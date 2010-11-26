@@ -14,6 +14,7 @@ Then repeat.
 const int N_ROW = 12;
 const int N_COL = 16;
 const int N_COLOR = 8;
+const int DBG = 12;
 
 // bitmasks for the colors
 const unsigned long RGBW_MASKS[] = {0b00001001001001001001001001001001, // RED
@@ -105,6 +106,7 @@ void RefreshAll(){
 
 void setup(){
   pinMode(8, OUTPUT);
+  pinMode(DBG, OUTPUT);
   buffer = (uint32_t*)calloc(N_COL, sizeof(uint32_t));
   memset(buffer, WHITE, N_COL*sizeof(uint32_t)); // ALL ON: WHITE
 
@@ -128,6 +130,7 @@ void setup(){
 }
 
 unsigned long count = 0;
+boolean dbg = true;
 void loop(){
   int color_i = 0;
   if(count % 4000 == 0){
@@ -136,6 +139,13 @@ void loop(){
       delay(1000);
     }
     memset(buffer, COLORS[color_i], N_COL*sizeof(uint32_t));
+    if(dbg){
+      dbg = false;
+    }
+    else{
+      dbg = true;
+    }
+    digitalWrite(DBG, dbg);
   }    
   RefreshAll();
   count++;
