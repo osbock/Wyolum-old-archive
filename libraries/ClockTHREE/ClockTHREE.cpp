@@ -75,6 +75,7 @@ void ClockTHREE::init(){
 
 // Refresh this frame
 void ClockTHREE::refresh(){
+  return;
   uint8_t col_j;
 
   union Column_t {
@@ -93,7 +94,7 @@ void ClockTHREE::refresh(){
     SPI.transfer(Column.dat8[0]);
     PORTB |= 2U;    //Latch-Pulse 
     PORTB &= 253U;
-    delay(200);
+    delay(200); // SLOW scan rate down. 
     col_j++;
   }
 }
