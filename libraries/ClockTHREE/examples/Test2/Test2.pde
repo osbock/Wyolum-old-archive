@@ -10,6 +10,8 @@ void setup(){
   Serial.begin(9600);
 }
 uint32_t count = 0;
+boolean dbg = true;
+
 void loop(){
   uint8_t color_i;
   
@@ -20,6 +22,8 @@ void loop(){
     if(color_i == 1){
       delay(500);
     }
+    dbg = !dbg;
+    digitalWrite(DBG, dbg);
   }
   
   c3.refresh();
