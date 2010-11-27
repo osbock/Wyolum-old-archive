@@ -18,8 +18,7 @@ void loop(){
   if(count % 4000 == 0){
     color_i = count / 4000;
     color_i %=  N_COLOR;
-    // displayfill(display, colors[color_i]);
-    displayfill(display, RED);
+    displayfill(display, colors[color_i]);
     if(color_i == 1){
       delay(500);
     }
