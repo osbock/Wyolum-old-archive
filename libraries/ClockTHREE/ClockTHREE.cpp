@@ -75,7 +75,6 @@ void ClockTHREE::init(){
 
 // Refresh this frame
 void ClockTHREE::refresh(){
-  return;
   uint8_t col_j;
 
   union Column_t {
