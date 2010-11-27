@@ -93,6 +93,7 @@ void ClockTHREE::refresh(){
     SPI.transfer(Column.dat8[0]);
     PORTB |= 2U;    //Latch-Pulse 
     PORTB &= 253U;
+    delay(200);
     col_j++;
   }
 }
