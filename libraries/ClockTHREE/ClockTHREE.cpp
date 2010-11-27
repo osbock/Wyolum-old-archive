@@ -87,6 +87,7 @@ void ClockTHREE::refresh(){
     PORTD = col_j;
     Column.dat32 = display[col_j];
     // transfer column to row drivers
+#ifdef NOTDEF
     Serial.print("Col");
     Serial.print(col_j, DEC);
     Serial.print(" data");
@@ -98,6 +99,7 @@ void ClockTHREE::refresh(){
     Serial.print(" ");
     Serial.print(Column.dat8[3], BIN);
     Serial.println(" ");
+#endif
     SPI.transfer(Column.dat8[3]);
     SPI.transfer(Column.dat8[2]);
     SPI.transfer(Column.dat8[1]);
