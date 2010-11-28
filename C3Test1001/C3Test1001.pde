@@ -71,6 +71,7 @@ void RefreshAll(){
     SPI_TX(mix.c[0]); 
     PORTB |= 2U;    //Latch Pulse 
     PORTB &= 253U;
+    //delay(100);
     col_j++;
   }
 }
@@ -104,7 +105,7 @@ void setup(){
   PORTB &= 253;  
 }
 
-unsigned long count = 0;
+unsigned long count =4000;
 boolean dbg = true;
 void loop(){
   int color_i = 0;
@@ -119,13 +120,16 @@ void loop(){
       buffer[i] = COLORS[color_i];
     }
     if(dbg){
+      // PORTC |= 0b00001000; // Disable col driver
       dbg = false;
     }
     else{
+      // PORTC &= 0b11110111; // Enable col driver
       dbg = true;
     }
     digitalWrite(DBG, dbg);
     // digitalWrite(COL_DRIVER_ENABLE, dbg);
+
   }    
   RefreshAll();
   count++;

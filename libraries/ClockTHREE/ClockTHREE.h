@@ -58,30 +58,33 @@ const int COL_DRIVER_ENABLE = 17;
 
 // bitmasks for the colors
 const unsigned long RGBW_MASKS[] = {
-  0b00001001001001001001001001001001, // RED
-  0b00010010010010010010010010010010, // GREEN
-  0b11100100100100100100100100100100, // BLUE
-  0b00111111111111111111111111111111  // WHITE
+  0b001001001001001001001001001001, // RED
+  0b010010010010010010010010010010, // GREEN
+  0b100100100100100100100100100100, // BLUE
+  0b111111111111111111111111111111  // WHITE
 };
 
-const uint8_t colors[] = {
-  0b00000000,
-  0b00000001,
-  0b00000010,
-  0b00000100,
-  0b00000011,
-  0b00000101,
-  0b00000110,
-  0b00000111,
+const uint8_t       OFF = 0b000;
+const uint8_t     GREEN = 0b001;
+const uint8_t      BLUE = 0b010;
+const uint8_t       RED = 0b100;
+const uint8_t GREENBLUE = 0b011;
+const uint8_t  REDGREEN = 0b101;
+const uint8_t   REDBLUE = 0b110;
+const uint8_t     WHITE = 0b111;
+
+const uint8_t MONO = BLUE;
+
+const uint8_t COLORS[] = {
+  OFF,
+  RED,
+  GREEN,
+  BLUE,
+  REDGREEN,
+  REDBLUE,
+  GREENBLUE,
+  WHITE
 };
-const uint8_t OFF = colors[0];
-const uint8_t RED = colors[1];
-const uint8_t GREEN = colors[2];
-const uint8_t BLUE = colors[3];
-const uint8_t REDGREEN = colors[4];
-const uint8_t REDBLUE = colors[5];
-const uint8_t GREENBLUE = colors[6];
-const uint8_t WHITE = colors[7];
 
 class ClockTHREE
 { 
@@ -101,10 +104,10 @@ class ClockTHREE
   uint32_t getcol(uint8_t xpos);
 
   // Turn a pixel to color (0 == off)
-  void setpoint(uint8_t xpos, uint8_t ypos, uint8_t color);
+  void setPixel(uint8_t xpos, uint8_t ypos, uint8_t color);
 
   // Determine color value of pixel at xpos, ypos
-  uint8_t getpoint(uint8_t xpos, uint8_t ypos); 
+  uint8_t getPixel(uint8_t xpos, uint8_t ypos); 
 		
   //Draw a line from (x1,y1) to (x2,y2)
   void line(int8_t x1, int8_t y1, int8_t x2, int8_t y2, uint8_t color);
@@ -119,13 +122,15 @@ class ClockTHREE
   // Replace current display buffer
   void setdisplay(uint32_t *display);
   
+  // Fill the display with single color
+  void displayfill(uint8_t color);
   uint32_t* display;
   uint8_t _xcursor;
   uint8_t _ycursor;
  private:
 };
 
-void displayfill(uint32_t *display, uint8_t color);
+void _delay(unsigned int n);
 #endif
 
 
