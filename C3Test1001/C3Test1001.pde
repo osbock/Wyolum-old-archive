@@ -15,6 +15,7 @@ const int N_ROW = 12;
 const int N_COL = 16;
 const int N_COLOR = 8;
 const int DBG = 12;
+const int COL_DRIVER_ENABLE = 17;
 
 // bitmasks for the colors
 const unsigned long RGBW_MASKS[] = {0b00001001001001001001001001001001, // RED
@@ -49,36 +50,6 @@ unsigned char SPI_TX(char cData)
   while (!(SPSR & _BV(SPIF))) ;
   return SPDR;
 } 
-// Modified from Peggy2.cpp
-void RefreshAllOld(){
-  unsigned char col_j;
-  unsigned char rgb_i;
-  
-  union mix_t {
-    unsigned long atemp; 
-    unsigned char c[4];
-  } mix;
-  
-  col_j = 0;
-  while (col_j < N_COL){
-    rgb_i = 0;
-    PORTD = col_j;
-    while(rgb_i < 3){
-      mix.atemp = buffer[col_j] & RGBW_MASKS[rgb_i];
-      SPI_TX(mix.c[3]);
-      SPI_TX(mix.c[2]);
-      SPI_TX(mix.c[1]);
-      
-      //PORTD = 32;  // Turn displays off
-      
-      SPI_TX(mix.c[0]); 
-      PORTB |= 2U;    //Latch Pulse 
-      PORTB &= 253U;
-      rgb_i++;
-    }
-    col_j++;
-  }
-}
 
 // Modified from Peggy2.cpp
 void RefreshAll(){
@@ -107,6 +78,10 @@ void RefreshAll(){
 void setup(){
   pinMode(8, OUTPUT);
   pinMode(DBG, OUTPUT);
+  pinMode(COL_DRIVER_ENABLE, OUTPUT);
+  
+  digitalWrite(COL_DRIVER_ENABLE, LOW);
+
   buffer = (uint32_t*)calloc(N_COL, sizeof(uint32_t));
   memset(buffer, WHITE, N_COL*sizeof(uint32_t)); // ALL ON: WHITE
 
@@ -133,12 +108,16 @@ unsigned long count = 0;
 boolean dbg = true;
 void loop(){
   int color_i = 0;
+  int i;
+
   if(count % 4000 == 0){
     color_i = (count / 4000) % N_COLOR;
     if(color_i == 1){
       delay(1000);
     }
-    memset(buffer, COLORS[color_i], N_COL*sizeof(uint32_t));
+    for(i = 0; i < N_COL; i++){
+      buffer[i] = COLORS[color_i];
+    }
     if(dbg){
       dbg = false;
     }
@@ -146,6 +125,7 @@ void loop(){
       dbg = true;
     }
     digitalWrite(DBG, dbg);
+    // digitalWrite(COL_DRIVER_ENABLE, dbg);
   }    
   RefreshAll();
   count++;

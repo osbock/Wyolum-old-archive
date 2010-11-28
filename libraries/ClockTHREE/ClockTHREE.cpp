@@ -56,6 +56,8 @@ void ClockTHREE::init(){
   SPI.begin(); // start SPI communications
 
   pinMode(DBG, OUTPUT);
+  pinMode(COL_DRIVER_ENABLE, OUTPUT);
+  digitalWrite(COL_DRIVER_ENABLE, LOW);
   display = NULL;
   PORTD = 0U;
   DDRD = 255U;

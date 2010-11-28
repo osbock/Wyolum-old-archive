@@ -52,7 +52,10 @@ const int     N_ROW = 12;
 const int N_RGB_ROW = 10;
 const int     N_COL = 16;
 const int   N_COLOR = 8;
-const int       DBG = 12;
+
+const int               DBG = 12;
+const int COL_DRIVER_ENABLE = 17;
+
 // bitmasks for the colors
 const unsigned long RGBW_MASKS[] = {
   0b00001001001001001001001001001001, // RED
