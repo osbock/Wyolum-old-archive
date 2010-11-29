@@ -1,5 +1,11 @@
 /*
   ClockTHREE.cpp -- ClockTHREE RGB LED Matrix library for Arduino
+
+  Justin Shaw
+  The hardware and software for ClockTHREE have been enabled by the 
+  open souce Peggy2.  Thanks to the Evil Mad Science Team for making them
+  available.
+  
   LIBRARY VERSION: 0.01, DATED 26/11/2010
 
 Licenced under Creative Commons Attribution.
@@ -79,7 +85,7 @@ void ClockTHREE::init(){
 
 }
 
-// Refresh this frame
+// Scan current display if not NULL
 void ClockTHREE::refresh(){
   uint8_t col_j;
 
@@ -94,7 +100,7 @@ void ClockTHREE::refresh(){
     // for(col_j=0; col_j < N_COL; col_j++){
     while (col_j < N_COL){
       Column.dat32 = display[col_j];
-      // PORTC |= 0b00001000; // Disable col driver (here for reference)
+      // PORTC |= 0b00001000; // Disable col driver 
       // transfer column to row drivers
       SPI.transfer(Column.dat8[3]);
       SPI.transfer(Column.dat8[2]);
@@ -107,7 +113,7 @@ void ClockTHREE::refresh(){
       col_j++;
       // _delay(0);
     }
-    // PORTC |= 0b00001000; // Disable col driver (here for reference)
+    // PORTC |= 0b00001000; // Disable col driver
   }
 }
 
@@ -116,12 +122,14 @@ void ClockTHREE::clear(void){
   displayfill(0);
 }
 
+// Set column at xpos to col.  Use setPixel to set an individual pixel.
 void ClockTHREE::setcol(uint8_t xpos, uint32_t col){
   if(display != NULL){
     display[xpos] = col;
   }
 }
 
+// Return column value at xpos.  Use getPixel to get an individual pixel.
 uint32_t ClockTHREE::getcol(uint8_t xpos){
   uint32_t out;
   if(display != NULL){
@@ -133,13 +141,17 @@ uint32_t ClockTHREE::getcol(uint8_t xpos){
   return out;
 }
 
-// Turn a pixel to color (0 == off)
-// for rows 10 and 11 if color is not MONO turn pixel off
+/* 
+ * Turn a pixel to color (0 == off)
+ * for rows 10 and 11:
+ *   if color is not MONO turn pixel off
+ *   if color is MONO turn pixel on
+ */
 void ClockTHREE::setPixel(uint8_t xpos, uint8_t ypos, uint8_t color){
   if(display != NULL){
     // RGB pixels
     color &= 0b111; // ensure 3 bit color
-    if(ypos < N_RGB_ROW){
+    if(ypos < N_RGB_ROW and xpos < N_COL){
       // clear pixel
       display[xpos] &= ~(0b111 << (3 * ypos)); 
 
@@ -168,7 +180,11 @@ void ClockTHREE::setPixel(uint8_t xpos, uint8_t ypos, uint8_t color){
   }
 }
 
-// Determine color value of pixel at xpos, ypos
+/*
+ * Return color value of pixel at xpos, ypos
+ * For rows 10 and 11, return 0b000 if MONO pixel is set
+ * Otherwise return MONO
+ */
 uint8_t ClockTHREE::getPixel(uint8_t xpos, uint8_t ypos){
   uint8_t out = 0;
 
@@ -196,10 +212,39 @@ uint8_t ClockTHREE::getPixel(uint8_t xpos, uint8_t ypos){
 //Draw a line from (x1,y1) to (x2,y2)
 void ClockTHREE::line(int8_t x1, int8_t y1, int8_t x2, int8_t y2, 
 		      uint8_t color){
+  int i;
+  float x, y;
+  setPixel(x1, y1, color);
+  setPixel(x2, y2, color);
+  if(x2 < x1){
+    this->line(x2, y2, x1, y1, color);
+  }
+  else{
+    if(x1 != x2){
+      float m = (y2 - y1) / float(x2 - x1);
+      y = y1;
+      for(x = x1 + .5; x < x2 + .5; x+= .0001){
+	y = m * (x - x1) + y1;
+	setPixel((uint8_t)x, (uint8_t)y, color);
+      }
+    }
+    else{
+      if(y2 < y1){
+	this->line(x2, y2, x1, y1, color);
+      }
+      else{
+	for(y = y1; y < y2; y++){
+	  setPixel(x1, y, color);
+	}
+      }
+    }
+  }
 }
 
 //Set cursor position to (xpos,ypos)
-void ClockTHREE::moveto(int8_t xpos, int8_t ypos){
+void ClockTHREE::moveto(int8_t _xpos, int8_t _ypos){
+  xpos = _xpos;
+  ypos = _ypos;
 }
 	
 //Draw line from cursor position to (xpos,ypos)
@@ -217,10 +262,13 @@ void ClockTHREE::displayfill(uint8_t color){
   uint32_t col;
   int i;
   if(display != NULL){
-    color &= 0b00000111; // ensure 3 bit color
+    color &= 0b111; // ensure 3 bit color
     col = 0;
     for(i = 0; i < N_RGB_ROW; i++){
       col |= (color << (3 * i));
+    }
+    if(color == MONO){
+      col |= 0b11 << 30;
     }
     for(i = 0; i < N_COL; i++){
       display[i] = col;

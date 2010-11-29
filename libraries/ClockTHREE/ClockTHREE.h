@@ -1,5 +1,11 @@
 /*
   ClockTHREE.h -- ClockTHREE RGB LED Matrix library for Arduino
+
+  Justin Shaw
+  The hardware and software for ClockTHREE have been enabled by the 
+  open souce Peggy2.  Thanks to the Evil Mad Science Team for making them
+  available.
+  
   LIBRARY VERSION: 0.01, DATED 26/11/2010
 
 Licenced under Creative Commons Attribution.
@@ -125,8 +131,8 @@ class ClockTHREE
   // Fill the display with single color
   void displayfill(uint8_t color);
   uint32_t* display;
-  uint8_t _xcursor;
-  uint8_t _ycursor;
+  uint8_t xpos;
+  uint8_t ypos;
  private:
 };
 

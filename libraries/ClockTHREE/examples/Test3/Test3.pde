@@ -32,7 +32,7 @@ void loop(){
   uint32_t tmp_col;
   c3.refresh();
   tmp_col = c3.display[0];
-  if(count % 4000 == 0){
+  if(count % 1000 == 0){
     for(col_j=1; col_j < 16; col_j++){
       c3.display[col_j - 1] = c3.display[col_j];
     }
