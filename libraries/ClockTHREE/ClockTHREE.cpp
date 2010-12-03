@@ -235,7 +235,9 @@ void ClockTHREE::moveto(int8_t _xpos, int8_t _ypos){
 	
 //Draw line from cursor position to (xpos,ypos)
 // updating cursor position
-void ClockTHREE::lineto(int8_t xpos, int8_t ypos, uint8_t color){
+void ClockTHREE::lineto(int8_t _xpos, int8_t _ypos, uint8_t color){
+  line(xpos, ypos, _xpos, _ypos);
+  moveto(_xpos, _ypos);
 }
   
 // Replace current display buffer
