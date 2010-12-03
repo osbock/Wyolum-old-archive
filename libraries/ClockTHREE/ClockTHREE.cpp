@@ -85,7 +85,7 @@ void ClockTHREE::init(){
 
 }
 
-// Scan current display if not NULL
+// Scan current display if it is not NULL
 void ClockTHREE::refresh(){
   uint8_t col_j;
 
@@ -100,18 +100,18 @@ void ClockTHREE::refresh(){
     // for(col_j=0; col_j < N_COL; col_j++){
     while (col_j < N_COL){
       Column.dat32 = display[col_j];
-      // PORTC |= 0b00001000; // Disable col driver 
       // transfer column to row drivers
       SPI.transfer(Column.dat8[3]);
       SPI.transfer(Column.dat8[2]);
       SPI.transfer(Column.dat8[1]);
+      PORTC |= 0b00001000; // Disable col driver 
       SPI.transfer(Column.dat8[0]);
-      PORTB |= 0b00000010; // 2;    //Latch-Pulse 
-      PORTB &= 0b11111101; // 253;
+      PORTB |= 0b00000010; // Start latch pulse 
+      PORTB &= 0b11111101; // End latch pulse 
       PORTD = (PORTD & 0b11110000) | col_j; //only impacts lower 4 bits of PORTD
-      // PORTC &= 0b11110111; // Enable col driver
+      PORTC &= 0b11110111; // Enable col driver
       col_j++;
-      // _delay(0);
+      _delay(500);
     }
     // PORTC |= 0b00001000; // Disable col driver
   }
@@ -119,7 +119,7 @@ void ClockTHREE::refresh(){
 
 // Clears the display: LEDs set to OFF
 void ClockTHREE::clear(void){
-  displayfill(0);
+  displayfill(DARK);
 }
 
 // Set column at xpos to col.  Use setPixel to set an individual pixel.
@@ -150,13 +150,13 @@ uint32_t ClockTHREE::getcol(uint8_t xpos){
 void ClockTHREE::setPixel(uint8_t xpos, uint8_t ypos, uint8_t color){
   if(display != NULL){
     // RGB pixels
-    color &= 0b111; // ensure 3 bit color
+    color &= (uint8_t)0b111; // ensure 3 bit color
     if(ypos < N_RGB_ROW and xpos < N_COL){
       // clear pixel
-      display[xpos] &= ~(0b111 << (3 * ypos)); 
+      display[xpos] &= ~((uint32_t)0b111 << (3 * ypos)); 
 
       // set pixel to color
-      display[xpos] |= color << (3 * ypos); 
+      display[xpos] |= ((uint32_t)color << (3 * ypos)); 
     }
     // MONO pixels
     else if(ypos < N_ROW){ // ROW 10 or 11
@@ -209,34 +209,20 @@ uint8_t ClockTHREE::getPixel(uint8_t xpos, uint8_t ypos){
   }
 }
 		
-//Draw a line from (x1,y1) to (x2,y2)
-void ClockTHREE::line(int8_t x1, int8_t y1, int8_t x2, int8_t y2, 
+//Draw a line from (x0,y0) to (x1,y1)
+void ClockTHREE::line(int8_t x0, int8_t y0, int8_t x1, int8_t y1, 
 		      uint8_t color){
-  int i;
-  float x, y;
-  setPixel(x1, y1, color);
-  setPixel(x2, y2, color);
-  if(x2 < x1){
-    this->line(x2, y2, x1, y1, color);
-  }
-  else{
-    if(x1 != x2){
-      float m = (y2 - y1) / float(x2 - x1);
-      y = y1;
-      for(x = x1 + .5; x < x2 + .5; x+= .0001){
-	y = m * (x - x1) + y1;
-	setPixel((uint8_t)x, (uint8_t)y, color);
-      }
-    }
-    else{
-      if(y2 < y1){
-	this->line(x2, y2, x1, y1, color);
-      }
-      else{
-	for(y = y1; y < y2; y++){
-	  setPixel(x1, y, color);
-	}
-      }
+  double t;
+  double d;
+  uint8_t x, y, i;
+    
+  if(display != NULL){
+    // determine how many steps we need
+    d = abs(x1 - x0) > abs(y1 - y0) ? abs(x1 - x0): abs(y1 - y0);
+    for(i = 0; i <= d; i++){
+      x = round(x0 + i * (x1 - x0) / d);
+      y = round(y0 + i * (y1 - y0) / d);
+      setPixel(x, y, color);
     }
   }
 }
