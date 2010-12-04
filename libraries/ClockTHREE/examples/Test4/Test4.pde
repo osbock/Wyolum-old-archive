@@ -1,6 +1,6 @@
 /*
   ClockTHREE Test4 Diag Test.
-  Draw a RED line
+  Draw a some lines
 
   Justin Shaw Nov 28, 2010
   
@@ -27,6 +27,7 @@ void bin32Print(uint32_t num){
   Serial.println("");
 }
 void printData(){
+  Serial.println("");
   for(int i=0; i < N_COL; i++){
     bin32Print(display[i]);
   }
@@ -57,6 +58,10 @@ void setup(){
   c3.line(0, 0, 15, 1, WHITE);
   c3.line(0, 11, 15, 0, BLUE);
   c3.line(5, 0, 9, 12, RED);
+  c3.moveto(5, 5);
+  c3.lineto(10, 10, WHITE);
+  c3.lineto(10, 3, WHITE);
+  c3.lineto(3, 3, WHITE);
   printData();
   //c3.line(0, 4, 1, 3, RED);
 

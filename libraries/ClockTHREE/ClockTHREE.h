@@ -116,8 +116,30 @@ class ClockTHREE
   uint8_t getPixel(uint8_t xpos, uint8_t ypos); 
 		
   //Draw a line from (x1,y1) to (x2,y2)
-  void line(int8_t x1, int8_t y1, int8_t x2, int8_t y2, uint8_t color);
+  void line(double x1, double y1, double x2, double y2, uint8_t color);
 
+  // Draw an ellipse centered at x, y with radius rx in the x direction and
+  // ry in the y direction
+  void ellipsalArc(double cx, double cy, 
+		   double sma, double smi, double orientation, 
+		   uint8_t color);
+  /*
+   * Draw an arc of an ellipse centered at x, y with 
+   * semi-major axis sma
+   * semi-minor axis smi
+   * with semimajor axis oriented by orientation angle in radians
+   * orient = 0 => sma oriented along x axis
+   * orient = pi / 2 => sma oriented along x axis
+   */
+  void ellipse(double cx, double cy, 
+	       double sma, double smi, double orientation, 
+	       uint8_t color);
+
+  // Draw a circle centered at x, y with radius r
+  void circle(double x, double y, double r, uint8_t color);
+  
+  // Draw a rectangle
+  
   //Set cursor position to (xpos,ypos)
   void moveto(int8_t xpos, int8_t ypos);
 	

@@ -20,7 +20,8 @@ void setup(){
   c3.setdisplay(display);
   for(xpos=0; xpos<N_COL; xpos++){
     for(ypos=0; ypos<N_RGB_ROW; ypos++){
-      c3.setPixel(xpos, ypos, COLORS[(ypos + xpos) % N_COLOR]);
+      // c3.setPixel(xpos, ypos, COLORS[(ypos + xpos) % N_COLOR]);
+      c3.setPixel(xpos, ypos, COLORS[(ypos + xpos) % 4]);
     }
   }
 }

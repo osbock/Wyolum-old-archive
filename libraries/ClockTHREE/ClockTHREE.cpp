@@ -210,7 +210,7 @@ uint8_t ClockTHREE::getPixel(uint8_t xpos, uint8_t ypos){
 }
 		
 //Draw a line from (x0,y0) to (x1,y1)
-void ClockTHREE::line(int8_t x0, int8_t y0, int8_t x1, int8_t y1, 
+void ClockTHREE::line(double x0, double y0, double x1, double y1, 
 		      uint8_t color){
   double t;
   double d;
@@ -218,13 +218,41 @@ void ClockTHREE::line(int8_t x0, int8_t y0, int8_t x1, int8_t y1,
     
   if(display != NULL){
     // determine how many steps we need
-    d = abs(x1 - x0) > abs(y1 - y0) ? abs(x1 - x0): abs(y1 - y0);
+    uint8_t dx, dy;
+    dx = abs(x1 - x0);
+    dy = abs(y1 - y0);
+    d = dx > dy ? dx: dy;
     for(i = 0; i <= d; i++){
       x = round(x0 + i * (x1 - x0) / d);
       y = round(y0 + i * (y1 - y0) / d);
       setPixel(x, y, color);
     }
   }
+}
+
+// Draw an ellipse centered at x, y with radius rx in the x direction and
+// ry in the y direction
+void ClockTHREE::ellipse(double cx, double cy, 
+			 double sma, double smi, double orient,
+			 uint8_t color){
+  double  x, y, tx, ty;
+  const uint8_t N = 52;
+  double theta = 0.;
+  double dtheta = 2 * PI / N;
+  double cosorient = cos(orient);
+  double sinorient = sin(orient);
+  for(theta=0; theta < 2 * PI; theta += dtheta){
+    tx = sma * cos(theta);
+    ty = smi * sin(theta);
+    x = cx + cosorient * tx + sinorient * ty;
+    y = cy - sinorient * tx + cosorient * ty;
+    setPixel(round(x), round(y), color);
+  }
+}
+
+// Draw a circle centered at x, y with radius r
+void ClockTHREE::circle(double cx, double cy, double r, uint8_t color){
+  ellipse(cx, cy, r, r, 0, color);
 }
 
 //Set cursor position to (xpos,ypos)
@@ -253,10 +281,10 @@ void ClockTHREE::displayfill(uint8_t color){
     color &= 0b111; // ensure 3 bit color
     col = 0;
     for(i = 0; i < N_RGB_ROW; i++){
-      col |= (color << (3 * i));
+      col |= ((uint32_t)color << (3 * i));
     }
     if(color == MONO){
-      col |= 0b11 << 30;
+      col |= (uint32_t)0b11 << 30;
     }
     for(i = 0; i < N_COL; i++){
       display[i] = col;
