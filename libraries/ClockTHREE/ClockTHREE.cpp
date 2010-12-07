@@ -99,7 +99,8 @@ void ClockTHREE::refresh(){
     // PORTC &= 0b11110111; // Enable col driver
     // for(col_j=0; col_j < N_COL; col_j++){
     while (col_j < N_COL){
-      Column.dat32 = display[col_j];
+	// Column.dat32 = RGBW_MASKS[rgb_i] & display[col_j];
+      Column.dat32 = display[15 - col_j];
       // transfer column to row drivers
       SPI.transfer(Column.dat8[3]);
       SPI.transfer(Column.dat8[2]);
@@ -111,7 +112,7 @@ void ClockTHREE::refresh(){
       PORTD = (PORTD & 0b11110000) | col_j; //only impacts lower 4 bits of PORTD
       PORTC &= 0b11110111; // Enable col driver
       col_j++;
-      _delay(500);
+      _delay(100);
     }
     // PORTC |= 0b00001000; // Disable col driver
   }

@@ -71,9 +71,9 @@ const unsigned long RGBW_MASKS[] = {
 };
 
 const uint8_t      DARK = 0b000;
-const uint8_t     GREEN = 0b001;
-const uint8_t      BLUE = 0b010;
-const uint8_t       RED = 0b100;
+const uint8_t      RED = 0b001;
+const uint8_t     GREEN = 0b010;
+const uint8_t      BLUE = 0b100;
 const uint8_t GREENBLUE = 0b011;
 const uint8_t  REDGREEN = 0b101;
 const uint8_t   REDBLUE = 0b110;

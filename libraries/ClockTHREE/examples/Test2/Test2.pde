@@ -18,14 +18,15 @@ void setup(){
 }
 uint32_t count = 4000;
 boolean dbg = true;
-
+const int hold = 500;
 void loop(){
   uint8_t color_i;
   
-  if(count % 4000 == 0){
-    color_i = count / 4000;
+  if(count % hold == 0){
+    color_i = count / hold;
     color_i %=  N_COLOR;
     c3.displayfill(COLORS[color_i]);
+    // c3.displayfill(GREEN);
     dbg = !dbg;
     digitalWrite(DBG, dbg);
   }
