@@ -26,16 +26,17 @@ boolean dbg = true;
 double x0 = 0, y0 = 0, x1 = 8, y1 = 10;
 double vx0 = .4, vy0 = .15, vx1 = -.4, vy1 = -.3;
 uint8_t color_i = 1;
-const int hold = 100;
+const int hold = 50;
 
 void loop(){
   if(count % hold == 0){
-    c3.line(x0, y0, x1, y1, DARK);
+    // c3.line(x0, y0, x1, y1, DARK);
+    c3.displayfill(DARK);
     x0 += vx0;
-    if(x0 > N_COL){
+    if(x0 >= N_COL){
       color_i++;
       color_i %= N_COLOR;
-      x0 = N_COL;
+      x0 = N_COL - 1;
       vx0 *= -1;
     }
     if(x0 < 0){
@@ -45,10 +46,10 @@ void loop(){
       vx0 *= -1;
     }
 
-    if(x1 > N_COL){
+    if(x1 >= N_COL){
       color_i++;
       color_i %= N_COLOR;
-      x1 = N_COL;
+      x1 = N_COL - 1;
       vx1 *= -1;
     }
     if(x1 < 0){
@@ -57,10 +58,10 @@ void loop(){
       x1 = 0;
       vx1 *= -1;
     }
-    if(y0 > N_RGB_ROW){
+    if(y0 >= N_RGB_ROW){
       color_i++;
       color_i %= N_COLOR;
-      y0 = N_RGB_ROW;
+      y0 = N_RGB_ROW - 1;
       vy0 *= -1;
     }
     if(y0 < 0){
@@ -70,10 +71,10 @@ void loop(){
       vy0 *= -1;
     }
 
-    if(y1 > N_RGB_ROW){
+    if(y1 >= N_RGB_ROW){
       color_i++;
       color_i %= N_COLOR;
-      y1 = N_RGB_ROW;
+      y1 = N_RGB_ROW - 1;
       vy1 *= -1;
     }
     if(y1 < 0){
