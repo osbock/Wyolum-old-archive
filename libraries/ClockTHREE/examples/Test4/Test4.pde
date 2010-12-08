@@ -14,62 +14,83 @@
 ClockTHREE c3 = ClockTHREE();
 uint32_t *display = (uint32_t*)calloc(N_COL, sizeof(uint32_t));
 
-void bin32Print(uint32_t num){
-  for(int i=31; i >= 0; i--){
-    if(num >= (1LU << i)){
-      Serial.print('1');
-      num -= (1LU << i);
-    }
-    else{
-      Serial.print("0");
-    }
-  }
-  Serial.println("");
-}
-void printData(){
-  Serial.println("");
-  for(int i=0; i < N_COL; i++){
-    bin32Print(display[i]);
-  }
-}
 void setup(){
   int xpos, ypos;
 
   c3.init();
-  Serial.begin(9600);
   delay(100);
   c3.setdisplay(display);
-  c3.displayfill(DARK);
-  // c3.setPixel(0, 0, WHITE);
-  // c3.setPixel(0, 0, WHITE);
-  // c3.setPixel(0, 4, WHITE);
-  //for(int i = 0; i <= 12; i++){
-  //    c3.setPixel(i, 12-i, BLUE);
-  //}
-  //for(int i = 0; i < 12; i++){
-  //  c3.setPixel(i+6, i, WHITE);
-  //}
-  
-  // c3.setPixel(0, 0, WHITE);
-
-  
-  // c3.setPixel(1, 0, WHITE);
-  // c3.setPixel(1, 1, BLUE);
-  c3.line(0, 0, 15, 1, WHITE);
-  c3.line(0, 11, 15, 0, BLUE);
-  c3.line(5, 0, 9, 12, RED);
-  c3.moveto(5, 5);
-  c3.lineto(10, 10, WHITE);
-  c3.lineto(10, 3, WHITE);
-  c3.lineto(3, 3, WHITE);
-  printData();
-  //c3.line(0, 4, 1, 3, RED);
-
 }
 uint32_t count = 0;
 boolean dbg = true;
+double x0 = 0, y0 = 0, x1 = 8, y1 = 10;
+double vx0 = .4, vy0 = .15, vx1 = -.4, vy1 = -.3;
+uint8_t color_i = 1;
+const int hold = 100;
 
 void loop(){
+  if(count % hold == 0){
+    c3.line(x0, y0, x1, y1, DARK);
+    x0 += vx0;
+    if(x0 > N_COL){
+      color_i++;
+      color_i %= N_COLOR;
+      x0 = N_COL;
+      vx0 *= -1;
+    }
+    if(x0 < 0){
+      color_i++;
+      color_i %= N_COLOR;
+      x0 = 0;
+      vx0 *= -1;
+    }
+
+    if(x1 > N_COL){
+      color_i++;
+      color_i %= N_COLOR;
+      x1 = N_COL;
+      vx1 *= -1;
+    }
+    if(x1 < 0){
+      color_i++;
+      color_i %= N_COLOR;
+      x1 = 0;
+      vx1 *= -1;
+    }
+    if(y0 > N_RGB_ROW){
+      color_i++;
+      color_i %= N_COLOR;
+      y0 = N_RGB_ROW;
+      vy0 *= -1;
+    }
+    if(y0 < 0){
+      color_i++;
+      color_i %= N_COLOR;
+      y0 = 0;
+      vy0 *= -1;
+    }
+
+    if(y1 > N_RGB_ROW){
+      color_i++;
+      color_i %= N_COLOR;
+      y1 = N_RGB_ROW;
+      vy1 *= -1;
+    }
+    if(y1 < 0){
+      color_i++;
+      color_i %= N_COLOR;
+      y1 = 0;
+      vy1 *= -1;
+    }
+    if(color_i == 0){
+      color_i = 1;
+    }
+    x0 += vx0;
+    y0 += vy0;
+    x1 += vx1;
+    y1 += vy1;
+    c3.line(x0, y0, x1, y1, COLORS[color_i]);
+  }
   c3.refresh();
   count++;
 }

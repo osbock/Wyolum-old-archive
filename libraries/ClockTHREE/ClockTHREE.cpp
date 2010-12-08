@@ -114,7 +114,7 @@ void ClockTHREE::refresh(){
       col_j++;
       _delay(100);
     }
-    // PORTC |= 0b00001000; // Disable col driver
+    PORTC |= 0b00001000; // Disable col driver
   }
 }
 
@@ -237,7 +237,7 @@ void ClockTHREE::ellipse(double cx, double cy,
 			 double sma, double smi, double orient,
 			 uint8_t color){
   double  x, y, tx, ty;
-  const uint8_t N = 52;
+  const uint8_t N = (int)(PI * sma * smi);
   double theta = 0.;
   double dtheta = 2 * PI / N;
   double cosorient = cos(orient);

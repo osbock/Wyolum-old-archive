@@ -11,8 +11,10 @@
 #include "ClockTHREE.h"
 #include "SPI.h"
 
+const uint8_t N_DISPLAY = 8;
 ClockTHREE c3 = ClockTHREE();
 uint32_t *display = (uint32_t*)calloc(N_COL, sizeof(uint32_t));
+uint32_t *displays = (uint32_t*)calloc(N_DISPLAY * N_COL, sizeof(uint32_t));
 
 void bin32Print(uint32_t num){
   for(int i=31; i >= 0; i--){
@@ -32,28 +34,31 @@ void printData(){
     bin32Print(display[i]);
   }
 }
+
 void setup(){
   int xpos, ypos;
 
   c3.init();
-  Serial.begin(9600);
+  // Serial.begin(9600);
   delay(100);
-  c3.setdisplay(display);
-  c3.displayfill(DARK);
-  c3.circle(8, 5, 4, WHITE);
-  // c3.ellipse(7.5, 5.5, 8, 6, 0, BLUE);
-  c3.ellipse(9, 3, 8, 6, PI / 4, BLUE);
-  c3.ellipse(5, 3, 4, 2, -PI / 4, RED);
-  printData();
-  c3.displayfill(BLUE);
-  c3.ellipse(7.5, 5.5, 8, 6, 0, DARK);
-  Serial.println("");
-  printData();
+  for(int i = 0; i < N_DISPLAY; i++){
+    c3.setdisplay(displays + i * 32);
+    c3.displayfill(DARK);
+    c3.circle(7.5, 5.5, (i + 1) % 9, BLUE);
+    c3.circle(7.5, 5.5, (i + 2) % 9, RED);
+    c3.circle(7.5, 5.5, (i + 3) % 9, GREEN);
+
+  }
 }
 uint32_t count = 0;
 boolean dbg = true;
-
+uint8_t color_i = 0;
+const int hold = 100;
 void loop(){
-  //   c3.refresh();
+  if(count % hold == 0){
+    int n = (count / hold) % N_DISPLAY;
+    c3.setdisplay(displays + n * 32);
+  }
+  c3.refresh();
   count++;
 }
