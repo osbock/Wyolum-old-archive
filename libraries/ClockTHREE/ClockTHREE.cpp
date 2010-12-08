@@ -223,10 +223,15 @@ void ClockTHREE::line(double x0, double y0, double x1, double y1,
     dx = abs(x1 - x0);
     dy = abs(y1 - y0);
     d = dx > dy ? dx: dy;
-    for(i = 0; i <= d; i++){
-      x = round(x0 + i * (x1 - x0) / d);
-      y = round(y0 + i * (y1 - y0) / d);
-      setPixel(x, y, color);
+    if(d < .5){
+      setPixel(round((x0 + x1) / 2.), round((y0 + y1) / 2.), color);
+    }
+    else{
+      for(i = 0; i <= d; i++){
+	x = round(x0 + i * (x1 - x0) / d);
+	y = round(y0 + i * (y1 - y0) / d);
+	setPixel(x, y, color);
+      }
     }
   }
 }
