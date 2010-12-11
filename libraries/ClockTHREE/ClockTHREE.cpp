@@ -82,39 +82,45 @@ void ClockTHREE::init(){
   SPI.transfer(0);
   SPI.transfer(0);
   SPI.transfer(0);
-
+  my_delay = 50;
 }
 
-// Scan current display if it is not NULL
+// Scan current display 1 time (if display is not NULL)
 void ClockTHREE::refresh(){
+  refresh(1);
+}
+// Scan current display n times (if display is not NULL)
+void ClockTHREE::refresh(int n_hold){
   uint8_t col_j;
 
   union Column_t {
     uint32_t dat32; 
     uint8_t dat8[4];
   } Column;
-  col_j = 0;
   
   if(display != NULL){
-    // PORTC &= 0b11110111; // Enable col driver
-    // for(col_j=0; col_j < N_COL; col_j++){
-    while (col_j < N_COL){
-	// Column.dat32 = RGBW_MASKS[rgb_i] & display[col_j];
-      Column.dat32 = display[15 - col_j];
-      // transfer column to row drivers
-      SPI.transfer(Column.dat8[3]);
-      SPI.transfer(Column.dat8[2]);
-      SPI.transfer(Column.dat8[1]);
-      PORTC |= 0b00001000; // Disable col driver 
-      SPI.transfer(Column.dat8[0]);
-      PORTB |= 0b00000010; // Start latch pulse 
-      PORTB &= 0b11111101; // End latch pulse 
-      PORTD = (PORTD & 0b11110000) | col_j; //only impacts lower 4 bits of PORTD
+    for(int hold_i = 0; hold_i < n_hold; hold_i++){
       PORTC &= 0b11110111; // Enable col driver
-      col_j++;
-      _delay(100);
+      // for(col_j=0; col_j < N_COL; col_j++){
+      col_j = 0;
+      while (col_j < N_COL){
+	// Column.dat32 = RGBW_MASKS[rgb_i] & display[col_j];
+	Column.dat32 = display[15 - col_j];
+	// transfer column to row drivers
+	SPI.transfer(Column.dat8[3]);
+	SPI.transfer(Column.dat8[2]);
+	SPI.transfer(Column.dat8[1]);
+	PORTC |= 0b00001000; // Disable col driver 
+	SPI.transfer(Column.dat8[0]);
+	PORTB |= 0b00000010; // Start latch pulse 
+	PORTB &= 0b11111101; // End latch pulse 
+	PORTD = (PORTD & 0b11110000) | col_j; //only impacts lower 4 bits of PORTD
+	PORTC &= 0b11110111; // Enable col driver
+	_delay(my_delay);
+	col_j++;
+      }
+      PORTC |= 0b00001000; // Disable col driver
     }
-    PORTC |= 0b00001000; // Disable col driver
   }
 }
 
@@ -123,6 +129,13 @@ void ClockTHREE::clear(void){
   displayfill(DARK);
 }
 
+/* 
+ * Set the hold time between column writes defaults to 50
+ * (my_delay = # of times nop is called)
+ */
+void ClockTHREE::set_column_hold(uint16_t _my_delay){
+  my_delay = _my_delay;
+}
 // Set column at xpos to col.  Use setPixel to set an individual pixel.
 void ClockTHREE::setcol(uint8_t xpos, uint32_t col){
   if(display != NULL){

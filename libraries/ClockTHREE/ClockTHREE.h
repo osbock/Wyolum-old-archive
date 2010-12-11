@@ -74,9 +74,9 @@ const uint8_t      DARK = 0b000;
 const uint8_t      RED = 0b001;
 const uint8_t     GREEN = 0b010;
 const uint8_t      BLUE = 0b100;
-const uint8_t GREENBLUE = 0b011;
-const uint8_t  REDGREEN = 0b101;
-const uint8_t   REDBLUE = 0b110;
+const uint8_t GREENBLUE = GREEN | BLUE;
+const uint8_t  REDGREEN = RED | GREEN;
+const uint8_t   REDBLUE = RED | BLUE;
 const uint8_t     WHITE = 0b111;
 
 const uint8_t MONO = BLUE;
@@ -100,12 +100,21 @@ class ClockTHREE
   // Hardware initialization
   void init();
 
-  // Refresh this frame
+  // Scan current display 1 time (if display is not NULL)
   void refresh();
+
+  // Scan current display n times (if display is not NULL)
+  void refresh(int n);
 
   // Clears the display: LEDs set to OFF
   void clear(void);
 
+  /* 
+   * Set the hold time between column writes defaults to 50
+   * (my_delay = # of times noop is called)
+   */
+  void set_column_hold(uint16_t _my_delay);
+    
   void setcol(uint8_t xpos, uint32_t col);
   uint32_t getcol(uint8_t xpos);
 
@@ -155,9 +164,10 @@ class ClockTHREE
   uint32_t* display;
   uint8_t xpos;
   uint8_t ypos;
+  uint16_t my_delay;
+
  private:
 };
-
 void _delay(unsigned int n);
 #endif
 
