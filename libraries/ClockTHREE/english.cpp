@@ -73,6 +73,7 @@ void English::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
   uint8_t hour24 = 0;
   uint8_t h_offset = 0;
   
+  c3.displayfill(DARK);
   display_word(c3, color, its);
   if (0 <= mm and mm < 5){
     display_word(c3, color, oclock);

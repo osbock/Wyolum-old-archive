@@ -28,10 +28,26 @@ void setup(){
 
 uint32_t count = 0;
 uint8_t color_i = 1;
-const int display_hold = 200;
+const int display_hold = 500;
+int YY = 2010;
+int MM = 1;
+int DD = 1;
+int hh = 0;
+int mm = 0;
+int ss = 0;
 
 void loop(){
-  eng.display_time(2010, 12, 12, 12, 12, 0, c3, BLUE);
+  mm += 1;
+  if(mm == 60){
+    hh += 1;
+    mm = 0;
+    if(hh == 24){
+      DD += 1;
+      hh = 0;
+    }
+  }
+  
+  eng.display_time(YY, MM, DD, hh, mm, ss, c3, BLUE);
   count++;
   c3.refresh(display_hold);
 }
