@@ -20,9 +20,15 @@
 #define TIME_HEADER  '$'   // Header tag for serial time sync message
 #define TIME_REQ '%'
 #define VERSION_REQ '^'    // Header tag for software version
+#define PC_TIME  1
+#define RTC_TIME 2
+#define AVR_TIME 3
 
 // globals
 char msg[100];
+uint32_t word32[20 * 8]; // holds 20 chars
+uint8_t time_source = AVR_TIME;
+
 ClockTHREE c3 = ClockTHREE();
 Font font = Font();
 uint32_t *display = (uint32_t*)calloc(N_COL, sizeof(uint32_t));
@@ -31,47 +37,39 @@ const byte OnePins[3] = {
 
 void setup(){
   // start Wire proto
-  // Serial.begin(9600);
   Wire.begin();
+  // Serial.begin(9600); // for debugging
 
   setCompileTime();          // default initial time
-  sync_time();
   setSyncProvider(getTime);  // PC, then RTC
-  setSyncInterval(3600);      // update hour (and on boot)
+  setSyncInterval(1);      // update hour (and on boot)
 
   c3.init();
   c3.setdisplay(display);
   c3.set_column_hold(20);
   displaytime();
+
+  pinMode(COL_DRIVER_ENABLE, OUTPUT); // ClockTWO Hack
 }
 
 uint32_t count = 0;
-uint8_t color_i = 0;
+uint8_t color_i = 1;
 const int display_hold = 200;
 int myx = 0;
-uint32_t next_char_count = 8;
 
 void loop(){
   uint8_t c;
   int n = strlen(msg);
-
-  if(count == next_char_count){
+  // Serial.println("in loop(), getting time");
+  // getTime();
+  // delay(1000);
+  if(count % 8 == 0){
     char c = msg[(count / 8) % n];
-    font.getChar(c, GREENBLUE, display + N_COL);
+    font.getChar(c, COLORS[color_i], display + N_COL);
     
-    // pack it in if char is not ' '
-    if(c != ' '){
-      next_char_count = count + 8;
-      while(display[N_COL] == 0 && display[N_COL + 1] == 0){
-	next_char_count--;
-	for(int i = 0; i < 7; i++){
-	  display[N_COL + i] = display[N_COL + i + 1];
-	}
-	display[N_COL + 7] = 0;
-      }
-    }
-    else{
-      next_char_count = count + 8;
+    if((count / 8) % n == n - 1){
+      displaytime();
+      color_i = (color_i + 1) % (N_COLOR - 1) + 1;
     }
   }
   for(int i = 0; i < N_COL + 7; i++){
@@ -236,8 +234,8 @@ boolean PCgetTime(){
         setTime(pctime);   // Sync Arduino clock to the time received on the serial port
         Serial.print("PC Time:");
         printTime(year(), month(), day(), hour(), minute(), second());
-        sync_time();     // update RTC if available
-        Serial.print("ARD Time:");
+        set_rtc();     // update RTC if available
+        Serial.print("ARDUINO Time:");
         printTime(year(), month(), day(), hour(), minute(), second());
         status = true;
       }
@@ -253,6 +251,7 @@ int bcd2dec(byte bcd){
 }
 boolean RTCgetTime(){
   boolean status;
+  int ss, mm, hh, DD, MM, YY;
   // reused from macetech.com sample code
   Wire.beginTransmission(104); // 104 is DS3231 device address
   Wire.send(0); // start at register 0
@@ -260,15 +259,26 @@ boolean RTCgetTime(){
   Wire.requestFrom(104, 7); // request six bytes (second, minute, hour, day, month, year)
   status = Wire.available();
   if(status){
-    int ss = bcd2dec(Wire.receive()); // get seconds
-    int mm = bcd2dec(Wire.receive()); // get minutes
-    int hh = bcd2dec(Wire.receive());   // get hours
+    ss = bcd2dec(Wire.receive()); // get seconds
+    mm = bcd2dec(Wire.receive()); // get minutes
+    hh = bcd2dec(Wire.receive());   // get hours
     Wire.receive(); // day of week is discarded
-    int DD = bcd2dec(Wire.receive());   // get day
-    int MM = bcd2dec(Wire.receive());   // get month
-    int YY = bcd2dec(Wire.receive());   // get year
+    DD = bcd2dec(Wire.receive());   // get day
+    MM = bcd2dec(Wire.receive());   // get month
+    YY = bcd2dec(Wire.receive());   // get year
+    /*
+      Serial.print("Setting Time from RTC, YY:");
+      Serial.print(YY);
+      Serial.print(", status:");
+      Serial.println(status, BIN);
+    */
     setTime(hh, mm, ss, DD, MM, YY);
     printTime(year(), month(), day(), hour(), minute(), second());
+  }
+  if(YY < 10){
+    // Bad year, don't trust time.
+    // Serial.println("not trusing RTC!");
+    status = false;
   }
   return status;
 }
@@ -293,15 +303,17 @@ void RTCgetTemp(){
  * Updates time from PC if available
  */
 time_t getTime(){
-  Serial.println("getTime()");
+  // Serial.println('getTime()');
   if(PCgetTime()){
-    Serial.println("   PCgetTime");
+    time_source = PC_TIME;
   }
   else if(RTCgetTime()){
-    Serial.println("   RTCgetTime");
+    time_source = RTC_TIME;
+    // Serial.println('    Using RTC time');
   }
   else{
-    Serial.println("   Compile Time");
+    time_source = AVR_TIME;
+    // Serial.println("   Compile Time");
     setCompileTime(); // 0, 0, 0, 1, 1, 2010);
     setSyncProvider(0); // clear time provider
     setSyncInterval(31536000); // 10 years!
@@ -309,7 +321,7 @@ time_t getTime(){
   return now();
 }
 
-void sync_time(){
+void set_rtc(){
   RTCsetTime(hour(), minute(), second(), day(), month(), year());
 }
 
@@ -344,42 +356,42 @@ int append_msg(char *msg, char *end, int index){
 char* displaytime(void){
   byte msg_index = 0;
 
-  msg_index = append_msg(msg, "It is ", msg_index);  
+  // msg_index = append_msg(msg, "It's ", msg_index);  
 
   // now we display the appropriate minute counter
   if ((minute()>4) && (minute()<10)) { 
-    msg_index = append_msg(msg, "Five Minutes ", msg_index);
+    msg_index = append_msg(msg, "Five ", msg_index);
   } 
   if ((minute()>9) &&(minute()<15)) { 
-    msg_index = append_msg(msg, "Ten Minutes ", msg_index);
+    msg_index = append_msg(msg, "Ten ", msg_index);
   }
   if ((minute()>14) && (minute()<20)) {
     msg_index = append_msg(msg, "Quarter ", msg_index);
   }
   if ((minute()>19) && (minute()<25)) { 
-    msg_index = append_msg(msg, "Twenty Minutes ", msg_index);
+    msg_index = append_msg(msg, "Twenty ", msg_index);
   }
   if ((minute()>24) && (minute()<30)) { 
-    msg_index = append_msg(msg, "Twenty-Five Minutes ", msg_index);
+    msg_index = append_msg(msg, "Twenty-Five ", msg_index);
   }  
   if ((minute()>29) && (minute()<35)) {
     msg_index = append_msg(msg, "Half ", msg_index);
   }
   if ((minute()>34) && (minute()<40)) { 
-    msg_index = append_msg(msg, "Twenty-Five Minutes ", msg_index);
+    msg_index = append_msg(msg, "Twenty-Five ", msg_index);
   }  
   if ((minute()>39) && (minute()<45)) { 
-    msg_index = append_msg(msg, "Twenty Minutes ", msg_index);
+    msg_index = append_msg(msg, "Twenty ", msg_index);
   }
   if ((minute()>44) && (minute()<50)) {
     msg_index = append_msg(msg, "Quarter ", msg_index);
 
   }
   if ((minute()>49) && (minute()<55)) { 
-    msg_index = append_msg(msg, "Ten Minutes ", msg_index);
+    msg_index = append_msg(msg, "Ten ", msg_index);
   } 
   if (minute()>54) { 
-    msg_index = append_msg(msg, "Five Minutes ", msg_index);
+    msg_index = append_msg(msg, "Five ", msg_index);
   }
 
   if ((minute() <5))
@@ -422,7 +434,7 @@ char* displaytime(void){
       msg_index = append_msg(msg, "Twelve ", msg_index);
       break;
     }
-    msg_index = append_msg(msg, "O'Clock ", msg_index);
+    // msg_index = append_msg(msg, "O'Clock ", msg_index);
   }
   else
     if ((minute() < 35) && (minute() >4))
@@ -537,6 +549,15 @@ char* displaytime(void){
     digitalWrite(OnePins[1], LOW);
     digitalWrite(OnePins[2], HIGH);
     break;
+  }
+  if(time_source == PC_TIME){
+    msg_index = append_msg(msg, "PC ", msg_index);
+  }
+  if(time_source == RTC_TIME){
+    msg_index = append_msg(msg, "RTC ", msg_index);
+  }
+  if(time_source == AVR_TIME){
+    msg_index = append_msg(msg, "AVR ", msg_index);
   }
   msg[msg_index++] = ' ';
   msg[msg_index++] = ' ';

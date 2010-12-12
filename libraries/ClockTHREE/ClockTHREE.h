@@ -158,14 +158,23 @@ class ClockTHREE
   
   // Replace current display buffer
   void setdisplay(uint32_t *display);
-  
+
+  /*
+    Fill in a horizontal line of LEDs from start to start + n_char.
+    n_char = # characters.
+  */
+  void fill_consecutive(uint8_t row, 
+			uint8_t start, 
+			uint8_t n_char, 
+			uint8_t color);
+   
   // Fill the display with single color
   void displayfill(uint8_t color);
   uint32_t* display;
   uint8_t xpos;
   uint8_t ypos;
   uint16_t my_delay;
-
+  
  private:
 };
 void _delay(unsigned int n);

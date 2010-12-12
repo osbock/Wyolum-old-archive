@@ -92,7 +92,7 @@ void ClockTHREE::refresh(){
 // Scan current display n times (if display is not NULL)
 void ClockTHREE::refresh(int n_hold){
   uint8_t col_j;
-
+  
   union Column_t {
     uint32_t dat32; 
     uint8_t dat8[4];
@@ -308,6 +308,19 @@ void ClockTHREE::displayfill(uint8_t color){
     for(i = 0; i < N_COL; i++){
       display[i] = col;
     }
+  }
+}
+
+/*
+  Fill in a horizontal line of LEDs from start up to but not includeing stop.
+  stop - start = # characters.
+ */
+void ClockTHREE::fill_consecutive(uint8_t row, 
+				  uint8_t start, 
+				  uint8_t n_char, 
+				  uint8_t color){
+  for(int i = start; i < start + n_char; i++){
+    setPixel(i, row, color);
   }
 }
 
