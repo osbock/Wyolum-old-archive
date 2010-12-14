@@ -46,5 +46,7 @@ void loop(){
       hh = 0;
     }
   }
-  lang.display_time(YY, MM, DD, hh, mm, ss, c3, BLUE, 50);
+  lang.display_time(YY, MM, DD, hh, mm, ss, c3, 
+              BLUE, // or DARK/RED/GREEN/BLUE/REDGREEN/REDBLUE/GREENBLUE/WHITE
+		    50);
 }
