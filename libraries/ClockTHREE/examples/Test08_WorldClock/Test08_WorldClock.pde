@@ -57,13 +57,17 @@ void setup(){
 uint32_t count = 0;
 boolean dbg = true;
 uint8_t color_i = 0;
-const int hold = 1000;
+const int hold = 50;
 void loop(){
-  uint32_t tmp = display[0];
-  for(int i = 0; i < 16; i++){
-    display[i] = display[i + 1]; 
+  uint32_t tmp[N_COL];
+  for(int i = 0; i < N_COL - 1; i++){
+    tmp[i] = display[i + 1]; 
   }
-  display[15] = tmp;
+  tmp[N_COL - 1] = display[0];
+  c3.fadeto(tmp, 50);
+  for(int i=0; i < N_COL; i++){
+    display[i] = tmp[i];
+  }
   c3.refresh(hold);
   count++;
 }

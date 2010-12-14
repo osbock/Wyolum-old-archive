@@ -68,11 +68,14 @@ static inline void display_word(ClockTHREE c3, uint8_t color, uint8_t *w){
 }
 
 void English::display_time(int YY, int MM, int DD, int hh, int mm, int ss, 
-			   ClockTHREE c3, uint8_t color){
+			   ClockTHREE c3, uint8_t color, uint8_t fade_steps){
   uint8_t hour = 0;
   uint8_t hour24 = 0;
   uint8_t h_offset = 0;
-  
+  uint32_t new_display[32];
+  uint32_t *old_display;
+
+  old_display = c3.setdisplay(new_display);
   c3.displayfill(DARK);
   display_word(c3, color, its);
   if (0 <= mm and mm < 5){
@@ -217,5 +220,13 @@ void English::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
   else if( 20 <= hour24  && hour24 < 24){
     display_word(c3, color, at);
     display_word(c3, color, night);
+  }
+
+
+  c3.setdisplay(old_display);
+  c3.fadeto(new_display, fade_steps);
+  // copy new_display over
+  for(int i = 0; i < N_COL; i++){
+    old_display[i] = new_display[i];
   }
 }

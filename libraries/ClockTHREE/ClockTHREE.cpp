@@ -8,47 +8,47 @@
   
   LIBRARY VERSION: 0.01, DATED 26/11/2010
 
-Licenced under Creative Commons Attribution.
-Attribution 3.0 Unported
-This license is acceptable for Free Cultural Works.
-You are free:
+  Licenced under Creative Commons Attribution.
+  Attribution 3.0 Unported
+  This license is acceptable for Free Cultural Works.
+  You are free:
 
-    * to Share — to copy, distribute and transmit the work
-    * to Remix — to adapt the work
-    *
+  * to Share — to copy, distribute and transmit the work
+  * to Remix — to adapt the work
+  *
 
-Under the following conditions:
+  Under the following conditions:
 
-    *
+  *
 
-      Attribution — You must attribute the work in the manner specified by 
-the author or licensor (but not in any way that suggests that they endorse
-you or your use of the work).
+  Attribution — You must attribute the work in the manner specified by 
+  the author or licensor (but not in any way that suggests that they endorse
+  you or your use of the work).
 
-      Attribute this work:
-      Information
-      What does "Attribute this work" mean?
-      The page you came from contained embedded licensing metadata, including
-how the creator wishes to be attributed for re-use. You can use the HTML here 
-to cite the work. Doing so will also include metadata on your page so that 
-others can find the original work as well.
+  Attribute this work:
+  Information
+  What does "Attribute this work" mean?
+  The page you came from contained embedded licensing metadata, including
+  how the creator wishes to be attributed for re-use. You can use the HTML here 
+  to cite the work. Doing so will also include metadata on your page so that 
+  others can find the original work as well.
 
-With the understanding that:
-    * Waiver — Any of the above conditions can be waived if you get permission 
-      from the copyright holder.
-    * Public Domain — Where the work or any of its elements is in the public 
-      domain under applicable law, that status is in no way affected by the 
-      license.
-    * Other Rights — In no way are any of the following rights affected by the
-      license:
-          o Your fair dealing or fair use rights, or other applicable copyright
-	    exceptions and limitations;
-          o The author's moral rights;
-          o Rights other persons may have either in the work itself or in how 
-            the work is used, such as publicity or privacy rights.
-    * Notice — For any reuse or distribution, you must make clear to others 
-     the license terms of this work. The best way to do this is with a link 
-     to this web page.
+  With the understanding that:
+  * Waiver — Any of the above conditions can be waived if you get permission 
+  from the copyright holder.
+  * Public Domain — Where the work or any of its elements is in the public 
+  domain under applicable law, that status is in no way affected by the 
+  license.
+  * Other Rights — In no way are any of the following rights affected by the
+  license:
+  o Your fair dealing or fair use rights, or other applicable copyright
+  exceptions and limitations;
+  o The author's moral rights;
+  o Rights other persons may have either in the work itself or in how 
+  the work is used, such as publicity or privacy rights.
+  * Notice — For any reuse or distribution, you must make clear to others 
+  the license terms of this work. The best way to do this is with a link 
+  to this web page.
 */
 
 #include "ClockTHREE.h"
@@ -124,6 +124,17 @@ void ClockTHREE::refresh(int n_hold){
   }
 }
 
+// Gradually change display to new_display in over "steps" screens
+void ClockTHREE::fadeto(uint32_t *new_display, uint32_t steps){
+  uint32_t *old_display = display;
+  for(int i = 0; i < steps; i++){
+    setdisplay(new_display);
+    refresh(i);
+    setdisplay(old_display);
+    refresh(steps - i);
+  }
+  setdisplay(new_display);
+}
 // Clears the display: LEDs set to OFF
 void ClockTHREE::clear(void){
   displayfill(DARK);
@@ -287,9 +298,11 @@ void ClockTHREE::lineto(int8_t _xpos, int8_t _ypos, uint8_t color){
   moveto(_xpos, _ypos);
 }
   
-// Replace current display buffer
-void ClockTHREE::setdisplay(uint32_t *_display){
+// Replace current display buffer, return pointer to old buffer
+uint32_t *ClockTHREE::setdisplay(uint32_t *_display){
+  uint32_t *out = display;
   display = _display;
+  return out;
 }
 
 
@@ -314,7 +327,7 @@ void ClockTHREE::displayfill(uint8_t color){
 /*
   Fill in a horizontal line of LEDs from start up to but not includeing stop.
   stop - start = # characters.
- */
+*/
 void ClockTHREE::fill_consecutive(uint8_t row, 
 				  uint8_t start, 
 				  uint8_t n_char, 

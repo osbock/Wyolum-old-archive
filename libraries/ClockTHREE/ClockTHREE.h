@@ -106,6 +106,9 @@ class ClockTHREE
   // Scan current display n times (if display is not NULL)
   void refresh(int n);
 
+  // Gradually change display to new_display in over "steps" screens
+  void fadeto(uint32_t *new_display, uint32_t steps);
+
   // Clears the display: LEDs set to OFF
   void clear(void);
 
@@ -156,8 +159,8 @@ class ClockTHREE
   // updating cursor position
   void lineto(int8_t xpos, int8_t ypos, uint8_t color);
   
-  // Replace current display buffer
-  void setdisplay(uint32_t *display);
+  // Replace current display buffer, return pointer to old buffer
+  uint32_t *setdisplay(uint32_t *display);
 
   /*
     Fill in a horizontal line of LEDs from start to start + n_char.

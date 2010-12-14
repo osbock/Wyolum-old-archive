@@ -16,7 +16,7 @@
 
 // globals
 ClockTHREE c3 = ClockTHREE();
-English eng = English();
+English lang = English();
 
 uint32_t *display = (uint32_t*)calloc(N_COL, sizeof(uint32_t));
 
@@ -28,7 +28,7 @@ void setup(){
 
 uint32_t count = 0;
 uint8_t color_i = 1;
-const int display_hold = 500;
+const int display_hold = 50;
 int YY = 2010;
 int MM = 1;
 int DD = 1;
@@ -37,7 +37,7 @@ int mm = 0;
 int ss = 0;
 
 void loop(){
-  mm += 1;
+  mm += 5;
   if(mm == 60){
     hh += 1;
     mm = 0;
@@ -46,9 +46,5 @@ void loop(){
       hh = 0;
     }
   }
-  
-  eng.display_time(YY, MM, DD, hh, mm, ss, c3, BLUE);
-  count++;
-  c3.refresh(display_hold);
+  lang.display_time(YY, MM, DD, hh, mm, ss, c3, BLUE, 50);
 }
-
