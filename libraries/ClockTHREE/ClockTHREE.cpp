@@ -83,6 +83,10 @@ void ClockTHREE::init(){
   SPI.transfer(0);
   SPI.transfer(0);
   my_delay = 50;
+  
+  // turn off speaker;
+  pinMode(SPEAKER_PIN, INPUT);
+  noTone(SPEAKER_PIN);
 }
 
 // Scan current display 1 time (if display is not NULL)
