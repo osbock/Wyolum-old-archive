@@ -64,10 +64,13 @@ void loop(){
     tmp[i] = display[i + 1]; 
   }
   tmp[N_COL - 1] = display[0];
-  c3.fadeto(tmp, 50);
-  for(int i=0; i < N_COL; i++){
-    display[i] = tmp[i];
+  c3.fadeto(tmp, 30);
+  for(int i=0; i < N_COL - 1; i++){
+    display[i] = tmp[i + 1];
   }
-  c3.refresh(hold);
+
+  display[N_COL - 1] = tmp[0];
+  c3.fadeto(display, 30);
+  // c3.refresh(hold);
   count++;
 }

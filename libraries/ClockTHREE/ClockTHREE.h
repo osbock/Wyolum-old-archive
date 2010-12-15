@@ -63,6 +63,7 @@ const int               DBG = 12;
 const int COL_DRIVER_ENABLE = 17;
 
 const int SPEAKER_PIN = 10;
+const int LDR_PIN = 0;
 
 // bitmasks for the colors
 const unsigned long RGBW_MASKS[] = {
