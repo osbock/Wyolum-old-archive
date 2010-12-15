@@ -20,18 +20,19 @@ int val;
 // variable used to store the value
 // coming from the sensor
 void setup() {
-  Serial.begin(9600);
+  // Serial.begin(9600);
   pinMode(DBG, OUTPUT); // LED is as an OUTPUT
   // Note: Analogue pins are
   // automatically set as inputs
 }
 void loop() {
-  val = analogRead(LDR_PIN); // read the value from
-  Serial.println(val);
+  val = (analogRead(LDR_PIN) - 900) * 10; // read the value from
+  // Serial.println(val);
   // the sensor
   digitalWrite(DBG, HIGH); // turn the LED on
   delay(val); // stop the program for
   // some time
+  val = (analogRead(LDR_PIN) - 900) * 10; // read the value from
   digitalWrite(DBG, LOW); // turn the LED off
   delay(val); // stop the program for
   // some time
