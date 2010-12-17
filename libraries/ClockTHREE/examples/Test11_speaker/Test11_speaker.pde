@@ -147,7 +147,7 @@ const double HALF_STEP = 1.0594630943592953;
 int noteDuration = 256;
 
 void loop() {
-  int pin = 10;
+  int pin = SPEAKER_PIN;
   tone(pin, note);
   note = (int)(note * HALF_STEP);
   if(note > NOTE_C8){

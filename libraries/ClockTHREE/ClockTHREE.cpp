@@ -65,8 +65,7 @@ void ClockTHREE::init(){
   pinMode(COL_DRIVER_ENABLE, OUTPUT);
 
   // digitalWrite(COL_DRIVER_ENABLE, LOW); // Enable col driver (slower)
-  PORTC &= 0b11110111; // Enable col driver
-  // PORTC |= 0b00001000; // Disable col driver (here for reference)
+  PORTC |= 0b00001000; // Disable col driver
 
   display = NULL;
 
@@ -85,8 +84,8 @@ void ClockTHREE::init(){
   my_delay = 50;
   
   // turn off speaker;
-  pinMode(SPEAKER_PIN, INPUT);
-  noTone(SPEAKER_PIN);
+  pinMode(SPEAKER_PIN, OUTPUT);
+  digitalWrite(SPEAKER_PIN, LOW);
 }
 
 // Scan current display 1 time (if display is not NULL)
@@ -129,9 +128,10 @@ void ClockTHREE::refresh(int n_hold){
 }
 
 // Gradually change display to new_display in over "steps" screens
-void ClockTHREE::fadeto(uint32_t *new_display, uint32_t steps){
+// return pointer to old display
+uint32_t *ClockTHREE::fadeto(uint32_t *new_display, uint32_t steps){
   uint32_t *old_display = display;
-  for(int i = 0; i < steps; i++){
+  for(int i = 4; i < steps; i*= 1.414){
     setdisplay(new_display);
     refresh(i);
     setdisplay(old_display);
@@ -139,6 +139,21 @@ void ClockTHREE::fadeto(uint32_t *new_display, uint32_t steps){
   }
   setdisplay(new_display);
 }
+
+  // Interleave two images at specified duty cycle. DOES NOT WORK :(
+void ClockTHREE::blend(uint32_t *new_display, 
+		       uint8_t k,
+		       uint8_t n,
+		       uint32_t cycles){
+  uint32_t *tmp_display;
+  for(int i = 0; i < cycles; i++){
+    tmp_display = setdisplay(new_display);
+    refresh(k);
+    setdisplay(tmp_display);
+    refresh(n - k);
+  }
+}
+
 // Clears the display: LEDs set to OFF
 void ClockTHREE::clear(void){
   displayfill(DARK);
@@ -309,7 +324,6 @@ uint32_t *ClockTHREE::setdisplay(uint32_t *_display){
   return out;
 }
 
-
 void ClockTHREE::displayfill(uint8_t color){
   uint32_t col;
   int i;
@@ -332,10 +346,10 @@ void ClockTHREE::displayfill(uint8_t color){
   Fill in a horizontal line of LEDs from start up to but not includeing stop.
   stop - start = # characters.
 */
-void ClockTHREE::fill_consecutive(uint8_t row, 
-				  uint8_t start, 
-				  uint8_t n_char, 
-				  uint8_t color){
+void ClockTHREE::horizontal_line(uint8_t row, 
+				 uint8_t start, 
+				 uint8_t n_char, 
+				 uint8_t color){
   for(int i = start; i < start + n_char; i++){
     setPixel(i, row, color);
   }

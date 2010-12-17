@@ -110,8 +110,15 @@ class ClockTHREE
   void refresh(int n);
 
   // Gradually change display to new_display in over "steps" screens
-  void fadeto(uint32_t *new_display, uint32_t steps);
+  // return pointer to old display
+  uint32_t *fadeto(uint32_t *new_display, uint32_t steps);
 
+  // Interleave two images at specified duty cycle.
+  void blend(uint32_t *new_display, 
+	     uint8_t k,
+	     uint8_t n,
+	     uint32_t cycles);
+  
   // Clears the display: LEDs set to OFF
   void clear(void);
 
@@ -169,10 +176,10 @@ class ClockTHREE
     Fill in a horizontal line of LEDs from start to start + n_char.
     n_char = # characters.
   */
-  void fill_consecutive(uint8_t row, 
-			uint8_t start, 
-			uint8_t n_char, 
-			uint8_t color);
+  void horizontal_line(uint8_t row, 
+		       uint8_t start, 
+		       uint8_t n_char, 
+		       uint8_t color);
    
   // Fill the display with single color
   void displayfill(uint8_t color);

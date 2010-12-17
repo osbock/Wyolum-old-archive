@@ -14,6 +14,7 @@
 #include "ClockTHREE.h"
 #include "SPI.h"
 #include "font.h"
+#include "english.h"
 
 // time sync to PC is HEADER followed by unix time_t as ten ascii digits
 #define TIME_MSG_LEN  10   
@@ -28,6 +29,7 @@
 char msg[100];
 uint32_t word32[20 * 8]; // holds 20 chars
 uint8_t time_source = AVR_TIME;
+English lang = English();
 
 ClockTHREE c3 = ClockTHREE();
 Font font = Font();
@@ -42,11 +44,13 @@ void setup(){
 
   setCompileTime();          // default initial time
   setSyncProvider(getTime);  // PC, then RTC
-  setSyncInterval(1);      // update hour (and on boot)
+  setSyncInterval(3600000);      // update hour (and on boot)
 
   c3.init();
   c3.setdisplay(display);
   c3.set_column_hold(20);
+  pinMode(10, OUTPUT);
+  analogWrite(10, 0);
   displaytime();
 
   pinMode(COL_DRIVER_ENABLE, OUTPUT); // ClockTWO Hack

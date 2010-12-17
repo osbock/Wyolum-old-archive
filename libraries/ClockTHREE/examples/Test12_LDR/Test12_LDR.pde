@@ -17,24 +17,28 @@
 
  // the pin for the LED
 int val;
-// variable used to store the value
-// coming from the sensor
+ClockTHREE c3 = ClockTHREE();
+
 void setup() {
-  // Serial.begin(9600);
+  c3.init();
+
   pinMode(DBG, OUTPUT); // LED is as an OUTPUT
   // Note: Analogue pins are
   // automatically set as inputs
 }
 void loop() {
-  val = (analogRead(LDR_PIN) - 900) * 10; // read the value from
-  // Serial.println(val);
-  // the sensor
+  val = (analogRead(LDR_PIN) - 800) * 10; // read the value from
   digitalWrite(DBG, HIGH); // turn the LED on
   delay(val); // stop the program for
-  // some time
+
+  // really anoying sounds based on LDR value
+  // tone(SPEAKER_PIN, val * 2);
+  // return;
+
   val = (analogRead(LDR_PIN) - 900) * 10; // read the value from
   digitalWrite(DBG, LOW); // turn the LED off
   delay(val); // stop the program for
-  // some time
+  c3.refresh();
+
 }
 

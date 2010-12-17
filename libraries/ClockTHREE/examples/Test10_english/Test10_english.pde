@@ -9,6 +9,7 @@
  */
 
 #include <avr/pgmspace.h>
+#include <Time.h>
 #include <Wire.h>
 #include "ClockTHREE.h"
 #include "SPI.h"
@@ -19,6 +20,12 @@ ClockTHREE c3 = ClockTHREE();
 English lang = English();
 
 uint32_t *display = (uint32_t*)calloc(N_COL, sizeof(uint32_t));
+int YY = 2010;
+int MM = 1;
+int DD = 1;
+int hh = 0;
+int mm = 0;
+int ss = 0;
 
 void setup(){
   c3.init();
@@ -28,13 +35,7 @@ void setup(){
 
 uint32_t count = 0;
 uint8_t color_i = 1;
-const int display_hold = 50;
-int YY = 2010;
-int MM = 1;
-int DD = 1;
-int hh = 0;
-int mm = 0;
-int ss = 0;
+const int display_hold = 5000;
 
 void loop(){
   mm += 5;
@@ -47,6 +48,7 @@ void loop(){
     }
   }
   lang.display_time(YY, MM, DD, hh, mm, ss, c3, 
-              BLUE, // or DARK/RED/GREEN/BLUE/REDGREEN/REDBLUE/GREENBLUE/WHITE
+		    BLUE, // or DARK/RED/GREEN/BLUE/REDGREEN/REDBLUE/GREENBLUE/WHITE
 		    50);
+  c3.refresh(display_hold);
 }

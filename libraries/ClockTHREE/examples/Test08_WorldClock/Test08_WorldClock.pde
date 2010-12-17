@@ -53,6 +53,7 @@ void setup(){
 
   c3.init();
   c3.setdisplay(display);
+  c3.set_column_hold(1);
 }
 uint32_t count = 0;
 boolean dbg = true;
@@ -64,13 +65,12 @@ void loop(){
     tmp[i] = display[i + 1]; 
   }
   tmp[N_COL - 1] = display[0];
-  c3.fadeto(tmp, 30);
+  c3.fadeto(tmp, 100);
   for(int i=0; i < N_COL - 1; i++){
     display[i] = tmp[i + 1];
   }
 
   display[N_COL - 1] = tmp[0];
-  c3.fadeto(display, 30);
-  // c3.refresh(hold);
+  c3.fadeto(display, 100);
   count++;
 }

@@ -64,7 +64,7 @@ uint8_t support[3] = {11, 5, 7};
 uint8_t emphasize[3] = {11, 12, 2};
 
 static inline void display_word(ClockTHREE c3, uint8_t color, uint8_t *w){
-  c3.fill_consecutive(w[0], w[1], w[2], color);
+  c3.horizontal_line(w[0], w[1], w[2], color);
 }
 
 void English::display_time(int YY, int MM, int DD, int hh, int mm, int ss, 
