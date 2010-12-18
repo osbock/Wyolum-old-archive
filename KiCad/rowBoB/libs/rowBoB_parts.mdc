@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  12/18/10 13:43:39
+PCBNEW-LibDoc----V1  12/18/10 18:33:04
 #
 $MODULE Volt Reg 78xx
 Li Volt Reg 78xx
@@ -44,12 +44,6 @@ Cd 24 pins DIL package, elliptical pads
 Kw DIL
 $EndMODULE
 #
-$MODULE Pot-Var
-Li Pot-Var
-Cd Resistance variable / Potentiometre
-Kw R
-$EndMODULE
-#
 $MODULE RC03
 Li RC03
 Cd Resistor, RC03
@@ -64,6 +58,12 @@ $EndMODULE
 $MODULE vite_3mm
 Li vite_3mm
 Cd vite 2,5mm
+$EndMODULE
+#
+$MODULE Pot-Var
+Li Pot-Var
+Cd Resistance variable / Potentiometre
+Kw R
 $EndMODULE
 #
 $EndLIBDOC

@@ -1,4 +1,4 @@
-update=12/18/10 18:17:00
+update=12/18/10 18:41:08
 last_client=pcbnew
 [cvpcb]
 version=1
@@ -47,9 +47,9 @@ LibName2=libs\\power
 version=1
 [pcbnew]
 version=1
-PadDrlX=320
-PadDimH=600
-PadDimV=600
+PadDrlX=400
+PadDimH=800
+PadDimV=800
 BoardThickness=630
 SgPcb45=1
 TxtPcbV=800
@@ -65,13 +65,4 @@ MSegLar=150
 LastNetListRead=
 [pcbnew/libraries]
 LibDir=
-LibName1=sockets
-LibName2=connect
-LibName3=discret
-LibName4=pin_array
-LibName5=divers
-LibName6=libcms
-LibName7=display
-LibName8=valves
-LibName9=led
-LibName10=dip_sockets
+LibName1=libs\\rowBoB_parts
