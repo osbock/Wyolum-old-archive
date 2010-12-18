@@ -1,4 +1,4 @@
-update=12/18/10 18:41:08
+update=12/18/10 19:00:21
 last_client=pcbnew
 [cvpcb]
 version=1
@@ -62,7 +62,7 @@ DrawLar=150
 EdgeLar=150
 TxtLar=120
 MSegLar=150
-LastNetListRead=
+LastNetListRead=rowBoB.net
 [pcbnew/libraries]
 LibDir=
 LibName1=libs\\rowBoB_parts
