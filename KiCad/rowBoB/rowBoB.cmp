@@ -1,0 +1,52 @@
+Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 12/18/10 14:57:50
+
+BeginCmp
+TimeStamp = /4D0C44F3;
+Reference = C1;
+ValeurCmp = 100n;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D0C4AC4;
+Reference = P1;
+ValeurCmp = DIP01_12;
+IdModule  = DIL01_12;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D0C4AD0;
+Reference = P2;
+ValeurCmp = DIP13_24;
+IdModule  = DIL13_24;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D0C7E2F;
+Reference = P3;
+ValeurCmp = CONN_1;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D0C44EB;
+Reference = R1;
+ValeurCmp = 470;
+IdModule  = RC03;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D0C4871;
+Reference = R2;
+ValeurCmp = 2k;
+IdModule  = Pot-Var;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D0C44B2;
+Reference = U1;
+ValeurCmp = STP16DP05;
+IdModule  = STP16DP05;
+EndCmp
+
+EndListe

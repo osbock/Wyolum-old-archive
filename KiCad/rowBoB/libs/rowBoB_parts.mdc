@@ -1,0 +1,69 @@
+PCBNEW-LibDoc----V1  12/18/10 13:43:39
+#
+$MODULE Volt Reg 78xx
+Li Volt Reg 78xx
+Cd TO220, 2 pins, horizontal
+$EndMODULE
+#
+$MODULE Volt Reg 78xx
+Li Volt Reg 78xx
+Cd TO220, 2 pins, horizontal
+$EndMODULE
+#
+$MODULE Volt Reg 78xx
+Li Volt Reg 78xx
+Cd TO220, 2 pins, horizontal
+$EndMODULE
+#
+$MODULE Volt Reg 78xx
+Li Volt Reg 78xx
+Cd TO220, 2 pins, horizontal
+$EndMODULE
+#
+$MODULE C2
+Li C2
+Cd Condensateur = 2 pas
+Kw C
+$EndMODULE
+#
+$MODULE DIL01_12
+Li DIL01_12
+Cd DIL01_12
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE DIL13_24
+Li DIL13_24
+Cd DIL13_24
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE DIP-24__600_ELL
+Li DIP-24__600_ELL
+Cd 24 pins DIL package, elliptical pads
+Kw DIL
+$EndMODULE
+#
+$MODULE Pot-Var
+Li Pot-Var
+Cd Resistance variable / Potentiometre
+Kw R
+$EndMODULE
+#
+$MODULE RC03
+Li RC03
+Cd Resistor, RC03
+Kw R
+$EndMODULE
+#
+$MODULE vite_2mm5
+Li vite_2mm5
+Cd vite 2,5mm
+$EndMODULE
+#
+$MODULE vite_3mm
+Li vite_3mm
+Cd vite 2,5mm
+$EndMODULE
+#
+$EndLIBDOC

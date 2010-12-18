@@ -1,0 +1,138 @@
+PCBNEW-LibDoc----V1  12/13/10 01:24:34
+#
+$MODULE vite_2mm5
+Li vite_2mm5
+Cd vite 2,5mm
+$EndMODULE
+#
+$MODULE hs_11cw_to220
+Li hs_11cw_to220
+Cd 11°C/W heat sink for TO220
+$EndMODULE
+#
+$MODULE hs_14cw_to220
+Li hs_14cw_to220
+Cd 14°C/W heat sink for TO220
+$EndMODULE
+#
+$MODULE testpoint_1mm
+Li testpoint_1mm
+Cd TestPoint 1mm
+$EndMODULE
+#
+$MODULE testpoint_1mm5
+Li testpoint_1mm5
+Cd TestPoint 1.5mm
+$EndMODULE
+#
+$MODULE testpoint_2mm
+Li testpoint_2mm
+Cd TestPoint 2mm
+$EndMODULE
+#
+$MODULE testpoint_2mm5
+Li testpoint_2mm5
+Cd TestPoint 2.5mm
+$EndMODULE
+#
+$MODULE hole_1mm
+Li hole_1mm
+Cd Hole 1mm
+$EndMODULE
+#
+$MODULE hole_1mm5
+Li hole_1mm5
+Cd Hole 1.5mm
+$EndMODULE
+#
+$MODULE hole_2mm
+Li hole_2mm
+Cd Hole 2mm
+$EndMODULE
+#
+$MODULE hole_2mm5
+Li hole_2mm5
+Cd Hole 2.5mm
+$EndMODULE
+#
+$MODULE hole_10mm
+Li hole_10mm
+Cd Hole 10mm
+$EndMODULE
+#
+$MODULE hole_9mm5
+Li hole_9mm5
+Cd Hole 9.5mm
+$EndMODULE
+#
+$MODULE hole_9mm
+Li hole_9mm
+Cd Hole 9mm
+$EndMODULE
+#
+$MODULE hole_8mm5
+Li hole_8mm5
+Cd Hole 8.5mm
+$EndMODULE
+#
+$MODULE hole_8mm
+Li hole_8mm
+Cd Hole 8mm
+$EndMODULE
+#
+$MODULE hole_7mm5
+Li hole_7mm5
+Cd Hole 7.5mm
+$EndMODULE
+#
+$MODULE hole_7mm
+Li hole_7mm
+Cd Hole 7mm
+$EndMODULE
+#
+$MODULE hole_6mm5
+Li hole_6mm5
+Cd Hole 6.5mm
+$EndMODULE
+#
+$MODULE hole_6mm
+Li hole_6mm
+Cd Hole 6mm
+$EndMODULE
+#
+$MODULE hole_5mm5
+Li hole_5mm5
+Cd Hole 5.5mm
+$EndMODULE
+#
+$MODULE hole_4mm5
+Li hole_4mm5
+Cd Hole 4.5mm
+$EndMODULE
+#
+$MODULE hole_4mm
+Li hole_4mm
+Cd Hole 4mm
+$EndMODULE
+#
+$MODULE hole_3mm5
+Li hole_3mm5
+Cd Hole 3.5mm
+$EndMODULE
+#
+$MODULE hole_3mm
+Li hole_3mm
+Cd Hole 3mm
+$EndMODULE
+#
+$MODULE hole_5mm
+Li hole_5mm
+Cd Hole 5mm
+$EndMODULE
+#
+$MODULE vite_3mm
+Li vite_3mm
+Cd vite 2,5mm
+$EndMODULE
+#
+$EndLIBDOC

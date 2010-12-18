@@ -1,0 +1,89 @@
+# EESchema Netlist Version 1.1 created  12/18/10 14:57:50
+(
+ ( /4D0C44F3 C2 C1 100n
+  ( 1 /R_EXT )
+  ( 2 /VCC )
+ )
+ ( /4D0C4AC4 DIL01_12 P1 DIP01_12
+  ( 1 /R_EXT )
+  ( 2 /SDI )
+  ( 3 /CLK )
+  ( 4 /LE-DM1 )
+  ( 5 /Out0 )
+  ( 6 /Out1 )
+  ( 7 /Out2 )
+  ( 8 /Out3 )
+  ( 9 /Out4 )
+  ( 10 /Out5 )
+  ( 11 /Out6 )
+  ( 12 /Out7 )
+ )
+ ( /4D0C4AD0 DIL13_24 P2 DIP13_24
+  ( 13 /Out8 )
+  ( 14 /Out9 )
+  ( 15 /Out10 )
+  ( 16 /Out11 )
+  ( 17 /Out12 )
+  ( 18 /Out13 )
+  ( 19 /Out14 )
+  ( 20 /Out15 )
+  ( 21 /OE-DM2 )
+  ( 22 /SD0 )
+  ( 23 /R_EXT )
+  ( 24 /VCC )
+ )
+ ( /4D0C7E2F vite_3mm P3 CONN_1
+  ( 1 ? )
+ )
+ ( /4D0C44EB RC03 R1 470
+  ( 1 N-000013 )
+  ( 2 N-000024 )
+ )
+ ( /4D0C4871 Pot-Var R2 2k
+  ( 1 N-000024 )
+  ( 2 /R_EXT )
+  ( 3 /R_EXT )
+ )
+ ( /4D0C44B2 STP16DP05 U1 STP16DP05
+  ( 1 /R_EXT )
+  ( 2 /SDI )
+  ( 3 /CLK )
+  ( 4 /LE-DM1 )
+  ( 5 /Out0 )
+  ( 6 /Out1 )
+  ( 7 /Out2 )
+  ( 8 /Out3 )
+  ( 9 /Out4 )
+  ( 10 /Out5 )
+  ( 11 /Out6 )
+  ( 12 /Out7 )
+  ( 13 /Out8 )
+  ( 14 /Out9 )
+  ( 15 /Out10 )
+  ( 16 /Out11 )
+  ( 17 /Out12 )
+  ( 18 /Out13 )
+  ( 19 /Out14 )
+  ( 20 /Out15 )
+  ( 21 /OE-DM2 )
+  ( 22 /SD0 )
+  ( 23 N-000013 )
+  ( 24 /VCC )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
