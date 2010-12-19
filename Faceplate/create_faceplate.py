@@ -1,3 +1,4 @@
+import PIL.Image
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch, mm
 from reportlab.lib.colors import pink, black, red, blue, green, white
@@ -12,6 +13,10 @@ H = 9 * inch
 W = 12 * inch
 TOP = 1 * inch - 7.5 * mm
 LEFT = 1.5 * inch - 7.5 * mm
+
+DX = (W - 2 * LEFT) / float(N_COL)
+print DX, dx
+dx = DX
 
 def draw(filename, faceplate=True, baffle=True):
     c = canvas.Canvas(filename,
@@ -31,7 +36,7 @@ def draw(filename, faceplate=True, baffle=True):
         c.grid(xs, ys)
         c.rect(xs[0], ys[-1], xs[-1] - xs[0], ys[0] - ys[-1])
     hole_sepx = 2.920
-    hole_sepy = 2.900
+    hole_sepy = 2.887
     startx = .172
     starty = .172
     r = .172 / 4
@@ -40,7 +45,7 @@ def draw(filename, faceplate=True, baffle=True):
         mounts.append((startx + i * hole_sepx, starty))
         mounts.append((startx + i * hole_sepx, starty + hole_sepy * 3))
     for i in range(1, 3):
-        mounts.append((startx, starty + i * hole_sepy))
+        mounts.append((startx + 4 * hole_sepx, starty + i * hole_sepy))
         mounts.append((startx, starty + i * hole_sepy))
         
     c.setLineWidth(1/64. * inch)
@@ -51,10 +56,10 @@ def draw(filename, faceplate=True, baffle=True):
         ('T','W','E','N','T','Y','F','I','V','E','D','P','A','S','T','O'),
         ('T','W','E','L','V','E','T','W','O','N','E','S','E','V','E','N'),
         ('F','O','U','R','F','I','V','E','S','I','X','T','H','R','E','E'),
-        ('E','I','G','H','T','E','N','I','N','E','L','E','V','E','N','-'),
-        ('B','E','E','R','C','H','A','I',"O'",'C','L','O','C','K','M','-'),
-        ('T','H','I','R','T','Y','U','I','N','I','T','H','E','A','T','-'),
-        ('M','I','D','N','I','G','H','T','E','V','E','N','I','N','G','-'),
+        ('E','I','G','H','T','E','N','I','N','E','L','E','V','E','N',' '),
+        ('B','E','E','R','C','H','A','I',"O'",'C','L','O','C','K','M',' '),
+        ('T','H','I','R','T','Y','U','I','N','I','T','H','E','A','T',' '),
+        ('M','I','D','N','I','G','H','T','E','V','E','N','I','N','G',' '),
         ('M','O','R','N','I','N','G','A','F','T','E','R','N','O','O','N'),
         ('I','X','I','C','L','O','C','K','T','H','R','E','E','7','8','9'),
         ('T','H','A','N','K','V','I','W','E','M','N','E','E','D','1','7'),
@@ -74,6 +79,31 @@ def draw(filename, faceplate=True, baffle=True):
     print t.wrap(W, H)
     if faceplate:
         t.drawOn(c, xs[0], ys[-2] - dy/2.5)
+        image1 = PIL.Image.open('minute1.png')
+        c.drawInlineImage(image1, 
+                          xs[-2] + dx * .315,
+                          ys[5] + dy * .2,
+                          dx * .4, 
+                          dy * .56)
+        image2 = PIL.Image.open('minute2.png')
+        c.drawInlineImage(image2, 
+                          xs[-2] + dx * .315,
+                          ys[6] + dy * .2,
+                          dx * .4, 
+                          dy * .56)
+        image3 = PIL.Image.open('minute3.png')
+        c.drawInlineImage(image3, 
+                          xs[-2] + dx * .315,
+                          ys[7] + dy * .2,
+                          dx * .4, 
+                          dy * .56)
+        image4 = PIL.Image.open('minute4.png')
+        c.drawInlineImage(image4, 
+                          xs[-2] + dx * .315,
+                          ys[8] + dy * .2,
+                          dx * .4, 
+                          dy * .56)
+
     c.showPage()
     c.save()
 face = canvas.Canvas("faceplate.pdf",
