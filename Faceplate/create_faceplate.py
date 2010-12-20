@@ -42,7 +42,8 @@ def draw(filename, faceplate=True, baffle=True):
     r = .172 / 4
     mounts = [(startx, starty)]
     for i in range(5):
-        mounts.append((startx + i * hole_sepx, starty))
+        if i != 1:
+            mounts.append((startx + i * hole_sepx, starty))
         mounts.append((startx + i * hole_sepx, starty + hole_sepy * 3))
     for i in range(1, 3):
         mounts.append((startx + 4 * hole_sepx, starty + i * hole_sepy))
@@ -79,25 +80,28 @@ def draw(filename, faceplate=True, baffle=True):
     print t.wrap(W, H)
     if faceplate:
         t.drawOn(c, xs[0], ys[-2] - dy/2.5)
-        image1 = PIL.Image.open('minute1.png')
+        bug_i = PIL.Image.open('Images/bug.png')
+        c.drawInlineImage(bug_i, 
+                          2.826 * inch, .05 * inch, .3*inch, .4*inch)
+        image1 = PIL.Image.open('Images/minute1.png')
         c.drawInlineImage(image1, 
                           xs[-2] + dx * .315,
                           ys[5] + dy * .2,
                           dx * .4, 
                           dy * .56)
-        image2 = PIL.Image.open('minute2.png')
+        image2 = PIL.Image.open('Images/minute2.png')
         c.drawInlineImage(image2, 
                           xs[-2] + dx * .315,
                           ys[6] + dy * .2,
                           dx * .4, 
                           dy * .56)
-        image3 = PIL.Image.open('minute3.png')
+        image3 = PIL.Image.open('Images/minute3.png')
         c.drawInlineImage(image3, 
                           xs[-2] + dx * .315,
                           ys[7] + dy * .2,
                           dx * .4, 
                           dy * .56)
-        image4 = PIL.Image.open('minute4.png')
+        image4 = PIL.Image.open('Images/minute4.png')
         c.drawInlineImage(image4, 
                           xs[-2] + dx * .315,
                           ys[8] + dy * .2,
