@@ -85,7 +85,7 @@ void ClockTHREE::init(){
   
   // turn off speaker;
   pinMode(SPEAKER_PIN, OUTPUT);
-  digitalWrite(SPEAKER_PIN, LOW);
+  digitalWrite(SPEAKER_PIN, HIGH);
 }
 
 // Scan current display 1 time (if display is not NULL)

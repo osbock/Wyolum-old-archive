@@ -35,16 +35,20 @@ void setup(){
 
 uint32_t count = 0;
 uint8_t color_i = 1;
-const int display_hold = 5000;
+const int display_hold = 100;
 
 void loop(){
-  mm += 5;
-  if(mm == 60){
-    hh += 1;
-    mm = 0;
-    if(hh == 24){
-      DD += 1;
-      hh = 0;
+  ss += 1;
+  if(ss >= 60){
+    mm++;
+    ss = 0; 
+    if(mm >= 60){
+      hh += 1;
+      mm = 0;
+      if(hh >= 24){
+	DD += 1;
+	hh = 0;
+      }
     }
   }
   lang.display_time(YY, MM, DD, hh, mm, ss, c3, 

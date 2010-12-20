@@ -63,6 +63,8 @@ uint8_t your[3] = {11, 0, 4};
 uint8_t support[3] = {11, 5, 7};
 uint8_t emphasize[3] = {11, 12, 2};
 
+void minutes_hack(ClockTHREE c3, int mm, int ss);
+
 static inline void display_word(ClockTHREE c3, uint8_t color, uint8_t *w){
   c3.horizontal_line(w[0], w[1], w[2], color);
 }
@@ -222,11 +224,40 @@ void English::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
     display_word(c3, color, night);
   }
 
-
+  minutes_hack(c3, mm, ss);
   c3.setdisplay(old_display);
   c3.fadeto(new_display, fade_steps);
   // copy new_display over
   for(int i = 0; i < N_COL; i++){
     old_display[i] = new_display[i];
+  }
+}
+
+void minutes_hack(ClockTHREE c3, int mm, int ss){
+  mm %= 5;
+  uint32_t color;
+  if(mm >= 1){
+    ss /= 10;
+    switch(ss){
+    case 0:
+      color = BLUE;
+      break;
+    case 1:
+      color = GREEN;
+      break;
+    case 2:
+      color = RED;
+      break;
+    case 3:
+      color = REDBLUE;
+      break;
+    case 4:
+      color = REDGREEN;
+      break;
+    case 5:
+      color = WHITE;
+      break;
+    }
+    c3.setPixel(15, 4 + mm - 1, color);
   }
 }

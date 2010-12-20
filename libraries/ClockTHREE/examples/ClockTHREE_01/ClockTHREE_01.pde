@@ -42,7 +42,7 @@ uint8_t color_i = 1;
 const int display_hold = 500;
 
 void loop(){
-  digitalWrite(SPEAKER_PIN, HIGH);
+  // digitalWrite(SPEAKER_PIN, HIGH);
   lang.display_time(year(),
 		    month(),
 		    day(),
@@ -50,7 +50,7 @@ void loop(){
 		    minute(),
 		    second(),
 		    c3, BLUE, 32);
-  c3.refresh(100);
+    c3.refresh(100);
 }
 
 // decimal to binary coded decimal
@@ -105,4 +105,3 @@ time_t getTime(){
   }
   return now();
 }
-
