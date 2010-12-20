@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  12/18/10 16:55:09
+PCBNEW-LibDoc----V1  12/20/10 14:35:37
 #
 $MODULE Volt Reg 78xx
 Li Volt Reg 78xx
@@ -18,34 +18,6 @@ $EndMODULE
 $MODULE Volt Reg 78xx
 Li Volt Reg 78xx
 Cd TO220, 2 pins, horizontal
-$EndMODULE
-#
-$MODULE pin_strip_2
-Li pin_strip_2
-Cd Pin strip 2pin
-Kw CONN DEV
-$EndMODULE
-#
-$MODULE pin_strip_4
-Li pin_strip_4
-Cd Pin strip 4pin
-Kw CONN DEV
-$EndMODULE
-#
-$MODULE vite_2mm5
-Li vite_2mm5
-Cd vite 2,5mm
-$EndMODULE
-#
-$MODULE vite_3mm
-Li vite_3mm
-Cd vite 2,5mm
-$EndMODULE
-#
-$MODULE RC03
-Li RC03
-Cd Resistor, RC03
-Kw R
 $EndMODULE
 #
 $MODULE C1
@@ -78,9 +50,37 @@ Cd Module CMS SOJ 16 pins tres large
 Kw CMS SOJ
 $EndMODULE
 #
+$MODULE pin_strip_2
+Li pin_strip_2
+Cd Pin strip 2pin
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE pin_strip_4
+Li pin_strip_4
+Cd Pin strip 4pin
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE RC03
+Li RC03
+Cd Resistor, RC03
+Kw R
+$EndMODULE
+#
 $MODULE rc03_vert
 Li rc03_vert
 Cd Resistor, RC03 vertical
+$EndMODULE
+#
+$MODULE vite_2mm5
+Li vite_2mm5
+Cd vite 2,5mm
+$EndMODULE
+#
+$MODULE vite_3mm
+Li vite_3mm
+Cd vite 2,5mm
 $EndMODULE
 #
 $MODULE CR2032
