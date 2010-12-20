@@ -1,5 +1,5 @@
-update=12/18/10 19:00:21
-last_client=pcbnew
+update=12/20/10 13:52:13
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
@@ -43,8 +43,6 @@ ShowSheetReferenceAndTitleBlock=1
 [eeschema/libraries]
 LibName1=libs\\rowBoB
 LibName2=libs\\power
-[general]
-version=1
 [pcbnew]
 version=1
 PadDrlX=400
@@ -66,3 +64,5 @@ LastNetListRead=rowBoB.net
 [pcbnew/libraries]
 LibDir=
 LibName1=libs\\rowBoB_parts
+[general]
+version=1

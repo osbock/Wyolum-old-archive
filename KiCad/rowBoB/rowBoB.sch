@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/18/10 15:30:52
+EESchema Schematic File Version 2  date 12/20/10 13:52:04
 LIBS:rowBoB
 LIBS:power
 LIBS:rowBoB-cache

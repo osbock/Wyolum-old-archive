@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/18/10 15:07:06
+EESchema Schematic File Version 2  date 12/18/10 15:30:52
 LIBS:rowBoB
 LIBS:power
 LIBS:rowBoB-cache
@@ -6,13 +6,13 @@ EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
-Title "rowBoB - Row Driver Break Out Board, STP16DP05"
+Title "ClockTHREE :: rowBoB"
 Date "18 dec 2010"
 Rev "A"
-Comp "A row driver break out board for Clock3, and other apps."
+Comp "A LED driver break out board for ClockTHREE, and other applications"
 Comment1 "WyoLum"
 Comment2 "anool.m@gmail.com :: wyojustin@gmail.com"
-Comment3 "https://sites.google.com/site/clockthreeishere/"
+Comment3 "http://goo.gl/V8Mni"
 Comment4 ""
 $EndDescr
 Text Notes 6900 4600 0    40   ~ 0
