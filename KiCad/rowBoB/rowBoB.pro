@@ -1,4 +1,4 @@
-update=12/20/10 13:52:13
+update=12/20/10 19:09:50
 last_client=kicad
 [cvpcb]
 version=1
@@ -46,8 +46,8 @@ LibName2=libs\\power
 [pcbnew]
 version=1
 PadDrlX=400
-PadDimH=800
-PadDimV=800
+PadDimH=700
+PadDimV=700
 BoardThickness=630
 SgPcb45=1
 TxtPcbV=800
@@ -56,10 +56,10 @@ TxtModV=600
 TxtModH=600
 TxtModW=120
 VEgarde=100
-DrawLar=150
-EdgeLar=150
+DrawLar=100
+EdgeLar=100
 TxtLar=120
-MSegLar=150
+MSegLar=75
 LastNetListRead=rowBoB.net
 [pcbnew/libraries]
 LibDir=

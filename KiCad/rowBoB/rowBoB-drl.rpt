@@ -1,13 +1,13 @@
 Drill report for D:\Users\Anool\Documents\Arduino\Project-Clock3\Code\clockthree\KiCad\rowBoB\rowBoB.brd
-Created on 12/18/10 18:49:38
+Created on 12/20/10 19:08:29
 Selected Drill Unit: Imperial (")
 
 Drill report for through holes :
-T1  0.020"  0.51mm  (12 holes)
+T1  0.020"  0.51mm  (11 holes)
 T2  0.032"  0.81mm  (4 holes)
-T3  0.040"  1.02mm  (38 holes)
+T3  0.040"  1.02mm  (45 holes)
 T4  0.120"  3.05mm  (1 hole)
 
-total holes count 55
+total holes count 61
 
 

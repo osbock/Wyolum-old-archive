@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 12/18/10 18:33:47
+Cmp-Mod V01 Genere par PcbNew le 12/20/10 19:06:32
 
 BeginCmp
 TimeStamp = /4D0C44F3;
@@ -39,7 +39,7 @@ BeginCmp
 TimeStamp = /4D0C4871;
 Reference = R2;
 ValeurCmp = 2k;
-IdModule  = POT-VAR;
+IdModule  = POT-VAR2;
 EndCmp
 
 BeginCmp

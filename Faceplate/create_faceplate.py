@@ -68,7 +68,7 @@ def draw(filename, faceplate=True, baffle=True):
 
     t=Table(data, N_COL*[dx], N_ROW*[dy])
     t.setStyle(TableStyle(
-            [('FONTNAME', (0, 0), (N_COL - 1, N_ROW - 1), 'Times-Roman'),
+            [('FONTNAME', (0, 0), (N_COL - 1, N_ROW - 1), 'Ubuntu'),
              ('FONTSIZE', (0, 0), (N_COL - 1, N_ROW - 1), 30),
              ('ALIGN', (0, 0), (N_COL - 1, N_ROW - 1), 'CENTRE'),
              ]))

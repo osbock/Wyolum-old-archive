@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  12/18/10 14:57:50
+# EESchema Netlist Version 1.1 created  12/20/10 18:21:21
 (
  ( /4D0C44F3 C2 C1 100n
   ( 1 /R_EXT )
@@ -39,7 +39,7 @@
   ( 1 N-000013 )
   ( 2 N-000024 )
  )
- ( /4D0C4871 Pot-Var R2 2k
+ ( /4D0C4871 Pot-Var2 R2 2k
   ( 1 N-000024 )
   ( 2 /R_EXT )
   ( 3 /R_EXT )
