@@ -1,7 +1,12 @@
-update=12/20/10 17:32:37
+update=12/21/10 20:52:08
 last_client=pcbnew
 [general]
 version=1
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
 [eeschema]
 version=1
 LibDir=
@@ -40,16 +45,11 @@ ShowSheetReferenceAndTitleBlock=1
 [eeschema/libraries]
 LibName1=libs\\power
 LibName2=libs\\rtcBoB
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
 [pcbnew]
 version=1
-PadDrlX=0
-PadDimH=2500
-PadDimV=2500
+PadDrlX=1200
+PadDimH=1800
+PadDimV=1800
 BoardThickness=630
 SgPcb45=1
 TxtPcbV=800

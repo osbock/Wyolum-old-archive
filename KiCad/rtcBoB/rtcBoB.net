@@ -1,79 +1,74 @@
-# EESchema Netlist Version 1.1 created  12/18/10 16:57:18
+# EESchema Netlist Version 1.1 created  12/21/10 20:02:25
 (
- ( /4C9C4864 CR2032 BT1 BATT_RTC
-  ( + N-000005 )
-  ( - GND )
+ ( /4D0C8A06 $noname  P3 CONN_2 {Lib=CONN_2}
+  (    1 N-000005 )
+  (    2 /BAT )
  )
- ( /4C9B49BE C2 C1 100n
-  ( 1 VCC )
-  ( 2 GND )
+ ( /4C9C7003 $noname  H4 CONN_1 {Lib=CONN_1}
+  (    1 ? )
  )
- ( /4C9C6FF2 vite_3mm H1 CONN_1
-  ( 1 ? )
+ ( /4C9C7001 $noname  H3 CONN_1 {Lib=CONN_1}
+  (    1 ? )
  )
- ( /4C9C6FFE vite_3mm H2 CONN_1
-  ( 1 ? )
+ ( /4C9C6FFE $noname  H2 CONN_1 {Lib=CONN_1}
+  (    1 ? )
  )
- ( /4C9C7001 vite_3mm H3 CONN_1
-  ( 1 ? )
+ ( /4C9C6FF2 $noname  H1 CONN_1 {Lib=CONN_1}
+  (    1 ? )
  )
- ( /4C9C7003 vite_3mm H4 CONN_1
-  ( 1 ? )
+ ( /4C9C4864 $noname  BT1 BATT_RTC {Lib=BATT_LI-PO}
+  (    + N-000005 )
+  (    - GND )
  )
- ( /4C9B49C7 pin_strip_4 P1 CDOT1
-  ( 1 VCC )
-  ( 2 /32k )
-  ( 3 /SQW )
-  ( 4 /RST )
+ ( /4C9B49C8 $noname  P2 CDOT2 {Lib=CONN_4}
+  (    1 /SDA )
+  (    2 /SCL )
+  (    3 /VCC )
+  (    4 GND )
  )
- ( /4C9B49C8 pin_strip_4 P2 CDOT2
-  ( 1 /SDA )
-  ( 2 /SCL )
-  ( 3 VCC )
-  ( 4 GND )
+ ( /4C9B49C7 $noname  P1 CDOT1 {Lib=CONN_4}
+  (    1 /BAT )
+  (    2 /32k )
+  (    3 /SQW )
+  (    4 /RST )
  )
- ( /4D0C8A06 pin_strip_2 P3 CONN_2
-  ( 1 N-000005 )
-  ( 2 VCC )
+ ( /4C9B49C6 $noname  U1 DS3231 {Lib=DS3231N}
+  (    1 /32k )
+  (    2 /VCC )
+  (    3 /SQW )
+  (    4 /RST )
+  (    5 GND )
+  (    6 GND )
+  (    7 GND )
+  (    8 GND )
+  (    9 GND )
+  (   10 GND )
+  (   11 GND )
+  (   12 GND )
+  (   13 GND )
+  (   14 /BAT )
+  (   15 /SDA )
+  (   16 /SCL )
  )
- ( /4C9B49C1 rc03_vert R1 10k
-  ( 1 VCC )
-  ( 2 /SQW )
+ ( /4C9B49C1 $noname  R1 10k {Lib=R}
+  (    1 /VCC )
+  (    2 /SQW )
  )
- ( /4C9B49C0 rc03_vert R2 10k
-  ( 1 VCC )
-  ( 2 /RST )
+ ( /4C9B49C0 $noname  R2 10k {Lib=R}
+  (    1 /VCC )
+  (    2 /RST )
  )
- ( /4C9B49BF rc03_vert R3 10k
-  ( 1 VCC )
-  ( 2 /32k )
+ ( /4C9B49BF $noname  R3 10k {Lib=R}
+  (    1 /VCC )
+  (    2 /32k )
  )
- ( /4C9B49C6 DS3231 U1 DS3231
-  ( 1 /32k )
-  ( 2 VCC )
-  ( 3 /SQW )
-  ( 4 /RST )
-  ( 5 GND )
-  ( 6 GND )
-  ( 7 GND )
-  ( 8 GND )
-  ( 9 GND )
-  ( 10 GND )
-  ( 11 GND )
-  ( 12 GND )
-  ( 13 GND )
-  ( 14 VCC )
-  ( 15 /SDA )
-  ( 16 /SCL )
+ ( /4C9B49BE $noname  C1 100n {Lib=C}
+  (    1 /BAT )
+  (    2 GND )
  )
 )
 *
 { Allowed footprints by component:
-$component C1
- SM*
- C?
- C1-1
-$endlist
 $component R1
  R?
  SM0603
@@ -95,5 +90,58 @@ $component R3
  R?-*
  SM1206
 $endlist
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
 $endfootprintlist
 }
+{ Pin List by Nets
+Net 5 "" ""
+ P3 1
+ BT1 +
+Net 6 "/RST" "RST"
+ U1 4
+ P1 4
+ R2 2
+Net 7 "/SQW" "SQW"
+ R1 2
+ U1 3
+ P1 3
+Net 8 "/SCL" "SCL"
+ U1 16
+ P2 2
+Net 9 "/SDA" "SDA"
+ U1 15
+ P2 1
+Net 10 "GND" "GND"
+ U1 9
+ U1 10
+ U1 11
+ U1 12
+ U1 8
+ U1 7
+ U1 6
+ U1 5
+ U1 13
+ BT1 -
+ P2 4
+ C1 2
+Net 11 "/32k" "32k"
+ R3 2
+ P1 2
+ U1 1
+Net 12 "/BAT" "BAT"
+ C1 1
+ P1 1
+ U1 14
+ P3 2
+Net 13 "/VCC" "VCC"
+ R3 1
+ R2 1
+ R1 1
+ U1 2
+ P2 3
+}
+#End

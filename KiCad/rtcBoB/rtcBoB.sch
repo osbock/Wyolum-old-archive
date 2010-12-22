@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/18/10 15:49:47
+EESchema Schematic File Version 2  date 12/21/10 20:27:57
 LIBS:power
 LIBS:rtcBoB
 LIBS:rtcBoB-cache
@@ -7,7 +7,7 @@ EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
 Title "ClockTHREE :: rtcBoB"
-Date "18 dec 2010"
+Date "21 dec 2010"
 Rev "A"
 Comp "anool.m@gmail.com :: wyojustin@gmail.com"
 Comment1 "http://goo.gl/V8Mni"
@@ -15,6 +15,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Wire Wire Line
+	3550 1700 3550 1950
 Wire Wire Line
 	1750 1700 1650 1700
 Wire Wire Line
@@ -33,7 +35,7 @@ Connection ~ 2050 1700
 Wire Wire Line
 	1650 1700 1650 2550
 Wire Wire Line
-	2050 3950 2050 2950
+	2050 2950 2050 3950
 Wire Wire Line
 	4700 2550 5850 2550
 Wire Wire Line
@@ -122,7 +124,7 @@ Wire Wire Line
 Wire Wire Line
 	6100 2400 4700 2400
 Wire Wire Line
-	2050 1700 2050 2550
+	2050 2550 2050 1700
 Wire Wire Line
 	1650 3000 1650 3950
 Wire Wire Line
@@ -133,8 +135,6 @@ Wire Wire Line
 	6100 2500 5850 2500
 Wire Wire Line
 	5850 2500 5850 2550
-Wire Wire Line
-	3550 1600 3550 1950
 Wire Wire Line
 	1950 1650 1950 1700
 Wire Wire Line
@@ -155,15 +155,6 @@ P 4100 4100
 F 0 "#PWR01" H 4100 4100 30  0001 C CNN
 F 1 "GND" H 4100 4030 30  0001 C CNN
 	1    4100 4100
-	1    0    0    -1  
-$EndComp
-$Comp
-L VCC #PWR02
-U 1 1 4D0C8796
-P 3550 1600
-F 0 "#PWR02" H 3550 1700 30  0001 C CNN
-F 1 "VCC" H 3550 1700 30  0000 C CNN
-	1    3550 1600
 	1    0    0    -1  
 $EndComp
 Text Notes 6800 1250 0    40   ~ 0
