@@ -1,4 +1,4 @@
-PCBNEW-BOARD Version 1 date 12/23/10 16:19:32
+PCBNEW-BOARD Version 1 date 12/23/10 16:21:34
 
 # Created by Pcbnew(2010-05-05 BZR 2356)-stable
 
@@ -9,7 +9,7 @@ EnabledLayers 10FF8001
 Links 28
 NoConn 1
 Di 8840 9040 23160 22960
-Ndraw 25
+Ndraw 26
 Ntrack 133
 Nzone 0
 BoardThickness 630
@@ -704,6 +704,11 @@ Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  CR2032
+$TEXTPCB
+Te "goo.gl/V8Mni"
+Po 16000 18750 400 400 60 0
+De 20 0 0 Normal
+$EndTEXTPCB
 $COTATION
 Ge 0 20 0
 Va 12000
