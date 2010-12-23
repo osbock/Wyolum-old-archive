@@ -1,0 +1,14 @@
+ref;value;footprint
+BT1;BATT_RTC;CR2032
+C1;100n;C2
+H1;CONN_1;vite_2mm5
+H2;CONN_1;vite_2mm5
+H3;CONN_1;vite_2mm5
+H4;CONN_1;vite_2mm5
+P1;CDOT1;SCK-04-F-SMT
+P2;CDOT2;SCK-04-F-SMT
+P3;CONN_2;pin_strip_2
+R1;10k;rc03_vert
+R2;10k;rc03_vert
+R3;10k;rc03_vert
+U1;DS3231;DS3231
