@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/20/10 13:52:04
+EESchema Schematic File Version 2  date 12/23/10 16:48:42
 LIBS:rowBoB
 LIBS:power
 LIBS:rowBoB-cache
@@ -7,7 +7,7 @@ EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
 Title "ClockTHREE :: rowBoB"
-Date "18 dec 2010"
+Date "23 dec 2010"
 Rev "A"
 Comp "A LED driver break out board for ClockTHREE, and other applications"
 Comment1 "WyoLum"
@@ -24,6 +24,7 @@ U 1 1 4D0C7E2F
 P 6800 4700
 F 0 "P3" V 6900 4700 40  0000 L CNN
 F 1 "CONN_1" H 6800 4755 30  0001 C CNN
+F 2 "vite_3mm" H 6800 4700 60  0001 C CNN
 	1    6800 4700
 	0    -1   -1   0   
 $EndComp
@@ -273,6 +274,7 @@ U 1 1 4D0C4AD0
 P 7450 3050
 F 0 "P2" V 7400 3050 60  0000 C CNN
 F 1 "DIP13_24" V 7500 3050 60  0000 C CNN
+F 2 "DIL13_24" H 7450 3050 60  0001 C CNN
 	1    7450 3050
 	1    0    0    -1  
 $EndComp
@@ -282,6 +284,7 @@ U 1 1 4D0C4AC4
 P 3000 3050
 F 0 "P1" V 2950 3050 60  0000 C CNN
 F 1 "DIP01_12" V 3050 3050 60  0000 C CNN
+F 2 "DIL01_12" H 3000 3050 60  0001 C CNN
 	1    3000 3050
 	1    0    0    -1  
 $EndComp
@@ -291,6 +294,7 @@ U 1 1 4D0C4871
 P 4350 4650
 F 0 "R2" V 4450 4550 50  0000 C CNN
 F 1 "2k" V 4270 4710 50  0000 C CNN
+F 2 "POT-VAR2" H 4350 4650 60  0001 C CNN
 	1    4350 4650
 	1    0    0    -1  
 $EndComp
@@ -300,6 +304,7 @@ U 1 1 4D0C44F3
 P 5150 1900
 F 0 "C1" V 5300 1900 50  0000 L CNN
 F 1 "100n" V 5400 1900 50  0000 L CNN
+F 2 "C2" H 5150 1900 60  0001 C CNN
 	1    5150 1900
 	0    -1   -1   0   
 $EndComp
@@ -309,6 +314,7 @@ U 1 1 4D0C44EB
 P 4350 4050
 F 0 "R1" V 4430 4050 50  0000 C CNN
 F 1 "470" V 4350 4050 50  0000 C CNN
+F 2 "RC03" H 4350 4050 60  0001 C CNN
 	1    4350 4050
 	1    0    0    -1  
 $EndComp
@@ -318,6 +324,7 @@ U 1 1 4D0C44B2
 P 5200 3050
 F 0 "U1" H 5000 2200 60  0000 C CNN
 F 1 "STP16DP05" H 5100 2100 60  0000 C CNN
+F 2 "STP16DP05" H 5200 3050 60  0001 C CNN
 	1    5200 3050
 	1    0    0    -1  
 $EndComp

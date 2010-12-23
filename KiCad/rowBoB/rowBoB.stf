@@ -1,0 +1,7 @@
+comp = "C1" module = "C2"
+comp = "P1" module = "DIL01_12"
+comp = "P2" module = "DIL13_24"
+comp = "P3" module = "vite_3mm"
+comp = "R1" module = "RC03"
+comp = "R2" module = "POT-VAR2"
+comp = "U1" module = "STP16DP05"
