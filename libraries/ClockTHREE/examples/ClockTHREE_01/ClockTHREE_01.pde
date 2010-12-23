@@ -1,8 +1,9 @@
 /*
-  ClockTHREE Test10 english test
-  Display time 12:12 PM in words: "ITS TEN PAST TWELVE NOON"
+  Initial ClockTHREE Word Clock App (no frills or modes adjustment or 
+  interaction)
+  Display time 12:12 PM in words using english template
 
-  Justin Shaw Dec 12, 2010
+  Justin Shaw Dec 22, 2010
   
   Licenced under Creative Commons Attribution.
   Attribution 3.0
@@ -29,12 +30,9 @@ void setup(){
   c3.setdisplay(display);
   c3.set_column_hold(50);
 
-  setSyncProvider(getTime);  // PC, then RTC
+  setSyncProvider(getTime);      // RTC
   setSyncInterval(3600000);      // update hour (and on boot)
-  pinMode(SPEAKER_PIN, OUTPUT);
-  t = now();
 
-  // display[1] = 0b11111111111111111111111111111111;
 }
 
 uint32_t count = 0;
