@@ -1,5 +1,5 @@
-Drill report for D:/Users/Anool/Documents/Arduino/Project-Clock3/Code/clockthree/KiCad/rtcBoB/rtcBoB.brd
-Created on 12/22/10 19:34:44
+Drill report for D:\Users\Anool\Documents\Arduino\Project-Clock3\Code\clockthree\KiCad\rtcBoB\rtcBoB.brd
+Created on 12/23/10 15:55:32
 Selected Drill Unit: Imperial (")
 
 Drill report for through holes :
@@ -7,7 +7,7 @@ T1  0.020"  0.51mm  (7 holes)
 T2  0.032"  0.81mm  (8 holes)
 T3  0.040"  1.02mm  (2 holes)
 T4  0.080"  2.03mm  (2 holes)
-T5  0.100"  2.54mm  (4 holes)
+T5  0.125"  3.18mm  (4 holes)
 
 total holes count 23
 

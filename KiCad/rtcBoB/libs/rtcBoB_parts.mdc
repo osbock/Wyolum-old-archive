@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  12/22/10 19:27:37
+PCBNEW-LibDoc----V1  12/23/10 15:50:03
 #
 $MODULE Volt Reg 78xx
 Li Volt Reg 78xx
@@ -72,9 +72,10 @@ Li vite_3mm
 Cd vite 2,5mm
 $EndMODULE
 #
-$MODULE CR2032
-Li CR2032
-Cd CR2032
+$MODULE DS3231
+Li DS3231
+Cd Module CMS SOJ 16 pins tres large
+Kw CMS SOJ
 $EndMODULE
 #
 $MODULE vite_2mm5
@@ -82,10 +83,9 @@ Li vite_2mm5
 Cd vite 2,5mm
 $EndMODULE
 #
-$MODULE DS3231
-Li DS3231
-Cd Module CMS SOJ 16 pins tres large
-Kw CMS SOJ
+$MODULE CR2032
+Li CR2032
+Cd CR2032
 $EndMODULE
 #
 $EndLIBDOC

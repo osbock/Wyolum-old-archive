@@ -1,4 +1,4 @@
-update=12/22/10 19:41:25
+update=12/23/10 16:23:00
 last_client=pcbnew
 [general]
 version=1
@@ -47,9 +47,9 @@ LibName1=libs\\power
 LibName2=libs\\rtcBoB
 [pcbnew]
 version=1
-PadDrlX=1000
-PadDimH=1600
-PadDimV=1600
+PadDrlX=1250
+PadDimH=1750
+PadDimV=1750
 BoardThickness=630
 SgPcb45=1
 TxtPcbV=800
