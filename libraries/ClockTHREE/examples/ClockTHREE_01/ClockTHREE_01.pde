@@ -36,7 +36,7 @@ void setup(){
 }
 
 uint32_t count = 0;
-uint8_t color_i = 1;
+uint8_t color_i = 2;
 const int display_hold = 500;
 
 void loop(){
@@ -47,7 +47,7 @@ void loop(){
 		    hour(),
 		    minute(),
 		    second(),
-		    c3, BLUE, 32);
+		    c3, COLORS[color_i], 32);
     c3.refresh(100);
 }
 

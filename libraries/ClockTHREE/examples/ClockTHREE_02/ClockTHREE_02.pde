@@ -18,10 +18,12 @@
 
 #include <avr/pgmspace.h>
 #include <Wire.h>
+#include <Time.h>
 #include "ClockTHREE.h"
 #include "SPI.h"
 #include "english.h"
 #include "font.h"
+#include "rtcBOB.h"
 
 // debounce mode button threshold
 const uint8_t DEBOUNCE_THRESH = 200;
@@ -32,7 +34,7 @@ typedef void (* LoopPtr)(); // this is a typedef for loop funtions
 typedef void (* ExitPtr)(); // this is a typedef for exit funtions
 typedef void (* CallBackPtr)(); // this is a typedef for callback funtions
 
-inline void do_nothing(void){};
+inline void do_nothing(void){}
 
 struct Mode{
   uint8_t id;
@@ -54,8 +56,8 @@ Mode NormalMode = {0, 'N', Normal_setup, Normal_loop, Normal_exit,
 		   Normal_inc, Normal_dec, Normal_mode};
 Mode SetTimeMode = {0, 'T', do_nothing,do_nothing,do_nothing,
 		    do_nothing,do_nothing,do_nothing};
-Mode SetColorMode = {0, 'C', do_nothing,do_nothing,do_nothing,
-		    do_nothing,do_nothing,do_nothing};
+Mode SetColorMode = {0, 'C', SetColor_setup, SetColor_loop, SetColor_exit, 
+		   SetColor_inc, SetColor_dec, SetColor_mode};
 Mode SetAlarmMode = {0, 2, do_nothing,do_nothing,do_nothing,
 		    do_nothing,do_nothing,do_nothing};
 Mode PCMode = {0, 'P', do_nothing,do_nothing,do_nothing,
@@ -92,6 +94,8 @@ ClockTHREE c3;
 English lang = English();
 Font font = Font();
 time_t t;
+uint8_t mode_counter;
+uint8_t color_i = 3;
 
 /*
  * Called when mode button is pressed
@@ -132,6 +136,10 @@ void dec_interrupt(){
 
 void setup(){
   c3.init();
+  Wire.begin();
+  setSyncProvider(getTime);      // RTC
+  setSyncInterval(3600000);      // update hour (and on boot)
+
   mode_p = &NormalMode;
   mode_p = &ModeMode;
   
@@ -156,8 +164,8 @@ void setup(){
   
   mode_p->setup();
 
-  attachInterrupt(0, mode_interrupt, FALLING); // Does not work on C2
-  attachInterrupt(1, inc_interrupt, FALLING);  // Does not work on C2
+  // attachInterrupt(0, mode_interrupt, FALLING); // Does not work on C2
+  // attachInterrupt(1, inc_interrupt, FALLING);  // Does not work on C2
 
   c3.setdisplay(display);
   c3.set_column_hold(50);
@@ -207,47 +215,97 @@ void loop(){
    setup() can assume "display" is clear and ready to go.
 */
 void Normal_setup(void) {
-};
+}
 void Normal_loop(void) {
+  lang.display_time(year(),
+		    month(),
+		    day(),
+		    hour(),
+		    minute(),
+		    second(),
+		    c3, COLORS[color_i], 32);
   c3.refresh(100);
-};
+}
 /*
   Get ready for next mode.
  */
 void Normal_exit(void) {
   c3.clear();
-};
+}
 /*
   Respond to button presses.
  */
 void Normal_inc(void) {
-};
+}
 void Normal_dec(void) {
-};
+}
 void Normal_mode(void) {
   switchmodes(MODE_MODE);
-};
+}
+
+// Begin SetColor Mode Code (TODO use one file per mode)
+/* 
+   Initalize mode.
+   setup() can assume "display" is clear and ready to go.
+*/
+void SetColor_setup(void) {
+}
+void SetColor_loop(void) {
+  lang.display_time(year(),
+		    month(),
+		    day(),
+		    hour(),
+		    minute(),
+		    second(),
+		    c3, COLORS[color_i], 32);
+  c3.refresh(100);
+}
+/*
+  Get ready for next mode.
+ */
+void SetColor_exit(void) {
+  c3.clear();
+}
+/*
+  Respond to button presses.
+ */
+void SetColor_inc(void) {
+  digitalWrite(DBG, HIGH);
+  color_i++;
+  color_i %= N_COLOR - 1; // skip ModeMode
+  color_i += 1; // skip 0 
+}
+void SetColor_dec(void) {
+  if(mode_counter == 1){
+    color_i = N_COLOR - 1;// Skip DARK
+  }
+  else{
+    color_i--;
+  }
+}
+void SetColor_mode(void) {
+  switchmodes(NORMAL_MODE);
+}
 
 // Begin Mode Mode Code (TODO use one file per mode)
-uint8_t mode_counter;
 void Mode_setup(void) {
   font.getChar('M', GREENBLUE, display);
   mode_counter = 1;
   font.getChar(Modes[mode_counter].sym, RED, display + 8);
-};
+}
 void Mode_loop(void) {
   c3.refresh(100);
-};
+}
 void Mode_exit(void) {
   digitalWrite(DBG, LOW);
   c3.clear();
-};
+}
 void Mode_inc(void) {
   digitalWrite(DBG, HIGH);
   mode_counter++;
   mode_counter %= N_MODE - 1; // skip ModeMode
   font.getChar(Modes[mode_counter].sym, RED, display + 8);
-};
+}
 void Mode_dec(void) {
   digitalWrite(DBG, HIGH);
   if(mode_counter == 0){
@@ -257,10 +315,10 @@ void Mode_dec(void) {
     mode_counter--;
   }
   font.getChar(Modes[mode_counter].sym, BLUE, display + 8);
-};
+}
 void Mode_mode(void) {
   switchmodes(mode_counter);
-};
+}
 
 void switchmodes(uint8_t new_mode_id){
   mode_p->exit();
