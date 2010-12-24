@@ -1,7 +1,5 @@
-update=12/23/10 17:32:39
-last_client=pcbnew
-[general]
-version=1
+update=Dec 24, 2010 05:54:47 PM
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
@@ -66,3 +64,5 @@ LastNetListRead=rtcBoB.net
 [pcbnew/libraries]
 LibDir=
 LibName1=libs\\rtcBoB_parts
+[general]
+version=1
