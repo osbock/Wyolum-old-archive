@@ -5,6 +5,19 @@ from reportlab.lib.colors import pink, black, red, blue, green, white
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Table, TableStyle
 from numpy import arange
 
+# we know some glyphs are missing, suppress warnings
+# fonts available from http://openfontlibrary.org
+# create your own fonts with fontforge! http://fontforge.sourceforge.net
+# origianl hourglass by Clker.com
+# http://commons.wikimedia.org/wiki/File:GreenHourglass.svg
+
+import reportlab.rl_config
+reportlab.rl_config.warnOnMissingFontGlyphs = 0
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+pdfmetrics.registerFont(TTFont('Asana-Math', 'fonts/Asana-Math.ttf'))
+pdfmetrics.registerFont(TTFont('ShadheenLipi', 'fonts/ShadheenLipi.ttf'))
+
 dx = 9/15. * inch
 dy = 9/15. * inch
 N_COL = 16
@@ -68,7 +81,7 @@ def draw(filename, faceplate=True, baffle=True):
 
     t=Table(data, N_COL*[dx], N_ROW*[dy])
     t.setStyle(TableStyle(
-            [('FONTNAME', (0, 0), (N_COL - 1, N_ROW - 1), 'Ubuntu'),
+            [('FONTNAME', (0, 0), (N_COL - 1, N_ROW - 1), 'ShadheenLipi'),
              ('FONTSIZE', (0, 0), (N_COL - 1, N_ROW - 1), 30),
              ('ALIGN', (0, 0), (N_COL - 1, N_ROW - 1), 'CENTRE'),
              ]))
@@ -80,15 +93,17 @@ def draw(filename, faceplate=True, baffle=True):
     print t.wrap(W, H)
     if faceplate:
         t.drawOn(c, xs[0], ys[-2] - dy/2.5)
-        bug_i = PIL.Image.open('Images/bug.png')
+        bug_i = PIL.Image.open('Images/noun_project_198.png')
+        # bug_i = PIL.Image.open('minute1.png')
         c.drawInlineImage(bug_i, 
                           2.826 * inch, .05 * inch, .3*inch, .4*inch)
-        image1 = PIL.Image.open('Images/minute1.png')
+        image1 = PIL.Image.open('Images/hourglass.png')
         c.drawInlineImage(image1, 
                           xs[-2] + dx * .315,
                           ys[5] + dy * .2,
-                          dx * .4, 
-                          dy * .56)
+                          # dx * .25, 
+                          # dy * .56
+                          )
         image2 = PIL.Image.open('Images/minute2.png')
         c.drawInlineImage(image2, 
                           xs[-2] + dx * .315,
@@ -110,9 +125,6 @@ def draw(filename, faceplate=True, baffle=True):
 
     c.showPage()
     c.save()
-face = canvas.Canvas("faceplate.pdf",
-                   pagesize=(W, H)
-                   )
 
 draw("faceplate.pdf", faceplate=True, baffle=False)
 draw("baffle.pdf", faceplate=False, baffle=True)
