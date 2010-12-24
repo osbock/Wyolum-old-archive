@@ -24,6 +24,7 @@
 #include "english.h"
 #include "font.h"
 #include "rtcBOB.h"
+#include "MsTimer2.h"
 
 // debounce mode button threshold
 const uint8_t DEBOUNCE_THRESH = 200;
@@ -96,7 +97,9 @@ Font font = Font();
 time_t t;
 uint8_t mode_counter;
 uint8_t color_i = 3;
-
+unsigned long count = 0;
+uint16_t YY;
+uint8_t MM, DD, hh, mm, ss;
 /*
  * Called when mode button is pressed
  * Increment mode after debounce check.
@@ -134,6 +137,16 @@ void dec_interrupt(){
   last_dec_time = now;
 }
 
+void update_time(){
+  YY = 2010;
+  MM = month();
+  DD = day();
+  hh = hour();
+  mm = minute();
+  ss = second();
+  Normal_update();
+}
+
 void setup(){
   c3.init();
   Wire.begin();
@@ -142,6 +155,9 @@ void setup(){
 
   mode_p = &NormalMode;
   mode_p = &ModeMode;
+
+  MsTimer2::set(5000, update_time); // 5 sec period
+  MsTimer2::start();
   
   // ensure mode ids are consistant.
   NormalMode.id = NORMAL_MODE;
@@ -188,6 +204,7 @@ void loop(){
   }
   
   mode_p->loop();
+  count++;
 
   // process new events
   for(int i = 0; i < n_evt; i++){
@@ -216,14 +233,11 @@ void loop(){
 */
 void Normal_setup(void) {
 }
-void Normal_loop(void) {
-  lang.display_time(year(),
-		    month(),
-		    day(),
-		    hour(),
-		    minute(),
-		    second(),
+void Normal_update(void){
+  lang.display_time(YY, MM, DD, hh, mm, ss,		    
 		    c3, COLORS[color_i], 32);
+}
+void Normal_loop(void) {
   c3.refresh(100);
 }
 /*
