@@ -52,7 +52,7 @@
 */
 
 #include "ClockTHREE.h"
-#include "SPI.h"
+#include "Time.h"
 
 ClockTHREE::ClockTHREE(){
 }
@@ -60,6 +60,7 @@ ClockTHREE::ClockTHREE(){
 // Hardware initialization
 void ClockTHREE::init(){
   SPI.begin(); // start SPI communications
+  // Wire.begin();
 
   pinMode(DBG, OUTPUT);
   pinMode(COL_DRIVER_ENABLE, OUTPUT);
@@ -118,6 +119,7 @@ void ClockTHREE::refresh(int n_hold){
 	PORTB |= 0b00000010; // Start latch pulse 
 	PORTB &= 0b11111101; // End latch pulse 
 	PORTD = (PORTD & 0b11110000) | col_j; //only impacts lower 4 bits of PORTD
+	// PORTD = 0b11110000 & col_j;// almost works
 	PORTC &= 0b11110111; // Enable col driver
 	_delay(my_delay);
 	col_j++;
@@ -353,6 +355,11 @@ void ClockTHREE::horizontal_line(uint8_t row,
   for(int i = start; i < start + n_char; i++){
     setPixel(i, row, color);
   }
+}
+
+void ClockTHREE::off(){
+  PORTC |= 0b00001000; // Disable col driver 
+  displayfill(DARK);
 }
 
 void _delay(unsigned int n){

@@ -34,10 +34,11 @@ void xmastree(){
   c3.setPixel(13, 7, REDBLUE);
   c3.setPixel(14, 1, REDBLUE);
   c3.setPixel(14, 9, RED);
+  c3.setPixel(15, 5, RED); // stump
 
 }
 
-const int N_FLAKE = 20;
+const int N_FLAKE = 15;
 int flake_xs[N_FLAKE];
 int flake_ys[N_FLAKE];
 
@@ -49,8 +50,8 @@ void setup(){
   xmastree();
   
   for(int i = 0; i < N_FLAKE; i++){
-    flake_xs[i] = random(-N_COL, N_COL);
-    flake_ys[i] = random(0, 10);
+    flake_xs[i] = random(-1, N_COL);
+    flake_ys[i] = random(0, 12);
   }
 }
 
@@ -63,8 +64,8 @@ void loop(){
   for(int i = 0; i < N_FLAKE; i++){
     flake_xs[i]++;
     if(flake_xs[i] > 16){
-      flake_xs[i] = -N_COL;
-      flake_ys[i] = random(0, 10);
+      flake_xs[i] = -1;
+      flake_ys[i] = random(0, 12);
     }
     c3.setPixel(flake_xs[i], flake_ys[i], WHITE);
   }

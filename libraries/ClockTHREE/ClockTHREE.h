@@ -53,6 +53,7 @@ With the understanding that:
 #ifndef ClockTHREE_h
 #define ClockTHREE_h
 #include <inttypes.h>
+#include "SPI.h"
 
 const int     N_ROW = 12;
 const int N_RGB_ROW = 10;
@@ -63,6 +64,16 @@ const int               DBG = 12;
 const int COL_DRIVER_ENABLE = 17;
 
 const int SPEAKER_PIN = 10;
+#ifdef CLOCKTWO
+const int MODE_PIN = 5;
+const int INC_PIN = 6;
+const int DEC_PIN = 7;
+#else
+const int MODE_PIN = 2;
+const int INC_PIN = 3;
+const int DEC_PIN = 14;
+#endif
+
 const int LDR_PIN = 0;
 
 // bitmasks for the colors
@@ -183,6 +194,14 @@ class ClockTHREE
    
   // Fill the display with single color
   void displayfill(uint8_t color);
+
+  // turn display off
+  void off();
+
+/*
+ * Uses RTC if available or INT if not.
+ */
+  
   uint32_t* display;
   uint8_t xpos;
   uint8_t ypos;
@@ -191,6 +210,7 @@ class ClockTHREE
  private:
 };
 void _delay(unsigned int n);
+
 #endif
 
 
