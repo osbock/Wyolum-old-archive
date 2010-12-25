@@ -10,8 +10,8 @@
   "BEERCHAIOCLOCKM-"
   "THIRTYUINITHEAT-"
   "MIDNIGHTEVENING-"
+  "IXICLOCKTHREE78-"
   "MORNINGAFTERNOON"
-  "IXICLOCKTHREE789"
   "THANKVIWEMNEED17"
   "YOUR!SUPPORT!!89";
 */
@@ -50,11 +50,11 @@ uint8_t midnight[3] = {7, 0, 8};
 uint8_t night[3] = {7, 3, 5};
 uint8_t evening[3] = {7, 8, 7};
 uint8_t roman_iiii[3] = {7, 15, 1};
-uint8_t morning[3] = {8, 0, 7};
-uint8_t after[3] = {8, 7, 5};
-uint8_t afternoon[3] = {8, 7, 9};
-uint8_t noon[3] = {8, 12, 4};
-uint8_t clocktwo[3] = {9, 3, 10};
+uint8_t morning[3] = {9, 0, 7};
+uint8_t after[3] = {9, 7, 5};
+uint8_t afternoon[3] = {9, 7, 9};
+uint8_t noon[3] = {9, 12, 4};
+uint8_t clocktwo[3] = {8, 3, 10};
 uint8_t thank[3] = {10, 0, 5};
 uint8_t we[3] = {10, 7, 2};
 uint8_t need[3] = {10, 10, 4};
@@ -235,29 +235,29 @@ void English::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
 
 void minutes_hack(ClockTHREE c3, int mm, int ss){
   mm %= 5;
-  uint32_t color;
-  if(mm >= 1){
-    ss /= 10;
-    switch(ss){
-    case 0:
-      color = BLUE;
-      break;
-    case 1:
-      color = GREEN;
-      break;
-    case 2:
-      color = RED;
-      break;
-    case 3:
-      color = REDBLUE;
-      break;
-    case 4:
-      color = REDGREEN;
-      break;
-    case 5:
-      color = WHITE;
-      break;
-    }
-    c3.setPixel(15, 4 + mm - 1, color);
+  uint8_t color, num;
+  num = ss / 10;
+  switch(num){
+  case 0:
+    color = BLUE;
+    break;
+  case 1:
+    color = GREEN;
+    break;
+  case 2:
+    color = RED;
+    break;
+  case 3:
+    color = REDBLUE;
+    break;
+  case 4:
+    color = REDGREEN;
+    break;
+  case 5:
+    color = WHITE;
+    break;
   }
+  c3.setPixel(15, 4 + mm, color);
+  c3.setPixel(ss / 4, 10, BLUE);
+  c3.setPixel(ss / 4, 11, BLUE);
 }

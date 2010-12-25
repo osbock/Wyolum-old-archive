@@ -60,7 +60,6 @@ ClockTHREE::ClockTHREE(){
 // Hardware initialization
 void ClockTHREE::init(){
   SPI.begin(); // start SPI communications
-  // Wire.begin();
 
   pinMode(DBG, OUTPUT);
   pinMode(COL_DRIVER_ENABLE, OUTPUT);

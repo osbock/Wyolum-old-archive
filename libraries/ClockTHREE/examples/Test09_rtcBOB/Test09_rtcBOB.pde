@@ -12,6 +12,7 @@
 #include <Time.h>
 #include <Wire.h>
 #include "ClockTHREE.h"
+#include "rtcBOB.h"
 #include "SPI.h"
 #include "font.h"
 #include "english.h"
@@ -39,14 +40,15 @@ const byte OnePins[3] = {
 
 void setup(){
   // start Wire proto
-  Wire.begin();
   // Serial.begin(9600); // for debugging
 
-  setCompileTime();          // default initial time
-  setSyncProvider(getTime);  // PC, then RTC
+  Wire.begin();
+  c3.init();
+
+  setCompileTime();           // default initial time
+  setSyncProvider(mygetTime);    // PC, then RTC
   setSyncInterval(3600000);      // update hour (and on boot)
 
-  c3.init();
   c3.setdisplay(display);
   c3.set_column_hold(20);
   pinMode(10, OUTPUT);
@@ -248,11 +250,6 @@ boolean PCgetTime(){
   return status;  //if no message return false
 }
 
-// get time from RTC
-int bcd2dec(byte bcd){
-  return (((bcd & 0b11110000)>>4)*10 + 
-    (bcd & 0b00001111));
-}
 boolean RTCgetTime(){
   boolean status;
   int ss, mm, hh, DD, MM, YY;
@@ -306,7 +303,7 @@ void RTCgetTemp(){
  * Uses RTC if available or INT if not.
  * Updates time from PC if available
  */
-time_t getTime(){
+time_t mygetTime(){
   // Serial.println('getTime()');
   if(PCgetTime()){
     time_source = PC_TIME;
@@ -329,11 +326,6 @@ void set_rtc(){
   RTCsetTime(hour(), minute(), second(), day(), month(), year());
 }
 
-byte dec2bcd(int dec){
-  byte t = dec / 10;
-  byte o = dec - t * 10;
-  return (t << 4) + o;
-}
 void RTCsetTime(byte hourIn, byte minuteIn, byte secondIn, byte dayIn, byte monthIn, int yearIn){
   Wire.beginTransmission(104); // 104 is DS3231 device address
   Wire.send(0); // start at register 0

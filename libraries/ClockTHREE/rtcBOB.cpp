@@ -8,7 +8,7 @@
  */
 time_t getTime(){
   int ss, mm, hh, DD, MM, YY;
-
+  
   // reused from macetech.com sample code
   Wire.beginTransmission(104); // 104 is DS3231 device address
   Wire.send(0); // start at register 0

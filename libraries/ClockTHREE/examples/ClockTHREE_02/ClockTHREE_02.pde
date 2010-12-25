@@ -19,12 +19,12 @@
 #include <avr/pgmspace.h>
 #include <Wire.h>
 #include <Time.h>
+#include "MsTimer2.h"
 #include "ClockTHREE.h"
 #include "SPI.h"
 #include "english.h"
 #include "font.h"
 #include "rtcBOB.h"
-#include "MsTimer2.h"
 
 // debounce mode button threshold
 const uint8_t DEBOUNCE_THRESH = 200;
@@ -38,14 +38,14 @@ typedef void (* CallBackPtr)(); // this is a typedef for callback funtions
 inline void do_nothing(void){}
 
 struct Mode{
-  uint8_t id;
-  char sym;
-  SetupPtr setup;
-  LoopPtr loop;
-  ExitPtr exit;
-  CallBackPtr inc;
-  CallBackPtr dec;
-  CallBackPtr mode;
+  uint8_t id;      // Mode ID
+  char sym;        // ASCII Symbol for mode
+  SetupPtr setup;  // to be called when Mode is initialized
+  LoopPtr loop;    // to be called as often as possible when mode is active
+  ExitPtr exit;    // to be called when mode is exited.
+  CallBackPtr inc; // to be called when increment button is pushed
+  CallBackPtr dec; // to be called when decrement button is pushed
+  CallBackPtr mode;// to be called when mode button is pushed
 };
 
 // Default display
@@ -79,11 +79,12 @@ const uint8_t MODE_MODE = 5;
 Mode Modes[N_MODE];
 
 /* Event types */
-const uint8_t NO_EVT = 0;
-const uint8_t MODE_EVT = 1;
-const uint8_t INC_EVT = 2;
-const uint8_t DEC_EVT = 3;
-const uint8_t EVENT_Q_SIZE = 5;
+const uint8_t       NO_EVT = 0; // NONE
+const uint8_t     MODE_EVT = 1; // Mode Button has been pressed
+const uint8_t      INC_EVT = 2; // Increment Button has been pressed
+const uint8_t      DEC_EVT = 3; // Decriment Button has been pressed
+const uint8_t     TICK_EVT = 4; // Second has ellapsed
+const uint8_t EVENT_Q_SIZE = 5; // Max # events.
 
 // Globals
 uint8_t event_q[EVENT_Q_SIZE];
@@ -100,6 +101,8 @@ uint8_t color_i = 3;
 unsigned long count = 0;
 uint16_t YY;
 uint8_t MM, DD, hh, mm, ss;
+boolean tick = true;
+
 /*
  * Called when mode button is pressed
  * Increment mode after debounce check.
@@ -137,28 +140,37 @@ void dec_interrupt(){
   last_dec_time = now;
 }
 
+void tick_interrupt(){
+  if(n_evt < EVENT_Q_SIZE){
+    event_q[n_evt++] = TICK_EVT;
+  }
+}
+
 void update_time(){
-  YY = 2010;
+  c3.refresh();
+  YY = year();
+  c3.refresh();
   MM = month();
+  c3.refresh();
   DD = day();
+  c3.refresh();
   hh = hour();
+  c3.refresh();
   mm = minute();
+  c3.refresh();
   ss = second();
-  Normal_update();
+  c3.refresh();
 }
 
 void setup(){
-  c3.init();
   Wire.begin();
+  c3.init();
   setSyncProvider(getTime);      // RTC
   setSyncInterval(3600000);      // update hour (and on boot)
+  update_time();
 
   mode_p = &NormalMode;
-  mode_p = &ModeMode;
 
-  MsTimer2::set(5000, update_time); // 5 sec period
-  MsTimer2::start();
-  
   // ensure mode ids are consistant.
   NormalMode.id = NORMAL_MODE;
   Modes[NORMAL_MODE] = NormalMode;
@@ -186,8 +198,8 @@ void setup(){
   c3.setdisplay(display);
   c3.set_column_hold(50);
 
-  // setSyncProvider(getTime);      // RTC
-  // setSyncInterval(3600000);      // update hour (and on boot)
+  MsTimer2::set(1000, tick_interrupt); // 1ms period
+  MsTimer2::start();
 
 }
 void loop(){
@@ -220,6 +232,20 @@ void loop(){
     case DEC_EVT:
       mode_p->dec();
       break;
+    case TICK_EVT:
+      tick = true;
+      ss++;
+      if(ss >= 60){
+	ss %= 60;
+	mm++;
+	if(mm >= 60){
+	  mm %= 60;
+	  hh++;
+	  if(hh == 24){
+	    update_time();
+	  }
+	}
+      }
     }
     event_q[i] = NO_EVT;
   }
@@ -231,20 +257,25 @@ void loop(){
    Initalize mode.
    setup() can assume "display" is clear and ready to go.
 */
-void Normal_setup(void) {
-}
-void Normal_update(void){
-  lang.display_time(YY, MM, DD, hh, mm, ss,		    
-		    c3, COLORS[color_i], 32);
+void Normal_setup(void){
+  tick = true;
 }
 void Normal_loop(void) {
-  c3.refresh(100);
+  if((ss % 6 == 0 || ss % 4 == 0) && tick){
+    // minutes hack updates every six seconds
+    lang.display_time(YY, MM, DD, hh, mm, ss,
+		      c3, COLORS[color_i], 32);
+    tick = false;
+  }
+  else{
+    tick = true;
+    c3.refresh(32);
+  }
 }
 /*
   Get ready for next mode.
  */
 void Normal_exit(void) {
-  c3.clear();
 }
 /*
   Respond to button presses.
@@ -263,22 +294,15 @@ void Normal_mode(void) {
    setup() can assume "display" is clear and ready to go.
 */
 void SetColor_setup(void) {
+  tick=true;
 }
 void SetColor_loop(void) {
-  lang.display_time(year(),
-		    month(),
-		    day(),
-		    hour(),
-		    minute(),
-		    second(),
-		    c3, COLORS[color_i], 32);
-  c3.refresh(100);
+  Normal_loop();
 }
 /*
   Get ready for next mode.
  */
 void SetColor_exit(void) {
-  c3.clear();
 }
 /*
   Respond to button presses.
@@ -286,12 +310,11 @@ void SetColor_exit(void) {
 void SetColor_inc(void) {
   digitalWrite(DBG, HIGH);
   color_i++;
-  color_i %= N_COLOR - 1; // skip ModeMode
-  color_i += 1; // skip 0 
+  color_i %= N_COLOR; // DARK=OFF
 }
 void SetColor_dec(void) {
-  if(mode_counter == 1){
-    color_i = N_COLOR - 1;// Skip DARK
+  if(mode_counter == 0){
+    color_i = N_COLOR - 1;// DARK=OFF
   }
   else{
     color_i--;
@@ -312,7 +335,6 @@ void Mode_loop(void) {
 }
 void Mode_exit(void) {
   digitalWrite(DBG, LOW);
-  c3.clear();
 }
 void Mode_inc(void) {
   digitalWrite(DBG, HIGH);
@@ -335,6 +357,7 @@ void Mode_mode(void) {
 }
 
 void switchmodes(uint8_t new_mode_id){
+  c3.clear();
   mode_p->exit();
   mode_p = &Modes[new_mode_id];
   mode_p->setup();
