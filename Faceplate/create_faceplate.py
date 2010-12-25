@@ -74,8 +74,8 @@ def draw(filename, faceplate=True, baffle=True):
         ('B','E','E','R','C','H','A','I',"O'",'C','L','O','C','K','M',' '),
         ('T','H','I','R','T','Y','U','I','N','I','T','H','E','A','T',' '),
         ('M','I','D','N','I','G','H','T','E','V','E','N','I','N','G',' '),
+        ('I','X','I','C','L','O','C','K','T','H','R','E','E','7','8',' '),
         ('M','O','R','N','I','N','G','A','F','T','E','R','N','O','O','N'),
-        ('I','X','I','C','L','O','C','K','T','H','R','E','E','7','8','9'),
         ('T','H','A','N','K','V','I','W','E','M','N','E','E','D','1','7'),
         ('Y','O','U','R','!','S','U','P','P','O','R','T','!','!','8','9')]
 
@@ -97,31 +97,41 @@ def draw(filename, faceplate=True, baffle=True):
         # bug_i = PIL.Image.open('minute1.png')
         c.drawInlineImage(bug_i, 
                           2.826 * inch, .05 * inch, .3*inch, .4*inch)
-        image1 = PIL.Image.open('Images/minute1.png')
-        c.drawInlineImage(image1, 
-                          xs[-2] + dx * .315,
+        image0 = PIL.Image.open('Images/hourglass0.png')
+        c.drawInlineImage(image0, 
+                          xs[-2] + dx * .35,
                           ys[5] + dy * .2,
-                          dx * .4, 
+                          dx * .3, 
                           dy * .56
                           )
-        image2 = PIL.Image.open('Images/minute2.png')
+        image1 = PIL.Image.open('Images/hourglass1.png')
+        c.drawInlineImage(image1, 
+                          xs[-2] + dx * .35,
+                          ys[6] + dy * .2,
+                          dx * .3, 
+                          dy * .56
+                          )
+        image2 = PIL.Image.open('Images/hourglass2.png')
         c.drawInlineImage(image2, 
                           xs[-2] + dx * .315,
-                          ys[6] + dy * .2,
-                          dx * .4, 
-                          dy * .56)
-        image3 = PIL.Image.open('Images/minute3.png')
+                          ys[7] + dy * .2,
+                          dx * .3, 
+                          dy * .56
+                          )
+        image3 = PIL.Image.open('Images/hourglass3.png')
         c.drawInlineImage(image3, 
                           xs[-2] + dx * .315,
-                          ys[7] + dy * .2,
-                          dx * .4, 
-                          dy * .56)
-        image4 = PIL.Image.open('Images/minute4.png')
+                          ys[8] + dy * .2,
+                          dx * .3, 
+                          dy * .56
+                          )
+        image4 = PIL.Image.open('Images/hourglass4.png')
         c.drawInlineImage(image4, 
                           xs[-2] + dx * .315,
-                          ys[8] + dy * .2,
-                          dx * .4, 
-                          dy * .56)
+                          ys[9] + dy * .2,
+                          dx * .3, 
+                          dy * .56
+                          )
 
     c.showPage()
     c.save()
