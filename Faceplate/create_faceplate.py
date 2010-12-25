@@ -81,7 +81,7 @@ def draw(filename, faceplate=True, baffle=True):
 
     t=Table(data, N_COL*[dx], N_ROW*[dy])
     t.setStyle(TableStyle(
-            [('FONTNAME', (0, 0), (N_COL - 1, N_ROW - 1), 'ShadheenLipi'),
+            [('FONTNAME', (0, 0), (N_COL - 1, N_ROW - 1), 'Asana-Math'),
              ('FONTSIZE', (0, 0), (N_COL - 1, N_ROW - 1), 30),
              ('ALIGN', (0, 0), (N_COL - 1, N_ROW - 1), 'CENTRE'),
              ]))
@@ -97,12 +97,12 @@ def draw(filename, faceplate=True, baffle=True):
         # bug_i = PIL.Image.open('minute1.png')
         c.drawInlineImage(bug_i, 
                           2.826 * inch, .05 * inch, .3*inch, .4*inch)
-        image1 = PIL.Image.open('Images/hourglass.png')
+        image1 = PIL.Image.open('Images/minute1.png')
         c.drawInlineImage(image1, 
                           xs[-2] + dx * .315,
                           ys[5] + dy * .2,
-                          # dx * .25, 
-                          # dy * .56
+                          dx * .4, 
+                          dy * .56
                           )
         image2 = PIL.Image.open('Images/minute2.png')
         c.drawInlineImage(image2, 
