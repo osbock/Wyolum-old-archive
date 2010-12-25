@@ -42,17 +42,21 @@ class Image:
         self.y = y
         self.w = w
         self.h = h
-    def drawon(self, c):
+    def drawOn(self, c):
         im = PIL.Image.open(self.filename)
         c.drawInlineImage(im, 
                           self.x, self.y, self.w, self.h)
 
-def draw(filename, data, images, fontname='Asana-Math', fontsize=30,
+def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
          faceplate=True, baffle=True):
     c = canvas.Canvas(filename,
                       pagesize=(W, H)
                       )
-
+    c.setFont(fontname, fontsize)
+    # c.getAvailableFonts()
+    # c.stringWidth('Hello World')
+    # c.drawString(0 * inch, 5 * inch, 'HelloWorld')
+    
     c.setLineWidth(1/16. * inch)
     if baffle:
         c.grid(XS, YS)
@@ -81,23 +85,16 @@ def draw(filename, data, images, fontname='Asana-Math', fontsize=30,
              ('FONTSIZE', (0, 0), (N_COL - 1, N_ROW - 1), fontsize),
              ('ALIGN', (0, 0), (N_COL - 1, N_ROW - 1), 'CENTRE'),
              ]))
-    # elements = []
-    # elements.append(t)
-    # doc = SimpleDocTemplate("simple_table.pdf")
-    # doc.build(elements)
-    c.setFont("Times-Roman", 30)
-    print t.wrap(W, H)
+
+    t.wrap(W, H)
     if faceplate:
         t.drawOn(c, XS[0], YS[-2] - dy/2.5)
-        #         bug_i = PIL.Image.open('Images/noun_project_198.png')
-        #        c.drawInlineImage(bug_i, 
-        #                  2.826 * inch, .05 * inch, .3*inch, .4*inch)
         for im in images:
-            im.drawon(c)
+            im.drawOn(c)
 
     c.showPage()
     c.save()
-
+    print "Wrote %s." % filename
 data = [
         ('I',"T'",'S','X','A','T','E','N','R','Q','U','A','R','T','E','R'),
         ('T','W','E','N','T','Y','F','I','V','E','D','P','A','S','T','O'),
@@ -117,9 +114,11 @@ images = [Image('Images/noun_project_198.png',
 
 for i in range(5):
     images.append(Image('Images/hourglass%d.png' % i,
-          XS[-2] + dx * .35, YS[5 + i] + dy * .2,
+          XS[-2] + dx * .35, YS[5 + i] + dy * .25,
           dx * .3, dy * .56))
 
-draw("faceplate.pdf", data, images, faceplate=True, baffle=False)
+for fontname in pdfmetrics.getRegisteredFontNames():
+    draw("faceplate_%s.pdf" % fontname, data, images, fontname=fontname, faceplate=True, baffle=False)
+
 draw("baffle.pdf", data, images, faceplate=False, baffle=True)
-draw("both.pdf", data, images, fontsize=30, faceplate=True, baffle=True)
+draw("both.pdf", data, images, faceplate=True, baffle=True)
