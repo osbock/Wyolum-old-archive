@@ -1,3 +1,4 @@
+from numpy import *
 import PIL.Image
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch, mm
@@ -109,16 +110,25 @@ data = [
         ('T','H','A','N','K','V','I','W','E','M','N','E','E','D','1','7'),
         ('Y','O','U','R','!','S','U','P','P','O','R','T','!','!','8','9')]
 
+bangla = [chr(c % 128) for c in range(16*12)]
+bangla = reshape(bangla, (12, 16))
+bangla = [tuple(l) for l in bangla]
+print bangla
+print shape(data)
+print shape(bangla)
+
 images = [Image('Images/noun_project_198.png',
           2.826 * inch, .05 * inch, .3*inch, .4*inch)]
 
 for i in range(5):
     images.append(Image('Images/hourglass%d.png' % i,
           XS[-2] + dx * .35, YS[5 + i] + dy * .25,
-          dx * .3, dy * .56))
+          dx * .3, dy * .56 ))
 
 for fontname in pdfmetrics.getRegisteredFontNames():
     draw("faceplate_%s.pdf" % fontname, data, images, fontname=fontname, faceplate=True, baffle=False)
 
 draw("baffle.pdf", data, images, faceplate=False, baffle=True)
 draw("both.pdf", data, images, faceplate=True, baffle=True)
+
+draw("bangla.pdf", bangla, images, fontname='ShadheenLipi', faceplate=True, baffle=False)
