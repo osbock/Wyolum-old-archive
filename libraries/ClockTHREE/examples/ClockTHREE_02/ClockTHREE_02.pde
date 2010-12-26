@@ -52,9 +52,9 @@ struct Mode{
 uint32_t *display = (uint32_t*)calloc(2 * N_COL, sizeof(uint32_t));
 Mode *mode_p;
 
-const uint8_t N_MODE = 7;
+const uint8_t N_MODE = 8;
 const uint8_t N_MAIN_MODE = 6;
-const uint8_t N_SUB_MODE = 1;
+const uint8_t N_SUB_MODE = 2;
 
 const uint8_t NORMAL_MODE = 0;
 const uint8_t SET_TIME_MODE = 1;
@@ -65,6 +65,7 @@ const uint8_t MODE_MODE = 5;
 
 // Sub Modes get ID > N_MODE
 const uint8_t SECONDS_MODE = 6;
+const uint8_t ALARM_MODE = 7;
 
 Mode Modes[N_MODE];
 
@@ -77,6 +78,9 @@ Mode NormalMode = {NORMAL_MODE,
 Mode SecondsMode = {SECONDS_MODE, 
 		    'S', Seconds_setup, Seconds_loop, Seconds_exit, 
 		    Seconds_mode, Seconds_mode, Seconds_mode};
+Mode AlarmMode = {ALARM_MODE, 
+		  'X', Alarm_setup, Alarm_loop, Alarm_exit, 
+		  Alarm_mode, Alarm_mode, Alarm_mode};
 Mode SetTimeMode = {SET_TIME_MODE, 
 		    'T', SetTime_setup,SetTime_loop,SetTime_exit,
 		    SetTime_inc, SetTime_dec, SetTime_mode};
@@ -187,6 +191,7 @@ void setup(void){
   setSyncProvider(getTime);      // RTC
   setSyncInterval(3600000);      // update hour (and on boot)
   update_time();
+  getRTC_alarm(&ahh, &amm, &ass, &alarm_set);
 
   mode_p = &NormalMode;
 
@@ -200,6 +205,7 @@ void setup(void){
 
   // Sub Modes
   Modes[SECONDS_MODE] = SecondsMode;
+  Modes[ALARM_MODE] = AlarmMode;
   mode_p->setup();
 
 #ifndef CLOCKTWO
@@ -211,6 +217,7 @@ void setup(void){
 
   MsTimer2::set(1000, tick_interrupt); // 1ms period
   MsTimer2::start();
+  Alarm_setup();
 }
 
 void loop(void){
@@ -256,6 +263,9 @@ void loop(void){
 	  if(hh == 24){
 	    update_time();
 	  }
+	}
+	if((alarm_set) && (mm == amm) && (hh == ahh)){
+	  switchmodes(ALARM_MODE);
 	}
       }
     }
@@ -322,6 +332,32 @@ void Seconds_loop(){
 void Seconds_exit(void) {
 }
 void Seconds_mode(){
+  switchmodes(NORMAL_MODE);
+}
+
+// Sub mode of normal mode ** sound the alarm!
+void Alarm_setup(void){
+  MsTimer2::stop(); // tone() interfers with MsTimer2
+  font.getChar('X', RED, display + 2);
+  font.getChar('X', RED, display + 9);
+}
+void Alarm_loop(){
+  if((count % (6 * 24) < (3 * 24)) && (count % 12) < 6){
+    tone(SPEAKER_PIN, 880);
+  }
+  else{
+    noTone(SPEAKER_PIN);
+  }
+  c3.refresh(32);
+}
+void Alarm_exit(void) {
+  // resync with RTC and start ticking again
+  update_time();
+  MsTimer2::set(1000, tick_interrupt); // 1ms period
+  MsTimer2::start();
+  digitalWrite(SPEAKER_PIN, HIGH);
+}
+void Alarm_mode(){
   switchmodes(NORMAL_MODE);
 }
 
@@ -500,13 +536,14 @@ void SetAlarm_setup(void){
   lang.display_word(c3, DARK, alarm_on_led);
   SetTime_unit = HOUR;
 }
-void SetAlarm_loop(void) {
+void SetAlarm_loop(void){
   c3.refresh(16);
 }
 /*
   Get ready for next mode.
  */
-void SetAlarm_exit(void) {
+void SetAlarm_exit(void){
+  setRTC_alarm(ahh, amm, ass, alarm_set);
 }
 /*
   Respond to button presses.
