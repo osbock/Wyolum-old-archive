@@ -91,8 +91,8 @@ Mode SetAlarmMode = {SET_ALARM_MODE,
 		     2, SetAlarm_setup,SetAlarm_loop,SetAlarm_exit,
 		     SetAlarm_inc, SetAlarm_dec, SetAlarm_mode};
 Mode PCMode = {PC_MODE, 
-	       'P', do_nothing,do_nothing,do_nothing,
-	       do_nothing,do_nothing,do_nothing};
+	       'P', PC_setup,PC_loop,PC_exit,
+	       PC_inc,PC_dec,PC_mode};
 Mode ModeMode = {MODE_MODE, 
 		 'M', Mode_setup, Mode_loop, Mode_exit, 
 		 Mode_inc, Mode_dec, Mode_mode};
@@ -217,7 +217,7 @@ void setup(void){
 
   MsTimer2::set(1000, tick_interrupt); // 1ms period
   MsTimer2::start();
-  Alarm_setup();
+  
 }
 
 void loop(void){
@@ -676,6 +676,37 @@ void SetColor_dec(void) {
 }
 
 void SetColor_mode(void) {
+  switchmodes(NORMAL_MODE);
+}
+
+// Begin PC Mode
+/* 
+   Initalize mode.
+*/
+void PC_setup(void){
+  tick = true;
+  lang.display_word(c3, MONO, usb_led);
+  Serial.begin(9600);
+}
+void PC_loop(void) {
+  while(Serial.available()){
+    Serial.print(Serial.read(), BYTE);
+  }
+}
+/*
+  Get ready for next mode.
+ */
+void PC_exit(void) {
+  Serial.end();
+}
+/*
+  Respond to button presses.
+ */
+void PC_inc(void) {
+}
+void PC_dec(void) {
+}
+void PC_mode(void) {
   switchmodes(NORMAL_MODE);
 }
 

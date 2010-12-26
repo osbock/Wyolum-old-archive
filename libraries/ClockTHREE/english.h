@@ -14,7 +14,7 @@
   "IXICLOCKTHREE78-"
   "MORNINGAFTERNOON"
   "THANKVIWEMNEED17"
-  "YMDYMSALARMT!!AN";
+  "UYMDYMSALARMT!!A";
 */
 const uint8_t its[3] = {0, 0, 3};
 const uint8_t a[3] = {0, 4, 1};
@@ -62,13 +62,14 @@ const uint8_t need[3] = {10, 10, 4};
 const uint8_t you[3] = {11, 0, 4};
 const uint8_t your[3] = {11, 0, 4};
 const uint8_t support[3] = {11, 5, 7};
-const uint8_t year_led[3] = {11, 0, 1};
-const uint8_t month_led[3] = {11, 1, 1};
-const uint8_t day_led[3] = {11, 2, 1};
-const uint8_t hour_led[3] = {11, 3, 1};
-const uint8_t minute_led[3] = {11, 4, 1};
-const uint8_t second_led[3] = {11, 5, 1};
-const uint8_t alarm[3] = {11, 6, 5};
+const uint8_t usb_led[3] = {11, 0, 1};
+const uint8_t year_led[3] = {11, 1, 1};
+const uint8_t month_led[3] = {11, 2, 1};
+const uint8_t day_led[3] = {11, 3, 1};
+const uint8_t hour_led[3] = {11, 4, 1};
+const uint8_t minute_led[3] = {11, 5, 1};
+const uint8_t second_led[3] = {11, 6, 1};
+const uint8_t alarm[3] = {11, 7, 5};
 const uint8_t alarm_on_led[3] = {11, 14, 1};
 const uint8_t alarm_off_led[3] = {11, 15, 1};
 
