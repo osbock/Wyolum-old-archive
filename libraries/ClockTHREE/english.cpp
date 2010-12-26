@@ -13,7 +13,7 @@
   "IXICLOCKTHREE78-"
   "MORNINGAFTERNOON"
   "THANKVIWEMNEED17"
-  "YOUR!SUPPORT!!89";
+  "YMDHMSUPPORT!!89";
 */
 uint8_t its[3] = {0, 0, 3};
 uint8_t a[3] = {0, 4, 1};

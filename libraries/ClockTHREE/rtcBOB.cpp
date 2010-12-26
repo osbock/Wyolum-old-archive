@@ -38,6 +38,22 @@ time_t getTime(){
   return now();
 }
 
+void setRTC(uint16_t YY, uint8_t MM, uint8_t DD, 
+	    uint8_t hh, uint8_t mm, uint8_t ss){
+  Wire.beginTransmission(104); // 104 is DS3231 device address
+  Wire.send(0); // start at register 0
+  
+  Wire.send(dec2bcd(ss)); //Send seconds as BCD
+  Wire.send(dec2bcd(mm)); //Send minutes as BCD
+  Wire.send(dec2bcd(hh)); //Send hours as BCD
+  Wire.send(dec2bcd(weekday())); // dow
+  Wire.send(dec2bcd(DD)); //Send day as BCD
+  Wire.send(dec2bcd(MM)); //Send month as BCD
+  Wire.send(dec2bcd(YY % 1000)); //Send year as BCD
+  Wire.endTransmission();  
+
+}
+
 // get current temperature
 int getTemp(){
   int temp;

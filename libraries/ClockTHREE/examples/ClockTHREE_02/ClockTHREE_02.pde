@@ -68,6 +68,7 @@ const uint8_t SECONDS_MODE = 6;
 
 Mode Modes[N_MODE];
 
+typedef enum {YEAR, MONTH, DAY, HOUR, MINUTE, SECOND} unit;
 // Begin mode declarations
 
 Mode NormalMode = {NORMAL_MODE, 
@@ -77,8 +78,8 @@ Mode SecondsMode = {SECONDS_MODE,
 		    'S', Seconds_setup, Seconds_loop, Seconds_exit, 
 		    Seconds_mode, Seconds_mode, Seconds_mode};
 Mode SetTimeMode = {SET_TIME_MODE, 
-		    'T', do_nothing,do_nothing,do_nothing,
-		    do_nothing,do_nothing,do_nothing};
+		    'T', SetTime_setup,SetTime_loop,SetTime_exit,
+		    SetTime_inc, SetTime_dec, SetTime_mode};
 Mode SetColorMode = {SET_COLOR_MODE, 
 		     'C', SetColor_setup, SetColor_loop, SetColor_exit, 
 		     SetColor_inc, SetColor_dec, SetColor_mode};
@@ -116,6 +117,8 @@ unsigned long count = 0;
 uint16_t YY;
 uint8_t MM, DD, hh, mm, ss;
 boolean tick = true;
+unit SetTime_unit = YEAR;
+boolean SetMode_first_press = true;
 
 /*
  * Called when mode button is pressed
@@ -206,8 +209,8 @@ void setup(void){
 
   MsTimer2::set(1000, tick_interrupt); // 1ms period
   MsTimer2::start();
-
 }
+
 void loop(void){
   //check button status // C2 hack
 #ifdef CLOCKTWO
@@ -271,12 +274,12 @@ void Normal_loop(void) {
   if((count == 0 || ss % 6 == 0 || ss % 4 == 0) && tick){
     // minutes hack updates every six seconds 
     lang.display_time(YY, MM, DD, hh, mm, ss,
-		      c3, COLORS[color_i], 32);
+		      c3, COLORS[color_i], 16);
     tick = false;
   }
   else{
     tick = true;
-    c3.refresh(32);
+    c3.refresh(16);
   }
 }
 /*
@@ -295,6 +298,7 @@ void Normal_dec(void) {
 void Normal_mode(void) {
   switchmodes(MODE_MODE);
 }
+
 // Sub mode of normal mode ** display seconds
 void Seconds_setup(void){
   tick = true;
@@ -302,8 +306,7 @@ void Seconds_setup(void){
 void Seconds_loop(){
   if(tick){
     tick = false;
-    font.getChar('0' + ss / 10, COLORS[color_i], display + 1);
-    font.getChar('0' + ss % 10, COLORS[color_i], display + 9);
+    two_digits(ss);
   }
   c3.refresh(32);
 }
@@ -311,6 +314,159 @@ void Seconds_exit(void) {
 }
 void Seconds_mode(){
   switchmodes(NORMAL_MODE);
+}
+
+// Begin SetTime Mode Code (TODO use one file per mode)
+/* 
+   Initalize mode.
+   _setup() can assume "display" is clear and ready to go.
+*/
+void SetTime_setup(void){
+  MsTimer2::stop(); // Ticks stop while setting time
+  getTime(); // sync with rtcBOB
+  SetTime_unit = YEAR;
+  font.getChar('Y', COLORS[color_i], display + 5);
+  c3.setPixel(0, 11, MONO);
+}
+void SetTime_loop(void) {
+  switch(SetTime_unit){
+  case YEAR:
+    break;
+  case MONTH:
+    break;
+  case DAY:
+    break;
+  case HOUR:
+    break;
+  case MINUTE:
+    break;
+  default:
+    break;
+  }
+  c3.refresh(16);
+}
+/*
+  Get ready for next mode.
+ */
+void SetTime_exit(void) {
+  setRTC(YY, MM, DD, hh, mm, ss);
+  MsTimer2::start();
+}
+/*
+  Respond to button presses.
+ */
+void SetTime_inc(void) {
+  switch(SetTime_unit){
+  case YEAR:
+    if(!SetMode_first_press){
+      YY++;
+    }
+    two_digits(YY % 100);
+    break;
+  case MONTH:
+    if(!SetMode_first_press){
+      MM = (MM + 1) % 13;
+      if(MM == 0){
+	MM = 1;
+      }
+    }
+    two_digits(MM);
+    break;
+  case DAY:
+    if(!SetMode_first_press){
+      DD = (DD + 1) % (MONTHS[MM] + LEAP_YEAR(YY) + 1);
+      if(DD == 0){
+	DD = 1;
+      }
+    }
+    two_digits(DD);
+    break;
+  case HOUR:
+    if(!SetMode_first_press){
+      hh = (hh + 1) % 24;
+    }
+    two_digits(hh);
+    break;
+  case MINUTE:
+    if(!SetMode_first_press){
+      mm = (mm + 1) % 60;
+      ss = 0;
+    }
+    two_digits(mm);
+    break;
+  }
+  SetMode_first_press = false;
+}
+void SetTime_dec(void) {
+  switch(SetTime_unit){
+  case YEAR:
+    if(!SetMode_first_press){
+      YY--;
+    }
+    two_digits(YY % 100);
+    break;
+  case MONTH:
+    if(!SetMode_first_press){
+      MM = (MM - 1) % 13;
+      if(MM == 0){
+	MM = 12;
+      }
+    }
+    two_digits(MM);
+    break;
+  case DAY:
+    if(!SetMode_first_press){
+      DD = (DD - 1) % (MONTHS[MM] + LEAP_YEAR(YY) + 1);
+      if(DD == 0){
+	DD = 1;
+      }
+    }
+    two_digits(DD);
+    break;
+  case HOUR:
+    if(!SetMode_first_press){
+      hh = (hh - 1) % 24;
+    }
+    two_digits(hh);
+    break;
+  case MINUTE:
+    if(!SetMode_first_press){
+      mm = (mm - 1) % 60;
+      ss = 0;
+    }
+    two_digits(mm);
+    break;
+  }
+  SetMode_first_press = false;
+}
+void SetTime_mode(void) {
+  c3.clear();
+  SetMode_first_press = true;
+  switch(SetTime_unit){
+  case YEAR:
+    SetTime_unit = MONTH;
+    font.getChar('M', COLORS[color_i], display + 5);
+    c3.setPixel(1, 11, MONO);
+    break;
+  case MONTH:
+    SetTime_unit = DAY;
+    font.getChar('D', COLORS[color_i], display + 5);
+    c3.setPixel(2, 11, MONO);
+    break;
+  case DAY:
+    SetTime_unit = HOUR;
+    font.getChar('h', COLORS[color_i], display + 5);
+    c3.setPixel(3, 11, MONO);
+    break;
+  case HOUR:
+    SetTime_unit = MINUTE;
+    font.getChar('m', COLORS[color_i], display + 5);
+    c3.setPixel(4, 11, MONO);
+    break;
+  default:
+    switchmodes(NORMAL_MODE);
+    break;
+  }
 }
 
 // Begin SetColor Mode Code (TODO use one file per mode)
@@ -337,6 +493,7 @@ void SetColor_inc(void) {
   color_i++;
   color_i %= N_COLOR; // DARK=OFF
 }
+
 void SetColor_dec(void) {
   if(mode_counter == 0){
     color_i = N_COLOR - 1;// DARK=OFF
@@ -345,6 +502,7 @@ void SetColor_dec(void) {
     color_i--;
   }
 }
+
 void SetColor_mode(void) {
   switchmodes(NORMAL_MODE);
 }
@@ -387,4 +545,9 @@ void switchmodes(uint8_t new_mode_id){
   mode_p = &Modes[new_mode_id];
   mode_p->setup();
   count = 0;
+}
+
+void two_digits(uint8_t val){
+  font.getChar('0' + val / 10, COLORS[color_i], display + 2);
+  font.getChar('0' + val % 10, COLORS[color_i], display + 9);
 }
