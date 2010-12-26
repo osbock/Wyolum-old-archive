@@ -38,10 +38,10 @@ uint8_t color_i = 1;
 const int display_hold = 100;
 
 void loop(){
-  ss += 1;
+  ss += 61;
   if(ss >= 60){
     mm++;
-    ss = 0; 
+    ss %= 60; 
     if(mm >= 60){
       hh += 1;
       mm = 0;

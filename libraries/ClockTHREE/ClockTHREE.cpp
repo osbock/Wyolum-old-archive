@@ -132,11 +132,11 @@ void ClockTHREE::refresh(int n_hold){
 // return pointer to old display
 uint32_t *ClockTHREE::fadeto(uint32_t *new_display, uint32_t steps){
   uint32_t *old_display = display;
-  for(int i = 4; i < steps; i*= 1.414){
+  for(double i = 1.; i < steps; i*= 1.04){
     setdisplay(new_display);
-    refresh(i);
+    refresh((int)i);
     setdisplay(old_display);
-    refresh(steps - i);
+    refresh((int)(steps / i));
   }
   setdisplay(new_display);
 }

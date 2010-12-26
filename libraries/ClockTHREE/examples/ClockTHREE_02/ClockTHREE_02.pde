@@ -48,27 +48,14 @@ struct Mode{
   CallBackPtr mode;// to be called when mode button is pushed
 };
 
-// Default display
-uint32_t *display = (uint32_t*)calloc(N_COL, sizeof(uint32_t));
-
-// Begin Normal mode declarations
-
-Mode NormalMode = {0, 'N', Normal_setup, Normal_loop, Normal_exit, 
-		   Normal_inc, Normal_dec, Normal_mode};
-Mode SetTimeMode = {0, 'T', do_nothing,do_nothing,do_nothing,
-		    do_nothing,do_nothing,do_nothing};
-Mode SetColorMode = {0, 'C', SetColor_setup, SetColor_loop, SetColor_exit, 
-		   SetColor_inc, SetColor_dec, SetColor_mode};
-Mode SetAlarmMode = {0, 2, do_nothing,do_nothing,do_nothing,
-		    do_nothing,do_nothing,do_nothing};
-Mode PCMode = {0, 'P', do_nothing,do_nothing,do_nothing,
-		    do_nothing,do_nothing,do_nothing};
-Mode ModeMode = {0, 'M', Mode_setup, Mode_loop, Mode_exit, 
-		 Mode_inc, Mode_dec, Mode_mode};
-
+// Default display -- twice as large as is needed
+uint32_t *display = (uint32_t*)calloc(2 * N_COL, sizeof(uint32_t));
 Mode *mode_p;
 
-const uint8_t N_MODE = 6;
+const uint8_t N_MODE = 7;
+const uint8_t N_MAIN_MODE = 6;
+const uint8_t N_SUB_MODE = 1;
+
 const uint8_t NORMAL_MODE = 0;
 const uint8_t SET_TIME_MODE = 1;
 const uint8_t SET_COLOR_MODE = 2;
@@ -76,7 +63,34 @@ const uint8_t SET_ALARM_MODE = 3;
 const uint8_t PC_MODE = 4;
 const uint8_t MODE_MODE = 5;
 
+// Sub Modes get ID > N_MODE
+const uint8_t SECONDS_MODE = 6;
+
 Mode Modes[N_MODE];
+
+// Begin mode declarations
+
+Mode NormalMode = {NORMAL_MODE, 
+		   'N', Normal_setup, Normal_loop, Normal_exit, 
+		   Normal_inc, Normal_dec, Normal_mode};
+Mode SecondsMode = {SECONDS_MODE, 
+		    'S', Seconds_setup, Seconds_loop, Seconds_exit, 
+		    Seconds_mode, Seconds_mode, Seconds_mode};
+Mode SetTimeMode = {SET_TIME_MODE, 
+		    'T', do_nothing,do_nothing,do_nothing,
+		    do_nothing,do_nothing,do_nothing};
+Mode SetColorMode = {SET_COLOR_MODE, 
+		     'C', SetColor_setup, SetColor_loop, SetColor_exit, 
+		     SetColor_inc, SetColor_dec, SetColor_mode};
+Mode SetAlarmMode = {SET_ALARM_MODE, 
+		     2, do_nothing,do_nothing,do_nothing,
+		    do_nothing,do_nothing,do_nothing};
+Mode PCMode = {PC_MODE, 
+	       'P', do_nothing,do_nothing,do_nothing,
+	       do_nothing,do_nothing,do_nothing};
+Mode ModeMode = {MODE_MODE, 
+		 'M', Mode_setup, Mode_loop, Mode_exit, 
+		 Mode_inc, Mode_dec, Mode_mode};
 
 /* Event types */
 const uint8_t       NO_EVT = 0; // NONE
@@ -162,7 +176,7 @@ void update_time(){
   c3.refresh();
 }
 
-void setup(){
+void setup(void){
   Wire.begin();
   c3.init();
   setSyncProvider(getTime);      // RTC
@@ -172,29 +186,21 @@ void setup(){
   mode_p = &NormalMode;
 
   // ensure mode ids are consistant.
-  NormalMode.id = NORMAL_MODE;
   Modes[NORMAL_MODE] = NormalMode;
-
-  SetTimeMode.id = SET_TIME_MODE;
   Modes[SET_TIME_MODE] = SetTimeMode;
-
-  SetColorMode.id = SET_COLOR_MODE;
   Modes[SET_COLOR_MODE] = SetColorMode;
-
-  SetAlarmMode.id = SET_ALARM_MODE;
   Modes[SET_ALARM_MODE] = SetAlarmMode;
-
-  PCMode.id = PC_MODE;
   Modes[PC_MODE] = PCMode;
-
-  ModeMode.id = MODE_MODE;
   Modes[MODE_MODE] = ModeMode;
-  
+
+  // Sub Modes
+  Modes[SECONDS_MODE] = SecondsMode;
   mode_p->setup();
 
-  // attachInterrupt(0, mode_interrupt, FALLING); // Does not work on C2
-  // attachInterrupt(1, inc_interrupt, FALLING);  // Does not work on C2
-
+#ifndef CLOCKTWO
+  attachInterrupt(0, mode_interrupt, FALLING); // Does not work on C2
+  attachInterrupt(1, inc_interrupt, FALLING);  // Does not work on C2
+#endif
   c3.setdisplay(display);
   c3.set_column_hold(50);
 
@@ -202,15 +208,16 @@ void setup(){
   MsTimer2::start();
 
 }
-void loop(){
+void loop(void){
   //check button status // C2 hack
-  
+#ifdef CLOCKTWO
   if(PIND & 1<<5){
     mode_interrupt();
   }
   if(PIND & 1 << 6){
     inc_interrupt();
   }
+#endif
   if(PIND & 1 << 7){
     dec_interrupt();
   }
@@ -255,14 +262,14 @@ void loop(){
 // Begin Normal Mode Code (TODO use one file per mode)
 /* 
    Initalize mode.
-   setup() can assume "display" is clear and ready to go.
+   _setup() can assume "display" is clear and ready to go.
 */
 void Normal_setup(void){
   tick = true;
 }
 void Normal_loop(void) {
-  if((ss % 6 == 0 || ss % 4 == 0) && tick){
-    // minutes hack updates every six seconds
+  if((count == 0 || ss % 6 == 0 || ss % 4 == 0) && tick){
+    // minutes hack updates every six seconds 
     lang.display_time(YY, MM, DD, hh, mm, ss,
 		      c3, COLORS[color_i], 32);
     tick = false;
@@ -281,11 +288,29 @@ void Normal_exit(void) {
   Respond to button presses.
  */
 void Normal_inc(void) {
+  switchmodes(SECONDS_MODE);
 }
 void Normal_dec(void) {
 }
 void Normal_mode(void) {
   switchmodes(MODE_MODE);
+}
+// Sub mode of normal mode ** display seconds
+void Seconds_setup(void){
+  tick = true;
+}
+void Seconds_loop(){
+  if(tick){
+    tick = false;
+    font.getChar('0' + ss / 10, COLORS[color_i], display + 1);
+    font.getChar('0' + ss % 10, COLORS[color_i], display + 9);
+  }
+  c3.refresh(32);
+}
+void Seconds_exit(void) {
+}
+void Seconds_mode(){
+  switchmodes(NORMAL_MODE);
 }
 
 // Begin SetColor Mode Code (TODO use one file per mode)
@@ -339,13 +364,13 @@ void Mode_exit(void) {
 void Mode_inc(void) {
   digitalWrite(DBG, HIGH);
   mode_counter++;
-  mode_counter %= N_MODE - 1; // skip ModeMode
+  mode_counter %= N_MAIN_MODE - 1; // skip ModeMode
   font.getChar(Modes[mode_counter].sym, RED, display + 8);
 }
 void Mode_dec(void) {
   digitalWrite(DBG, HIGH);
   if(mode_counter == 0){
-    mode_counter = N_MODE - 2;// skip ModeMode
+    mode_counter = N_MAIN_MODE - 2;// skip ModeMode
   }
   else{
     mode_counter--;
@@ -361,4 +386,5 @@ void switchmodes(uint8_t new_mode_id){
   mode_p->exit();
   mode_p = &Modes[new_mode_id];
   mode_p->setup();
+  count = 0;
 }
