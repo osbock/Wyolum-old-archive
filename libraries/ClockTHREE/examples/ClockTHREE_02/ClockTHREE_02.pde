@@ -27,7 +27,7 @@
 #include "rtcBOB.h"
 
 // debounce mode button threshold
-const uint8_t DEBOUNCE_THRESH = 200;
+const uint8_t DEBOUNCE_THRESH = 100;
 
 // Define modes
 typedef void (* SetupPtr)(); // this is a typedef for setup funtions
@@ -84,8 +84,8 @@ Mode SetColorMode = {SET_COLOR_MODE,
 		     'C', SetColor_setup, SetColor_loop, SetColor_exit, 
 		     SetColor_inc, SetColor_dec, SetColor_mode};
 Mode SetAlarmMode = {SET_ALARM_MODE, 
-		     2, do_nothing,do_nothing,do_nothing,
-		    do_nothing,do_nothing,do_nothing};
+		     2, SetAlarm_setup,SetAlarm_loop,SetAlarm_exit,
+		     SetAlarm_inc, SetAlarm_dec, SetAlarm_mode};
 Mode PCMode = {PC_MODE, 
 	       'P', do_nothing,do_nothing,do_nothing,
 	       do_nothing,do_nothing,do_nothing};
@@ -116,9 +116,11 @@ uint8_t color_i = 3;
 unsigned long count = 0;
 uint16_t YY;
 uint8_t MM, DD, hh, mm, ss;
+uint8_t ahh, amm, ass;
 boolean tick = true;
 unit SetTime_unit = YEAR;
 boolean SetMode_first_press = true;
+boolean alarm_set = false;
 
 /*
  * Called when mode button is pressed
@@ -265,7 +267,6 @@ void loop(void){
 // Begin Normal Mode Code (TODO use one file per mode)
 /* 
    Initalize mode.
-   _setup() can assume "display" is clear and ready to go.
 */
 void Normal_setup(void){
   tick = true;
@@ -273,6 +274,14 @@ void Normal_setup(void){
 void Normal_loop(void) {
   if((count == 0 || ss % 6 == 0 || ss % 4 == 0) && tick){
     // minutes hack updates every six seconds 
+    if(alarm_set){
+      lang.display_word(c3, DARK, alarm_off_led);
+      lang.display_word(c3, MONO, alarm_on_led);
+    }
+    else{
+      lang.display_word(c3, DARK, alarm_off_led);
+      lang.display_word(c3, DARK, alarm_on_led);
+    }
     lang.display_time(YY, MM, DD, hh, mm, ss,
 		      c3, COLORS[color_i], 16);
     tick = false;
@@ -319,7 +328,6 @@ void Seconds_mode(){
 // Begin SetTime Mode Code (TODO use one file per mode)
 /* 
    Initalize mode.
-   _setup() can assume "display" is clear and ready to go.
 */
 void SetTime_setup(void){
   MsTimer2::stop(); // Ticks stop while setting time
@@ -425,13 +433,23 @@ void SetTime_dec(void) {
     break;
   case HOUR:
     if(!SetMode_first_press){
-      hh = (hh - 1) % 24;
+      if(hh == 1){
+	hh = 23; // uint cannot go neg
+      }
+      else{
+	hh--;
+      }
     }
     two_digits(hh);
     break;
   case MINUTE:
     if(!SetMode_first_press){
-      mm = (mm - 1) % 60;
+      if(mm == 0){
+	mm = 59; // uint cannot go neg
+      }
+      else{
+	mm--;
+      }
       ss = 0;
     }
     two_digits(mm);
@@ -469,10 +487,127 @@ void SetTime_mode(void) {
   }
 }
 
+// Begin SetAlarm Mode Code (TODO use one file per mode)
+/* 
+   Initalize mode.
+*/
+void SetAlarm_setup(void){
+  lang.display_word(c3, COLORS[color_i], alarm);
+  lang.display_time(YY, MM, DD, ahh, amm, ass,
+		    c3, COLORS[color_i], 0, false, false);
+  lang.display_word(c3, COLORS[color_i], hour_led);
+  lang.display_word(c3, DARK, alarm_off_led);
+  lang.display_word(c3, DARK, alarm_on_led);
+  SetTime_unit = HOUR;
+}
+void SetAlarm_loop(void) {
+  c3.refresh(16);
+}
+/*
+  Get ready for next mode.
+ */
+void SetAlarm_exit(void) {
+}
+/*
+  Respond to button presses.
+ */
+void SetAlarm_inc(void){
+  switch(SetTime_unit){
+  case HOUR:
+    ahh = (ahh + 1) % 24;
+    lang.display_time(YY, MM, DD, ahh, amm, ass,
+		      c3, COLORS[color_i], 0, false, false);
+    break;
+  case MINUTE:
+    amm = (amm + 5) % 60;
+    ass = 0;
+    lang.display_time(YY, MM, DD, ahh, amm, ass,
+		      c3, COLORS[color_i], 0, false, false);
+    break;
+  case SECOND:
+    if(!alarm_set){
+      alarm_set = true;
+      lang.display_word(c3, DARK, alarm_off_led);
+      lang.display_word(c3, MONO, alarm_on_led);
+    }
+    else{
+      alarm_set = false;
+      lang.display_word(c3, DARK, alarm_on_led);
+      lang.display_word(c3, MONO, alarm_off_led);
+    }
+    break;
+  default:
+    switchmodes(NORMAL_MODE); // Error?! get out of here.
+  }
+}
+
+void SetAlarm_dec(void){
+  switch(SetTime_unit){
+  case HOUR:
+    if(ahh == 0){
+      ahh = 23; // uint cannot go neg
+    }
+    else{
+      ahh--;
+    }
+    lang.display_time(YY, MM, DD, ahh, amm, ass,
+		      c3, COLORS[color_i], 0, false, false);
+    break;
+  case MINUTE:
+    if(amm < 5){
+      amm = 55; // uint cannot go neg
+    }
+    else{
+      amm -= 5;
+    }
+    ass = 0;
+    lang.display_time(YY, MM, DD, ahh, amm, ass,
+		      c3, COLORS[color_i], 0, false, false);
+    break;
+  case SECOND:
+    if(!alarm_set){
+      alarm_set = true;
+      lang.display_word(c3, DARK, alarm_off_led);
+      lang.display_word(c3, MONO, alarm_on_led);
+    }
+    else{
+      alarm_set = false;
+      lang.display_word(c3, DARK, alarm_on_led);
+      lang.display_word(c3, MONO, alarm_off_led);
+    }
+    break;
+  default:
+    switchmodes(NORMAL_MODE); // Error?! get out of here.
+  }
+}
+void SetAlarm_mode(void){
+  switch(SetTime_unit){
+  case HOUR:
+    SetTime_unit = MINUTE;
+    lang.display_word(c3, DARK, hour_led);
+    lang.display_word(c3, COLORS[color_i], minute_led);
+    break;
+  case MINUTE:
+    SetTime_unit = SECOND;
+    c3.clear();
+    if(alarm_set){
+      lang.display_word(c3, MONO, alarm_on_led);
+    }
+    else{
+      lang.display_word(c3, MONO, alarm_off_led);
+    }
+    break;
+  case SECOND:
+    // fall though to default
+  default:
+    switchmodes(NORMAL_MODE);
+    break;
+  }
+}
+
 // Begin SetColor Mode Code (TODO use one file per mode)
 /* 
    Initalize mode.
-   setup() can assume "display" is clear and ready to go.
 */
 void SetColor_setup(void) {
   tick=true;

@@ -13,64 +13,25 @@
   "IXICLOCKTHREE78-"
   "MORNINGAFTERNOON"
   "THANKVIWEMNEED17"
-  "YMDHMSUPPORT!!89";
+  "YMDYMSALARMT!!89";
 */
-uint8_t its[3] = {0, 0, 3};
-uint8_t a[3] = {0, 4, 1};
-uint8_t mten[3] = {0, 5, 3};
-uint8_t quarter[3] = {0, 9, 7};
-uint8_t twenty[3] = {1, 0, 6};
-uint8_t mfive[3] = {1, 6, 4};
-uint8_t past[3] = {1, 11, 4};
-uint8_t to[3] = {1, 14, 2};
-uint8_t twelve[3] = {2, 0, 6};
-uint8_t two[3] = {2, 6, 3};
-uint8_t one[3] = {2, 8, 3};
-uint8_t seven[3] = {2, 11, 5};
-uint8_t four[3] = {3, 0, 4};
-uint8_t hfive[3] = {3, 4, 4};
-uint8_t six[3] = {3, 8, 3};
-uint8_t three[3] = {3, 11, 5};
-uint8_t eight[3] = {4, 0, 5};
-uint8_t hten[3] = {4, 4, 3};
-uint8_t nine[3] = {4, 6, 4};
-uint8_t eleven[3] = {4, 9, 6};
-uint8_t roman_i[3] = {4, 15, 1};
-uint8_t beer[3] = {5, 0, 4};
-uint8_t chai[3] = {5, 4, 4};
-uint8_t oclock[3] = {5, 8, 6};
-uint8_t roman_ii[3] = {5, 15, 1};
-uint8_t thirty[3] = {6, 0, 6};
-uint8_t in_the[3] = {6, 7, 5};
-uint8_t in[3] = {6, 7, 2};
-uint8_t the[3] = {6, 10, 3};
-uint8_t at[3] = {6, 13, 2};
-uint8_t roman_iii[3] = {6, 15, 1};
-uint8_t midnight[3] = {7, 0, 8};
-uint8_t night[3] = {7, 3, 5};
-uint8_t evening[3] = {7, 8, 7};
-uint8_t roman_iiii[3] = {7, 15, 1};
-uint8_t morning[3] = {9, 0, 7};
-uint8_t after[3] = {9, 7, 5};
-uint8_t afternoon[3] = {9, 7, 9};
-uint8_t noon[3] = {9, 12, 4};
-uint8_t clocktwo[3] = {8, 3, 10};
-uint8_t thank[3] = {10, 0, 5};
-uint8_t we[3] = {10, 7, 2};
-uint8_t need[3] = {10, 10, 4};
-uint8_t you[3] = {11, 0, 4};
-uint8_t your[3] = {11, 0, 4};
-uint8_t support[3] = {11, 5, 7};
-uint8_t emphasize[3] = {11, 12, 2};
 
 void minutes_hack(ClockTHREE c3, int mm, int ss);
 
-static inline void display_word(ClockTHREE c3, uint8_t color, uint8_t *w){
+void English::display_word(ClockTHREE c3, uint8_t color, 
+			   const uint8_t *w){
   c3.horizontal_line(w[0], w[1], w[2], color);
 }
 
 void English::display_time(int YY, int MM, int DD, int hh, int mm, int ss, 
-			   ClockTHREE c3, uint8_t color, uint8_t fade_steps){
+			   ClockTHREE c3, uint8_t color, uint8_t fade_steps
+			   ){
+  display_time(YY, MM, DD, hh, mm, ss, c3, color, fade_steps, (uint8_t)1, 
+	       (uint8_t)1);
+}
+void English::display_time(int YY, int MM, int DD, int hh, int mm, int ss, 
+			   ClockTHREE c3, uint8_t color, uint8_t fade_steps,
+			   uint8_t its_flag, uint8_t minutes_hack_flag){
   uint8_t hour = 0;
   uint8_t hour24 = 0;
   uint8_t h_offset = 0;
@@ -78,8 +39,13 @@ void English::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
   uint32_t *old_display;
 
   old_display = c3.setdisplay(new_display);
-  c3.displayfill(DARK);
-  display_word(c3, color, its);
+  // copy mono rows; clear rest
+  for(int i = 0; i < N_COL; i++){
+    new_display[i] = old_display[i] & 0xc0000000;
+  }
+  if(its_flag){
+    display_word(c3, color, its);
+  }
   if (0 <= mm and mm < 5){
     display_word(c3, color, oclock);
     h_offset = 0;
@@ -224,7 +190,9 @@ void English::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
     display_word(c3, color, night);
   }
 
-  minutes_hack(c3, mm, ss);
+  if(minutes_hack_flag){
+    minutes_hack(c3, mm, ss);
+  }
   c3.setdisplay(old_display);
   c3.fadeto(new_display, fade_steps);
   // copy new_display over
@@ -258,6 +226,6 @@ void minutes_hack(ClockTHREE c3, int mm, int ss){
     break;
   }
   c3.setPixel(15, 4 + mm, color);
-  c3.setPixel(ss / 4, 10, BLUE);
-  c3.setPixel(ss / 4, 11, BLUE);
+  // c3.setPixel(ss / 4, 10, BLUE);
+  // c3.setPixel(ss / 4, 11, BLUE);
 }
