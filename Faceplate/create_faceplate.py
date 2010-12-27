@@ -1,6 +1,8 @@
 from numpy import *
 import PIL.Image
 from reportlab.pdfgen import canvas
+from reportlab.graphics import renderPDF
+from reportlab.graphics.shapes import Drawing, Group, String, Circle, Rect
 from reportlab.lib.units import inch, mm
 from reportlab.lib.colors import pink, black, red, blue, green, white
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Table, TableStyle
@@ -18,6 +20,15 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 pdfmetrics.registerFont(TTFont('Asana-Math', 'fonts/Asana-Math.ttf'))
 pdfmetrics.registerFont(TTFont('ShadheenLipi', 'fonts/ShadheenLipi.ttf'))
+
+adobe2codec = {
+    'WinAnsiEncoding':'winansi',
+    'MacRomanEncoding':'macroman',
+    'MacExpert':'macexpert',
+    'PDFDoc':'pdfdoc',
+    
+    }
+
 
 dx = 9/15. * inch
 dy = 9/15. * inch
@@ -92,6 +103,20 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         t.drawOn(c, XS[0], YS[-2] - dy/2.5)
         for im in images:
             im.drawOn(c)
+        encName = 'winansi'
+        decoder = codecs.lookup(encName)[1]
+        def decodeFunc(txt):
+            if txt is None:
+                return None
+            else:
+                return decoder(txt, errors='replace')[0]        
+        c.drawCentredString(XS[-4] - dx/2, YS[-1] + dy/4,
+                            decodeFunc(chr(186) + 'C'))
+        c.drawCentredString(XS[-3] - dx/2, YS[-1] + dy/4,
+                            decodeFunc(chr(186) + 'F'))
+        c.setLineWidth(1 * mm)
+        c.line(XS[-2], YS[-1],
+               XS[-1], YS[-2])
 
     c.showPage()
     c.save()
@@ -107,7 +132,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
   "IXICLOCKTHREE78-"
   "MORNINGAFTERNOON"
   "THANKVIWEMNEED17"
-  "YMDYMSALARMTCFAN"'''
+  "YMDYMSALARMT  AN"'''
 data = [
         ('I',"T'",'S','X','A','T','E','N','R','Q','U','A','R','T','E','R'),
         ('T','W','E','N','T','Y','F','I','V','E','D','P','A','S','T','O'),
@@ -120,7 +145,7 @@ data = [
         ('I','X','I','C','L','O','C','K','T','H','R','E','E','7','8',' '),
         ('M','O','R','N','I','N','G','A','F','T','E','R','N','O','O','N'),
         ('T','H','A','N','K','V','I','W','E','M','N','E','E','D','1','7'),
-        ('Y','M','D','H','M','S','A','L','A','R','M','T','C','F',' ',' ')]
+        ('Y','M','D','H','M','S','A','L','A','R','M','T',' ',' ',' ',' ')]
 
 bangla = [chr(c % 128) for c in range(16*12)]
 bangla = reshape(bangla, (12, 16))
@@ -129,18 +154,22 @@ print bangla
 print shape(data)
 print shape(bangla)
 
-images = [Image('Images/noun_project_198.png',
-          2.826 * inch, .05 * inch, .3*inch, .4*inch)]
+images = [Image('Images/NounProject/noun_project_198.png',
+                2.826 * inch, .05 * inch, .3*inch, .4*inch),
+          Image('Images/NounProject/noun_project_317.png',
+                XS[-3] + dx * .17, YS[-1] + dy * .07, .4*inch, .5*inch),
+          Image('Images/NounProject/noun_project_317.png',
+                XS[-2] + dx * .17, YS[-1] + dy * .07, .4*inch, .5*inch)]
 
 for i in range(5):
     images.append(Image('Images/hourglass%d.png' % i,
           XS[-2] + dx * .35, YS[5 + i] + dy * .25,
           dx * .3, dy * .56 ))
 
+draw("baffle.pdf", data, images, faceplate=False, baffle=True)
+draw("both.pdf", data, images, faceplate=True, baffle=True)
+draw("bangla.pdf", bangla, images, fontname='ShadheenLipi', faceplate=True, baffle=False)
+draw("times.pdf", bangla, images, fontname='Times-Roman', faceplate=True, baffle=False)
 for fontname in pdfmetrics.getRegisteredFontNames():
     draw("faceplate_%s.pdf" % fontname, data, images, fontname=fontname, faceplate=True, baffle=False)
 
-draw("baffle.pdf", data, images, faceplate=False, baffle=True)
-draw("both.pdf", data, images, faceplate=True, baffle=True)
-
-draw("bangla.pdf", bangla, images, fontname='ShadheenLipi', faceplate=True, baffle=False)
