@@ -1,0 +1,46 @@
+Overview:
+This document describes the serial interface between ClockTHREE and a computer.
+With this interface commands can be sent to:
+     get/set the absolute time YYYY MM DD hh:mm:ss 
+     get/set time of day alarm hh:mm on/off.
+     get/set scrollable message
+     get/set Annual Event ID YYYY MM DD hh:mm:ss MID
+     get/set display (think web cam interface here)
+
+
+Details:
+Baudrate: 115200
+
+A synchronization message is sent at the start of communication and
+every so offten to assure message alignment is maintained.
+
+const uint32_t SYNC_MSG = 0xFEFEFEFE;
+
+Each message will begin with a message id (MID).  The message length will
+be determined by the MID and the message header (for variable length MIDs)
+
+No message length will be longer than 256 bytes.
+
+Message length will include all header information.
+
+Message format:
+    MID [msg_len] data
+
+Fixed length messages:
+MID           length description               payload format 
+0x00               X not used                  NA
+0x01               1 request absolute time     NA
+0x01               5 set absolote time         4 bytes unsigned int (seconds from 00:00 Jan 1, 1970)
+0x02               1 request tod alarm         NA
+0x03               5 set tod alarm             4 bytes unsigned int (seconds from midnight)
+0x04               2 request message           1 byte scrollable ID (SID)
+0x05               2 scroll message            SID
+0x06               2 get annual event          SID
+0x07               6 set annual event          4 bytes unsigned int (seconds from Jan 1) SID
+0x08               1 request display           NA
+0x09          16x4+1 set display               16x4 byte display
+
+Variable length messages.  Payload length is first byte after MID
+
+MID           length description               payload format 
+0x0A  3 + msg length set current msg           1 byte payload length, 1 byte SID, char* msg
