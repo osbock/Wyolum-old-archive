@@ -110,6 +110,41 @@ int getTemp(){
   }
   return temp_c;
 }
+
+uint8_t getTempUnit(){
+  uint8_t temp_unit = 0;
+  Wire.beginTransmission(104); // 104 is DS3231 device address
+  Wire.send(0x0A); // start at register 0x0A
+  Wire.endTransmission();
+  Wire.requestFrom(104, 1); // request 1 byte
+  if(wire.available()){
+    temp_unit = Wire.receive();
+    temp_unit = (temp_unit >> 6) & 1; // use DY/_DT as temp_unit bit
+  }
+  return temp_unit;
+}
+void setTempUnit(uint8_t temp_unit){
+  uint8_t old_byte;
+  // get old value
+  Wire.beginTransmission(104); // 104 is DS3231 device address
+  Wire.requestFrom(104, 1);    // request 1 byte
+  if(wire.available()){
+    old_byte = Wire.receive();
+  }
+  
+  if(((old_byte >> 6) & 1) == ((temp_unit & 1))){
+    // DONE! They are the same.
+  }
+  else{
+    temp_unit = old_byte & ((temp_unit & 1) << 6);
+    Wire.beginTransmission(104); // 104 is DS3231 device address
+    Wire.send(0x0A); // start at register 0A
+    
+    Wire.send(temp_unit);
+    Wire.endTransmission();
+  }
+}
+
 // conversion routines
 int toF(int C){
   return C * 9./5 + 32;

@@ -379,6 +379,7 @@ void Temperature_dec(){
   switchmodes(NORMAL_MODE);
 }
 void Temperature_mode(){
+  setTempUint(temp_unit);
   switchmodes(NORMAL_MODE);
 }
 

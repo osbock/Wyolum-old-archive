@@ -96,6 +96,18 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
     c.showPage()
     c.save()
     print "Wrote %s." % filename
+'''ITSXATENRQUARTER"
+  "TWENTYFIVEDPASTO"
+  "TWELVETWONESEVEN"
+  "FOURFIVESIXTHREE"
+  "EIGHTENINELEVEN-"
+  "BEERCHAIOCLOCKM-"
+  "THIRTYUINITHEAT-"
+  "MIDNIGHTEVENING-"
+  "IXICLOCKTHREE78-"
+  "MORNINGAFTERNOON"
+  "THANKVIWEMNEED17"
+  "YMDYMSALARMTCFAN"'''
 data = [
         ('I',"T'",'S','X','A','T','E','N','R','Q','U','A','R','T','E','R'),
         ('T','W','E','N','T','Y','F','I','V','E','D','P','A','S','T','O'),
@@ -108,7 +120,7 @@ data = [
         ('I','X','I','C','L','O','C','K','T','H','R','E','E','7','8',' '),
         ('M','O','R','N','I','N','G','A','F','T','E','R','N','O','O','N'),
         ('T','H','A','N','K','V','I','W','E','M','N','E','E','D','1','7'),
-        ('Y','O','U','R','!','S','U','P','P','O','R','T','!','!','8','9')]
+        ('Y','M','D','H','M','S','A','L','A','R','M','T','C','F',' ',' ')]
 
 bangla = [chr(c % 128) for c in range(16*12)]
 bangla = reshape(bangla, (12, 16))
