@@ -53,6 +53,7 @@
 
 #include "ClockTHREE.h"
 #include "Time.h"
+#include "rtcBOB.h"
 
 ClockTHREE::ClockTHREE(){
 }
@@ -195,7 +196,7 @@ uint32_t ClockTHREE::getcol(uint8_t xpos){
 void ClockTHREE::setPixel(uint8_t xpos, uint8_t ypos, uint8_t color){
   if(display != NULL){
     // RGB pixels
-    color &= (uint8_t)0b111; // ensure 3 bit color
+    color = getColor(color); 
     if(ypos < N_RGB_ROW and xpos < N_COL){
       // clear pixel
       display[xpos] &= ~((uint32_t)0b111 << (3 * ypos)); 
@@ -329,7 +330,7 @@ void ClockTHREE::displayfill(uint8_t color){
   uint32_t col;
   int i;
   if(display != NULL){
-    color &= 0b111; // ensure 3 bit color
+    color = getColor(color);
     col = 0;
     for(i = 0; i < N_RGB_ROW; i++){
       col |= ((uint32_t)color << (3 * i));
@@ -361,6 +362,23 @@ void ClockTHREE::off(){
   displayfill(DARK);
 }
 
+uint8_t getColor(uint8_t color){
+  if(color < TEMPERATURE_COLOR){
+  }
+  else{
+    int temp_c = getTemp();
+    color = round(BLUE + (float)(temp_c - BLUE_TEMP_C) * (WHITE - BLUE) 
+		  / (WHITE_TEMP_C - BLUE_TEMP_C));
+    if(color < BLUE){
+      color = BLUE;
+    }
+    
+    if(color > WHITE){
+      color = WHITE;
+    }
+  }
+  return color;
+}
 void _delay(unsigned int n){
   unsigned int delayvar;
   delayvar = 0; 

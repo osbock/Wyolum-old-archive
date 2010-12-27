@@ -106,6 +106,13 @@ int getTemp(){
   }
   return temp_c;
 }
+// conversion routines
+int toF(int C){
+  return C * 9./5 + 32;
+}
+int toC(int F){
+  return (F  - 32)* 5./9;
+}
 
 // decimal to binary coded decimal
 uint8_t dec2bcd(int dec){

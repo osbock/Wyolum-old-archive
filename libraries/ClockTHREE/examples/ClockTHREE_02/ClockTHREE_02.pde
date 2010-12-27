@@ -52,9 +52,9 @@ struct Mode{
 uint32_t *display = (uint32_t*)calloc(2 * N_COL, sizeof(uint32_t));
 Mode *mode_p;
 
-const uint8_t N_MODE = 8;
+const uint8_t N_MODE = 9;
 const uint8_t N_MAIN_MODE = 6;
-const uint8_t N_SUB_MODE = 2;
+const uint8_t N_SUB_MODE = 3;
 
 const uint8_t NORMAL_MODE = 0;
 const uint8_t SET_TIME_MODE = 1;
@@ -66,10 +66,13 @@ const uint8_t MODE_MODE = 5;
 // Sub Modes get ID > N_MODE
 const uint8_t SECONDS_MODE = 6;
 const uint8_t ALARM_MODE = 7;
+const uint8_t TEMPERATURE_MODE = 8;
 
 Mode Modes[N_MODE];
 
-typedef enum {YEAR, MONTH, DAY, HOUR, MINUTE, SECOND} unit;
+typedef enum {YEAR, MONTH, DAY, HOUR, MINUTE, SECOND} unit_t;
+typedef enum {DEG_C, DEG_F} temp_unit_t;
+
 // Begin mode declarations
 
 Mode NormalMode = {NORMAL_MODE, 
@@ -81,6 +84,9 @@ Mode SecondsMode = {SECONDS_MODE,
 Mode AlarmMode = {ALARM_MODE, 
 		  'X', Alarm_setup, Alarm_loop, Alarm_exit, 
 		  Alarm_mode, Alarm_mode, Alarm_mode};
+Mode TemperatureMode = {TEMPERATURE_MODE, 'X', 
+			Temperature_setup, Temperature_loop, Temperature_exit, 
+			Temperature_inc, Temperature_dec, Temperature_mode};
 Mode SetTimeMode = {SET_TIME_MODE, 
 		    'T', SetTime_setup,SetTime_loop,SetTime_exit,
 		    SetTime_inc, SetTime_dec, SetTime_mode};
@@ -122,7 +128,8 @@ uint16_t YY;
 uint8_t MM, DD, hh, mm, ss;
 uint8_t ahh, amm, ass;
 boolean tick = true;
-unit SetTime_unit = YEAR;
+unit_t SetTime_unit = YEAR;
+temp_unit_t temp_unit = DEG_C;
 boolean alarm_set = false;
 
 /*
@@ -205,6 +212,7 @@ void setup(void){
   // Sub Modes
   Modes[SECONDS_MODE] = SecondsMode;
   Modes[ALARM_MODE] = AlarmMode;
+  Modes[TEMPERATURE_MODE] = TemperatureMode;
   mode_p->setup();
 
 #ifndef CLOCKTWO
@@ -292,7 +300,7 @@ void Normal_loop(void) {
       lang.display_word(c3, DARK, alarm_on_led);
     }
     lang.display_time(YY, MM, DD, hh, mm, ss,
-		      c3, COLORS[color_i], 16);
+		      c3, getColor(COLORS[color_i]), 16);
     tick = false;
   }
   else{
@@ -312,6 +320,7 @@ void Normal_inc(void) {
   switchmodes(SECONDS_MODE);
 }
 void Normal_dec(void) {
+  switchmodes(TEMPERATURE_MODE);
 }
 void Normal_mode(void) {
   switchmodes(MODE_MODE);
@@ -331,6 +340,45 @@ void Seconds_loop(){
 void Seconds_exit(void) {
 }
 void Seconds_mode(){
+  switchmodes(NORMAL_MODE);
+}
+
+// Sub mode of normal mode ** display seconds
+void Temperature_setup(void){
+  if(temp_unit == DEG_C){
+    lang.display_word(c3, MONO, c_led);
+  }
+  else{
+    lang.display_word(c3, MONO, f_led);
+  }
+}
+void Temperature_loop(){
+  int temp = getTemp();
+  if(temp_unit == DEG_F){
+    temp = toF(temp);
+  }
+  two_digits(temp);
+  c3.refresh(16);
+}
+void Temperature_exit(void) {
+}
+// toggle temp_unit
+void Temperature_inc(){
+  if(temp_unit == DEG_F){
+    temp_unit = DEG_C;
+    lang.display_word(c3, DARK, f_led);
+    lang.display_word(c3, getColor(COLORS[color_i]), c_led);
+  }
+  else{
+    temp_unit = DEG_F;
+    lang.display_word(c3, DARK, c_led);
+    lang.display_word(c3, getColor(COLORS[color_i]), f_led);
+  }
+}
+void Temperature_dec(){
+  switchmodes(NORMAL_MODE);
+}
+void Temperature_mode(){
   switchmodes(NORMAL_MODE);
 }
 
@@ -504,12 +552,10 @@ void SetTime_mode(void) {
    Initalize mode.
 */
 void SetAlarm_setup(void){
-  lang.display_word(c3, COLORS[color_i], alarm);
+  lang.display_word(c3, MONO, alarm);
   lang.display_time(YY, MM, DD, ahh, amm, ass,
-		    c3, COLORS[color_i], 0, false, false);
-  lang.display_word(c3, COLORS[color_i], hour_led);
-  lang.display_word(c3, DARK, alarm_off_led);
-  lang.display_word(c3, DARK, alarm_on_led);
+		    c3, getColor(COLORS[color_i]), 0, false, false);
+  lang.display_word(c3, MONO, hour_led);
   SetTime_unit = HOUR;
 }
 void SetAlarm_loop(void){
@@ -529,13 +575,13 @@ void SetAlarm_inc(void){
   case HOUR:
     ahh = (ahh + 1) % 24;
     lang.display_time(YY, MM, DD, ahh, amm, ass,
-		      c3, COLORS[color_i], 0, false, false);
+		      c3, getColor(COLORS[color_i]), 0, false, false);
     break;
   case MINUTE:
     amm = (amm + 5) % 60;
     ass = 0;
     lang.display_time(YY, MM, DD, ahh, amm, ass,
-		      c3, COLORS[color_i], 0, false, false);
+		      c3, getColor(COLORS[color_i]), 0, false, false);
     break;
   case SECOND:
     if(!alarm_set){
@@ -564,7 +610,7 @@ void SetAlarm_dec(void){
       ahh--;
     }
     lang.display_time(YY, MM, DD, ahh, amm, ass,
-		      c3, COLORS[color_i], 0, false, false);
+		      c3, getColor(COLORS[color_i]), 0, false, false);
     break;
   case MINUTE:
     if(amm < 5){
@@ -575,7 +621,7 @@ void SetAlarm_dec(void){
     }
     ass = 0;
     lang.display_time(YY, MM, DD, ahh, amm, ass,
-		      c3, COLORS[color_i], 0, false, false);
+		      c3, getColor(COLORS[color_i]), 0, false, false);
     break;
   case SECOND:
     if(!alarm_set){
@@ -598,7 +644,7 @@ void SetAlarm_mode(void){
   case HOUR:
     SetTime_unit = MINUTE;
     lang.display_word(c3, DARK, hour_led);
-    lang.display_word(c3, COLORS[color_i], minute_led);
+    lang.display_word(c3, getColor(COLORS[color_i]), minute_led);
     break;
   case MINUTE:
     SetTime_unit = SECOND;
@@ -626,12 +672,17 @@ void SetColor_setup(void) {
 }
 void SetColor_loop(void) {
   if(color_i == DARK){
-    c3.displayfill(RED);
+    c3.displayfill(DARK);
+    c3.moveto(        0,         0);
+    c3.lineto(N_COL - 1,         0, MONO);
+    c3.lineto(N_COL - 1, N_ROW - 1, MONO);
+    c3.lineto(        0, N_ROW - 1, MONO);
+    c3.lineto(        0,         0, MONO);
   }
   else{
     c3.clear();
+    font.getChar('0' + color_i, getColor(COLORS[color_i]), display + 5);
   }
-  font.getChar('0' + color_i, COLORS[color_i], display + 5);
   c3.refresh(16);
 }
 /*
@@ -649,7 +700,7 @@ void SetColor_inc(void) {
 }
 
 void SetColor_dec(void) {
-  if(mode_counter == 0){
+  if(color_i == 0){
     color_i = N_COLOR - 1;// DARK=OFF
   }
   else{
@@ -733,6 +784,6 @@ void switchmodes(uint8_t new_mode_id){
 }
 
 void two_digits(uint8_t val){
-  font.getChar('0' + val / 10, COLORS[color_i], display + 2);
-  font.getChar('0' + val % 10, COLORS[color_i], display + 9);
+  font.getChar('0' + val / 10, getColor(COLORS[color_i]), display + 2);
+  font.getChar('0' + val % 10, getColor(COLORS[color_i]), display + 9);
 }

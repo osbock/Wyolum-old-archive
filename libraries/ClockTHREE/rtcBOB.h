@@ -22,6 +22,10 @@ void setRTC_alarm(uint8_t ahh, uint8_t amm, uint8_t ass, uint8_t alarm_Set);
 // return temperature in degrees C
 int getTemp();
 
+// conversion routines
+int toF(int C);
+int toC(int F);
+
 // decimal to binary coded decimal
 uint8_t dec2bcd(int dec);
 

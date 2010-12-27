@@ -58,7 +58,7 @@ With the understanding that:
 const int     N_ROW = 12;
 const int N_RGB_ROW = 10;
 const int     N_COL = 16;
-const int   N_COLOR = 8;
+const int   N_COLOR = 9;
 
 const int               DBG = 12;
 const int COL_DRIVER_ENABLE = 17;
@@ -93,17 +93,24 @@ const uint8_t  REDGREEN = RED | GREEN;
 const uint8_t   REDBLUE = RED | BLUE;
 const uint8_t     WHITE = 0b111;
 
+// not a real color, use temperature for color;
+const uint8_t TEMPERATURE_COLOR = 8; 
+const uint8_t BLUE_TEMP_C = 15;
+const uint8_t WHITE_TEMP_C = 33;
+
 const uint8_t MONO = BLUE;
 
-const uint8_t COLORS[] = {
+// cold to warm
+const uint8_t COLORS[N_COLOR] = {
   DARK,
-  RED,
-  GREEN,
   BLUE,
-  REDGREEN,
-  REDBLUE,
   GREENBLUE,
-  WHITE
+  GREEN,
+  REDBLUE,
+  REDGREEN,
+  RED,
+  WHITE,
+  TEMPERATURE_COLOR // hidden color for temperature control
 };
 
 class ClockTHREE
@@ -209,6 +216,7 @@ class ClockTHREE
   
  private:
 };
+uint8_t getColor(uint8_t color);
 void _delay(unsigned int n);
 
 #endif

@@ -14,7 +14,7 @@
   "IXICLOCKTHREE78-"
   "MORNINGAFTERNOON"
   "THANKVIWEMNEED17"
-  "UYMDYMSALARMT!!A";
+  "YMDYMSALARMTCFAN";
 */
 const uint8_t its[3] = {0, 0, 3};
 const uint8_t a[3] = {0, 4, 1};
@@ -70,6 +70,8 @@ const uint8_t hour_led[3] = {11, 4, 1};
 const uint8_t minute_led[3] = {11, 5, 1};
 const uint8_t second_led[3] = {11, 6, 1};
 const uint8_t alarm[3] = {11, 7, 5};
+const uint8_t c_led[3] = {11, 12, 1};
+const uint8_t f_led[3] = {11, 13, 1};
 const uint8_t alarm_on_led[3] = {11, 14, 1};
 const uint8_t alarm_off_led[3] = {11, 15, 1};
 
