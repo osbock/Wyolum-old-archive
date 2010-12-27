@@ -67,11 +67,12 @@ const uint8_t MODE_MODE = 5;
 const uint8_t SECONDS_MODE = 6;
 const uint8_t ALARM_MODE = 7;
 const uint8_t TEMPERATURE_MODE = 8;
+const uint8_t DEG_C = 0;
+const uint8_t DEG_F = 1;
 
 Mode Modes[N_MODE];
 
 typedef enum {YEAR, MONTH, DAY, HOUR, MINUTE, SECOND} unit_t;
-typedef enum {DEG_C, DEG_F} temp_unit_t;
 
 // Begin mode declarations
 
@@ -129,7 +130,7 @@ uint8_t MM, DD, hh, mm, ss;
 uint8_t ahh, amm, ass;
 boolean tick = true;
 unit_t SetTime_unit = YEAR;
-temp_unit_t temp_unit = DEG_C;
+uint8_t temp_unit = DEG_C;
 boolean alarm_set = false;
 
 /*
@@ -197,7 +198,7 @@ void setup(void){
   setSyncProvider(getTime);      // RTC
   setSyncInterval(3600000);      // update hour (and on boot)
   update_time();
-  getRTC_alarm(&ahh, &amm, &ass, &alarm_set, &temp_unit);
+  getRTC_alarm(&ahh, &amm, &ass, &alarm_set);
 
   mode_p = &NormalMode;
 
@@ -287,18 +288,18 @@ void loop(void){
 */
 void Normal_setup(void){
   tick = true;
+  if(alarm_set){
+    lang.display_word(c3, DARK, alarm_off_led);
+    lang.display_word(c3, MONO, alarm_on_led);
+  }
+  else{
+    lang.display_word(c3, DARK, alarm_off_led);
+    lang.display_word(c3, DARK, alarm_on_led);
+  }
 }
 void Normal_loop(void) {
   if((count == 0 || ss % 6 == 0 || ss % 4 == 0) && tick){
     // minutes hack updates every six seconds 
-    if(alarm_set){
-      lang.display_word(c3, DARK, alarm_off_led);
-      lang.display_word(c3, MONO, alarm_on_led);
-    }
-    else{
-      lang.display_word(c3, DARK, alarm_off_led);
-      lang.display_word(c3, DARK, alarm_on_led);
-    }
     lang.display_time(YY, MM, DD, hh, mm, ss,
 		      c3, getColor(COLORS[color_i]), 16);
     tick = false;
@@ -367,19 +368,18 @@ void Temperature_inc(){
   if(temp_unit == DEG_F){
     temp_unit = DEG_C;
     lang.display_word(c3, DARK, f_led);
-    lang.display_word(c3, getColor(COLORS[color_i]), c_led);
+    lang.display_word(c3, MONO, c_led);
   }
   else{
     temp_unit = DEG_F;
     lang.display_word(c3, DARK, c_led);
-    lang.display_word(c3, getColor(COLORS[color_i]), f_led);
+    lang.display_word(c3, MONO, f_led);
   }
 }
 void Temperature_dec(){
   switchmodes(NORMAL_MODE);
 }
 void Temperature_mode(){
-  setTempUint(temp_unit);
   switchmodes(NORMAL_MODE);
 }
 
@@ -566,7 +566,7 @@ void SetAlarm_loop(void){
   Get ready for next mode.
  */
 void SetAlarm_exit(void){
-  setRTC_alarm(ahh, amm, ass, alarm_set, temp_unit);
+  setRTC_alarm(ahh, amm, ass, alarm_set);
 }
 /*
   Respond to button presses.
@@ -645,7 +645,7 @@ void SetAlarm_mode(void){
   case HOUR:
     SetTime_unit = MINUTE;
     lang.display_word(c3, DARK, hour_led);
-    lang.display_word(c3, getColor(COLORS[color_i]), minute_led);
+    lang.display_word(c3, MONO, minute_led);
     break;
   case MINUTE:
     SetTime_unit = SECOND;
@@ -719,7 +719,7 @@ void SetColor_mode(void) {
 */
 void PC_setup(void){
   tick = true;
-  lang.display_word(c3, MONO, usb_led);
+  // lang.display_word(c3, MONO, usb_led);
   Serial.begin(9600);
 }
 void PC_loop(void) {

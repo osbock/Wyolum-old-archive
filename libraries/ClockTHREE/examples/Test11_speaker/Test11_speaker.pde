@@ -128,6 +128,7 @@ This example code is in the public domain.
 #include "ClockTHREE.h"
 #include "SPI.h"
 #include "english.h"
+#include "Time.h"
 
 // globals
 ClockTHREE c3 = ClockTHREE();

@@ -10,6 +10,8 @@
 
 #include "ClockTHREE.h"
 #include "SPI.h"
+#include "Wire.h"
+#include "Time.h"
 
 const uint8_t N_DISPLAY = 8;
 ClockTHREE c3 = ClockTHREE();

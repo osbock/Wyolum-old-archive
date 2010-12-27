@@ -19,6 +19,9 @@ void setRTC(uint16_t YY, uint8_t MM, uint8_t DD,
 void getRTC_alarm(uint8_t *ahh, uint8_t *amm, uint8_t *ass, uint8_t *alarm_set);
 void setRTC_alarm(uint8_t ahh, uint8_t amm, uint8_t ass, uint8_t alarm_Set);
 
+uint8_t getTempUnit();
+void setTempUnit(uint8_t temp_unit);
+
 // return temperature in degrees C
 int getTemp();
 

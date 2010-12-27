@@ -8,6 +8,8 @@
 
 #include "ClockTHREE.h"
 #include "SPI.h"
+#include "Wire.h"
+#include "Time.h"
 
 ClockTHREE c3 = ClockTHREE();
 uint32_t *display = (uint32_t*)calloc(N_COL, sizeof(uint32_t));

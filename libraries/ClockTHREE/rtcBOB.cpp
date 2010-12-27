@@ -54,19 +54,20 @@ void setRTC(uint16_t YY, uint8_t MM, uint8_t DD,
 
 }
 
-void setRTC_alarm(uint8_t ahh, uint8_t amm, uint8_t ass, uint8_t alarm_set, uint8_t temp_unit){
+void setRTC_alarm(uint8_t ahh, uint8_t amm, uint8_t ass, uint8_t alarm_set){
   Wire.beginTransmission(104); // 104 is DS3231 device address
   Wire.send(0x7); // start at register 0
   
   Wire.send(dec2bcd(ass)); //Send seconds as BCD
   Wire.send(dec2bcd(amm)); //Send minutes as BCD
   Wire.send(dec2bcd(ahh)); //Send hours as BCD
-  Wire.send(((temp_uint & 1) << 6) || ((alarm_set & 1) << 7)); // use A1M4 as alarm_set bit, DY/_DT as temp_unit bit
+  Wire.send((alarm_set & 1) << 7);  // use A1M4 as alarm_set bit
   Wire.endTransmission();  
 
 }
 
-void getRTC_alarm(uint8_t *ahh, uint8_t *amm, uint8_t *ass, uint8_t *alarm_set, uint8_t *temp_unit){
+void getRTC_alarm(uint8_t *ahh, uint8_t *amm, uint8_t *ass, 
+		  uint8_t *alarm_set){
   uint8_t x;
 
   Wire.beginTransmission(104); // 104 is DS3231 device address
@@ -79,7 +80,6 @@ void getRTC_alarm(uint8_t *ahh, uint8_t *amm, uint8_t *ass, uint8_t *alarm_set, 
     *ahh = bcd2dec(Wire.receive());
     x = Wire.receive();
     *alarm_set = (x >> 7) & 1; // use A1M4 as set bit
-    *temp_unit = (x >> 6) & 1; // use DY/_DT as temp_unit bit
   }
   else{
     *ass = 0;
@@ -109,40 +109,6 @@ int getTemp(){
     temp_c = 99;
   }
   return temp_c;
-}
-
-uint8_t getTempUnit(){
-  uint8_t temp_unit = 0;
-  Wire.beginTransmission(104); // 104 is DS3231 device address
-  Wire.send(0x0A); // start at register 0x0A
-  Wire.endTransmission();
-  Wire.requestFrom(104, 1); // request 1 byte
-  if(wire.available()){
-    temp_unit = Wire.receive();
-    temp_unit = (temp_unit >> 6) & 1; // use DY/_DT as temp_unit bit
-  }
-  return temp_unit;
-}
-void setTempUnit(uint8_t temp_unit){
-  uint8_t old_byte;
-  // get old value
-  Wire.beginTransmission(104); // 104 is DS3231 device address
-  Wire.requestFrom(104, 1);    // request 1 byte
-  if(wire.available()){
-    old_byte = Wire.receive();
-  }
-  
-  if(((old_byte >> 6) & 1) == ((temp_unit & 1))){
-    // DONE! They are the same.
-  }
-  else{
-    temp_unit = old_byte & ((temp_unit & 1) << 6);
-    Wire.beginTransmission(104); // 104 is DS3231 device address
-    Wire.send(0x0A); // start at register 0A
-    
-    Wire.send(temp_unit);
-    Wire.endTransmission();
-  }
 }
 
 // conversion routines

@@ -11,6 +11,8 @@
 
 #include "ClockTHREE.h"
 #include "SPI.h"
+#include "Time.h"
+#include "Wire.h"
 
 // Example 06A: Blink LED at a rate specified by the
 // value of the analogue input

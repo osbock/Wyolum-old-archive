@@ -11,6 +11,8 @@
 #include <Wire.h>
 #include "SPI.h"
 #include "ClockTHREE.h"
+#include "Time.h"
+#include "rtcBOB.h"
 
 void setup(){
   // start Wire proto
