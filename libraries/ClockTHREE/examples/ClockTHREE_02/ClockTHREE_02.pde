@@ -326,7 +326,7 @@ void Seconds_loop(){
     tick = false;
     two_digits(ss);
   }
-  c3.refresh(32);
+  c3.refresh(16);
 }
 void Seconds_exit(void) {
 }
@@ -347,7 +347,7 @@ void Alarm_loop(){
   else{
     noTone(SPEAKER_PIN);
   }
-  c3.refresh(32);
+  c3.refresh(16);
 }
 void Alarm_exit(void) {
   // resync with RTC and start ticking again
@@ -373,19 +373,19 @@ void SetTime_setup(void){
 void SetTime_loop(void) {
   switch(SetTime_unit){
   case YEAR:
-    two_digit(YY % 100);
+    two_digits(YY % 100);
     break;
   case MONTH:
-    two_digit(MM);
+    two_digits(MM);
     break;
   case DAY:
-    two_digit(DD);
+    two_digits(DD);
     break;
   case HOUR:
-    two_digit(hh);
+    two_digits(hh);
     break;
   case MINUTE:
-    two_digit(mm);
+    two_digits(mm);
     break;
   default:
     break;
@@ -623,10 +623,16 @@ void SetAlarm_mode(void){
    Initalize mode.
 */
 void SetColor_setup(void) {
-  tick=true;
 }
 void SetColor_loop(void) {
-  Normal_loop();
+  if(color_i == DARK){
+    c3.displayfill(RED);
+  }
+  else{
+    c3.clear();
+  }
+  font.getChar('0' + color_i, COLORS[color_i], display + 5);
+  c3.refresh(16);
 }
 /*
   Get ready for next mode.
@@ -688,12 +694,12 @@ void PC_mode(void) {
 
 // Begin Mode Mode Code (TODO use one file per mode)
 void Mode_setup(void) {
-  font.getChar('M', GREENBLUE, display);
+  font.getChar('M', BLUE, display);
   mode_counter = 1;
-  font.getChar(Modes[mode_counter].sym, RED, display + 8);
+  font.getChar(Modes[mode_counter].sym, BLUE, display + 8);
 }
 void Mode_loop(void) {
-  c3.refresh(100);
+  c3.refresh(16);
 }
 void Mode_exit(void) {
   digitalWrite(DBG, LOW);
@@ -702,7 +708,7 @@ void Mode_inc(void) {
   digitalWrite(DBG, HIGH);
   mode_counter++;
   mode_counter %= N_MAIN_MODE - 1; // skip ModeMode
-  font.getChar(Modes[mode_counter].sym, RED, display + 8);
+  font.getChar(Modes[mode_counter].sym, BLUE, display + 8);
 }
 void Mode_dec(void) {
   digitalWrite(DBG, HIGH);
