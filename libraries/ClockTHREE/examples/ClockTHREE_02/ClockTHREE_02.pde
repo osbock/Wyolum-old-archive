@@ -197,7 +197,7 @@ void setup(void){
   setSyncProvider(getTime);      // RTC
   setSyncInterval(3600000);      // update hour (and on boot)
   update_time();
-  getRTC_alarm(&ahh, &amm, &ass, &alarm_set);
+  getRTC_alarm(&ahh, &amm, &ass, &alarm_set, &temp_unit);
 
   mode_p = &NormalMode;
 
@@ -565,7 +565,7 @@ void SetAlarm_loop(void){
   Get ready for next mode.
  */
 void SetAlarm_exit(void){
-  setRTC_alarm(ahh, amm, ass, alarm_set);
+  setRTC_alarm(ahh, amm, ass, alarm_set, temp_unit);
 }
 /*
   Respond to button presses.

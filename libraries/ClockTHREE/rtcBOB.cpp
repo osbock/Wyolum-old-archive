@@ -54,19 +54,21 @@ void setRTC(uint16_t YY, uint8_t MM, uint8_t DD,
 
 }
 
-void setRTC_alarm(uint8_t ahh, uint8_t amm, uint8_t ass, uint8_t alarm_set){
+void setRTC_alarm(uint8_t ahh, uint8_t amm, uint8_t ass, uint8_t alarm_set, uint8_t temp_unit){
   Wire.beginTransmission(104); // 104 is DS3231 device address
   Wire.send(0x7); // start at register 0
   
   Wire.send(dec2bcd(ass)); //Send seconds as BCD
   Wire.send(dec2bcd(amm)); //Send minutes as BCD
   Wire.send(dec2bcd(ahh)); //Send hours as BCD
-  Wire.send((alarm_set & 1) << 7); // use A1M4 as set bit
+  Wire.send(((temp_uint & 1) << 6) || ((alarm_set & 1) << 7)); // use A1M4 as alarm_set bit, DY/_DT as temp_unit bit
   Wire.endTransmission();  
 
 }
 
-void getRTC_alarm(uint8_t *ahh, uint8_t *amm, uint8_t *ass, uint8_t *alarm_set){
+void getRTC_alarm(uint8_t *ahh, uint8_t *amm, uint8_t *ass, uint8_t *alarm_set, uint8_t *temp_unit){
+  uint8_t x;
+
   Wire.beginTransmission(104); // 104 is DS3231 device address
   Wire.send(0x7); // start at register 0x7
   Wire.endTransmission();
@@ -75,7 +77,9 @@ void getRTC_alarm(uint8_t *ahh, uint8_t *amm, uint8_t *ass, uint8_t *alarm_set){
     *ass = bcd2dec(Wire.receive());
     *amm = bcd2dec(Wire.receive());
     *ahh = bcd2dec(Wire.receive());
-    *alarm_set = (Wire.receive() >> 7) & 1; // use A1M4 as set bit
+    x = Wire.receive();
+    *alarm_set = (x >> 7) & 1; // use A1M4 as set bit
+    *temp_unit = (x >> 6) & 1; // use DY/_DT as temp_unit bit
   }
   else{
     *ass = 0;

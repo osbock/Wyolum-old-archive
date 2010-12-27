@@ -12,7 +12,7 @@ Details:
 Baudrate: 115200
 
 A synchronization message is sent at the start of communication and
-every so offten to assure message alignment is maintained.
+every so often to assure message alignment is maintained.
 
 const uint32_t SYNC_MSG = 0xFEFEFEFE;
 

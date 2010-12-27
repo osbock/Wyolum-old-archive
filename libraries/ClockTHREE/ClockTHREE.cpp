@@ -113,8 +113,13 @@ void ClockTHREE::refresh(int n_hold){
 	// transfer column to row drivers
 	SPI.transfer(Column.dat8[3]);
 	SPI.transfer(Column.dat8[2]);
+#ifdef SLOW_TRANS
+	PORTC |= 0b00001000; // Disable col driver 
+	SPI.transfer(Column.dat8[1]);
+#else
 	SPI.transfer(Column.dat8[1]);
 	PORTC |= 0b00001000; // Disable col driver 
+#endif
 	SPI.transfer(Column.dat8[0]);
 	PORTB |= 0b00000010; // Start latch pulse 
 	PORTB &= 0b11111101; // End latch pulse 
