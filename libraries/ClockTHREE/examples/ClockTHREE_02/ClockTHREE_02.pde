@@ -123,7 +123,6 @@ uint8_t MM, DD, hh, mm, ss;
 uint8_t ahh, amm, ass;
 boolean tick = true;
 unit SetTime_unit = YEAR;
-boolean SetMode_first_press = true;
 boolean alarm_set = false;
 
 /*
@@ -369,20 +368,24 @@ void SetTime_setup(void){
   MsTimer2::stop(); // Ticks stop while setting time
   getTime(); // sync with rtcBOB
   SetTime_unit = YEAR;
-  font.getChar('Y', COLORS[color_i], display + 5);
-  c3.setPixel(0, 11, MONO);
+  lang.display_word(c3, MONO, year_led);
 }
 void SetTime_loop(void) {
   switch(SetTime_unit){
   case YEAR:
+    two_digit(YY % 100);
     break;
   case MONTH:
+    two_digit(MM);
     break;
   case DAY:
+    two_digit(DD);
     break;
   case HOUR:
+    two_digit(hh);
     break;
   case MINUTE:
+    two_digit(mm);
     break;
   default:
     break;
@@ -402,120 +405,93 @@ void SetTime_exit(void) {
 void SetTime_inc(void) {
   switch(SetTime_unit){
   case YEAR:
-    if(!SetMode_first_press){
-      YY++;
-    }
+    YY++;
     two_digits(YY % 100);
     break;
   case MONTH:
-    if(!SetMode_first_press){
-      MM = (MM + 1) % 13;
-      if(MM == 0){
-	MM = 1;
-      }
+    MM = (MM + 1) % 13;
+    if(MM == 0){
+      MM = 1;
     }
     two_digits(MM);
     break;
   case DAY:
-    if(!SetMode_first_press){
-      DD = (DD + 1) % (MONTHS[MM] + LEAP_YEAR(YY) + 1);
-      if(DD == 0){
-	DD = 1;
-      }
+    DD = (DD + 1) % (MONTHS[MM] + LEAP_YEAR(YY) + 1);
+    if(DD == 0){
+      DD = 1;
     }
     two_digits(DD);
     break;
   case HOUR:
-    if(!SetMode_first_press){
-      hh = (hh + 1) % 24;
-    }
+    hh = (hh + 1) % 24;
     two_digits(hh);
     break;
   case MINUTE:
-    if(!SetMode_first_press){
-      mm = (mm + 1) % 60;
-      ss = 0;
-    }
+    mm = (mm + 1) % 60;
+    ss = 0;
     two_digits(mm);
     break;
   }
-  SetMode_first_press = false;
 }
 void SetTime_dec(void) {
   switch(SetTime_unit){
   case YEAR:
-    if(!SetMode_first_press){
-      YY--;
-    }
+    YY--;
     two_digits(YY % 100);
     break;
   case MONTH:
-    if(!SetMode_first_press){
-      MM = (MM - 1) % 13;
-      if(MM == 0){
-	MM = 12;
-      }
+    MM = (MM - 1) % 13;
+    if(MM == 0){
+      MM = 12;
     }
     two_digits(MM);
     break;
   case DAY:
-    if(!SetMode_first_press){
-      DD = (DD - 1) % (MONTHS[MM] + LEAP_YEAR(YY) + 1);
-      if(DD == 0){
-	DD = 1;
-      }
+    DD = (DD - 1) % (MONTHS[MM] + LEAP_YEAR(YY) + 1);
+    if(DD == 0){
+      DD = 1;
     }
     two_digits(DD);
     break;
   case HOUR:
-    if(!SetMode_first_press){
-      if(hh == 1){
-	hh = 23; // uint cannot go neg
-      }
-      else{
-	hh--;
-      }
+    if(hh == 1){
+      hh = 23; // uint cannot go neg
+    }
+    else{
+      hh--;
     }
     two_digits(hh);
     break;
   case MINUTE:
-    if(!SetMode_first_press){
-      if(mm == 0){
-	mm = 59; // uint cannot go neg
-      }
-      else{
-	mm--;
-      }
-      ss = 0;
+    if(mm == 0){
+      mm = 59; // uint cannot go neg
     }
+    else{
+      mm--;
+    }
+    ss = 0;
     two_digits(mm);
     break;
   }
-  SetMode_first_press = false;
 }
 void SetTime_mode(void) {
   c3.clear();
-  SetMode_first_press = true;
   switch(SetTime_unit){
   case YEAR:
     SetTime_unit = MONTH;
-    font.getChar('M', COLORS[color_i], display + 5);
-    c3.setPixel(1, 11, MONO);
+    lang.display_word(c3, MONO, month_led);
     break;
   case MONTH:
     SetTime_unit = DAY;
-    font.getChar('D', COLORS[color_i], display + 5);
-    c3.setPixel(2, 11, MONO);
+    lang.display_word(c3, MONO, day_led);
     break;
   case DAY:
     SetTime_unit = HOUR;
-    font.getChar('h', COLORS[color_i], display + 5);
-    c3.setPixel(3, 11, MONO);
+    lang.display_word(c3, MONO, hour_led);
     break;
   case HOUR:
     SetTime_unit = MINUTE;
-    font.getChar('m', COLORS[color_i], display + 5);
-    c3.setPixel(4, 11, MONO);
+    lang.display_word(c3, MONO, minute_led);
     break;
   default:
     switchmodes(NORMAL_MODE);
