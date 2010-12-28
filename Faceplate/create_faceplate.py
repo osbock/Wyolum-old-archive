@@ -1,3 +1,13 @@
+'''
+download fonts from: 
+    http://openfontlibrary.org
+    http://code.google.com/webfonts
+    http://www.font-zone.com/
+
+download images from:
+    thenounproject.com
+    
+'''
 from numpy import *
 import PIL.Image
 from reportlab.pdfgen import canvas
@@ -15,11 +25,12 @@ from numpy import arange
 # http://commons.wikimedia.org/wiki/File:GreenHourglass.svg
 
 import reportlab.rl_config
+import codecs
 reportlab.rl_config.warnOnMissingFontGlyphs = 0
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-pdfmetrics.registerFont(TTFont('Asana-Math', 'fonts/Asana-Math.ttf'))
-pdfmetrics.registerFont(TTFont('ShadheenLipi', 'fonts/ShadheenLipi.ttf'))
+import glob
+import os.path
 
 adobe2codec = {
     'WinAnsiEncoding':'winansi',
@@ -70,26 +81,43 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
     # c.drawString(0 * inch, 5 * inch, 'HelloWorld')
     
     c.setLineWidth(1/16. * inch)
-    if baffle:
-        c.grid(XS, YS)
-        c.rect(XS[0], YS[-1], XS[-1] - XS[0], YS[0] - YS[-1])
     hole_sepx = 2.920
     hole_sepy = 2.887
     startx = .172
     starty = .172
     r = .172 / 4
-    mounts = [(startx, starty)]
-    for i in range(5):
+    mounts = [(startx, starty)] # lower left
+    for i in range(5):          
         if i != 1:
-            mounts.append((startx + i * hole_sepx, starty))
-        mounts.append((startx + i * hole_sepx, starty + hole_sepy * 3))
+            mounts.append((startx + i * hole_sepx, starty))             # bottom row
+        mounts.append((startx + i * hole_sepx, starty + hole_sepy * 3)) # top row
+
+    SW = mounts[0]
+    NW = mounts[1]
+    SE = mounts[-2]
+    NE = mounts[-1]
     for i in range(1, 3):
         mounts.append((startx + 4 * hole_sepx, starty + i * hole_sepy))
         mounts.append((startx, starty + i * hole_sepy))
         
+    if baffle:
+        c.setLineJoin(1)
+        lw = 1/32. * inch
+        c.setLineWidth(1./64*inch)
+        # c.grid(XS, YS)
+        # c.rect(XS[0], YS[-1], XS[-1] - XS[0], YS[0] - YS[-1])
+        for x in XS[:-1]:
+            for y in YS[1:]:
+                c.rect(x + lw, y + lw, dx - lw, dy -lw)
+
+        # bug
+        c.rect(2.826 * inch, .05 * inch, .3*inch, .4*inch)
+        # ClockTHREE
+        c.rect(W - .75*inch, H - (3.3875 + .5)*inch, .5*inch, .5*inch)
+
     c.setLineWidth(1/64. * inch)
     for x, y in mounts:
-        c.circle(x*inch, y*inch, r*inch, fill=True)
+        c.circle(x*inch, y*inch, r*inch, fill=False)
 
     t=Table(data, N_COL*[dx], N_ROW*[dy])
     t.setStyle(TableStyle(
@@ -115,8 +143,9 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         c.drawCentredString(XS[-3] - dx/2, YS[-1] + dy/4,
                             decodeFunc(chr(186) + 'F'))
         c.setLineWidth(1 * mm)
-        c.line(XS[-2], YS[-1],
-               XS[-1], YS[-2])
+        c.setLineJoin(1)
+        c.line(XS[-2] + dx/10., YS[-1] + dx/10.,
+               XS[-1] - dx/10., YS[-2] - dy/10.)
 
     c.showPage()
     c.save()
@@ -142,34 +171,73 @@ data = [
         ('B','E','E','R','C','H','A','I',"O'",'C','L','O','C','K','M',' '),
         ('T','H','I','R','T','Y','U','I','N','I','T','H','E','A','T',' '),
         ('M','I','D','N','I','G','H','T','E','V','E','N','I','N','G',' '),
-        ('I','X','I','C','L','O','C','K','T','H','R','E','E','7','8',' '),
+        ('T','J','S','C','L','O','C','K','T','H','R','E','E','A','M',' '),
         ('M','O','R','N','I','N','G','A','F','T','E','R','N','O','O','N'),
-        ('T','H','A','N','K','V','I','W','E','M','N','E','E','D','1','7'),
-        ('Y','M','D','H','M','S','A','L','A','R','M','T',' ',' ',' ',' ')]
+        ('E','G','S','W','Y','O','L','U','M','A','C','S','E','C','S','H'),
+        (' ','Y','M','D','H','M','S','A','L','A','R','M',' ',' ',' ',' ')]
 
 bangla = [chr(c % 128) for c in range(16*12)]
 bangla = reshape(bangla, (12, 16))
 bangla = [tuple(l) for l in bangla]
-print bangla
-print shape(data)
-print shape(bangla)
 
-images = [Image('Images/NounProject/noun_project_198.png',
-                2.826 * inch, .05 * inch, .3*inch, .4*inch),
-          Image('Images/NounProject/noun_project_317.png',
+images = [Image('Images/NounProject/noun_project_198.png',                       # BUG
+                2.826 * inch, .05 * inch, .3*inch, .4*inch),                
+          Image('Images/NounProject/noun_project_317.png',                       # DEG  
                 XS[-3] + dx * .17, YS[-1] + dy * .07, .4*inch, .5*inch),
-          Image('Images/NounProject/noun_project_317.png',
-                XS[-2] + dx * .17, YS[-1] + dy * .07, .4*inch, .5*inch)]
+          Image('Images/NounProject/noun_project_317.png',                       # DEG
+                XS[-2] + dx * .17, YS[-1] + dy * .07, .4*inch, .5*inch),
+          Image('Images/NounProject/noun_project_140.png',                       # USB
+                XS[0] + dx * .37, YS[-1] + dy * .25, .17*inch, .34*inch),
+          Image('Images/ClockTHREE_soft.gif',                                    # ClockTHREE
+                W - .75*inch, H - (3.3875 + .5)*inch, .5*inch, .5*inch),
+
+]
 
 for i in range(5):
     images.append(Image('Images/hourglass%d.png' % i,
           XS[-2] + dx * .35, YS[5 + i] + dy * .25,
           dx * .3, dy * .56 ))
 
-draw("baffle.pdf", data, images, faceplate=False, baffle=True)
-draw("both.pdf", data, images, faceplate=True, baffle=True)
-draw("bangla.pdf", bangla, images, fontname='ShadheenLipi', faceplate=True, baffle=False)
-draw("times.pdf", bangla, images, fontname='Times-Roman', faceplate=True, baffle=False)
-for fontname in pdfmetrics.getRegisteredFontNames():
-    draw("faceplate_%s.pdf" % fontname, data, images, fontname=fontname, faceplate=True, baffle=False)
+def test():    
+    draw("baffle.pdf", data, images, faceplate=False, baffle=True)
+    draw("both.pdf", data, images, fontname='Philosopher', faceplate=True, baffle=True)
+    # draw("bangla.pdf", bangla, images, fontname='ShadheenLipi', faceplate=True, baffle=False)
 
+def main(fontnames):
+    for fontname in fontnames:
+        if fontname not in ignore_fonts:
+            try:
+                add_font(fontname)
+                draw("faceplate_%s.pdf" % fontname, data, images, fontname=fontname, faceplate=True, baffle=False)
+            except:
+                print 'problem.  skipping %s' % fontname
+    
+
+def add_font(fontname):
+    pdfmetrics.registerFont(TTFont(fontname, 'fonts/%s.ttf' % fontname))
+
+ignore_fonts = ['ZapfDingbats', 'Symbol']
+def add_all_fonts():
+    global fontnames
+
+    fontnames = pdfmetrics.getRegisteredFontNames()
+    fontpaths = glob.glob('fonts/*.ttf')
+    for fp in fontpaths:
+        d, fn = os.path.split(fp)
+        fontnames.append(fn[:-4])
+
+        pdfmetrics.registerFont(TTFont(fn, fp))
+        print 'added', fn
+# pdfmetrics.registerFont(TTFont('ShadheenLipi', 'fonts/ShadheenLipi.ttf'))
+
+if __name__ == '__main__':
+    import sys
+    if len(sys.argv) == 1: # print all
+        add_all_fonts()
+        main(fontnames)
+        test()
+        # main(['Vollkorn-Regular'])
+    else:
+        main(sys.argv[1:])
+        test()
+    
