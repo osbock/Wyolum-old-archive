@@ -1,5 +1,5 @@
-update=Dec 24, 2010 05:54:47 PM
-last_client=kicad
+update=12/29/10 17:26:25
+last_client=pcbnew
 [cvpcb]
 version=1
 NetIExt=net
@@ -43,6 +43,8 @@ ShowSheetReferenceAndTitleBlock=1
 [eeschema/libraries]
 LibName1=libs\\power
 LibName2=libs\\rtcBoB
+[general]
+version=1
 [pcbnew]
 version=1
 PadDrlX=1250
@@ -64,5 +66,3 @@ LastNetListRead=rtcBoB.net
 [pcbnew/libraries]
 LibDir=
 LibName1=libs\\rtcBoB_parts
-[general]
-version=1
