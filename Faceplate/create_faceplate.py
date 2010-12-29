@@ -157,23 +157,27 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         grid_NE = array([max(XS), max(YS)])
         grid_NW = array([min(XS), max(YS)])
 
+        # Middle bottom
         p = c.beginPath()
         first = ((W + w)/2., grid_NW[1] + w)
         first = mounts[1][0] + w, grid_SE[1] - w
         p.moveTo(*first)
         
-        next = mounts[2][0] - w, grid_SW[1]- w
-        p.lineTo(*next)
-        next = mounts[2][0] - w, mounts[2][1]
-        p.lineTo(*next)
-        
-        for theta in arange(-180, 0, 1) * DEG:
-            next = mounts[2] + [w * cos(theta), w * sin(theta)]
+        if False: # right lower middle SSE
+            next = mounts[2][0] - w, grid_SW[1]- w
             p.lineTo(*next)
-        
+            next = mounts[2][0] - w, mounts[2][1]
+            p.lineTo(*next)
+
+            for theta in arange(-180, 0, 1) * DEG:
+                next = mounts[2] + [w * cos(theta), w * sin(theta)]
+                p.lineTo(*next)
+        else:
+            next = first
         next = next[0], grid_SE[1] - w
         p.lineTo(*next)
 
+        # SE corner
         V = SE - grid_SE
         d = linalg.norm(V)
         V /= d
@@ -195,16 +199,17 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         next = l1.intersect(l2)
         p.lineTo(*next)
         
-        for m_i in [4, 5]:
-            next = grid_SE[0] + w, mounts[m_i][1] - w
-            p.lineTo(*next)
-            next = mounts[m_i][0], mounts[m_i][1] - w
-            p.lineTo(*next)
-            for theta in arange(-90, 90, 1) * DEG:
-                next = mounts[m_i] + [w * cos(theta), w * sin(theta)]
+        if False: # right side
+            for m_i in [4, 5]:
+                next = grid_SE[0] + w, mounts[m_i][1] - w
                 p.lineTo(*next)
-            next = grid_SE[0] + w, mounts[m_i][1] + w
-            p.lineTo(*next)
+                next = mounts[m_i][0], mounts[m_i][1] - w
+                p.lineTo(*next)
+                for theta in arange(-90, 90, 1) * DEG:
+                    next = mounts[m_i] + [w * cos(theta), w * sin(theta)]
+                    p.lineTo(*next)
+                next = grid_SE[0] + w, mounts[m_i][1] + w
+                p.lineTo(*next)
 
         V = NE - grid_NE
         d = linalg.norm(V)
@@ -226,7 +231,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         next = l1.intersect(l2)
         p.lineTo(*next)
         
-        for i in [7, 8, 9]:
+        for i in [8]: # [7, 8, 9] gets each hole in top
             next = mounts[i][0] + w, l1.p1[1]
             p.lineTo(*next)
             next = mounts[i] + [w, 0]
@@ -258,17 +263,17 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         next = l2.intersect(l1)
         p.lineTo(*next)
 
-        
-        for i in [12, 13]:
-            next = [grid_NW[0] - w, mounts[i][1] + w]
-            p.lineTo(*next)
-            next = mounts[i] + [0, w]
-            p.lineTo(*next)
-            for theta in arange(90, 270, 1) * DEG:
-                next = mounts[i] + [w * cos(theta),  w * sin(theta)]
+        if False: # left side
+            for i in [12, 13]:
+                next = [grid_NW[0] - w, mounts[i][1] + w]
                 p.lineTo(*next)
-            next = grid_NW[0] - w, mounts[i][1] - w
-            p.lineTo(*next)
+                next = mounts[i] + [0, w]
+                p.lineTo(*next)
+                for theta in arange(90, 270, 1) * DEG:
+                    next = mounts[i] + [w * cos(theta),  w * sin(theta)]
+                    p.lineTo(*next)
+                next = grid_NW[0] - w, mounts[i][1] - w
+                p.lineTo(*next)
 
         V = SW - grid_SW
         d = linalg.norm(V)
@@ -300,9 +305,14 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         p.lineTo(*first)
         c.drawPath(p)
         
-    c.setLineWidth(1/64. * inch)
-    for x, y in mounts:
-        c.circle(x, y, r, fill=False)
+    if baffle:
+        c.setLineWidth(1/64. * inch)
+        for x, y in [mounts[0], mounts[1], mounts[3], mounts[6], mounts[8], mounts[10]]:
+            c.circle(x, y, r, fill=False)
+    else:
+        c.setLineWidth(1/64. * inch)
+        for x, y in mounts:
+            c.circle(x, y, r, fill=False)
 
     t=Table(data, N_COL*[dx], N_ROW*[dy])
     t.setStyle(TableStyle(
