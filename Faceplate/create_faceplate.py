@@ -18,6 +18,37 @@ from reportlab.lib.colors import pink, black, red, blue, green, white
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Table, TableStyle
 from numpy import arange
 
+DEG = pi/180.
+
+class Line:
+    def __init__(self, p1, p2):
+        self.p1 = array(p1, copy=True)
+        self.p2 = array(p2, copy=True)
+
+    def __call__(self, s):
+        return self.p1 + s * (self.p2 - self.p1)
+
+    def intersect(self, other):
+        M = transpose([self.p1 - self.p2, other.p2 - other.p1])
+        x = dot(linalg.inv(M), self.p1 - other.p1)
+        return self(x[0])
+    
+    def parallel(self, through):
+        return Line(through, self.p2 + through - self.p1)
+    
+    def __add__(self, v):
+        return Line(self.p1 + v, self.p2 + v)
+    
+    def __sub__(self, v):
+        return self + (-v)
+    
+    def drawOn(self, canvas):
+        canvas.line(self.p1[0], self.p1[1], self.p2[0], self.p2[1])
+
+l1 = Line([0, 1], [1, 2])
+l2 = Line([1, -1], [0, 0])
+assert linalg.norm(l1.intersect(l2) - l2.intersect(l1)) < 1e-8
+
 # we know some glyphs are missing, suppress warnings
 # fonts available from http://openfontlibrary.org
 # create your own fonts with fontforge! http://fontforge.sourceforge.net
@@ -51,6 +82,7 @@ TOP = 1 * inch - 7.5 * mm
 LEFT = 1.5 * inch - 7.5 * mm
 XS = arange(LEFT, LEFT + dx * (N_COL + .01), dx)
 YS = arange(TOP, TOP + dy * (N_ROW + .01), dy) # from top
+
 assert len(XS) == N_COL + 1, '%s != %s ' % (len(XS), N_COL + 1)
 assert len(YS) == N_ROW + 1, '%s != %s ' % (len(YS), N_ROW + 1)
 YS = H - YS # from bottom
@@ -76,30 +108,33 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
                       pagesize=(W, H)
                       )
     c.setFont(fontname, fontsize)
+    
     # c.getAvailableFonts()
     # c.stringWidth('Hello World')
     # c.drawString(0 * inch, 5 * inch, 'HelloWorld')
     
     c.setLineWidth(1/16. * inch)
-    hole_sepx = 2.920
-    hole_sepy = 2.887
-    startx = .172
-    starty = .172
-    r = .172 / 4
-    mounts = [(startx, starty)] # lower left
+    hole_sepx = 2.920 * inch
+    hole_sepy = 2.887 * inch
+    startx = .172 * inch
+    starty = .172 * inch
+    r = .172 / 4 * inch
+    mounts = [] # lower left
     for i in range(5):          
         if i != 1:
-            mounts.append((startx + i * hole_sepx, starty))             # bottom row
-        mounts.append((startx + i * hole_sepx, starty + hole_sepy * 3)) # top row
-
+            mounts.append(array([startx + i * hole_sepx, starty]))             # bottom row
     SW = mounts[0]
-    NW = mounts[1]
-    SE = mounts[-2]
-    NE = mounts[-1]
+    SE = mounts[-1]
+            
     for i in range(1, 3):
-        mounts.append((startx + 4 * hole_sepx, starty + i * hole_sepy))
-        mounts.append((startx, starty + i * hole_sepy))
-        
+        mounts.append(array([startx + 4 * hole_sepx, starty + i * hole_sepy]))
+    for i in range(4, -1, -1):
+        mounts.append(array([startx + i * hole_sepx, starty + hole_sepy * 3])) # top row
+    NE = mounts[-5]
+    NW = mounts[-1]
+    for i in range(3, -1, -1):
+        mounts.append(array([startx, starty + i * hole_sepy]))
+
     if baffle:
         c.setLineJoin(1)
         lw = 1/32. * inch
@@ -108,16 +143,166 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         # c.rect(XS[0], YS[-1], XS[-1] - XS[0], YS[0] - YS[-1])
         for x in XS[:-1]:
             for y in YS[1:]:
-                c.rect(x + lw, y + lw, dx - lw, dy -lw)
+                c.rect(x + lw, y + lw, dx - 2 * lw, dy -2 * lw)
 
         # bug
-        c.rect(2.826 * inch, .05 * inch, .3*inch, .4*inch)
+        # c.rect(2.826 * inch, .05 * inch, .3*inch, .4*inch)
         # ClockTHREE
-        c.rect(W - .75*inch, H - (3.3875 + .5)*inch, .5*inch, .5*inch)
+        # c.rect(W - .75*inch, H - (3.3875 + .5)*inch, .5*inch, .5*inch)
+     
+        w = 3 * mm
 
+        grid_SW = array([min(XS), min(YS)])
+        grid_SE = array([max(XS), min(YS)])
+        grid_NE = array([max(XS), max(YS)])
+        grid_NW = array([min(XS), max(YS)])
+
+        p = c.beginPath()
+        first = ((W + w)/2., grid_NW[1] + w)
+        first = mounts[1][0] + w, grid_SE[1] - w
+        p.moveTo(*first)
+        
+        next = mounts[2][0] - w, grid_SW[1]- w
+        p.lineTo(*next)
+        next = mounts[2][0] - w, mounts[2][1]
+        p.lineTo(*next)
+        
+        for theta in arange(-180, 0, 1) * DEG:
+            next = mounts[2] + [w * cos(theta), w * sin(theta)]
+            p.lineTo(*next)
+        
+        next = next[0], grid_SE[1] - w
+        p.lineTo(*next)
+
+        V = SE - grid_SE
+        d = linalg.norm(V)
+        V /= d
+        Vperp = array([-V[1], V[0]])
+
+        l1 = Line(grid_SE, grid_SW) - array([0, w])
+        l2 = Line(grid_SE, SE) - Vperp * w
+        next = l1.intersect(l2)
+        p.lineTo(*next)
+        next = l2.p2
+        p.lineTo(*next)
+
+        for theta in arange(180, 0, -1) * DEG:
+            next = SE + w * sin(theta) * V + w * cos(theta) * Vperp
+            p.lineTo(*next)
+
+        l1 = Line(grid_SE, grid_NE) + array([w, 0])
+        l2 = Line(grid_SE, SE) + Vperp * w
+        next = l1.intersect(l2)
+        p.lineTo(*next)
+        
+        for m_i in [4, 5]:
+            next = grid_SE[0] + w, mounts[m_i][1] - w
+            p.lineTo(*next)
+            next = mounts[m_i][0], mounts[m_i][1] - w
+            p.lineTo(*next)
+            for theta in arange(-90, 90, 1) * DEG:
+                next = mounts[m_i] + [w * cos(theta), w * sin(theta)]
+                p.lineTo(*next)
+            next = grid_SE[0] + w, mounts[m_i][1] + w
+            p.lineTo(*next)
+
+        V = NE - grid_NE
+        d = linalg.norm(V)
+        V /= d
+        Vperp = array([-V[1], V[0]])
+
+        l1 = Line(grid_NE, grid_SE) + [w, 0]
+        l2 = Line(grid_NE, NE) - Vperp * w
+        next = l1.intersect(l2)
+        p.lineTo(*next)
+        next = l2.p2
+        p.lineTo(*next)
+        
+        for theta in arange(180, 0, -1) * DEG:
+            next = NE + w * sin(theta) * V + w * cos(theta) * Vperp
+            p.lineTo(*next)
+        l1 = Line(grid_NW, grid_NE) + [0, w]
+        l2 = Line(grid_NE, NE) + Vperp * w
+        next = l1.intersect(l2)
+        p.lineTo(*next)
+        
+        for i in [7, 8, 9]:
+            next = mounts[i][0] + w, l1.p1[1]
+            p.lineTo(*next)
+            next = mounts[i] + [w, 0]
+            p.lineTo(*next)
+            for theta in arange(0, 180, 1) * DEG:
+                next = mounts[i] + [w * cos(theta),  w * sin(theta)]
+                p.lineTo(*next)
+
+            next = mounts[i][0] - w, l1.p1[1]
+            p.lineTo(*next)
+        
+        V = NW - grid_NW
+        d = linalg.norm(V)
+        V /= d
+        Vperp = array([-V[1], V[0]])
+
+        l1 = Line(grid_NW, grid_NE) + [0, w]
+        l2 = Line(NW, grid_NW) - w * Vperp
+        next = l1.intersect(l2)
+        p.lineTo(*next)
+        next = NW - w * Vperp
+        p.lineTo(*next)
+        for theta in arange(180, 0, -1) * DEG:
+            next = NW + w * sin(theta) * V + w * cos(theta) * Vperp
+            p.lineTo(*next)
+            
+        l1 = Line(grid_NW, grid_SW) - array([w, 0])
+        l2 = l2 + 2 * w * Vperp
+        next = l2.intersect(l1)
+        p.lineTo(*next)
+
+        
+        for i in [12, 13]:
+            next = [grid_NW[0] - w, mounts[i][1] + w]
+            p.lineTo(*next)
+            next = mounts[i] + [0, w]
+            p.lineTo(*next)
+            for theta in arange(90, 270, 1) * DEG:
+                next = mounts[i] + [w * cos(theta),  w * sin(theta)]
+                p.lineTo(*next)
+            next = grid_NW[0] - w, mounts[i][1] - w
+            p.lineTo(*next)
+
+        V = SW - grid_SW
+        d = linalg.norm(V)
+        V /= d
+        Vperp = array([-V[1], V[0]])
+
+        l1 = Line(grid_NW, grid_SW) - array([w, 0])
+        l2 = Line(grid_SW, SW) - w * Vperp
+        next = l2.intersect(l1)
+        p.lineTo(*next)
+        next = l2.p2
+        p.lineTo(*next)
+        for theta in arange(180, 0, -1) * DEG:
+            next = SW + w * sin(theta) * V + w * cos(theta) * Vperp
+            p.lineTo(*next)
+
+        l1 = Line(grid_SW, grid_SE) - array([0, w])
+        l2 = l2 + 2 * w * Vperp
+        next = l1.intersect(l2)
+        p.lineTo(*next)
+        next = mounts[1][0] - w, grid_SW[1] - w
+        p.lineTo(*next)
+        
+        next = mounts[1] - [w, 0]
+        p.lineTo(*next)
+        for theta in arange(180, 360, 1) * DEG:
+            next = mounts[1] + [w * cos(theta),  w * sin(theta)]
+            p.lineTo(*next)
+        p.lineTo(*first)
+        c.drawPath(p)
+        
     c.setLineWidth(1/64. * inch)
     for x, y in mounts:
-        c.circle(x*inch, y*inch, r*inch, fill=False)
+        c.circle(x, y, r, fill=False)
 
     t=Table(data, N_COL*[dx], N_ROW*[dy])
     t.setStyle(TableStyle(
