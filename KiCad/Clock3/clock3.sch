@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/30/10 16:28:24
+EESchema Schematic File Version 2  date 12/30/10 20:22:06
 LIBS:clock3
 LIBS:power
 LIBS:clock3-cache
@@ -253,9 +253,6 @@ Wire Wire Line
 	750  4150 700  4150
 Wire Wire Line
 	2350 5850 2350 6100
-Connection ~ 1050 4750
-Wire Wire Line
-	1400 4300 1400 4150
 Connection ~ 2050 1000
 Wire Wire Line
 	1850 2050 1850 2200
@@ -268,23 +265,15 @@ Wire Wire Line
 Connection ~ 1850 2100
 Connection ~ 1850 1200
 Wire Wire Line
-	700  4750 700  4700
-Wire Wire Line
-	700  4750 1400 4750
-Wire Wire Line
-	1400 4750 1400 4700
-Wire Wire Line
 	1450 3450 1250 3450
 Wire Wire Line
 	1250 3450 1250 3550
 Wire Wire Line
 	1450 4150 1350 4150
-Connection ~ 1400 4150
 Wire Wire Line
-	700  3950 1450 3950
+	1450 3950 700  3950
 Wire Wire Line
-	700  4300 700  3950
-Connection ~ 700  4150
+	700  3950 700  4150
 Connection ~ 2350 2500
 Wire Wire Line
 	3725 7250 3725 7575
@@ -1307,26 +1296,6 @@ F 1 "10k" V 1000 2500 50  0000 C CNN
 F 2 "RC03" H 1000 2500 60  0001 C CNN
 	1    1000 2500
 	0    1    1    0   
-$EndComp
-$Comp
-L C C5
-U 1 1 4B077AEE
-P 1400 4500
-F 0 "C5" H 1450 4600 50  0000 L CNN
-F 1 "22p" H 1450 4400 50  0000 L CNN
-F 2 "cnp_3mm_disc" H 1400 4500 60  0001 C CNN
-	1    1400 4500
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C4
-U 1 1 4B077AE6
-P 700 4500
-F 0 "C4" H 750 4600 50  0000 L CNN
-F 1 "22p" H 750 4400 50  0000 L CNN
-F 2 "cnp_3mm_disc" H 700 4500 60  0001 C CNN
-	1    700  4500
-	1    0    0    -1  
 $EndComp
 $Comp
 L CRYSTAL X1
