@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  12/17/10 21:18:43
+PCBNEW-LibDoc----V1  12/30/10 15:44:51
 #
 $MODULE SW-PB
 Li SW-PB
@@ -112,12 +112,6 @@ Li to92_3
 Cd TO92
 $EndMODULE
 #
-$MODULE Speaker
-Li Speaker
-Cd BUZZER
-Kw BUZZER
-$EndMODULE
-#
 $MODULE 01D01
 Li 01D01
 Cd 10mm RGB LED
@@ -221,6 +215,12 @@ $MODULE led_10mm_yellow
 Li led_10mm_yellow
 Cd 5mm yellow led
 Kw led
+$EndMODULE
+#
+$MODULE Speaker
+Li Speaker
+Cd BUZZER
+Kw BUZZER
 $EndMODULE
 #
 $EndLIBDOC

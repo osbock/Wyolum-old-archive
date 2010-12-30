@@ -1,7 +1,5 @@
-update=12/28/10 17:22:36
-last_client=pcbnew
-[general]
-version=1
+update=12/30/10 18:45:43
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
@@ -66,3 +64,5 @@ LastNetListRead=clock3.net
 [pcbnew/libraries]
 LibDir=
 LibName1=libs\\clock3_parts
+[general]
+version=1

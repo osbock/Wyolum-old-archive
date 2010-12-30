@@ -1,14 +1,13 @@
-EESchema Schematic File Version 2  date 12/23/10 19:13:55
-LIBS:clock3-cache
-LIBS:power
+EESchema Schematic File Version 2  date 12/30/10 16:28:24
 LIBS:clock3
+LIBS:power
 LIBS:clock3-cache
 EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 1 3
 Title "ClockTHREE"
-Date "23 dec 2010"
+Date "30 dec 2010"
 Rev "A"
 Comp "An Arduino based RGB LED Array"
 Comment1 "Wyo Innovations      :: Lumetronics"
@@ -20,12 +19,11 @@ Text Label 2550 800  0    40   ~ 0
 ENTER
 Text Label 3500 5050 0    40   ~ 0
 ENTER
-NoConn ~ 4700 5050
 Connection ~ 2250 800 
 Wire Wire Line
 	3850 800  3850 5050
 Wire Wire Line
-	3850 800  1450 800 
+	1450 800  3850 800 
 Connection ~ 2050 2100
 Wire Wire Line
 	2250 2100 1650 2100
@@ -67,18 +65,18 @@ Wire Wire Line
 Wire Wire Line
 	5475 4650 6600 4650
 Wire Wire Line
-	3800 3350 3800 1200
+	3800 1200 3800 3350
 Wire Wire Line
 	3800 3350 3350 3350
 Wire Wire Line
-	3700 4350 3700 1450
+	3700 1450 3700 4350
 Wire Wire Line
 	3700 4350 3350 4350
 Wire Wire Line
 	1250 2500 2650 2500
 Connection ~ 4700 5775
 Wire Wire Line
-	4700 5775 5575 5775
+	5575 5775 4700 5775
 Wire Wire Line
 	5575 5775 5575 5800
 Wire Wire Line
@@ -104,7 +102,7 @@ Wire Wire Line
 	3350 4150 3500 4150
 Connection ~ 1370 3650
 Wire Wire Line
-	1370 3650 1370 3550
+	1370 3550 1370 3650
 Wire Wire Line
 	1370 3550 1450 3550
 Wire Wire Line
@@ -112,7 +110,7 @@ Wire Wire Line
 Wire Wire Line
 	600  3650 1450 3650
 Wire Wire Line
-	3350 5150 4200 5150
+	4200 5150 3350 5150
 Wire Wire Line
 	4200 5150 4200 875 
 Wire Wire Line
@@ -232,7 +230,7 @@ Connection ~ 5750 1875
 Wire Wire Line
 	6500 1875 5750 1875
 Wire Wire Line
-	800  1450 800  600 
+	800  600  800  1450
 Wire Wire Line
 	1650 1550 1650 1450
 Connection ~ 800  600 
@@ -240,13 +238,13 @@ Connection ~ 800  1000
 Wire Wire Line
 	1450 3250 600  3250
 Wire Wire Line
-	750  2500 600  2500
+	600  2500 750  2500
 Wire Wire Line
 	850  1000 800  1000
 Wire Wire Line
 	1450 1000 3750 1000
 Wire Wire Line
-	3550 1550 3550 600 
+	3550 600  3550 1550
 Wire Wire Line
 	3550 3750 3350 3750
 Wire Wire Line
@@ -270,7 +268,7 @@ Wire Wire Line
 Connection ~ 1850 2100
 Connection ~ 1850 1200
 Wire Wire Line
-	700  4700 700  4750
+	700  4750 700  4700
 Wire Wire Line
 	700  4750 1400 4750
 Wire Wire Line
@@ -283,9 +281,9 @@ Wire Wire Line
 	1450 4150 1350 4150
 Connection ~ 1400 4150
 Wire Wire Line
-	1450 3950 700  3950
+	700  3950 1450 3950
 Wire Wire Line
-	700  3950 700  4300
+	700  4300 700  3950
 Connection ~ 700  4150
 Connection ~ 2350 2500
 Wire Wire Line
@@ -298,7 +296,7 @@ Wire Wire Line
 	3400 1550 3400 600 
 Connection ~ 3400 600 
 Wire Wire Line
-	3800 1200 1450 1200
+	1450 1200 3800 1200
 Wire Wire Line
 	800  1200 850  1200
 Wire Wire Line
@@ -315,14 +313,14 @@ Wire Wire Line
 	800  1450 850  1450
 Connection ~ 800  1200
 Wire Wire Line
-	3700 1450 1450 1450
+	1450 1450 3700 1450
 Connection ~ 1650 1450
 Wire Wire Line
-	6500 1675 5750 1675
+	5750 1675 6500 1675
 Wire Wire Line
 	5750 2925 6500 2925
 Wire Wire Line
-	6500 775  4150 775 
+	4150 775  6500 775 
 Wire Wire Line
 	4200 875  6500 875 
 Wire Wire Line
@@ -331,7 +329,7 @@ Wire Wire Line
 	3350 5450 3725 5450
 Connection ~ 3400 600 
 Wire Wire Line
-	3550 600  800  600 
+	800  600  3550 600 
 Wire Wire Line
 	7900 4650 7750 4650
 Wire Wire Line
@@ -443,9 +441,9 @@ Wire Wire Line
 Wire Wire Line
 	6300 4400 6300 5575
 Wire Wire Line
-	6300 5975 6300 6400
+	6300 6400 6300 5975
 Wire Wire Line
-	6300 6400 7150 6400
+	7150 6400 6300 6400
 Connection ~ 6550 6400
 Wire Wire Line
 	1050 4850 1050 4400
@@ -502,13 +500,9 @@ Wire Wire Line
 Wire Wire Line
 	5575 3550 3350 3550
 Wire Wire Line
-	5750 1675 5750 2200
+	5750 2200 5750 1675
 Wire Wire Line
-	3350 3450 4600 3450
-Wire Wire Line
-	4600 3450 4600 4950
-Wire Wire Line
-	4600 4950 4700 4950
+	3350 3450 4700 3450
 Wire Wire Line
 	700  6350 1075 6350
 Wire Wire Line
@@ -552,9 +546,6 @@ F 2 "SW_PB_V" H 1150 800 60  0001 C CNN
 	1    1150 800 
 	1    0    0    -1  
 $EndComp
-NoConn ~ 4700 5250
-NoConn ~ 4700 5350
-NoConn ~ 4700 5150
 Text Label 3500 5250 0    40   ~ 0
 SPEAKER
 Text Label 3425 3250 0    40   ~ 0
@@ -574,53 +565,13 @@ ISSUE 5 : DONE\nPD0 RX, FTDI Proto\nPD1 TX, FTDI Proto\nPD2 INT0, MODE\nPD3 INT1
 Text Notes 10000 4050 1    60   ~ 0
 RGB CA LED 12 Rows Cathodes
 $Comp
-L CONN_1 P47
-U 1 1 4C9A4A81
-P 4850 5350
-F 0 "P47" H 4930 5350 40  0000 L CNN
-F 1 "CONN_1" H 4850 5405 30  0001 C CNN
-F 2 "Pad01" H 4850 5350 60  0001 C CNN
-	1    4850 5350
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_1 P46
-U 1 1 4C9A4A80
-P 4850 5250
-F 0 "P46" H 4930 5250 40  0000 L CNN
-F 1 "CONN_1" H 4850 5305 30  0001 C CNN
-F 2 "Pad01" H 4850 5250 60  0001 C CNN
-	1    4850 5250
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_1 P45
-U 1 1 4C9A4A7E
-P 4850 5150
-F 0 "P45" H 4930 5150 40  0000 L CNN
-F 1 "CONN_1" H 4850 5205 30  0001 C CNN
-F 2 "Pad01" H 4850 5150 60  0001 C CNN
-	1    4850 5150
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_1 P44
-U 1 1 4C9A4A7B
-P 4850 5050
-F 0 "P44" H 4930 5050 40  0000 L CNN
-F 1 "CONN_1" H 4850 5105 30  0001 C CNN
-F 2 "Pad01" H 4850 5050 60  0001 C CNN
-	1    4850 5050
-	1    0    0    -1  
-$EndComp
-$Comp
 L CONN_1 P43
 U 1 1 4C9A4A71
-P 4850 4950
-F 0 "P43" H 4930 4950 40  0000 L CNN
-F 1 "CONN_1" H 4850 5005 30  0001 C CNN
-F 2 "Pad01" H 4850 4950 60  0001 C CNN
-	1    4850 4950
+P 4850 3450
+F 0 "P43" H 4930 3450 40  0000 L CNN
+F 1 "CONN_1" H 4850 3505 30  0001 C CNN
+F 2 "Pad01" H 4850 3450 60  0001 C CNN
+	1    4850 3450
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1159,11 +1110,11 @@ $Comp
 L SW_PUSH SW2
 U 1 1 4B680EC9
 P 1150 1200
-F 0 "SW2" H 1000 1300 50  0000 C CNN
-F 1 "DEC" H 1400 1300 50  0000 C CNN
+F 0 "SW2" H 1300 1300 50  0000 C CNN
+F 1 "DEC" H 900 1300 50  0000 C CNN
 F 2 "SW_PB_V" H 1150 1200 60  0001 C CNN
 	1    1150 1200
-	-1   0    0    -1  
+	1    0    0    -1  
 $EndComp
 $Comp
 L SW_PUSH SW1

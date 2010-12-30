@@ -1,14 +1,13 @@
-EESchema Schematic File Version 2  date 12/23/10 17:40:40
-LIBS:clock3-cache
-LIBS:power
+EESchema Schematic File Version 2  date 12/30/10 16:21:34
 LIBS:clock3
+LIBS:power
 LIBS:clock3-cache
 EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 3 3
 Title "ClockTWO"
-Date "23 dec 2010"
+Date "30 dec 2010"
 Rev "A"
 Comp "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment1 "wyoinnovation.blogspot.com"
@@ -25,30 +24,30 @@ NoConn ~ 1550 3050
 NoConn ~ 1400 3050
 NoConn ~ 1250 3050
 $Comp
-L CONN_1 P46
+L CONN_1 P52
 U 1 1 4D133B38
 P 1700 2900
-F 0 "P46" H 1780 2900 40  0000 L CNN
+F 0 "P52" H 1780 2900 40  0000 L CNN
 F 1 "CONN_1" H 1700 2955 30  0001 C CNN
 F 2 "vite_3mm" H 1700 2900 60  0001 C CNN
 	1    1700 2900
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P45
+L CONN_1 P51
 U 1 1 4D133B36
 P 1550 2900
-F 0 "P45" H 1630 2900 40  0000 L CNN
+F 0 "P51" H 1630 2900 40  0000 L CNN
 F 1 "CONN_1" H 1550 2955 30  0001 C CNN
 F 2 "vite_3mm" H 1550 2900 60  0001 C CNN
 	1    1550 2900
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P44
+L CONN_1 P50
 U 1 1 4D133B32
 P 1400 2900
-F 0 "P44" H 1480 2900 40  0000 L CNN
+F 0 "P50" H 1480 2900 40  0000 L CNN
 F 1 "CONN_1" H 1400 2955 30  0001 C CNN
 F 2 "vite_3mm" H 1400 2900 60  0001 C CNN
 	1    1400 2900
@@ -586,10 +585,10 @@ Wire Notes Line
 Wire Notes Line
 	6050 3500 6050 5400
 $Comp
-L CONN_1 P43
+L CONN_1 P49
 U 1 1 4D133AEE
 P 1250 2900
-F 0 "P43" H 1330 2900 40  0000 L CNN
+F 0 "P49" H 1330 2900 40  0000 L CNN
 F 1 "CONN_1" H 1250 2955 30  0001 C CNN
 F 2 "vite_3mm" H 1250 2900 60  0001 C CNN
 	1    1250 2900

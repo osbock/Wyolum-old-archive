@@ -1,14 +1,13 @@
-EESchema Schematic File Version 2  date 12/23/10 19:13:55
-LIBS:clock3-cache
-LIBS:power
+EESchema Schematic File Version 2  date 12/30/10 16:28:24
 LIBS:clock3
+LIBS:power
 LIBS:clock3-cache
 EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 3 3
 Title "ClockTWO"
-Date "23 dec 2010"
+Date "30 dec 2010"
 Rev "A"
 Comp "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment1 "wyoinnovation.blogspot.com"
