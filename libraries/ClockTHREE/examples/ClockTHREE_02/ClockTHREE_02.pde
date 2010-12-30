@@ -7,7 +7,7 @@
   SetTime
   SetAlarm
   SetColor
-  PC
+  Serial
 
   Justin Shaw Dec 22, 2010
   
@@ -50,6 +50,7 @@ struct Mode{
 
 // Default display -- twice as large as is needed
 uint32_t *display = (uint32_t*)calloc(2 * N_COL, sizeof(uint32_t));
+
 Mode *mode_p;
 
 const uint8_t N_MODE = 9;
@@ -60,7 +61,7 @@ const uint8_t NORMAL_MODE = 0;
 const uint8_t SET_TIME_MODE = 1;
 const uint8_t SET_COLOR_MODE = 2;
 const uint8_t SET_ALARM_MODE = 3;
-const uint8_t PC_MODE = 4;
+const uint8_t SERIAL_MODE = 4;
 const uint8_t MODE_MODE = 5;
 
 // Sub Modes get ID > N_MODE
@@ -97,9 +98,9 @@ Mode SetColorMode = {SET_COLOR_MODE,
 Mode SetAlarmMode = {SET_ALARM_MODE, 
 		     2, SetAlarm_setup,SetAlarm_loop,SetAlarm_exit,
 		     SetAlarm_inc, SetAlarm_dec, SetAlarm_mode};
-Mode PCMode = {PC_MODE, 
-	       'P', PC_setup,PC_loop,PC_exit,
-	       PC_inc,PC_dec,PC_mode};
+Mode SerialMode = {SERIAL_MODE, 
+	       'P', Serial_setup,Serial_loop,Serial_exit,
+	       Serial_inc,Serial_dec,Serial_mode};
 Mode ModeMode = {MODE_MODE, 
 		 'M', Mode_setup, Mode_loop, Mode_exit, 
 		 Mode_inc, Mode_dec, Mode_mode};
@@ -112,6 +113,42 @@ const uint8_t      DEC_EVT = 3; // Decriment Button has been pressed
 const uint8_t     TICK_EVT = 4; // Second has ellapsed
 const uint8_t EVENT_Q_SIZE = 5; // Max # events.
 
+// Messaging constants
+const uint8_t MAX_MSG_LEN = 100;
+// const uint8_t BAUD_RATE = 115200; // official
+const uint8_t BAUD_RATE = 9600; // for debugging
+
+const uint8_t NOT_USED = 0x00;
+const uint8_t ABS_TIME_REQ = 0x01;
+const uint8_t ABS_TIME_SET = 0x02;
+const uint8_t TOD_ALARM_REQ = 0x03;
+const uint8_t TOD_ALARM_SET = 0x04;
+const uint8_t MSG_REQ = 0x05;
+const uint8_t SCROLL_MSG = 0x06;
+const uint8_t EVENT_REQ = 0x07;
+const uint8_t EVENT_SET = 0x08;
+const uint8_t DISPLAY_REQ = 0x09;
+const uint8_t DISPLAY_SET = 0x0A;
+const uint8_t MSG_SET = 0x0B;
+
+const uint8_t NOT_USED_LEN = 0x00;
+const uint8_t ABS_TIME_REQ_LEN = 0x01;
+const uint8_t ABS_TIME_SET_LEN = 0x05;
+const uint8_t TOD_ALARM_REQ_LEN = 0x01;
+const uint8_t TOD_ALARM_SET_LEN = 0x05;
+const uint8_t MSG_REQ_LEN = 0x02;
+const uint8_t SCROLL_MSG_LEN = 0x02;
+const uint8_t EVENT_REQ_LEN = 0x02;
+const uint8_t EVENT_SET_LEN = 0x06;
+const uint8_t DISPLAY_REQ_LEN = 0x01;
+const uint8_t DISPLAY_SET_LEN = 0x41;
+const uint8_t MSG_SET_LEN = 0x01;
+
+char serial_msg[MAX_MSG_LEN];
+uint8_t serial_i = 0;
+uint8_t serial_mid;
+uint8_t serial_msg_len;
+
 // Globals
 uint8_t event_q[EVENT_Q_SIZE];
 uint8_t n_evt = 0;
@@ -119,7 +156,7 @@ unsigned long last_mode_time = 0;
 unsigned long last_inc_time = 0;
 unsigned long last_dec_time = 0;
 ClockTHREE c3;
-English lang = English();
+English faceplate = English();
 Font font = Font();
 time_t t;
 uint8_t mode_counter;
@@ -207,7 +244,7 @@ void setup(void){
   Modes[SET_TIME_MODE] = SetTimeMode;
   Modes[SET_COLOR_MODE] = SetColorMode;
   Modes[SET_ALARM_MODE] = SetAlarmMode;
-  Modes[PC_MODE] = PCMode;
+  Modes[SERIAL_MODE] = SerialMode;
   Modes[MODE_MODE] = ModeMode;
 
   // Sub Modes
@@ -241,11 +278,8 @@ void loop(void){
   if(PIND & 1 << 7){
     dec_interrupt();
   }
-  
-  mode_p->loop();
-  count++;
 
-  // process new events
+  // process new events before calling mode loop()
   for(int i = 0; i < n_evt; i++){
     switch(event_q[i]){
     case NO_EVT:
@@ -280,6 +314,10 @@ void loop(void){
     event_q[i] = NO_EVT;
   }
   n_evt = 0;
+
+  mode_p->loop(); // finally call mode_p loop()
+  count++;        // counts times mode_p->loop() has run since mode start
+
 }
 
 // Begin Normal Mode Code (TODO use one file per mode)
@@ -289,18 +327,18 @@ void loop(void){
 void Normal_setup(void){
   tick = true;
   if(alarm_set){
-    lang.display_word(c3, DARK, alarm_off_led);
-    lang.display_word(c3, MONO, alarm_on_led);
+    faceplate.display_word(c3, DARK, alarm_off_led);
+    faceplate.display_word(c3, MONO, alarm_on_led);
   }
   else{
-    lang.display_word(c3, DARK, alarm_off_led);
-    lang.display_word(c3, DARK, alarm_on_led);
+    faceplate.display_word(c3, DARK, alarm_off_led);
+    faceplate.display_word(c3, DARK, alarm_on_led);
   }
 }
 void Normal_loop(void) {
   if((count == 0 || ss % 6 == 0 || ss % 4 == 0) && tick){
     // minutes hack updates every six seconds 
-    lang.display_time(YY, MM, DD, hh, mm, ss,
+    faceplate.display_time(YY, MM, DD, hh, mm, ss,
 		      c3, getColor(COLORS[color_i]), 16);
     tick = false;
   }
@@ -347,10 +385,10 @@ void Seconds_mode(){
 // Sub mode of normal mode ** display seconds
 void Temperature_setup(void){
   if(temp_unit == DEG_C){
-    lang.display_word(c3, MONO, c_led);
+    faceplate.display_word(c3, MONO, c_led);
   }
   else{
-    lang.display_word(c3, MONO, f_led);
+    faceplate.display_word(c3, MONO, f_led);
   }
 }
 void Temperature_loop(){
@@ -367,13 +405,13 @@ void Temperature_exit(void) {
 void Temperature_inc(){
   if(temp_unit == DEG_F){
     temp_unit = DEG_C;
-    lang.display_word(c3, DARK, f_led);
-    lang.display_word(c3, MONO, c_led);
+    faceplate.display_word(c3, DARK, f_led);
+    faceplate.display_word(c3, MONO, c_led);
   }
   else{
     temp_unit = DEG_F;
-    lang.display_word(c3, DARK, c_led);
-    lang.display_word(c3, MONO, f_led);
+    faceplate.display_word(c3, DARK, c_led);
+    faceplate.display_word(c3, MONO, f_led);
   }
 }
 void Temperature_dec(){
@@ -417,7 +455,7 @@ void SetTime_setup(void){
   MsTimer2::stop(); // Ticks stop while setting time
   getTime(); // sync with rtcBOB
   SetTime_unit = YEAR;
-  lang.display_word(c3, MONO, year_led);
+  faceplate.display_word(c3, MONO, year_led);
 }
 void SetTime_loop(void) {
   switch(SetTime_unit){
@@ -528,19 +566,19 @@ void SetTime_mode(void) {
   switch(SetTime_unit){
   case YEAR:
     SetTime_unit = MONTH;
-    lang.display_word(c3, MONO, month_led);
+    faceplate.display_word(c3, MONO, month_led);
     break;
   case MONTH:
     SetTime_unit = DAY;
-    lang.display_word(c3, MONO, day_led);
+    faceplate.display_word(c3, MONO, day_led);
     break;
   case DAY:
     SetTime_unit = HOUR;
-    lang.display_word(c3, MONO, hour_led);
+    faceplate.display_word(c3, MONO, hour_led);
     break;
   case HOUR:
     SetTime_unit = MINUTE;
-    lang.display_word(c3, MONO, minute_led);
+    faceplate.display_word(c3, MONO, minute_led);
     break;
   default:
     switchmodes(NORMAL_MODE);
@@ -553,10 +591,10 @@ void SetTime_mode(void) {
    Initalize mode.
 */
 void SetAlarm_setup(void){
-  lang.display_word(c3, MONO, alarm);
-  lang.display_time(YY, MM, DD, ahh, amm, ass,
+  faceplate.display_word(c3, MONO, alarm);
+  faceplate.display_time(YY, MM, DD, ahh, amm, ass,
 		    c3, getColor(COLORS[color_i]), 0, false, false);
-  lang.display_word(c3, MONO, hour_led);
+  faceplate.display_word(c3, MONO, hour_led);
   SetTime_unit = HOUR;
 }
 void SetAlarm_loop(void){
@@ -575,25 +613,25 @@ void SetAlarm_inc(void){
   switch(SetTime_unit){
   case HOUR:
     ahh = (ahh + 1) % 24;
-    lang.display_time(YY, MM, DD, ahh, amm, ass,
+    faceplate.display_time(YY, MM, DD, ahh, amm, ass,
 		      c3, getColor(COLORS[color_i]), 0, false, false);
     break;
   case MINUTE:
     amm = (amm + 5) % 60;
     ass = 0;
-    lang.display_time(YY, MM, DD, ahh, amm, ass,
+    faceplate.display_time(YY, MM, DD, ahh, amm, ass,
 		      c3, getColor(COLORS[color_i]), 0, false, false);
     break;
   case SECOND:
     if(!alarm_set){
       alarm_set = true;
-      lang.display_word(c3, DARK, alarm_off_led);
-      lang.display_word(c3, MONO, alarm_on_led);
+      faceplate.display_word(c3, DARK, alarm_off_led);
+      faceplate.display_word(c3, MONO, alarm_on_led);
     }
     else{
       alarm_set = false;
-      lang.display_word(c3, DARK, alarm_on_led);
-      lang.display_word(c3, MONO, alarm_off_led);
+      faceplate.display_word(c3, DARK, alarm_on_led);
+      faceplate.display_word(c3, MONO, alarm_off_led);
     }
     break;
   default:
@@ -610,7 +648,7 @@ void SetAlarm_dec(void){
     else{
       ahh--;
     }
-    lang.display_time(YY, MM, DD, ahh, amm, ass,
+    faceplate.display_time(YY, MM, DD, ahh, amm, ass,
 		      c3, getColor(COLORS[color_i]), 0, false, false);
     break;
   case MINUTE:
@@ -621,19 +659,19 @@ void SetAlarm_dec(void){
       amm -= 5;
     }
     ass = 0;
-    lang.display_time(YY, MM, DD, ahh, amm, ass,
+    faceplate.display_time(YY, MM, DD, ahh, amm, ass,
 		      c3, getColor(COLORS[color_i]), 0, false, false);
     break;
   case SECOND:
     if(!alarm_set){
       alarm_set = true;
-      lang.display_word(c3, DARK, alarm_off_led);
-      lang.display_word(c3, MONO, alarm_on_led);
+      faceplate.display_word(c3, DARK, alarm_off_led);
+      faceplate.display_word(c3, MONO, alarm_on_led);
     }
     else{
       alarm_set = false;
-      lang.display_word(c3, DARK, alarm_on_led);
-      lang.display_word(c3, MONO, alarm_off_led);
+      faceplate.display_word(c3, DARK, alarm_on_led);
+      faceplate.display_word(c3, MONO, alarm_off_led);
     }
     break;
   default:
@@ -644,17 +682,17 @@ void SetAlarm_mode(void){
   switch(SetTime_unit){
   case HOUR:
     SetTime_unit = MINUTE;
-    lang.display_word(c3, DARK, hour_led);
-    lang.display_word(c3, MONO, minute_led);
+    faceplate.display_word(c3, DARK, hour_led);
+    faceplate.display_word(c3, MONO, minute_led);
     break;
   case MINUTE:
     SetTime_unit = SECOND;
     c3.clear();
     if(alarm_set){
-      lang.display_word(c3, MONO, alarm_on_led);
+      faceplate.display_word(c3, MONO, alarm_on_led);
     }
     else{
-      lang.display_word(c3, MONO, alarm_off_led);
+      faceplate.display_word(c3, MONO, alarm_off_led);
     }
     break;
   case SECOND:
@@ -713,34 +751,97 @@ void SetColor_mode(void) {
   switchmodes(NORMAL_MODE);
 }
 
-// Begin PC Mode
+// Begin Serial Modes
 /* 
    Initalize mode.
 */
-void PC_setup(void){
-  tick = true;
-  // lang.display_word(c3, MONO, usb_led);
-  Serial.begin(9600);
+void Serial_setup(void){
+  faceplate.display_word(c3, MONO, usb_led);
+  c3.refresh();
+  serial_i = 0;
+  PORTD = 0;
+  digitalWrite(COL_DRIVER_ENABLE, HIGH);
+  Serial.begin(BAUD_RATE);
+  Serial.println("Ready to recieve!");
+  delay(10000);
 }
-void PC_loop(void) {
+void Serial_loop(void) {
+  uint8_t val;
+  Serial.print("THIS IS A TEST: Serial_loop()");
   while(Serial.available()){
-    Serial.print(Serial.read(), BYTE);
+    val = Serial.read();
+    serial_msg[serial_i++] = val;
+    if(serial_i == 1){
+      serial_mid = val;
+      switch(serial_mid){
+      case ABS_TIME_REQ:
+	serial_msg_len = ABS_TIME_REQ_LEN;
+	break;
+      case ABS_TIME_SET:
+	serial_msg_len = ABS_TIME_SET_LEN;
+	break;
+      case TOD_ALARM_REQ:
+	serial_msg_len = TOD_ALARM_REQ_LEN;
+	break;
+      case TOD_ALARM_SET:
+	serial_msg_len = TOD_ALARM_SET_LEN;
+	break;
+      case MSG_REQ:
+	serial_msg_len = MSG_REQ_LEN;
+	break;
+      case SCROLL_MSG:
+	serial_msg_len = SCROLL_MSG_LEN;
+	break;
+      case EVENT_REQ:
+	serial_msg_len = EVENT_REQ_LEN;
+	break;
+      case EVENT_SET:
+	serial_msg_len = EVENT_SET_LEN;
+	break;
+      case DISPLAY_REQ:
+	serial_msg_len = DISPLAY_REQ_LEN;
+	break;
+      case DISPLAY_SET:
+	serial_msg_len = DISPLAY_SET_LEN;
+	break;
+      case MSG_SET:
+	serial_msg_len = MSG_SET_LEN;
+	break;
+      case NOT_USED: // fall through to default
+	serial_msg_len = NOT_USED_LEN;
+      default:
+	serial_i = 0;
+      }
+    }
+    if(serial_i == serial_msg_len){
+      for(int i = 0; i < serial_msg_len; i++){
+	// echo message
+	Serial.print(serial_msg[i]);
+      }
+      serial_i = 0;
+    }
+    if(serial_i == MAX_MSG_LEN){
+      serial_i = 0;
+    }
   }
+#ifndef CLOCKTWO
+  c3.refresh(16);
+#endif
 }
 /*
   Get ready for next mode.
  */
-void PC_exit(void) {
+void Serial_exit(void) {
   Serial.end();
 }
 /*
   Respond to button presses.
  */
-void PC_inc(void) {
+void Serial_inc(void) {
 }
-void PC_dec(void) {
+void Serial_dec(void) {
 }
-void PC_mode(void) {
+void Serial_mode(void) {
   switchmodes(NORMAL_MODE);
 }
 

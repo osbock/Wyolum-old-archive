@@ -4,8 +4,11 @@
 #include <inttypes.h>
 #include "Time.h"
 const uint8_t MONTHS[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30,31, 30, 31};
+const int DS3231_ADDR = 104;
+const int DS3231_TEMP_OFFSET = 0x11;
+const int DS3231_ALARM1_OFSET = 0x7;
 
-#define LEAP_YEAR(Y) (!((Y)%4) && ( ((Y)%100) || !((Y)%400)))
+#define LEAP_YEAR(Y) (!((Y)%4) && (((Y)%100) || !((Y)%400)))
 
 /*
  * single front end interface to both PCgetTime and RTCgetTime()

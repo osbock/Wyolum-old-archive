@@ -10,10 +10,10 @@ time_t getTime(){
   int ss, mm, hh, DD, MM, YY;
   
   // reused from macetech.com sample code
-  Wire.beginTransmission(104); // 104 is DS3231 device address
+  Wire.beginTransmission(DS3231_ADDR); 
   Wire.send(0); // start at register 0
   Wire.endTransmission();
-  Wire.requestFrom(104, 7); // request six bytes (second, minute, hour, day, month, year)
+  Wire.requestFrom(DS3231_ADDR, 7); // request six bytes (second, minute, hour, day, month, year)
   if(Wire.available()){
     ss = bcd2dec(Wire.receive()); // get seconds
     mm = bcd2dec(Wire.receive()); // get minutes
@@ -40,7 +40,7 @@ time_t getTime(){
 
 void setRTC(uint16_t YY, uint8_t MM, uint8_t DD, 
 	    uint8_t hh, uint8_t mm, uint8_t ss){
-  Wire.beginTransmission(104); // 104 is DS3231 device address
+  Wire.beginTransmission(DS3231_ADDR); 
   Wire.send(0); // start at register 0
   
   Wire.send(dec2bcd(ss)); //Send seconds as BCD
@@ -55,8 +55,8 @@ void setRTC(uint16_t YY, uint8_t MM, uint8_t DD,
 }
 
 void setRTC_alarm(uint8_t ahh, uint8_t amm, uint8_t ass, uint8_t alarm_set){
-  Wire.beginTransmission(104); // 104 is DS3231 device address
-  Wire.send(0x7); // start at register 0
+  Wire.beginTransmission(DS3231_ADDR); 
+  Wire.send(DS3231_ALARM1_OFSET); // start at register 0
   
   Wire.send(dec2bcd(ass)); //Send seconds as BCD
   Wire.send(dec2bcd(amm)); //Send minutes as BCD
@@ -70,10 +70,10 @@ void getRTC_alarm(uint8_t *ahh, uint8_t *amm, uint8_t *ass,
 		  uint8_t *alarm_set){
   uint8_t x;
 
-  Wire.beginTransmission(104); // 104 is DS3231 device address
-  Wire.send(0x7); // start at register 0x7
+  Wire.beginTransmission(DS3231_ADDR); 
+  Wire.send(DS3231_ALARM1_OFSET); 
   Wire.endTransmission();
-  Wire.requestFrom(104, 4); // request 3 bytes 
+  Wire.requestFrom(DS3231_ADDR, 4); // request 4 bytes 
   if(Wire.available()){
     *ass = bcd2dec(Wire.receive());
     *amm = bcd2dec(Wire.receive());
@@ -93,10 +93,10 @@ int getTemp(){
   int temp;
   int temp_c;
   
-  Wire.beginTransmission(104); // 104 is DS3231 device address
-  Wire.send(0x11); // start at register 0x11
+  Wire.beginTransmission(DS3231_ADDR); 
+  Wire.send(DS3231_TEMP_OFFSET); 
   Wire.endTransmission();
-  Wire.requestFrom(104, 2); // request 2 bytes 
+  Wire.requestFrom(DS3231_ADDR, 2); // request 2 bytes 
   if(Wire.available()){
     uint8_t tmp[0];
     tmp[0] = Wire.receive();

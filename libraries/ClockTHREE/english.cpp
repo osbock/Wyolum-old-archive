@@ -206,6 +206,9 @@ void minutes_hack(ClockTHREE c3, int mm, int ss){
   mm %= 5;
   uint8_t color, num;
   num = ss / 10;
+  for(int i = 0; i < mm; i++){
+    c3.setPixel(15, 4 + i, WHITE);
+  }
   switch(num){
   case 0:
     color = BLUE;

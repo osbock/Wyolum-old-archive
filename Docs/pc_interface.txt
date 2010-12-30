@@ -9,7 +9,7 @@ With this interface commands can be sent to:
 
 
 Details:
-Baudrate: 115200
+Baudrate: 57600 // Max funtional for arduino
 
 A synchronization message is sent at the start of communication and
 every so often to assure message alignment is maintained.
@@ -30,21 +30,24 @@ Fixed length messages:
 MID           length description               payload format 
 0x00               X not used                  NA
 0x01               1 request absolute time     NA
-0x01               5 set absolote time         4 bytes unsigned int (seconds from 00:00 Jan 1, 1970)
-0x02               1 request tod alarm         NA
-0x03               5 set tod alarm             4 bytes unsigned int (seconds from midnight)
-0x04               2 request message           1 byte scrollable ID (SID)
-0x05               2 scroll message            SID
-0x06               2 get annual event          SID
-0x07               6 set annual event          4 bytes unsigned int (seconds from Jan 1) SID
-0x08               1 request display           NA
-0x09          16x4+1 set display               16x4 byte display
-0x0A               1 trigger MODE              NA
-0x0B               1 trigger INC               NA
-0x0C               1 trigger DEC               NA
-0x0D               1 trigger AUX               NA
+0x02               5 set absolote time         4 bytes unsigned int (seconds from 00:00 Jan 1, 1970)
+0x03               1 request tod alarm         NA
+0x04               5 set tod alarm             4 bytes unsigned int (seconds from midnight)
+0x05               2 request message           1 byte scrollable ID (SID)
+0x06               2 scroll message            SID
+0x07               2 get annual event          SID
+0x08               6 set annual event          SID 4 bytes unsigned int (seconds from Jan 1)
+0x09               1 request display           NA
+0x0A          16x4+1 set display               16x4 byte display
+0x0B               1 trigger MODE              NA
+0x0C               1 trigger INC               NA
+0x0D               1 trigger DEC               NA
+0x0E               1 trigger AUX               NA
+0x0F               1 Get SW Version	       NA
+0x10               1 Get SW About              NA
+0x11             100 Ping                      1 99 data bytes
 
 Variable length messages.  Payload length is first byte after MID
 
 MID           length description               payload format 
-0x70  3 + msg length set current msg           1 byte payload length, 1 byte SID, char* msg
+0x70         3 + msg set current msg           1 byte payload length, 1 byte SID, char* msg
