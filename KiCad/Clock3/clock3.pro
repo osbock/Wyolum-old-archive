@@ -1,5 +1,5 @@
-update=12/30/10 20:22:29
-last_client=kicad
+update=12/31/10 18:22:09
+last_client=pcbnew
 [cvpcb]
 version=1
 NetIExt=net
@@ -43,9 +43,11 @@ ShowSheetReferenceAndTitleBlock=1
 [eeschema/libraries]
 LibName1=libs\\clock3
 LibName2=libs\\power
+[general]
+version=1
 [pcbnew]
 version=1
-PadDrlX=500
+PadDrlX=320
 PadDimH=800
 PadDimV=800
 BoardThickness=630
@@ -64,5 +66,3 @@ LastNetListRead=clock3.net
 [pcbnew/libraries]
 LibDir=
 LibName1=libs\\clock3_parts
-[general]
-version=1
