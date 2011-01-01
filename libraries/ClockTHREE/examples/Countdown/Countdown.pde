@@ -37,9 +37,15 @@ void setup(){
   c3.clear();
   setSyncProvider(getTime);      // RTC
   setSyncInterval(60000);      // update minute (and on boot)
-  alarm_seconds = now() % 86400 + 15;
-  // alarm_seconds = 86400;
-
+  // alarm_seconds = now() % 86400 + 15;
+  
+  // from RTC alarm
+  //getRTC_alarm(&ahh, &amm, &ass, &alarm_set);
+  //alarm_tm.Second = ass;
+  //alarm_tm.Minute = amm;
+  //alarm_tm.Hour = ahh;
+  //alarm_seconds = makeTime(alarm_tm) % 86400;
+  alarm_seconds = 0; // midnight
   font.getChar(':', color, colen);
 }
 
@@ -49,7 +55,14 @@ int last_ss = -1;
 int last_mm = -1;
 int last_hh = -1;
 void loop(){
-  time_t t = (alarm_seconds - now() % 86400);
+  
+  time_t t = now() % 86400;
+  if(t > alarm_seconds){
+    t = alarm_seconds + 86400 - t;
+  }
+  else{
+    t = alarm_seconds - t;
+  }
   uint8_t hh, mm, ss;
   hh = t / 3600;
   mm = (t % 3600) / 60;
