@@ -17,8 +17,9 @@
 #define CLOCKTWO
 
 #include <avr/pgmspace.h>
+#include <EEPROM.h>
 #include <Wire.h>
-#include <Time.h>
+#include "Time.h"
 #include "MsTimer2.h"
 #include "ClockTHREE.h"
 #include "SPI.h"
@@ -64,10 +65,11 @@ const uint8_t SET_ALARM_MODE = 3;
 const uint8_t SERIAL_MODE = 4;
 const uint8_t MODE_MODE = 5;
 
-// Sub Modes get ID > N_MODE
+// Sub Modes 
 const uint8_t SECONDS_MODE = 6;
 const uint8_t ALARM_MODE = 7;
 const uint8_t TEMPERATURE_MODE = 8;
+
 const uint8_t DEG_C = 0;
 const uint8_t DEG_F = 1;
 
@@ -113,41 +115,69 @@ const uint8_t      DEC_EVT = 3; // Decriment Button has been pressed
 const uint8_t     TICK_EVT = 4; // Second has ellapsed
 const uint8_t EVENT_Q_SIZE = 5; // Max # events.
 
-// Messaging constants
+// Messaging
+struct MsgDef{
+  uint8_t id;
+  uint8_t n_byte; // if n_byte > 100, variable length message
+  CallBackPtr cb;
+};
+
+union Serial_time_t{
+  time_t dat32; 
+  uint8_t dat8[4];
+};
+
 const uint8_t MAX_MSG_LEN = 100;
-// const uint8_t BAUD_RATE = 115200; // official
-const uint8_t BAUD_RATE = 9600; // for debugging
+const uint16_t BAUDRATE = 57600; // official
+const uint8_t SYNC_BYTE = 0xEF;
+const uint8_t VAR_LENGTH = 0xFF;
 
-const uint8_t NOT_USED = 0x00;
-const uint8_t ABS_TIME_REQ = 0x01;
-const uint8_t ABS_TIME_SET = 0x02;
-const uint8_t TOD_ALARM_REQ = 0x03;
-const uint8_t TOD_ALARM_SET = 0x04;
-const uint8_t MSG_REQ = 0x05;
-const uint8_t SCROLL_MSG = 0x06;
-const uint8_t EVENT_REQ = 0x07;
-const uint8_t EVENT_SET = 0x08;
-const uint8_t DISPLAY_REQ = 0x09;
-const uint8_t DISPLAY_SET = 0x0A;
-const uint8_t MSG_SET = 0x0B;
+const uint8_t N_MSG_TYPE = 20;
+const MsgDef  NOT_USED_MSG = {0x00, 1, do_nothing};
+const MsgDef  ABS_TIME_REQ = {0x01, 1, send_time};
+const MsgDef  ABS_TIME_SET = {0x02, 5, Serial_time_set};
+const MsgDef TOD_ALARM_REQ = {0x03, 1, tod_alarm_get};
+const MsgDef TOD_ALARM_SET = {0x04, 6, tod_alarm_set};
+const MsgDef      DATA_REQ = {0x05, 2, send_data};
+const MsgDef   SCROLL_DATA = {0x06, 2, do_nothing};
+const MsgDef     EVENT_REQ = {0x07, 2, do_nothing};
+const MsgDef     EVENT_SET = {0x08, 6, do_nothing};
+const MsgDef   DISPLAY_REQ = {0x09, 1, do_nothing};
+const MsgDef   DISPLAY_SET = {0x0A, 0x41, do_nothing};
+const MsgDef  TRIGGER_MODE = {0x0B, 1, do_nothing};
+const MsgDef   TRIGGER_INC = {0x0C, 1, do_nothing};
+const MsgDef   TRIGGER_DEC = {0x0D, 1, do_nothing};
+const MsgDef TRIGGER_ENTER = {0x0E, 1, do_nothing};
+const MsgDef   VERSION_REQ = {0x0F, 1, do_nothing};
+const MsgDef     ABOUT_REQ = {0x10, 1, do_nothing};
+const MsgDef          PING = {0x11, 100, pong};
+const MsgDef  CLEAR_EEPROM = {0x12, 20, clear_eeprom};
 
-const uint8_t NOT_USED_LEN = 0x00;
-const uint8_t ABS_TIME_REQ_LEN = 0x01;
-const uint8_t ABS_TIME_SET_LEN = 0x05;
-const uint8_t TOD_ALARM_REQ_LEN = 0x01;
-const uint8_t TOD_ALARM_SET_LEN = 0x05;
-const uint8_t MSG_REQ_LEN = 0x02;
-const uint8_t SCROLL_MSG_LEN = 0x02;
-const uint8_t EVENT_REQ_LEN = 0x02;
-const uint8_t EVENT_SET_LEN = 0x06;
-const uint8_t DISPLAY_REQ_LEN = 0x01;
-const uint8_t DISPLAY_SET_LEN = 0x41;
-const uint8_t MSG_SET_LEN = 0x01;
+const MsgDef          SYNC = {SYNC_BYTE, 2, do_nothing}; // must already be in sync
+const MsgDef      DATA_SET = {0x70, MAX_MSG_LEN, receive_data}; // variable length
+
+const MsgDef *MSG_DEFS[N_MSG_TYPE] = {&NOT_USED_MSG,
+				      &ABS_TIME_REQ,
+				      &ABS_TIME_SET,
+				      &TOD_ALARM_REQ,
+				      &TOD_ALARM_SET,
+				      &DATA_REQ,
+				      &SCROLL_DATA,
+				      &EVENT_REQ,
+				      &EVENT_SET,
+				      &DISPLAY_REQ,
+				      &DISPLAY_SET,
+				      &TRIGGER_MODE,
+				      &TRIGGER_INC,
+				      &TRIGGER_DEC,
+				      &TRIGGER_ENTER,
+				      &VERSION_REQ,
+				      &ABOUT_REQ,
+				      &PING,
+				      &CLEAR_EEPROM,
+				      &DATA_SET};
 
 char serial_msg[MAX_MSG_LEN];
-uint8_t serial_i = 0;
-uint8_t serial_mid;
-uint8_t serial_msg_len;
 
 // Globals
 uint8_t event_q[EVENT_Q_SIZE];
@@ -733,7 +763,6 @@ void SetColor_exit(void) {
   Respond to button presses.
  */
 void SetColor_inc(void) {
-  digitalWrite(DBG, HIGH);
   color_i++;
   color_i %= N_COLOR; // DARK=OFF
 }
@@ -758,80 +787,192 @@ void SetColor_mode(void) {
 void Serial_setup(void){
   faceplate.display_word(c3, MONO, usb_led);
   c3.refresh();
-  serial_i = 0;
-  PORTD = 0;
-  digitalWrite(COL_DRIVER_ENABLE, HIGH);
-  Serial.begin(BAUD_RATE);
-  Serial.println("Ready to recieve!");
-  delay(10000);
+  pinMode(DBG, OUTPUT);
+  Serial.begin(BAUDRATE);
+  for(int i = 0; i < 4; i++){
+    digitalWrite(DBG, HIGH);
+    delay(50);
+    digitalWrite(DBG, LOW);
+    delay(50);
+  }
+  digitalWrite(DBG, HIGH);
 }
+
 void Serial_loop(void) {
   uint8_t val;
-  Serial.print("THIS IS A TEST: Serial_loop()");
-  while(Serial.available()){
+  boolean resync_flag = true;
+
+  if(Serial.available()){
     val = Serial.read();
-    serial_msg[serial_i++] = val;
-    if(serial_i == 1){
-      serial_mid = val;
-      switch(serial_mid){
-      case ABS_TIME_REQ:
-	serial_msg_len = ABS_TIME_REQ_LEN;
+    // find msg type
+    for(uint8_t msg_i = 0; msg_i < N_MSG_TYPE; msg_i++){
+      if(MSG_DEFS[msg_i]->id == val){
+	if(Serial_get_msg(MSG_DEFS[msg_i]->n_byte - 1)){
+	  // payload stored in serial_msg: callback time.
+	  MSG_DEFS[msg_i]->cb();
+	}
+	else{
+	  // Got a sync message unexpectedly. Get ready for new message.
+	  // no callback
+	}
+	resync_flag = false;
 	break;
-      case ABS_TIME_SET:
-	serial_msg_len = ABS_TIME_SET_LEN;
-	break;
-      case TOD_ALARM_REQ:
-	serial_msg_len = TOD_ALARM_REQ_LEN;
-	break;
-      case TOD_ALARM_SET:
-	serial_msg_len = TOD_ALARM_SET_LEN;
-	break;
-      case MSG_REQ:
-	serial_msg_len = MSG_REQ_LEN;
-	break;
-      case SCROLL_MSG:
-	serial_msg_len = SCROLL_MSG_LEN;
-	break;
-      case EVENT_REQ:
-	serial_msg_len = EVENT_REQ_LEN;
-	break;
-      case EVENT_SET:
-	serial_msg_len = EVENT_SET_LEN;
-	break;
-      case DISPLAY_REQ:
-	serial_msg_len = DISPLAY_REQ_LEN;
-	break;
-      case DISPLAY_SET:
-	serial_msg_len = DISPLAY_SET_LEN;
-	break;
-      case MSG_SET:
-	serial_msg_len = MSG_SET_LEN;
-	break;
-      case NOT_USED: // fall through to default
-	serial_msg_len = NOT_USED_LEN;
-      default:
-	serial_i = 0;
+	// return;
       }
     }
-    if(serial_i == serial_msg_len){
-      for(int i = 0; i < serial_msg_len; i++){
-	// echo message
-	Serial.print(serial_msg[i]);
-      }
-      serial_i = 0;
-    }
-    if(serial_i == MAX_MSG_LEN){
-      serial_i = 0;
+    if(resync_flag){
+      Serial_sync_wait();
     }
   }
-#ifndef CLOCKTWO
-  c3.refresh(16);
-#endif
 }
+
+void Serial_sync_wait(){
+  // wait for SYNC message;
+  uint8_t val;
+  uint8_t n = 0;
+  digitalWrite(DBG, LOW);
+  while(n < SYNC.n_byte){
+    if(Serial.available()){
+      val = Serial.read();
+      if(val == SYNC_BYTE){ // look for other chars
+	n++;
+      }
+      else{
+	n = 0;
+      }
+    }
+  }
+  digitalWrite(DBG, HIGH);
+}
+
+void pong(){
+  for(int i=0; i < 99; i++){
+    Serial.print(serial_msg[i],BYTE);
+  }
+}
+
+void send_time(){
+  Serial_time_t data;
+  
+  data.dat32 = now();
+  for(int i = 0; i < 4; i++){
+    Serial.print(data.dat8[i], BYTE);
+  }
+}
+
+void Serial_time_set(){
+  Serial_time_t data;
+
+  for(int i = 0; i < 4; i++){
+    data.dat8[i] = serial_msg[i];
+  }
+  setTime(data.dat32);
+  YY = year();
+  MM = month();
+  DD = day();
+  hh = hour();
+  mm = minute();
+  ss = second();
+  setRTC(YY, MM, DD, hh, mm, ss);
+}
+void tod_alarm_set(){
+  Serial_time_t data;
+  for(int i = 0; i < 4; i++){
+    data.dat8[i] = serial_msg[i];
+  }
+  tmElements_t tm;
+  breakTime(data.dat32, tm);
+  ahh = tm.Hour;
+  amm = tm.Minute;
+  ass = tm.Second;
+  alarm_set = serial_msg[4];
+}
+
+void tod_alarm_get(){
+  Serial_time_t data;
+  tmElements_t tm;
+  tm.Hour = ahh;
+  tm.Minute = amm;
+  tm.Second = ass;
+  data.dat32 = makeTime(tm);
+  data.dat32 %= 86400;
+
+  Serial.print(TOD_ALARM_SET.id, BYTE);
+  for(int i = 0; i < 4; i++){
+    Serial.print(data.dat8[i], BYTE);
+  }
+  Serial.print(alarm_set, BYTE);
+}
+
+void receive_data(){
+  uint8_t n_byte = serial_msg[0];
+  uint8_t did = serial_msg[1];
+
+  for(int i=0; i < n_byte; i++){
+    EEPROM.write(did * MAX_MSG_LEN + i, serial_msg[i]);
+  }
+}
+
+void send_data(){
+  uint8_t did = serial_msg[0];
+  uint8_t n_byte = EEPROM.read(did * MAX_MSG_LEN);
+  
+  Serial.print(DATA_SET.id, BYTE);
+  for(int i=0; i < n_byte; i++){
+    Serial.print(EEPROM.read(did * MAX_MSG_LEN + i));
+  }
+}
+
+void clear_eeprom(){
+  bool confirmed = true;
+  for(int i = 0; i < CLEAR_EEPROM.n_byte - 1; i++){
+    if(serial_msg[i] != CLEAR_EEPROM.id){
+      confirmed = false;
+      break;
+    }
+  }
+  if(confirmed){
+    for(int i = 0; i < 1023; i++){
+      EEPROM.write(i, 0);
+    }
+  }
+}
+boolean Serial_get_msg(uint8_t n_byte) {
+  int i = 0;
+  uint8_t val, next;
+  boolean out = true;
+  digitalWrite(DBG, LOW);
+  if(n_byte == VAR_LENGTH){
+    // variable length message
+    while(!Serial.available()){
+      delay(1);
+    }
+    n_byte = Serial.peek();
+  }
+  while(i < n_byte){
+    if(Serial.available()){
+      val = Serial.read();
+      if (val == SYNC_BYTE){
+	next = Serial.peek();
+	if(next == SYNC_BYTE){
+	  // SYNC MESSAGE RECEIVED!  Next byte is start of new message
+	  // abort message
+	  out = false;
+	  break;
+	}
+      }
+      serial_msg[i++] = val;
+    }
+  }
+  digitalWrite(DBG, HIGH);
+  return out;
+}
+
 /*
   Get ready for next mode.
  */
 void Serial_exit(void) {
+  digitalWrite(DBG, LOW);
   Serial.end();
 }
 /*
