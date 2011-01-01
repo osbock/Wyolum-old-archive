@@ -37,7 +37,7 @@ void setup(){
   c3.clear();
   setSyncProvider(getTime);      // RTC
   setSyncInterval(60000);      // update minute (and on boot)
-  // alarm_seconds = now() % 86400 + 15;
+  alarm_seconds = now() % 86400 + 5;
   
   // from RTC alarm
   //getRTC_alarm(&ahh, &amm, &ass, &alarm_set);
@@ -45,7 +45,7 @@ void setup(){
   //alarm_tm.Minute = amm;
   //alarm_tm.Hour = ahh;
   //alarm_seconds = makeTime(alarm_tm) % 86400;
-  alarm_seconds = 0; // midnight
+  // alarm_seconds = 0; // midnight
   font.getChar(':', color, colen);
 }
 
@@ -115,16 +115,16 @@ void fireworks(){
       if(random(0, 10) < 5){
 	memset(displays, 0, N_COL * N_DISPLAY * sizeof(uint32_t));
       }
-      x = random(0, 16);
-      y = random(0, 6);
+      x = random(3, 13);
+      y = random(3, 10);
       int istart = random(0, 10);
       c3.setdisplay(displays + istart * N_COL);
       // c3.line(7, 11, x, y, WHITE);
       for(int i = istart; i < istart + 10; i++){
 	c3.setdisplay(displays + i * N_COL);
-	c3.circle(x, y, (i + 1 - istart), BLUE);
-	c3.circle(x, y, (i + 2 - istart), RED);
-	c3.circle(x, y, (i + 3 - istart), GREEN);
+	c3.circle(x, y, (i + 1 - istart), COLORS[random(0, 8)]);
+	c3.circle(x, y, (i + 2 - istart), COLORS[random(0, 8)]);
+	c3.circle(x, y, (i + 3 - istart), COLORS[random(0, 8)]);
       }
       x = random(0, 16);
       y = random(0, 9);
@@ -132,9 +132,9 @@ void fireworks(){
       if(istart < 10){
 	for(int i = istart; i < istart + 10; i++){
 	  c3.setdisplay(displays + i * N_COL);
-	  c3.circle(x, y, (i + 1 - istart), BLUE);
-	  c3.circle(x, y, (i + 2 - istart), RED);
-	  c3.circle(x, y, (i + 3 - istart), GREEN);
+	  c3.circle(x, y, (i + 1 - istart), COLORS[random(0, 8)]);
+	  c3.circle(x, y, (i + 2 - istart), COLORS[random(0, 8)]);
+	  c3.circle(x, y, (i + 3 - istart), COLORS[random(0, 8)]);
 	}
       }
       int iter = random(1, 2);

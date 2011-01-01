@@ -142,8 +142,8 @@ const MsgDef      DATA_REQ = {0x05, 2, send_data};
 const MsgDef   SCROLL_DATA = {0x06, 2, do_nothing};
 const MsgDef     EVENT_REQ = {0x07, 2, do_nothing};
 const MsgDef     EVENT_SET = {0x08, 6, do_nothing};
-const MsgDef   DISPLAY_REQ = {0x09, 1, do_nothing};
-const MsgDef   DISPLAY_SET = {0x0A, 0x41, do_nothing};
+const MsgDef   DISPLAY_REQ = {0x09, 1, display_send};
+const MsgDef   DISPLAY_SET = {0x0A, 2, display_set};
 const MsgDef  TRIGGER_MODE = {0x0B, 1, do_nothing};
 const MsgDef   TRIGGER_INC = {0x0C, 1, do_nothing};
 const MsgDef   TRIGGER_DEC = {0x0D, 1, do_nothing};
@@ -154,7 +154,8 @@ const MsgDef          PING = {0x11, 100, pong};
 const MsgDef  CLEAR_EEPROM = {0x12, 20, clear_eeprom};
 
 const MsgDef          SYNC = {SYNC_BYTE, 2, do_nothing}; // must already be in sync
-const MsgDef      DATA_SET = {0x70, MAX_MSG_LEN, receive_data}; // variable length
+// const MsgDef      DATA_SET = {0x70, MAX_MSG_LEN, receive_data}; // variable length
+const MsgDef      DATA_SET = {0x70, VAR_LENGTH, receive_data}; // variable length
 
 const MsgDef *MSG_DEFS[N_MSG_TYPE] = {&NOT_USED_MSG,
 				      &ABS_TIME_REQ,
@@ -923,6 +924,19 @@ void send_data(){
   }
 }
 
+void display_send(){
+  uint8_t *display_p = (uint8_t *)display;
+  for(int i = 0; i < N_COL * sizeof(uint32_t); i++){
+    Serial.print(display_p[i], BYTE);
+  }
+}
+void display_set(){
+  uint8_t did = serial_msg[0];
+  uint8_t *display_p = (uint8_t *)display;
+  for(int i = 0; i < N_COL * sizeof(uint32_t); i++){
+    display_p[i] = EEPROM.read(did * MAX_MSG_LEN + i + 2);
+  }
+}
 void clear_eeprom(){
   bool confirmed = true;
   for(int i = 0; i < CLEAR_EEPROM.n_byte - 1; i++){
