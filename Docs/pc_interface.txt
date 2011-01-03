@@ -9,7 +9,7 @@ With this interface commands can be sent to:
 
 
 Details:
-Baudrate: 57600 // Max funtional for arduino
+Baudrate: 57600 // Max rate for arduino
 
 A synchronization message is sent at the start of communication and
 every so often to assure message alignment is maintained.
@@ -32,22 +32,57 @@ MID           length description               payload format
 0x01               1 request absolute time     NA
 0x02               5 set absolote time         4 bytes unsigned int (seconds from 00:00 Jan 1, 1970)
 0x03               1 request tod alarm         NA
-0x04               5 set tod alarm             4 bytes unsigned int (seconds from midnight)
-0x05               2 request message           1 byte scrollable ID (SID)
-0x06               2 scroll message            SID
-0x07               2 get annual event          SID
-0x08               6 set annual event          SID 4 bytes unsigned int (seconds from Jan 1)
-0x09               1 request display           NA
-0x0A          16x4+1 set display               16x4 byte display
-0x0B               1 trigger MODE              NA
-0x0C               1 trigger INC               NA
-0x0D               1 trigger DEC               NA
-0x0E               1 trigger AUX               NA
-0x0F               1 Get SW Version	       NA
-0x10               1 Get SW About              NA
-0x11             100 Ping                      1 99 data bytes
+0x04               6 set tod alarm             4 bytes unsigned int (seconds from midnight)
+0x05               2 request message           1 byte data ID (DID)
+0x06               2 delete message            1 byte data ID (DID)
+0x07               2 scroll message            DID
+0x08               2 get annual event          DID
+0x09               6 set annual event          DID 4 bytes unsigned int (seconds from Jan 1)
+0x0A               1 request display           NA
+0x0B               2 set display               DID 
+0x0C               1 trigger MODE              NA
+0x0D               1 trigger INC               NA
+0x0E               1 trigger DEC               NA
+0x0F               1 trigger AUX               NA
+0x10               1 Get SW Version	       NA
+0x11               1 Get SW About              NA
+0x12             100 Ping                      1 99 data bytes
+0x13		  20 clear eeprom	       zero all data in EEPROM
+0xEF               2 SYNC		       1 data byte (0xEF)
 
 Variable length messages.  Payload length is first byte after MID
 
 MID           length description               payload format 
-0x70         3 + msg set current msg           1 byte payload length, 1 byte SID, char* msg
+0x70         3 + msg send data           1 byte- message length (payload len + 3), 1 byte (data id) DID, char* msg
+0x71         2 + msg error data          1 byte length error message
+
+
+The sync message 0xEF:
+"0xEF" + "0xEF" should be followed by a valid DID in the next byte.  If ClockTHREE does not recieve
+a valid DID at the end of each message, it will not accept any new data until sync message is passed.  The
+DBG LED is used to indicate ready for data.
+
+
+Set alarm message 0x04 6 bytes:
+byte 0: DID
+bytes 1,2,3,4: time (seconds from Unix epoch Jan 1 1970)
+byte 5:
+     bit 0: beep_set_flag 1 => set, 0 => unset
+     bits 1-7: DID event data id # 0 for no DID.
+
+All rendering information is stored in the DID.
+DID memory:
+byte0: payload length (including this byte) 9
+byte1: DID
+byte2: countdown #number seconds
+byte3: countdown #number minutes
+byte4: repeat interval # minutes
+byte5: Days of the week repeat:
+       bit0: repeat every Sunday hence
+       bit1: repeat every Monday hence
+       ...
+       bit6: repeat every Saturday hence
+       bit7: repeat every year hence (annual event)
+byte6: scroll message DID
+byte7: special effect #(1 => fireworks, 2=> color lines)
+byte8: tune DID 

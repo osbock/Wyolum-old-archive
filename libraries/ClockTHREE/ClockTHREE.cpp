@@ -202,7 +202,7 @@ void ClockTHREE::setPixel(uint8_t xpos, uint8_t ypos, uint8_t color){
   if(display != NULL){
     // RGB pixels
     color = getColor(color); 
-    if(ypos < N_RGB_ROW and xpos < N_COL){
+    if(ypos < N_RGB_ROW && xpos < N_COL){
       // clear pixel
       display[xpos] &= ~((uint32_t)0b111 << (3 * ypos)); 
 
@@ -210,7 +210,7 @@ void ClockTHREE::setPixel(uint8_t xpos, uint8_t ypos, uint8_t color){
       display[xpos] |= ((uint32_t)color << (3 * ypos)); 
     }
     // MONO pixels
-    else if(ypos < N_ROW){ // ROW 10 or 11
+    else if(ypos < N_ROW && xpos < N_COL){ // ROW 10 or 11
       if(ypos == 10){
 	if(color == MONO){
 	  display[xpos] |= 0b01000000000000000000000000000000; // set
