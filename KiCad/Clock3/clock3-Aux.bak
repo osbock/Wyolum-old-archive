@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/30/10 19:55:59
+EESchema Schematic File Version 2  date 01/01/11 11:58:58
 LIBS:clock3
 LIBS:power
 LIBS:clock3-cache
@@ -1219,7 +1219,7 @@ U 1 1 4B3F12CA
 P 3300 4950
 F 0 "D196" H 3300 5050 50  0000 C CNN
 F 1 "PWR" H 3300 4850 50  0000 C CNN
-F 2 "led_5mm_clear" H 3300 4950 60  0001 C CNN
+F 2 "led_5mm_blue" H 3300 4950 60  0001 C CNN
 	1    3300 4950
 	0    1    1    0   
 $EndComp

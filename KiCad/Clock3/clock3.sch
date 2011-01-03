@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/30/10 20:22:06
+EESchema Schematic File Version 2  date 01/03/11 18:27:14
 LIBS:clock3
 LIBS:power
 LIBS:clock3-cache
@@ -7,7 +7,7 @@ EELAYER END
 $Descr A4 11700 8267
 Sheet 1 3
 Title "ClockTHREE"
-Date "30 dec 2010"
+Date "3 jan 2011"
 Rev "A"
 Comp "An Arduino based RGB LED Array"
 Comment1 "Wyo Innovations      :: Lumetronics"
@@ -632,7 +632,7 @@ U 1 1 4C2C6A4D
 P 7150 3325
 F 0 "DIL-U2" H 6975 2475 60  0000 C CNN
 F 1 "STP16DP05" H 7700 2450 60  0000 C CNN
-F 2 "DIP-24__600_ELL" H 7150 3325 60  0001 C CNN
+F 2 "SCK-24_600_ELL" H 7150 3325 60  0001 C CNN
 	1    7150 3325
 	1    0    0    -1  
 $EndComp
@@ -642,7 +642,7 @@ U 1 1 4C2C6A39
 P 7150 1475
 F 0 "DIL-U1" H 6975 625 60  0000 C CNN
 F 1 "STP16DP05" H 7700 600 60  0000 C CNN
-F 2 "DIP-24__600_ELL" H 7150 1475 60  0001 C CNN
+F 2 "SCK-24_600_ELL" H 7150 1475 60  0001 C CNN
 	1    7150 1475
 	1    0    0    -1  
 $EndComp
@@ -1273,7 +1273,7 @@ U 1 1 4B077B46
 P 3725 7050
 F 0 "D193" H 3925 6950 50  0000 C CNN
 F 1 "DBG" H 3875 6850 50  0000 C CNN
-F 2 "led_5mm_clear" H 3725 7050 60  0001 C CNN
+F 2 "led_5mm_blue" H 3725 7050 60  0001 C CNN
 	1    3725 7050
 	0    1    1    0   
 $EndComp
