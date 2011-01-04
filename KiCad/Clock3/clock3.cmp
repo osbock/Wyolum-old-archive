@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 01/01/11 16:07:51
+Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 01/04/11 18:16:58
 
 BeginCmp
 TimeStamp = /4C134896/4C135743;
@@ -1508,7 +1508,7 @@ EndCmp
 BeginCmp
 TimeStamp = /4B3F1092/4C122417;
 Reference = P13;
-ValeurCmp = ISP_Header;
+ValeurCmp = ISP;
 IdModule  = PIN_STRIP_3X2;
 EndCmp
 
@@ -1753,120 +1753,120 @@ EndCmp
 BeginCmp
 TimeStamp = /4C134896/4C136C56;
 Reference = Q1;
-ValeurCmp = KSH32CTF;
-IdModule  = TO92_3;
+ValeurCmp = 2N5401;
+IdModule  = to92_2N5401;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C134896/4C136CD8;
 Reference = Q2;
-ValeurCmp = KSH32CTF;
-IdModule  = TO92_3;
+ValeurCmp = 2N5401;
+IdModule  = to92_2N5401;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C134896/4C136CE0;
 Reference = Q3;
-ValeurCmp = KSH32CTF;
-IdModule  = TO92_3;
+ValeurCmp = 2N5401;
+IdModule  = to92_2N5401;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C134896/4C136CE5;
 Reference = Q4;
-ValeurCmp = KSH32CTF;
-IdModule  = TO92_3;
+ValeurCmp = 2N5401;
+IdModule  = to92_2N5401;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C134896/4C136CEB;
 Reference = Q5;
-ValeurCmp = KSH32CTF;
-IdModule  = TO92_3;
+ValeurCmp = 2N5401;
+IdModule  = to92_2N5401;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C134896/4C136CF0;
 Reference = Q6;
-ValeurCmp = KSH32CTF;
-IdModule  = TO92_3;
+ValeurCmp = 2N5401;
+IdModule  = to92_2N5401;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C134896/4C136CF9;
 Reference = Q7;
-ValeurCmp = KSH32CTF;
-IdModule  = TO92_3;
+ValeurCmp = 2N5401;
+IdModule  = to92_2N5401;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C134896/4C136D0B;
 Reference = Q8;
-ValeurCmp = KSH32CTF;
-IdModule  = TO92_3;
+ValeurCmp = 2N5401;
+IdModule  = to92_2N5401;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C134896/4C136D11;
 Reference = Q9;
-ValeurCmp = KSH32CTF;
-IdModule  = TO92_3;
+ValeurCmp = 2N5401;
+IdModule  = to92_2N5401;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C134896/4C136D19;
 Reference = Q10;
-ValeurCmp = KSH32CTF;
-IdModule  = TO92_3;
+ValeurCmp = 2N5401;
+IdModule  = to92_2N5401;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C134896/4C136D1F;
 Reference = Q11;
-ValeurCmp = KSH32CTF;
-IdModule  = TO92_3;
+ValeurCmp = 2N5401;
+IdModule  = to92_2N5401;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C134896/4C136D24;
 Reference = Q12;
-ValeurCmp = KSH32CTF;
-IdModule  = TO92_3;
+ValeurCmp = 2N5401;
+IdModule  = to92_2N5401;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C134896/4C136D29;
 Reference = Q13;
-ValeurCmp = KSH32CTF;
-IdModule  = TO92_3;
+ValeurCmp = 2N5401;
+IdModule  = to92_2N5401;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C134896/4C136D32;
 Reference = Q14;
-ValeurCmp = KSH32CTF;
-IdModule  = TO92_3;
+ValeurCmp = 2N5401;
+IdModule  = to92_2N5401;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C134896/4C136D37;
 Reference = Q15;
-ValeurCmp = KSH32CTF;
-IdModule  = TO92_3;
+ValeurCmp = 2N5401;
+IdModule  = to92_2N5401;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C134896/4C136D3C;
 Reference = Q16;
-ValeurCmp = KSH32CTF;
-IdModule  = TO92_3;
+ValeurCmp = 2N5401;
+IdModule  = to92_2N5401;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C9A0DF8;
 Reference = Q17;
 ValeurCmp = 2N5401;
-IdModule  = TO92_3;
+IdModule  = to92_2N5401;
 EndCmp
 
 BeginCmp
@@ -2070,6 +2070,20 @@ TimeStamp = /4C9A0F04;
 Reference = R33;
 ValeurCmp = 680E;
 IdModule  = RC03;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D2315D0;
+Reference = rowBoB1;
+ValeurCmp = CONN_1;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D2315BF;
+Reference = rowBoB2;
+ValeurCmp = CONN_1;
+IdModule  = vite_3mm;
 EndCmp
 
 BeginCmp

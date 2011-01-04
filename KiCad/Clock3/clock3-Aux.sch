@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 01/03/11 18:27:14
+EESchema Schematic File Version 2  date 01/04/11 18:15:53
 LIBS:clock3
 LIBS:power
 LIBS:clock3-cache
@@ -7,7 +7,7 @@ EELAYER END
 $Descr A4 11700 8267
 Sheet 3 3
 Title "ClockTWO"
-Date "3 jan 2011"
+Date "4 jan 2011"
 Rev "A"
 Comp "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment1 "wyoinnovation.blogspot.com"
@@ -879,7 +879,7 @@ U 1 1 4C9A16BC
 P 1200 1250
 F 0 "P41" V 1150 1250 50  0000 C CNN
 F 1 "STACK-L" V 1250 1250 50  0000 C CNN
-F 2 "PIN_STRIP_4-90" H 1200 1250 60  0001 C CNN
+F 2 "pin_sck_4-90" H 1200 1250 60  0001 C CNN
 	1    1200 1250
 	-1   0    0    -1  
 $EndComp
@@ -1028,7 +1028,7 @@ VDD
 Text HLabel 10700 950  2    40   Input ~ 0
 VCC
 Text Notes 9050 4200 0    47   ~ 0
-ISP HEADER
+ISP
 Text Label 9750 3750 0    40   ~ 0
 MOSI-SDI
 Text Label 9750 3550 0    40   ~ 0
@@ -1046,7 +1046,7 @@ L CONN_6 P13
 U 1 1 4C122417
 P 9150 3800
 F 0 "P13" V 9100 3800 60  0000 C CNN
-F 1 "ISP Header" V 9200 3800 60  0000 C CNN
+F 1 "ISP" V 9200 3800 60  0000 C CNN
 F 2 "PIN_STRIP_3X2" H 9150 3800 60  0001 C CNN
 	1    9150 3800
 	-1   0    0    1   
@@ -1192,7 +1192,7 @@ U 1 1 4B3F12CF
 P 2600 4150
 F 0 "U5" H 2500 4350 60  0000 C CNN
 F 1 "7805" V 2650 3850 60  0000 C CNN
-F 2 "Volt_Reg_78xx" H 2600 4150 60  0001 C CNN
+F 2 "VOLT_REG_78XX" H 2600 4150 60  0001 C CNN
 	1    2600 4150
 	1    0    0    -1  
 $EndComp

@@ -1,1810 +1,1743 @@
-# EESchema Netlist Version 1.1 created  01/03/11 18:27:24
+# EESchema Netlist Version 1.1 created  01/04/11 18:16:58
 (
- ( /4D133449 RC03  R23 10k {Lib=R}
-  (    1 /ENTER )
-  (    2 /clock3-Aux/GND )
- )
- ( /4D1333DE SW_PB_V  SW5 ENTER {Lib=SW_PUSH}
-  (    1 VCC )
-  (    2 /ENTER )
- )
- ( /4C9A4A71 Pad01  P43 CONN_1 {Lib=CONN_1}
-  (    1 N-000068 )
- )
- ( /4C9A0F04 RC03  R33 680E {Lib=R}
-  (    1 N-000062 )
-  (    2 /SPEAKER )
- )
- ( /4C9A0DF8 to92_3  Q17 2N5401 {Lib=PNP}
-  (    1 VCC )
-  (    2 N-000062 )
-  (    3 N-000069 )
- )
- ( /4C2C6A4D SCK-24_600_ELL  DIL-U2 STP16DP05 {Lib=STP16DP05}
-  (    1 /clock3-Aux/GND )
-  (    2 /SDO-SDI )
-  (    3 /clock3-Aux/SCK-CLK )
-  (    4 /OC1A-LE )
-  (    5 /R06G )
-  (    6 /R06B )
-  (    7 /clock3-LED/R07R )
-  (    8 /R07G )
-  (    9 /R07B )
-  (   10 /clock3-LED/R08R )
-  (   11 /clock3-LED/R08G )
-  (   12 /clock3-LED/R08B )
-  (   13 /R09R )
-  (   14 /R09G )
-  (   15 /R09B )
-  (   16 /R10R )
-  (   17 /R10G )
-  (   18 /R10B )
-  (   19 /clock3-LED/R11W )
-  (   20 /R12W )
-  (   21 /clock3-Aux/GND )
-  (   22 ? )
-  (   23 ? )
-  (   24 VCC )
- )
- ( /4C2C6A39 SCK-24_600_ELL  DIL-U1 STP16DP05 {Lib=STP16DP05}
-  (    1 /clock3-Aux/GND )
-  (    2 /clock3-Aux/MOSI-SDI )
-  (    3 /clock3-Aux/SCK-CLK )
-  (    4 /OC1A-LE )
-  (    5 /R01R )
-  (    6 /R01G )
-  (    7 /R01B )
-  (    8 /R02R )
-  (    9 /clock3-LED/R02G )
-  (   10 /R02B )
-  (   11 /R03R )
-  (   12 /R03G )
-  (   13 /R03B )
-  (   14 /R04R )
-  (   15 /R04G )
-  (   16 /R04B )
-  (   17 /R05R )
-  (   18 /R05G )
-  (   19 /R05B )
-  (   20 /R06R )
-  (   21 /clock3-Aux/GND )
-  (   22 /SDO-SDI )
-  (   23 ? )
-  (   24 VCC )
- )
- ( /4C1741EB RC03  R31 10K {Lib=R}
-  (    1 /LDR )
-  (    2 VCC )
- )
- ( /4C1741DB pin_strip_2  R32 LDR {Lib=RVAR}
-  (    1 /clock3-Aux/GND )
-  (    2 /LDR )
- )
- ( /4C17353D RC03  R30 100E {Lib=R}
-  (    1 N-000014 )
-  (    2 N-000069 )
- )
- ( /4C173167 Speaker  SP1 SPEAKER {Lib=SPEAKER}
-  (    1 N-000014 )
-  (    2 /clock3-Aux/GND )
-  (    3 /clock3-Aux/GND )
- )
- ( /4C1345CB C2  C3 100n {Lib=C}
-  (    1 VCC )
-  (    2 /clock3-Aux/GND )
- )
- ( /4C12211E C2  C6 100n {Lib=C}
-  (    1 VCC )
-  (    2 /clock3-Aux/GND )
- )
- ( /4C109B50 DIP-24__600_ELL  U4 74LS154 {Lib=74LS154}
-  (    1 /COL01 )
-  (    2 /COL02 )
-  (    3 /COL03 )
-  (    4 /COL04 )
-  (    5 /clock3-LED/COL05 )
-  (    6 /COL06 )
-  (    7 /COL07 )
-  (    8 /COL08 )
-  (    9 /clock3-LED/COL09 )
-  (   10 /COL10 )
-  (   11 /clock3-LED/COL11 )
-  (   12 /clock3-Aux/GND )
-  (   13 /clock3-LED/COL12 )
-  (   14 /COL13 )
-  (   15 /COL14 )
-  (   16 /clock3-LED/COL15 )
-  (   17 /clock3-LED/COL16 )
-  (   18 /clock3-Aux/GND )
-  (   19 /COL_DRIVER_ENABLE )
-  (   20 /A3 )
-  (   21 /A2 )
-  (   22 /A1 )
-  (   23 /A0 )
-  (   24 VCC )
- )
- ( /4B6FC619 RC03  R17 10k {Lib=R}
-  (    1 /MODE )
-  (    2 /clock3-Aux/GND )
- )
- ( /4B6FC330 SW_PB_V  SW3 MODE {Lib=SW_PUSH}
-  (    1 VCC )
-  (    2 /MODE )
- )
- ( /4B6FC25C SW_PB_V  SW4 RST {Lib=SW_PUSH}
-  (    1 /clock3-Aux/GND )
-  (    2 /clock3-Aux/RES )
- )
- ( /4B680EC9 SW_PB_V  SW2 DEC {Lib=SW_PUSH}
-  (    1 VCC )
-  (    2 /DEC )
- )
- ( /4B680EC2 SW_PB_V  SW1 INC {Lib=SW_PUSH}
-  (    1 VCC )
-  (    2 /INC )
- )
- ( /4B66B818 RC03  R20 4k7 {Lib=R}
-  (    1 VCC )
-  (    2 /SDA )
- )
- ( /4B66B80D RC03  R21 4k7 {Lib=R}
-  (    1 VCC )
-  (    2 /clock3-Aux/SCL )
- )
- ( /4B077B9C RC03  R19 10k {Lib=R}
-  (    1 /INC )
-  (    2 /clock3-Aux/GND )
- )
- ( /4B077B96 RC03  R18 10k {Lib=R}
-  (    1 /DEC )
-  (    2 /clock3-Aux/GND )
- )
- ( /4B077B46 led_5mm_blue  D193 DBG {Lib=LED}
-  (    1 N-000052 )
-  (    2 /clock3-Aux/GND )
- )
- ( /4B077B33 RC03  R25 1k {Lib=R}
-  (    1 N-000052 )
-  (    2 /MISO )
- )
- ( /4B077B1E RC03  R22 10k {Lib=R}
-  (    1 VCC )
-  (    2 /clock3-Aux/RES )
- )
- ( /4B077AD9 XTAL  X1 16MHz {Lib=CRYSTAL}
-  (    ~ /clock3-Aux/GND )
-  (    1 N-000048 )
-  (    2 N-000053 )
- )
- ( /4B07796D dil_28-300_socket  U3 ATMEGA8-P {Lib=ATMEGA8-P}
-  (    1 /clock3-Aux/RES )
-  (    2 /RXD )
-  (    3 /clock3-Aux/TXD )
-  (    4 /MODE )
-  (    5 /INC )
-  (    6 /A0 )
-  (    7 VCC )
-  (    8 /clock3-Aux/GND )
-  (    9 N-000048 )
-  (   10 N-000053 )
-  (   11 /A1 )
-  (   12 /A2 )
-  (   13 /A3 )
-  (   14 /ENTER )
-  (   15 /OC1A-LE )
-  (   16 /SPEAKER )
-  (   17 /clock3-Aux/MOSI-SDI )
-  (   18 /MISO )
-  (   19 /clock3-Aux/SCK-CLK )
-  (   20 VCC )
-  (   21 VCC )
-  (   22 /clock3-Aux/GND )
-  (   23 /LDR )
-  (   24 /DEC )
-  (   25 N-000068 )
-  (   26 /COL_DRIVER_ENABLE )
-  (   27 /SDA )
-  (   28 /clock3-Aux/SCL )
- )
- ( /4C134896/4D04EA8D pin_strip_3  K2 LED_ENABLE {Lib=CONN_3}
-  (    1 VCC )
-  (    2 N-000158 )
-  (    3 ? )
- )
- ( /4C134896/4C136E60 RC03  R1 100 {Lib=R}
-  (    1 /clock3-LED/COL16 )
-  (    2 N-000137 )
- )
- ( /4C134896/4C136E5E RC03  R2 100 {Lib=R}
-  (    1 /clock3-LED/COL15 )
-  (    2 N-000136 )
- )
- ( /4C134896/4C136E5C RC03  R3 100 {Lib=R}
-  (    1 /COL14 )
-  (    2 N-000135 )
- )
- ( /4C134896/4C136E59 RC03  R4 100 {Lib=R}
-  (    1 /COL13 )
-  (    2 N-000134 )
- )
- ( /4C134896/4C136E4C RC03  R5 100 {Lib=R}
-  (    1 /clock3-LED/COL12 )
-  (    2 N-000133 )
- )
- ( /4C134896/4C136E44 RC03  R6 100 {Lib=R}
-  (    1 /clock3-LED/COL11 )
-  (    2 N-000132 )
- )
- ( /4C134896/4C136E42 RC03  R7 100 {Lib=R}
-  (    1 /COL10 )
-  (    2 N-000131 )
- )
- ( /4C134896/4C136E3E RC03  R8 100 {Lib=R}
-  (    1 /clock3-LED/COL09 )
-  (    2 N-000143 )
- )
- ( /4C134896/4C136E3B RC03  R9 100 {Lib=R}
-  (    1 /COL08 )
-  (    2 N-000142 )
- )
- ( /4C134896/4C136E25 RC03  R10 100 {Lib=R}
-  (    1 /COL07 )
-  (    2 N-000141 )
- )
- ( /4C134896/4C136E20 RC03  R11 100 {Lib=R}
-  (    1 /COL06 )
-  (    2 N-000140 )
- )
- ( /4C134896/4C136E1D RC03  R12 100 {Lib=R}
-  (    1 /clock3-LED/COL05 )
-  (    2 N-000139 )
- )
- ( /4C134896/4C136E1A RC03  R13 100 {Lib=R}
-  (    1 /COL04 )
-  (    2 N-000138 )
- )
- ( /4C134896/4C136E04 RC03  R14 100 {Lib=R}
-  (    1 /COL03 )
-  (    2 N-000151 )
- )
- ( /4C134896/4C136DFE RC03  R15 100 {Lib=R}
-  (    1 /COL02 )
-  (    2 N-000152 )
- )
- ( /4C134896/4C136D55 RC03  R16 100 {Lib=R}
-  (    1 /COL01 )
-  (    2 N-000153 )
- )
- ( /4C134896/4C136D3C to92_3  Q16 KSH32CTF {Lib=PNP}
-  (    1 N-000158 )
-  (    2 N-000153 )
-  (    3 N-000147 )
- )
- ( /4C134896/4C136D37 to92_3  Q15 KSH32CTF {Lib=PNP}
-  (    1 N-000158 )
-  (    2 N-000152 )
-  (    3 N-000128 )
- )
- ( /4C134896/4C136D32 to92_3  Q14 KSH32CTF {Lib=PNP}
-  (    1 N-000158 )
-  (    2 N-000151 )
-  (    3 N-000125 )
- )
- ( /4C134896/4C136D29 to92_3  Q13 KSH32CTF {Lib=PNP}
-  (    1 N-000158 )
-  (    2 N-000138 )
-  (    3 N-000146 )
- )
- ( /4C134896/4C136D24 to92_3  Q12 KSH32CTF {Lib=PNP}
-  (    1 N-000158 )
-  (    2 N-000139 )
-  (    3 N-000127 )
- )
- ( /4C134896/4C136D1F to92_3  Q11 KSH32CTF {Lib=PNP}
-  (    1 N-000158 )
-  (    2 N-000140 )
-  (    3 N-000150 )
- )
- ( /4C134896/4C136D19 to92_3  Q10 KSH32CTF {Lib=PNP}
-  (    1 N-000158 )
-  (    2 N-000141 )
-  (    3 N-000154 )
- )
- ( /4C134896/4C136D11 to92_3  Q9 KSH32CTF {Lib=PNP}
-  (    1 N-000158 )
-  (    2 N-000142 )
-  (    3 N-000149 )
- )
- ( /4C134896/4C136D0B to92_3  Q8 KSH32CTF {Lib=PNP}
-  (    1 N-000158 )
-  (    2 N-000143 )
-  (    3 N-000145 )
- )
- ( /4C134896/4C136CF9 to92_3  Q7 KSH32CTF {Lib=PNP}
-  (    1 N-000158 )
-  (    2 N-000131 )
-  (    3 N-000148 )
- )
- ( /4C134896/4C136CF0 to92_3  Q6 KSH32CTF {Lib=PNP}
-  (    1 N-000158 )
-  (    2 N-000132 )
-  (    3 N-000126 )
- )
- ( /4C134896/4C136CEB to92_3  Q5 KSH32CTF {Lib=PNP}
-  (    1 N-000158 )
-  (    2 N-000133 )
-  (    3 N-000156 )
- )
- ( /4C134896/4C136CE5 to92_3  Q4 KSH32CTF {Lib=PNP}
-  (    1 N-000158 )
-  (    2 N-000134 )
-  (    3 N-000144 )
- )
- ( /4C134896/4C136CE0 to92_3  Q3 KSH32CTF {Lib=PNP}
-  (    1 N-000158 )
-  (    2 N-000135 )
-  (    3 N-000155 )
- )
- ( /4C134896/4C136CD8 to92_3  Q2 KSH32CTF {Lib=PNP}
-  (    1 N-000158 )
-  (    2 N-000136 )
-  (    3 N-000130 )
- )
- ( /4C134896/4C136C56 to92_3  Q1 KSH32CTF {Lib=PNP}
-  (    1 N-000158 )
-  (    2 N-000137 )
-  (    3 N-000129 )
- )
- ( /4C134896/4C13615B led_10mm_blue  12D01 LED {Lib=LED}
-  (    1 N-000129 )
-  (    2 /R12W )
- )
- ( /4C134896/4C13615A led_10mm_blue  12D02 LED {Lib=LED}
-  (    1 N-000130 )
-  (    2 /R12W )
- )
- ( /4C134896/4C136159 led_10mm_blue  12D03 LED {Lib=LED}
-  (    1 N-000155 )
-  (    2 /R12W )
- )
- ( /4C134896/4C136158 led_10mm_blue  12D04 LED {Lib=LED}
-  (    1 N-000144 )
-  (    2 /R12W )
- )
- ( /4C134896/4C136157 led_10mm_blue  12D05 LED {Lib=LED}
-  (    1 N-000156 )
-  (    2 /R12W )
- )
- ( /4C134896/4C136156 led_10mm_blue  12D06 LED {Lib=LED}
-  (    1 N-000126 )
-  (    2 /R12W )
- )
- ( /4C134896/4C136155 led_10mm_blue  12D07 LED {Lib=LED}
-  (    1 N-000148 )
-  (    2 /R12W )
- )
- ( /4C134896/4C136154 led_10mm_blue  12D08 LED {Lib=LED}
-  (    1 N-000145 )
-  (    2 /R12W )
- )
- ( /4C134896/4C136153 led_10mm_blue  12D09 LED {Lib=LED}
-  (    1 N-000149 )
-  (    2 /R12W )
- )
- ( /4C134896/4C136152 led_10mm_blue  12D10 LED {Lib=LED}
-  (    1 N-000154 )
-  (    2 /R12W )
- )
- ( /4C134896/4C136151 led_10mm_blue  12D11 LED {Lib=LED}
-  (    1 N-000150 )
-  (    2 /R12W )
- )
- ( /4C134896/4C136150 led_10mm_blue  12D12 LED {Lib=LED}
-  (    1 N-000127 )
-  (    2 /R12W )
- )
- ( /4C134896/4C13614F led_10mm_blue  12D13 LED {Lib=LED}
-  (    1 N-000146 )
-  (    2 /R12W )
- )
- ( /4C134896/4C13614E led_10mm_blue  12D14 LED {Lib=LED}
-  (    1 N-000125 )
-  (    2 /R12W )
- )
- ( /4C134896/4C13614D led_10mm_blue  12D15 LED {Lib=LED}
-  (    1 N-000128 )
-  (    2 /R12W )
- )
- ( /4C134896/4C13614C led_10mm_blue  12D16 LED {Lib=LED}
-  (    1 N-000147 )
-  (    2 /R12W )
- )
- ( /4C134896/4C136124 led_10mm_blue  11D16 LED {Lib=LED}
-  (    1 N-000147 )
-  (    2 /clock3-LED/R11W )
- )
- ( /4C134896/4C13611D led_10mm_blue  11D15 LED {Lib=LED}
-  (    1 N-000128 )
-  (    2 /clock3-LED/R11W )
- )
- ( /4C134896/4C136115 led_10mm_blue  11D14 LED {Lib=LED}
-  (    1 N-000125 )
-  (    2 /clock3-LED/R11W )
- )
- ( /4C134896/4C136108 led_10mm_blue  11D13 LED {Lib=LED}
-  (    1 N-000146 )
-  (    2 /clock3-LED/R11W )
- )
- ( /4C134896/4C136101 led_10mm_blue  11D12 LED {Lib=LED}
-  (    1 N-000127 )
-  (    2 /clock3-LED/R11W )
- )
- ( /4C134896/4C1360F9 led_10mm_blue  11D11 LED {Lib=LED}
-  (    1 N-000150 )
-  (    2 /clock3-LED/R11W )
- )
- ( /4C134896/4C1360F2 led_10mm_blue  11D10 LED {Lib=LED}
-  (    1 N-000154 )
-  (    2 /clock3-LED/R11W )
- )
- ( /4C134896/4C1360EC led_10mm_blue  11D09 LED {Lib=LED}
-  (    1 N-000149 )
-  (    2 /clock3-LED/R11W )
- )
- ( /4C134896/4C1360E2 led_10mm_blue  11D08 LED {Lib=LED}
-  (    1 N-000145 )
-  (    2 /clock3-LED/R11W )
- )
- ( /4C134896/4C1360D6 led_10mm_blue  11D07 LED {Lib=LED}
-  (    1 N-000148 )
-  (    2 /clock3-LED/R11W )
- )
- ( /4C134896/4C1360CC led_10mm_blue  11D06 LED {Lib=LED}
-  (    1 N-000126 )
-  (    2 /clock3-LED/R11W )
- )
- ( /4C134896/4C1360BE led_10mm_blue  11D05 LED {Lib=LED}
-  (    1 N-000156 )
-  (    2 /clock3-LED/R11W )
- )
- ( /4C134896/4C1360B5 led_10mm_blue  11D04 LED {Lib=LED}
-  (    1 N-000144 )
-  (    2 /clock3-LED/R11W )
- )
- ( /4C134896/4C1360AE led_10mm_blue  11D03 LED {Lib=LED}
-  (    1 N-000155 )
-  (    2 /clock3-LED/R11W )
- )
- ( /4C134896/4C1360A5 led_10mm_blue  11D02 LED {Lib=LED}
-  (    1 N-000130 )
-  (    2 /clock3-LED/R11W )
- )
- ( /4C134896/4C136094 led_10mm_blue  11D01 LED {Lib=LED}
-  (    1 N-000129 )
-  (    2 /clock3-LED/R11W )
- )
- ( /4C134896/4C135743 01D01  01D01 LED_RGB {Lib=LED_RGB}
-  (  RED /R01R )
-  (  COM N-000129 )
-  (  GRN /R01G )
-  (  BLU /R01B )
- )
- ( /4C134896/4C135742 01D01  02D01 LED_RGB {Lib=LED_RGB}
-  (  RED /R02R )
-  (  COM N-000129 )
-  (  GRN /clock3-LED/R02G )
-  (  BLU /R02B )
- )
- ( /4C134896/4C135741 01D01  03D01 LED_RGB {Lib=LED_RGB}
-  (  RED /R03R )
-  (  COM N-000129 )
-  (  GRN /R03G )
-  (  BLU /R03B )
- )
- ( /4C134896/4C135740 01D01  04D01 LED_RGB {Lib=LED_RGB}
-  (  RED /R04R )
-  (  COM N-000129 )
-  (  GRN /R04G )
-  (  BLU /R04B )
- )
- ( /4C134896/4C13573F 01D01  05D01 LED_RGB {Lib=LED_RGB}
-  (  RED /R05R )
-  (  COM N-000129 )
-  (  GRN /R05G )
-  (  BLU /R05B )
- )
- ( /4C134896/4C13573E 01D01  06D01 LED_RGB {Lib=LED_RGB}
-  (  RED /R06R )
-  (  COM N-000129 )
-  (  GRN /R06G )
-  (  BLU /R06B )
- )
- ( /4C134896/4C13573D 01D01  07D01 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R07R )
-  (  COM N-000129 )
-  (  GRN /R07G )
-  (  BLU /R07B )
- )
- ( /4C134896/4C13573C 01D01  08D01 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R08R )
-  (  COM N-000129 )
-  (  GRN /clock3-LED/R08G )
-  (  BLU /clock3-LED/R08B )
- )
- ( /4C134896/4C13573B 01D01  09D01 LED_RGB {Lib=LED_RGB}
-  (  RED /R09R )
-  (  COM N-000129 )
-  (  GRN /R09G )
-  (  BLU /R09B )
- )
- ( /4C134896/4C13573A 01D01  10D01 LED_RGB {Lib=LED_RGB}
-  (  RED /R10R )
-  (  COM N-000129 )
-  (  GRN /R10G )
-  (  BLU /R10B )
- )
- ( /4C134896/4C135739 01D01  10D02 LED_RGB {Lib=LED_RGB}
-  (  RED /R10R )
-  (  COM N-000130 )
-  (  GRN /R10G )
-  (  BLU /R10B )
- )
- ( /4C134896/4C135738 01D01  09D02 LED_RGB {Lib=LED_RGB}
-  (  RED /R09R )
-  (  COM N-000130 )
-  (  GRN /R09G )
-  (  BLU /R09B )
- )
- ( /4C134896/4C135737 01D01  08D02 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R08R )
-  (  COM N-000130 )
-  (  GRN /clock3-LED/R08G )
-  (  BLU /clock3-LED/R08B )
- )
- ( /4C134896/4C135736 01D01  07D02 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R07R )
-  (  COM N-000130 )
-  (  GRN /R07G )
-  (  BLU /R07B )
- )
- ( /4C134896/4C135735 01D01  06D02 LED_RGB {Lib=LED_RGB}
-  (  RED /R06R )
-  (  COM N-000130 )
-  (  GRN /R06G )
-  (  BLU /R06B )
- )
- ( /4C134896/4C135734 01D01  05D02 LED_RGB {Lib=LED_RGB}
-  (  RED /R05R )
-  (  COM N-000130 )
-  (  GRN /R05G )
-  (  BLU /R05B )
- )
- ( /4C134896/4C135733 01D01  04D02 LED_RGB {Lib=LED_RGB}
-  (  RED /R04R )
-  (  COM N-000130 )
-  (  GRN /R04G )
-  (  BLU /R04B )
- )
- ( /4C134896/4C135732 01D01  03D02 LED_RGB {Lib=LED_RGB}
-  (  RED /R03R )
-  (  COM N-000130 )
-  (  GRN /R03G )
-  (  BLU /R03B )
- )
- ( /4C134896/4C135731 01D01  02D02 LED_RGB {Lib=LED_RGB}
-  (  RED /R02R )
-  (  COM N-000130 )
-  (  GRN /clock3-LED/R02G )
-  (  BLU /R02B )
- )
- ( /4C134896/4C135730 01D01  01D02 LED_RGB {Lib=LED_RGB}
-  (  RED /R01R )
-  (  COM N-000130 )
-  (  GRN /R01G )
-  (  BLU /R01B )
- )
- ( /4C134896/4C13572F 01D01  01D04 LED_RGB {Lib=LED_RGB}
-  (  RED /R01R )
-  (  COM N-000144 )
-  (  GRN /R01G )
-  (  BLU /R01B )
- )
- ( /4C134896/4C13572E 01D01  02D04 LED_RGB {Lib=LED_RGB}
-  (  RED /R02R )
-  (  COM N-000144 )
-  (  GRN /clock3-LED/R02G )
-  (  BLU /R02B )
- )
- ( /4C134896/4C13572D 01D01  03D04 LED_RGB {Lib=LED_RGB}
-  (  RED /R03R )
-  (  COM N-000144 )
-  (  GRN /R03G )
-  (  BLU /R03B )
- )
- ( /4C134896/4C13572C 01D01  04D04 LED_RGB {Lib=LED_RGB}
-  (  RED /R04R )
-  (  COM N-000144 )
-  (  GRN /R04G )
-  (  BLU /R04B )
- )
- ( /4C134896/4C13572B 01D01  05D04 LED_RGB {Lib=LED_RGB}
-  (  RED /R05R )
-  (  COM N-000144 )
-  (  GRN /R05G )
-  (  BLU /R05B )
- )
- ( /4C134896/4C13572A 01D01  06D04 LED_RGB {Lib=LED_RGB}
-  (  RED /R06R )
-  (  COM N-000144 )
-  (  GRN /R06G )
-  (  BLU /R06B )
- )
- ( /4C134896/4C135729 01D01  07D04 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R07R )
-  (  COM N-000144 )
-  (  GRN /R07G )
-  (  BLU /R07B )
- )
- ( /4C134896/4C135728 01D01  08D04 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R08R )
-  (  COM N-000144 )
-  (  GRN /clock3-LED/R08G )
-  (  BLU /clock3-LED/R08B )
- )
- ( /4C134896/4C135727 01D01  09D04 LED_RGB {Lib=LED_RGB}
-  (  RED /R09R )
-  (  COM N-000144 )
-  (  GRN /R09G )
-  (  BLU /R09B )
- )
- ( /4C134896/4C135726 01D01  10D04 LED_RGB {Lib=LED_RGB}
-  (  RED /R10R )
-  (  COM N-000144 )
-  (  GRN /R10G )
-  (  BLU /R10B )
- )
- ( /4C134896/4C135725 01D01  10D03 LED_RGB {Lib=LED_RGB}
-  (  RED /R10R )
-  (  COM N-000155 )
-  (  GRN /R10G )
-  (  BLU /R10B )
- )
- ( /4C134896/4C135724 01D01  09D03 LED_RGB {Lib=LED_RGB}
-  (  RED /R09R )
-  (  COM N-000155 )
-  (  GRN /R09G )
-  (  BLU /R09B )
- )
- ( /4C134896/4C135723 01D01  08D03 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R08R )
-  (  COM N-000155 )
-  (  GRN /clock3-LED/R08G )
-  (  BLU /clock3-LED/R08B )
- )
- ( /4C134896/4C135722 01D01  07D03 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R07R )
-  (  COM N-000155 )
-  (  GRN /R07G )
-  (  BLU /R07B )
- )
- ( /4C134896/4C135721 01D01  06D03 LED_RGB {Lib=LED_RGB}
-  (  RED /R06R )
-  (  COM N-000155 )
-  (  GRN /R06G )
-  (  BLU /R06B )
- )
- ( /4C134896/4C135720 01D01  05D03 LED_RGB {Lib=LED_RGB}
-  (  RED /R05R )
-  (  COM N-000155 )
-  (  GRN /R05G )
-  (  BLU /R05B )
- )
- ( /4C134896/4C13571F 01D01  04D03 LED_RGB {Lib=LED_RGB}
-  (  RED /R04R )
-  (  COM N-000155 )
-  (  GRN /R04G )
-  (  BLU /R04B )
- )
- ( /4C134896/4C13571E 01D01  03D03 LED_RGB {Lib=LED_RGB}
-  (  RED /R03R )
-  (  COM N-000155 )
-  (  GRN /R03G )
-  (  BLU /R03B )
- )
- ( /4C134896/4C13571D 01D01  02D03 LED_RGB {Lib=LED_RGB}
-  (  RED /R02R )
-  (  COM N-000155 )
-  (  GRN /clock3-LED/R02G )
-  (  BLU /R02B )
- )
- ( /4C134896/4C13571C 01D01  01D03 LED_RGB {Lib=LED_RGB}
-  (  RED /R01R )
-  (  COM N-000155 )
-  (  GRN /R01G )
-  (  BLU /R01B )
- )
- ( /4C134896/4C13571B 01D01  01D07 LED_RGB {Lib=LED_RGB}
-  (  RED /R01R )
-  (  COM N-000148 )
-  (  GRN /R01G )
-  (  BLU /R01B )
- )
- ( /4C134896/4C13571A 01D01  02D07 LED_RGB {Lib=LED_RGB}
-  (  RED /R02R )
-  (  COM N-000148 )
-  (  GRN /clock3-LED/R02G )
-  (  BLU /R02B )
- )
- ( /4C134896/4C135719 01D01  03D07 LED_RGB {Lib=LED_RGB}
-  (  RED /R03R )
-  (  COM N-000148 )
-  (  GRN /R03G )
-  (  BLU /R03B )
- )
- ( /4C134896/4C135718 01D01  04D07 LED_RGB {Lib=LED_RGB}
-  (  RED /R04R )
-  (  COM N-000148 )
-  (  GRN /R04G )
-  (  BLU /R04B )
- )
- ( /4C134896/4C135717 01D01  05D07 LED_RGB {Lib=LED_RGB}
-  (  RED /R05R )
-  (  COM N-000148 )
-  (  GRN /R05G )
-  (  BLU /R05B )
- )
- ( /4C134896/4C135716 01D01  06D07 LED_RGB {Lib=LED_RGB}
-  (  RED /R06R )
-  (  COM N-000148 )
-  (  GRN /R06G )
-  (  BLU /R06B )
- )
- ( /4C134896/4C135715 01D01  07D07 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R07R )
-  (  COM N-000148 )
-  (  GRN /R07G )
-  (  BLU /R07B )
- )
- ( /4C134896/4C135714 01D01  08D07 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R08R )
-  (  COM N-000148 )
-  (  GRN /clock3-LED/R08G )
-  (  BLU /clock3-LED/R08B )
- )
- ( /4C134896/4C135713 01D01  09D07 LED_RGB {Lib=LED_RGB}
-  (  RED /R09R )
-  (  COM N-000148 )
-  (  GRN /R09G )
-  (  BLU /R09B )
- )
- ( /4C134896/4C135712 01D01  10D07 LED_RGB {Lib=LED_RGB}
-  (  RED /R10R )
-  (  COM N-000148 )
-  (  GRN /R10G )
-  (  BLU /R10B )
- )
- ( /4C134896/4C135711 01D01  10D08 LED_RGB {Lib=LED_RGB}
-  (  RED /R10R )
-  (  COM N-000145 )
-  (  GRN /R10G )
-  (  BLU /R10B )
- )
- ( /4C134896/4C135710 01D01  09D08 LED_RGB {Lib=LED_RGB}
-  (  RED /R09R )
-  (  COM N-000145 )
-  (  GRN /R09G )
-  (  BLU /R09B )
- )
- ( /4C134896/4C13570F 01D01  08D08 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R08R )
-  (  COM N-000145 )
-  (  GRN /clock3-LED/R08G )
-  (  BLU /clock3-LED/R08B )
- )
- ( /4C134896/4C13570E 01D01  07D08 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R07R )
-  (  COM N-000145 )
-  (  GRN /R07G )
-  (  BLU /R07B )
- )
- ( /4C134896/4C13570D 01D01  06D08 LED_RGB {Lib=LED_RGB}
-  (  RED /R06R )
-  (  COM N-000145 )
-  (  GRN /R06G )
-  (  BLU /R06B )
- )
- ( /4C134896/4C13570C 01D01  05D08 LED_RGB {Lib=LED_RGB}
-  (  RED /R05R )
-  (  COM N-000145 )
-  (  GRN /R05G )
-  (  BLU /R05B )
- )
- ( /4C134896/4C13570B 01D01  04D08 LED_RGB {Lib=LED_RGB}
-  (  RED /R04R )
-  (  COM N-000145 )
-  (  GRN /R04G )
-  (  BLU /R04B )
- )
- ( /4C134896/4C13570A 01D01  03D08 LED_RGB {Lib=LED_RGB}
-  (  RED /R03R )
-  (  COM N-000145 )
-  (  GRN /R03G )
-  (  BLU /R03B )
- )
- ( /4C134896/4C135709 01D01  02D08 LED_RGB {Lib=LED_RGB}
-  (  RED /R02R )
-  (  COM N-000145 )
-  (  GRN /clock3-LED/R02G )
-  (  BLU /R02B )
- )
- ( /4C134896/4C135708 01D01  01D08 LED_RGB {Lib=LED_RGB}
-  (  RED /R01R )
-  (  COM N-000145 )
-  (  GRN /R01G )
-  (  BLU /R01B )
- )
- ( /4C134896/4C135707 01D01  01D06 LED_RGB {Lib=LED_RGB}
-  (  RED /R01R )
-  (  COM N-000126 )
-  (  GRN /R01G )
-  (  BLU /R01B )
- )
- ( /4C134896/4C135706 01D01  02D06 LED_RGB {Lib=LED_RGB}
-  (  RED /R02R )
-  (  COM N-000126 )
-  (  GRN /clock3-LED/R02G )
-  (  BLU /R02B )
- )
- ( /4C134896/4C135705 01D01  03D06 LED_RGB {Lib=LED_RGB}
-  (  RED /R03R )
-  (  COM N-000126 )
-  (  GRN /R03G )
-  (  BLU /R03B )
- )
- ( /4C134896/4C135704 01D01  04D06 LED_RGB {Lib=LED_RGB}
-  (  RED /R04R )
-  (  COM N-000126 )
-  (  GRN /R04G )
-  (  BLU /R04B )
- )
- ( /4C134896/4C135703 01D01  05D06 LED_RGB {Lib=LED_RGB}
-  (  RED /R05R )
-  (  COM N-000126 )
-  (  GRN /R05G )
-  (  BLU /R05B )
- )
- ( /4C134896/4C135702 01D01  06D06 LED_RGB {Lib=LED_RGB}
-  (  RED /R06R )
-  (  COM N-000126 )
-  (  GRN /R06G )
-  (  BLU /R06B )
- )
- ( /4C134896/4C135701 01D01  07D06 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R07R )
-  (  COM N-000126 )
-  (  GRN /R07G )
-  (  BLU /R07B )
- )
- ( /4C134896/4C135700 01D01  08D06 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R08R )
-  (  COM N-000126 )
-  (  GRN /clock3-LED/R08G )
-  (  BLU /clock3-LED/R08B )
- )
- ( /4C134896/4C1356FF 01D01  09D06 LED_RGB {Lib=LED_RGB}
-  (  RED /R09R )
-  (  COM N-000126 )
-  (  GRN /R09G )
-  (  BLU /R09B )
- )
- ( /4C134896/4C1356FE 01D01  10D06 LED_RGB {Lib=LED_RGB}
-  (  RED /R10R )
-  (  COM N-000126 )
-  (  GRN /R10G )
-  (  BLU /R10B )
- )
- ( /4C134896/4C1356FD 01D01  10D05 LED_RGB {Lib=LED_RGB}
-  (  RED /R10R )
-  (  COM N-000156 )
-  (  GRN /R10G )
-  (  BLU /R10B )
- )
- ( /4C134896/4C1356FC 01D01  09D05 LED_RGB {Lib=LED_RGB}
-  (  RED /R09R )
-  (  COM N-000156 )
-  (  GRN /R09G )
-  (  BLU /R09B )
- )
- ( /4C134896/4C1356FB 01D01  08D05 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R08R )
-  (  COM N-000156 )
-  (  GRN /clock3-LED/R08G )
-  (  BLU /clock3-LED/R08B )
- )
- ( /4C134896/4C1356FA 01D01  07D05 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R07R )
-  (  COM N-000156 )
-  (  GRN /R07G )
-  (  BLU /R07B )
- )
- ( /4C134896/4C1356F9 01D01  06D05 LED_RGB {Lib=LED_RGB}
-  (  RED /R06R )
-  (  COM N-000156 )
-  (  GRN /R06G )
-  (  BLU /R06B )
- )
- ( /4C134896/4C1356F8 01D01  05D05 LED_RGB {Lib=LED_RGB}
-  (  RED /R05R )
-  (  COM N-000156 )
-  (  GRN /R05G )
-  (  BLU /R05B )
- )
- ( /4C134896/4C1356F7 01D01  04D05 LED_RGB {Lib=LED_RGB}
-  (  RED /R04R )
-  (  COM N-000156 )
-  (  GRN /R04G )
-  (  BLU /R04B )
- )
- ( /4C134896/4C1356F6 01D01  03D05 LED_RGB {Lib=LED_RGB}
-  (  RED /R03R )
-  (  COM N-000156 )
-  (  GRN /R03G )
-  (  BLU /R03B )
- )
- ( /4C134896/4C1356F5 01D01  02D05 LED_RGB {Lib=LED_RGB}
-  (  RED /R02R )
-  (  COM N-000156 )
-  (  GRN /clock3-LED/R02G )
-  (  BLU /R02B )
- )
- ( /4C134896/4C1356F4 01D01  01D05 LED_RGB {Lib=LED_RGB}
-  (  RED /R01R )
-  (  COM N-000156 )
-  (  GRN /R01G )
-  (  BLU /R01B )
- )
- ( /4C134896/4C135524 01D01  01D13 LED_RGB {Lib=LED_RGB}
-  (  RED /R01R )
-  (  COM N-000146 )
-  (  GRN /R01G )
-  (  BLU /R01B )
- )
- ( /4C134896/4C135523 01D01  02D13 LED_RGB {Lib=LED_RGB}
-  (  RED /R02R )
-  (  COM N-000146 )
-  (  GRN /clock3-LED/R02G )
-  (  BLU /R02B )
- )
- ( /4C134896/4C135522 01D01  03D13 LED_RGB {Lib=LED_RGB}
-  (  RED /R03R )
-  (  COM N-000146 )
-  (  GRN /R03G )
-  (  BLU /R03B )
- )
- ( /4C134896/4C135521 01D01  04D13 LED_RGB {Lib=LED_RGB}
-  (  RED /R04R )
-  (  COM N-000146 )
-  (  GRN /R04G )
-  (  BLU /R04B )
- )
- ( /4C134896/4C135520 01D01  05D13 LED_RGB {Lib=LED_RGB}
-  (  RED /R05R )
-  (  COM N-000146 )
-  (  GRN /R05G )
-  (  BLU /R05B )
- )
- ( /4C134896/4C13551F 01D01  06D13 LED_RGB {Lib=LED_RGB}
-  (  RED /R06R )
-  (  COM N-000146 )
-  (  GRN /R06G )
-  (  BLU /R06B )
- )
- ( /4C134896/4C13551E 01D01  07D13 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R07R )
-  (  COM N-000146 )
-  (  GRN /R07G )
-  (  BLU /R07B )
- )
- ( /4C134896/4C13551D 01D01  08D13 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R08R )
-  (  COM N-000146 )
-  (  GRN /clock3-LED/R08G )
-  (  BLU /clock3-LED/R08B )
- )
- ( /4C134896/4C13551C 01D01  09D13 LED_RGB {Lib=LED_RGB}
-  (  RED /R09R )
-  (  COM N-000146 )
-  (  GRN /R09G )
-  (  BLU /R09B )
- )
- ( /4C134896/4C13551B 01D01  10D13 LED_RGB {Lib=LED_RGB}
-  (  RED /R10R )
-  (  COM N-000146 )
-  (  GRN /R10G )
-  (  BLU /R10B )
- )
- ( /4C134896/4C13551A 01D01  10D14 LED_RGB {Lib=LED_RGB}
-  (  RED /R10R )
-  (  COM N-000125 )
-  (  GRN /R10G )
-  (  BLU /R10B )
- )
- ( /4C134896/4C135519 01D01  09D14 LED_RGB {Lib=LED_RGB}
-  (  RED /R09R )
-  (  COM N-000125 )
-  (  GRN /R09G )
-  (  BLU /R09B )
- )
- ( /4C134896/4C135518 01D01  08D14 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R08R )
-  (  COM N-000125 )
-  (  GRN /clock3-LED/R08G )
-  (  BLU /clock3-LED/R08B )
- )
- ( /4C134896/4C135517 01D01  07D14 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R07R )
-  (  COM N-000125 )
-  (  GRN /R07G )
-  (  BLU /R07B )
- )
- ( /4C134896/4C135516 01D01  06D14 LED_RGB {Lib=LED_RGB}
-  (  RED /R06R )
-  (  COM N-000125 )
-  (  GRN /R06G )
-  (  BLU /R06B )
- )
- ( /4C134896/4C135515 01D01  05D14 LED_RGB {Lib=LED_RGB}
-  (  RED /R05R )
-  (  COM N-000125 )
-  (  GRN /R05G )
-  (  BLU /R05B )
- )
- ( /4C134896/4C135514 01D01  04D14 LED_RGB {Lib=LED_RGB}
-  (  RED /R04R )
-  (  COM N-000125 )
-  (  GRN /R04G )
-  (  BLU /R04B )
- )
- ( /4C134896/4C135513 01D01  03D14 LED_RGB {Lib=LED_RGB}
-  (  RED /R03R )
-  (  COM N-000125 )
-  (  GRN /R03G )
-  (  BLU /R03B )
- )
- ( /4C134896/4C135512 01D01  02D14 LED_RGB {Lib=LED_RGB}
-  (  RED /R02R )
-  (  COM N-000125 )
-  (  GRN /clock3-LED/R02G )
-  (  BLU /R02B )
- )
- ( /4C134896/4C135511 01D01  01D14 LED_RGB {Lib=LED_RGB}
-  (  RED /R01R )
-  (  COM N-000125 )
-  (  GRN /R01G )
-  (  BLU /R01B )
- )
- ( /4C134896/4C135510 01D01  01D16 LED_RGB {Lib=LED_RGB}
-  (  RED /R01R )
-  (  COM N-000147 )
-  (  GRN /R01G )
-  (  BLU /R01B )
- )
- ( /4C134896/4C13550F 01D01  02D16 LED_RGB {Lib=LED_RGB}
-  (  RED /R02R )
-  (  COM N-000147 )
-  (  GRN /clock3-LED/R02G )
-  (  BLU /R02B )
- )
- ( /4C134896/4C13550E 01D01  03D16 LED_RGB {Lib=LED_RGB}
-  (  RED /R03R )
-  (  COM N-000147 )
-  (  GRN /R03G )
-  (  BLU /R03B )
- )
- ( /4C134896/4C13550D 01D01  04D16 LED_RGB {Lib=LED_RGB}
-  (  RED /R04R )
-  (  COM N-000147 )
-  (  GRN /R04G )
-  (  BLU /R04B )
- )
- ( /4C134896/4C13550C 01D01  05D16 LED_RGB {Lib=LED_RGB}
-  (  RED /R05R )
-  (  COM N-000147 )
-  (  GRN /R05G )
-  (  BLU /R05B )
- )
- ( /4C134896/4C13550B 01D01  06D16 LED_RGB {Lib=LED_RGB}
-  (  RED /R06R )
-  (  COM N-000147 )
-  (  GRN /R06G )
-  (  BLU /R06B )
- )
- ( /4C134896/4C13550A 01D01  07D16 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R07R )
-  (  COM N-000147 )
-  (  GRN /R07G )
-  (  BLU /R07B )
- )
- ( /4C134896/4C135509 01D01  08D16 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R08R )
-  (  COM N-000147 )
-  (  GRN /clock3-LED/R08G )
-  (  BLU /clock3-LED/R08B )
- )
- ( /4C134896/4C135508 01D01  09D16 LED_RGB {Lib=LED_RGB}
-  (  RED /R09R )
-  (  COM N-000147 )
-  (  GRN /R09G )
-  (  BLU /R09B )
- )
- ( /4C134896/4C135507 01D01  10D16 LED_RGB {Lib=LED_RGB}
-  (  RED /R10R )
-  (  COM N-000147 )
-  (  GRN /R10G )
-  (  BLU /R10B )
- )
- ( /4C134896/4C135506 01D01  10D15 LED_RGB {Lib=LED_RGB}
-  (  RED /R10R )
-  (  COM N-000128 )
-  (  GRN /R10G )
-  (  BLU /R10B )
- )
- ( /4C134896/4C135505 01D01  09D15 LED_RGB {Lib=LED_RGB}
-  (  RED /R09R )
-  (  COM N-000128 )
-  (  GRN /R09G )
-  (  BLU /R09B )
- )
- ( /4C134896/4C135504 01D01  08D15 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R08R )
-  (  COM N-000128 )
-  (  GRN /clock3-LED/R08G )
-  (  BLU /clock3-LED/R08B )
- )
- ( /4C134896/4C135503 01D01  07D15 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R07R )
-  (  COM N-000128 )
-  (  GRN /R07G )
-  (  BLU /R07B )
- )
- ( /4C134896/4C135502 01D01  06D15 LED_RGB {Lib=LED_RGB}
-  (  RED /R06R )
-  (  COM N-000128 )
-  (  GRN /R06G )
-  (  BLU /R06B )
- )
- ( /4C134896/4C135501 01D01  05D15 LED_RGB {Lib=LED_RGB}
-  (  RED /R05R )
-  (  COM N-000128 )
-  (  GRN /R05G )
-  (  BLU /R05B )
- )
- ( /4C134896/4C135500 01D01  04D15 LED_RGB {Lib=LED_RGB}
-  (  RED /R04R )
-  (  COM N-000128 )
-  (  GRN /R04G )
-  (  BLU /R04B )
- )
- ( /4C134896/4C1354FF 01D01  03D15 LED_RGB {Lib=LED_RGB}
-  (  RED /R03R )
-  (  COM N-000128 )
-  (  GRN /R03G )
-  (  BLU /R03B )
- )
- ( /4C134896/4C1354FE 01D01  02D15 LED_RGB {Lib=LED_RGB}
-  (  RED /R02R )
-  (  COM N-000128 )
-  (  GRN /clock3-LED/R02G )
-  (  BLU /R02B )
- )
- ( /4C134896/4C1354FD 01D01  01D15 LED_RGB {Lib=LED_RGB}
-  (  RED /R01R )
-  (  COM N-000128 )
-  (  GRN /R01G )
-  (  BLU /R01B )
- )
- ( /4C134896/4C1354ED 01D01  01D11 LED_RGB {Lib=LED_RGB}
-  (  RED /R01R )
-  (  COM N-000150 )
-  (  GRN /R01G )
-  (  BLU /R01B )
- )
- ( /4C134896/4C1354EC 01D01  02D11 LED_RGB {Lib=LED_RGB}
-  (  RED /R02R )
-  (  COM N-000150 )
-  (  GRN /clock3-LED/R02G )
-  (  BLU /R02B )
- )
- ( /4C134896/4C1354EB 01D01  03D11 LED_RGB {Lib=LED_RGB}
-  (  RED /R03R )
-  (  COM N-000150 )
-  (  GRN /R03G )
-  (  BLU /R03B )
- )
- ( /4C134896/4C1354EA 01D01  04D11 LED_RGB {Lib=LED_RGB}
-  (  RED /R04R )
-  (  COM N-000150 )
-  (  GRN /R04G )
-  (  BLU /R04B )
- )
- ( /4C134896/4C1354E9 01D01  05D11 LED_RGB {Lib=LED_RGB}
-  (  RED /R05R )
-  (  COM N-000150 )
-  (  GRN /R05G )
-  (  BLU /R05B )
- )
- ( /4C134896/4C1354E8 01D01  06D11 LED_RGB {Lib=LED_RGB}
-  (  RED /R06R )
-  (  COM N-000150 )
-  (  GRN /R06G )
-  (  BLU /R06B )
- )
- ( /4C134896/4C1354E7 01D01  07D11 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R07R )
-  (  COM N-000150 )
-  (  GRN /R07G )
-  (  BLU /R07B )
- )
- ( /4C134896/4C1354E6 01D01  08D11 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R08R )
-  (  COM N-000150 )
-  (  GRN /clock3-LED/R08G )
-  (  BLU /clock3-LED/R08B )
- )
- ( /4C134896/4C1354E5 01D01  09D11 LED_RGB {Lib=LED_RGB}
-  (  RED /R09R )
-  (  COM N-000150 )
-  (  GRN /R09G )
-  (  BLU /R09B )
- )
- ( /4C134896/4C1354E4 01D01  10D11 LED_RGB {Lib=LED_RGB}
-  (  RED /R10R )
-  (  COM N-000150 )
-  (  GRN /R10G )
-  (  BLU /R10B )
- )
- ( /4C134896/4C1354E3 01D01  10D12 LED_RGB {Lib=LED_RGB}
-  (  RED /R10R )
-  (  COM N-000127 )
-  (  GRN /R10G )
-  (  BLU /R10B )
- )
- ( /4C134896/4C1354E2 01D01  09D12 LED_RGB {Lib=LED_RGB}
-  (  RED /R09R )
-  (  COM N-000127 )
-  (  GRN /R09G )
-  (  BLU /R09B )
- )
- ( /4C134896/4C1354E1 01D01  08D12 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R08R )
-  (  COM N-000127 )
-  (  GRN /clock3-LED/R08G )
-  (  BLU /clock3-LED/R08B )
- )
- ( /4C134896/4C1354E0 01D01  07D12 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R07R )
-  (  COM N-000127 )
-  (  GRN /R07G )
-  (  BLU /R07B )
- )
- ( /4C134896/4C1354DF 01D01  06D12 LED_RGB {Lib=LED_RGB}
-  (  RED /R06R )
-  (  COM N-000127 )
-  (  GRN /R06G )
-  (  BLU /R06B )
- )
- ( /4C134896/4C1354DE 01D01  05D12 LED_RGB {Lib=LED_RGB}
-  (  RED /R05R )
-  (  COM N-000127 )
-  (  GRN /R05G )
-  (  BLU /R05B )
- )
- ( /4C134896/4C1354DD 01D01  04D12 LED_RGB {Lib=LED_RGB}
-  (  RED /R04R )
-  (  COM N-000127 )
-  (  GRN /R04G )
-  (  BLU /R04B )
- )
- ( /4C134896/4C1354DC 01D01  03D12 LED_RGB {Lib=LED_RGB}
-  (  RED /R03R )
-  (  COM N-000127 )
-  (  GRN /R03G )
-  (  BLU /R03B )
- )
- ( /4C134896/4C1354DB 01D01  02D12 LED_RGB {Lib=LED_RGB}
-  (  RED /R02R )
-  (  COM N-000127 )
-  (  GRN /clock3-LED/R02G )
-  (  BLU /R02B )
- )
- ( /4C134896/4C1354DA 01D01  01D12 LED_RGB {Lib=LED_RGB}
-  (  RED /R01R )
-  (  COM N-000127 )
-  (  GRN /R01G )
-  (  BLU /R01B )
- )
- ( /4C134896/4C1354CC 01D01  01D10 LED_RGB {Lib=LED_RGB}
-  (  RED /R01R )
-  (  COM N-000154 )
-  (  GRN /R01G )
-  (  BLU /R01B )
- )
- ( /4C134896/4C1354CB 01D01  02D10 LED_RGB {Lib=LED_RGB}
-  (  RED /R02R )
-  (  COM N-000154 )
-  (  GRN /clock3-LED/R02G )
-  (  BLU /R02B )
- )
- ( /4C134896/4C1354CA 01D01  03D10 LED_RGB {Lib=LED_RGB}
-  (  RED /R03R )
-  (  COM N-000154 )
-  (  GRN /R03G )
-  (  BLU /R03B )
- )
- ( /4C134896/4C1354C9 01D01  04D10 LED_RGB {Lib=LED_RGB}
-  (  RED /R04R )
-  (  COM N-000154 )
-  (  GRN /R04G )
-  (  BLU /R04B )
- )
- ( /4C134896/4C1354C8 01D01  05D10 LED_RGB {Lib=LED_RGB}
-  (  RED /R05R )
-  (  COM N-000154 )
-  (  GRN /R05G )
-  (  BLU /R05B )
- )
- ( /4C134896/4C1354C7 01D01  06D10 LED_RGB {Lib=LED_RGB}
-  (  RED /R06R )
-  (  COM N-000154 )
-  (  GRN /R06G )
-  (  BLU /R06B )
- )
- ( /4C134896/4C1354C6 01D01  07D10 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R07R )
-  (  COM N-000154 )
-  (  GRN /R07G )
-  (  BLU /R07B )
- )
- ( /4C134896/4C1354C5 01D01  08D10 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R08R )
-  (  COM N-000154 )
-  (  GRN /clock3-LED/R08G )
-  (  BLU /clock3-LED/R08B )
- )
- ( /4C134896/4C1354C4 01D01  09D10 LED_RGB {Lib=LED_RGB}
-  (  RED /R09R )
-  (  COM N-000154 )
-  (  GRN /R09G )
-  (  BLU /R09B )
- )
- ( /4C134896/4C1354C3 01D01  10D10 LED_RGB {Lib=LED_RGB}
-  (  RED /R10R )
-  (  COM N-000154 )
-  (  GRN /R10G )
-  (  BLU /R10B )
- )
- ( /4C134896/4C1352AA 01D01  10D09 LED_RGB {Lib=LED_RGB}
-  (  RED /R10R )
-  (  COM N-000149 )
-  (  GRN /R10G )
-  (  BLU /R10B )
- )
- ( /4C134896/4C1352A6 01D01  09D09 LED_RGB {Lib=LED_RGB}
-  (  RED /R09R )
-  (  COM N-000149 )
-  (  GRN /R09G )
-  (  BLU /R09B )
- )
- ( /4C134896/4C135265 01D01  08D09 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R08R )
-  (  COM N-000149 )
-  (  GRN /clock3-LED/R08G )
-  (  BLU /clock3-LED/R08B )
- )
- ( /4C134896/4C135262 01D01  07D09 LED_RGB {Lib=LED_RGB}
-  (  RED /clock3-LED/R07R )
-  (  COM N-000149 )
-  (  GRN /R07G )
-  (  BLU /R07B )
- )
- ( /4C134896/4C13525E 01D01  06D09 LED_RGB {Lib=LED_RGB}
-  (  RED /R06R )
-  (  COM N-000149 )
-  (  GRN /R06G )
-  (  BLU /R06B )
- )
- ( /4C134896/4C135251 01D01  05D09 LED_RGB {Lib=LED_RGB}
-  (  RED /R05R )
-  (  COM N-000149 )
-  (  GRN /R05G )
-  (  BLU /R05B )
- )
- ( /4C134896/4C13523B 01D01  04D09 LED_RGB {Lib=LED_RGB}
-  (  RED /R04R )
-  (  COM N-000149 )
-  (  GRN /R04G )
-  (  BLU /R04B )
- )
- ( /4C134896/4C135231 01D01  03D09 LED_RGB {Lib=LED_RGB}
-  (  RED /R03R )
-  (  COM N-000149 )
-  (  GRN /R03G )
-  (  BLU /R03B )
- )
- ( /4C134896/4C13521F 01D01  02D09 LED_RGB {Lib=LED_RGB}
-  (  RED /R02R )
-  (  COM N-000149 )
-  (  GRN /clock3-LED/R02G )
-  (  BLU /R02B )
- )
- ( /4C134896/4C13521A 01D01  01D09 LED_RGB {Lib=LED_RGB}
-  (  RED /R01R )
-  (  COM N-000149 )
-  (  GRN /R01G )
-  (  BLU /R01B )
- )
- ( /4B3F1092/4D133B38 vite_3mm  P52 CONN_1 {Lib=CONN_1}
-  (    1 ? )
- )
- ( /4B3F1092/4D133B36 vite_3mm  P51 CONN_1 {Lib=CONN_1}
-  (    1 ? )
- )
- ( /4B3F1092/4D133B32 vite_3mm  P50 CONN_1 {Lib=CONN_1}
-  (    1 ? )
- )
- ( /4B3F1092/4D133AEE vite_3mm  P49 CONN_1 {Lib=CONN_1}
-  (    1 ? )
- )
- ( /4B3F1092/4D0B619A pin_strip_8  P48 7SegDisp {Lib=CONN_8}
-  (    1 /clock3-Aux/GND )
-  (    2 VCC )
-  (    3 ? )
-  (    4 ? )
-  (    5 ? )
-  (    6 ? )
-  (    7 ? )
-  (    8 /clock3-Aux/TXD )
- )
- ( /4B3F1092/4D060C51 pin_strip_4  CD3 CDOT3 {Lib=CONN_4}
-  (    1 N-000116 )
-  (    2 N-000103 )
-  (    3 N-000120 )
-  (    4 N-000102 )
- )
- ( /4B3F1092/4D060BC4 pin_strip_4  CD1 CDOT1 {Lib=CONN_4}
-  (    1 N-000116 )
-  (    2 N-000103 )
-  (    3 N-000120 )
-  (    4 N-000102 )
- )
- ( /4B3F1092/4D060BC3 pin_strip_4  CD2 CDOT2 {Lib=CONN_4}
-  (    1 /SDA )
-  (    2 /clock3-Aux/SCL )
-  (    3 VCC )
-  (    4 /clock3-Aux/GND )
- )
- ( /4B3F1092/4C9A3574 PROTO-6  P39 DIL6 {Lib=DIL6}
-  (    1 /clock3-Aux/GND )
-  (    2 /clock3-Aux/GND )
-  (    3 /clock3-Aux/GND )
-  (    4 VCC )
-  (    5 VCC )
-  (    6 VCC )
- )
- ( /4B3F1092/4C9A3571 PROTO-6  P38 DIL6 {Lib=DIL6}
-  (    1 /clock3-Aux/GND )
-  (    2 /clock3-Aux/GND )
-  (    3 /clock3-Aux/GND )
-  (    4 VCC )
-  (    5 VCC )
-  (    6 VCC )
- )
- ( /4B3F1092/4C9A356F PROTO-6  P37 DIL6 {Lib=DIL6}
-  (    1 /clock3-Aux/GND )
-  (    2 /clock3-Aux/GND )
-  (    3 /clock3-Aux/GND )
-  (    4 VCC )
-  (    5 VCC )
-  (    6 VCC )
- )
- ( /4B3F1092/4C9A356B PROTO-6  P36 DIL6 {Lib=DIL6}
-  (    1 /clock3-Aux/GND )
-  (    2 /clock3-Aux/GND )
-  (    3 /clock3-Aux/GND )
-  (    4 VCC )
-  (    5 VCC )
-  (    6 VCC )
- )
- ( /4B3F1092/4C9A3559 PROTO-6  P35 DIL6 {Lib=DIL6}
-  (    1 N-000096 )
-  (    2 N-000096 )
-  (    3 N-000096 )
-  (    4 N-000091 )
-  (    5 N-000091 )
-  (    6 N-000091 )
- )
- ( /4B3F1092/4C9A3556 PROTO-6  P34 DIL6 {Lib=DIL6}
-  (    1 N-000097 )
-  (    2 N-000097 )
-  (    3 N-000097 )
-  (    4 N-000092 )
-  (    5 N-000092 )
-  (    6 N-000092 )
- )
- ( /4B3F1092/4C9A3554 PROTO-6  P33 DIL6 {Lib=DIL6}
-  (    1 N-000095 )
-  (    2 N-000095 )
-  (    3 N-000095 )
-  (    4 N-000090 )
-  (    5 N-000090 )
-  (    6 N-000090 )
- )
- ( /4B3F1092/4C9A3551 PROTO-6  P32 DIL6 {Lib=DIL6}
-  (    1 N-000087 )
-  (    2 N-000087 )
-  (    3 N-000087 )
-  (    4 N-000093 )
-  (    5 N-000093 )
-  (    6 N-000093 )
- )
- ( /4B3F1092/4C9A354E PROTO-6  P31 DIL6 {Lib=DIL6}
-  (    1 N-000112 )
-  (    2 N-000112 )
-  (    3 N-000112 )
-  (    4 N-000089 )
-  (    5 N-000089 )
-  (    6 N-000089 )
- )
- ( /4B3F1092/4C9A354B PROTO-6  P30 DIL6 {Lib=DIL6}
-  (    1 N-000086 )
-  (    2 N-000086 )
-  (    3 N-000086 )
-  (    4 N-000094 )
-  (    5 N-000094 )
-  (    6 N-000094 )
- )
- ( /4B3F1092/4C9A3547 PROTO-6  P29 DIL6 {Lib=DIL6}
-  (    1 N-000108 )
-  (    2 N-000108 )
-  (    3 N-000108 )
-  (    4 N-000099 )
-  (    5 N-000099 )
-  (    6 N-000099 )
- )
- ( /4B3F1092/4C9A3544 PROTO-6  P28 DIL6 {Lib=DIL6}
-  (    1 N-000100 )
-  (    2 N-000100 )
-  (    3 N-000100 )
-  (    4 N-000088 )
-  (    5 N-000088 )
-  (    6 N-000088 )
- )
- ( /4B3F1092/4C9A3541 PROTO-6  P27 DIL6 {Lib=DIL6}
-  (    1 N-000107 )
-  (    2 N-000107 )
-  (    3 N-000107 )
-  (    4 N-000098 )
-  (    5 N-000098 )
-  (    6 N-000098 )
- )
- ( /4B3F1092/4C9A353E PROTO-6  P26 DIL6 {Lib=DIL6}
-  (    1 N-000106 )
-  (    2 N-000106 )
-  (    3 N-000106 )
-  (    4 N-000111 )
-  (    5 N-000111 )
-  (    6 N-000111 )
- )
- ( /4B3F1092/4C9A353B PROTO-6  P25 DIL6 {Lib=DIL6}
-  (    1 N-000085 )
-  (    2 N-000085 )
-  (    3 N-000085 )
-  (    4 N-000084 )
-  (    5 N-000084 )
-  (    6 N-000084 )
- )
- ( /4B3F1092/4C9A34A2 PROTO-6  P24 DIL6 {Lib=DIL6}
-  (    1 N-000109 )
-  (    2 N-000109 )
-  (    3 N-000109 )
-  (    4 N-000110 )
-  (    5 N-000110 )
-  (    6 N-000110 )
- )
- ( /4B3F1092/4C9A16BC PIN_STRIP_4-90  P41 STACK-L {Lib=CONN_4}
-  (    1 VCC )
-  (    2 /clock3-Aux/SCL )
-  (    3 /SDA )
-  (    4 /clock3-Aux/GND )
- )
- ( /4B3F1092/4C9A16A1 PIN_STRIP_4-90  P42 STACK-R {Lib=CONN_4}
-  (    1 /clock3-Aux/GND )
-  (    2 /SDA )
-  (    3 /clock3-Aux/SCL )
-  (    4 VCC )
- )
- ( /4B3F1092/4C2B10A0 vite_3mm  P23 CONN_1 {Lib=CONN_1}
-  (    1 /clock3-Aux/GND )
- )
- ( /4B3F1092/4C2B109E vite_3mm  P22 CONN_1 {Lib=CONN_1}
-  (    1 /clock3-Aux/GND )
- )
- ( /4B3F1092/4C2B109C vite_3mm  P21 CONN_1 {Lib=CONN_1}
-  (    1 /clock3-Aux/GND )
- )
- ( /4B3F1092/4C2B1099 vite_3mm  P20 CONN_1 {Lib=CONN_1}
-  (    1 /clock3-Aux/GND )
- )
- ( /4B3F1092/4C2B1097 vite_3mm  P19 CONN_1 {Lib=CONN_1}
-  (    1 /clock3-Aux/GND )
- )
- ( /4B3F1092/4C2B1095 vite_3mm  P18 CONN_1 {Lib=CONN_1}
-  (    1 /clock3-Aux/GND )
- )
- ( /4B3F1092/4C2B1092 vite_3mm  P17 CONN_1 {Lib=CONN_1}
-  (    1 /clock3-Aux/GND )
- )
- ( /4B3F1092/4C2B1090 vite_3mm  P16 CONN_1 {Lib=CONN_1}
-  (    1 /clock3-Aux/GND )
- )
- ( /4B3F1092/4C2B108C vite_3mm  P15 CONN_1 {Lib=CONN_1}
-  (    1 /clock3-Aux/GND )
- )
- ( /4B3F1092/4C2B1088 vite_3mm  P14 CONN_1 {Lib=CONN_1}
-  (    1 /clock3-Aux/GND )
- )
- ( /4B3F1092/4C1C8E7F pin_strip_3  P12 V_OUT {Lib=CONN_3}
-  (    1 /clock3-Aux/GND )
-  (    2 /clock3-Aux/VOUT )
-  (    3 /clock3-Aux/GND )
- )
- ( /4B3F1092/4C122417 PIN_STRIP_3X2  P13 ISP_Header {Lib=CONN_6}
-  (    1 /MISO )
-  (    2 VCC )
-  (    3 /clock3-Aux/SCK-CLK )
-  (    4 /clock3-Aux/MOSI-SDI )
-  (    5 /clock3-Aux/RES )
-  (    6 /clock3-Aux/GND )
- )
- ( /4B3F1092/4C109AAC pin_strip_3  K1 PWR_SEL {Lib=CONN_3}
-  (    1 /clock3-Aux/VOUT )
-  (    2 VCC )
-  (    3 /clock3-Aux/USB5V )
- )
- ( /4B3F1092/4C109AA9 vite_3mm  P8 CONN_1 {Lib=CONN_1}
-  (    1 /clock3-Aux/GND )
- )
- ( /4B3F1092/4C109AA8 vite_3mm  P9 CONN_1 {Lib=CONN_1}
-  (    1 /clock3-Aux/GND )
- )
- ( /4B3F1092/4C109AA7 vite_3mm  P10 CONN_1 {Lib=CONN_1}
-  (    1 /clock3-Aux/GND )
- )
- ( /4B3F1092/4C109AA6 vite_3mm  P11 CONN_1 {Lib=CONN_1}
-  (    1 /clock3-Aux/GND )
- )
- ( /4B3F1092/4C109AA5 PIN_STRIP_6-90  P7 FTDI {Lib=CONN_6}
-  (    1 /clock3-Aux/GND )
-  (    2 /clock3-Aux/GND )
-  (    3 /clock3-Aux/USB5V )
-  (    4 /RXD )
-  (    5 /clock3-Aux/TXD )
-  (    6 N-000083 )
- )
- ( /4B3F1092/4C109AA3 C2  C7 100n {Lib=C}
-  (    1 /clock3-Aux/RES )
-  (    2 N-000083 )
- )
- ( /4B3F1092/4B3F12D0 C2  C9 100n {Lib=C}
-  (    1 /clock3-Aux/VRAW )
-  (    2 /clock3-Aux/GND )
- )
- ( /4B3F1092/4B3F12CF Volt_Reg_78xx  U5 7805 {Lib=7805}
-  (   VI /clock3-Aux/VRAW )
-  (   VO /clock3-Aux/VOUT )
-  (  GND /clock3-Aux/GND )
- )
- ( /4B3F1092/4B3F12CA led_5mm_blue  D196 PWR {Lib=LED}
-  (    1 N-000082 )
-  (    2 /clock3-Aux/GND )
- )
- ( /4B3F1092/4B3F12C9 RC03  R26 1k {Lib=R}
-  (    1 N-000082 )
-  (    2 /clock3-Aux/VOUT )
- )
- ( /4B3F1092/4B3F12C8 CP_5x11mm  C10 100u {Lib=CP1}
-  (    1 /clock3-Aux/VOUT )
-  (    2 /clock3-Aux/GND )
- )
- ( /4B3F1092/4B3F12C7 CP_5x11mm  C8 100u {Lib=CP1}
-  (    1 /clock3-Aux/VRAW )
-  (    2 /clock3-Aux/GND )
- )
- ( /4B3F1092/4B3F12C6 diode_do41  D195 1N4007 {Lib=DIODE}
-  (    1 N-000081 )
-  (    2 /clock3-Aux/VRAW )
- )
- ( /4B3F1092/4B3F12C5 JACK_ALIM  J1 V_IN {Lib=CONN_2}
-  (    1 N-000081 )
-  (    2 /clock3-Aux/GND )
+ ( /4C134896/4C135743 01D01 01D01 LED_RGB
+  ( BLU /R01B )
+  ( COM N-000131 )
+  ( GRN /R01G )
+  ( RED /R01R )
+ )
+ ( /4C134896/4C135730 01D01 01D02 LED_RGB
+  ( BLU /R01B )
+  ( COM N-000132 )
+  ( GRN /R01G )
+  ( RED /R01R )
+ )
+ ( /4C134896/4C13571C 01D01 01D03 LED_RGB
+  ( BLU /R01B )
+  ( COM N-000157 )
+  ( GRN /R01G )
+  ( RED /R01R )
+ )
+ ( /4C134896/4C13572F 01D01 01D04 LED_RGB
+  ( BLU /R01B )
+  ( COM N-000146 )
+  ( GRN /R01G )
+  ( RED /R01R )
+ )
+ ( /4C134896/4C1356F4 01D01 01D05 LED_RGB
+  ( BLU /R01B )
+  ( COM N-000158 )
+  ( GRN /R01G )
+  ( RED /R01R )
+ )
+ ( /4C134896/4C135707 01D01 01D06 LED_RGB
+  ( BLU /R01B )
+  ( COM N-000128 )
+  ( GRN /R01G )
+  ( RED /R01R )
+ )
+ ( /4C134896/4C13571B 01D01 01D07 LED_RGB
+  ( BLU /R01B )
+  ( COM N-000150 )
+  ( GRN /R01G )
+  ( RED /R01R )
+ )
+ ( /4C134896/4C135708 01D01 01D08 LED_RGB
+  ( BLU /R01B )
+  ( COM N-000147 )
+  ( GRN /R01G )
+  ( RED /R01R )
+ )
+ ( /4C134896/4C13521A 01D01 01D09 LED_RGB
+  ( BLU /R01B )
+  ( COM N-000151 )
+  ( GRN /R01G )
+  ( RED /R01R )
+ )
+ ( /4C134896/4C1354CC 01D01 01D10 LED_RGB
+  ( BLU /R01B )
+  ( COM N-000156 )
+  ( GRN /R01G )
+  ( RED /R01R )
+ )
+ ( /4C134896/4C1354ED 01D01 01D11 LED_RGB
+  ( BLU /R01B )
+  ( COM N-000152 )
+  ( GRN /R01G )
+  ( RED /R01R )
+ )
+ ( /4C134896/4C1354DA 01D01 01D12 LED_RGB
+  ( BLU /R01B )
+  ( COM N-000129 )
+  ( GRN /R01G )
+  ( RED /R01R )
+ )
+ ( /4C134896/4C135524 01D01 01D13 LED_RGB
+  ( BLU /R01B )
+  ( COM N-000148 )
+  ( GRN /R01G )
+  ( RED /R01R )
+ )
+ ( /4C134896/4C135511 01D01 01D14 LED_RGB
+  ( BLU /R01B )
+  ( COM N-000127 )
+  ( GRN /R01G )
+  ( RED /R01R )
+ )
+ ( /4C134896/4C1354FD 01D01 01D15 LED_RGB
+  ( BLU /R01B )
+  ( COM N-000130 )
+  ( GRN /R01G )
+  ( RED /R01R )
+ )
+ ( /4C134896/4C135510 01D01 01D16 LED_RGB
+  ( BLU /R01B )
+  ( COM N-000149 )
+  ( GRN /R01G )
+  ( RED /R01R )
+ )
+ ( /4C134896/4C135742 01D01 02D01 LED_RGB
+  ( BLU /clock3-LED/R02B )
+  ( COM N-000131 )
+  ( GRN /clock3-LED/R02G )
+  ( RED /clock3-LED/R02R )
+ )
+ ( /4C134896/4C135731 01D01 02D02 LED_RGB
+  ( BLU /clock3-LED/R02B )
+  ( COM N-000132 )
+  ( GRN /clock3-LED/R02G )
+  ( RED /clock3-LED/R02R )
+ )
+ ( /4C134896/4C13571D 01D01 02D03 LED_RGB
+  ( BLU /clock3-LED/R02B )
+  ( COM N-000157 )
+  ( GRN /clock3-LED/R02G )
+  ( RED /clock3-LED/R02R )
+ )
+ ( /4C134896/4C13572E 01D01 02D04 LED_RGB
+  ( BLU /clock3-LED/R02B )
+  ( COM N-000146 )
+  ( GRN /clock3-LED/R02G )
+  ( RED /clock3-LED/R02R )
+ )
+ ( /4C134896/4C1356F5 01D01 02D05 LED_RGB
+  ( BLU /clock3-LED/R02B )
+  ( COM N-000158 )
+  ( GRN /clock3-LED/R02G )
+  ( RED /clock3-LED/R02R )
+ )
+ ( /4C134896/4C135706 01D01 02D06 LED_RGB
+  ( BLU /clock3-LED/R02B )
+  ( COM N-000128 )
+  ( GRN /clock3-LED/R02G )
+  ( RED /clock3-LED/R02R )
+ )
+ ( /4C134896/4C13571A 01D01 02D07 LED_RGB
+  ( BLU /clock3-LED/R02B )
+  ( COM N-000150 )
+  ( GRN /clock3-LED/R02G )
+  ( RED /clock3-LED/R02R )
+ )
+ ( /4C134896/4C135709 01D01 02D08 LED_RGB
+  ( BLU /clock3-LED/R02B )
+  ( COM N-000147 )
+  ( GRN /clock3-LED/R02G )
+  ( RED /clock3-LED/R02R )
+ )
+ ( /4C134896/4C13521F 01D01 02D09 LED_RGB
+  ( BLU /clock3-LED/R02B )
+  ( COM N-000151 )
+  ( GRN /clock3-LED/R02G )
+  ( RED /clock3-LED/R02R )
+ )
+ ( /4C134896/4C1354CB 01D01 02D10 LED_RGB
+  ( BLU /clock3-LED/R02B )
+  ( COM N-000156 )
+  ( GRN /clock3-LED/R02G )
+  ( RED /clock3-LED/R02R )
+ )
+ ( /4C134896/4C1354EC 01D01 02D11 LED_RGB
+  ( BLU /clock3-LED/R02B )
+  ( COM N-000152 )
+  ( GRN /clock3-LED/R02G )
+  ( RED /clock3-LED/R02R )
+ )
+ ( /4C134896/4C1354DB 01D01 02D12 LED_RGB
+  ( BLU /clock3-LED/R02B )
+  ( COM N-000129 )
+  ( GRN /clock3-LED/R02G )
+  ( RED /clock3-LED/R02R )
+ )
+ ( /4C134896/4C135523 01D01 02D13 LED_RGB
+  ( BLU /clock3-LED/R02B )
+  ( COM N-000148 )
+  ( GRN /clock3-LED/R02G )
+  ( RED /clock3-LED/R02R )
+ )
+ ( /4C134896/4C135512 01D01 02D14 LED_RGB
+  ( BLU /clock3-LED/R02B )
+  ( COM N-000127 )
+  ( GRN /clock3-LED/R02G )
+  ( RED /clock3-LED/R02R )
+ )
+ ( /4C134896/4C1354FE 01D01 02D15 LED_RGB
+  ( BLU /clock3-LED/R02B )
+  ( COM N-000130 )
+  ( GRN /clock3-LED/R02G )
+  ( RED /clock3-LED/R02R )
+ )
+ ( /4C134896/4C13550F 01D01 02D16 LED_RGB
+  ( BLU /clock3-LED/R02B )
+  ( COM N-000149 )
+  ( GRN /clock3-LED/R02G )
+  ( RED /clock3-LED/R02R )
+ )
+ ( /4C134896/4C135741 01D01 03D01 LED_RGB
+  ( BLU /clock3-LED/R03B )
+  ( COM N-000131 )
+  ( GRN /R03G )
+  ( RED /R03R )
+ )
+ ( /4C134896/4C135732 01D01 03D02 LED_RGB
+  ( BLU /clock3-LED/R03B )
+  ( COM N-000132 )
+  ( GRN /R03G )
+  ( RED /R03R )
+ )
+ ( /4C134896/4C13571E 01D01 03D03 LED_RGB
+  ( BLU /clock3-LED/R03B )
+  ( COM N-000157 )
+  ( GRN /R03G )
+  ( RED /R03R )
+ )
+ ( /4C134896/4C13572D 01D01 03D04 LED_RGB
+  ( BLU /clock3-LED/R03B )
+  ( COM N-000146 )
+  ( GRN /R03G )
+  ( RED /R03R )
+ )
+ ( /4C134896/4C1356F6 01D01 03D05 LED_RGB
+  ( BLU /clock3-LED/R03B )
+  ( COM N-000158 )
+  ( GRN /R03G )
+  ( RED /R03R )
+ )
+ ( /4C134896/4C135705 01D01 03D06 LED_RGB
+  ( BLU /clock3-LED/R03B )
+  ( COM N-000128 )
+  ( GRN /R03G )
+  ( RED /R03R )
+ )
+ ( /4C134896/4C135719 01D01 03D07 LED_RGB
+  ( BLU /clock3-LED/R03B )
+  ( COM N-000150 )
+  ( GRN /R03G )
+  ( RED /R03R )
+ )
+ ( /4C134896/4C13570A 01D01 03D08 LED_RGB
+  ( BLU /clock3-LED/R03B )
+  ( COM N-000147 )
+  ( GRN /R03G )
+  ( RED /R03R )
+ )
+ ( /4C134896/4C135231 01D01 03D09 LED_RGB
+  ( BLU /clock3-LED/R03B )
+  ( COM N-000151 )
+  ( GRN /R03G )
+  ( RED /R03R )
+ )
+ ( /4C134896/4C1354CA 01D01 03D10 LED_RGB
+  ( BLU /clock3-LED/R03B )
+  ( COM N-000156 )
+  ( GRN /R03G )
+  ( RED /R03R )
+ )
+ ( /4C134896/4C1354EB 01D01 03D11 LED_RGB
+  ( BLU /clock3-LED/R03B )
+  ( COM N-000152 )
+  ( GRN /R03G )
+  ( RED /R03R )
+ )
+ ( /4C134896/4C1354DC 01D01 03D12 LED_RGB
+  ( BLU /clock3-LED/R03B )
+  ( COM N-000129 )
+  ( GRN /R03G )
+  ( RED /R03R )
+ )
+ ( /4C134896/4C135522 01D01 03D13 LED_RGB
+  ( BLU /clock3-LED/R03B )
+  ( COM N-000148 )
+  ( GRN /R03G )
+  ( RED /R03R )
+ )
+ ( /4C134896/4C135513 01D01 03D14 LED_RGB
+  ( BLU /clock3-LED/R03B )
+  ( COM N-000127 )
+  ( GRN /R03G )
+  ( RED /R03R )
+ )
+ ( /4C134896/4C1354FF 01D01 03D15 LED_RGB
+  ( BLU /clock3-LED/R03B )
+  ( COM N-000130 )
+  ( GRN /R03G )
+  ( RED /R03R )
+ )
+ ( /4C134896/4C13550E 01D01 03D16 LED_RGB
+  ( BLU /clock3-LED/R03B )
+  ( COM N-000149 )
+  ( GRN /R03G )
+  ( RED /R03R )
+ )
+ ( /4C134896/4C135740 01D01 04D01 LED_RGB
+  ( BLU /R04B )
+  ( COM N-000131 )
+  ( GRN /clock3-LED/R04G )
+  ( RED /R04R )
+ )
+ ( /4C134896/4C135733 01D01 04D02 LED_RGB
+  ( BLU /R04B )
+  ( COM N-000132 )
+  ( GRN /clock3-LED/R04G )
+  ( RED /R04R )
+ )
+ ( /4C134896/4C13571F 01D01 04D03 LED_RGB
+  ( BLU /R04B )
+  ( COM N-000157 )
+  ( GRN /clock3-LED/R04G )
+  ( RED /R04R )
+ )
+ ( /4C134896/4C13572C 01D01 04D04 LED_RGB
+  ( BLU /R04B )
+  ( COM N-000146 )
+  ( GRN /clock3-LED/R04G )
+  ( RED /R04R )
+ )
+ ( /4C134896/4C1356F7 01D01 04D05 LED_RGB
+  ( BLU /R04B )
+  ( COM N-000158 )
+  ( GRN /clock3-LED/R04G )
+  ( RED /R04R )
+ )
+ ( /4C134896/4C135704 01D01 04D06 LED_RGB
+  ( BLU /R04B )
+  ( COM N-000128 )
+  ( GRN /clock3-LED/R04G )
+  ( RED /R04R )
+ )
+ ( /4C134896/4C135718 01D01 04D07 LED_RGB
+  ( BLU /R04B )
+  ( COM N-000150 )
+  ( GRN /clock3-LED/R04G )
+  ( RED /R04R )
+ )
+ ( /4C134896/4C13570B 01D01 04D08 LED_RGB
+  ( BLU /R04B )
+  ( COM N-000147 )
+  ( GRN /clock3-LED/R04G )
+  ( RED /R04R )
+ )
+ ( /4C134896/4C13523B 01D01 04D09 LED_RGB
+  ( BLU /R04B )
+  ( COM N-000151 )
+  ( GRN /clock3-LED/R04G )
+  ( RED /R04R )
+ )
+ ( /4C134896/4C1354C9 01D01 04D10 LED_RGB
+  ( BLU /R04B )
+  ( COM N-000156 )
+  ( GRN /clock3-LED/R04G )
+  ( RED /R04R )
+ )
+ ( /4C134896/4C1354EA 01D01 04D11 LED_RGB
+  ( BLU /R04B )
+  ( COM N-000152 )
+  ( GRN /clock3-LED/R04G )
+  ( RED /R04R )
+ )
+ ( /4C134896/4C1354DD 01D01 04D12 LED_RGB
+  ( BLU /R04B )
+  ( COM N-000129 )
+  ( GRN /clock3-LED/R04G )
+  ( RED /R04R )
+ )
+ ( /4C134896/4C135521 01D01 04D13 LED_RGB
+  ( BLU /R04B )
+  ( COM N-000148 )
+  ( GRN /clock3-LED/R04G )
+  ( RED /R04R )
+ )
+ ( /4C134896/4C135514 01D01 04D14 LED_RGB
+  ( BLU /R04B )
+  ( COM N-000127 )
+  ( GRN /clock3-LED/R04G )
+  ( RED /R04R )
+ )
+ ( /4C134896/4C135500 01D01 04D15 LED_RGB
+  ( BLU /R04B )
+  ( COM N-000130 )
+  ( GRN /clock3-LED/R04G )
+  ( RED /R04R )
+ )
+ ( /4C134896/4C13550D 01D01 04D16 LED_RGB
+  ( BLU /R04B )
+  ( COM N-000149 )
+  ( GRN /clock3-LED/R04G )
+  ( RED /R04R )
+ )
+ ( /4C134896/4C13573F 01D01 05D01 LED_RGB
+  ( BLU /clock3-LED/R05B )
+  ( COM N-000131 )
+  ( GRN /clock3-LED/R05G )
+  ( RED /R05R )
+ )
+ ( /4C134896/4C135734 01D01 05D02 LED_RGB
+  ( BLU /clock3-LED/R05B )
+  ( COM N-000132 )
+  ( GRN /clock3-LED/R05G )
+  ( RED /R05R )
+ )
+ ( /4C134896/4C135720 01D01 05D03 LED_RGB
+  ( BLU /clock3-LED/R05B )
+  ( COM N-000157 )
+  ( GRN /clock3-LED/R05G )
+  ( RED /R05R )
+ )
+ ( /4C134896/4C13572B 01D01 05D04 LED_RGB
+  ( BLU /clock3-LED/R05B )
+  ( COM N-000146 )
+  ( GRN /clock3-LED/R05G )
+  ( RED /R05R )
+ )
+ ( /4C134896/4C1356F8 01D01 05D05 LED_RGB
+  ( BLU /clock3-LED/R05B )
+  ( COM N-000158 )
+  ( GRN /clock3-LED/R05G )
+  ( RED /R05R )
+ )
+ ( /4C134896/4C135703 01D01 05D06 LED_RGB
+  ( BLU /clock3-LED/R05B )
+  ( COM N-000128 )
+  ( GRN /clock3-LED/R05G )
+  ( RED /R05R )
+ )
+ ( /4C134896/4C135717 01D01 05D07 LED_RGB
+  ( BLU /clock3-LED/R05B )
+  ( COM N-000150 )
+  ( GRN /clock3-LED/R05G )
+  ( RED /R05R )
+ )
+ ( /4C134896/4C13570C 01D01 05D08 LED_RGB
+  ( BLU /clock3-LED/R05B )
+  ( COM N-000147 )
+  ( GRN /clock3-LED/R05G )
+  ( RED /R05R )
+ )
+ ( /4C134896/4C135251 01D01 05D09 LED_RGB
+  ( BLU /clock3-LED/R05B )
+  ( COM N-000151 )
+  ( GRN /clock3-LED/R05G )
+  ( RED /R05R )
+ )
+ ( /4C134896/4C1354C8 01D01 05D10 LED_RGB
+  ( BLU /clock3-LED/R05B )
+  ( COM N-000156 )
+  ( GRN /clock3-LED/R05G )
+  ( RED /R05R )
+ )
+ ( /4C134896/4C1354E9 01D01 05D11 LED_RGB
+  ( BLU /clock3-LED/R05B )
+  ( COM N-000152 )
+  ( GRN /clock3-LED/R05G )
+  ( RED /R05R )
+ )
+ ( /4C134896/4C1354DE 01D01 05D12 LED_RGB
+  ( BLU /clock3-LED/R05B )
+  ( COM N-000129 )
+  ( GRN /clock3-LED/R05G )
+  ( RED /R05R )
+ )
+ ( /4C134896/4C135520 01D01 05D13 LED_RGB
+  ( BLU /clock3-LED/R05B )
+  ( COM N-000148 )
+  ( GRN /clock3-LED/R05G )
+  ( RED /R05R )
+ )
+ ( /4C134896/4C135515 01D01 05D14 LED_RGB
+  ( BLU /clock3-LED/R05B )
+  ( COM N-000127 )
+  ( GRN /clock3-LED/R05G )
+  ( RED /R05R )
+ )
+ ( /4C134896/4C135501 01D01 05D15 LED_RGB
+  ( BLU /clock3-LED/R05B )
+  ( COM N-000130 )
+  ( GRN /clock3-LED/R05G )
+  ( RED /R05R )
+ )
+ ( /4C134896/4C13550C 01D01 05D16 LED_RGB
+  ( BLU /clock3-LED/R05B )
+  ( COM N-000149 )
+  ( GRN /clock3-LED/R05G )
+  ( RED /R05R )
+ )
+ ( /4C134896/4C13573E 01D01 06D01 LED_RGB
+  ( BLU /clock3-LED/R06B )
+  ( COM N-000131 )
+  ( GRN /R06G )
+  ( RED /R06R )
+ )
+ ( /4C134896/4C135735 01D01 06D02 LED_RGB
+  ( BLU /clock3-LED/R06B )
+  ( COM N-000132 )
+  ( GRN /R06G )
+  ( RED /R06R )
+ )
+ ( /4C134896/4C135721 01D01 06D03 LED_RGB
+  ( BLU /clock3-LED/R06B )
+  ( COM N-000157 )
+  ( GRN /R06G )
+  ( RED /R06R )
+ )
+ ( /4C134896/4C13572A 01D01 06D04 LED_RGB
+  ( BLU /clock3-LED/R06B )
+  ( COM N-000146 )
+  ( GRN /R06G )
+  ( RED /R06R )
+ )
+ ( /4C134896/4C1356F9 01D01 06D05 LED_RGB
+  ( BLU /clock3-LED/R06B )
+  ( COM N-000158 )
+  ( GRN /R06G )
+  ( RED /R06R )
+ )
+ ( /4C134896/4C135702 01D01 06D06 LED_RGB
+  ( BLU /clock3-LED/R06B )
+  ( COM N-000128 )
+  ( GRN /R06G )
+  ( RED /R06R )
+ )
+ ( /4C134896/4C135716 01D01 06D07 LED_RGB
+  ( BLU /clock3-LED/R06B )
+  ( COM N-000150 )
+  ( GRN /R06G )
+  ( RED /R06R )
+ )
+ ( /4C134896/4C13570D 01D01 06D08 LED_RGB
+  ( BLU /clock3-LED/R06B )
+  ( COM N-000147 )
+  ( GRN /R06G )
+  ( RED /R06R )
+ )
+ ( /4C134896/4C13525E 01D01 06D09 LED_RGB
+  ( BLU /clock3-LED/R06B )
+  ( COM N-000151 )
+  ( GRN /R06G )
+  ( RED /R06R )
+ )
+ ( /4C134896/4C1354C7 01D01 06D10 LED_RGB
+  ( BLU /clock3-LED/R06B )
+  ( COM N-000156 )
+  ( GRN /R06G )
+  ( RED /R06R )
+ )
+ ( /4C134896/4C1354E8 01D01 06D11 LED_RGB
+  ( BLU /clock3-LED/R06B )
+  ( COM N-000152 )
+  ( GRN /R06G )
+  ( RED /R06R )
+ )
+ ( /4C134896/4C1354DF 01D01 06D12 LED_RGB
+  ( BLU /clock3-LED/R06B )
+  ( COM N-000129 )
+  ( GRN /R06G )
+  ( RED /R06R )
+ )
+ ( /4C134896/4C13551F 01D01 06D13 LED_RGB
+  ( BLU /clock3-LED/R06B )
+  ( COM N-000148 )
+  ( GRN /R06G )
+  ( RED /R06R )
+ )
+ ( /4C134896/4C135516 01D01 06D14 LED_RGB
+  ( BLU /clock3-LED/R06B )
+  ( COM N-000127 )
+  ( GRN /R06G )
+  ( RED /R06R )
+ )
+ ( /4C134896/4C135502 01D01 06D15 LED_RGB
+  ( BLU /clock3-LED/R06B )
+  ( COM N-000130 )
+  ( GRN /R06G )
+  ( RED /R06R )
+ )
+ ( /4C134896/4C13550B 01D01 06D16 LED_RGB
+  ( BLU /clock3-LED/R06B )
+  ( COM N-000149 )
+  ( GRN /R06G )
+  ( RED /R06R )
+ )
+ ( /4C134896/4C13573D 01D01 07D01 LED_RGB
+  ( BLU /clock3-LED/R07B )
+  ( COM N-000131 )
+  ( GRN /R07G )
+  ( RED /clock3-LED/R07R )
+ )
+ ( /4C134896/4C135736 01D01 07D02 LED_RGB
+  ( BLU /clock3-LED/R07B )
+  ( COM N-000132 )
+  ( GRN /R07G )
+  ( RED /clock3-LED/R07R )
+ )
+ ( /4C134896/4C135722 01D01 07D03 LED_RGB
+  ( BLU /clock3-LED/R07B )
+  ( COM N-000157 )
+  ( GRN /R07G )
+  ( RED /clock3-LED/R07R )
+ )
+ ( /4C134896/4C135729 01D01 07D04 LED_RGB
+  ( BLU /clock3-LED/R07B )
+  ( COM N-000146 )
+  ( GRN /R07G )
+  ( RED /clock3-LED/R07R )
+ )
+ ( /4C134896/4C1356FA 01D01 07D05 LED_RGB
+  ( BLU /clock3-LED/R07B )
+  ( COM N-000158 )
+  ( GRN /R07G )
+  ( RED /clock3-LED/R07R )
+ )
+ ( /4C134896/4C135701 01D01 07D06 LED_RGB
+  ( BLU /clock3-LED/R07B )
+  ( COM N-000128 )
+  ( GRN /R07G )
+  ( RED /clock3-LED/R07R )
+ )
+ ( /4C134896/4C135715 01D01 07D07 LED_RGB
+  ( BLU /clock3-LED/R07B )
+  ( COM N-000150 )
+  ( GRN /R07G )
+  ( RED /clock3-LED/R07R )
+ )
+ ( /4C134896/4C13570E 01D01 07D08 LED_RGB
+  ( BLU /clock3-LED/R07B )
+  ( COM N-000147 )
+  ( GRN /R07G )
+  ( RED /clock3-LED/R07R )
+ )
+ ( /4C134896/4C135262 01D01 07D09 LED_RGB
+  ( BLU /clock3-LED/R07B )
+  ( COM N-000151 )
+  ( GRN /R07G )
+  ( RED /clock3-LED/R07R )
+ )
+ ( /4C134896/4C1354C6 01D01 07D10 LED_RGB
+  ( BLU /clock3-LED/R07B )
+  ( COM N-000156 )
+  ( GRN /R07G )
+  ( RED /clock3-LED/R07R )
+ )
+ ( /4C134896/4C1354E7 01D01 07D11 LED_RGB
+  ( BLU /clock3-LED/R07B )
+  ( COM N-000152 )
+  ( GRN /R07G )
+  ( RED /clock3-LED/R07R )
+ )
+ ( /4C134896/4C1354E0 01D01 07D12 LED_RGB
+  ( BLU /clock3-LED/R07B )
+  ( COM N-000129 )
+  ( GRN /R07G )
+  ( RED /clock3-LED/R07R )
+ )
+ ( /4C134896/4C13551E 01D01 07D13 LED_RGB
+  ( BLU /clock3-LED/R07B )
+  ( COM N-000148 )
+  ( GRN /R07G )
+  ( RED /clock3-LED/R07R )
+ )
+ ( /4C134896/4C135517 01D01 07D14 LED_RGB
+  ( BLU /clock3-LED/R07B )
+  ( COM N-000127 )
+  ( GRN /R07G )
+  ( RED /clock3-LED/R07R )
+ )
+ ( /4C134896/4C135503 01D01 07D15 LED_RGB
+  ( BLU /clock3-LED/R07B )
+  ( COM N-000130 )
+  ( GRN /R07G )
+  ( RED /clock3-LED/R07R )
+ )
+ ( /4C134896/4C13550A 01D01 07D16 LED_RGB
+  ( BLU /clock3-LED/R07B )
+  ( COM N-000149 )
+  ( GRN /R07G )
+  ( RED /clock3-LED/R07R )
+ )
+ ( /4C134896/4C13573C 01D01 08D01 LED_RGB
+  ( BLU /R08B )
+  ( COM N-000131 )
+  ( GRN /R08G )
+  ( RED /R08R )
+ )
+ ( /4C134896/4C135737 01D01 08D02 LED_RGB
+  ( BLU /R08B )
+  ( COM N-000132 )
+  ( GRN /R08G )
+  ( RED /R08R )
+ )
+ ( /4C134896/4C135723 01D01 08D03 LED_RGB
+  ( BLU /R08B )
+  ( COM N-000157 )
+  ( GRN /R08G )
+  ( RED /R08R )
+ )
+ ( /4C134896/4C135728 01D01 08D04 LED_RGB
+  ( BLU /R08B )
+  ( COM N-000146 )
+  ( GRN /R08G )
+  ( RED /R08R )
+ )
+ ( /4C134896/4C1356FB 01D01 08D05 LED_RGB
+  ( BLU /R08B )
+  ( COM N-000158 )
+  ( GRN /R08G )
+  ( RED /R08R )
+ )
+ ( /4C134896/4C135700 01D01 08D06 LED_RGB
+  ( BLU /R08B )
+  ( COM N-000128 )
+  ( GRN /R08G )
+  ( RED /R08R )
+ )
+ ( /4C134896/4C135714 01D01 08D07 LED_RGB
+  ( BLU /R08B )
+  ( COM N-000150 )
+  ( GRN /R08G )
+  ( RED /R08R )
+ )
+ ( /4C134896/4C13570F 01D01 08D08 LED_RGB
+  ( BLU /R08B )
+  ( COM N-000147 )
+  ( GRN /R08G )
+  ( RED /R08R )
+ )
+ ( /4C134896/4C135265 01D01 08D09 LED_RGB
+  ( BLU /R08B )
+  ( COM N-000151 )
+  ( GRN /R08G )
+  ( RED /R08R )
+ )
+ ( /4C134896/4C1354C5 01D01 08D10 LED_RGB
+  ( BLU /R08B )
+  ( COM N-000156 )
+  ( GRN /R08G )
+  ( RED /R08R )
+ )
+ ( /4C134896/4C1354E6 01D01 08D11 LED_RGB
+  ( BLU /R08B )
+  ( COM N-000152 )
+  ( GRN /R08G )
+  ( RED /R08R )
+ )
+ ( /4C134896/4C1354E1 01D01 08D12 LED_RGB
+  ( BLU /R08B )
+  ( COM N-000129 )
+  ( GRN /R08G )
+  ( RED /R08R )
+ )
+ ( /4C134896/4C13551D 01D01 08D13 LED_RGB
+  ( BLU /R08B )
+  ( COM N-000148 )
+  ( GRN /R08G )
+  ( RED /R08R )
+ )
+ ( /4C134896/4C135518 01D01 08D14 LED_RGB
+  ( BLU /R08B )
+  ( COM N-000127 )
+  ( GRN /R08G )
+  ( RED /R08R )
+ )
+ ( /4C134896/4C135504 01D01 08D15 LED_RGB
+  ( BLU /R08B )
+  ( COM N-000130 )
+  ( GRN /R08G )
+  ( RED /R08R )
+ )
+ ( /4C134896/4C135509 01D01 08D16 LED_RGB
+  ( BLU /R08B )
+  ( COM N-000149 )
+  ( GRN /R08G )
+  ( RED /R08R )
+ )
+ ( /4C134896/4C13573B 01D01 09D01 LED_RGB
+  ( BLU /R09B )
+  ( COM N-000131 )
+  ( GRN /R09G )
+  ( RED /clock3-LED/R09R )
+ )
+ ( /4C134896/4C135738 01D01 09D02 LED_RGB
+  ( BLU /R09B )
+  ( COM N-000132 )
+  ( GRN /R09G )
+  ( RED /clock3-LED/R09R )
+ )
+ ( /4C134896/4C135724 01D01 09D03 LED_RGB
+  ( BLU /R09B )
+  ( COM N-000157 )
+  ( GRN /R09G )
+  ( RED /clock3-LED/R09R )
+ )
+ ( /4C134896/4C135727 01D01 09D04 LED_RGB
+  ( BLU /R09B )
+  ( COM N-000146 )
+  ( GRN /R09G )
+  ( RED /clock3-LED/R09R )
+ )
+ ( /4C134896/4C1356FC 01D01 09D05 LED_RGB
+  ( BLU /R09B )
+  ( COM N-000158 )
+  ( GRN /R09G )
+  ( RED /clock3-LED/R09R )
+ )
+ ( /4C134896/4C1356FF 01D01 09D06 LED_RGB
+  ( BLU /R09B )
+  ( COM N-000128 )
+  ( GRN /R09G )
+  ( RED /clock3-LED/R09R )
+ )
+ ( /4C134896/4C135713 01D01 09D07 LED_RGB
+  ( BLU /R09B )
+  ( COM N-000150 )
+  ( GRN /R09G )
+  ( RED /clock3-LED/R09R )
+ )
+ ( /4C134896/4C135710 01D01 09D08 LED_RGB
+  ( BLU /R09B )
+  ( COM N-000147 )
+  ( GRN /R09G )
+  ( RED /clock3-LED/R09R )
+ )
+ ( /4C134896/4C1352A6 01D01 09D09 LED_RGB
+  ( BLU /R09B )
+  ( COM N-000151 )
+  ( GRN /R09G )
+  ( RED /clock3-LED/R09R )
+ )
+ ( /4C134896/4C1354C4 01D01 09D10 LED_RGB
+  ( BLU /R09B )
+  ( COM N-000156 )
+  ( GRN /R09G )
+  ( RED /clock3-LED/R09R )
+ )
+ ( /4C134896/4C1354E5 01D01 09D11 LED_RGB
+  ( BLU /R09B )
+  ( COM N-000152 )
+  ( GRN /R09G )
+  ( RED /clock3-LED/R09R )
+ )
+ ( /4C134896/4C1354E2 01D01 09D12 LED_RGB
+  ( BLU /R09B )
+  ( COM N-000129 )
+  ( GRN /R09G )
+  ( RED /clock3-LED/R09R )
+ )
+ ( /4C134896/4C13551C 01D01 09D13 LED_RGB
+  ( BLU /R09B )
+  ( COM N-000148 )
+  ( GRN /R09G )
+  ( RED /clock3-LED/R09R )
+ )
+ ( /4C134896/4C135519 01D01 09D14 LED_RGB
+  ( BLU /R09B )
+  ( COM N-000127 )
+  ( GRN /R09G )
+  ( RED /clock3-LED/R09R )
+ )
+ ( /4C134896/4C135505 01D01 09D15 LED_RGB
+  ( BLU /R09B )
+  ( COM N-000130 )
+  ( GRN /R09G )
+  ( RED /clock3-LED/R09R )
+ )
+ ( /4C134896/4C135508 01D01 09D16 LED_RGB
+  ( BLU /R09B )
+  ( COM N-000149 )
+  ( GRN /R09G )
+  ( RED /clock3-LED/R09R )
+ )
+ ( /4C134896/4C13573A 01D01 10D01 LED_RGB
+  ( BLU /R10B )
+  ( COM N-000131 )
+  ( GRN /R10G )
+  ( RED /clock3-LED/R10R )
+ )
+ ( /4C134896/4C135739 01D01 10D02 LED_RGB
+  ( BLU /R10B )
+  ( COM N-000132 )
+  ( GRN /R10G )
+  ( RED /clock3-LED/R10R )
+ )
+ ( /4C134896/4C135725 01D01 10D03 LED_RGB
+  ( BLU /R10B )
+  ( COM N-000157 )
+  ( GRN /R10G )
+  ( RED /clock3-LED/R10R )
+ )
+ ( /4C134896/4C135726 01D01 10D04 LED_RGB
+  ( BLU /R10B )
+  ( COM N-000146 )
+  ( GRN /R10G )
+  ( RED /clock3-LED/R10R )
+ )
+ ( /4C134896/4C1356FD 01D01 10D05 LED_RGB
+  ( BLU /R10B )
+  ( COM N-000158 )
+  ( GRN /R10G )
+  ( RED /clock3-LED/R10R )
+ )
+ ( /4C134896/4C1356FE 01D01 10D06 LED_RGB
+  ( BLU /R10B )
+  ( COM N-000128 )
+  ( GRN /R10G )
+  ( RED /clock3-LED/R10R )
+ )
+ ( /4C134896/4C135712 01D01 10D07 LED_RGB
+  ( BLU /R10B )
+  ( COM N-000150 )
+  ( GRN /R10G )
+  ( RED /clock3-LED/R10R )
+ )
+ ( /4C134896/4C135711 01D01 10D08 LED_RGB
+  ( BLU /R10B )
+  ( COM N-000147 )
+  ( GRN /R10G )
+  ( RED /clock3-LED/R10R )
+ )
+ ( /4C134896/4C1352AA 01D01 10D09 LED_RGB
+  ( BLU /R10B )
+  ( COM N-000151 )
+  ( GRN /R10G )
+  ( RED /clock3-LED/R10R )
+ )
+ ( /4C134896/4C1354C3 01D01 10D10 LED_RGB
+  ( BLU /R10B )
+  ( COM N-000156 )
+  ( GRN /R10G )
+  ( RED /clock3-LED/R10R )
+ )
+ ( /4C134896/4C1354E4 01D01 10D11 LED_RGB
+  ( BLU /R10B )
+  ( COM N-000152 )
+  ( GRN /R10G )
+  ( RED /clock3-LED/R10R )
+ )
+ ( /4C134896/4C1354E3 01D01 10D12 LED_RGB
+  ( BLU /R10B )
+  ( COM N-000129 )
+  ( GRN /R10G )
+  ( RED /clock3-LED/R10R )
+ )
+ ( /4C134896/4C13551B 01D01 10D13 LED_RGB
+  ( BLU /R10B )
+  ( COM N-000148 )
+  ( GRN /R10G )
+  ( RED /clock3-LED/R10R )
+ )
+ ( /4C134896/4C13551A 01D01 10D14 LED_RGB
+  ( BLU /R10B )
+  ( COM N-000127 )
+  ( GRN /R10G )
+  ( RED /clock3-LED/R10R )
+ )
+ ( /4C134896/4C135506 01D01 10D15 LED_RGB
+  ( BLU /R10B )
+  ( COM N-000130 )
+  ( GRN /R10G )
+  ( RED /clock3-LED/R10R )
+ )
+ ( /4C134896/4C135507 01D01 10D16 LED_RGB
+  ( BLU /R10B )
+  ( COM N-000149 )
+  ( GRN /R10G )
+  ( RED /clock3-LED/R10R )
+ )
+ ( /4C134896/4C136094 LED_10MM_BLUE 11D01 LED
+  ( 1 N-000131 )
+  ( 2 /R11W )
+ )
+ ( /4C134896/4C1360A5 LED_10MM_BLUE 11D02 LED
+  ( 1 N-000132 )
+  ( 2 /R11W )
+ )
+ ( /4C134896/4C1360AE LED_10MM_BLUE 11D03 LED
+  ( 1 N-000157 )
+  ( 2 /R11W )
+ )
+ ( /4C134896/4C1360B5 LED_10MM_BLUE 11D04 LED
+  ( 1 N-000146 )
+  ( 2 /R11W )
+ )
+ ( /4C134896/4C1360BE LED_10MM_BLUE 11D05 LED
+  ( 1 N-000158 )
+  ( 2 /R11W )
+ )
+ ( /4C134896/4C1360CC LED_10MM_BLUE 11D06 LED
+  ( 1 N-000128 )
+  ( 2 /R11W )
+ )
+ ( /4C134896/4C1360D6 LED_10MM_BLUE 11D07 LED
+  ( 1 N-000150 )
+  ( 2 /R11W )
+ )
+ ( /4C134896/4C1360E2 LED_10MM_BLUE 11D08 LED
+  ( 1 N-000147 )
+  ( 2 /R11W )
+ )
+ ( /4C134896/4C1360EC LED_10MM_BLUE 11D09 LED
+  ( 1 N-000151 )
+  ( 2 /R11W )
+ )
+ ( /4C134896/4C1360F2 LED_10MM_BLUE 11D10 LED
+  ( 1 N-000156 )
+  ( 2 /R11W )
+ )
+ ( /4C134896/4C1360F9 LED_10MM_BLUE 11D11 LED
+  ( 1 N-000152 )
+  ( 2 /R11W )
+ )
+ ( /4C134896/4C136101 LED_10MM_BLUE 11D12 LED
+  ( 1 N-000129 )
+  ( 2 /R11W )
+ )
+ ( /4C134896/4C136108 LED_10MM_BLUE 11D13 LED
+  ( 1 N-000148 )
+  ( 2 /R11W )
+ )
+ ( /4C134896/4C136115 LED_10MM_BLUE 11D14 LED
+  ( 1 N-000127 )
+  ( 2 /R11W )
+ )
+ ( /4C134896/4C13611D LED_10MM_BLUE 11D15 LED
+  ( 1 N-000130 )
+  ( 2 /R11W )
+ )
+ ( /4C134896/4C136124 LED_10MM_BLUE 11D16 LED
+  ( 1 N-000149 )
+  ( 2 /R11W )
+ )
+ ( /4C134896/4C13615B LED_10MM_BLUE 12D01 LED
+  ( 1 N-000131 )
+  ( 2 /R12W )
+ )
+ ( /4C134896/4C13615A LED_10MM_BLUE 12D02 LED
+  ( 1 N-000132 )
+  ( 2 /R12W )
+ )
+ ( /4C134896/4C136159 LED_10MM_BLUE 12D03 LED
+  ( 1 N-000157 )
+  ( 2 /R12W )
+ )
+ ( /4C134896/4C136158 LED_10MM_BLUE 12D04 LED
+  ( 1 N-000146 )
+  ( 2 /R12W )
+ )
+ ( /4C134896/4C136157 LED_10MM_BLUE 12D05 LED
+  ( 1 N-000158 )
+  ( 2 /R12W )
+ )
+ ( /4C134896/4C136156 LED_10MM_BLUE 12D06 LED
+  ( 1 N-000128 )
+  ( 2 /R12W )
+ )
+ ( /4C134896/4C136155 LED_10MM_BLUE 12D07 LED
+  ( 1 N-000150 )
+  ( 2 /R12W )
+ )
+ ( /4C134896/4C136154 LED_10MM_BLUE 12D08 LED
+  ( 1 N-000147 )
+  ( 2 /R12W )
+ )
+ ( /4C134896/4C136153 LED_10MM_BLUE 12D09 LED
+  ( 1 N-000151 )
+  ( 2 /R12W )
+ )
+ ( /4C134896/4C136152 LED_10MM_BLUE 12D10 LED
+  ( 1 N-000156 )
+  ( 2 /R12W )
+ )
+ ( /4C134896/4C136151 LED_10MM_BLUE 12D11 LED
+  ( 1 N-000152 )
+  ( 2 /R12W )
+ )
+ ( /4C134896/4C136150 LED_10MM_BLUE 12D12 LED
+  ( 1 N-000129 )
+  ( 2 /R12W )
+ )
+ ( /4C134896/4C13614F LED_10MM_BLUE 12D13 LED
+  ( 1 N-000148 )
+  ( 2 /R12W )
+ )
+ ( /4C134896/4C13614E LED_10MM_BLUE 12D14 LED
+  ( 1 N-000127 )
+  ( 2 /R12W )
+ )
+ ( /4C134896/4C13614D LED_10MM_BLUE 12D15 LED
+  ( 1 N-000130 )
+  ( 2 /R12W )
+ )
+ ( /4C134896/4C13614C LED_10MM_BLUE 12D16 LED
+  ( 1 N-000149 )
+  ( 2 /R12W )
+ )
+ ( /4C1345CB C2 C3 100n
+  ( 1 /VCC )
+  ( 2 /clock3-Aux/GND )
+ )
+ ( /4C12211E C2 C6 100n
+  ( 1 /VCC )
+  ( 2 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C109AA3 C2 C7 100n
+  ( 1 /clock3-Aux/RES )
+  ( 2 N-000085 )
+ )
+ ( /4B3F1092/4B3F12C7 CP_5x11mm C8 100u
+  ( 1 /clock3-Aux/VRAW )
+  ( 2 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4B3F12D0 C2 C9 100n
+  ( 1 /clock3-Aux/VRAW )
+  ( 2 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4B3F12C8 CP_5x11mm C10 100u
+  ( 1 /clock3-Aux/VOUT )
+  ( 2 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4D060BC4 pin_strip_4 CD1 CDOT1
+  ( 1 N-000118 )
+  ( 2 N-000105 )
+  ( 3 N-000122 )
+  ( 4 N-000104 )
+ )
+ ( /4B3F1092/4D060BC3 pin_strip_4 CD2 CDOT2
+  ( 1 /SDA )
+  ( 2 /SCL )
+  ( 3 /VCC )
+  ( 4 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4D060C51 pin_strip_4 CD3 CDOT3
+  ( 1 N-000118 )
+  ( 2 N-000105 )
+  ( 3 N-000122 )
+  ( 4 N-000104 )
+ )
+ ( /4B077B46 led_5mm_blue D193 DBG
+  ( 1 N-000052 )
+  ( 2 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4B3F12C6 diode_do41 D195 1N4007
+  ( 1 N-000083 )
+  ( 2 /clock3-Aux/VRAW )
+ )
+ ( /4B3F1092/4B3F12CA led_5mm_blue D196 PWR
+  ( 1 N-000084 )
+  ( 2 /clock3-Aux/GND )
+ )
+ ( /4C2C6A39 SCK-24_600_ELL DIL-U1 STP16DP05
+  ( 1 /clock3-Aux/GND )
+  ( 2 /clock3-1 )
+  ( 3 /clock3-2 )
+  ( 4 /OC1A-LE )
+  ( 5 /R01R )
+  ( 6 /R01G )
+  ( 7 /R01B )
+  ( 8 /clock3-LED/R02R )
+  ( 9 /clock3-LED/R02G )
+  ( 10 /clock3-LED/R02B )
+  ( 11 /R03R )
+  ( 12 /R03G )
+  ( 13 /clock3-LED/R03B )
+  ( 14 /R04R )
+  ( 15 /clock3-LED/R04G )
+  ( 16 /R04B )
+  ( 17 /R05R )
+  ( 18 /clock3-LED/R05G )
+  ( 19 /clock3-LED/R05B )
+  ( 20 /R06R )
+  ( 21 /clock3-Aux/GND )
+  ( 22 /SDO-SDI )
+  ( 23 ? )
+  ( 24 /VCC )
+ )
+ ( /4C2C6A4D SCK-24_600_ELL DIL-U2 STP16DP05
+  ( 1 /clock3-Aux/GND )
+  ( 2 /SDO-SDI )
+  ( 3 /clock3-2 )
+  ( 4 /OC1A-LE )
+  ( 5 /R06G )
+  ( 6 /clock3-LED/R06B )
+  ( 7 /clock3-LED/R07R )
+  ( 8 /R07G )
+  ( 9 /clock3-LED/R07B )
+  ( 10 /R08R )
+  ( 11 /R08G )
+  ( 12 /R08B )
+  ( 13 /clock3-LED/R09R )
+  ( 14 /R09G )
+  ( 15 /R09B )
+  ( 16 /clock3-LED/R10R )
+  ( 17 /R10G )
+  ( 18 /R10B )
+  ( 19 /R11W )
+  ( 20 /R12W )
+  ( 21 /clock3-Aux/GND )
+  ( 22 ? )
+  ( 23 ? )
+  ( 24 /VCC )
+ )
+ ( /4B3F1092/4B3F12C5 JACK_ALIM J1 V_IN
+  ( 1 N-000083 )
+  ( 2 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C109AAC pin_strip_3 K1 PWR_SEL
+  ( 1 /clock3-Aux/VOUT )
+  ( 2 /VCC )
+  ( 3 /clock3-3 )
+ )
+ ( /4C134896/4D04EA8D pin_strip_3 K2 LED_ENABLE
+  ( 1 /VCC )
+  ( 2 N-000160 )
+  ( 3 ? )
+ )
+ ( /4B3F1092/4C109AA5 PIN_STRIP_6-90 P7 FTDI
+  ( 1 /clock3-Aux/GND )
+  ( 2 /clock3-Aux/GND )
+  ( 3 /clock3-3 )
+  ( 4 /RXD )
+  ( 5 /clock3-Aux/TXD )
+  ( 6 N-000085 )
+ )
+ ( /4B3F1092/4C109AA9 vite_3mm P8 CONN_1
+  ( 1 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C109AA8 vite_3mm P9 CONN_1
+  ( 1 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C109AA7 vite_3mm P10 CONN_1
+  ( 1 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C109AA6 vite_3mm P11 CONN_1
+  ( 1 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C1C8E7F pin_strip_3 P12 V_OUT
+  ( 1 /clock3-Aux/GND )
+  ( 2 /clock3-Aux/VOUT )
+  ( 3 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C122417 PIN_STRIP_3X2 P13 ISP
+  ( 1 /MISO )
+  ( 2 /VCC )
+  ( 3 /clock3-2 )
+  ( 4 /clock3-1 )
+  ( 5 /clock3-Aux/RES )
+  ( 6 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C2B1088 vite_3mm P14 CONN_1
+  ( 1 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C2B108C vite_3mm P15 CONN_1
+  ( 1 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C2B1090 vite_3mm P16 CONN_1
+  ( 1 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C2B1092 vite_3mm P17 CONN_1
+  ( 1 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C2B1095 vite_3mm P18 CONN_1
+  ( 1 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C2B1097 vite_3mm P19 CONN_1
+  ( 1 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C2B1099 vite_3mm P20 CONN_1
+  ( 1 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C2B109C vite_3mm P21 CONN_1
+  ( 1 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C2B109E vite_3mm P22 CONN_1
+  ( 1 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C2B10A0 vite_3mm P23 CONN_1
+  ( 1 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C9A34A2 PROTO-6 P24 DIL6
+  ( 1 N-000111 )
+  ( 2 N-000111 )
+  ( 3 N-000111 )
+  ( 4 N-000112 )
+  ( 5 N-000112 )
+  ( 6 N-000112 )
+ )
+ ( /4B3F1092/4C9A353B PROTO-6 P25 DIL6
+  ( 1 N-000087 )
+  ( 2 N-000087 )
+  ( 3 N-000087 )
+  ( 4 N-000086 )
+  ( 5 N-000086 )
+  ( 6 N-000086 )
+ )
+ ( /4B3F1092/4C9A353E PROTO-6 P26 DIL6
+  ( 1 N-000108 )
+  ( 2 N-000108 )
+  ( 3 N-000108 )
+  ( 4 N-000113 )
+  ( 5 N-000113 )
+  ( 6 N-000113 )
+ )
+ ( /4B3F1092/4C9A3541 PROTO-6 P27 DIL6
+  ( 1 N-000109 )
+  ( 2 N-000109 )
+  ( 3 N-000109 )
+  ( 4 N-000100 )
+  ( 5 N-000100 )
+  ( 6 N-000100 )
+ )
+ ( /4B3F1092/4C9A3544 PROTO-6 P28 DIL6
+  ( 1 N-000102 )
+  ( 2 N-000102 )
+  ( 3 N-000102 )
+  ( 4 N-000090 )
+  ( 5 N-000090 )
+  ( 6 N-000090 )
+ )
+ ( /4B3F1092/4C9A3547 PROTO-6 P29 DIL6
+  ( 1 N-000110 )
+  ( 2 N-000110 )
+  ( 3 N-000110 )
+  ( 4 N-000101 )
+  ( 5 N-000101 )
+  ( 6 N-000101 )
+ )
+ ( /4B3F1092/4C9A354B PROTO-6 P30 DIL6
+  ( 1 N-000088 )
+  ( 2 N-000088 )
+  ( 3 N-000088 )
+  ( 4 N-000096 )
+  ( 5 N-000096 )
+  ( 6 N-000096 )
+ )
+ ( /4B3F1092/4C9A354E PROTO-6 P31 DIL6
+  ( 1 N-000114 )
+  ( 2 N-000114 )
+  ( 3 N-000114 )
+  ( 4 N-000091 )
+  ( 5 N-000091 )
+  ( 6 N-000091 )
+ )
+ ( /4B3F1092/4C9A3551 PROTO-6 P32 DIL6
+  ( 1 N-000089 )
+  ( 2 N-000089 )
+  ( 3 N-000089 )
+  ( 4 N-000095 )
+  ( 5 N-000095 )
+  ( 6 N-000095 )
+ )
+ ( /4B3F1092/4C9A3554 PROTO-6 P33 DIL6
+  ( 1 N-000097 )
+  ( 2 N-000097 )
+  ( 3 N-000097 )
+  ( 4 N-000092 )
+  ( 5 N-000092 )
+  ( 6 N-000092 )
+ )
+ ( /4B3F1092/4C9A3556 PROTO-6 P34 DIL6
+  ( 1 N-000099 )
+  ( 2 N-000099 )
+  ( 3 N-000099 )
+  ( 4 N-000094 )
+  ( 5 N-000094 )
+  ( 6 N-000094 )
+ )
+ ( /4B3F1092/4C9A3559 PROTO-6 P35 DIL6
+  ( 1 N-000098 )
+  ( 2 N-000098 )
+  ( 3 N-000098 )
+  ( 4 N-000093 )
+  ( 5 N-000093 )
+  ( 6 N-000093 )
+ )
+ ( /4B3F1092/4C9A356B PROTO-6 P36 DIL6
+  ( 1 /clock3-Aux/GND )
+  ( 2 /clock3-Aux/GND )
+  ( 3 /clock3-Aux/GND )
+  ( 4 /VCC )
+  ( 5 /VCC )
+  ( 6 /VCC )
+ )
+ ( /4B3F1092/4C9A356F PROTO-6 P37 DIL6
+  ( 1 /clock3-Aux/GND )
+  ( 2 /clock3-Aux/GND )
+  ( 3 /clock3-Aux/GND )
+  ( 4 /VCC )
+  ( 5 /VCC )
+  ( 6 /VCC )
+ )
+ ( /4B3F1092/4C9A3571 PROTO-6 P38 DIL6
+  ( 1 /clock3-Aux/GND )
+  ( 2 /clock3-Aux/GND )
+  ( 3 /clock3-Aux/GND )
+  ( 4 /VCC )
+  ( 5 /VCC )
+  ( 6 /VCC )
+ )
+ ( /4B3F1092/4C9A3574 PROTO-6 P39 DIL6
+  ( 1 /clock3-Aux/GND )
+  ( 2 /clock3-Aux/GND )
+  ( 3 /clock3-Aux/GND )
+  ( 4 /VCC )
+  ( 5 /VCC )
+  ( 6 /VCC )
+ )
+ ( /4B3F1092/4C9A16BC pin_sck_4-90 P41 STACK-L
+  ( 1 /VCC )
+  ( 2 /SCL )
+  ( 3 /SDA )
+  ( 4 /clock3-Aux/GND )
+ )
+ ( /4B3F1092/4C9A16A1 PIN_STRIP_4-90 P42 STACK-R
+  ( 1 /clock3-Aux/GND )
+  ( 2 /SDA )
+  ( 3 /SCL )
+  ( 4 /VCC )
+ )
+ ( /4C9A4A71 Pad01 P43 CONN_1
+  ( 1 N-000071 )
+ )
+ ( /4B3F1092/4D0B619A pin_strip_8 P48 7SegDisp
+  ( 1 /clock3-Aux/GND )
+  ( 2 /VCC )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 /clock3-Aux/TXD )
+ )
+ ( /4B3F1092/4D133AEE vite_3mm P49 CONN_1
+  ( 1 ? )
+ )
+ ( /4B3F1092/4D133B32 vite_3mm P50 CONN_1
+  ( 1 ? )
+ )
+ ( /4B3F1092/4D133B36 vite_3mm P51 CONN_1
+  ( 1 ? )
+ )
+ ( /4B3F1092/4D133B38 vite_3mm P52 CONN_1
+  ( 1 ? )
+ )
+ ( /4C134896/4C136C56 to92_2N5401 Q1 2N5401
+  ( 1 N-000160 )
+  ( 2 N-000139 )
+  ( 3 N-000131 )
+ )
+ ( /4C134896/4C136CD8 to92_2N5401 Q2 2N5401
+  ( 1 N-000160 )
+  ( 2 N-000138 )
+  ( 3 N-000132 )
+ )
+ ( /4C134896/4C136CE0 to92_2N5401 Q3 2N5401
+  ( 1 N-000160 )
+  ( 2 N-000137 )
+  ( 3 N-000157 )
+ )
+ ( /4C134896/4C136CE5 to92_2N5401 Q4 2N5401
+  ( 1 N-000160 )
+  ( 2 N-000136 )
+  ( 3 N-000146 )
+ )
+ ( /4C134896/4C136CEB to92_2N5401 Q5 2N5401
+  ( 1 N-000160 )
+  ( 2 N-000135 )
+  ( 3 N-000158 )
+ )
+ ( /4C134896/4C136CF0 to92_2N5401 Q6 2N5401
+  ( 1 N-000160 )
+  ( 2 N-000134 )
+  ( 3 N-000128 )
+ )
+ ( /4C134896/4C136CF9 to92_2N5401 Q7 2N5401
+  ( 1 N-000160 )
+  ( 2 N-000133 )
+  ( 3 N-000150 )
+ )
+ ( /4C134896/4C136D0B to92_2N5401 Q8 2N5401
+  ( 1 N-000160 )
+  ( 2 N-000145 )
+  ( 3 N-000147 )
+ )
+ ( /4C134896/4C136D11 to92_2N5401 Q9 2N5401
+  ( 1 N-000160 )
+  ( 2 N-000144 )
+  ( 3 N-000151 )
+ )
+ ( /4C134896/4C136D19 to92_2N5401 Q10 2N5401
+  ( 1 N-000160 )
+  ( 2 N-000143 )
+  ( 3 N-000156 )
+ )
+ ( /4C134896/4C136D1F to92_2N5401 Q11 2N5401
+  ( 1 N-000160 )
+  ( 2 N-000142 )
+  ( 3 N-000152 )
+ )
+ ( /4C134896/4C136D24 to92_2N5401 Q12 2N5401
+  ( 1 N-000160 )
+  ( 2 N-000141 )
+  ( 3 N-000129 )
+ )
+ ( /4C134896/4C136D29 to92_2N5401 Q13 2N5401
+  ( 1 N-000160 )
+  ( 2 N-000140 )
+  ( 3 N-000148 )
+ )
+ ( /4C134896/4C136D32 to92_2N5401 Q14 2N5401
+  ( 1 N-000160 )
+  ( 2 N-000153 )
+  ( 3 N-000127 )
+ )
+ ( /4C134896/4C136D37 to92_2N5401 Q15 2N5401
+  ( 1 N-000160 )
+  ( 2 N-000154 )
+  ( 3 N-000130 )
+ )
+ ( /4C134896/4C136D3C to92_2N5401 Q16 2N5401
+  ( 1 N-000160 )
+  ( 2 N-000155 )
+  ( 3 N-000149 )
+ )
+ ( /4C9A0DF8 to92_2N5401 Q17 2N5401
+  ( 1 /VCC )
+  ( 2 N-000066 )
+  ( 3 N-000072 )
+ )
+ ( /4C134896/4C136E60 RC03 R1 100
+  ( 1 /COL16 )
+  ( 2 N-000139 )
+ )
+ ( /4C134896/4C136E5E RC03 R2 100
+  ( 1 /clock3-4 )
+  ( 2 N-000138 )
+ )
+ ( /4C134896/4C136E5C RC03 R3 100
+  ( 1 /COL14 )
+  ( 2 N-000137 )
+ )
+ ( /4C134896/4C136E59 RC03 R4 100
+  ( 1 /COL13 )
+  ( 2 N-000136 )
+ )
+ ( /4C134896/4C136E4C RC03 R5 100
+  ( 1 /COL12 )
+  ( 2 N-000135 )
+ )
+ ( /4C134896/4C136E44 RC03 R6 100
+  ( 1 /clock3-5 )
+  ( 2 N-000134 )
+ )
+ ( /4C134896/4C136E42 RC03 R7 100
+  ( 1 /COL10 )
+  ( 2 N-000133 )
+ )
+ ( /4C134896/4C136E3E RC03 R8 100
+  ( 1 /clock3-6 )
+  ( 2 N-000145 )
+ )
+ ( /4C134896/4C136E3B RC03 R9 100
+  ( 1 /clock3-7 )
+  ( 2 N-000144 )
+ )
+ ( /4C134896/4C136E25 RC03 R10 100
+  ( 1 /COL07 )
+  ( 2 N-000143 )
+ )
+ ( /4C134896/4C136E20 RC03 R11 100
+  ( 1 /COL06 )
+  ( 2 N-000142 )
+ )
+ ( /4C134896/4C136E1D RC03 R12 100
+  ( 1 /clock3-8 )
+  ( 2 N-000141 )
+ )
+ ( /4C134896/4C136E1A RC03 R13 100
+  ( 1 /COL04 )
+  ( 2 N-000140 )
+ )
+ ( /4C134896/4C136E04 RC03 R14 100
+  ( 1 /COL03 )
+  ( 2 N-000153 )
+ )
+ ( /4C134896/4C136DFE RC03 R15 100
+  ( 1 /COL02 )
+  ( 2 N-000154 )
+ )
+ ( /4C134896/4C136D55 RC03 R16 100
+  ( 1 /COL01 )
+  ( 2 N-000155 )
+ )
+ ( /4B6FC619 RC03 R17 10k
+  ( 1 /MODE )
+  ( 2 /clock3-Aux/GND )
+ )
+ ( /4B077B96 RC03 R18 10k
+  ( 1 /DEC )
+  ( 2 /clock3-Aux/GND )
+ )
+ ( /4B077B9C RC03 R19 10k
+  ( 1 /INC )
+  ( 2 /clock3-Aux/GND )
+ )
+ ( /4B66B818 RC03 R20 4k7
+  ( 1 /VCC )
+  ( 2 /SDA )
+ )
+ ( /4B66B80D RC03 R21 4k7
+  ( 1 /VCC )
+  ( 2 /SCL )
+ )
+ ( /4B077B1E RC03 R22 10k
+  ( 1 /VCC )
+  ( 2 /clock3-Aux/RES )
+ )
+ ( /4D133449 RC03 R23 10k
+  ( 1 /ENTER )
+  ( 2 /clock3-Aux/GND )
+ )
+ ( /4B077B33 RC03 R25 1k
+  ( 1 N-000052 )
+  ( 2 /MISO )
+ )
+ ( /4B3F1092/4B3F12C9 RC03 R26 1k
+  ( 1 N-000084 )
+  ( 2 /clock3-Aux/VOUT )
+ )
+ ( /4C17353D RC03 R30 100E
+  ( 1 N-000015 )
+  ( 2 N-000072 )
+ )
+ ( /4C1741EB RC03 R31 10K
+  ( 1 /LDR )
+  ( 2 /VCC )
+ )
+ ( /4C1741DB pin_strip_2 R32 LDR
+  ( 1 /clock3-Aux/GND )
+  ( 2 /LDR )
+ )
+ ( /4C9A0F04 RC03 R33 680E
+  ( 1 N-000066 )
+  ( 2 /SPEAKER )
+ )
+ ( /4D2315D0 vite_3mm rowBoB1 CONN_1
+  ( 1 ? )
+ )
+ ( /4D2315BF vite_3mm rowBoB2 CONN_1
+  ( 1 ? )
+ )
+ ( /4C173167 SPEAKER SP1 SPEAKER
+  ( 1 N-000015 )
+  ( 2 /clock3-Aux/GND )
+  ( 3 /clock3-Aux/GND )
+ )
+ ( /4B680EC2 SW_PB_V SW1 INC
+  ( 1 /VCC )
+  ( 2 /INC )
+ )
+ ( /4B680EC9 SW_PB_V SW2 DEC
+  ( 1 /VCC )
+  ( 2 /DEC )
+ )
+ ( /4B6FC330 SW_PB_V SW3 MODE
+  ( 1 /VCC )
+  ( 2 /MODE )
+ )
+ ( /4B6FC25C SW_PB_V SW4 RST
+  ( 1 /clock3-Aux/GND )
+  ( 2 /clock3-Aux/RES )
+ )
+ ( /4D1333DE SW_PB_V SW5 ENTER
+  ( 1 /VCC )
+  ( 2 /ENTER )
+ )
+ ( /4B07796D dil_28-300_socket U3 ATMEGA8-P
+  ( 1 /clock3-Aux/RES )
+  ( 2 /RXD )
+  ( 3 /clock3-Aux/TXD )
+  ( 4 /MODE )
+  ( 5 /INC )
+  ( 6 /A0 )
+  ( 7 /VCC )
+  ( 8 /clock3-Aux/GND )
+  ( 9 N-000048 )
+  ( 10 N-000053 )
+  ( 11 /A1 )
+  ( 12 /A2 )
+  ( 13 /A3 )
+  ( 14 /ENTER )
+  ( 15 /OC1A-LE )
+  ( 16 /SPEAKER )
+  ( 17 /clock3-1 )
+  ( 18 /MISO )
+  ( 19 /clock3-2 )
+  ( 20 /VCC )
+  ( 21 /VCC )
+  ( 22 /clock3-Aux/GND )
+  ( 23 /LDR )
+  ( 24 /DEC )
+  ( 25 N-000071 )
+  ( 26 /COL_DRI9 )
+  ( 27 /SDA )
+  ( 28 /SCL )
+ )
+ ( /4C109B50 DIP-24__600_ELL U4 74LS154
+  ( 1 /COL01 )
+  ( 2 /COL02 )
+  ( 3 /COL03 )
+  ( 4 /COL04 )
+  ( 5 /clock3-8 )
+  ( 6 /COL06 )
+  ( 7 /COL07 )
+  ( 8 /clock3-7 )
+  ( 9 /clock3-6 )
+  ( 10 /COL10 )
+  ( 11 /clock3-5 )
+  ( 12 /clock3-Aux/GND )
+  ( 13 /COL12 )
+  ( 14 /COL13 )
+  ( 15 /COL14 )
+  ( 16 /clock3-4 )
+  ( 17 /COL16 )
+  ( 18 /clock3-Aux/GND )
+  ( 19 /COL_DRI9 )
+  ( 20 /A3 )
+  ( 21 /A2 )
+  ( 22 /A1 )
+  ( 23 /A0 )
+  ( 24 /VCC )
+ )
+ ( /4B3F1092/4B3F12CF VOLT_REG_78XX U5 7805
+  ( GND /clock3-Aux/GND )
+  ( VI /clock3-Aux/VRAW )
+  ( VO /clock3-Aux/VOUT )
+ )
+ ( /4B077AD9 XTAL X1 16MHz
+  ( 1 N-000048 )
+  ( 2 N-000053 )
+  ( ~ /clock3-Aux/GND )
  )
 )
 *
 { Allowed footprints by component:
-$component R23
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R33
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R31
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R30
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component C3
- SM*
- C?
- C1-1
-$endlist
-$component C6
- SM*
- C?
- C1-1
-$endlist
-$component R17
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R20
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R21
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R19
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R18
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component D193
+$component 11D01
  LED-3MM
  LED-5MM
  LED-10MM
@@ -1813,135 +1746,140 @@ $component D193
  LED-1206
  LEDV
 $endlist
-$component R25
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component 11D02
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
 $endlist
-$component R22
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component 11D03
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
 $endlist
-$component U3
- 28DIP-ELL600
- 28dip600
+$component 11D04
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
 $endlist
-$component R1
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component 11D05
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
 $endlist
-$component R2
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component 11D06
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
 $endlist
-$component R3
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component 11D07
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
 $endlist
-$component R4
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component 11D08
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
 $endlist
-$component R5
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component 11D09
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
 $endlist
-$component R6
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component 11D10
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
 $endlist
-$component R7
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component 11D11
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
 $endlist
-$component R8
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component 11D12
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
 $endlist
-$component R9
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component 11D13
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
 $endlist
-$component R10
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component 11D14
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
 $endlist
-$component R11
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component 11D15
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
 $endlist
-$component R12
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R13
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R14
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R15
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R16
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component 11D16
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
 $endlist
 $component 12D01
  LED-3MM
@@ -2087,159 +2025,46 @@ $component 12D16
  LED-1206
  LEDV
 $endlist
-$component 11D16
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
+$component C3
+ SM*
+ C?
+ C1-1
 $endlist
-$component 11D15
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component 11D14
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component 11D13
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component 11D12
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component 11D11
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component 11D10
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component 11D09
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component 11D08
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component 11D07
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component 11D06
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component 11D05
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component 11D04
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component 11D03
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component 11D02
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component 11D01
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
+$component C6
+ SM*
+ C?
+ C1-1
 $endlist
 $component C7
  SM*
  C?
  C1-1
 $endlist
+$component C8
+ CP*
+ SM*
+$endlist
 $component C9
  SM*
  C?
  C1-1
+$endlist
+$component C10
+ CP*
+ SM*
+$endlist
+$component D193
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D195
+ D?
+ S*
 $endlist
 $component D196
  LED-3MM
@@ -2250,6 +2075,174 @@ $component D196
  LED-1206
  LEDV
 $endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R8
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R9
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R10
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R11
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R12
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R13
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R14
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R15
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R16
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R17
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R18
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R19
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R20
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R21
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R22
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R23
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R25
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
 $component R26
  R?
  SM0603
@@ -2257,1268 +2250,30 @@ $component R26
  R?-*
  SM1206
 $endlist
-$component C10
- CP*
- SM*
+$component R30
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
 $endlist
-$component C8
- CP*
- SM*
+$component R31
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
 $endlist
-$component D195
- D?
- S*
+$component R33
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component U3
+ 28DIP-ELL600
+ 28dip600
 $endlist
 $endfootprintlist
 }
-{ Pin List by Nets
-Net 1 "/R10G" "R10G"
- DIL-U2 17
- 10D11 GRN
- 10D12 GRN
- 10D16 GRN
- 10D15 GRN
- 10D09 GRN
- 10D10 GRN
- 10D01 GRN
- 10D02 GRN
- 10D05 GRN
- 10D06 GRN
- 10D14 GRN
- 10D13 GRN
- 10D04 GRN
- 10D03 GRN
- 10D08 GRN
- 10D07 GRN
-Net 2 "/R09B" "R09B"
- 09D11 BLU
- 09D13 BLU
- 09D14 BLU
- 09D07 BLU
- 09D02 BLU
- 09D12 BLU
- 09D16 BLU
- 09D06 BLU
- 09D08 BLU
- 09D05 BLU
- 09D01 BLU
- 09D10 BLU
- 09D09 BLU
- 09D15 BLU
- 09D03 BLU
- DIL-U2 15
- 09D04 BLU
-Net 3 "/R09R" "R09R"
- 09D06 RED
- 09D12 RED
- 09D04 RED
- 09D11 RED
- 09D07 RED
- 09D15 RED
- 09D10 RED
- 09D16 RED
- 09D01 RED
- 09D09 RED
- 09D08 RED
- 09D02 RED
- 09D03 RED
- DIL-U2 13
- 09D13 RED
- 09D14 RED
- 09D05 RED
-Net 4 "/clock3-LED/R08G" "R08G"
- 08D13 GRN
- 08D01 GRN
- 08D14 GRN
- 08D11 GRN
- DIL-U2 11
- 08D02 GRN
- 08D15 GRN
- 08D16 GRN
- 08D10 GRN
- 08D09 GRN
- 08D05 GRN
- 08D08 GRN
- 08D12 GRN
- 08D04 GRN
- 08D03 GRN
- 08D06 GRN
- 08D07 GRN
-Net 5 "/R07B" "R07B"
- 07D07 BLU
- 07D04 BLU
- 07D05 BLU
- DIL-U2 9
- 07D02 BLU
- 07D03 BLU
- 07D10 BLU
- 07D16 BLU
- 07D14 BLU
- 07D11 BLU
- 07D15 BLU
- 07D06 BLU
- 07D13 BLU
- 07D01 BLU
- 07D09 BLU
- 07D08 BLU
- 07D12 BLU
-Net 6 "/clock3-LED/R07R" "R07R"
- 07D13 RED
- 07D14 RED
- 07D01 RED
- 07D02 RED
- DIL-U2 7
- 07D08 RED
- 07D05 RED
- 07D06 RED
- 07D07 RED
- 07D09 RED
- 07D10 RED
- 07D16 RED
- 07D15 RED
- 07D11 RED
- 07D12 RED
- 07D03 RED
- 07D04 RED
-Net 7 "/R06G" "R06G"
- 06D14 GRN
- 06D15 GRN
- 06D16 GRN
- 06D01 GRN
- 06D05 GRN
- 06D06 GRN
- 06D08 GRN
- DIL-U2 5
- 06D13 GRN
- 06D11 GRN
- 06D10 GRN
- 06D12 GRN
- 06D03 GRN
- 06D07 GRN
- 06D02 GRN
- 06D04 GRN
- 06D09 GRN
-Net 8 "/COL04" "COL04"
- R13 1
- U4 4
-Net 9 "/COL03" "COL03"
- R14 1
- U4 3
-Net 10 "/COL02" "COL02"
- U4 2
- R15 1
-Net 11 "/COL01" "COL01"
- U4 1
- R16 1
-Net 13 "/clock3-LED/R11W" "R11W"
- DIL-U2 19
- 11D02 2
- 11D01 2
- 11D12 2
- 11D11 2
- 11D10 2
- 11D09 2
- 11D08 2
- 11D07 2
- 11D06 2
- 11D05 2
- 11D04 2
- 11D03 2
- 11D16 2
- 11D15 2
- 11D14 2
- 11D13 2
-Net 14 "" ""
- SP1 1
- R30 1
-Net 15 "/R06R" "R06R"
- DIL-U1 20
- 06D15 RED
- 06D01 RED
- 06D04 RED
- 06D16 RED
- 06D02 RED
- 06D14 RED
- 06D11 RED
- 06D07 RED
- 06D10 RED
- 06D13 RED
- 06D12 RED
- 06D08 RED
- 06D03 RED
- 06D05 RED
- 06D09 RED
- 06D06 RED
-Net 17 "/R04R" "R04R"
- 04D13 RED
- 04D12 RED
- 04D16 RED
- 04D01 RED
- 04D02 RED
- 04D14 RED
- 04D04 RED
- 04D03 RED
- 04D09 RED
- 04D08 RED
- 04D07 RED
- 04D06 RED
- DIL-U1 14
- 04D05 RED
- 04D11 RED
- 04D10 RED
- 04D15 RED
-Net 18 "/R04G" "R04G"
- 04D08 GRN
- 04D09 GRN
- 04D01 GRN
- 04D12 GRN
- 04D05 GRN
- 04D10 GRN
- 04D13 GRN
- DIL-U1 15
- 04D14 GRN
- 04D16 GRN
- 04D11 GRN
- 04D15 GRN
- 04D06 GRN
- 04D03 GRN
- 04D07 GRN
- 04D02 GRN
- 04D04 GRN
-Net 19 "/R04B" "R04B"
- DIL-U1 16
- 04D14 BLU
- 04D03 BLU
- 04D16 BLU
- 04D02 BLU
- 04D11 BLU
- 04D15 BLU
- 04D07 BLU
- 04D10 BLU
- 04D12 BLU
- 04D05 BLU
- 04D13 BLU
- 04D01 BLU
- 04D04 BLU
- 04D06 BLU
- 04D09 BLU
- 04D08 BLU
-Net 20 "/R05R" "R05R"
- 05D02 RED
- 05D14 RED
- 05D16 RED
- 05D10 RED
- 05D08 RED
- DIL-U1 17
- 05D03 RED
- 05D13 RED
- 05D15 RED
- 05D07 RED
- 05D06 RED
- 05D09 RED
- 05D05 RED
- 05D11 RED
- 05D12 RED
- 05D04 RED
- 05D01 RED
-Net 21 "/R05G" "R05G"
- 05D03 GRN
- 05D10 GRN
- 05D11 GRN
- 05D09 GRN
- 05D06 GRN
- 05D07 GRN
- 05D15 GRN
- 05D14 GRN
- 05D02 GRN
- 05D16 GRN
- DIL-U1 18
- 05D01 GRN
- 05D05 GRN
- 05D08 GRN
- 05D04 GRN
- 05D12 GRN
- 05D13 GRN
-Net 22 "/R05B" "R05B"
- 05D15 BLU
- 05D07 BLU
- 05D11 BLU
- 05D01 BLU
- 05D05 BLU
- 05D12 BLU
- 05D13 BLU
- 05D04 BLU
- 05D08 BLU
- 05D10 BLU
- 05D09 BLU
- 05D06 BLU
- 05D03 BLU
- DIL-U1 19
- 05D14 BLU
- 05D02 BLU
- 05D16 BLU
-Net 23 "/R03G" "R03G"
- 03D02 GRN
- 03D14 GRN
- 03D03 GRN
- DIL-U1 12
- 03D11 GRN
- 03D04 GRN
- 03D12 GRN
- 03D13 GRN
- 03D07 GRN
- 03D10 GRN
- 03D05 GRN
- 03D06 GRN
- 03D08 GRN
- 03D09 GRN
- 03D01 GRN
- 03D16 GRN
- 03D15 GRN
-Net 24 "/R03R" "R03R"
- 03D15 RED
- 03D07 RED
- 03D02 RED
- 03D14 RED
- 03D04 RED
- 03D08 RED
- 03D01 RED
- 03D09 RED
- 03D03 RED
- 03D10 RED
- 03D12 RED
- 03D05 RED
- 03D06 RED
- 03D16 RED
- 03D13 RED
- 03D11 RED
- DIL-U1 11
-Net 25 "/R02B" "R02B"
- 02D10 BLU
- 02D08 BLU
- 02D06 BLU
- 02D04 BLU
- 02D12 BLU
- 02D16 BLU
- 02D09 BLU
- 02D11 BLU
- 02D03 BLU
- 02D07 BLU
- 02D15 BLU
- DIL-U1 10
- 02D02 BLU
- 02D05 BLU
- 02D01 BLU
- 02D14 BLU
- 02D13 BLU
-Net 26 "/clock3-LED/R02G" "R02G"
- 02D07 GRN
- 02D13 GRN
- 02D02 GRN
- 02D05 GRN
- 02D10 GRN
- 02D12 GRN
- 02D03 GRN
- 02D09 GRN
- 02D11 GRN
- DIL-U1 9
- 02D04 GRN
- 02D16 GRN
- 02D15 GRN
- 02D14 GRN
- 02D01 GRN
- 02D08 GRN
- 02D06 GRN
-Net 27 "/R02R" "R02R"
- DIL-U1 8
- 02D11 RED
- 02D14 RED
- 02D02 RED
- 02D07 RED
- 02D04 RED
- 02D03 RED
- 02D13 RED
- 02D12 RED
- 02D15 RED
- 02D08 RED
- 02D06 RED
- 02D05 RED
- 02D16 RED
- 02D10 RED
- 02D01 RED
- 02D09 RED
-Net 28 "/R01B" "R01B"
- 01D08 BLU
- 01D06 BLU
- 01D01 BLU
- 01D15 BLU
- 01D09 BLU
- 01D11 BLU
- 01D05 BLU
- 01D14 BLU
- 01D13 BLU
- 01D07 BLU
- 01D16 BLU
- 01D02 BLU
- 01D04 BLU
- 01D10 BLU
- 01D03 BLU
- 01D12 BLU
- DIL-U1 7
-Net 29 "/R01G" "R01G"
- 01D01 GRN
- 01D02 GRN
- 01D04 GRN
- 01D12 GRN
- DIL-U1 6
- 01D15 GRN
- 01D11 GRN
- 01D09 GRN
- 01D14 GRN
- 01D16 GRN
- 01D06 GRN
- 01D08 GRN
- 01D13 GRN
- 01D05 GRN
- 01D03 GRN
- 01D07 GRN
- 01D10 GRN
-Net 30 "/R01R" "R01R"
- 01D13 RED
- DIL-U1 5
- 01D12 RED
- 01D01 RED
- 01D02 RED
- 01D16 RED
- 01D09 RED
- 01D03 RED
- 01D11 RED
- 01D15 RED
- 01D14 RED
- 01D10 RED
- 01D05 RED
- 01D07 RED
- 01D08 RED
- 01D06 RED
- 01D04 RED
-Net 31 "/clock3-LED/COL16" "COL16"
- R1 1
- U4 17
-Net 32 "/clock3-LED/COL15" "COL15"
- U4 16
- R2 1
-Net 33 "/COL14" "COL14"
- R3 1
- U4 15
-Net 34 "/COL13" "COL13"
- R4 1
- U4 14
-Net 35 "/clock3-LED/COL12" "COL12"
- U4 13
- R5 1
-Net 36 "/clock3-LED/COL11" "COL11"
- U4 11
- R6 1
-Net 37 "/COL10" "COL10"
- R7 1
- U4 10
-Net 38 "/clock3-LED/COL09" "COL09"
- U4 9
- R8 1
-Net 39 "/COL08" "COL08"
- U4 8
- R9 1
-Net 40 "/COL07" "COL07"
- U4 7
- R10 1
-Net 41 "/COL06" "COL06"
- R11 1
- U4 6
-Net 42 "/clock3-LED/COL05" "COL05"
- R12 1
- U4 5
-Net 43 "/R03B" "R03B"
- DIL-U1 13
- 03D03 BLU
- 03D12 BLU
- 03D09 BLU
- 03D08 BLU
- 03D02 BLU
- 03D04 BLU
- 03D07 BLU
- 03D05 BLU
- 03D10 BLU
- 03D06 BLU
- 03D13 BLU
- 03D01 BLU
- 03D16 BLU
- 03D11 BLU
- 03D15 BLU
- 03D14 BLU
-Net 44 "/clock3-Aux/VRAW" "VRAW"
- C8 1
- C9 1
- D195 2
- U5 VI
-Net 45 "/clock3-Aux/SCK-CLK" "SCK-CLK"
- DIL-U1 3
- P13 3
- U3 19
- DIL-U2 3
-Net 46 "/clock3-Aux/SCL" "SCL"
- CD2 2
- P42 3
- P41 2
- U3 28
- R21 2
-Net 47 "/SDA" "SDA"
- R20 2
- CD2 1
- P41 3
- P42 2
- U3 27
-Net 48 "" ""
- X1 1
- U3 9
-Net 49 "/A2" "A2"
- U4 21
- U3 12
-Net 50 "/A3" "A3"
- U3 13
- U4 20
-Net 51 "/DEC" "DEC"
- U3 24
- SW2 2
- R18 1
-Net 52 "" ""
- R25 1
- D193 1
-Net 53 "" ""
- X1 2
- U3 10
-Net 54 "/RXD" "RXD"
- P7 4
- U3 2
-Net 55 "/clock3-Aux/TXD" "TXD"
- U3 3
- P48 8
- P7 5
-Net 56 "/clock3-Aux/RES" "RES"
- C7 1
- R22 2
- U3 1
- P13 5
- SW4 2
-Net 57 "/clock3-Aux/MOSI-SDI" "MOSI-SDI"
- P13 4
- DIL-U1 2
- U3 17
-Net 58 "/MISO" "MISO"
- P13 1
- R25 2
- U3 18
-Net 59 "/MODE" "MODE"
- SW3 2
- R17 1
- U3 4
-Net 60 "/A1" "A1"
- U4 22
- U3 11
-Net 61 "/INC" "INC"
- R19 1
- U3 5
- SW1 2
-Net 62 "" ""
- R33 1
- Q17 2
-Net 63 "/ENTER" "ENTER"
- U3 14
- SW5 2
- R23 1
-Net 64 "/SPEAKER" "SPEAKER"
- U3 16
- R33 2
-Net 65 "/LDR" "LDR"
- R31 1
- U3 23
- R32 2
-Net 67 "/A0" "A0"
- U4 23
- U3 6
-Net 68 "" ""
- P43 1
- U3 25
-Net 69 "" ""
- Q17 3
- R30 2
-Net 70 "/COL_DRIVER_ENABLE" "COL_DRIVER_ENABLE"
- U4 19
- U3 26
-Net 71 "/R09G" "R09G"
- 09D06 GRN
- DIL-U2 14
- 09D11 GRN
- 09D03 GRN
- 09D09 GRN
- 09D02 GRN
- 09D12 GRN
- 09D15 GRN
- 09D01 GRN
- 09D14 GRN
- 09D04 GRN
- 09D16 GRN
- 09D10 GRN
- 09D08 GRN
- 09D05 GRN
- 09D13 GRN
- 09D07 GRN
-Net 72 "/R10R" "R10R"
- 10D12 RED
- 10D01 RED
- 10D02 RED
- 10D09 RED
- 10D16 RED
- 10D05 RED
- 10D08 RED
- 10D07 RED
- 10D06 RED
- 10D14 RED
- 10D13 RED
- 10D11 RED
- 10D03 RED
- 10D04 RED
- 10D10 RED
- 10D15 RED
- DIL-U2 16
-Net 73 "/R10B" "R10B"
- 10D15 BLU
- 10D16 BLU
- 10D09 BLU
- 10D10 BLU
- 10D01 BLU
- 10D02 BLU
- 10D12 BLU
- 10D11 BLU
- 10D03 BLU
- 10D04 BLU
- DIL-U2 18
- 10D05 BLU
- 10D08 BLU
- 10D07 BLU
- 10D06 BLU
- 10D14 BLU
- 10D13 BLU
-Net 74 "/OC1A-LE" "OC1A-LE"
- DIL-U1 4
- U3 15
- DIL-U2 4
-Net 75 "/R06B" "R06B"
- 06D10 BLU
- 06D06 BLU
- 06D09 BLU
- 06D08 BLU
- 06D13 BLU
- 06D05 BLU
- 06D14 BLU
- 06D16 BLU
- 06D11 BLU
- 06D15 BLU
- 06D12 BLU
- 06D02 BLU
- 06D07 BLU
- 06D04 BLU
- DIL-U2 6
- 06D01 BLU
- 06D03 BLU
-Net 76 "/R07G" "R07G"
- 07D11 GRN
- 07D04 GRN
- 07D06 GRN
- 07D07 GRN
- 07D09 GRN
- 07D16 GRN
- 07D08 GRN
- 07D05 GRN
- 07D14 GRN
- DIL-U2 8
- 07D15 GRN
- 07D02 GRN
- 07D03 GRN
- 07D10 GRN
- 07D01 GRN
- 07D13 GRN
- 07D12 GRN
-Net 77 "/clock3-LED/R08R" "R08R"
- 08D02 RED
- 08D03 RED
- 08D01 RED
- 08D11 RED
- 08D12 RED
- 08D04 RED
- 08D10 RED
- 08D09 RED
- 08D08 RED
- 08D05 RED
- 08D13 RED
- 08D16 RED
- 08D14 RED
- 08D07 RED
- DIL-U2 10
- 08D15 RED
- 08D06 RED
-Net 78 "/R12W" "R12W"
- 12D04 2
- 12D03 2
- 12D02 2
- 12D01 2
- 12D16 2
- 12D05 2
- 12D15 2
- 12D14 2
- 12D13 2
- 12D12 2
- 12D11 2
- DIL-U2 20
- 12D06 2
- 12D07 2
- 12D08 2
- 12D09 2
- 12D10 2
-Net 79 "/clock3-LED/R08B" "R08B"
- 08D09 BLU
- 08D08 BLU
- 08D05 BLU
- 08D03 BLU
- 08D16 BLU
- 08D02 BLU
- 08D14 BLU
- 08D13 BLU
- 08D10 BLU
- 08D04 BLU
- 08D01 BLU
- 08D11 BLU
- DIL-U2 12
- 08D06 BLU
- 08D12 BLU
- 08D07 BLU
- 08D15 BLU
-Net 80 "/SDO-SDI" "SDO-SDI"
- DIL-U1 22
- DIL-U2 2
-Net 81 "" ""
- J1 1
- D195 1
-Net 82 "" ""
- D196 1
- R26 1
-Net 83 "" ""
- C7 2
- P7 6
-Net 84 "" ""
- P25 6
- P25 4
- P25 5
-Net 85 "" ""
- P25 2
- P25 1
- P25 3
-Net 86 "" ""
- P30 1
- P30 2
- P30 3
-Net 87 "" ""
- P32 1
- P32 2
- P32 3
-Net 88 "" ""
- P28 6
- P28 5
- P28 4
-Net 89 "" ""
- P31 4
- P31 5
- P31 6
-Net 90 "" ""
- P33 4
- P33 5
- P33 6
-Net 91 "" ""
- P35 6
- P35 5
- P35 4
-Net 92 "" ""
- P34 4
- P34 5
- P34 6
-Net 93 "" ""
- P32 4
- P32 6
- P32 5
-Net 94 "" ""
- P30 6
- P30 5
- P30 4
-Net 95 "" ""
- P33 3
- P33 2
- P33 1
-Net 96 "" ""
- P35 3
- P35 2
- P35 1
-Net 97 "" ""
- P34 2
- P34 3
- P34 1
-Net 98 "" ""
- P27 5
- P27 6
- P27 4
-Net 99 "" ""
- P29 6
- P29 5
- P29 4
-Net 100 "" ""
- P28 3
- P28 2
- P28 1
-Net 101 "VCC" "VCC"
- CD2 3
- P13 2
- K1 2
- DIL-U2 24
- SW5 1
- Q17 1
- R31 2
- DIL-U1 24
- P42 4
- P41 1
- C3 1
- P37 5
- P37 4
- P38 6
- P38 5
- P38 4
- P39 6
- P39 5
- P39 4
- U3 20
- P48 2
- P36 6
- P36 5
- P36 4
- U3 21
- P37 6
- SW3 1
- SW2 1
- SW1 1
- R20 1
- R21 1
- U4 24
- R22 1
- K2 1
- U3 7
- C6 1
-Net 102 "" ""
- CD3 4
- CD1 4
-Net 103 "" ""
- CD1 2
- CD3 2
-Net 106 "" ""
- P26 1
- P26 3
- P26 2
-Net 107 "" ""
- P27 3
- P27 2
- P27 1
-Net 108 "" ""
- P29 3
- P29 2
- P29 1
-Net 109 "" ""
- P24 3
- P24 2
- P24 1
-Net 110 "" ""
- P24 5
- P24 6
- P24 4
-Net 111 "" ""
- P26 6
- P26 5
- P26 4
-Net 112 "" ""
- P31 1
- P31 3
- P31 2
-Net 113 "/clock3-Aux/GND" "GND"
- R23 2
- P7 1
- D193 2
- R18 2
- P8 1
- X1 ~
- DIL-U1 1
- P9 1
- P10 1
- P11 1
- U4 12
- CD2 4
- P7 2
- R19 2
- U3 8
- DIL-U2 1
- C6 2
- U4 18
- R17 2
- SW4 1
- DIL-U2 21
- C8 2
- SP1 2
- P38 3
- P38 2
- SP1 3
- P13 6
- P38 1
- C10 2
- P18 1
- P17 1
- P16 1
- P15 1
- P14 1
- P12 1
- C3 2
- P37 1
- U5 GND
- R32 1
- U3 22
- P42 1
- P36 2
- P36 3
- C9 2
- P41 4
- J1 2
- P12 3
- DIL-U1 21
- P48 1
- P39 3
- P39 2
- P37 2
- P39 1
- P19 1
- P20 1
- P21 1
- P37 3
- D196 2
- P22 1
- P36 1
- P23 1
-Net 114 "/clock3-Aux/USB5V" "USB5V"
- P7 3
- K1 3
-Net 115 "/clock3-Aux/VOUT" "VOUT"
- R26 2
- U5 VO
- C10 1
- P12 2
- K1 1
-Net 116 "" ""
- CD3 1
- CD1 1
-Net 120 "" ""
- CD1 3
- CD3 3
-Net 125 "" ""
- 11D14 1
- 12D14 1
- Q14 3
- 07D14 COM
- 05D14 COM
- 04D14 COM
- 03D14 COM
- 02D14 COM
- 08D14 COM
- 01D14 COM
- 09D14 COM
- 06D14 COM
- 10D14 COM
-Net 126 "" ""
- Q6 3
- 07D06 COM
- 01D06 COM
- 02D06 COM
- 03D06 COM
- 04D06 COM
- 06D06 COM
- 10D06 COM
- 12D06 1
- 05D06 COM
- 08D06 COM
- 11D06 1
- 09D06 COM
-Net 127 "" ""
- Q12 3
- 12D12 1
- 04D12 COM
- 01D12 COM
- 05D12 COM
- 06D12 COM
- 09D12 COM
- 08D12 COM
- 11D12 1
- 07D12 COM
- 10D12 COM
- 02D12 COM
- 03D12 COM
-Net 128 "" ""
- 08D15 COM
- 09D15 COM
- 10D15 COM
- Q15 3
- 03D15 COM
- 02D15 COM
- 01D15 COM
- 11D15 1
- 12D15 1
- 06D15 COM
- 05D15 COM
- 04D15 COM
- 07D15 COM
-Net 129 "" ""
- Q1 3
- 12D01 1
- 01D01 COM
- 11D01 1
- 10D01 COM
- 05D01 COM
- 06D01 COM
- 07D01 COM
- 08D01 COM
- 09D01 COM
- 02D01 COM
- 03D01 COM
- 04D01 COM
-Net 130 "" ""
- 11D02 1
- 12D02 1
- 10D02 COM
- 02D02 COM
- 01D02 COM
- 07D02 COM
- 08D02 COM
- 09D02 COM
- 06D02 COM
- 05D02 COM
- 04D02 COM
- 03D02 COM
- Q2 3
-Net 131 "" ""
- R7 2
- Q7 2
-Net 132 "" ""
- R6 2
- Q6 2
-Net 133 "" ""
- Q5 2
- R5 2
-Net 134 "" ""
- Q4 2
- R4 2
-Net 135 "" ""
- Q3 2
- R3 2
-Net 136 "" ""
- Q2 2
- R2 2
-Net 137 "" ""
- Q1 2
- R1 2
-Net 138 "" ""
- R13 2
- Q13 2
-Net 139 "" ""
- R12 2
- Q12 2
-Net 140 "" ""
- R11 2
- Q11 2
-Net 141 "" ""
- Q10 2
- R10 2
-Net 142 "" ""
- R9 2
- Q9 2
-Net 143 "" ""
- R8 2
- Q8 2
-Net 144 "" ""
- Q4 3
- 12D04 1
- 07D04 COM
- 11D04 1
- 08D04 COM
- 09D04 COM
- 01D04 COM
- 02D04 COM
- 03D04 COM
- 04D04 COM
- 10D04 COM
- 05D04 COM
- 06D04 COM
-Net 145 "" ""
- 07D08 COM
- 08D08 COM
- 09D08 COM
- 10D08 COM
- 12D08 1
- Q8 3
- 01D08 COM
- 06D08 COM
- 05D08 COM
- 11D08 1
- 02D08 COM
- 03D08 COM
- 04D08 COM
-Net 146 "" ""
- 09D13 COM
- 08D13 COM
- 07D13 COM
- 06D13 COM
- 05D13 COM
- 01D13 COM
- 02D13 COM
- 03D13 COM
- 04D13 COM
- 10D13 COM
- 11D13 1
- 12D13 1
- Q13 3
-Net 147 "" ""
- 12D16 1
- 11D16 1
- 07D16 COM
- 06D16 COM
- 05D16 COM
- 10D16 COM
- 04D16 COM
- 03D16 COM
- 02D16 COM
- 01D16 COM
- 08D16 COM
- 09D16 COM
- Q16 3
-Net 148 "" ""
- 11D07 1
- 09D07 COM
- 08D07 COM
- 07D07 COM
- 06D07 COM
- 05D07 COM
- 10D07 COM
- 04D07 COM
- 03D07 COM
- 02D07 COM
- 01D07 COM
- 12D07 1
- Q7 3
-Net 149 "" ""
- 12D09 1
- Q9 3
- 01D09 COM
- 11D09 1
- 06D09 COM
- 05D09 COM
- 04D09 COM
- 02D09 COM
- 03D09 COM
- 07D09 COM
- 08D09 COM
- 09D09 COM
- 10D09 COM
-Net 150 "" ""
- Q11 3
- 12D11 1
- 01D11 COM
- 02D11 COM
- 03D11 COM
- 04D11 COM
- 10D11 COM
- 05D11 COM
- 06D11 COM
- 07D11 COM
- 08D11 COM
- 09D11 COM
- 11D11 1
-Net 151 "" ""
- Q14 2
- R14 2
-Net 152 "" ""
- Q15 2
- R15 2
-Net 153 "" ""
- Q16 2
- R16 2
-Net 154 "" ""
- 06D10 COM
- 05D10 COM
- Q10 3
- 10D10 COM
- 04D10 COM
- 03D10 COM
- 12D10 1
- 07D10 COM
- 01D10 COM
- 11D10 1
- 02D10 COM
- 09D10 COM
- 08D10 COM
-Net 155 "" ""
- Q3 3
- 07D03 COM
- 08D03 COM
- 11D03 1
- 12D03 1
- 01D03 COM
- 06D03 COM
- 05D03 COM
- 04D03 COM
- 03D03 COM
- 02D03 COM
- 09D03 COM
- 10D03 COM
-Net 156 "" ""
- 09D05 COM
- 08D05 COM
- 07D05 COM
- 10D05 COM
- 11D05 1
- 05D05 COM
- 04D05 COM
- 03D05 COM
- 02D05 COM
- 06D05 COM
- 01D05 COM
- Q5 3
- 12D05 1
-Net 158 "" ""
- Q11 1
- Q10 1
- Q7 1
- Q9 1
- Q8 1
- Q16 1
- Q15 1
- Q14 1
- Q6 1
- Q12 1
- Q13 1
- Q1 1
- Q2 1
- Q3 1
- Q4 1
- K2 2
- Q5 1
-}
-#End
