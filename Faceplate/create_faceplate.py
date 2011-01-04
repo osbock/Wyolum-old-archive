@@ -19,7 +19,9 @@ from reportlab.platypus import Paragraph, SimpleDocTemplate, Table, TableStyle
 from numpy import arange
 
 DEG = pi/180.
-
+DTHETA = 5
+THETA_EXTRA = 0
+thetas = arange(-THETA_EXTRA, 180 + THETA_EXTRA, DTHETA)
 class Line:
     def __init__(self, p1, p2):
         self.p1 = array(p1, copy=True)
@@ -45,6 +47,26 @@ class Line:
     def drawOn(self, canvas):
         canvas.line(self.p1[0], self.p1[1], self.p2[0], self.p2[1])
 
+class MyPath:
+    def __init__(self, c):
+        self.c = c
+        self.p = c.beginPath()
+        self.points = []
+    def moveTo(self, x, y):
+        self.p.moveTo(x, y)
+        self.points.append([x, y])
+    def lineTo(self, x, y):
+        self.p.lineTo(x, y)
+        self.points.append([x, y])
+    def draw(self):
+        self.c.drawPath(self.p)
+    def toOpenScad(self, height):
+        print '''\
+linear_extrude(height=%s, center=true, convexity=10, twist=0)
+translate([2, 0, 0])
+polygon(points=%s, 
+        paths=%s)''' % (height, self.points, range(len(self.points)))
+    
 l1 = Line([0, 1], [1, 2])
 l2 = Line([1, -1], [0, 0])
 assert linalg.norm(l1.intersect(l2) - l2.intersect(l1)) < 1e-8
@@ -118,7 +140,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
     hole_sepy = 2.887 * inch
     startx = .172 * inch
     starty = .172 * inch
-    r = .172 / 4 * inch
+    r = .172 / 2 * inch
     mounts = [] # lower left
     for i in range(5):          
         if i != 1:
@@ -150,7 +172,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         # ClockTHREE
         # c.rect(W - .75*inch, H - (3.3875 + .5)*inch, .5*inch, .5*inch)
      
-        w = 3 * mm
+        w = r + 2 * mm
 
         grid_SW = array([min(XS), min(YS)])
         grid_SE = array([max(XS), min(YS)])
@@ -158,7 +180,8 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         grid_NW = array([min(XS), max(YS)])
 
         # Middle bottom
-        p = c.beginPath()
+        # p = c.beginPath()
+        p = MyPath(c)
         first = ((W + w)/2., grid_NW[1] + w)
         first = mounts[1][0] + w, grid_SE[1] - w
         p.moveTo(*first)
@@ -169,7 +192,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
             next = mounts[2][0] - w, mounts[2][1]
             p.lineTo(*next)
 
-            for theta in arange(-180, 0, 1) * DEG:
+            for theta in (thetas - 180) * DEG:
                 next = mounts[2] + [w * cos(theta), w * sin(theta)]
                 p.lineTo(*next)
         else:
@@ -190,7 +213,8 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         next = l2.p2
         p.lineTo(*next)
 
-        for theta in arange(180, 0, -1) * DEG:
+        for theta in (-thetas + 180) * DEG:
+        # for theta in arange(180 + THETA_EXTRA, 0 - THETA_EXTRA, -DTHETA) * DEG:
             next = SE + w * sin(theta) * V + w * cos(theta) * Vperp
             p.lineTo(*next)
 
@@ -205,7 +229,8 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
                 p.lineTo(*next)
                 next = mounts[m_i][0], mounts[m_i][1] - w
                 p.lineTo(*next)
-                for theta in arange(-90, 90, 1) * DEG:
+                for theta in (thetas -90) * DEG:
+                # for theta in arange(-90 - THETA_EXTRA, 90 + THETA_EXTRA, DTHETA) * DEG:
                     next = mounts[m_i] + [w * cos(theta), w * sin(theta)]
                     p.lineTo(*next)
                 next = grid_SE[0] + w, mounts[m_i][1] + w
@@ -222,8 +247,8 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         p.lineTo(*next)
         next = l2.p2
         p.lineTo(*next)
-        
-        for theta in arange(180, 0, -1) * DEG:
+        for theta in (-thetas + 180) * DEG:
+        # for theta in arange(180 + THETA_EXTRA, 0 - THETA_EXTRA, -DTHETA) * DEG:
             next = NE + w * sin(theta) * V + w * cos(theta) * Vperp
             p.lineTo(*next)
         l1 = Line(grid_NW, grid_NE) + [0, w]
@@ -236,7 +261,8 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
             p.lineTo(*next)
             next = mounts[i] + [w, 0]
             p.lineTo(*next)
-            for theta in arange(0, 180, 1) * DEG:
+            for theta in (thetas) * DEG:
+            # for theta in arange(0 - THETA_EXTRA, 180 + THETA_EXTRA, DTHETA) * DEG:
                 next = mounts[i] + [w * cos(theta),  w * sin(theta)]
                 p.lineTo(*next)
 
@@ -254,7 +280,8 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         p.lineTo(*next)
         next = NW - w * Vperp
         p.lineTo(*next)
-        for theta in arange(180, 0, -1) * DEG:
+        for theta in (-thetas + 180) * DEG:
+        # for theta in arange(180 + THETA_EXTRA, 0 - THETA_EXTRA, -DTHETA) * DEG:
             next = NW + w * sin(theta) * V + w * cos(theta) * Vperp
             p.lineTo(*next)
             
@@ -269,7 +296,8 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
                 p.lineTo(*next)
                 next = mounts[i] + [0, w]
                 p.lineTo(*next)
-                for theta in arange(90, 270, 1) * DEG:
+                for theta in (thetas + 90) * DEG:
+                # for theta in arange(90 - THETA_EXTRA, 270 + THETA_EXTRA, DTHETA) * DEG:
                     next = mounts[i] + [w * cos(theta),  w * sin(theta)]
                     p.lineTo(*next)
                 next = grid_NW[0] - w, mounts[i][1] - w
@@ -286,7 +314,8 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         p.lineTo(*next)
         next = l2.p2
         p.lineTo(*next)
-        for theta in arange(180, 0, -1) * DEG:
+        for theta in (-thetas + 180) * DEG:
+        # for theta in arange(180 + THETA_EXTRA, 0 - THETA_EXTRA, -DTHETA) * DEG:
             next = SW + w * sin(theta) * V + w * cos(theta) * Vperp
             p.lineTo(*next)
 
@@ -299,11 +328,14 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         
         next = mounts[1] - [w, 0]
         p.lineTo(*next)
-        for theta in arange(180, 360, 1) * DEG:
+        for theta in (thetas + 180) * DEG:
+        # for theta in arange(180 - THETA_EXTRA, 360 + THETA_EXTRA, DTHETA) * DEG:
             next = mounts[1] + [w * cos(theta),  w * sin(theta)]
             p.lineTo(*next)
         p.lineTo(*first)
-        c.drawPath(p)
+        # c.drawPath(p)
+        p.draw()
+        p.toOpenScad(1)
         
     if baffle:
         c.setLineWidth(1/64. * inch)
