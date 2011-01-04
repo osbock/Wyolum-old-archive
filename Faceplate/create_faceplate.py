@@ -19,7 +19,7 @@ from reportlab.platypus import Paragraph, SimpleDocTemplate, Table, TableStyle
 from numpy import arange
 
 DEG = pi/180.
-DTHETA = 5
+DTHETA = 180/5
 THETA_EXTRA = 0
 thetas = arange(-THETA_EXTRA, 180 + THETA_EXTRA, DTHETA)
 class Line:
@@ -62,10 +62,13 @@ class MyPath:
         self.c.drawPath(self.p)
     def toOpenScad(self, height):
         print '''\
-linear_extrude(height=%s, center=true, convexity=10, twist=0)
-translate([2, 0, 0])
-polygon(points=%s, 
-        paths=%s)''' % (height, self.points, range(len(self.points)))
+
+linear_extrude(height=%s, center=true, convexity=10, twist=0)\
+translate([2, 0, 0])\
+polygon(points=%s, \
+paths=[%s]);
+
+''' % (height, self.points, range(len(self.points)))
     
 l1 = Line([0, 1], [1, 2])
 l2 = Line([1, -1], [0, 0])
@@ -335,7 +338,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         p.lineTo(*first)
         # c.drawPath(p)
         p.draw()
-        p.toOpenScad(1)
+        p.toOpenScad(10)
         
     if baffle:
         c.setLineWidth(1/64. * inch)
@@ -465,6 +468,6 @@ if __name__ == '__main__':
         test()
         # main(['Vollkorn-Regular'])
     else:
-        main(sys.argv[1:])
+        # main(sys.argv[1:])
         test()
     
