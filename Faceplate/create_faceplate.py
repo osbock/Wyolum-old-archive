@@ -8,6 +8,7 @@ download images from:
     thenounproject.com
     
 '''
+test = 2
 from numpy import *
 import PIL.Image
 from reportlab.pdfgen import canvas
