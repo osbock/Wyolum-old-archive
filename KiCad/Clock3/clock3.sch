@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 01/04/11 18:15:53
+EESchema Schematic File Version 2  date 01/05/11 20:16:22
 LIBS:clock3
 LIBS:power
 LIBS:clock3-cache
@@ -7,7 +7,7 @@ EELAYER END
 $Descr A4 11700 8267
 Sheet 1 3
 Title "ClockTHREE"
-Date "4 jan 2011"
+Date "5 jan 2011"
 Rev "A"
 Comp "An Arduino based RGB LED Array"
 Comment1 "Wyo Innovations      :: Lumetronics"
@@ -15,6 +15,15 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "wyoinnovation.blogspot.com"
 Comment4 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 $EndDescr
+$Comp
+L BAFFLE BF1
+U 1 1 4D247CC3
+P 9000 5950
+F 0 "BF1" H 9000 5800 60  0000 C CNN
+F 1 "BAFFLE" H 9000 6100 60  0000 C CNN
+	1    9000 5950
+	1    0    0    -1  
+$EndComp
 Text Notes 8250 1700 0    40   ~ 0
 Mounting Hole for rowBoB
 Text Notes 8250 3550 0    40   ~ 0
