@@ -1,12 +1,10 @@
-update=1/4/2011 7:43:39 PM
-last_client=pcbnew
+update=01/05/11 20:34:08
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -58,7 +56,7 @@ TxtModV=600
 TxtModH=600
 TxtModW=120
 VEgarde=100
-DrawLar=2000
+DrawLar=150
 EdgeLar=150
 TxtLar=120
 MSegLar=150
@@ -66,3 +64,5 @@ LastNetListRead=clock3.net
 [pcbnew/libraries]
 LibDir=
 LibName1=libs\\clock3_parts
+[general]
+version=1
