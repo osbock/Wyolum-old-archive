@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  01/04/11 18:16:58
+# EESchema Netlist Version 1.1 created  01/05/11 19:50:53
 (
  ( /4C134896/4C135743 01D01 01D01 LED_RGB
   ( BLU /R01B )
@@ -1087,6 +1087,8 @@
  ( /4C134896/4C13614C LED_10MM_BLUE 12D16 LED
   ( 1 N-000149 )
   ( 2 /R12W )
+ )
+ ( /4D247CC3 Baffle BF1 BAFFLE
  )
  ( /4C1345CB C2 C3 100n
   ( 1 /VCC )

@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 01/04/11 18:16:58
+Cmp-Mod V01 Genere par PcbNew le 01/05/11 20:00:52
 
 BeginCmp
 TimeStamp = /4C134896/4C135743;
@@ -1342,6 +1342,13 @@ TimeStamp = /4C134896/4C13614C;
 Reference = 12D16;
 ValeurCmp = LED;
 IdModule  = LED_10MM_BLUE;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D247CC3;
+Reference = BF1;
+ValeurCmp = BAFFLE;
+IdModule  = BAFFLE;
 EndCmp
 
 BeginCmp
