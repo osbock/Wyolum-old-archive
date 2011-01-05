@@ -158,7 +158,7 @@ const MsgDef          PING = {0x12, 100, pong};
 const MsgDef  EEPROM_CLEAR = {0x13, 20, eeprom_clear};
 const MsgDef   EEPROM_DUMP = {0x14, 1, eeprom_dump};
 
-const MsgDef          SYNC = {SYNC_BYTE, 2, do_nothing}; // must already be in sync
+const MsgDef          SYNC = {SYNC_BYTE, MAX_MSG_LEN, do_nothing}; // must already be in sync
 const MsgDef      DATA_SET = {0x70, VAR_LENGTH, receive_data}; // variable length
 const MsgDef      ERR_OUT = {0x71, VAR_LENGTH, do_nothing}; // variable length
 
@@ -207,6 +207,7 @@ boolean tick = true;
 unit_t SetTime_unit = YEAR;
 uint8_t temp_unit = DEG_C;
 boolean alarm_set = false;
+uint8_t sync_msg_byte_counter = 0;
 
 /*
  * Called when mode button is pressed
@@ -843,7 +844,7 @@ void Serial_sync_wait(){
   while(n < SYNC.n_byte){
     if(Serial.available()){
       val = Serial.read();
-      if(val == SYNC_BYTE){ // look for other chars
+      if(val == SYNC_BYTE){
 	n++;
       }
       else{
@@ -1151,25 +1152,22 @@ boolean Serial_get_msg(uint8_t n_byte) {
       delay(1);
     }
     n_byte = Serial.peek();
-#ifdef NOTDEF    
-    Serial.end();
-    font.getChar('0' + n_byte / 16, BLUE, display);
-    font.getChar('0' + n_byte % 16, BLUE, display + 8);
-    c3.refresh(18000);
-    Serial.begin(BAUDRATE);
-#endif
   }
   while(i < n_byte - 1){
     if(Serial.available()){
       val = Serial.read();
       if (val == SYNC_BYTE){
-	next = Serial.peek();
-	if(next == SYNC_BYTE){
-	  // SYNC MESSAGE RECEIVED!  Next byte is start of new message
-	  // abort message
+	sync_msg_byte_counter++;
+	if(sync_msg_byte_counter == MAX_MSG_LEN){
+	  // no other valid msg combination can have MAX_MSG_LEN sync bytes.
+	  // sync msg recieved! break out, next char is start of new message
+	  sync_msg_byte_counter = 0;
 	  out = false;
 	  break;
 	}
+      }
+      else{
+	sync_msg_byte_counter = 0;
       }
       serial_msg[i++] = val;
     }

@@ -11,10 +11,11 @@ With this interface commands can be sent to:
 Details:
 Baudrate: 57600 // Max rate for arduino
 
-A synchronization message is sent at the start of communication and
-every so often to assure message alignment is maintained.
+MAX_MSG_LEN = 100 BYTES
 
-const uint32_t SYNC_MSG = 0xFEFEFEFE;
+A synchronization message can be passed to re-establish communication if things get wonky,
+
+const uint32_t SYNC_MSG = (0xFE)xMAX_MSG_LEN;
 
 Each message will begin with a message id (MID).  The message length will
 be determined by the MID and the message header (for variable length MIDs)
@@ -46,9 +47,10 @@ MID           length description               payload format
 0x0F               1 trigger AUX               NA
 0x10               1 Get SW Version	       NA
 0x11               1 Get SW About              NA
-0x12             100 Ping                      1 99 data bytes
+0x12     MAX_MSG_LEN Ping                      1 99 data bytes
 0x13		  20 clear eeprom	       zero all data in EEPROM
-0xEF               2 SYNC		       1 data byte (0xEF)
+0x14               1 EEPROM dump	       NA
+0xEF     MAX_MSG_LEN SYNC		       99 data bytes (0xEF)(SYNC)
 
 Variable length messages.  Payload length is first byte after MID
 
@@ -58,7 +60,7 @@ MID           length description               payload format
 
 
 The sync message 0xEF:
-"0xEF" + "0xEF" should be followed by a valid DID in the next byte.  If ClockTHREE does not recieve
+"0xEF" MAX_MSG_LEN times should be followed by a valid DID in the next byte.  If ClockTHREE does not recieve
 a valid DID at the end of each message, it will not accept any new data until sync message is passed.  The
 DBG LED is used to indicate ready for data.
 
