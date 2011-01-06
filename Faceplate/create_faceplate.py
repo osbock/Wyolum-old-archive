@@ -144,7 +144,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
     hole_sepy = 2.887 * inch
     startx = .172 * inch
     starty = .172 * inch
-    r = .172 / 2 * inch
+    r = .1 / 2 * inch
     mounts = [] # lower left
     for i in range(5):          
         if i != 1:
@@ -177,6 +177,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         # c.rect(W - .75*inch, H - (3.3875 + .5)*inch, .5*inch, .5*inch)
      
         w = r + 2 * mm
+        w = .15 * inch
 
         grid_SW = array([min(XS), min(YS)])
         grid_SE = array([max(XS), min(YS)])
@@ -445,7 +446,7 @@ def add_all_fonts():
 if __name__ == '__main__':
     import sys
     if len(sys.argv) == 1: # print all
-        add_all_fonts()
+        # add_all_fonts()
         # main(fontnames)
         test()
         # main(['Vollkorn-Regular'])
