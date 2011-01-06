@@ -20,7 +20,7 @@ from reportlab.platypus import Paragraph, SimpleDocTemplate, Table, TableStyle
 from numpy import arange
 
 DEG = pi/180.
-DTHETA = 180/5
+DTHETA = 180/50.
 THETA_EXTRA = 0
 thetas = arange(-THETA_EXTRA, 180 + THETA_EXTRA, DTHETA)
 class Line:
