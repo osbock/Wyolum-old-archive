@@ -163,7 +163,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
 
     if baffle:
         c.setLineJoin(1)
-        lw = 1/32. * inch
+        lw = .05 * inch
         c.setLineWidth(1./64*inch)
         # c.grid(XS, YS)
         # c.rect(XS[0], YS[-1], XS[-1] - XS[0], YS[0] - YS[-1])
@@ -319,9 +319,9 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
             p.lineTo(*next)
 
         p.lineTo(*first)
-        # c.drawPath(p)
+        # c.drawPath(p) # old way
         p.draw()
-        # p.toOpenScad(10)
+        # p.toOpenScad(.8 * inch)
         
     if baffle:
         c.setLineWidth(1/64. * inch)
