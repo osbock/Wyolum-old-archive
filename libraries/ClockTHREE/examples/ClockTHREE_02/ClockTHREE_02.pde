@@ -806,6 +806,8 @@ void Serial_setup(void){
     delay(50);
   }
   digitalWrite(DBG, HIGH);
+  // SPCR &= ~_BV(SPE); // try to keep DBG from dimming! (FAIL)
+
 }
 
 void Serial_loop(void) {
@@ -818,7 +820,7 @@ void Serial_loop(void) {
     for(uint8_t msg_i = 0; msg_i < N_MSG_TYPE; msg_i++){
       if(MSG_DEFS[msg_i]->id == val){
 	if(Serial_get_msg(MSG_DEFS[msg_i]->n_byte)){
-	  // payload stored in serial_msg: callback time.
+	  // entire payload is stored in serial_msg: callback time.
 	  MSG_DEFS[msg_i]->cb();
 	}
 	else{
@@ -853,6 +855,7 @@ void Serial_sync_wait(){
     }
   }
   digitalWrite(DBG, HIGH);
+  // SPCR |= _BV(SPE); // try to keep DBG from dimming! (FAIL)
 }
 
 void pong(){

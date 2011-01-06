@@ -65,26 +65,28 @@ a valid DID at the end of each message, it will not accept any new data until sy
 DBG LED is used to indicate ready for data.
 
 
-Set alarm message 0x04 6 bytes:
-byte 0: DID
+Set time of day alarm message (MID 0x04) 6 bytes:
+byte 0: 0x04
 bytes 1,2,3,4: time (seconds from Unix epoch Jan 1 1970)
 byte 5:
      bit 0: beep_set_flag 1 => set, 0 => unset
-     bits 1-7: DID event data id # 0 for no DID.
+     bits 1-7: DID event data id # 0 for no DID.  This implies that DID < 128 (ignored for TOD alarm)
 
-All rendering information is stored in the DID.
-DID memory:
-byte0: payload length (including this byte) 9
-byte1: DID
-byte2: countdown #number seconds
-byte3: countdown #number minutes
-byte4: repeat interval # minutes
-byte5: Days of the week repeat:
-       bit0: repeat every Sunday hence
-       bit1: repeat every Monday hence
-       ...
-       bit6: repeat every Saturday hence
-       bit7: repeat every year hence (annual event)
-byte6: scroll message DID
-byte7: special effect #(1 => fireworks, 2=> color lines)
-byte8: tune DID 
+Aniversary Alarm:
+byte0: MID 0x??
+byte1: payload length (including this byte)
+byte2: DID
+byte3: DID length (payload length + 2)
+byte4-7 alarm time (seconds from Jan 1)
+byte8: countdown #number seconds
+byte9: countdown #number minutes
+byte10: repeat interval # minutes
+byte11: Days of the week repeat:
+        bit0: repeat every Sunday hence
+        bit1: repeat every Monday hence
+        ...
+        bit6: repeat every Saturday hence
+        bit7: repeat every year hence (annual event)
+byte12: scroll message DID
+byte13: special effect #(1 => fireworks, 2=> color lines)
+byte14: tune DID (Not implimented)

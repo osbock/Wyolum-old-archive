@@ -178,6 +178,7 @@ msg = 'This is a test. '
 set_data(12, msg + '12')
 err_check()
 print 'msg 12?', get_data(12)
+delete_did(12)
 set_data(1, msg + '1')
 err_check()
 print get_data(1)
