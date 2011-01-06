@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 01/06/11 13:50:06
+Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 01/06/11 18:43:02
 
 BeginCmp
 TimeStamp = /4C134896/4C135743;
@@ -1415,22 +1415,29 @@ IdModule  = pin_strip_4;
 EndCmp
 
 BeginCmp
+TimeStamp = /4D25BDEF;
+Reference = D1;
+ValeurCmp = 1N4148;
+IdModule  = diode_do35;
+EndCmp
+
+BeginCmp
 TimeStamp = /4B077B46;
-Reference = D193;
+Reference = D2;
 ValeurCmp = DBG;
 IdModule  = led_5mm_blue;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B3F1092/4B3F12C6;
-Reference = D195;
+Reference = D3;
 ValeurCmp = 1N4007;
 IdModule  = diode_do41;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B3F1092/4B3F12CA;
-Reference = D196;
+Reference = D4;
 ValeurCmp = PWR;
 IdModule  = led_5mm_blue;
 EndCmp

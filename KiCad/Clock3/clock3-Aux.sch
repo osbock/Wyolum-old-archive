@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 01/05/11 20:30:49
+EESchema Schematic File Version 2  date 01/06/11 18:41:46
 LIBS:clock3
 LIBS:power
 LIBS:clock3-cache
@@ -7,7 +7,7 @@ EELAYER END
 $Descr A4 11700 8267
 Sheet 3 3
 Title "ClockTWO"
-Date "5 jan 2011"
+Date "6 jan 2011"
 Rev "A"
 Comp "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment1 "wyoinnovation.blogspot.com"
@@ -1216,10 +1216,10 @@ F 4 "GND" H 2500 5350 60  0000 C CNN "Field1"
 	1    0    0    -1  
 $EndComp
 $Comp
-L LED D196
+L LED D4
 U 1 1 4B3F12CA
 P 3300 4950
-F 0 "D196" H 3300 5050 50  0000 C CNN
+F 0 "D4" H 3300 5050 50  0000 C CNN
 F 1 "PWR" H 3300 4850 50  0000 C CNN
 F 2 "led_5mm_blue" H 3300 4950 60  0001 C CNN
 	1    3300 4950
@@ -1256,10 +1256,10 @@ F 2 "CP_5x11mm" H 1800 4450 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L DIODE D195
+L DIODE D3
 U 1 1 4B3F12C6
 P 1550 4100
-F 0 "D195" H 1550 4200 40  0000 C CNN
+F 0 "D3" H 1550 4200 40  0000 C CNN
 F 1 "1N4007" H 1550 4000 40  0000 C CNN
 F 2 "diode_do41" H 1550 4100 60  0001 C CNN
 	1    1550 4100
