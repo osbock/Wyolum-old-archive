@@ -50,6 +50,7 @@ MID           length description               payload format
 0x12     MAX_MSG_LEN Ping                      1 99 data bytes
 0x13		  20 clear eeprom	       zero all data in EEPROM
 0x14               1 EEPROM dump	       NA
+0x15              12 Anniversary Alarm     See Anniversary Alarm Below.
 0xEF     MAX_MSG_LEN SYNC		       99 data bytes (0xEF)(SYNC)
 
 Variable length messages.  Payload length is first byte after MID
@@ -72,21 +73,29 @@ byte 5:
      bit 0: beep_set_flag 1 => set, 0 => unset
      bits 1-7: DID event data id # 0 for no DID.  This implies that DID < 128 (ignored for TOD alarm)
 
-Aniversary Alarm:
-byte0: MID 0x??
-byte1: payload length (including this byte)
-byte2: DID
-byte3: DID length (payload length + 2)
-byte4-7 alarm time (seconds from Jan 1)
-byte8: countdown #number seconds
-byte9: countdown #number minutes
-byte10: repeat interval # minutes
-byte11: Days of the week repeat:
+Anniversary Alarm MID:
+byte0: MID 0x15
+byte1-4 alarm time (seconds from Jan 1)
+byte5: countdown #number seconds
+byte6: countdown #number minutes
+byte7: repeat interval # minutes
+byte8: Days of the week repeat:
         bit0: repeat every Sunday hence
         bit1: repeat every Monday hence
         ...
         bit6: repeat every Saturday hence
         bit7: repeat every year hence (annual event)
-byte12: scroll message DID
-byte13: special effect #(1 => fireworks, 2=> color lines)
-byte14: tune DID (Not implimented)
+byte9: scroll message DID
+byte10: special effect #(1 => fireworks, 2=> color lines)
+byte11: tune DID (Not implimented)
+
+Anniversary Alarm DID:
+Byte0: DID (0x01 - 0x40)
+Byte1: 0x0E Message length (This is a fixed length message).
+-----------------------------DID follows------------------
+Byte2: 0x15 MID
+Bytes3-13 Anniversary Alarm MID Bytes 1-11
+
+DID Allocation:
+0x01 - 0x40 -- Anniversary Alarm (first 0x40 DID reservered for anniversary alarms.)
+0x41 - 0xFF -- Arbitrary
