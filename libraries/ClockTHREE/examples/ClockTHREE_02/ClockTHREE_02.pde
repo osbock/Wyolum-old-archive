@@ -21,6 +21,7 @@
 #include <Wire.h>
 #include <string.h>
 #include "Time.h"
+#include "TimeAlarms.h"
 #include "MsTimer2.h"
 #include "ClockTHREE.h"
 #include "SPI.h"
@@ -154,7 +155,7 @@ const MsgDef   TRIGGER_DEC = {0x0E, 1, do_nothing};
 const MsgDef TRIGGER_ENTER = {0x0F, 1, do_nothing};
 const MsgDef   VERSION_REQ = {0x10, 1, do_nothing};
 const MsgDef     ABOUT_REQ = {0x11, 1, do_nothing};
-const MsgDef          PING = {0x12, 100, pong};
+const MsgDef          PING = {0x12, MAX_MSG_LEN, pong};
 const MsgDef  EEPROM_CLEAR = {0x13, 20, eeprom_clear};
 const MsgDef   EEPROM_DUMP = {0x14, 1, eeprom_dump};
 const MsgDef   ANNIVERSARY = {0x15, 12, save_date};
@@ -892,10 +893,11 @@ void Serial_time_set(){
 }
 void tod_alarm_set(){
   Serial_time_t data;
+  tmElements_t tm;
+
   for(int i = 0; i < 4; i++){
     data.dat8[i] = serial_msg[i];
   }
-  tmElements_t tm;
   breakTime(data.dat32, tm);
   ahh = tm.Hour;
   amm = tm.Minute;
@@ -906,6 +908,7 @@ void tod_alarm_set(){
 void tod_alarm_get(){
   Serial_time_t data;
   tmElements_t tm;
+
   tm.Hour = ahh;
   tm.Minute = amm;
   tm.Second = ass;
@@ -926,7 +929,23 @@ void eeprom_dump(){
 }
 
 void save_date(){
-  //date info stored in serial_msg
+  //date info stored in serial_msg 
+  // MID pealed off already
+  Serial_time_t data;
+  tmElements_t tm;
+
+  for(int i = 0; i < 4; i++){
+    data.dat8[i] = serial_msg[i];
+  }
+  breakTime(data.dat32, tm);
+  uint16_t seconds_countdown = (serial_msg[4] + 
+				60 * serial_msg[5]);
+  Alarm.timerOnce(10, do_nothing);
+  uint8_t repeat_minutes = serial_msg[6];
+  uint8_t dow_repeat = serial_msg[7];
+  uint8_t scoll_msg_id = serial_msg[8];
+  uint8_t special_effects = serial_msg[9];
+  uint8_t sound_effects = serial_msg[10];  
 }
 
 void receive_data(){

@@ -146,7 +146,7 @@ s = 0
 is_set = True
 set_tod_alarm(h, m, s, is_set)
 ahh, amm, ass, ais_set = get_tod_alarm()
-print ahh, amm, ass
+print ahh, amm, ass, h, m, s
 assert ahh == h and amm == m and ass == s
 
 for i in range(1):

@@ -1,3 +1,6 @@
+/*
+ * RTC clock interface.  TODO: Mimic DS1307RTC.h.
+ */
 #ifndef RTC_BOB_H
 #define RTC_BOB_H
 
