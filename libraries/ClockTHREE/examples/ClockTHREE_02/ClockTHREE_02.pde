@@ -27,6 +27,7 @@
 #include "english.h"
 #include "font.h"
 #include "rtcBOB.h"
+#include "EDL.h"
 
 // debounce mode button threshold
 const uint8_t DEBOUNCE_THRESH = 100;
@@ -132,10 +133,9 @@ const uint8_t MAX_MSG_LEN = 100;
 const uint16_t BAUDRATE = 57600; // official
 const uint8_t SYNC_BYTE = 0xEF;
 const uint8_t VAR_LENGTH = 0xFF;
-const uint16_t MAX_EEPROM_ADDR = 1023;
 char* EEPROM_ERR = "EE";
 char* EEPROM_DELETE_ERR = "ED";
-const uint8_t N_MSG_TYPE = 22;
+const uint8_t N_MSG_TYPE = 23;
 const MsgDef  NOT_USED_MSG = {0x00, 1, do_nothing};
 const MsgDef  ABS_TIME_REQ = {0x01, 1, send_time};
 const MsgDef  ABS_TIME_SET = {0x02, 5, Serial_time_set};
@@ -157,6 +157,7 @@ const MsgDef     ABOUT_REQ = {0x11, 1, do_nothing};
 const MsgDef          PING = {0x12, 100, pong};
 const MsgDef  EEPROM_CLEAR = {0x13, 20, eeprom_clear};
 const MsgDef   EEPROM_DUMP = {0x14, 1, eeprom_dump};
+const MsgDef   ANNIVERSARY = {0x15, 12, save_date};
 
 const MsgDef          SYNC = {SYNC_BYTE, MAX_MSG_LEN, do_nothing}; // must already be in sync
 const MsgDef      DATA_SET = {0x70, VAR_LENGTH, receive_data}; // variable length
@@ -183,6 +184,7 @@ const MsgDef *MSG_DEFS[N_MSG_TYPE] = {&NOT_USED_MSG,
 				      &PING,
 				      &EEPROM_CLEAR,
 				      &EEPROM_DUMP,
+				      &ANNIVERSARY,
 				      &DATA_SET};
 
 char serial_msg[MAX_MSG_LEN];
@@ -917,158 +919,14 @@ void tod_alarm_get(){
   Serial.print(alarm_set, BYTE);
 }
 
-/* 
- * EEPROM Map -- no gaps between DIDs!
- * DID: 0                 1       2     3     4   ...
- *      |---------------->|------>|---->|---->|---...
- * FAT: 0,20              20,7    27,5  32,5  37, ...  
- * number of DIDs stored in last byte of EEPROM
- */
-// next available did address
-bool did_next_addr(int16_t *addr_p){
-  uint8_t n = EEPROM.read(MAX_EEPROM_ADDR);
-  bool status = false;
-  *addr_p = 0;
-
-  // go to end of the line of DIDs
-  for(int i = 0; 
-      i < n && *addr_p < MAX_EEPROM_ADDR - 2; 
-      i++){
-    *addr_p += EEPROM.read(*addr_p + 1);
-  }
-  if(*addr_p < MAX_EEPROM_ADDR - 2){
-    status = true;
-  }
-  else{
-    // strcpy(serial_msg, "mem");
-  }
-  return status;
-}
-
-// write a valid did stored in data.
-bool did_write(char* data){
-  uint8_t n = EEPROM.read(MAX_EEPROM_ADDR);
-  int16_t addr = 0;
-  uint8_t did = data[0];
-  uint8_t len = data[1];
-  bool status = false;
-  
-  int16_t tmp_addr;
-  uint8_t tmp_l;
-  // check to see if DID is used -->get_did_addr will succeed if did is already used
-  if(!get_did_addr(did, &tmp_addr, &tmp_l)){
-    // Serial.println("HERE!!!");
-    if(did_next_addr(&addr)){
-      // Serial.println("    HERE!!!");
-      if(addr + len < MAX_EEPROM_ADDR - 1){
-	// Serial.println("        HERE!!!");
-	// write data
-	for(int i = 0; i < len; i++){
-	  EEPROM.write(addr + i, data[i]);
-	  // Serial.println(EEPROM.read(addr + i));
-	}
-	// Serial.print("n:");
-	// Serial.print(n, DEC);
-	EEPROM.write(MAX_EEPROM_ADDR, n + 1);
-	// Serial.print("  eeprom.n:");
-	// Serial.print(EEPROM.read(1023), DEC);
-	status = true;
-      }
-    }
-  }
-  // Serial.print("status");
-  // Serial.println(status, DEC);
-  return status;
-}
-
 void eeprom_dump(){
   for(int i = 0; i < 1024; i++){
     Serial.print(EEPROM.read(i), BYTE);
   }
 }
 
-// store address of did in addr, return true if successful
-bool get_did_addr(uint8_t did, int16_t* addr_p, uint8_t *len_p){
-  bool status = false;
-  uint8_t id;
-
-  *addr_p = 0;
-  id = EEPROM.read(*addr_p);
-  uint8_t n = EEPROM.read(MAX_EEPROM_ADDR);
-  uint8_t i = 0;
-  while((*addr_p < MAX_EEPROM_ADDR - 2) && 
-	(did != id) && 
-	(i++ < n)){
-    *len_p = EEPROM.read(*addr_p + 1);
-    *addr_p += *len_p;
-    id = EEPROM.read(*addr_p);
-  }
-  if(id == did){
-    // make sure it is not too long
-    if(*addr_p < MAX_EEPROM_ADDR - 2){
-      *len_p = EEPROM.read(*addr_p + 1);
-      status = true;
-    }
-  }
-  else{
-    // strcpy(serial_msg, "~id");
-  }
-  // Serial.println("HERE SDAMIT");
-  // Serial.println(did, DEC);
-  // Serial.println(n, DEC);
-  // Serial.println(status, DEC);
-  return status;
-}
-
-// copy DID to data
-bool did_read(uint8_t did, char *dest, uint8_t *len_p){
-  int16_t addr;
-  bool status = false;
-
-  if(get_did_addr(did, &addr, len_p)){
-    for(int i = 0; i < *len_p; i++){
-      dest[i] = EEPROM.read(addr + i);
-    }
-    status = true;
-  }
-  return status;
-}
-
-bool did_delete(uint8_t did){
-  int16_t addr, next_addr;
-  uint8_t len;
-  uint8_t n = EEPROM.read(MAX_EEPROM_ADDR);
-  bool status = false;
-  if(get_did_addr(did, &addr, &len)){
-    status = true;
-    if(n == 1){
-      len = EEPROM.read(1);
-      for(int i = 0; i < len; i++){
-	EEPROM.write(i, 0);
-      }
-      EEPROM.write(MAX_EEPROM_ADDR, 0);
-    }
-    else{
-      if(did_next_addr(&next_addr)){
-	// Serial.print("HERE next_addr:");
-	// Serial.print(next_addr, DEC);
-	// Serial.print(" addr:");
-	// Serial.println(addr, DEC);
-	for(int i = addr; i < next_addr - 1 - len; i++){
-	  // Serial.print("    ");
-	  // Serial.print(i, DEC);
-	  EEPROM.write(i, EEPROM.read(i + len));
-	  // Serial.print(" ");
-	  // Serial.println(EEPROM.read(i + len), DEC);
-	}
-      }
-      // Serial.println("HERE2");
-      if(n > 0){
-	EEPROM.write(MAX_EEPROM_ADDR, n - 1);
-      }
-    }
-  }
-  return status;
+void save_date(){
+  //date info stored in serial_msg
 }
 
 void receive_data(){
