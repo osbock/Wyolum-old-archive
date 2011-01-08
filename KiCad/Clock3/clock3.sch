@@ -1,13 +1,13 @@
-EESchema Schematic File Version 2  date 01/06/11 18:41:46
+EESchema Schematic File Version 2  date 01/08/11 19:28:15
 LIBS:clock3
 LIBS:power
 LIBS:clock3-cache
 EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
-Sheet 1 3
+Sheet 1 4
 Title "ClockTHREE"
-Date "6 jan 2011"
+Date "8 jan 2011"
 Rev "A"
 Comp "An Arduino based RGB LED Array"
 Comment1 "Wyo Innovations      :: Lumetronics"
@@ -15,6 +15,12 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "wyoinnovation.blogspot.com"
 Comment4 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 $EndDescr
+$Sheet
+S 2550 6250 850  1400
+U 4D28241A
+F0 "clock3-mech" 60
+F1 "clock3-mech.sch" 60
+$EndSheet
 Connection ~ 4175 5850
 Wire Wire Line
 	4075 5850 4175 5850
@@ -526,16 +532,8 @@ U 1 1 4D25BDEF
 P 3875 5850
 F 0 "D1" H 3875 5950 40  0000 C CNN
 F 1 "1N4148" H 3875 5750 40  0000 C CNN
+F 2 "diode_do35" H 3875 5850 60  0001 C CNN
 	1    3875 5850
-	1    0    0    -1  
-$EndComp
-$Comp
-L BAFFLE BF1
-U 1 1 4D247CC3
-P 9000 5950
-F 0 "BF1" H 9000 5800 60  0000 C CNN
-F 1 "BAFFLE" H 9000 6100 60  0000 C CNN
-	1    9000 5950
 	1    0    0    -1  
 $EndComp
 Text Notes 8250 1700 0    40   ~ 0
@@ -550,7 +548,7 @@ U 1 1 4D2315D0
 P 8300 1450
 F 0 "rowBoB1" V 8380 1450 40  0000 L CNN
 F 1 "CONN_1" H 8300 1505 30  0001 C CNN
-F 2 "Pad01" H 8300 1450 60  0001 C CNN
+F 2 "vite_3mm" H 8300 1450 60  0001 C CNN
 	1    8300 1450
 	0    -1   -1   0   
 $EndComp
@@ -560,7 +558,7 @@ U 1 1 4D2315BF
 P 8300 3300
 F 0 "rowBoB2" V 8380 3300 40  0000 L CNN
 F 1 "CONN_1" H 8300 3355 30  0001 C CNN
-F 2 "Pad01" H 8300 3300 60  0001 C CNN
+F 2 "vite_3mm" H 8300 3300 60  0001 C CNN
 	1    8300 3300
 	0    -1   -1   0   
 $EndComp

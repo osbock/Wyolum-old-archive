@@ -1,13 +1,13 @@
-EESchema Schematic File Version 2  date 01/06/11 18:40:42
+EESchema Schematic File Version 2  date 01/08/11 19:27:12
 LIBS:clock3
 LIBS:power
 LIBS:clock3-cache
 EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
-Sheet 3 3
+Sheet 4 4
 Title "ClockTWO"
-Date "6 jan 2011"
+Date "8 jan 2011"
 Rev "A"
 Comp "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment1 "wyoinnovation.blogspot.com"
@@ -550,8 +550,8 @@ Wire Notes Line
 	2850 2050 2850 3350
 Wire Notes Line
 	2850 3350 750  3350
-Text Notes 9900 3050 1    40   ~ 0
-Mounting holes for C3
+Text Notes 9850 2400 2    40   ~ 0
+Mounting holes for C3\n14 holes around the board\nwith 3mm mounting hole
 Text Notes 1800 2950 0    40   ~ 0
 Mounting Holes for rtcBoB
 NoConn ~ 1700 3050

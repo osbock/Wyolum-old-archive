@@ -1,13 +1,13 @@
-EESchema Schematic File Version 2  date 01/06/11 18:41:46
+EESchema Schematic File Version 2  date 01/08/11 19:28:15
 LIBS:clock3
 LIBS:power
 LIBS:clock3-cache
 EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
-Sheet 3 3
+Sheet 4 4
 Title "ClockTWO"
-Date "6 jan 2011"
+Date "8 jan 2011"
 Rev "A"
 Comp "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment1 "wyoinnovation.blogspot.com"
@@ -550,8 +550,8 @@ Wire Notes Line
 	2850 2050 2850 3350
 Wire Notes Line
 	2850 3350 750  3350
-Text Notes 9900 3050 1    40   ~ 0
-Mounting holes for C3
+Text Notes 9850 2400 2    40   ~ 0
+Mounting holes for C3\n14 holes around the board\nwith 3mm mounting hole
 Text Notes 1800 2950 0    40   ~ 0
 Mounting Holes for rtcBoB
 NoConn ~ 1700 3050
@@ -901,7 +901,7 @@ U 1 1 4C2B10A0
 P 10200 3350
 F 0 "P23" H 10280 3350 40  0000 L CNN
 F 1 "CONN_1" H 10200 3405 30  0001 C CNN
-F 2 "vite_3mm" H 10200 3350 60  0001 C CNN
+F 2 "vite_4mm" H 10200 3350 60  0001 C CNN
 	1    10200 3350
 	1    0    0    -1  
 $EndComp
@@ -911,7 +911,7 @@ U 1 1 4C2B109E
 P 10200 3250
 F 0 "P22" H 10280 3250 40  0000 L CNN
 F 1 "CONN_1" H 10200 3305 30  0001 C CNN
-F 2 "vite_3mm" H 10200 3250 60  0001 C CNN
+F 2 "vite_4mm" H 10200 3250 60  0001 C CNN
 	1    10200 3250
 	1    0    0    -1  
 $EndComp
@@ -921,7 +921,7 @@ U 1 1 4C2B109C
 P 10200 3150
 F 0 "P21" H 10280 3150 40  0000 L CNN
 F 1 "CONN_1" H 10200 3205 30  0001 C CNN
-F 2 "vite_3mm" H 10200 3150 60  0001 C CNN
+F 2 "vite_4mm" H 10200 3150 60  0001 C CNN
 	1    10200 3150
 	1    0    0    -1  
 $EndComp
@@ -931,7 +931,7 @@ U 1 1 4C2B1099
 P 10200 3050
 F 0 "P20" H 10280 3050 40  0000 L CNN
 F 1 "CONN_1" H 10200 3105 30  0001 C CNN
-F 2 "vite_3mm" H 10200 3050 60  0001 C CNN
+F 2 "vite_4mm" H 10200 3050 60  0001 C CNN
 	1    10200 3050
 	1    0    0    -1  
 $EndComp
@@ -941,7 +941,7 @@ U 1 1 4C2B1097
 P 10200 2950
 F 0 "P19" H 10280 2950 40  0000 L CNN
 F 1 "CONN_1" H 10200 3005 30  0001 C CNN
-F 2 "vite_3mm" H 10200 2950 60  0001 C CNN
+F 2 "vite_4mm" H 10200 2950 60  0001 C CNN
 	1    10200 2950
 	1    0    0    -1  
 $EndComp
@@ -951,7 +951,7 @@ U 1 1 4C2B1095
 P 10200 2850
 F 0 "P18" H 10280 2850 40  0000 L CNN
 F 1 "CONN_1" H 10200 2905 30  0001 C CNN
-F 2 "vite_3mm" H 10200 2850 60  0001 C CNN
+F 2 "vite_4mm" H 10200 2850 60  0001 C CNN
 	1    10200 2850
 	1    0    0    -1  
 $EndComp
@@ -961,7 +961,7 @@ U 1 1 4C2B1092
 P 10200 2750
 F 0 "P17" H 10280 2750 40  0000 L CNN
 F 1 "CONN_1" H 10200 2805 30  0001 C CNN
-F 2 "vite_3mm" H 10200 2750 60  0001 C CNN
+F 2 "vite_4mm" H 10200 2750 60  0001 C CNN
 	1    10200 2750
 	1    0    0    -1  
 $EndComp
@@ -971,7 +971,7 @@ U 1 1 4C2B1090
 P 10200 2650
 F 0 "P16" H 10280 2650 40  0000 L CNN
 F 1 "CONN_1" H 10200 2705 30  0001 C CNN
-F 2 "vite_3mm" H 10200 2650 60  0001 C CNN
+F 2 "vite_4mm" H 10200 2650 60  0001 C CNN
 	1    10200 2650
 	1    0    0    -1  
 $EndComp
@@ -981,7 +981,7 @@ U 1 1 4C2B108C
 P 10200 2550
 F 0 "P15" H 10280 2550 40  0000 L CNN
 F 1 "CONN_1" H 10200 2605 30  0001 C CNN
-F 2 "vite_3mm" H 10200 2550 60  0001 C CNN
+F 2 "vite_4mm" H 10200 2550 60  0001 C CNN
 	1    10200 2550
 	1    0    0    -1  
 $EndComp
@@ -991,7 +991,7 @@ U 1 1 4C2B1088
 P 10200 2450
 F 0 "P14" H 10280 2450 40  0000 L CNN
 F 1 "CONN_1" H 10200 2505 30  0001 C CNN
-F 2 "vite_3mm" H 10200 2450 60  0001 C CNN
+F 2 "vite_4mm" H 10200 2450 60  0001 C CNN
 	1    10200 2450
 	1    0    0    -1  
 $EndComp
@@ -1087,7 +1087,7 @@ U 1 1 4C109AA9
 P 10200 2050
 F 0 "P8" H 10280 2050 40  0000 L CNN
 F 1 "CONN_1" H 10200 2105 30  0001 C CNN
-F 2 "vite_3mm" H 10200 2050 60  0001 C CNN
+F 2 "vite_4mm" H 10200 2050 60  0001 C CNN
 	1    10200 2050
 	1    0    0    -1  
 $EndComp
@@ -1097,7 +1097,7 @@ U 1 1 4C109AA8
 P 10200 2150
 F 0 "P9" H 10280 2150 40  0000 L CNN
 F 1 "CONN_1" H 10200 2205 30  0001 C CNN
-F 2 "vite_3mm" H 10200 2150 60  0001 C CNN
+F 2 "vite_4mm" H 10200 2150 60  0001 C CNN
 	1    10200 2150
 	1    0    0    -1  
 $EndComp
@@ -1107,7 +1107,7 @@ U 1 1 4C109AA7
 P 10200 2250
 F 0 "P10" H 10280 2250 40  0000 L CNN
 F 1 "CONN_1" H 10200 2305 30  0001 C CNN
-F 2 "vite_3mm" H 10200 2250 60  0001 C CNN
+F 2 "vite_4mm" H 10200 2250 60  0001 C CNN
 	1    10200 2250
 	1    0    0    -1  
 $EndComp
@@ -1117,7 +1117,7 @@ U 1 1 4C109AA6
 P 10200 2350
 F 0 "P11" H 10280 2350 40  0000 L CNN
 F 1 "CONN_1" H 10200 2405 30  0001 C CNN
-F 2 "vite_3mm" H 10200 2350 60  0001 C CNN
+F 2 "vite_4mm" H 10200 2350 60  0001 C CNN
 	1    10200 2350
 	1    0    0    -1  
 $EndComp

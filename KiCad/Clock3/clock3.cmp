@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 01/06/11 18:43:02
+Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 01/08/11 19:53:27
 
 BeginCmp
 TimeStamp = /4C134896/4C135743;
@@ -1345,7 +1345,7 @@ IdModule  = LED_10MM_BLUE;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D247CC3;
+TimeStamp = /4D28241A/4D282455;
 Reference = BF1;
 ValeurCmp = BAFFLE;
 IdModule  = BAFFLE;
@@ -1443,6 +1443,13 @@ IdModule  = led_5mm_blue;
 EndCmp
 
 BeginCmp
+TimeStamp = /4D28241A/4D28255F;
+Reference = DF1;
+ValeurCmp = DIFFUSER;
+IdModule  = DIFFUSER;
+EndCmp
+
+BeginCmp
 TimeStamp = /4C2C6A39;
 Reference = DIL-U1;
 ValeurCmp = STP16DP05;
@@ -1454,6 +1461,20 @@ TimeStamp = /4C2C6A4D;
 Reference = DIL-U2;
 ValeurCmp = STP16DP05;
 IdModule  = SCK-24_600_ELL;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D28241A/4D2828D4;
+Reference = FC1;
+ValeurCmp = FRONT_COVER;
+IdModule  = FrontCover;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D28241A/4D2828B9;
+Reference = FP1;
+ValeurCmp = FACE_PLATE;
+IdModule  = FacePlate;
 EndCmp
 
 BeginCmp
@@ -1478,6 +1499,104 @@ IdModule  = pin_strip_3;
 EndCmp
 
 BeginCmp
+TimeStamp = /4D28241A/4D283F93;
+Reference = MP1;
+ValeurCmp = SCREW;
+IdModule  = MtgPost;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D28241A/4D283C9E;
+Reference = MT1;
+ValeurCmp = SCREW;
+IdModule  = VITE_CSK_3MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D28241A/4D283CB1;
+Reference = MT2;
+ValeurCmp = SCREW;
+IdModule  = VITE_CSK_3MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D28241A/4D286CF3;
+Reference = MT3;
+ValeurCmp = SCREW;
+IdModule  = vite_csk_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D28241A/4D283CE6;
+Reference = MT4;
+ValeurCmp = SCREW;
+IdModule  = VITE_CSK_3MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D28241A/4D283CDD;
+Reference = MT5;
+ValeurCmp = SCREW;
+IdModule  = VITE_CSK_3MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D28241A/4D286CF6;
+Reference = MT6;
+ValeurCmp = SCREW;
+IdModule  = vite_csk_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D28241A/4D283CC9;
+Reference = MT7;
+ValeurCmp = SCREW;
+IdModule  = VITE_CSK_3MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D28241A/4D283CC6;
+Reference = MT8;
+ValeurCmp = SCREW;
+IdModule  = VITE_CSK_3MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D28241A/4D286CFA;
+Reference = MT10;
+ValeurCmp = SCREW;
+IdModule  = vite_csk_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D28241A/4D283CC3;
+Reference = MT11;
+ValeurCmp = SCREW;
+IdModule  = VITE_CSK_3MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D28241A/4D283CBF;
+Reference = MT12;
+ValeurCmp = SCREW;
+IdModule  = VITE_CSK_3MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D28241A/4D286CFF;
+Reference = MT13;
+ValeurCmp = SCREW;
+IdModule  = vite_csk_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D28241A/4D283CB9;
+Reference = MT14;
+ValeurCmp = SCREW;
+IdModule  = VITE_CSK_3MM;
+EndCmp
+
+BeginCmp
 TimeStamp = /4B3F1092/4C109AA5;
 Reference = P7;
 ValeurCmp = FTDI;
@@ -1488,28 +1607,28 @@ BeginCmp
 TimeStamp = /4B3F1092/4C109AA9;
 Reference = P8;
 ValeurCmp = CONN_1;
-IdModule  = vite_3mm;
+IdModule  = vite_4mm;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B3F1092/4C109AA8;
 Reference = P9;
 ValeurCmp = CONN_1;
-IdModule  = vite_3mm;
+IdModule  = vite_4mm;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B3F1092/4C109AA7;
 Reference = P10;
 ValeurCmp = CONN_1;
-IdModule  = vite_3mm;
+IdModule  = vite_4mm;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B3F1092/4C109AA6;
 Reference = P11;
 ValeurCmp = CONN_1;
-IdModule  = vite_3mm;
+IdModule  = vite_4mm;
 EndCmp
 
 BeginCmp
@@ -1530,70 +1649,70 @@ BeginCmp
 TimeStamp = /4B3F1092/4C2B1088;
 Reference = P14;
 ValeurCmp = CONN_1;
-IdModule  = vite_3mm;
+IdModule  = vite_4mm;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B3F1092/4C2B108C;
 Reference = P15;
 ValeurCmp = CONN_1;
-IdModule  = vite_3mm;
+IdModule  = vite_4mm;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B3F1092/4C2B1090;
 Reference = P16;
 ValeurCmp = CONN_1;
-IdModule  = vite_3mm;
+IdModule  = vite_4mm;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B3F1092/4C2B1092;
 Reference = P17;
 ValeurCmp = CONN_1;
-IdModule  = vite_3mm;
+IdModule  = vite_4mm;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B3F1092/4C2B1095;
 Reference = P18;
 ValeurCmp = CONN_1;
-IdModule  = vite_3mm;
+IdModule  = vite_4mm;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B3F1092/4C2B1097;
 Reference = P19;
 ValeurCmp = CONN_1;
-IdModule  = vite_3mm;
+IdModule  = vite_4mm;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B3F1092/4C2B1099;
 Reference = P20;
 ValeurCmp = CONN_1;
-IdModule  = vite_3mm;
+IdModule  = vite_4mm;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B3F1092/4C2B109C;
 Reference = P21;
 ValeurCmp = CONN_1;
-IdModule  = vite_3mm;
+IdModule  = vite_4mm;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B3F1092/4C2B109E;
 Reference = P22;
 ValeurCmp = CONN_1;
-IdModule  = vite_3mm;
+IdModule  = vite_4mm;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B3F1092/4C2B10A0;
 Reference = P23;
 ValeurCmp = CONN_1;
-IdModule  = vite_3mm;
+IdModule  = vite_4mm;
 EndCmp
 
 BeginCmp

@@ -1,4 +1,4 @@
-update=01/06/11 19:18:11
+update=01/08/11 20:11:39
 last_client=kicad
 [cvpcb]
 version=1
@@ -45,9 +45,9 @@ LibName1=libs\\clock3
 LibName2=libs\\power
 [pcbnew]
 version=1
-PadDrlX=320
-PadDimH=1000
-PadDimV=500
+PadDrlX=1600
+PadDimH=2400
+PadDimV=2400
 BoardThickness=630
 SgPcb45=1
 TxtPcbV=800
