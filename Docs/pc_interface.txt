@@ -90,12 +90,33 @@ byte10: special effect #(1 => fireworks, 2=> color lines)
 byte11: tune DID (Not implimented)
 
 Anniversary Alarm DID:
-Byte0: DID (0x01 - 0x40)
+Anniversary alarms need to be stored in EEPROM (long term memory).  This top section described
+the serial message format to send an anniversary over to ClockTHREE.  To store this in EEPROM,
+two extra bytes are prepended to the serial message:
+
+Byte0: DID (0x01 - 0x3F)
 Byte1: 0x0E Message length (This is a fixed length message).
 -----------------------------DID follows------------------
-Byte2: 0x15 MID
+Byte2: 0x15 MID This indicates that the data stored at DID holds anniversary alarm
 Bytes3-13 Anniversary Alarm MID Bytes 1-11
 
+
+The first 63 DIDs (0x01 - 0x3F) are reserved for anniversary alarms.  This should help reduce the
+ambiguity of when setting and gettin alarm events.
 DID Allocation:
-0x01 - 0x40 -- Anniversary Alarm (first 0x40 DID reservered for anniversary alarms.)
-0x41 - 0xFF -- Arbitrary
+0x00 -- not used.  invalid.
+0x01 - 0x3F -- Anniversary Alarm (first DIDs reservered for anniversary alarms.)
+0x40 - 0xFF -- Arbitrary: scroll messages for instance.
+
+
+EEPROM Interface.
+Several messages reffer to a DID (scroll_data for instance).  This is like a small file stored in
+EEPROM memory.  These tiny files are referenced by a unique Data IDentification or DID number.  You 
+can read, write, and delete and delete DID files using the library described fully in "EDL.h".
+There are four main functions:
+bool did_read(uint8_t did, char *dest, uint8_t *len_p),
+bool get_did_addr(uint8_t did, int16_t* addr_p, uint8_t *len_p);
+bool did_write(char* data), and
+bool did_delete(uint8_t did).
+
+Each returns true if when they are successful and false otherwise.  Be sure to always check the return value.
