@@ -4,6 +4,8 @@
   Each record is reference by a Data ID or DID for short.  
   The library has been optimized for storage (as opposed to fact access).
 
+  *** First two bytes of a DID record are always always always DID and LEN
+
   Justin Shaw
   The hardware and software for ClockTHREE have been enabled by the 
   open souce Peggy2.  Thanks to the Evil Mad Science Team for making them
@@ -36,6 +38,7 @@ bool did_next_addr(int16_t *addr_p);
  * Copy DID to data to dest.  
  * dest -- location to copy DID record.  It must have enough space allocated to contain entire record.
  * len_p -- ouput, if output is true, the value pointed to by this pointer will contian the length for this did
+ * First two bytes are always always always DID and LEN
  */
 bool did_read(uint8_t did, char *dest, uint8_t *len_p);
 
@@ -50,6 +53,7 @@ bool did_write(char* data);
  * did -- data id
  * addr_p -- output, if output is true, the value pointed to by this pointer will contian the address for this did
  * len_p -- output, if output is true, the value pointed to by this pointer will contian the length for this did
+ * First two bytes are always always always DID and LEN
  */
 bool get_did_addr(uint8_t did, int16_t* addr_p, uint8_t *len_p);
 

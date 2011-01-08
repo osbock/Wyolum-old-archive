@@ -58,7 +58,7 @@ uint32_t *display = (uint32_t*)calloc(2 * N_COL, sizeof(uint32_t));
 
 Mode *mode_p;
 
-const uint8_t N_MODE = 9;
+const uint8_t N_MODE = 10;
 const uint8_t N_MAIN_MODE = 6;
 const uint8_t N_SUB_MODE = 3;
 
@@ -73,6 +73,7 @@ const uint8_t MODE_MODE = 5;
 const uint8_t SECONDS_MODE = 6;
 const uint8_t ALARM_MODE = 7;
 const uint8_t TEMPERATURE_MODE = 8;
+const uint8_t SCROLL_MODE = 9;
 
 const uint8_t DEG_C = 0;
 const uint8_t DEG_F = 1;
@@ -95,6 +96,9 @@ Mode AlarmMode = {ALARM_MODE,
 Mode TemperatureMode = {TEMPERATURE_MODE, 'X', 
 			Temperature_setup, Temperature_loop, Temperature_exit, 
 			Temperature_inc, Temperature_dec, Temperature_mode};
+Mode ScrollMode = {SCROLL_MODE, 'X', 
+		   Scroll_setup, Scroll_loop, Scroll_exit, 
+		   Scroll_inc, Scroll_dec, Scroll_mode};
 Mode SetTimeMode = {SET_TIME_MODE, 
 		    'T', SetTime_setup,SetTime_loop,SetTime_exit,
 		    SetTime_inc, SetTime_dec, SetTime_mode};
@@ -145,7 +149,7 @@ const MsgDef TOD_ALARM_REQ = {0x03, 1, tod_alarm_get};
 const MsgDef TOD_ALARM_SET = {0x04, 6, tod_alarm_set};
 const MsgDef      DATA_REQ = {0x05, 2, send_data};
 const MsgDef   DATA_DELETE = {0x06, 2, delete_data};
-const MsgDef    SCROLL_MSG = {0x07, 2, do_nothing};
+const MsgDef    SCROLL_DATA = {0x07, 2, scroll_data};
 const MsgDef     EVENT_REQ = {0x08, 2, do_nothing};
 const MsgDef     EVENT_SET = {0x09, 6, do_nothing};
 const MsgDef   DISPLAY_REQ = {0x0A, 1, display_send};
@@ -173,7 +177,7 @@ const MsgDef *MSG_DEFS[N_MSG_TYPE] = {&NOT_USED_MSG,
 				      &TOD_ALARM_SET,
 				      &DATA_REQ,
 				      &DATA_DELETE,
-				      &SCROLL_MSG,
+				      &SCROLL_DATA,
 				      &EVENT_REQ,
 				      &EVENT_SET,
 				      &DISPLAY_REQ,
@@ -191,6 +195,7 @@ const MsgDef *MSG_DEFS[N_MSG_TYPE] = {&NOT_USED_MSG,
 				      &DATA_SET};
 
 char serial_msg[MAX_MSG_LEN];
+uint8_t serial_msg_len;
 
 // Globals
 uint8_t event_q[EVENT_Q_SIZE];
@@ -214,6 +219,7 @@ unit_t SetTime_unit = YEAR;
 uint8_t temp_unit = DEG_C;
 boolean alarm_set = false;
 uint8_t sync_msg_byte_counter = 0;
+uint8_t scroll_did = 0;
 
 /*
  * Called when mode button is pressed
@@ -281,8 +287,8 @@ void setup(void){
   setSyncInterval(3600000);      // update every hour (and on boot)
   update_time();
   getRTC_alarm(&ahh, &amm, &ass, &alarm_set);
-  // TOD_Alarm_Set(todAlarm, ahh, amm, ass, alarm_set);
-  TOD_Alarm_Set(todAlarm, ahh, amm, ass + 5, alarm_set);
+  TOD_Alarm_Set(todAlarm, ahh, amm, ass, alarm_set);
+  // TOD_Alarm_Set(todAlarm, hh, mm, ss + 5, alarm_set);
   // Alarm.timerOnce(5, switch_to_alarm_mode);
   
   mode_p = &NormalMode;
@@ -300,6 +306,7 @@ void setup(void){
   Modes[SECONDS_MODE] = SecondsMode;
   Modes[ALARM_MODE] = AlarmMode;
   Modes[TEMPERATURE_MODE] = TemperatureMode;
+  Modes[SCROLL_MODE] = ScrollMode;
   mode_p->setup();
 
 #ifndef CLOCKTWO
@@ -346,9 +353,9 @@ void loop(void){
       tick = true;
       ss++;
       Alarm.serviceAlarms();
-      if((alarm_set) && (mm == amm) && (hh == ahh) && (ss == ass)){
-	switchmodes(ALARM_MODE); // should not be needed?
-      }
+      // if((alarm_set) && (mm == amm) && (hh == ahh) && (ss == ass)){
+      // switchmodes(ALARM_MODE); // should not be needed?
+      // }
       if(ss >= 60){
 	ss %= 60;
 	mm++;
@@ -432,7 +439,51 @@ void Seconds_mode(){
   switchmodes(NORMAL_MODE);
 }
 
-// Sub mode of normal mode ** display seconds
+// Sub mode of normal mode ** scoll message stored in scroll_did;
+void Scroll_setup(){
+  // Display is 2x as large as screen.  Use larger indeces to stage display.
+  if(scroll_did && did_read(scroll_did, serial_msg, &serial_msg_len)){
+    for(int i = 2; i < serial_msg_len; i++){
+      serial_msg[i - 2] =  serial_msg[i];
+    }
+    serial_msg_len -= 2;
+    if(serial_msg_len > 0){
+      font.getChar(serial_msg[0], getColor(COLORS[color_i]), display + 15);
+    }
+  }
+  else{
+    Scroll_mode();// hit the mode button to exit out of this mode, no mesage to scroll
+  }
+}
+void Scroll_loop(){
+  c3.refresh(16);
+  if(count % 12 == 0){
+    for(int i = 0; i < 2 * N_COL - 1; i++){
+      display[i] = display[i + 1];
+    }
+  }
+  if(count % (7 * 12) == 0){
+    uint8_t i = (count / (7 * 12));
+    if(i < serial_msg_len){
+      font.getChar(serial_msg[i], getColor(COLORS[color_i]), display + N_COL - 1);
+    }
+    else{
+      Scroll_mode();// hit the mode button to exit out of this mode, no mesage to scroll
+    }
+  }
+}
+void Scroll_exit() {
+}
+
+void Scroll_inc(){
+}
+void Scroll_dec(){
+}
+void Scroll_mode(){
+  switchmodes(NORMAL_MODE);
+}
+
+// Sub mode of normal mode ** display temp
 void Temperature_setup(void){
   if(temp_unit == DEG_C){
     faceplate.display_word(c3, MONO, c_led);
@@ -973,6 +1024,11 @@ void delete_data(){
   }
 }
 
+void scroll_data(){
+  scroll_did = serial_msg[0];
+  switchmodes(SCROLL_MODE);
+}
+
 void Serial_send_err(char *err){
   uint8_t len = strlen(err);
   Serial.print(ERR_OUT.id, BYTE);
@@ -1034,6 +1090,8 @@ void trigger_mode(){
   
 }
 
+// store serial data into serial_msg staring from first byte AFTER MID
+// to be clear MID is not in serial_msg
 boolean Serial_get_msg(uint8_t n_byte) {
   /*
    n_byte = message length including 1 byte MID

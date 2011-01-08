@@ -97,10 +97,12 @@ def set_data(id, data):
     # MID, len(payload)
     l = len(data)
     out = '%s%s%s%s%s' % (str(const.DATA_SET), chr(l + 4), chr(id), chr(l + 2),  data)
-    print 'OUT:', out
     assert len(out) == len(data) + 4, '%s != %s' % (len(out), len(data) + 4)
     ser.write(out)
     time.sleep(.1)
+    err = ser.read(4)
+    if err:
+        raise Exception(get_err(err))
 
 def get_err(err):
     id = '0x%02x' % ord(err[0])
@@ -182,6 +184,10 @@ def delete_did(did):
 def trigger_mode():
     ser.write(str(const.TRIGGER_MODE))
 
+def scroll_data(did):
+    ser.write(str(const.SCROLL_DATA))
+    ser.write(chr(did))
+    
 def main():
     year = 0
     while year != 2011:
@@ -219,15 +225,15 @@ def main():
         # print time.gmtime(t).tm_sec, time.gmtime(time.time()).tm_sec
         time.sleep(.1)
 
+    J = ord('J')
+    set_data(J, 'JS: TEST')
+    delete_did(J)
+    err_check()
+
     eeprom_read()
     clear_eeprom()
     print 'eeprom cleared?'
     eeprom_read()
-
-    J = ord('J')
-    set_data(J, 'ZERO')
-    print 'readback?', get_data(J), len(get_data(J))
-    delete_did(J)
 
     err_check()
     eeprom_read()
@@ -235,7 +241,7 @@ def main():
     msg = 'J--2'
     set_data(J, msg)
     eeprom_read()
-    get_data(J) == msg
+    assert get_data(J) == msg
     err_check()
 
     msg = 'This is a test. '
