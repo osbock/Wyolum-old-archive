@@ -206,6 +206,7 @@ unsigned long count = 0;
 uint16_t YY;
 uint8_t MM, DD, hh, mm, ss;
 uint8_t ahh, amm, ass;
+AlarmId todAlarm;
 boolean tick = true;
 unit_t SetTime_unit = YEAR;
 uint8_t temp_unit = DEG_C;
@@ -278,6 +279,10 @@ void setup(void){
   setSyncInterval(3600000);      // update every hour (and on boot)
   update_time();
   getRTC_alarm(&ahh, &amm, &ass, &alarm_set);
+  todAlarm = Alarm.alarmRepeat(ahh, amm, ass, swicth_to_alarm_mode);
+  if(!alarm_set){
+    Alarm.disable(todAlarm);
+  }
   
   mode_p = &NormalMode;
   mode_p = &SerialMode;
@@ -648,6 +653,12 @@ void SetAlarm_loop(void){
  */
 void SetAlarm_exit(void){
   setRTC_alarm(ahh, amm, ass, alarm_set);
+  if(alarm_set){
+    Alarm.write(todAlarm, (ahh * 60 + amm) * 60 + ass);
+  }
+  else{
+    Alarm.disable(todAlarm);
+  }
 }
 /*
   Respond to button presses.
@@ -903,6 +914,13 @@ void tod_alarm_set(){
   amm = tm.Minute;
   ass = tm.Second;
   alarm_set = serial_msg[4];
+  if(alarm_set){
+    Alarm.write(todAlarm, data.dat32 % SECS_PER_DAY);
+  }
+  else{
+    Alarm.disable(todAlarm);
+  }
+  setRTC_alarm(ahh, amm, ass, alarm_set);
 }
 
 void tod_alarm_get(){
@@ -940,7 +958,7 @@ void save_date(){
   breakTime(data.dat32, tm);
   uint16_t seconds_countdown = (serial_msg[4] + 
 				60 * serial_msg[5]);
-  Alarm.timerOnce(10, do_nothing);
+  // Alarm.timerOnce(10, do_nothing);
   uint8_t repeat_minutes = serial_msg[6];
   uint8_t dow_repeat = serial_msg[7];
   uint8_t scoll_msg_id = serial_msg[8];
@@ -1114,6 +1132,9 @@ void switchmodes(uint8_t new_mode_id){
   count = 0;
 }
 
+void swicth_to_alarm_mode(){
+  switchmodes(ALARM_MODE);
+}
 void two_digits(uint8_t val){
   font.getChar('0' + val / 10, getColor(COLORS[color_i]), display + 2);
   font.getChar('0' + val % 10, getColor(COLORS[color_i]), display + 9);
