@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  01/08/11 19:52:35
+PCBNEW-LibDoc----V1  01/08/11 21:09:41
 #
 $MODULE Volt Reg 78xx
 Li Volt Reg 78xx
@@ -217,12 +217,6 @@ Cd Pin strip 4pin
 Kw CONN DEV
 $EndMODULE
 #
-$MODULE pin_strip_4-90
-Li pin_strip_4-90
-Cd Pin strip 4pin 90
-Kw CONN DEV
-$EndMODULE
-#
 $MODULE pin_strip_4x2
 Li pin_strip_4x2
 Cd Pin strip 4x2pin
@@ -260,6 +254,12 @@ $EndMODULE
 $MODULE vite_csk_3mm
 Li vite_csk_3mm
 Cd vite 2,5mm
+$EndMODULE
+#
+$MODULE pin_strip_4-90
+Li pin_strip_4-90
+Cd Pin strip 4pin 90
+Kw CONN DEV
 $EndMODULE
 #
 $EndLIBDOC
