@@ -33,6 +33,7 @@ class AlarmClass
 private:
 public:
   AlarmClass();
+  void init(); // TJS.
   OnTick_t onTickHandler;  
   void updateNextTrigger();
   /* TJS Interpretation of value:
@@ -85,6 +86,7 @@ class TimeAlarmsClass
  
   // low level methods
   void enable(AlarmID_t ID);
+  void free(AlarmID_t ID);
   void disable(AlarmID_t ID);
   void write(AlarmID_t ID, time_t value);    // write the value (and enable) the alarm with the given ID
   time_t read(AlarmID_t ID);                 // return the value for the given timer 

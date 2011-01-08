@@ -3,10 +3,18 @@
 
 void setup()
 {
-  Serial.begin(9600);
+  Serial.begin(57600);
   setTime(8,29,0,1,1,10); // set time to 8:29:00am Jan 1 2010
   // create the alarms 
-   Alarm.alarmRepeat(8,29,12, MorningAlarm);  // 08:29:12  every day
+  AlarmId mal, dont_alarm;
+
+  Alarm.free(mal); // free before allocated ok?
+
+  mal = Alarm.alarmRepeat(8,29,12, MorningAlarm);  // 08:29:12  every day
+
+  dont_alarm = Alarm.alarmRepeat(8,29,12, DontAlarm);  // 08:29:12  every da
+  Alarm.free(dont_alarm);
+
   Alarm.alarmRepeat(8,29,17,EveningAlarm);  // 08:29:17 every day 
  
   Alarm.timerRepeat(7, Repeats7);            // timer for every 1 seconds    
@@ -17,25 +25,29 @@ void setup()
 void  loop(){  
   // Serial.println(millis(), DEC);
   digitalClockDisplay();
-  Alarm.delay(1000); // wait one second 
+  Alarm.serviceAlarms(); // wait one second 
+  Alarm.delay(1000);
 }
 
 // functions to be called when an alarm triggers:
+void DontAlarm(){
+  Serial.println("Oops, should not have alarmed!");
+}
 void MorningAlarm(){
   if(hour() != 8 || minute() != 29 || second() != 12){
-    Serial.println("Morning alarm pre triggered");
+    Serial.println("Morning alarm false triggered");
   }
   else{
-    Serial.println("Alarm: - turn lights off");    
+    Serial.println("Morning Alarm: - turn lights off");    
   }
 }
 
 void EveningAlarm(){
   if(hour() != 8 || minute() != 29 || second() != 17){
-    Serial.println("Evening alarm pre triggered");
+    Serial.println("Evening alarm false triggered");
   }
   else{
-    Serial.println("Alarm: - turn lights on");           
+    Serial.println("Evening Alarm: - turn lights on");           
   }
 }
 

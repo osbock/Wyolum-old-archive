@@ -33,12 +33,17 @@ extern "C" {
 
 AlarmClass::AlarmClass()
 {
+  init(); // TJS:
+}
+
+// TJS:
+void AlarmClass::init()
+{
   Mode.isAlarm =  Mode.isEnabled = Mode.isOneShot = 0;
   value = MAX_TIME_T;
   nextTrigger = 0;
   onTickHandler = NULL;  // prevent a callback until this pointer is explicitly set 
 }
-
 //**************************************************************
 //* Private Methods
 
@@ -164,6 +169,12 @@ void TimeAlarmsClass::findNextTrigger(){
     }
   }
 }
+void TimeAlarmsClass::free(AlarmID_t ID)
+{
+  if(ID < dtNBR_ALARMS){
+    Alarm[ID].init();
+  }
+}
 void TimeAlarmsClass::disable(AlarmID_t ID)
 {
   time_t new_next_trigger = MAX_TIME_T;
@@ -174,7 +185,6 @@ void TimeAlarmsClass::disable(AlarmID_t ID)
       findNextTrigger();
     }
   }
-  
 }
 
 // write the given value to the given alarm
@@ -247,7 +257,7 @@ void TimeAlarmsClass::serviceAlarms()
 	    {
 	      OnTick_t TickHandler = Alarm[i].onTickHandler;
 	      if(Alarm[i].Mode.isOneShot)
-		Alarm[i].Mode.isEnabled = Alarm[i].Mode.isAllocated = false;  // free the ID if mode is OnShot		
+		free(i);  // free the ID if mode is OnShot		
 	      else   
 		Alarm[i].updateNextTrigger();
 	      if( TickHandler != NULL) {        

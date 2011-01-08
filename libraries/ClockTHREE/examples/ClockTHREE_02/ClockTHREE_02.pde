@@ -32,6 +32,7 @@
 
 // debounce mode button threshold
 const uint8_t DEBOUNCE_THRESH = 100;
+const uint16_t SERIAL_TIMEOUT_MS = 1000;
 
 // Define modes
 typedef void (* SetupPtr)(); // this is a typedef for setup funtions
@@ -130,7 +131,7 @@ union Serial_time_t{
   uint8_t dat8[4];
 };
 
-const uint8_t MAX_MSG_LEN = 100;
+const uint8_t MAX_MSG_LEN = 100; // official: 100
 const uint16_t BAUDRATE = 57600; // official:57600
 const uint8_t SYNC_BYTE = 0xEF;
 const uint8_t VAR_LENGTH = 0xFF;
@@ -157,7 +158,7 @@ const MsgDef TRIGGER_ENTER = {0x0F, 1, do_nothing};
 const MsgDef   VERSION_REQ = {0x10, 1, do_nothing};
 const MsgDef     ABOUT_REQ = {0x11, 1, do_nothing};
 const MsgDef          PING = {0x12, MAX_MSG_LEN, pong};
-const MsgDef  EEPROM_CLEAR = {0x13, 20, eeprom_clear};
+const MsgDef  EEPROM_CLEAR = {0x13, MAX_MSG_LEN, eeprom_clear};
 const MsgDef   EEPROM_DUMP = {0x14, 1, eeprom_dump};
 const MsgDef   ANNIVERSARY = {0x15, 12, save_date};
 
@@ -280,14 +281,12 @@ void setup(void){
   setSyncInterval(3600000);      // update every hour (and on boot)
   update_time();
   getRTC_alarm(&ahh, &amm, &ass, &alarm_set);
-  // todAlarm = Alarm.alarmRepeat(ahh, amm, ass, switch_to_alarm_mode);
+  // TOD_Alarm_Set(todAlarm, ahh, amm, ass, alarm_set);
+  TOD_Alarm_Set(todAlarm, ahh, amm, ass + 5, alarm_set);
   // Alarm.timerOnce(5, switch_to_alarm_mode);
-  if(!alarm_set){
-    // Alarm.disable(todAlarm);
-  }
   
   mode_p = &NormalMode;
-  // mode_p = &SerialMode;
+  mode_p = &SerialMode;
 
   // ensure mode ids are consistant.
   Modes[NORMAL_MODE] = NormalMode;
@@ -346,7 +345,10 @@ void loop(void){
     case TICK_EVT:
       tick = true;
       ss++;
-      // Alarm.serviceAlarms();
+      Alarm.serviceAlarms();
+      if((alarm_set) && (mm == amm) && (hh == ahh) && (ss == ass)){
+	switchmodes(ALARM_MODE); // should not be needed?
+      }
       if(ss >= 60){
 	ss %= 60;
 	mm++;
@@ -356,9 +358,6 @@ void loop(void){
 	  if(hh == 24){
 	    update_time();
 	  }
-	}
-	if((alarm_set) && (mm == amm) && (hh == ahh)){
-	  // switchmodes(ALARM_MODE);
 	}
       }
     }
@@ -656,12 +655,7 @@ void SetAlarm_loop(void){
  */
 void SetAlarm_exit(void){
   setRTC_alarm(ahh, amm, ass, alarm_set);
-  if(alarm_set){
-    // Alarm.write(todAlarm, (ahh * 60 + amm) * 60 + ass);
-  }
-  else{
-    // Alarm.disable(todAlarm);
-  }
+  TOD_Alarm_Set(todAlarm, ahh, amm, ass, alarm_set);
 }
 /*
   Respond to button presses.
@@ -843,6 +837,7 @@ void Serial_loop(void) {
 	else{
 	  // Got a sync message unexpectedly. Get ready for new message.
 	  // no callback
+	  // or timeout
 	}
 	resync_flag = false;
 	break;
@@ -876,7 +871,7 @@ void Serial_sync_wait(){
 }
 
 void pong(){
-  for(int i=0; i < 99; i++){
+  for(int i=0; i < MAX_MSG_LEN - 1; i++){
     Serial.print(serial_msg[i],BYTE);
   }
 }
@@ -917,12 +912,8 @@ void tod_alarm_set(){
   amm = tm.Minute;
   ass = tm.Second;
   alarm_set = serial_msg[4];
-  if(alarm_set){
-    // Alarm.write(todAlarm, data.dat32 % SECS_PER_DAY);
-  }
-  else{
-    // Alarm.disable(todAlarm);
-  }
+  
+  TOD_Alarm_Set(todAlarm, ahh, amm, ass, alarm_set);
   setRTC_alarm(ahh, amm, ass, alarm_set);
 }
 
@@ -1048,17 +1039,22 @@ boolean Serial_get_msg(uint8_t n_byte) {
    n_byte = message length including 1 byte MID
    */
   int i = 0;
+  unsigned long start_time = millis();
+
   uint8_t val, next;
-  boolean out = true;
+  boolean out;
+
   digitalWrite(DBG, LOW);
   if(n_byte == VAR_LENGTH){
     // variable length message
-    while(!Serial.available()){
+    while(!Serial.available() && 
+	  ((millis() - start_time) < SERIAL_TIMEOUT_MS)){
       delay(1);
     }
     n_byte = Serial.peek();
   }
-  while(i < n_byte - 1){
+  while((i < n_byte - 1)){/* && 
+			     ((millis() - start_time) < SERIAL_TIMEOUT_MS)){*/
     if(Serial.available()){
       val = Serial.read();
       if (val == SYNC_BYTE){
@@ -1067,7 +1063,6 @@ boolean Serial_get_msg(uint8_t n_byte) {
 	  // no other valid msg combination can have MAX_MSG_LEN sync bytes.
 	  // sync msg recieved! break out, next char is start of new message
 	  sync_msg_byte_counter = 0;
-	  out = false;
 	  break;
 	}
       }
@@ -1078,6 +1073,12 @@ boolean Serial_get_msg(uint8_t n_byte) {
     }
   }
   digitalWrite(DBG, HIGH);
+  if(i == n_byte - 1){
+    out = true;
+  }
+  else{
+    out = false;
+  }
   return out;
 }
 
@@ -1148,4 +1149,15 @@ void switch_to_alarm_mode(){
 void two_digits(uint8_t val){
   font.getChar('0' + val / 10, getColor(COLORS[color_i]), display + 2);
   font.getChar('0' + val % 10, getColor(COLORS[color_i]), display + 9);
+}
+
+void TOD_Alarm_Set(AlarmId id, uint8_t ahh, uint8_t amm, uint8_t ass, boolean alarm_set){
+  Alarm.free(todAlarm);
+  todAlarm = Alarm.alarmRepeat(ahh, amm, ass, switch_to_alarm_mode);
+  if(alarm_set){
+    Alarm.enable(todAlarm);
+  }
+  else{
+    Alarm.disable(todAlarm);
+  }
 }
