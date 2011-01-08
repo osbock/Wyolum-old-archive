@@ -131,7 +131,7 @@ union Serial_time_t{
 };
 
 const uint8_t MAX_MSG_LEN = 100;
-const uint16_t BAUDRATE = 57600; // official
+const uint16_t BAUDRATE = 57600; // official:57600
 const uint8_t SYNC_BYTE = 0xEF;
 const uint8_t VAR_LENGTH = 0xFF;
 char* EEPROM_ERR = "EE";
@@ -149,7 +149,8 @@ const MsgDef     EVENT_REQ = {0x08, 2, do_nothing};
 const MsgDef     EVENT_SET = {0x09, 6, do_nothing};
 const MsgDef   DISPLAY_REQ = {0x0A, 1, display_send};
 const MsgDef   DISPLAY_SET = {0x0B, 2, display_set};
-const MsgDef  TRIGGER_MODE = {0x0C, 1, do_nothing};
+const MsgDef  TRIGGER_MODE = {0x0C, 1, mode_interrupt};
+// const MsgDef  TRIGGER_MODE = {0x0C, 1, do_nothing};
 const MsgDef   TRIGGER_INC = {0x0D, 1, do_nothing};
 const MsgDef   TRIGGER_DEC = {0x0E, 1, do_nothing};
 const MsgDef TRIGGER_ENTER = {0x0F, 1, do_nothing};
@@ -279,13 +280,14 @@ void setup(void){
   setSyncInterval(3600000);      // update every hour (and on boot)
   update_time();
   getRTC_alarm(&ahh, &amm, &ass, &alarm_set);
-  todAlarm = Alarm.alarmRepeat(ahh, amm, ass, swicth_to_alarm_mode);
+  // todAlarm = Alarm.alarmRepeat(ahh, amm, ass, switch_to_alarm_mode);
+  // Alarm.timerOnce(5, switch_to_alarm_mode);
   if(!alarm_set){
-    Alarm.disable(todAlarm);
+    // Alarm.disable(todAlarm);
   }
   
   mode_p = &NormalMode;
-  mode_p = &SerialMode;
+  // mode_p = &SerialMode;
 
   // ensure mode ids are consistant.
   Modes[NORMAL_MODE] = NormalMode;
@@ -344,6 +346,7 @@ void loop(void){
     case TICK_EVT:
       tick = true;
       ss++;
+      // Alarm.serviceAlarms();
       if(ss >= 60){
 	ss %= 60;
 	mm++;
@@ -355,7 +358,7 @@ void loop(void){
 	  }
 	}
 	if((alarm_set) && (mm == amm) && (hh == ahh)){
-	  switchmodes(ALARM_MODE);
+	  // switchmodes(ALARM_MODE);
 	}
       }
     }
@@ -654,10 +657,10 @@ void SetAlarm_loop(void){
 void SetAlarm_exit(void){
   setRTC_alarm(ahh, amm, ass, alarm_set);
   if(alarm_set){
-    Alarm.write(todAlarm, (ahh * 60 + amm) * 60 + ass);
+    // Alarm.write(todAlarm, (ahh * 60 + amm) * 60 + ass);
   }
   else{
-    Alarm.disable(todAlarm);
+    // Alarm.disable(todAlarm);
   }
 }
 /*
@@ -915,10 +918,10 @@ void tod_alarm_set(){
   ass = tm.Second;
   alarm_set = serial_msg[4];
   if(alarm_set){
-    Alarm.write(todAlarm, data.dat32 % SECS_PER_DAY);
+    // Alarm.write(todAlarm, data.dat32 % SECS_PER_DAY);
   }
   else{
-    Alarm.disable(todAlarm);
+    // Alarm.disable(todAlarm);
   }
   setRTC_alarm(ahh, amm, ass, alarm_set);
 }
@@ -1036,6 +1039,10 @@ void eeprom_clear(){
   }
 }
 
+void trigger_mode(){
+  
+}
+
 boolean Serial_get_msg(uint8_t n_byte) {
   /*
    n_byte = message length including 1 byte MID
@@ -1125,14 +1132,17 @@ void Mode_mode(void) {
 }
 
 void switchmodes(uint8_t new_mode_id){
-  c3.clear();
-  mode_p->exit();
-  mode_p = &Modes[new_mode_id];
-  mode_p->setup();
-  count = 0;
+  // only switch if we are not in this mode already
+  if(new_mode_id != mode_p->id){
+    c3.clear();
+    mode_p->exit();
+    mode_p = &Modes[new_mode_id];
+    mode_p->setup();
+    count = 0;
+  }
 }
 
-void swicth_to_alarm_mode(){
+void switch_to_alarm_mode(){
   switchmodes(ALARM_MODE);
 }
 void two_digits(uint8_t val){
