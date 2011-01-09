@@ -35,9 +35,6 @@ const uint8_t DEBOUNCE_THRESH = 100;
 const uint16_t SERIAL_TIMEOUT_MS = 1000;
 
 // Define modes
-typedef void (* SetupPtr)(); // this is a typedef for setup funtions
-typedef void (* LoopPtr)(); // this is a typedef for loop funtions
-typedef void (* ExitPtr)(); // this is a typedef for exit funtions
 typedef void (* CallBackPtr)(); // this is a typedef for callback funtions
 
 inline void do_nothing(void){}
@@ -45,9 +42,9 @@ inline void do_nothing(void){}
 struct Mode{
   uint8_t id;      // Mode ID
   char sym;        // ASCII Symbol for mode
-  SetupPtr setup;  // to be called when Mode is initialized
-  LoopPtr loop;    // to be called as often as possible when mode is active
-  ExitPtr exit;    // to be called when mode is exited.
+  CallBackPtr setup;  // to be called when Mode is initialized
+  CallBackPtr loop;    // to be called as often as possible when mode is active
+  CallBackPtr exit;    // to be called when mode is exited.
   CallBackPtr inc; // to be called when increment button is pushed
   CallBackPtr dec; // to be called when decrement button is pushed
   CallBackPtr mode;// to be called when mode button is pushed
@@ -163,7 +160,7 @@ const MsgDef   VERSION_REQ = {0x10, 1, do_nothing};
 const MsgDef     ABOUT_REQ = {0x11, 1, do_nothing};
 const MsgDef          PING = {0x12, MAX_MSG_LEN, pong};
 const MsgDef  EEPROM_CLEAR = {0x13, MAX_MSG_LEN, eeprom_clear};
-const MsgDef   EEPROM_DUMP = {0x14, 1, eeprom_dump};
+const MsgDef   EEPROM_DUMP = {0x44, 1, eeprom_dump}; // 0x44 = ASCII 'D'
 const MsgDef   ANNIVERSARY = {0x15, 12, save_date};
 
 const MsgDef          SYNC = {SYNC_BYTE, MAX_MSG_LEN, do_nothing}; // must already be in sync
@@ -336,7 +333,7 @@ void loop(void){
   }
 
   // process new events before calling mode loop()
-  for(int i = 0; i < n_evt; i++){
+  for(uint8_t i = 0; i < n_evt; i++){
     switch(event_q[i]){
     case NO_EVT:
       break;
@@ -443,7 +440,7 @@ void Seconds_mode(){
 void Scroll_setup(){
   // Display is 2x as large as screen.  Use larger indeces to stage display.
   if(scroll_did && did_read(scroll_did, serial_msg, &serial_msg_len)){
-    for(int i = 2; i < serial_msg_len; i++){
+    for(uint8_t i = 2; i < serial_msg_len; i++){
       serial_msg[i - 2] =  serial_msg[i];
     }
     serial_msg_len -= 2;
@@ -458,7 +455,7 @@ void Scroll_setup(){
 void Scroll_loop(){
   c3.refresh(16);
   if(count % 12 == 0){
-    for(int i = 0; i < 2 * N_COL - 1; i++){
+    for(uint8_t i = 0; i < 2 * N_COL - 1; i++){
       display[i] = display[i + 1];
     }
   }
@@ -493,7 +490,7 @@ void Temperature_setup(void){
   }
 }
 void Temperature_loop(){
-  int temp = getTemp();
+  int8_t temp = getTemp();
   if(temp_unit == DEG_F){
     temp = toF(temp);
   }
@@ -861,7 +858,7 @@ void Serial_setup(void){
   c3.refresh();
   pinMode(DBG, OUTPUT);
   Serial.begin(BAUDRATE);
-  for(int i = 0; i < 4; i++){
+  for(uint8_t i = 0; i < 4; i++){
     digitalWrite(DBG, HIGH);
     delay(50);
     digitalWrite(DBG, LOW);
@@ -922,7 +919,7 @@ void Serial_sync_wait(){
 }
 
 void pong(){
-  for(int i=0; i < MAX_MSG_LEN - 1; i++){
+  for(uint8_t i=0; i < MAX_MSG_LEN - 1; i++){
     Serial.print(serial_msg[i],BYTE);
   }
 }
@@ -931,7 +928,7 @@ void send_time(){
   Serial_time_t data;
   
   data.dat32 = now();
-  for(int i = 0; i < 4; i++){
+  for(uint8_t i = 0; i < 4; i++){
     Serial.print(data.dat8[i], BYTE);
   }
 }
@@ -939,7 +936,7 @@ void send_time(){
 void Serial_time_set(){
   Serial_time_t data;
 
-  for(int i = 0; i < 4; i++){
+  for(uint8_t i = 0; i < 4; i++){
     data.dat8[i] = serial_msg[i];
   }
   setTime(data.dat32);
@@ -955,7 +952,7 @@ void tod_alarm_set(){
   Serial_time_t data;
   tmElements_t tm;
 
-  for(int i = 0; i < 4; i++){
+  for(uint8_t i = 0; i < 4; i++){
     data.dat8[i] = serial_msg[i];
   }
   breakTime(data.dat32, tm);
@@ -979,14 +976,15 @@ void tod_alarm_get(){
   data.dat32 %= 86400;
 
   Serial.print(TOD_ALARM_SET.id, BYTE);
-  for(int i = 0; i < 4; i++){
+  for(uint8_t i = 0; i < 4; i++){
     Serial.print(data.dat8[i], BYTE);
   }
   Serial.print(alarm_set, BYTE);
 }
 
 void eeprom_dump(){
-  for(int i = 0; i < 1024; i++){
+  // switchmodes(SECONDS_MODE);  return;
+  for(uint16_t i = 0; i < 1024; i++){
     Serial.print(EEPROM.read(i), BYTE);
   }
 }
@@ -997,7 +995,7 @@ void save_date(){
   Serial_time_t data;
   tmElements_t tm;
 
-  for(int i = 0; i < 4; i++){
+  for(uint8_t i = 0; i < 4; i++){
     data.dat8[i] = serial_msg[i];
   }
   breakTime(data.dat32, tm);
@@ -1045,7 +1043,7 @@ void send_data(){
   if(did_read(did, serial_msg, &n_byte)){
     Serial.print(DATA_SET.id, BYTE);
     Serial.print(n_byte + 2, BYTE);
-    for(int i=0; i < n_byte; i++){
+    for(uint8_t i=0; i < n_byte; i++){
       Serial.print(serial_msg[i]);
     }
   }
@@ -1056,7 +1054,7 @@ void send_data(){
 
 void display_send(){
   uint8_t *display_p = (uint8_t *)display;
-  for(int i = 0; i < N_COL * sizeof(uint32_t); i++){
+  for(uint8_t i = 0; i < N_COL * sizeof(uint32_t); i++){
     Serial.print(display_p[i], BYTE);
   }
 }
@@ -1064,7 +1062,7 @@ void display_send(){
 void display_set(){
   uint8_t did = serial_msg[0];
   uint8_t *display_p = (uint8_t *)display;
-  for(int i = 0; i < N_COL * sizeof(uint32_t); i++){
+  for(uint8_t i = 0; i < N_COL * sizeof(uint32_t); i++){
     display_p[i] = EEPROM.read(did * MAX_MSG_LEN + i + 2);
   }
 }
@@ -1072,7 +1070,7 @@ void display_set(){
 void eeprom_clear(){
   bool confirmed = true;
   // make sure entire message is filled with EEPROM_CLEAR byte.
-  for(int i = 0; i < EEPROM_CLEAR.n_byte - 1; i++){
+  for(uint8_t i = 0; i < EEPROM_CLEAR.n_byte - 1; i++){
     if(serial_msg[i] != EEPROM_CLEAR.id){
       confirmed = false;
       break;
@@ -1080,7 +1078,7 @@ void eeprom_clear(){
   }
   // do the deed
   if(confirmed){
-    for(int i = 0; i < 1024; i++){
+    for(uint8_t i = 0; i < 1024; i++){
       EEPROM.write(i, 0);
     }
   }
@@ -1096,7 +1094,7 @@ boolean Serial_get_msg(uint8_t n_byte) {
   /*
    n_byte = message length including 1 byte MID
    */
-  int i = 0;
+  uint8_t i = 0;
   unsigned long start_time = millis();
 
   uint8_t val, next;

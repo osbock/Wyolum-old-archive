@@ -6,80 +6,58 @@
  * Uses RTC if available or INT if not.
  * Updates time from PC if available
  */
+
+#define IS_BCD true
+#define IS_DEC false
+#define IS_BYTES false
+
 time_t getTime(){
-  int ss, mm, hh, DD, MM, YY;
-  
-  // reused from macetech.com sample code
-  Wire.beginTransmission(DS3231_ADDR); 
-  Wire.send(0); // start at register 0
-  Wire.endTransmission();
-  Wire.requestFrom(DS3231_ADDR, 7); // request six bytes (second, minute, hour, day, month, year)
-  if(Wire.available()){
-    ss = bcd2dec(Wire.receive()); // get seconds
-    mm = bcd2dec(Wire.receive()); // get minutes
-    hh = bcd2dec(Wire.receive());   // get hours
-    Wire.receive(); // day of week is discarded
-    DD = bcd2dec(Wire.receive());   // get day
-    MM = bcd2dec(Wire.receive());   // get month
-    YY = bcd2dec(Wire.receive());   // get year
-    /*
-      Serial.print("Setting Time from RTC, YY:");
-      Serial.print(YY);
-      Serial.print(", status:");
-      Serial.println(status, BIN);
-    */
-    setTime(hh, mm, ss, DD, MM, YY);
-    // printTime(year(), month(), day(), hour(), minute(), second());
-  }
-  if(YY < 10){
-    // Bad year, don't trust time.
-    // Serial.println("not trusing RTC!");
+  uint8_t date[7];
+  if(rtc_raw_read(0, 7, IS_BCD, date)){
+    setTime(date[2], date[1], date[0], date[4], date[5], date[6]);
   }
   return now();
 }
 
 void setRTC(uint16_t YY, uint8_t MM, uint8_t DD, 
 	    uint8_t hh, uint8_t mm, uint8_t ss){
-  Wire.beginTransmission(DS3231_ADDR); 
-  Wire.send(0); // start at register 0
-  
-  Wire.send(dec2bcd(ss)); //Send seconds as BCD
-  Wire.send(dec2bcd(mm)); //Send minutes as BCD
-  Wire.send(dec2bcd(hh)); //Send hours as BCD
-  Wire.send(dec2bcd(weekday())); // dow
-  Wire.send(dec2bcd(DD)); //Send day as BCD
-  Wire.send(dec2bcd(MM)); //Send month as BCD
-  Wire.send(dec2bcd(YY % 1000)); //Send year as BCD
-  Wire.endTransmission();  
-
+  uint8_t date[3];
+  date[0] = ss;
+  date[1] = mm;
+  date[2] = hh;
+  rtc_raw_write(0, 3, IS_BCD, date);
+  date[0] = DD;
+  date[1] = MM;
+  date[2] = YY % 100;
+  rtc_raw_write(4, 3, IS_BCD, date);
 }
 
 void setRTC_alarm(uint8_t ahh, uint8_t amm, uint8_t ass, uint8_t alarm_set){
-  Wire.beginTransmission(DS3231_ADDR); 
-  Wire.send(DS3231_ALARM1_OFSET); // start at register 0
-  
-  Wire.send(dec2bcd(ass)); //Send seconds as BCD
-  Wire.send(dec2bcd(amm)); //Send minutes as BCD
-  Wire.send(dec2bcd(ahh)); //Send hours as BCD
-  Wire.send((alarm_set & 1) << 7);  // use A1M4 as alarm_set bit
-  Wire.endTransmission();  
-
+  uint8_t date[3];
+  date[0] = ass;
+  date[1] = amm;
+  date[2] = ahh;
+  rtc_raw_write(DS3231_ALARM1_OFSET, 3, IS_BCD, date);
+  rtc_raw_read(DS3231_ALARM1_OFSET+ 3, 1, IS_BYTES, date);
+  if(alarm_set){
+    date[0] |= (1 << 7);
+  }
+  else{
+    date[0] &= (~1 << 7);
+  }
+  rtc_raw_write(DS3231_ALARM1_OFSET, 1, IS_BYTES, date);
 }
 
 void getRTC_alarm(uint8_t *ahh, uint8_t *amm, uint8_t *ass, 
 		  uint8_t *alarm_set){
   uint8_t x;
-
-  Wire.beginTransmission(DS3231_ADDR); 
-  Wire.send(DS3231_ALARM1_OFSET); 
-  Wire.endTransmission();
-  Wire.requestFrom(DS3231_ADDR, 4); // request 4 bytes 
-  if(Wire.available()){
-    *ass = bcd2dec(Wire.receive());
-    *amm = bcd2dec(Wire.receive());
-    *ahh = bcd2dec(Wire.receive());
-    x = Wire.receive();
-    *alarm_set = (x >> 7) & 1; // use A1M4 as set bit
+  uint8_t date[3];
+  if(rtc_raw_read(DS3231_ALARM1_OFSET, 3, IS_BCD, date)){
+    *ass = date[0];
+    *amm = date[1];
+    *ahh = date[2];
+    rtc_raw_read(DS3231_ALARM1_OFSET + 3, 1, IS_BYTES, date);
+    *alarm_set = (date[0] >> 7) & 1; // use A1M4 as set bit
   }
   else{
     *ass = 0;
@@ -90,20 +68,13 @@ void getRTC_alarm(uint8_t *ahh, uint8_t *amm, uint8_t *ass,
 
 // get current temperature
 int getTemp(){
-  int temp;
   int temp_c;
-  
-  Wire.beginTransmission(DS3231_ADDR); 
-  Wire.send(DS3231_TEMP_OFFSET); 
-  Wire.endTransmission();
-  Wire.requestFrom(DS3231_ADDR, 2); // request 2 bytes 
-  if(Wire.available()){
-    uint8_t tmp[0];
-    tmp[0] = Wire.receive();
-    tmp[1] = Wire.receive();
-    temp = (int)(tmp[0] << 5);
-    temp |= (int)(tmp[1] >> 3); // will not work for negative temps (celcius)
-    temp_c = .03125 * temp;
+  uint8_t tmp[2];
+
+  if(rtc_raw_read(DS3231_TEMP_OFFSET, 2, IS_BYTES, tmp)){
+    temp_c = (int)(tmp[0] << 5);
+    temp_c |= (int)(tmp[1] >> 3); // will not work for negative temps (celcius)
+    temp_c *= .03125;
   }
   else{
     temp_c = 99;
@@ -130,5 +101,43 @@ uint8_t dec2bcd(int dec){
 int bcd2dec(uint8_t bcd){
   return (((bcd & 0b11110000)>>4)*10 + 
     (bcd & 0b00001111));
+}
+
+bool rtc_raw_read(uint8_t addr,
+	      uint8_t n_bytes,
+	      bool is_bcd,
+	      uint8_t *dest){
+
+  bool out = false;
+  Wire.beginTransmission(DS3231_ADDR); 
+  Wire.send(addr); 
+  Wire.endTransmission();
+  Wire.requestFrom(DS3231_ADDR, (int)n_bytes); // request n_bytes bytes 
+  if(Wire.available()){
+    for(uint8_t i = 0; i < n_bytes; i++){
+      dest[i] = Wire.receive();
+      if(is_bcd){ // needs to be converted to dec
+	dest[i] = bcd2dec(dest[i]);
+      }
+    }
+    out = true;
+  }
+  return out;
+}
+void rtc_raw_write(uint8_t addr,
+	       uint8_t n_bytes,
+	       bool is_bcd,
+	       uint8_t *source){
+  Wire.beginTransmission(DS3231_ADDR); 
+  Wire.send(addr); // start at address addr
+  for(uint8_t i = 0; i < n_bytes; i++){
+    if(is_bcd){
+      Wire.send(source[i]);
+    }
+    else{
+      Wire.send(dec2bcd(source[i]));
+    }
+  }
+  Wire.endTransmission();  
 }
 

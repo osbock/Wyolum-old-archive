@@ -14,7 +14,7 @@ bool did_read(uint8_t did, char *dest, uint8_t *len_p){
   bool status = false;
 
   if(get_did_addr(did, &addr, len_p)){
-    for(int i = 0; i < *len_p; i++){
+    for(uint8_t i = 0; i < *len_p; i++){
       dest[i] = EEPROM.read(addr + i);
     }
     status = true;
@@ -38,7 +38,7 @@ bool did_write(char* data){
   if(!get_did_addr(did, &tmp_addr, &tmp_l)){
     if(did_next_addr(&addr)){
       if(addr + len < MAX_EEPROM_ADDR - 1){
-	for(int i = 0; i < len; i++){
+	for(uint8_t i = 0; i < len; i++){
 	  EEPROM.write(addr + i, data[i]);
 	}
 	EEPROM.write(MAX_EEPROM_ADDR, n + 1);
@@ -59,7 +59,7 @@ bool did_next_addr(int16_t *addr_p){
   *addr_p = 0;
 
   // go to end of the line of DIDs
-  for(int i = 0; 
+  for(uint8_t i = 0; 
       i < n && *addr_p < MAX_EEPROM_ADDR - 2; 
       i++){
     *addr_p += EEPROM.read(*addr_p + 1);
@@ -84,28 +84,19 @@ bool did_delete(uint8_t did){
   bool status = false;
   if(get_did_addr(did, &addr, &len)){
     status = true;
-    if(n == 1){
+    if(n == 1){ // only one --> delete from address 0
       len = EEPROM.read(1);
-      for(int i = 0; i < len; i++){
+      for(uint8_t i = 0; i < len; i++){
 	EEPROM.write(i, 0);
       }
       EEPROM.write(MAX_EEPROM_ADDR, 0);
     }
     else{
       if(did_next_addr(&next_addr)){
-	// Serial.print("HERE next_addr:");
-	// Serial.print(next_addr, DEC);
-	// Serial.print(" addr:");
-	// Serial.println(addr, DEC);
 	for(int i = addr; i < next_addr - 1 - len; i++){
-	  // Serial.print("    ");
-	  // Serial.print(i, DEC);
 	  EEPROM.write(i, EEPROM.read(i + len));
-	  // Serial.print(" ");
-	  // Serial.println(EEPROM.read(i + len), DEC);
 	}
       }
-      // Serial.println("HERE2");
       if(n > 0){
 	EEPROM.write(MAX_EEPROM_ADDR, n - 1);
       }

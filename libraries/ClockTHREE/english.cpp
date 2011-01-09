@@ -16,12 +16,11 @@
   "YMDYMSALARMTCFAN";
 */
 
-void minutes_hack(ClockTHREE c3, int mm, int ss);
+void minutes_hack(ClockTHREE c3, int mm, int ss); // not public declaration
 
 void English::display_word(ClockTHREE c3, uint8_t color, 
 			   const uint8_t *w){
   c3.horizontal_line(w[0], w[1], w[2], color);
-  
 }
 
 void English::display_time(int YY, int MM, int DD, int hh, int mm, int ss, 
@@ -36,7 +35,7 @@ void English::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
   uint8_t hour = 0;
   uint8_t hour24 = 0;
   uint8_t h_offset = 0;
-  uint32_t new_display[32];
+  uint32_t *new_display = c3.display + N_COL;
   uint32_t *old_display;
 
   old_display = c3.setdisplay(new_display);

@@ -121,14 +121,17 @@ def eeprom_read():
     ser.write(str(const.EEPROM_DUMP))
     eeprom = ser.read(1024)
     print len(eeprom), ':len eeprom'
-    for r in range(128):
+    for r in range(len(eeprom) / 8):
         print '0x%03x  -- ' % (r * 8),
         for i in range(8):
             if r * 8 + i < len(eeprom):
                 print '%2x' % ord(eeprom[r * 8 + i]),
         print ""
-    print 
-    n = ord(eeprom[-1])
+    print
+    if len(eeprom) -- 1024:
+        n = ord(eeprom[-1])
+    else:
+        raise ValueError('Eeprom is not 1024 bytes!')
     print 'N:', n
     addr = 0
     try:
@@ -189,13 +192,14 @@ def scroll_data(did):
     ser.write(chr(did))
     
 def main():
-    year = 0
-    while year != 2011:
-        now = time.gmtime(time_req())
-        year = now.tm_year
-        print year
-        year = 2011
-
+    
+    now = time.gmtime(time_req())
+    year = now.tm_year
+    print year
+    if year != 2011:
+        raise 'restart, got bad year'
+    eeprom_read()
+    return
     for i in range(3):
         now = time.gmtime(time_req())
         assert (now.tm_year == 2011), 'huh, year=%s' % now.tm_year
@@ -224,7 +228,8 @@ def main():
         print time.gmtime(t)
         # print time.gmtime(t).tm_sec, time.gmtime(time.time()).tm_sec
         time.sleep(.1)
-
+    
+    clear_eeprom()
     J = ord('J')
     set_data(J, 'JS: TEST')
     delete_did(J)

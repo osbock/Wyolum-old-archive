@@ -36,32 +36,23 @@ const uint8_t eight[3] = {4, 0, 5};
 const uint8_t hten[3] = {4, 4, 3};
 const uint8_t nine[3] = {4, 6, 4};
 const uint8_t eleven[3] = {4, 9, 6};
-const uint8_t roman_i[3] = {4, 15, 1};
 const uint8_t beer[3] = {5, 0, 4};
 const uint8_t chai[3] = {5, 4, 4};
 const uint8_t oclock[3] = {5, 8, 6};
-const uint8_t roman_ii[3] = {5, 15, 1};
 const uint8_t thirty[3] = {6, 0, 6};
 const uint8_t in_the[3] = {6, 7, 5};
 const uint8_t in[3] = {6, 7, 2};
 const uint8_t the[3] = {6, 10, 3};
 const uint8_t at[3] = {6, 13, 2};
-const uint8_t roman_iii[3] = {6, 15, 1};
 const uint8_t midnight[3] = {7, 0, 8};
 const uint8_t night[3] = {7, 3, 5};
 const uint8_t evening[3] = {7, 8, 7};
-const uint8_t roman_iiii[3] = {7, 15, 1};
 const uint8_t morning[3] = {9, 0, 7};
 const uint8_t after[3] = {9, 7, 5};
 const uint8_t afternoon[3] = {9, 7, 9};
 const uint8_t noon[3] = {9, 12, 4};
 const uint8_t clocktwo[3] = {8, 3, 10};
 const uint8_t thank[3] = {10, 0, 5};
-const uint8_t we[3] = {10, 7, 2};
-const uint8_t need[3] = {10, 10, 4};
-const uint8_t you[3] = {11, 0, 4};
-const uint8_t your[3] = {11, 0, 4};
-const uint8_t support[3] = {11, 5, 7};
 const uint8_t usb_led[3] = {11, 0, 1};
 const uint8_t year_led[3] = {11, 1, 1};
 const uint8_t month_led[3] = {11, 2, 1};
@@ -78,7 +69,7 @@ const uint8_t alarm_off_led[3] = {11, 15, 1};
 class English{
  public:
   void display_word(ClockTHREE c3, uint8_t color, 
-				  const uint8_t *w);
+		    const uint8_t *w);
   /* display time on ClockTHREE in words.
    * fade_steps is a parameter for smoothing the transistion
    * 0 -- no smoothing, 50 -- high smoothing.
