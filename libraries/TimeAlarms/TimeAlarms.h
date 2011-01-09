@@ -7,15 +7,27 @@
 
 #include "Time.h"
 
-#define dtNBR_ALARMS 6
+#define dtNBR_ALARMS 10 // may need more alarms!
 
 typedef enum { dtMillisecond, dtSecond, dtMinute, dtHour, dtDay } dtUnits_t;
 
 typedef struct  {
-    uint8_t isAllocated            :1 ;  // the alarm is avialable for allocation if false
-    uint8_t isEnabled              :1 ;  // the timer is only actioned if isEnabled is true 
-    uint8_t isOneShot              :1 ;  // the timer will be de-allocated after trigger is processed 
-    uint8_t isAlarm                :1 ;  // time of day alarm if true, period timer if false  
+  uint8_t isAllocated            :1 ;  // the alarm is avialable for allocation if false
+  uint8_t isEnabled              :1 ;  // the timer is only actioned if isEnabled is true 
+  uint8_t isOneShot              :1 ;  // the timer will be de-allocated after trigger is processed 
+  uint8_t isAlarm                :1 ;  // time of day alarm if true, period timer if false
+  uint8_t countdown_sec          :1;
+  uint8_t countdown_min          :1;
+  uint8_t countdown_5min         :1;
+  uint8_t countdown_hour         :1;
+  uint8_t countdown_day          :1;
+  uint8_t sunday                 :1;
+  uint8_t monday                 :1;
+  uint8_t tuesday                :1;
+  uint8_t wednedsay              :1;
+  uint8_t thursday               :1;
+  uint8_t friday                 :1;
+  uint8_t saturday               :1;
  }
     AlarmMode_t   ;
 
@@ -31,9 +43,18 @@ typedef void (*OnTick_t)();  // alarm callback function typedef
 class AlarmClass
 {  
 private:
+  AlarmMode_t Mode;
 public:
   AlarmClass();
   void init(); // TJS.
+  void set_allocated(bool val); // TJS:
+  void set_enabled(bool val);   // TJS:
+  void set_oneshot(bool val);  // TJS:
+  void set_alarm(bool val);    // TJS:
+  bool get_allocated();         // TJS:
+  bool get_enabled();           // TJS:
+  bool get_oneshot();          // TJS:
+  bool get_alarm();            // TJS:
   OnTick_t onTickHandler;  
   void updateNextTrigger();
   /* TJS Interpretation of value:
@@ -45,7 +66,6 @@ public:
    */
   time_t value;
   time_t nextTrigger; //TJS: holds next trigger time in absolute time (seconds from epoch).
-  AlarmMode_t Mode;
 };
 
 // class containing the collection of alarms
@@ -86,7 +106,7 @@ class TimeAlarmsClass
  
   // low level methods
   void enable(AlarmID_t ID);
-  void free(AlarmID_t ID);
+  void free(AlarmID_t ID);                   // TJS:
   void disable(AlarmID_t ID);
   void write(AlarmID_t ID, time_t value);    // write the value (and enable) the alarm with the given ID
   time_t read(AlarmID_t ID);                 // return the value for the given timer 

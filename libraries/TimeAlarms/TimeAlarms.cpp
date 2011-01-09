@@ -36,33 +36,73 @@ AlarmClass::AlarmClass()
   init(); // TJS:
 }
 
+/* public methods */
 // TJS:
 void AlarmClass::init()
 {
-  Mode.isAlarm =  Mode.isEnabled = Mode.isOneShot = 0;
+  set_alarm(false);
+  set_enabled(false);
+  set_oneshot(false);
   value = MAX_TIME_T;
   nextTrigger = 0;
   onTickHandler = NULL;  // prevent a callback until this pointer is explicitly set 
 }
+void AlarmClass::set_allocated(bool val){ // TJS:
+  /*  true -> alarm memory canNOT be resued
+   * false -> alarm memory can be resued
+   */
+    Mode.isAllocated = val;
+}
+void AlarmClass::set_enabled(bool val){   // TJS:
+  /*  true -> alarm will trigger when time expires
+   * false -> alarm will NOT trigger when time expires
+   */
+  Mode.isEnabled = val;
+}
+void AlarmClass::set_oneshot(bool val){  // TJS:
+  /*  true -> alarm only once
+   * false -> repeated alarm
+   */
+  Mode.isOneShot = val;
+}
+void AlarmClass::set_alarm(bool val){    // TJS:
+  /*  true -> wall clock alarm
+   * false -> count down timer
+   */
+  Mode.isAlarm = val;
+}
+bool AlarmClass::get_allocated(){         // TJS:
+  return Mode.isAllocated;
+}
+bool AlarmClass::get_enabled(){           // TJS:
+  return Mode.isEnabled;
+}
+bool AlarmClass::get_oneshot(){          // TJS:
+  return Mode.isOneShot;
+}
+bool AlarmClass::get_alarm(){            // TJS:
+  return Mode.isAlarm;
+}
+
 //**************************************************************
 //* Private Methods
 
 void AlarmClass::updateNextTrigger()
 {
-  if( (value != MAX_TIME_T) && Mode.isEnabled )
+  if( (value != MAX_TIME_T) && get_enabled() )
   {
     time_t time = now();
-    if(Mode.isAlarm && nextTrigger <= time)   // update alarm if next trigger has passed
+    if(get_alarm() && nextTrigger <= time)   // update alarm if next trigger has passed
     {
-      if( value > SECS_PER_WEEK ) { // is the value a specific data and time in the future 
+      if( value > SECS_PER_WEEK ) { // is the value for a specific date and time in the future 
         nextTrigger = value;  // yes, trigger on this value // TJS: treat as seconds past epoch
       }
       else if ( value <= SECS_PER_DAY) {
-        if( value + previousMidnight(now()) <= time)  // TJS: TODO: trade "now()" for "time"
+        if( value + previousMidnight(time) <= time)  // TJS: traded "now()" for "time"
 	  { // TJS: treat as seconds past midnight
 	    nextTrigger = value + nextMidnight(time); // if time has passed then set for tomorrow 
 	  }
-	else
+	else // DOW repeat
 	  {
 	    nextTrigger = value + previousMidnight(time);  // set the date to today and add the time given in value	
 	  }
@@ -71,16 +111,16 @@ void AlarmClass::updateNextTrigger()
         nextTrigger = value + previousMidnight(time); // set the date to today and add the time given in value
       }
       else {
-        Mode.isEnabled = false; // values more than a year but less than today have expired so the alarm is disabled 
+        set_enabled(false); // values more than a year but less than today have expired so the alarm is disabled 
       }
     }
-    if(Mode.isAlarm == false){
+    if(get_alarm() == false){
       // its a timer
       nextTrigger = time + value;  // add the value to previous time (this ensures delay always at least Value seconds)
     }
   }
   else {
-    Mode.isEnabled = false;  // Disable if the value is 0
+    set_enabled(false);  // Disable if the value is 0
   }
 }
 
@@ -91,7 +131,7 @@ TimeAlarmsClass::TimeAlarmsClass()
 {
   isServicing = false;
   for(uint8_t id = 0; id < dtNBR_ALARMS; id++)
-     Alarm[id].Mode.isAllocated = false;  // ensure  all Alarms are avialable for allocation  
+    Alarm[id].set_allocated(false);  // ensure  all Alarms are avialable for allocation  
   nextTrigger = MAX_TIME_T;               // TJS: next tigger time in seconds past epoch (Feb 7, 2106 w/ 32 bit uint)
 }
 
@@ -139,15 +179,15 @@ AlarmID_t TimeAlarmsClass::timerRepeat(const int H,  const int M,  const int S, 
 
 void TimeAlarmsClass::enable(AlarmID_t ID)
 {
-  if(ID < dtNBR_ALARMS && Alarm[ID].Mode.isAllocated){
+  if(ID < dtNBR_ALARMS && Alarm[ID].get_allocated()){
     Alarm[ID].updateNextTrigger(); // trigger is updated whenever  this is called, even if already enabled
 
     // only enable if value is non zero and a tick handler has been set
     if ((Alarm[ID].value != 0) && (Alarm[ID].onTickHandler != 0)){
-      Alarm[ID].Mode.isEnabled =  true;
+      Alarm[ID].set_enabled(true);
     }
     else{
-      Alarm[ID].Mode.isEnabled = false;
+      Alarm[ID].set_enabled(false);
     }
     findNextTrigger(); //TJS: since Alarm[ID].nextTrigger may have been updated we have to check of this.nextTrigger needs to be updated
 
@@ -161,7 +201,7 @@ void TimeAlarmsClass::findNextTrigger(){
   nextTrigger = MAX_TIME_T; // (Feb 7, 2106 w/ 32 bit uint)
 
   for(int i = 0; i < dtNBR_ALARMS; i++){
-    if(Alarm[i].Mode.isEnabled && (Alarm[i].onTickHandler != NULL)){
+    if(Alarm[i].get_enabled() && (Alarm[i].onTickHandler != NULL)){
       if(Alarm[i].nextTrigger <= nextTrigger){
 	// TJS: Found the new next trigger!
 	nextTrigger = Alarm[i].nextTrigger;
@@ -178,8 +218,8 @@ void TimeAlarmsClass::free(AlarmID_t ID)
 void TimeAlarmsClass::disable(AlarmID_t ID)
 {
   time_t new_next_trigger = MAX_TIME_T;
-  if(ID < dtNBR_ALARMS && Alarm[ID].Mode.isAllocated){
-    Alarm[ID].Mode.isEnabled = false;
+  if(ID < dtNBR_ALARMS && Alarm[ID].get_allocated()){
+    Alarm[ID].set_enabled(false);
     if(Alarm[ID].nextTrigger == nextTrigger){
       //TJS: find new nextTrigger!
       findNextTrigger();
@@ -190,7 +230,7 @@ void TimeAlarmsClass::disable(AlarmID_t ID)
 // write the given value to the given alarm
 void TimeAlarmsClass::write(AlarmID_t ID, time_t value)
 {
-  if(ID < dtNBR_ALARMS && Alarm[ID].Mode.isAllocated){
+  if(ID < dtNBR_ALARMS && Alarm[ID].get_allocated()){
     Alarm[ID].value = value;
     enable(ID); // TJS: Enable will check for nextTrigger
   }
@@ -199,7 +239,7 @@ void TimeAlarmsClass::write(AlarmID_t ID, time_t value)
 // return the value for the given alarm
 time_t TimeAlarmsClass::read(AlarmID_t ID)
 {
-  if(ID < dtNBR_ALARMS && Alarm[ID].Mode.isAllocated)
+  if(ID < dtNBR_ALARMS && Alarm[ID].get_allocated())
     return Alarm[ID].value;
   else 	
     return 0l;  
@@ -249,19 +289,21 @@ void TimeAlarmsClass::serviceAlarms()
     /* TJS: Speed up servicing (now() called multiple times to save memory)    
      * Just check against next trigger
      */
-    if(now() >= nextTrigger){ 
+    time_t time = now();
+    if(time >= nextTrigger){ 
       // now alarm ALL alarms that need to be triggered
       for(uint8_t i = 0; i < dtNBR_ALARMS; i++)
 	{
-	  if( Alarm[i].Mode.isEnabled && (now() >= Alarm[i].nextTrigger)  )
+	  if( Alarm[i].get_enabled() && (time >= Alarm[i].nextTrigger)  )
 	    {
-	      OnTick_t TickHandler = Alarm[i].onTickHandler;
-	      if(Alarm[i].Mode.isOneShot)
+	      if(Alarm[i].get_oneshot()){
 		free(i);  // free the ID if mode is OnShot		
-	      else   
+	      }
+	      else{
 		Alarm[i].updateNextTrigger();
-	      if( TickHandler != NULL) {        
-		(*TickHandler)();     // call the handler  
+	      }
+	      if(Alarm[i].onTickHandler != NULL) {        
+		Alarm[i].onTickHandler();
 	      }
 	    }
 	}
@@ -277,13 +319,13 @@ void TimeAlarmsClass::serviceAlarms()
 AlarmID_t TimeAlarmsClass::create( time_t value, OnTick_t onTickHandler,boolean isAlarm, boolean isOneShot, boolean isEnabled ){
   for(uint8_t id = 0; id < dtNBR_ALARMS; id++)
   {
-    if(Alarm[id].Mode.isAllocated == false)
+    if(Alarm[id].get_allocated() == false)
     {
       // here if there is an Alarm id is available
-      Alarm[id].Mode.isAllocated = true;
+      Alarm[id].set_allocated(true);
       Alarm[id].onTickHandler = onTickHandler;
-      Alarm[id].Mode.isAlarm = isAlarm;
-      Alarm[id].Mode.isOneShot = isOneShot;
+      Alarm[id].set_alarm(isAlarm);
+      Alarm[id].set_oneshot(isOneShot);
       Alarm[id].value = value;
       isEnabled ?  enable(id) : disable(id);   
       Alarm[id].updateNextTrigger();
