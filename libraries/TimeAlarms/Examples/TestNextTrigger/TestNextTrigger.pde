@@ -20,13 +20,15 @@ void setup()
   Alarm.timerRepeat(7, Repeats7);            // timer for every 1 seconds    
   Alarm.timerRepeat(3, Repeats3);            // timer for every 5 seconds    
   Alarm.timerOnce(10, OnceOnly);             // called once after 10 seconds 
+  Serial.print(Alarm.Alarm[0].nextTrigger);
+  delay(5000);
 }
 
 void  loop(){  
   // Serial.println(millis(), DEC);
   digitalClockDisplay();
-  Alarm.serviceAlarms(); // wait one second 
-  Alarm.delay(1000);
+  Alarm.serviceAlarms();
+  delay(1000);  // wait one second 
 }
 
 // functions to be called when an alarm triggers:

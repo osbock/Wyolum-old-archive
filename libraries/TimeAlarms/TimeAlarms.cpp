@@ -23,8 +23,17 @@ extern "C" {
 #include "TimeAlarms.h"
 #include "Time.h"
 
-#define IS_ONESHOT  true
-#define IS_REPEAT   false 
+#define IS_ONESHOT  0
+#define TIMER_REPEAT 1
+#define    REPEAT_ANNUAL 1 << 0
+#define    REPEAT_SUNDAY 1 << 1
+#define    REPEAT_MONDAY 1 << 2
+#define   REPEAT_TUESDAY 1 << 3
+#define REPEAT_WEDNESDAY 1 << 4 
+#define  REPEAT_THURSDAY 1 << 5
+#define    REPEAT_FRIDAY 1 << 6
+#define  REPEAT_SATURDAY 1 << 7 
+#define REPEAT_DAILY 0b11111110
 #define IS_ALARM    true
 #define IS_TIMER    false 
 
@@ -42,7 +51,7 @@ void AlarmClass::init()
 {
   set_alarm(false);
   set_enabled(false);
-  set_oneshot(false);
+  set_repeat(0);
   value = MAX_TIME_T;
   nextTrigger = 0;
   onTickHandler = NULL;  // prevent a callback until this pointer is explicitly set 
@@ -59,11 +68,19 @@ void AlarmClass::set_enabled(bool val){   // TJS:
    */
   Mode.isEnabled = val;
 }
-void AlarmClass::set_oneshot(bool val){  // TJS:
-  /*  true -> alarm only once
-   * false -> repeated alarm
+void AlarmClass::set_repeat(uint8_t val){  // TJS:
+  /*  bit field repeat every...
+   * 0 -- annnual event
+   * 1 -- sunday
+   * 2 -- monday
+   * 3 -- tuesday
+   * 4 -- wednesday
+   * 5 -- thursday
+   * 6 -- friday
+   * 7 -- saturday
+   *  false -> repeated alarm
    */
-  Mode.isOneShot = val;
+  Mode.repeat = val;
 }
 void AlarmClass::set_alarm(bool val){    // TJS:
   /*  true -> wall clock alarm
@@ -71,16 +88,36 @@ void AlarmClass::set_alarm(bool val){    // TJS:
    */
   Mode.isAlarm = val;
 }
+bool AlarmClass::is_countdown(){          // TJS:
+  return !get_alarm();
+}
+bool AlarmClass::is_tod(){                // TJS:
+  return get_alarm() && value < SECS_PER_WEEK;
+}
+bool AlarmClass::is_annual(){             // TJS:
+  return Mode.repeat && 1;
+}
+bool AlarmClass::is_oneshot(){            // TJS:
+  return Mode.repeat == 0;
+}
+bool AlarmClass::is_repeated(){            // TJS:
+  return Mode.repeat > 0;
+}
+bool AlarmClass::is_armed(){              // TJS:
+  return ((value != MAX_TIME_T) && 
+	  get_allocated() && 
+	  get_enabled());
+}
 bool AlarmClass::get_allocated(){         // TJS:
   return Mode.isAllocated;
 }
 bool AlarmClass::get_enabled(){           // TJS:
   return Mode.isEnabled;
 }
-bool AlarmClass::get_oneshot(){          // TJS:
-  return Mode.isOneShot;
+uint8_t AlarmClass::get_repeat(){         // TJS:
+  return Mode.repeat;
 }
-bool AlarmClass::get_alarm(){            // TJS:
+bool AlarmClass::get_alarm(){             // TJS:
   return Mode.isAlarm;
 }
 
@@ -89,38 +126,43 @@ bool AlarmClass::get_alarm(){            // TJS:
 
 void AlarmClass::updateNextTrigger()
 {
-  if( (value != MAX_TIME_T) && get_enabled() )
-  {
-    time_t time = now();
-    if(get_alarm() && nextTrigger <= time)   // update alarm if next trigger has passed
-    {
-      if( value > SECS_PER_WEEK ) { // is the value for a specific date and time in the future 
-        nextTrigger = value;  // yes, trigger on this value // TJS: treat as seconds past epoch
-      }
-      else if ( value <= SECS_PER_DAY) {
-        if( value + previousMidnight(time) <= time)  // TJS: traded "now()" for "time"
-	  { // TJS: treat as seconds past midnight
-	    nextTrigger = value + nextMidnight(time); // if time has passed then set for tomorrow 
-	  }
-	else // DOW repeat
-	  {
-	    nextTrigger = value + previousMidnight(time);  // set the date to today and add the time given in value	
-	  }
-      }
-      else if ( value <= SECS_PER_WEEK) {
-        nextTrigger = value + previousMidnight(time); // set the date to today and add the time given in value
-      }
-      else {
-        set_enabled(false); // values more than a year but less than today have expired so the alarm is disabled 
+  time_t time = now();
+  if(is_armed() && nextTrigger <= time){
+    if(is_countdown()){
+      if(is_repeated()){
+	nextTrigger = time + value;
       }
     }
-    if(get_alarm() == false){
-      // its a timer
-      nextTrigger = time + value;  // add the value to previous time (this ensures delay always at least Value seconds)
+    else if(is_tod()){ // time of day alarm, find next time of day when this time occurs
+      nextTrigger = previousMidnight(time) + value;
+      if(value <= elapsedSecsToday(time)){  // find next day of the week
+	uint8_t dow = dayOfWeek(time) - dowSunday;
+	uint8_t delta_days = 1;
+	uint16_t two_weeks = ((Mode.repeat & ~1) >>1) | ((Mode.repeat & ~1) << 7);
+	// m-f looks like this then 01111100111110
+	for(; delta_days < 8; delta_days++){
+	  if((two_weeks >> (dow + delta_days)) & 1){
+	    break;
+	  }
+	}
+	nextTrigger += SECS_PER_DAY * delta_days;
+      }
+    }
+    else if(is_annual()){
+      tmElements_t tm;
+      tm.Year = year() + 1;
+      tm.Month = month();
+      tm.Day = day();
+      tm.Hour = hour();
+      tm.Minute = minute();
+      tm.Second = second();
+      nextTrigger = makeTime(tm);
+    }
+    else{              // absolote time
+      nextTrigger = value;
     }
   }
-  else {
-    set_enabled(false);  // Disable if the value is 0
+  else{
   }
 }
 
@@ -149,16 +191,16 @@ AlarmID_t TimeAlarmsClass::alarmOnce(const timeDayOfWeek_t DOW, const int H,  co
 }
    
 AlarmID_t TimeAlarmsClass::alarmRepeat(time_t value, OnTick_t onTickHandler){ // trigger daily at the given time
-     return create( value, onTickHandler, IS_ALARM, IS_REPEAT );
+     return create( value, onTickHandler, IS_ALARM, REPEAT_DAILY );
 }
 
 AlarmID_t TimeAlarmsClass::alarmRepeat(const int H,  const int M,  const int S, OnTick_t onTickHandler){ // as above with HMS arguments
-     return create( AlarmHMS(H,M,S), onTickHandler, IS_ALARM, IS_REPEAT );
+     return create( AlarmHMS(H,M,S), onTickHandler, IS_ALARM, REPEAT_DAILY);
 }
 
 AlarmID_t TimeAlarmsClass::alarmRepeat(const timeDayOfWeek_t DOW, const int H,  const int M,  const int S, OnTick_t onTickHandler){  // as above, with day of week 
    unsigned long dayOffset =  ( 7 + DOW - dayOfWeek(now())) %7;
-   return create( (dayOffset * SECS_PER_DAY) + AlarmHMS(H,M,S), onTickHandler, IS_ALARM, IS_REPEAT );      
+   return create( (dayOffset * SECS_PER_DAY) + AlarmHMS(H,M,S), onTickHandler, IS_ALARM, REPEAT_DAILY);      
 }
 
 AlarmID_t TimeAlarmsClass::timerOnce(time_t value, OnTick_t onTickHandler){   // trigger once after the given number of seconds 
@@ -170,11 +212,11 @@ AlarmID_t TimeAlarmsClass::timerOnce(const int H,  const int M,  const int S, On
 }
   
 AlarmID_t TimeAlarmsClass::timerRepeat(time_t value, OnTick_t onTickHandler){ // trigger after the given number of seconds continuously
-     return create( value, onTickHandler, IS_TIMER, IS_REPEAT);
+     return create( value, onTickHandler, IS_TIMER, TIMER_REPEAT);
 }
 
 AlarmID_t TimeAlarmsClass::timerRepeat(const int H,  const int M,  const int S, OnTick_t onTickHandler){ // trigger after the given number of seconds continuously
-     return create( AlarmHMS(H,M,S), onTickHandler, IS_TIMER, IS_REPEAT);
+     return create( AlarmHMS(H,M,S), onTickHandler, IS_TIMER, TIMER_REPEAT);
 }
 
 void TimeAlarmsClass::enable(AlarmID_t ID)
@@ -296,7 +338,7 @@ void TimeAlarmsClass::serviceAlarms()
 	{
 	  if( Alarm[i].get_enabled() && (time >= Alarm[i].nextTrigger)  )
 	    {
-	      if(Alarm[i].get_oneshot()){
+	      if(Alarm[i].is_oneshot()){
 		free(i);  // free the ID if mode is OnShot		
 	      }
 	      else{
@@ -315,8 +357,12 @@ void TimeAlarmsClass::serviceAlarms()
 }
 
 // returns true if has been registerd ok
-//                         create(        value,          onTickHandler,       IS_ALARM,        IS_REPEAT );
-AlarmID_t TimeAlarmsClass::create( time_t value, OnTick_t onTickHandler,boolean isAlarm, boolean isOneShot, boolean isEnabled ){
+//                         create(       value,  onTickHandler,  IS_ALARM,  IS_REPEAT,   IS_ENABLED);
+AlarmID_t TimeAlarmsClass::create(time_t value, 
+				  OnTick_t onTickHandler,
+				  boolean isAlarm, 
+				  uint8_t repeat, 
+				  boolean isEnabled ){
   for(uint8_t id = 0; id < dtNBR_ALARMS; id++)
   {
     if(Alarm[id].get_allocated() == false)
@@ -325,7 +371,7 @@ AlarmID_t TimeAlarmsClass::create( time_t value, OnTick_t onTickHandler,boolean 
       Alarm[id].set_allocated(true);
       Alarm[id].onTickHandler = onTickHandler;
       Alarm[id].set_alarm(isAlarm);
-      Alarm[id].set_oneshot(isOneShot);
+      Alarm[id].set_repeat(repeat);
       Alarm[id].value = value;
       isEnabled ?  enable(id) : disable(id);   
       Alarm[id].updateNextTrigger();

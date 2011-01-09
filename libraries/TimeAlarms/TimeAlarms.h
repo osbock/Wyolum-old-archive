@@ -14,20 +14,14 @@ typedef enum { dtMillisecond, dtSecond, dtMinute, dtHour, dtDay } dtUnits_t;
 typedef struct  {
   uint8_t isAllocated            :1 ;  // the alarm is avialable for allocation if false
   uint8_t isEnabled              :1 ;  // the timer is only actioned if isEnabled is true 
-  uint8_t isOneShot              :1 ;  // the timer will be de-allocated after trigger is processed 
+  // uint8_t isOneShot              :1 ;  // use 0 for repeat instead
   uint8_t isAlarm                :1 ;  // time of day alarm if true, period timer if false
   uint8_t countdown_sec          :1;
   uint8_t countdown_min          :1;
   uint8_t countdown_5min         :1;
   uint8_t countdown_hour         :1;
   uint8_t countdown_day          :1;
-  uint8_t sunday                 :1;
-  uint8_t monday                 :1;
-  uint8_t tuesday                :1;
-  uint8_t wednedsay              :1;
-  uint8_t thursday               :1;
-  uint8_t friday                 :1;
-  uint8_t saturday               :1;
+  uint8_t repeat;                  // bit field sunday= bit0--> annual, bit1 --> monday, ...  bit7 --> sat
  }
     AlarmMode_t   ;
 
@@ -49,12 +43,18 @@ public:
   void init(); // TJS.
   void set_allocated(bool val); // TJS:
   void set_enabled(bool val);   // TJS:
-  void set_oneshot(bool val);  // TJS:
-  void set_alarm(bool val);    // TJS:
+  void set_repeat(uint8_t val); // TJS:
+  void set_alarm(bool val);     // TJS:
+  bool is_countdown();          // TJS:
+  bool is_tod();                // TJS:
+  bool is_annual();             // TJS:
+  bool is_armed();              // TJS:
+  bool is_oneshot();            // TJS:
+  bool is_repeated();           // TJS:
   bool get_allocated();         // TJS:
   bool get_enabled();           // TJS:
-  bool get_oneshot();          // TJS:
-  bool get_alarm();            // TJS:
+  uint8_t get_repeat();         // TJS:
+  bool get_alarm();             // TJS:
   OnTick_t onTickHandler;  
   void updateNextTrigger();
   /* TJS Interpretation of value:
@@ -77,9 +77,9 @@ class TimeAlarmsClass
   AlarmID_t create( time_t value, OnTick_t onTickHandler, uint8_t isAlarm, uint8_t isOneShot, uint8_t isEnabled=true);
   
   void findNextTrigger(); // TJS: Find and set the time of the next alarm to be triggered.
-  AlarmClass Alarm[dtNBR_ALARMS];
   
  public:
+  AlarmClass Alarm[dtNBR_ALARMS];
   void serviceAlarms();// TJS: made public.  This is the method I wish to use.
   TimeAlarmsClass();
   // functions to create alarms and timers

@@ -55,7 +55,7 @@ typedef time_t(*getExternalTime)();
 #define numberOfSeconds(_time_) (_time_ % SECS_PER_MIN)  
 #define numberOfMinutes(_time_) ((_time_ / SECS_PER_MIN) % SECS_PER_MIN) 
 #define numberOfHours(_time_) (( _time_% SECS_PER_DAY) / SECS_PER_HOUR)
-#define dayOfWeek(_time_)  ((( _time_ / SECS_PER_DAY + 4)  % DAYS_PER_WEEK)+1) // 1 = Sunday
+#define dayOfWeek(_time_)((timeDayOfWeek_t)((( _time_ / SECS_PER_DAY + 4)  % DAYS_PER_WEEK)+1)) // 1 = Sunday
 #define elapsedDays(_time_) ( _time_ / SECS_PER_DAY)  // this is number of days since Jan 1 1970
 #define elapsedSecsToday(_time_)  (_time_ % SECS_PER_DAY)   // the number of seconds since last midnight 
 #define previousMidnight(_time_) (( _time_ / SECS_PER_DAY) * SECS_PER_DAY)  // time at the start of the given day
