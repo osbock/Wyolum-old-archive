@@ -1,12 +1,10 @@
-update=01/10/11 18:26:07
-last_client=pcbnew
+update=01/10/11 18:39:52
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -47,9 +45,9 @@ LibName1=libs\\clock3
 LibName2=libs\\power
 [pcbnew]
 version=1
-PadDrlX=1200
-PadDimH=5000
-PadDimV=7000
+PadDrlX=320
+PadDimH=1000
+PadDimV=600
 BoardThickness=630
 SgPcb45=1
 TxtPcbV=800
@@ -66,3 +64,5 @@ LastNetListRead=clock3.net
 [pcbnew/libraries]
 LibDir=..\\..\\..\\..\\..\\..\\..\\Downloads\\KiCAD\\Libs
 LibName1=libs\\clock3_parts
+[general]
+version=1

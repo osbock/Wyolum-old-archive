@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 01/08/11 21:10:06
+Cmp-Mod V01 Genere par PcbNew le 01/10/11 18:32:40
 
 BeginCmp
 TimeStamp = /4C134896/4C135743;
@@ -1376,7 +1376,7 @@ BeginCmp
 TimeStamp = /4B3F1092/4B3F12C7;
 Reference = C8;
 ValeurCmp = 100u;
-IdModule  = CP_5x11mm;
+IdModule  = CP_5X11MM;
 EndCmp
 
 BeginCmp
@@ -1390,7 +1390,7 @@ BeginCmp
 TimeStamp = /4B3F1092/4B3F12C8;
 Reference = C10;
 ValeurCmp = 100u;
-IdModule  = CP_5x11mm;
+IdModule  = CP_5X11MM;
 EndCmp
 
 BeginCmp

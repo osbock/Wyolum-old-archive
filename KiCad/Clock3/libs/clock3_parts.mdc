@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  01/08/11 21:09:41
+PCBNEW-LibDoc----V1  01/10/11 18:32:10
 #
 $MODULE Volt Reg 78xx
 Li Volt Reg 78xx
@@ -176,11 +176,6 @@ Cd Condensateur = 2 pas
 Kw C
 $EndMODULE
 #
-$MODULE CP_5x11mm
-Li CP_5x11mm
-Cd Capacitor, pol, cyl 5x11mm
-$EndMODULE
-#
 $MODULE pin_sck_4-90
 Li pin_sck_4-90
 Cd Pin strip 4pin 90
@@ -260,6 +255,11 @@ $MODULE pin_strip_4-90
 Li pin_strip_4-90
 Cd Pin strip 4pin 90
 Kw CONN DEV
+$EndMODULE
+#
+$MODULE CP_5x11mm
+Li CP_5x11mm
+Cd Capacitor, pol, cyl 5x11mm
 $EndMODULE
 #
 $EndLIBDOC
