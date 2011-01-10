@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 01/08/11 19:28:15
+EESchema Schematic File Version 2  date 01/10/11 10:45:00
 LIBS:clock3
 LIBS:power
 LIBS:clock3-cache
@@ -9,7 +9,7 @@ Sheet 1 4
 Title "ClockTHREE"
 Date "8 jan 2011"
 Rev "A"
-Comp "An Arduino based RGB LED Array"
+Comp "An Arduino friendly RGB LED Array"
 Comment1 "Wyo Innovations      :: Lumetronics"
 Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "wyoinnovation.blogspot.com"
