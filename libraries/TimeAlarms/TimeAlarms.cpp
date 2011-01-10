@@ -22,27 +22,6 @@ extern "C" {
 #include <WProgram.h>
 #include "TimeAlarms.h"
 #include "Time.h"
-
-#define IS_ONESHOT  0
-#define TIMER_REPEAT 1
-#define    REPEAT_ANNUAL (1 << 0)
-#define    REPEAT_SUNDAY (1 << 1)
-#define    REPEAT_MONDAY (1 << 2)
-#define   REPEAT_TUESDAY (1 << 3)
-#define REPEAT_WEDNESDAY (1 << 4)
-#define  REPEAT_THURSDAY (1 << 5)
-#define    REPEAT_FRIDAY (1 << 6)
-#define  REPEAT_SATURDAY (1 << 7) 
-#define REPEAT_DAILY 0b11111110
-#define NO_COUNTDOWN 0
-#define COUNTDOWN_10SEC (1 << 0)
-#define COUNTDOWN_1MIN (1 << 1)
-#define COUNTDOWN_5MIN (1 << 2)
-#define COUNTDOWN_1HOUR (1 << 3)
-#define COUNTDOWN_1DAY (1 << 4)
-#define IS_ALARM    true
-#define IS_TIMER    false 
-
 //**************************************************************
 //* Alarm Class Constructor
 
