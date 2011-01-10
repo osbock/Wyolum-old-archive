@@ -4,33 +4,40 @@
 void setup()
 {
   Serial.begin(57600);
-  setTime(8,29,0,1,1,10); // set time to 8:29:00am Jan 1 2010
+  setTime(8,29,0,10,1,11); // set time to 8:29:00am Jan 1 2010
   // create the alarms 
   AlarmId mal, dont_alarm;
-  /*
+  /**/
   Alarm.free(mal); // free before allocated ok?
-
-  mal = Alarm.alarmRepeat(8,29,12, MorningAlarm);  // 08:29:12  every day
-
   dont_alarm = Alarm.alarmRepeat(8,29,12, DontAlarm);  // 08:29:12  every da
   Alarm.free(dont_alarm);
-
+  
+  mal = Alarm.alarmRepeat(8,29,12, MorningAlarm);  // 08:29:12  every day
   Alarm.alarmRepeat(8,29,17,EveningAlarm);  // 08:29:17 every day 
  
   Alarm.timerRepeat(7, Repeats7);            // timer for every 1 seconds    
   Alarm.timerRepeat(3, Repeats3);            // timer for every 5 seconds    
-  Alarm.timerOnce(10, OnceOnly);             // called once after 10 seconds 
-  Serial.print(Alarm.Alarm[0].nextTrigger); */
-  Alarm.create(now() + 5, fire_alarm, true, 0, 0, 5);
-  Serial.print(Alarm.nextTrigger);
-  Serial.print(" ");
-  Serial.println(Alarm.Alarm[0].nextTrigger);
+  Alarm.timerOnce(2, OnceOnly);                 // called once after 2 seconds 
+
+//create(      value,  onTickHandler,  IS_ALARM,  COUNTDOWN, IS_REPEAT,   arg, IS_ENABLED=true);  
+  // Annual event 10 secs from now
+  Alarm.create(now() + 10, fire_alarm, true, 0, REPEAT_ANNUAL, 10);
+  
+  // Weekday event 25 secs from now
+  Alarm.create(now() + 25, fire_alarm, true, 0, REPEAT_WEEKDAYS, 25);
+
+  // Weekdays 17 Secs from now
+  Alarm.create(now() + 17, fire_alarm, true, 0, REPEAT_WEEKENDS, 17);
+
+  // Wed,Thus,Fri 30 secs from now
+  Alarm.create(now() + 32, fire_alarm, true, 0, 0b01110000, 32);
+
   delay(500);
 }
 
 void  loop(){  
-  // Serial.println(millis(), DEC);
-  digitalClockDisplay();
+  Serial.println(Alarm.nextTrigger - now());
+  // digitalClockDisplay();
   Alarm.serviceAlarms();
   delay(1000);  // wait one second 
 }

@@ -115,15 +115,20 @@ void AlarmClass::set_alarm(bool val){    // TJS:
    */
   Mode.isAlarm = val;
 }
-bool AlarmClass::is_tod(){                // TJS:
-  return get_alarm() && value < SECS_PER_WEEK;
+// repeat alarm based on days of the week (for instance: could be every day, or just one day per week)
+bool AlarmClass::is_daily(){                // TJS:
+  // return value < SECS_PER_DAY;
+  return Mode.repeat & ~1;
 }
 bool AlarmClass::is_annual(){             // TJS:
-  return Mode.repeat && 1;
+  return Mode.repeat & 1;
 }
 bool AlarmClass::is_oneshot(){            // TJS:
   return Mode.repeat == 0;
 }
+/*
+  Return true if value represents # seconds past start or periodic interval.
+ */
 bool AlarmClass::is_periodic(){
   return !get_alarm();
 }
@@ -147,7 +152,20 @@ uint8_t AlarmClass::get_repeat(){         // TJS:
 bool AlarmClass::get_alarm(){             // TJS:
   return Mode.isAlarm;
 }
-
+// for daily alarms, get num days till next trigger
+bool AlarmClass::get_delta_days(time_t time){
+  uint8_t dow = dayOfWeek(time) - dowSunday;
+  uint8_t delta_days = 1;
+  uint16_t two_weeks = ((Mode.repeat & ~1) >>1) | (((Mode.repeat & ~1) >> 1) << 7);
+  //      m-f looks like this then 01111100111110
+  // everyday looks like this then 11111111111111
+  for(; delta_days < 8; delta_days++){
+    if((two_weeks >> (dow + delta_days)) & 1){
+      break;
+    }
+  }
+  return delta_days;
+}
 //**************************************************************
 //* Private Methods
 
@@ -155,38 +173,47 @@ void AlarmClass::updateNextTrigger()
 {
   time_t time = now();
   if(is_armed() && nextTrigger <= time){
-    if(is_periodic()){
-      if(is_repeated()){
+    if(is_periodic()){ // value is number of seconds between triggers or from start
+      if(is_repeated() || nextTrigger == 0){
 	nextTrigger = time + value;
       }
     }
-    else if(is_tod()){ // time of day alarm, find next time of day when this time occurs
-      nextTrigger = previousMidnight(time) + value;
-      if(value <= elapsedSecsToday(time)){  // find next day of the week
-	uint8_t dow = dayOfWeek(time) - dowSunday;
-	uint8_t delta_days = 1;
-	uint16_t two_weeks = ((Mode.repeat & ~1) >>1) | ((Mode.repeat & ~1) << 7);
-	// m-f looks like this then 01111100111110
-	for(; delta_days < 8; delta_days++){
-	  if((two_weeks >> (dow + delta_days)) & 1){
-	    break;
-	  }
+    else if(is_daily()){ // time of day alarm, find next time of day when this time occurs
+      if(nextTrigger == 0){
+	if(value < SECS_PER_DAY){ // value holds time of day
+	  nextTrigger = previousMidnight(time) + value;
 	}
-	nextTrigger += SECS_PER_DAY * delta_days;
+	else{ // value hold abs time
+	  nextTrigger = value;
+	}
+      }
+      if(nextTrigger <= time){  // find next day of the week
+	nextTrigger += (time_t)(SECS_PER_DAY * get_delta_days(time));
       }
     }
     else if(is_annual()){
-      tmElements_t tm;
-      tm.Year = year() + 1;
-      tm.Month = month();
-      tm.Day = day();
-      tm.Hour = hour();
-      tm.Minute = minute();
-      tm.Second = second();
-      nextTrigger = makeTime(tm);
+      if(nextTrigger == 0){
+	nextTrigger = value;
+      }
+      else if(time >= nextTrigger){
+	tmElements_t tm;
+	tm.Year = CalendarYrToTm(year(nextTrigger)) + 1;
+	tm.Month = month(nextTrigger);
+	tm.Day = day(nextTrigger);
+	tm.Hour = hour(nextTrigger);
+	tm.Minute = minute(nextTrigger);
+	tm.Second = second(nextTrigger);
+
+	nextTrigger = makeTime(tm);
+      }
     }
-    else{              // absolote time
-      nextTrigger = value;
+    else{// absolute time
+      if(nextTrigger == 0){
+	nextTrigger = value;
+      }
+      else{ // absolute time has passed // should not get here
+	init();
+      }
     }
   }
   else{
@@ -200,7 +227,7 @@ TimeAlarmsClass::TimeAlarmsClass()
 {
   isServicing = false;
   for(uint8_t id = 0; id < dtNBR_ALARMS; id++)
-    Alarm[id].set_allocated(false);  // ensure  all Alarms are avialable for allocation  
+    Alarm[id].set_allocated(false);       // ensure  all Alarms are avialable for allocation  
   nextTrigger = MAX_TIME_T;               // TJS: next tigger time in seconds past epoch (Feb 7, 2106 w/ 32 bit uint)
 }
 
@@ -231,7 +258,7 @@ AlarmID_t TimeAlarmsClass::alarmRepeat(const timeDayOfWeek_t DOW, const int H,  
 }
 
 AlarmID_t TimeAlarmsClass::timerOnce(time_t value, OnTick_t onTickHandler){   // trigger once after the given number of seconds 
-     return create( value, onTickHandler, IS_TIMER, NO_COUNTDOWN, IS_ONESHOT );
+     return create(value, onTickHandler, IS_TIMER, NO_COUNTDOWN, IS_ONESHOT );
 }
 
 AlarmID_t TimeAlarmsClass::timerOnce(const int H,  const int M,  const int S, OnTick_t onTickHandler){   // As above with HMS arguments
@@ -365,14 +392,14 @@ void TimeAlarmsClass::serviceAlarms()
 	{
 	  if( Alarm[i].get_enabled() && (time >= Alarm[i].nextTrigger)  )
 	    {
+	      if(Alarm[i].onTickHandler != NULL) {
+		Alarm[i].onTickHandler(Alarm[i].argument);
+	      }
 	      if(Alarm[i].is_oneshot()){
-		free(i);  // free the ID if mode is OnShot		
+		free(i);  // free the ID if mode is OneShot		
 	      }
 	      else{
 		Alarm[i].updateNextTrigger();
-	      }
-	      if(Alarm[i].onTickHandler != NULL) {        
-		Alarm[i].onTickHandler(Alarm[i].argument);
 	      }
 	    }
 	}
@@ -406,7 +433,7 @@ AlarmID_t TimeAlarmsClass::create(time_t value,
       isEnabled ?  enable(id) : disable(id);   
       Alarm[id].updateNextTrigger();
       Alarm[id].argument = argument;
-      findNextTrigger(); // TJS: find the next alarm that needs to be triggeredxo
+      findNextTrigger(); // TJS: find the next alarm that needs to be triggered
       return id;
     }  
   }

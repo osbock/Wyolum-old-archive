@@ -15,7 +15,7 @@
 
 void setup()
 {
-  Serial.begin(9600);    
+  Serial.begin(57600);    
   Serial.println("TimeAlarms Example");
   Serial.println("Alarms are triggered daily at 8:30 am and 17:45 pm");
   Serial.println("One timer is triggered every 15 seconds");
@@ -31,22 +31,22 @@ void setup()
   Alarm.timerOnce(10, OnceOnlyTask);            // called once after 10 seconds 
 }
 
-void MorningAlarm()
+void MorningAlarm(uint8_t arg)
 {
   Serial.println("Alarm: - turn lights off");    
 }
 
-void EveningAlarm()
+void EveningAlarm(uint8_t arg)
 {
   Serial.println("Alarm: - turn lights on");           
 }
 
-void RepeatTask()
+void RepeatTask(uint8_t arg)
 {
   Serial.println("15 second timer");         
 }
 
-void OnceOnlyTask()
+void OnceOnlyTask(uint8_t arg)
 {
   Serial.println("This timer only triggers once");  
 }

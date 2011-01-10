@@ -9,6 +9,29 @@
 
 #define dtNBR_ALARMS 10 // may need more alarms!
 
+#define IS_ONESHOT  0
+#define TIMER_REPEAT 1
+#define    REPEAT_ANNUAL (1 << 0)
+#define    REPEAT_SUNDAY (1 << 1)
+#define    REPEAT_MONDAY (1 << 2)
+#define   REPEAT_TUESDAY (1 << 3)
+#define REPEAT_WEDNESDAY (1 << 4)
+#define  REPEAT_THURSDAY (1 << 5)
+#define    REPEAT_FRIDAY (1 << 6)
+#define  REPEAT_SATURDAY (1 << 7) 
+#define REPEAT_WEEKDAYS 0b01111100
+#define REPEAT_WEEKENDS 0b10000010
+#define    REPEAT_DAILY 0b11111110
+#define NO_COUNTDOWN 0
+#define COUNTDOWN_10SEC (1 << 0)
+#define COUNTDOWN_1MIN (1 << 1)
+#define COUNTDOWN_5MIN (1 << 2)
+#define COUNTDOWN_1HOUR (1 << 3)
+#define COUNTDOWN_1DAY (1 << 4)
+#define IS_ALARM    true
+#define IS_TIMER    false 
+
+
 typedef enum { dtMillisecond, dtSecond, dtMinute, dtHour, dtDay } dtUnits_t;
 
 typedef struct  {
@@ -37,6 +60,9 @@ class AlarmClass
 {  
 private:
   AlarmMode_t Mode;
+
+  // TJS: horid bit parsing function, edit at your own risk!
+  bool get_delta_days(time_t time); // TJS:
 public:
   AlarmClass();
   void init(); // TJS.
@@ -46,7 +72,7 @@ public:
   void set_repeat(uint8_t val); // TJS:
   void set_alarm(bool val);     // TJS:
   bool is_countdown();          // TJS:
-  bool is_tod();                // TJS:
+  bool is_daily();              // TJS:
   bool is_annual();             // TJS:
   bool is_armed();              // TJS:
   bool is_oneshot();            // TJS:
@@ -74,11 +100,11 @@ public:
 class TimeAlarmsClass
 {
  private:
-  time_t nextTrigger; // TJS:  Next trigger time accross all Alarm[]
   uint8_t isServicing;
   void findNextTrigger(); // TJS: Find and set the time of the next alarm to be triggered.
   
  public:
+  time_t nextTrigger; // TJS:  Next trigger time accross all Alarm[]
   // TJS: made public
   AlarmID_t create( time_t value, 
 		    OnTick_t onTickHandler, 
