@@ -367,6 +367,13 @@ void ClockTHREE::off(){
   displayfill(DARK);
 }
 
+void ClockTHREE::c3_tone(uint16_t freq, uint16_t ms){
+  tone(SPEAKER_PIN, freq);
+  delay(ms);
+  noTone(SPEAKER_PIN);
+  digitalWrite(SPEAKER_PIN, HIGH);
+}
+
 uint8_t getColor(uint8_t color){
   if(color < TEMPERATURE_COLOR){
   }

@@ -310,7 +310,7 @@ def set_alarm(t, countdown, repeat, scroll_msg,
 def main():
     # clear_eeprom()
     # eeprom_read()
-    set_alarm(int(time.time()) + 5, 0, 0, "DONE!", 0, 0)
+    set_alarm(time_req() + 5, 0, 0, "DONE!", 0, 0) ## HERE IS WHY!!  GMT offset of such?
     eeprom_read()
     trigger_mode()
     return

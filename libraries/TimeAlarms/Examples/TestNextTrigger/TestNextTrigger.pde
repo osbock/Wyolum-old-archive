@@ -7,7 +7,7 @@ void setup()
   setTime(8,29,0,1,1,10); // set time to 8:29:00am Jan 1 2010
   // create the alarms 
   AlarmId mal, dont_alarm;
-
+  /*
   Alarm.free(mal); // free before allocated ok?
 
   mal = Alarm.alarmRepeat(8,29,12, MorningAlarm);  // 08:29:12  every day
@@ -20,8 +20,12 @@ void setup()
   Alarm.timerRepeat(7, Repeats7);            // timer for every 1 seconds    
   Alarm.timerRepeat(3, Repeats3);            // timer for every 5 seconds    
   Alarm.timerOnce(10, OnceOnly);             // called once after 10 seconds 
-  Serial.print(Alarm.Alarm[0].nextTrigger);
-  delay(5000);
+  Serial.print(Alarm.Alarm[0].nextTrigger); */
+  Alarm.create(now() + 5, fire_alarm, true, 0, 0, 5);
+  Serial.print(Alarm.nextTrigger);
+  Serial.print(" ");
+  Serial.println(Alarm.Alarm[0].nextTrigger);
+  delay(500);
 }
 
 void  loop(){  
@@ -34,6 +38,10 @@ void  loop(){
 // functions to be called when an alarm triggers:
 void DontAlarm(uint8_t arg){
   Serial.println("Oops, should not have alarmed!");
+}
+void fire_alarm(uint8_t arg){
+  Serial.print("Alarm fired with ");
+  Serial.println(arg, DEC);
 }
 void MorningAlarm(uint8_t arg){
   if(hour() != 8 || minute() != 29 || second() != 12){

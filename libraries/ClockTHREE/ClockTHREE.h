@@ -205,6 +205,9 @@ class ClockTHREE
   // turn display off
   void off();
 
+  // play a note
+  void c3_tone(uint16_t freq, uint16_t ms);
+
 /*
  * Uses RTC if available or INT if not.
  */

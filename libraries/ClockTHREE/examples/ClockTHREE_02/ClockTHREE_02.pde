@@ -1030,6 +1030,15 @@ void set_did_alarm(){
     uint8_t countdown = serial_msg[6];
     uint8_t repeat = serial_msg[7];
     Alarm.create(data.dat32, fire_alarm, data.dat32 < now(), countdown, repeat, serial_msg[0]);
+    /* // count down for debugging
+    Serial.end();
+    while(data.dat32 > now()){
+	two_digits(data.dat32 - now());
+	c3.refresh(16);
+	Alarm.serviceAlarms();
+    }
+    Serial.begin(BAUDRATE);
+    */
   }
   else{
     // error
