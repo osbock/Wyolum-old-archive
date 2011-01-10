@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 01/10/11 10:45:00
+EESchema Schematic File Version 2  date 01/10/11 18:09:01
 LIBS:clock3
 LIBS:power
 LIBS:clock3-cache
@@ -7,7 +7,7 @@ EELAYER END
 $Descr A4 11700 8267
 Sheet 1 4
 Title "ClockTHREE"
-Date "8 jan 2011"
+Date "10 jan 2011"
 Rev "A"
 Comp "An Arduino friendly RGB LED Array"
 Comment1 "Wyo Innovations      :: Lumetronics"
@@ -583,6 +583,8 @@ P 1150 800
 F 0 "SW5" H 1300 910 50  0000 C CNN
 F 1 "ENTER" H 950 900 50  0000 C CNN
 F 2 "SW_PB_V" H 1150 800 60  0001 C CNN
+F 3 "http://industrial.panasonic.com/www-data/pdf/ATK0000/ATK0000CE32.pdf" H 1150 800 60  0001 C CNN
+F 4 "P10884S-ND" H 1150 800 60  0001 C CNN "DigiKey"
 	1    1150 800 
 	1    0    0    -1  
 $EndComp
@@ -649,6 +651,8 @@ P 4750 6350
 F 0 "Q17" H 4750 6200 60  0000 R CNN
 F 1 "2N5401" H 4750 6500 60  0000 R CNN
 F 2 "to92_2N5401" H 4750 6350 60  0001 C CNN
+F 3 "http://www.onsemi.com/pub_link/Collateral/2N5401-D.PDF" H 4750 6350 60  0001 C CNN
+F 4 "2N5401RLRAGOSCT-ND" H 4750 6350 60  0001 C CNN "DigiKey"
 	1    4750 6350
 	1    0    0    1   
 $EndComp
@@ -684,6 +688,8 @@ P 7150 3325
 F 0 "DIL-U2" H 6975 2475 60  0000 C CNN
 F 1 "STP16DP05" H 7700 2450 60  0000 C CNN
 F 2 "SCK-24_600_ELL" H 7150 3325 60  0001 C CNN
+F 3 "http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=497-5975-1-ND" H 7150 3325 60  0001 C CNN
+F 4 "497-5975-1-ND" H 7150 3325 60  0001 C CNN "DigiKey"
 	1    7150 3325
 	1    0    0    -1  
 $EndComp
@@ -694,6 +700,8 @@ P 7150 1475
 F 0 "DIL-U1" H 6975 625 60  0000 C CNN
 F 1 "STP16DP05" H 7700 600 60  0000 C CNN
 F 2 "SCK-24_600_ELL" H 7150 1475 60  0001 C CNN
+F 3 "http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=497-5975-1-ND" H 7150 1475 60  0001 C CNN
+F 4 "497-5975-1-ND" H 7150 1475 60  0001 C CNN "DigiKey"
 	1    7150 1475
 	1    0    0    -1  
 $EndComp
@@ -754,6 +762,8 @@ P 5200 7200
 F 0 "SP1" H 5175 7000 70  0000 C CNN
 F 1 "SPEAKER" H 5275 7400 70  0000 C CNN
 F 2 "SPEAKER" H 5200 7200 60  0001 C CNN
+F 3 "http://products.cui.com/GetSpecForDigiKey.aspx?MFGNum=CEM-14R06CT" H 5200 7200 60  0001 C CNN
+F 4 "102-1169-ND" H 5200 7200 60  0001 C CNN "DigiKey"
 	1    5200 7200
 	1    0    0    -1  
 $EndComp
@@ -1105,6 +1115,8 @@ P 7150 5450
 F 0 "U4" H 6900 5100 60  0000 C CNN
 F 1 "74LS154" H 7400 6350 60  0000 C CNN
 F 2 "DIP-24__600_ELL" H 7150 5450 60  0001 C CNN
+F 3 "http://media.digikey.com/pdf/Data%20Sheets/Texas%20Instruments%20PDFs/SN74154.pdf" H 7150 5450 60  0001 C CNN
+F 4 "296-8757-5-ND" H 7150 5450 60  0001 C CNN "DigiKey"
 	1    7150 5450
 	1    0    0    -1  
 $EndComp
@@ -1133,6 +1145,8 @@ P 1150 1450
 F 0 "SW3" H 1300 1560 50  0000 C CNN
 F 1 "MODE" H 950 1550 50  0000 C CNN
 F 2 "SW_PB_V" H 1150 1450 60  0001 C CNN
+F 3 "http://industrial.panasonic.com/www-data/pdf/ATK0000/ATK0000CE32.pdf" H 1150 1450 60  0001 C CNN
+F 4 "P10884S-ND" H 1150 1450 60  0001 C CNN "DigiKey"
 	1    1150 1450
 	1    0    0    -1  
 $EndComp
@@ -1143,6 +1157,8 @@ P 950 3450
 F 0 "SW4" H 950 3600 50  0000 C CNN
 F 1 "RST" H 950 3370 50  0000 C CNN
 F 2 "SW_PB_V" H 950 3450 60  0001 C CNN
+F 3 "http://industrial.panasonic.com/www-data/pdf/ATK0000/ATK0000CE32.pdf" H 950 3450 60  0001 C CNN
+F 4 "P10884S-ND" H 950 3450 60  0001 C CNN "DigiKey"
 	1    950  3450
 	-1   0    0    1   
 $EndComp
@@ -1153,6 +1169,8 @@ P 1150 1200
 F 0 "SW2" H 1300 1300 50  0000 C CNN
 F 1 "DEC" H 900 1300 50  0000 C CNN
 F 2 "SW_PB_V" H 1150 1200 60  0001 C CNN
+F 3 "http://industrial.panasonic.com/www-data/pdf/ATK0000/ATK0000CE32.pdf" H 1150 1200 60  0001 C CNN
+F 4 "P10884S-ND" H 1150 1200 60  0001 C CNN "DigiKey"
 	1    1150 1200
 	1    0    0    -1  
 $EndComp
@@ -1163,6 +1181,8 @@ P 1150 1000
 F 0 "SW1" H 1300 1110 50  0000 C CNN
 F 1 "INC" H 900 1100 50  0000 C CNN
 F 2 "SW_PB_V" H 1150 1000 60  0001 C CNN
+F 3 "http://industrial.panasonic.com/www-data/pdf/ATK0000/ATK0000CE32.pdf" H 1150 1000 60  0001 C CNN
+F 4 "P10884S-ND" H 1150 1000 60  0001 C CNN "DigiKey"
 	1    1150 1000
 	1    0    0    -1  
 $EndComp
@@ -1355,6 +1375,8 @@ P 1050 4150
 F 0 "X1" H 1050 4300 60  0000 C CNN
 F 1 "16MHz" H 1050 4000 60  0000 C CNN
 F 2 "XTAL" H 1050 4150 60  0001 C CNN
+F 3 "http://search.murata.co.jp/Ceramy/image/img/w_hinm/L0430E.pdf" H 1050 4150 60  0001 C CNN
+F 4 "490-1214-ND" H 1050 4150 60  0001 C CNN "DigiKey"
 	1    1050 4150
 	1    0    0    -1  
 $EndComp

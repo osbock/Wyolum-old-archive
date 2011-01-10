@@ -4,8 +4,8 @@ DEF cube194_sep27 Transform {
   children [
     Shape {
       appearance Appearance {
-        material DEF Chrome Material {
-          diffuseColor 0.66 0.6599999999999997 0.329695665539502
+        material DEF Blue Material {
+          diffuseColor 0.0 0.0 0.58
           emissiveColor 0.0 0.0 0.0
           specularColor 1.0 1.0 1.0
           ambientIntensity 1.0
@@ -284,7 +284,7 @@ DEF cube194_sep26 Transform {
   children [
     Shape {
       appearance Appearance {
-        material USE Chrome
+        material USE Blue
       }
       geometry IndexedFaceSet {
         normalPerVertex TRUE
@@ -557,7 +557,7 @@ DEF cube194_sep25 Transform {
   children [
     Shape {
       appearance Appearance {
-        material USE Chrome
+        material USE Blue
       }
       geometry IndexedFaceSet {
         normalPerVertex TRUE
@@ -830,7 +830,7 @@ DEF cube194_sep24 Transform {
   children [
     Shape {
       appearance Appearance {
-        material USE Chrome
+        material USE Blue
       }
       geometry IndexedFaceSet {
         normalPerVertex TRUE
@@ -1103,7 +1103,7 @@ DEF cube194_sep23 Transform {
   children [
     Shape {
       appearance Appearance {
-        material USE Chrome
+        material USE Blue
       }
       geometry IndexedFaceSet {
         normalPerVertex TRUE
@@ -1376,7 +1376,7 @@ DEF cube194_sep22 Transform {
   children [
     Shape {
       appearance Appearance {
-        material USE Chrome
+        material USE Blue
       }
       geometry IndexedFaceSet {
         normalPerVertex TRUE
@@ -1649,7 +1649,7 @@ DEF cube194_sep21 Transform {
   children [
     Shape {
       appearance Appearance {
-        material USE Chrome
+        material USE Blue
       }
       geometry IndexedFaceSet {
         normalPerVertex TRUE
@@ -1922,7 +1922,7 @@ DEF cube194_sep20 Transform {
   children [
     Shape {
       appearance Appearance {
-        material USE Chrome
+        material USE Blue
       }
       geometry IndexedFaceSet {
         normalPerVertex TRUE
@@ -2195,7 +2195,7 @@ DEF cube194_sep19 Transform {
   children [
     Shape {
       appearance Appearance {
-        material USE Chrome
+        material USE Blue
       }
       geometry IndexedFaceSet {
         normalPerVertex TRUE
@@ -2468,7 +2468,7 @@ DEF cube194_sep18 Transform {
   children [
     Shape {
       appearance Appearance {
-        material USE Chrome
+        material USE Blue
       }
       geometry IndexedFaceSet {
         normalPerVertex TRUE
@@ -2741,7 +2741,7 @@ DEF cube194_sep17 Transform {
   children [
     Shape {
       appearance Appearance {
-        material USE Chrome
+        material USE Blue
       }
       geometry IndexedFaceSet {
         normalPerVertex TRUE
@@ -3014,7 +3014,7 @@ DEF cube194_sep16 Transform {
   children [
     Shape {
       appearance Appearance {
-        material USE Chrome
+        material USE Blue
       }
       geometry IndexedFaceSet {
         normalPerVertex TRUE
@@ -3287,7 +3287,7 @@ DEF cube194_sep15 Transform {
   children [
     Shape {
       appearance Appearance {
-        material USE Chrome
+        material USE Blue
       }
       geometry IndexedFaceSet {
         normalPerVertex TRUE

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 01/10/11 10:44:49
+EESchema Schematic File Version 2  date 01/10/11 17:54:06
 LIBS:clock3
 LIBS:power
 LIBS:clock3-cache
@@ -6,14 +6,14 @@ EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 4 4
-Title "ClockTWO"
-Date "8 jan 2011"
+Title "ClockTHREE"
+Date "10 jan 2011"
 Rev "A"
-Comp "wyojustin@gmail.com :: anool.m@gmail.com"
-Comment1 "wyoinnovation.blogspot.com"
-Comment2 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
-Comment3 ""
-Comment4 ""
+Comp "An Arduino friendly RGB LED Array"
+Comment1 "Wyo Innovations      :: Lumetronics"
+Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
+Comment3 "wyoinnovation.blogspot.com"
+Comment4 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 $EndDescr
 Text Label 1700 1100 0    40   ~ 0
 VCC
