@@ -20,6 +20,8 @@ Attribution 3.0 Unported
 #ifndef EDL_H
 #define ELD_H
 
+const uint16_t MAX_EEPROM_ADDR = 1023;
+
 /* 
  * EEPROM Map -- no gaps between DIDs!
  *      DID: 0                 1       2     3     4   ...

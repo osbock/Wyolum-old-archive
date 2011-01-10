@@ -32,10 +32,10 @@ void  loop(){
 }
 
 // functions to be called when an alarm triggers:
-void DontAlarm(){
+void DontAlarm(uint8_t arg){
   Serial.println("Oops, should not have alarmed!");
 }
-void MorningAlarm(){
+void MorningAlarm(uint8_t arg){
   if(hour() != 8 || minute() != 29 || second() != 12){
     Serial.println("Morning alarm false triggered");
   }
@@ -44,7 +44,7 @@ void MorningAlarm(){
   }
 }
 
-void EveningAlarm(){
+void EveningAlarm(uint8_t arg){
   if(hour() != 8 || minute() != 29 || second() != 17){
     Serial.println("Evening alarm false triggered");
   }
@@ -53,7 +53,7 @@ void EveningAlarm(){
   }
 }
 
-void Repeats3(){
+void Repeats3(uint8_t arg){
   if(millis() < 3000){
     Serial.println("3 second timer alarm pre triggered");
   }
@@ -62,7 +62,7 @@ void Repeats3(){
   }
 }
 
-void Repeats7(){
+void Repeats7(uint8_t arg){
   if(millis() < 1000){
     Serial.println("7 second timer alarm pre triggered");
   }
@@ -71,7 +71,7 @@ void Repeats7(){
   }
 }
 
-void OnceOnly(){
+void OnceOnly(uint8_t arg){
   if(millis() < 10000){
     Serial.println("OnceOnly alarm pre triggered");
   }

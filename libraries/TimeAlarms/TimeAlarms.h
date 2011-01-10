@@ -12,15 +12,14 @@
 typedef enum { dtMillisecond, dtSecond, dtMinute, dtHour, dtDay } dtUnits_t;
 
 typedef struct  {
-  uint8_t isAllocated            :1 ;  // the alarm is avialable for allocation if false
-  uint8_t isEnabled              :1 ;  // the timer is only actioned if isEnabled is true 
-  // uint8_t isOneShot              :1 ;  // use 0 for repeat instead
-  uint8_t isAlarm                :1 ;  // time of day alarm if true, period timer if false
-  uint8_t countdown_sec          :1;
-  uint8_t countdown_min          :1;
-  uint8_t countdown_5min         :1;
-  uint8_t countdown_hour         :1;
-  uint8_t countdown_day          :1;
+  uint8_t isAllocated            :1;  // the alarm is avialable for allocation if false
+  uint8_t isEnabled              :1;  // the timer is only actioned if isEnabled is true 
+  uint8_t isAlarm                :1;  // time of day alarm if true, period timer if false
+  uint8_t countdown_10sec        :1;  // count down from t - ten seconds
+  uint8_t countdown_min          :1;  // count down from t - sixty seconds
+  uint8_t countdown_5min         :1;  // count down from t - five minutes
+  uint8_t countdown_hour         :1;  // count down from t - one hour
+  uint8_t countdown_day          :1;  // count down from t - one day
   uint8_t repeat;                  // bit field sunday= bit0--> annual, bit1 --> monday, ...  bit7 --> sat
  }
     AlarmMode_t   ;
@@ -31,7 +30,7 @@ typedef AlarmID_t AlarmId;  // Arduino friendly name
 
 
 class AlarmClass;  // forward reference
-typedef void (*OnTick_t)();  // alarm callback function typedef 
+typedef void (*OnTick_t)(uint8_t argument);  // alarm callback function typedef 
 
 // class defining an alarm instance, only used by dtAlarmsClass
 class AlarmClass
@@ -43,6 +42,7 @@ public:
   void init(); // TJS.
   void set_allocated(bool val); // TJS:
   void set_enabled(bool val);   // TJS:
+  void set_countdown(uint8_t val); // TJS:
   void set_repeat(uint8_t val); // TJS:
   void set_alarm(bool val);     // TJS:
   bool is_countdown();          // TJS:
@@ -50,11 +50,13 @@ public:
   bool is_annual();             // TJS:
   bool is_armed();              // TJS:
   bool is_oneshot();            // TJS:
+  bool is_periodic();           // TJS:
   bool is_repeated();           // TJS:
   bool get_allocated();         // TJS:
   bool get_enabled();           // TJS:
   uint8_t get_repeat();         // TJS:
   bool get_alarm();             // TJS:
+  uint8_t argument;             // TJS:
   OnTick_t onTickHandler;  
   void updateNextTrigger();
   /* TJS Interpretation of value:
@@ -74,11 +76,17 @@ class TimeAlarmsClass
  private:
   time_t nextTrigger; // TJS:  Next trigger time accross all Alarm[]
   uint8_t isServicing;
-  AlarmID_t create( time_t value, OnTick_t onTickHandler, uint8_t isAlarm, uint8_t isOneShot, uint8_t isEnabled=true);
-  
   void findNextTrigger(); // TJS: Find and set the time of the next alarm to be triggered.
   
  public:
+  // TJS: made public
+  AlarmID_t create( time_t value, 
+		    OnTick_t onTickHandler, 
+		    uint8_t isAlarm, 
+		    uint8_t countdown, 
+		    uint8_t repeat, 
+		    uint8_t argument=0,
+		    uint8_t isEnabled=true);   
   AlarmClass Alarm[dtNBR_ALARMS];
   void serviceAlarms();// TJS: made public.  This is the method I wish to use.
   TimeAlarmsClass();

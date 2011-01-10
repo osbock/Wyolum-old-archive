@@ -2,8 +2,6 @@
 #include "EDL.h"
 #include "EEPROM.h"
 
-const uint16_t MAX_EEPROM_ADDR = 1023;
-
 /* 
  * Copy DID to data to dest.  
  * dest -- location to copy DID record.  It must have enough space allocated to contain entire record.

@@ -75,6 +75,8 @@ const uint8_t SCROLL_MODE = 9;
 const uint8_t DEG_C = 0;
 const uint8_t DEG_F = 1;
 
+uint8_t last_mode_id = NORMAL_MODE; // the last mode clock was in...
+
 Mode Modes[N_MODE];
 
 typedef enum {YEAR, MONTH, DAY, HOUR, MINUTE, SECOND} unit_t;
@@ -134,8 +136,8 @@ union Serial_time_t{
 
 const uint8_t MAX_MSG_LEN = 100; // official: 100
 const uint16_t BAUDRATE = 57600; // official:57600
-const uint8_t SYNC_BYTE = 0xEF;
-const uint8_t VAR_LENGTH = 0xFF;
+const uint8_t SYNC_BYTE = 254;   // 0xEF;
+const uint8_t VAR_LENGTH = 255;   // 0xFF;
 char* EEPROM_ERR = "EE";
 char* EEPROM_DELETE_ERR = "ED";
 const uint8_t N_MSG_TYPE = 23;
@@ -152,16 +154,17 @@ const MsgDef     EVENT_SET = {0x09, 6, do_nothing};
 const MsgDef   DISPLAY_REQ = {0x0A, 1, display_send};
 const MsgDef   DISPLAY_SET = {0x0B, 2, display_set};
 const MsgDef  TRIGGER_MODE = {0x0C, 1, mode_interrupt};
-// const MsgDef  TRIGGER_MODE = {0x0C, 1, do_nothing};
+// const MsgDef  TRIGGER_MODE = {0x0C, 1, eeprom_clear};
+
 const MsgDef   TRIGGER_INC = {0x0D, 1, do_nothing};
 const MsgDef   TRIGGER_DEC = {0x0E, 1, do_nothing};
 const MsgDef TRIGGER_ENTER = {0x0F, 1, do_nothing};
 const MsgDef   VERSION_REQ = {0x10, 1, do_nothing};
 const MsgDef     ABOUT_REQ = {0x11, 1, do_nothing};
 const MsgDef          PING = {0x12, MAX_MSG_LEN, pong};
-const MsgDef  EEPROM_CLEAR = {0x13, MAX_MSG_LEN, eeprom_clear};
+const MsgDef  EEPROM_CLEAR = {0x43, MAX_MSG_LEN, eeprom_clear}; // 0x43 = ASCII 'C'
 const MsgDef   EEPROM_DUMP = {0x44, 1, eeprom_dump}; // 0x44 = ASCII 'D'
-const MsgDef   ANNIVERSARY = {0x15, 12, save_date};
+const MsgDef   ANNIVERSARY = {0x15, 2, set_did_alarm};
 
 const MsgDef          SYNC = {SYNC_BYTE, MAX_MSG_LEN, do_nothing}; // must already be in sync
 const MsgDef      DATA_SET = {0x70, VAR_LENGTH, receive_data}; // variable length
@@ -185,8 +188,8 @@ const MsgDef *MSG_DEFS[N_MSG_TYPE] = {&NOT_USED_MSG,
 				      &TRIGGER_ENTER,
 				      &VERSION_REQ,
 				      &ABOUT_REQ,
-				      &PING,
 				      &EEPROM_CLEAR,
+				      &PING,
 				      &EEPROM_DUMP,
 				      &ANNIVERSARY,
 				      &DATA_SET};
@@ -286,7 +289,7 @@ void setup(void){
   getRTC_alarm(&ahh, &amm, &ass, &alarm_set);
   TOD_Alarm_Set(todAlarm, ahh, amm, ass, alarm_set);
   // TOD_Alarm_Set(todAlarm, hh, mm, ss + 5, alarm_set);
-  // Alarm.timerOnce(5, switch_to_alarm_mode);
+  // Alarm.timerOnce(5, fire_alarm);
   
   mode_p = &NormalMode;
   mode_p = &SerialMode;
@@ -433,7 +436,7 @@ void Seconds_loop(){
 void Seconds_exit(void) {
 }
 void Seconds_mode(){
-  switchmodes(NORMAL_MODE);
+  switchmodes(last_mode_id);
 }
 
 // Sub mode of normal mode ** scoll message stored in scroll_did;
@@ -477,7 +480,7 @@ void Scroll_inc(){
 void Scroll_dec(){
 }
 void Scroll_mode(){
-  switchmodes(NORMAL_MODE);
+  switchmodes(last_mode_id);
 }
 
 // Sub mode of normal mode ** display temp
@@ -513,10 +516,10 @@ void Temperature_inc(){
   }
 }
 void Temperature_dec(){
-  switchmodes(NORMAL_MODE);
+  switchmodes(last_mode_id);
 }
 void Temperature_mode(){
-  switchmodes(NORMAL_MODE);
+  switchmodes(last_mode_id);
 }
 
 // Sub mode of normal mode ** sound the alarm!
@@ -542,7 +545,7 @@ void Alarm_exit(void) {
   digitalWrite(SPEAKER_PIN, HIGH);
 }
 void Alarm_mode(){
-  switchmodes(NORMAL_MODE);
+  switchmodes(last_mode_id);
 }
 
 // Begin SetTime Mode Code (TODO use one file per mode)
@@ -679,7 +682,7 @@ void SetTime_mode(void) {
     faceplate.display_word(c3, MONO, minute_led);
     break;
   default:
-    switchmodes(NORMAL_MODE);
+    switchmodes(last_mode_id);
     break;
   }
 }
@@ -734,7 +737,7 @@ void SetAlarm_inc(void){
     }
     break;
   default:
-    switchmodes(NORMAL_MODE); // Error?! get out of here.
+    switchmodes(last_mode_id); // Error?! get out of here.
   }
 }
 
@@ -774,7 +777,7 @@ void SetAlarm_dec(void){
     }
     break;
   default:
-    switchmodes(NORMAL_MODE); // Error?! get out of here.
+    switchmodes(last_mode_id); // Error?! get out of here.
   }
 }
 void SetAlarm_mode(void){
@@ -797,7 +800,7 @@ void SetAlarm_mode(void){
   case SECOND:
     // fall though to default
   default:
-    switchmodes(NORMAL_MODE);
+    switchmodes(last_mode_id);
     break;
   }
 }
@@ -846,7 +849,7 @@ void SetColor_dec(void) {
 }
 
 void SetColor_mode(void) {
-  switchmodes(NORMAL_MODE);
+  switchmodes(last_mode_id);
 }
 
 // Begin Serial Modes
@@ -879,10 +882,33 @@ void Serial_loop(void) {
     for(uint8_t msg_i = 0; msg_i < N_MSG_TYPE; msg_i++){
       if(MSG_DEFS[msg_i]->id == val){
 	if(Serial_get_msg(MSG_DEFS[msg_i]->n_byte)){
-	  // entire payload is stored in serial_msg: callback time.
+	  /*
+	   * Entire payload (n_byte - 1) bytes 
+	   * is stored in serial_msg: callback time.
+	   */
+	  
+#ifdef LISTEN // define LISTEN to listen for protocal errors
+	  pinMode(SPEAKER_PIN, OUTPUT);
+	  tone(SPEAKER_PIN, 554);
+	  delay(100);
+	  noTone(SPEAKER_PIN);
+	  */
+#endif
 	  MSG_DEFS[msg_i]->cb();
+#ifdef LISTEN // define LISTEN to listen for protocal errors
+	  pinMode(SPEAKER_PIN, OUTPUT);
+	  tone(SPEAKER_PIN, 689);
+	  delay(100);
+	  noTone(SPEAKER_PIN);
+#endif
 	}
 	else{
+#ifdef LISTEN // define LISTEN to listen for protocal errors
+	  pinMode(SPEAKER_PIN, OUTPUT);
+	  tone(SPEAKER_PIN, 466);
+	  delay(100);
+	  noTone(SPEAKER_PIN);
+#endif
 	  // Got a sync message unexpectedly. Get ready for new message.
 	  // no callback
 	  // or timeout
@@ -983,30 +1009,31 @@ void tod_alarm_get(){
 }
 
 void eeprom_dump(){
-  // switchmodes(SECONDS_MODE);  return;
   for(uint16_t i = 0; i < 1024; i++){
     Serial.print(EEPROM.read(i), BYTE);
   }
 }
 
-void save_date(){
-  //date info stored in serial_msg 
-  // MID pealed off already
+void set_did_alarm(){
   Serial_time_t data;
   tmElements_t tm;
+  uint8_t len;
 
-  for(uint8_t i = 0; i < 4; i++){
-    data.dat8[i] = serial_msg[i];
+  // did stored in serial_msg[0] (MID pealed off already)
+  // record stored in eeprom
+  if(did_read(serial_msg[0], serial_msg, &len)){
+    for(uint8_t i = 2; i < 6; i++){
+      data.dat8[i - 2] = serial_msg[i];
+    }
+    // countdown bits: MSb     -->                  LSb
+    // blank, blank, blank, day, hour, 5min, min, 10sec, 
+    uint8_t countdown = serial_msg[6];
+    uint8_t repeat = serial_msg[7];
+    Alarm.create(data.dat32, fire_alarm, data.dat32 < now(), countdown, repeat, serial_msg[0]);
   }
-  breakTime(data.dat32, tm);
-  uint16_t seconds_countdown = (serial_msg[4] + 
-				60 * serial_msg[5]);
-  // Alarm.timerOnce(10, do_nothing);
-  uint8_t repeat_minutes = serial_msg[6];
-  uint8_t dow_repeat = serial_msg[7];
-  uint8_t scoll_msg_id = serial_msg[8];
-  uint8_t special_effects = serial_msg[9];
-  uint8_t sound_effects = serial_msg[10];  
+  else{
+    // error
+  }
 }
 
 void receive_data(){
@@ -1068,8 +1095,9 @@ void display_set(){
 }
 
 void eeprom_clear(){
-  bool confirmed = true;
-  // make sure entire message is filled with EEPROM_CLEAR byte.
+  bool confirmed = true;					
+
+  // make sure entire message is filled with EEPROM_CLEAR bytes.
   for(uint8_t i = 0; i < EEPROM_CLEAR.n_byte - 1; i++){
     if(serial_msg[i] != EEPROM_CLEAR.id){
       confirmed = false;
@@ -1078,7 +1106,7 @@ void eeprom_clear(){
   }
   // do the deed
   if(confirmed){
-    for(uint8_t i = 0; i < 1024; i++){
+    for(uint16_t i = 0; i < 1024; i++){
       EEPROM.write(i, 0);
     }
   }
@@ -1094,17 +1122,24 @@ boolean Serial_get_msg(uint8_t n_byte) {
   /*
    n_byte = message length including 1 byte MID
    */
-  uint8_t i = 0;
+  uint16_t i = 0;
   unsigned long start_time = millis();
 
   uint8_t val, next;
   boolean out;
 
+#ifdef LISTEN // define LISTEN to listen for protocal errors
+  pinMode(SPEAKER_PIN, OUTPUT);
+  tone(SPEAKER_PIN, 880);
+  delay(100);
+  noTone(SPEAKER_PIN);
+#endif
+
   digitalWrite(DBG, LOW);
   if(n_byte == VAR_LENGTH){
     // variable length message
-    while(!Serial.available() && 
-	  ((millis() - start_time) < SERIAL_TIMEOUT_MS)){
+    while(!Serial.available()){/* && 
+				  ((millis() - start_time) < SERIAL_TIMEOUT_MS)){*/
       delay(1);
     }
     n_byte = Serial.peek();
@@ -1135,6 +1170,11 @@ boolean Serial_get_msg(uint8_t n_byte) {
   else{
     out = false;
   }
+#ifdef LISTEN // define LISTEN to listen for protocal errors
+  tone(SPEAKER_PIN, 440);
+  delay(100);
+  noTone(SPEAKER_PIN);
+#endif
   return out;
 }
 
@@ -1153,7 +1193,7 @@ void Serial_inc(void) {
 void Serial_dec(void) {
 }
 void Serial_mode(void) {
-  switchmodes(NORMAL_MODE);
+  switchmodes(last_mode_id);  // or maybe just go back to NORMAL_MODE?
 }
 
 // Begin Mode Mode Code (TODO use one file per mode)
@@ -1191,6 +1231,7 @@ void Mode_mode(void) {
 void switchmodes(uint8_t new_mode_id){
   // only switch if we are not in this mode already
   if(new_mode_id != mode_p->id){
+    last_mode_id = mode_p->id;
     c3.clear();
     mode_p->exit();
     mode_p = &Modes[new_mode_id];
@@ -1199,7 +1240,10 @@ void switchmodes(uint8_t new_mode_id){
   }
 }
 
-void switch_to_alarm_mode(){
+void fire_alarm(uint8_t did){
+  /* if did is 0, just sound the alarm.
+   * otherwise -- look up record at did and follow perscription!
+   */
   switchmodes(ALARM_MODE);
 }
 void two_digits(uint8_t val){
@@ -1209,7 +1253,7 @@ void two_digits(uint8_t val){
 
 void TOD_Alarm_Set(AlarmId id, uint8_t ahh, uint8_t amm, uint8_t ass, boolean alarm_set){
   Alarm.free(todAlarm);
-  todAlarm = Alarm.alarmRepeat(ahh, amm, ass, switch_to_alarm_mode);
+  todAlarm = Alarm.alarmRepeat(ahh, amm, ass, fire_alarm);
   if(alarm_set){
     Alarm.enable(todAlarm);
   }
