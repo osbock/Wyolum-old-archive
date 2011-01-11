@@ -49,7 +49,7 @@ void setup(){
   uint8_t out_len;
   uint8_t n_record;
 
-  for(n_record = 10; n_record >= 1; n_record--){
+  for(n_record = 4; n_record >= 1; n_record--){
     // write some records
     Serial.print(n_record, DEC);
     Serial.println(" records:");
@@ -85,7 +85,10 @@ void setup(){
     }
     for(did = 1; did < n_record + 1; did++){
       // Delete them
-      did_delete(did);
+      if(!did_delete(did)){
+	Serial.print("Trouble deleting did ");
+	Serial.println(did, BYTE);
+      }
     }
   
     // check EEPROM IS ALL ZEROS
@@ -100,6 +103,39 @@ void setup(){
       }
     }
   }
+
+  // check delete does not effect other records
+  Serial.println("Independence test");
+  get_test_record(1, payload, msg);
+  if(!did_write(msg)){
+    Serial.println("Trouble writing message 1 with did ");
+    Serial.print(did, DEC);
+  }
+  get_test_record(2, payload, msg);
+  if(!did_write(msg)){
+    Serial.println("Trouble writing message 2 with did ");
+    Serial.print(did, DEC);
+  }
+  
+  if(!did_delete(2)){
+    Serial.print("Trouble deleting did 2");
+  }
+
+  get_test_record(1, payload, msg);
+
+  // see if msg 1 is ok
+  did_read(1, retrieved, &out_len);
+  for(uint8_t i = 0; i < msg[1]; i++){
+    if(retrieved[i] != msg[i]){
+      Serial.print("    ERROR, retrieved != msg in byte ");
+      Serial.print(i, DEC);
+      Serial.print(", ");
+      Serial.print(retrieved[i], DEC);
+      Serial.print(" != ");
+      Serial.println(msg[i], DEC);
+    }
+  }
+
   // clear EEPROM
   for(uint16_t i = 0; i <= MAX_EEPROM_ADDR; i++){
     EEPROM.write(i, 0);

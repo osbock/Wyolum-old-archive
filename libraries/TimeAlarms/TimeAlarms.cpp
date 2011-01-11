@@ -153,6 +153,7 @@ void AlarmClass::updateNextTrigger()
   time_t time = now();
   if(is_armed() && nextTrigger <= time){
     if(is_periodic()){ // value is number of seconds between triggers or from start
+                       // may or may not be repeated
       if(is_repeated() || nextTrigger == 0){
 	nextTrigger = time + value;
       }

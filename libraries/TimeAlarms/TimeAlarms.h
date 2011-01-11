@@ -10,6 +10,7 @@
 #define dtNBR_ALARMS 10 // may need more alarms!
 
 #define IS_ONESHOT  0
+#define NO_REPEAT   0 // same as IS_ONESHOT
 #define TIMER_REPEAT 1
 #define    REPEAT_ANNUAL (1 << 0)
 #define    REPEAT_SUNDAY (1 << 1)

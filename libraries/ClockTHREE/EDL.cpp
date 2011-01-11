@@ -98,7 +98,7 @@ bool did_delete(uint8_t did){
 	  EEPROM.write(i, EEPROM.read(i + len));
 	}
 	// delete tail
-	for(int i = next_addr - 1 - len; i < next_addr; i++){
+	for(int i = next_addr - len; i < next_addr; i++){
 	  EEPROM.write(i, 0);
 	}
       }

@@ -7,7 +7,7 @@ void setup()
   setTime(8,29,0,10,1,11); // set time to 8:29:00am Jan 1 2010
   // create the alarms 
   AlarmId mal, dont_alarm;
-  /**/
+  /*
   Alarm.free(mal); // free before allocated ok?
   dont_alarm = Alarm.alarmRepeat(8,29,12, DontAlarm);  // 08:29:12  every da
   Alarm.free(dont_alarm);
@@ -17,7 +17,7 @@ void setup()
  
   Alarm.timerRepeat(7, Repeats7);            // timer for every 1 seconds    
   Alarm.timerRepeat(3, Repeats3);            // timer for every 5 seconds    
-  Alarm.timerOnce(2, OnceOnly);                 // called once after 2 seconds 
+  Alarm.timerOnce(2, OnceOnly);                 // called once after 2 seconds
 
 //create(      value,  onTickHandler,  IS_ALARM,  COUNTDOWN, IS_REPEAT,   arg, IS_ENABLED=true);  
   // Annual event 10 secs from now
@@ -25,14 +25,12 @@ void setup()
   
   // Weekday event 25 secs from now
   Alarm.create(now() + 25, fire_alarm, true, 0, REPEAT_WEEKDAYS, 25);
+  */
 
-  // Weekdays 17 Secs from now
-  Alarm.create(now() + 17, fire_alarm, true, 0, REPEAT_WEEKENDS, 17);
-
-  // Wed,Thus,Fri 30 secs from now
-  Alarm.create(now() + 32, fire_alarm, true, 0, 0b01110000, 32);
-
-  delay(500);
+  // ONCE 30 secs from now
+  Alarm.create(now() + 32, fire_alarm, true, 0, NO_REPEAT, 32);
+  // ONCE 17 Secs from now
+  Alarm.create(now() + 17, fire_alarm, true, 0, NO_REPEAT, 17);
 }
 
 void  loop(){  
@@ -47,9 +45,10 @@ void DontAlarm(uint8_t arg){
   Serial.println("Oops, should not have alarmed!");
 }
 void fire_alarm(uint8_t arg){
-  Serial.print("Alarm fired with ");
+  Serial.print("Alarm fired with arg");
   Serial.println(arg, DEC);
 }
+
 void MorningAlarm(uint8_t arg){
   if(hour() != 8 || minute() != 29 || second() != 12){
     Serial.println("Morning alarm false triggered");
@@ -87,7 +86,7 @@ void Repeats7(uint8_t arg){
 }
 
 void OnceOnly(uint8_t arg){
-  if(millis() < 10000){
+  if(millis() < 2000){
     Serial.println("OnceOnly alarm pre triggered");
   }
   else{

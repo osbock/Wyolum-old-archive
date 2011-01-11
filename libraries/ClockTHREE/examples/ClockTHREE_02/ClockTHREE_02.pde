@@ -442,10 +442,13 @@ void Seconds_mode(){
   switchmodes(last_mode_id);
 }
 
-// Sub mode of normal mode ** scoll message stored in scroll_did;
+// Sub mode of normal mode ** scoll message ID stored in first byte of serial_msg scroll_did;
 void Scroll_setup(){
   // Display is 2x as large as screen.  Use larger indeces to stage display.
-  if(scroll_did && did_read(scroll_did, serial_msg, &serial_msg_len)){
+  // if(scroll_did && did_read(scroll_did, serial_msg, &serial_msg_len)){
+  /* two_digits(serial_msg[0]); */
+  /* c3.refresh(10000); */
+  if(serial_msg[0] && did_read(serial_msg[0], serial_msg, &serial_msg_len)){
     for(uint8_t i = 2; i < serial_msg_len; i++){
       serial_msg[i - 2] =  serial_msg[i];
     }
@@ -453,6 +456,8 @@ void Scroll_setup(){
     if(serial_msg_len > 0){
       font.getChar(serial_msg[0], getColor(COLORS[color_i]), display + 15);
     }
+    serial_msg[0] = 0; // clear out scroll_didx
+
   }
   else{
     Scroll_mode();// hit the mode button to exit out of this mode, no mesage to scroll
@@ -538,7 +543,7 @@ void Alarm_loop(){
   else{
     noTone(SPEAKER_PIN);
   }
-  c3.refresh(16);
+  // c3.refresh(16);
 }
 void Alarm_exit(void) {
   // resync with RTC and start ticking again
@@ -1030,6 +1035,7 @@ void set_did_alarm(){
   Serial_time_t data;
   tmElements_t tm;
   uint8_t len;
+  bool status = true;
 
   // did stored in serial_msg[0] (MID pealed off already)
   // record stored in eeprom
@@ -1041,11 +1047,26 @@ void set_did_alarm(){
     // blank, blank, blank, day, hour, 5min, min, 10sec, 
     uint8_t countdown = serial_msg[6];
     uint8_t repeat = serial_msg[7];
-    Alarm.create(data.dat32, fire_alarm, true, countdown, repeat, serial_msg[0]);
+    //                time        callback  alarm_f cd_f      rp_f     alarm_did
+    /* uint8_t o_color = color_i; */
+    /* color_i = 7; */
+    /* Serial.end(); */
+    /* two_digits(serial_msg[0]); // DEBUGGING */
+    /* c3.refresh(10000);         // DEBUGGING */
+    /* Serial.begin(BAUDRATE); */
+    /* color_i = o_color; */
+    /* delay(200); */
+    //                time        cb       alarm  cd rp  alarm_did
+    if(!Alarm.create(data.dat32, fire_alarm, true, 0, 0, serial_msg[0])){
+      status = false;
+    }
   }
   else{
-    Serial_send_err("AL");
+    status = false;
+  }
+  if(!status){
     // error
+    Serial_send_err("AL");
   }
 }
 
@@ -1066,7 +1087,6 @@ void delete_data(){
 }
 
 void scroll_data(){
-  scroll_did = serial_msg[0];
   switchmodes(SCROLL_MODE);
 }
 
@@ -1266,25 +1286,32 @@ void fire_alarm(uint8_t did){
    * otherwise -- look up record at did and follow perscription!
    */
   bool status = true;
-  if(did && did_read(serial_msg[0], serial_msg, &len)){
+  if(did && did_read(did, serial_msg, &len)){
+    /* Serial.end(); */
+    /* two_digits(serial_msg[0]); // DEBUGGING */
+    /* c3.refresh(10000);         // DEBUGGING */
+    /* two_digits(serial_msg[8]); // DEBUGGING */
+    /* c3.refresh(10000);         // DEBUGGING */
+    /* Serial.begin(BAUDRATE); */
+    /* delay(200); */
     if(len == 11){
-      if(serial_msg[7] == 0){ // this is a non repeating alarm, delete it from eeprom
-	// if(!did_delete(did)){
-	//   Serial_send_err(EEPROM_ERR);
-	//   status = false;
-	// }
-      }
+      /*if(serial_msg[7] == 0){ // this is a non repeating alarm, delete it from eeprom
+	//TO SAVE SPACE THIS WAS MOVED TO PC SIDE
+	if(!did_delete(did)){
+	  Serial_send_err(EEPROM_ERR);
+	  status = false;
+	}
+      }*/
       if(status){
-	scroll_did = serial_msg[8];
-	if(scroll_did){
-	  serial_msg[0] = scroll_did;
-	  scroll_data();
+	if(serial_msg[8]){ // scroll_did
+	  serial_msg[0] = serial_msg[8];
+	  switchmodes(SCROLL_MODE);
 	}
       }
     }
   }
   else{// if(status){
-    // switchmodes(ALARM_MODE);
+    switchmodes(ALARM_MODE);
   }
 }
 void two_digits(uint8_t val){

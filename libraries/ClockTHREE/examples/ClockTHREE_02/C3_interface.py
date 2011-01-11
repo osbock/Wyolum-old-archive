@@ -38,7 +38,22 @@ class MsgDef:
         self.callback = callback
     def __str__(self):
         return chr(self.val)
-        
+
+'''
+A record is did,len,paylaod
+where did, len are one byte, payload is len - 2 bytes
+did is a char
+payload is a str
+'''
+
+def form_record(did, payload):
+    assert len(payload) < const.MAX_MSG_LEN - 2
+    out = did + ord(len(payload) + 2) + payload
+    return out
+
+def parse_record(record):
+    assert len(record) == ord(record[1])
+    return record[0], record[2:]
 def read_constants(fn):
     f = open(fn)
     out = {}
@@ -148,7 +163,7 @@ def get_tod_alarm():
     if len(ser_data) < 6:
         raise ValueError('Got bad tod_alarm_msg, l=%d: "%s"' % (len(ser_data), ser_data))
     assert ser_data[0] == str(const.TOD_ALARM_SET)
-    hms = c3_to_call_clock(ser_data[1:5])
+    hms = c3_to_wall_clock(ser_data[1:5])
     h, ms = divmod(hms , 60 * 60)
     m, s = divmod(ms, 60)
     return h, m, s, bool(ser_data[5])
@@ -215,6 +230,7 @@ def set_alarm(t, countdown, repeat, scroll_msg,
     # finally inform C3 new alarm is waiting
     ser.write(str(const.ANNIVERSARY))
     ser.write(alarm_did)
+    err_check()
     return alarm_did
 
 def get_next_alarm():
@@ -295,28 +311,33 @@ class EEPROM: # singleton!
         print ord(out), 'is next id value!', [ord(did) for did in self.dids]
         return out
     
-    def add_record(self, record, alarm_flag=False):
+    def add_record(self, payload, alarm_flag=False):
         did = None
-        if record in self.eeprom:
-            addr = self.eeprom.find(record) - 2
-            if ord(self.eeprom[addr + 1]) == len(record) + 2:
+        if payload in self.eeprom:
+            addr = self.eeprom.find(payload) - 2
+            if ord(self.eeprom[addr + 1]) == len(payload) + 2:
+                print 'eeprom already has payload at address %s' % addr, payload
                 # we already have it
                 did = self.eeprom[addr]
         if did is None:
+            print 'writing new payload', payload
             did = self.next_did(alarm_flag)
             if did < MAX_ALARM_DID:
                 print 'Alarm DID:', did, ord(did)
-                assert len(record) + 2 == ALARM_RECORD_LEN
-            self.write(did, record)
+                assert len(payload) + 2 == ALARM_RECORD_LEN
+            self.write(did, payload)
         return did
 
-    def write(self, did, record):
+    def write(self, did, payload):
         assert did not in self.dids, 'DID with num %d not available %s' % (ord(did), [ord(k) for k in self.dids.keys()])
         print 'Trying to write ord(did):', ord(did)
-        set_data(did, record)
-        self.dids[did] = (-1, record)
+        set_data(did, payload)
+        self.dids[did] = (-1, payload)
         time.sleep(.1)
 
+def fmt_time(when):
+    return '%02d/%02d/%04d %d:%02d:%02d' % (when.tm_mday, when.tm_mon, when.tm_year,
+                                            when.tm_hour, when.tm_min, when.tm_sec)
 def eeprom_read(full=False):
     err_check()
     ser.write(str(const.EEPROM_DUMP))
@@ -341,9 +362,19 @@ def eeprom_read(full=False):
             print ord(did), l, 
             for j in range(2, l):
                 print '0x%02x' % ord(eeprom[addr + j]),
-            print eeprom[addr + 2: addr + l]
+
+            payload = eeprom[addr + 2: addr + l]
+            print payload
+            if did < MAX_ALARM_DID:
+                when = time.gmtime(c3_to_wall_clock(payload[:4]))
+                print 'ALARM:', fmt_time(when),
+                countdown = payload[5]
+                repeat = payload[6]
+                scroll_did = payload[6]
+                print 'scroll', ord(scroll_did)
             addr += l
-    except:
+    except Exception, e:
+        print e
         pass
 
 class ClockTHREE_Error(Exception):
@@ -402,13 +433,13 @@ def main():
     ser.flush()
     print eeprom.dids
     now = time_req()
-    print ord(set_alarm(now + 20, 0, 0, "DUDE!!!!....--", 0, 0))
-    print ord(set_alarm(now + 50, 0, 0, "XXXXX", 0, 0))
+    print ord(set_alarm(now + 30, 0, 0, "DUDE!!!!....--", 0, 0))
+    print ord(set_alarm(now + 60, 0, 0, "ZZZZZ", 0, 0))
+    return
     trigger_mode()
     for i in range(50):
         print i
         time.sleep(1)
-    return
     time.sleep(10);
     print 'done'
     return
@@ -508,18 +539,31 @@ def main():
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:
-        arg = sys.argv[1]
-        if arg == 'clear':
-            clear_eeprom()
-            print 'eeprom cleared'
-        elif arg == 'set':
-            time_set()
-            print 'C3 time',  time.gmtime(time_req())
-        elif arg == 'read':
-            eeprom_read(full=True)
-        elif arg == 'time':
-            print 'C3 time',  time.gmtime(time_req())
-            
+        for arg in sys.argv[1:]:
+            if arg == 'clear':
+                clear_eeprom()
+                print 'eeprom cleared'
+            elif arg == 'set':
+                time_set()
+                print '      C3 time',  fmt_time(time.gmtime(time_req()))
+            elif arg == 'read':
+                eeprom_read(full=True)
+            elif arg == 'time':
+                print '      C3 time',  fmt_time(time.gmtime(time_req()))
+            elif arg == 'next':
+                next = get_next_alarm()
+                try:
+                    next = time.gmtime(next)
+                    print 'next alarm at', fmt_time(next)
+                except ValueError, e:
+                    print e
+                    print next
+            elif arg == 'mode':
+                trigger_mode()
+            elif arg == 'pc_time':
+                print '     PC TIME:', fmt_time(time.gmtime(to_gmt(time.time())))
+            else:
+                print 'huh?', arg
     else:
         eeprom = EEPROM() # singlton instance
         # read_write_test()
