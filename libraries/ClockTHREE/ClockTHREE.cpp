@@ -52,6 +52,7 @@
 */
 
 #include "ClockTHREE.h"
+#include "MsTimer2.h"
 #include "Time.h"
 #include "rtcBOB.h"
 
@@ -367,11 +368,15 @@ void ClockTHREE::off(){
   displayfill(DARK);
 }
 
-void ClockTHREE::c3_tone(uint16_t freq, uint16_t ms){
+void ClockTHREE::tone(uint16_t freq, uint16_t ms){
+  MsTimer2::stop();
+  pinMode(SPEAKER_PIN, OUTPUT);
   tone(SPEAKER_PIN, freq);
   delay(ms);
   noTone(SPEAKER_PIN);
   digitalWrite(SPEAKER_PIN, HIGH);
+  MsTimer2::start();
+
 }
 
 uint8_t getColor(uint8_t color){

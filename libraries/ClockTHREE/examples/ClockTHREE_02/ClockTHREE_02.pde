@@ -125,7 +125,7 @@ const uint8_t EVENT_Q_SIZE = 5; // Max # events.
 // Messaging
 struct MsgDef{
   uint8_t id;
-  uint8_t n_byte; // if n_byte > 100, variable length message
+  uint8_t n_byte; // n_byte = MAX_MSG_LEN implies a variable length message
   CallBackPtr cb;
 };
 
@@ -140,7 +140,7 @@ const uint8_t SYNC_BYTE = 254;   // 0xEF;
 const uint8_t VAR_LENGTH = 255;   // 0xFF;
 char* EEPROM_ERR = "EE";
 char* EEPROM_DELETE_ERR = "ED";
-const uint8_t N_MSG_TYPE = 23;
+const uint8_t N_MSG_TYPE = 24;
 const MsgDef  NOT_USED_MSG = {0x00, 1, do_nothing};
 const MsgDef  ABS_TIME_REQ = {0x01, 1, send_time};
 const MsgDef  ABS_TIME_SET = {0x02, 5, Serial_time_set};
@@ -165,6 +165,7 @@ const MsgDef          PING = {0x12, MAX_MSG_LEN, pong};
 const MsgDef  EEPROM_CLEAR = {0x43, MAX_MSG_LEN, eeprom_clear}; // 0x43 = ASCII 'C'
 const MsgDef   EEPROM_DUMP = {0x44, 1, eeprom_dump}; // 0x44 = ASCII 'D'
 const MsgDef   ANNIVERSARY = {0x15, 2, set_did_alarm};
+const MsgDef NEXT_ALARM_REQ = {0x16, 1, next_alarm_send};
 
 const MsgDef          SYNC = {SYNC_BYTE, MAX_MSG_LEN, do_nothing}; // must already be in sync
 const MsgDef      DATA_SET = {0x70, VAR_LENGTH, receive_data}; // variable length
@@ -192,6 +193,7 @@ const MsgDef *MSG_DEFS[N_MSG_TYPE] = {&NOT_USED_MSG,
 				      &PING,
 				      &EEPROM_DUMP,
 				      &ANNIVERSARY,
+				      &NEXT_ALARM_REQ,
 				      &DATA_SET};
 
 char serial_msg[MAX_MSG_LEN];
@@ -283,6 +285,7 @@ void update_time(){
 void setup(void){
   Wire.begin();
   c3.init();
+
   setSyncProvider(getTime);      // RTC
   setSyncInterval(3600000);      // update every hour (and on boot)
   update_time();
@@ -953,6 +956,7 @@ void pong(){
 void send_time(){
   Serial_time_t data;
   
+  Serial.print(ABS_TIME_SET.id, BYTE);
   data.dat32 = now();
   for(uint8_t i = 0; i < 4; i++){
     Serial.print(data.dat8[i], BYTE);
@@ -1009,11 +1013,19 @@ void tod_alarm_get(){
 }
 
 void eeprom_dump(){
-  for(uint16_t i = 0; i < 1024; i++){
+  for(uint16_t i = 0; i <= MAX_EEPROM_ADDR; i++){
     Serial.print(EEPROM.read(i), BYTE);
   }
 }
 
+void next_alarm_send(){
+  Serial_time_t data;
+  Serial.print(ABS_TIME_SET.id, BYTE);
+  data.dat32 = Alarm.nextTrigger;
+  for(uint8_t i = 0; i < 4; i++){
+    Serial.print(data.dat8[i]);
+  }
+}
 void set_did_alarm(){
   Serial_time_t data;
   tmElements_t tm;
@@ -1029,23 +1041,18 @@ void set_did_alarm(){
     // blank, blank, blank, day, hour, 5min, min, 10sec, 
     uint8_t countdown = serial_msg[6];
     uint8_t repeat = serial_msg[7];
-    Alarm.create(data.dat32, fire_alarm, data.dat32 < now(), countdown, repeat, serial_msg[0]);
-    /* // count down for debugging
-    Serial.end();
-    while(data.dat32 > now()){
-	two_digits(data.dat32 - now());
-	c3.refresh(16);
-	Alarm.serviceAlarms();
-    }
-    Serial.begin(BAUDRATE);
-    */
+    Alarm.create(data.dat32, fire_alarm, true, countdown, repeat, serial_msg[0]);
   }
   else{
+    Serial_send_err("AL");
     // error
   }
 }
 
 void receive_data(){
+  int16_t tmp_addr;
+  uint8_t tmp_l;
+
   if(!did_write(serial_msg + 1)){
     Serial_send_err(EEPROM_ERR);
   }
@@ -1069,10 +1076,12 @@ void Serial_send_err(char *err){
   // Serial.print(len + 2 + MAX_MSG_LEN, BYTE);
   Serial.print(len + 2, BYTE);
   Serial.print(err);
+  c3.tone(55, 500);
   // Serial.print(serial_msg);
 }
 
 void send_data(){
+
   uint8_t did = serial_msg[0];
   uint8_t n_byte;
 
@@ -1090,6 +1099,7 @@ void send_data(){
 
 void display_send(){
   uint8_t *display_p = (uint8_t *)display;
+  Serial.print(DISPLAY_SET.id, BYTE);
   for(uint8_t i = 0; i < N_COL * sizeof(uint32_t); i++){
     Serial.print(display_p[i], BYTE);
   }
@@ -1115,7 +1125,7 @@ void eeprom_clear(){
   }
   // do the deed
   if(confirmed){
-    for(uint16_t i = 0; i < 1024; i++){
+    for(uint16_t i = 0; i <= MAX_EEPROM_ADDR; i++){
       EEPROM.write(i, 0);
     }
   }
@@ -1202,7 +1212,7 @@ void Serial_inc(void) {
 void Serial_dec(void) {
 }
 void Serial_mode(void) {
-  switchmodes(last_mode_id);  // or maybe just go back to NORMAL_MODE?
+  switchmodes(NORMAL_MODE);  // or maybe just go back to NORMAL_MODE? or last_mode?
 }
 
 // Begin Mode Mode Code (TODO use one file per mode)
@@ -1250,10 +1260,32 @@ void switchmodes(uint8_t new_mode_id){
 }
 
 void fire_alarm(uint8_t did){
+  Serial_time_t data;
+  uint8_t len;
   /* if did is 0, just sound the alarm.
    * otherwise -- look up record at did and follow perscription!
    */
-  switchmodes(ALARM_MODE);
+  bool status = true;
+  if(did && did_read(serial_msg[0], serial_msg, &len)){
+    if(len == 11){
+      if(serial_msg[7] == 0){ // this is a non repeating alarm, delete it from eeprom
+	// if(!did_delete(did)){
+	//   Serial_send_err(EEPROM_ERR);
+	//   status = false;
+	// }
+      }
+      if(status){
+	scroll_did = serial_msg[8];
+	if(scroll_did){
+	  serial_msg[0] = scroll_did;
+	  scroll_data();
+	}
+      }
+    }
+  }
+  else{// if(status){
+    // switchmodes(ALARM_MODE);
+  }
 }
 void two_digits(uint8_t val){
   font.getChar('0' + val / 10, getColor(COLORS[color_i]), display + 2);

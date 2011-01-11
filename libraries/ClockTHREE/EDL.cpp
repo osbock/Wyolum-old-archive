@@ -33,14 +33,16 @@ bool did_write(char* data){
   
   int16_t tmp_addr;
   uint8_t tmp_l;
-  if(!get_did_addr(did, &tmp_addr, &tmp_l)){
-    if(did_next_addr(&addr)){
-      if(addr + len < MAX_EEPROM_ADDR - 1){
-	for(uint8_t i = 0; i < len; i++){
-	  EEPROM.write(addr + i, data[i]);
+  if((did != 0) && (did != 255)){ // 0 and 255 are not a valid dids
+    if(!get_did_addr(did, &tmp_addr, &tmp_l)){ // check if did already exists
+      if(did_next_addr(&addr)){                // find next EEPROM address
+	if(addr + len < MAX_EEPROM_ADDR - 1){  // make sure there is enough space
+	  for(uint8_t i = 0; i < len; i++){
+	    EEPROM.write(addr + i, data[i]);   // copy to EEPROM
+	  }
+	  EEPROM.write(MAX_EEPROM_ADDR, n + 1); // update # dids
+	  status = true;
 	}
-	EEPROM.write(MAX_EEPROM_ADDR, n + 1);
-	status = true;
       }
     }
   }
@@ -91,8 +93,13 @@ bool did_delete(uint8_t did){
     }
     else{
       if(did_next_addr(&next_addr)){
+	// slide everything down
 	for(int i = addr; i < next_addr - 1 - len; i++){
 	  EEPROM.write(i, EEPROM.read(i + len));
+	}
+	// delete tail
+	for(int i = next_addr - 1 - len; i < next_addr; i++){
+	  EEPROM.write(i, 0);
 	}
       }
       if(n > 0){
