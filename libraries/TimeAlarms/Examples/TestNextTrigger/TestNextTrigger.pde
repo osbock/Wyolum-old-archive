@@ -28,9 +28,17 @@ void setup()
   */
 
   // ONCE 30 secs from now
-  Alarm.create(now() + 32, fire_alarm, true, 0, NO_REPEAT, 32);
+
+  //         create(      value,  onTickHandler,  IS_ALARM,  COUNTDOWN, IS_REPEAT,   arg, IS_ENABLED=true);  
+  AlarmID_t id = Alarm.create(now() + 35, fire_alarm, true, 0, REPEAT_5MIN, 32);
+  Serial.println(Alarm.Alarm[id].is_5min_repeat(), DEC);
+  Serial.println(Alarm.Alarm[id].is_daily(), DEC);
+  Serial.println(Alarm.Alarm[id].is_annual(), DEC);
+  Serial.println(Alarm.Alarm[id].is_armed(), DEC);
+  Serial.println(Alarm.Alarm[id].is_5min_repeat(), DEC);
+  
   // ONCE 17 Secs from now
-  Alarm.create(now() + 17, fire_alarm, true, 0, NO_REPEAT, 17);
+  /*Alarm.create(now() + 17, fire_alarm, true, 0, NO_REPEAT, 17);*/
 }
 
 void  loop(){  

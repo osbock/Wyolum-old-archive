@@ -213,7 +213,10 @@ def scroll_data(did):
 
 def set_alarm(t, countdown, repeat, scroll_msg, 
               effect_id, sound_id):
-    scroll_did = eeprom.add_record(scroll_msg)
+    if scroll_msg:
+        scroll_did = eeprom.add_record(scroll_msg)
+    else:
+        scroll_did = chr(0)
     dat = [
            struct.pack('<I', t),
            chr(countdown),
@@ -363,15 +366,22 @@ def eeprom_read(full=False):
             for j in range(2, l):
                 print '0x%02x' % ord(eeprom[addr + j]),
 
-            payload = eeprom[addr + 2: addr + l]
-            print payload
+            record = eeprom[addr: addr + l]
+            print record
             if did < MAX_ALARM_DID:
-                when = time.gmtime(c3_to_wall_clock(payload[:4]))
+                assert record[1] == chr(11)
+                when = time.gmtime(c3_to_wall_clock(record[2:6]))
                 print 'ALARM:', fmt_time(when),
-                countdown = payload[5]
-                repeat = payload[6]
-                scroll_did = payload[6]
-                print 'scroll', ord(scroll_did)
+                countdown = record[6]
+                repeat = record[7]
+                scroll_did = record[8]
+                effect_id = record[9]
+                sound_id = record[10]
+                print 'cd', ord(countdown),
+                print 'rp', ord(repeat),
+                print 'sc', ord(scroll_did),
+                print 'ef', ord(effect_id),
+                print 'sd', ord(sound_id)
             addr += l
     except Exception, e:
         print e
@@ -433,9 +443,19 @@ def main():
     ser.flush()
     print eeprom.dids
     now = time_req()
-    print ord(set_alarm(now + 30, 0, 0, "DUDE!!!!....--", 0, 0))
-    print ord(set_alarm(now + 60, 0, 0, "ZZZZZ", 0, 0))
+    print ord(set_alarm(22, 
+                        countdown=0, 
+                        repeat=0xff, 
+                        scroll_msg="HAPPY NEW YEAR     ",
+                        effect_id=0,
+                        sound_id=0))
     return
+    print ord(set_alarm(now + 45, 
+                        countdown=0, 
+                        repeat=0, 
+                        scroll_msg="DUDE!!!!....--",
+                        effect_id=0,
+                        sound_id=0))
     trigger_mode()
     for i in range(50):
         print i

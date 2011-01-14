@@ -12,6 +12,8 @@
 #include <Time.h>
 #include <Wire.h>
 #include "ClockTHREE.h"
+#include "EEPROM.h"
+#include "MsTimer2.h"
 #include "rtcBOB.h"
 #include "SPI.h"
 #include "font.h"

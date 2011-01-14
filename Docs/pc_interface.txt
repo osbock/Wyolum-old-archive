@@ -40,7 +40,7 @@ MID           length description               payload format
 0x08               2 get annual event          DID
 0x09               6 set annual event          DID 4 bytes unsigned int (seconds from Jan 1)
 0x0A               1 request display           NA
-0x0B               2 set display               DID 
+0x0B               2 set display               64 bytes of display data
 0x0C               1 trigger MODE              NA
 0x0D               1 trigger INC               NA
 0x0E               1 trigger DEC               NA

@@ -21,15 +21,16 @@ time_t getTime(){
 
 void setRTC(uint16_t YY, uint8_t MM, uint8_t DD, 
 	    uint8_t hh, uint8_t mm, uint8_t ss){
-  uint8_t date[3];
+  uint8_t date[7];
   date[0] = ss;
   date[1] = mm;
   date[2] = hh;
-  rtc_raw_write(0, 3, IS_BCD, date);
-  date[0] = DD;
-  date[1] = MM;
-  date[2] = YY % 100;
-  rtc_raw_write(4, 3, IS_BCD, date);
+  date[3] = 0;
+  date[4] = DD;
+  date[5] = MM;
+  date[6] = YY % 100;
+  
+  rtc_raw_write(0, 7, IS_BCD, date);
 }
 
 void setRTC_alarm(uint8_t ahh, uint8_t amm, uint8_t ass, uint8_t alarm_set){
@@ -99,8 +100,7 @@ uint8_t dec2bcd(int dec){
 
 // binary coded decimal to decimal
 int bcd2dec(uint8_t bcd){
-  return (((bcd & 0b11110000)>>4)*10 + 
-    (bcd & 0b00001111));
+  return (((bcd & 0b11110000)>>4)*10 + (bcd & 0b00001111));
 }
 
 bool rtc_raw_read(uint8_t addr,
@@ -125,9 +125,9 @@ bool rtc_raw_read(uint8_t addr,
   return out;
 }
 void rtc_raw_write(uint8_t addr,
-	       uint8_t n_bytes,
-	       bool is_bcd,
-	       uint8_t *source){
+		   uint8_t n_bytes,
+		   bool is_bcd,
+		   uint8_t *source){
   Wire.beginTransmission(DS3231_ADDR); 
   Wire.send(addr); // start at address addr
   for(uint8_t i = 0; i < n_bytes; i++){

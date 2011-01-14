@@ -125,10 +125,13 @@ This example code is in the public domain.
 
 #include <avr/pgmspace.h>
 #include <Wire.h>
+#include "EEPROM.h"
+#include "MsTimer2.h"
 #include "ClockTHREE.h"
 #include "SPI.h"
 #include "english.h"
 #include "Time.h"
+#include "EDL.h"
 
 // globals
 ClockTHREE c3 = ClockTHREE();
@@ -149,7 +152,8 @@ int noteDuration = 256;
 
 void loop() {
   int pin = SPEAKER_PIN;
-  tone(pin, note);
+  // tone(SPEAKER_PIN, note);
+  c3.note(note);
   note = (int)(note * HALF_STEP);
   if(note > NOTE_C8){
     note = NOTE_C4;

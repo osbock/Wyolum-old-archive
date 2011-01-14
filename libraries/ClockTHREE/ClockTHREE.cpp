@@ -325,7 +325,10 @@ void ClockTHREE::lineto(int8_t _xpos, int8_t _ypos, uint8_t color){
   moveto(_xpos, _ypos);
 }
   
-// Replace current display buffer, return pointer to old buffer
+/* Replace current display buffer, return pointer to old buffer
+   A display has at least N_COL columns. but can have more for off screen staging.
+   pass n_col into to secify more than N_COL columns .
+*/
 uint32_t *ClockTHREE::setdisplay(uint32_t *_display){
   uint32_t *out = display;
   display = _display;
@@ -368,17 +371,15 @@ void ClockTHREE::off(){
   displayfill(DARK);
 }
 
-void ClockTHREE::tone(uint16_t freq, uint16_t ms){
-  MsTimer2::stop();
-  pinMode(SPEAKER_PIN, OUTPUT);
+void ClockTHREE::note(uint16_t freq){
+  // MsTimer2::stop();
   tone(SPEAKER_PIN, freq);
-  delay(ms);
-  noTone(SPEAKER_PIN);
-  digitalWrite(SPEAKER_PIN, HIGH);
-  MsTimer2::start();
-
 }
 
+void ClockTHREE::nonote(){
+  noTone(SPEAKER_PIN);
+  // MsTimer2::start();
+}
 uint8_t getColor(uint8_t color){
   if(color < TEMPERATURE_COLOR){
   }

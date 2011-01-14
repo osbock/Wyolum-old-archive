@@ -23,6 +23,7 @@
 #define REPEAT_WEEKDAYS 0b01111100
 #define REPEAT_WEEKENDS 0b10000010
 #define    REPEAT_DAILY 0b11111110
+#define     REPEAT_5MIN 0b11111111
 #define NO_COUNTDOWN 0
 #define COUNTDOWN_10SEC (1 << 0)
 #define COUNTDOWN_1MIN (1 << 1)
@@ -45,6 +46,7 @@ typedef struct  {
   uint8_t countdown_hour         :1;  // count down from t - one hour
   uint8_t countdown_day          :1;  // count down from t - one day
   uint8_t repeat;                  // bit field sunday= bit0--> annual, bit1 --> monday, ...  bit7 --> sat
+                                   // If all bits are one, repeat every 5 minutes 
  }
     AlarmMode_t   ;
 
@@ -72,7 +74,7 @@ public:
   void set_countdown(uint8_t val); // TJS:
   void set_repeat(uint8_t val); // TJS:
   void set_alarm(bool val);     // TJS:
-  bool is_countdown();          // TJS:
+  bool is_5min_repeat();        // TJS:
   bool is_daily();              // TJS:
   bool is_annual();             // TJS:
   bool is_armed();              // TJS:

@@ -67,6 +67,7 @@ void AlarmClass::set_repeat(uint8_t val){  // TJS:
    * 6 -- friday
    * 7 -- saturday
    *  if all bits are zero -> oneshot alarm
+   *  if all bits are one -> repeat every 5 min
    */
   Mode.repeat = val;
 }
@@ -97,10 +98,13 @@ void AlarmClass::set_alarm(bool val){    // TJS:
 // repeat alarm based on days of the week (for instance: could be every day, or just one day per week)
 bool AlarmClass::is_daily(){                // TJS:
   // return value < SECS_PER_DAY;
-  return Mode.repeat & ~1;
+  return 1 < Mode.repeat && Mode.repeat < 255;
+}
+bool AlarmClass::is_5min_repeat(){        // TJS:
+  return Mode.repeat = 255;               
 }
 bool AlarmClass::is_annual(){             // TJS:
-  return Mode.repeat & 1;
+  return Mode.repeat == 1;
 }
 bool AlarmClass::is_oneshot(){            // TJS:
   return Mode.repeat == 0;
@@ -151,52 +155,72 @@ bool AlarmClass::get_delta_days(time_t time){
 void AlarmClass::updateNextTrigger()
 {
   time_t time = now();
-  if(is_armed() && nextTrigger <= time){
+  if(is_armed() && nextTrigger == 0){
+    // initialize
     if(is_periodic()){ // value is number of seconds between triggers or from start
                        // may or may not be repeated
-      if(is_repeated() || nextTrigger == 0){
+      if(nextTrigger == 0 || is_repeated()){
 	nextTrigger = time + value;
       }
     }
     else if(is_daily()){ // time of day alarm, find next time of day when this time occurs
-      if(nextTrigger == 0){
-	if(value < SECS_PER_DAY){ // value holds time of day
-	  nextTrigger = previousMidnight(time) + value;
-	}
-	else{ // value hold abs time
-	  nextTrigger = value;
-	}
+      if(value < SECS_PER_DAY){ // value holds time of day
+	nextTrigger = previousMidnight(time) + value;
       }
-      if(nextTrigger <= time){  // find next day of the week
-	nextTrigger += (time_t)(SECS_PER_DAY * get_delta_days(time));
+      else{ // value hold abs time
+	nextTrigger = value;
       }
     }
     else if(is_annual()){
       if(nextTrigger == 0){
 	nextTrigger = value;
       }
-      else if(time >= nextTrigger){
-	tmElements_t tm;
-	tm.Year = CalendarYrToTm(year(nextTrigger)) + 1;
-	tm.Month = month(nextTrigger);
-	tm.Day = day(nextTrigger);
-	tm.Hour = hour(nextTrigger);
-	tm.Minute = minute(nextTrigger);
-	tm.Second = second(nextTrigger);
-
-	nextTrigger = makeTime(tm);
-      }
+    }
+    else if(is_5min_repeat()){ // date and 5min repeat
+      nextTrigger = value;
     }
     else{// absolute time
-      if(nextTrigger == 0){
-	nextTrigger = value;
+      nextTrigger = value;
+    }
+  }
+  else{ 
+    // update
+    if(is_armed() && nextTrigger <= time){
+      if(is_periodic() && is_repeated()){
+	  nextTrigger = time + value;
       }
-      else{ // absolute time has passed // should not get here
+      else if(is_daily()){ // time of day alarm, find next time of day when this time occurs
+	if(nextTrigger == 0){
+	  if(value < SECS_PER_DAY){ // value holds time of day
+	    nextTrigger = previousMidnight(time) + value;
+	  }
+	  else{ // value hold abs time
+	    nextTrigger = value;
+	  }
+	}
+	if(nextTrigger <= time){  // find next day of the week
+	  nextTrigger += (time_t)(SECS_PER_DAY * get_delta_days(time));
+	}
+      }
+      else if(is_annual() && time >= nextTrigger){
+	  tmElements_t tm;
+	  tm.Year = CalendarYrToTm(year(nextTrigger)) + 1;
+	  tm.Month = month(nextTrigger);
+	  tm.Day = day(nextTrigger);
+	  tm.Hour = hour(nextTrigger);
+	  tm.Minute = minute(nextTrigger);
+	  tm.Second = second(nextTrigger);
+	  
+	  nextTrigger = makeTime(tm);
+      }
+      else if(is_5min_repeat()){
+	nextTrigger = time + 5 * SECS_PER_MIN;
+      }
+      else{// absolute time
+	   // absolute time has passed // should not get here
 	init();
       }
     }
-  }
-  else{
   }
 }
 

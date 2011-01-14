@@ -81,7 +81,7 @@ const unsigned long RGBW_MASKS[] = {
   0b001001001001001001001001001001, // RED
   0b010010010010010010010010010010, // GREEN
   0b100100100100100100100100100100, // BLUE
-  0b111111111111111111111111111111  // WHITE
+  0b001111111111111111111111111111  // WHITE
 };
 
 const uint8_t      DARK = 0b000;
@@ -120,7 +120,7 @@ class ClockTHREE
     
   // Hardware initialization
   void init();
-
+  
   // Scan current display 1 time (if display is not NULL)
   void refresh();
 
@@ -206,8 +206,8 @@ class ClockTHREE
   void off();
 
   // play a note
-  void tone(uint16_t freq, uint16_t ms);
-
+  void note(uint16_t freq);
+  void nonote();
 /*
  * Uses RTC if available or INT if not.
  */
@@ -216,6 +216,7 @@ class ClockTHREE
   uint8_t xpos;
   uint8_t ypos;
   uint16_t my_delay;
+  uint8_t n_disp_col; // number of columns in the display data (at least N_COL, may be more)
   
  private:
 };
