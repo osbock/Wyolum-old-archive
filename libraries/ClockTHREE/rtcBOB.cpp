@@ -21,6 +21,21 @@ time_t getTime(){
 
 void setRTC(uint16_t YY, uint8_t MM, uint8_t DD, 
 	    uint8_t hh, uint8_t mm, uint8_t ss){
+  if(true){ // old way seems to work?!
+    Wire.beginTransmission(104); // 104 is DS3231 device address
+    Wire.send(0); // start at register 0
+    Wire.send(dec2bcd(ss)); //Send seconds as BCD
+    Wire.send(dec2bcd(mm)); //Send minutes as BCD
+    Wire.send(dec2bcd(hh)); //Send hours as BCD
+    Wire.send(dec2bcd(weekday())); // dow
+    Wire.send(dec2bcd(DD)); //Send day as BCD
+    Wire.send(dec2bcd(MM)); //Send month as BCD
+    Wire.send(dec2bcd(YY % 100)); //Send year as BCD
+    Wire.endTransmission();
+    getTime();
+    return;
+  }
+  // TODO: DBG from here down is new way, and it does not actually update rtc!
   uint8_t date[7];
   date[0] = ss;
   date[1] = mm;
