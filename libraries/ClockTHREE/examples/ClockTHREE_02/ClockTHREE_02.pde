@@ -33,7 +33,7 @@
 // debounce mode button threshold
 const uint8_t DEBOUNCE_THRESH = 100;
 const uint16_t SERIAL_TIMEOUT_MS = 1000;
-const uint8_t MAX_ALARM_DID = 0x3F;
+const uint8_t MAX_ALARM_DID = 63;
 
 // Define modes
 typedef void (* CallBackPtr)(); // this is a typedef for callback funtions
@@ -141,7 +141,7 @@ const uint8_t SYNC_BYTE = 254;   // 0xEF;
 const uint8_t VAR_LENGTH = 255;   // 0xFF;
 char* EEPROM_ERR = "EE";
 char* EEPROM_DELETE_ERR = "ED";
-const uint8_t N_MSG_TYPE = 24;
+const uint8_t N_MSG_TYPE = 25;
 const MsgDef  NOT_USED_MSG = {0x00, 1, do_nothing};
 const MsgDef  ABS_TIME_REQ = {0x01, 1, send_time};
 const MsgDef  ABS_TIME_SET = {0x02, 5, Serial_time_set};
@@ -165,8 +165,9 @@ const MsgDef     ABOUT_REQ = {0x11, 1, do_nothing};
 const MsgDef          PING = {0x12, MAX_MSG_LEN, pong};
 const MsgDef  EEPROM_CLEAR = {0x43, MAX_MSG_LEN, eeprom_clear}; // 0x43 = ASCII 'C'
 const MsgDef   EEPROM_DUMP = {0x44, 1, eeprom_dump}; // 0x44 = ASCII 'D'
-const MsgDef   ANNIVERSARY = {0x15, 2, set_did_alarm};
+const MsgDef    DID_ALARM_SET = {0x15, 2, set_did_alarm};
 const MsgDef NEXT_ALARM_REQ = {0x16, 1, next_alarm_send};
+const MsgDef DID_ALARM_DELETE = {0x17, 2, delete_did_alarm};
 
 const MsgDef          SYNC = {SYNC_BYTE, MAX_MSG_LEN, do_nothing}; // must already be in sync
 const MsgDef      DATA_SET = {0x70, VAR_LENGTH, receive_data}; // variable length
@@ -193,10 +194,12 @@ const MsgDef *MSG_DEFS[N_MSG_TYPE] = {&NOT_USED_MSG,
 				      &EEPROM_CLEAR,
 				      &PING,
 				      &EEPROM_DUMP,
-				      &ANNIVERSARY,
+				      &DID_ALARM_SET,
 				      &NEXT_ALARM_REQ,
+				      &DID_ALARM_DELETE,
 				      &DATA_SET};
-
+const uint8_t DID_ALARM_LEN = 12;
+const uint8_t ALARM_ID_OFFSET = 11;
 char serial_msg[MAX_MSG_LEN];
 uint8_t serial_msg_len;
 
@@ -448,20 +451,21 @@ void Seconds_mode(){
 void Scroll_setup(){
   // Display is 2x as large as screen.  Use larger induces to stage display.
   if(serial_msg[0] && did_read(serial_msg[0], serial_msg, &serial_msg_len)){
-     for(uint8_t i = 2; i < serial_msg_len; i++){
-       serial_msg[i - 2] =  serial_msg[i];
-     }
-     serial_msg_len -= 2;
-     if(serial_msg_len > 0){
-       font.getChar(serial_msg[0], getColor(COLORS[color_i]), display + 15);
-     }
-   }
-   else{
-     strcpy(serial_msg, "JANK");
-     serial_msg_len = strlen("JANK");
-     // Scroll_mode();// hit the mode button to exit out of this mode, no mesage to scroll
-   }
- }
+    // remove header
+    for(uint8_t i = 2; i < serial_msg_len; i++){
+      serial_msg[i - 2] =  serial_msg[i];
+    }
+    serial_msg_len -= 2;
+    if(serial_msg_len > 0){
+      font.getChar(serial_msg[0], getColor(COLORS[color_i]), display + 15);
+    }
+  }
+  else{
+    strcpy(serial_msg, "JANK");
+    serial_msg_len = strlen("JANK");
+    // Scroll_mode();// hit the mode button to exit out of this mode, no mesage to scroll
+  }
+}
  void Scroll_loop(){
    c3.refresh(16);
    if(count % 12 == 0){
@@ -532,10 +536,26 @@ void Scroll_setup(){
    pinMode(SPEAKER_PIN, OUTPUT);
    MsTimer2::stop(); // tone/note() interfers with MsTimer2
    // see if alarm msg is stored in serial_msg
-   if(serial_msg[0] < MAX_ALARM_DID && serial_msg_len == 11){ // 0x3F = 
-     // two_digits(serial_msg[10]);
-     // c3.refresh(10000);
-     alarm_beeping = serial_msg[10] > 0;
+   // two_digits(serial_msg[0]); // DBG
+   // c3.refresh(10000); // DBG
+
+
+   if(0 < serial_msg[0] && serial_msg[0] <= MAX_ALARM_DID && 
+      serial_msg_len == DID_ALARM_LEN){ // 0x3F = 
+
+     two_digits(alarm_beeping); // DEB
+     c3.refresh(10000);
+
+     if(serial_msg[10] > 0){
+       alarm_beeping = true;
+     }
+     color_i = 1;
+     two_digits(serial_msg[10]); // DEB
+     c3.refresh(10000);
+     color_i = 2;
+     two_digits(alarm_beeping); // DEB
+     c3.refresh(10000);
+
      if(0 < serial_msg[8] && serial_msg[8] < 255){ // valid scroll_did
        serial_msg[0] = serial_msg[8];
        serial_msg_len = 1;
@@ -1030,57 +1050,99 @@ void Scroll_setup(){
    Serial.print(alarm_set, BYTE);
  }
 
- void eeprom_dump(){
-   for(uint16_t i = 0; i <= MAX_EEPROM_ADDR; i++){
-     Serial.print(EEPROM.read(i), BYTE);
-   }
- }
-
- void next_alarm_send(){
-   Serial_time_t data;
-   Serial.print(ABS_TIME_SET.id, BYTE);
-   data.dat32 = Alarm.nextTrigger;
-   for(uint8_t i = 0; i < 4; i++){
-     Serial.print(data.dat8[i]);
-   }
- }
- void set_did_alarm(){
-   Serial_time_t data;
-   tmElements_t tm;
-   uint8_t len;
-   bool status = true;
-
-   // did stored in serial_msg[0] (MID pealed off already)
-   // record stored in eeprom
-   if(did_read(serial_msg[0], serial_msg, &serial_msg_len)){
-     for(uint8_t i = 2; i < 6; i++){
-       data.dat8[i - 2] = serial_msg[i];
-     }
-     // countdown bits: MSb     -->                  LSb
-     // blank, blank, blank, day, hour, 5min, min, 10sec, 
-     uint8_t countdown = serial_msg[6];
-     uint8_t repeat = serial_msg[7];
-
-     if(!Alarm.create(data.dat32,                 // time 
-		      fire_alarm,                 // callback
-		      data.dat32 < SECS_PER_DAY,  // alarm_f          
-		      0,                          // countdown_flags
-		      0,                          // repeat_flags      
-		      serial_msg[0])              // arg=alarm_did
-	)
-       {
-      status = false;
-    }
+void eeprom_dump(){
+  for(uint16_t i = 0; i <= MAX_EEPROM_ADDR; i++){
+    Serial.print(EEPROM.read(i), BYTE);
   }
-  else{
-    status = false;
+}
+
+void next_alarm_send(){
+  Serial_time_t data;
+  Serial.print(ABS_TIME_SET.id, BYTE);
+  data.dat32 = Alarm.nextTrigger;
+  for(uint8_t i = 0; i < 4; i++){
+    Serial.print(data.dat8[i]);
+  }
+}
+void set_did_alarm(){
+  Serial_time_t data;
+  tmElements_t tm;
+  uint8_t len;
+  bool status = false;
+  uint8_t did;
+  AlarmID_t aid;
+  // did stored in serial_msg[0] (MID pealed off already)
+  // record stored in eeprom
+  did = serial_msg[0];
+  if(0 < did && did <= MAX_ALARM_DID){
+    if(did_read(did, serial_msg, &serial_msg_len)) {
+      for(uint8_t i = 2; i < 6; i++){
+	data.dat8[i - 2] = serial_msg[i];
+      }
+      // countdown bits: MSb     -->                  LSb
+      // blank, blank, blank, day, hour, 5min, min, 10sec, 
+      uint8_t countdown = serial_msg[6];
+      uint8_t repeat = serial_msg[7];
+      
+      aid = Alarm.create(data.dat32,                 // time 
+			 fire_alarm,                 // callback
+			 true,                      // alarm_f (true for c3)
+			 0,                          // countdown_flags
+			 0,                          // repeat_flags      
+			 serial_msg[0]);              // arg=alarm_did
+      // update alarm_id in EEPROM.
+      if(!did_edit(did, ALARM_ID_OFFSET, aid)){
+	Serial.end();
+	two_digits(aid);
+	c3.refresh(10000);
+	Serial.begin(BAUDRATE);
+      }
+      else if(aid != dtINVALID_ALARM_ID){
+	status = true;
+      }
+    }
   }
   if(!status){
     // error
+    two_letters(EEPROM_ERR);
+    c3.refresh(10000);
     Serial_send_err("AL");
   }
 }
 
+void delete_did_alarm(){
+  bool status = false;
+  uint8_t did;
+  AlarmID_t aid;
+  // did stored in serial_msg[0] (MID pealed off already)
+  // record stored in eeprom
+  did = serial_msg[0];
+  if(0 < did && did <= MAX_ALARM_DID){
+    if(did_read(did, serial_msg, &serial_msg_len)){
+      if(serial_msg_len == DID_ALARM_LEN){
+	// grab aid
+	aid = serial_msg[ALARM_ID_OFFSET];
+	Alarm.free(aid);
+	if(did_delete(did)){
+	    status = true;
+	}
+      }
+    }
+  }
+  if(!status){
+    // error
+#ifdef CLOCKTHREE
+    Serial.end();
+#endif
+    two_letters(EEPROM_ERR);
+    c3.refresh(10000);
+#ifdef CLOCKTHREE
+    Serial.end();
+#else
+    Serial_send_err("AL");
+#endif
+  }
+}
 void receive_data(){
   int16_t tmp_addr;
   uint8_t tmp_l;
@@ -1303,7 +1365,7 @@ void fire_alarm(uint8_t did){
   Serial_time_t data;
   uint8_t len;
   /* if did is 0, just switch to alarm mode
-   * otherwise -- look up record at did and swtich
+   * otherwise -- look up record at did and switch
    */
   // two_digits(did);
   // c3.refresh(10000);

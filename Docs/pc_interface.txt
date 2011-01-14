@@ -79,7 +79,7 @@ byte1: DID (find the alarm msg under this DID)
 
 Alarm DID:
 byte0: DID
-byte1: 11  -- DID SIZE (this is a fixed length record here to make DID complete)
+byte1: 12  -- DID SIZE (this is a fixed length record here to make DID complete)
 byte2-5: alarm time, if greater than current time ==> absolute time, else repeat interval from now
 byte6: countdown bitfield: blank, blank, blank, day, hour, 5min, min, 10sec, 
 byte7: Days of the week repeat: can choose more than one DOW
@@ -91,6 +91,9 @@ byte7: Days of the week repeat: can choose more than one DOW
 byte8: scroll message DID
 byte9: special effect #(0 => None, 1 => fireworks, 2=> color lines)
 byte10: tune DID (0=> no sound, 1 => beeping, >0x3F DID of tune data (Not implimented))
+byte11: set this byte to UNALLOCATED_ALARM_ID (0xFE), RESERVED for AlarmID_t 
+        returned from TimeAlarms.h.  This byte is used to delete pending 
+        alarms.
 
 Anniversary Alarm DID:
 Anniversary alarms need to be stored in EEPROM (long term memory).  This top section described

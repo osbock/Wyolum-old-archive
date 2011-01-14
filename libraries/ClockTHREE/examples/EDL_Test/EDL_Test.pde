@@ -56,7 +56,7 @@ void setup(){
     for(did = 1; did < n_record + 1; did++){
       get_test_record(did, payload, msg);
       if(!did_write(msg)){
-	Serial.println("Trouble writing message with did ");
+	Serial.println("ERROR writing message with did ");
 	Serial.print(did, DEC);
       }
     }
@@ -86,7 +86,7 @@ void setup(){
     for(did = 1; did < n_record + 1; did++){
       // Delete them
       if(!did_delete(did)){
-	Serial.print("Trouble deleting did ");
+	Serial.print("    ERROR deleting did ");
 	Serial.println(did, BYTE);
       }
     }
@@ -108,17 +108,17 @@ void setup(){
   Serial.println("Independence test");
   get_test_record(1, payload, msg);
   if(!did_write(msg)){
-    Serial.println("Trouble writing message 1 with did ");
+    Serial.println("    ERROR writing message 1 with did ");
     Serial.print(did, DEC);
   }
   get_test_record(2, payload, msg);
   if(!did_write(msg)){
-    Serial.println("Trouble writing message 2 with did ");
+    Serial.println("    ERROR writing message 2 with did ");
     Serial.print(did, DEC);
   }
   
   if(!did_delete(2)){
-    Serial.print("Trouble deleting did 2");
+    Serial.print("    ERROR deleting did 2");
   }
 
   get_test_record(1, payload, msg);
@@ -135,10 +135,57 @@ void setup(){
       Serial.println(msg[i], DEC);
     }
   }
+  
+  if(!did_delete(1)){
+    Serial.print("    ERROR deleting did 1");
+  }
 
-  // clear EEPROM
-  for(uint16_t i = 0; i <= MAX_EEPROM_ADDR; i++){
-    EEPROM.write(i, 0);
+  Serial.println("Test did_edit()");
+  did = 16;
+  get_test_record(did, payload, msg);
+  if(!did_write(msg)){
+    Serial.print("    ERROR writing message: '");
+    Serial.print(msg[0], HEX);
+    Serial.print(msg[1], HEX);
+    for(int i = 2; i < msg[1]; i++){
+      Serial.print(msg[i]);
+    }
+    Serial.println("'");
+  }
+  else{
+    if(did_edit(did, 0, 0)){
+      Serial.println("    ERROR: allowed to overwrite did");
+    }
+    if(did_edit(did, 1, 0)){
+      Serial.println("    ERROR: allowed to overwrite len");
+    }
+    for(uint8_t offset = 2; offset < msg[1]; offset++){
+      if(!did_edit(did, offset, offset)){
+	Serial.print("    ERROR: not allowed to overwrite byte ");
+	Serial.print(offset, HEX);
+      }
+      else{
+	if(!did_read(did, msg, &out_len)){
+	  Serial.println("    ERROR: not read DID after edit");
+	}
+	else{
+	  if(msg[offset] != offset){
+	    Serial.print("    ERROR: record edit not effective ");
+	    Serial.print(offset);
+	    Serial.print(" != ");
+	    Serial.println(msg[2]);
+	  }
+	}
+      }
+    }
+    if(did_edit(did, 100, 100)){
+      Serial.println("    ERROR: allowed to overwrite byte 100 ");
+    }
+    
+    // clear EEPROM
+    for(uint16_t i = 0; i <= MAX_EEPROM_ADDR; i++){
+      EEPROM.write(i, 0);
+    }
   }
   Serial.println("EDL test end");
   Serial.println("");

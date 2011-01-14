@@ -8,8 +8,7 @@ from wx.lib.analogclock import *
 import struct
 
 MAX_ALARM_DID = chr(0x3F)
-ALARM_RECORD_LEN = 11
-
+DID_ALARM_LEN = 12
 class PingError(Exception):
     pass
 
@@ -223,18 +222,27 @@ def set_alarm(t, countdown, repeat, scroll_msg,
            chr(repeat),
            scroll_did,
            chr(effect_id),
-           chr(sound_id)
+           chr(sound_id),
+           chr(0xFE) #  show alarm as unallocated
            ]
     msg = ''.join(dat)
-    assert len(msg) == 9
+    assert len(msg) == DID_ALARM_LEN - 2
 
     alarm_did = eeprom.add_record(msg, alarm_flag=True)
     
     # finally inform C3 new alarm is waiting
-    ser.write(str(const.ANNIVERSARY))
+    ser.write(str(const.DID_ALARM_SET))
     ser.write(alarm_did)
     err_check()
     return alarm_did
+
+def delete_alarm(did):
+    if(0 < did <= const.MAX_ALARM_DID):
+        ser.flush()
+        ser.write(str(const.DID_ALARM_DELETE))
+        ser.write(str(did))
+        err_check()
+    
 
 def get_next_alarm():
     ser.flush()
@@ -262,10 +270,10 @@ class EEPROM: # singleton!
                 if data:
                     assert data[0] == did
                     assert len(data) == ord(data[1])
-                    assert len(data) == 11
-                    t = to_gmt(c3_to_wall_clock(data[2:6]))
+                    assert len(data) == DID_ALARM_LEN
+                    t = c3_to_wall_clock(data[2:6])
                     tr = time_req()
-                    print t, tr, '?', t < tr, '?'
+                    print t, tr, '?', t < tr, '?', (tr - t)
                     if t < tr:
                         self.delete_did(did)
                         print 'deleted'
@@ -327,7 +335,7 @@ class EEPROM: # singleton!
             did = self.next_did(alarm_flag)
             if did < MAX_ALARM_DID:
                 print 'Alarm DID:', did, ord(did)
-                assert len(payload) + 2 == ALARM_RECORD_LEN
+                assert len(payload) + 2 == DID_ALARM_LEN
             self.write(did, payload)
         return did
 
@@ -369,19 +377,21 @@ def eeprom_read(full=False):
             record = eeprom[addr: addr + l]
             print record
             if did < MAX_ALARM_DID:
-                assert record[1] == chr(11)
+                assert record[1] == chr(DID_ALARM_LEN)
                 when = time.gmtime(c3_to_wall_clock(record[2:6]))
-                print 'ALARM:', fmt_time(when),
+                print '       ALARM:', fmt_time(when),
                 countdown = record[6]
                 repeat = record[7]
                 scroll_did = record[8]
                 effect_id = record[9]
                 sound_id = record[10]
+                aid = record[11]
                 print 'cd', ord(countdown),
                 print 'rp', ord(repeat),
                 print 'sc', ord(scroll_did),
                 print 'ef', ord(effect_id),
-                print 'sd', ord(sound_id)
+                print 'sd', ord(sound_id),
+                print 'aid', ord(aid)
             addr += l
     except Exception, e:
         print e
@@ -443,19 +453,21 @@ def main():
     ser.flush()
     print eeprom.dids
     now = time_req()
-    print ord(set_alarm(22, 
-                        countdown=0, 
-                        repeat=0xff, 
-                        scroll_msg="HAPPY NEW YEAR     ",
-                        effect_id=0,
-                        sound_id=0))
+    did  = ord(set_alarm(now + 5, 
+                         countdown=0, 
+                         repeat=0, 
+                         scroll_msg="H   ",
+                         effect_id=0,
+                         sound_id=0))
+    # delete_alarm(did)
+    if False:
+        print ord(set_alarm(now + 27, 
+                            countdown=0, 
+                            repeat=0, 
+                            scroll_msg="DUDE!!!!....--",
+                            effect_id=0,
+                            sound_id=1))
     return
-    print ord(set_alarm(now + 45, 
-                        countdown=0, 
-                        repeat=0, 
-                        scroll_msg="DUDE!!!!....--",
-                        effect_id=0,
-                        sound_id=0))
     trigger_mode()
     for i in range(50):
         print i
@@ -576,6 +588,7 @@ if __name__ == '__main__':
                     next = time.gmtime(next)
                     print 'next alarm at', fmt_time(next)
                 except ValueError, e:
+                    print 'error getting next alarm:'
                     print e
                     print next
             elif arg == 'mode':

@@ -64,4 +64,12 @@ bool get_did_addr(uint8_t did, int16_t* addr_p, uint8_t *len_p);
  * return true if successful, false otherwise
  */
 bool did_delete(uint8_t did);
+
+/*
+ * Replace byte at record location "offset" of record stored at did with
+ * new_byte.  Cannot use this to modify DID or SIZE. Use delete for thes
+ * actions.
+ */
+bool did_edit(uint8_t did, uint8_t offset, uint8_t new_byte);
+
 #endif

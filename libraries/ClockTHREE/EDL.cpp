@@ -78,6 +78,8 @@ bool did_next_addr(int16_t *addr_p){
  * return true if successful, false otherwise
  */
 bool did_delete(uint8_t did){
+  // TODO: rather than move everything down, see if another DID has same length
+  //       then just copy over!  faster!
   int16_t addr, next_addr;
   uint8_t len;
   uint8_t n = EEPROM.read(MAX_EEPROM_ADDR);
@@ -143,3 +145,21 @@ bool get_did_addr(uint8_t did, int16_t* addr_p, uint8_t *len_p){
   return status;
 }
 
+/*
+ * Replace byte at record location "offset" of record stored at did with
+ * new_byte.  Cannot use this to modify DID or SIZE. Use delete for thes
+ * actions.
+ */
+bool did_edit(uint8_t did, uint8_t offset, uint8_t new_byte){
+  bool status = false;
+  int16_t addr;
+  uint8_t len;
+
+  if(get_did_addr(did, &addr, &len)){
+    if(1 < offset && offset < len){
+      EEPROM.write(addr + offset, new_byte);
+      status = true;
+    }
+  }
+  return status;
+}

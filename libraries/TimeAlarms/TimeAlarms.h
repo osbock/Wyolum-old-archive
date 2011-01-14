@@ -53,6 +53,7 @@ typedef struct  {
 typedef uint8_t AlarmID_t;
 typedef AlarmID_t AlarmId;  // Arduino friendly name
 #define dtINVALID_ALARM_ID 255
+#define dtUNALLOCATED_ALARM_ID 254
 
 
 class AlarmClass;  // forward reference
