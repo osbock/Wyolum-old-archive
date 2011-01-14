@@ -237,11 +237,10 @@ def set_alarm(t, countdown, repeat, scroll_msg,
     return alarm_did
 
 def delete_alarm(did):
-    if(0 < did <= const.MAX_ALARM_DID):
-        ser.flush()
-        ser.write(str(const.DID_ALARM_DELETE))
-        ser.write(str(did))
-        err_check()
+    ser.flush()
+    ser.write(str(const.DID_ALARM_DELETE))
+    ser.write(did)
+    err_check()
     
 
 def get_next_alarm():
@@ -453,21 +452,27 @@ def main():
     ser.flush()
     print eeprom.dids
     now = time_req()
-    did  = ord(set_alarm(now + 5, 
-                         countdown=0, 
-                         repeat=0, 
-                         scroll_msg="H   ",
-                         effect_id=0,
-                         sound_id=0))
-    # delete_alarm(did)
-    if False:
-        print ord(set_alarm(now + 27, 
-                            countdown=0, 
-                            repeat=0, 
-                            scroll_msg="DUDE!!!!....--",
-                            effect_id=0,
-                            sound_id=1))
+    did  = set_alarm(now + 30, 
+                     countdown=0, 
+                     repeat=0xFF, 
+                     scroll_msg="MMMMNNNNWWWWZZZZFFFFFHFHFHx",
+                     effect_id=0,
+                     sound_id=0)
+    print ord(set_alarm(now + 40, 
+                        countdown=0, 
+                        repeat=0, 
+                        scroll_msg="D ",
+                        effect_id=0,
+                        sound_id=1))
+    print ord(set_alarm(now + 50, 
+                        countdown=0, 
+                        repeat=0, 
+                        scroll_msg="DUDE!!!!....--",
+                        effect_id=0,
+                        sound_id=0))
+    delete_alarm(did)
     return
+
     trigger_mode()
     for i in range(50):
         print i

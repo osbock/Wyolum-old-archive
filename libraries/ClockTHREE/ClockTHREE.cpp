@@ -372,13 +372,13 @@ void ClockTHREE::off(){
 }
 
 void ClockTHREE::note(uint16_t freq){
-  // MsTimer2::stop();
+  MsTimer2::stop();
   tone(SPEAKER_PIN, freq);
 }
 
 void ClockTHREE::nonote(){
   noTone(SPEAKER_PIN);
-  // MsTimer2::start();
+  MsTimer2::start();
 }
 uint8_t getColor(uint8_t color){
   if(color < TEMPERATURE_COLOR){

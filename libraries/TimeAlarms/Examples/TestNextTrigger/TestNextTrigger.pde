@@ -7,11 +7,11 @@ void setup()
   setTime(8,29,0,10,1,11); // set time to 8:29:00am Jan 1 2010
   // create the alarms 
   AlarmId mal, dont_alarm;
-  /*
+  /**/
   Alarm.free(mal); // free before allocated ok?
   dont_alarm = Alarm.alarmRepeat(8,29,12, DontAlarm);  // 08:29:12  every da
   Alarm.free(dont_alarm);
-  
+  /*
   mal = Alarm.alarmRepeat(8,29,12, MorningAlarm);  // 08:29:12  every day
   Alarm.alarmRepeat(8,29,17,EveningAlarm);  // 08:29:17 every day 
  
