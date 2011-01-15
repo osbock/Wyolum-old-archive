@@ -20,16 +20,16 @@ const uint32_t SYNC_MSG = (0xFE)xMAX_MSG_LEN;
 Each message will begin with a message id (MID).  The message length will
 be determined by the MID and the message header (for variable length MIDs)
 
-No message length will be longer than 256 bytes.
+No message length will be longer than MAX_MSG_LEN bytes.
 
-Message length will include all header information.
+Message length will include all header bytes.
 
 Message format:
     MID [msg_len] data
 
 Fixed length messages:
 MID           length description               payload format 
-0x00               X not used                  NA
+0x00               X NOT USED                  NA
 0x01               1 request absolute time     NA
 0x02               5 set absolote time         4 bytes unsigned int (seconds from 00:00 Jan 1, 1970)
 0x03               1 request tod alarm         NA
@@ -37,18 +37,18 @@ MID           length description               payload format
 0x05               2 request message           1 byte data ID (DID)
 0x06               2 delete message            1 byte data ID (DID)
 0x07               2 scroll message            DID
-0x08               2 get annual event          DID
-0x09               6 set annual event          DID 4 bytes unsigned int (seconds from Jan 1)
-0x0A               1 request display           NA
+0x08               X NOT USED                  NA
+0x09               X NOT USED                  NA
+0x0A               1 get display               NA
 0x0B               2 set display               64 bytes of display data
-0x0C               1 trigger MODE              NA
-0x0D               1 trigger INC               NA
-0x0E               1 trigger DEC               NA
-0x0F               1 trigger AUX               NA
+0x0C               1 trigger MODE Press        NA
+0x0D               1 trigger INC  Press        NA
+0x0E               1 trigger DEC  Press        NA
+0x0F               1 trigger AUX  Press        NA
 0x10               1 Get SW Version	       NA
 0x11               1 Get SW About              NA
-0x12     MAX_MSG_LEN Ping                      1 99 data bytes
-0x13		  20 clear eeprom	       zero all data in EEPROM
+0x12     MAX_MSG_LEN Ping                      MAX_MSG_LEN - data bytes
+0x13     MAX_MSG_LEN clear eeprom	       0x13 x MAX_MSG_LEN
 0x14               1 EEPROM dump	       NA
 0x15               2 Anniversary Alarm         Anniversary DID (see below for this data record)
 0xEF     MAX_MSG_LEN SYNC		       99 data bytes (0xEF)(SYNC)
