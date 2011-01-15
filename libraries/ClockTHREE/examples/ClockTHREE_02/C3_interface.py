@@ -375,7 +375,7 @@ def eeprom_read(full=False):
 
             record = eeprom[addr: addr + l]
             print record
-            if did < MAX_ALARM_DID:
+            if did <= MAX_ALARM_DID:
                 assert record[1] == chr(DID_ALARM_LEN)
                 when = time.gmtime(c3_to_wall_clock(record[2:6]))
                 print '       ALARM:', fmt_time(when),
@@ -456,17 +456,17 @@ def main():
     ser.flush()
     print eeprom.dids
     now = time_req()
-    if 0:
-        print ord(set_alarm(now + 50, 
-                        countdown=1, 
+    if False:
+        print ord(set_alarm(now + 60, 
+                        countdown=1<<1, 
                             repeat=0, 
                             scroll_msg="DUDE!!!!....--",
                             effect_id=0,
                             sound_id=0))
-    print ord(set_alarm(now + 15, 
-                        countdown=1 << 1, 
+    print ord(set_alarm(now + 5, 
+                        countdown=1 << 3, 
                         repeat=0, 
-                        scroll_msg="COUNTDOWN WORKS!!  ",
+                        scroll_msg="!!  ",
                         effect_id=0,
                         sound_id=0))
     trigger_mode()
