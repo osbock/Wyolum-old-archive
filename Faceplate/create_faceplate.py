@@ -21,7 +21,7 @@ from numpy import arange
 
 DEG = pi/180.
 DTHETA = 180/50.
-THETA_EXTRA = 60.
+THETA_EXTRA = 0.
 thetas = arange(-THETA_EXTRA, 180 + THETA_EXTRA, DTHETA)
 class Line:
     def __init__(self, p1, p2):
@@ -139,12 +139,12 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
     # c.stringWidth('Hello World')
     # c.drawString(0 * inch, 5 * inch, 'HelloWorld')
     
-    c.setLineWidth(1/16. * inch)
+    c.setLineWidth(1/64. * inch)
     hole_sepx = 2.920 * inch
     hole_sepy = 2.887 * inch
     startx = .172 * inch
     starty = .172 * inch
-    r = .1 / 2 * inch
+    r = 3 * mm
     mounts = [] # lower left
     for i in range(5):          
         if i != 1:
@@ -177,7 +177,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         # c.rect(W - .75*inch, H - (3.3875 + .5)*inch, .5*inch, .5*inch)
      
         w = r + 2 * mm
-        w = .15 * inch
+        w = 4 * mm
 
         grid_SW = array([min(XS), min(YS)])
         grid_SE = array([max(XS), min(YS)])
@@ -187,12 +187,13 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         # Middle bottom
         # p = c.beginPath()
         p = MyPath(c)
-        first = ((W + w)/2., grid_NW[1] + w)
-        first = mounts[1][0] + w/2, grid_SE[1] - w
+        # first = ((W + w)/2., grid_NW[1] + w)
+        # first = mounts[1][0] + w/2, grid_SE[1] - w
+        first = mounts[1][0] + w, grid_SE[1] - w
         p.moveTo(*first)
         
         if True: # right lower middle SSE
-            next = mounts[2][0] - w/2, grid_SW[1]- w
+            next = mounts[2][0] - w, grid_SW[1]- w
             p.lineTo(*next)
             # next = mounts[2][0] - w, mounts[2][1]
             p.lineTo(*next)
@@ -212,7 +213,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         Vperp = array([-V[1], V[0]])
 
         l1 = Line(grid_SE, grid_SW) - array([0, w])
-        l2 = Line(grid_SE, SE) - Vperp * w/2
+        l2 = Line(grid_SE, SE) - Vperp * w
         next = l1.intersect(l2)
         p.lineTo(*next)
 
@@ -222,19 +223,19 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
             p.lineTo(*next)
 
         l1 = Line(grid_SE, grid_NE) + array([w, 0])
-        l2 = Line(grid_SE, SE) + Vperp * w/2
+        l2 = Line(grid_SE, SE) + Vperp * w
         next = l1.intersect(l2)
         p.lineTo(*next)
         
         if True: # right side
             for m_i in [4, 5]:
-                next = grid_SE[0] + w, mounts[m_i][1] - w/2
+                next = grid_SE[0] + w, mounts[m_i][1] - w
                 p.lineTo(*next)
-                next = mounts[m_i][0], mounts[m_i][1] - w/2
+                next = mounts[m_i][0], mounts[m_i][1] - w
                 for theta in (thetas -90) * DEG:
                     next = mounts[m_i] + [w * cos(theta), w * sin(theta)]
                     p.lineTo(*next)
-                next = grid_SE[0] + w, mounts[m_i][1] + w/2
+                next = grid_SE[0] + w, mounts[m_i][1] + w
                 p.lineTo(*next)
 
         V = NE - grid_NE
@@ -243,26 +244,26 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         Vperp = array([-V[1], V[0]])
 
         l1 = Line(grid_NE, grid_SE) + [w, 0]
-        l2 = Line(grid_NE, NE) - Vperp * w/2
+        l2 = Line(grid_NE, NE) - Vperp * w
         next = l1.intersect(l2)
         p.lineTo(*next)
         for theta in (-thetas + 180) * DEG:
             next = NE + w * sin(theta) * V + w * cos(theta) * Vperp
             p.lineTo(*next)
         l1 = Line(grid_NW, grid_NE) + [0, w]
-        l2 = Line(grid_NE, NE) + Vperp * w/2
+        l2 = Line(grid_NE, NE) + Vperp * w
         next = l1.intersect(l2)
         p.lineTo(*next)
         
         for i in [7, 8, 9]: #  gets each hole in top
-            next = mounts[i][0] + w/2, l1.p1[1]
+            next = mounts[i][0] + w, l1.p1[1]
             p.lineTo(*next)
             for theta in (thetas) * DEG:
             # for theta in arange(0 - THETA_EXTRA, 180 + THETA_EXTRA, DTHETA) * DEG:
                 next = mounts[i] + [w * cos(theta),  w * sin(theta)]
                 p.lineTo(*next)
 
-            next = mounts[i][0] - w/2, l1.p1[1]
+            next = mounts[i][0] - w, l1.p1[1]
             p.lineTo(*next)
         
         V = NW - grid_NW
@@ -271,7 +272,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         Vperp = array([-V[1], V[0]])
 
         l1 = Line(grid_NW, grid_NE) + [0, w]
-        l2 = Line(NW, grid_NW) - w/2 * Vperp
+        l2 = Line(NW, grid_NW) - w * Vperp
         next = l1.intersect(l2)
         p.lineTo(*next)
         for theta in (-thetas + 180) * DEG:
@@ -279,19 +280,19 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
             p.lineTo(*next)
             
         l1 = Line(grid_NW, grid_SW) - array([w, 0])
-        l2 = l2 + 2 * w/2 * Vperp
+        l2 = l2 + 2 * w * Vperp
         next = l2.intersect(l1)
         p.lineTo(*next)
 
         if True: # left side
             for i in [12, 13]:
-                next = [grid_NW[0] - w, mounts[i][1] + w/2]
+                next = [grid_NW[0] - w, mounts[i][1] + w]
                 p.lineTo(*next)
                 for theta in (thetas + 90) * DEG:
                 # for theta in arange(90 - THETA_EXTRA, 270 + THETA_EXTRA, DTHETA) * DEG:
                     next = mounts[i] + [w * cos(theta),  w * sin(theta)]
                     p.lineTo(*next)
-                next = grid_NW[0] - w, mounts[i][1] - w/2
+                next = grid_NW[0] - w, mounts[i][1] - w
                 p.lineTo(*next)
 
         V = SW - grid_SW
@@ -300,7 +301,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         Vperp = array([-V[1], V[0]])
 
         l1 = Line(grid_NW, grid_SW) - array([w, 0])
-        l2 = Line(grid_SW, SW) - w/2 * Vperp
+        l2 = Line(grid_SW, SW) - w * Vperp
         next = l2.intersect(l1)
         p.lineTo(*next)
         for theta in (-thetas + 180) * DEG:
@@ -308,10 +309,10 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
             p.lineTo(*next)
 
         l1 = Line(grid_SW, grid_SE) - array([0, w])
-        l2 = l2 + 2 * w/2 * Vperp
+        l2 = l2 + 2 * w * Vperp
         next = l1.intersect(l2)
         p.lineTo(*next)
-        next = mounts[1][0] - w/2, grid_SW[1] - w
+        next = mounts[1][0] - w, grid_SW[1] - w
         p.lineTo(*next)
         
         for theta in (thetas + 180) * DEG:
