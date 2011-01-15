@@ -7,7 +7,7 @@
 
 #include "Time.h"
 
-#define dtNBR_ALARMS 10 // may need more alarms!
+#define dtNBR_ALARMS 30 // may need more alarms! // 100 is too many
 
 #define IS_ONESHOT  0
 #define NO_REPEAT   0 // same as IS_ONESHOT

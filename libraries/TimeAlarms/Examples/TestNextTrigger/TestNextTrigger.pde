@@ -7,7 +7,7 @@ void setup()
   setTime(8,29,0,10,1,11); // set time to 8:29:00am Jan 1 2010
   // create the alarms 
   AlarmId mal, dont_alarm;
-  /**/
+  
   Alarm.free(mal); // free before allocated ok?
   dont_alarm = Alarm.alarmRepeat(8,29,12, DontAlarm);  // 08:29:12  every da
   Alarm.free(dont_alarm);
@@ -25,24 +25,56 @@ void setup()
   
   // Weekday event 25 secs from now
   Alarm.create(now() + 25, fire_alarm, true, 0, REPEAT_WEEKDAYS, 25);
-  */
 
   // ONCE 30 secs from now
 
   //         create(      value,  onTickHandler,  IS_ALARM,  COUNTDOWN, IS_REPEAT,   arg, IS_ENABLED=true);  
-  AlarmID_t id = Alarm.create(now() + 35, fire_alarm, true, 0, REPEAT_5MIN, 32);
-  Serial.println(Alarm.Alarm[id].is_5min_repeat(), DEC);
-  Serial.println(Alarm.Alarm[id].is_daily(), DEC);
-  Serial.println(Alarm.Alarm[id].is_annual(), DEC);
-  Serial.println(Alarm.Alarm[id].is_armed(), DEC);
-  Serial.println(Alarm.Alarm[id].is_5min_repeat(), DEC);
+  */
+
+  const int FMIN = 1;
+  const int ANNUAL = 2;
+  const int DAILY = 3;
+  const int ONESHOT = 4;
+  int testtype = ONESHOT;
+  AlarmID_t id1, id2, id3;
+  
+  time_t t = now();
+  switch(testtype){
+  case(FMIN):
+    id1 = Alarm.create(t - 2 * 86400 + 5, fire_alarm, true, 0, REPEAT_5MIN, 1);
+    id2 = Alarm.create(t + 2 * 86400 + 5, fire_alarm, true, 0, REPEAT_5MIN, 2);
+    id3 = Alarm.create(t + 0 * 86400 + 5, fire_alarm, true, 0, REPEAT_5MIN, 3); //5min_repeat tested
+    break;
+  case(ANNUAL):
+    id1 = Alarm.create(t - SECS_PER_YEAR(2010) + 5, fire_alarm, true, 0, REPEAT_ANNUAL, 1);
+    id2 = Alarm.create(t + 5, fire_alarm, true, 0, REPEAT_ANNUAL, 2);
+    break;
+  case(DAILY):
+    id1 = Alarm.create(t - SECS_PER_YEAR(2010) + 5, fire_alarm, true, 0, REPEAT_DAILY, 1);
+    id2 = Alarm.create(t + SECS_PER_YEAR(2010) + 10, fire_alarm, true, 0, REPEAT_DAILY, 2);
+    break;
+  case(ONESHOT):
+    id1 = Alarm.create(t - SECS_PER_DAY +  5,  DontAlarm, true, 0, NO_REPEAT, 1); // passed
+    id2 = Alarm.create(t +           0  + 10, fire_alarm, true, 0, NO_REPEAT, 2);  
+    id3 = Alarm.create(t +           0  + 20, fire_alarm, true, 0, NO_REPEAT, 3);  
+    Serial.print("id2 next: ");
+    Serial.print(Alarm.Alarm[id2].nextTrigger - t);
+    Serial.print(", id3 next:");
+    Serial.println(Alarm.Alarm[id3].nextTrigger - t);
+    break;
+  }
+  Serial.println(Alarm.Alarm[id1].is_5min_repeat(), DEC);
+  Serial.println(Alarm.Alarm[id1].is_daily(), DEC);
+  Serial.println(Alarm.Alarm[id1].is_annual(), DEC);
+  Serial.println(Alarm.Alarm[id1].is_armed(), DEC);
   
   // ONCE 17 Secs from now
-  /*Alarm.create(now() + 17, fire_alarm, true, 0, NO_REPEAT, 17);*/
+  /*Alarm.create(t + 17, fire_alarm, true, 0, NO_REPEAT, 17);*/
 }
 
 void  loop(){  
   Serial.println(Alarm.nextTrigger - now());
+
   // digitalClockDisplay();
   Alarm.serviceAlarms();
   delay(1000);  // wait one second 

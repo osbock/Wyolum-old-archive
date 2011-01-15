@@ -48,7 +48,6 @@ typedef time_t(*getExternalTime)();
 #define SECS_PER_DAY  (SECS_PER_HOUR * 24UL)
 #define DAYS_PER_WEEK (7UL)
 #define SECS_PER_WEEK (SECS_PER_DAY * DAYS_PER_WEEK)
-#define SECS_PER_YEAR (SECS_PER_WEEK * 52UL)
 #define SECS_YR_2000  (946684800UL) // the time at the start of y2k
  
 /* Useful Macros for getting elapsed time */
@@ -61,6 +60,9 @@ typedef time_t(*getExternalTime)();
 #define previousMidnight(_time_) (( _time_ / SECS_PER_DAY) * SECS_PER_DAY)  // time at the start of the given day
 #define nextMidnight(_time_) ( previousMidnight(_time_)  + SECS_PER_DAY ) // time at the end of the given day 
 #define elapsedSecsThisWeek(_time_)  (elapsedSecsToday(_time_) +  (dayOfWeek(_time_) * SECS_PER_DAY) )   
+#define LEAP_YEAR(_Y_) (!((_Y_)%4) && (((_Y_)%100) || !((_Y_)%400)))
+#define DAYS_PER_YEAR(_year_) (365 + LEAP_YEAR(_year_))
+#define SECS_PER_YEAR(_year_) ((DAYS_PER_YEAR(_year_)) * SECS_PER_DAY)
 
 /* Useful Macros for converting elapsed time to a time_t */
 #define minutesToTime_t ((M)) ( (M) * SECS_PER_MIN)  

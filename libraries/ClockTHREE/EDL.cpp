@@ -121,26 +121,27 @@ bool did_delete(uint8_t did){
 bool get_did_addr(uint8_t did, int16_t* addr_p, uint8_t *len_p){
   bool status = false;
   uint8_t id;
-
-  *addr_p = 0;
-  id = EEPROM.read(*addr_p);
-  uint8_t n = EEPROM.read(MAX_EEPROM_ADDR);
-  uint8_t i = 0;
-  while((*addr_p < MAX_EEPROM_ADDR - 2) && 
-	(did != id) && 
-	(i++ < n)){
-    *len_p = EEPROM.read(*addr_p + 1);
-    *addr_p += *len_p;
+  if(0 < did && did <  255){
+    *addr_p = 0;
     id = EEPROM.read(*addr_p);
-  }
-  if(id == did){
-    // make sure it is not too long
-    if(*addr_p < MAX_EEPROM_ADDR - 2){
+    uint8_t n = EEPROM.read(MAX_EEPROM_ADDR);
+    uint8_t i = 0;
+    while((*addr_p < MAX_EEPROM_ADDR - 2) && 
+	  (did != id) && 
+	  (i++ < n)){
       *len_p = EEPROM.read(*addr_p + 1);
-      status = true;
+      *addr_p += *len_p;
+      id = EEPROM.read(*addr_p);
     }
-  }
-  else{
+    if(id == did){
+      // make sure it is not too long
+      if(*addr_p < MAX_EEPROM_ADDR - 2){
+	*len_p = EEPROM.read(*addr_p + 1);
+	status = true;
+      }
+    }
+    else{
+    }
   }
   return status;
 }

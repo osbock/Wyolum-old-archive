@@ -56,9 +56,9 @@ uint32_t *display = (uint32_t*)calloc(2 * N_COL, sizeof(uint32_t));
 
 Mode *mode_p;
 
-const uint8_t N_MODE = 10;
+const uint8_t N_MODE = 11;
 const uint8_t N_MAIN_MODE = 6;
-const uint8_t N_SUB_MODE = 3;
+const uint8_t N_SUB_MODE = 4;
 
 const uint8_t NORMAL_MODE = 0;
 const uint8_t SET_TIME_MODE = 1;
@@ -72,6 +72,7 @@ const uint8_t SECONDS_MODE = 6;
 const uint8_t ALARM_MODE = 7;
 const uint8_t TEMPERATURE_MODE = 8;
 const uint8_t SCROLL_MODE = 9;
+const uint8_t COUNTDOWN_MODE = 10;
 
 const uint8_t DEG_C = 0;
 const uint8_t DEG_F = 1;
@@ -93,6 +94,9 @@ Mode SecondsMode = {SECONDS_MODE,
 Mode AlarmMode = {ALARM_MODE, 
 		  'X', Alarm_setup, Alarm_loop, Alarm_exit, 
 		  Alarm_mode, Alarm_mode, Alarm_mode};
+Mode CountdownMode = {COUNTDOWN_MODE, 
+		      'X', Countdown_setup, Countdown_loop, do_nothing, 
+		      Countdown_mode, Countdown_mode, Countdown_mode};
 Mode TemperatureMode = {TEMPERATURE_MODE, 'X', 
 			Temperature_setup, Temperature_loop, Temperature_exit, 
 			Temperature_inc, Temperature_dec, Temperature_mode};
@@ -200,6 +204,7 @@ const MsgDef *MSG_DEFS[N_MSG_TYPE] = {&NOT_USED_MSG,
 				      &DATA_SET};
 const uint8_t DID_ALARM_LEN = 12;
 const uint8_t ALARM_ID_OFFSET = 11;
+const uint8_t COUNTDOWN_TIMER_DID = MAX_ALARM_DID;
 char serial_msg[MAX_MSG_LEN];
 uint8_t serial_msg_len;
 
@@ -227,6 +232,7 @@ boolean alarm_set = false;
 uint8_t sync_msg_byte_counter = 0;
 uint8_t scroll_did = 0;
 bool alarm_beeping = false;
+time_t countdown_time = 0;
 
 /*
  * Called when mode button is pressed
@@ -289,21 +295,28 @@ void update_time(){
   ss = second();
   c3.refresh();
 }
+void read_did_alarms(){
+  int16_t addr;
+  uint8_t len;
 
+  for(uint8_t did = 0; did <= MAX_ALARM_DID; did++){
+    if(get_did_addr(did, &addr, &len)){
+      if(len == DID_ALARM_LEN){
+	serial_msg[0] = did;
+	set_did_alarm();
+      }
+    }
+  }
+}
 void setup(void){
   Wire.begin();
   c3.init();
 
-  setSyncProvider(getTime);      // RTC
-  setSyncInterval(3600000);      // update every hour (and on boot)
-  update_time();
-  getRTC_alarm(&ahh, &amm, &ass, &alarm_set);
-  TOD_Alarm_Set(todAlarm, ahh, amm, ass, alarm_set);
   // TOD_Alarm_Set(todAlarm, hh, mm, ss + 5, alarm_set);
   // Alarm.timerOnce(5, fire_alarm);
   
   mode_p = &NormalMode;
-  mode_p = &SerialMode;
+  // mode_p = &SerialMode;
 
   // ensure mode ids are consistant.
   Modes[NORMAL_MODE] = NormalMode;
@@ -316,6 +329,7 @@ void setup(void){
   // Sub Modes
   Modes[SECONDS_MODE] = SecondsMode;
   Modes[ALARM_MODE] = AlarmMode;
+  Modes[COUNTDOWN_MODE] = CountdownMode;
   Modes[TEMPERATURE_MODE] = TemperatureMode;
   Modes[SCROLL_MODE] = ScrollMode;
   mode_p->setup();
@@ -329,6 +343,15 @@ void setup(void){
 
   MsTimer2::set(1000, tick_interrupt); // 1ms period
   MsTimer2::start();
+
+  // Set Time and Alarms
+  setSyncProvider(getTime);      // RTC
+  setSyncInterval(3600000);      // update every hour (and on boot)
+  update_time();
+  getRTC_alarm(&ahh, &amm, &ass, &alarm_set);
+  TOD_Alarm_Set(todAlarm, ahh, amm, ass, alarm_set);
+  read_did_alarms();
+
   
 }
 
@@ -382,7 +405,12 @@ void loop(void){
     event_q[i] = NO_EVT;
   }
   n_evt = 0;
-  beep();
+  if(alarm_beeping){
+    beep();
+  }
+  else{
+    c3.nonote();
+  }
   mode_p->loop(); // finally call mode_p loop()
   count++;        // counts times mode_p->loop() has run since mode start
 
@@ -536,24 +564,65 @@ void Temperature_mode(){
 
 // Sub mode of normal mode ** sound the alarm!
 void Alarm_setup(void){
-  pinMode(SPEAKER_PIN, OUTPUT);
 
   // see if alarm msg is stored in serial_msg
   // two_digits(serial_msg[0]); // DBG
   // c3.refresh(10000); // DBG
-  
-
   if(0 < serial_msg[0] && serial_msg[0] <= MAX_ALARM_DID && 
      serial_msg_len == DID_ALARM_LEN){ // 0x3F
 
-    if(serial_msg[10] > 0){
-      alarm_beeping = true;
+    if(serial_msg[6]){ // countdown bit field
+      time_t t = now();
+      switch(serial_msg[6]){
+      case(1 << 0): // 10 sec
+	countdown_time = t + 10;
+	break;
+      case(1 << 1): // 1 minute
+	countdown_time = t + 1 * SECS_PER_MIN;
+	break;
+      case(1 << 2): // 5 minute
+	countdown_time = t + 5 * SECS_PER_MIN;
+	break;
+      case(1 << 3): // 1 hour
+	countdown_time = t + 1 * SECS_PER_HOUR;
+	break;
+      case(1 << 4): // 1 day
+	countdown_time = t + 1 * SECS_PER_DAY;
+	break;
+      default:
+	countdown_time = 0;
+      }
+      // set another alarm for when countdown is complete
+      serial_msg[6] = 0; // do not countdown
+      serial_msg[0] = 0; // do not repeat
+
+      // update alarmtime
+      Serial_time_t stime;
+      stime.dat32 = countdown_time;
+      for(uint8_t i = 0; i < 4; i++){
+	serial_msg[2 + i] = stime.dat8[i];
+      }
+      did_delete(COUNTDOWN_TIMER_DID); // just in case (ignore return value)
+      serial_msg[0] = COUNTDOWN_TIMER_DID;
+      if(!did_write(serial_msg)){
+	two_letters("CD");
+	c3.refresh(2000);
+      }
+      else{
+	serial_msg[0] = COUNTDOWN_TIMER_DID;
+	set_did_alarm();
+	switchmodes(COUNTDOWN_MODE);
+      }
     }
-    
-    if(0 < serial_msg[8] && serial_msg[8] < 255){ // valid scroll_did
-      serial_msg[0] = serial_msg[8];
-      serial_msg_len = 1;
-      switchmodes(SCROLL_MODE);
+    else{
+      if(serial_msg[10] > 0){
+	alarm_beeping = true;
+      }
+      if(0 < serial_msg[8] && serial_msg[8] < 255){ // valid scroll_did
+	serial_msg[0] = serial_msg[8];
+	serial_msg_len = 1;
+	switchmodes(SCROLL_MODE);
+      }
     }
   }
   else{
@@ -578,7 +647,8 @@ void Alarm_loop(){
 }
 void Alarm_exit(void) {
   // resync with RTC and start ticking again
-  update_time();
+  getTime();
+
   MsTimer2::set(1000, tick_interrupt); // 1ms period
   MsTimer2::start();
 }
@@ -586,6 +656,24 @@ void Alarm_mode(){
   alarm_beeping = false;
   switchmodes(NORMAL_MODE);
 }
+
+// Sub mode of alarm submode ** display countdown
+void Countdown_setup(void){
+}
+void Countdown_loop(){
+  time_t t = now();
+  if(countdown_time > t){
+    two_digits(countdown_time - t);
+    c3.refresh(16);
+  }
+  else{
+    switchmodes(NORMAL_MODE);
+  }
+}
+void Countdown_mode(){
+  switchmodes(NORMAL_MODE);
+}
+
 
 // Begin SetTime Mode Code (TODO use one file per mode)
 /* 
@@ -1070,6 +1158,14 @@ void set_did_alarm(){
   // did stored in serial_msg[0] (MID pealed off already)
   // record stored in eeprom
   did = serial_msg[0];
+
+#ifdef NOTDEF
+  Serial.end();
+  color_i = 1;     // TODO
+  two_digits(did); // TODO remove
+  c3.refresh(2000);// TODO
+#endif
+
   if(0 < did && did <= MAX_ALARM_DID){
     if(did_read(did, serial_msg, &serial_msg_len)) {
       for(uint8_t i = 2; i < 6; i++){
@@ -1079,19 +1175,32 @@ void set_did_alarm(){
       // blank, blank, blank, day, hour, 5min, min, 10sec, 
       uint8_t countdown = serial_msg[6];
       uint8_t repeat = serial_msg[7];
-      
-      aid = Alarm.create(data.dat32,                 // time 
-			 fire_alarm,                 // callback
-			 true,                      // alarm_f (true for c3)
-			 countdown,                          // countdown_flags
-			 repeat,                          // repeat_flags      
-			 serial_msg[0]);              // arg=alarm_did
+      bool stale = ((data.dat32 < now()) && (repeat == 0));
+      if(stale){
+	did_delete(did);
+      }
+      else{ // fresh
+	aid = Alarm.create(data.dat32,                 // time 
+			   fire_alarm,                 // callback
+			   true,                       // alarm_f (true for c3)
+			   countdown,                  // countdown_flags
+			   repeat,                     // repeat_flags      
+			   did);                       // arg=alarm_did
+      }
+#ifdef NOTDEF
+      color_i = 3;     // TODO
+      two_digits(aid); // TODO remove
+      c3.refresh(2000);// TODO
+#endif
+
       // update alarm_id in EEPROM.
       if(!did_edit(did, ALARM_ID_OFFSET, aid)){
 	Serial.end();
+	two_digits(did);
+	c3.refresh(2000);
 	two_letters("AE");
-	c3.refresh(10000);
-	Serial.begin(BAUDRATE);
+	c3.refresh(2000);
+	status = false;
       }
       else if(aid != dtINVALID_ALARM_ID){
 	status = true;
@@ -1100,9 +1209,9 @@ void set_did_alarm(){
   }
   if(!status){
     // error
-    two_letters(EEPROM_ERR);
+    Serial.end();
+    two_letters("AL");
     c3.refresh(10000);
-    Serial_send_err("AL");
   }
 }
 
@@ -1361,6 +1470,11 @@ void fire_alarm(uint8_t did){
    */
 
   if(0 < did && did < 255){
+#ifdef NOTDEF
+    Serial.end();   //TODO: DELETE ME
+    two_digits(did);//TODO: DELETE ME
+    c3.refresh(2000);//TODO: DELETE ME
+#endif
     if(!did_read(did, serial_msg, &serial_msg_len)){
       two_letters(EEPROM_ERR);
       c3.refresh(10000);

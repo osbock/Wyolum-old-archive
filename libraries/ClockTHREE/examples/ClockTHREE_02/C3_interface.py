@@ -448,29 +448,40 @@ def read_write_test():
         did = chr(i)
         delete_did(did)
     eeprom_read(full=True)
+def countdown(secs):
+    for i in range(secs):
+        print secs - i
+        time.sleep(1)
 def main():
     ser.flush()
     print eeprom.dids
     now = time_req()
-    did  = set_alarm(now + 30, 
-                     countdown=0, 
-                     repeat=0xFF, 
-                     scroll_msg="MMMMNNNNWWWWZZZZFFFFFHFHFHx",
-                     effect_id=0,
-                     sound_id=0)
-    print ord(set_alarm(now + 40, 
-                        countdown=0, 
+    if 0:
+        print ord(set_alarm(now + 50, 
+                        countdown=1, 
+                            repeat=0, 
+                            scroll_msg="DUDE!!!!....--",
+                            effect_id=0,
+                            sound_id=0))
+    print ord(set_alarm(now + 15, 
+                        countdown=1 << 1, 
                         repeat=0, 
-                        scroll_msg="D ",
-                        effect_id=0,
-                        sound_id=1))
-    print ord(set_alarm(now + 50, 
-                        countdown=0, 
-                        repeat=0, 
-                        scroll_msg="DUDE!!!!....--",
+                        scroll_msg="COUNTDOWN WORKS!!  ",
                         effect_id=0,
                         sound_id=0))
-    delete_alarm(did)
+    trigger_mode()
+    countdown(15)
+    countdown(35)
+    return
+
+    if False:
+        did  = set_alarm(now + 30, 
+                         countdown=0, 
+                         repeat=0xFF, 
+                         scroll_msg="MMMMNNNNWWWWZZZZFFFFFHFHFHx",
+                         effect_id=0,
+                         sound_id=0)
+        delete_alarm(did)
     return
 
     trigger_mode()
