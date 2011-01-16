@@ -466,7 +466,7 @@ def main():
     print ord(set_alarm(now + 5, 
                         countdown=1 << 3, 
                         repeat=0, 
-                        scroll_msg="!!  ",
+                        scroll_msg="Hooray!  ",
                         effect_id=0,
                         sound_id=0))
     trigger_mode()

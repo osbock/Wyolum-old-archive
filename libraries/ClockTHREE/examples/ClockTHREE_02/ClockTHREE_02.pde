@@ -56,7 +56,9 @@ const uint8_t N_DISPLAY = 3;
 // Default display -- twice as large as is needed
 uint32_t *display = (uint32_t*)calloc(N_DISPLAY * N_COL, sizeof(uint32_t));
 uint32_t *countdown_display = display + 2;
-uint32_t colen[8];
+uint8_t last_hh, last_mm, last_ss; // for countdown mode
+
+// uint32_t *colen = (uint32_t*)calloc(8, sizeof(uint32_t));
 
 Mode *mode_p;
 
@@ -100,7 +102,7 @@ Mode AlarmMode = {ALARM_MODE,
 		  Alarm_mode, Alarm_mode, Alarm_mode};
 Mode CountdownMode = {COUNTDOWN_MODE, 
 		      'X', Countdown_setup, Countdown_loop, do_nothing, 
-		      Countdown_mode, Countdown_mode, Countdown_mode};
+		      Countdown_exit, Countdown_exit, Countdown_exit};
 Mode TemperatureMode = {TEMPERATURE_MODE, 'X', 
 			Temperature_setup, Temperature_loop, Temperature_exit, 
 			Temperature_inc, Temperature_dec, Temperature_mode};
@@ -304,7 +306,7 @@ void read_did_alarms(){
   int16_t addr;
   uint8_t len;
 
-  for(uint8_t did = 0; did < MAX_ALARM_DID; did++){
+  for(uint8_t did = 0; did <= MAX_ALARM_DID; did++){
     if(get_did_addr(did, &addr, &len)){
       if(len == DID_ALARM_LEN){
 	serial_msg[0] = did;
@@ -317,6 +319,7 @@ void read_did_alarms(){
     time_t t = now();
     did_read(COUNTDOWN_TIMER_DID, serial_msg, &serial_msg_len);
     countdown_time = Serial_to_Time(serial_msg + 2);
+    // old way
     //for(uint8_t i = 0; i < 4; i++){
     //  tmp.dat8[i] = serial_msg[i + 2];
     //}
@@ -435,7 +438,7 @@ void loop(void){
 
 }
 
-// Begin Normal Mode Code (TODO use one file per mode)
+// Begin Normal Mode Code 
 /* 
    Initalize mode.
 */
@@ -483,6 +486,9 @@ void Normal_mode(void) {
 // Sub mode of normal mode ** display seconds
 void Seconds_setup(void){
   tick = true;
+  if(countdown_time > now()){
+    switchmodes(COUNTDOWN_MODE);
+  }
 }
 void Seconds_loop(){
   if(tick){
@@ -681,7 +687,6 @@ void Alarm_mode(){
 
 // Sub mode of alarm submode ** display countdown
 void Countdown_setup(void){
-  font.getChar(':', getColor(color_i), colen); // for fancy countdown
 }
 void Countdown_loop_old(){
   time_t t = now();
@@ -693,65 +698,58 @@ void Countdown_loop_old(){
     switchmodes(NORMAL_MODE);
   }
 }
-void Countdown_mode(){
+void Countdown_exit(){
   switchmodes(NORMAL_MODE);
+  last_hh = last_mm = last_ss = 0;
 }
-uint8_t last_hh, last_mm, last_ss;
 
 void Countdown_loop(){
   time_t t = now();
   uint8_t hh, mm, ss;
   uint32_t *save_display = display;
+  int p;
+  double rate = .006666;
 
   if(countdown_time > t){
     hh = hour(countdown_time - t);
     mm = minute(countdown_time - t);
     ss = second(countdown_time - t);
     if(hh != last_hh){
-      display = countdown_display + 0;
-      two_digits(hh);
-      display = save_display;
+      two_digits(hh, countdown_display);
+      two_digits(mm, countdown_display + 17);
     }
-    if(mm != last_mm){
-      display = countdown_display + 17;
-      two_digits(mm);
-      display = save_display;
+    else if(mm != last_mm){
+      two_digits(mm, countdown_display + 17);
     }
-    if(ss != last_ss){
-      display = countdown_display + 34;
-      two_digits(ss);
-      display = save_display;
+    else if(ss != last_ss){
+      two_digits(ss, countdown_display + 34);
+      add_char(':', countdown_display, 14);
+      add_char(':', countdown_display, 31);
     }
     last_hh = hh;
     last_mm = mm;
     last_ss = ss;
-    int p;
+
     if(hh > 0){
       // p = (int)(16 - 18.9 * cos(count * 3.14159 / 180));
-      p = (int)(18 - 17.9 * cos(count * 3.14159 / 180));
-      countdown_display[16] = colen[2];
-      countdown_display[17] = colen[3];
-      countdown_display[17+16] = colen[2];
-      countdown_display[17+17] = colen[3];
+      p = (int)(18 - 17.9 * cos(count * rate));
     }
     else if(mm > 0){
       // p = (int)(25 - 18.9 / 2 * cos(count * 3.14159 / 180));
-      p = (int)(27 - 17.9 / 2 * cos(count * 3.14159 / 180));
-      countdown_display[17+16] = colen[2];
-      countdown_display[17+17] = colen[3];
+      p = (int)(27 - 17.9 / 2 * cos(count * rate));
     }
     else{
       p = 35;
     }
     c3.setdisplay(countdown_display + p);
-    c3.refresh(100);
+    c3.refresh(16);
   }
   else{
     switchmodes(NORMAL_MODE);
   }
 }
 
-// Begin SetTime Mode Code (TODO use one file per mode)
+// Begin SetTime Mode Code 
 /* 
    Initalize mode.
 */
@@ -890,7 +888,7 @@ void SetTime_mode(void) {
   }
 }
 
-// Begin SetAlarm Mode Code (TODO use one file per mode)
+// Begin SetAlarm Mode Code 
 /* 
    Initalize mode.
 */
@@ -1008,7 +1006,7 @@ void SetAlarm_mode(void){
   }
 }
 
-// Begin SetColor Mode Code (TODO use one file per mode)
+// Begin SetColor Mode Code 
 /* 
    Initalize mode.
 */
@@ -1152,22 +1150,32 @@ void pong(){
 }
 
 void send_time(){
-  Serial_time_t data;
-
+  char ser_data[4];
   Serial.print(ABS_TIME_SET.id, BYTE);
+  Time_to_Serial(now(), ser_data);
+  for(uint8_t i = 0; i < 4; i++){
+    Serial.print(ser_data[i], BYTE);
+  }
+  /* // old way
+  Serial_time_t data;
   data.dat32 = now();
   for(uint8_t i = 0; i < 4; i++){
     Serial.print(data.dat8[i], BYTE);
   }
+  */
 }
 
 void Serial_time_set(){
+  setTime(Serial_to_Time(serial_msg));
+  
+  /* // old way
   Serial_time_t data;
 
   for(uint8_t i = 0; i < 4; i++){
     data.dat8[i] = serial_msg[i];
   }
   setTime(data.dat32);
+  */
   YY = year();
   MM = month();
   DD = day();
@@ -1177,13 +1185,15 @@ void Serial_time_set(){
   setRTC(YY, MM, DD, hh, mm, ss);
 }
 void tod_alarm_set(){
-  Serial_time_t data;
   tmElements_t tm;
-
+  breakTime(Serial_to_Time(serial_msg), tm);
+  /* // old way
+  Serial_time_t data;
   for(uint8_t i = 0; i < 4; i++){
     data.dat8[i] = serial_msg[i];
   }
   breakTime(data.dat32, tm);
+  */
   ahh = tm.Hour;
   amm = tm.Minute;
   ass = tm.Second;
@@ -1194,19 +1204,26 @@ void tod_alarm_set(){
 }
 
 void tod_alarm_get(){
-  Serial_time_t data;
   tmElements_t tm;
 
   tm.Hour = ahh;
   tm.Minute = amm;
   tm.Second = ass;
-  data.dat32 = makeTime(tm);
-  data.dat32 %= 86400;
 
   Serial.print(TOD_ALARM_SET.id, BYTE);
+  Time_to_Serial(makeTime(tm) % SECS_PER_DAY, serial_msg);
+  serial_msg_len = 4;
+  for(uint8_t i = 0; i < 4; i++){
+    Serial.print(serial_msg[i], BYTE);
+  }
+  /* // old way
+  Serial_time_t data;
   for(uint8_t i = 0; i < 4; i++){
     Serial.print(data.dat8[i], BYTE);
   }
+  data.dat32 = makeTime(tm);
+  data.dat32 %= 86400;
+  */
   Serial.print(alarm_set, BYTE);
 }
 
@@ -1217,15 +1234,21 @@ void eeprom_dump(){
 }
 
 void next_alarm_send(){
-  Serial_time_t data;
+  Time_to_Serial(Alarm.nextTrigger, serial_msg);
+  serial_msg_len = 4;
   Serial.print(ABS_TIME_SET.id, BYTE);
+  for(uint8_t i = 0; i < 4; i++){
+    Serial.print(serial_msg[i]);
+  }
+  /* // old way
+  Serial_time_t data;
   data.dat32 = Alarm.nextTrigger;
   for(uint8_t i = 0; i < 4; i++){
     Serial.print(data.dat8[i]);
   }
+  */
 }
 void set_did_alarm(){
-  Serial_time_t data;
   tmElements_t tm;
   uint8_t len;
   bool status = false;
@@ -1235,28 +1258,28 @@ void set_did_alarm(){
   // record stored in eeprom
   did = serial_msg[0];
 
-#ifdef NOTDEF
-  Serial.end();
-  color_i = 1;     // TODO
-  two_digits(did); // TODO remove
-  c3.refresh(2000);// TODO
-#endif
-
   if(0 < did && did <= MAX_ALARM_DID){
     if(did_read(did, serial_msg, &serial_msg_len)) {
+      time_t t = Serial_to_Time(serial_msg + 2);
+      /* // old way
+       Serial_time_t data;
+
       for(uint8_t i = 2; i < 6; i++){
 	data.dat8[i - 2] = serial_msg[i];
       }
+      t = data.dat32;
+      */
       // countdown bits: MSb     -->                  LSb
       // blank, blank, blank, day, hour, 5min, min, 10sec, 
       uint8_t countdown = serial_msg[6];
       uint8_t repeat = serial_msg[7];
-      bool stale = ((data.dat32 < now()) && (repeat == 0));
+      bool stale = ((t < now()) && (repeat == 0));
       if(stale){
 	did_delete(did);
+	status = true;
       }
       else{ // fresh
-	aid = Alarm.create(data.dat32,                 // time 
+	aid = Alarm.create(t,                          // time 
 			   fire_alarm,                 // callback
 			   true,                       // alarm_f (true for c3)
 			   countdown,                  // countdown_flags
@@ -1485,7 +1508,7 @@ void Serial_mode(void) {
   switchmodes(NORMAL_MODE);  // or maybe just go back to NORMAL_MODE? or last_mode?
 }
 
-// Begin Mode Mode Code (TODO use one file per mode)
+// Begin Mode Mode Code
 void Mode_setup(void) {
   font.getChar('M', BLUE, display);
   mode_counter = 1;
@@ -1534,18 +1557,12 @@ void switchmodes(uint8_t new_mode_id){
 
 void fire_alarm(uint8_t did){
   // read in record at DID and switch to alarm mode
-  Serial_time_t data;
 
   /* if did is 0, just switch to alarm mode
    * otherwise -- look up record at did and switch
    */
 
   if(0 < did && did < 255){
-#ifdef NOTDEF
-    Serial.end();   //TODO: DELETE ME
-    two_digits(did);//TODO: DELETE ME
-    c3.refresh(2000);//TODO: DELETE ME
-#endif
     if(!did_read(did, serial_msg, &serial_msg_len)){
       two_letters(EEPROM_ERR);
       c3.refresh(10000);
@@ -1559,6 +1576,21 @@ void two_digits(uint8_t val){
   font.getChar('0' + val % 10, getColor(COLORS[color_i]), display + 9);
 }
 
+void two_digits(uint8_t val, uint32_t *display){
+  font.getChar('0' + val / 10, getColor(COLORS[color_i]), display + 2);
+  font.getChar('0' + val % 10, getColor(COLORS[color_i]), display + 9);
+}
+
+/*
+ * Add a letter without erasing existing pixels
+ */
+void add_char(char letter, uint32_t* display, uint8_t col){
+  uint32_t data[8];
+  font.getChar(letter, getColor(COLORS[color_i]), data);
+  for(uint8_t i = 0; i < 8; i++){
+    display[col + i] |= (data[i] & 0b00000000111111111111111111111111);
+  }
+}
 void two_letters(char* letters){
   font.getChar(letters[0], getColor(COLORS[color_i]), display + 2);
   font.getChar(letters[1], getColor(COLORS[color_i]), display + 9);
