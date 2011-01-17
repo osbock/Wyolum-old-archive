@@ -3,22 +3,19 @@ from numpy import *
 import Tkinter
 import Pmw
 import C3_interface
-
-def getC3_time():
-    t = C3_interface.time_req()
-    return time.gmtime(t)
     
 class Main:
     def __init__(self, com):
-        C3_interface.connect(com)
-        eeprom = C3_interface.EEPROM()
-
+        self.com = com
         self.root = Pmw.initialise(fontScheme='pmw1')
+        self.eeprom = None
         class DatetimeField:
-            def __init__(self, parent, label, tm, getcmd=None, setcmd=None, clearcmd=None):
+            def __init__(self, parent, label, tm=None, getcmd=None, setcmd=None, clearcmd=None):
                 self.tk = parent
                 self.f = Tkinter.Frame(parent)
                 now = time.time()
+                if tm is None:
+                    tm = time.localtime()
                 self.date = Pmw.EntryField(self.f,
                                            label_text=label,
                                            labelpos='w',
@@ -64,36 +61,43 @@ class Main:
                     print 'clear', row
                 Tkinter.Button(parent, text='Set', command=set).grid(row=row, column=0)
                 Tkinter.Button(parent, text='Clear', command=clear).grid(row=row, column=1)
+                when = DatetimeField(parent, '', None, getcmd=None, setcmd=None, clearcmd=None)
+                when.grid(row=row, column=2)
                 scrollable = Pmw.EntryField(parent, value='Scrollable Text')
                 scrollable.component('entry').config(width=40)
-                scrollable.grid(row=row, column=2)
-                Repeat(parent, row=row, column=3)
-                Countdown(parent, row=row, column=11)
+                scrollable.grid(row=row, column=3)
+                Repeat(parent, row=row, column=4)
+                Countdown(parent, row=row, column=12)
 
-        c3tm = getC3_time()
+        c3tm = self.getC3_time()
         pctm = time.localtime()
-        self.ardtime = DatetimeField(self.root, 'Arduino Time', c3tm)
+        self.control_frame = Tkinter.Frame(self.root)
+        self.control_left = Tkinter.Frame(self.control_frame)
+        self.control_right = Tkinter.Frame(self.control_frame)
+        Tkinter.Button(self.control_left, text="Connect", command=self.connect).grid(row=0, column=0)
+        self.ardtime = DatetimeField(self.control_right, 'Arduino Time', c3tm)
         self.ardtime.grid(row=0)
-        self.pctime = DatetimeField(self.root, '       PC Time', pctm)
+        self.pctime = DatetimeField(self.control_right, '       PC Time', pctm)
         self.pctime.grid(row=1)
-        delta_frame = Tkinter.Frame(self.root)
+        delta_frame = Tkinter.Frame(self.control_right)
         self.delta = Pmw.EntryField(delta_frame, 
-                               label_text='Delta Seconds:',
-                               labelpos='w',
-                               value='0',
-                               validate='real',
-                               )
+                                    label_text='Delta Seconds:',
+                                    labelpos='w',
+                                    value='0',
+                                    validate='real',
+                                    )
         self.delta.component('entry').config(width=6)
         self.delta.grid(row=0, column=0)
         Tkinter.Button(delta_frame, text="SYNC", command=synctime).grid(row=0, column=1)
         delta_frame.grid(row=2)
-        combo = Pmw.ComboBox(label_text='GMT Offset (Hours):',
+        combo = Pmw.ComboBox(self.control_right,
+                             label_text='GMT Offset (Hours):',
                              labelpos='w',
                              scrolledlist_items=map(str, arange(-12, 12, .5))
                              )
         combo.component('entry').config(width=6)
         combo.grid(row=3)
-        alarm_frame = Tkinter.Frame(self.root)
+        alarm_frame = Tkinter.Frame(self.control_right)
         alarm = Pmw.EntryField(alarm_frame,
                                label_text='Daily Alarm:',
                                labelpos='w',
@@ -107,33 +111,35 @@ class Main:
         c.grid(row=0, column=2)
         Tkinter.Button(alarm_frame, text="Set", command=alarm_set).grid(row=0, column=3)
         alarm_frame.grid(row=4)
-
-
-        f = Tkinter.Frame(self.root)
+        self.control_left.grid(row=0, column=0)
+        self.control_right.grid(row=0, column=1)
+        self.control_frame.grid(row=0)
+        # f = Tkinter.Frame(self.root)
         def getter():
             pass
         def setter():
             pass
 
         did_frame = Tkinter.Frame(self.root)
-        Tkinter.Label(did_frame, text='Repeat').grid(row=0, column=3, columnspan=8)
+        Tkinter.Label(did_frame, text='Repeat').grid(row=0, column=4, columnspan=8)
         Tkinter.Label(did_frame, text='Countdown').grid(row=0, column=11, columnspan=6)
-        Tkinter.Label(did_frame, text='Scrollable Text').grid(row=1, column=2)
-        Tkinter.Label(did_frame, text="S").grid(row=1, column=3)
-        Tkinter.Label(did_frame, text="M").grid(row=1, column=4)
-        Tkinter.Label(did_frame, text="T").grid(row=1, column=5)
-        Tkinter.Label(did_frame, text="W").grid(row=1, column=6)
-        Tkinter.Label(did_frame, text="T").grid(row=1, column=7)
-        Tkinter.Label(did_frame, text="F").grid(row=1, column=8)
-        Tkinter.Label(did_frame, text="S").grid(row=1, column=9)
-        Tkinter.Label(did_frame, text="A").grid(row=1, column=10)
+        Tkinter.Label(did_frame, text='When').grid(row=1, column=2)
+        Tkinter.Label(did_frame, text='Scrollable Text').grid(row=1, column=3)
+        Tkinter.Label(did_frame, text="S").grid(row=1, column=4)
+        Tkinter.Label(did_frame, text="M").grid(row=1, column=5)
+        Tkinter.Label(did_frame, text="T").grid(row=1, column=6)
+        Tkinter.Label(did_frame, text="W").grid(row=1, column=7)
+        Tkinter.Label(did_frame, text="T").grid(row=1, column=8)
+        Tkinter.Label(did_frame, text="F").grid(row=1, column=9)
+        Tkinter.Label(did_frame, text="S").grid(row=1, column=10)
+        Tkinter.Label(did_frame, text="A").grid(row=1, column=11)
 
-        Tkinter.Label(did_frame, text="D").grid(row=1, column=11)
-        Tkinter.Label(did_frame, text="H").grid(row=1, column=12)
-        Tkinter.Label(did_frame, text="5M").grid(row=1, column=13)
-        Tkinter.Label(did_frame, text="M").grid(row=1, column=14)
-        Tkinter.Label(did_frame, text="10").grid(row=1, column=15)
-        Tkinter.Label(did_frame, text="N").grid(row=1, column=16)
+        Tkinter.Label(did_frame, text="D").grid(row=1, column=12)
+        Tkinter.Label(did_frame, text="H").grid(row=1, column=13)
+        Tkinter.Label(did_frame, text="5M").grid(row=1, column=14)
+        Tkinter.Label(did_frame, text="M").grid(row=1, column=15)
+        Tkinter.Label(did_frame, text="10").grid(row=1, column=16)
+        Tkinter.Label(did_frame, text="N").grid(row=1, column=17)
 
         for row in range(2, 14):
             dida = DID_AlarmField(did_frame, row)
@@ -144,7 +150,7 @@ class Main:
         self.root.mainloop()
 
     def tick(self):
-        c3tm = getC3_time()
+        c3tm = self.getC3_time()
         pctm = time.localtime()
         diff = time.mktime(c3tm) - time.mktime(pctm)
         self.ardtime.date.component('entry').delete(0, Tkinter.END)
@@ -171,9 +177,21 @@ class Main:
             str(diff)
             )
         self.root.after(1000, self.tick)
-        
+
+    def getC3_time(self):
+        if self.eeprom:
+            t = C3_interface.time_req()
+        else:
+            t = 0
+        out = time.gmtime(t)
+        return out
+
+    def connect(self):
+        C3_interface.connect(self.com)
+        self.eeprom = C3_interface.EEPROM()
+
 def synctime(args=None):
-    C3_interface.sync()
+    C3_interface.time_set()
 
 def alarm_set():
     print 'alarm_set()'

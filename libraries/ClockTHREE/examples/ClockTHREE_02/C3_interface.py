@@ -113,6 +113,13 @@ def connect(serialport='/dev/ttyUSB0', _gmt_offset=-5*3600):
     # raw_input('...')
     ser = serial.Serial(serialport, baudrate=const.BAUDRATE, timeout=.5)
     ser.flush()
+    try:
+        ping()
+    except PingError: # try again
+        ser = serial.Serial(serialport, baudrate=const.BAUDRATE, timeout=.5)
+        ser.flush()
+        ping()
+        
 
 payload = 'A23456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789'
 gmt_offset = -5 * 3600

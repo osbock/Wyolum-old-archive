@@ -119,9 +119,9 @@ int bcd2dec(uint8_t bcd){
 }
 
 bool rtc_raw_read(uint8_t addr,
-	      uint8_t n_bytes,
-	      bool is_bcd,
-	      uint8_t *dest){
+		  uint8_t n_bytes,
+		  bool is_bcd,
+		  uint8_t *dest){
 
   bool out = false;
   Wire.beginTransmission(DS3231_ADDR); 
