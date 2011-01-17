@@ -3,8 +3,6 @@ import glob
 import serial
 import time
 import datetime
-import wx
-from wx.lib.analogclock import *
 import struct
 
 MAX_ALARM_DID = chr(0x3F)
@@ -104,11 +102,17 @@ for file in c_files:
         const[key] = next[key]
 const = Struct(**const)
 
-serialport = '/dev/ttyUSB0'
+def set_gmt_offset(offset):
+    global gmt_offset
+    gmt_offset = offset
+    
+def connect(serialport='/dev/ttyUSB0', _gmt_offset=-5*3600):
+    global ser
+    set_gmt_offset(_gmt_offset)
 
-# raw_input('...')
-ser = serial.Serial(serialport, baudrate=const.BAUDRATE, timeout=.5)
-ser.flush()
+    # raw_input('...')
+    ser = serial.Serial(serialport, baudrate=const.BAUDRATE, timeout=.5)
+    ser.flush()
 
 payload = 'A23456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789'
 gmt_offset = -5 * 3600
@@ -126,7 +130,8 @@ def time_req():
     return out
 
 def time_set():
-    now = int(round(time.time())) + gmt_offset
+    now = int(round(time.time()) + gmt_offset)
+    # now = time.mktime(time.localtime())
     dat = wall_clock_to_c3(now)
     ser.write(str(const.ABS_TIME_SET))
     ser.write(dat)
@@ -135,7 +140,7 @@ def c3_to_wall_clock(bytes):
     return struct.unpack('<I', bytes)[0]
 
 def wall_clock_to_c3(t):
-    return struct.pack('<I', t)
+    return struct.pack('<I', int(round(t)))
 
 def test_wall_clock_conversion():
     # time_set()
@@ -165,8 +170,24 @@ def get_tod_alarm():
     hms = c3_to_wall_clock(ser_data[1:5])
     h, ms = divmod(hms , 60 * 60)
     m, s = divmod(ms, 60)
-    return h, m, s, bool(ser_data[5])
+    return h, m, s, ser_data[5] == chr(1)
 
+def tod_alarm_test():
+    connect()
+    h, m, s = 6, 30, 0
+    set_tod_alarm(h, m, s, True)
+    out = get_tod_alarm()
+    assert out[0] == h, '%s ?= %s' %(out[0], h)
+    assert out[1] == m, '%s ?= %s' %(out[1], m)
+    assert out[2] == s, '%s ?= %s' %(out[2], s)
+    assert out[3] == True, '%s = %s' %(out[3], True)
+
+    set_tod_alarm(h, m, s, False)
+    out = get_tod_alarm()
+    assert out[3] == False, '%s = %s' %(out[3], False)
+
+# tod_alarm_test()
+   
 def set_data(id, data):
     # MID, len(payload)
     l = len(data)
@@ -463,7 +484,7 @@ def main():
                             scroll_msg="DUDE!!!!....--",
                             effect_id=0,
                             sound_id=0))
-    print ord(set_alarm(now + 5, 
+    print ord(set_alarm(now + 86400, 
                         countdown=1 << 3, 
                         repeat=0, 
                         scroll_msg="Hooray!  ",
@@ -586,6 +607,7 @@ def main():
     eeprom_read()
 
 if __name__ == '__main__':
+    connect()
     if len(sys.argv) > 1:
         for arg in sys.argv[1:]:
             if arg == 'clear':

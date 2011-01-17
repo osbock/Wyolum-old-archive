@@ -159,7 +159,7 @@ const MsgDef TOD_ALARM_REQ = {0x03, 1, tod_alarm_get};
 const MsgDef TOD_ALARM_SET = {0x04, 6, tod_alarm_set};
 const MsgDef      DATA_REQ = {0x05, 2, send_data};
 const MsgDef   DATA_DELETE = {0x06, 2, delete_data};
-const MsgDef    SCROLL_DATA = {0x07, 2, scroll_data};
+const MsgDef   SCROLL_DATA = {0x07, 2, scroll_data};
 const MsgDef     EVENT_REQ = {0x08, 2, do_nothing};
 const MsgDef     EVENT_SET = {0x09, 6, do_nothing};
 const MsgDef   DISPLAY_REQ = {0x0A, 1, display_send};
@@ -1209,6 +1209,9 @@ void tod_alarm_get(){
   tm.Hour = ahh;
   tm.Minute = amm;
   tm.Second = ass;
+  tm.Year = 1;
+  tm.Month = 1;
+  tm.Day = 1;
 
   Serial.print(TOD_ALARM_SET.id, BYTE);
   Time_to_Serial(makeTime(tm) % SECS_PER_DAY, serial_msg);
