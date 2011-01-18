@@ -370,7 +370,7 @@ void setup(void){
 
   // Set Time and Alarms
   setSyncProvider(getTime);      // RTC
-  setSyncInterval(3600000);      // update every hour (and on boot)
+  setSyncInterval(60000);      // update every minute (and on boot)
   update_time();
   getRTC_alarm(&ahh, &amm, &ass, &alarm_set);
   TOD_Alarm_Set(todAlarm, ahh, amm, ass, alarm_set);

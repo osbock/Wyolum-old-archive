@@ -316,6 +316,25 @@ class EEPROM: # singleton!
         assert data[0] == did
         return data
         
+    def read_did_alarm(self, did):
+        assert did <= MAX_ALARM_DID, '%s > %s' % (did, MAX_ALARM_DID)
+        record = self.read_did_from_mem(did)
+        assert record[0] == did
+        assert len(record) == ord(record[1])
+        assert len(record) == DID_ALARM_LEN
+
+        countdown = record[6]
+        repeat = record[7]
+        scroll_did = record[8]
+        effect_id = record[9]
+        sound_id = record[10]
+        t = c3_to_wall_clock(record[2:6])
+        when = time.gmtime(t)
+
+        scroll_text = self.read_did_from_mem(scroll_did)[2:]
+        
+        return when, scroll_text, repeat, countdown
+        
     def read(self):
         ser.write(str(const.EEPROM_DUMP))
         self.eeprom = ser.read(const.MAX_EEPROM_ADDR + 1)
@@ -492,9 +511,9 @@ def main():
                             effect_id=0,
                             sound_id=0))
     print ord(set_alarm(now + 86400, 
-                        countdown=1 << 3, 
-                        repeat=0, 
-                        scroll_msg="Hooray!  ",
+                        countdown=1 << 1, 
+                        repeat=0b00111000, 
+                        scroll_msg="Hooray for Amy!!! ",
                         effect_id=0,
                         sound_id=0))
     trigger_mode()
