@@ -331,10 +331,30 @@ class EEPROM: # singleton!
         t = c3_to_wall_clock(record[2:6])
         when = time.gmtime(t)
 
-        scroll_text = self.read_did_from_mem(scroll_did)[2:]
+        try:
+            scroll_text = self.read_did_from_mem(scroll_did)[2:]
+        except KeyError:
+            scroll_text = ''
         
         return when, scroll_text, repeat, countdown
-        
+
+    def delete_did_alarm(self, did):
+        record = self.read_did_from_mem(did)
+        self.delete_did(did)
+        scroll_did = record[8]
+        sound_id = record[10]
+        if scroll_did:
+            keep = False
+            for i in [did for did in self.dids if did <= MAX_ALARM_DID]:
+                if i != did:
+                    if self.read_did_from_mem(i)[8] == scroll_did:
+                        keep = True
+            if not keep:
+                try:
+                    self.delete_did(scroll_did)
+                except AssertionError, e:
+                    print e
+
     def read(self):
         ser.write(str(const.EEPROM_DUMP))
         self.eeprom = ser.read(const.MAX_EEPROM_ADDR + 1)
@@ -503,22 +523,21 @@ def main():
     ser.flush()
     print eeprom.dids
     now = time_req()
-    if False:
-        print ord(set_alarm(now + 60, 
-                        countdown=1<<1, 
-                            repeat=0, 
-                            scroll_msg="DUDE!!!!....--",
-                            effect_id=0,
-                            sound_id=0))
-    print ord(set_alarm(now + 86400, 
-                        countdown=1 << 1, 
-                        repeat=0b00111000, 
-                        scroll_msg="Hooray for Amy!!! ",
-                        effect_id=0,
-                        sound_id=0))
-    trigger_mode()
-    countdown(15)
-    countdown(35)
+    if True:
+        for i in range(3):
+            print ord(set_alarm(now + 6 * 86400 + 10 * i, 
+                                countdown=1<<1, 
+                                repeat=0, 
+                                scroll_msg="DUDE!!!!....--" + str(i),
+                                effect_id=0,
+                                sound_id=0))
+            print ord(set_alarm(now + i * 86400, 
+                                countdown=1 << 1, 
+                                repeat=0b00111000, 
+                                scroll_msg="YOU'RE #1!!! ",
+                                effect_id=0,
+                                sound_id=0))
+    # trigger_mode()
     return
 
     if False:

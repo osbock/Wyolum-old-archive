@@ -14,6 +14,8 @@
 #include "font.h"
 #include "rtcBOB.h"
 #include "english.h"
+#include "EEPROM.h"
+#include "MsTimer2.h"
 
 const uint8_t N_DISPLAY = 20;
 ClockTHREE c3 = ClockTHREE();
@@ -37,7 +39,7 @@ void setup(){
   c3.clear();
   setSyncProvider(getTime);      // RTC
   setSyncInterval(60000);      // update minute (and on boot)
-  alarm_seconds = now() % 86400 + 5;
+  alarm_seconds = now() % 86400 + 125;
   
   // from RTC alarm
   //getRTC_alarm(&ahh, &amm, &ass, &alarm_set);

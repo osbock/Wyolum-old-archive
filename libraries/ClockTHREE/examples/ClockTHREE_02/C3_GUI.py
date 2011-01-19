@@ -3,7 +3,7 @@ from numpy import *
 import Tkinter
 import Pmw
 import C3_interface
-    
+
 class Main:
     def __init__(self, com):
         self.com = com
@@ -30,7 +30,7 @@ class Main:
                                            value=time_val,
                                            validate='time'
                                            )
-                self.update(tm)
+                self.set(tm)
                 self.wids = [self.date, self.time]
                 self.wids[0].component('entry').config(width=9)
                 self.wids[1].component('entry').config(width=7)
@@ -46,7 +46,7 @@ class Main:
                     wid.grid(row=0, column=i)
                 self.f.grid(*args,**kw)
             
-            def update(self, tm=None):
+            def set(self, tm=None):
                 if tm is None:
                     time_val = ''
                     date_val = ''
@@ -58,45 +58,81 @@ class Main:
                 self.date.checkentry()
                 self.time.checkentry()
 
+            def get(self):
+                if self.valid():
+                    ymd = self.date.getvalue()
+                    dt = [int(x) for x in ymd.split('/')]
+                    hms = self.time.getvalue()
+                    dt.extend([int(x) for x in hms.split(':')])
+                    dt.extend([0, 0, 0])
+                    out = time.mktime(dt)
+                else:
+                    raise ValueError("Date/Time not valid")
+                return out
+
+            def valid(self):
+                return self.date.valid() and self.time.valid()
         class Repeat:
             def __init__(self, parent, row, column):
-                self.vars = [Tkinter.IntVar() for i in range(8)]
+                self.vars = [Tkinter.IntVar() for i in range(9)]
                 self.checks = []
                 for i, var in enumerate(self.vars):
-                    c = Tkinter.Checkbutton(parent, text="", variable=var, command=self.update)
+                    c = Tkinter.Checkbutton(parent, text="", variable=var, command=self.on_click)
                     c.grid(row=row, column=column + i)
                     self.checks.append(c)
 
-            def update(self):
-                annual = self.vars[-1].get()
+            def on_click(self):
+                annual = self.vars[0].get()
                 if annual:
+                    for i, var in enumerate(self.vars[1:]):
+                        var.set(False)
+                        self.checks[i + 1].config(state=Tkinter.DISABLED)
+                else:
+                    for i, var in enumerate(self.vars[1:]):
+                        self.checks[i + 1].config(state=Tkinter.NORMAL)
+
+                m5 = self.vars[-1].get()
+                if m5:
                     for i, var in enumerate(self.vars[:-1]):
                         var.set(False)
                         self.checks[i].config(state=Tkinter.DISABLED)
                 else:
-                    for i, var in enumerate(self.vars[:-1]):
-                        self.checks[i].config(state=Tkinter.NORMAL)
-                    
+                    self.checks[0].config(state=Tkinter.NORMAL)
+
             def set(self, byte):
-                byte = ord(byte)
-                n = True
-                for i in range(8):
-                    if byte & (1 << i):
-                        n = False
-                        self.vars[i].set(True)
-                    else:
-                        self.vars[i].set(False)
-                if n:
-                    pass # set annual
-                else: 
-                    pass # unset annual
-                    
+                if type(byte) == type(''):
+                    byte = ord(byte)
+                if byte == 255:
+                    self.vars[-1].set(True)
+                else:
+                    self.vars[-1].set(False)
+                    n = True
+                    for i in range(8):
+                        if byte & (1 << i):
+                            n = False
+                            self.vars[i].set(True)
+                        else:
+                            self.vars[i].set(False)
+                    if n:
+                        pass # set annual
+                    else: 
+                        pass # unset annual
+
+            def get(self):
+                if self.vars[-1].get():
+                    byte = 255
+                else:
+                    byte = 0
+                    for i in range(8):
+                        byte |= (self.vars[i].get() << i)
+                return byte
+                
         class Countdown:
             def __init__(self, parent, row, column):
                 self.radio_buttons = []
-                var = Tkinter.IntVar()
+                self.var = Tkinter.IntVar()
                 for i in range(6):
-                    c = Tkinter.Radiobutton(parent, text="", variable=var, value=i)
+                    c = Tkinter.Radiobutton(parent, text="", variable=self.var, value=4 - i)
                     c.grid(row=row, column=column + i)
                     self.radio_buttons.append(c)
 
@@ -112,28 +148,49 @@ class Main:
                         self.radio_buttons[5 - i].select()
                     else:
                         self.radio_buttons[5 - i].deselect()
-                        
-                    
+            def get(self):
+                if self.var.get() < 0:
+                    byte = 0
+                else:
+                    byte = 1 << self.var.get()
+                return byte
+
         class DID_AlarmField:
             def __init__(self, parent, row):
                 self.did = None
-                def set():
-                    print 'set', row
-                def clear():
-                    print 'clear', row
-                Tkinter.Button(parent, text='Set', command=set).grid(row=row, column=0)
-                Tkinter.Button(parent, text='Clear', command=clear).grid(row=row, column=1)
+                self.tm = None
+                Tkinter.Button(parent, text='Set', command=self.on_set).grid(row=row, column=0)
+                Tkinter.Button(parent, text='Clear', command=self.on_clear).grid(row=row, column=1)
                 self.when = DatetimeField(parent, '', None, getcmd=None, setcmd=None, clearcmd=None)
                 self.when.grid(row=row, column=2)
                 self.scrollable = Pmw.EntryField(parent, value='')
-                self.scrollable.component('entry').config(width=40)
+                self.scrollable.component('entry').config(width=30)
                 self.scrollable.grid(row=row, column=3)
                 self.repeat = Repeat(parent, row=row, column=4)
-                self.countdown = Countdown(parent, row=row, column=12)
+                self.countdown = Countdown(parent, row=row, column=13)
                 self.row = row
-            def update(self, tm):
-                self.when.update(tm)
+
+            def set(self, tm):
+                self.tm = tm
+                self.when.set(tm)
+            def on_set(self):
+                scroll_text = self.scrollable.getvalue()
+                if self.when.valid():
+                    print self.when.get()
+                    print scroll_text
+                    print self.repeat.get()
+                    print self.countdown.get()
                 
+            def on_clear(self):
+                if self.did is not None:
+                    C3_interface.EEPROM.singleton.delete_did_alarm(self.did)
+                self.when.set(None)
+                self.scrollable.component('entry').delete(0, Tkinter.END)
+                self.repeat.set(0)
+                self.countdown.set(0)
+                
+                    
+                    
         c3tm = self.getC3_time()
         pctm = time.localtime()
         self.control_frame = Tkinter.Frame(self.root)
@@ -192,25 +249,26 @@ class Main:
             pass
 
         did_frame = Tkinter.Frame(self.root)
-        Tkinter.Label(did_frame, text='Repeat').grid(row=0, column=4, columnspan=8)
-        Tkinter.Label(did_frame, text='Countdown').grid(row=0, column=11, columnspan=6)
+        Tkinter.Label(did_frame, text='Repeat').grid(row=0, column=4, columnspan=9)
+        Tkinter.Label(did_frame, text='Countdown').grid(row=0, column=12, columnspan=6)
         Tkinter.Label(did_frame, text='When').grid(row=1, column=2)
         Tkinter.Label(did_frame, text='Scrollable Text').grid(row=1, column=3)
-        Tkinter.Label(did_frame, text="S").grid(row=1, column=4)
-        Tkinter.Label(did_frame, text="M").grid(row=1, column=5)
-        Tkinter.Label(did_frame, text="T").grid(row=1, column=6)
-        Tkinter.Label(did_frame, text="W").grid(row=1, column=7)
-        Tkinter.Label(did_frame, text="T").grid(row=1, column=8)
-        Tkinter.Label(did_frame, text="F").grid(row=1, column=9)
-        Tkinter.Label(did_frame, text="S").grid(row=1, column=10)
-        Tkinter.Label(did_frame, text="A").grid(row=1, column=11)
+        Tkinter.Label(did_frame, text="A").grid(row=1, column=4)
+        Tkinter.Label(did_frame, text="S").grid(row=1, column=5)
+        Tkinter.Label(did_frame, text="M").grid(row=1, column=6)
+        Tkinter.Label(did_frame, text="T").grid(row=1, column=7)
+        Tkinter.Label(did_frame, text="W").grid(row=1, column=8)
+        Tkinter.Label(did_frame, text="T").grid(row=1, column=9)
+        Tkinter.Label(did_frame, text="F").grid(row=1, column=10)
+        Tkinter.Label(did_frame, text="S").grid(row=1, column=11)
+        Tkinter.Label(did_frame, text="5'").grid(row=1, column=12)
 
-        Tkinter.Label(did_frame, text="D").grid(row=1, column=12)
-        Tkinter.Label(did_frame, text="H").grid(row=1, column=13)
-        Tkinter.Label(did_frame, text="5M").grid(row=1, column=14)
-        Tkinter.Label(did_frame, text="M").grid(row=1, column=15)
-        Tkinter.Label(did_frame, text="10").grid(row=1, column=16)
-        Tkinter.Label(did_frame, text="N").grid(row=1, column=17)
+        Tkinter.Label(did_frame, text="D").grid(row=1, column=13)
+        Tkinter.Label(did_frame, text="H").grid(row=1, column=14)
+        Tkinter.Label(did_frame, text="5'").grid(row=1, column=15)
+        Tkinter.Label(did_frame, text="M").grid(row=1, column=16)
+        Tkinter.Label(did_frame, text='10"').grid(row=1, column=17)
+        Tkinter.Label(did_frame, text="N").grid(row=1, column=18)
 
         didas = [] #did alarm fields
         for row in range(2, 14):
@@ -222,6 +280,7 @@ class Main:
         self.root.title('Pmw megawidgets example')
         self.root.after(1000, self.tick)
         self.root.mainloop()
+    
 
     def gmt_change(self, args):
         C3_interface.set_gmt_offset(float(args) * 3600)
@@ -271,7 +330,7 @@ class Main:
         for i, did in enumerate([d for d in self.eeprom.dids if d <= C3_interface.MAX_ALARM_DID]):
             when, scroll_text, repeat, countdown = self.eeprom.read_did_alarm(did)
             self.didas[i].did = did
-            self.didas[i].update(when)
+            self.didas[i].set(when)
             self.didas[i].scrollable.delete(0, Tkinter.END)
             self.didas[i].scrollable.insert(0, scroll_text)
             self.didas[i].repeat.set(repeat)
