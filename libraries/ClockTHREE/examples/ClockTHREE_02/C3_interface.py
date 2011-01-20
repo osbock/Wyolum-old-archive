@@ -107,7 +107,7 @@ def set_gmt_offset(offset):
     gmt_offset = offset
     
 def connect(serialport='/dev/ttyUSB0', _gmt_offset=-5*3600):
-    global ser
+    global ser, eeprom
     set_gmt_offset(_gmt_offset)
 
     # raw_input('...')
@@ -119,6 +119,7 @@ def connect(serialport='/dev/ttyUSB0', _gmt_offset=-5*3600):
         ser = serial.Serial(serialport, baudrate=const.BAUDRATE, timeout=.5)
         ser.flush()
         ping()
+    eeprom = EEPROM() # singlton instance
         
 
 payload = 'A23456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789'
@@ -238,12 +239,18 @@ def scroll_data(did):
     ser.write(str(const.SCROLL_DATA))
     ser.write(did)
 
-def set_alarm(t, countdown, repeat, scroll_msg, 
-              effect_id, sound_id):
+def set_alarm(t, 
+              countdown, 
+              repeat, 
+              scroll_msg, 
+              effect_id, 
+              sound_id):
+    global eeprom
     if scroll_msg:
         scroll_did = eeprom.add_record(scroll_msg)
     else:
         scroll_did = chr(0)
+    print 'set_alarm().scroll_did', ord(scroll_did), scroll_msg
     dat = [
            struct.pack('<I', t),
            chr(countdown),
@@ -336,7 +343,7 @@ class EEPROM: # singleton!
         except KeyError:
             scroll_text = ''
         
-        return when, scroll_text, repeat, countdown
+        return when, scroll_text, repeat, countdown, sound_id
 
     def delete_did_alarm(self, did):
         record = self.read_did_from_mem(did)
@@ -390,12 +397,10 @@ class EEPROM: # singleton!
     
     def add_record(self, payload, alarm_flag=False):
         did = None
-        if payload in self.eeprom:
-            addr = self.eeprom.find(payload) - 2
-            if ord(self.eeprom[addr + 1]) == len(payload) + 2:
-                print 'eeprom already has payload at address %s' % addr, payload
-                # we already have it
-                did = self.eeprom[addr]
+        matches = [id for id in self.dids if self.dids[id][2:] == payload]
+        if len(matches) > 0:
+            did = matches[0]
+            print 'eeprom already has payload %s with did %s' % (payload, did)
         if did is None:
             print 'writing new payload', payload
             did = self.next_did(alarm_flag)
@@ -407,10 +412,11 @@ class EEPROM: # singleton!
 
     def write(self, did, payload):
         assert did not in self.dids, 'DID with num %d not available %s' % (ord(did), [ord(k) for k in self.dids.keys()])
-        print 'Trying to write ord(did):', ord(did)
+        print 'Trying to write ord(did):', ord(did),
         set_data(did, payload)
         self.dids[did] = (-1, payload)
         time.sleep(.1)
+        print 'ok'
 
 def fmt_time(when):
     return '%02d/%02d/%04d %d:%02d:%02d' % (when.tm_mday, when.tm_mon, when.tm_year,
@@ -526,11 +532,11 @@ def main():
     if True:
         for i in range(3):
             print ord(set_alarm(now + 6 * 86400 + 10 * i, 
-                                countdown=1<<1, 
-                                repeat=0, 
+                                countdown=1<<i, 
+                                repeat=1 << i, 
                                 scroll_msg="DUDE!!!!....--" + str(i),
                                 effect_id=0,
-                                sound_id=0))
+                                sound_id=1))
             print ord(set_alarm(now + i * 86400, 
                                 countdown=1 << 1, 
                                 repeat=0b00111000, 
@@ -681,6 +687,5 @@ if __name__ == '__main__':
             else:
                 print 'huh?', arg
     else:
-        eeprom = EEPROM() # singlton instance
         # read_write_test()
         main()

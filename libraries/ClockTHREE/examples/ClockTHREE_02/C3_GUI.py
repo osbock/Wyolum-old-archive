@@ -65,7 +65,7 @@ class Main:
                     hms = self.time.getvalue()
                     dt.extend([int(x) for x in hms.split(':')])
                     dt.extend([0, 0, 0])
-                    out = time.mktime(dt)
+                    out = int(round(time.mktime(dt)))
                 else:
                     raise ValueError("Date/Time not valid")
                 return out
@@ -77,7 +77,7 @@ class Main:
                 self.vars = [Tkinter.IntVar() for i in range(9)]
                 self.checks = []
                 for i, var in enumerate(self.vars):
-                    c = Tkinter.Checkbutton(parent, text="", variable=var, command=self.on_click)
+                    c = Tkinter.Checkbutton(parent, text="", variable=var, command=self.on_click, borderwidth=0)
                     c.grid(row=row, column=column + i)
                     self.checks.append(c)
 
@@ -132,7 +132,7 @@ class Main:
                 self.radio_buttons = []
                 self.var = Tkinter.IntVar()
                 for i in range(6):
-                    c = Tkinter.Radiobutton(parent, text="", variable=self.var, value=4 - i)
+                    c = Tkinter.Radiobutton(parent, text="", variable=self.var, value=4 - i, borderwidth=0)
                     c.grid(row=row, column=column + i)
                     self.radio_buttons.append(c)
 
@@ -149,47 +149,65 @@ class Main:
                     else:
                         self.radio_buttons[5 - i].deselect()
             def get(self):
-                if self.var.get() < 0:
+                try:
+                    if self.var.get() < 0:
+                        byte = 0
+                    else:
+                        byte = 1 << self.var.get()
+                except:
                     byte = 0
-                else:
-                    byte = 1 << self.var.get()
                 return byte
 
         class DID_AlarmField:
             def __init__(self, parent, row):
                 self.did = None
                 self.tm = None
+                self.is_beeping = Tkinter.IntVar()
                 Tkinter.Button(parent, text='Set', command=self.on_set).grid(row=row, column=0)
                 Tkinter.Button(parent, text='Clear', command=self.on_clear).grid(row=row, column=1)
+                Tkinter.Checkbutton(parent, text="", variable=self.is_beeping, borderwidth=0).grid(row=row, column=2)
                 self.when = DatetimeField(parent, '', None, getcmd=None, setcmd=None, clearcmd=None)
-                self.when.grid(row=row, column=2)
+                self.when.grid(row=row, column=3)
                 self.scrollable = Pmw.EntryField(parent, value='')
                 self.scrollable.component('entry').config(width=30)
-                self.scrollable.grid(row=row, column=3)
-                self.repeat = Repeat(parent, row=row, column=4)
-                self.countdown = Countdown(parent, row=row, column=13)
+                self.scrollable.grid(row=row, column=4)
+                self.repeat = Repeat(parent, row=row, column=5)
+                self.countdown = Countdown(parent, row=row, column=14)
                 self.row = row
 
             def set(self, tm):
                 self.tm = tm
                 self.when.set(tm)
+
             def on_set(self):
                 scroll_text = self.scrollable.getvalue()
                 if self.when.valid():
+                    if self.did:
+                        C3_interface.EEPROM.singleton.delete_did_alarm(self.did)
+                        self.did = None
                     print self.when.get()
-                    print scroll_text
-                    print self.repeat.get()
                     print self.countdown.get()
+                    print self.repeat.get()
+                    print scroll_text
+                    print "self.is_beeping.get()'%d'" % self.is_beeping.get()
+                    self.did = C3_interface.set_alarm(self.when.get(),
+                                                      self.countdown.get(),
+                                                      self.repeat.get(),
+                                                      scroll_text,
+                                                      effect_id=0,
+                                                      sound_id=self.is_beeping.get())
+                    print 'ord(self.did)', ord(self.did)
+                                           
                 
             def on_clear(self):
                 if self.did is not None:
                     C3_interface.EEPROM.singleton.delete_did_alarm(self.did)
+                    self.did = None
                 self.when.set(None)
                 self.scrollable.component('entry').delete(0, Tkinter.END)
                 self.repeat.set(0)
                 self.countdown.set(0)
-                
-                    
+                self.is_beeping.set(0)
                     
         c3tm = self.getC3_time()
         pctm = time.localtime()
@@ -235,7 +253,7 @@ class Main:
         self.alarm_entry.component('entry').config(width=7)
         self.alarm_entry.grid(row=0, column=0)
         self.alarm_isset = Tkinter.IntVar()
-        alarm_set_c = Tkinter.Checkbutton(alarm_frame, text="", variable=self.alarm_isset)
+        alarm_set_c = Tkinter.Checkbutton(alarm_frame, text="", variable=self.alarm_isset, borderwidth=0)
         alarm_set_c.grid(row=0, column=2)
         Tkinter.Button(alarm_frame, text="Set", command=self.alarm_set).grid(row=0, column=3)
         alarm_frame.grid(row=4)
@@ -251,24 +269,25 @@ class Main:
         did_frame = Tkinter.Frame(self.root)
         Tkinter.Label(did_frame, text='Repeat').grid(row=0, column=4, columnspan=9)
         Tkinter.Label(did_frame, text='Countdown').grid(row=0, column=12, columnspan=6)
-        Tkinter.Label(did_frame, text='When').grid(row=1, column=2)
-        Tkinter.Label(did_frame, text='Scrollable Text').grid(row=1, column=3)
-        Tkinter.Label(did_frame, text="A").grid(row=1, column=4)
-        Tkinter.Label(did_frame, text="S").grid(row=1, column=5)
-        Tkinter.Label(did_frame, text="M").grid(row=1, column=6)
-        Tkinter.Label(did_frame, text="T").grid(row=1, column=7)
-        Tkinter.Label(did_frame, text="W").grid(row=1, column=8)
-        Tkinter.Label(did_frame, text="T").grid(row=1, column=9)
-        Tkinter.Label(did_frame, text="F").grid(row=1, column=10)
-        Tkinter.Label(did_frame, text="S").grid(row=1, column=11)
-        Tkinter.Label(did_frame, text="5'").grid(row=1, column=12)
+        Tkinter.Label(did_frame, text='Beep').grid(row=1, column=2)
+        Tkinter.Label(did_frame, text='When').grid(row=1, column=3)
+        Tkinter.Label(did_frame, text='Scrollable Text').grid(row=1, column=4)
+        Tkinter.Label(did_frame, text="A").grid(row=1, column=5)
+        Tkinter.Label(did_frame, text="S").grid(row=1, column=6)
+        Tkinter.Label(did_frame, text="M").grid(row=1, column=7)
+        Tkinter.Label(did_frame, text="T").grid(row=1, column=8)
+        Tkinter.Label(did_frame, text="W").grid(row=1, column=9)
+        Tkinter.Label(did_frame, text="T").grid(row=1, column=10)
+        Tkinter.Label(did_frame, text="F").grid(row=1, column=11)
+        Tkinter.Label(did_frame, text="S").grid(row=1, column=12)
+        Tkinter.Label(did_frame, text="5'").grid(row=1, column=13)
 
-        Tkinter.Label(did_frame, text="D").grid(row=1, column=13)
-        Tkinter.Label(did_frame, text="H").grid(row=1, column=14)
-        Tkinter.Label(did_frame, text="5'").grid(row=1, column=15)
-        Tkinter.Label(did_frame, text="M").grid(row=1, column=16)
-        Tkinter.Label(did_frame, text='10"').grid(row=1, column=17)
-        Tkinter.Label(did_frame, text="N").grid(row=1, column=18)
+        Tkinter.Label(did_frame, text="D").grid(row=1, column=14)
+        Tkinter.Label(did_frame, text="H").grid(row=1, column=15)
+        Tkinter.Label(did_frame, text="5'").grid(row=1, column=16)
+        Tkinter.Label(did_frame, text="M").grid(row=1, column=17)
+        Tkinter.Label(did_frame, text='10"').grid(row=1, column=18)
+        Tkinter.Label(did_frame, text="N").grid(row=1, column=19)
 
         didas = [] #did alarm fields
         for row in range(2, 14):
@@ -325,11 +344,12 @@ class Main:
 
     def connect(self):
         C3_interface.connect(self.com)
-        self.eeprom = C3_interface.EEPROM()
+        self.eeprom = C3_interface.eeprom
         self.alarm_get()
         for i, did in enumerate([d for d in self.eeprom.dids if d <= C3_interface.MAX_ALARM_DID]):
-            when, scroll_text, repeat, countdown = self.eeprom.read_did_alarm(did)
+            when, scroll_text, repeat, countdown, beeping = self.eeprom.read_did_alarm(did)
             self.didas[i].did = did
+            self.didas[i].is_beeping.set(ord(beeping))
             self.didas[i].set(when)
             self.didas[i].scrollable.delete(0, Tkinter.END)
             self.didas[i].scrollable.insert(0, scroll_text)
