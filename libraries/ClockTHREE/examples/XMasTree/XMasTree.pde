@@ -9,6 +9,10 @@
 
 #include "ClockTHREE.h"
 #include "SPI.h"
+#include "EEPROM.h"
+#include "MsTimer2.h"
+#include "Time.h"
+#include "Wire.h"
 
 ClockTHREE c3 = ClockTHREE();
 uint32_t *old_display = (uint32_t*)calloc(N_COL, sizeof(uint32_t));

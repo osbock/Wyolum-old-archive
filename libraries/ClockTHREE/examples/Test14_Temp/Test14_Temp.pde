@@ -13,6 +13,8 @@
 #include "ClockTHREE.h"
 #include "Time.h"
 #include "rtcBOB.h"
+#include "EEPROM.h"
+#include "MsTimer2.h"
 
 void setup(){
   // start Wire proto

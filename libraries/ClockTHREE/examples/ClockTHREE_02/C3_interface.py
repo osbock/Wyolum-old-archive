@@ -20,7 +20,6 @@ class MsgDef:
             self.val = int(val, 16)
         else:
             if val not in const:
-                print const.keys()
                 raise Exception('Unknown constant %s' % val)
             self.val = const[val]
         try:
@@ -29,8 +28,6 @@ class MsgDef:
             try:
                 self.n_byte = const[msg_size]
             except:
-                # print msg_size in const.keys()
-                # print const.keys()
                 raise
         self.callback = callback
     def __str__(self):
@@ -76,7 +73,6 @@ def read_constants(fn):
                     out[n] = v
             except:
                 pass
-                # print 'could not read', line
     return out
             
 class Struct:
@@ -206,11 +202,10 @@ def set_data(id, data):
     err = ser.read(4)
     if err:
         raise Exception(get_err(err))
-
+    return out
 def get_err(err):
     id = '0x%02x' % ord(err[0])
     len = ord(err[1])
-    # print id, len, err[2:len]
     return err[2:]
 
 def err_check():
@@ -226,7 +221,6 @@ def from_gmt(t):
     return t - gmt_offset
 
 def delete_did(did):
-    print 'DELETING', ord(did)
     ser.write(str(const.DATA_DELETE))
     ser.write(did)
     time.sleep(1)
@@ -250,7 +244,6 @@ def set_alarm(t,
         scroll_did = eeprom.add_record(scroll_msg)
     else:
         scroll_did = chr(0)
-    print 'set_alarm().scroll_did', ord(scroll_did), scroll_msg
     dat = [
            struct.pack('<I', t),
            chr(countdown),
@@ -300,17 +293,14 @@ class EEPROM: # singleton!
             self.dids = self.__get_dids()
             for did in [d for d in self.dids if d <= MAX_ALARM_DID]:
                 data = self.read_did_from_mem(did)
-                print 'DATA? "%s"' % data, len(data)
                 if data:
                     assert data[0] == did
                     assert len(data) == ord(data[1])
                     assert len(data) == DID_ALARM_LEN
                     t = c3_to_wall_clock(data[2:6])
                     tr = time_req()
-                    print t, tr, '?', t < tr, '?', (tr - t)
                     if t < tr:
                         self.delete_did(did)
-                        print 'deleted'
                         continue
             EEPROM.singleton = self
 
@@ -320,7 +310,7 @@ class EEPROM: # singleton!
         
     def read_did_from_mem(self, did):
         addr, data = self.dids[did]
-        assert data[0] == did
+        assert data[0] == did, '%s != %s (ord())' % ( ord(data[0]), ord(did))
         return data
         
     def read_did_alarm(self, did):
@@ -392,7 +382,6 @@ class EEPROM: # singleton!
             raise ValueError("no did's available")
         out = chr(out)
         assert out not in self.dids, 'did "%s" already used! ord: %s' % (out, ord(out))
-        print ord(out), 'is next id value!', [ord(did) for did in self.dids]
         return out
     
     def add_record(self, payload, alarm_flag=False):
@@ -400,23 +389,26 @@ class EEPROM: # singleton!
         matches = [id for id in self.dids if self.dids[id][2:] == payload]
         if len(matches) > 0:
             did = matches[0]
-            print 'eeprom already has payload %s with did %s' % (payload, did)
+            # print 'eeprom already has payload %s with did %s' % (payload, did)
         if did is None:
-            print 'writing new payload', payload
+            # print 'writing new payload', payload
             did = self.next_did(alarm_flag)
             if did < MAX_ALARM_DID:
-                print 'Alarm DID:', did, ord(did)
+                # print 'Alarm DID:', did, ord(did)
                 assert len(payload) + 2 == DID_ALARM_LEN
             self.write(did, payload)
+            
         return did
 
     def write(self, did, payload):
         assert did not in self.dids, 'DID with num %d not available %s' % (ord(did), [ord(k) for k in self.dids.keys()])
-        print 'Trying to write ord(did):', ord(did),
-        set_data(did, payload)
-        self.dids[did] = (-1, payload)
+        # print 'Trying to write ord(did):', ord(did),
+        message = set_data(did, payload)
+        record = message[2:]
+        assert record[0] == did, 'Wrote DID, but did does not match! (%s != %s)' %(ord(record[0], ord(did)))
+        self.dids[did] = (-1, record)
         time.sleep(.1)
-        print 'ok'
+        # print 'ok', self.dids[did]
 
 def fmt_time(when):
     return '%02d/%02d/%04d %d:%02d:%02d' % (when.tm_mday, when.tm_mon, when.tm_year,
@@ -481,12 +473,9 @@ def get_data(id):
         raise ClockTHREE_Error(err)
     assert head == str(const.DATA_SET), ('? 0x%x' % ord(head))
     n_byte = ord(ser.read(1))
-    # print 'N_BYTE:', n_byte
     assert ser.read(1) == id
     
     out = ser.read(n_byte - 3)
-    # print 'out:', out
-    # print 'equal?', len(out), n_byte - 3
     assert ord(out[0]) - 1 == len(out), '%s != %s' % (ord(out[0]), len(out))
     return out[1:]
 
@@ -499,13 +488,11 @@ def ping():
         'len(out) != %s' % const.PING.n_byte)
     ser.write(data_out)
     out = ser.read(const.PING.n_byte - 1)
-    # print out
     if out != data_out[1:]:
         raise PingError('Recieved bad ping data:"%s"' % out)
     return True
 
 def clear_eeprom():
-    # print '0x%02x' % const.EEPROM_CLEAR.val
     out = str(const.EEPROM_CLEAR) * const.EEPROM_CLEAR.n_byte
     assert len(out) == const.EEPROM_CLEAR.n_byte
     ser.write(out)

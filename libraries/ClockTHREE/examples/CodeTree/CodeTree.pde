@@ -7,8 +7,15 @@
   Attribution 3.0 Unported
  */
 
+#include <avr/pgmspace.h>
+#include <Wire.h>
+#include <Time.h>
+#include "EEPROM.h"
+#include "MsTimer2.h"
 #include "ClockTHREE.h"
 #include "SPI.h"
+#include "english.h"
+#include "rtcBOB.h"
 
 ClockTHREE c3 = ClockTHREE();
 uint32_t *old_display = (uint32_t*)calloc(N_COL, sizeof(uint32_t));

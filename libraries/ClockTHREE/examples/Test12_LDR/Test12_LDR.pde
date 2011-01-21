@@ -13,6 +13,8 @@
 #include "SPI.h"
 #include "Time.h"
 #include "Wire.h"
+#include "EEPROM.h"
+#include "MsTimer2.h"
 
 // Example 06A: Blink LED at a rate specified by the
 // value of the analogue input

@@ -12,6 +12,8 @@
 #include "SPI.h"
 #include "Wire.h"
 #include "Time.h"
+#include "EEPROM.h"
+#include "MsTimer2.h"
 #include <avr/pgmspace.h>
 #include "font.h"
 

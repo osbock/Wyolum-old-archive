@@ -14,6 +14,8 @@
 #include "ClockTHREE.h"
 #include "SPI.h"
 #include "english.h"
+#include "EEPROM.h"
+#include "MsTimer2.h"
 
 // globals
 ClockTHREE c3 = ClockTHREE();
