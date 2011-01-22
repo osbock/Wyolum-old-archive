@@ -21,21 +21,6 @@ time_t getTime(){
 
 void setRTC(uint16_t YY, uint8_t MM, uint8_t DD, 
 	    uint8_t hh, uint8_t mm, uint8_t ss){
-  if(true){ // old way seems to work?!
-    Wire.beginTransmission(104); // 104 is DS3231 device address
-    Wire.send(0); // start at register 0
-    Wire.send(dec2bcd(ss)); //Send seconds as BCD
-    Wire.send(dec2bcd(mm)); //Send minutes as BCD
-    Wire.send(dec2bcd(hh)); //Send hours as BCD
-    Wire.send(dec2bcd(weekday())); // dow
-    Wire.send(dec2bcd(DD)); //Send day as BCD
-    Wire.send(dec2bcd(MM)); //Send month as BCD
-    Wire.send(dec2bcd(YY % 100)); //Send year as BCD
-    Wire.endTransmission();
-    getTime();
-    return;
-  }
-  // TODO: DBG from here down is new way, and it does not actually update rtc!
   uint8_t date[7];
   date[0] = ss;
   date[1] = mm;
@@ -54,14 +39,14 @@ void setRTC_alarm(uint8_t ahh, uint8_t amm, uint8_t ass, uint8_t alarm_set){
   date[1] = amm;
   date[2] = ahh;
   rtc_raw_write(DS3231_ALARM1_OFSET, 3, IS_BCD, date);
-  rtc_raw_read(DS3231_ALARM1_OFSET+ 3, 1, IS_BYTES, date);
+  rtc_raw_read(DS3231_ALARM1_OFSET + 3, 1, IS_BYTES, date);
   if(alarm_set){
     date[0] |= (1 << 7);
   }
   else{
     date[0] &= (~1 << 7);
   }
-  rtc_raw_write(DS3231_ALARM1_OFSET, 1, IS_BYTES, date);
+  rtc_raw_write(DS3231_ALARM1_OFSET + 3, 1, IS_BYTES, date);
 }
 
 void getRTC_alarm(uint8_t *ahh, uint8_t *amm, uint8_t *ass, 
@@ -140,18 +125,21 @@ bool rtc_raw_read(uint8_t addr,
   return out;
 }
 void rtc_raw_write(uint8_t addr,
-		   uint8_t n_bytes,
+		   uint8_t n_byte,
 		   bool is_bcd,
 		   uint8_t *source){
+  uint8_t byte;
+
   Wire.beginTransmission(DS3231_ADDR); 
   Wire.send(addr); // start at address addr
-  for(uint8_t i = 0; i < n_bytes; i++){
+  for(uint8_t i = 0; i < n_byte; i++){
     if(is_bcd){
-      Wire.send(source[i]);
+      byte = dec2bcd(source[i]);
     }
     else{
-      Wire.send(dec2bcd(source[i]));
+      byte = source[i];
     }
+    Wire.send(byte);
   }
   Wire.endTransmission();  
 }

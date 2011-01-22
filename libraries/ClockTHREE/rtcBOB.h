@@ -40,6 +40,6 @@ uint8_t dec2bcd(int dec);
 int bcd2dec(uint8_t bcd);
 
 // low level read/writes
-bool rtc_raw_read(uint8_t addr, uint8_t n_bytes, bool is_bcd, uint8_t *dest);
-void rtc_raw_write(uint8_t addr, uint8_t n_bytes, bool is_bcd, uint8_t *source);
+bool rtc_raw_read(uint8_t addr, uint8_t n_byte, bool is_bcd, uint8_t *dest);
+void rtc_raw_write(uint8_t addr, uint8_t n_byte, bool is_bcd, uint8_t *source);
 #endif

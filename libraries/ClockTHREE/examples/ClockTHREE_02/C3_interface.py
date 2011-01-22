@@ -104,21 +104,23 @@ def set_gmt_offset(offset):
     
 def connect(serialport='/dev/ttyUSB0', _gmt_offset=-5*3600):
     global ser, eeprom
+    if hasattr(EEPROM, 'singleton'):
+        del EEPROM.singleton
     set_gmt_offset(_gmt_offset)
 
     # raw_input('...')
-    ser = serial.Serial(serialport, baudrate=const.BAUDRATE, timeout=.5)
+    ser = serial.Serial(serialport, baudrate=const.BAUDRATE, timeout=.1)
     ser.flush()
     try:
         ping()
     except PingError: # try again
-        ser = serial.Serial(serialport, baudrate=const.BAUDRATE, timeout=.5)
+        ser = serial.Serial(serialport, baudrate=const.BAUDRATE, timeout=.1)
         ser.flush()
         ping()
     eeprom = EEPROM() # singlton instance
         
 
-payload = 'A23456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789'
+PING_DEFAULT = 'A23456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789'
 gmt_offset = -5 * 3600
 
 def time_req():
@@ -386,7 +388,7 @@ class EEPROM: # singleton!
     
     def add_record(self, payload, alarm_flag=False):
         did = None
-        matches = [id for id in self.dids if self.dids[id][2:] == payload]
+        matches = [id for id in self.dids if self.dids[id][1][2:] == payload]
         if len(matches) > 0:
             did = matches[0]
             # print 'eeprom already has payload %s with did %s' % (payload, did)
@@ -482,13 +484,19 @@ def get_data(id):
 def sync():
     ser.write(str(const.SYNC))
 
-def ping():
+def ping(payload=PING_DEFAULT):
+    ser.read(const.MAX_MSG_LEN)
+    while(len(payload) < const.PING.n_byte):
+        payload = payload + payload
     data_out = str(const.PING) + payload[:const.PING.n_byte - 1]
     assert len(data_out) == const.PING.n_byte, (
         'len(out) != %s' % const.PING.n_byte)
     ser.write(data_out)
     out = ser.read(const.PING.n_byte - 1)
     if out != data_out[1:]:
+        print len(out), len(data_out[1:])
+        print ' in = "%s ... %s"' % (data_out[1:21], data_out[-20:])
+        print 'out = "%s ... %s"' % (out[:20], out[-20:])
         raise PingError('Recieved bad ping data:"%s"' % out)
     return True
 
@@ -669,6 +677,8 @@ if __name__ == '__main__':
                     print next
             elif arg == 'mode':
                 trigger_mode()
+            elif arg == 'ping':
+                print ping()
             elif arg == 'pc_time':
                 print '     PC TIME:', fmt_time(time.gmtime(to_gmt(time.time())))
             else:

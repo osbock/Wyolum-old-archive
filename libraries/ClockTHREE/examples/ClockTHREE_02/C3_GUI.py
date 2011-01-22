@@ -1,3 +1,4 @@
+import glob
 import time
 from numpy import *
 import Tkinter
@@ -5,8 +6,7 @@ import Pmw
 import C3_interface
 
 class Main:
-    def __init__(self, com):
-        self.com = com
+    def __init__(self):
         self.root = Pmw.initialise(fontScheme='pmw1')
         self.eeprom = None
         class DatetimeField:
@@ -81,7 +81,10 @@ class Main:
                     c = Tkinter.Checkbutton(parent, text="", variable=var, command=self.on_click, borderwidth=0)
                     c.grid(row=row, column=column + i)
                     self.checks.append(c)
-            
+            def reset(self):
+                for i, var in enumerate(self.vars):
+                    var.set(0)
+                
             def on_click(self):
                 annual = self.vars[0].get()
                 if annual:
@@ -150,7 +153,8 @@ class Main:
                                 1:0b00010,
                                 0:0b00001,
                                 -1:0b0000}
-
+            def reset(self):
+                self.var.set(-1)
             def set(self, byte):
                 if type(byte) == type(''):
                     byte = ord(byte)
@@ -225,6 +229,17 @@ class Main:
                 self.countdown.config(state=Tkinter.NORMAL)
                 self.clear_b.config(state=Tkinter.DISABLED)
 
+            def reset(self):
+                self.normal()
+                self.when.date.component('entry').delete(0, Tkinter.END)
+                self.when.time.component('entry').delete(0, Tkinter.END)
+                self.when.date.checkentry()
+                self.when.time.checkentry()
+                self.scrollable.component('entry').delete(0, Tkinter.END)
+                self.is_beeping.set(0)
+                self.repeat.reset()
+                self.countdown.reset()
+
             def set(self, tm):
                 self.tm = tm
                 self.when.set(tm)
@@ -260,8 +275,22 @@ class Main:
         self.control_frame = Tkinter.Frame(self.root)
         self.control_left = Tkinter.Frame(self.control_frame)
         self.control_right = Tkinter.Frame(self.control_frame)
-        self.connect_b = Tkinter.Button(self.control_left, text="Connect", command=self.connect)
-        self.connect_b.grid(row=0, column=0)
+        serialports = getSerialports()
+        self.serialport_dd = Pmw.ComboBox(self.control_left,
+                                   label_text='Serial Port:',
+                                   labelpos='w',
+                                   scrolledlist_items=serialports,
+                                   selectioncommand=self.on_portchange,
+                             )
+        self.serialport_dd.component('entry').config(width=20)
+        self.connect_b = Tkinter.Button(self.control_left, 
+                                        text="Connect", 
+                                        command=self.connect)
+        if len(serialports) > 0:
+            self.serialport_dd.selectitem(0)
+            self.on_portchange(serialports[0])
+        self.serialport_dd.grid(row=0, column=0)
+        self.connect_b.grid(row=1,column=0)
         self.ardtime = DatetimeField(self.control_right, 'Arduino Time', c3tm)
         self.ardtime.grid(row=0)
         self.pctime = DatetimeField(self.control_right, '       PC Time', pctm)
@@ -355,6 +384,10 @@ class Main:
         self.root.after(1000, self.tick)
         self.root.mainloop()
 
+    def on_portchange(self, *args, **kw):
+        self.com = args[0]
+        print self.com
+
     def gmt_change(self, args):
         C3_interface.set_gmt_offset(float(args) * 3600)
         
@@ -403,10 +436,11 @@ class Main:
         data = []
         for i, did in enumerate([d for d in self.eeprom.dids 
                                  if d <= C3_interface.MAX_ALARM_DID]):
-            data.append((did, self.eeprom.read_did_alarm(did)))
+            data.append((self.eeprom.read_did_alarm(did), did))
         data.sort()
+        i = -1 # default for loop over "normal" didas 1/2 page down
         for i, line in enumerate(data):
-            did, line = line
+            line, did = line
             when, scroll_text, repeat, countdown, beeping = line
             self.didas[i].normal()
             self.didas[i].did = did
@@ -419,13 +453,14 @@ class Main:
             
             self.didas[i].clear_b.config(state=Tkinter.NORMAL)
             self.didas[i].disable()
-        self.connect_b.config(state=Tkinter.DISABLED)
         for j in range(i + 1, 30):
+            self.didas[j].reset()
             self.didas[j].normal()
 
     def alarm_set(self):
         h, m, s = self.alarm_entry.getvalue().split(':')
         is_set = self.alarm_isset.get()
+        print 'is_set', is_set
         C3_interface.set_tod_alarm(int(h), int(m), int(s), is_set)
 
     def alarm_get(self):
@@ -436,6 +471,8 @@ class Main:
 def synctime(args=None):
     C3_interface.time_set()
 
+def getSerialports():
+    return glob.glob('/dev/ttyUSB*')
 
 usage = '''
 Linux example:
@@ -447,10 +484,11 @@ python C3_GUI.py COM1
 
 if __name__ == '__main__':
     import sys
-    if len(sys.argv) > 1:
-        com = sys.argv[1]
-        if sys.platform == 'win32':
-            com = int(com[-1]) - 1
-        Main(com)
-    else:
-        print usage
+    Main()
+    if False:
+        if len(sys.argv) > 1:
+            com = sys.argv[1]
+            if sys.platform == 'win32':
+                com = int(com[-1]) - 1
+        else:
+            print usage
