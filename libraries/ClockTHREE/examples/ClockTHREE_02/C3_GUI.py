@@ -4,6 +4,7 @@ from numpy import *
 import Tkinter
 import Pmw
 import C3_interface
+import serial
 
 class Main:
     def __init__(self):
@@ -380,7 +381,7 @@ class Main:
         self.didas = didas
         did_frame.grid(row=5)
         self.scroll_frame.grid(row=6)
-        self.root.title('Pmw megawidgets example')
+        self.root.title('ClockTHREE Connect!')
         self.root.after(1000, self.tick)
         self.root.mainloop()
 
@@ -470,8 +471,22 @@ def synctime(args=None):
     C3_interface.time_set()
 
 def getSerialports():
-    out = glob.glob('/dev/ttyUSB*')
-    out.sort()
+    if sys.platform.startswith('win'):
+        out = []
+        import scanwin32
+        for order, port, desc, hwid in sorted(scanwin32.comports()):
+            print "%-10s: %s (%s) ->" % (port, desc, hwid),
+            try:
+                s = serial.Serial(port) # test open
+                s.close()
+            except serial.serialutil.SerialException:
+                print "can't be opened"
+            else:
+                print "Ready"
+                out.append(port)
+    else: # linux
+        out = glob.glob('/dev/ttyUSB*')
+        out.sort()
     return out
 
 usage = '''

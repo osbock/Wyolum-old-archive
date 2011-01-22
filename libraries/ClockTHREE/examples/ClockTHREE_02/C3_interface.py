@@ -4,9 +4,12 @@ import serial
 import time
 import datetime
 import struct
+import os
 
 MAX_ALARM_DID = chr(0x3F)
 DID_ALARM_LEN = 12
+SER_TIMEOUT = .2 # Serial timeout, seconds
+
 class PingError(Exception):
     pass
 
@@ -89,12 +92,18 @@ class Struct:
         return Struct(**out)
 
 const = {}
-c_files = ['ClockTHREE_02.pde']
-c_files.extend(glob.glob("../../*.cpp"))
-c_files.extend(glob.glob("../../*.h"))
+if os.path.exists('ClockTHREE_02.pde'):
+    c_files = ['ClockTHREE_02.pde']
+    c_files.extend(glob.glob("../../*.cpp"))
+    c_files.extend(glob.glob("../../*.h"))
+else:
+    c_files = ['../ClockTHREE_02.pde']
+    c_files.extend(glob.glob("../../../*.cpp"))
+    c_files.extend(glob.glob("../../../*.h"))
 for file in c_files:
     next = read_constants(file)
     for key in next:
+        # print '%s = %s' % (key, next[key])
         const[key] = next[key]
 const = Struct(**const)
 
@@ -108,15 +117,30 @@ def connect(serialport='/dev/ttyUSB0', _gmt_offset=-5*3600):
         del EEPROM.singleton
     set_gmt_offset(_gmt_offset)
 
+    try:
+        ser.close() # need to close serial port on windows.
+    except:
+        pass
+        
     # raw_input('...')
-    ser = serial.Serial(serialport, baudrate=const.BAUDRATE, timeout=.1)
+    print 'serialport', serialport
+    ser = serial.Serial(serialport,
+                        baudrate=const.BAUDRATE,
+                        timeout=SER_TIMEOUT)
     ser.flush()
     try:
         ping()
     except PingError: # try again
-        ser = serial.Serial(serialport, baudrate=const.BAUDRATE, timeout=.1)
-        ser.flush()
-        ping()
+        ser.close()
+        try:
+            ser = serial.Serial(serialport,
+                                baudrate=const.BAUDRATE,
+                                timeout=SER_TIMEOUT)
+            ser.flush()
+            ping()
+        except PingError:
+            ser.close()
+            raise
     eeprom = EEPROM() # singlton instance
         
 

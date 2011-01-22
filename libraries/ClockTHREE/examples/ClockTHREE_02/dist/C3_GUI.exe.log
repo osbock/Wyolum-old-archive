@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "C3_GUI.py", line 5, in <module>
+  File "Pmw\__init__.pyc", line 28, in <module>
+WindowsError: [Error 3] The system cannot find the path specified: 'C:\\Documents and Settings\\Justin\\My Documents\\Arduino\\clockthree\\libraries\\ClockTHREE\\examples\\ClockTHREE_02\\dist\\library.zip\\Pmw/*.*'
+Traceback (most recent call last):
+  File "C3_GUI.py", line 5, in <module>
+  File "Pmw\__init__.pyc", line 28, in <module>
+WindowsError: [Error 3] The system cannot find the path specified: 'C:\\Documents and Settings\\Justin\\My Documents\\Arduino\\clockthree\\libraries\\ClockTHREE\\examples\\ClockTHREE_02\\dist\\library.zip\\Pmw/*.*'
+Traceback (most recent call last):
+  File "C3_GUI.py", line 5, in <module>
+  File "Pmw.pyc", line 2, in <module>
+ImportError: No module named PmwColor
+Traceback (most recent call last):
+  File "C3_GUI.py", line 6, in <module>
+  File "C3_interface.pyc", line 98, in <module>
+  File "C3_interface.pyc", line 54, in read_constants
+IOError: [Errno 2] No such file or directory: 'ClockTHREE_02.pde'
+Traceback (most recent call last):
+  File "C3_GUI.py", line 6, in <module>
+  File "C3_interface.pyc", line 98, in <module>
+  File "C3_interface.pyc", line 54, in read_constants
+IOError: [Errno 2] No such file or directory: 'ClockTHREE_02.pde'
+Traceback (most recent call last):
+  File "C3_GUI.py", line 6, in <module>
+  File "C3_interface.pyc", line 98, in <module>
+  File "C3_interface.pyc", line 54, in read_constants
+IOError: [Errno 2] No such file or directory: 'ClockTHREE_02.pde'
