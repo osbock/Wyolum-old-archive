@@ -302,7 +302,7 @@ class Main:
                                     value='0',
                                     validate='real',
                                     )
-        self.delta.component('entry').config(width=6)
+        self.delta.component('entry').config(width=12, justify=Tkinter.CENTER)
         self.delta.grid(row=0, column=0)
         Tkinter.Button(delta_frame, text="SYNC", command=synctime).grid(row=0, column=1)
         delta_frame.grid(row=2)
@@ -313,7 +313,7 @@ class Main:
                              scrolledlist_items=timezones,
                              selectioncommand=self.gmt_change,
                              )
-        combo.component('entry').config(width=6)
+        combo.component('entry').config(width=6, justify=Tkinter.CENTER)
         local_time = time.localtime()
         tz = (local_time.tm_isdst - time.timezone / 3600.)
         i = timezones.index(str(tz))
@@ -386,7 +386,6 @@ class Main:
 
     def on_portchange(self, *args, **kw):
         self.com = args[0]
-        print self.com
 
     def gmt_change(self, args):
         C3_interface.set_gmt_offset(float(args) * 3600)
@@ -417,7 +416,7 @@ class Main:
             time.strftime('%H:%M:%S', pctm))
         self.delta.component('entry').insert(
             0,
-            str(diff)
+            str(int(round(diff)))
             )
         self.root.after(1000, self.tick)
 
@@ -460,7 +459,6 @@ class Main:
     def alarm_set(self):
         h, m, s = self.alarm_entry.getvalue().split(':')
         is_set = self.alarm_isset.get()
-        print 'is_set', is_set
         C3_interface.set_tod_alarm(int(h), int(m), int(s), is_set)
 
     def alarm_get(self):
@@ -472,7 +470,9 @@ def synctime(args=None):
     C3_interface.time_set()
 
 def getSerialports():
-    return glob.glob('/dev/ttyUSB*')
+    out = glob.glob('/dev/ttyUSB*')
+    out.sort()
+    return out
 
 usage = '''
 Linux example:
