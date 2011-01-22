@@ -55,10 +55,10 @@ class MyPath:
         self.points = []
     def moveTo(self, x, y):
         self.p.moveTo(x, y)
-        self.points.append([x, y])
+        self.points.append([x/inch, y/inch])
     def lineTo(self, x, y):
         self.p.lineTo(x, y)
-        self.points.append([x, y])
+        self.points.append([x/inch, y/inch])
     def draw(self):
         self.c.drawPath(self.p)
     def toOpenScad(self, height):
@@ -322,7 +322,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         p.lineTo(*first)
         # c.drawPath(p) # old way
         p.draw()
-        # p.toOpenScad(.8 * inch)
+        p.toOpenScad(.8)
         
     if baffle:
         c.setLineWidth(1/64. * inch)
