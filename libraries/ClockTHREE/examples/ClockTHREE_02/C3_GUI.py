@@ -334,10 +334,12 @@ class Main:
         alarm_set_c.grid(row=0, column=2)
         Tkinter.Button(alarm_frame, text="Set", command=self.alarm_set).grid(row=0, column=3)
         alarm_frame.grid(row=4)
-        logo = Tkinter.PhotoImage(file="logo.png")
-        self.w = Tkinter.Label(self.control_frame)
-        self.w.logo = logo
-        self.w.grid(column=0)
+        try:
+            self.logo = Tkinter.PhotoImage(file="logo.gif")
+            self.w = Tkinter.Label(self.control_frame, image=self.logo)
+            self.w.grid(column=0)
+        except: # don't crash for lack of logo!
+            pass
         self.control_left.grid(row=0, column=1)
         self.control_right.grid(row=0, column=2)
         self.control_frame.grid(row=0)
