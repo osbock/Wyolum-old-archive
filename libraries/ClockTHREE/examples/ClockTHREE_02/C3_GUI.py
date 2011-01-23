@@ -276,7 +276,7 @@ class Main:
         self.control_frame = Tkinter.Frame(self.root)
         self.control_left = Tkinter.Frame(self.control_frame)
         self.control_right = Tkinter.Frame(self.control_frame)
-        serialports = getSerialports()
+        serialports = C3_interface.getSerialports()
         self.serialport_dd = Pmw.ComboBox(self.control_left,
                                    label_text='Serial Port:',
                                    labelpos='w',
@@ -469,25 +469,6 @@ class Main:
 
 def synctime(args=None):
     C3_interface.time_set()
-
-def getSerialports():
-    if sys.platform.startswith('win'):
-        out = []
-        import scanwin32
-        for order, port, desc, hwid in sorted(scanwin32.comports()):
-            print "%-10s: %s (%s) ->" % (port, desc, hwid),
-            try:
-                s = serial.Serial(port) # test open
-                s.close()
-            except serial.serialutil.SerialException:
-                print "can't be opened"
-            else:
-                print "Ready"
-                out.append(port)
-    else: # linux
-        out = glob.glob('/dev/ttyUSB*')
-        out.sort()
-    return out
 
 usage = '''
 Linux example:

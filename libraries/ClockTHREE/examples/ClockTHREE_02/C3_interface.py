@@ -110,7 +110,26 @@ const = Struct(**const)
 def set_gmt_offset(offset):
     global gmt_offset
     gmt_offset = offset
-    
+
+def getSerialports():
+    if sys.platform.startswith('win'):
+        out = []
+        import scanwin32
+        for order, port, desc, hwid in sorted(scanwin32.comports()):
+            print "%-10s: %s (%s) ->" % (port, desc, hwid),
+            try:
+                s = serial.Serial(port) # test open
+                s.close()
+            except serial.serialutil.SerialException:
+                print "can't be opened"
+            else:
+                print "Ready"
+                out.append(port)
+    else: # linux
+        out = glob.glob('/dev/ttyUSB*')
+        out.sort()
+    return out
+
 def connect(serialport='/dev/ttyUSB0', _gmt_offset=-5*3600):
     global ser, eeprom
     if hasattr(EEPROM, 'singleton'):
@@ -677,7 +696,7 @@ def main():
     eeprom_read()
 
 if __name__ == '__main__':
-    connect()
+    connect(getSerialports()[0])
     if len(sys.argv) > 1:
         for arg in sys.argv[1:]:
             if arg == 'clear':
