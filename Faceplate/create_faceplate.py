@@ -129,7 +129,7 @@ class Image:
                           self.x, self.y, self.w, self.h)
 
 def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
-         faceplate=True, baffle=True):
+         faceplate=True, baffle=True, CFL=True):
     c = canvas.Canvas(filename,
                       pagesize=(W, H)
                       )
@@ -329,9 +329,12 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         for x, y in mounts:
             c.circle(x, y, r, fill=False)
     else:
+        face_mounts = [mounts[0], mounts[1], mounts[3],
+                       mounts[6], mounts[8], mounts[11]]
         c.setLineWidth(1/64. * inch)
-        for x, y in mounts:
-            c.circle(x, y, r, fill=False)
+        for x, y in face_mounts:
+            r = 1 /64. * inch
+            c.circle(x, y, r, fill=True)
 
     t=Table(data, N_COL*[dx], N_ROW*[dy])
     t.setStyle(TableStyle(
@@ -351,15 +354,18 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
             if txt is None:
                 return None
             else:
-                return decoder(txt, errors='replace')[0]        
-        c.drawCentredString(XS[-4] - dx/2, YS[-1] + dy/4,
-                            decodeFunc(chr(186) + 'C'))
-        c.drawCentredString(XS[-3] - dx/2, YS[-1] + dy/4,
-                            decodeFunc(chr(186) + 'F'))
-        c.setLineWidth(1 * mm)
-        c.setLineJoin(1)
-        c.line(XS[-2] + dx/10., YS[-1] + dx/10.,
-               XS[-1] - dx/10., YS[-2] - dy/10.)
+                return decoder(txt, errors='replace')[0]
+        if CFL: 
+            # draw deg C and def F
+            c.drawCentredString(XS[-4] - dx/2, YS[-1] + dy/4,
+                                decodeFunc(chr(186) + 'C'))
+            c.drawCentredString(XS[-3] - dx/2, YS[-1] + dy/4,
+                                decodeFunc(chr(186) + 'F'))
+            # draw clock slash
+            c.setLineWidth(1 * mm)
+            c.setLineJoin(1)
+            c.line(XS[-2] + dx/10., YS[-1] + dx/10.,
+                   XS[-1] - dx/10., YS[-2] - dy/10.)
 
     c.showPage()
     c.save()
@@ -389,6 +395,20 @@ data = [
         ('M','O','R','N','I','N','G','A','F','T','E','R','N','O','O','N'),
         ('E','G','S','W','Y','O','L','U','M','A','C','S','E','C','S','H'),
         (' ','Y','M','D','H','M','S','A','L','A','R','M',' ',' ',' ',' ')]
+example_data = [
+        ('I',"T'",'S',' ','A',' ',' ',' ',' ','Q','U','A','R','T','E','R'),
+        (' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','P','A','S','T',' '),
+        ('T','W','E','L','V','E',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+        (' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+        (' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+        (' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+        (' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+        ('M','I','D','N','I','G','H','T',' ',' ',' ',' ',' ',' ',' ',' '),
+        (' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+        (' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+        (' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+        (' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+        ]
 
 bangla = [chr(c % 128) for c in range(16*12)]
 bangla = reshape(bangla, (12, 16))
@@ -414,7 +434,8 @@ for i in range(5):
 
 def test():    
     draw("baffle.pdf", data, images, faceplate=False, baffle=True)
-    draw("both.pdf", data, images, fontname='Ubuntu-Bold', faceplate=True, baffle=True)
+    draw("both.pdf", data, images, fontname='Allerta-Stencil', faceplate=True, baffle=True)
+    # draw("both.pdf", data, images, fontname='Ubuntu-Bold', faceplate=True, baffle=True)
     # draw("bangla.pdf", bangla, images, fontname='ShadheenLipi', faceplate=True, baffle=False)
 
 def main(fontnames):
@@ -423,6 +444,7 @@ def main(fontnames):
             try:
                 add_font(fontname)
                 draw("faceplate_%s.pdf" % fontname, data, images, fontname=fontname, faceplate=True, baffle=False)
+                draw("faceplate_%s_example.pdf" % fontname, example_data, [], fontname=fontname, faceplate=True, baffle=False, CFL=False)
             except:
                 print 'problem.  skipping %s' % fontname
     
