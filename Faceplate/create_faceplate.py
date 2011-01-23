@@ -322,7 +322,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         p.lineTo(*first)
         # c.drawPath(p) # old way
         p.draw()
-        p.toOpenScad(.8)
+        # p.toOpenScad(.8)
         
     if baffle:
         c.setLineWidth(1/64. * inch)
@@ -395,10 +395,10 @@ bangla = reshape(bangla, (12, 16))
 bangla = [tuple(l) for l in bangla]
 
 images = [Image('Images/NounProject/noun_project_198.png',                       # BUG
-                2.826 * inch, .05 * inch, .3*inch, .4*inch),                
-          Image('Images/NounProject/noun_project_317.png',                       # DEG  
+                2.876 * inch, .05 * inch, .3*inch, .4*inch),                
+          Image('Images/NounProject/noun_project_317.png',                       # clock  
                 XS[-3] + dx * .17, YS[-1] + dy * .07, .4*inch, .5*inch),
-          Image('Images/NounProject/noun_project_317.png',                       # DEG
+          Image('Images/NounProject/noun_project_317.png',                       # clock
                 XS[-2] + dx * .17, YS[-1] + dy * .07, .4*inch, .5*inch),
           Image('Images/NounProject/noun_project_140.png',                       # USB
                 XS[0] + dx * .37, YS[-1] + dy * .25, .17*inch, .34*inch),
@@ -414,7 +414,7 @@ for i in range(5):
 
 def test():    
     draw("baffle.pdf", data, images, faceplate=False, baffle=True)
-    # draw("both.pdf", data, images, fontname='Philosopher', faceplate=True, baffle=True)
+    draw("both.pdf", data, images, fontname='Ubuntu-Bold', faceplate=True, baffle=True)
     # draw("bangla.pdf", bangla, images, fontname='ShadheenLipi', faceplate=True, baffle=False)
 
 def main(fontnames):
@@ -447,8 +447,8 @@ def add_all_fonts():
 if __name__ == '__main__':
     import sys
     if len(sys.argv) == 1: # print all
-        # add_all_fonts()
-        # main(fontnames)
+        add_all_fonts()
+        main(fontnames)
         test()
         # main(['Vollkorn-Regular'])
     else:
