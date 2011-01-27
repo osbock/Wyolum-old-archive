@@ -148,12 +148,21 @@ class Main:
                     c.grid(row=row, column=column + i)
                     self.radio_buttons.append(c)
                 self.radio_buttons[-1].select()
+
+                self.countdown_secs = {4:86400, # one day
+                                       3:3600,  # one hour
+                                       2:300,   # five minutes
+                                       1:60,    # one minute
+                                       0:10,    # ten seconds
+                                      -1:0}     # no countdown
                 self.decoder = {4:0b10000,
                                 3:0b01000,
                                 2:0b00100,
                                 1:0b00010,
                                 0:0b00001,
-                                -1:0b0000}
+                               -1:0b0000}
+            def get_countdown_duration(self):
+                return self.countdown_secs[self.var.get()]
             def reset(self):
                 self.var.set(-1)
             def set(self, byte):
@@ -251,7 +260,7 @@ class Main:
                     if self.did is not None:
                         C3_interface.EEPROM.singleton.delete_did_alarm(self.did)
                         self.did = None
-                    self.did = C3_interface.set_alarm(self.when.get(),
+                    self.did = C3_interface.set_alarm(self.when.get() - self.countdown.get_countdown_duration(),
                                                       self.countdown.get(),
                                                       self.repeat.get(),
                                                       scroll_text,
@@ -451,11 +460,11 @@ class Main:
             self.didas[i].normal()
             self.didas[i].did = did
             self.didas[i].is_beeping.set(ord(beeping))
-            self.didas[i].set(when)
             self.didas[i].scrollable.delete(0, Tkinter.END)
             self.didas[i].scrollable.insert(0, scroll_text)
             self.didas[i].repeat.set(repeat)
             self.didas[i].countdown.set(countdown)
+            self.didas[i].set(when + self.didas[i].countdown.get_countdown_duration())
             
             self.didas[i].clear_b.config(state=Tkinter.NORMAL)
             self.didas[i].disable()

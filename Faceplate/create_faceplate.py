@@ -163,13 +163,14 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
 
     if baffle:
         c.setLineJoin(1)
-        lw = .05 * inch
+        lw = .075 * inch
         c.setLineWidth(1./64*inch)
         # c.grid(XS, YS)
         # c.rect(XS[0], YS[-1], XS[-1] - XS[0], YS[0] - YS[-1])
         for x in XS[:-1]:
             for y in YS[1:]:
                 c.rect(x + lw, y + lw, dx - 2 * lw, dy -2 * lw)
+                c.circle(x + dx/2., y + dy/2., 5*mm)
 
         # bug
         # c.rect(2.826 * inch, .05 * inch, .3*inch, .4*inch)
@@ -428,14 +429,15 @@ images = [Image('Images/NounProject/noun_project_198.png',                      
 ]
 
 for i in range(5):
+    continue
     images.append(Image('Images/hourglass%d.png' % i,
           XS[-2] + dx * .35, YS[5 + i] + dy * .25,
           dx * .3, dy * .56 ))
 
 def test():    
     draw("baffle.pdf", data, images, faceplate=False, baffle=True)
-    draw("both.pdf", data, images, fontname='Allerta-Stencil', faceplate=True, baffle=True)
-    # draw("both.pdf", data, images, fontname='Ubuntu-Bold', faceplate=True, baffle=True)
+    # draw("both.pdf", data, images, fontname='FontdinerSwanky', faceplate=True, baffle=True)
+    draw("both.pdf", data, images, fontname='Ubuntu-Bold', faceplate=True, baffle=True)
     # draw("bangla.pdf", bangla, images, fontname='ShadheenLipi', faceplate=True, baffle=False)
 
 def main(fontnames):

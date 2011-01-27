@@ -9,19 +9,25 @@
   SetColor
   Serial
 
+  Multiple persistant alarms are supported.
+
+  Serial interface for interacting with computers supported.
+
   Justin Shaw Dec 22, 2010
   
   Licenced under Creative Commons Attribution.
   Attribution 3.0
+
 */
-#define CLOCKTWO
+
+#define CLOCKTWO // Use ClockTWO hardware configuration
 
 #include <avr/pgmspace.h>
 #include <EEPROM.h>
 #include <Wire.h>
 #include <string.h>
 #include "Time.h"
-#include "TimeAlarms.h"
+#include "C3Alarms.h"
 #include "MsTimer2.h"
 #include "ClockTHREE.h"
 #include "SPI.h"
@@ -30,40 +36,59 @@
 #include "rtcBOB.h"
 #include "EDL.h"
 
-// debounce mode button threshold
-const uint8_t DEBOUNCE_THRESH = 100;
-const uint16_t SERIAL_TIMEOUT_MS = 1000;
-const uint8_t MAX_ALARM_DID = 63;
+// debounce buttons threshold
+const uint8_t DEBOUNCE_THRESH = 100;     // Two button pushes within this time frame are counted only once.
+const uint16_t SERIAL_TIMEOUT_MS = 1000; // Not working as expected.  Turned off.
 
 // Define modes
 typedef void (* CallBackPtr)(); // this is a typedef for callback funtions
+inline void do_nothing(void){}  // empty call back
 
-inline void do_nothing(void){}
-
+/*
+ * ClockTHREE is mode driven.  A Mode is like a mini arduino program 
+ * with its own setup and loop functions as well as an exit function
+ * to clean up and prevent memory leeks.  Only one mode can be 
+ * active at a time.  The active mode defines behaviors for events 
+ * (like button pushes).  The switchmode function should be called 
+ * to change modes.
+ */
 struct Mode{
-  uint8_t id;      // Mode ID
-  char sym;        // ASCII Symbol for mode
-  CallBackPtr setup;  // to be called when Mode is initialized
-  CallBackPtr loop;    // to be called as often as possible when mode is active
-  CallBackPtr exit;    // to be called when mode is exited.
-  CallBackPtr inc; // to be called when increment button is pushed
-  CallBackPtr dec; // to be called when decrement button is pushed
-  CallBackPtr mode;// to be called when mode button is pushed
+  uint8_t id;        // Mode ID
+  char sym;          // ASCII Symbol for mode (used to display mode in Mode mode)
+  CallBackPtr setup; // to be called when Mode is initialized
+  CallBackPtr loop;  // to be called as often as possible when mode is active
+  CallBackPtr exit;  // to be called when mode is exited.
+  CallBackPtr inc;   // to be called when increment button is pushed
+  CallBackPtr dec;   // to be called when decrement button is pushed
+  CallBackPtr mode;  // to be called when mode button is pushed
 };
 
+/* The display memory buffer is larger than physical display for screen 
+ * staging and fast display.
+ */
 const uint8_t N_DISPLAY = 3;
 
-// Default display -- twice as large as is needed
+// Default display -- N_DISPLAY larger than physical display.
 uint32_t *display = (uint32_t*)calloc(N_DISPLAY * N_COL, sizeof(uint32_t));
+
+/* 
+ * Special offset pointer for HH:MM:SS countdown display.
+ */
 uint32_t *countdown_display = display + 2;
-uint8_t last_hh, last_mm, last_ss; // for countdown mode
 
-// uint32_t *colen = (uint32_t*)calloc(8, sizeof(uint32_t));
+/*
+ * These are for countdown mode.  The display data are changed
+ * only when needed to minimized flicker.  In otherwords update
+ * hour display when hh != last_hh and so on.
+ */
+uint8_t last_hh, last_mm, last_ss; 
 
+// active mode pointer
 Mode *mode_p;
 
+// MODE Constants
 const uint8_t N_MODE = 11;
-const uint8_t N_MAIN_MODE = 6;
+const uint8_t N_MAIN_MODE = 6;  // main modes are accessable through Mode mode. (sub modes are not).
 const uint8_t N_SUB_MODE = 4;
 
 const uint8_t NORMAL_MODE = 0;
@@ -73,24 +98,30 @@ const uint8_t SET_ALARM_MODE = 3;
 const uint8_t SERIAL_MODE = 4;
 const uint8_t MODE_MODE = 5;
 
-// Sub Modes 
+// Sub Modes (this cannot be accessed though Mode mode selection.)
 const uint8_t SECONDS_MODE = 6;
 const uint8_t ALARM_MODE = 7;
 const uint8_t TEMPERATURE_MODE = 8;
 const uint8_t SCROLL_MODE = 9;
 const uint8_t COUNTDOWN_MODE = 10;
 
+// Temperature unit constants
 const uint8_t DEG_C = 0;
 const uint8_t DEG_F = 1;
 
+/* last_mode_id is used for returning to previous mode.  
+ * Usually best to return to NORMAL_MODE, but this allows sub-modes to return
+ * to the mode that invoked them.
+ */
 uint8_t last_mode_id = NORMAL_MODE; // the last mode clock was in...
 
+// indexed by mode.id
 Mode Modes[N_MODE];
 
+//Time units
 typedef enum {YEAR, MONTH, DAY, HOUR, MINUTE, SECOND} unit_t;
 
 // Begin mode declarations
-
 Mode NormalMode = {NORMAL_MODE, 
 		   'N', Normal_setup, Normal_loop, Normal_exit, 
 		   Normal_inc, Normal_dec, Normal_mode};
@@ -133,25 +164,30 @@ const uint8_t      DEC_EVT = 3; // Decriment Button has been pressed
 const uint8_t     TICK_EVT = 4; // Second has ellapsed
 const uint8_t EVENT_Q_SIZE = 5; // Max # events.
 
-// Messaging
+// Serial Messaging
 struct MsgDef{
-  uint8_t id;
-  uint8_t n_byte; // n_byte = MAX_MSG_LEN implies a variable length message
-  CallBackPtr cb;
-};
+  uint8_t id;     // message type id
 
-union Serial_time_t{
-  time_t dat32; 
-  uint8_t dat8[4];
+  /* n_byte holde the number of bytes or if n_byte == VAR_LENGTH, message type is variable length 
+   * with message length in second byte of message. */
+  uint8_t n_byte; 
+
+  /* Function to call when this message type is recieved.
+   * message content (header byte removed) will available to the call back function through
+   * the global variabe "char serial_msg[]".
+   */
+  CallBackPtr cb; 
 };
 
 const uint8_t MAX_MSG_LEN = 100; // official: 100
 const uint16_t BAUDRATE = 57600; // official:57600
-const uint8_t SYNC_BYTE = 254;   // 0xEF;
-const uint8_t VAR_LENGTH = 255;   // 0xFF;
+const uint8_t SYNC_BYTE = 254;   // 0xEF; (does not seem to work!)
+const uint8_t VAR_LENGTH = 255;  // 0xFF;
 char* EEPROM_ERR = "EE";
 char* EEPROM_DELETE_ERR = "ED";
 const uint8_t N_MSG_TYPE = 25;
+
+// Message types
 const MsgDef  NOT_USED_MSG = {0x00, 1, do_nothing};
 const MsgDef  ABS_TIME_REQ = {0x01, 1, send_time};
 const MsgDef  ABS_TIME_SET = {0x02, 5, Serial_time_set};
@@ -160,19 +196,17 @@ const MsgDef TOD_ALARM_SET = {0x04, 6, tod_alarm_set};
 const MsgDef      DATA_REQ = {0x05, 2, send_data};
 const MsgDef   DATA_DELETE = {0x06, 2, delete_data};
 const MsgDef   SCROLL_DATA = {0x07, 2, scroll_data};
-const MsgDef     EVENT_REQ = {0x08, 2, do_nothing};
-const MsgDef     EVENT_SET = {0x09, 6, do_nothing};
+// const MsgDef     EVENT_REQ = {0x08, 2, do_nothing}; // not used
+// const MsgDef     EVENT_SET = {0x09, 6, do_nothing}; // not used
 const MsgDef   DISPLAY_REQ = {0x0A, 1, display_send};
-const MsgDef   DISPLAY_SET = {0x0B, 64, display_set};
+const MsgDef   DISPLAY_SET = {0x0B, 65, display_set};
 const MsgDef  TRIGGER_MODE = {0x0C, 1, mode_interrupt};
-// const MsgDef  TRIGGER_MODE = {0x0C, 1, eeprom_clear};
-
 const MsgDef   TRIGGER_INC = {0x0D, 1, do_nothing};
 const MsgDef   TRIGGER_DEC = {0x0E, 1, do_nothing};
 const MsgDef TRIGGER_ENTER = {0x0F, 1, do_nothing};
 const MsgDef   VERSION_REQ = {0x10, 1, do_nothing};
 const MsgDef     ABOUT_REQ = {0x11, 1, do_nothing};
-const MsgDef          PING = {0x12, MAX_MSG_LEN, pong};
+const MsgDef          PING = {0x12, MAX_MSG_LEN, pong}; // can make variable length.
 const MsgDef  EEPROM_CLEAR = {0x43, MAX_MSG_LEN, eeprom_clear}; // 0x43 = ASCII 'C'
 const MsgDef   EEPROM_DUMP = {0x44, 1, eeprom_dump}; // 0x44 = ASCII 'D'
 const MsgDef    DID_ALARM_SET = {0x15, 2, set_did_alarm};
@@ -183,6 +217,7 @@ const MsgDef          SYNC = {SYNC_BYTE, MAX_MSG_LEN, do_nothing}; // must alrea
 const MsgDef      DATA_SET = {0x70, VAR_LENGTH, receive_data}; // variable length
 const MsgDef      ERR_OUT = {0x71, VAR_LENGTH, do_nothing}; // variable length
 
+// array to loop over when new messages arrive.
 const MsgDef *MSG_DEFS[N_MSG_TYPE] = {&NOT_USED_MSG,
 				      &ABS_TIME_REQ,
 				      &ABS_TIME_SET,
@@ -191,8 +226,8 @@ const MsgDef *MSG_DEFS[N_MSG_TYPE] = {&NOT_USED_MSG,
 				      &DATA_REQ,
 				      &DATA_DELETE,
 				      &SCROLL_DATA,
-				      &EVENT_REQ,
-				      &EVENT_SET,
+				      //&EVENT_REQ,
+				      //&EVENT_SET,
 				      &DISPLAY_REQ,
 				      &DISPLAY_SET,
 				      &TRIGGER_MODE,
@@ -208,42 +243,61 @@ const MsgDef *MSG_DEFS[N_MSG_TYPE] = {&NOT_USED_MSG,
 				      &NEXT_ALARM_REQ,
 				      &DID_ALARM_DELETE,
 				      &DATA_SET};
-const uint8_t DID_ALARM_LEN = 12;
+
+const uint8_t MAX_ALARM_DID = 63;        // Alarm Data IDs should be less than or equal to this #.
+const uint8_t DID_ALARM_LEN = 12;        // Alarm records are twelve bytes long
+
+/* Alarms have a Data ID for EEPROM referencing and an ID for TimeAlarms.h referencing.
+ * the TimeAlarms.h reference is stored in the EEPROM record at given byte offset */
 const uint8_t ALARM_ID_OFFSET = 11;
+
+/* There can be at most one countdown timer active at at time.  
+ * The countdown timer has this DID reserved.
+ *
+ * When the main timer expires, if a countdown flag is set, a secondary countdown alarm is initated.
+ */
 const uint8_t COUNTDOWN_TIMER_DID = MAX_ALARM_DID;
 
-char serial_msg[MAX_MSG_LEN];
-uint8_t serial_msg_len;
 
 // Globals
+/*
+ * This is a input/output buffer for serial communications.  
+ * This buffer is also used for some non-serial processing to save memory.
+ */
+char serial_msg[MAX_MSG_LEN];
+uint8_t serial_msg_len;       // Stores actual length of serial message.  Should be updated upon transmit or reciept.
+
+/*
+ * Array to store button push events or clock "TICK" events.
+ */
 uint8_t event_q[EVENT_Q_SIZE];
-uint8_t n_evt = 0;
-unsigned long last_mode_time = 0;
-unsigned long last_inc_time = 0;
-unsigned long last_dec_time = 0;
-ClockTHREE c3;
-English faceplate = English();
-Font font = Font();
-time_t t;
-uint8_t mode_counter;
-uint8_t color_i = 3;
-unsigned long count = 0;
-uint16_t YY;
+uint8_t n_evt = 0;                  // number of events awaiting processing
+unsigned long last_mode_time = 0;   // for debounce
+unsigned long last_inc_time = 0;    // for debounce
+unsigned long last_dec_time = 0;    // for debounce
+
+ClockTHREE c3;                      // ClockTHREE singleton
+English faceplate = English();      // Only faceplate, others could be supported.
+Font font = Font();                 // Only font at this time.
+time_t t;                           // TODO: remove this, not needed (I think)
+uint8_t mode_counter;               // Used for selecting mode
+uint8_t color_i = 3;                // Default color
+unsigned long count = 0;            // Number of interations current mode has been running.
+uint16_t YY;                        // current time variables.
 uint8_t MM, DD, hh, mm, ss;
-uint8_t ahh, amm, ass;
-AlarmId todAlarm;
-boolean tick = true;
-unit_t SetTime_unit = YEAR;
-uint8_t temp_unit = DEG_C;
-boolean alarm_set = false;
-uint8_t sync_msg_byte_counter = 0;
-uint8_t scroll_did = 0;
-bool alarm_beeping = false;
-time_t countdown_time = 0;
+uint8_t ahh, amm, ass;              // time of day time (tod) variables.
+AlarmId todAlarm;                   // AlarmID for tod alarm
+boolean tick = true;                // tick is true whenever a second changes (false when change has been dealt with)
+unit_t SetTime_unit = YEAR;         // Part of time being set {YEAR | MONTH | DAY | HOUR | MINUTE}
+uint8_t temp_unit = DEG_C;          // Temperature display units {DEG_C | DEC_F}
+boolean alarm_set = false;          // Whether or not tod alarm is set.
+uint8_t sync_msg_byte_counter = 0;  // How many byte in a row has sync byte been recieved (sync not working as expected)
+uint8_t scroll_did = 0;             // When a message is to be scrolled accross screen, this is its data ID.
+bool alarm_beeping = false;         // Beeping or Not? when alarm sounds.
+time_t countdown_time = 0;          // for countdown alarms.
 
 /*
  * Called when mode button is pressed
- * Increment mode after debounce check.
  */
 void mode_interrupt(){
   unsigned long now = millis();
@@ -257,6 +311,9 @@ void mode_interrupt(){
   last_mode_time = now;
 }
 
+/*
+ * Called when inc button is pressed
+ */
 void inc_interrupt(){
   unsigned long now = millis();
   if(now - last_inc_time > DEBOUNCE_THRESH){
@@ -269,6 +326,9 @@ void inc_interrupt(){
   last_inc_time = now;
 }
 
+/*
+ * Called when dec button is pressed
+ */
 void dec_interrupt(){
   unsigned long now = millis();
   if(now - last_dec_time > DEBOUNCE_THRESH){
@@ -281,14 +341,24 @@ void dec_interrupt(){
   last_dec_time = now;
 }
 
+/*
+ * Called when second boundary is crossed
+ */
 void tick_interrupt(){
   if(n_evt < EVENT_Q_SIZE){
     event_q[n_evt++] = TICK_EVT;
   }
 }
 
+/*
+ * Three time systems are with varying degrees of processor use and accuracy.
+ * YY, MM, DD ... are the least accurate and least procesor hungry
+ * Time.h time -- year(), month() ... are kinda slow.
+ * rtcBOB -- most accrate (and slowest?  need to verify this.)
+ */
 void update_time(){
-  c3.refresh();
+  // update global time variables.  resync with Time.h
+  c3.refresh();  // keep display going.
   YY = year();
   c3.refresh();
   MM = month();
@@ -302,6 +372,8 @@ void update_time(){
   ss = second();
   c3.refresh();
 }
+
+// read persistant alarms.  Kick off TimeAlarms to manage them
 void read_did_alarms(){
   int16_t addr;
   uint8_t len;
@@ -319,19 +391,16 @@ void read_did_alarms(){
     time_t t = now();
     did_read(COUNTDOWN_TIMER_DID, serial_msg, &serial_msg_len);
     countdown_time = Serial_to_Time(serial_msg + 2);
-    // old way
-    //for(uint8_t i = 0; i < 4; i++){
-    //  tmp.dat8[i] = serial_msg[i + 2];
-    //}
     if(countdown_time > t){
       switchmodes(COUNTDOWN_MODE);
     }
     else{
       countdown_time = 0;
     }
-  }
-  
+  } 
 }
+
+// Main setup function
 void setup(void){
   Wire.begin();
   c3.init();
@@ -377,6 +446,7 @@ void setup(void){
   read_did_alarms();
 }
 
+// main loop function.  Dellegate to mode_p->loop();
 void loop(void){
   //check button status // C2 hack
 #ifdef CLOCKTWO
@@ -623,13 +693,7 @@ void Alarm_setup(void){
 
       // update alarmtime
       Time_to_Serial(countdown_time, serial_msg + 2);
-      /* // old way
-	 Serial_time_t stime;
-	 stime.dat32 = countdown_time;
-	 for(uint8_t i = 0; i < 4; i++){
-	 serial_msg[2 + i] = stime.dat8[i];
-	 }
-      */
+
       did_delete(COUNTDOWN_TIMER_DID); // just in case it already exists (ignore return value)
       serial_msg[0] = COUNTDOWN_TIMER_DID;
       if(!did_write(serial_msg)){
@@ -1140,12 +1204,12 @@ void Serial_sync_wait(){
     }
   }
   digitalWrite(DBG, HIGH);
-  // SPCR |= _BV(SPE); // try to keep DBG from dimming! (FAIL)
 }
 
+// Transmit contents of PING message back to sender.
 void pong(){
   for(uint8_t i=0; i < MAX_MSG_LEN - 1; i++){
-    Serial.print(serial_msg[i],BYTE);
+    Serial.print(serial_msg[i], BYTE);
   }
 }
 
@@ -1156,13 +1220,6 @@ void send_time(){
   for(uint8_t i = 0; i < 4; i++){
     Serial.print(ser_data[i], BYTE);
   }
-  /* // old way
-  Serial_time_t data;
-  data.dat32 = now();
-  for(uint8_t i = 0; i < 4; i++){
-    Serial.print(data.dat8[i], BYTE);
-  }
-  */
 }
 
 void Serial_time_set(){
@@ -1241,15 +1298,15 @@ void next_alarm_send(){
   serial_msg_len = 4;
   Serial.print(ABS_TIME_SET.id, BYTE);
   for(uint8_t i = 0; i < 4; i++){
-    Serial.print(serial_msg[i]);
+    Serial.print(serial_msg[i], BYTE);
   }
-  /* // old way
-  Serial_time_t data;
-  data.dat32 = Alarm.nextTrigger;
-  for(uint8_t i = 0; i < 4; i++){
-    Serial.print(data.dat8[i]);
-  }
-  */
+  // new way (not implimented but could save a little space)
+  /*
+    serial_msg_len = 5;
+    serial_msg[0] = ABS_TIME_SET.id;
+    Time_to_Serial(Alarm.nextTrigger, serial_msg + 1);
+    xmit_serial_msg();
+   */
 }
 void set_did_alarm(){
   tmElements_t tm;
@@ -1696,6 +1753,7 @@ time_t Serial_to_Time(char *in){
   return *((uint32_t *)in);
 }
 
+// write 4 bytes of in into char buffer out.
 void Time_to_Serial(time_t in, char *out){
   time_t *out_p = (time_t *)out;
   *out_p = in;
