@@ -1,7 +1,7 @@
 from create_faceplate import *
 
 gh = 8 * mm
-gw = .1 * inch
+gw = .07 * inch
 
 def create_baffle(gh, gw, n_notch, delta):
     p = MyPath()
@@ -29,10 +29,12 @@ def create_verts():
                       pagesize=(W, H)
                       )
     c.setTitle("Vertical Baffles")
+    c.drawCentredString(W/2, H/2, "15 units per clock")
+    c.drawCentredString(W/2, H/2 - .5*inch, '0.07" notches')
 
 
     xbase = 0
-    for j in range(15):
+    for j in range(1, 2):
         ybase = j * (gh + gw)
         p = create_baffle(gh, gw, 11, dy)
         p.translate(xbase, ybase)
@@ -52,8 +54,11 @@ def create_horiz():
                       pagesize=(W, H)
                       )
     c.setTitle("Horizontal Baffles")
+    c.drawCentredString(W/2, H/2, "11 units per clock")
+    c.drawCentredString(W/2, H/2 - .5*inch, '%0.2f" notches' % (gw / inch))
+
     xbase = 0
-    for j in range(11):
+    for j in range(1, 2):
         ybase = j * (gh + gw)
         p = create_baffle(gh, gw, 15, dx)
         p.translate(xbase, ybase)

@@ -185,10 +185,14 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         c.setLineWidth(1./64*inch)
         # c.grid(XS, YS)
         c.rect(XS[0], YS[-1], XS[-1] - XS[0], YS[0] - YS[-1])
+
+        c.drawCentredString(W/2, H/2, 'DRAFT for quote only.  Do not fabricate.')
+
         for x in XS[:-1]:
             for y in YS[1:]:
                 # c.rect(x + lw, y + lw, dx - 2 * lw, dy -2 * lw)
-                c.circle(x + dx/2., y + dy/2., 5*mm)
+                # c.circle(x + dx/2., y + dy/2., 5*mm)
+                pass
         
         # bug
         # c.rect(2.826 * inch, .05 * inch, .3*inch, .4*inch)
@@ -397,17 +401,18 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
             c.line(XS[-2] + dx/10., YS[-1] + dx/10.,
                    XS[-1] - dx/10., YS[-2] - dy/10.)
 
-    import create_baffle_grid
-    c.setLineWidth(1/64. * inch)
-    baffle = create_baffle_grid.create_baffle(8 * mm,
-                                               .1 * inch, 15, dx)
-    baffle.translate(XS[0], YS[-2])
-    baffle.drawOn(c)
-    baffle = create_baffle_grid.create_baffle(8 * mm,
-                                               .1 * inch, 11, dy)
-    baffle.rotate(90)
-    baffle.translate(XS[1], YS[0])
-    baffle.drawOn(c)
+    if False: # check baffle grid size
+        import create_baffle_grid
+        c.setLineWidth(1/64. * inch)
+        baffle = create_baffle_grid.create_baffle(8 * mm,
+                                                   .1 * inch, 15, dx)
+        baffle.translate(XS[0], YS[-2])
+        baffle.drawOn(c)
+        baffle = create_baffle_grid.create_baffle(8 * mm,
+                                                   .1 * inch, 11, dy)
+        baffle.rotate(90)
+        baffle.translate(XS[1], YS[0])
+        baffle.drawOn(c)
     c.showPage()
     c.save()
     print "Wrote %s." % filename
