@@ -4,7 +4,7 @@ download fonts from:
     http://code.google.com/webfonts
     http://www.font-zone.com/
 
-download images from:
+    download images from:
     thenounproject.com
     
 '''
@@ -49,19 +49,36 @@ class Line:
         canvas.line(self.p1[0], self.p1[1], self.p2[0], self.p2[1])
 
 class MyPath:
-    def __init__(self, c):
-        self.c = c
-        self.p = c.beginPath()
+    def __init__(self):
         self.points = []
+
     def moveTo(self, x, y):
-        self.p.moveTo(x, y)
-        self.points.append([x/inch, y/inch])
+        self.points.append([x, y])
+
     def lineTo(self, x, y):
-        self.p.lineTo(x, y)
-        self.points.append([x/inch, y/inch])
-    def draw(self):
-        self.c.drawPath(self.p)
+        self.points.append([x, y])
+
+    def drawOn(self, c):
+        p = c.beginPath()
+        p.moveTo(*self.points[0])
+        for x, y in self.points[1:]:
+            p.lineTo(x, y)
+        p.lineTo(*self.points[0])
+        c.drawPath(p)
+
+    def rotate(self, rotate_deg):
+        theta = rotate_deg * pi / 180.
+        rot_mat = array([[cos(theta), -sin(theta)],
+                         [sin(theta), cos(theta)]])
+        self.points = list(dot(self.points, rot_mat))
+
+    def translate(self, dx, dy):
+        for l in self.points:
+            l[0] += dx
+            l[1] += dy
+
     def toOpenScad(self, height):
+        points = array(self.points / inch)
         print '''\
 
 linear_extrude(height=%s, center=true, convexity=10, twist=0)\
@@ -69,7 +86,7 @@ translate([2, 0, 0])\
 polygon(points=%s, \
 paths=[%s]);
 
-''' % (height, self.points, range(len(self.points)))
+''' % (height, points, range(len(self.points)))
     
 l1 = Line([0, 1], [1, 2])
 l2 = Line([1, -1], [0, 0])
@@ -133,6 +150,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
     c = canvas.Canvas(filename,
                       pagesize=(W, H)
                       )
+    c.setTitle("ClockTHREE Faceplate: %s" % fontname)
     c.setFont(fontname, fontsize)
     
     # c.getAvailableFonts()
@@ -166,12 +184,12 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         lw = .075 * inch
         c.setLineWidth(1./64*inch)
         # c.grid(XS, YS)
-        # c.rect(XS[0], YS[-1], XS[-1] - XS[0], YS[0] - YS[-1])
+        c.rect(XS[0], YS[-1], XS[-1] - XS[0], YS[0] - YS[-1])
         for x in XS[:-1]:
             for y in YS[1:]:
-                c.rect(x + lw, y + lw, dx - 2 * lw, dy -2 * lw)
+                # c.rect(x + lw, y + lw, dx - 2 * lw, dy -2 * lw)
                 c.circle(x + dx/2., y + dy/2., 5*mm)
-
+        
         # bug
         # c.rect(2.826 * inch, .05 * inch, .3*inch, .4*inch)
         # ClockTHREE
@@ -189,7 +207,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
 
         # Middle bottom
         # p = c.beginPath()
-        p = MyPath(c)
+        p = MyPath()
         # first = ((W + w)/2., grid_NW[1] + w)
         # first = mounts[1][0] + w/2, grid_SE[1] - w
         first = mounts[1][0] + w, grid_SE[1] - w
@@ -333,7 +351,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
 
         p.lineTo(*first)
         # c.drawPath(p) # old way
-        p.draw()
+        p.drawOn(c)
         # p.toOpenScad(.8)
         
     if baffle:
@@ -379,6 +397,17 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
             c.line(XS[-2] + dx/10., YS[-1] + dx/10.,
                    XS[-1] - dx/10., YS[-2] - dy/10.)
 
+    import create_baffle_grid
+    c.setLineWidth(1/64. * inch)
+    baffle = create_baffle_grid.create_baffle(8 * mm,
+                                               .1 * inch, 15, dx)
+    baffle.translate(XS[0], YS[-2])
+    baffle.drawOn(c)
+    baffle = create_baffle_grid.create_baffle(8 * mm,
+                                               .1 * inch, 11, dy)
+    baffle.rotate(90)
+    baffle.translate(XS[1], YS[0])
+    baffle.drawOn(c)
     c.showPage()
     c.save()
     print "Wrote %s." % filename
