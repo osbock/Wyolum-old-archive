@@ -52,5 +52,3 @@ void loop(){
 		    c3, COLORS[color_i], 32);
     c3.refresh(100);
 }
-
-
