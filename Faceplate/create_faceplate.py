@@ -14,17 +14,22 @@ import PIL.Image
 from reportlab.pdfgen import canvas
 from reportlab.graphics import renderPDF
 from reportlab.graphics.shapes import Drawing, Group, String, Circle, Rect
-from reportlab.lib.units import inch, mm
+from reportlab.lib.units import inch, mm, cm
 from reportlab.lib.colors import pink, black, red, blue, green, white
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Table, TableStyle
 from numpy import arange
+import create_baffle_grid
 
 LASER_THICKNESS = .01 * inch
+ACRYLIC_THICKNESS = .06 * inch
 DEG = pi/180.
-DTHETA = 180/50.
-STANDOFF_R = 3 * mm
+DTHETA = 5.
+STANDOFF_OR = 4.7 / 2 * mm
+STANDOFF_IR = 3.0 / 2 * mm
+STANDOFF_H = 10 * mm - 2 * ACRYLIC_THICKNESS
 STRUT_W = .2 * inch
-MOUNT_R = STANDOFF_R + 2 * mm
+MOUNT_R = STANDOFF_OR + 2 * mm
+MOUNT_R = STRUT_W / 2.
 THETA_EXTRA = arccos((STRUT_W / 2) / MOUNT_R) / DEG
 
 THETAS = arange(-THETA_EXTRA, 180 + THETA_EXTRA, DTHETA)
@@ -57,19 +62,23 @@ class Line:
 class MyPath:
     def __init__(self):
         self.points = []
+        self.paths = []
 
     def moveTo(self, x, y):
         self.points.append([x, y])
-
+        self.paths.append([])
+        self.paths[-1].append(len(self.points) - 1)
     def lineTo(self, x, y):
         self.points.append([x, y])
+        self.paths[-1].append(len(self.points) - 1)
 
     def drawOn(self, c):
         p = c.beginPath()
-        p.moveTo(*self.points[0])
-        for x, y in self.points[1:]:
-            p.lineTo(x, y)
-        p.lineTo(*self.points[0])
+        for path in self.paths:
+            p.moveTo(*self.points[path[0]])
+            for i in path[1:]:
+                p.lineTo(*self.points[i])
+                
         c.drawPath(p)
 
     def rotate(self, rotate_deg):
@@ -91,18 +100,42 @@ class MyPath:
         return min(l[0] for l in self.points)
     def getRight(self):
         return max(l[0] for l in self.points)
+    def toOpenScad(self, thickness, outfile):
+        print >> outfile, '''\
+linear_extrude(height=%s, center=true, convexity=10, twist=0)
+polygon(points=[''' % (thickness / cm)
+        for x, y in self.points:
+            print >> outfile, '[%s, %s],' % (x/cm, y/cm)
+        print >> outfile, '],'
+        print >> outfile, 'paths=['
+        for path in self.paths:
+            print >> outfile, '%s,' % path
+        print >> outfile, ']);'
 
-    def toOpenScad(self, height):
-        points = array(self.points / inch)
-        print '''\
+def create_baffle(gh, gw, n_notch, delta, tab_width=0.):
+    p = MyPath()
+    p.moveTo(0, 0)
+    p.lineTo(0, gw)
+    p.lineTo(-tab_width, gw)
+    p.lineTo(-tab_width, gh - gw)
+    p.lineTo(0, gh - gw)
+    p.lineTo(0, gh)
+    for i in range(1, n_notch + 1):
+        x = delta * i
+        p.lineTo(x - gw / 2, gh)
+        p.lineTo(x - gw / 2, gh / 2 - .01 * inch)
+        p.lineTo(x + gw / 2, gh / 2 - .01 * inch)
+        p.lineTo(x + gw / 2, gh)
 
-linear_extrude(height=%s, center=true, convexity=10, twist=0)\
-translate([2, 0, 0])\
-polygon(points=%s, \
-paths=[%s]);
+    p.lineTo(delta * (n_notch + 1), gh)
+    p.lineTo(delta * (n_notch + 1), gh - gw)
+    p.lineTo(delta * (n_notch + 1) + tab_width, gh - gw)
+    p.lineTo(delta * (n_notch + 1) + tab_width, gw)
+    p.lineTo(delta * (n_notch + 1), gw)
+    p.lineTo(delta * (n_notch + 1), 0)
+    p.lineTo(0, 0)
+    return p
 
-''' % (height, points, range(len(self.points)))
-    
 l1 = Line([0, 1], [1, 2])
 l2 = Line([1, -1], [0, 0])
 assert linalg.norm(l1.intersect(l2) - l2.intersect(l1)) < 1e-8
@@ -166,7 +199,8 @@ class Image:
                           self.x, self.y, self.w, self.h)
 
 def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
-         faceplate=True, baffle=True, CFL=True, horizontal_baffles=False, vertical_baffles=False):
+         faceplate=True, baffle=True, CFL=True, horizontal_baffles=False,
+         vertical_baffles=False, scad=False):
     c = canvas.Canvas(filename,
                       pagesize=(W + 2 * XOFFSET, H + 2 * YOFFSET)
                       )
@@ -203,9 +237,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         c.setLineJoin(1)
         lw = .075 * inch
         c.setLineWidth(1./64*inch)
-        # c.grid(XS, YS)
-        c.rect(XS[0], YS[-1], XS[-1] - XS[0], YS[0] - YS[-1])
-
+        
         c.drawCentredString(W/2, H/2, 'DRAFT for quote only.  Do not fabricate.')
 
         for x in XS[:-1]:
@@ -228,27 +260,24 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         grid_NW = array([min(XS), max(YS)])
 
         # Middle bottom
-        # p = c.beginPath()
-        p = MyPath()
-        # first = ((W + STRUT_W / 2)/2., grid_NW[1] + STRUT_W / 2)
-        # first = mounts[1][0] + w/2, grid_SE[1] - STRUT_W / 2
+        frame = MyPath()
         first = mounts[1][0] + STRUT_W / 2, grid_SE[1] - STRUT_W
-        p.moveTo(*first)
+        frame.moveTo(*first)
         
         if True: # right lower middle SSE
             next = mounts[2][0] - STRUT_W / 2, grid_SW[1]- STRUT_W
-            p.lineTo(*next)
+            frame.lineTo(*next)
             # next = mounts[2][0] - STRUT_W / 2, mounts[2][1]
-            p.lineTo(*next)
+            frame.lineTo(*next)
 
             for theta in (THETAS - 180) * DEG:
                 next = mounts[2] + [MOUNT_R * cos(theta), 
                                     MOUNT_R * sin(theta)]
-                p.lineTo(*next)
+                frame.lineTo(*next)
         else:
             next = first
         next = next[0], grid_SE[1] - STRUT_W 
-        p.lineTo(*next)
+        frame.lineTo(*next)
 
         # SE corner
         V = SE - grid_SE
@@ -259,30 +288,30 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         l1 = Line(grid_SE, grid_SW) - array([0, STRUT_W ])
         l2 = Line(grid_SE, SE) - Vperp * STRUT_W / 2
         next = l1.intersect(l2)
-        p.lineTo(*next)
+        frame.lineTo(*next)
 
         for theta in (-THETAS + 180) * DEG:
         # for theta in arange(180 + THETA_EXTRA, 0 - THETA_EXTRA, -DTHETA) * DEG:
             next = SE + (MOUNT_R * sin(theta) * V + 
                          MOUNT_R * cos(theta) * Vperp)
-            p.lineTo(*next)
+            frame.lineTo(*next)
 
         l1 = Line(grid_SE, grid_NE) + array([STRUT_W, 0])
         l2 = Line(grid_SE, SE) + Vperp * STRUT_W / 2
         next = l1.intersect(l2)
-        p.lineTo(*next)
+        frame.lineTo(*next)
         
         if True: # right side
             for m_i in [4, 5]:
                 next = grid_SE[0] + STRUT_W, mounts[m_i][1] - STRUT_W / 2
-                p.lineTo(*next)
+                frame.lineTo(*next)
                 next = mounts[m_i][0], mounts[m_i][1] - STRUT_W / 2
                 for theta in (THETAS -90) * DEG:
                     next = mounts[m_i] + [MOUNT_R * cos(theta), 
                                           MOUNT_R * sin(theta)]
-                    p.lineTo(*next)
+                    frame.lineTo(*next)
                 next = grid_SE[0] + STRUT_W, mounts[m_i][1] + STRUT_W / 2
-                p.lineTo(*next)
+                frame.lineTo(*next)
 
         V = NE - grid_NE
         d = linalg.norm(V)
@@ -292,27 +321,27 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         l1 = Line(grid_NE, grid_SE) + [STRUT_W, 0]
         l2 = Line(grid_NE, NE) - Vperp * STRUT_W / 2
         next = l1.intersect(l2)
-        p.lineTo(*next)
+        frame.lineTo(*next)
         for theta in (-THETAS + 180) * DEG:
             next = NE + (MOUNT_R * sin(theta) * V + 
                          MOUNT_R * cos(theta) * Vperp)
-            p.lineTo(*next)
+            frame.lineTo(*next)
         l1 = Line(grid_NW, grid_NE) + [0, STRUT_W]
         l2 = Line(grid_NE, NE) + Vperp * STRUT_W / 2
         next = l1.intersect(l2)
-        p.lineTo(*next)
+        frame.lineTo(*next)
         
         for i in [7, 8, 9]: #  gets each hole in top
             next = mounts[i][0] + STRUT_W / 2, l1.p1[1]
-            p.lineTo(*next)
+            frame.lineTo(*next)
             for theta in (THETAS) * DEG:
             # for theta in arange(0 - THETA_EXTRA, 180 + THETA_EXTRA, DTHETA) * DEG:
                 next = mounts[i] + [MOUNT_R * cos(theta),  
                                     MOUNT_R * sin(theta)]
-                p.lineTo(*next)
+                frame.lineTo(*next)
 
             next = mounts[i][0] - STRUT_W / 2, l1.p1[1]
-            p.lineTo(*next)
+            frame.lineTo(*next)
         
         V = NW - grid_NW
         d = linalg.norm(V)
@@ -322,28 +351,28 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         l1 = Line(grid_NW, grid_NE) + [0, STRUT_W]
         l2 = Line(NW, grid_NW) - STRUT_W / 2 * Vperp
         next = l1.intersect(l2)
-        p.lineTo(*next)
+        frame.lineTo(*next)
         for theta in (-THETAS + 180) * DEG:
             next = NW + (MOUNT_R * sin(theta) * V + 
                          MOUNT_R * cos(theta) * Vperp)
-            p.lineTo(*next)
+            frame.lineTo(*next)
             
         l1 = Line(grid_NW, grid_SW) - array([STRUT_W, 0])
         l2 = l2 + 2 * STRUT_W / 2 * Vperp
         next = l2.intersect(l1)
-        p.lineTo(*next)
+        frame.lineTo(*next)
 
         if True: # left side
             for i in [12, 13]:
                 next = [grid_NW[0] - STRUT_W, mounts[i][1] + STRUT_W / 2]
-                p.lineTo(*next)
+                frame.lineTo(*next)
                 for theta in (THETAS + 90) * DEG:
                 # for theta in arange(90 - THETA_EXTRA, 270 + THETA_EXTRA, DTHETA) * DEG:
                     next = mounts[i] + [MOUNT_R * cos(theta),  
                                         MOUNT_R * sin(theta)]
-                    p.lineTo(*next)
+                    frame.lineTo(*next)
                 next = grid_NW[0] - STRUT_W, mounts[i][1] - STRUT_W / 2
-                p.lineTo(*next)
+                frame.lineTo(*next)
 
         V = SW - grid_SW
         d = linalg.norm(V)
@@ -353,33 +382,38 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         l1 = Line(grid_NW, grid_SW) - array([STRUT_W, 0])
         l2 = Line(grid_SW, SW) - STRUT_W / 2 * Vperp
         next = l2.intersect(l1)
-        p.lineTo(*next)
+        frame.lineTo(*next)
         for theta in (-THETAS + 180) * DEG:
             next = SW + (MOUNT_R * sin(theta) * V + 
                          MOUNT_R * cos(theta) * Vperp)
-            p.lineTo(*next)
+            frame.lineTo(*next)
 
         l1 = Line(grid_SW, grid_SE) - array([0, STRUT_W])
         l2 = l2 + 2 * STRUT_W / 2 * Vperp
         next = l1.intersect(l2)
-        p.lineTo(*next)
+        frame.lineTo(*next)
         next = mounts[1][0] - STRUT_W / 2, grid_SW[1] - STRUT_W
-        p.lineTo(*next)
+        frame.lineTo(*next)
         
         for theta in (THETAS + 180) * DEG:
             next = mounts[1] + [MOUNT_R * cos(theta),  
                                 MOUNT_R * sin(theta)]
-            p.lineTo(*next)
+            frame.lineTo(*next)
 
-        p.lineTo(*first)
+        frame.lineTo(*first)
         # c.drawPath(p) # old way
-        p.drawOn(c)
-        # p.toOpenScad(.8)
+        frame.moveTo(XS[0], YS[-1])
+        frame.lineTo(XS[0], YS[0])
+        frame.lineTo(XS[-1], YS[0])
+        frame.lineTo(XS[-1], YS[-1])
+        frame.lineTo(XS[0], YS[-1])
+
+        frame.drawOn(c)
         
     if baffle:
         c.setLineWidth(1/64. * inch)
         for x, y in mounts:
-            c.circle(x, y, STANDOFF_R, fill=False)
+            c.circle(x, y, STANDOFF_IR, fill=False)
     else:
         face_mounts = [mounts[0], mounts[1], mounts[3],
                        mounts[6], mounts[8], mounts[11]]
@@ -419,40 +453,81 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
             c.line(XS[-2] + dx/10., YS[-1] + dx/10.,
                    XS[-1] - dx/10., YS[-2] - dy/10.)
 
-    if True: # check baffle grid size
-        import create_baffle_grid
+    baffle_height = 10.00 * mm
+    baffle_h = create_baffle(baffle_height,
+                             ACRYLIC_THICKNESS, 15, dx,
+                             tab_width=STRUT_W / 2)
+    baffle_v = create_baffle(baffle_height,
+                             ACRYLIC_THICKNESS, 11, dy,
+                             STRUT_W)
+    if scad:
+        scad = open('baffle.scad', 'w')
+        print >> scad, 'inch = %s;' % (inch / cm)
+        print >> scad, 'module frame(){'
+        print >> scad, '  color([ 0, 0, 1, 0.8 ])'
+        print >> scad, '  difference(){'
+        frame.toOpenScad(ACRYLIC_THICKNESS, scad)
+        for x, y in mounts:
+           print >> scad, 'translate(v=[%s, %s, -5*inch])' % (x/cm, y/cm)
+           print >> scad, 'cylinder(h=10*inch, r=%s, $fn=100);' % ((STANDOFF_IR + .1 * mm) / cm)
+        print >> scad, '}'
+        print >> scad, '}'
+        print >> scad, 'color([ 0, 1, 1, 0.5 ]);'
+        for x, y in mounts:
+            print >> scad, 'translate(v=[%s, %s, %s])' % (x/cm, y/cm, ACRYLIC_THICKNESS/cm)
+            print >> scad, '    difference(){'
+            print >> scad, '    cylinder(h=%s, r=%s, $fn=100);' % (STANDOFF_H / cm, STANDOFF_OR / cm)
+            print >> scad, '    cylinder(h=%s, r=%s, $fn=100);' % (STANDOFF_H / cm, STANDOFF_IR / cm)
+            print >> scad, '}'
+        print >> scad, '''\
+translate(v=[0, 0, %s])
+frame();
+translate(v=[0, 0, %s])
+frame();''' % (ACRYLIC_THICKNESS/2/cm, (baffle_height - ACRYLIC_THICKNESS/2)/cm)
+
+        print >> scad, 'module baffle_h(){'
+        print >> scad, 'color([ 0, 1., 0, 0.5 ])'
+        print >> scad, "translate(v=[%s, %s, 0])" % (XS[0]/cm, YS[-2]/cm)
+        print >> scad, "rotate(a=90, v=[1, 0, 0])"
+        baffle_h.toOpenScad(ACRYLIC_THICKNESS, scad)
+        print >> scad, '}'
+        for i in range(11):
+            print >> scad, 'translate(v=[0, %s, 0])' % (i * dy/cm)
+            print >> scad, 'baffle_h();'
+        
+        print >> scad, 'module baffle_v(){'
+        print >> scad, 'color([ 1, 0, 0, 0.5 ])'
+        print >> scad, "translate(v=[%s,%s, %s])" % (XS[1] / cm,
+                                                    YS[-1] / cm,
+                                                    baffle_height / cm)
+        print >> scad, "rotate(a=90, v=[0, -1, 0])"
+        print >> scad, "rotate(a=90, v=[0, 0, 1])"
+        baffle_v.toOpenScad(ACRYLIC_THICKNESS, scad)
+        print >> scad, '}'
+        for i in range(15):
+            print >> scad, 'translate(v=[%s, 0, 0])' % (i * DX/cm)
+            print >> scad, 'baffle_v();'
+        print 'wrote', scad.name
+        
+    if baffle: # check baffle grid size
         c.setLineWidth(1/64. * inch)
-        baffle_height = 10.00 * mm
         if horizontal_baffles:
-            baffle = create_baffle_grid.create_baffle(baffle_height,
-                                                      .1 * inch, 15, dx)
-            baffle.translate(XS[0], YS[-1] - baffle_height)
-            for i in range(0):
-                baffle.translate(0, baffle_height)
-                baffle.drawOn(c)
-            baffle = create_baffle_grid.create_baffle(baffle_height,
-                                                      .1 * inch, 15, dx,
-                                                      tab_width=.1 * inch)
             theta = 15 * DEG
-            baffle.rotate(theta / DEG)
+            baffle_h.rotate(theta / DEG)
             ystep = baffle_height / cos(theta) + LASER_THICKNESS
-            baffle.translate(XS[0] + .1 * inch, YS[-1] - baffle.getBottom() - ystep + .05 * inch)
+            baffle_h.translate(XS[0] + .1 * inch,
+                               YS[-1] - baffle_h.getBottom() - ystep + .05 * inch)
             for i in range(11):
-                baffle.translate(0, ystep)
-                baffle.drawOn(c)
+                baffle_h.translate(0, ystep)
+                baffle_h.drawOn(c)
 
 
         if vertical_baffles:
-            baffle = create_baffle_grid.create_baffle(baffle_height,
-                                                      .1 * inch, 11, dy,
-                                                      STRUT_W)
-            # baffle.rotate(90)
-            # baffle.translate(XS[0] - baffle_height, YS[0])
             ystep = baffle_height + LASER_THICKNESS
-            baffle.translate(XS[0] + STRUT_W, YS[-1] - baffle_height + LASER_THICKNESS)
+            baffle_v.translate(XS[0] + STRUT_W, YS[-1] - baffle_height + LASER_THICKNESS)
             for i in range(15):
-                baffle.translate(0, ystep)
-                baffle.drawOn(c)
+                baffle_v.translate(0, ystep)
+                baffle_v.drawOn(c)
     c.showPage()
     c.save()
     print "Wrote %s." % filename
@@ -521,10 +596,9 @@ for i in range(5):
 def test():    
     draw("baffle_h.pdf", data, images, faceplate=False, baffle=True, horizontal_baffles=True)
     draw("baffle_v.pdf", data, images, faceplate=False, baffle=True, vertical_baffles=True)
-    # draw("both.pdf", data, images, fontname='FontdinerSwanky', faceplate=True, baffle=True)
     draw("all.pdf", data, images, fontname='Ubuntu-Bold', faceplate=True, 
-         baffle=True, vertical_baffles=True, horizontal_baffles=True)
-    # draw("bangla.pdf", bangla, images, fontname='ShadheenLipi', faceplate=True, baffle=False)
+         baffle=True, vertical_baffles=True, horizontal_baffles=True,
+         scad=True)
 
 def main(fontnames):
     for fontname in fontnames:

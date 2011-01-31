@@ -2,29 +2,6 @@ from create_faceplate import *
 
 gh = 8 * mm
 gw = .07 * inch
-
-def create_baffle(gh, gw, n_notch, delta, tab_width=0.):
-    p = MyPath()
-    p.moveTo(0, 0)
-    p.lineTo(0, gw)
-    p.lineTo(-tab_width, gw)
-    p.lineTo(-tab_width, gh - gw)
-    p.lineTo(0, gh - gw)
-    p.lineTo(0, gh)
-    for i in range(1, n_notch + 1):
-        x = delta * i
-        p.lineTo(x - gw / 2, gh)
-        p.lineTo(x - gw / 2, gh / 2 - .01 * inch)
-        p.lineTo(x + gw / 2, gh / 2 - .01 * inch)
-        p.lineTo(x + gw / 2, gh)
-
-    p.lineTo(delta * (n_notch + 1), gh)
-    p.lineTo(delta * (n_notch + 1), gh - gw)
-    p.lineTo(delta * (n_notch + 1) + tab_width, gh - gw)
-    p.lineTo(delta * (n_notch + 1) + tab_width, gw)
-    p.lineTo(delta * (n_notch + 1), gw)
-    p.lineTo(delta * (n_notch + 1), 0)
-    return p
     
 def create_verts():
 
