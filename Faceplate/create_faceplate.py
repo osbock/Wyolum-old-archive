@@ -24,13 +24,13 @@ from copy import deepcopy
 LASER_THICKNESS = .01 * inch
 ACRYLIC_THICKNESS = .06 * inch
 DEG = pi/180.
-DTHETA = 5.
+DTHETA = 2.5
 STANDOFF_OR = 4.7 / 2 * mm
 STANDOFF_IR = 3.0 / 2 * mm
 STANDOFF_H = 10 * mm - 2 * ACRYLIC_THICKNESS
 STRUT_W = .2 * inch
 MOUNT_R = STANDOFF_OR + 2 * mm
-MOUNT_R = STRUT_W / 2.
+# MOUNT_R = STRUT_W / 2.
 THETA_EXTRA = arccos((STRUT_W / 2) / MOUNT_R) / DEG
 
 THETAS = arange(-THETA_EXTRA, 180 + THETA_EXTRA, DTHETA)
@@ -97,6 +97,7 @@ class MyPath:
         c = canvas.Canvas(filename,
                           pagesize=(W + .5 * inch, H + .5 * inch)
                           )
+        c.setLineWidth(1/64. * inch)
         self.translate(-self.getleft() + .25 * inch, -self.getbottom() + .25 * inch)
         self.drawOn(c)
         return c
@@ -540,7 +541,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
             c.line(XS[-2] + dx/10., YS[-1] + dx/10.,
                    XS[-1] - dx/10., YS[-2] - dy/10.)
 
-    baffle_height = 10.00 * mm
+    baffle_height = 10.00 * mm 
     baffle_h = create_baffle(baffle_height,
                              ACRYLIC_THICKNESS, 15, dx,
                              tab_width=STRUT_W / 2)
@@ -551,7 +552,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         scad = open('baffle.scad', 'w')
         print >> scad, 'inch = %s;' % (inch / cm)
         print >> scad, 'module frame(){'
-        print >> scad, '  color([ 0, 0, 1, 1. ])'
+        print >> scad, '  color([ 0, 0, 0, 1. ])'
         if explode:
             print >> scad, 'translate(v=[0, 0, -2])'
         for x, y, in face_mounts:
@@ -568,7 +569,9 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         
         start = Center[0] + R * cos(pi/2 + phi), Center[1] + R * sin(pi/2 + phi)
         keyhole.moveTo(*start)
-        for theta in arange(pi/2 + phi, 2 * pi + pi / 2 - phi, DTHETA * DEG):
+        for theta in arange(pi/2 + phi,
+                            2 * pi + pi / 2 - phi +DTHETA*DEG/2,
+                            DTHETA * DEG):
             next = Center[0] + R * cos(theta), Center[1] + R * sin(theta)
             keyhole.lineTo(*next)
         for theta in arange(0, pi, DTHETA * DEG):
@@ -620,7 +623,7 @@ frame();''' % (ACRYLIC_THICKNESS/2/cm)
         
 
         print >> scad, 'module baffle_h(){'
-        print >> scad, 'color([ 0, 1., 0, 1. ])'
+        print >> scad, 'color([ 0.1, 0.1, 0.1, 1. ])'
         print >> scad, "translate(v=[%s, %s, 0])" % (XS[0]/cm, YS[-2]/cm)
         print >> scad, "rotate(a=90, v=[1, 0, 0])"
         baffle_h.toOpenScad(ACRYLIC_THICKNESS, scad)
@@ -630,7 +633,7 @@ frame();''' % (ACRYLIC_THICKNESS/2/cm)
             print >> scad, 'baffle_h();'
         
         print >> scad, 'module baffle_v(){'
-        print >> scad, 'color([ 1, 0, 0, 1. ])'
+        print >> scad, 'color([ 0.1, 0.1, 0.1, 1. ])'
         if explode:
             print >> scad, "translate(v=[%s,%s, 6])" % (XS[1] / cm,
                                                          YS[-1] / cm,
@@ -649,7 +652,12 @@ frame();''' % (ACRYLIC_THICKNESS/2/cm)
         print 'wrote', scad.name
         
     if baffle: # check baffle grid size
-        c.setLineWidth(1/64. * inch)
+        bc = back_cover.toPDF("back_cover.pdf")
+        bc.showPage()
+        bc.save()
+        cc = clear_cover.toPDF("front_cover.pdf")
+        cc.showPage()
+        cc.save()
         if horizontal_baffles:
             theta = 15 * DEG
             baffle_h.rotate(theta / DEG)
@@ -659,17 +667,21 @@ frame();''' % (ACRYLIC_THICKNESS/2/cm)
             for i in range(11):
                 baffle_h.translate(0, ystep)
                 top_frame.route(baffle_h)
-            c = top_frame.toPDF("top_frame.pdf")
-            c.showPage()
-            c.save()
+            tf = top_frame.toPDF("top_frame.pdf")
+            tf.showPage()
+            tf.save()
 
 
         if vertical_baffles:
             ystep = baffle_height + LASER_THICKNESS
-            baffle_v.translate(XS[0] + STRUT_W, YS[-1] - baffle_height + LASER_THICKNESS)
+            baffle_v.translate(XS[0] + STRUT_W + LASER_THICKNESS, YS[-1] - baffle_height + LASER_THICKNESS)
             for i in range(15):
                 baffle_v.translate(0, ystep)
-                baffle_v.drawOn(c)
+                bottom_frame.route(baffle_v)
+                # baffle_v.drawOn(c)
+            bf = bottom_frame.toPDF("bottom_frame.pdf")
+            bf.showPage()
+            bf.save()
     c.showPage()
     c.save()
     print "Wrote %s." % filename
@@ -740,7 +752,7 @@ def test():
     draw("baffle_v.pdf", data, images, faceplate=False, baffle=True, vertical_baffles=True)
     draw("all.pdf", data, images, fontname='Ubuntu-Bold', faceplate=True, 
          baffle=True, vertical_baffles=True, horizontal_baffles=True,
-         scad=True, explode=False)
+         scad=True, explode=True)
 
 def main(fontnames):
     for fontname in fontnames:
