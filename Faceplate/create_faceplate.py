@@ -27,7 +27,7 @@ DEG = pi/180.
 DTHETA = 2.5
 STANDOFF_OR = 4.7 / 2 * mm
 STANDOFF_IR = 3.0 / 2 * mm
-STANDOFF_H = 10 * mm - 2 * ACRYLIC_THICKNESS
+STANDOFF_H = 20 * mm
 STRUT_W = .2 * inch
 MOUNT_R = STANDOFF_OR + 2 * mm
 # MOUNT_R = STRUT_W / 2.
@@ -61,6 +61,7 @@ class Line:
         canvas.line(self.p1[0], self.p1[1], self.p2[0], self.p2[1])
 
 class MyPath:
+    UNIT = cm
     def __init__(self):
         self.points = []
         self.paths = []
@@ -129,7 +130,17 @@ class MyPath:
             xyr[1] += dy
         for s in self.subtract:
             s.translate(dx, dy)
-            
+    def scale(self, f):
+        for l in self.points:
+            l[0] *= f
+            l[1] *= f
+        for xyr in self.holes:
+            xyr[0] *= f
+            xyr[1] *= f
+            xyr[2] *= f
+        for s in self.subtract:
+            s.scale(f)
+        
     def drill(self, x, y, r):
         self.holes.append([x, y, r])
     def route(self, polygon):
@@ -231,8 +242,8 @@ BOTTOM = 1 * inch - 7.5 * mm
 TOP = H - BOTTOM
 
 LEFT = 1.5 * inch - 7.5 * mm 
-XS = arange(LEFT, LEFT + dx * (N_COL + .01), dx) + XOFFSET
-YS = arange(TOP, TOP - dy * (N_ROW + .01), -dy) + YOFFSET
+XS = arange(LEFT, LEFT + dx * (N_COL + .01), dx)
+YS = arange(TOP, TOP - dy * (N_ROW + .01), -dy) 
 
 assert len(XS) == N_COL + 1, '%s != %s ' % (len(XS), N_COL + 1)
 assert len(YS) == N_ROW + 1, '%s != %s ' % (len(YS), N_ROW + 1)
@@ -269,8 +280,8 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
     c.setLineWidth(1/64. * inch)
     hole_sepx = 2.920 * inch
     hole_sepy = 2.887 * inch
-    startx = .172 * inch # + XOFFSET
-    starty = .172 * inch # + YOFFSET
+    startx = .172 * inch 
+    starty = .172 * inch 
 
     mounts = [] # lower left
     for i in range(5):          
@@ -297,7 +308,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
 
         for x in XS[:-1]:
             for y in YS[1:]:
-                # c.rect(x + lw, y + lw, dx - 2 * lw, dy -2 * lw)
+                c.rect(x + lw, y + lw, dx - 2 * lw, dy -2 * lw)
                 # c.circle(x + dx / 2., y + dy / 2., 5*mm)
                 pass
         
@@ -541,10 +552,10 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
             c.line(XS[-2] + dx/10., YS[-1] + dx/10.,
                    XS[-1] - dx/10., YS[-2] - dy/10.)
 
-    baffle_height = 10.00 * mm 
+    baffle_height = 20.00 * mm + 2 * ACRYLIC_THICKNESS
     baffle_h = create_baffle(baffle_height,
                              ACRYLIC_THICKNESS, 15, dx,
-                             tab_width=STRUT_W / 2)
+                             tab_width=STRUT_W)
     baffle_v = create_baffle(baffle_height,
                              ACRYLIC_THICKNESS, 11, dy,
                              STRUT_W)
@@ -552,14 +563,21 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         scad = open('baffle.scad', 'w')
         print >> scad, 'inch = %s;' % (inch / cm)
         print >> scad, 'module frame(){'
-        print >> scad, '  color([ 0, 0, 0, 1. ])'
+        print >> scad, '  color([ 0, 0, 0, 1.0 ])'
         if explode:
             print >> scad, 'translate(v=[0, 0, -2])'
+        X = deepcopy(clear_cover)
         for x, y, in face_mounts:
-            bottom_frame.drill(x, y, STANDOFF_IR)
-            top_frame.drill(x, y, STANDOFF_IR)
-            clear_cover.drill(x, y, STANDOFF_IR)
-            back_cover.drill(x, y, STANDOFF_IR)
+            bottom_frame.drill(x, y, STANDOFF_IR + .25*mm)
+            X.drill(x, y, STANDOFF_IR)
+            top_frame.drill(x, y, STANDOFF_IR + .25*mm)
+            clear_cover.drill(x, y, STANDOFF_IR + .25*mm)
+            back_cover.drill(x, y, STANDOFF_IR + .25*mm)
+        X.translate(-W / 2., -H / 2.)
+        X.scale(cm / inch)
+        Xf = open("top_frame_stl.scad", 'w')
+        print >> Xf, 'translate(v=[0, 0, -0.5 * inch])'
+        X.toOpenScad(ACRYLIC_THICKNESS, Xf)
         keyhole = MyPath()
         Center = 2. * inch, 7.5 * inch
         center = 2. * inch, 7.875 * inch
@@ -613,8 +631,8 @@ frame();''' % (ACRYLIC_THICKNESS/2/cm)
         clear_cover.toOpenScad(.115 * inch, scad);
 
         # wall_mount
-        if False: # bottom cover
-            print >> scad, '  color([ 0, 0, 0, 0.7 ])'
+        if True: # bottom cover
+            print >> scad, '  color([ 0, 0, 0, 0.8 ])'
             if explode:
                 print >> scad, 'translate(v=[0, 0, -3])'
             else:
@@ -623,7 +641,7 @@ frame();''' % (ACRYLIC_THICKNESS/2/cm)
         
 
         print >> scad, 'module baffle_h(){'
-        print >> scad, 'color([ 0.1, 0.1, 0.1, 1. ])'
+        print >> scad, 'color([ 1, 0.1, 0.1, 0.8 ])'
         print >> scad, "translate(v=[%s, %s, 0])" % (XS[0]/cm, YS[-2]/cm)
         print >> scad, "rotate(a=90, v=[1, 0, 0])"
         baffle_h.toOpenScad(ACRYLIC_THICKNESS, scad)
@@ -633,7 +651,7 @@ frame();''' % (ACRYLIC_THICKNESS/2/cm)
             print >> scad, 'baffle_h();'
         
         print >> scad, 'module baffle_v(){'
-        print >> scad, 'color([ 0.1, 0.1, 0.1, 1. ])'
+        print >> scad, 'color([ 0.1, 1, 0.1, 0.8 ])'
         if explode:
             print >> scad, "translate(v=[%s,%s, 6])" % (XS[1] / cm,
                                                          YS[-1] / cm,
@@ -652,36 +670,64 @@ frame();''' % (ACRYLIC_THICKNESS/2/cm)
         print 'wrote', scad.name
         
     if baffle: # check baffle grid size
-        bc = back_cover.toPDF("back_cover.pdf")
+        bc = back_cover.toPDF("hines/back_cover.pdf")
         bc.showPage()
         bc.save()
-        cc = clear_cover.toPDF("front_cover.pdf")
+        cc = clear_cover.toPDF("hines/front_cover.pdf")
         cc.showPage()
         cc.save()
         if horizontal_baffles:
-            theta = 15 * DEG
-            baffle_h.rotate(theta / DEG)
-            ystep = baffle_height / cos(theta) + LASER_THICKNESS
-            baffle_h.translate(XS[0] + .1 * inch,
-                               YS[-1] - baffle_h.getBottom() - ystep + .05 * inch)
+            ystep = baffle_height + 5 * LASER_THICKNESS
+            baffle_h.translate(STRUT_W + .1 * inch,
+                               -baffle_height + .25 * inch)
+            
+            c = canvas.Canvas(filename,
+                              pagesize=(W + .5 * inch, H + .5 * inch)
+                             )
+            single_h = baffle_h.toPDF('hines/horizontal_baffle.pdf')
+            single_h.showPage()
+            single_h.save()
+            
+            hb = canvas.Canvas('hines/horizontal_baffles.pdf',
+                                pagesize=(baffle_h.getright() - baffle_h.getleft() + .5 * inch,
+                                          11 * (baffle_height + 5 * LASER_THICKNESS) + .5 * inch
+                                          )
+                             )
             for i in range(11):
+                baffle_h.drawOn(hb)
                 baffle_h.translate(0, ystep)
-                top_frame.route(baffle_h)
-            tf = top_frame.toPDF("top_frame.pdf")
-            tf.showPage()
-            tf.save()
+            hb.showPage()
+            hb.save()
 
 
         if vertical_baffles:
-            ystep = baffle_height + LASER_THICKNESS
-            baffle_v.translate(XS[0] + STRUT_W + LASER_THICKNESS, YS[-1] - baffle_height + LASER_THICKNESS)
-            for i in range(15):
+            ystep = baffle_height + 5 * LASER_THICKNESS
+            baffle_v.translate(XS[0] + STRUT_W + LASER_THICKNESS + .1 * inch,
+                               YS[-1] - baffle_height + LASER_THICKNESS + .1 * inch)
+            for i in range(7):
                 baffle_v.translate(0, ystep)
                 bottom_frame.route(baffle_v)
+                top_frame.route(baffle_v)
                 # baffle_v.drawOn(c)
-            bf = bottom_frame.toPDF("bottom_frame.pdf")
+            notab_baffle_v = create_baffle(baffle_height,
+                                           ACRYLIC_THICKNESS, 11, dy,
+                                           0)
+
+            notab_baffle_v.translate(-notab_baffle_v.getleft(),
+                                     -notab_baffle_v.getbottom())
+            notab_baffle_v.rotate(-90)
+            notab_baffle_v.translate(10 * inch, YS[-1])
+            bottom_frame.route(notab_baffle_v)
+            top_frame.route(notab_baffle_v)
+            
+            tf = top_frame.toPDF("hines/top_frame.pdf")
+            tf.showPage()
+            tf.save()
+
+            bf = bottom_frame.toPDF("hines/bottom_frame.pdf")
             bf.showPage()
             bf.save()
+
     c.showPage()
     c.save()
     print "Wrote %s." % filename
