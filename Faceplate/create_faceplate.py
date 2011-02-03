@@ -103,8 +103,9 @@ class MyPath:
         self.drawOn(c)
         return c
 
-    def drawOn(self, c):
+    def drawOn(self, c, linewidth=1/64. * inch):
         p = c.beginPath()
+        c.setLineWidth(linewidth)
         for path in self.paths:
             p.moveTo(*self.points[path[0]])
             for i in path[1:]:
@@ -189,8 +190,8 @@ def create_baffle(gh, gw, n_notch, delta, tab_width=0.):
     for i in range(1, n_notch + 1):
         x = delta * i
         p.lineTo(x - gw / 2, gh)
-        p.lineTo(x - gw / 2, gh / 2 - .01 * inch)
-        p.lineTo(x + gw / 2, gh / 2 - .01 * inch)
+        p.lineTo(x - gw / 2 - .01 * inch, gh / 2 - .05 * inch) # add extra width in notch
+        p.lineTo(x + gw / 2 - .01 * inch, gh / 2 - .05 * inch) # add extra width in notch
         p.lineTo(x + gw / 2, gh)
 
     p.lineTo(delta * (n_notch + 1), gh)
@@ -228,7 +229,7 @@ adobe2codec = {
 }
 
 
-dx = 9/15. * inch
+dx = 9/15. * inch # .6 inch
 dy = 9/15. * inch
 N_COL = 16
 N_ROW = 12
@@ -253,7 +254,7 @@ DX = (W - 2 * LEFT) / float(N_COL)
 dx = DX
 
 class Image:
-    def __init__(self, filename, x, y, w, h):
+    def __init__(self, filename, x, y, w=None, h=None):
         self.filename = filename
         self.x = x
         self.y = y
@@ -263,25 +264,41 @@ class Image:
         im = PIL.Image.open(self.filename)
         c.drawInlineImage(im, 
                           self.x, self.y, self.w, self.h)
+    def translate(self, dx, dy):
+        return Image(self.filename, self.x + dx, self.y + dy, self.w, self.h)
 
 def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
          faceplate=True, baffle=True, CFL=True, horizontal_baffles=False,
-         vertical_baffles=False, scad=False, explode=False):
+         vertical_baffles=False, scad=False, explode=False, pcb_outline=False):
     c = canvas.Canvas(filename,
-                      pagesize=(W + 2 * XOFFSET, H + 2 * YOFFSET)
+#                       pagesize=(W + 2 * XOFFSET, H + 2 * YOFFSET),
+#                       pagesize=(13*inch, 10*inch)
+                      pagesize=(17*inch, 11*inch)
                       )
+    c.translate(2.5 * inch, 1. * inch)
     c.setTitle("ClockTHREE Faceplate: %s" % fontname)
     c.setFont(fontname, fontsize)
+    if pcb_outline:
+        c.rect(0*inch, 0*inch, 12*inch, 9*inch)
+    c.line(-1 * inch,  -.5*inch, -.55 * inch, -.5*inch)
+    c.line(12.55 * inch,  -.5*inch, 13. * inch, -.5*inch)
+    c.line(-1 * inch,  9.5*inch, -.55 * inch, 9.5*inch)
+    c.line(12.55 * inch,  9.5*inch, 13. * inch, 9.5*inch)
+
+    c.line(-.5*inch, -1*inch, -.5*inch, -.55 * inch)
+    c.line(12.5*inch, -1*inch, 12.5*inch, -.55 * inch)    
+    c.line(-.5*inch, 10*inch, -.5*inch, 9.55 * inch)
+    c.line(12.5*inch, 10*inch, 12.5*inch, 9.55 * inch)
     
     # c.getAvailableFonts()
     # c.stringWidth('Hello World')
     # c.drawString(0 * inch, 5 * inch, 'HelloWorld')
     
     c.setLineWidth(1/64. * inch)
-    hole_sepx = 2.920 * inch
-    hole_sepy = 2.887 * inch
-    startx = .172 * inch 
-    starty = .172 * inch 
+    startx = .15 * inch 
+    starty = .15 * inch 
+    hole_sepx = (W - 2 * startx) / 4.
+    hole_sepy = (H - 2 * starty) / 3.
 
     mounts = [] # lower left
     for i in range(5):          
@@ -308,7 +325,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
 
         for x in XS[:-1]:
             for y in YS[1:]:
-                c.rect(x + lw, y + lw, dx - 2 * lw, dy -2 * lw)
+                # c.rect(x + lw, y + lw, dx - 2 * lw, dy -2 * lw)
                 # c.circle(x + dx / 2., y + dy / 2., 5*mm)
                 pass
         
@@ -332,6 +349,8 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         top_frame.lineTo(12.5 * inch, 9.5 * inch)
         top_frame.lineTo( -.5 * inch, 9.5 * inch)
         top_frame.lineTo( -.5 * inch, -.5 * inch)
+        top_frame.drawOn(c)
+        
 
         # cut out center
         top_frame.moveTo(XS[0], YS[-1])
@@ -671,8 +690,28 @@ frame();''' % (ACRYLIC_THICKNESS/2/cm)
         
     if baffle: # check baffle grid size
         bc = back_cover.toPDF("hines/back_cover.pdf")
+        C3_logo = Image('Images/ClockTHREE_Logo.png',
+                         8*inch, 1*inch)
+        C3_logo.drawOn(bc)
+        textobject = bc.beginText()
+        textobject.setTextOrigin(9.75*inch, .75*inch)
+        textobject.setFont("Orbitron-Black", 14)
+        textobject.textOut('ClockTHREE')
+        bc.drawText(textobject)
+        # bc.drawCentredString(10.75*inch, .5*inch, , fontsize=20)
+
+
+        x = 1.25 * inch
+        y = 1.25 * inch
+        bc.drawString(x, y, 'WyoLum@gmail.com')
+        bc.drawString(x, y - .25 * inch, 'http://sites.google.com/site/clockthreeishere')
+        bc.drawString(x, y - .5 * inch, 'http://lumetron.com')
+        bc.drawString(x, y - .75 * inch, 'http://wyoinnovation.blogspot.com')
+        
+
         bc.showPage()
         bc.save()
+        
         cc = clear_cover.toPDF("hines/front_cover.pdf")
         cc.showPage()
         cc.save()
@@ -681,9 +720,9 @@ frame();''' % (ACRYLIC_THICKNESS/2/cm)
             baffle_h.translate(STRUT_W + .1 * inch,
                                -baffle_height + .25 * inch)
             
-            c = canvas.Canvas(filename,
-                              pagesize=(W + .5 * inch, H + .5 * inch)
-                             )
+            # c = canvas.Canvas(filename,
+            #                   pagesize=(W + .5 * inch, H + .5 * inch)
+            #                 )
             single_h = baffle_h.toPDF('hines/horizontal_baffle.pdf')
             single_h.showPage()
             single_h.save()
@@ -720,7 +759,14 @@ frame();''' % (ACRYLIC_THICKNESS/2/cm)
             bottom_frame.route(notab_baffle_v)
             top_frame.route(notab_baffle_v)
             
+            top_frame.drill((2.876 + .15) * inch, .25 * inch, .2*inch) # for BUG .3*inch, .4*inch
+            top_frame.drill(11.5 * inch, 5.37*inch, .28*inch) # for Logo
+            top_frame.drawOn(c)
+
             tf = top_frame.toPDF("hines/top_frame.pdf")
+            for button in button_logos:
+                button = button.translate(.75 * inch, .75 * inch)
+                button.drawOn(tf)
             tf.showPage()
             tf.save()
 
@@ -785,6 +831,16 @@ images = [Image('Images/NounProject/noun_project_198.png',                      
                 XS[0] + dx * .37, YS[-1] + dy * .25, .17*inch, .34*inch),
           Image('Images/ClockTHREE_soft.gif',                                    # ClockTHREE
                 W - .75*inch, H - (3.3875 + .5)*inch, .5*inch, .5*inch),
+          ]
+button_logos = [
+          Image('Images/mode.png',          # Mode
+                (4.95 + .025)*inch, -.335*inch, .25*inch, .25*inch),
+          Image('Images/dec.png',          # Mode
+                5.55*inch, -.35*inch, .3*inch, .3*inch),
+          Image('Images/inc.png',          # Mode
+                6.15*inch, -.35*inch, .3*inch, .3*inch),
+          Image('Images/enter.png',          # Mode
+                6.75*inch, -.35*inch, .4*inch, .3*inch),
 
 ]
 
@@ -794,11 +850,11 @@ for i in range(5):
           dx * .3, dy * .56 ))
 
 def test():    
-    draw("baffle_h.pdf", data, images, faceplate=False, baffle=True, horizontal_baffles=True)
-    draw("baffle_v.pdf", data, images, faceplate=False, baffle=True, vertical_baffles=True)
+    # draw("baffle_h.pdf", data, images, faceplate=False, baffle=True, horizontal_baffles=True)
+    # draw("baffle_v.pdf", data, images, faceplate=False, baffle=True, vertical_baffles=True)
     draw("all.pdf", data, images, fontname='Ubuntu-Bold', faceplate=True, 
          baffle=True, vertical_baffles=True, horizontal_baffles=True,
-         scad=True, explode=True)
+         scad=True, explode=True, pcb_outline=True)
 
 def main(fontnames):
     for fontname in fontnames:
