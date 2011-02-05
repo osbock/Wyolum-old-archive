@@ -22,7 +22,9 @@ import create_baffle_grid
 from copy import deepcopy
 
 LASER_THICKNESS = .01 * inch
-ACRYLIC_THICKNESS = .06 * inch
+ACRYLIC_THICKNESS = .06 * inch+ .2*mm
+# ACRYLIC_THICKNESS = 3 * mm
+
 DEG = pi/180.
 DTHETA = 2.5
 STANDOFF_OR = 4.7 / 2 * mm
@@ -179,7 +181,7 @@ polygon(points=[''' % (thickness / cm)
                 poly.toOpenScad(thickness * 2, outfile)
             print >> outfile, '}'
 
-def create_baffle(gh, gw, n_notch, delta, tab_width=0.):
+def create_baffle(gh, gw, n_notch, delta, tab_width=0., margin=.1*mm):
     p = MyPath()
     p.moveTo(0, 0)
     p.lineTo(0, gw)
@@ -187,11 +189,12 @@ def create_baffle(gh, gw, n_notch, delta, tab_width=0.):
     p.lineTo(-tab_width, gh - gw)
     p.lineTo(0, gh - gw)
     p.lineTo(0, gh)
+
     for i in range(1, n_notch + 1):
         x = delta * i
         p.lineTo(x - gw / 2, gh)
-        p.lineTo(x - gw / 2 - .01 * inch, gh / 2 - .05 * inch) # add extra width in notch
-        p.lineTo(x + gw / 2 - .01 * inch, gh / 2 - .05 * inch) # add extra width in notch
+        p.lineTo(x - gw / 2 - margin, gh / 2 - margin) # add extra width in notch
+        p.lineTo(x + gw / 2 - margin, gh / 2 - margin) # add extra width in notch
         p.lineTo(x + gw / 2, gh)
 
     p.lineTo(delta * (n_notch + 1), gh)
@@ -278,6 +281,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
     c.translate(2.5 * inch, 1. * inch)
     c.setTitle("ClockTHREE Faceplate: %s" % fontname)
     c.setFont(fontname, fontsize)
+    # c.setFont("Helvetica", 14)
     if pcb_outline:
         c.rect(0*inch, 0*inch, 12*inch, 9*inch)
     c.line(-1 * inch,  -.5*inch, -.55 * inch, -.5*inch)
@@ -647,7 +651,7 @@ frame();''' % (ACRYLIC_THICKNESS/2/cm)
             print >> scad, 'translate(v=[0, 0, 10])'
         else:
             print >> scad, 'translate(v=[0, 0, %s])'%((baffle_height)/cm)
-        clear_cover.toOpenScad(.115 * inch, scad);
+        clear_cover.toOpenScad(.25 * inch, scad);
 
         # wall_mount
         if True: # bottom cover
@@ -740,7 +744,7 @@ frame();''' % (ACRYLIC_THICKNESS/2/cm)
 
 
         if vertical_baffles:
-            ystep = baffle_height + 5 * LASER_THICKNESS
+            ystep = baffle_height + 2 * LASER_THICKNESS
             baffle_v.translate(XS[0] + STRUT_W + LASER_THICKNESS + .1 * inch,
                                YS[-1] - baffle_height + LASER_THICKNESS + .1 * inch)
             for i in range(7):
@@ -860,12 +864,15 @@ def main(fontnames):
     for fontname in fontnames:
         if fontname not in ignore_fonts:
             try:
-                add_font(fontname)
+                if (fontname.endswith('.ttf') or
+                    fontname.endswith('.odf')):
+                    continue
+                # add_font(fontname)
                 draw("faceplate_%s.pdf" % fontname, data, images, fontname=fontname, faceplate=True, baffle=False)
                 draw("faceplate_%s_example.pdf" % fontname, example_data, [], fontname=fontname, faceplate=True, baffle=False, CFL=False)
-            except:
-                print 'problem.  skipping %s' % fontname
-    
+            except Exception, e:
+                print 'problem.  skipping %s' % fontname, e
+                raise
 
 def add_font(fontname):
     pdfmetrics.registerFont(TTFont(fontname, 'fonts/%s.ttf' % fontname))
@@ -881,17 +888,17 @@ def add_all_fonts():
         fontnames.append(fn[:-4])
 
         pdfmetrics.registerFont(TTFont(fn, fp))
-        print 'added', fn
+        print 'added', fn, fontnames[-1]
 # pdfmetrics.registerFont(TTFont('ShadheenLipi', 'fonts/ShadheenLipi.ttf'))
 
 if __name__ == '__main__':
     import sys
     if len(sys.argv) == 1: # print all
         add_all_fonts()
-        main(fontnames)
+        # main(fontnames)
         test()
         # main(['Vollkorn-Regular'])
     else:
-        # main(sys.argv[1:])
-        test()
+        main(sys.argv[1:])
+        # test()
     
