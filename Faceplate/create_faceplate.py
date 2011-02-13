@@ -22,9 +22,10 @@ import create_baffle_grid
 from copy import deepcopy
 
 LASER_CUT_DIR = 'LaserPoint'
-# LASER_CUT_DIR = 'Hines'
+LASER_CUT_DIR = 'Hines'
 
 LASER_THICKNESS = .01 * inch
+PIECE_GAP = .5 * mm
 DEG = pi/180.
 DTHETA = 2.5
 STANDOFF_OR = 4.7 / 2 * mm
@@ -37,11 +38,11 @@ THETA_EXTRA = arccos((STRUT_W / 2) / MOUNT_R) / DEG
 if LASER_CUT_DIR == 'Hines':
     BAFFLE_THICKNESS = .06 * inch+ .2*mm
     BAFFLE_HEIGHT = 20.00 * mm + 2 * BAFFLE_THICKNESS
-    FRAME_MOUNT_DRILL_R = STANDOFF_IR + .25*mm
+    FRAME_MOUNT_DRILL_R = 1.5 * mm
 else:
     BAFFLE_THICKNESS = 3 * mm
     BAFFLE_HEIGHT = 20.00 * mm
-    FRAME_MOUNT_DRILL_R = STANDOFF_OR + .1*mm
+    FRAME_MOUNT_DRILL_R = 2.5*mm
 TAB_WIDTH = BAFFLE_THICKNESS
 TAB_DEPTH = 1.5 * STRUT_W
 MARGIN = .1*mm
@@ -305,9 +306,14 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
     # c.setFont("Helvetica", 14)
     if pcb_outline:
         c.rect(0*inch, 0*inch, 12*inch, 9*inch)
+
+    # crop marks
     c.line(-1 * inch,  -.5*inch, -.55 * inch, -.5*inch)
+    c.line(6. * inch, -1 * inch, 6. * inch, -.5*inch)
     c.line(12.55 * inch,  -.5*inch, 13. * inch, -.5*inch)
+
     c.line(-1 * inch,  9.5*inch, -.55 * inch, 9.5*inch)
+    c.line(6. * inch, 10 * inch, 6. * inch, 9.5*inch)
     c.line(12.55 * inch,  9.5*inch, 13. * inch, 9.5*inch)
 
     c.line(-.5*inch, -1*inch, -.5*inch, -.55 * inch)
@@ -608,6 +614,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
     if scad:
         scad = open('baffle.scad', 'w')
         print >> scad, 'inch = %s;' % (inch / cm)
+        print >> scad, 'PEEK = 0;'
         print >> scad, 'module frame(){'
         print >> scad, '  color([ 0, 0, 0, 1.0 ])'
         if explode:
@@ -638,14 +645,16 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
         back_cover.route(keyhole)
         keyhole.translate(8 * inch, 0 * inch)
         back_cover.route(keyhole)
-        print >> scad, 'translate(v=[0, 0, -11.1111])'
+        print >> scad, 'translate(v=[0, 0, -PEEK])'
         bottom_frame.toOpenScad(BAFFLE_THICKNESS, scad)
 
         print >> scad, '}'
 
         print >> scad, 'color([ 0, 1, 1, 1 ]);'
         for x, y in face_mounts:
-            print >> scad, 'translate(v=[%s, %s, %s])' % (x/cm, y/cm, BAFFLE_THICKNESS/cm)
+            print >> scad, 'translate(v=[%s, %s, 0])' % (x/cm, y/cm)
+            if LASER_CUT_DIR == 'Hines':
+                print >> scad, 'translate(v=[0, 0, %s])' % (BAFFLE_THICKNESS/cm)
             print >> scad, '    difference(){'
             print >> scad, '    cylinder(h=%s, r=%s, $fn=25);' % (STANDOFF_H / cm, STANDOFF_OR / cm)
             print >> scad, '    cylinder(h=%s, r=%s, $fn=25);' % (STANDOFF_H / cm, STANDOFF_IR / cm)
@@ -659,7 +668,7 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
             print >> scad, 'translate(v=[0, 0, 8])'
         else:
             print >> scad, 'translate(v=[0, 0, %s])'%((BAFFLE_HEIGHT - BAFFLE_THICKNESS/2)/cm)        
-            print >> scad, 'translate(v=[0, 0, 11.1111])'
+            print >> scad, 'translate(v=[0, 0, PEEK])'
         top_frame.toOpenScad(BAFFLE_THICKNESS, scad);
 
         # clear cover
@@ -668,7 +677,7 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
             print >> scad, 'translate(v=[0, 0, 10])'
         else:
             print >> scad, 'translate(v=[0, 0, %s])'%((BAFFLE_HEIGHT + 1/8. * inch)/cm)
-            print >> scad, 'translate(v=[0, 0, 11.1111])'
+            print >> scad, 'translate(v=[0, 0, PEEK])'
         clear_cover.toOpenScad(.25 * inch, scad);
 
         # wall_mount
@@ -678,6 +687,8 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
                 print >> scad, 'translate(v=[0, 0, -3])'
             else:
                 print >> scad, 'translate(v=[0, 0, %s])'%((-0.25*inch/2)/cm)
+                print >> scad, 'translate(v=[0, 0, -PEEK])'
+
             back_cover.toOpenScad(0.25 * inch, scad);
         
 
@@ -730,16 +741,14 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
             border_h.lineTo(i * dx + BAFFLE_THICKNESS/2, TAB_DEPTH - MARGIN)
             border_h.lineTo(i * dx - BAFFLE_THICKNESS/2, TAB_DEPTH - MARGIN)
             
-        # border_scad = open('border.scad', 'w')
-        border_scad = scad
-        print >> border_scad, 'module border_h(){'
-        print >> border_scad, 'translate(v=[%s, %s, 0])' % (XS[0]/cm,
+        print >> scad, 'module border_h(){'
+        print >> scad, 'translate(v=[%s, %s, 0])' % (XS[0]/cm,
                                                             YS[-1]/cm)
-        print >> border_scad, 'translate(v=[0, -%s, 0])' % (BAFFLE_THICKNESS / cm / 2)
-        print >> border_scad, 'rotate(a=90, v=[1, 0, 0])'
-        print >> border_scad, 'color([ 0, 0.5, 0.5, 1.0 ])'
-        border_h.toOpenScad(BAFFLE_THICKNESS, border_scad)
-        print >> border_scad, '}'
+        print >> scad, 'translate(v=[0, -%s, 0])' % (BAFFLE_THICKNESS / cm / 2)
+        print >> scad, 'rotate(a=90, v=[1, 0, 0])'
+        print >> scad, 'color([ 0, 0.5, 0.5, 1.0 ])'
+        border_h.toOpenScad(BAFFLE_THICKNESS, scad)
+        print >> scad, '}'
 
         border_v = create_baffle(BAFFLE_HEIGHT - 2 * BAFFLE_THICKNESS,
                                  BAFFLE_THICKNESS, 0, 12 * dy,
@@ -752,45 +761,51 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
             border_v.lineTo(i * dy + BAFFLE_THICKNESS/2, TAB_DEPTH- BAFFLE_THICKNESS)
             border_v.lineTo(i * dy - BAFFLE_THICKNESS/2, TAB_DEPTH- BAFFLE_THICKNESS)
         
-        print >> border_scad, 'module border_v(){'
-        print >> border_scad, 'translate(v=[%s, %s, %s])' % (XS[0]/cm-.5 * BAFFLE_THICKNESS / cm,
+        print >> scad, 'module border_v(){'
+        print >> scad, 'translate(v=[%s, %s, %s])' % (XS[0]/cm-.5 * BAFFLE_THICKNESS / cm,
                                                             YS[-1]/cm,
                                                             BAFFLE_THICKNESS / cm)
-        print >> border_scad, 'rotate(a=90, v=[1, 0, 0])'
-        print >> border_scad, 'rotate(a=90, v=[0, 1, 0])'
-        print >> border_scad, 'color([ 0.5, 0.0, 0.5, 1.0 ])'
-        border_v.toOpenScad(BAFFLE_THICKNESS, border_scad)
-        print >> border_scad, '}'
+        print >> scad, 'rotate(a=90, v=[1, 0, 0])'
+        print >> scad, 'rotate(a=90, v=[0, 1, 0])'
+        print >> scad, 'color([ 0.5, 0.0, 0.5, 1.0 ])'
+        border_v.toOpenScad(BAFFLE_THICKNESS, scad)
+        print >> scad, '}'
         if explode:
             print >> scad, 'translate(v=[0, -6, 3.5])'
-        print >> border_scad, 'border_h();'
+        print >> scad, 'border_h();'
         if explode:
             print >> scad, 'translate(v=[0, 6, 3.5])'
-        print >> border_scad, 'translate(v=[0, %s, 0])' % (12 * dy / cm + BAFFLE_THICKNESS / cm)
-        print >> border_scad, 'border_h();'
+        print >> scad, 'translate(v=[0, %s, 0])' % (12 * dy / cm + BAFFLE_THICKNESS / cm)
+        print >> scad, 'border_h();'
 
         if explode:
             print >> scad, 'translate(v=[-3, 0, 0])'
-        print >> border_scad, 'border_v();'
-        print >> border_scad, 'translate(v=[%s, 0, 0])' % (16 * dx / cm + BAFFLE_THICKNESS / cm)
+        print >> scad, 'border_v();'
+        print >> scad, 'translate(v=[%s, 0, 0])' % (16 * dx / cm + BAFFLE_THICKNESS / cm)
         if explode:
             print >> scad, 'translate(v=[3, 0, 0])'
-        print >> border_scad, 'border_v();'
-
-        border_can = canvas.Canvas('%s/border.pdf' % LASER_CUT_DIR,
-                                    pagesize=(13 * inch, 4*inch))
-        border_h.translate(1*inch, 2 * inch)
-        border_v.translate(1*inch, 1 * inch)
-        border_v.drawOn(border_can)
-        border_h.drawOn(border_can)
-        border_can.showPage()
-        border_can.save()
+        print >> scad, 'border_v();'
 
         print 'wrote', scad.name
-        print 'wrote', border_scad.name
         
     if baffle: # check baffle grid size
         bc = back_cover.toPDF("%s/back_cover.pdf" % LASER_CUT_DIR)
+        bc.showPage()
+        bc.save()
+        
+        # do separate sheet for engraving
+        bc = canvas.Canvas("%s/back_cover_engraving.pdf" % LASER_CUT_DIR,
+                           pagesize=(13.5 * inch, 10.5 * inch))
+        # crop marks
+        bc.line(0, .25 * inch, .2 * inch, .25 * inch)
+        bc.line(13.5 * inch, .25 * inch, 13.3 * inch, .25 * inch)
+        bc.line(0, 10.25 * inch, .2 * inch, 10.25 * inch)
+        bc.line(13.5 * inch, 10.25 * inch, 13.3 * inch, 10.25 * inch)
+        bc.line(.25 * inch, 0 * inch, .25 * inch, .2 * inch)
+        bc.line(13.25 * inch, 0 * inch, 13.25 * inch, .2 * inch)
+        bc.line(.25 * inch, 10.5 * inch, .25 * inch, 10.3 * inch)
+        bc.line(13.25 * inch, 10.5 * inch, 13.25 * inch, 10.3 * inch)
+
         C3_logo = Image('Images/ClockTHREE_Logo.png',
                          8*inch, 1*inch)
         C3_logo.drawOn(bc)
@@ -803,11 +818,12 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
 
 
         x = 1.25 * inch
-        y = 1.25 * inch
+        y = 1.50 * inch
         bc.drawString(x, y, 'WyoLum@gmail.com')
         bc.drawString(x, y - .25 * inch, 'http://sites.google.com/site/clockthreeishere')
         bc.drawString(x, y - .5 * inch, 'http://lumetron.com')
         bc.drawString(x, y - .75 * inch, 'http://wyoinnovation.blogspot.com')
+        # bc.line(0, .75 * inch, 13.5 * inch, .75 * inch)
         
 
         bc.showPage()
@@ -817,33 +833,42 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
         cc.showPage()
         cc.save()
         if horizontal_baffles:
-            ystep = BAFFLE_HEIGHT + 5 * LASER_THICKNESS
+            ystep = BAFFLE_HEIGHT + PIECE_GAP
             baffle_h.translate(STRUT_W + .1 * inch,
                                -BAFFLE_HEIGHT + .25 * inch)
             
             # c = canvas.Canvas(filename,
             #                   pagesize=(W + .5 * inch, H + .5 * inch)
             #                 )
-            single_h = baffle_h.toPDF('%s/horizontal_baffle.pdf' % LASER_CUT_DIR)
-            single_h.showPage()
-            single_h.save()
+            # single_h = baffle_h.toPDF('%s/horizontal_baffle.pdf' % LASER_CUT_DIR)
+            # single_h.showPage()
+            # single_h.save()
             
             hb = canvas.Canvas('%s/horizontal_baffles.pdf' % LASER_CUT_DIR,
-                                pagesize=(baffle_h.getright() - baffle_h.getleft() + .5 * inch,
-                                          11 * (BAFFLE_HEIGHT + 5 * LASER_THICKNESS) + .5 * inch
+                                pagesize=(baffle_h.getright() - baffle_h.getleft() + 4 * inch,
+                                          4 * inch
                                           )
                              )
-            for i in range(11):
-                baffle_h.drawOn(hb)
-                baffle_h.translate(0, ystep)
+            baffle_h.translate(.25 * inch - baffle_h.getleft(), ystep)
+            baffle_h.drawOn(hb)
+            hb.drawString(baffle_h.getright() + .25 * inch, (baffle_h.gettop() + baffle_h.getbottom()) / 2., '11 per clock')
+
+            border_h.translate(.25 * inch - border_h.getleft(), baffle_h.gettop() - border_h.getbottom() + PIECE_GAP)                
+            border_h.drawOn(hb)
+            hb.drawString(border_h.getright() + .25 * inch, (border_h.gettop() + border_h.getbottom()) / 2., '2 per clock')
+                
+            border_v.translate(.25 * inch - border_v.getleft(), border_h.gettop() - border_v.getbottom() + PIECE_GAP)
+            border_v.drawOn(hb)
+            hb.drawString(.25 * inch + border_v.getright(), (border_v.gettop() + border_v.getbottom()) / 2., '2 per clock')
+
             hb.showPage()
             hb.save()
 
 
         if vertical_baffles:
-            ystep = BAFFLE_HEIGHT + 5 * LASER_THICKNESS
-            baffle_v.translate(XS[0] + STRUT_W + LASER_THICKNESS + .1 * inch,
-                               YS[-1] - BAFFLE_HEIGHT + LASER_THICKNESS + .1 * inch)
+            ystep = BAFFLE_HEIGHT + PIECE_GAP
+            baffle_v.translate(XS[0] + STRUT_W + PIECE_GAP + .1 * inch,
+                               YS[-1] - BAFFLE_HEIGHT + PIECE_GAP + .1 * inch)
             count = 0
             while baffle_v.gettop() + ystep < max(YS):
                 baffle_v.translate(0, ystep)
@@ -867,9 +892,30 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
             top_frame.drawOn(c)
 
             tf = top_frame.toPDF("%s/top_frame.pdf" % LASER_CUT_DIR)
+            tf.showPage()
+            tf.save()
+
+            
+            tf = canvas.Canvas("%s/top_frame_engraving.pdf" % LASER_CUT_DIR,
+                                pagesize=(13.5 * inch, 10.5 * inch))
+            tf.setLineWidth(LASER_THICKNESS)
             for button in button_logos:
                 button = button.translate(.75 * inch, .75 * inch)
+                print button.x / inch, button.y / inch
                 button.drawOn(tf)
+            # crop marks
+            tf.line(0, .25 * inch, .2 * inch, .25 * inch)
+            tf.line(13.5 * inch, .25 * inch, 13.3 * inch, .25 * inch)
+            tf.line(0, 10.25 * inch, .2 * inch, 10.25 * inch)
+            tf.line(13.5 * inch, 10.25 * inch, 13.3 * inch, 10.25 * inch)
+            tf.line(.25 * inch, 0 * inch, .25 * inch, .2 * inch)
+            tf.line(13.25 * inch, 0 * inch, 13.25 * inch, .2 * inch)
+            tf.line(.25 * inch, 10.5 * inch, .25 * inch, 10.3 * inch)
+            tf.line(13.25 * inch, 10.5 * inch, 13.25 * inch, 10.3 * inch)
+
+            # tf.line(0, .75 * inch, 13.5 * inch, .75 * inch)
+            # for i in range(14):
+            #     tf.line((i + .25) *inch, 0, (i + .25) * inch, 10.5 * inch)
             tf.showPage()
             tf.save()
 
@@ -945,7 +991,9 @@ button_logos = [
           Image('Images/enter.png',          # Mode
                 6.75*inch, -.35*inch, .4*inch, .3*inch),
 
-]
+          ]
+for bl in button_logos:
+    print bl.filename, bl.x / inch + .5, bl.y / inch + .5, bl.w / inch, bl.h / inch
 
 for i in range(5):
     images.append(Image('Images/hourglass%d.png' % i,
@@ -993,7 +1041,7 @@ if __name__ == '__main__':
     import sys
     if len(sys.argv) == 1: # print all
         add_all_fonts()
-        # main(fontnames)
+        main(fontnames)
         test()
         # main(['Vollkorn-Regular'])
     else:

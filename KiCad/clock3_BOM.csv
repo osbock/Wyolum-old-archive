@@ -1,0 +1,45 @@
+Designator,Package,Quantity,Designation,Supplier,Part#,Price,Notes,
+01D01-10D16,10mm common anode,160,LED_RGB,Evil Mad Science,382,0.43,,68.8
+12D16-11D01,led_10mm_blue,32,LED,Evil Mad Science,322,0.2575,,8.24
+C8,CP_5x11mm,1,100u,NA,NA,NA,NOT USED,
+C10,CP_5x11mm,1,100u,NA,NA,NA,NOT USED,
+"C7,C6,C3",,3,100n,,,,,0
+C9,,1,,NA,NA,NA,NOT USED,
+"CD1 CD2 K1 K2, P12 40-pin breakaway",pin_strip_4,1,CDOT1,Digikey,A26509-40-ND,1.6,"Chronodot 4-pin male header, PWRSEL LEDENABLE, V_OUT",1.6
+CD3 (unused),pin_strip_4,1,CDOT3,NA,NA,NA,Unused,
+D1,diode_do35,1,1N4148,Digikey,1N4148TACT-ND,0.14,DBG reverse current inhibitor,0.14
+D2,led_5mm_blue,1,DBG,Stock LED,,0.1,DBG LED,0.1
+D3,diode_do41,1,1N4007,Digikey,641-1312-1-ND,0.25,Power reverse current inhibitor,0.25
+D4,led_5mm_blue,1,PWR,Stock LED,NA,0.1,Power indictor,0.1
+"U1/U2 rowBoB1, rowBoB2",SCK-24_600_ELL,2,STP16DP05,WyoLum,NA,,LED row driver breakout board,0
+J1,JACK_ALIM,1,V_IN,Digikey,SC1324-ND,1.56,"ANOOL, please verify",1.56
+P13,pin_strip_3x2,1,ISP,NA,NA,NA,NOT USED,
+P41,pin_sck_4-90,1,STACK-L,NA,NA,NA,NOT USED,
+P42,pin_strip_4-90,1,STACK-R,NA,NA,NA,NOT USED,
+P48,pin_strip_8,1,7SegDisp,NA,NA,NA,NOT USED,
+P7,pin_strip_6-90,1,FTDI,,,,,0
+Q1-Q17,to92_2N5401,17,2N5401,Digikey,2N5401RLRAGOSCT-ND,0.38,.38 @ 10 or more pc,6.46
+"R2,R3,R4,R5,R6,R7,R8,R9,R10,R11,R12,R13,R14,R15,R16,R1",RC03,16,100,Digikey,CF14JT100RCT-ND,0.053,,0.848
+"R21,R20",RC03,2,4k7,Digikey,4.7KH-ND,0.062,,0.124
+"R22,R17,R18,R19,R23",RC03,5,10k,Digikey,CF18JT10K0CT-ND,1.58,,7.9
+"R26,R25",RC03,2,1k,Digikey,1.0KH-ND,0.31,,0.62
+R30,RC03,1,100E,,,,,0
+R31,RC03,1,10K,Digikey,CF18JT10K0CT-ND,0.09,,0.09
+R32,pin_strip_2,1,LDR,Digikey,PDV-P9004-ND,1.58,,1.58
+R33,RC03,1,680E,Digikey,CF18JT680RCT-ND,0.09,,0.09
+SP1,Speaker,1,SPEAKER,Digikey,102-1169-ND,1.71,,1.71
+SW1-SW5,SW_PB_V,5,INC/DEC/MODE/RST/ENTER,Digikey,P10884S-ND,0.33,,1.65
+U3,dil_28-300_socket,1,Socket,Digikey,3M5480-ND,0.33,CPU socket,0.33
+U1/U2/U4 Socket,DIP-24__600_ELL,3,74LS154,Digikey,3M5479-ND,0.33,Col driver + rowBoB sockets,0.99
+U5,Volt_Reg_78xx,1,7805,NA,NA,NA,NA,
+X1,XTAL,1,16MHz,Digikey,490-1214-ND,0.44,,0.44
+U3 IC,dil_28-300_socket,1,ATMEGA328,Digikey,ATMEGA328P-PU-ND,4.98,CPU,4.98
+Power Supply,International Plug,1,Power,Digikey,T377-P5P-ND,15.56,,15.56
+Power Supply Extension,,1,Power ext,Digikey,CP-2215-ND,3.06,,3.06
+TTL cable,6 pin,1,FTDI,Digikey,768-1028-ND,20,,20
+Jumper,2-pin shunt,2,PWR SEL/ LED Enable,Digikey,609-3121-ND,0.36,,0.72
+,,,,,,,,0
+rtcBOB/ChronoDot2,dil_8-900,1,rtcBoB,WyoLum/MaceTech,,14.99,,14.99
+,,,,,,,,0
+
+,,,,,,,,162.932
