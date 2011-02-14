@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 01/10/11 18:09:01
+EESchema Schematic File Version 2  date 02/14/11 16:32:05
 LIBS:clock3
 LIBS:power
 LIBS:clock3-cache
