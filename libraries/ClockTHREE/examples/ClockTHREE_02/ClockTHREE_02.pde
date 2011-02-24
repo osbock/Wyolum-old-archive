@@ -20,7 +20,7 @@
 
 */
 
-#define CLOCKTWO // Use ClockTWO hardware configuration
+// #define CLOCKTWO // Use ClockTWO hardware configuration
 
 #include <avr/pgmspace.h>
 #include <EEPROM.h>
