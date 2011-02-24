@@ -33,9 +33,9 @@ void setup(){
 
 uint32_t count = 0;
 void resettime(){
-  setRTC(2016, 6, 17, 
-	 9, 10, 11);
-  Serial.println("Time reset time to 2016/6/17 09:10:11");
+  setRTC(2011, 2, 23, 
+	18, 25, 00);
+  Serial.println("Time reset time to 2011, feb 23, 18:25");
   Serial.println("Disconnect power and reconnect.");
   Serial.println("Displayed time should be a few seconds later.");
   Serial.println("");

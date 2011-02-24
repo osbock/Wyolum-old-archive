@@ -108,6 +108,11 @@ void ClockTHREE::refresh(int n_hold){
       PORTC &= 0b11110111; // Enable col driver
       // for(col_j=0; col_j < N_COL; col_j++){
       col_j = 0;
+#ifdef CLOCKTWO // CLOCK TWO has column pins on bits 4, 5, 6, 7 of PORTD
+      int col_offset = 0;
+#else
+      int col_offset = 4;
+#endif
       while (col_j < N_COL){
 	// Column.dat32 = RGBW_MASKS[rgb_i] & display[col_j];
 	Column.dat32 = display[15 - col_j];
@@ -124,7 +129,11 @@ void ClockTHREE::refresh(int n_hold){
 	SPI.transfer(Column.dat8[0]);
 	PORTB |= 0b00000010; // Start latch pulse 
 	PORTB &= 0b11111101; // End latch pulse 
+#ifdef CLOCKTWO
 	PORTD = (PORTD & 0b11110000) | col_j; //only impacts lower 4 bits of PORTD
+#else
+	PORTD = (PORTD & 0b00001111) | col_j << 4; //only impacts upper 4 bits of PORTD
+#endif
 	// PORTD = 0b11110000 & col_j;// almost works
 	PORTC &= 0b11110111; // Enable col driver
 	_delay(my_delay);
