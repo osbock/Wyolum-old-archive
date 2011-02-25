@@ -12,6 +12,7 @@
 #include "SPI.h"
 #include "Wire.h"
 #include "Time.h"
+#include "rtcBOB.h"
 #include "EEPROM.h"
 #include "MsTimer2.h"
 #include "rtcBOB.h"

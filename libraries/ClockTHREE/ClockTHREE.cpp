@@ -72,7 +72,11 @@ void ClockTHREE::init(){
   display = NULL;
 
   // set column driver outputs.
+#ifdef CLOCKTWO
   DDRD |= 0b00001111;
+#else
+  DDRD |= 0b11110000;
+#endif
   
   ////SET MOSI, SCK Output, all other SPI as input: 
   DDRB |= 0b00101110;
@@ -129,7 +133,6 @@ void ClockTHREE::refresh(int n_hold){
 #else
 	PORTD = (PORTD & 0b00001111) | (col_j << 4); //only impacts upper 4 bits of PORTD
 #endif
-	// PORTD = 0b11110000 & col_j;// almost works
 	PORTC &= 0b11110111; // Enable col driver
 	_delay(my_delay);
 	col_j++;

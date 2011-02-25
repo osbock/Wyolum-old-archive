@@ -16,6 +16,7 @@
 #include "english.h"
 #include "EEPROM.h"
 #include "MsTimer2.h"
+#include "rtcBOB.h"
 
 // globals
 ClockTHREE c3 = ClockTHREE();

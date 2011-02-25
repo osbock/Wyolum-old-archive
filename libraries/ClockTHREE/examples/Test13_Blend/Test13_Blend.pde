@@ -14,6 +14,7 @@
 #include "Time.h"
 #include "EEPROM.h"
 #include "MsTimer2.h"
+#include "rtcBOB.h"
 
 const uint8_t N_DISPLAY = 8;
 ClockTHREE c3 = ClockTHREE();

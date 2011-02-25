@@ -15,6 +15,7 @@
 #include "rtcBOB.h"
 #include "EEPROM.h"
 #include "MsTimer2.h"
+#include "rtcBOB.h"
 
 void setup(){
   // start Wire proto

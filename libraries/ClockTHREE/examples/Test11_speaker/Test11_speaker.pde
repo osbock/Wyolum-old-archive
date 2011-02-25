@@ -132,6 +132,7 @@ This example code is in the public domain.
 #include "english.h"
 #include "Time.h"
 #include "EDL.h"
+#include "rtcBOB.h"
 
 // globals
 ClockTHREE c3 = ClockTHREE();
