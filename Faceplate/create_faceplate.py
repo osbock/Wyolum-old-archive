@@ -359,6 +359,19 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
                 # c.rect(x + lw, y + lw, dx - 2 * lw, dy -2 * lw)
                 # c.circle(x + dx / 2., y + dy / 2., 5*mm)
                 pass
+
+        alignment_c = canvas.Canvas("led_alignment.pdf",
+                                    pagesize=(1.8*inch, 9*inch)
+                                    )
+        alignment_c.translate(-XS[0] + .3*inch, 0)
+
+        for x in XS[:2]:
+            for y in YS[1:]:
+                # c.rect(x + lw, y + lw, dx - 2 * lw, dy -2 * lw)
+                alignment_c.circle(x + dx / 2., y + dy / 2., 5.25*mm)
+                pass
+        alignment_c.showPage()
+        alignment_c.save()
         
         # bug
         # c.rect(2.826 * inch, .05 * inch, .3*inch, .4*inch)
@@ -1015,6 +1028,7 @@ def main(fontnames):
                     fontname.endswith('.odf')):
                     break
                 # add_font(fontname)
+                draw("junk_%s.pdf", data, images, fontname='OfficinaSansStd-Bold', faceplate=True, baffle=False)
                 draw("faceplate_%s.pdf" % fontname, data, images, fontname=fontname, faceplate=True, baffle=False)
                 draw("faceplate_%s_example.pdf" % fontname, example_data, [], fontname=fontname, faceplate=True, baffle=False, CFL=False)
             except Exception, e:
