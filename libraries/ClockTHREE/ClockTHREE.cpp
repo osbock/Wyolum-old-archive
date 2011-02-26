@@ -76,6 +76,7 @@ void ClockTHREE::init(){
   DDRD |= 0b00001111;
 #else
   DDRD |= 0b11110000;
+  pinMode(DEC_PIN, INPUT);
 #endif
   
   ////SET MOSI, SCK Output, all other SPI as input: 

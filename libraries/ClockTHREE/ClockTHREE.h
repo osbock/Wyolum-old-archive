@@ -60,18 +60,21 @@ const int N_RGB_ROW = 10;
 const int     N_COL = 16;
 const int   N_COLOR = 9;
 
-const int               DBG = 12;
 const int COL_DRIVER_ENABLE = 17;
 
 const int SPEAKER_PIN = 10;
 #ifdef CLOCKTWO
+const int DBG = 12;
 const int MODE_PIN = 5;
 const int INC_PIN = 6;
 const int DEC_PIN = 7;
+const int ENTER_PIN = MODE_PIN;
 #else
+const int DBG = 13;
 const int MODE_PIN = 2;
 const int INC_PIN = 3;
-const int DEC_PIN = 14;
+const int DEC_PIN = 15;
+const int ENTER_PIN = 8;
 #endif
 
 const int LDR_PIN = 0;

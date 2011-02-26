@@ -161,7 +161,8 @@ const uint8_t       NO_EVT = 0; // NONE
 const uint8_t     MODE_EVT = 1; // Mode Button has been pressed
 const uint8_t      INC_EVT = 2; // Increment Button has been pressed
 const uint8_t      DEC_EVT = 3; // Decriment Button has been pressed
-const uint8_t     TICK_EVT = 4; // Second has ellapsed
+const uint8_t    ENTER_EVT = 4; // Enter Button has been pressed
+const uint8_t     TICK_EVT = 5; // Second has ellapsed
 const uint8_t EVENT_Q_SIZE = 5; // Max # events.
 
 // Serial Messaging
@@ -275,6 +276,7 @@ uint8_t n_evt = 0;                  // number of events awaiting processing
 unsigned long last_mode_time = 0;   // for debounce
 unsigned long last_inc_time = 0;    // for debounce
 unsigned long last_dec_time = 0;    // for debounce
+unsigned long last_enter_time = 0;    // for debounce
 
 ClockTHREE c3;                      // ClockTHREE singleton
 English faceplate = English();      // Only faceplate, others could be supported.
@@ -339,6 +341,22 @@ void dec_interrupt(){
   }
   alarm_beeping = false;
   last_dec_time = now;
+}
+
+
+/*
+ * Called when dec button is pressed
+ */
+void enter_interrupt(){
+  unsigned long now = millis();
+  if(now - last_enter_time > DEBOUNCE_THRESH){
+    // add mode_press event to mode event queue
+    if(n_evt < EVENT_Q_SIZE){
+      event_q[n_evt++] = ENTER_EVT;
+    }
+  }
+  alarm_beeping = false;
+  last_enter_time = now;
 }
 
 /*
@@ -450,16 +468,23 @@ void setup(void){
 void loop(void){
   //check button status // C2 hack
 #ifdef CLOCKTWO
-  if(PIND & 1<<5){
+  if(PIND & 1 << 5){
     mode_interrupt();
   }
   if(PIND & 1 << 6){
     inc_interrupt();
   }
-#endif
   if(PIND & 1 << 7){
     dec_interrupt();
   }
+#else
+  if(PINC & 1 << 0){
+    // dec_interrupt();
+  }
+  if(PINB & 1 << 0){
+    enter_interrupt();
+  }
+#endif
 
   // process new events before calling mode loop()
   for(uint8_t i = 0; i < n_evt; i++){
