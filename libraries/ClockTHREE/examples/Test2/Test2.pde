@@ -14,6 +14,8 @@
 #include "EEPROM.h"
 #include "MsTimer2.h"
 
+#define CLOCKTWO // comment this line out for C3 hardware
+
 ClockTHREE c3 = ClockTHREE();
 uint32_t *display = (uint32_t*)calloc(N_COL, sizeof(uint32_t));
 void setup(){

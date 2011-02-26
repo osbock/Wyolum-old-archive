@@ -20,7 +20,7 @@
 
 */
 
-// #define CLOCKTWO // Use ClockTWO hardware configuration
+#define CLOCKTWO // Use ClockTWO hardware configuration
 
 #include <avr/pgmspace.h>
 #include <EEPROM.h>
@@ -468,23 +468,30 @@ void setup(void){
 void loop(void){
   //check button status // C2 hack
 #ifdef CLOCKTWO
-  if(PIND & 1 << 5){
+  if(PIND & (1 << 5)){
     mode_interrupt();
   }
-  if(PIND & 1 << 6){
+  if(PIND & (1 << 6)){
     inc_interrupt();
   }
-  if(PIND & 1 << 7){
+  if(PIND & (1 << 7)){
     dec_interrupt();
   }
 #else
-  if(PINC & 1 << 0){
-    // dec_interrupt();
+  if(PINC & (1 << 1)){
+    dec_interrupt();
   }
-  if(PINB & 1 << 0){
+  if(PINB & (1 << 0)){
     enter_interrupt();
   }
 #endif
+  /* with auto reset, 
+   * serial connection to C3 causes a reset so entering serial mode
+   * manually is fuitless.  This is way better anyway.
+   */
+  if(Serial.available() && (mode_p->id != SERIAL_MODE)){
+    switchmodes(SERIAL_MODE);
+  }
 
   // process new events before calling mode loop()
   for(uint8_t i = 0; i < n_evt; i++){

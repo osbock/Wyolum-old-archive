@@ -129,6 +129,7 @@ void ClockTHREE::refresh(int n_hold){
 	SPI.transfer(Column.dat8[0]);
 	PORTB |= 0b00000010; // Start latch pulse 
 	PORTB &= 0b11111101; // End latch pulse 
+
 #ifdef CLOCKTWO
 	PORTD = (PORTD & 0b11110000) | col_j; //only impacts lower 4 bits of PORTD
 #else
