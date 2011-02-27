@@ -491,7 +491,7 @@ void loop(void){
     enter_interrupt();
   }
   if(Serial.available() && (mode_p->id != SERIAL_MODE)){
-    while(Serial.available()){
+    while(Serial.available()){ // suck up all the chars.
       Serial.read();
     }
     switchmodes(SERIAL_MODE);
@@ -1176,7 +1176,9 @@ void Serial_setup(void){
   faceplate.display_word(c3, MONO, usb_led);
   c3.refresh();
   pinMode(DBG, OUTPUT);
+#ifdef CLOCKTWO
   Serial.begin(BAUDRATE);
+#endif
   for(uint8_t i = 0; i < 4; i++){
     digitalWrite(DBG, HIGH);
     delay(50);
@@ -1184,14 +1186,14 @@ void Serial_setup(void){
     delay(50);
   }
   digitalWrite(DBG, HIGH);
-  // SPCR &= ~_BV(SPE); // try to keep DBG from dimming! (FAIL)
-
 }
 
 void Serial_loop(void) {
   uint8_t val;
   boolean resync_flag = true;
-
+#ifndef CLOCKTWO
+  c3.refresh(16);
+#endif
   if(Serial.available()){
     val = Serial.read();
     // find msg type
@@ -1593,7 +1595,7 @@ boolean Serial_get_msg(uint8_t n_byte) {
   else{
     out = false;
   }
-#ifdef LISTEN // define LISTEN to listen for protocal errors
+#ifdef LISTEN // define LISTEN to listen for protocol errors
   c3.note(440);
   delay(100);
   c3.nonote();
