@@ -91,7 +91,7 @@ class Struct:
             out[key] = other.d[key]
         return Struct(**out)
 
-const = {}
+const = {'MAX_EEPROM_ADDR':1023}
 if os.path.exists('ClockTHREE_02.pde'):
     c_files = ['ClockTHREE_02.pde']
     c_files.extend(glob.glob("../../*.cpp"))
@@ -106,7 +106,6 @@ for file in c_files:
         # print '%s = %s' % (key, next[key])
         const[key] = next[key]
 const = Struct(**const)
-
 def set_gmt_offset(offset):
     global gmt_offset
     gmt_offset = offset
@@ -130,6 +129,9 @@ def getSerialports():
         out.sort()
     return out
 
+def disconnect():
+    trigger_mode()
+
 def connect(serialport='/dev/ttyUSB0', _gmt_offset=-5*3600):
     global ser, eeprom
     if hasattr(EEPROM, 'singleton'):
@@ -146,7 +148,10 @@ def connect(serialport='/dev/ttyUSB0', _gmt_offset=-5*3600):
     ser = serial.Serial(serialport,
                         baudrate=const.BAUDRATE,
                         timeout=SER_TIMEOUT)
-    ser.flush()
+    # ser.flush()
+    ser.write('a') # put C3 in serial_mode
+    time.sleep(1)
+    ping()
     try:
         ping()
     except PingError: # try again

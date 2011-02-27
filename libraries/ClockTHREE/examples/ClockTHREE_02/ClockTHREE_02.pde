@@ -20,7 +20,7 @@
 
 */
 
-#define CLOCKTWO // Use ClockTWO hardware configuration
+// #define CLOCKTWO // Use ClockTWO hardware configuration
 
 #include <avr/pgmspace.h>
 #include <EEPROM.h>
@@ -37,7 +37,7 @@
 #include "EDL.h"
 
 // debounce buttons threshold
-const uint8_t DEBOUNCE_THRESH = 100;     // Two button pushes within this time frame are counted only once.
+const uint8_t DEBOUNCE_THRESH = 200;     // Two button pushes within this time frame are counted only once.
 const uint16_t SERIAL_TIMEOUT_MS = 1000; // Not working as expected.  Turned off.
 
 // Define modes
@@ -61,6 +61,7 @@ struct Mode{
   CallBackPtr inc;   // to be called when increment button is pushed
   CallBackPtr dec;   // to be called when decrement button is pushed
   CallBackPtr mode;  // to be called when mode button is pushed
+  CallBackPtr enter;   // to be called when enter button is pushed
 };
 
 /* The display memory buffer is larger than physical display for screen 
@@ -124,37 +125,38 @@ typedef enum {YEAR, MONTH, DAY, HOUR, MINUTE, SECOND} unit_t;
 // Begin mode declarations
 Mode NormalMode = {NORMAL_MODE, 
 		   'N', Normal_setup, Normal_loop, Normal_exit, 
-		   Normal_inc, Normal_dec, Normal_mode};
+		   Normal_inc, Normal_dec, Normal_mode, do_nothing};
 Mode SecondsMode = {SECONDS_MODE, 
 		    'S', Seconds_setup, Seconds_loop, Seconds_exit, 
-		    Seconds_mode, Seconds_mode, Seconds_mode};
+		    Seconds_mode, Seconds_mode, Seconds_mode, do_nothing};
 Mode AlarmMode = {ALARM_MODE, 
 		  'X', Alarm_setup, Alarm_loop, Alarm_exit, 
-		  Alarm_mode, Alarm_mode, Alarm_mode};
+		  Alarm_mode, Alarm_mode, Alarm_mode, do_nothing};
 Mode CountdownMode = {COUNTDOWN_MODE, 
 		      'X', Countdown_setup, Countdown_loop, do_nothing, 
-		      Countdown_exit, Countdown_exit, Countdown_exit};
+		      Countdown_exit, Countdown_exit, Countdown_exit, do_nothing};
 Mode TemperatureMode = {TEMPERATURE_MODE, 'X', 
 			Temperature_setup, Temperature_loop, Temperature_exit, 
-			Temperature_inc, Temperature_dec, Temperature_mode};
+			Temperature_inc, Temperature_dec, Temperature_mode,
+			do_nothing};
 Mode ScrollMode = {SCROLL_MODE, 'X', 
 		   Scroll_setup, Scroll_loop, Scroll_exit, 
-		   Scroll_inc, Scroll_dec, Scroll_mode};
+		   Scroll_inc, Scroll_dec, Scroll_mode, do_nothing};
 Mode SetTimeMode = {SET_TIME_MODE, 
 		    'T', SetTime_setup,SetTime_loop,SetTime_exit,
-		    SetTime_inc, SetTime_dec, SetTime_mode};
+		    SetTime_inc, SetTime_dec, SetTime_mode, SetTime_enter};
 Mode SetColorMode = {SET_COLOR_MODE, 
 		     'C', SetColor_setup, SetColor_loop, SetColor_exit, 
-		     SetColor_inc, SetColor_dec, SetColor_mode};
+		     SetColor_inc, SetColor_dec, SetColor_mode, do_nothing};
 Mode SetAlarmMode = {SET_ALARM_MODE, 
 		     2, SetAlarm_setup,SetAlarm_loop,SetAlarm_exit,
-		     SetAlarm_inc, SetAlarm_dec, SetAlarm_mode};
+		     SetAlarm_inc, SetAlarm_dec, SetAlarm_mode, do_nothing};
 Mode SerialMode = {SERIAL_MODE, 
 		   'P', Serial_setup,Serial_loop,Serial_exit,
-		   Serial_inc,Serial_dec,Serial_mode};
+		   Serial_inc,Serial_dec,Serial_mode, do_nothing};
 Mode ModeMode = {MODE_MODE, 
 		 'M', Mode_setup, Mode_loop, Mode_exit, 
-		 Mode_inc, Mode_dec, Mode_mode};
+		 Mode_inc, Mode_dec, Mode_mode, Mode_enter};
 
 /* Event types */
 const uint8_t       NO_EVT = 0; // NONE
@@ -420,9 +422,13 @@ void read_did_alarms(){
 
 // Main setup function
 void setup(void){
+#ifndef CLOCKTWO
+  Serial.begin(BAUDRATE);
+#endif
+
   Wire.begin();
   c3.init();
-
+  
   // TOD_Alarm_Set(todAlarm, hh, mm, ss + 5, alarm_set);
   // Alarm.timerOnce(5, fire_alarm);
   
@@ -484,6 +490,12 @@ void loop(void){
   if(PINB & (1 << 0)){
     enter_interrupt();
   }
+  if(Serial.available() && (mode_p->id != SERIAL_MODE)){
+    while(Serial.available()){
+      Serial.read();
+    }
+    switchmodes(SERIAL_MODE);
+  }
 #endif
   /* with auto reset, 
    * serial connection to C3 causes a reset so entering serial mode
@@ -506,6 +518,9 @@ void loop(void){
       break;
     case DEC_EVT:
       mode_p->dec();
+      break;
+    case ENTER_EVT:
+      mode_p->enter();
       break;
     case TICK_EVT:
       tick = true;
@@ -979,11 +994,15 @@ void SetTime_mode(void) {
     faceplate.display_word(c3, MONO, minute_led);
     break;
   default:
-    switchmodes(last_mode_id);
+    SetTime_unit = YEAR;
+    faceplate.display_word(c3, MONO, year_led);
     break;
   }
 }
 
+void SetTime_enter(void){
+  switchmodes(NORMAL_MODE);
+}
 // Begin SetAlarm Mode Code 
 /* 
    Initalize mode.
@@ -1629,6 +1648,9 @@ void Mode_dec(void) {
   font.getChar(Modes[mode_counter].sym, BLUE, display + 8);
 }
 void Mode_mode(void) {
+  switchmodes(NORMAL_MODE);
+}
+void Mode_enter(void) {
   switchmodes(mode_counter);
 }
 

@@ -444,7 +444,15 @@ class Main:
         out = time.gmtime(t)
         return out
 
+    def disconnect(self):
+        C3_interface.disconnect()
+        self.eeprom = None
+        self.connect_b.config(command=self.connect,
+                              text='Connect')
+
     def connect(self):
+        self.connect_b.config(command=self.disconnect,
+                              text='Disconnect')
         C3_interface.connect(self.com)
         self.eeprom = C3_interface.eeprom
         self.alarm_get()
@@ -464,7 +472,8 @@ class Main:
             self.didas[i].scrollable.insert(0, scroll_text)
             self.didas[i].repeat.set(repeat)
             self.didas[i].countdown.set(countdown)
-            self.didas[i].set(when + self.didas[i].countdown.get_countdown_duration())
+            self.didas[i].set(when)
+            # + self.didas[i].countdown.get_countdown_duration())
             
             self.didas[i].clear_b.config(state=Tkinter.NORMAL)
             self.didas[i].disable()
