@@ -294,13 +294,17 @@ class Image:
 
 def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
          faceplate=True, baffle=True, CFL=True, horizontal_baffles=False,
-         vertical_baffles=False, scad=False, explode=False, pcb_outline=False):
+         vertical_baffles=False, scad=False, explode=False, pcb_outline=False,
+         reverse=True):
     c = canvas.Canvas(filename,
 #                       pagesize=(W + 2 * XOFFSET, H + 2 * YOFFSET),
 #                       pagesize=(13*inch, 10*inch)
                       pagesize=(17*inch, 11*inch)
                       )
-    c.translate(2.5 * inch, 1. * inch)
+    if reverse:
+        c.translate(14. * inch, 0 * inch)
+        c.scale(-1, 1)
+    c.translate(1. * inch, 1. * inch)
     c.setTitle("ClockTHREE Faceplate: %s" % fontname)
     c.setFont(fontname, fontsize)
     # c.setFont("Helvetica", 14)
@@ -330,6 +334,14 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
     starty = .15 * inch 
     hole_sepx = (W - 2 * startx) / 4.
     hole_sepy = (H - 2 * starty) / 3.
+
+    if False: # make button window (does not look good)
+        c.rect(button_logos[0].x - .1 * inch,
+               button_logos[0].y - .1 * inch,
+               button_logos[-1].x - button_logos[0].x + button_logos[-1].w + .1 * inch,
+               button_logos[-1].y - button_logos[0].y + button_logos[-1].h + .1 * inch,
+               fill=True)
+
 
     mounts = [] # lower left
     for i in range(5):          
@@ -912,6 +924,7 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
             tf = canvas.Canvas("%s/top_frame_engraving.pdf" % LASER_CUT_DIR,
                                 pagesize=(13.5 * inch, 10.5 * inch))
             tf.setLineWidth(LASER_THICKNESS)
+
             for button in button_logos:
                 button = button.translate(.75 * inch, .75 * inch)
                 print button.x / inch, button.y / inch
@@ -1028,7 +1041,7 @@ def main(fontnames):
                     fontname.endswith('.odf')):
                     break
                 # add_font(fontname)
-                draw("junk_%s.pdf", data, images, fontname='OfficinaSansStd-Bold', faceplate=True, baffle=False)
+                # draw("junk_%s.pdf", data, images, fontname='OfficinaSansStd-Bold', faceplate=True, baffle=False)
                 draw("faceplate_%s.pdf" % fontname, data, images, fontname=fontname, faceplate=True, baffle=False)
                 draw("faceplate_%s_example.pdf" % fontname, example_data, [], fontname=fontname, faceplate=True, baffle=False, CFL=False)
             except Exception, e:
