@@ -1,4 +1,4 @@
-const int DBG = 12;
+const int DBG = 16;
 
 void setup(){
   pinMode(DBG, OUTPUT);

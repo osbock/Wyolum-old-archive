@@ -1212,11 +1212,11 @@ void Serial_loop(void) {
 	  delay(100);
 	  c3.nonote();
 #endif
-	    MSG_DEFS[msg_i]->cb();
+	  MSG_DEFS[msg_i]->cb();
 #ifdef LISTEN // define LISTEN to listen for protocol errors
-	    c3.note(689);
-	    delay(100);
-	    c3.nonote();
+	  c3.note(689);
+	  delay(100);
+	  c3.nonote();
 #endif
 	}
 	else{

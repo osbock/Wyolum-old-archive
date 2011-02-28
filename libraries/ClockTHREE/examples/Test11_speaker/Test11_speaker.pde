@@ -149,7 +149,7 @@ void setup(){
 
 int note = NOTE_C4;
 const double HALF_STEP = 1.0594630943592953;
-int noteDuration = 256;
+int noteDuration = 128;
 
 void loop() {
   int pin = SPEAKER_PIN;
@@ -157,13 +157,8 @@ void loop() {
   c3.note(note);
   note = (int)(note * HALF_STEP);
   if(note > NOTE_C8){
-    note = NOTE_C4;
-    if(noteDuration <= 8){
-      noteDuration = 256;
-    }
-    else{
-      noteDuration /= 2;
-    }
+    c3.nonote();
+    while(1); // end this madness!
   }
   delay(noteDuration);
   Serial.println(note, DEC);

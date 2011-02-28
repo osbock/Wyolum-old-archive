@@ -381,13 +381,11 @@ void ClockTHREE::off(){
 }
 
 void ClockTHREE::note(uint16_t freq){
-  return;
   MsTimer2::stop();
   tone(SPEAKER_PIN, freq);
 }
 
 void ClockTHREE::nonote(){
-  return;
   noTone(SPEAKER_PIN);
   MsTimer2::start();
 }
