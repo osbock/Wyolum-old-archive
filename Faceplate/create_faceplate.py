@@ -1056,6 +1056,7 @@ def add_all_fonts():
     global fontnames
 
     fontnames = pdfmetrics.getRegisteredFontNames()
+    fontnames.append('Helvetica-Bold')
     fontpaths = glob.glob('fonts/*.ttf')
     for fp in fontpaths:
         d, fn = os.path.split(fp)
