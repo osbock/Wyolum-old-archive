@@ -39,6 +39,7 @@ if LASER_CUT_DIR == 'Hines':
     BAFFLE_THICKNESS = .06 * inch+ .2*mm
     BAFFLE_HEIGHT = 20.00 * mm + 2 * BAFFLE_THICKNESS
     FRAME_MOUNT_DRILL_R = 1.5 * mm
+    COVER_THICKNESS = 0.25 * inch
 else:
     BAFFLE_THICKNESS = 3 * mm
     BAFFLE_HEIGHT = 20.00 * mm
@@ -185,8 +186,8 @@ polygon(points=[''' % (thickness / cm)
         if len(self.holes) > 0 or len(self.subtract) > 0:
             for hole in self.holes:
                 x, y, r = hole
-                print >> outfile, 'translate(v=[%s, %s, -5*inch])' % (x/cm, y/cm)
-                print >> outfile, 'cylinder(h=10*inch, r=%s, $fn=25);' % (r / cm)# ((STANDOFF_IR + .1 * mm) / cm)
+                print >> outfile, 'translate(v=[%s, %s, %s])' % (x/cm, y/cm, -5*inch)
+                print >> outfile, 'cylinder(h=%s, r=%s, $fn=25);' % (10*inch, r / cm)# ((STANDOFF_IR + .1 * mm) / cm)
             for poly in self.subtract:
                 print >> outfile, '//subtract'
                 ## print >> outfile, 'translate(v=[0, 0, -%s])' % (thickness / cm)
@@ -714,7 +715,7 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
                 print >> scad, 'translate(v=[0, 0, %s])'%((-0.25*inch/2)/cm)
                 print >> scad, 'translate(v=[0, 0, -PEEK])'
 
-            back_cover.toOpenScad(0.25 * inch, scad);
+            back_cover.toOpenScad(COVER_THICKNESS, scad);
         
 
         print >> scad, 'module baffle_h(){'
@@ -813,6 +814,25 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
 
         print 'wrote', scad.name
         
+        ##### make individual scad files
+        back_cover.toOpenScad(COVER_THICKNESS,
+                              open('scad/back_cover.scad', 'w'))
+        bottom_frame.toOpenScad(BAFFLE_THICKNESS,
+                                open('scad/back_frame.scad', 'w'))
+        baffle_h.toOpenScad(BAFFLE_THICKNESS,
+                            open('scad/baffle_h.scad', 'w'))
+        baffle_v.toOpenScad(BAFFLE_THICKNESS,
+                            open('scad/baffle_v.scad', 'w'))
+        border_h.toOpenScad(BAFFLE_THICKNESS,
+                            open('scad/border_h.scad', 'w'))
+        border_v.toOpenScad(BAFFLE_THICKNESS,
+                            open('scad/border_v.scad', 'w'))
+        top_frame.toOpenScad(BAFFLE_THICKNESS,
+                             open('scad/top_frame.scad', 'w'))
+        clear_cover.toOpenScad(COVER_THICKNESS,
+                               open('scad/clear_cover.scad', 'w'))
+        print 'wrote scad/ directory'
+
     if baffle: # check baffle grid size
         bc = back_cover.toPDF("%s/back_cover.pdf" % LASER_CUT_DIR)
         bc.showPage()
