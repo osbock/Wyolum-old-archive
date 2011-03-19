@@ -113,6 +113,7 @@ void ClockTHREE::refresh(int n_hold){
       PORTC &= 0b11110111; // Enable col driver
       // for(col_j=0; col_j < N_COL; col_j++){
       col_j = 0;
+      _delay(10);
       while (col_j < N_COL){
 	// Column.dat32 = RGBW_MASKS[rgb_i] & display[col_j];
 	Column.dat32 = display[15 - col_j];

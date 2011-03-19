@@ -32,7 +32,7 @@
 #include "ClockTHREE.h"
 #include "SPI.h"
 #include "english.h"
-#include "font.h"
+#include "mem_font.h"
 #include "rtcBOB.h"
 #include "EDL.h"
 
@@ -88,7 +88,7 @@ uint8_t last_hh, last_mm, last_ss;
 Mode *mode_p;
 
 // MODE Constants
-const uint8_t N_MODE = 11;
+const uint8_t N_MODE = 12;
 const uint8_t N_MAIN_MODE = 6;  // main modes are accessable through Mode mode. (sub modes are not).
 const uint8_t N_SUB_MODE = 4;
 
@@ -96,8 +96,8 @@ const uint8_t NORMAL_MODE = 0;
 const uint8_t SET_TIME_MODE = 1;
 const uint8_t SET_COLOR_MODE = 2;
 const uint8_t SET_ALARM_MODE = 3;
-const uint8_t SERIAL_MODE = 4;
-const uint8_t MODE_MODE = 5;
+// const uint8_t SERIAL_MODE = 4;
+const uint8_t MODE_MODE = 4;
 
 // Sub Modes (this cannot be accessed though Mode mode selection.)
 const uint8_t SECONDS_MODE = 6;
@@ -105,6 +105,7 @@ const uint8_t ALARM_MODE = 7;
 const uint8_t TEMPERATURE_MODE = 8;
 const uint8_t SCROLL_MODE = 9;
 const uint8_t COUNTDOWN_MODE = 10;
+const uint8_t SER_DISPLAY_MODE = 11;
 
 // Temperature unit constants
 const uint8_t DEG_C = 0;
@@ -128,35 +129,41 @@ Mode NormalMode = {NORMAL_MODE,
 		   Normal_inc, Normal_dec, Normal_mode, do_nothing};
 Mode SecondsMode = {SECONDS_MODE, 
 		    'S', Seconds_setup, Seconds_loop, Seconds_exit, 
-		    Seconds_mode, Seconds_mode, Seconds_mode, do_nothing};
+		    Seconds_mode, Seconds_mode, Seconds_mode, Seconds_mode};
 Mode AlarmMode = {ALARM_MODE, 
 		  'X', Alarm_setup, Alarm_loop, Alarm_exit, 
-		  Alarm_mode, Alarm_mode, Alarm_mode, do_nothing};
+		  Alarm_mode, Alarm_mode, Alarm_mode, Alarm_mode};
 Mode CountdownMode = {COUNTDOWN_MODE, 
 		      'X', Countdown_setup, Countdown_loop, do_nothing, 
-		      Countdown_exit, Countdown_exit, Countdown_exit, do_nothing};
+		      Countdown_exit, Countdown_exit, Countdown_exit, 
+		      Countdown_exit};
+Mode SerDisplayMode = {SER_DISPLAY_MODE,
+		       'X', do_nothing, SerDisplay_loop, do_nothing,
+		       return_to_normal,return_to_normal,return_to_normal,
+		       return_to_normal};
+
 Mode TemperatureMode = {TEMPERATURE_MODE, 'X', 
 			Temperature_setup, Temperature_loop, Temperature_exit, 
 			Temperature_inc, Temperature_dec, Temperature_mode,
-			do_nothing};
+			Temperature_mode};
 Mode ScrollMode = {SCROLL_MODE, 'X', 
 		   Scroll_setup, Scroll_loop, Scroll_exit, 
-		   Scroll_inc, Scroll_dec, Scroll_mode, do_nothing};
+		   Scroll_inc, Scroll_dec, return_to_normal, return_to_normal};
 Mode SetTimeMode = {SET_TIME_MODE, 
 		    'T', SetTime_setup,SetTime_loop,SetTime_exit,
 		    SetTime_inc, SetTime_dec, SetTime_mode, SetTime_enter};
 Mode SetColorMode = {SET_COLOR_MODE, 
 		     'C', SetColor_setup, SetColor_loop, SetColor_exit, 
-		     SetColor_inc, SetColor_dec, SetColor_mode, do_nothing};
+		     SetColor_inc, SetColor_dec, SetColor_mode, SetColor_mode};
 Mode SetAlarmMode = {SET_ALARM_MODE, 
-		     2, SetAlarm_setup,SetAlarm_loop,SetAlarm_exit,
-		     SetAlarm_inc, SetAlarm_dec, SetAlarm_mode, do_nothing};
-Mode SerialMode = {SERIAL_MODE, 
-		   'P', Serial_setup,Serial_loop,Serial_exit,
-		   Serial_inc,Serial_dec,Serial_mode, do_nothing};
+		     'A', SetAlarm_setup,SetAlarm_loop,SetAlarm_exit,
+		     SetAlarm_inc, SetAlarm_dec, SetAlarm_mode, SetAlarm_enter};
+//Mode SerialMode = {SERIAL_MODE, 
+//		   'P', Serial_setup,Serial_loop,Serial_exit,
+//		   Serial_inc,Serial_dec,Serial_mode, do_nothing};
 Mode ModeMode = {MODE_MODE, 
 		 'M', Mode_setup, Mode_loop, Mode_exit, 
-		 Mode_inc, Mode_dec, Mode_mode, Mode_enter};
+		 Mode_inc, Mode_dec, return_to_normal, Mode_enter};
 
 /* Event types */
 const uint8_t       NO_EVT = 0; // NONE
@@ -282,7 +289,8 @@ unsigned long last_enter_time = 0;    // for debounce
 
 ClockTHREE c3;                      // ClockTHREE singleton
 English faceplate = English();      // Only faceplate, others could be supported.
-Font font = Font();                 // Only font at this time.
+//Font font = Font();                 // Only font at this time.
+MemFont font = MemFont();
 time_t t;                           // TODO: remove this, not needed (I think)
 uint8_t mode_counter;               // Used for selecting mode
 uint8_t color_i = 3;                // Default color
@@ -440,13 +448,14 @@ void setup(void){
   Modes[SET_TIME_MODE] = SetTimeMode;
   Modes[SET_COLOR_MODE] = SetColorMode;
   Modes[SET_ALARM_MODE] = SetAlarmMode;
-  Modes[SERIAL_MODE] = SerialMode;
+  //  Modes[SERIAL_MODE] = SerialMode;
   Modes[MODE_MODE] = ModeMode;
 
   // Sub Modes
   Modes[SECONDS_MODE] = SecondsMode;
   Modes[ALARM_MODE] = AlarmMode;
   Modes[COUNTDOWN_MODE] = CountdownMode;
+  Modes[SER_DISPLAY_MODE] = SerDisplayMode;
   Modes[TEMPERATURE_MODE] = TemperatureMode;
   Modes[SCROLL_MODE] = ScrollMode;
   mode_p->setup();
@@ -490,21 +499,12 @@ void loop(void){
   if(PINB & (1 << 0)){
     enter_interrupt();
   }
-  if(Serial.available() && (mode_p->id != SERIAL_MODE)){
-    while(Serial.available()){ // suck up all the chars.
-      Serial.read();
-    }
-    switchmodes(SERIAL_MODE);
-  }
 #endif
   /* with auto reset, 
    * serial connection to C3 causes a reset so entering serial mode
    * manually is fuitless.  This is way better anyway.
    */
-  if(Serial.available() && (mode_p->id != SERIAL_MODE)){
-    switchmodes(SERIAL_MODE);
-  }
-
+  Serial_loop();
   // process new events before calling mode loop()
   for(uint8_t i = 0; i < n_evt; i++){
     switch(event_q[i]){
@@ -650,7 +650,7 @@ void Scroll_loop(){
       font.getChar(serial_msg[i], getColor(COLORS[color_i]), display + N_COL - 1);
     }
     else{
-      Scroll_mode();// hit the mode button to exit out of this mode, no more mesage to scroll
+      ScrollMode.mode();
     }
   }
 }
@@ -660,9 +660,6 @@ void Scroll_exit() {
 void Scroll_inc(){
 }
 void Scroll_dec(){
-}
-void Scroll_mode(){
-  switchmodes(NORMAL_MODE);
 }
 
 // Sub mode of normal mode ** display temp
@@ -798,6 +795,10 @@ void Alarm_mode(){
 
 // Sub mode of alarm submode ** display countdown
 void Countdown_setup(void){
+  // explicit clearing of super large display
+  for(int i=0; i < N_DISPLAY * N_COL; i++){
+    countdown_display[i] = 0;
+  }
 }
 void Countdown_loop_old(){
   time_t t = now();
@@ -858,6 +859,10 @@ void Countdown_loop(){
   else{
     switchmodes(NORMAL_MODE);
   }
+}
+
+void SerDisplay_loop(){
+  c3.refresh(16);
 }
 
 // Begin SetTime Mode Code 
@@ -1013,6 +1018,14 @@ void SetAlarm_setup(void){
 			 c3, getColor(COLORS[color_i]), 0, false, false);
   faceplate.display_word(c3, MONO, hour_led);
   SetTime_unit = HOUR;
+    if(alarm_set){
+      faceplate.display_word(c3, DARK, alarm_off_led);
+      faceplate.display_word(c3, MONO, alarm_on_led);
+    }
+    else{
+      faceplate.display_word(c3, DARK, alarm_on_led);
+      faceplate.display_word(c3, MONO, alarm_off_led);
+    }
 }
 void SetAlarm_loop(void){
   c3.refresh(16);
@@ -1114,13 +1127,12 @@ void SetAlarm_mode(void){
     }
     break;
   case SECOND:
-    // fall though to default
-  default:
-    switchmodes(last_mode_id);
-    break;
+    SetAlarm_setup();
   }
 }
-
+void SetAlarm_enter(void){
+  switchmodes(NORMAL_MODE);
+}
 // Begin SetColor Mode Code 
 /* 
    Initalize mode.
@@ -1165,7 +1177,7 @@ void SetColor_dec(void) {
 }
 
 void SetColor_mode(void) {
-  switchmodes(last_mode_id);
+  switchmodes(NORMAL_MODE);
 }
 
 // Begin Serial Modes
@@ -1205,26 +1217,11 @@ void Serial_loop(void) {
 	   * is stored in serial_msg: callback time.
 	   */
 
-#undef LISTEN
-#ifdef LISTEN // define LISTEN to listen for protocol errors
-	  pinMode(SPEAKER_PIN, OUTPUT);
-	  c3.note(554);
-	  delay(100);
-	  c3.nonote();
-#endif
 	  MSG_DEFS[msg_i]->cb();
-#ifdef LISTEN // define LISTEN to listen for protocol errors
-	  c3.note(689);
-	  delay(100);
-	  c3.nonote();
-#endif
+	  //two_digits(val);
+	  //c3.refresh(10000);
 	}
 	else{
-#ifdef LISTEN // define LISTEN to listen for protocol errors
-	  c3.note(466);
-	  delay(100);
-	  c3.nonote();
-#endif
 	  // Got a sync message unexpectedly. Get ready for new message.
 	  // no callback
 	  // or timeout
@@ -1514,6 +1511,7 @@ void display_send(){
 void display_set(){
   uint8_t did = serial_msg[0];
   uint8_t *display_p = (uint8_t *)display;
+  switchmodes(SER_DISPLAY_MODE);
   for(uint8_t i = 0; i < N_COL * sizeof(uint32_t); i++){
     display_p[i] = serial_msg[i];
   }
@@ -1553,13 +1551,6 @@ boolean Serial_get_msg(uint8_t n_byte) {
   uint8_t val, next;
   boolean out;
 
-#ifdef LISTEN // define LISTEN to listen for protocol errors
-  pinMode(SPEAKER_PIN, OUTPUT);
-  c3.note(880);
-  delay(100);
-  c3.nonote();
-#endif
-
   digitalWrite(DBG, LOW);
   if(n_byte == VAR_LENGTH){
     // variable length message
@@ -1595,11 +1586,6 @@ boolean Serial_get_msg(uint8_t n_byte) {
   else{
     out = false;
   }
-#ifdef LISTEN // define LISTEN to listen for protocol errors
-  c3.note(440);
-  delay(100);
-  c3.nonote();
-#endif
   return out;
 }
 
@@ -1649,9 +1635,6 @@ void Mode_dec(void) {
   }
   font.getChar(Modes[mode_counter].sym, BLUE, display + 8);
 }
-void Mode_mode(void) {
-  switchmodes(NORMAL_MODE);
-}
 void Mode_enter(void) {
   switchmodes(mode_counter);
 }
@@ -1671,6 +1654,9 @@ void switchmodes(uint8_t new_mode_id){
   // }
 }
 
+void return_to_normal(){
+  switchmodes(NORMAL_MODE);
+}
 void fire_alarm(uint8_t did){
   // read in record at DID and switch to alarm mode
 
@@ -1703,7 +1689,7 @@ void two_digits(uint8_t val, uint32_t *display){
 void add_char(char letter, uint32_t* display, uint8_t col){
   uint32_t data[8];
   font.getChar(letter, getColor(COLORS[color_i]), data);
-  for(uint8_t i = 0; i < 8; i++){
+  for(uint8_t i = 0; i < 7; i++){
     display[col + i] |= (data[i] & 0b00000000111111111111111111111111);
   }
 }

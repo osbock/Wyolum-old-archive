@@ -410,7 +410,7 @@ class Main:
     def tick(self):
         c3tm = self.getC3_time()
         pctm = time.localtime()
-        diff = time.mktime(c3tm) - time.mktime(pctm)
+        diff = time.mktime(c3tm) - time.mktime(pctm) - 3600 * pctm.tm_isdst
         self.ardtime.date.component('entry').delete(0, Tkinter.END)
         self.ardtime.time.component('entry').delete(0, Tkinter.END)
         self.pctime.date.component('entry').delete(0, Tkinter.END)

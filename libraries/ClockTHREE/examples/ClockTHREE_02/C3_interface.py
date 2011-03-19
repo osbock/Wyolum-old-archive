@@ -8,7 +8,7 @@ import os
 
 MAX_ALARM_DID = chr(0x3F)
 DID_ALARM_LEN = 12
-SER_TIMEOUT = .2 # Serial timeout, seconds
+SER_TIMEOUT = .5 # Serial timeout, seconds
 
 class PingError(Exception):
     pass
@@ -132,7 +132,10 @@ def getSerialports():
 def disconnect():
     trigger_mode()
 
-def connect(serialport='/dev/ttyUSB0', _gmt_offset=-5*3600):
+def connect(serialport='/dev/ttyUSB0', _gmt_offset=None):
+    if _gmt_offset is None:
+        local_time = time.localtime()
+        _gmt_offset = (local_time.tm_isdst * 3600 - time.timezone)
     global ser, eeprom
     if hasattr(EEPROM, 'singleton'):
         del EEPROM.singleton
@@ -149,7 +152,6 @@ def connect(serialport='/dev/ttyUSB0', _gmt_offset=-5*3600):
                         baudrate=const.BAUDRATE,
                         timeout=SER_TIMEOUT)
     # ser.flush()
-    ser.write('a') # put C3 in serial_mode
     time.sleep(1)
     ping()
     try:
@@ -169,7 +171,7 @@ def connect(serialport='/dev/ttyUSB0', _gmt_offset=-5*3600):
         
 
 PING_DEFAULT = 'A23456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789'
-gmt_offset = -5 * 3600
+gmt_offset = -4 * 3600
 
 def time_req():
     ser.flush()
@@ -532,6 +534,12 @@ def get_data(id):
 def sync():
     ser.write(str(const.SYNC))
 
+def display_set(payload):
+    msg = str(const.DISPLAY_SET) + payload
+    assert len(msg) == const.DISPLAY_SET.n_byte, 'Display data must be %d bytes long exactly' % (
+        const.DISPLAY_SET.n_byte - 1, len(msg) - 1)
+    ser.write(msg)
+
 def ping(payload=PING_DEFAULT):
     ser.read(const.MAX_MSG_LEN)
     while(len(payload) < const.PING.n_byte):
@@ -572,20 +580,29 @@ def main():
     ser.flush()
     print eeprom.dids
     now = time_req()
-    if True:
-        for i in range(3):
-            print ord(set_alarm(now + 6 * 86400 + 10 * i, 
-                                countdown=1<<i, 
-                                repeat=1 << i, 
-                                scroll_msg="DUDE!!!!....--" + str(i),
-                                effect_id=0,
-                                sound_id=1))
-            print ord(set_alarm(now + i * 86400, 
-                                countdown=1 << 1, 
-                                repeat=0b00111000, 
-                                scroll_msg="YOU'RE #1!!! ",
-                                effect_id=0,
-                                sound_id=0))
+    display_X = 'X' * 64
+    display_A = 'A' * 64
+    for i in range(100):
+        display_set(display_A)
+        time.sleep(.1)
+        display_set(display_X)
+        time.sleep(.1)
+    trigger_mode()
+    if False:
+        print ord(set_alarm(now + 30,
+                            countdown=1<<4, 
+                            repeat= 0,
+                            scroll_msg="DUDE!",
+                            effect_id=0,
+                            sound_id=1))
+        return
+    if False:
+        print ord(set_alarm(now + i * 86400, 
+                            countdown=1 << 1, 
+                            repeat=0b00111000, 
+                            scroll_msg="YOU'RE #1!!! ",
+                            effect_id=0,
+                            sound_id=0))
     # trigger_mode()
     return
 
