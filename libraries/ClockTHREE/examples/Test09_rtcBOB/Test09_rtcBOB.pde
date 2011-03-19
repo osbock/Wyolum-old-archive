@@ -17,7 +17,7 @@
 #include "EEPROM.h"
 #include "MsTimer2.h"
 
-const char RESET_BYTE = 'R';
+const char SET_BYTE = 'S';
 
 void setup(){
   // start comm protos
@@ -27,15 +27,14 @@ void setup(){
   setSyncProvider(getTime);      // RTC
   setSyncInterval(60000);      // update every minute (and on boot)
   Serial.print("Type ");
-  Serial.print(RESET_BYTE);
-  Serial.println(" to reset time to 2016/6/17 09:10:11");
+  Serial.print(SET_BYTE);
+  Serial.println(" to reset time to compile time.");
 }
 
 uint32_t count = 0;
 void resettime(){
-  setRTC(2011, 2, 23, 
-	18, 25, 00);
-  Serial.println("Time reset time to 2011, feb 23, 18:25");
+  setCompileTime();
+  Serial.print("Time set time to compile time");
   Serial.println("Disconnect power and reconnect.");
   Serial.println("Displayed time should be a few seconds later.");
   Serial.println("");
@@ -44,7 +43,7 @@ void resettime(){
 }
 void interact(){
   if(Serial.available()){
-    if(Serial.read() == RESET_BYTE){
+    if(Serial.read() == SET_BYTE){
       resettime();
     }
   }
@@ -74,7 +73,7 @@ void loop(){
     }
   }
   Serial.println("Verify that time = alarm time");
-  for(int i = 0; i < 60; i++){
+  for(int i = 0; i < 5; i++){
     is_set = i % 2;
     interact();
     Serial.print("rtc time:");
@@ -101,8 +100,8 @@ void loop(){
   }
   
   Serial.print("Type ");
-  Serial.print(RESET_BYTE);
-  Serial.println(" to reset time to 2016/6/17 09:10:11");
+  Serial.print(SET_BYTE);
+  Serial.println(" to reset time to compile time");
   while(1){
     interact();
     delay(100);
@@ -127,4 +126,94 @@ void done(){
   while(1){
     delay(1000);
   }
+}
+
+
+void setCompileTime(){
+  char *date = __DATE__;
+  char *tm   = __TIME__;
+  byte i;
+  int yyyy = 0;
+  int hh = 0;
+  int mm = 0;
+  int ss = 0;
+  int dd = 0;
+  for(i = 0; i<4; i++){
+    yyyy = (10 * yyyy) + (date[7 + i] - '0');
+  }
+  for(i = 0; i < 2; i++){
+    hh = (10 * hh) + (tm[0 + i] - '0');
+    mm = (10 * mm) + (tm[3 + i] - '0');
+    ss = (10 * ss) + (tm[6 + i] - '0');
+    dd = (10 * dd) + (date[4 + i] - '0');
+  }
+
+  long mmm = (date[0] - 'A') * (26 * 26) + 
+    (date[1] - 'a') * 26 + 
+    date[2] - 'a';
+  switch (mmm) {
+  case 6097:
+    mmm = 1;
+    break;
+  case 3485:
+    mmm = 2;
+    break;
+  case 8129:
+    mmm = 3;
+    break;
+  case 407:
+    mmm = 4;
+    break;
+  case 8136:
+    mmm = 5;
+    break;
+  case 6617:
+    mmm = 6;
+    break;
+  case 6615:
+    mmm = 7;
+    break;
+  case 526:
+    mmm = 8;
+    break;
+  case 12287:
+    mmm = 9;
+    break;
+  case 9535:
+    mmm = 10;
+    break;
+  case 9173:
+    mmm = 11;
+    break;
+  case 2134:
+    mmm = 12;
+    break;
+  default:
+    mmm = 1;
+    break;
+  }
+  /*
+Jan 6097
+   Feb 3485
+   Mar 8129
+   Apr 407
+   May 8136
+   Jun 6617
+   Jul 6615
+   Aug 526
+   Sep 12287
+   Oct 9535
+   Nov 9173
+   Dec 2134
+   */
+
+  
+  setRTC(yyyy, mmm, dd, hh, mm, ss);
+  setTime(hh, mmm, ss, dd, mm, yyyy);
+
+  Serial.print("Time set to ");
+  print_time(hh, mm, ss);
+  Serial.print("\nArduino time ");
+  print_time(hour(), minute(), second());
+  Serial.println("");
 }

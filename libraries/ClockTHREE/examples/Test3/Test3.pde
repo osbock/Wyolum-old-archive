@@ -40,7 +40,7 @@ void setup(){
 }
 uint32_t count = 0;
 boolean dbg = true;
-int hold = 150;
+int hold = 1500;
 void loop(){
   uint8_t color_i, col_j;
   uint32_t tmp_col;
