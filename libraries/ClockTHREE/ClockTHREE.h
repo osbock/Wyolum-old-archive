@@ -54,6 +54,7 @@ With the understanding that:
 #define ClockTHREE_h
 #include <inttypes.h>
 #include "SPI.h"
+#include "rtcBOB.h"
 
 const int     N_ROW = 12;
 const int N_RGB_ROW = 10;
@@ -70,7 +71,7 @@ const int INC_PIN = 6;
 const int DEC_PIN = 7;
 const int ENTER_PIN = MODE_PIN;
 #else
-const int DBG = 13;
+const int DBG = 16;
 const int MODE_PIN = 2;
 const int INC_PIN = 3;
 const int DEC_PIN = 15;

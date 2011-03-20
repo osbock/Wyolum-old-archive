@@ -26,6 +26,9 @@ void setup(){
   c3.init();
   c3.setdisplay(display);
   c3.set_column_hold(20);
+  for(int i = 0; i < N_COL; i++){
+    display[i] = 0;
+  }
 }
 
 uint32_t count = 0;

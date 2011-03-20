@@ -20,7 +20,7 @@
 void setup(){
   // start Wire proto
   Wire.begin();
-  Serial.begin(9600); // for debugging
+  Serial.begin(57600); // for debugging
   pinMode(COL_DRIVER_ENABLE, OUTPUT);
   digitalWrite(COL_DRIVER_ENABLE, HIGH);
 }

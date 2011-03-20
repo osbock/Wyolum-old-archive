@@ -1,4 +1,5 @@
 #include <avr/pgmspace.h>
+
 const uint8_t N_CHAR = 128;
 class Font{
  public:

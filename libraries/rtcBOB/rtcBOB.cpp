@@ -1,5 +1,6 @@
-#include "rtcBOB.h"
 #include "Wire.h"
+#include "Time.h"
+#include "rtcBOB.h"
 
 /*
  * single front end interface to both PCgetTime and RTCgetTime()

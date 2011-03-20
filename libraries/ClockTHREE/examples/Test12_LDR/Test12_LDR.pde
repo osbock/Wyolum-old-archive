@@ -9,40 +9,22 @@
   Attribution 3.0 Unported
  */
 
-#include "ClockTHREE.h"
-#include "SPI.h"
-#include "Time.h"
-#include "Wire.h"
-#include "EEPROM.h"
-#include "MsTimer2.h"
-
-// Example 06A: Blink LED at a rate specified by the
-// value of the analogue input
-
  // the pin for the LED
 int val;
-ClockTHREE c3 = ClockTHREE();
-
+const int LDR_PIN = 0;
+const int DBG = 16;
 void setup() {
-  c3.init();
-
+  Serial.begin(57600);
   pinMode(DBG, OUTPUT); // LED is as an OUTPUT
   // Note: Analogue pins are
   // automatically set as inputs
 }
 void loop() {
-  val = (analogRead(LDR_PIN) - 800) * 10; // read the value from
-  digitalWrite(DBG, HIGH); // turn the LED on
-  delay(val); // stop the program for
-
-  // really anoying sounds based on LDR value
-  // tone(SPEAKER_PIN, val * 2);
-  // return;
-
-  val = (analogRead(LDR_PIN) - 900) * 10; // read the value from
-  digitalWrite(DBG, LOW); // turn the LED off
-  delay(val); // stop the program for
-  c3.refresh();
-
+  val = analogRead(LDR_PIN);
+  Serial.println(val);
+  digitalWrite(DBG, HIGH);
+  delay(val/2); // stop the program for
+  digitalWrite(DBG, LOW);
+  delay(val/2); // stop the program for
 }
 

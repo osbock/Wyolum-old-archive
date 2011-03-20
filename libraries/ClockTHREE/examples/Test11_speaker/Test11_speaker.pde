@@ -154,10 +154,10 @@ int noteDuration = 128;
 void loop() {
   int pin = SPEAKER_PIN;
   // tone(SPEAKER_PIN, note);
-  c3.note(note);
+  tone(SPEAKER_PIN, note);
   note = (int)(note * HALF_STEP);
   if(note > NOTE_C8){
-    c3.nonote();
+    noTone(SPEAKER_PIN);
     while(1); // end this madness!
   }
   delay(noteDuration);
