@@ -415,6 +415,12 @@ class EEPROM: # singleton!
         addr = 0
         out = {}
         for i in range(n):
+            if addr > const.MAX_EEPROM_ADDR:
+                print 'invalid eeprom address'
+                ans = raw_input('enter "F" to format EEPROM anything else to escape:')
+                if ans == 'F':
+                    clear_eeprom()
+                    return out
             did = self.eeprom[addr]
             l = ord(self.eeprom[addr + 1])
             out[did] = (addr, self.eeprom[addr: addr + l])

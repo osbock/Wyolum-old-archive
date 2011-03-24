@@ -20,8 +20,6 @@
 
 */
 
-// #define CLOCKTWO // Use ClockTWO hardware configuration
-
 #include <avr/pgmspace.h>
 #include <EEPROM.h>
 #include <Wire.h>
@@ -190,7 +188,7 @@ struct MsgDef{
 };
 
 const uint8_t MAX_MSG_LEN = 100; // official: 100
-const uint16_t BAUDRATE = 57600; // official:57600
+const uint16_t BAUDRATE = 57600; // official:57600 (Scott Schenker 38400)
 const uint8_t SYNC_BYTE = 254;   // 0xEF; (does not seem to work!)
 const uint8_t VAR_LENGTH = 255;  // 0xFF;
 char* EEPROM_ERR = "EE";
@@ -430,9 +428,7 @@ void read_did_alarms(){
 
 // Main setup function
 void setup(void){
-#ifndef CLOCKTWO
   Serial.begin(BAUDRATE);
-#endif
 
   Wire.begin();
   c3.init();
@@ -460,10 +456,8 @@ void setup(void){
   Modes[SCROLL_MODE] = ScrollMode;
   mode_p->setup();
 
-#ifndef CLOCKTWO
   attachInterrupt(0, mode_interrupt, FALLING); // Does not work on C2
   attachInterrupt(1, inc_interrupt, FALLING);  // Does not work on C2
-#endif
   c3.setdisplay(display); // 2x actual LED array size for staging data. // required by fade to
   c3.set_column_hold(50);
 
@@ -482,24 +476,12 @@ void setup(void){
 // main loop function.  Dellegate to mode_p->loop();
 void loop(void){
   //check button status // C2 hack
-#ifdef CLOCKTWO
-  if(PIND & (1 << 5)){
-    mode_interrupt();
-  }
-  if(PIND & (1 << 6)){
-    inc_interrupt();
-  }
-  if(PIND & (1 << 7)){
-    dec_interrupt();
-  }
-#else
   if(PINC & (1 << 1)){
     dec_interrupt();
   }
   if(PINB & (1 << 0)){
     enter_interrupt();
   }
-#endif
   /* with auto reset, 
    * serial connection to C3 causes a reset so entering serial mode
    * manually is fuitless.  This is way better anyway.
@@ -1187,27 +1169,21 @@ void SetColor_mode(void) {
 void Serial_setup(void){
   faceplate.display_word(c3, MONO, usb_led);
   c3.refresh();
-  pinMode(DBG, OUTPUT);
-#ifdef CLOCKTWO
-  Serial.begin(BAUDRATE);
-#endif
   for(uint8_t i = 0; i < 4; i++){
     digitalWrite(DBG, HIGH);
     delay(50);
     digitalWrite(DBG, LOW);
     delay(50);
   }
-  digitalWrite(DBG, HIGH);
+  digitalWrite(DBG, LOW);
 }
 
 void Serial_loop(void) {
   uint8_t val;
   boolean resync_flag = true;
-#ifndef CLOCKTWO
-  c3.refresh(16);
-#endif
   if(Serial.available()){
     val = Serial.read();
+    // two_digits(val);
     // find msg type
     for(uint8_t msg_i = 0; msg_i < N_MSG_TYPE; msg_i++){
       if(MSG_DEFS[msg_i]->id == val){
@@ -1241,7 +1217,7 @@ void Serial_sync_wait(){
   // wait for SYNC message;
   uint8_t val;
   uint8_t n = 0;
-  digitalWrite(DBG, LOW);
+  digitalWrite(DBG, HIGH);
   while(n < SYNC.n_byte){
     if(Serial.available()){
       val = Serial.read();
@@ -1253,7 +1229,7 @@ void Serial_sync_wait(){
       }
     }
   }
-  digitalWrite(DBG, HIGH);
+  digitalWrite(DBG, LOW);
 }
 
 // Transmit contents of PING message back to sender.
@@ -1440,16 +1416,9 @@ void delete_did_alarm(){
   }
   if(!status){
     // error
-#ifdef CLOCKTWO
-    Serial.end();
-#endif
     two_letters(EEPROM_ERR);
     c3.refresh(10000);
-#ifdef CLOCKTHREE
-    Serial.end();
-#else
     Serial_send_err("AL");
-#endif
   }
 }
 void receive_data(){
@@ -1510,8 +1479,10 @@ void display_send(){
 
 void display_set(){
   uint8_t did = serial_msg[0];
+  if(mode_p->id != SER_DISPLAY_MODE){
+    switchmodes(SER_DISPLAY_MODE);
+  }
   uint8_t *display_p = (uint8_t *)display;
-  switchmodes(SER_DISPLAY_MODE);
   for(uint8_t i = 0; i < N_COL * sizeof(uint32_t); i++){
     display_p[i] = serial_msg[i];
   }
@@ -1551,7 +1522,7 @@ boolean Serial_get_msg(uint8_t n_byte) {
   uint8_t val, next;
   boolean out;
 
-  digitalWrite(DBG, LOW);
+  // digitalWrite(DBG, HIGH);
   if(n_byte == VAR_LENGTH){
     // variable length message
     while(!Serial.available()){/* && 
@@ -1567,23 +1538,24 @@ boolean Serial_get_msg(uint8_t n_byte) {
       if (val == SYNC_BYTE){
 	sync_msg_byte_counter++;
 	if(sync_msg_byte_counter == MAX_MSG_LEN){
-	  // no other valid msg combination can have MAX_MSG_LEN sync bytes.
-	  // sync msg recieved! break out, next char is start of new message
-	  sync_msg_byte_counter = 0;
-	  break;
-	}
-      }
-      else{
-	sync_msg_byte_counter = 0;
-      }
-      serial_msg[i++] = val;
-    }
-  }
-  digitalWrite(DBG, HIGH);
-  if(i == n_byte - 1){
-    out = true;
-  }
-  else{
+	   // no other valid msg combination can have MAX_MSG_LEN sync bytes.
+	   // sync msg recieved! break out, next char is start of new message
+	   sync_msg_byte_counter = 0;
+	   break;
+	 }
+       }
+       else{
+	 sync_msg_byte_counter = 0;
+       }
+       serial_msg[i++] = val;
+     }
+   }
+   if(i == n_byte - 1){
+     digitalWrite(DBG, LOW);
+     out = true;
+   }
+   else{
+    digitalWrite(DBG, HIGH);
     out = false;
   }
   return out;
@@ -1593,7 +1565,6 @@ boolean Serial_get_msg(uint8_t n_byte) {
   Get ready for next mode.
 */
 void Serial_exit(void) {
-  digitalWrite(DBG, LOW);
   Serial.end();
 }
 /*
@@ -1617,16 +1588,13 @@ void Mode_loop(void) {
   c3.refresh(16);
 }
 void Mode_exit(void) {
-  digitalWrite(DBG, LOW);
 }
 void Mode_inc(void) {
-  digitalWrite(DBG, HIGH);
   mode_counter++;
   mode_counter %= N_MAIN_MODE - 1; // skip ModeMode
   font.getChar(Modes[mode_counter].sym, BLUE, display + 8);
 }
 void Mode_dec(void) {
-  digitalWrite(DBG, HIGH);
   if(mode_counter == 0){
     mode_counter = N_MAIN_MODE - 2;// skip ModeMode
   }
