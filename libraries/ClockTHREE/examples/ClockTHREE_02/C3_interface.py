@@ -9,8 +9,12 @@ import os
 MAX_ALARM_DID = chr(0x3F)
 DID_ALARM_LEN = 12
 SER_TIMEOUT = .5 # Serial timeout, seconds
+eeprom = None
 
 class PingError(Exception):
+    pass
+
+class EEPROMError(Exception):
     pass
 
 class MsgDef:
@@ -129,10 +133,14 @@ def getSerialports():
         out.sort()
     return out
 
+def is_connected():
+    return eeprom is not None
 def disconnect():
-    trigger_mode()
-
-def connect(serialport='/dev/ttyUSB0', _gmt_offset=None):
+    global eeprom
+    # trigger_mode()
+    eeprom = None
+    
+def connect(serialport='/dev/ttyUSB0', _gmt_offset=None, yesping=True):
     if _gmt_offset is None:
         local_time = time.localtime()
         _gmt_offset = (local_time.tm_isdst * 3600 - time.timezone)
@@ -152,21 +160,22 @@ def connect(serialport='/dev/ttyUSB0', _gmt_offset=None):
                         baudrate=const.BAUDRATE,
                         timeout=SER_TIMEOUT)
     # ser.flush()
-    time.sleep(1)
-    ping()
-    try:
+    time.sleep(.1)
+    if yesping:
         ping()
-    except PingError: # try again
-        ser.close()
         try:
-            ser = serial.Serial(serialport,
-                                baudrate=const.BAUDRATE,
-                                timeout=SER_TIMEOUT)
-            ser.flush()
             ping()
-        except PingError:
+        except PingError: # try again
             ser.close()
-            raise
+            try:
+                ser = serial.Serial(serialport,
+                                    baudrate=const.BAUDRATE,
+                                    timeout=SER_TIMEOUT)
+                ser.flush()
+                ping()
+            except PingError:
+                ser.close()
+                raise
     eeprom = EEPROM() # singlton instance
         
 
@@ -343,6 +352,7 @@ class EEPROM: # singleton!
         else:
             self.read()
             self.dids = self.__get_dids()
+                
             for did in [d for d in self.dids if d <= MAX_ALARM_DID]:
                 data = self.read_did_from_mem(did)
                 if data:
@@ -350,8 +360,9 @@ class EEPROM: # singleton!
                     assert len(data) == ord(data[1])
                     assert len(data) == DID_ALARM_LEN
                     t = c3_to_wall_clock(data[2:6])
+                    repeat = ord(data[7])
                     tr = time_req()
-                    if t < tr:
+                    if t < tr and not repeat:
                         self.delete_did(did)
                         continue
             EEPROM.singleton = self
@@ -416,6 +427,7 @@ class EEPROM: # singleton!
         out = {}
         for i in range(n):
             if addr > const.MAX_EEPROM_ADDR:
+                raise EEPROMError('invalid eeprom address %d, suggest reformatting' % addr)
                 print 'invalid eeprom address'
                 ans = raw_input('enter "F" to format EEPROM anything else to escape:')
                 if ans == 'F':
@@ -542,7 +554,7 @@ def sync():
 
 def display_set(payload):
     msg = str(const.DISPLAY_SET) + payload
-    assert len(msg) == const.DISPLAY_SET.n_byte, 'Display data must be %d bytes long exactly' % (
+    assert len(msg) == const.DISPLAY_SET.n_byte, 'Display data must be %d bytes long exactly, got %s' % (
         const.DISPLAY_SET.n_byte - 1, len(msg) - 1)
     ser.write(msg)
 

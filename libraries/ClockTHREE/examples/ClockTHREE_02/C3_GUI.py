@@ -312,9 +312,20 @@ class Main:
                                     value='0',
                                     validate='real',
                                     )
+
+        self.format_eeprom_dialog = Pmw.Dialog(self.control_frame,
+                                               buttons = ('Format', 'Cancel'),
+                                               defaultbutton = 'Cancel',
+                                               title = 'Format EEPROM?',
+                                               command = self.format_eeprom)
+        self.format_eeprom_dialog.withdraw()
+
         self.delta.component('entry').config(width=12, justify=Tkinter.CENTER)
         self.delta.grid(row=0, column=0)
-        Tkinter.Button(delta_frame, text="SYNC", command=synctime).grid(row=0, column=1)
+        self.sync_b = Tkinter.Button(delta_frame, text="SYNC", command=synctime)
+        self.sync_b.config(state=Tkinter.DISABLED)
+
+        self.sync_b.grid(row=0, column=1)
         delta_frame.grid(row=2)
         timezones = map(str, arange(-12, 12, .5))
         combo = Pmw.ComboBox(self.control_right,
@@ -341,7 +352,10 @@ class Main:
         self.alarm_isset = Tkinter.IntVar()
         alarm_set_c = Tkinter.Checkbutton(alarm_frame, text="", variable=self.alarm_isset, borderwidth=0)
         alarm_set_c.grid(row=0, column=2)
-        Tkinter.Button(alarm_frame, text="Set", command=self.alarm_set).grid(row=0, column=3)
+        self.set_b = Tkinter.Button(alarm_frame, text="Set", command=self.alarm_set)
+        self.set_b.grid(row=0, column=3)
+        self.set_b.config(state=Tkinter.DISABLED)
+
         alarm_frame.grid(row=4)
         try:
             self.logo = Tkinter.PhotoImage(file="logo.gif")
@@ -446,14 +460,35 @@ class Main:
 
     def disconnect(self):
         C3_interface.disconnect()
+        self.sync_b.config(state=Tkinter.DISABLED)
+        self.set_b.config(state=Tkinter.DISABLED)
         self.eeprom = None
         self.connect_b.config(command=self.connect,
                               text='Connect')
 
+    def format_eeprom(self, button_label):
+        self.format_eeprom_dialog.deactivate(button_label)
+        print button_label
+        if button_label.upper() == 'FORMAT':
+            C3_interface.clear_eeprom()
+        else:
+            raise C3_interface.EEPROMError('EEPROM not formatted')
+
+        
     def connect(self):
         self.connect_b.config(command=self.disconnect,
                               text='Disconnect')
-        C3_interface.connect(self.com)
+        self.sync_b.config(state=Tkinter.NORMAL)
+        self.set_b.config(state=Tkinter.NORMAL)
+
+        try:
+            C3_interface.connect(self.com)
+        except C3_interface.EEPROMError:
+            if self.format_eeprom_dialog.activate().upper() == "FORMAT":
+                C3_interface.connect()
+            else:
+                self.disconnect()
+                return
         self.eeprom = C3_interface.eeprom
         self.alarm_get()
         data = []
