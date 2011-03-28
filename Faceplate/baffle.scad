@@ -1480,10 +1480,6 @@ translate(v=[21.315, 0, 0])
 baffle_v();
 module border_h(){
 translate(v=[3.06, 2.782, 0])
-tran])
-baffle_v();
-module border_h(){
-translate(v=[3.06, 2.782, 0])
 translate(v=[0, -0.0862, 0])
 rotate(a=90, v=[1, 0, 0])
 color([ 0, 0.5, 0.5, 1.0 ])

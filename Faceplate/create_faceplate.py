@@ -296,7 +296,7 @@ class Image:
 def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
          faceplate=True, baffle=True, CFL=True, horizontal_baffles=False,
          vertical_baffles=False, scad=False, explode=False, pcb_outline=False,
-         reverse=True):
+         reverse=False):
     c = canvas.Canvas(filename,
 #                       pagesize=(W + 2 * XOFFSET, H + 2 * YOFFSET),
 #                       pagesize=(13*inch, 10*inch)
@@ -312,6 +312,12 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
     if pcb_outline:
         c.rect(0*inch, 0*inch, 12*inch, 9*inch)
 
+    # label font
+    textobject = c.beginText()
+    textobject.setTextOrigin(-.25*inch, 9.6*inch)
+    textobject.textOut(fontname)
+    c.drawText(textobject)
+
     # crop marks
     c.line(-1 * inch,  -.5*inch, -.55 * inch, -.5*inch)
     c.line(6. * inch, -1 * inch, 6. * inch, -.5*inch)
@@ -325,7 +331,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
     c.line(12.5*inch, -1*inch, 12.5*inch, -.55 * inch)    
     c.line(-.5*inch, 10*inch, -.5*inch, 9.55 * inch)
     c.line(12.5*inch, 10*inch, 12.5*inch, 9.55 * inch)
-    
+
     # c.getAvailableFonts()
     # c.stringWidth('Hello World')
     # c.drawString(0 * inch, 5 * inch, 'HelloWorld')

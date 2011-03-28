@@ -458,14 +458,6 @@ class Main:
         out = time.gmtime(t)
         return out
 
-    def disconnect(self):
-        C3_interface.disconnect()
-        self.sync_b.config(state=Tkinter.DISABLED)
-        self.set_b.config(state=Tkinter.DISABLED)
-        self.eeprom = None
-        self.connect_b.config(command=self.connect,
-                              text='Connect')
-
     def format_eeprom(self, button_label):
         self.format_eeprom_dialog.deactivate(button_label)
         print button_label
@@ -515,6 +507,17 @@ class Main:
         for j in range(i + 1, 30):
             self.didas[j].reset()
             self.didas[j].normal()
+
+    def disconnect(self):
+        C3_interface.disconnect()
+        self.sync_b.config(state=Tkinter.DISABLED)
+        self.set_b.config(state=Tkinter.DISABLED)
+        self.eeprom = None
+        self.connect_b.config(command=self.connect,
+                              text='Connect')
+        for j in range(30):
+            self.didas[j].reset()
+            self.didas[j].disable()
 
     def alarm_set(self):
         h, m, s = self.alarm_entry.getvalue().split(':')

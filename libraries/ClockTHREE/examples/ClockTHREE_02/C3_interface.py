@@ -96,14 +96,14 @@ class Struct:
         return Struct(**out)
 
 const = {'MAX_EEPROM_ADDR':1023}
-if os.path.exists('ClockTHREE_02.pde'):
+if os.path.exists('ClockTHREE.cpp'):
+    c_files = ['ClockTHREE_02.pde']
+    c_files.extend(glob.glob("*.cpp"))
+    c_files.extend(glob.glob("*.h"))
+else:
     c_files = ['ClockTHREE_02.pde']
     c_files.extend(glob.glob("../../*.cpp"))
     c_files.extend(glob.glob("../../*.h"))
-else:
-    c_files = ['../ClockTHREE_02.pde']
-    c_files.extend(glob.glob("../../../*.cpp"))
-    c_files.extend(glob.glob("../../../*.h"))
 for file in c_files:
     next = read_constants(file)
     for key in next:
