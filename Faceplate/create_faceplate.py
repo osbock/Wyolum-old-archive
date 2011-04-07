@@ -9,6 +9,7 @@ download fonts from:
     
 '''
 test = 1
+import string
 from numpy import *
 import PIL.Image
 from reportlab.pdfgen import canvas
@@ -34,6 +35,8 @@ STANDOFF_H = 20 * mm
 STRUT_W = .2 * inch
 MOUNT_R = STANDOFF_OR + 2 * mm
 THETA_EXTRA = arccos((STRUT_W / 2) / MOUNT_R) / DEG
+
+DEFAULT_FONT_SIZE = 30
 
 if LASER_CUT_DIR == 'Hines':
     BAFFLE_THICKNESS = .06 * inch+ .2*mm
@@ -293,10 +296,13 @@ class Image:
     def translate(self, dx, dy):
         return Image(self.filename, self.x + dx, self.y + dy, self.w, self.h)
 
-def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
+def draw(filename, data, images, fontname='Times-Roman', 
+         fontsize= DEFAULT_FONT_SIZE,
          faceplate=True, baffle=True, CFL=True, horizontal_baffles=False,
          vertical_baffles=False, scad=False, explode=False, pcb_outline=False,
-         reverse=False):
+         reverse=False,
+         case=string.upper,
+         ):
     c = canvas.Canvas(filename,
 #                       pagesize=(W + 2 * XOFFSET, H + 2 * YOFFSET),
 #                       pagesize=(13*inch, 10*inch)
@@ -603,6 +609,7 @@ def draw(filename, data, images, fontname='Times-Roman', fontsize=30,
             r = 1 /64. * inch
             c.circle(x, y, r, fill=True)
 
+    data = [[case(char) for char in line] for line in data]
     t=Table(data, N_COL*[dx], N_ROW*[dy])
     t.setStyle(TableStyle(
             [('FONTNAME', (0, 0), (N_COL - 1, N_ROW - 1), fontname),
@@ -977,6 +984,7 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
 
     c.showPage()
     c.save()
+
     print "Wrote %s." % filename
 '''"ITSXATENRQUARTER"
   "TWENTYFIVEDPASTO"
@@ -1017,6 +1025,10 @@ example_data = [
         (' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
         (' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
         ]
+
+# make lower case hack!
+# data = [[c.lower() for c in line] for line in data]
+# example_data = [[c.lower() for c in line] for line in example_data]
 
 bangla = [chr(c % 128) for c in range(16*12)]
 bangla = reshape(bangla, (12, 16))
@@ -1066,10 +1078,26 @@ def main(fontnames):
                 if (fontname.endswith('.ttf') or
                     fontname.endswith('.odf')):
                     break
-                # add_font(fontname)
-                # draw("junk_%s.pdf", data, images, fontname='OfficinaSansStd-Bold', faceplate=True, baffle=False)
-                draw("faceplate_%s.pdf" % fontname, data, images, fontname=fontname, faceplate=True, baffle=False)
-                draw("faceplate_%s_example.pdf" % fontname, example_data, [], fontname=fontname, faceplate=True, baffle=False, CFL=False)
+                cases = {'Upper':string.upper,
+                         'Lower':string.lower}
+                data_dict = {'':data, 'example':example_data}
+                for reverse in [True, False]:
+                    for data_name in data_dict:
+                        for case in cases:
+                            if reverse:
+                                faceplate_filename = "Faceplates/%s/faceplate%s%sR.pdf" % (case, 
+                                                                                           fontname,
+                                                                                           data_name)
+                            else:
+                                faceplate_filename = "Faceplates/%s/faceplate%s%s.pdf" % (case, 
+                                                                                            fontname, 
+                                                                                            data_name)
+                            if reverse and data_name == 'example':
+                                continue
+                            draw(faceplate_filename,
+                                 data_dict[data_name], images, fontname=fontname, 
+                                 faceplate=True, baffle=False, case=cases[case],
+                                 reverse=reverse)
             except Exception, e:
                 print 'problem.  skipping %s' % fontname, e
                 raise
