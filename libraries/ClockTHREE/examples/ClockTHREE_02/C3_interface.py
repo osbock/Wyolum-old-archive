@@ -115,7 +115,7 @@ def set_gmt_offset(offset):
     gmt_offset = offset
 
 def getSerialports():
-    if sys.platform.startswith('win'):
+    if sys.platform.startswith('win'): # windows
         out = []
         import scanwin32
         for order, port, desc, hwid in sorted(scanwin32.comports()):
@@ -128,7 +128,10 @@ def getSerialports():
             else:
                 print "Ready"
                 out.append(port)
-    else: # linux
+    elif sys.platform.startswith('darwin'): # mac
+        out = glob.glob('/dev/tty.usb*')
+        out.sort()
+    else: # assume linux 
         out = glob.glob('/dev/ttyUSB*')
         out.sort()
     return out
