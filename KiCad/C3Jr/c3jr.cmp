@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 04/24/11 20:08:03
+Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 04/24/11 20:44:22
 
 BeginCmp
 TimeStamp = /4D28241A/4D282455;
@@ -67,28 +67,28 @@ BeginCmp
 TimeStamp = /4C134896/4DB3F5FC;
 Reference = D1;
 ValeurCmp = LED;
-IdModule  = diode_do35;
+IdModule  = led_5mm_clear;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C134896/4DB3F5F7;
 Reference = D2;
 ValeurCmp = LED;
-IdModule  = led_5mm_blue;
+IdModule  = led_5mm_clear;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C134896/4DB3F5F0;
 Reference = D3;
 ValeurCmp = LED;
-IdModule  = diode_do41;
+IdModule  = led_5mm_clear;
 EndCmp
 
 BeginCmp
 TimeStamp = /4C134896/4DB3F5EC;
 Reference = D4;
 ValeurCmp = LED;
-IdModule  = led_5mm_blue;
+IdModule  = led_5mm_clear;
 EndCmp
 
 BeginCmp

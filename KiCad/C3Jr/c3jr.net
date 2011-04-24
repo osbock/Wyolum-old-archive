@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  04/24/11 20:08:03
+# EESchema Netlist Version 1.1 created  04/24/11 20:44:22
 (
  ( /4D28241A/4D282455 BAFFLE BF1 BAFFLE
  )
@@ -40,19 +40,19 @@
   ( 3 N-000100 )
   ( 4 N-000083 )
  )
- ( /4C134896/4DB3F5FC diode_do35 D1 LED
+ ( /4C134896/4DB3F5FC led_5mm_clear D1 LED
   ( 1 N-000126 )
   ( 2 /c3jr-LED/R01 )
  )
- ( /4C134896/4DB3F5F7 led_5mm_blue D2 LED
+ ( /4C134896/4DB3F5F7 led_5mm_clear D2 LED
   ( 1 N-000117 )
   ( 2 /c3jr-LED/R01 )
  )
- ( /4C134896/4DB3F5F0 diode_do41 D3 LED
+ ( /4C134896/4DB3F5F0 led_5mm_clear D3 LED
   ( 1 N-000125 )
   ( 2 /c3jr-LED/R01 )
  )
- ( /4C134896/4DB3F5EC led_5mm_blue D4 LED
+ ( /4C134896/4DB3F5EC led_5mm_clear D4 LED
   ( 1 N-000127 )
   ( 2 /c3jr-LED/R01 )
  )
