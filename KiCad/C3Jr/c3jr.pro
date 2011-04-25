@@ -1,4 +1,4 @@
-update=04/24/11 20:54:04
+update=04/25/11 15:56:09
 last_client=pcbnew
 [cvpcb]
 version=1
@@ -37,16 +37,22 @@ offY_E=0
 RptD_X=0
 RptD_Y=100
 RptLab=1
+SimCmd=
+UseNetN=0
 LabSize=40
+PrintMonochrome=1
+ShowSheetReferenceAndTitleBlock=1
 [eeschema/libraries]
-LibName1=libs/clock3
-LibName2=libs/power
+LibName1=libs\\clock3
+LibName2=libs\\power
+LibName3=c3jr-cache
 [pcbnew]
 version=1
 PadDrlX=320
 PadDimH=1000
 PadDimV=1000
 BoardThickness=630
+SgPcb45=1
 TxtPcbV=800
 TxtPcbH=600
 TxtModV=600

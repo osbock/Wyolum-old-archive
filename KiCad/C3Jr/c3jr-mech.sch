@@ -1,11 +1,11 @@
-EESchema Schematic File Version 2  date 04/24/11 20:08:18
+EESchema Schematic File Version 2  date 04/25/11 15:56:13
 LIBS:clock3
 LIBS:power
 LIBS:c3jr-cache
-EELAYER 25  0
+LIBS:c3jr-cache
+EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
-encoding utf-8
 Sheet 3 4
 Title "ClockTHREE Junior aka C3Jr"
 Date "24 apr 2011"
