@@ -1,13 +1,14 @@
-EESchema Schematic File Version 2  date 04/25/11 12:26:17
+EESchema Schematic File Version 2  date 04/25/11 17:02:13
 LIBS:clock3
 LIBS:power
+LIBS:c3jr-cache
 LIBS:c3jr-cache
 EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 4 4
 Title "ClockTHREE Junior aka C3Jr"
-Date "24 apr 2011"
+Date "25 apr 2011"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -205,18 +206,6 @@ Wire Wire Line
 	950  5850 950  5650
 Wire Wire Line
 	950  5650 1000 5650
-Connection ~ 8900 3650
-Wire Wire Line
-	8900 3650 8950 3650
-Connection ~ 8900 3450
-Wire Wire Line
-	8900 3450 8950 3450
-Connection ~ 8900 3250
-Wire Wire Line
-	8900 3250 8950 3250
-Connection ~ 8900 3050
-Wire Wire Line
-	8900 3050 8950 3050
 Connection ~ 8900 2850
 Wire Wire Line
 	8900 2850 8950 2850
@@ -338,18 +327,6 @@ Connection ~ 3450 4200
 Wire Wire Line
 	8900 2750 8950 2750
 Connection ~ 8900 2750
-Wire Wire Line
-	8900 2950 8950 2950
-Connection ~ 8900 2950
-Wire Wire Line
-	8900 3150 8950 3150
-Connection ~ 8900 3150
-Wire Wire Line
-	8900 3350 8950 3350
-Connection ~ 8900 3350
-Wire Wire Line
-	8900 3550 8950 3550
-Connection ~ 8900 3550
 Wire Wire Line
 	1000 6000 950  6000
 Wire Wire Line
@@ -523,7 +500,7 @@ Wire Wire Line
 Text Label 1700 1100 0    40   ~ 0
 VCC
 Text Notes 8750 2700 2    40   ~ 0
-Mounting holes for C3\n14 holes around the board\nwith 3mm mounting hole
+Mounting holes for C3\n6 holes around the board\nwith 3mm mounting hole
 Text Notes 1800 2950 0    40   ~ 0
 Mounting Holes for rtcBoB
 NoConn ~ 1700 3050
@@ -824,86 +801,6 @@ F 2 "PIN_STRIP_4-90" H 2400 1250 60  0001 C CNN
 $EndComp
 Text Notes 5400 7650 0    60   ~ 0
 PROTO AREA
-$Comp
-L CONN_1 P23
-U 1 1 4C2B10A0
-P 9100 3650
-F 0 "P23" H 9180 3650 40  0000 L CNN
-F 1 "CONN_1" H 9100 3705 30  0001 C CNN
-F 2 "vite_4mm" H 9100 3650 60  0001 C CNN
-	1    9100 3650
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_1 P22
-U 1 1 4C2B109E
-P 9100 3550
-F 0 "P22" H 9180 3550 40  0000 L CNN
-F 1 "CONN_1" H 9100 3605 30  0001 C CNN
-F 2 "vite_4mm" H 9100 3550 60  0001 C CNN
-	1    9100 3550
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_1 P21
-U 1 1 4C2B109C
-P 9100 3450
-F 0 "P21" H 9180 3450 40  0000 L CNN
-F 1 "CONN_1" H 9100 3505 30  0001 C CNN
-F 2 "vite_4mm" H 9100 3450 60  0001 C CNN
-	1    9100 3450
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_1 P20
-U 1 1 4C2B1099
-P 9100 3350
-F 0 "P20" H 9180 3350 40  0000 L CNN
-F 1 "CONN_1" H 9100 3405 30  0001 C CNN
-F 2 "vite_4mm" H 9100 3350 60  0001 C CNN
-	1    9100 3350
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_1 P19
-U 1 1 4C2B1097
-P 9100 3250
-F 0 "P19" H 9180 3250 40  0000 L CNN
-F 1 "CONN_1" H 9100 3305 30  0001 C CNN
-F 2 "vite_4mm" H 9100 3250 60  0001 C CNN
-	1    9100 3250
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_1 P18
-U 1 1 4C2B1095
-P 9100 3150
-F 0 "P18" H 9180 3150 40  0000 L CNN
-F 1 "CONN_1" H 9100 3205 30  0001 C CNN
-F 2 "vite_4mm" H 9100 3150 60  0001 C CNN
-	1    9100 3150
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_1 P17
-U 1 1 4C2B1092
-P 9100 3050
-F 0 "P17" H 9180 3050 40  0000 L CNN
-F 1 "CONN_1" H 9100 3105 30  0001 C CNN
-F 2 "vite_4mm" H 9100 3050 60  0001 C CNN
-	1    9100 3050
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_1 P16
-U 1 1 4C2B1090
-P 9100 2950
-F 0 "P16" H 9180 2950 40  0000 L CNN
-F 1 "CONN_1" H 9100 3005 30  0001 C CNN
-F 2 "vite_4mm" H 9100 2950 60  0001 C CNN
-	1    9100 2950
-	1    0    0    -1  
-$EndComp
 $Comp
 L CONN_1 P15
 U 1 1 4C2B108C

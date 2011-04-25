@@ -1,11 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 04/25/11 01:46:42
-
-BeginCmp
-TimeStamp = /4D28241A/4D282455;
-Reference = BF1;
-ValeurCmp = BAFFLE;
-IdModule  = BAFFLE;
-EndCmp
+Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 04/25/11 16:52:28
 
 BeginCmp
 TimeStamp = /4C1345CB;
@@ -981,31 +974,10 @@ IdModule  = led_5mm_blue;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D28241A/4D28255F;
-Reference = DF1;
-ValeurCmp = DIFFUSER;
-IdModule  = DIFFUSER;
-EndCmp
-
-BeginCmp
 TimeStamp = /4C2C6A39;
 Reference = DIL-U1;
 ValeurCmp = STP16DP05;
 IdModule  = SCK-24_600_ELL;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D28241A/4D2828D4;
-Reference = FC1;
-ValeurCmp = FRONT_COVER;
-IdModule  = FrontCover;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D28241A/4D2828B9;
-Reference = FP1;
-ValeurCmp = FACE_PLATE;
-IdModule  = FacePlate;
 EndCmp
 
 BeginCmp
@@ -1027,104 +999,6 @@ TimeStamp = /4C134896/4D04EA8D;
 Reference = K2;
 ValeurCmp = LED_ENABLE;
 IdModule  = pin_strip_3;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D28241A/4D283F93;
-Reference = MP1;
-ValeurCmp = SCREW;
-IdModule  = MtgPost;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D28241A/4D283C9E;
-Reference = MT1;
-ValeurCmp = SCREW;
-IdModule  = VITE_CSK_3MM;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D28241A/4D283CB1;
-Reference = MT2;
-ValeurCmp = SCREW;
-IdModule  = VITE_CSK_3MM;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D28241A/4D286CF3;
-Reference = MT3;
-ValeurCmp = SCREW;
-IdModule  = vite_csk_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D28241A/4D283CE6;
-Reference = MT4;
-ValeurCmp = SCREW;
-IdModule  = VITE_CSK_3MM;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D28241A/4D283CDD;
-Reference = MT5;
-ValeurCmp = SCREW;
-IdModule  = VITE_CSK_3MM;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D28241A/4D286CF6;
-Reference = MT6;
-ValeurCmp = SCREW;
-IdModule  = vite_csk_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D28241A/4D283CC9;
-Reference = MT7;
-ValeurCmp = SCREW;
-IdModule  = VITE_CSK_3MM;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D28241A/4D283CC6;
-Reference = MT8;
-ValeurCmp = SCREW;
-IdModule  = VITE_CSK_3MM;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D28241A/4D286CFA;
-Reference = MT10;
-ValeurCmp = SCREW;
-IdModule  = vite_csk_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D28241A/4D283CC3;
-Reference = MT11;
-ValeurCmp = SCREW;
-IdModule  = VITE_CSK_3MM;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D28241A/4D283CBF;
-Reference = MT12;
-ValeurCmp = SCREW;
-IdModule  = VITE_CSK_3MM;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D28241A/4D286CFF;
-Reference = MT13;
-ValeurCmp = SCREW;
-IdModule  = vite_csk_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D28241A/4D283CB9;
-Reference = MT14;
-ValeurCmp = SCREW;
-IdModule  = VITE_CSK_3MM;
 EndCmp
 
 BeginCmp
