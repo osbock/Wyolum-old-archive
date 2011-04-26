@@ -1,4 +1,4 @@
-update=04/25/11 18:36:26
+update=04/26/11 18:57:24
 last_client=kicad
 [cvpcb]
 version=1
@@ -48,16 +48,16 @@ LibName3=c3jr-cache
 version=1
 PadDrlX=320
 PadDimH=1000
-PadDimV=1000
+PadDimV=500
 BoardThickness=630
 SgPcb45=1
-TxtPcbV=800
+TxtPcbV=600
 TxtPcbH=600
 TxtModV=600
 TxtModH=600
 TxtModW=120
 VEgarde=100
-DrawLar=3000
+DrawLar=150
 EdgeLar=150
 TxtLar=120
 MSegLar=150
