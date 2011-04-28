@@ -1,10 +1,12 @@
-update=04/26/11 18:57:24
-last_client=kicad
+update=4/28/2011 7:22:25 AM
+last_client=pcbnew
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
@@ -40,10 +42,6 @@ UseNetN=0
 LabSize=40
 PrintMonochrome=1
 ShowSheetReferenceAndTitleBlock=1
-[eeschema/libraries]
-LibName1=libs\\clock3
-LibName2=libs\\power
-LibName3=c3jr-cache
 [pcbnew]
 version=1
 PadDrlX=320
@@ -65,5 +63,3 @@ LastNetListRead=c3jr.net
 [pcbnew/libraries]
 LibDir=../../../../../../../Downloads/KiCAD/Libs
 LibName1=libs/clock3_parts
-[general]
-version=1
