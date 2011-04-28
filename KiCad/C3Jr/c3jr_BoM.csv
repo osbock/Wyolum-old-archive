@@ -151,14 +151,6 @@ P12	V_OUT	pin_strip_3
 P13	ISP	PIN_STRIP_3X2								
 P14	CONN_1	vite_4mm								
 P15	CONN_1	vite_4mm								
-P16	CONN_1	vite_4mm								
-P17	CONN_1	vite_4mm								
-P18	CONN_1	vite_4mm								
-P19	CONN_1	vite_4mm								
-P20	CONN_1	vite_4mm								
-P21	CONN_1	vite_4mm								
-P22	CONN_1	vite_4mm								
-P23	CONN_1	vite_4mm								
 P24	DIL6	PROTO-6								
 P25	DIL6	PROTO-6								
 P26	DIL6	PROTO-6								
@@ -182,6 +174,8 @@ P49	CONN_1	vite_3mm
 P50	CONN_1	vite_3mm								
 P51	CONN_1	vite_3mm								
 P52	CONN_1	vite_3mm								
+P53	CONN_1	vite_4mm								
+P54	CONN_1	vite_4mm								
 Q1	2N5401	to92_2N5401								
 Q2	2N5401	to92_2N5401								
 Q3	2N5401	to92_2N5401								
@@ -226,8 +220,10 @@ R25	1k	RC03
 R26	1k	RC03								
 R30	100E	RC03								
 R31	10K	RC03								
-R32	LDR	pin_strip_2								
+R32	LDR									
 R33	680E	RC03								
+R34	2k									
+R35	680E									
 rowBoB1	CONN_1	vite_3mm								
 SP1	SPEAKER	SPEAKER	102-1169-ND							
 SW1	INC	SW_PB_V	P10884S-ND							
@@ -237,4 +233,5 @@ SW4	RST	SW_PB_V	P10884S-ND
 SW5	ENTER	SW_PB_V	P10884S-ND							
 U3	ATMEGA8-P	dil_28-300_socket								
 U4	74LS154	DIP-24__600_ELL	296-8757-5-ND							
+U5	STP8DP05									
 X1	16MHz	XTAL	490-1214-ND							

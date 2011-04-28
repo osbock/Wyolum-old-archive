@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 04/25/11 18:36:08
+EESchema Schematic File Version 2  date 04/28/11 19:41:19
 LIBS:clock3
 LIBS:power
 LIBS:c3jr-cache
@@ -8,7 +8,7 @@ EELAYER END
 $Descr A4 11700 8267
 Sheet 4 4
 Title "ClockTHREE Junior aka C3Jr"
-Date "25 apr 2011"
+Date "28 apr 2011"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -16,6 +16,9 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 Comment4 ""
 $EndDescr
+Connection ~ 8900 3050
+Wire Wire Line
+	8950 3050 8900 3050
 Wire Wire Line
 	3050 5150 3050 5300
 Wire Wire Line
@@ -497,10 +500,33 @@ Wire Notes Line
 	2850 3350 750  3350
 Wire Wire Line
 	3050 3900 3050 4200
+Wire Wire Line
+	8950 2950 8900 2950
+Connection ~ 8900 2950
+$Comp
+L CONN_1 P54
+U 1 1 4DB9703E
+P 9100 3050
+F 0 "P54" H 9180 3050 40  0000 L CNN
+F 1 "CONN_1" H 9100 3105 30  0001 C CNN
+F 2 "vite_4mm" H 9100 3050 60  0001 C CNN
+	1    9100 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 P53
+U 1 1 4DB97039
+P 9100 2950
+F 0 "P53" H 9180 2950 40  0000 L CNN
+F 1 "CONN_1" H 9100 3005 30  0001 C CNN
+F 2 "vite_4mm" H 9100 2950 60  0001 C CNN
+	1    9100 2950
+	1    0    0    -1  
+$EndComp
 Text Label 1700 1100 0    40   ~ 0
 VCC
-Text Notes 8750 2700 2    40   ~ 0
-Mounting holes for C3\n6 holes around the board\nwith 3mm mounting hole
+Text Notes 7800 2600 2    40   ~ 0
+Mounting holes for C3Jr\n8 holes around the board\nwith 3mm mounting hole\n4 holes at corners for Housing\n4 holes near LEDs for Baffle
 Text Notes 1800 2950 0    40   ~ 0
 Mounting Holes for rtcBoB
 NoConn ~ 1700 3050
@@ -594,19 +620,19 @@ F 2 "pin_strip_4" H 2050 2400 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR015
+L GND #PWR016
 U 1 1 4C9A49B0
 P 3350 7250
-F 0 "#PWR015" H 3350 7250 30  0001 C CNN
+F 0 "#PWR016" H 3350 7250 30  0001 C CNN
 F 1 "GND" H 3350 7180 30  0001 C CNN
 	1    3350 7250
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR016
+L VCC #PWR017
 U 1 1 4C9A4991
 P 4150 5750
-F 0 "#PWR016" H 4150 5850 30  0001 C CNN
+F 0 "#PWR017" H 4150 5850 30  0001 C CNN
 F 1 "VCC" H 4150 5850 30  0000 C CNN
 	1    4150 5750
 	1    0    0    -1  
@@ -888,19 +914,19 @@ F 2 "pin_strip_3" H 8050 1400 60  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR017
+L VCC #PWR018
 U 1 1 4C109AAB
 P 8700 1150
-F 0 "#PWR017" H 8700 1250 30  0001 C CNN
+F 0 "#PWR018" H 8700 1250 30  0001 C CNN
 F 1 "VCC" H 8700 1250 30  0000 C CNN
 	1    8700 1150
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR018
+L GND #PWR019
 U 1 1 4C109AAA
 P 8750 2350
-F 0 "#PWR018" H 8750 2350 30  0001 C CNN
+F 0 "#PWR019" H 8750 2350 30  0001 C CNN
 F 1 "GND" H 8750 2280 30  0001 C CNN
 	1    8750 2350
 	1    0    0    -1  
@@ -970,10 +996,10 @@ $EndComp
 Text Label 8450 2050 0    47   ~ 0
 USB5V
 $Comp
-L VDD #PWR019
+L VDD #PWR020
 U 1 1 4C109AA4
 P 8900 1150
-F 0 "#PWR019" H 8900 1250 30  0001 C CNN
+F 0 "#PWR020" H 8900 1250 30  0001 C CNN
 F 1 "VDD" H 8900 1260 30  0000 C CNN
 	1    8900 1150
 	1    0    0    -1  
@@ -1013,19 +1039,19 @@ F 2 "C2" H 2100 4450 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VSS #PWR020
+L VSS #PWR021
 U 1 1 4B3F12CE
 P 3050 5300
-F 0 "#PWR020" H 3050 5300 30  0001 C CNN
+F 0 "#PWR021" H 3050 5300 30  0001 C CNN
 F 1 "VSS" H 3150 5350 30  0000 C CNN
 	1    3050 5300
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR021
+L GND #PWR022
 U 1 1 4B3F12CB
 P 2600 5300
-F 0 "#PWR021" H 2600 5300 30  0001 C CNN
+F 0 "#PWR022" H 2600 5300 30  0001 C CNN
 F 1 "GND" H 2600 5230 30  0001 C CNN
 F 4 "GND" H 2500 5350 60  0000 C CNN "Field1"
 	1    2600 5300
