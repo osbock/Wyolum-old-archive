@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  01/10/11 18:32:10
+PCBNEW-LibDoc----V1  04/28/11 18:36:14
 #
 $MODULE Volt Reg 78xx
 Li Volt Reg 78xx
@@ -260,6 +260,18 @@ $EndMODULE
 $MODULE CP_5x11mm
 Li CP_5x11mm
 Cd Capacitor, pol, cyl 5x11mm
+$EndMODULE
+#
+$MODULE Pot-Var2
+Li Pot-Var2
+Cd Resistance variable / Potentiometre
+Kw R
+$EndMODULE
+#
+$MODULE dil_16-300_socket
+Li dil_16-300_socket
+Cd IC, DIL16 x 0,3", with socket
+Kw DIL
 $EndMODULE
 #
 $EndLIBDOC

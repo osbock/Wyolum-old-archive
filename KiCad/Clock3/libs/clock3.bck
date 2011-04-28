@@ -1,8 +1,13 @@
-EESchema-DOCLIB  Version 2.0  Date: 01/10/11 17:33:43
+EESchema-DOCLIB  Version 2.0  Date: 04/28/11 18:05:43
 #
 $CMP CONN_8
 D Symbole general de connecteur
 K CONN
+$ENDCMP
+#
+$CMP SW_PUSH
+D Swtch Tactile Right_Angle Push_Button
+F D:/Users/Anool/Documents/Arduino/Project-Clock3/Data/PB-Rt Ang-ATK0000CE32.pdf
 $ENDCMP
 #
 #End Doc Library
