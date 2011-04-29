@@ -180,7 +180,8 @@ polygon(points=[''' % (thickness / cm)
 
 def draw():
     path = MyPath()
-    l1 = Line((4.5 * inch, 3 * inch), (5 * inch, 0 * inch))
+    peak = (4.5 * inch, 3 * inch)
+    l1 = Line(peak, (5 * inch, 0 * inch))
     l2 = Line((0, .5 * inch), (10*inch, .5*inch))
     p = l1.perp(l1.intersect(l2))
     d = p.p1 - p.p2
