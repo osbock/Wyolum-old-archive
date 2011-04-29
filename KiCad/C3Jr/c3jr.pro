@@ -1,5 +1,5 @@
-update=04/29/11 20:07:02
-last_client=kicad
+update=04/29/11 20:20:01
+last_client=pcbnew
 [cvpcb]
 version=1
 NetIExt=net
@@ -44,6 +44,8 @@ ShowSheetReferenceAndTitleBlock=1
 LibName1=libs\\clock3
 LibName2=libs\\power
 LibName3=c3jr-cache
+[general]
+version=1
 [pcbnew]
 version=1
 PadDrlX=400
@@ -65,5 +67,3 @@ LastNetListRead=c3jr.net
 [pcbnew/libraries]
 LibDir=../../../../../../../Downloads/KiCAD/Libs
 LibName1=libs/clock3_parts
-[general]
-version=1
