@@ -1,4 +1,4 @@
-update=04/28/11 19:47:08
+update=04/29/11 20:07:02
 last_client=kicad
 [cvpcb]
 version=1
@@ -40,11 +40,15 @@ UseNetN=0
 LabSize=40
 PrintMonochrome=1
 ShowSheetReferenceAndTitleBlock=1
+[eeschema/libraries]
+LibName1=libs\\clock3
+LibName2=libs\\power
+LibName3=c3jr-cache
 [pcbnew]
 version=1
-PadDrlX=320
-PadDimH=1000
-PadDimV=500
+PadDrlX=400
+PadDimH=500
+PadDimV=900
 BoardThickness=630
 SgPcb45=1
 TxtPcbV=600

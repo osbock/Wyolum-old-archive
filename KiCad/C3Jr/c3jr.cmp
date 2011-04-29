@@ -1,4 +1,11 @@
-Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 04/28/11 19:20:36
+Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 04/29/11 19:37:04
+
+BeginCmp
+TimeStamp = /4B3F1092/4DBAC155;
+Reference = BT1;
+ValeurCmp = BATT_RTC;
+IdModule  = CR2032;
+EndCmp
 
 BeginCmp
 TimeStamp = /4C1345CB;
@@ -31,6 +38,13 @@ EndCmp
 BeginCmp
 TimeStamp = /4B3F1092/4B3F12D0;
 Reference = C9;
+ValeurCmp = 100n;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B3F1092/4DBAC168;
+Reference = C10;
 ValeurCmp = 100n;
 IdModule  = C2;
 EndCmp
@@ -953,13 +967,6 @@ IdModule  = led_5mm_clear;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D25BDEF;
-Reference = D257;
-ValeurCmp = 1N4148;
-IdModule  = diode_do35;
-EndCmp
-
-BeginCmp
 TimeStamp = /4B077B46;
 Reference = D258;
 ValeurCmp = DBG;
@@ -1576,6 +1583,27 @@ IdModule  = RC03;
 EndCmp
 
 BeginCmp
+TimeStamp = /4B3F1092/4DBAC17C;
+Reference = R36;
+ValeurCmp = 10k;
+IdModule  = RC03;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B3F1092/4DBAC184;
+Reference = R37;
+ValeurCmp = 10k;
+IdModule  = RC03;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B3F1092/4DBAC191;
+Reference = R38;
+ValeurCmp = 10k;
+IdModule  = RC03;
+EndCmp
+
+BeginCmp
 TimeStamp = /4D2315D0;
 Reference = rowBoB1;
 ValeurCmp = CONN_1;
@@ -1643,6 +1671,13 @@ TimeStamp = /4DB95F47;
 Reference = U5;
 ValeurCmp = STP8DP05;
 IdModule  = dil_16-300_socket;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B3F1092/4DBAC142;
+Reference = U6;
+ValeurCmp = DS3231N;
+IdModule  = DS3231;
 EndCmp
 
 BeginCmp

@@ -1,14 +1,13 @@
-EESchema Schematic File Version 2  date 04/28/11 19:41:19
+EESchema Schematic File Version 2  date 04/29/11 20:05:16
 LIBS:clock3
 LIBS:power
-LIBS:c3jr-cache
 LIBS:c3jr-cache
 EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 1 4
 Title "ClockTHREE Junior aka C3Jr"
-Date "28 apr 2011"
+Date "29 apr 2011"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -16,12 +15,17 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 Comment4 ""
 $EndDescr
+Wire Wire Line
+	4175 6250 4175 3450
+Text Label 3500 5550 0    40   ~ 0
+SCK-CLK
 $Comp
 L R R32
 U 1 1 4DB9676E
 P 5575 7200
 F 0 "R32" V 5655 7200 50  0000 C CNN
 F 1 "LDR" V 5575 7200 50  0000 C CNN
+F 2 "pin_strip_2" H 5575 7200 60  0001 C CNN
 	1    5575 7200
 	1    0    0    -1  
 $EndComp
@@ -50,19 +54,12 @@ Wire Wire Line
 	6500 900  5125 900 
 Wire Wire Line
 	6500 700  5125 700 
-Connection ~ 3500 5550
-Wire Wire Line
-	3500 5550 3500 5850
-Wire Wire Line
-	3500 5850 3675 5850
 Connection ~ 4175 3450
-Wire Wire Line
-	4175 6250 4175 3450
 Wire Wire Line
 	2250 1550 2250 800 
 Connection ~ 800  800 
 Wire Wire Line
-	850  800  800  800 
+	800  800  850  800 
 Connection ~ 10075 2075
 Connection ~ 10075 2175
 Wire Wire Line
@@ -213,7 +210,7 @@ Wire Wire Line
 Wire Wire Line
 	600  3450 600  2500
 Wire Wire Line
-	800  1200 850  1200
+	850  1200 800  1200
 Wire Wire Line
 	1450 1200 3800 1200
 Connection ~ 3400 600 
@@ -243,7 +240,7 @@ Wire Wire Line
 Wire Wire Line
 	1850 1550 1850 1200
 Wire Wire Line
-	2050 2100 2050 2050
+	2050 2050 2050 2100
 Wire Wire Line
 	1850 2050 1850 2200
 Connection ~ 2050 1000
@@ -428,9 +425,6 @@ Connection ~ 2250 800
 Wire Wire Line
 	3350 5450 3500 5450
 Wire Wire Line
-	4075 5850 4175 5850
-Connection ~ 4175 5850
-Wire Wire Line
 	3350 3550 5575 3550
 Wire Wire Line
 	5575 3550 5575 5150
@@ -462,6 +456,7 @@ U 1 1 4DB9625B
 P 6175 1500
 F 0 "R35" V 6255 1500 50  0000 C CNN
 F 1 "680E" V 6175 1500 50  0000 C CNN
+F 2 "RC03" H 6175 1500 60  0001 C CNN
 	1    6175 1500
 	0    1    1    0   
 $EndComp
@@ -471,6 +466,7 @@ U 1 1 4DB961F4
 P 5625 1500
 F 0 "R34" V 5700 1625 50  0000 C CNN
 F 1 "2k" V 5525 1500 50  0000 C CNN
+F 2 "Pot-Var2" H 5625 1500 60  0001 C CNN
 	1    5625 1500
 	0    1    1    0   
 $EndComp
@@ -516,6 +512,7 @@ U 1 1 4DB95F47
 P 7150 1500
 F 0 "U5" H 6850 1350 60  0000 C CNN
 F 1 "STP8DP05" H 7700 1400 60  0000 C CNN
+F 2 "dil_16-300_socket" H 7150 1500 60  0001 C CNN
 	1    7150 1500
 	1    0    0    -1  
 $EndComp
@@ -567,16 +564,6 @@ U 4D28241A
 F0 "c3jr-mech" 60
 F1 "c3jr-mech.sch" 60
 $EndSheet
-$Comp
-L DIODE D257
-U 1 1 4D25BDEF
-P 3875 5850
-F 0 "D257" H 3875 5950 40  0000 C CNN
-F 1 "1N4148" H 3875 5750 40  0000 C CNN
-F 2 "diode_do35" H 3875 5850 60  0001 C CNN
-	1    3875 5850
-	1    0    0    -1  
-$EndComp
 Text Notes 5850 2750 0    40   ~ 0
 Mounting Hole for rowBoB
 NoConn ~ 6225 2650
@@ -1068,8 +1055,6 @@ Text Label 3500 4250 0    39   ~ 0
 TXD
 Text Label 3500 4150 0    39   ~ 0
 RXD
-Text Label 3500 5550 0    40   ~ 0
-SCK-CLK
 $Sheet
 S 10200 1675 850  1400
 U 4B3F1092

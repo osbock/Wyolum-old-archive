@@ -1,9 +1,11 @@
 ref	value	footprint	Field1	Field2	Field3	Field4	Field5	Field6	Field7	Field8
+BT1	BATT_RTC									
 C3	100n	C2								
 C6	100n	C2								
 C7	100n	C2								
 C8	100u	CP_5x11mm								
 C9	100n	C2								
+C10	100n	C2								
 CD1	CDOT1	pin_strip_4								
 CD2	CDOT2	pin_strip_4								
 CD3	CDOT3	pin_strip_4								
@@ -135,7 +137,6 @@ D125	LED
 D126	LED									
 D127	LED									
 D128	LED									
-D257	1N4148	diode_do35								
 D258	DBG	led_5mm_blue								
 D260	PWR	led_5mm_blue								
 DIL-U1	STP16DP05	SCK-24_600_ELL	497-5975-1-ND							
@@ -224,6 +225,9 @@ R32	LDR
 R33	680E	RC03								
 R34	2k									
 R35	680E									
+R36	10k	RC03								
+R37	10k	RC03								
+R38	10k	RC03								
 rowBoB1	CONN_1	vite_3mm								
 SP1	SPEAKER	SPEAKER	102-1169-ND							
 SW1	INC	SW_PB_V	P10884S-ND							
@@ -234,4 +238,5 @@ SW5	ENTER	SW_PB_V	P10884S-ND
 U3	ATMEGA8-P	dil_28-300_socket								
 U4	74LS154	DIP-24__600_ELL	296-8757-5-ND							
 U5	STP8DP05									
+U6	DS3231N									
 X1	16MHz	XTAL	490-1214-ND							
