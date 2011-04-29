@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: 04/28/11 18:17:32
+EESchema-LIBRARY Version 2.3  Date: 04/29/11 19:39:01
 #
 # 74LS154
 #
@@ -307,6 +307,21 @@ P 2 0 1 0  0 0  50 0 N
 P 2 0 1 6  0 50  0 -50 N
 X + 1 -250 0 150 R 50 50 1 1 P
 X - 2 200 0 150 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Batt_RTC
+#
+DEF Batt_RTC BT 0 0 Y Y 1 F N
+F0 "BT" 0 200 50 H V C CNN
+F1 "Batt_RTC" 0 -190 50 H V C CNN
+DRAW
+P 2 0 1 0  -50 0  -100 0 N
+P 2 0 1 6  -50 90  -50 -89 N
+P 2 0 1 0  0 0  50 0 N
+P 2 0 1 6  0 50  0 -50 N
+X + + -250 0 150 R 50 50 1 1 P
+X - - 200 0 150 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #

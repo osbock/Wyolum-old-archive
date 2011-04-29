@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  04/28/11 18:36:14
+PCBNEW-LibDoc----V1  04/29/11 19:36:15
 #
 $MODULE Volt Reg 78xx
 Li Volt Reg 78xx
@@ -272,6 +272,11 @@ $MODULE dil_16-300_socket
 Li dil_16-300_socket
 Cd IC, DIL16 x 0,3", with socket
 Kw DIL
+$EndMODULE
+#
+$MODULE CR2032
+Li CR2032
+Cd CR2032
 $EndMODULE
 #
 $EndLIBDOC
