@@ -1,13 +1,15 @@
-EESchema Schematic File Version 2  date 04/29/11 19:39:27
+EESchema Schematic File Version 2  date 05/01/11 14:30:20
 LIBS:clock3
 LIBS:power
 LIBS:c3jr-cache
-EELAYER 24  0
+LIBS:c3jr-cache
+EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
+encoding utf-8
 Sheet 1 4
 Title "ClockTHREE Junior aka C3Jr"
-Date "29 apr 2011"
+Date "1 may 2011"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -16,19 +18,14 @@ Comment3 "part of the project inspired from : http://www.evilmadscientist.com/ar
 Comment4 ""
 $EndDescr
 Wire Wire Line
+	700  4700 700  4800
+Wire Wire Line
+	700  4800 1400 4800
+Connection ~ 1400 4150
+Wire Wire Line
+	1400 4300 1400 4150
+Wire Wire Line
 	4175 6250 4175 3450
-Text Label 3500 5550 0    40   ~ 0
-SCK-CLK
-$Comp
-L R R32
-U 1 1 4DB9676E
-P 5575 7200
-F 0 "R32" V 5655 7200 50  0000 C CNN
-F 1 "LDR" V 5575 7200 50  0000 C CNN
-F 2 "pin_strip_2" H 5575 7200 60  0001 C CNN
-	1    5575 7200
-	1    0    0    -1  
-$EndComp
 Connection ~ 5300 1500
 Wire Wire Line
 	5300 1200 5300 1675
@@ -224,9 +221,7 @@ Wire Wire Line
 	4175 7250 4175 7575
 Connection ~ 2350 2500
 Wire Wire Line
-	700  3950 700  4150
-Wire Wire Line
-	700  3950 1450 3950
+	1450 3950 700  3950
 Wire Wire Line
 	1450 4150 1350 4150
 Wire Wire Line
@@ -450,6 +445,44 @@ Wire Wire Line
 Wire Wire Line
 	5300 1500 5375 1500
 Connection ~ 5300 1200
+Wire Wire Line
+	700  3950 700  4300
+Connection ~ 700  4150
+Wire Wire Line
+	1400 4800 1400 4700
+Connection ~ 1050 4800
+$Comp
+L C C12
+U 1 1 4DBBA4E0
+P 1400 4500
+F 0 "C12" H 1450 4600 50  0000 L CNN
+F 1 "22p" H 1450 4400 50  0000 L CNN
+F 2 "cnp_3mm_disc" H 1400 4500 60  0001 C CNN
+	1    1400 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C11
+U 1 1 4DBBA4DA
+P 700 4500
+F 0 "C11" H 750 4600 50  0000 L CNN
+F 1 "22p" H 750 4400 50  0000 L CNN
+F 2 "cnp_3mm_disc" H 700 4500 60  0001 C CNN
+	1    700  4500
+	1    0    0    -1  
+$EndComp
+Text Label 3500 5550 0    40   ~ 0
+SCK-CLK
+$Comp
+L R R32
+U 1 1 4DB9676E
+P 5575 7200
+F 0 "R32" V 5655 7200 50  0000 C CNN
+F 1 "LDR" V 5575 7200 50  0000 C CNN
+F 2 "pin_strip_2" H 5575 7200 60  0001 C CNN
+	1    5575 7200
+	1    0    0    -1  
+$EndComp
 $Comp
 L R R35
 U 1 1 4DB9625B
@@ -726,7 +759,7 @@ U 1 1 4C173167
 P 5200 7200
 F 0 "SP1" H 5175 7000 70  0000 C CNN
 F 1 "SPEAKER" H 5275 7400 70  0000 C CNN
-F 2 "SPEAKER" H 5200 7200 60  0001 C CNN
+F 2 "Speaker" H 5200 7200 60  0001 C CNN
 F 3 "http://products.cui.com/GetSpecForDigiKey.aspx?MFGNum=CEM-14R06CT" H 5200 7200 60  0001 C CNN
 F 4 "102-1169-ND" H 5200 7200 60  0001 C CNN "DigiKey"
 	1    5200 7200
