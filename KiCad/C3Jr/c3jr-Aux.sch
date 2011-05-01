@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 05/01/11 17:04:57
+EESchema Schematic File Version 2  date 05/02/11 00:39:08
 LIBS:clock3
 LIBS:power
 LIBS:c3jr-cache
@@ -17,8 +17,12 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 Comment4 ""
 $EndDescr
-Text Label 5550 6050 0    40   ~ 0
-TXD
+Connection ~ 1450 4500
+Wire Wire Line
+	1300 4500 1450 4500
+Connection ~ 1350 5100
+Wire Wire Line
+	1300 5100 1350 5100
 Wire Wire Line
 	5400 6050 5550 6050
 Wire Wire Line
@@ -608,6 +612,38 @@ Wire Wire Line
 	5400 6650 5550 6650
 Wire Wire Line
 	5550 6650 5550 6550
+Wire Wire Line
+	1300 4700 1350 4700
+Connection ~ 1350 4700
+Wire Wire Line
+	1300 4900 1450 4900
+Wire Wire Line
+	1450 4900 1450 4100
+Connection ~ 1450 4100
+$Comp
+L CONN_2 J3
+U 1 1 4DBDA57B
+P 950 5000
+F 0 "J3" H 900 5100 40  0000 C CNN
+F 1 "V_IN" V 1000 5000 40  0000 C CNN
+F 2 "JACK_ALIM" H 950 5000 60  0001 C CNN
+F 4 "7 - 12V DC" H 850 4800 39  0000 C CNN "Field1"
+	1    950  5000
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_2 J2
+U 1 1 4DBDA575
+P 950 4600
+F 0 "J2" H 900 4700 40  0000 C CNN
+F 1 "V_IN" V 1000 4600 40  0000 C CNN
+F 2 "JACK_ALIM" H 950 4600 60  0001 C CNN
+F 4 "7 - 12V DC" H 850 4400 39  0000 C CNN "Field1"
+	1    950  4600
+	-1   0    0    -1  
+$EndComp
+Text Label 5550 6050 0    40   ~ 0
+TXD
 $Comp
 L VCC #PWR016
 U 1 1 4DBD205C
@@ -1325,7 +1361,7 @@ $Comp
 L CONN_2 J1
 U 1 1 4B3F12C5
 P 950 4200
-F 0 "J1" H 1000 4400 40  0000 C CNN
+F 0 "J1" H 900 4300 40  0000 C CNN
 F 1 "V_IN" V 1000 4200 40  0000 C CNN
 F 2 "JACK_ALIM" H 950 4200 60  0001 C CNN
 F 4 "7 - 12V DC" H 850 4000 39  0000 C CNN "Field1"
