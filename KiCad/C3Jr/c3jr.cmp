@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 05/01/11 14:29:47
+Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 05/03/11 17:26:38
 
 BeginCmp
 TimeStamp = /4B3F1092/4DBAC690;
@@ -1002,10 +1002,24 @@ IdModule  = SCK-24_600_ELL;
 EndCmp
 
 BeginCmp
-TimeStamp = /4B3F1092/4B3F12C5;
+TimeStamp = /4B3F1092/4DBFE43B;
 Reference = J1;
 ValeurCmp = V_IN;
-IdModule  = JACK_ALIM;
+IdModule  = con-usb-USB-B-H;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B3F1092/4DBFE63C;
+Reference = J2;
+ValeurCmp = V_IN;
+IdModule  = con-usb-USB-B-H;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B3F1092/4DBFE641;
+Reference = J3;
+ValeurCmp = V_IN;
+IdModule  = con-usb-USB-B-H;
 EndCmp
 
 BeginCmp

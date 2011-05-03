@@ -1,7 +1,8 @@
-EESchema Schematic File Version 2  date 05/02/11 00:39:08
+EESchema Schematic File Version 2  date 05/03/11 17:26:50
 LIBS:clock3
 LIBS:power
 LIBS:c3jr-cache
+LIBS:usb-b
 LIBS:c3jr-cache
 EELAYER 25  0
 EELAYER END
@@ -9,7 +10,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 4
 Title "ClockTHREE Junior aka C3Jr"
-Date "1 may 2011"
+Date "3 may 2011"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -17,12 +18,33 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 Comment4 ""
 $EndDescr
-Connection ~ 1450 4500
+NoConn ~ 1200 5150
+NoConn ~ 1200 5050
+NoConn ~ 1200 4600
+NoConn ~ 1200 4500
+NoConn ~ 1200 3950
+NoConn ~ 1200 3850
+Connection ~ 850  5250
 Wire Wire Line
-	1300 4500 1450 4500
-Connection ~ 1350 5100
+	900  5250 850  5250
+Connection ~ 850  4050
 Wire Wire Line
-	1300 5100 1350 5100
+	900  4050 850  4050
+Connection ~ 1400 5250
+Wire Wire Line
+	1200 5250 1400 5250
+Connection ~ 850  5150
+Wire Wire Line
+	850  5350 1800 5350
+Wire Wire Line
+	850  5350 850  3950
+Wire Wire Line
+	900  4600 850  4600
+Wire Wire Line
+	850  3950 900  3950
+Connection ~ 800  4100
+Wire Wire Line
+	800  4500 900  4500
 Wire Wire Line
 	5400 6050 5550 6050
 Wire Wire Line
@@ -67,13 +89,13 @@ Wire Wire Line
 Wire Wire Line
 	6275 925  6275 1025
 Wire Wire Line
-	6125 1750 6125 1525
+	6125 1525 6125 1750
 Connection ~ 5975 2400
 Wire Wire Line
 	5850 2400 5975 2400
 Connection ~ 5975 2200
 Wire Wire Line
-	5850 2200 5975 2200
+	5975 2200 5850 2200
 Connection ~ 5350 2900
 Wire Wire Line
 	5350 2800 5350 2900
@@ -82,7 +104,7 @@ Wire Wire Line
 	4050 1750 3775 1750
 Connection ~ 9600 3050
 Wire Wire Line
-	9650 3050 9600 3050
+	9600 3050 9650 3050
 Wire Wire Line
 	3050 5150 3050 5300
 Wire Wire Line
@@ -310,11 +332,9 @@ Connection ~ 2100 4100
 Wire Wire Line
 	2100 4100 2100 4250
 Connection ~ 3050 5200
-Wire Wire Line
-	1300 4300 1350 4300
 Connection ~ 1800 4100
 Wire Wire Line
-	1800 4650 1800 5200
+	1800 5350 1800 4650
 Connection ~ 1800 5200
 Connection ~ 2600 5200
 Connection ~ 3050 4100
@@ -322,17 +342,13 @@ Wire Wire Line
 	2100 5200 2100 4650
 Connection ~ 2100 5200
 Wire Wire Line
-	1350 4300 1350 5200
-Wire Wire Line
-	1350 5200 4500 5200
+	4500 5200 1800 5200
 Wire Wire Line
 	4250 5200 4250 5000
 Wire Wire Line
 	4250 5000 4500 5000
 Wire Wire Line
 	3050 4700 3050 4750
-Wire Wire Line
-	1300 4100 3600 4100
 Connection ~ 3450 5200
 Connection ~ 4250 5200
 Wire Wire Line
@@ -367,7 +383,7 @@ Connection ~ 9450 2250
 Wire Wire Line
 	9100 1300 9150 1300
 Wire Wire Line
-	9400 1400 9400 1150
+	9400 1150 9400 1400
 Wire Wire Line
 	9150 1300 9150 950 
 Wire Wire Line
@@ -575,9 +591,9 @@ Wire Wire Line
 	5975 2300 5850 2300
 Connection ~ 5975 2300
 Wire Wire Line
-	5950 1600 5950 1525
+	5950 1525 5950 1600
 Wire Wire Line
-	6275 1900 6275 1525
+	6275 1525 6275 1900
 Wire Wire Line
 	6125 1025 6125 925 
 Connection ~ 6125 925 
@@ -613,34 +629,57 @@ Wire Wire Line
 Wire Wire Line
 	5550 6650 5550 6550
 Wire Wire Line
-	1300 4700 1350 4700
-Connection ~ 1350 4700
+	900  3850 800  3850
 Wire Wire Line
-	1300 4900 1450 4900
+	800  4100 3600 4100
 Wire Wire Line
-	1450 4900 1450 4100
-Connection ~ 1450 4100
+	800  3850 800  5050
+Wire Wire Line
+	800  5050 900  5050
+Connection ~ 800  4500
+Wire Wire Line
+	850  5150 900  5150
+Connection ~ 850  4600
+Wire Wire Line
+	1200 4050 1400 4050
+Wire Wire Line
+	1400 4050 1400 5350
+Connection ~ 1400 5350
+Wire Wire Line
+	1200 4700 1400 4700
+Connection ~ 1400 4700
+Wire Wire Line
+	900  4700 850  4700
+Connection ~ 850  4700
 $Comp
-L CONN_2 J3
-U 1 1 4DBDA57B
-P 950 5000
-F 0 "J3" H 900 5100 40  0000 C CNN
-F 1 "V_IN" V 1000 5000 40  0000 C CNN
-F 2 "JACK_ALIM" H 950 5000 60  0001 C CNN
-F 4 "7 - 12V DC" H 850 4800 39  0000 C CNN "Field1"
-	1    950  5000
-	-1   0    0    -1  
+L USB-B J3
+U 1 1 4DBFE641
+P 1050 5000
+F 0 "J3" H 1050 5210 60  0000 C CNN
+F 1 "V_IN" H 1060 5140 60  0000 C CNN
+F 2 "con-usb-USB-B-H" H 1050 5000 60  0001 C CNN
+	1    1050 5000
+	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_2 J2
-U 1 1 4DBDA575
-P 950 4600
-F 0 "J2" H 900 4700 40  0000 C CNN
-F 1 "V_IN" V 1000 4600 40  0000 C CNN
-F 2 "JACK_ALIM" H 950 4600 60  0001 C CNN
-F 4 "7 - 12V DC" H 850 4400 39  0000 C CNN "Field1"
-	1    950  4600
-	-1   0    0    -1  
+L USB-B J2
+U 1 1 4DBFE63C
+P 1050 4450
+F 0 "J2" H 1050 4660 60  0000 C CNN
+F 1 "V_IN" H 1060 4590 60  0000 C CNN
+F 2 "con-usb-USB-B-H" H 1050 4450 60  0001 C CNN
+	1    1050 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L USB-B J1
+U 1 1 4DBFE43B
+P 1050 3800
+F 0 "J1" H 1050 4010 60  0000 C CNN
+F 1 "V_IN" H 1060 3940 60  0000 C CNN
+F 2 "con-usb-USB-B-H" H 1050 3800 60  0001 C CNN
+	1    1050 3800
+	1    0    0    -1  
 $EndComp
 Text Label 5550 6050 0    40   ~ 0
 TXD
@@ -1288,7 +1327,7 @@ Text Label 9700 1650 0    39   ~ 0
 RES
 Text Label 4500 3900 0    60   ~ 0
 VOUT
-Text Label 1450 5200 0    47   ~ 0
+Text Label 1850 5200 0    47   ~ 0
 GND
 Text HLabel 4500 5200 2    47   Input ~ 0
 GND
@@ -1356,16 +1395,5 @@ F 1 "100u" V 1850 4250 50  0000 L CNN
 F 2 "CP_5x11mm" H 1800 4450 60  0001 C CNN
 	1    1800 4450
 	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_2 J1
-U 1 1 4B3F12C5
-P 950 4200
-F 0 "J1" H 900 4300 40  0000 C CNN
-F 1 "V_IN" V 1000 4200 40  0000 C CNN
-F 2 "JACK_ALIM" H 950 4200 60  0001 C CNN
-F 4 "7 - 12V DC" H 850 4000 39  0000 C CNN "Field1"
-	1    950  4200
-	-1   0    0    -1  
 $EndComp
 $EndSCHEMATC

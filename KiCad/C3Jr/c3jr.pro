@@ -1,4 +1,4 @@
-update=05/02/11 00:39:07
+update=05/03/11 18:09:34
 last_client=eeschema
 [cvpcb]
 version=1
@@ -13,7 +13,6 @@ PadDrlX=800
 PadDimH=1500
 PadDimV=1500
 BoardThickness=630
-SgPcb45=1
 TxtPcbV=600
 TxtPcbH=600
 TxtModV=600
@@ -26,14 +25,14 @@ TxtLar=120
 MSegLar=100
 LastNetListRead=c3jr.net
 [pcbnew/libraries]
-LibDir=../../../../../../../Downloads/KiCAD/Libs
+LibDir=../../../../../../../Downloads/KiCAD/Libs;D:/Users/Anool/Downloads/KiCAD/Libs/USB
 LibName1=libs/clock3_parts
-LibName2=libs\\Logo-WL1
-LibName3=libs\\OPENHARDWARE
-LibName4=libs\\Logo-QR
+LibName2=libs/Logo-WL1
+LibName3=libs/OPENHARDWARE
+LibName4=libs/Logo-QR
 [eeschema]
 version=1
-LibDir=
+LibDir=D:/Users/Anool/Downloads/KiCAD/Libs/USB
 NetFmt=1
 HPGLSpd=20
 HPGLDm=15

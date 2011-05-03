@@ -142,9 +142,9 @@ D128	LED	led_5mm_clear
 D258	DBG	led_5mm_blue
 D260	PWR	led_5mm_blue
 DIL-U1	STP16DP05	SCK-24_600_ELL	497-5975-1-ND
-J1	V_IN	JACK_ALIM	7 - 12V DC
-J2	V_IN	JACK_ALIM	7 - 12V DC
-J3	V_IN	JACK_ALIM	7 - 12V DC
+J1	V_IN	
+J2	V_IN	
+J3	V_IN	
 K1	PWR SEL	pin_strip_3
 K2	LED_ENABLE	pin_strip_3
 P1	7SegDisp	pin_strip_8
