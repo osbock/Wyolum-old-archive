@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 04/29/11 19:39:01
+EESchema-DOCLIB  Version 2.0  Date: 05/03/11 17:15:35
 #
 $CMP CONN_8
 D Symbole general de connecteur
@@ -8,6 +8,11 @@ $ENDCMP
 $CMP SW_PUSH
 D Swtch Tactile Right_Angle Push_Button
 F D:/Users/Anool/Documents/Arduino/Project-Clock3/Data/PB-Rt Ang-ATK0000CE32.pdf
+$ENDCMP
+#
+$CMP USB-B
+D USB B-TYPE connector
+K USB
 $ENDCMP
 #
 #End Doc Library
