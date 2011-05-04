@@ -1,18 +1,16 @@
 Drill report for D:\Users\Anool\Documents\Arduino\Project-Clock3\Code\clockthree\KiCad\C3Jr\c3jr.brd
-Created on 05/03/11 18:12:43
+Created on 05/04/11 15:03:21
 Selected Drill Unit: Imperial (")
 
 Drill report for through holes :
 T1  0.020"  0.51mm  (52 holes)
 T2  0.025"  0.64mm  (68 holes)
-T3  0.032"  0.80mm  (4 holes)
-T4  0.032"  0.81mm  (392 holes)
-T5  0.036"  0.91mm  (6 holes)
-T6  0.040"  1.02mm  (227 holes)
-T7  0.050"  1.27mm  (10 holes)
-T8  0.080"  2.03mm  (2 holes)
-T9  0.090"  2.29mm  (6 holes)
-T10  0.120"  3.05mm  (13 holes)
+T3  0.032"  0.81mm  (396 holes)
+T4  0.040"  1.02mm  (233 holes)
+T5  0.050"  1.27mm  (10 holes)
+T6  0.080"  2.03mm  (2 holes)
+T7  0.090"  2.29mm  (6 holes)
+T8  0.120"  3.05mm  (13 holes)
 
 total holes count 780
 
