@@ -1,4 +1,18 @@
-Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 05/03/11 17:26:38
+Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 05/04/11 19:13:51
+
+BeginCmp
+TimeStamp = /4D28241A/4DC14DAD;
+Reference = BF1;
+ValeurCmp = BAFFLE;
+IdModule  = Baffle;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D28241A/4DC14DC7;
+Reference = BP1;
+ValeurCmp = BackPlate;
+IdModule  = BackPlate;
+EndCmp
 
 BeginCmp
 TimeStamp = /4B3F1092/4DBAC690;
@@ -999,6 +1013,20 @@ TimeStamp = /4C2C6A39;
 Reference = DIL-U1;
 ValeurCmp = STP16DP05;
 IdModule  = SCK-24_600_ELL;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D28241A/4DC15770;
+Reference = FM1;
+ValeurCmp = FRAME;
+IdModule  = Frame;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D28241A/4DC14DC3;
+Reference = FP1;
+ValeurCmp = FacePlate;
+IdModule  = FacePlate;
 EndCmp
 
 BeginCmp
