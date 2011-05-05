@@ -44,7 +44,8 @@ class Line:
     def perp(self, through):
         d = self.p2 - self.p1
         d /= linalg.norm(d)
-        line = Line(through, d)
+        d = (d[1], -d[0])
+        line = Line(through, through + d)
         return line
     
     def __add__(self, v):
@@ -53,8 +54,17 @@ class Line:
     def __sub__(self, v):
         return self + (-v)
     
-    def drawOn(self, canvas):
+    def drawOn(self, canvas, label=None):
         canvas.line(self.p1[0], self.p1[1], self.p2[0], self.p2[1])
+        canvas.circle(*self.p1, r=1*mm, fill=True)
+        canvas.circle(*self.p2, r=1*mm, fill=False)
+        if label is not None:
+            textobject = canvas.beginText()
+            center = ((self.p1 + self.p2)/2.)
+            textobject.setTextOrigin(*center)
+            textobject.setFont("Helvetica", 8)
+            textobject.textOut(label)
+            canvas.drawText(textobject)
 
 class MyPath:
     UNIT = cm
@@ -81,6 +91,9 @@ class MyPath:
         self.points.append([x, y])
         self.paths[-1].append(len(self.points) - 1)
         self.last = array([x, y])
+
+    def curveTo(self, x0, y0, x1, y1, x2, y2):
+        pass
 
     def getleft(self):
         return min([l[0] for l in self.points])
@@ -179,47 +192,62 @@ polygon(points=[''' % (thickness / cm)
             print >> outfile, '}'
 
 def draw():
-    path = MyPath()
-    peak = (4.5 * inch, 3 * inch)
-    l1 = Line(peak, (5 * inch, 0 * inch))
-    l2 = Line((0, .5 * inch), (10*inch, .5*inch))
-    p = l1.perp(l1.intersect(l2))
-    d = p.p1 - p.p2
-    d /= linalg.norm(d)
-    intersect = l1.intersect(l2)
-    
-    path.moveTo(4.5 * inch, 3 * inch)
-    path.lineTo(*intersect)
+    filename = "stand1.pdf"
+    c = canvas.Canvas(filename,
+                      pagesize=(8.5*inch, 11 * inch)
+                      )
+    c.setLineWidth(1/64. * inch)
 
-    # 1/4" hook (for back)
-    base = Line(intersect, intersect + d)
-    path.lineTo(*intersect + d * .28 * inch)
-    e = l1.p1 - l1.p2
-    e /= linalg.norm(e)
-    path.lineTo(*(path.last + e * .25 * inch))
-    
-    # front layer holder
-    W =  1.3 * inch
-    next = intersect + d * 1 * inch
-    l1 = Line(path.last, next)
-    path.lineTo(*l1.intersect(base))
-    path.lineTo(*(path.last + d * .3 * inch))
+    for dh in [.5*inch]:
+        path = MyPath()
+        peak = (4.5 * inch, 3*inch + dh)
+        l1 = Line(peak, (5 * inch, 0 * inch + dh))
+        #         l1.drawOn(c, 'l1')
+        l2 = Line((0, .5 * inch + dh), (1*inch, .5*inch + dh))
+        #         l2.drawOn(c, 'l2')
+        perp = l1.perp(l1.intersect(l2))
+        #        perp.drawOn(c, 'perp')
+        parallel = l1.p2 - l1.p1
+        parallel /= linalg.norm(parallel)
+        
+        d = perp.p1 - perp.p2
+        d /= linalg.norm(d)
+        intersect = l1.intersect(l2)
+        
+        path.moveTo(*peak)
+        bit_radius = .25*inch / 2
+        path.lineTo(*intersect)
+        path.lineTo(*intersect + bit_radius * parallel)
 
-    l1 = Line(path.last, path.last + e)
-    l2 = Line((0, 0), (1, 0))
-    path.lineTo(*(l1.intersect(l2)))
+        # 1/4" hook (for back)
+        base = Line(intersect, intersect + d)
+        #        base.drawOn(c, label='base')
+        path.lineTo(*path.last + d * .28 * inch)
+        e = l1.p1 - l1.p2
+        e /= linalg.norm(e)
+        path.lineTo(*(path.last + e * .25 * inch))
+        
+        # front layer holder
+        W =  1.3 * inch
+        next = intersect + d * 1 * inch
+        l1 = Line(path.last, next)
+        path.lineTo(*l1.intersect(base))
+        path.lineTo(*(path.last + d * .3 * inch))
 
-    
-    path.lineTo(6 * inch, 0 * inch)
-    path.lineTo(2 * inch, 0 * inch)
-    
-    path.lineTo(4.5 * inch, 3 * inch)
-    
-    filename = "stand.pdf"
-    path.drill(2.55*inch, .25*inch, .125*inch)
-    path.drill(4.325*inch, 2.4*inch, .125*inch)
+        l1 = Line(path.last, path.last + e)
+        l2 = Line((0, 0), (1, 0))
+        path.lineTo(*(l1.intersect(l2)))
 
-    c = path.toPDF(filename)
+        
+        path.lineTo(6 * inch, 0 * inch)
+        path.lineTo(2 * inch, 0 * inch)
+        
+        path.lineTo(*peak)
+        path.translate(0, 5 * inch)
+        #         path.drill(2.55*inch, .25*inch, .125*inch)
+        #         path.drill(4.325*inch, 2.4*inch + dh, .125*inch)
+        path.drawOn(c)
+        
     c.showPage()
     c.save()
     print "wrote", filename
