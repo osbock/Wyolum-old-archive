@@ -92,9 +92,14 @@ class MyPath:
         self.paths[-1].append(len(self.points) - 1)
         self.last = array([x, y])
 
-    def curveTo(self, x0, y0, x1, y1, x2, y2):
-        pass
-
+    def curveTo(self, control, endpoint, n=100):
+        p0 = array(self.last)
+        p1 = array(control)
+        p2 = array(endpoint)
+        for t in arange(n) / float(n - 1):
+            p = (1 - t) ** 2 * p0 + 2 * (1 - t)*t * p1 + t**2 * p2
+            self.lineTo(*p)
+            
     def getleft(self):
         return min([l[0] for l in self.points])
     def getright(self):
@@ -192,7 +197,7 @@ polygon(points=[''' % (thickness / cm)
             print >> outfile, '}'
 
 def draw():
-    filename = "stand1.pdf"
+    filename = "stand00.pdf"
     c = canvas.Canvas(filename,
                       pagesize=(8.5*inch, 11 * inch)
                       )
@@ -229,7 +234,7 @@ def draw():
         
         # front layer holder
         W =  1.3 * inch
-        next = intersect + d * 1 * inch
+        next = intersect + d * W
         l1 = Line(path.last, next)
         path.lineTo(*l1.intersect(base))
         path.lineTo(*(path.last + d * .3 * inch))
@@ -243,6 +248,7 @@ def draw():
         path.lineTo(2 * inch, 0 * inch)
         
         path.lineTo(*peak)
+        # path.curveTo((4*inch, 1.25*inch), peak)
         path.translate(0, 5 * inch)
         #         path.drill(2.55*inch, .25*inch, .125*inch)
         #         path.drill(4.325*inch, 2.4*inch + dh, .125*inch)
