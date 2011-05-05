@@ -1076,7 +1076,7 @@ def main(fontnames):
         if fontname not in ignore_fonts:
             try:
                 if (fontname.endswith('.ttf') or
-                    fontname.endswith('.odf')):
+                    fontname.endswith('.otf')):
                     break
                 cases = {'Upper':string.upper,
                          'Lower':string.lower}
@@ -1128,5 +1128,5 @@ if __name__ == '__main__':
         # main(['Vollkorn-Regular'])
     else:
         main(sys.argv[1:])
-        # test()
+        test()
     
