@@ -22,14 +22,14 @@ DEFAULT_FONT_SIZE = 30
 LASER_THICKNESS = .01 * inch
 
 
-letters = '''itrisctenhalf---
-quartertwenty---
-fivecminutesh---
-pasttoeonetwo---
-threefourfive---
-sixseveneight---
-nineteneleven---
-twelveloclock---'''.splitlines()
+letters = '''KITRISCTENHALFX.
+QUARTERTWENTYBZ:
+IFIVECMINUTESAL.
+PASTOBTWONEIGHTS
+THREELEVENSIXTEN
+FOURFIVESEVENINE
+TWELVEXOCLOCKYAM
+DAYMDHMSPMALARM?'''.splitlines()
 # letters = ['.' * 16] * 8
 
 class MyPath:
@@ -76,6 +76,7 @@ class MyPath:
         return c
 
     def drawOn(self, c, linewidth=LASER_THICKNESS):
+        c.setStrokeColor(red)
         p = c.beginPath()
         c.setLineWidth(linewidth)
         for path in self.paths:
@@ -87,6 +88,7 @@ class MyPath:
         for poly in self.subtract:
             poly.drawOn(c)
         c.drawPath(p)
+        c.setStrokeColor(black)
 
     def rotate(self, rotate_deg):
         theta = rotate_deg * pi / 180.
@@ -153,21 +155,33 @@ polygon(points=[''' % (thickness / cm)
 
 MARGIN = 1/64.*inch
 
-def create_baffle(baffle_height, baffle_thickness, n_notch, delta,
+def create_baffle(baffle_height, 
+                  baffle_thickness, 
+                  n_notch, 
+                  delta,
                   overhang=0,
+                  overhang_height=None,
+                  overhang_taper=False,
                   margin=MARGIN):
     '''
     delta = DX/DY
     overhang = amount of extra plastic from center of last notch    
+    overhang_height = height of overhang.  if None, baffle_height
     margin = extra gap for slots
     '''
+
+    if overhang_height is None:
+        overhang_height = baffle_height
 
     p = MyPath()
     p.moveTo(0, 0)
     if overhang > 0:
         p.lineTo(-overhang, 0)
-        p.lineTo(-overhang, baffle_height)
-        p.lineTo(-baffle_thickness / 2. - margin, baffle_height)
+        if overhang_taper:
+            p.lineTo(-overhang, overhang_height/2)
+        else:
+            p.lineTo(-overhang, overhang_height)
+        p.lineTo(-baffle_thickness / 2. - margin, overhang_height)
         p.lineTo(-baffle_thickness / 2. - margin,
                   baffle_height / 2 - margin)
     p.lineTo(0, baffle_height / 2 - margin)
@@ -187,18 +201,21 @@ def create_baffle(baffle_height, baffle_thickness, n_notch, delta,
         p.lineTo(n_notch * delta + baffle_thickness / 2 + margin,
                  baffle_height / 2 - margin)
         p.lineTo(n_notch * delta + baffle_thickness / 2 + margin,
-                 baffle_height)
-        p.lineTo(n_notch * delta + overhang, baffle_height)
+                 overhang_height)
+        if overhang_taper:
+            p.lineTo(n_notch * delta + overhang, overhang_height/2)
+        else:
+            p.lineTo(n_notch * delta + overhang, overhang_height)
         p.lineTo(n_notch * delta + overhang, 0)
     p.lineTo(n_notch * delta, 0)
     p.lineTo(0, 0)
     return p
-c = canvas.Canvas('junk.pdf',
+c = canvas.Canvas('baffles_jr.pdf',
                   pagesize=(8.5*inch, 11*inch)
                   )
 c.setLineWidth(1/64. * inch)
 
-baffle_height = 15 * mm; print 'TODO: change baffle height'
+baffle_height = 16 * mm
 baffle_thickness = .06 * inch
 dy = 0.7 * inch
 dx = 0.4 * inch
@@ -209,18 +226,51 @@ p = create_baffle(baffle_height=baffle_height,
                   baffle_thickness=baffle_thickness,
                   n_notch=N_ROW,
                   delta=dy,
-                  overhang=0*cm,
+                  overhang=.2*inch,
+                  overhang_height=12*mm,
+                  overhang_taper=True,
                   margin=MARGIN)
 p.translate(1*inch, 9*inch)
 p.drawOn(c)
+textobject = c.beginText()
+textobject.setTextOrigin(1 * inch, 8.75*inch)
+textobject.textOut("17x")
+c.drawText(textobject)
+
 p = create_baffle(baffle_height=baffle_height, 
                   baffle_thickness=baffle_thickness,
                   n_notch=N_COL,
                   delta=dx,
                   overhang=dx,
                   margin=MARGIN)
-p.translate(1*inch, 8*inch)
+p.translate(1*inch, 7*inch)
 p.drawOn(c)
+textobject = c.beginText()
+textobject.setTextOrigin(1 * inch, 6.75*inch)
+textobject.textOut("9x")
+c.drawText(textobject)
+
+locator = MyPath()
+locator.moveTo(MARGIN, MARGIN)
+locator.lineTo(.28*inch - MARGIN, MARGIN)
+locator.lineTo(.28*inch - MARGIN, dy - baffle_thickness - MARGIN)
+locator.lineTo(MARGIN, dy - baffle_thickness - MARGIN)
+locator.lineTo(MARGIN, MARGIN)
+
+locator.drill((.28 * inch)/2, (dy - baffle_thickness)/2, 1.8 * mm)
+locator.translate(1 * inch, 5 * inch)
+locator.drawOn(c)
+locator.translate(-1 * inch, -5 * inch)
+
+textobject.setTextOrigin(1 * inch, 4.75*inch)
+textobject.textOut("4x")
+c.drawText(textobject)
+
+textobject = c.beginText()
+textobject.setTextOrigin(1 * inch, 3.*inch)
+textobject.textOut('ClockTHREEjr Baffles 0.06" Acrylic')
+c.drawText(textobject)
+
 c.showPage()
 c.save()
 
@@ -321,8 +371,8 @@ def draw(filename, data, fontname='Times-Roman',
             can.drawCentredString(x, y, c)
 
     for x in baffle_xs:
-        can.rect(x - baffle_thickness / 2, letter_bbox[1] - baffle_thickness/2, 
-                 baffle_thickness, (N_ROW) * dy + baffle_thickness), 
+        can.rect(x - baffle_thickness / 2, letter_bbox[1] - baffle_thickness/2 - .2*inch, 
+                 baffle_thickness, (N_ROW) * dy + baffle_thickness + .4 * inch), 
 
     for y in baffle_ys:
         can.rect(pcb_bbox[0], y - baffle_thickness/2, 
@@ -338,9 +388,20 @@ def draw(filename, data, fontname='Times-Roman',
                         [.15, .15 + 1.9 + 4.9],
                         [.15, .15 + 1.9],
                         ]) * inch + (1 * inch, 0)
+    locator_mounts = array([
+            [7 - .15, .15 + 1.9],
+            [7 - .15, .15 + 1.9 + 4.9],
+            [.15, .15 + 1.9],
+            [.15, .15 + 1.9 + 4.9],
+            ]) * inch + (1 * inch, 0) - (.28*inch/2, (dy - baffle_thickness) / 2)
                         
     for x, y in pcb_mounts:
         can.circle(x, y, mount_r, fill=False)
+    
+    for x, y in locator_mounts:
+        locator.translate(x, y)
+        locator.drawOn(can)
+        locator.translate(-x, -y)
 
     face_mounts = array([[.15, .15],
                          [.15, 9 - .15],
@@ -356,6 +417,6 @@ def draw(filename, data, fontname='Times-Roman',
 def add_font(fontname):
     pdfmetrics.registerFont(TTFont(fontname, 'fonts/%s.ttf' % fontname))
 add_font('Futura')
-draw('test.pdf', letters, fontname='Futura')
+draw('faceplate_jr_Futura.pdf', letters, fontname='Futura')
                         
     
