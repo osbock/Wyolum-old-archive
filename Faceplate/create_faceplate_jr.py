@@ -20,6 +20,8 @@ from copy import deepcopy
 
 DEFAULT_FONT_SIZE = 30
 LASER_THICKNESS = .01 * inch
+DTHETA = 1
+DEG = pi/180.
 
 
 letters = '''KITRISCTENHALFX.
@@ -29,11 +31,11 @@ PASTOBTWONEIGHTS
 THREELEVENSIXTEN
 FOURFIVESEVENINE
 TWELVEXOCLOCKYAM
-DAYMDHMSPMALARM?'''.splitlines()
+PMYDMTHWMFSUALR!'''.splitlines()
 # letters = ['.' * 16] * 8
 
 class MyPath:
-    UNIT = cm
+    UNIT = mm
     def __init__(self):
         self.points = []
         self.paths = []
@@ -77,8 +79,8 @@ class MyPath:
 
     def drawOn(self, c, linewidth=LASER_THICKNESS):
         c.setStrokeColor(red)
-        p = c.beginPath()
         c.setLineWidth(linewidth)
+        p = c.beginPath()
         for path in self.paths:
             p.moveTo(*self.points[path[0]])
             for i in path[1:]:
@@ -88,7 +90,6 @@ class MyPath:
         for poly in self.subtract:
             poly.drawOn(c)
         c.drawPath(p)
-        c.setStrokeColor(black)
 
     def rotate(self, rotate_deg):
         theta = rotate_deg * pi / 180.
@@ -115,6 +116,12 @@ class MyPath:
             xyr[2] *= f
         for s in self.subtract:
             s.scale(f)
+    def rect(self, bbox):
+        self.moveTo(bbox[0], bbox[1])
+        self.lineTo(bbox[0] + bbox[2], bbox[1])
+        self.lineTo(bbox[0] + bbox[2], bbox[1] + bbox[3])
+        self.lineTo(bbox[0], bbox[1] + bbox[3])
+        self.lineTo(bbox[0], bbox[1])
         
     def drill(self, x, y, r):
         self.holes.append([x, y, r])
@@ -128,14 +135,18 @@ class MyPath:
         return min(l[0] for l in self.points)
     def getRight(self):
         return max(l[0] for l in self.points)
-    def toOpenScad(self, thickness, outfile):
+    def toOpenScad(self, thickness, outfile, module_name=None, color=None):
+        if module_name is not None:
+            print >> outfile, 'module %s(){' % module_name
+        if color is not None:
+            print >> outfile, 'color([%s, %s, %s, %s])' % tuple(color)
         if len(self.holes) > 0 or len(self.subtract) > 0:
             print >> outfile, 'difference(){'
         print >> outfile, '''\
 linear_extrude(height=%s, center=true, convexity=10, twist=0)
-polygon(points=[''' % (thickness / cm)
+polygon(points=[''' % (thickness / self.UNIT)
         for x, y in self.points:
-            print >> outfile, '[%s, %s],' % (x / cm, y / cm)
+            print >> outfile, '[%s, %s],' % (x / self.UNIT, y / self.UNIT)
         print >> outfile, '],'
         print >> outfile, 'paths=['
         for path in self.paths:
@@ -145,13 +156,37 @@ polygon(points=[''' % (thickness / cm)
         if len(self.holes) > 0 or len(self.subtract) > 0:
             for hole in self.holes:
                 x, y, r = hole
-                print >> outfile, 'translate(v=[%s, %s, %s])' % (x/cm, y/cm, -5*inch)
-                print >> outfile, 'cylinder(h=%s, r=%s, $fn=25);' % (10*inch, r / cm)# ((STANDOFF_IR + .1 * mm) / cm)
+                print >> outfile, 'translate(v=[%s, %s, %s])' % (x/self.UNIT, y/self.UNIT, -5*inch)
+                print >> outfile, 'cylinder(h=%s, r=%s, $fn=25);' % (10*inch, r / self.UNIT)
             for poly in self.subtract:
                 print >> outfile, '//subtract'
-                ## print >> outfile, 'translate(v=[0, 0, -%s])' % (thickness / cm)
+                ## print >> outfile, 'translate(v=[0, 0, -%s])' % (thickness / self.UNIT)
                 poly.toOpenScad(thickness * 2, outfile)
             print >> outfile, '}'
+        if module_name is not None:
+            print >> outfile, '}'
+
+class Keyhole(MyPath):
+        def __init__(self):
+            MyPath.__init__(self)
+
+            Center = 0.75 * inch, 7.5 * inch  # larger keyhole circle center
+            center = 0.75 * inch, 7.875 * inch # smaller keyhole circle center
+            r = .125 * inch # smaller keyhole circle radius
+            R = .25 * inch  # larger keyhole circle radius
+            phi = arcsin(r/R)
+            
+            start = Center[0] + R * cos(pi/2 + phi), Center[1] + R * sin(pi/2 + phi)
+            self.moveTo(*start)
+            for theta in arange(pi/2 + phi,
+                                2 * pi + pi / 2 - phi +DTHETA*DEG/2,
+                                DTHETA * DEG):
+                next = Center[0] + R * cos(theta), Center[1] + R * sin(theta)
+                self.lineTo(*next)
+            for theta in arange(0, pi, DTHETA * DEG):
+                next = center[0] + r * cos(theta), center[1] + r * sin(theta)
+                self.lineTo(*next)
+            self.lineTo(*start)
 
 MARGIN = 1/64.*inch
 
@@ -210,19 +245,26 @@ def create_baffle(baffle_height,
     p.lineTo(n_notch * delta, 0)
     p.lineTo(0, 0)
     return p
-c = canvas.Canvas('baffles_jr.pdf',
-                  pagesize=(8.5*inch, 11*inch)
-                  )
-c.setLineWidth(1/64. * inch)
 
 baffle_height = 16 * mm
 baffle_thickness = .06 * inch
+pcb_thickness = 1.6 * mm
+washer_thickness = 0.05 * inch
+washer_or = .27*inch / 2
+washer_ir = .132*inch / 2
+
+standoff_thickness = 20 * mm
+standoff_or = 5*mm / 2
+standoff_ir = .132*inch / 2
+
+faceplate_thickness = .25*inch
+
 dy = 0.7 * inch
 dx = 0.4 * inch
 N_ROW = 8
 N_COL = 16
-    
-p = create_baffle(baffle_height=baffle_height, 
+
+baffle_v = create_baffle(baffle_height=baffle_height, 
                   baffle_thickness=baffle_thickness,
                   n_notch=N_ROW,
                   delta=dy,
@@ -230,25 +272,6 @@ p = create_baffle(baffle_height=baffle_height,
                   overhang_height=12*mm,
                   overhang_taper=True,
                   margin=MARGIN)
-p.translate(1*inch, 9*inch)
-p.drawOn(c)
-textobject = c.beginText()
-textobject.setTextOrigin(1 * inch, 8.75*inch)
-textobject.textOut("17x")
-c.drawText(textobject)
-
-p = create_baffle(baffle_height=baffle_height, 
-                  baffle_thickness=baffle_thickness,
-                  n_notch=N_COL,
-                  delta=dx,
-                  overhang=dx,
-                  margin=MARGIN)
-p.translate(1*inch, 7*inch)
-p.drawOn(c)
-textobject = c.beginText()
-textobject.setTextOrigin(1 * inch, 6.75*inch)
-textobject.textOut("9x")
-c.drawText(textobject)
 
 locator = MyPath()
 locator.moveTo(MARGIN, MARGIN)
@@ -258,21 +281,6 @@ locator.lineTo(MARGIN, dy - baffle_thickness - MARGIN)
 locator.lineTo(MARGIN, MARGIN)
 
 locator.drill((.28 * inch)/2, (dy - baffle_thickness)/2, 1.8 * mm)
-locator.translate(1 * inch, 5 * inch)
-locator.drawOn(c)
-locator.translate(-1 * inch, -5 * inch)
-
-textobject.setTextOrigin(1 * inch, 4.75*inch)
-textobject.textOut("4x")
-c.drawText(textobject)
-
-textobject = c.beginText()
-textobject.setTextOrigin(1 * inch, 3.*inch)
-textobject.textOut('ClockTHREEjr Baffles 0.06" Acrylic')
-c.drawText(textobject)
-
-c.showPage()
-c.save()
 
 class Image:
     def __init__(self, filename, x, y, w=None, h=None):
@@ -284,6 +292,11 @@ class Image:
 
     def drawOn(self, c):
         im = PIL.Image.open(self.filename)
+        dims = im.size
+        aspect = dims[1] / float(dims[0])
+        if self.h is None and self.w is not None:
+            self.h = aspect * self.w
+            
         c.drawInlineImage(im, 
                           self.x, self.y, self.w, self.h)
     def translate(self, dx, dy):
@@ -329,15 +342,66 @@ def draw(filename, data, fontname='Times-Roman',
     baffle_xs = arange(N_COL + 1) * dx + 1.3 * inch
     baffle_ys = arange(N_ROW + 1) * dy + 1.7 * inch
 
-    # leds
-    can.setFillColor(blue)
-    for x in led_xs:
-        for y in led_ys:
-            can.circle(x, y, 2.5 * mm, fill=1)
-    can.setFillColor(black)
+    scad = open("ClockTHREEjr.scad", "w")
+    scad_ex = open("ClockTHREEjr_exploded.scad", "w")
+    print >> scad_ex, 'use <ClockTHREEjr.scad>'
+    print >> scad, 'mm = 1;' 
+    print >> scad, 'dy = %s;' % (dy / mm)
+    print >> scad, 'dx = %s;' % (dx / mm)
+    print >> scad, 'module baffle_v(){'
+    print >> scad, 'color([ 0.1, 1, 0.1, 0.8 ])'
+    print >> scad, "translate(v=[%s,%s, %s])" % (0 / mm,
+                                                 0 / mm,
+                                                 baffle_height / mm)
+    print >> scad, "rotate(a=90, v=[0, -1, 0])"
+    print >> scad, "rotate(a=90, v=[0, 0, 1])"
+    baffle_v.toOpenScad(baffle_thickness, scad)
+    print >> scad, '}'
+
+    baffle_h = create_baffle(baffle_height=baffle_height, 
+                      baffle_thickness=baffle_thickness,
+                      n_notch=N_COL,
+                      delta=dx,
+                      overhang=.3*inch,
+                      margin=MARGIN)
+
+    print >> scad, 'module baffle_h(){'
+    print >> scad, 'color([ 1, 0.1, 0.1, 0.8 ])'
+    print >> scad, "translate(v=[%s, %s, 0])" % (0/mm, 0/mm)
+    print >> scad, "rotate(a=90, v=[1, 0, 0])"
+    baffle_h.toOpenScad(baffle_thickness, scad)
+    print >> scad, '}'
+    print >> scad, '''module baffle_grid(){
+      for(i=[0:16]){
+        translate(v=[i * dx, 0, 0])baffle_v();
+      }
+      for(i=[0:8]){
+        translate(v=[0, i * dy, 0])baffle_h();
+      }
+    }
+    '''
+    locator.toOpenScad(baffle_thickness, scad, 'locator', color=[.1, .1, 1, .8])
+
+    print >> scad, '''module washer(x, y, z){
+      color([0.1, 0.1, 1, 0.8])translate([x, y, z]) difference(){cylinder(h=%s, r=%s);translate([0, 0, -1])cylinder(h=2*%s, r=%s);}
+    }''' % (washer_thickness / mm, washer_or / mm, washer_thickness / mm, washer_ir / mm)
+
+
+    print >> scad, '''module standoff(x, y){
+      color([0.1, 0.1, 1, 0.8])translate([x, y]) difference(){cylinder(h=%s, r=%s);translate([0, 0, -1])cylinder(h=2*%s, r=%s);}
+    }''' % (standoff_thickness / mm, standoff_or / mm, standoff_thickness / mm, standoff_ir / mm)
+
+
+    if False:
+        # leds
+        can.setFillColor(blue)
+        for x in led_xs:
+            for y in led_ys:
+                can.circle(x, y, 2.5 * mm, fill=1)
+        can.setFillColor(black)
 
     if reverse:
-        can.translate(11 * inch, 0 * inch)
+        can.translate(9 * inch, 0 * inch)
         can.scale(-1, 1)
     can.setTitle("ClockTHREE Jr. Faceplate: %s" % fontname)
     can.setFont(fontname, fontsize)
@@ -352,32 +416,51 @@ def draw(filename, data, fontname='Times-Roman',
     can.setLineWidth(1/64. * inch)
     margin = 10*mm
     letter_bbox = (xs[0], ys[0], xs[-1] - xs[0] + dx, ys[-1] - ys[0] + dy)
-    can.rect(*letter_bbox)
+    print >> scad, 'translate([%s, %s, %s])baffle_grid();' % (letter_bbox[0] / mm,
+                                                              letter_bbox[1] / mm,
+                                                              (2 * washer_thickness + pcb_thickness) / mm
+                                                              )
+    print >> scad_ex, 'translate([%s, %s, %s])baffle_grid();' % (letter_bbox[0] / mm,
+                                                                 letter_bbox[1] / mm,
+                                                                 (2 * washer_thickness + pcb_thickness) / mm
+                                                                 )
+
+    if False:
+        can.rect(*letter_bbox)
     bbox = (0 * inch,
             0 * inch,
             9 * inch,
             9 * inch)
-    can.setStrokeColor(red)
-    can.rect(*bbox)
-    can.setStrokeColor(black)
+    faceplate = MyPath()
+    faceplate.rect(bbox)
+
+    backplate = MyPath()
+    backplate.rect(bbox)
+    keyhole = Keyhole()
+    backplate.route(keyhole)
+    keyhole.translate((9 - .75 - .75) * inch, 0 * inch)
+    backplate.route(keyhole)
+        
     pcb_bbox = (1 * inch,
                 0 * inch,
                 7 * inch,
                 9 * inch)
-    can.rect(*pcb_bbox)
+    pcb = MyPath()
+    pcb.rect(pcb_bbox)
     
     for y, l in zip(ys + dy * .27, data[::-1]):
         for x, c in zip(xs + dx / 2., l):
             can.drawCentredString(x, y, c)
 
-    for x in baffle_xs:
-        can.rect(x - baffle_thickness / 2, letter_bbox[1] - baffle_thickness/2 - .2*inch, 
-                 baffle_thickness, (N_ROW) * dy + baffle_thickness + .4 * inch), 
+    if False:
+        for x in baffle_xs:
+            can.rect(x - baffle_thickness / 2, letter_bbox[1] - baffle_thickness/2 - .2*inch, 
+                     baffle_thickness, (N_ROW) * dy + baffle_thickness + .4 * inch), 
 
-    for y in baffle_ys:
-        can.rect(pcb_bbox[0], y - baffle_thickness/2, 
-                 pcb_bbox[2], baffle_thickness)
-    
+        for y in baffle_ys:
+            can.rect(pcb_bbox[0], y - baffle_thickness/2, 
+                     pcb_bbox[2], baffle_thickness)
+        
     mount_r = .12 * inch / 2
     pcb_mounts = array([[.15, .15],
                         [7 - .15, .15],
@@ -394,29 +477,112 @@ def draw(filename, data, fontname='Times-Roman',
             [.15, .15 + 1.9],
             [.15, .15 + 1.9 + 4.9],
             ]) * inch + (1 * inch, 0) - (.28*inch/2, (dy - baffle_thickness) / 2)
-                        
+
     for x, y in pcb_mounts:
-        can.circle(x, y, mount_r, fill=False)
+        pcb.drill(x, y, mount_r)
+        backplate.drill(x, y, mount_r)
+        print >> scad, 'washer(%s, %s, 0);' % (x / mm, y / mm)
+        print >> scad, 'washer(%s, %s, %s);' % (x / mm, y / mm, washer_thickness / mm)
+
+        print >> scad_ex, 'washer(%s, %s, 0);' % (x / mm, y / mm)
+        print >> scad_ex, 'washer(%s, %s, %s);' % (x / mm, y / mm, washer_thickness / mm)
+        # can.circle(x, y, mount_r, fill=False)
+
+    if False:
+        pcb.drawOn(can)
+    pcb.toOpenScad(pcb_thickness, scad, 'pcb')
+    print >> scad, 'color([0, 1, 0, 0.3])translate([0, 0, %s])pcb();' % ((2 * washer_thickness + pcb_thickness / 2) / mm)
+    print >> scad_ex, 'color([0, 1, 0, 0.3])translate([0, 0, %s])pcb();' % ((2 * washer_thickness + pcb_thickness / 2) / mm)
     
     for x, y in locator_mounts:
-        locator.translate(x, y)
-        locator.drawOn(can)
-        locator.translate(-x, -y)
+        if False:
+            locator.translate(x, y)
+            locator.drawOn(can)
+            locator.translate(-x, -y)
+        print >> scad, 'translate([%s, %s, %s])locator();' % (x / mm, y / mm, (2 * washer_thickness + 1.5 * pcb_thickness) / mm)
+
+        print >> scad_ex, 'translate([%s, %s, %s])locator();' % (x / mm, y / mm, (2 * washer_thickness + 1.5 * pcb_thickness) / mm)
 
     face_mounts = array([[.15, .15],
                          [.15, 9 - .15],
                          [9 - .15, 9 - .15],
                          [9 - .15, .15]]) * inch
     for x, y in face_mounts:
-        can.circle(x, y, mount_r, fill=False)
+        faceplate.drill(x, y, mount_r)
+        backplate.drill(x, y, mount_r)
+        # can.circle(x, y, mount_r, fill=False)
+        print >> scad, 'standoff(%s, %s);' % (x/mm, y/mm);
+        print >> scad_ex, 'standoff(%s, %s);' % (x/mm, y/mm);
+    faceplate.toOpenScad(faceplate_thickness, scad, 'faceplate')
+    print >> scad, 'color([0.1, 0.1, 0.1, 0.3])translate([0, 0, %s]) faceplate();' % ((standoff_thickness + faceplate_thickness / 2) / mm)
+    print >> scad_ex, 'color([0.1, 0.1, 0.1, 0.3])translate([0, 0, %s])faceplate();' % (2 * inch/mm + (standoff_thickness + faceplate_thickness / 2) / mm)
+    # faceplate.toOpenScad(faceplate_thickness, scad_ex)
 
-        
+    backplate.toOpenScad(faceplate_thickness, scad, 'backplate')
+    print >> scad, 'color([0.1, 0.1, 0.1, 0.9])translate([0, 0, %s])backplate();' % ((-faceplate_thickness / 2) / mm)
+    print >> scad_ex, 'color([0.1, 0.1, 0.1, 0.9])translate([0, 0, %s])backplate();' % (-2 * inch / mm + (-faceplate_thickness / 2) / mm)
+
+    faceplate.drawOn(can)
+    can.setFont("Futura", 15)
+    can.drawCentredString(4.5 * inch, -.75* inch, 'ClockTHREEjr Faceplate, %s, 0.25" Painted/Etched Acrylic' % fontname)
     can.showPage()
+
+    can.translate(1 * inch, 1 * inch)
+    can.setStrokeColor(red)
+    backplate.drawOn(can)
+    # c3jr = Image("Images/ClockTHREEjr_logo2.png", 3*inch, 3.5*inch, w=3*inch, h=None)
+    # c3jr.drawOn(can)
+
+    # oshw = Image("Images/oshw-logo.png", .25*inch, .25*inch, w=1.5*inch)
+    # oshw.drawOn(can)
+
+    can.setFont("Futura", 30)
+    # can.drawCentredString(4.5 * inch, 1. * inch, "WyoLum.com")
+    # can.drawCentredString(4.5 * inch, .5 * inch, "TimeWithArduino")
+    # can.setFont("Futura", 15)
+    # can.drawString(6.1 * inch, .5 * inch, ".blogspot.com")
+
+    can.setFont("Futura", 15)
+    can.drawCentredString(4.5 * inch, -.75 * inch, 'ClockTHREEjr Backplate, 0.25" Engraved ABS')
+
+    can.showPage()
+    
+    baffle_v.translate(1*inch, 9*inch)
+    baffle_v.drawOn(can)
+    baffle_v.translate(-1*inch, -9*inch)
+    textobject = can.beginText()
+    textobject.setTextOrigin(1 * inch, 8.75*inch)
+    textobject.textOut("17 / clock")
+    can.drawText(textobject)
+
+    baffle_h.translate(1*inch, 7*inch)
+    baffle_h.drawOn(can)
+    baffle_h.translate(-1*inch, -7*inch)
+
+    textobject = can.beginText()
+    textobject.setTextOrigin(1 * inch, 6.75*inch)
+    textobject.textOut("9 / clock")
+    can.drawText(textobject)
+    locator.translate(1 * inch, 5 * inch)
+    locator.drawOn(can)
+    locator.translate(-1 * inch, -5 * inch)
+    textobject = can.beginText()
+    textobject.setTextOrigin(1 * inch, 4.75*inch)
+    textobject.textOut("4 / clock")
+    can.drawText(textobject)
+
+    can.setFont("Futura", 15)
+    can.drawCentredString(4.5 * inch, 3 * inch, 'ClockTHREEjr Baffles 0.06" Laser Cut Acrylic')
+
+    can.showPage()
+
     can.save()
+    scad.close()
+    scad_ex.close()
 
 def add_font(fontname):
     pdfmetrics.registerFont(TTFont(fontname, 'fonts/%s.ttf' % fontname))
 add_font('Futura')
-draw('faceplate_jr_Futura.pdf', letters, fontname='Futura')
-                        
+draw('faceplate_jr_Futura.pdf', letters, fontname='Futura', reverse=False)
+draw('faceplate_jr_Futura_R.pdf', letters, fontname='Futura', reverse=True)
     
