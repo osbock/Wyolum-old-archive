@@ -55,6 +55,7 @@ With the understanding that:
 #include <inttypes.h>
 #include "SPI.h"
 #include "rtcBOB.h"
+// #include "Screen.h"
 
 const int     N_ROW = 12;
 const int N_RGB_ROW = 10;
@@ -117,8 +118,7 @@ const uint8_t COLORS[N_COLOR] = {
   TEMPERATURE_COLOR // hidden color for temperature control
 };
 
-class ClockTHREE
-{ 
+class ClockTHREE {//:public Screen{ 
  public:
   ClockTHREE(); 
     
