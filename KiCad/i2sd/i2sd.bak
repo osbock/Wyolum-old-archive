@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 05/12/11 17:55:52
+EESchema Schematic File Version 2  date 05/12/11 22:39:26
 LIBS:i2sd
 LIBS:power
 LIBS:i2sd-cache
@@ -16,27 +16,9 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-NoConn ~ 8500 2250
-NoConn ~ 8450 2250
-NoConn ~ 10875 5900
-NoConn ~ 10875 650 
-NoConn ~ 5600 6325
-NoConn ~ 5600 6225
-Text Label 3600 7050 0    60   ~ 0
-GND
-$Comp
-L GND #PWR01
-U 1 1 4DCB988F
-P 3600 7150
-F 0 "#PWR01" H 3600 7150 30  0001 C CNN
-F 1 "GND" H 3600 7080 30  0001 C CNN
-	1    3600 7150
-	1    0    0    -1  
-$EndComp
-Text Label 3275 6450 0    60   ~ 0
-TXD
-Text Label 3275 6550 0    60   ~ 0
-RXD
+Connection ~ 8500 2900
+Wire Wire Line
+	8500 2250 8500 2900
 Wire Wire Line
 	3800 6450 3275 6450
 Wire Wire Line
@@ -421,6 +403,38 @@ Wire Wire Line
 	3175 6350 3800 6350
 Wire Wire Line
 	3800 6550 3275 6550
+Wire Wire Line
+	8450 2250 8450 2900
+Connection ~ 8450 2900
+$Comp
+L SD_CARD SD1
+U 1 1 4DCA70EB
+P 7750 2050
+F 0 "SD1" H 7900 2500 60  0000 C CNN
+F 1 "SD_CARD" H 8000 2600 60  0000 C CNN
+F 2 "Memory_Card_SD_3M" H 7750 2050 60  0001 C CNN
+	1    7750 2050
+	1    0    0    -1  
+$EndComp
+NoConn ~ 10875 5900
+NoConn ~ 10875 650 
+NoConn ~ 5600 6325
+NoConn ~ 5600 6225
+Text Label 3600 7050 0    60   ~ 0
+GND
+$Comp
+L GND #PWR01
+U 1 1 4DCB988F
+P 3600 7150
+F 0 "#PWR01" H 3600 7150 30  0001 C CNN
+F 1 "GND" H 3600 7080 30  0001 C CNN
+	1    3600 7150
+	1    0    0    -1  
+$EndComp
+Text Label 3275 6450 0    60   ~ 0
+TXD
+Text Label 3275 6550 0    60   ~ 0
+RXD
 Text Label 2200 6350 0    60   ~ 0
 RESET
 $Comp
@@ -786,16 +800,6 @@ P 8300 3100
 F 0 "#PWR03" H 8300 3100 30  0001 C CNN
 F 1 "GND" H 8300 3030 30  0001 C CNN
 	1    8300 3100
-	1    0    0    -1  
-$EndComp
-$Comp
-L SD_CARD SD1
-U 1 1 4DCA70EB
-P 7750 2050
-F 0 "SD1" H 7900 2500 60  0000 C CNN
-F 1 "SD_CARD" H 8000 2600 60  0000 C CNN
-F 2 "Memory_Card_SD_3M" H 7750 2050 60  0001 C CNN
-	1    7750 2050
 	1    0    0    -1  
 $EndComp
 Text Notes 9950 4900 0    60   ~ 0

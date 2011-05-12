@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 05/12/11 14:55:42
+Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 05/12/11 22:36:53
 
 BeginCmp
 TimeStamp = /4DCA7BAC;
@@ -59,21 +59,21 @@ EndCmp
 BeginCmp
 TimeStamp = /4DCA7A2D;
 Reference = P1;
-ValeurCmp = CONN_4;
+ValeurCmp = WP_CD;
 IdModule  = pin_strip_4;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCA5EE0;
 Reference = P2;
-ValeurCmp = CONN_4;
+ValeurCmp = COMM_R;
 IdModule  = pin_strip_4;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCA5EE4;
 Reference = P3;
-ValeurCmp = CONN_4;
+ValeurCmp = COMM_L;
 IdModule  = pin_strip_4;
 EndCmp
 
@@ -172,7 +172,7 @@ BeginCmp
 TimeStamp = /4DCA70EB;
 Reference = SD1;
 ValeurCmp = SD_CARD;
-IdModule  = Memory_Card_SD_3M;
+IdModule  = Memory_Card_SD_Tyco;
 EndCmp
 
 BeginCmp
