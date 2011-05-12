@@ -1,0 +1,438 @@
+# EESchema Netlist Version 1.1 created  05/12/11 15:35:06
+(
+ ( /4DCB9774 C2  C7 100n {Lib=C}
+  (    1 N-000007 )
+  (    2 /RESET )
+ )
+ ( /4DCB971F pin_strip_6-90  P8 FTDI {Lib=CONN_6}
+  (    1 GND )
+  (    2 GND )
+  (    3 ? )
+  (    4 /RXD )
+  (    5 /TXD )
+  (    6 N-000007 )
+ )
+ ( /4DCB9641 CP_5x11mm  C5 100u {Lib=C_POL}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4DCB9634 CP_5x11mm  C6 100u {Lib=C_POL}
+  (    1 +5V )
+  (    2 GND )
+ )
+ ( /4DCB8075 pin_strip_4  P7 CONN_4 {Lib=CONN_4}
+  (    1 /B_13 )
+  (    2 /B_14 )
+  (    3 /B_15 )
+  (    4 /B_16 )
+ )
+ ( /4DCB8070 pin_strip_4  P6 CONN_4 {Lib=CONN_4}
+  (    1 /B_09 )
+  (    2 /B_10 )
+  (    3 /B_11 )
+  (    4 /B_12 )
+ )
+ ( /4DCB806B pin_strip_4  P5 CONN_4 {Lib=CONN_4}
+  (    1 ? )
+  (    2 /B_06 )
+  (    3 /B_07 )
+  (    4 /B_08 )
+ )
+ ( /4DCB8053 pin_strip_4  P4 CONN_4 {Lib=CONN_4}
+  (    1 /B_01 )
+  (    2 /B_02 )
+  (    3 /B_03 )
+  (    4 ? )
+ )
+ ( /4DCB7505 SO14E  U2 74LS125 {Lib=74LS125}
+  (    1 GND )
+  (    2 /SD_CLK )
+  (    3 /SCK )
+  (    4 GND )
+  (    5 /SD_DATA_IN )
+  (    6 /MOSI )
+  (    7 GND )
+  (    8 /SS )
+  (    9 /SD_CS )
+  (   10 GND )
+  (   11 ? )
+  (   12 VCC )
+  (   13 VCC )
+  (   14 VCC )
+ )
+ ( /4DCAC2D1 SOT23-5  U1 MCP_1700 {Lib=MCP_1700}
+  (    1 GND )
+  (    2 VCC )
+  (    3 +5V )
+ )
+ ( /4DCAC172 R1  R2 10k {Lib=R}
+  (    1 +5V )
+  (    2 /SDA )
+ )
+ ( /4DCAC161 R1  R1 10k {Lib=R}
+  (    1 +5V )
+  (    2 /SCL )
+ )
+ ( /4DCA7DAB C1  C4 22p {Lib=C}
+  (    1 N-000009 )
+  (    2 GND )
+ )
+ ( /4DCA7D99 C1  C3 22p {Lib=C}
+  (    1 N-000029 )
+  (    2 GND )
+ )
+ ( /4DCA7D83 XTAL  X1 CRYSTAL {Lib=CRYSTAL}
+  (    1 N-000029 )
+  (    2 N-000009 )
+  (    3 GND )
+ )
+ ( /4DCA7D67 SW-PB  SW1 SW_PUSH {Lib=SW_PUSH}
+  (    1 GND )
+  (    2 /RESET )
+ )
+ ( /4DCA7BFC R1  R7 10k {Lib=R}
+  (    1 +5V )
+  (    2 /RESET )
+ )
+ ( /4DCA7BAC C2  C1 100n {Lib=C}
+  (    1 +5V )
+  (    2 GND )
+ )
+ ( /4DCA7A2D pin_strip_4  P1 WP_CD {Lib=CONN_4}
+  (    1 N-000040 )
+  (    2 GND )
+  (    3 N-000035 )
+  (    4 GND )
+ )
+ ( /4DCA79DE R1  R9 10k {Lib=R}
+  (    1 VCC )
+  (    2 N-000035 )
+ )
+ ( /4DCA79D1 R1  R8 10k {Lib=R}
+  (    1 VCC )
+  (    2 N-000040 )
+ )
+ ( /4DCA70EB Memory_Card_SD_3M  SD1 SD_CARD {Lib=SD_CARD}
+  (    1 /SD_CS )
+  (    2 /SD_DATA_IN )
+  (    3 GND )
+  (    4 VCC )
+  (    5 /SD_CLK )
+  (    6 GND )
+  (    7 /MISO )
+  (    8 ? )
+  (    9 ? )
+  (   10 GND )
+  (   11 ? )
+  (   12 ? )
+  (   CD N-000035 )
+  (  GP3 GND )
+  (   WP N-000040 )
+ )
+ ( /4DCA5F5F R1  R3 10k {Lib=R}
+  (    1 VCC )
+  (    2 /SS )
+ )
+ ( /4DCA5F5D R1  R4 10k {Lib=R}
+  (    1 VCC )
+  (    2 /MOSI )
+ )
+ ( /4DCA5F59 R1  R6 10k {Lib=R}
+  (    1 VCC )
+  (    2 /SCK )
+ )
+ ( /4DCA5F1E C2  C2 100n {Lib=C}
+  (    1 +5V )
+  (    2 GND )
+ )
+ ( /4DCA5EE4 pin_strip_4  P3 COMM_L {Lib=CONN_4}
+  (    1 +5V )
+  (    2 /SCL )
+  (    3 /SDA )
+  (    4 GND )
+ )
+ ( /4DCA5EE0 pin_strip_4  P2 COMM_R {Lib=CONN_4}
+  (    1 +5V )
+  (    2 /SCL )
+  (    3 /SDA )
+  (    4 GND )
+ )
+ ( /4DCA5EC5 TQFP32  IC1 ATMEGA8-AI {Lib=ATMEGA8-AI}
+  (    1 /B_02 )
+  (    2 /B_01 )
+  (    3 GND )
+  (    4 +5V )
+  (    5 GND )
+  (    6 +5V )
+  (    7 N-000029 )
+  (    8 N-000009 )
+  (    9 /B_16 )
+  (   10 /B_15 )
+  (   11 /B_14 )
+  (   12 /B_13 )
+  (   13 /B_12 )
+  (   14 /SS )
+  (   15 /MOSI )
+  (   16 /MISO )
+  (   17 /SCK )
+  (   18 +5V )
+  (   19 /B_11 )
+  (   20 +5V )
+  (   21 GND )
+  (   22 /B_10 )
+  (   23 /B_09 )
+  (   24 /B_08 )
+  (   25 /B_07 )
+  (   26 /B_06 )
+  (   27 /SDA )
+  (   28 /SCL )
+  (   29 /RESET )
+  (   30 /RXD )
+  (   31 /TXD )
+  (   32 /B_03 )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C7
+ SM*
+ C?
+ C1-1
+$endlist
+$component C5
+ SM*
+ C?
+ C1-1
+$endlist
+$component C6
+ SM*
+ C?
+ C1-1
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+$endlist
+$component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$component C3
+ SM*
+ C?
+ C1-1
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+$endlist
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component R9
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R8
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component IC1
+ TQFP32
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 4 "/SD_DATA_IN" "SD_DATA_IN"
+ U2 5
+ SD1 2
+Net 5 "/SD_CLK" "SD_CLK"
+ U2 2
+ SD1 5
+Net 7 "" ""
+ P8 6
+ C7 1
+Net 8 "/RESET" "RESET"
+ C7 2
+ IC1 29
+ R7 2
+ SW1 2
+Net 9 "" ""
+ X1 2
+ IC1 8
+ C4 1
+Net 10 "GND" "GND"
+ C3 2
+ C4 2
+ SD1 10
+ SD1 6
+ SD1 3
+ IC1 3
+ P2 4
+ P3 4
+ C2 2
+ SD1 GP3
+ IC1 21
+ P1 4
+ P1 2
+ C1 2
+ SW1 1
+ X1 3
+ U2 1
+ C6 2
+ C5 2
+ U1 1
+ P8 2
+ P8 1
+ U2 4
+ IC1 5
+ U2 7
+ U2 10
+Net 11 "/B_01" "B_01"
+ IC1 2
+ P4 1
+Net 12 "/B_02" "B_02"
+ P4 2
+ IC1 1
+Net 13 "/SCL" "SCL"
+ P2 2
+ R1 2
+ P3 2
+ IC1 28
+Net 14 "/B_11" "B_11"
+ P6 3
+ IC1 19
+Net 15 "/SDA" "SDA"
+ R2 2
+ P2 3
+ P3 3
+ IC1 27
+Net 16 "/B_06" "B_06"
+ P5 2
+ IC1 26
+Net 17 "/B_07" "B_07"
+ IC1 25
+ P5 3
+Net 18 "/B_08" "B_08"
+ P5 4
+ IC1 24
+Net 19 "/B_09" "B_09"
+ IC1 23
+ P6 1
+Net 20 "/B_12" "B_12"
+ P6 4
+ IC1 13
+Net 21 "/B_03" "B_03"
+ IC1 32
+ P4 3
+Net 22 "/B_10" "B_10"
+ P6 2
+ IC1 22
+Net 23 "/B_13" "B_13"
+ P7 1
+ IC1 12
+Net 24 "/TXD" "TXD"
+ IC1 31
+ P8 5
+Net 25 "/B_14" "B_14"
+ IC1 11
+ P7 2
+Net 26 "/RXD" "RXD"
+ P8 4
+ IC1 30
+Net 27 "/B_15" "B_15"
+ IC1 10
+ P7 3
+Net 28 "/B_16" "B_16"
+ IC1 9
+ P7 4
+Net 29 "" ""
+ IC1 7
+ X1 1
+ C3 1
+Net 34 "/SD_CS" "SD_CS"
+ SD1 1
+ U2 9
+Net 35 "" ""
+ R9 2
+ SD1 CD
+ P1 3
+Net 36 "/MISO" "MISO"
+ IC1 16
+ SD1 7
+Net 37 "/SCK" "SCK"
+ IC1 17
+ U2 3
+ R6 2
+Net 38 "/SS" "SS"
+ IC1 14
+ R3 2
+ U2 8
+Net 39 "/MOSI" "MOSI"
+ IC1 15
+ R4 2
+ U2 6
+Net 40 "" ""
+ P1 1
+ SD1 WP
+ R8 2
+Net 41 "VCC" "VCC"
+ SD1 4
+ R8 1
+ R9 1
+ U2 13
+ U2 14
+ U2 12
+ C5 1
+ U1 2
+ R6 1
+ R4 1
+ R3 1
+Net 42 "+5V" "+5V"
+ IC1 4
+ IC1 6
+ U1 3
+ C6 1
+ IC1 20
+ C1 1
+ R7 1
+ IC1 18
+ R1 1
+ R2 1
+ C2 1
+ P3 1
+ P2 1
+}
+#End
