@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  05/12/11 22:39:41
+PCBNEW-LibModule-V1  05/13/11 11:15:00
 # encoding utf-8
 $INDEX
 C1
@@ -986,7 +986,7 @@ Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  XTAL
 $MODULE Memory_Card_SD_Tyco
-Po 0 0 0 15 4DCC1415 00000000 ~~
+Po 0 0 0 15 4DCCC556 00000000 ~~
 Li Memory_Card_SD_Tyco
 Kw SD Memory Card Connector 3M SD-RSMT-2-MQ-WF Push-Push R/A SMD
 Sc 00000000
@@ -1080,21 +1080,21 @@ Ne 0 ""
 Po -3182 0
 $EndPAD
 $PAD
-Sh "8" R 394 610 0 0 0
+Sh "8" R 365 610 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
 Po -3851 0
 $EndPAD
 $PAD
-Sh "CD" R 276 610 0 0 0
+Sh "CD" R 250 610 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
 Po -4363 0
 $EndPAD
 $PAD
-Sh "WP" R 276 610 0 0 0
+Sh "WP" R 250 610 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
@@ -1129,7 +1129,7 @@ Ne 0 ""
 Po 5315 9449
 $EndPAD
 $PAD
-Sh "GP3" R 591 1102 0 0 0
+Sh "GP3" R 500 1000 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""

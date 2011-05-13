@@ -1,6 +1,30 @@
-# EESchema Netlist Version 1.1 created  05/12/11 22:39:31
+# EESchema Netlist Version 1.1 created  05/13/11 14:36:42
 (
- ( /4DCA70EB Memory_Card_SD_3M  SD1 SD_CARD {Lib=SD_CARD}
+ ( /4DCCE768 vite_3mm  SC6 SCREW {Lib=SCREW}
+ )
+ ( /4DCCE766 vite_3mm  SC5 SCREW {Lib=SCREW}
+ )
+ ( /4DCCE761 vite_3mm  SC4 SCREW {Lib=SCREW}
+ )
+ ( /4DCCE75D vite_3mm  SC3 SCREW {Lib=SCREW}
+ )
+ ( /4DCCE754 vite_3mm  SC2 SCREW {Lib=SCREW}
+ )
+ ( /4DCCE748 vite_3mm  SC1 SCREW {Lib=SCREW}
+ )
+ ( /4DCCC353 pin_strip_4  P10 CDOT1 {Lib=CONN_4}
+  (    1 ? )
+  (    2 ? )
+  (    3 ? )
+  (    4 ? )
+ )
+ ( /4DCCC34B pin_strip_4  P9 CDOT2 {Lib=CONN_4}
+  (    1 ? )
+  (    2 ? )
+  (    3 ? )
+  (    4 ? )
+ )
+ ( /4DCA70EB Memory_Card_SD_Tyco  SD1 SD_CARD {Lib=SD_CARD}
   (    1 /SD_CS )
   (    2 /SD_DATA_IN )
   (    3 GND )
@@ -13,12 +37,12 @@
   (   10 GND )
   (   11 GND )
   (   12 GND )
-  (   CD N-000031 )
+  (   CD N-000047 )
   (  GP3 GND )
-  (   WP N-000038 )
+  (   WP N-000041 )
  )
  ( /4DCB9774 C2  C7 100n {Lib=C}
-  (    1 N-000008 )
+  (    1 N-000015 )
   (    2 /RESET )
  )
  ( /4DCB971F pin_strip_6-90  P8 FTDI {Lib=CONN_6}
@@ -27,7 +51,7 @@
   (    3 ? )
   (    4 /RXD )
   (    5 /TXD )
-  (    6 N-000008 )
+  (    6 N-000015 )
  )
  ( /4DCB9641 CP_5x11mm  C5 100u {Lib=C_POL}
   (    1 VCC )
@@ -91,16 +115,16 @@
   (    2 /SCL )
  )
  ( /4DCA7DAB C1  C4 22p {Lib=C}
-  (    1 N-000010 )
+  (    1 N-000043 )
   (    2 GND )
  )
  ( /4DCA7D99 C1  C3 22p {Lib=C}
-  (    1 N-000029 )
+  (    1 N-000016 )
   (    2 GND )
  )
  ( /4DCA7D83 XTAL  X1 CRYSTAL {Lib=CRYSTAL}
-  (    1 N-000029 )
-  (    2 N-000010 )
+  (    1 N-000016 )
+  (    2 N-000043 )
   (    3 GND )
  )
  ( /4DCA7D67 SW-PB  SW1 SW_PUSH {Lib=SW_PUSH}
@@ -116,18 +140,18 @@
   (    2 GND )
  )
  ( /4DCA7A2D pin_strip_4  P1 WP_CD {Lib=CONN_4}
-  (    1 N-000038 )
+  (    1 N-000041 )
   (    2 GND )
-  (    3 N-000031 )
+  (    3 N-000047 )
   (    4 GND )
  )
  ( /4DCA79DE R1  R9 10k {Lib=R}
   (    1 VCC )
-  (    2 N-000031 )
+  (    2 N-000047 )
  )
  ( /4DCA79D1 R1  R8 10k {Lib=R}
   (    1 VCC )
-  (    2 N-000038 )
+  (    2 N-000041 )
  )
  ( /4DCA5F5F R1  R3 10k {Lib=R}
   (    1 VCC )
@@ -164,8 +188,8 @@
   (    4 +5V )
   (    5 GND )
   (    6 +5V )
-  (    7 N-000029 )
-  (    8 N-000010 )
+  (    7 N-000016 )
+  (    8 N-000043 )
   (    9 /B_16 )
   (   10 /B_15 )
   (   11 /B_14 )
@@ -275,166 +299,166 @@ $endlist
 $endfootprintlist
 }
 { Pin List by Nets
-Net 1 "/SD_CLK" "SD_CLK"
- U2 2
- SD1 5
-Net 7 "/SD_CS" "SD_CS"
- SD1 1
- U2 9
-Net 8 "" ""
- C7 1
+Net 15 "" ""
  P8 6
-Net 10 "" ""
- X1 2
- IC1 8
- C4 1
-Net 11 "/B_01" "B_01"
- P4 1
- IC1 2
-Net 12 "/B_02" "B_02"
- IC1 1
- P4 2
-Net 13 "/B_11" "B_11"
- P6 3
- IC1 19
-Net 14 "/SCL" "SCL"
- R1 2
- IC1 28
- P3 2
- P2 2
-Net 15 "/SDA" "SDA"
- R2 2
- IC1 27
- P2 3
- P3 3
-Net 16 "/B_06" "B_06"
- IC1 26
- P5 2
-Net 17 "/B_07" "B_07"
- P5 3
- IC1 25
-Net 18 "/B_08" "B_08"
- P5 4
- IC1 24
-Net 19 "/B_09" "B_09"
- IC1 23
- P6 1
-Net 20 "/B_12" "B_12"
- IC1 13
- P6 4
-Net 21 "/B_03" "B_03"
- P4 3
- IC1 32
-Net 22 "/B_10" "B_10"
- P6 2
- IC1 22
-Net 23 "/B_13" "B_13"
- IC1 12
- P7 1
-Net 24 "/TXD" "TXD"
- P8 5
- IC1 31
-Net 25 "/B_14" "B_14"
- P7 2
- IC1 11
-Net 26 "/RXD" "RXD"
- IC1 30
- P8 4
-Net 27 "/B_15" "B_15"
- IC1 10
- P7 3
-Net 28 "/B_16" "B_16"
- IC1 9
- P7 4
-Net 29 "" ""
+ C7 1
+Net 16 "" ""
  IC1 7
  C3 1
  X1 1
-Net 30 "/SD_DATA_IN" "SD_DATA_IN"
- SD1 2
- U2 5
-Net 31 "" ""
- SD1 CD
- R9 2
- P1 3
-Net 32 "GND" "GND"
+Net 17 "/B_01" "B_01"
+ IC1 2
+ P4 1
+Net 18 "/B_02" "B_02"
+ P4 2
+ IC1 1
+Net 19 "/SD_CS" "SD_CS"
+ SD1 1
+ U2 9
+Net 20 "/B_11" "B_11"
+ P6 3
+ IC1 19
+Net 21 "/B_06" "B_06"
+ P5 2
+ IC1 26
+Net 22 "/MISO" "MISO"
+ SD1 7
+ IC1 16
+Net 23 "/B_07" "B_07"
+ P5 3
+ IC1 25
+Net 24 "/B_08" "B_08"
+ IC1 24
+ P5 4
+Net 25 "/B_09" "B_09"
+ IC1 23
+ P6 1
+Net 26 "/B_12" "B_12"
+ P6 4
+ IC1 13
+Net 27 "/B_03" "B_03"
+ P4 3
+ IC1 32
+Net 28 "/B_10" "B_10"
+ IC1 22
+ P6 2
+Net 29 "/B_13" "B_13"
+ P7 1
+ IC1 12
+Net 30 "/TXD" "TXD"
+ IC1 31
+ P8 5
+Net 31 "GND" "GND"
+ U2 10
+ U2 7
+ U2 4
+ U1 1
+ X1 3
+ SW1 1
+ P1 4
+ P1 2
+ C1 2
+ SD1 3
+ C6 2
+ C5 2
+ P8 2
+ P8 1
  IC1 5
  IC1 3
  P2 4
- P3 4
- C2 2
- IC1 21
- SW1 1
- X1 3
- C3 2
- C4 2
- U1 1
- U2 4
- U2 7
- U2 10
  U2 1
  SD1 GP3
  SD1 12
  SD1 11
  SD1 10
  SD1 6
- SD1 3
- C6 2
- C5 2
- P8 2
- P8 1
- P1 2
- P1 4
- C1 2
-Net 33 "/RESET" "RESET"
+ C4 2
+ C3 2
+ IC1 21
+ P3 4
+ C2 2
+Net 32 "/B_14" "B_14"
+ P7 2
+ IC1 11
+Net 33 "/RXD" "RXD"
+ IC1 30
+ P8 4
+Net 34 "+5V" "+5V"
+ IC1 20
+ R1 1
+ R2 1
+ U1 3
+ IC1 4
+ IC1 6
+ C6 1
+ R7 1
+ C1 1
+ C2 1
+ P3 1
+ IC1 18
+ P2 1
+Net 35 "/B_15" "B_15"
+ IC1 10
+ P7 3
+Net 36 "/B_16" "B_16"
+ P7 4
+ IC1 9
+Net 37 "/MOSI" "MOSI"
+ R4 2
+ U2 6
+ IC1 15
+Net 38 "/SS" "SS"
+ U2 8
+ IC1 14
+ R3 2
+Net 39 "/SCK" "SCK"
+ IC1 17
+ U2 3
+ R6 2
+Net 40 "/SD_DATA_IN" "SD_DATA_IN"
+ SD1 2
+ U2 5
+Net 41 "" ""
+ SD1 WP
+ R8 2
+ P1 1
+Net 42 "/RESET" "RESET"
  IC1 29
  R7 2
  SW1 2
  C7 2
-Net 34 "/MISO" "MISO"
- SD1 7
- IC1 16
-Net 35 "/SCK" "SCK"
- IC1 17
- R6 2
- U2 3
-Net 36 "/SS" "SS"
- IC1 14
- R3 2
- U2 8
-Net 37 "/MOSI" "MOSI"
- R4 2
- IC1 15
- U2 6
-Net 38 "" ""
- R8 2
- P1 1
- SD1 WP
-Net 39 "VCC" "VCC"
- U2 14
- U2 12
- C5 1
+Net 43 "" ""
+ X1 2
+ IC1 8
+ C4 1
+Net 44 "/SCL" "SCL"
+ P2 2
+ R1 2
+ P3 2
+ IC1 28
+Net 45 "/SD_CLK" "SD_CLK"
+ SD1 5
+ U2 2
+Net 46 "/SDA" "SDA"
+ P3 3
+ P2 3
+ R2 2
+ IC1 27
+Net 47 "" ""
+ R9 2
+ SD1 CD
+ P1 3
+Net 48 "VCC" "VCC"
  U2 13
- SD1 4
- U1 2
- R9 1
- R8 1
+ U2 12
+ U2 14
  R3 1
- R6 1
  R4 1
-Net 40 "+5V" "+5V"
- IC1 6
- IC1 4
- C2 1
- P3 1
- P2 1
- R7 1
- IC1 18
- C1 1
- IC1 20
- C6 1
- R1 1
- R2 1
- U1 3
+ R6 1
+ U1 2
+ C5 1
+ R8 1
+ SD1 4
+ R9 1
 }
 #End

@@ -1,6 +1,6 @@
-update=05/12/11 23:09:23
+update=05/13/11 16:41:32
 version=1
-last_client=kicad
+last_client=eeschema
 [cvpcb]
 version=1
 NetITyp=0
@@ -32,6 +32,8 @@ LastNetListRead=i2sd.net
 LibDir=
 LibName1=libs/i2sd
 LibName2=libs/clock3_parts
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
@@ -66,5 +68,3 @@ LabSize=60
 [eeschema/libraries]
 LibName1=libs/i2sd
 LibName2=libs/power
-[general]
-version=1

@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: 05/12/11 22:48:57
+EESchema-LIBRARY Version 2.3  Date: 05/13/11 15:39:35
 #encoding utf-8
 #
 # +5V
@@ -206,6 +206,16 @@ DRAW
 S -40 150 40 -150 0 1 8 N
 X ~ 1 0 250 100 D 60 60 1 1 P
 X ~ 2 0 -250 100 U 60 60 1 1 P
+ENDDRAW
+ENDDEF
+#
+# SCREW
+#
+DEF ~SCREW SC 0 0 N N 1 F N
+F0 "SC" 0 -100 40 H V C CNN
+F1 "SCREW" 0 100 40 H I C CNN
+DRAW
+C 0 0 50 0 1 0 N
 ENDDRAW
 ENDDEF
 #

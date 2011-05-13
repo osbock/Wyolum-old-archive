@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 05/12/11 22:36:53
+Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 05/13/11 13:41:17
 
 BeginCmp
 TimeStamp = /4DCA7BAC;
@@ -113,6 +113,20 @@ IdModule  = pin_strip_6-90;
 EndCmp
 
 BeginCmp
+TimeStamp = /4DCCC34B;
+Reference = P9;
+ValeurCmp = CDOT2;
+IdModule  = pin_strip_4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DCCC353;
+Reference = P10;
+ValeurCmp = CDOT1;
+IdModule  = pin_strip_4;
+EndCmp
+
+BeginCmp
 TimeStamp = /4DCAC161;
 Reference = R1;
 ValeurCmp = 10k;
@@ -166,6 +180,48 @@ TimeStamp = /4DCA79DE;
 Reference = R9;
 ValeurCmp = 10k;
 IdModule  = R1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DCCE748;
+Reference = SC1;
+ValeurCmp = SCREW;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DCCE754;
+Reference = SC2;
+ValeurCmp = SCREW;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DCCE75D;
+Reference = SC3;
+ValeurCmp = SCREW;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DCCE761;
+Reference = SC4;
+ValeurCmp = SCREW;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DCCE766;
+Reference = SC5;
+ValeurCmp = SCREW;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DCCE768;
+Reference = SC6;
+ValeurCmp = SCREW;
+IdModule  = vite_3mm;
 EndCmp
 
 BeginCmp
