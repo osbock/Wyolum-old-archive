@@ -1,30 +1,39 @@
 ref	value	footprint	Field1	Field2	Field3	Field4	Field5	Field6	Field7	Field8
-C1	100n	
-C2	100n	
-C3	22p	
-C4	22p	
-C5	100u	
-C6	100u	
-C7	100n	
+C1	100n	C2
+C2	100n	C2
+C3	22p	C1
+C4	22p	C1
+C5	100u	CP_5x11mm
+C6	100u	CP_5x11mm
+C7	100n	C2
 IC1	ATMEGA8-AI	TQFP32
-P1	CONN_4	
-P2	CONN_4	
-P3	CONN_4	
-P4	CONN_4	
-P5	CONN_4	
-P6	CONN_4	
-P7	CONN_4	
-P8	FTDI	
-R1	10k	
-R2	10k	
-R3	10k	
-R4	10k	
-R6	10k	
-R7	10k	
-R8	10k	
-R9	10k	
-SD1	SD_CARD	
-SW1	SW_PUSH		
-U1	MCP_1700	
-U2	74LS125	
-X1	CRYSTAL	
+P1	WP_CD	pin_strip_4
+P2	COMM_R	pin_strip_4
+P3	COMM_L	pin_strip_4
+P4	CONN_4	pin_strip_4
+P5	CONN_4	pin_strip_4
+P6	CONN_4	pin_strip_4
+P7	CONN_4	pin_strip_4
+P8	FTDI	pin_strip_6-90
+P9	CDOT2	pin_strip_4
+P10	CDOT1	pin_strip_4
+P11	ISP	
+R1	10k	R1
+R2	10k	R1
+R3	10k	R1
+R4	10k	R1
+R6	10k	R1
+R7	10k	R1
+R8	10k	R1
+R9	10k	R1
+SC1	SCREW	vite_3mm
+SC2	SCREW	vite_3mm
+SC3	SCREW	vite_3mm
+SC4	SCREW	vite_3mm
+SC5	SCREW	vite_3mm
+SC6	SCREW	vite_3mm
+SD1	SD_CARD	Memory_Card_SD_Tyco
+SW1	SW_PUSH	SW-PB	
+U1	MCP_1700	SOT23-5
+U2	74LS125	SO14E
+X1	CRYSTAL	XTAL

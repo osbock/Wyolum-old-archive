@@ -1,6 +1,7 @@
-EESchema Schematic File Version 2  date 05/13/11 15:39:35
+EESchema Schematic File Version 2  date 05/13/11 18:11:31
 LIBS:i2sd
 LIBS:power
+LIBS:clock3
 LIBS:i2sd-cache
 EELAYER 25  0
 EELAYER END
@@ -16,72 +17,190 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-NoConn ~ 9850 5150
-NoConn ~ 9850 5050
-NoConn ~ 9850 4950
-NoConn ~ 9850 4850
 $Comp
-L SCREW SC6
-U 1 1 4DCCE768
-P 7950 6575
-F 0 "SC6" H 7950 6475 40  0000 C CNN
-F 1 "SCREW" H 7950 6675 40  0001 C CNN
-F 2 "vite_3mm" H 7950 6575 60  0001 C CNN
-	1    7950 6575
+L I/O B14
+U 1 1 4DCD1D5C
+P 4325 3650
+F 0 "B14" H 4405 3650 40  0000 L CNN
+F 1 "I/O" H 4325 3705 30  0001 C CNN
+	1    4325 3650
 	1    0    0    -1  
 $EndComp
 $Comp
-L SCREW SC5
-U 1 1 4DCCE766
-P 7800 6575
-F 0 "SC5" H 7800 6475 40  0000 C CNN
-F 1 "SCREW" H 7800 6675 40  0001 C CNN
-F 2 "vite_3mm" H 7800 6575 60  0001 C CNN
-	1    7800 6575
+L I/O B13
+U 1 1 4DCD1D59
+P 4325 3750
+F 0 "B13" H 4405 3750 40  0000 L CNN
+F 1 "I/O" H 4325 3805 30  0001 C CNN
+	1    4325 3750
 	1    0    0    -1  
 $EndComp
 $Comp
-L SCREW SC4
-U 1 1 4DCCE761
-P 7650 6575
-F 0 "SC4" H 7650 6475 40  0000 C CNN
-F 1 "SCREW" H 7650 6675 40  0001 C CNN
-F 2 "vite_3mm" H 7650 6575 60  0001 C CNN
-	1    7650 6575
+L I/O B12
+U 1 1 4DCD1D52
+P 4325 3850
+F 0 "B12" H 4405 3850 40  0000 L CNN
+F 1 "I/O" H 4325 3905 30  0001 C CNN
+	1    4325 3850
 	1    0    0    -1  
 $EndComp
 $Comp
-L SCREW SC3
-U 1 1 4DCCE75D
-P 7500 6575
-F 0 "SC3" H 7500 6475 40  0000 C CNN
-F 1 "SCREW" H 7500 6675 40  0001 C CNN
-F 2 "vite_3mm" H 7500 6575 60  0001 C CNN
-	1    7500 6575
+L I/O B11
+U 1 1 4DCD1D50
+P 4325 4050
+F 0 "B11" H 4405 4050 40  0000 L CNN
+F 1 "I/O" H 4325 4105 30  0001 C CNN
+	1    4325 4050
 	1    0    0    -1  
 $EndComp
 $Comp
-L SCREW SC2
-U 1 1 4DCCE754
-P 7350 6575
-F 0 "SC2" H 7350 6475 40  0000 C CNN
-F 1 "SCREW" H 7350 6675 40  0001 C CNN
-F 2 "vite_3mm" H 7350 6575 60  0001 C CNN
-	1    7350 6575
+L I/O B10
+U 1 1 4DCD1D4F
+P 4325 4150
+F 0 "B10" H 4405 4150 40  0000 L CNN
+F 1 "I/O" H 4325 4205 30  0001 C CNN
+	1    4325 4150
 	1    0    0    -1  
 $EndComp
 $Comp
-L SCREW SC1
-U 1 1 4DCCE748
-P 7200 6575
-F 0 "SC1" H 7200 6475 40  0000 C CNN
-F 1 "SCREW" H 7200 6675 40  0001 C CNN
-F 2 "vite_3mm" H 7200 6575 60  0001 C CNN
-	1    7200 6575
+L I/O B9
+U 1 1 4DCD1D4D
+P 4325 2850
+F 0 "B9" H 4405 2850 40  0000 L CNN
+F 1 "I/O" H 4325 2905 30  0001 C CNN
+	1    4325 2850
 	1    0    0    -1  
 $EndComp
-Text Notes 9425 5775 0    60   ~ 0
-Additional connectors\nto provide compatibility with\nCDot / rtcBoB\n0.9" spacing betn connectors\nUse only if space permits on PCB
+$Comp
+L I/O B8
+U 1 1 4DCD1D4C
+P 4325 2950
+F 0 "B8" H 4405 2950 40  0000 L CNN
+F 1 "I/O" H 4325 3005 30  0001 C CNN
+	1    4325 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L I/O B7
+U 1 1 4DCD1D49
+P 4325 2250
+F 0 "B7" H 4405 2250 40  0000 L CNN
+F 1 "I/O" H 4325 2305 30  0001 C CNN
+	1    4325 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L I/O B6
+U 1 1 4DCD1D46
+P 4325 2350
+F 0 "B6" H 4405 2350 40  0000 L CNN
+F 1 "I/O" H 4325 2405 30  0001 C CNN
+	1    4325 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L I/O B5
+U 1 1 4DCD1D43
+P 4325 2450
+F 0 "B5" H 4405 2450 40  0000 L CNN
+F 1 "I/O" H 4325 2505 30  0001 C CNN
+	1    4325 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L I/O B4
+U 1 1 4DCD1D41
+P 4325 2550
+F 0 "B4" H 4405 2550 40  0000 L CNN
+F 1 "I/O" H 4325 2605 30  0001 C CNN
+	1    4325 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L I/O B3
+U 1 1 4DCD1D3F
+P 4325 3350
+F 0 "B3" H 4405 3350 40  0000 L CNN
+F 1 "I/O" H 4325 3405 30  0001 C CNN
+	1    4325 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L I/O B2
+U 1 1 4DCD1D3D
+P 4325 3450
+F 0 "B2" H 4405 3450 40  0000 L CNN
+F 1 "I/O" H 4325 3505 30  0001 C CNN
+	1    4325 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L I/O B1
+U 1 1 4DCD1D3A
+P 4325 3550
+F 0 "B1" H 4405 3550 40  0000 L CNN
+F 1 "I/O" H 4325 3605 30  0001 C CNN
+	1    4325 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_I/O P7
+U 1 1 4DCD1CB5
+P 5950 7275
+F 0 "P7" V 5900 7275 50  0000 C CNN
+F 1 "CONN_I/O" V 6000 7275 50  0000 C CNN
+	1    5950 7275
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_I/O P6
+U 1 1 4DCD1CB1
+P 5950 6875
+F 0 "P6" V 5900 6875 50  0000 C CNN
+F 1 "CONN_I/O" V 6000 6875 50  0000 C CNN
+	1    5950 6875
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_I/O P5
+U 1 1 4DCD1CAD
+P 5950 6475
+F 0 "P5" V 5900 6475 50  0000 C CNN
+F 1 "CONN_I/O" V 6000 6475 50  0000 C CNN
+	1    5950 6475
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_I/O P4
+U 1 1 4DCD1CA7
+P 5950 6075
+F 0 "P4" V 5900 6075 50  0000 C CNN
+F 1 "CONN_I/O" V 6000 6075 50  0000 C CNN
+	1    5950 6075
+	1    0    0    -1  
+$EndComp
+NoConn ~ 5600 7425
+NoConn ~ 5600 7325
+NoConn ~ 5600 7225
+NoConn ~ 5600 7125
+NoConn ~ 5600 7025
+NoConn ~ 5600 6925
+NoConn ~ 5600 6825
+NoConn ~ 5600 6725
+NoConn ~ 5600 6625
+NoConn ~ 5600 6525
+NoConn ~ 5600 6425
+NoConn ~ 5600 6125
+NoConn ~ 5600 6025
+NoConn ~ 5600 5925
+Text Label 1000 6350 0    60   ~ 0
+MISO
+Wire Wire Line
+	1650 6350 1000 6350
+Wire Wire Line
+	1650 6550 1000 6550
+Wire Wire Line
+	1650 6750 1000 6750
 Wire Wire Line
 	8025 5700 1000 5700
 Connection ~ 10575 1800
@@ -93,7 +212,7 @@ Wire Wire Line
 Wire Wire Line
 	3800 6550 3275 6550
 Wire Wire Line
-	3175 6350 3800 6350
+	3275 6350 3800 6350
 Wire Wire Line
 	3600 7150 3600 6750
 Wire Wire Line
@@ -106,7 +225,7 @@ Wire Wire Line
 	10575 1175 10575 1100
 Connection ~ 7100 3650
 Wire Wire Line
-	7100 2450 7100 5700
+	7100 5700 7100 2450
 Connection ~ 5750 2500
 Wire Wire Line
 	5750 2500 6450 2500
@@ -116,22 +235,6 @@ Connection ~ 7100 5700
 Connection ~ 6450 3050
 Wire Wire Line
 	6450 2850 6450 3050
-Wire Wire Line
-	5375 7025 5600 7025
-Wire Wire Line
-	5375 6825 5600 6825
-Wire Wire Line
-	5375 6725 5600 6725
-Wire Wire Line
-	5375 6925 5600 6925
-Wire Wire Line
-	5375 7125 5600 7125
-Wire Wire Line
-	5375 7225 5600 7225
-Wire Wire Line
-	5375 7325 5600 7325
-Wire Wire Line
-	5375 7425 5600 7425
 Wire Wire Line
 	3950 2850 4175 2850
 Wire Wire Line
@@ -149,12 +252,6 @@ Wire Wire Line
 Wire Wire Line
 	3950 2250 4175 2250
 Wire Wire Line
-	5375 6625 5600 6625
-Wire Wire Line
-	5375 6525 5600 6525
-Wire Wire Line
-	5375 6425 5600 6425
-Wire Wire Line
 	3950 2350 4175 2350
 Wire Wire Line
 	3950 2450 4175 2450
@@ -162,12 +259,6 @@ Wire Wire Line
 	3950 2550 4175 2550
 Wire Wire Line
 	3950 3150 4175 3150
-Wire Wire Line
-	5375 6125 5600 6125
-Wire Wire Line
-	5375 5925 5600 5925
-Wire Wire Line
-	5375 6025 5600 6025
 Wire Wire Line
 	3950 3250 4175 3250
 Wire Wire Line
@@ -179,7 +270,7 @@ Wire Wire Line
 Wire Wire Line
 	6750 4300 7000 4300
 Wire Wire Line
-	7000 4650 6300 4650
+	6300 4650 7000 4650
 Wire Wire Line
 	6300 4650 6300 4600
 Connection ~ 7100 3050
@@ -210,12 +301,12 @@ Wire Wire Line
 	10875 800  1250 800 
 Connection ~ 4800 2750
 Wire Wire Line
-	4800 5400 4800 1700
+	4800 1700 4800 5400
 Connection ~ 5000 2650
 Wire Wire Line
-	5000 5500 5000 1700
+	5000 1700 5000 5500
 Wire Wire Line
-	7650 2900 9100 2900
+	9100 2900 7650 2900
 Wire Wire Line
 	5400 1700 5400 4350
 Wire Wire Line
@@ -225,9 +316,9 @@ Wire Wire Line
 Wire Wire Line
 	7750 2000 6900 2000
 Wire Wire Line
-	9950 1925 9950 1600
+	9950 1600 9950 1925
 Wire Wire Line
-	10500 1100 10875 1100
+	10875 1100 10500 1100
 Connection ~ 1000 4500
 Wire Wire Line
 	1350 4500 650  4500
@@ -237,9 +328,9 @@ Connection ~ 1350 3700
 Wire Wire Line
 	1300 3700 1350 3700
 Wire Wire Line
-	1350 3150 2050 3150
+	2050 3150 1350 3150
 Wire Wire Line
-	1350 4000 1350 3150
+	1350 3150 1350 4000
 Connection ~ 1800 5700
 Wire Wire Line
 	1550 5500 1550 5700
@@ -252,7 +343,7 @@ Connection ~ 2900 5700
 Wire Wire Line
 	2050 2450 1800 2450
 Wire Wire Line
-	1950 2550 1950 2650
+	1950 2650 1950 2550
 Wire Wire Line
 	1950 2550 2050 2550
 Wire Wire Line
@@ -274,7 +365,7 @@ Wire Wire Line
 Wire Wire Line
 	7600 2050 7600 2150
 Wire Wire Line
-	5600 4550 3950 4550
+	3950 4550 5600 4550
 Wire Wire Line
 	3950 4450 5500 4450
 Wire Wire Line
@@ -283,10 +374,10 @@ Wire Wire Line
 	7750 1850 6800 1850
 Connection ~ 8300 2900
 Wire Wire Line
-	8425 5400 4800 5400
+	4800 5400 8425 5400
 Connection ~ 10875 1100
 Wire Wire Line
-	10875 1200 10875 650 
+	10875 650  10875 1200
 Connection ~ 8225 5400
 Connection ~ 3000 5700
 Wire Wire Line
@@ -299,18 +390,18 @@ Wire Wire Line
 Connection ~ 8025 5600
 Connection ~ 8125 5500
 Wire Wire Line
-	8425 5500 5000 5500
+	5000 5500 8425 5500
 Wire Wire Line
-	8025 5150 8425 5150
+	8425 5150 8025 5150
 Wire Wire Line
 	8425 5600 8025 5600
 Wire Wire Line
 	2900 5700 2900 4850
 Connection ~ 8025 5700
 Wire Wire Line
-	7650 1800 7750 1800
+	7750 1800 7650 1800
 Wire Wire Line
-	7650 2900 7650 1800
+	7650 1800 7650 2900
 Wire Wire Line
 	8400 2900 8400 2250
 Connection ~ 8400 2900
@@ -327,26 +418,26 @@ Wire Wire Line
 	9000 1100 9000 1450
 Connection ~ 9000 1100
 Wire Wire Line
-	8250 2550 8250 2250
+	8250 2250 8250 2550
 Wire Wire Line
 	9000 1950 9000 2550
 Wire Wire Line
-	9200 2550 8250 2550
+	8250 2550 9200 2550
 Connection ~ 9000 2550
 Wire Wire Line
 	9200 2650 9100 2650
 Connection ~ 9100 2650
 Wire Wire Line
-	1250 2650 1250 800 
+	1250 800  1250 2650
 Wire Wire Line
-	2050 2650 1250 2650
+	1250 2650 2050 2650
 Connection ~ 1950 2650
 Connection ~ 2900 800 
 Wire Wire Line
-	1800 1900 1800 5700
+	1800 5700 1800 1900
 Connection ~ 1800 2450
 Wire Wire Line
-	1550 4900 1550 1950
+	1550 1950 1550 4900
 Connection ~ 1550 2250
 Wire Wire Line
 	650  4000 650  2950
@@ -358,7 +449,7 @@ Connection ~ 650  3700
 Wire Wire Line
 	650  4500 650  4400
 Wire Wire Line
-	1000 3950 1000 5700
+	1000 5700 1000 3950
 Connection ~ 1550 5700
 Wire Wire Line
 	9400 1100 5200 1100
@@ -374,11 +465,11 @@ Wire Wire Line
 	5600 1100 5600 1200
 Connection ~ 5600 1100
 Wire Wire Line
-	5600 1700 5600 4550
+	5600 4550 5600 1700
 Wire Wire Line
 	5500 1750 5500 4450
 Wire Wire Line
-	8300 3100 8300 2250
+	8300 2250 8300 3100
 Wire Wire Line
 	3950 2650 5000 2650
 Wire Wire Line
@@ -387,25 +478,25 @@ Wire Wire Line
 	4800 800  4800 1200
 Connection ~ 4800 800 
 Wire Wire Line
-	8025 5900 8025 5150
+	8025 5150 8025 5900
 Wire Wire Line
 	10875 1800 10875 1600
 Wire Wire Line
 	1550 1450 1550 800 
 Connection ~ 1550 800 
 Wire Wire Line
-	8325 5300 8425 5300
+	8425 5300 8325 5300
 Wire Wire Line
-	8325 4425 8325 5300
+	8325 5300 8325 4425
 Connection ~ 8325 4850
 Wire Wire Line
 	8425 5050 8125 5050
 Wire Wire Line
 	8125 5050 8125 5500
 Wire Wire Line
-	6300 3650 6300 3600
+	6300 3600 6300 3650
 Wire Wire Line
-	7100 3650 6300 3650
+	6300 3650 7100 3650
 Wire Wire Line
 	6750 2700 6900 2700
 Wire Wire Line
@@ -419,11 +510,11 @@ Wire Wire Line
 Wire Wire Line
 	6800 2100 6800 1850
 Wire Wire Line
-	7000 4050 7000 4650
+	7000 4650 7000 4050
 Wire Wire Line
-	5750 4050 7000 4050
+	7000 4050 5750 4050
 Wire Wire Line
-	5750 1100 5750 4050
+	5750 4050 5750 1100
 Connection ~ 5750 1100
 Connection ~ 7000 4300
 Wire Wire Line
@@ -458,39 +549,99 @@ Wire Wire Line
 	9325 1100 9325 1175
 Connection ~ 9325 1100
 Wire Wire Line
-	10575 1800 10575 1625
+	10575 1625 10575 1800
 Wire Wire Line
 	3800 6850 3600 6850
 Connection ~ 3600 6850
 Wire Wire Line
-	2775 6350 2200 6350
+	2875 6350 2500 6350
 Wire Wire Line
 	3800 6450 3275 6450
 Wire Wire Line
-	8500 2900 8500 2250
+	8500 2250 8500 2900
 Connection ~ 8500 2900
-NoConn ~ 9850 5600
-NoConn ~ 9850 5500
-NoConn ~ 9850 5400
-NoConn ~ 9850 5300
+Wire Wire Line
+	1650 6850 1450 6850
+Wire Wire Line
+	1450 6850 1450 7150
+Wire Wire Line
+	1650 6650 1000 6650
+Wire Wire Line
+	1650 6450 1000 6450
+Text Label 1000 6450 0    60   ~ 0
+5V0
+Text Label 1000 6550 0    60   ~ 0
+SCK
+Text Label 1000 6650 0    60   ~ 0
+MOSI
+Text Label 1000 6750 0    60   ~ 0
+RESET
 $Comp
-L CONN_4 P10
-U 1 1 4DCCC353
-P 10200 5450
-F 0 "P10" V 10150 5450 50  0000 C CNN
-F 1 "CDOT1" V 10250 5450 50  0000 C CNN
-F 2 "pin_strip_4" H 10200 5450 60  0001 C CNN
-	1    10200 5450
+L GND #PWR01
+U 1 1 4DCD19B3
+P 1450 7150
+F 0 "#PWR01" H 1450 7150 30  0001 C CNN
+F 1 "GND" H 1450 7080 30  0001 C CNN
+	1    1450 7150
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_4 P9
-U 1 1 4DCCC34B
-P 10200 5000
-F 0 "P9" V 10150 5000 50  0000 C CNN
-F 1 "CDOT2" V 10250 5000 50  0000 C CNN
-F 2 "pin_strip_4" H 10200 5000 60  0001 C CNN
-	1    10200 5000
+L ISP P9
+U 1 1 4DCD1997
+P 2000 6600
+F 0 "P9" V 1950 6600 60  0000 C CNN
+F 1 "ISP" V 2050 6600 60  0000 C CNN
+	1    2000 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L SCREW SC6
+U 1 1 4DCCE768
+P 7950 6575
+F 0 "SC6" H 7950 6475 40  0000 C CNN
+F 1 "SCREW" H 7950 6675 40  0001 C CNN
+F 2 "vite_3mm" H 7950 6575 60  0001 C CNN
+	1    7950 6575
+	1    0    0    -1  
+$EndComp
+$Comp
+L SCREW SC5
+U 1 1 4DCCE766
+P 7800 6575
+F 0 "SC5" H 7800 6475 40  0000 C CNN
+F 1 "SCREW" H 7800 6675 40  0001 C CNN
+F 2 "vite_3mm" H 7800 6575 60  0001 C CNN
+	1    7800 6575
+	1    0    0    -1  
+$EndComp
+$Comp
+L SCREW SC3
+U 1 1 4DCCE75D
+P 7500 6575
+F 0 "SC3" H 7500 6475 40  0000 C CNN
+F 1 "SCREW" H 7500 6675 40  0001 C CNN
+F 2 "vite_3mm" H 7500 6575 60  0001 C CNN
+	1    7500 6575
+	1    0    0    -1  
+$EndComp
+$Comp
+L SCREW SC2
+U 1 1 4DCCE754
+P 7350 6575
+F 0 "SC2" H 7350 6475 40  0000 C CNN
+F 1 "SCREW" H 7350 6675 40  0001 C CNN
+F 2 "vite_3mm" H 7350 6575 60  0001 C CNN
+	1    7350 6575
+	1    0    0    -1  
+$EndComp
+$Comp
+L SCREW SC1
+U 1 1 4DCCE748
+P 7200 6575
+F 0 "SC1" H 7200 6475 40  0000 C CNN
+F 1 "SCREW" H 7200 6675 40  0001 C CNN
+F 2 "vite_3mm" H 7200 6575 60  0001 C CNN
+	1    7200 6575
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -508,10 +659,10 @@ NoConn ~ 5600 6225
 Text Label 3600 7050 0    60   ~ 0
 GND
 $Comp
-L GND #PWR01
+L GND #PWR02
 U 1 1 4DCB988F
 P 3600 7150
-F 0 "#PWR01" H 3600 7150 30  0001 C CNN
+F 0 "#PWR02" H 3600 7150 30  0001 C CNN
 F 1 "GND" H 3600 7080 30  0001 C CNN
 	1    3600 7150
 	1    0    0    -1  
@@ -520,16 +671,16 @@ Text Label 3275 6450 0    60   ~ 0
 TXD
 Text Label 3275 6550 0    60   ~ 0
 RXD
-Text Label 2200 6350 0    60   ~ 0
+Text Label 2500 6350 0    60   ~ 0
 RESET
 $Comp
 L C C7
 U 1 1 4DCB9774
-P 2975 6350
-F 0 "C7" V 2875 6475 50  0000 L CNN
-F 1 "100n" V 2875 6175 50  0000 L CNN
-F 2 "C2" H 2975 6350 60  0001 C CNN
-	1    2975 6350
+P 3075 6350
+F 0 "C7" V 2975 6475 50  0000 L CNN
+F 1 "100n" V 2975 6175 50  0000 L CNN
+F 2 "C2" H 3075 6350 60  0001 C CNN
+	1    3075 6350
 	0    1    1    0   
 $EndComp
 NoConn ~ 3800 6650
@@ -569,106 +720,38 @@ Text Label 1550 2250 0    60   ~ 0
 RESET
 Text Notes 6250 6950 1    60   ~ 0
 I/O Breakout
-Text Label 5375 7025 0    60   ~ 0
-B_12
-Text Label 5375 6925 0    60   ~ 0
-B_11
-Text Label 5375 6825 0    60   ~ 0
-B_10
-Text Label 5375 6725 0    60   ~ 0
+Text Label 3950 2850 0    60   ~ 0
 B_09
-Text Label 5375 7125 0    60   ~ 0
-B_13
-Text Label 5375 7225 0    60   ~ 0
+Text Label 3950 3650 0    60   ~ 0
 B_14
-Text Label 5375 7325 0    60   ~ 0
-B_15
-Text Label 5375 7425 0    60   ~ 0
-B_16
-Text Label 4175 2850 0    60   ~ 0
-B_11
-Text Label 4175 3650 0    60   ~ 0
-B_16
-Text Label 4175 3750 0    60   ~ 0
-B_15
-Text Label 4175 3850 0    60   ~ 0
-B_14
-Text Label 4175 4050 0    60   ~ 0
+Text Label 3950 3750 0    60   ~ 0
 B_13
-Text Label 4175 4150 0    60   ~ 0
+Text Label 3950 3850 0    60   ~ 0
 B_12
-Text Label 4175 2950 0    60   ~ 0
+Text Label 3950 4050 0    60   ~ 0
+B_11
+Text Label 3950 4150 0    60   ~ 0
 B_10
-Text Label 4175 2250 0    60   ~ 0
-B_09
-Text Label 5375 6625 0    60   ~ 0
+Text Label 3950 2950 0    60   ~ 0
 B_08
-Text Label 5375 6525 0    60   ~ 0
+Text Label 3950 2250 0    60   ~ 0
 B_07
-Text Label 5375 6425 0    60   ~ 0
+Text Label 3950 2350 0    60   ~ 0
 B_06
-Text Label 4175 2350 0    60   ~ 0
-B_08
-Text Label 4175 2450 0    60   ~ 0
-B_07
-Text Label 4175 2550 0    60   ~ 0
-B_06
+Text Label 3950 2450 0    60   ~ 0
+B_05
+Text Label 3950 2550 0    60   ~ 0
+B_04
 Text Label 4175 3150 0    60   ~ 0
 RXD
-Text Label 5375 5925 0    60   ~ 0
-B_01
-Text Label 5375 6025 0    60   ~ 0
-B_02
-Text Label 5375 6125 0    60   ~ 0
-B_03
 Text Label 4175 3250 0    60   ~ 0
 TXD
-Text Label 4175 3350 0    60   ~ 0
+Text Label 3950 3350 0    60   ~ 0
 B_03
-Text Label 4175 3450 0    60   ~ 0
+Text Label 3950 3450 0    60   ~ 0
 B_02
-Text Label 4175 3550 0    60   ~ 0
+Text Label 3950 3550 0    60   ~ 0
 B_01
-$Comp
-L CONN_4 P7
-U 1 1 4DCB8075
-P 5950 7275
-F 0 "P7" V 5900 7275 50  0000 C CNN
-F 1 "CONN_4" V 6000 7275 50  0000 C CNN
-F 2 "pin_strip_4" H 5950 7275 60  0001 C CNN
-	1    5950 7275
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_4 P6
-U 1 1 4DCB8070
-P 5950 6875
-F 0 "P6" V 5900 6875 50  0000 C CNN
-F 1 "CONN_4" V 6000 6875 50  0000 C CNN
-F 2 "pin_strip_4" H 5950 6875 60  0001 C CNN
-	1    5950 6875
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_4 P5
-U 1 1 4DCB806B
-P 5950 6475
-F 0 "P5" V 5900 6475 50  0000 C CNN
-F 1 "CONN_4" V 6000 6475 50  0000 C CNN
-F 2 "pin_strip_4" H 5950 6475 60  0001 C CNN
-	1    5950 6475
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_4 P4
-U 1 1 4DCB8053
-P 5950 6075
-F 0 "P4" V 5900 6075 50  0000 C CNN
-F 1 "CONN_4" V 6000 6075 50  0000 C CNN
-F 2 "pin_strip_4" H 5950 6075 60  0001 C CNN
-	1    5950 6075
-	1    0    0    -1  
-$EndComp
 NoConn ~ 5850 4300
 Text Label 7800 800  0    60   ~ 0
 5V0
@@ -715,10 +798,10 @@ $EndComp
 Text Label 9950 1700 0    60   ~ 0
 GND
 $Comp
-L GND #PWR02
+L GND #PWR03
 U 1 1 4DCAC327
 P 9950 1925
-F 0 "#PWR02" H 9950 1925 30  0001 C CNN
+F 0 "#PWR03" H 9950 1925 30  0001 C CNN
 F 1 "GND" H 9950 1855 30  0001 C CNN
 	1    9950 1925
 	1    0    0    -1  
@@ -879,10 +962,10 @@ MISO
 Text Label 7000 1750 0    60   ~ 0
 SD_DATA_OUT
 $Comp
-L GND #PWR03
+L GND #PWR04
 U 1 1 4DCA7300
 P 8300 3100
-F 0 "#PWR03" H 8300 3100 30  0001 C CNN
+F 0 "#PWR04" H 8300 3100 30  0001 C CNN
 F 1 "GND" H 8300 3030 30  0001 C CNN
 	1    8300 3100
 	1    0    0    -1  
@@ -962,19 +1045,19 @@ $EndComp
 Text Notes 8925 5350 0    60   ~ 0
 VCC\nSCL\nSDA\nGND
 $Comp
-L +5V #PWR04
+L +5V #PWR05
 U 1 1 4D82B1D1
 P 10875 650
-F 0 "#PWR04" H 10875 740 20  0001 C CNN
+F 0 "#PWR05" H 10875 740 20  0001 C CNN
 F 1 "+5V" H 10875 740 30  0000 C CNN
 	1    10875 650 
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR05
+L GND #PWR06
 U 1 1 4D82B1AE
 P 8025 5900
-F 0 "#PWR05" H 8025 5900 30  0001 C CNN
+F 0 "#PWR06" H 8025 5900 30  0001 C CNN
 F 1 "GND" H 8025 5830 30  0001 C CNN
 	1    8025 5900
 	1    0    0    -1  

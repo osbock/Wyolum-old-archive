@@ -1,4 +1,4 @@
-update=05/13/11 16:41:32
+update=05/13/11 19:01:28
 version=1
 last_client=eeschema
 [cvpcb]
@@ -11,6 +11,8 @@ LibDir=
 NetType=0
 [cvpcb/libraries]
 EquName1=devcms
+[general]
+version=1
 [pcbnew]
 version=1
 PadDrlX=320
@@ -32,8 +34,6 @@ LastNetListRead=i2sd.net
 LibDir=
 LibName1=libs/i2sd
 LibName2=libs/clock3_parts
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -68,3 +68,4 @@ LabSize=60
 [eeschema/libraries]
 LibName1=libs/i2sd
 LibName2=libs/power
+LibName3=D:/Users/Anool/Documents/Arduino/Project-Clock3/Code/clockthree/KiCad/Clock3/libs/clock3
