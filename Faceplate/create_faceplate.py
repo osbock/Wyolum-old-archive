@@ -1,3 +1,5 @@
+ # -*- coding: latin-1 -*-
+
 '''
 download fonts from: 
     http://openfontlibrary.org
@@ -609,7 +611,15 @@ def draw(filename, data, images, fontname='Times-Roman',
             r = 1 /64. * inch
             c.circle(x, y, r, fill=True)
 
-    data = [[case(char) for char in line] for line in data]
+    encName = 'winansi'
+    decoder = codecs.lookup(encName)[1]
+    def decodeFunc(txt):
+        if txt is None:
+            return ' '
+        else:
+            return decoder(txt, errors='replace')[0]
+    data = [[decodeFunc(case(char)) for char in line] for line in data]
+    # data[0][0] = unicode(chr(153))
     t=Table(data, N_COL*[dx], N_ROW*[dy])
     t.setStyle(TableStyle(
             [('FONTNAME', (0, 0), (N_COL - 1, N_ROW - 1), fontname),
@@ -622,13 +632,6 @@ def draw(filename, data, images, fontname='Times-Roman',
         t.drawOn(c, XS[0], YS[-2] - dy/2.5)
         for im in images:
             im.drawOn(c)
-        encName = 'winansi'
-        decoder = codecs.lookup(encName)[1]
-        def decodeFunc(txt):
-            if txt is None:
-                return None
-            else:
-                return decoder(txt, errors='replace')[0]
         if CFL: 
             # draw deg C and def F
             c.drawCentredString(XS[-4] - dx/2, YS[-1] + dy/4,
@@ -1011,6 +1014,20 @@ data = [
         ('M','O','R','N','I','N','G','A','F','T','E','R','N','O','O','N'),
         ('E','G','S','W','Y','O','L','U','M','A','C','S','E','C','S','H'),
         (' ','Y','M','D','H','M','S','A','L','A','R','M',' ',' ',' ',' ')]
+german = [list(l) for l in '''\
+ES-IST-VIERTEL--
+FÜNF-ZWANZIGZEHN
+VORNACH-HALB----
+EINSZWEIDREI--- 
+VIERFUNFSECHS-- 
+SIEBENACHTZWÖLF 
+ZEHNELFNEUN-UHR 
+AMINACHMITTAGS--
+MORGENSABENDS---
+DER-MITTERNACHTS
+PETERSCLOCKTHREE
+ YMTUMSALARM     
+'''.splitlines()]
 example_data = [
         ('I',"T'",'S',' ','A',' ',' ',' ',' ','Q','U','A','R','T','E','R'),
         (' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','P','A','S','T',' '),
@@ -1080,7 +1097,7 @@ def main(fontnames):
                     break
                 cases = {'Upper':string.upper,
                          'Lower':string.lower}
-                data_dict = {'':data, 'example':example_data}
+                data_dict = {'':data, 'german':german}
                 for reverse in [True, False]:
                     for data_name in data_dict:
                         for case in cases:

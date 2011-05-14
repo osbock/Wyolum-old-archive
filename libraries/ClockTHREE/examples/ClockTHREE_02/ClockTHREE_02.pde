@@ -29,7 +29,8 @@
 #include "MsTimer2.h"
 #include "ClockTHREE.h"
 #include "SPI.h"
-#include "english.h"
+// #include "english.h" // only need one language at a time
+#include "german.h"
 #include "mem_font.h"
 #include "rtcBOB.h"
 #include "EDL.h"
@@ -286,7 +287,8 @@ unsigned long last_dec_time = 0;    // for debounce
 unsigned long last_enter_time = 0;    // for debounce
 
 ClockTHREE c3;                      // ClockTHREE singleton
-English faceplate = English();      // Only faceplate, others could be supported.
+// English faceplate = English();      // Only need one at a time
+German faceplate = German();      
 //Font font = Font();                 // Only font at this time.
 MemFont font = MemFont();
 time_t t;                           // TODO: remove this, not needed (I think)
