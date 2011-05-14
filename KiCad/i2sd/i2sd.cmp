@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 05/13/11 18:05:02
+Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 05/14/11 17:23:30
 
 BeginCmp
 TimeStamp = /4DCD1D3A;
@@ -295,13 +295,6 @@ IdModule  = vite_3mm;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DCCE761;
-Reference = SC4;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
 TimeStamp = /4DCCE766;
 Reference = SC5;
 ValeurCmp = SCREW;
@@ -333,7 +326,7 @@ BeginCmp
 TimeStamp = /4DCAC2D1;
 Reference = U1;
 ValeurCmp = MCP_1700;
-IdModule  = SOT23-5;
+IdModule  = SOT23-3;
 EndCmp
 
 BeginCmp
