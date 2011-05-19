@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 05/14/11 17:23:30
+Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 05/15/11 23:16:36
 
 BeginCmp
 TimeStamp = /4DCD1D3A;
@@ -102,28 +102,14 @@ BeginCmp
 TimeStamp = /4DCA7BAC;
 Reference = C1;
 ValeurCmp = 100n;
-IdModule  = C2;
+IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCA5F1E;
 Reference = C2;
 ValeurCmp = 100n;
-IdModule  = C2;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DCA7D99;
-Reference = C3;
-ValeurCmp = 22p;
-IdModule  = C1;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DCA7DAB;
-Reference = C4;
-ValeurCmp = 22p;
-IdModule  = C1;
+IdModule  = c_0805;
 EndCmp
 
 BeginCmp
@@ -144,7 +130,21 @@ BeginCmp
 TimeStamp = /4DCB9774;
 Reference = C7;
 ValeurCmp = 100n;
-IdModule  = C2;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DCFFACF;
+Reference = D1;
+ValeurCmp = LED;
+IdModule  = d_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DCFFADF;
+Reference = D2;
+ValeurCmp = LED;
+IdModule  = d_0805;
 EndCmp
 
 BeginCmp
@@ -152,13 +152,6 @@ TimeStamp = /4DCA5EC5;
 Reference = IC1;
 ValeurCmp = ATMEGA8-AI;
 IdModule  = TQFP32;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DCA7A2D;
-Reference = P1;
-ValeurCmp = WP_CD;
-IdModule  = WP_CD;
 EndCmp
 
 BeginCmp
@@ -221,56 +214,56 @@ BeginCmp
 TimeStamp = /4DCAC161;
 Reference = R1;
 ValeurCmp = 10k;
-IdModule  = R1;
+IdModule  = r_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCAC172;
 Reference = R2;
 ValeurCmp = 10k;
-IdModule  = R1;
+IdModule  = r_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCA5F5F;
 Reference = R3;
 ValeurCmp = 10k;
-IdModule  = R1;
+IdModule  = r_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCA5F5D;
 Reference = R4;
 ValeurCmp = 10k;
-IdModule  = R1;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DCFFAF9;
+Reference = R5;
+ValeurCmp = R;
+IdModule  = r_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCA5F59;
 Reference = R6;
 ValeurCmp = 10k;
-IdModule  = R1;
+IdModule  = r_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCA7BFC;
 Reference = R7;
 ValeurCmp = 10k;
-IdModule  = R1;
+IdModule  = r_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DCA79D1;
+TimeStamp = /4DCFFB11;
 Reference = R8;
-ValeurCmp = 10k;
-IdModule  = R1;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DCA79DE;
-Reference = R9;
-ValeurCmp = 10k;
-IdModule  = R1;
+ValeurCmp = R;
+IdModule  = r_0805;
 EndCmp
 
 BeginCmp
@@ -288,27 +281,6 @@ IdModule  = vite_3mm;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DCCE75D;
-Reference = SC3;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DCCE766;
-Reference = SC5;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DCCE768;
-Reference = SC6;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
 TimeStamp = /4DCA70EB;
 Reference = SD1;
 ValeurCmp = SD_CARD;
@@ -319,7 +291,7 @@ BeginCmp
 TimeStamp = /4DCA7D67;
 Reference = SW1;
 ValeurCmp = SW_PUSH;
-IdModule  = SW-PB;
+IdModule  = pin_strip_2;
 EndCmp
 
 BeginCmp
