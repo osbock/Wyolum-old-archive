@@ -33,7 +33,6 @@ assert x055[1] == 1
 macros = {
     'ES':((0,0), (0,1)),
     'IST':((0,0,0), (3,4,5)), 
-    'ES IST':(X(0,0,6),X(0,6,6)),
     'VIERTEL':(X(0,0,7),X(7,14,7)),
     'FUNF':(X(1,1,4),X(0,4,4)),
     'ZWANSIG':(X(1,1,7),X(5,12,7)),
@@ -76,7 +75,8 @@ def update_time(clocktwo, refresh=True):
     now = gmtime(now_sec + clocktwo.offset)
     clocktwo.clearall()
     clocktwo.time_str = ''
-    clocktwo.set_by_key('ES IST')
+    clocktwo.set_by_key('ES')
+    clocktwo.set_by_key('IST')
     if now.tm_min % 5 > 0:
         clocktwo.set_by_key('I')
     if now.tm_min % 5 > 1:
