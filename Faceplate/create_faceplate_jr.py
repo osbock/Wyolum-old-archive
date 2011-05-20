@@ -19,7 +19,7 @@ from numpy import arange
 from copy import deepcopy
 
 DEFAULT_FONT_SIZE = 30
-LASER_THICKNESS = .01 * inch
+LASER_THICKNESS = .1
 DTHETA = 1
 DEG = pi/180.
 
@@ -72,7 +72,7 @@ class MyPath:
         c = canvas.Canvas(filename,
                           pagesize=(W + .5 * inch, H + .5 * inch)
                           )
-        c.setLineWidth(1/64. * inch)
+        c.setLineWidth(LASER_THICKNESS)#px
         self.translate(-self.getleft() + .25 * inch, -self.getbottom() + .25 * inch)
         self.drawOn(c)
         return c
@@ -188,7 +188,7 @@ class Keyhole(MyPath):
                 self.lineTo(*next)
             self.lineTo(*start)
 
-MARGIN = 1/64.*inch
+MARGIN = 0# 1/64.*inch
 
 def create_baffle(baffle_height, 
                   baffle_thickness, 
@@ -413,7 +413,7 @@ def draw(filename, data, fontname='Times-Roman',
     can.drawText(textobject)
     
     # crop marks # update!
-    can.setLineWidth(1/64. * inch)
+    can.setLineWidth(LASER_THICKNESS)
     margin = 10*mm
     letter_bbox = (xs[0], ys[0], xs[-1] - xs[0] + dx, ys[-1] - ys[0] + dy)
     print >> scad, 'translate([%s, %s, %s])baffle_grid();' % (letter_bbox[0] / mm,
