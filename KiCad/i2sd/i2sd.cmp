@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 05/15/11 23:16:36
+Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 05/21/11 12:49:56
 
 BeginCmp
 TimeStamp = /4DCD1D3A;
@@ -172,28 +172,28 @@ BeginCmp
 TimeStamp = /4DCD1CA7;
 Reference = P4;
 ValeurCmp = CONN_I/O;
-IdModule  = CONN_I/O;
+IdModule  = pin_strip_4;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCD1CAD;
 Reference = P5;
 ValeurCmp = CONN_I/O;
-IdModule  = CONN_I/O;
+IdModule  = pin_strip_4;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCD1CB1;
 Reference = P6;
 ValeurCmp = CONN_I/O;
-IdModule  = CONN_I/O;
+IdModule  = pin_strip_4;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCD1CB5;
 Reference = P7;
 ValeurCmp = CONN_I/O;
-IdModule  = CONN_I/O;
+IdModule  = pin_strip_4;
 EndCmp
 
 BeginCmp
@@ -208,6 +208,34 @@ TimeStamp = /4DCD1997;
 Reference = P9;
 ValeurCmp = ISP;
 IdModule  = ISP;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DD7586B;
+Reference = P10;
+ValeurCmp = CD2;
+IdModule  = Sck-04-F-SMT;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DD75881;
+Reference = P11;
+ValeurCmp = CD2;
+IdModule  = Sck-04-F-SMT;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DD75888;
+Reference = P12;
+ValeurCmp = CD1;
+IdModule  = Sck-04-F-SMT;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DD75875;
+Reference = P13;
+ValeurCmp = CD1;
+IdModule  = Sck-04-F-SMT;
 EndCmp
 
 BeginCmp
@@ -241,7 +269,7 @@ EndCmp
 BeginCmp
 TimeStamp = /4DCFFAF9;
 Reference = R5;
-ValeurCmp = R;
+ValeurCmp = 470E;
 IdModule  = r_0805;
 EndCmp
 
@@ -262,7 +290,7 @@ EndCmp
 BeginCmp
 TimeStamp = /4DCFFB11;
 Reference = R8;
-ValeurCmp = R;
+ValeurCmp = 470E;
 IdModule  = r_0805;
 EndCmp
 
