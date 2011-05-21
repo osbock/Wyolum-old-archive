@@ -16,8 +16,6 @@
   "YMDYMSALARMTCFAN";
 */
 
-void minutes_hack(ClockTHREE c3, int mm, int ss); // not public declaration
-
 void English::display_word(ClockTHREE c3, uint8_t color, 
 			   const uint8_t *w){
   c3.horizontal_line(w[0], w[1], w[2], color);
@@ -201,7 +199,7 @@ void English::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
   }
 }
 
-void minutes_hack(ClockTHREE c3, int mm, int ss){
+void English::minutes_hack(ClockTHREE c3, int mm, int ss){
   mm %= 5;
   uint8_t color, num;
   num = ss / 10;

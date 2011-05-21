@@ -52,15 +52,23 @@ With the understanding that:
 */
 #ifndef ClockTHREE_h
 #define ClockTHREE_h
+#define CLOCKTHREEJR // uncomment this line for ClockTHREEjr
+
 #include <inttypes.h>
 #include "SPI.h"
 #include "rtcBOB.h"
 // #include "Screen.h"
-
+#ifndef CLOCKTHREEJR
 const int     N_ROW = 12;
 const int N_RGB_ROW = 10;
 const int     N_COL = 16;
 const int   N_COLOR = 9;
+#else
+const int     N_ROW = 8;
+const int N_RGB_ROW = 0;
+const int     N_COL = 16;
+const int   N_COLOR = 2;
+#endif
 
 const int COL_DRIVER_ENABLE = 17;
 
@@ -106,7 +114,7 @@ const uint8_t WHITE_TEMP_C = 33;
 const uint8_t MONO = BLUE;
 
 // cold to warm
-const uint8_t COLORS[N_COLOR] = {
+const uint8_t COLORS[9] = {
   DARK,
   BLUE,
   GREENBLUE,

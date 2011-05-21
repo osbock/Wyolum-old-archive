@@ -80,6 +80,8 @@ class English{
   void display_time(int YY, int MM, int DD, int hh, int mm, int ss,
 		    ClockTHREE c3, uint8_t color, uint8_t fade_steps, 
 		    uint8_t its_flag, uint8_t minutes_hack_flag);
+  void minutes_hack(ClockTHREE c3, int mm, int ss);
+
 };
 
 #endif

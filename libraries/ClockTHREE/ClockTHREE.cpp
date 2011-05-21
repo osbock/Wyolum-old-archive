@@ -51,6 +51,7 @@
   to this web page.
 */
 
+// #define CLOCKTHREEJR
 #include "ClockTHREE.h"
 #include "MsTimer2.h"
 #include "Time.h"
@@ -204,6 +205,7 @@ uint32_t ClockTHREE::getcol(uint8_t xpos){
   return out;
 }
 
+#ifndef CLOCKTHREEJR
 /* 
  * Turn a pixel to color (0 == off)
  * for rows 10 and 11:
@@ -242,7 +244,28 @@ void ClockTHREE::setPixel(uint8_t xpos, uint8_t ypos, uint8_t color){
     }
   }
 }
-
+#else
+/* 
+   ClockTHREEjr set pixel.  (define CLOCKTHREEJR in pde file)
+   color -- 1 = on
+            0 = off
+ */
+void ClockTHREE::setPixel(uint8_t xpos, uint8_t ypos, uint8_t color){
+  if(display != NULL){
+    if(ypos < N_ROW && xpos < N_COL){
+      if(color == 0){
+	// clear pixel
+	display[xpos] &= ~((uint32_t)1 << (ypos)); 
+      }
+      else{
+	// set pixel to color
+	display[xpos] |= ((uint32_t)1 << (ypos));
+      }
+    }
+  }
+}
+#endif
+// TODO: define for C3jr
 /*
  * Return color value of pixel at xpos, ypos
  * For rows 10 and 11, return 0b000 if MONO pixel is set
@@ -345,7 +368,7 @@ uint32_t *ClockTHREE::setdisplay(uint32_t *_display){
   display = _display;
   return out;
 }
-
+#ifndef CLOCKTHREEJR
 void ClockTHREE::displayfill(uint8_t color){
   uint32_t col;
   int i;
@@ -363,7 +386,22 @@ void ClockTHREE::displayfill(uint8_t color){
     }
   }
 }
-
+#else
+// color -- 0 off, 1 -- on
+void ClockTHREE::displayfill(uint8_t color){
+  uint32_t column;
+  int i;
+  if(display != NULL){
+    column = 0;
+    if(color){
+      column = 255;
+    }
+    for(i = 0; i < N_COL; i++){
+      display[i] = column;
+    }
+  }
+}
+#endif
 /*
   Fill in a horizontal line of LEDs from start up to but not includeing stop.
   stop - start = # characters.

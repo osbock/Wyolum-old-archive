@@ -22,9 +22,13 @@ const char SET_BYTE = 'S';
 void setup(){
   // start comm protos
   Serial.begin(57600); // for debugging
+  Serial.println("Begin rtcBOB test");
   Wire.begin();
+  Serial.println("Wire started");
+  Serial.println(getTime());
 
-  setSyncProvider(getTime);      // RTC
+  // setSyncProvider(getTime);      // RTC
+  // Serial.println("Sync providor set");
   setSyncInterval(60000);      // update every minute (and on boot)
   Serial.print("Type ");
   Serial.print(SET_BYTE);
