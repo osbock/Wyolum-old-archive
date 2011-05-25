@@ -19,14 +19,14 @@ from numpy import arange
 from copy import deepcopy
 
 DEFAULT_FONT_SIZE = 30
-LASER_THICKNESS = .1
+LASER_THICKNESS = .006 * inch
 DTHETA = 1
 DEG = pi/180.
 
 
-letters = '''KITRISCTENHALFX.
-QUARTERTWENTYBZ:
-IFIVECMINUTESAL.
+letters = '''KITRISCTENHALFX 
+QUARTERTWENTYBZ 
+IFIVECMINUTESAL 
 PASTOBTWONEIGHTS
 THREELEVENSIXTEN
 FOURFIVESEVENINE
@@ -72,7 +72,8 @@ class MyPath:
         c = canvas.Canvas(filename,
                           pagesize=(W + .5 * inch, H + .5 * inch)
                           )
-        c.setLineWidth(LASER_THICKNESS)#px
+        # c.setLineWidth(LASER_THICKNESS)#px
+        c.setLineWidth(.5)#px
         self.translate(-self.getleft() + .25 * inch, -self.getbottom() + .25 * inch)
         self.drawOn(c)
         return c
@@ -188,7 +189,7 @@ class Keyhole(MyPath):
                 self.lineTo(*next)
             self.lineTo(*start)
 
-MARGIN = 0# 1/64.*inch
+MARGIN = LASER_THICKNESS/2
 
 def create_baffle(baffle_height, 
                   baffle_thickness, 
@@ -246,16 +247,19 @@ def create_baffle(baffle_height,
     p.lineTo(0, 0)
     return p
 
-baffle_height = 16 * mm
-baffle_thickness = .06 * inch
 pcb_thickness = 1.6 * mm
 washer_thickness = 0.05 * inch
 washer_or = .27*inch / 2
 washer_ir = .132*inch / 2
+nut_thickness = 2.26 * mm
 
 standoff_thickness = 20 * mm
 standoff_or = 5*mm / 2
 standoff_ir = .132*inch / 2
+
+
+baffle_thickness = .06 * inch
+baffle_height = standoff_thickness - pcb_thickness - nut_thickness
 
 faceplate_thickness = .25*inch
 
@@ -269,7 +273,7 @@ baffle_v = create_baffle(baffle_height=baffle_height,
                   n_notch=N_ROW,
                   delta=dy,
                   overhang=.2*inch,
-                  overhang_height=12*mm,
+                  overhang_height=baffle_height,
                   overhang_taper=True,
                   margin=MARGIN)
 
@@ -322,7 +326,7 @@ def add_crop(can, bbox):
     can.line(left, bottom - .5 * inch, left, bottom - .05 * inch)
     can.line(right, bottom - .5 * inch, right, bottom - .05 * inch)
 
-def draw(filename, data, fontname='Times-Roman', 
+def draw(filename, data, fontname='Times-Roman', images=[],
          fontsize= DEFAULT_FONT_SIZE,
          reverse=False,
          case=string.upper,
@@ -406,6 +410,16 @@ def draw(filename, data, fontname='Times-Roman',
     can.setTitle("ClockTHREE Jr. Faceplate: %s" % fontname)
     can.setFont(fontname, fontsize)
 
+    for im in images:
+        im.drawOn(can)
+    ldr_x = 48.8 * mm
+    ldr_y = 9*inch - 6.38*mm
+    ldr_r = 2.5*mm
+    can.circle(ldr_x, ldr_y, ldr_r, fill=True) # ldr
+    can.circle(xs[-1] + dx/2, ys[-1] + dy/2, 1*mm, fill=True) # 1 minute
+    can.circle(xs[-1] + dx/2, ys[-2] + dy/2 + dy/8, 1*mm, fill=True) # 2 minutes
+    can.circle(xs[-1] + dx/2, ys[-2] + dy/2 - dy/8, 1*mm, fill=True) # 2 minutes
+    can.circle(xs[-1] + dx/2, ys[-3] + dy/2, 1*mm, fill=True) # 1 minute
     # label font
     textobject = can.beginText()
     textobject.setTextOrigin(1.25*inch, H - .75*inch)
@@ -413,7 +427,8 @@ def draw(filename, data, fontname='Times-Roman',
     can.drawText(textobject)
     
     # crop marks # update!
-    can.setLineWidth(LASER_THICKNESS)
+    # can.setLineWidth(LASER_THICKNESS)
+    can.setLineWidth(.5)
     margin = 10*mm
     letter_bbox = (xs[0], ys[0], xs[-1] - xs[0] + dx, ys[-1] - ys[0] + dy)
     print >> scad, 'translate([%s, %s, %s])baffle_grid();' % (letter_bbox[0] / mm,
@@ -577,12 +592,17 @@ def draw(filename, data, fontname='Times-Roman',
     can.showPage()
 
     can.save()
+    print 'wrote', filename
     scad.close()
     scad_ex.close()
 
 def add_font(fontname):
     pdfmetrics.registerFont(TTFont(fontname, 'fonts/%s.ttf' % fontname))
 add_font('Futura')
-draw('faceplate_jr_Futura.pdf', letters, fontname='Futura', reverse=False)
-draw('faceplate_jr_Futura_R.pdf', letters, fontname='Futura', reverse=True)
+x = 64.54 * mm
+y = .15 * inch
+bug = Image('Images/NounProject/noun_project_198.png', x, y, w=6.57*mm)
+
+draw('faceplate_jr_Futura.pdf', letters, fontname='Futura', images=[bug],reverse=False)
+draw('faceplate_jr_Futura_R.pdf', letters, fontname='Futura', images=[bug],reverse=True)
     

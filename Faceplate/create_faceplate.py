@@ -27,7 +27,7 @@ from copy import deepcopy
 LASER_CUT_DIR = 'LaserPoint'
 LASER_CUT_DIR = 'Hines'
 
-LASER_THICKNESS = .01 * inch
+LASER_THICKNESS = .006 * inch
 PIECE_GAP = .5 * mm
 DEG = pi/180.
 DTHETA = 2.5
@@ -310,6 +310,8 @@ def draw(filename, data, images, fontname='Times-Roman',
 #                       pagesize=(13*inch, 10*inch)
                       pagesize=(17*inch, 11*inch)
                       )
+    c.setLineWidth(.5)
+
     if reverse:
         c.translate(14. * inch, 0 * inch)
         c.scale(-1, 1)
@@ -320,25 +322,31 @@ def draw(filename, data, images, fontname='Times-Roman',
     if pcb_outline:
         c.rect(0*inch, 0*inch, 12*inch, 9*inch)
 
+    if True:
+        c.setStrokeColor(red)
+        c.rect(-.5 * inch, -.5 * inch, 13 * inch, 10 * inch);
+        c.setStrokeColor(black)
+    else:
+        # crop marks
+        c.line(-1 * inch,  -.5*inch, -.55 * inch, -.5*inch)
+        c.line(6. * inch, -1 * inch, 6. * inch, -.5*inch)
+        c.line(12.55 * inch,  -.5*inch, 13. * inch, -.5*inch)
+        
+        c.line(-1 * inch,  9.5*inch, -.55 * inch, 9.5*inch)
+        c.line(6. * inch, 10 * inch, 6. * inch, 9.5*inch)
+        c.line(12.55 * inch,  9.5*inch, 13. * inch, 9.5*inch)
+        
+        c.line(-.5*inch, -1*inch, -.5*inch, -.55 * inch)
+        c.line(12.5*inch, -1*inch, 12.5*inch, -.55 * inch)    
+        c.line(-.5*inch, 10*inch, -.5*inch, 9.55 * inch)
+        c.line(12.5*inch, 10*inch, 12.5*inch, 9.55 * inch)
+
+
     # label font
     textobject = c.beginText()
     textobject.setTextOrigin(-.25*inch, 9.6*inch)
     textobject.textOut(fontname)
     c.drawText(textobject)
-
-    # crop marks
-    c.line(-1 * inch,  -.5*inch, -.55 * inch, -.5*inch)
-    c.line(6. * inch, -1 * inch, 6. * inch, -.5*inch)
-    c.line(12.55 * inch,  -.5*inch, 13. * inch, -.5*inch)
-
-    c.line(-1 * inch,  9.5*inch, -.55 * inch, 9.5*inch)
-    c.line(6. * inch, 10 * inch, 6. * inch, 9.5*inch)
-    c.line(12.55 * inch,  9.5*inch, 13. * inch, 9.5*inch)
-
-    c.line(-.5*inch, -1*inch, -.5*inch, -.55 * inch)
-    c.line(12.5*inch, -1*inch, 12.5*inch, -.55 * inch)    
-    c.line(-.5*inch, 10*inch, -.5*inch, 9.55 * inch)
-    c.line(12.5*inch, 10*inch, 12.5*inch, 9.55 * inch)
 
     # c.getAvailableFonts()
     # c.stringWidth('Hello World')
@@ -601,15 +609,11 @@ def draw(filename, data, images, fontname='Times-Roman',
         
     face_mounts = [mounts[0], mounts[1], mounts[3],
                    mounts[6], mounts[8], mounts[11]]
-    if baffle:
-        c.setLineWidth(1/64. * inch)
-        for x, y in face_mounts:
-            c.circle(x, y, STANDOFF_IR, fill=False)
-    else:
-        c.setLineWidth(1/64. * inch)
-        for x, y in face_mounts:
-            r = 1 /64. * inch
-            c.circle(x, y, r, fill=True)
+    c.setLineWidth(.5)
+    c.setStrokeColor(red)
+    for x, y in face_mounts:
+        c.circle(x, y, STANDOFF_IR, fill=False)
+    c.setStrokeColor(black)
 
     encName = 'winansi'
     decoder = codecs.lookup(encName)[1]
@@ -1014,7 +1018,7 @@ data = [
         ('M','O','R','N','I','N','G','A','F','T','E','R','N','O','O','N'),
         ('E','G','S','W','Y','O','L','U','M','A','C','S','E','C','S','H'),
         (' ','Y','M','D','H','M','S','A','L','A','R','M',' ',' ',' ',' ')]
-german = [list(l) for l in '''\
+blank_german = '''
 ES-IST-VIERTEL--
 FÜNF-ZWANZIGZEHN
 VORNACH-HALB----
@@ -1024,6 +1028,20 @@ SIEBENACHTZWÖLF
 ZEHNELFNEUN-UHR 
 AMINACHMITTAGS--
 MORGENSABENDS---
+DER-MITTERNACHTS
+PETERSCLOCKTHREE
+ YMTUMSALARM     
+'''
+german = [list(l) for l in '''\
+ESXISTYVIERTELY?
+FÜNF@ZWANZIGZEHN
+VORNACHKHALBIER!
+EINSZWEIDREIZEIT 
+VIERFÜNFSECHSOE 
+SIEBENACHTZWÖLF 
+ZEHNELFNEUNQUHR 
+AMINACHMITTAGSZ
+MORGENSABENDSTJ
 DER-MITTERNACHTS
 PETERSCLOCKTHREE
  YMTUMSALARM     
