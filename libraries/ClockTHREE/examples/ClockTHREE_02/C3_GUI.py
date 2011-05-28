@@ -1,3 +1,5 @@
+import ClockTHREE
+import english
 import glob
 import time
 from numpy import *
@@ -296,11 +298,16 @@ class Main:
         self.connect_b = Tkinter.Button(self.control_left, 
                                         text="Connect", 
                                         command=self.connect)
+        self.mirror_b = Tkinter.Button(self.control_left, 
+                                       text="MirrorC3", 
+                                       command=self.mirror,
+                                       state=Tkinter.DISABLED)
         if len(serialports) > 0:
             self.serialport_dd.selectitem(0)
             self.on_portchange(serialports[0])
         self.serialport_dd.grid(row=0, column=0)
         self.connect_b.grid(row=1,column=0)
+        self.mirror_b.grid(row=2,column=0)
         self.ardtime = DatetimeField(self.control_right, 'Arduino Time', c3tm)
         self.ardtime.grid(row=0)
         self.pctime = DatetimeField(self.control_right, '       PC Time', pctm)
@@ -472,6 +479,7 @@ class Main:
                               text='Disconnect')
         self.sync_b.config(state=Tkinter.NORMAL)
         self.set_b.config(state=Tkinter.NORMAL)
+        self.mirror_b.config(state=Tkinter.NORMAL)
 
         try:
             C3_interface.connect(self.com)
@@ -512,12 +520,18 @@ class Main:
         C3_interface.disconnect()
         self.sync_b.config(state=Tkinter.DISABLED)
         self.set_b.config(state=Tkinter.DISABLED)
+        self.mirror_b.config(state=Tkinter.DISABLED)
         self.eeprom = None
         self.connect_b.config(command=self.connect,
                               text='Connect')
         for j in range(30):
             self.didas[j].reset()
             self.didas[j].disable()
+
+    def mirror(self):
+        # ClockTHREE.ClockTHREE(english, C3_interface.gmt_offset,
+        #                       parent=self.root)
+        ClockTHREE.main(english)
 
     def alarm_set(self):
         h, m, s = self.alarm_entry.getvalue().split(':')

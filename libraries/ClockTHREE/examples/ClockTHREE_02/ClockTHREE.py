@@ -132,14 +132,6 @@ def key_press(event):
             clockthree.led_test = False
         else:
             effects.led_test(clockthree)
-tk = Tk()
-tk.title('ClockTHREE')
-tk.tk_setPalette('#000000')
-r = Frame(tk, background='#000000')
-r.grid(row=0, column=0)
-r.bind("<Button-1>", next_time)
-r.bind("<Button-3>", last_time)
-tk.bind("<Key>", key_press)
 
 class Screen:
     def __init__(self, n_col=N_COL):
@@ -165,7 +157,7 @@ class Screen:
 
     
 class ClockTHREE:
-    def __init__(self, language, offset, yesconnect=False):
+    def __init__(self, language, offset, yesconnect=False, parent=None):
         self.N_ROW = N_ROW
         self.N_COL = N_COL
         self.screen = Screen()
@@ -179,6 +171,20 @@ class ClockTHREE:
             C3_interface.connect(yesping=False)
             offset = C3_interface.gmt_offset
         self.led_test = False
+        
+        if parent is None:
+            self.parent = Tk()
+        else:
+            self.parent = Toplevel(parent)
+        self.parent.title('ClockTHREE')
+        self.parent.tk_setPalette('#000000')
+        
+        self.r = Frame(self.parent, background='#000000')
+        self.r.grid(row=0, column=0)
+        self.r.bind("<Button-1>", next_time)
+        self.r.bind("<Button-3>", last_time)
+        self.parent.bind("<Key>", key_press)
+
 
     def __del__(self):
         C3_interface.trigger_mode()
@@ -237,7 +243,7 @@ class ClockTHREE:
                 labels[row][col].config(foreground=s)
         if delay > 0:
             sleep(delay)
-        r.update()
+        clockthree.parent.update()
 
 def main(language, yesconnect=False):
     import sys
@@ -250,13 +256,13 @@ def main(language, yesconnect=False):
     clockthree = ClockTHREE(faceplate, offset, yesconnect=yesconnect)
 
     labels = []
-    l = Label(r, 
+    l = Label(clockthree.parent, 
               text='   ',
               font='Courier 28', 
               background="#000000",
               foreground="#000000")
     l.grid(row=0, column=0)
-    l = Label(r, 
+    l = Label(clockthree.parent, 
               text='   ',
               font='Courier 28', 
               background="#000000",
@@ -265,7 +271,7 @@ def main(language, yesconnect=False):
     for row in range(N_ROW):
         labels.append([])
         for col in range(N_COL):
-            l = Label(r,
+            l = Label(clockthree.parent,
                       text='%s' % clockthree.text[row][col], 
                       font='Times 28', 
                       background="#000000",
@@ -294,10 +300,10 @@ def main(language, yesconnect=False):
         # stop led_test if active
         clockthree.led_test = False
 
-    reset_b = Button(r, text='R', foreground='#ff0000', command=do_reset)
-    mode_b = Button(r, text='M', foreground='#ff0000', command=do_mode)
-    dec_b = Button(r, text='D', foreground='#ff0000', command=do_dec)
-    inc_b = Button(r, text='I', foreground='#ff0000', command=do_inc)
+    reset_b = Button(clockthree.parent, text='R', foreground='#ff0000', command=do_reset)
+    mode_b = Button(clockthree.parent, text='M', foreground='#ff0000', command=do_mode)
+    dec_b = Button(clockthree.parent, text='D', foreground='#ff0000', command=do_dec)
+    inc_b = Button(clockthree.parent, text='I', foreground='#ff0000', command=do_inc)
 
     reset_b.grid(column=3, row=13)
     dec_b.grid(column=8, row=13)
@@ -309,14 +315,14 @@ def main(language, yesconnect=False):
     def tick_tock():
         global after_id
         clockthree.update()
-        # after_id = r.after(5 * 1000, tick_tock)
+        after_id = clockthree.parent.after(5 * 1000, tick_tock)
     clockthree.refresh()
     clockthree.update()
-    after_id = r.after(5 * 1000, tick_tock)
+    after_id = clockthree.parent.after(5 * 1000, tick_tock)
     def on_close(*args):
-        r.after_cancel(after_id)
-        tk.destroy()
-    tk.protocol('WM_DELETE_WINDOW', on_close)
-    tk.mainloop()
+        clockthree.r.after_cancel(after_id)
+        clockthree.parent.destroy()
+    clockthree.parent.protocol('WM_DELETE_WINDOW', on_close)
+    clockthree.parent.mainloop()
 if __name__ == '__main__':
     main(english, yesconnect=True)

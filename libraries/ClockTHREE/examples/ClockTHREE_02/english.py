@@ -67,12 +67,13 @@ def update_time(clocktwo, refresh=True):
     now = gmtime(now_sec + clocktwo.offset)
     clocktwo.clearall()
     clocktwo.set_by_key('ITS')
-    if True:#todo delete me!!!
+    if False:#todo delete me!!!
         clocktwo.set_by_key('BEER')
         clocktwo.set_by_key('THIRTY')
-        clocktwo.refresh()
+        if refresh:
+            clocktwo.refresh()
         return
-    if False: # minutes hack
+    if True: # minutes hack
         if now.tm_min % 5 > 0:
             clocktwo.set_by_key('I')
         if now.tm_min % 5 > 1:

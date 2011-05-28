@@ -154,7 +154,7 @@ def clockthree_rain_orig(c2, color):
         c2.setPixel(9, i, color)
         c2.refresh()
     sleep(3)
-    wordfa(c2)
+    wordfall(c2)
     c2.update()
     wordfall_in(c2)
     c2.paused = False
@@ -170,6 +170,8 @@ def led_test(c2):
             c2.screen.buffer *= 0
             c2.screen.buffer += color
             c2.refresh(delay=.4)
+            if not c2.led_test:
+                break
     c2.screen.buffer = buffer
     c2.refresh()
     c2.paused = False
