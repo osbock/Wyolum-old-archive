@@ -159,6 +159,21 @@ def clockthree_rain_orig(c2, color):
     wordfall_in(c2)
     c2.paused = False
 
+def led_test(c2):
+    c2.paused = True
+    c2.led_test = True
+    buffer = c2.screen.buffer.copy()
+    while c2.led_test:
+        c2.screen.buffer *= 0
+        c2.refresh(delay=.4)
+        for color in COLOR_MASKS:
+            c2.screen.buffer *= 0
+            c2.screen.buffer += color
+            c2.refresh(delay=.4)
+    c2.screen.buffer = buffer
+    c2.refresh()
+    c2.paused = False
+
 def scroll_msg(c2, msg, color_mask, clearall=True, clear_rgb=False):
     c2.paused = True
     if clearall:

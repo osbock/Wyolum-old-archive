@@ -127,7 +127,11 @@ def key_press(event):
         effects.wordfall_out(clockthree)
         clockthree.update(refresh=False)
         effects.wordfall_in(clockthree)
-
+    if event.char == 't':
+        if clockthree.led_test == True:
+            clockthree.led_test = False
+        else:
+            effects.led_test(clockthree)
 tk = Tk()
 tk.title('ClockTHREE')
 tk.tk_setPalette('#000000')
@@ -174,6 +178,10 @@ class ClockTHREE:
         if yesconnect:
             C3_interface.connect(yesping=False)
             offset = C3_interface.gmt_offset
+        self.led_test = False
+
+    def __del__(self):
+        C3_interface.trigger_mode()
 
     def getBuffer(self):
         return self.screen.buffer
@@ -283,6 +291,8 @@ def main(language, yesconnect=False):
     def do_reset():
         clockthree.offset = offset
         clockthree.update()
+        # stop led_test if active
+        clockthree.led_test = False
 
     reset_b = Button(r, text='R', foreground='#ff0000', command=do_reset)
     mode_b = Button(r, text='M', foreground='#ff0000', command=do_mode)
