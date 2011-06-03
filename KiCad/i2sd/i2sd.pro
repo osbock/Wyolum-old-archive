@@ -1,4 +1,4 @@
-update=05/21/11 14:57:57
+update=06/03/11 18:16:49
 version=1
 last_client=eeschema
 [cvpcb]
@@ -68,4 +68,3 @@ LabSize=60
 [eeschema/libraries]
 LibName1=libs/i2sd
 LibName2=libs/power
-LibName3=D:/Users/Anool/Documents/Arduino/Project-Clock3/Code/clockthree/KiCad/Clock3/libs/clock3
