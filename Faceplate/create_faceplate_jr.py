@@ -32,6 +32,7 @@ THREELEVENSIXTEN
 FOURFIVESEVENINE
 TWELVEXOCLOCKYAM
 PMYDMTHWMFSUALR!'''.splitlines()
+
 # letters = ['.' * 16] * 8
 
 class MyPath:
@@ -248,10 +249,10 @@ def create_baffle(baffle_height,
     return p
 
 pcb_thickness = 1.6 * mm
-washer_thickness = 0.05 * inch
-washer_or = .27*inch / 2
-washer_ir = .132*inch / 2
-nut_thickness = 2.26 * mm
+# nut_thickness = 0.05 * inch
+nut_or = .27*inch / 2
+nut_ir = .132*inch / 2
+nut_thickness = 2.3 * mm # 2.4 * mm spec
 
 standoff_thickness = 20 * mm
 standoff_or = 5*mm / 2
@@ -260,6 +261,7 @@ standoff_ir = .132*inch / 2
 
 baffle_thickness = .06 * inch
 baffle_height = standoff_thickness - pcb_thickness - nut_thickness
+print baffle_height / mm, (pcb_thickness + nut_thickness) / mm, pcb_thickness / inch
 
 faceplate_thickness = .25*inch
 
@@ -386,9 +388,9 @@ def draw(filename, data, fontname='Times-Roman', images=[],
     '''
     locator.toOpenScad(baffle_thickness, scad, 'locator', color=[.1, .1, 1, .8])
 
-    print >> scad, '''module washer(x, y, z){
+    print >> scad, '''module nut(x, y, z){
       color([0.1, 0.1, 1, 0.8])translate([x, y, z]) difference(){cylinder(h=%s, r=%s);translate([0, 0, -1])cylinder(h=2*%s, r=%s);}
-    }''' % (washer_thickness / mm, washer_or / mm, washer_thickness / mm, washer_ir / mm)
+    }''' % (nut_thickness / mm, nut_or / mm, nut_thickness / mm, nut_ir / mm)
 
 
     print >> scad, '''module standoff(x, y){
@@ -404,27 +406,33 @@ def draw(filename, data, fontname='Times-Roman', images=[],
                 can.circle(x, y, 2.5 * mm, fill=1)
         can.setFillColor(black)
 
+    can.setTitle("ClockTHREE Jr. Faceplate: %s" % fontname)
+    can.setFont(fontname, 15)
+    can.drawCentredString(4.5 * inch, -.75* inch, 'ClockTHREEjr Faceplate, %s, 0.25" Painted/Etched Acrylic' % fontname)
+
+    can.setFont(fontname, fontsize)
+
+    # label font
+    can.drawString(1.25*inch, 9.25*inch , fontname)
+
     if reverse:
         can.translate(9 * inch, 0 * inch)
         can.scale(-1, 1)
-    can.setTitle("ClockTHREE Jr. Faceplate: %s" % fontname)
-    can.setFont(fontname, fontsize)
+
+    # can.setFont("Helvetica-Bold", 20)
+    # can.drawCentredString(4.5*inch, (8.15 - .075)*inch , "Make:")
+    # can.setFont(fontname, fontsize)
 
     for im in images:
         im.drawOn(can)
-    ldr_x = 48.8 * mm
+    ldr_x = 48.8 * mm + 1 * inch
     ldr_y = 9*inch - 6.38*mm
     ldr_r = 2.5*mm
     can.circle(ldr_x, ldr_y, ldr_r, fill=True) # ldr
-    can.circle(xs[-1] + dx/2, ys[-1] + dy/2, 1*mm, fill=True) # 1 minute
-    can.circle(xs[-1] + dx/2, ys[-2] + dy/2 + dy/8, 1*mm, fill=True) # 2 minutes
-    can.circle(xs[-1] + dx/2, ys[-2] + dy/2 - dy/8, 1*mm, fill=True) # 2 minutes
-    can.circle(xs[-1] + dx/2, ys[-3] + dy/2, 1*mm, fill=True) # 1 minute
-    # label font
-    textobject = can.beginText()
-    textobject.setTextOrigin(1.25*inch, H - .75*inch)
-    textobject.textOut(fontname)
-    can.drawText(textobject)
+    can.circle(xs[-1] + dx/2, ys[-1] + dy/2 - .05*inch, 1*mm, fill=True) # 1 minute
+    can.circle(xs[-1] + dx/2, ys[-2] + dy/2 + dy/8 - .05*inch, 1*mm, fill=True) # 2 minutes
+    can.circle(xs[-1] + dx/2, ys[-2] + dy/2 - dy/8 - .05*inch, 1*mm, fill=True) # 2 minutes
+    can.circle(xs[-1] + dx/2, ys[-3] + dy/2 - .05*inch, 1*mm, fill=True) # 1 minute
     
     # crop marks # update!
     # can.setLineWidth(LASER_THICKNESS)
@@ -433,11 +441,11 @@ def draw(filename, data, fontname='Times-Roman', images=[],
     letter_bbox = (xs[0], ys[0], xs[-1] - xs[0] + dx, ys[-1] - ys[0] + dy)
     print >> scad, 'translate([%s, %s, %s])baffle_grid();' % (letter_bbox[0] / mm,
                                                               letter_bbox[1] / mm,
-                                                              (2 * washer_thickness + pcb_thickness) / mm
+                                                              (nut_thickness + pcb_thickness) / mm
                                                               )
     print >> scad_ex, 'translate([%s, %s, %s])baffle_grid();' % (letter_bbox[0] / mm,
                                                                  letter_bbox[1] / mm,
-                                                                 (2 * washer_thickness + pcb_thickness) / mm
+                                                                 (nut_thickness + pcb_thickness) / mm
                                                                  )
 
     if False:
@@ -496,27 +504,25 @@ def draw(filename, data, fontname='Times-Roman', images=[],
     for x, y in pcb_mounts:
         pcb.drill(x, y, mount_r)
         backplate.drill(x, y, mount_r)
-        print >> scad, 'washer(%s, %s, 0);' % (x / mm, y / mm)
-        print >> scad, 'washer(%s, %s, %s);' % (x / mm, y / mm, washer_thickness / mm)
+        print >> scad, 'nut(%s, %s, 0);' % (x / mm, y / mm)
 
-        print >> scad_ex, 'washer(%s, %s, 0);' % (x / mm, y / mm)
-        print >> scad_ex, 'washer(%s, %s, %s);' % (x / mm, y / mm, washer_thickness / mm)
+        print >> scad_ex, 'nut(%s, %s, 0);' % (x / mm, y / mm)
         # can.circle(x, y, mount_r, fill=False)
 
     if False:
         pcb.drawOn(can)
     pcb.toOpenScad(pcb_thickness, scad, 'pcb')
-    print >> scad, 'color([0, 1, 0, 0.3])translate([0, 0, %s])pcb();' % ((2 * washer_thickness + pcb_thickness / 2) / mm)
-    print >> scad_ex, 'color([0, 1, 0, 0.3])translate([0, 0, %s])pcb();' % ((2 * washer_thickness + pcb_thickness / 2) / mm)
+    print >> scad, 'color([0, 1, 0, 0.3])translate([0, 0, %s])pcb();' % ((nut_thickness + pcb_thickness / 2) / mm)
+    print >> scad_ex, 'color([0, 1, 0, 0.3])translate([0, 0, %s])pcb();' % ((nut_thickness + pcb_thickness / 2) / mm)
     
     for x, y in locator_mounts:
         if False:
             locator.translate(x, y)
             locator.drawOn(can)
             locator.translate(-x, -y)
-        print >> scad, 'translate([%s, %s, %s])locator();' % (x / mm, y / mm, (2 * washer_thickness + 1.5 * pcb_thickness) / mm)
+        print >> scad, 'translate([%s, %s, %s])locator();' % (x / mm, y / mm, (nut_thickness + 1.5 * pcb_thickness) / mm)
 
-        print >> scad_ex, 'translate([%s, %s, %s])locator();' % (x / mm, y / mm, (2 * washer_thickness + 1.5 * pcb_thickness) / mm)
+        print >> scad_ex, 'translate([%s, %s, %s])locator();' % (x / mm, y / mm, (nut_thickness + 1.5 * pcb_thickness) / mm)
 
     face_mounts = array([[.15, .15],
                          [.15, 9 - .15],
@@ -538,8 +544,6 @@ def draw(filename, data, fontname='Times-Roman', images=[],
     print >> scad_ex, 'color([0.1, 0.1, 0.1, 0.9])translate([0, 0, %s])backplate();' % (-2 * inch / mm + (-faceplate_thickness / 2) / mm)
 
     faceplate.drawOn(can)
-    can.setFont("Futura", 15)
-    can.drawCentredString(4.5 * inch, -.75* inch, 'ClockTHREEjr Faceplate, %s, 0.25" Painted/Etched Acrylic' % fontname)
     can.showPage()
 
     can.translate(1 * inch, 1 * inch)
@@ -599,10 +603,28 @@ def draw(filename, data, fontname='Times-Roman', images=[],
 def add_font(fontname):
     pdfmetrics.registerFont(TTFont(fontname, 'fonts/%s.ttf' % fontname))
 add_font('Futura')
-x = 64.54 * mm
+w = 6.57*mm
+x = 73*mm + 1 * inch - w/2
 y = .15 * inch
-bug = Image('Images/NounProject/noun_project_198.png', x, y, w=6.57*mm)
+bug = Image('Images/NounProject/noun_project_198.png', x, y, w=w)
 
-draw('faceplate_jr_Futura.pdf', letters, fontname='Futura', images=[bug],reverse=False)
-draw('faceplate_jr_Futura_R.pdf', letters, fontname='Futura', images=[bug],reverse=True)
+# draw('faceplate_jr_Futura.pdf', letters, fontname='Futura', images=[bug],reverse=False)
+# draw('faceplate_jr_Futura_R.pdf', letters, fontname='Futura', images=[bug],reverse=True)
+not_used = '''Futura
+PermanentMarker
+Cantarell-Bold
+Allerta-Medium
+Futura
+RuslanDisplay
+'''
+fontnames = '''
+Grenadie
+GrenadierNF
+'''.split()
+for fontname in fontnames:
+    add_font(fontname)
+    draw('Faceplates_jr/faceplate_jr_%s_upper_R.pdf' % fontname, letters, fontname=fontname, images=[bug],reverse=True, case=string.upper)
+    draw('Faceplates_jr/faceplate_jr_%s_lower_R.pdf' % fontname, letters, fontname=fontname, images=[bug],reverse=True, case=string.lower)
+    draw('Faceplates_jr/faceplate_jr_%s_upper.pdf' % fontname, letters, fontname=fontname, images=[bug],reverse=False, case=string.upper)
+    draw('Faceplates_jr/faceplate_jr_%s_lower.pdf' % fontname, letters, fontname=fontname, images=[bug],reverse=False, case=string.lower)
     

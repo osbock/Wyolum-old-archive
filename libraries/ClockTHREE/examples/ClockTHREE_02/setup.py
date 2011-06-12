@@ -35,6 +35,6 @@ setup(
     data_files = c_files,
     # targets to build
     # windows = ["WordClockSet.py"],
-    windows = ["C3_GUI.py"],
+    windows = ["C3_GUI.py", "ClockTHREE.py"],
     console = ["C3_interface.py"],
     )

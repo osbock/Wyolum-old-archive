@@ -213,9 +213,6 @@ class ClockTHREE:
                 self.screen.setPixel(row, col, color)
 
     def refresh(self, delay=.05):
-        if C3_interface.is_connected():
-            C3_interface.display_set(self.buffer.astype('uint32').tostring())
-
         for col in range(self.N_COL):
             data = self.screen[col]
             for row in range(self.N_ROW):
@@ -243,6 +240,8 @@ class ClockTHREE:
                 labels[row][col].config(foreground=s)
         if delay > 0:
             sleep(delay)
+        if C3_interface.is_connected():
+            C3_interface.display_set(self.buffer.astype('uint32').tostring())
         clockthree.parent.update()
 
 def main(language, yesconnect=False):

@@ -310,14 +310,15 @@ def draw(filename, data, images, fontname='Times-Roman',
 #                       pagesize=(13*inch, 10*inch)
                       pagesize=(17*inch, 11*inch)
                       )
-    c.setLineWidth(.5)
-
+    c.setLineWidth(.6)
+    # label font
+    c.setFont(fontname, fontsize)
+    c.drawString(1.25*inch, 10.75*inch , fontname)
     if reverse:
         c.translate(14. * inch, 0 * inch)
         c.scale(-1, 1)
     c.translate(1. * inch, 1. * inch)
     c.setTitle("ClockTHREE Faceplate: %s" % fontname)
-    c.setFont(fontname, fontsize)
     # c.setFont("Helvetica", 14)
     if pcb_outline:
         c.rect(0*inch, 0*inch, 12*inch, 9*inch)
@@ -342,11 +343,6 @@ def draw(filename, data, images, fontname='Times-Roman',
         c.line(12.5*inch, 10*inch, 12.5*inch, 9.55 * inch)
 
 
-    # label font
-    textobject = c.beginText()
-    textobject.setTextOrigin(-.25*inch, 9.6*inch)
-    textobject.textOut(fontname)
-    c.drawText(textobject)
 
     # c.getAvailableFonts()
     # c.stringWidth('Hello World')
@@ -1030,7 +1026,7 @@ AMINACHMITTAGS--
 MORGENSABENDS---
 DER-MITTERNACHTS
 PETERSCLOCKTHREE
- YMTUMSALARM     
+ JMTUMSALARM     
 '''
 german = [list(l) for l in '''\
 ESXISTYVIERTELY?
@@ -1044,7 +1040,7 @@ AMINACHMITTAGSZ
 MORGENSABENDSTJ
 DER-MITTERNACHTS
 PETERSCLOCKTHREE
- YMTUMSALARM     
+ JMTUMSALARM     
 '''.splitlines()]
 example_data = [
         ('I',"T'",'S',' ','A',' ',' ',' ',' ','Q','U','A','R','T','E','R'),
@@ -1078,7 +1074,7 @@ images = [Image('Images/NounProject/noun_project_198.png',                      
           Image('Images/NounProject/noun_project_140.png',                       # USB
                 XS[0] + dx * .37, YS[-1] + dy * .25, .17*inch, .34*inch),
           Image('Images/ClockTHREE_soft.gif',                                    # ClockTHREE
-                W - .75*inch, H - (3.3875 + .5)*inch, .5*inch, .5*inch),
+                W - .75*inch, H - (3.3875 + .7)*inch, .5*inch, .5*inch),
           ]
 button_logos = [
           Image('Images/mode.png',          # Mode
