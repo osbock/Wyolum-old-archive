@@ -24,6 +24,8 @@ from numpy import arange
 import create_baffle_grid
 from copy import deepcopy
 
+HOURGLASS = False
+
 LASER_CUT_DIR = 'LaserPoint'
 LASER_CUT_DIR = 'Hines'
 
@@ -646,7 +648,12 @@ def draw(filename, data, images, fontname='Times-Roman',
             c.setLineJoin(1)
             c.line(XS[-2] + dx/10., YS[-1] + dx/10.,
                    XS[-1] - dx/10., YS[-2] - dy/10.)
-
+        if not HOURGLASS:
+            x = XS[-2] + dx/2.
+            r = 1.5 * mm
+            for i in range(5):
+                y = YS[5 + i] + dy / 2.
+                c.circle(x, y, r, fill=True)
     baffle_h = create_baffle(BAFFLE_HEIGHT,
                              BAFFLE_THICKNESS, 15, dx,
                              tab_width=TAB_WIDTH,
@@ -1043,7 +1050,7 @@ SIEBENACHTZWÖLF
 ZEHNELFNEUNQUHR 
 AMINACHMITTAGSZ
 MORGENSABENDSTJ
-DER-MITTERNACHTS
+DER%MITTERNACHTS
 PETERSCLOCKTHREE
  JMTUMSALARM     
 '''.splitlines()]
@@ -1095,10 +1102,11 @@ button_logos = [
 for bl in button_logos:
     print bl.filename, bl.x / inch + .5, bl.y / inch + .5, bl.w / inch, bl.h / inch
 
-for i in range(5):
-    images.append(Image('Images/hourglass%d.png' % i,
-          XS[-2] + dx * .35, YS[5 + i] + dy * .25,
-          dx * .3, dy * .56 ))
+if HOURGLASS:
+    for i in range(5):
+        images.append(Image('Images/hourglass%d.png' % i,
+              XS[-2] + dx * .35, YS[5 + i] + dy * .25,
+              dx * .3, dy * .56 ))
 
 def test():    
     # draw("baffle_h.pdf", data, images, faceplate=False, baffle=True, horizontal_baffles=True)
