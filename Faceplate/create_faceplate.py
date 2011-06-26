@@ -52,6 +52,7 @@ else:
 TAB_WIDTH = BAFFLE_THICKNESS
 TAB_DEPTH = 1.5 * STRUT_W
 MARGIN = .1*mm
+MARGIN = .15*mm
 
 THETAS = arange(-THETA_EXTRA, 180 + THETA_EXTRA, DTHETA)
 
@@ -125,6 +126,7 @@ class MyPath:
 
     def drawOn(self, c, linewidth=LASER_THICKNESS):
         p = c.beginPath()
+        c.setStrokeColor(red)
         c.setLineWidth(linewidth)
         for path in self.paths:
             p.moveTo(*self.points[path[0]])
@@ -135,6 +137,7 @@ class MyPath:
         for poly in self.subtract:
             poly.drawOn(c)
         c.drawPath(p)
+        # c.setStrokeColor(black)
 
     def rotate(self, rotate_deg):
         theta = rotate_deg * pi / 180.
@@ -777,11 +780,11 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
         border_h.lineTo(dx * 16 + BAFFLE_THICKNESS,  BAFFLE_THICKNESS)
         border_h.lineTo(-BAFFLE_THICKNESS,  BAFFLE_THICKNESS)
         for i in range(1, 16):
-            border_h.moveTo(i * dx - BAFFLE_THICKNESS/2, TAB_DEPTH - MARGIN)
-            border_h.lineTo(i * dx - BAFFLE_THICKNESS/2, BAFFLE_HEIGHT - TAB_DEPTH + MARGIN)
-            border_h.lineTo(i * dx + BAFFLE_THICKNESS/2, BAFFLE_HEIGHT - TAB_DEPTH + MARGIN)
-            border_h.lineTo(i * dx + BAFFLE_THICKNESS/2, TAB_DEPTH - MARGIN)
-            border_h.lineTo(i * dx - BAFFLE_THICKNESS/2, TAB_DEPTH - MARGIN)
+            border_h.moveTo(i * dx - BAFFLE_THICKNESS/2 - MARGIN, TAB_DEPTH - MARGIN)
+            border_h.lineTo(i * dx - BAFFLE_THICKNESS/2 - MARGIN, BAFFLE_HEIGHT - TAB_DEPTH + MARGIN)
+            border_h.lineTo(i * dx + BAFFLE_THICKNESS/2 + MARGIN, BAFFLE_HEIGHT - TAB_DEPTH + MARGIN)
+            border_h.lineTo(i * dx + BAFFLE_THICKNESS/2 + MARGIN, TAB_DEPTH - MARGIN)
+            border_h.lineTo(i * dx - BAFFLE_THICKNESS/2 - MARGIN, TAB_DEPTH - MARGIN)
             
         print >> scad, 'module border_h(){'
         print >> scad, 'translate(v=[%s, %s, 0])' % (XS[0]/cm,
@@ -797,11 +800,11 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
                                  tab_width=BAFFLE_THICKNESS,
                                  tab_depth=TAB_DEPTH - BAFFLE_THICKNESS)
         for i in range(1, 12):
-            border_v.moveTo(i * dy - BAFFLE_THICKNESS/2, TAB_DEPTH - BAFFLE_THICKNESS)
-            border_v.lineTo(i * dy - BAFFLE_THICKNESS/2, BAFFLE_HEIGHT - TAB_DEPTH - BAFFLE_THICKNESS)
-            border_v.lineTo(i * dy + BAFFLE_THICKNESS/2, BAFFLE_HEIGHT - TAB_DEPTH- BAFFLE_THICKNESS)
-            border_v.lineTo(i * dy + BAFFLE_THICKNESS/2, TAB_DEPTH- BAFFLE_THICKNESS)
-            border_v.lineTo(i * dy - BAFFLE_THICKNESS/2, TAB_DEPTH- BAFFLE_THICKNESS)
+            border_v.moveTo(i * dy - BAFFLE_THICKNESS/2 - MARGIN, TAB_DEPTH - BAFFLE_THICKNESS)
+            border_v.lineTo(i * dy - BAFFLE_THICKNESS/2 - MARGIN, BAFFLE_HEIGHT - TAB_DEPTH - BAFFLE_THICKNESS)
+            border_v.lineTo(i * dy + BAFFLE_THICKNESS/2 + MARGIN, BAFFLE_HEIGHT - TAB_DEPTH- BAFFLE_THICKNESS)
+            border_v.lineTo(i * dy + BAFFLE_THICKNESS/2 + MARGIN, TAB_DEPTH- BAFFLE_THICKNESS)
+            border_v.lineTo(i * dy - BAFFLE_THICKNESS/2 - MARGIN, TAB_DEPTH- BAFFLE_THICKNESS)
         
         print >> scad, 'module border_v(){'
         print >> scad, 'translate(v=[%s, %s, %s])' % (XS[0]/cm-.5 * BAFFLE_THICKNESS / cm,
@@ -851,21 +854,21 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
 
     if baffle: # check baffle grid size
         bc = back_cover.toPDF("%s/back_cover.pdf" % LASER_CUT_DIR)
-        bc.showPage()
-        bc.save()
+        #bc.showPage()
+        #bc.save()
         
         # do separate sheet for engraving
-        bc = canvas.Canvas("%s/back_cover_engraving.pdf" % LASER_CUT_DIR,
-                           pagesize=(13.5 * inch, 10.5 * inch))
+        #bc = canvas.Canvas("%s/back_cover_engraving.pdf" % LASER_CUT_DIR,
+        #                   pagesize=(13.5 * inch, 10.5 * inch))
         # crop marks
-        bc.line(0, .25 * inch, .2 * inch, .25 * inch)
-        bc.line(13.5 * inch, .25 * inch, 13.3 * inch, .25 * inch)
-        bc.line(0, 10.25 * inch, .2 * inch, 10.25 * inch)
-        bc.line(13.5 * inch, 10.25 * inch, 13.3 * inch, 10.25 * inch)
-        bc.line(.25 * inch, 0 * inch, .25 * inch, .2 * inch)
-        bc.line(13.25 * inch, 0 * inch, 13.25 * inch, .2 * inch)
-        bc.line(.25 * inch, 10.5 * inch, .25 * inch, 10.3 * inch)
-        bc.line(13.25 * inch, 10.5 * inch, 13.25 * inch, 10.3 * inch)
+##        bc.line(0, .25 * inch, .2 * inch, .25 * inch)
+##        bc.line(13.5 * inch, .25 * inch, 13.3 * inch, .25 * inch)
+##        bc.line(0, 10.25 * inch, .2 * inch, 10.25 * inch)
+##        bc.line(13.5 * inch, 10.25 * inch, 13.3 * inch, 10.25 * inch)
+##        bc.line(.25 * inch, 0 * inch, .25 * inch, .2 * inch)
+##        bc.line(13.25 * inch, 0 * inch, 13.25 * inch, .2 * inch)
+##        bc.line(.25 * inch, 10.5 * inch, .25 * inch, 10.3 * inch)
+##        bc.line(13.25 * inch, 10.5 * inch, 13.25 * inch, 10.3 * inch)
 
         C3_logo = Image('Images/ClockTHREE_Logo.png',
                          8*inch, 1*inch)
@@ -910,11 +913,13 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
                                           4 * inch
                                           )
                              )
+            hb.setStrokeColor(red)
+
             baffle_h.translate(.25 * inch - baffle_h.getleft(), ystep)
             baffle_h.drawOn(hb)
             hb.drawString(baffle_h.getright() + .25 * inch, (baffle_h.gettop() + baffle_h.getbottom()) / 2., '11 per clock')
 
-            border_h.translate(.25 * inch - border_h.getleft(), baffle_h.gettop() - border_h.getbottom() + PIECE_GAP)                
+            border_h.translate(.25 * inch - border_h.getleft(), baffle_h.gettop() - border_h.getbottom() + PIECE_GAP)
             border_h.drawOn(hb)
             hb.drawString(border_h.getright() + .25 * inch, (border_h.gettop() + border_h.getbottom()) / 2., '2 per clock')
                 
@@ -948,8 +953,8 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
                 bottom_frame.route(notab_baffle_v)
                 top_frame.route(notab_baffle_v)
 
-            top_frame.drill((2.876 + .15) * inch, .25 * inch, .2*inch) # for BUG .3*inch, .4*inch
-            top_frame.drill(11.5 * inch, 5.37*inch, .28*inch) # for Logo
+            top_frame.drill((3.1) * inch, .25 * inch, .2*inch) # for BUG .3*inch, .4*inch
+            top_frame.drill(11.5 * inch, 5.1*inch, .28*inch) # for Logo
             top_frame.drawOn(c)
 
             tf = top_frame.toPDF("%s/top_frame.pdf" % LASER_CUT_DIR)
@@ -1066,7 +1071,7 @@ bangla = reshape(bangla, (12, 16))
 bangla = [tuple(l) for l in bangla]
 
 images = [Image('Images/NounProject/noun_project_198.png',                       # BUG
-                2.876 * inch, .05 * inch, .3*inch, .4*inch),                
+                (3.1 - .15) * inch, .05 * inch, .3*inch, .4*inch),                
           Image('Images/NounProject/noun_project_317.png',                       # clock  
                 XS[-3] + dx * .17, YS[-1] + dy * .07, .4*inch, .5*inch),
           Image('Images/NounProject/noun_project_317.png',                       # clock
@@ -1074,7 +1079,7 @@ images = [Image('Images/NounProject/noun_project_198.png',                      
           Image('Images/NounProject/noun_project_140.png',                       # USB
                 XS[0] + dx * .37, YS[-1] + dy * .25, .17*inch, .34*inch),
           Image('Images/ClockTHREE_soft.gif',                                    # ClockTHREE
-                W - .75*inch, H - (3.3875 + .7)*inch, .5*inch, .5*inch),
+                W - .75*inch, H - (3.9 + .25) * inch, .5*inch, .5*inch),
           ]
 button_logos = [
           Image('Images/mode.png',          # Mode
@@ -1154,7 +1159,8 @@ if __name__ == '__main__':
     import sys
     if len(sys.argv) == 1: # print all
         add_all_fonts()
-        main(fontnames)
+        # main(fontnames)
+        main(['Orbitron-Black'])
         test()
         # main(['Vollkorn-Regular'])
     else:

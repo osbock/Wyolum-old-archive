@@ -610,17 +610,18 @@ bug = Image('Images/NounProject/noun_project_198.png', x, y, w=w)
 
 # draw('faceplate_jr_Futura.pdf', letters, fontname='Futura', images=[bug],reverse=False)
 # draw('faceplate_jr_Futura_R.pdf', letters, fontname='Futura', images=[bug],reverse=True)
-not_used = '''Futura
+not_used = '''
+'''
+fontnames = '''Futura
 PermanentMarker
 Cantarell-Bold
 Allerta-Medium
 Futura
 RuslanDisplay
-'''
-fontnames = '''
 Grenadie
 GrenadierNF
 '''.split()
+
 for fontname in fontnames:
     add_font(fontname)
     draw('Faceplates_jr/faceplate_jr_%s_upper_R.pdf' % fontname, letters, fontname=fontname, images=[bug],reverse=True, case=string.upper)
