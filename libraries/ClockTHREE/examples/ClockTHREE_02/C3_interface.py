@@ -197,8 +197,9 @@ def time_req():
         out = c3_to_wall_clock(dat)
     return out
 
-def time_set():
-    now = int(round(time.time()) + gmt_offset)
+def time_set(now=None):
+    if now is None:
+        now = int(round(time.time()) + gmt_offset)
     # now = time.mktime(time.localtime())
     dat = wall_clock_to_c3(now)
     ser.write(str(const.ABS_TIME_SET))

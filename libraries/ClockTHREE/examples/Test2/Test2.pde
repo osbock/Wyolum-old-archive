@@ -33,7 +33,7 @@ void loop(){
     color_i = count / hold;
     color_i %=  N_COLOR;
     c3.displayfill(COLORS[color_i]);
-    // c3.displayfill(WHITE);
+    c3.displayfill(WHITE);
     dbg = !dbg;
     digitalWrite(DBG, dbg);
   }

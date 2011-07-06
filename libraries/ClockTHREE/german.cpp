@@ -32,8 +32,8 @@ void German::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
 void German::display_time(int YY, int MM, int DD, int hh, int mm, int ss, 
 			   ClockTHREE c3, uint8_t color, uint8_t fade_steps,
 			   uint8_t its_flag, uint8_t minutes_hack_flag){
-  uint8_t hour = 0;
-  uint8_t hour24 = 0;
+  uint8_t hour12;
+  uint8_t hour24;
   uint8_t h_offset = 0;
   uint32_t *new_display = c3.display + N_COL;
   uint32_t *old_display;
@@ -47,34 +47,31 @@ void German::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
     display_word(c3, color, es);
     display_word(c3, color, ist);
   }
-  /* paste code here */
+
   if(0 <= mm && mm < 5){
-    display_word(c3, color, uhr);
-    h_offset = 0;
+    if(hh != 0){
+      display_word(c3, color, uhr);
+    }
   }
   else if(5 <= mm && mm < 10){
     display_word(c3, color, mfunf);
     display_word(c3, color, mnach);
     display_word(c3, color, uhr);
-    h_offset = 0;
   }
   else if(10 <= mm && mm < 15){
     display_word(c3, color, mzehn);
     display_word(c3, color, mnach);
     display_word(c3, color, uhr);
-    h_offset = 0;
   }
   else if(15 <= mm && mm < 20){
     display_word(c3, color, viertel);
     display_word(c3, color, mnach);
     display_word(c3, color, uhr);
-    h_offset = 0;
   }
   else if(20 <= mm && mm < 25){
     display_word(c3, color, zwanzig);
     display_word(c3, color, mnach);
     display_word(c3, color, uhr);
-    h_offset = 0;
   }
   else if(25 <= mm && mm < 30){
     display_word(c3, color, mfunf);
@@ -116,10 +113,17 @@ void German::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
     display_word(c3, color, uhr);
     h_offset = 1;
   }
-  if(hour == 0){
-    display_word(c3, color, zwolf);
+  hour24 = (hh + h_offset) % 24;
+  hour12 = hour24 % 12;
+  if(hour12 == 0){
+    if(hour24 == 0 and mm < 5){
+      // pass
+    }
+    else{
+      display_word(c3, color, zwolf);
+    }
   }
-  else if(hour == 1){
+  else if(hour12 == 1){
     if(25 <= mm && mm < 40){
       display_word(c3, color, eins);
     }
@@ -127,41 +131,45 @@ void German::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
       display_word(c3, color, ein);
     }
   }
-  else if(hour == 2){
+  else if(hour12 == 2){
     display_word(c3, color, zwei);
   }
-  else if(hour == 3){
+  else if(hour12 == 3){
     display_word(c3, color, drei);
   }
-  else if(hour == 4){
+  else if(hour12 == 4){
     display_word(c3, color, vier);
   }
-  else if(hour == 5){
+  else if(hour12 == 5){
     display_word(c3, color, ufunf);
   }
-  else if(hour == 6){
+  else if(hour12 == 6){
     display_word(c3, color, sechs);
   }
-  else if(hour == 7){
+  else if(hour12 == 7){
     display_word(c3, color, sieben);
   }
-  else if(hour == 8){
+  else if(hour12 == 8){
     display_word(c3, color, acht);
   }
-  else if(hour == 9){
+  else if(hour12 == 9){
     display_word(c3, color, neun);
   }
-  else if(hour == 10){
+  else if(hour12 == 10){
     display_word(c3, color, uzehn);
   }
-  else if(hour == 11){
+  else if(hour12 == 11){
     display_word(c3, color, elf);
   }
-  
-  hour24 = (hh) % 24;
   if(0 <= hour24 && hour24 < 6){
     if(mm < 5){
-      display_word(c3, color, nachts);
+      if(hour12 == 0){
+	display_word(c3, color, mitter);	
+	display_word(c3, color, nacht);	
+      }
+      else{
+	display_word(c3, color, nachts);
+      }
     }
     else{
       display_word(c3, color, in);
@@ -216,7 +224,7 @@ void German::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
       display_word(c3, color, nacht);
     }
   }
-  /* paste code here */
+
   if(minutes_hack_flag){
     minutes_hack(c3, mm, ss);
   }

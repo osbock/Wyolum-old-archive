@@ -5,16 +5,16 @@ from time import *
 text = '''\
 ES-IST-VIERTEL--
 FUNF-ZWANZIGZEHN
-VORNACH-HALB----
-EINSZWEIDREI--- 
+VORNACH-HALBEIR-
+EINSZWEIDREIZEIT
 VIERFUNFSECHS-- 
 SIEBENACHTZWOLF 
 ZEHNELFNEUN-UHR 
-AMINACHMITTAGS--
+AMINACHMITTAGS-
 MORGENSABENDS---
 DER-MITTERNACHTS
 PETERSCLOCKTHREE
- YMTUMSALARM     
+ YMTUMSALARMCF   
 '''.splitlines()
 
 def X(start, stop, n):
@@ -35,7 +35,7 @@ macros = {
     'IST':((0,0,0), (3,4,5)), 
     'VIERTEL':(X(0,0,7),X(7,14,7)),
     'FUNF':(X(1,1,4),X(0,4,4)),
-    'ZWANSIG':(X(1,1,7),X(5,12,7)),
+    'ZWANZIG':(X(1,1,7),X(5,12,7)),
     'ZEHN':(X(1,1,4),X(12,16,4)),
     'VOR':(X(2,2,3,),X(0,3,3)),
     'NACH':(X(2,2,4),X(3,7,4)),
@@ -106,7 +106,7 @@ def update_time(clocktwo, refresh=True):
         clocktwo.set_by_key('UHR')
         h_offset = 0
     elif 20 <= now.tm_min and now.tm_min < 25:
-        clocktwo.set_by_key('ZWANSIG')
+        clocktwo.set_by_key('ZWANZIG')
         clocktwo.set_by_key('NACH')
         clocktwo.set_by_key('UHR')
         h_offset = 0

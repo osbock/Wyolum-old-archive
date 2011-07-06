@@ -53,6 +53,7 @@ void EnglishJr::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
   }
   else if( 10 <= mm && mm < 15){
     display_word(c3, color, mten);
+    display_word(c3, color, minutes);
     display_word(c3, color, past);
     h_offset = 0;
   }
@@ -64,12 +65,14 @@ void EnglishJr::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
   }
   else if( 20 <= mm && mm < 25){
     display_word(c3, color, twenty);
+    display_word(c3, color, minutes);
     display_word(c3, color, past);
     h_offset = 0;
   }
   else if( 25 <= mm && mm < 30){
     display_word(c3, color, mfive);
     display_word(c3, color, twenty);
+    display_word(c3, color, minutes);
     display_word(c3, color, past);
     h_offset = 0;
   }
@@ -81,11 +84,13 @@ void EnglishJr::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
   else if( 35 <= mm && mm < 40){
     display_word(c3, color, mfive);
     display_word(c3, color, twenty);
+    display_word(c3, color, minutes);
     display_word(c3, color, to);
     h_offset = 1;
   }
   else if( 40 <= mm && mm < 45){
     display_word(c3, color, twenty);
+    display_word(c3, color, minutes);
     display_word(c3, color, to);
     h_offset = 1;
   }
@@ -97,11 +102,13 @@ void EnglishJr::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
   }
   else if( 50 <= mm && mm < 55){
     display_word(c3, color, mten);
+    display_word(c3, color, minutes);
     display_word(c3, color, to);
     h_offset = 1;
   }
   else if( 55 <= mm && mm < 60){
     display_word(c3, color, mfive);
+    display_word(c3, color, minutes);
     display_word(c3, color, to);
     h_offset = 1;
   }

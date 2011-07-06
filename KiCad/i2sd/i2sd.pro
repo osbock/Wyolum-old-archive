@@ -1,4 +1,4 @@
-update=06/03/11 18:16:49
+update=Sun 03 Jul 2011 01:32:40 PM EDT
 version=1
 last_client=eeschema
 [cvpcb]
@@ -64,7 +64,8 @@ offY_E=0
 RptD_X=0
 RptD_Y=100
 RptLab=1
+SimCmd=
+UseNetN=0
 LabSize=60
 [eeschema/libraries]
-LibName1=libs/i2sd
-LibName2=libs/power
+LibName1=./i2sd-cache

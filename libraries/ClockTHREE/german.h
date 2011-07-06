@@ -6,13 +6,13 @@
 ES-IST-VIERTEL--
 FUNF-ZWANZIGZEHN
 VORNACH-HALB----
-EINSZWEIDREI--- 
+EINSZWEIDREIZEIT
 VIERFUNFSECHS-- 
 SIEBENACHTZWOLF 
 ZEHNELFNEUN-UHR 
-AM-NACHMITTAGS- 
+AMINACHMITTAGS--
 MORGENSABENDS---
-IN-DER-NACHTS---
+DER-MITTERNACHTS
 PETERSCLOCKTHREE
  YMTUMSALARM     
 */
@@ -24,11 +24,13 @@ const uint8_t zwanzig[3] = {1, 5, 7};
 const uint8_t mzehn[3] = {1, 12, 4};
 const uint8_t vor[3] = {2, 0, 3};
 const uint8_t mnach[3] = {2, 3, 4};
-const uint8_t halb[3] = {2, 8, 4};
+const uint8_t halb[3] = {2, 8, 4}; 
+const uint8_t beir[3] = {2, 11, 4}; 
 const uint8_t ein[3] = {3, 0, 3};
 const uint8_t eins[3] = {3, 0, 4};
 const uint8_t zwei[3] = {3, 4, 4};
 const uint8_t drei[3] = {3, 8, 4};
+const uint8_t zeit[3] = {3, 12, 4};
 const uint8_t vier[3] = {4, 0, 4};
 const uint8_t ufunf[3] = {4, 4, 4};
 const uint8_t sechs[3] = {4, 8, 5};
@@ -40,6 +42,7 @@ const uint8_t elf[3] = {6, 4, 3};
 const uint8_t neun[3] = {6, 7, 4};
 const uint8_t uhr[3] = {6, 12, 3};
 const uint8_t am[3] = {7, 0, 2};
+const uint8_t in[3] = {7, 2, 2};
 const uint8_t znach[3] = {7, 3, 4};
 const uint8_t mittag[3] = {7, 7, 6};
 const uint8_t mittags[3] = {7, 7, 7};
@@ -47,10 +50,10 @@ const uint8_t morgen[3] = {8, 0, 6};
 const uint8_t morgens[3] = {8, 0, 7};
 const uint8_t abend[3] = {8, 7, 5};
 const uint8_t abends[3] = {8, 7, 6};
-const uint8_t in[3] = {9, 0, 2};
-const uint8_t der[3] = {9, 3, 3};
-const uint8_t nacht[3] = {9, 7, 5};
-const uint8_t nachts[3] = {9, 7, 6};
+const uint8_t der[3] = {9, 0, 3};
+const uint8_t mitter[3] = {9, 4, 6};
+const uint8_t nacht[3] = {9, 10, 5};
+const uint8_t nachts[3] = {9, 10, 6};
 
 const uint8_t usb_led[3] = {11, 0, 1};
 const uint8_t year_led[3] = {11, 1, 1};

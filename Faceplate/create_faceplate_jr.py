@@ -33,6 +33,16 @@ FOURFIVESEVENINE
 TWELVEXOCLOCKYAM
 PMYDMTHWMFSUALR!'''.splitlines()
 
+temps = '''\
+ITS-A-LITTLE----
+WARMERCOOLER----
+HOTTERCOLDER----
+THAN-UNBEARABLY-
+HOTCOLD-PERFECT-
+CHILLYFREEZING--
+TOASTYOUTSIDE---
+IN-HEREWYOLUM---'''.splitlines()
+
 # letters = ['.' * 16] * 8
 
 class MyPath:
@@ -332,6 +342,7 @@ def draw(filename, data, fontname='Times-Roman', images=[],
          fontsize= DEFAULT_FONT_SIZE,
          reverse=False,
          case=string.upper,
+         seven_seg=False,
          ):
     W = 11 * inch
     H = 11 *inch
@@ -429,10 +440,11 @@ def draw(filename, data, fontname='Times-Roman', images=[],
     ldr_y = 9*inch - 6.38*mm
     ldr_r = 2.5*mm
     can.circle(ldr_x, ldr_y, ldr_r, fill=True) # ldr
-    can.circle(xs[-1] + dx/2, ys[-1] + dy/2 - .05*inch, 1*mm, fill=True) # 1 minute
-    can.circle(xs[-1] + dx/2, ys[-2] + dy/2 + dy/8 - .05*inch, 1*mm, fill=True) # 2 minutes
-    can.circle(xs[-1] + dx/2, ys[-2] + dy/2 - dy/8 - .05*inch, 1*mm, fill=True) # 2 minutes
-    can.circle(xs[-1] + dx/2, ys[-3] + dy/2 - .05*inch, 1*mm, fill=True) # 1 minute
+    if False:
+        can.circle(xs[-1] + dx/2, ys[-1] + dy/2 - .05*inch, 1*mm, fill=True) # 1 minute
+        can.circle(xs[-1] + dx/2, ys[-2] + dy/2 + dy/8 - .05*inch, 1*mm, fill=True) # 2 minutes
+        can.circle(xs[-1] + dx/2, ys[-2] + dy/2 - dy/8 - .05*inch, 1*mm, fill=True) # 2 minutes
+        can.circle(xs[-1] + dx/2, ys[-3] + dy/2 - .05*inch, 1*mm, fill=True) # 1 minute
     
     # crop marks # update!
     # can.setLineWidth(LASER_THICKNESS)
@@ -543,6 +555,13 @@ def draw(filename, data, fontname='Times-Roman', images=[],
     print >> scad, 'color([0.1, 0.1, 0.1, 0.9])translate([0, 0, %s])backplate();' % ((-faceplate_thickness / 2) / mm)
     print >> scad_ex, 'color([0.1, 0.1, 0.1, 0.9])translate([0, 0, %s])backplate();' % (-2 * inch / mm + (-faceplate_thickness / 2) / mm)
 
+    if seven_seg:
+        x = 4.15*inch + 1 * inch - .5*inch
+        w = 1.6*inch
+        h = .5*inch
+        y = 9*inch - .8 *inch  - .6*inch
+        can.rect(x, y, w, h, fill=True)
+
     faceplate.drawOn(can)
     can.showPage()
 
@@ -620,12 +639,31 @@ Futura
 RuslanDisplay
 Grenadie
 GrenadierNF
+'''
+fontnames = '''
+Futura
 '''.split()
-
-for fontname in fontnames:
-    add_font(fontname)
-    draw('Faceplates_jr/faceplate_jr_%s_upper_R.pdf' % fontname, letters, fontname=fontname, images=[bug],reverse=True, case=string.upper)
-    draw('Faceplates_jr/faceplate_jr_%s_lower_R.pdf' % fontname, letters, fontname=fontname, images=[bug],reverse=True, case=string.lower)
-    draw('Faceplates_jr/faceplate_jr_%s_upper.pdf' % fontname, letters, fontname=fontname, images=[bug],reverse=False, case=string.upper)
-    draw('Faceplates_jr/faceplate_jr_%s_lower.pdf' % fontname, letters, fontname=fontname, images=[bug],reverse=False, case=string.lower)
+if False: # ClockTHREEjr
+    for fontname in fontnames:
+        add_font(fontname)
+        draw('Faceplates_jr/faceplate_jr_%s_upper_R.pdf' % fontname, letters, fontname=fontname, images=[bug],reverse=True, case=string.upper)
+        draw('Faceplates_jr/faceplate_jr_%s_lower_R.pdf' % fontname, letters, fontname=fontname, images=[bug],reverse=True, case=string.lower)
+        draw('Faceplates_jr/faceplate_jr_%s_upper.pdf' % fontname, letters, fontname=fontname, images=[bug],reverse=False, case=string.upper)
+        draw('Faceplates_jr/faceplate_jr_%s_lower.pdf' % fontname, letters, fontname=fontname, images=[bug],reverse=False, case=string.lower)
+    
+else:
+    for fontname in fontnames:
+        add_font(fontname)
+        draw('Faceplates_tempjr/faceplate_jr_%s_upper_R.pdf' % fontname, temps,
+             fontname=fontname, images=[bug],reverse=True, case=string.upper,
+             seven_seg=True)
+        draw('Faceplates_tempjr/faceplate_jr_%s_lower_R.pdf' % fontname, temps, 
+             fontname=fontname, images=[bug],reverse=True, case=string.lower,
+             seven_seg=True)
+        draw('Faceplates_tempjr/faceplate_jr_%s_upper.pdf' % fontname, temps, 
+             fontname=fontname, images=[bug],reverse=False, case=string.upper,
+             seven_seg=True)
+        draw('Faceplates_tempjr/faceplate_jr_%s_lower.pdf' % fontname, temps, 
+             fontname=fontname, images=[bug],reverse=False, case=string.lower,
+             seven_seg=True)
     

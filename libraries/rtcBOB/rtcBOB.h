@@ -11,6 +11,8 @@ const int DS3231_ADDR = 104;
 const int DS3231_TEMP_OFFSET = 0x11;
 const int DS3231_ALARM1_OFSET = 0x7;
 
+#define LEAP_YEAR(_Y_) (!((_Y_)%4) && (((_Y_)%100) || !((_Y_)%400)))
+
 /*
  * single front end interface to both PCgetTime and RTCgetTime()
  * Uses RTC if available or INT if not.

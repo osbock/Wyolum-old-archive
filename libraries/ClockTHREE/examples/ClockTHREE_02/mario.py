@@ -92,5 +92,5 @@ def run(n):
 
 if __name__ == '__main__':
     C3_interface.connect()
-    run(100)
+    run(1000000)
     C3_interface.trigger_mode()

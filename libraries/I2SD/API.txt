@@ -1,0 +1,45 @@
+I2SD is an I2C interface for an SD card to be used initally with ClockTHREE and
+ClockTHREEjr.  The idea behind I2SD is to allow easy access to files stored
+on an SD card.  If the I2C bus is already part of a circuit, I2SD does 
+not require any extra pins.  So it it be used to optimize pin usage on the
+micro.
+
+I2SD has a simple single file interface.  That is only one file can
+be open at a time.
+
+Typical usage:
+
+I2SD sd = I2SD();
+sd.mkdir("/test");
+sd.chdir("/test");
+sd.open("tryme.txt", "w");
+sd.write("To be or not to be, that is the question\n");
+sd.close();
+sd.listdir("/test"); // future functionality
+
+
+sd.open("tryme.txt", "r");
+char c = sd.read(1); // c == 'T'
+char *all = sd.read(); // all = "o be or not to be, that is the question\n"
+sd.close();
+
+If any call fails, then I2SD will start rapidly alternating LED blinks to 
+indicate a failure and return an error code.  So test the output of 
+each call if you can respond to errors internally.
+
+I2SD sd = I2SD();
+if(!sd.mkdir("/test")){
+   // bla bla bla err
+}
+if(!sd.chdir("/test")){
+   // bla bla bla err
+}
+if(!sd.open("tryme.txt", "w")){
+   // bla bla bla err
+}
+if(!sd.write("To be or not to be, that is the question\n")){
+   // bla bla bla err
+}    
+if(!sd.close(){
+   // bla bla bla err
+}

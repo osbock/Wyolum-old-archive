@@ -60,7 +60,7 @@ typedef time_t(*getExternalTime)();
 #define previousMidnight(_time_) (( _time_ / SECS_PER_DAY) * SECS_PER_DAY)  // time at the start of the given day
 #define nextMidnight(_time_) ( previousMidnight(_time_)  + SECS_PER_DAY ) // time at the end of the given day 
 #define elapsedSecsThisWeek(_time_)  (elapsedSecsToday(_time_) +  (dayOfWeek(_time_) * SECS_PER_DAY) )   
-#define LEAP_YEAR(_Y_) (!((_Y_)%4) && (((_Y_)%100) || !((_Y_)%400)))
+// #define LEAP_YEAR(_Y_) (!((_Y_)%4) && (((_Y_)%100) || !((_Y_)%400)))
 #define DAYS_PER_YEAR(_year_) (365 + LEAP_YEAR(_year_))
 #define SECS_PER_YEAR(_year_) ((DAYS_PER_YEAR(_year_)) * SECS_PER_DAY)
 
