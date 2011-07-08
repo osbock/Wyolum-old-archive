@@ -1,22 +1,8 @@
-Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 05/21/11 12:49:56
+Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 07/07/11 16:35:12
 
 BeginCmp
 TimeStamp = /4DCD1D3A;
 Reference = B1;
-ValeurCmp = I/O;
-IdModule  = I/O;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DCD1D3D;
-Reference = B2;
-ValeurCmp = I/O;
-IdModule  = I/O;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DCD1D3F;
-Reference = B3;
 ValeurCmp = I/O;
 IdModule  = I/O;
 EndCmp
@@ -115,14 +101,14 @@ EndCmp
 BeginCmp
 TimeStamp = /4DCB9641;
 Reference = C5;
-ValeurCmp = 100u;
+ValeurCmp = 22u,10V;
 IdModule  = CP_5x11mm;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCB9634;
 Reference = C6;
-ValeurCmp = 100u;
+ValeurCmp = 47u,10V;
 IdModule  = CP_5x11mm;
 EndCmp
 
@@ -158,42 +144,28 @@ BeginCmp
 TimeStamp = /4DCA5EE0;
 Reference = P2;
 ValeurCmp = COMM_R;
-IdModule  = pin_strip_4;
+IdModule  = PIN_ARRAY_4x1;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCA5EE4;
 Reference = P3;
 ValeurCmp = COMM_L;
-IdModule  = pin_strip_4;
+IdModule  = PIN_ARRAY_4x1;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCD1CA7;
 Reference = P4;
 ValeurCmp = CONN_I/O;
-IdModule  = pin_strip_4;
+IdModule  = PIN_ARRAY_4x1;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCD1CAD;
 Reference = P5;
 ValeurCmp = CONN_I/O;
-IdModule  = pin_strip_4;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DCD1CB1;
-Reference = P6;
-ValeurCmp = CONN_I/O;
-IdModule  = pin_strip_4;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DCD1CB5;
-Reference = P7;
-ValeurCmp = CONN_I/O;
-IdModule  = pin_strip_4;
+IdModule  = PIN_ARRAY_4x1;
 EndCmp
 
 BeginCmp
@@ -326,13 +298,13 @@ BeginCmp
 TimeStamp = /4DCAC2D1;
 Reference = U1;
 ValeurCmp = MCP_1700;
-IdModule  = SOT23-3;
+IdModule  = SOT23-5;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCB7505;
 Reference = U2;
-ValeurCmp = 74LS125;
+ValeurCmp = 74HC125;
 IdModule  = SO14E;
 EndCmp
 

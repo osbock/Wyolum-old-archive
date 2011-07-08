@@ -1,13 +1,7 @@
-# EESchema Netlist Version 1.1 created  05/21/11 12:49:56
+# EESchema Netlist Version 1.1 created  07/07/11 16:35:12
 (
  ( /4DCD1D3A I/O B1 I/O
   ( 1 /B_01 )
- )
- ( /4DCD1D3D I/O B2 I/O
-  ( 1 /B_02 )
- )
- ( /4DCD1D3F I/O B3 I/O
-  ( 1 /B_03 )
  )
  ( /4DCD1D41 I/O B4 I/O
   ( 1 /B_04 )
@@ -50,24 +44,24 @@
   ( 1 +5V )
   ( 2 GND )
  )
- ( /4DCB9641 CP_5x11mm C5 100u
+ ( /4DCB9641 CP_5x11mm C5 22u,10V
   ( 1 VCC )
   ( 2 GND )
  )
- ( /4DCB9634 CP_5x11mm C6 100u
+ ( /4DCB9634 CP_5x11mm C6 47u,10V
   ( 1 +5V )
   ( 2 GND )
  )
  ( /4DCB9774 c_0805 C7 100n
-  ( 1 N-000014 )
+  ( 1 N-000009 )
   ( 2 /RESET )
  )
  ( /4DCFFACF d_0805 D1 LED
-  ( 1 N-000017 )
+  ( 1 N-000010 )
   ( 2 GND )
  )
  ( /4DCFFADF d_0805 D2 LED
-  ( 1 N-000018 )
+  ( 1 N-000011 )
   ( 2 GND )
  )
  ( /4DCA5EC5 TQFP32 IC1 ATMEGA8-AI
@@ -77,8 +71,8 @@
   ( 4 +5V )
   ( 5 GND )
   ( 6 +5V )
-  ( 7 N-000054 )
-  ( 8 N-000050 )
+  ( 7 N-000037 )
+  ( 8 N-000043 )
   ( 9 /B_14 )
   ( 10 /B_13 )
   ( 11 /B_12 )
@@ -104,37 +98,25 @@
   ( 31 /TXD )
   ( 32 /B_03 )
  )
- ( /4DCA5EE0 pin_strip_4 P2 COMM_R
+ ( /4DCA5EE0 PIN_ARRAY_4x1 P2 COMM_R
   ( 1 +5V )
   ( 2 /SCL )
   ( 3 /SDA )
   ( 4 GND )
  )
- ( /4DCA5EE4 pin_strip_4 P3 COMM_L
+ ( /4DCA5EE4 PIN_ARRAY_4x1 P3 COMM_L
   ( 1 +5V )
   ( 2 /SCL )
   ( 3 /SDA )
   ( 4 GND )
  )
- ( /4DCD1CA7 pin_strip_4 P4 CONN_I/O
+ ( /4DCD1CA7 PIN_ARRAY_4x1 P4 CONN_I/O
   ( 1 ? )
   ( 2 ? )
   ( 3 ? )
   ( 4 ? )
  )
- ( /4DCD1CAD pin_strip_4 P5 CONN_I/O
-  ( 1 ? )
-  ( 2 ? )
-  ( 3 ? )
-  ( 4 ? )
- )
- ( /4DCD1CB1 pin_strip_4 P6 CONN_I/O
-  ( 1 ? )
-  ( 2 ? )
-  ( 3 ? )
-  ( 4 ? )
- )
- ( /4DCD1CB5 pin_strip_4 P7 CONN_I/O
+ ( /4DCD1CAD PIN_ARRAY_4x1 P5 CONN_I/O
   ( 1 ? )
   ( 2 ? )
   ( 3 ? )
@@ -143,10 +125,10 @@
  ( /4DCB971F pin_strip_6-90 P8 FTDI
   ( 1 GND )
   ( 2 GND )
-  ( 3 ? )
+  ( 3 +5V )
   ( 4 /RXD )
   ( 5 /TXD )
-  ( 6 N-000014 )
+  ( 6 N-000009 )
  )
  ( /4DCD1997 ISP P9 ISP
   ( 1 /MISO )
@@ -198,7 +180,7 @@
  )
  ( /4DCFFAF9 r_0805 R5 470E
   ( 1 /B_02 )
-  ( 2 N-000017 )
+  ( 2 N-000010 )
  )
  ( /4DCA5F59 r_0805 R6 10k
   ( 1 VCC )
@@ -210,7 +192,7 @@
  )
  ( /4DCFFB11 r_0805 R8 470E
   ( 1 /B_03 )
-  ( 2 N-000018 )
+  ( 2 N-000011 )
  )
  ( /4DCCE748 vite_3mm SC1 SCREW
  )
@@ -237,12 +219,12 @@
   ( 1 GND )
   ( 2 /RESET )
  )
- ( /4DCAC2D1 SOT23-3 U1 MCP_1700
+ ( /4DCAC2D1 SOT23-5 U1 MCP_1700
   ( 1 GND )
   ( 2 VCC )
   ( 3 +5V )
  )
- ( /4DCB7505 SO14E U2 74LS125
+ ( /4DCB7505 SO14E U2 74HC125
   ( 1 GND )
   ( 2 /SCK )
   ( 3 /SD_CLK )
@@ -259,8 +241,8 @@
   ( 14 VCC )
  )
  ( /4DCA7D83 XTAL X1 CRYSTAL
-  ( 1 N-000054 )
-  ( 2 N-000050 )
+  ( 1 N-000037 )
+  ( 2 N-000043 )
   ( 3 GND )
  )
 )
