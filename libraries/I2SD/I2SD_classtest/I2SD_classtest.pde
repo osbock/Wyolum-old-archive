@@ -1,21 +1,18 @@
+#include <inttypes.h>
 #include "I2SD.h"
 #include "SD.h"
+#include "Wire.h"
+#include "C3SB.h"
 
 I2SD i2sd = I2SD();
-File file;
+// File file;
 
 void setup(){
+  Serial.begin(57600);
+  Wire.begin(I2SD_SLAVE_ID);
   i2sd.init();
-  file = SD.open("test.txt");
-  if(!file){
-    i2sd.err_out(OPEN_FILE_FAILED);
-  }
 }
 void loop(){
-  i2sd.setLED1(HIGH);
-  i2sd.setLED2(LOW);
-  delay(1000);
-  i2sd.setLED1(LOW);
-  i2sd.setLED2(HIGH);
+  // alternate LEDs to show it made it here.
   delay(1000);
 }

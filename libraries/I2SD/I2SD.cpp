@@ -54,32 +54,107 @@ With the understanding that:
 #include "I2SD.h"
 #include "SD.h"
 
+I2SD* i2sd_p;
+
 I2SD::I2SD(){
 }
 void I2SD::init(){
-  pinMode(I2SD_LED1_PIN, OUTPUT);
-  pinMode(I2SD_LED2_PIN, OUTPUT);
+  pinMode(I2SD_TX_LED_PIN, OUTPUT);
+  pinMode(I2SD_RX_LED_PIN, OUTPUT);
   pinMode(I2SD_SLAVE_SELECT, OUTPUT);
+  i2sd_p = this;
+  Wire.begin(I2SD_SLAVE_ID);
+  Wire.onReceive(I2SD_onReceive);
+  Wire.onRequest(I2SD_onRequest);
   if(!SD.begin(I2SD_SLAVE_SELECT)){
     err_out(INIT_FAILED);
   }
+  /*
+  file = SD.open("test.txt", FILE_WRITE);
+  if(!file){
+    err_out(OPEN_FILE_FAILED);
+  }
+  */
+  file_mode = FILE_READ;
+  file = SD.open("TEST.TXT", file_mode);
+  if(!file){
+    err_out(OPEN_FILE_FAILED);
+  }
 }
 void I2SD::err_out(uint8_t err_no){
-  digitalWrite(I2SD_LED1_PIN, HIGH); 
-  digitalWrite(I2SD_LED2_PIN, LOW); 
+  digitalWrite(I2SD_TX_LED_PIN, HIGH); 
+  digitalWrite(I2SD_RX_LED_PIN, LOW); 
   while(true){
     delay(1000);
     for(int i=0; i < err_no; i++){
-      digitalWrite(I2SD_LED2_PIN, HIGH); 
+      digitalWrite(I2SD_RX_LED_PIN, HIGH); 
       delay(200);
-      digitalWrite(I2SD_LED2_PIN, LOW); 
+      digitalWrite(I2SD_RX_LED_PIN, LOW); 
       delay(200);
     }
   }
 }
-void I2SD::setLED1(boolean state){
-  digitalWrite(I2SD_LED1_PIN, state);
+void I2SD::setTX_LED(boolean state){
+  digitalWrite(I2SD_TX_LED_PIN, state);
 }
-void I2SD::setLED2(boolean state){
-  digitalWrite(I2SD_LED2_PIN, state);
+void I2SD::setRX_LED(boolean state){
+  digitalWrite(I2SD_RX_LED_PIN, state);
 }
+void I2SD_onRequest(){
+  uint8_t buffer[I2C_BUFFER_LEN];
+  if(i2sd_p->file_mode == FILE_READ){
+    i2sd_p->setTX_LED(HIGH);
+    for(uint8_t i = 0; i < I2C_BUFFER_LEN; i++){
+      buffer[i] = i2sd_p->file.read();
+    }
+    Wire.send(buffer, I2C_BUFFER_LEN);
+    i2sd_p->setTX_LED(LOW);
+    Serial.print((char*)buffer);
+  }
+}
+void I2SD_onReceive(int n_byte){
+
+  i2sd_p->setRX_LED(HIGH);
+
+  uint8_t msg_type = Wire.receive();
+  // Serial.print("MSG_TYPE: ");
+  // Serial.print(msg_type, DEC);
+  if(msg_type == I2SD_SEEK_MSG){
+    // grab address
+    Address_t Address;
+    uint8_t i;
+    for(i = 0; 
+	i < sizeof(i2sd_p->cursor) && Wire.available(); 
+	i++){
+      Address.char4[i] = Wire.receive();
+    }
+    if(i == 4){
+      i2sd_p->file.seek(Address.dat32);
+      // Serial.print("SEEK: ");
+      // Serial.println(Address.dat32);
+    }
+  }
+  else if(msg_type == I2SD_READ_MSG and i2sd_p->file_mode != FILE_READ){
+    i2sd_p->file.close();
+    i2sd_p->file_mode = FILE_READ;
+    i2sd_p->file = SD.open("TEST.TXT", i2sd_p->file_mode);
+    if(!i2sd_p->file){
+      i2sd_p->err_out(OPEN_FILE_FAILED);
+    }
+  }
+  else if(msg_type == I2SD_WRITE_MSG){
+    if(i2sd_p->file_mode != FILE_WRITE){
+      i2sd_p->file.close();
+      i2sd_p->file_mode = FILE_WRITE;
+      i2sd_p->file = SD.open("TEST.TXT", i2sd_p->file_mode);
+      if(!i2sd_p->file){
+	i2sd_p->err_out(OPEN_FILE_FAILED);
+      }
+    }
+    while(Wire.available()){
+      i2sd_p->file.write(Wire.receive());
+    }
+  }
+  i2sd_p->setRX_LED(LOW);
+}
+

@@ -65,6 +65,9 @@ void loop()
 {
   // open the file. note that only one file can be open at a time,
   // so you have to close this one before opening another.
+  if(count == 10){
+    while(1) delay(1000); // stop it already
+  }
   SD.remove("test.txt");
   myFile = SD.open("test.txt", FILE_WRITE);
   
