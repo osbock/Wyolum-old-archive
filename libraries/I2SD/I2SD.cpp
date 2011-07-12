@@ -67,21 +67,28 @@ void I2SD::init(){
   Wire.onReceive(I2SD_onReceive);
   Wire.onRequest(I2SD_onRequest);
   if(!SD.begin(I2SD_SLAVE_SELECT)){
-    err_out(INIT_FAILED);
+    err_out(I2SD_INIT_ERROR, "Cannot initialize SD card");
   }
-  /*
-  file = SD.open("test.txt", FILE_WRITE);
-  if(!file){
-    err_out(OPEN_FILE_FAILED);
-  }
-  */
-  file_mode = FILE_READ;
-  file = SD.open("TEST.TXT", file_mode);
-  if(!file){
-    err_out(OPEN_FILE_FAILED);
-  }
+  open("DEFAULT.TXT", FILE_READ);
+  // open("TEST.TXT", FILE_READ);
 }
-void I2SD::err_out(uint8_t err_no){
+
+void I2SD::open(char* filename, uint8_t mode){
+  file = SD.open(filename, mode);
+  if(!file){
+    err_out(I2SD_OPEN_ERROR, "Cannot open file");
+  }
+  file_mode = mode;
+}
+
+void I2SD::close(){
+  file.close();
+}
+
+void I2SD::err_out(uint8_t err_no, char* err_msg){
+  Serial.print("ERROR OUT.  err_no: ");
+  Serial.println(err_no, DEC);
+  Serial.println(err_msg);
   digitalWrite(I2SD_TX_LED_PIN, HIGH); 
   digitalWrite(I2SD_RX_LED_PIN, LOW); 
   while(true){
@@ -135,24 +142,35 @@ void I2SD_onReceive(int n_byte){
     }
   }
   else if(msg_type == I2SD_READ_MSG and i2sd_p->file_mode != FILE_READ){
-    i2sd_p->file.close();
-    i2sd_p->file_mode = FILE_READ;
-    i2sd_p->file = SD.open("TEST.TXT", i2sd_p->file_mode);
-    if(!i2sd_p->file){
-      i2sd_p->err_out(OPEN_FILE_FAILED);
-    }
+    // NEEDED??
   }
   else if(msg_type == I2SD_WRITE_MSG){
-    if(i2sd_p->file_mode != FILE_WRITE){
-      i2sd_p->file.close();
-      i2sd_p->file_mode = FILE_WRITE;
-      i2sd_p->file = SD.open("TEST.TXT", i2sd_p->file_mode);
-      if(!i2sd_p->file){
-	i2sd_p->err_out(OPEN_FILE_FAILED);
+    if(i2sd_p->file_mode == FILE_WRITE){
+      while(Wire.available()){
+	i2sd_p->file.write(Wire.receive());
       }
     }
-    while(Wire.available()){
-      i2sd_p->file.write(Wire.receive());
+    else{
+      i2sd_p->err_out(I2SD_MODE_ERROR, "Cannot read in write mode");
+    }
+  }
+  else if(msg_type == I2SD_OPEN_MSG){
+    uint8_t mode, i;
+    mode = Wire.receive();
+
+    char filename[I2C_BUFFER_LEN - 1]; // one extra char reserved for 
+                                        // null terminator
+    for(i = 0; Wire.available() && i < I2C_BUFFER_LEN - 2; i++){
+      filename[i] = Wire.receive();
+    }
+    if(i > 0){
+      filename[i] = NULL; // terminate string
+      /* Serial.print("Open:");
+	 Serial.print(filename);
+	 Serial.print(", mode:");
+	 Serial.println(mode, DEC); */
+      i2sd_p->close();
+      i2sd_p->open(filename, mode);
     }
   }
   i2sd_p->setRX_LED(LOW);

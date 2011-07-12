@@ -62,22 +62,28 @@ With the understanding that:
 const uint8_t I2SD_TX_LED_PIN = 2;
 const uint8_t I2SD_RX_LED_PIN = 3;
 const uint8_t I2SD_SLAVE_SELECT = 10;
-const uint8_t INIT_FAILED = 3;
-const uint8_t OPEN_FILE_FAILED = 4;
+
+const uint8_t I2SD_INIT_ERROR = 3;
+const uint8_t I2SD_OPEN_ERROR = 4;
+const uint8_t I2SD_MODE_ERROR = 5;
+
 const uint8_t I2SD_SLAVE_ID = 81;
 
 // message types
 const uint8_t I2SD_READ_MSG = 1;
 const uint8_t I2SD_WRITE_MSG = 2;
 const uint8_t I2SD_SEEK_MSG = 3;
+const uint8_t I2SD_OPEN_MSG = 4;
 
 class I2SD{
  public:
   I2SD();
   void init();
-  void err_out(uint8_t err_no);
+  void err_out(uint8_t err_no, char* err_msg);
   void setTX_LED(boolean state);
   void setRX_LED(boolean state);
+  void open(char* filename, uint8_t mode);
+  void close();
   File file;
   uint8_t file_mode;
   unsigned long cursor;
