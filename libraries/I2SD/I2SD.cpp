@@ -90,6 +90,7 @@ void I2SD::seek(unsigned long addr){
   Wire.beginTransmission(I2SD_SLAVE_ID);
   Wire.send(buffer, 5); // seek(0) message
   Wire.endTransmission();
+  cursor = addr;
 }
 
 void I2SD::open(char* filename, uint8_t mode){
@@ -100,15 +101,21 @@ void I2SD::open(char* filename, uint8_t mode){
   Wire.beginTransmission(I2SD_SLAVE_ID);
   Wire.send(buffer, strlen(filename) + 3); // open "TEST.TXT" message
   Wire.endTransmission();
+  cursor = 0;
   delay(10);
 }
 
-void I2SD::read(uint8_t *data, unsigned long n_byte){
-  c3sb.read_from(I2SD_SLAVE_ID, data, n_byte);
+uint8_t I2SD::read(uint8_t *data, uint8_t n_byte){
+  uint8_t out = c3sb.read_from(I2SD_SLAVE_ID, data, n_byte);
+  cursor += out;
+  if(out % I2C_BUFFER_LEN){
+    seek(cursor);
+  }
+  return out;
 }
 
 void I2SD::write(uint8_t *data, uint8_t n_byte){
   uint8_t buffer[I2C_BUFFER_LEN];
-
   c3sb.write_to(I2SD_SLAVE_ID, data, n_byte);
+  cursor += n_byte;
 }

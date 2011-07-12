@@ -10,36 +10,21 @@ be open at a time.
 Typical usage:
 
 I2SD sd = I2SD();
-sd.mkdir("/test");
-sd.chdir("/test");
-sd.open("tryme.txt", "w");
-sd.write("To be or not to be, that is the question\n");
-sd.close();
-sd.listdir("/test"); // future functionality
+i2sd.open("tryme.txt", FILE_WRITE); 
+i2sd.write("To be or not to be, that is the question\n");
 
-
-sd.open("tryme.txt", "r");
-char c = sd.read(1); // c == 'T'
-char *all = sd.read(); // all = "o be or not to be, that is the question\n"
-sd.close();
+i2sd.open("tryme.txt", FILE_READ);
+i2sd.read(uint8_t* c, 1); // c == 'T'
+i2sd.read(uint8_t* all, 100); 
+// all = "o be or not to be, that is the question\n"
 
 If any call fails, then I2SD will start rapidly alternating LED blinks to 
 indicate a failure and return an error code.  So test the output of 
 each call if you can respond to errors internally.
 
-I2SD sd = I2SD();
-if(!sd.mkdir("/test")){
-   // bla bla bla err
-}
-if(!sd.chdir("/test")){
-   // bla bla bla err
-}
-if(!sd.open("tryme.txt", "w")){
-   // bla bla bla err
-}
-if(!sd.write("To be or not to be, that is the question\n")){
-   // bla bla bla err
-}    
-if(!sd.close(){
-   // bla bla bla err
-}
+Long reads happen most efficiently if the reads occur in blocks of size
+I2C_BUFFER_LEN: 32.  If not, a seek is preformed to realign the SD
+file back to what will be expected.  This results in a loss of efficiency 
+for two reasons:
+    1. a seek uses the bus
+    2. data is always sent from I2SD_Slave in 32 byte chunks.

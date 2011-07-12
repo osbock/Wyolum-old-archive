@@ -7,7 +7,7 @@
 #include "SD.h"
 #include "Wire.h"
 
-const uint WRITE_TEST = true;
+const boolean WRITE_TEST = true;
 
 I2SD i2sd;
 
@@ -28,20 +28,21 @@ void setup(){
       "Please note this is longer than 32 chararters.";
     i2sd.write((uint8_t*)msg, strlen(msg) + 1);
     i2sd.open("NEW_FILE.TXT", FILE_READ);
-    uint8_t msg_back[strlen(msg) + 1];
-    i2sd.read(msg_back, strlen(msg));
-    msg_back[strlen(msg)] = NULL;
+    uint8_t msg_back[100];
+    unsigned long n_byte = i2sd.read(msg_back, 100);
+    msg_back[n_byte] = NULL;
     Serial.println((char*)msg_back);
   }
   i2sd.open("TEST.TXT", FILE_READ);
 }
 
 void loop(){
-  char big_data[100];
+  const int n_byte = 200;
+  char big_data[n_byte];
   // i2sd.seek(0);
-  i2sd.read((uint8_t*)big_data, 99);
-  big_data[99] = NULL;
-  Serial.println(big_data);
+  i2sd.read((uint8_t*)big_data, n_byte - 1);
+  big_data[n_byte - 1] = NULL;
+  Serial.print(big_data);
   delay(500);
 }
 

@@ -59,31 +59,30 @@ class C3SB{
  public:
   C3SB();
   void init(char* desc);
-  unsigned long cursor;
   char* target;
   uint8_t other_id;
 
   boolean message_from(uint8_t device_id,
 		       uint8_t msg_id,
 		       uint8_t* dest,
-		       unsigned long n_byte);
+		       uint8_t n_byte);
 
   boolean message_to(uint8_t device_id,
 		     uint8_t msg_id,
 		     uint8_t* payload,
-		     unsigned long n_byte);
+		     uint8_t n_byte);
   // master
-  boolean read_from(uint8_t device_id,
+  uint8_t read_from(uint8_t device_id,
 		    uint8_t* dest,
-		    unsigned long n_byte);
-
+		    uint8_t n_byte);
+  
   // master
   boolean write_to(uint8_t device_id,
 		   uint8_t *payload,
-		   unsigned long n_byte);
+		   uint8_t n_byte);
  private:
   void raw_write(uint8_t* source, uint8_t n_byte);
-  void raw_read(uint8_t* source, uint8_t n_byte);
+  uint8_t raw_read(uint8_t* source, uint8_t n_byte);
   void handle_receive(int n_byte);
   void handle_request();
   uint8_t msg_id;

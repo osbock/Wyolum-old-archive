@@ -128,9 +128,9 @@ void I2SD_Slave_onRequest(){
     i2sd_p->next_pong = false;
     Wire.send(i2sd_p->pong_data, I2C_BUFFER_LEN);
   }
-  else if(i2sd_p->file_mode == FILE_READ){
+  else if(i2sd_p->file_mode){
     i2sd_p->setTX_LED(HIGH);
-    for(uint8_t i = 0; i < I2C_BUFFER_LEN; i++){
+    for(uint8_t i = 0; i < I2C_BUFFER_LEN && i2sd_p->file.available(); i++){
       buffer[i] = i2sd_p->file.read();
     }
     Wire.send(buffer, I2C_BUFFER_LEN);

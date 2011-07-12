@@ -72,11 +72,18 @@ const uint8_t I2SD_MODE_ERROR = 5;
 const uint8_t I2SD_SLAVE_ID = 81;
 
 // message types
-const uint8_t I2SD_PING_MSG = 1;
-const uint8_t I2SD_WRITE_MSG = C3SB_WRITE_MSG;
-const uint8_t I2SD_SEEK_MSG = C3SB_WRITE_MSG + 1;
-const uint8_t I2SD_OPEN_MSG = C3SB_WRITE_MSG + 2;
-
+enum MsgTypes {
+  I2SD_PING_MSG,
+  I2SD_WRITE_MSG = C3SB_WRITE_MSG,
+  I2SD_SEEK_MSG,
+  I2SD_OPEN_MSG,
+  I2SD_N_BYTE_MSG,
+};
+/*const uint8_t I2SD_PING_MSG = 1;
+  const uint8_t I2SD_WRITE_MSG = C3SB_WRITE_MSG;
+  const uint8_t I2SD_SEEK_MSG = C3SB_WRITE_MSG + 1;
+  const uint8_t I2SD_OPEN_MSG = C3SB_WRITE_MSG + 2;
+*/
 union Address_t {
   uint32_t dat32; 
   char char4[4];
@@ -86,11 +93,13 @@ extern Address_t Address;
 
 class I2SD{
  public:
+  unsigned long cursor;
+
   C3SB c3sb;
   boolean ping(uint8_t* ping_data, uint8_t n_byte);
   void seek(unsigned long addr);
   void open(char* filename, uint8_t mode);
-  void read(uint8_t *data, unsigned long n_byte);
+  uint8_t read(uint8_t *data, uint8_t n_byte);
   void write(uint8_t *data, uint8_t n_byte);
 };
 // extern I2SD i2sd; // does not work??!
