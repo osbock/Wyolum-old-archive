@@ -52,127 +52,63 @@ With the understanding that:
      to this web page.
 */
 #include "I2SD.h"
-#include "SD.h"
+Address_t Address;
 
-I2SD* i2sd_p;
+boolean I2SD::ping(uint8_t* ping_data, uint8_t len){
+  uint8_t buffer[32];
+  uint8_t i;
+  boolean out = true;
 
-I2SD::I2SD(){
-}
-void I2SD::init(){
-  pinMode(I2SD_TX_LED_PIN, OUTPUT);
-  pinMode(I2SD_RX_LED_PIN, OUTPUT);
-  pinMode(I2SD_SLAVE_SELECT, OUTPUT);
-  i2sd_p = this;
-  Wire.begin(I2SD_SLAVE_ID);
-  Wire.onReceive(I2SD_onReceive);
-  Wire.onRequest(I2SD_onRequest);
-  if(!SD.begin(I2SD_SLAVE_SELECT)){
-    err_out(I2SD_INIT_ERROR, "Cannot initialize SD card");
+  buffer[0] = I2SD_PING_MSG;
+  for(i = 0; i < len; i++){
+    buffer[i + 1] = ping_data[i + 0];
   }
-  open("DEFAULT.TXT", FILE_READ);
-  // open("TEST.TXT", FILE_READ);
+  Wire.beginTransmission(81);
+  Wire.send(buffer, len + 1); // seek(0) message
+  Wire.endTransmission();
+  
+  delay(100);
+  Wire.requestFrom(I2SD_SLAVE_ID, len);
+  for(i = 0; i < len && Wire.available(); i++){
+    char c = Wire.receive(); // receive a byte as character
+    if(c != ping_data[i]){
+      out = false;
+      break;
+    }
+  }
+  return out;
+}
+
+void I2SD::seek(unsigned long addr){
+  uint8_t buffer[5];
+
+  Address.dat32 = addr;
+  buffer[0] = I2SD_SEEK_MSG;
+  for(uint8_t i = 0; i < 4; i++){
+    buffer[i + 1] = Address.char4[i + 0];
+  }
+  Wire.beginTransmission(I2SD_SLAVE_ID);
+  Wire.send(buffer, 5); // seek(0) message
+  Wire.endTransmission();
 }
 
 void I2SD::open(char* filename, uint8_t mode){
-  file = SD.open(filename, mode);
-  if(!file){
-    err_out(I2SD_OPEN_ERROR, "Cannot open file");
-  }
-  file_mode = mode;
-}
-
-void I2SD::close(){
-  file.close();
-}
-
-void I2SD::err_out(uint8_t err_no, char* err_msg){
-  Serial.print("ERROR OUT.  err_no: ");
-  Serial.println(err_no, DEC);
-  Serial.println(err_msg);
-  digitalWrite(I2SD_TX_LED_PIN, HIGH); 
-  digitalWrite(I2SD_RX_LED_PIN, LOW); 
-  while(true){
-    delay(1000);
-    for(int i=0; i < err_no; i++){
-      digitalWrite(I2SD_RX_LED_PIN, HIGH); 
-      delay(200);
-      digitalWrite(I2SD_RX_LED_PIN, LOW); 
-      delay(200);
-    }
-  }
-}
-void I2SD::setTX_LED(boolean state){
-  digitalWrite(I2SD_TX_LED_PIN, state);
-}
-void I2SD::setRX_LED(boolean state){
-  digitalWrite(I2SD_RX_LED_PIN, state);
-}
-void I2SD_onRequest(){
   uint8_t buffer[I2C_BUFFER_LEN];
-  if(i2sd_p->file_mode == FILE_READ){
-    i2sd_p->setTX_LED(HIGH);
-    for(uint8_t i = 0; i < I2C_BUFFER_LEN; i++){
-      buffer[i] = i2sd_p->file.read();
-    }
-    Wire.send(buffer, I2C_BUFFER_LEN);
-    i2sd_p->setTX_LED(LOW);
-    Serial.print((char*)buffer);
-  }
-}
-void I2SD_onReceive(int n_byte){
-
-  i2sd_p->setRX_LED(HIGH);
-
-  uint8_t msg_type = Wire.receive();
-  // Serial.print("MSG_TYPE: ");
-  // Serial.print(msg_type, DEC);
-  if(msg_type == I2SD_SEEK_MSG){
-    // grab address
-    Address_t Address;
-    uint8_t i;
-    for(i = 0; 
-	i < sizeof(i2sd_p->cursor) && Wire.available(); 
-	i++){
-      Address.char4[i] = Wire.receive();
-    }
-    if(i == 4){
-      i2sd_p->file.seek(Address.dat32);
-      // Serial.print("SEEK: ");
-      // Serial.println(Address.dat32);
-    }
-  }
-  else if(msg_type == I2SD_READ_MSG and i2sd_p->file_mode != FILE_READ){
-    // NEEDED??
-  }
-  else if(msg_type == I2SD_WRITE_MSG){
-    if(i2sd_p->file_mode == FILE_WRITE){
-      while(Wire.available()){
-	i2sd_p->file.write(Wire.receive());
-      }
-    }
-    else{
-      i2sd_p->err_out(I2SD_MODE_ERROR, "Cannot read in write mode");
-    }
-  }
-  else if(msg_type == I2SD_OPEN_MSG){
-    uint8_t mode, i;
-    mode = Wire.receive();
-
-    char filename[I2C_BUFFER_LEN - 1]; // one extra char reserved for 
-                                        // null terminator
-    for(i = 0; Wire.available() && i < I2C_BUFFER_LEN - 2; i++){
-      filename[i] = Wire.receive();
-    }
-    if(i > 0){
-      filename[i] = NULL; // terminate string
-      /* Serial.print("Open:");
-	 Serial.print(filename);
-	 Serial.print(", mode:");
-	 Serial.println(mode, DEC); */
-      i2sd_p->close();
-      i2sd_p->open(filename, mode);
-    }
-  }
-  i2sd_p->setRX_LED(LOW);
+  buffer[0] = I2SD_OPEN_MSG;
+  buffer[1] = mode;
+  strcpy((char*)(buffer + 2), filename);
+  Wire.beginTransmission(I2SD_SLAVE_ID);
+  Wire.send(buffer, strlen(filename) + 3); // open "TEST.TXT" message
+  Wire.endTransmission();
+  delay(10);
 }
 
+void I2SD::read(uint8_t *data, unsigned long n_byte){
+  c3sb.read_from(I2SD_SLAVE_ID, data, n_byte);
+}
+
+void I2SD::write(uint8_t *data, uint8_t n_byte){
+  uint8_t buffer[I2C_BUFFER_LEN];
+
+  c3sb.write_to(I2SD_SLAVE_ID, data, n_byte);
+}

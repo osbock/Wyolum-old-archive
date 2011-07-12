@@ -1,5 +1,7 @@
 /*
   I2SD.h -- I2C <--> SD interface.
+  (This is the interface for the client code see I2SD_Slave.h for 
+   the interface to the device code)
 
   Justin Shaw
   The hardware and software for I2SD have been enabled by the 
@@ -70,30 +72,26 @@ const uint8_t I2SD_MODE_ERROR = 5;
 const uint8_t I2SD_SLAVE_ID = 81;
 
 // message types
-const uint8_t I2SD_READ_MSG = 1;
-const uint8_t I2SD_WRITE_MSG = 2;
-const uint8_t I2SD_SEEK_MSG = 3;
-const uint8_t I2SD_OPEN_MSG = 4;
+const uint8_t I2SD_PING_MSG = 1;
+const uint8_t I2SD_WRITE_MSG = C3SB_WRITE_MSG;
+const uint8_t I2SD_SEEK_MSG = C3SB_WRITE_MSG + 1;
+const uint8_t I2SD_OPEN_MSG = C3SB_WRITE_MSG + 2;
 
-class I2SD{
- public:
-  I2SD();
-  void init();
-  void err_out(uint8_t err_no, char* err_msg);
-  void setTX_LED(boolean state);
-  void setRX_LED(boolean state);
-  void open(char* filename, uint8_t mode);
-  void close();
-  File file;
-  uint8_t file_mode;
-  unsigned long cursor;
- private:
-};
-void I2SD_onRequest();
-void I2SD_onReceive(int n_byte);
 union Address_t {
   uint32_t dat32; 
   char char4[4];
 };
+extern Address_t Address;
 
+
+class I2SD{
+ public:
+  C3SB c3sb;
+  boolean ping(uint8_t* ping_data, uint8_t n_byte);
+  void seek(unsigned long addr);
+  void open(char* filename, uint8_t mode);
+  void read(uint8_t *data, unsigned long n_byte);
+  void write(uint8_t *data, uint8_t n_byte);
+};
+// extern I2SD i2sd; // does not work??!
 #endif

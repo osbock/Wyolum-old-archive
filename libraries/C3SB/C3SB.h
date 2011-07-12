@@ -53,6 +53,8 @@
 const uint8_t C3SB_MASTER_ID = 0;
 const uint8_t I2C_BUFFER_LEN = 32;
 const uint8_t C3SB_DESC_ID = 1;
+const uint8_t C3SB_WRITE_MSG = 2; 
+
 class C3SB{
  public:
   C3SB();
@@ -63,25 +65,25 @@ class C3SB{
 
   boolean message_from(uint8_t device_id,
 		       uint8_t msg_id,
-		       char* dest,
+		       uint8_t* dest,
 		       unsigned long n_byte);
 
   boolean message_to(uint8_t device_id,
 		     uint8_t msg_id,
-		     char* payload,
+		     uint8_t* payload,
 		     unsigned long n_byte);
   // master
   boolean read_from(uint8_t device_id,
-		    char *dest,
+		    uint8_t* dest,
 		    unsigned long n_byte);
 
   // master
   boolean write_to(uint8_t device_id,
-		   char *payload,
+		   uint8_t *payload,
 		   unsigned long n_byte);
  private:
-  void raw_write(char* source, uint8_t n_byte);
-  void raw_read(char* source, uint8_t n_byte);
+  void raw_write(uint8_t* source, uint8_t n_byte);
+  void raw_read(uint8_t* source, uint8_t n_byte);
   void handle_receive(int n_byte);
   void handle_request();
   uint8_t msg_id;

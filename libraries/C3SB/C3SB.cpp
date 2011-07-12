@@ -63,22 +63,22 @@ void C3SB::init(char* desc){
 
 boolean C3SB::message_from(uint8_t device_id,
 			   uint8_t msg_id,
-			   char* dest,
+			   uint8_t* dest,
 			   unsigned long n_byte){
-  write_to(device_id, (char*)&msg_id, 1);
+  write_to(device_id, &msg_id, 1);
   read_from(device_id, dest, n_byte);
 }
 
 boolean C3SB::message_to(uint8_t device_id,
 			 uint8_t msg_id,
-			 char* payload,
+			 uint8_t* payload,
 			 unsigned long n_byte){
-  write_to(device_id, (char*)&msg_id, 1);
+  write_to(device_id, &msg_id, 1);
   write_to(device_id, payload, n_byte);
 }
 
 boolean C3SB::read_from(uint8_t device_id,
-			char *dest,
+			uint8_t *dest,
 			unsigned long n_byte){
   other_id = device_id;
   unsigned long n_reads = n_byte / I2C_BUFFER_LEN;
@@ -89,29 +89,32 @@ boolean C3SB::read_from(uint8_t device_id,
 }
 
 boolean C3SB::write_to(uint8_t device_id,
-		       char *payload,
+		       uint8_t *payload,
 		       unsigned long n_byte){
   other_id = device_id;
-  unsigned long n_writes = n_byte / I2C_BUFFER_LEN;
+
+  unsigned long n_writes = n_byte / (I2C_BUFFER_LEN - 1);
   for(unsigned long i = 0; i < n_writes; i++){
-    raw_write(payload + i * I2C_BUFFER_LEN, I2C_BUFFER_LEN);
+    raw_write(payload + i * (I2C_BUFFER_LEN - 1), I2C_BUFFER_LEN - 1);
   }
-  raw_write(payload + n_writes * I2C_BUFFER_LEN, n_byte % I2C_BUFFER_LEN);
+  raw_write(payload + n_writes * (I2C_BUFFER_LEN - 1), 
+	    n_byte % (I2C_BUFFER_LEN - 1));
 }
 
-void C3SB::raw_write(char* data, uint8_t n_byte){
+void C3SB::raw_write(uint8_t* data, uint8_t n_byte){
   Wire.beginTransmission(other_id);
   // Serial.print("Start to ");
   // Serial.print(other_id, DEC);
   // Serial.print(", ");
-  for(int i = 0; i < n_byte && i < I2C_BUFFER_LEN; i++){
+  Wire.send(C3SB_WRITE_MSG);
+  for(int i = 0; i < n_byte && i < I2C_BUFFER_LEN - 1; i++){
     // Serial.print(data[i]);
     Wire.send(data[i]);
   }
   // Serial.println("");
   Wire.endTransmission();
 }
-void C3SB::raw_read(char* data, uint8_t n_byte){
+void C3SB::raw_read(uint8_t* data, uint8_t n_byte){
   Wire.requestFrom(other_id, n_byte);    // trigger slave handle_resquest()
   for(uint8_t i = 0; i < n_byte && Wire.available(); i++){
     data[i] = Wire.receive();
