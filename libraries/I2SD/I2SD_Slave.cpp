@@ -124,6 +124,9 @@ void I2SD_Slave::setRX_LED(boolean state){
 void I2SD_Slave_onRequest(){
   uint8_t buffer[I2C_BUFFER_LEN];
 
+  // Serial.println("I2SD_Slave_onRequest()");
+  // Serial.println(i2sd_p->next_pong, DEC);
+
   if(i2sd_p->next_pong){
     i2sd_p->next_pong = false;
     Wire.send(i2sd_p->pong_data, I2C_BUFFER_LEN);
@@ -135,7 +138,7 @@ void I2SD_Slave_onRequest(){
     }
     Wire.send(buffer, I2C_BUFFER_LEN);
     i2sd_p->setTX_LED(LOW);
-    Serial.print((char*)buffer);
+    // Serial.print((char*)buffer);
   }
 }
 
@@ -143,7 +146,9 @@ void I2SD_Slave_onRequest(){
 void I2SD_Slave_onReceive(int n_byte){
 
   i2sd_p->setRX_LED(HIGH);
-
+  // Serial.print("I2SD_Slave_onReceive(), n_byte:");
+  // Serial.println(n_byte, DEC);
+  // delayMicroseconds(100);
   uint8_t msg_type = Wire.receive();
   // Serial.print("MSG_TYPE: ");
   // Serial.print(msg_type, DEC);

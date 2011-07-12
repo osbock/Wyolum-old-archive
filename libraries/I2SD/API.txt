@@ -23,8 +23,9 @@ indicate a failure and return an error code.  So test the output of
 each call if you can respond to errors internally.
 
 Long reads happen most efficiently if the reads occur in blocks of size
-I2C_BUFFER_LEN: 32.  If not, a seek is preformed to realign the SD
+I2C_BUFFER_LEN - 1: 31.  If not, a seek is preformed to realign the SD
 file back to what will be expected.  This results in a loss of efficiency 
 for two reasons:
     1. a seek uses the bus
-    2. data is always sent from I2SD_Slave in 32 byte chunks.
+    2. data is always sent from I2SD_Slave in 32 byte chunks. 
+      (save one byte for I2SD_READ_MSG: 32 = 1 + 31)

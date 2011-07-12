@@ -7,7 +7,8 @@
 #include "SD.h"
 #include "Wire.h"
 
-const boolean WRITE_TEST = true;
+const boolean WRITE_TEST = false;
+const int DBG = 13;
 
 I2SD i2sd;
 
@@ -37,12 +38,22 @@ void setup(){
 }
 
 void loop(){
-  const int n_byte = 200;
+  const int n_byte = 7 * 31;
   char big_data[n_byte];
+  unsigned long now = millis();
+
   // i2sd.seek(0);
   i2sd.read((uint8_t*)big_data, n_byte - 1);
   big_data[n_byte - 1] = NULL;
   Serial.print(big_data);
-  delay(500);
+
+  // speed test: 248000 bytes per second!
+  // Serial.println((float)n_byte / (millis() - now)); 
+  if(false){
+    digitalWrite(DBG, HIGH);
+    delay(1);
+    digitalWrite(DBG, LOW);
+    delay(1);
+  }
 }
 
