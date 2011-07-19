@@ -117,7 +117,7 @@ uint8_t I2SD::read(uint8_t *data, uint8_t n_byte){
   delay(10);
   cursor += out;
   if(out % I2C_BUFFER_LEN){
-    // seek(cursor);
+    seek(cursor);
   }
   return out;
 }

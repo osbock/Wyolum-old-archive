@@ -121,9 +121,9 @@ void I2SD_Slave_onRequest(){
     Serial.print("Error :");
     Serial.println(i2sd_p->error_code, DEC);
     
-    //i2sd_p->buffer[0] = i2sd_p->error_code;
-    //i2sd_p->buffer_size = 1;
-    //i2sd_p->data_ready = true;
+    i2sd_p->buffer[0] = i2sd_p->error_code;
+    i2sd_p->buffer_size = 1;
+    i2sd_p->data_ready = true;
   }
   if(!i2sd_p->data_ready){
     if(i2sd_p->file_mode){
@@ -156,7 +156,7 @@ void I2SD_Slave_onReceive(int n_byte){
     // Serial.println(n_byte, DEC);
     // delayMicroseconds(100);
     Serial.print("MSG_TYPE: ");
-    Serial.print(msg_type, DEC);
+    Serial.println(msg_type, DEC);
     if(msg_type == I2SD_SEEK_MSG){
       // grab address
       Address_t Address;
