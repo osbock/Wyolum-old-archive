@@ -43,7 +43,7 @@ void setup(){
 }
 
 void loop(){
-  const int n_byte = 32 * 7 + 1;
+  const int n_byte = 32 * 7;
   char big_data[n_byte];
   unsigned long now = millis();
   // i2sd.seek(51);
