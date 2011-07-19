@@ -23,6 +23,22 @@ void setup(){
   i2sd.init();
 }
 void loop(){
-  // alternate LEDs to show it made it here.
-  delay(1000);
+  if(i2sd.error_code){
+    Serial.print("ERROR OUT.  err_no: ");
+    Serial.println(i2sd.error_code, DEC);
+    digitalWrite(I2SD_TX_LED_PIN, HIGH); 
+    digitalWrite(I2SD_RX_LED_PIN, LOW); 
+    while(i2sd.error_code){
+      delay(1000);
+      for(int i=0; i < i2sd.error_code; i++){
+	digitalWrite(I2SD_RX_LED_PIN, HIGH); 
+	delay(200);
+	digitalWrite(I2SD_RX_LED_PIN, LOW); 
+	delay(200);
+      }
+    }
+  }
+  Serial.print("error? ");
+  Serial.println(i2sd.error_code);
+  delay(200);
 }

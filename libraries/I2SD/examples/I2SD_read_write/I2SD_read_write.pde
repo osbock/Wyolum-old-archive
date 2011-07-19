@@ -1,19 +1,8 @@
 /*
-  SD card read/write
- 
- This example shows how to read and write data to and from an SD card file 	
- The circuit:
- * SD card attached to SPI bus as follows:
- ** MOSI - pin 11
- ** MISO - pin 12
- ** CLK - pin 13
- ** CS - pin 4
- 
- created   Nov 2010
+  Modified from SD card read/write by 
  by David A. Mellis
  updated 2 Dec 2010
  by Tom Igoe
-
  modified by Justin Shaw July 2011 for I2SD
  
  This example code is in the public domain.

@@ -80,9 +80,9 @@ class C3SB{
   boolean write_to(uint8_t device_id,
 		   uint8_t *payload,
 		   uint8_t n_byte);
- private:
-  void raw_write(uint8_t* source, uint8_t n_byte);
+  void raw_send(uint8_t* source, uint8_t n_byte, boolean write_byte);
   uint8_t raw_read(uint8_t* source, uint8_t n_byte);
+ private:
   void handle_receive(int n_byte);
   void handle_request();
   uint8_t msg_id;

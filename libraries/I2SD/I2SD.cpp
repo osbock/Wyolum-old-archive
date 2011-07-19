@@ -61,20 +61,27 @@ boolean I2SD::ping(uint8_t* ping_data, uint8_t len){
 
   buffer[0] = I2SD_PING_MSG;
   for(i = 0; i < len; i++){
+    // copy ping_data to buffer
     buffer[i + 1] = ping_data[i + 0];
   }
-  Wire.beginTransmission(81);
+  Wire.beginTransmission(I2SD_SLAVE_ID);
   Wire.send(buffer, len + 1); // seek(0) message
   Wire.endTransmission();
   
   delay(100);
+  
   Wire.requestFrom(I2SD_SLAVE_ID, len);
-  for(i = 0; i < len && Wire.available(); i++){
-    char c = Wire.receive(); // receive a byte as character
-    if(c != ping_data[i]){
-      out = false;
-      break;
+  if(Wire.available() == len){
+    for(i = 0; i < len && Wire.available(); i++){
+      char c = Wire.receive(); // receive a byte as character
+      if(c != ping_data[i]){
+	out = false;
+	break;
+      }
     }
+  }
+  else{
+    out = false;
   }
   return out;
 }
@@ -107,9 +114,10 @@ void I2SD::open(char* filename, uint8_t mode){
 
 uint8_t I2SD::read(uint8_t *data, uint8_t n_byte){
   uint8_t out = c3sb.read_from(I2SD_SLAVE_ID, data, n_byte);
+  delay(10);
   cursor += out;
   if(out % I2C_BUFFER_LEN){
-    seek(cursor);
+    // seek(cursor);
   }
   return out;
 }
@@ -118,4 +126,14 @@ void I2SD::write(uint8_t *data, uint8_t n_byte){
   uint8_t buffer[I2C_BUFFER_LEN];
   c3sb.write_to(I2SD_SLAVE_ID, data, n_byte);
   cursor += n_byte;
+}
+
+void I2SD::clear_error(){
+  uint8_t msg[1];
+  msg[0] = I2SD_CLEAR_ERROR_MSG;
+  // c3sb.raw_send(msg, 1, false);
+  // return;
+  Wire.beginTransmission(I2SD_SLAVE_ID);
+  Wire.send(msg, 1); // seek(0) message
+  Wire.endTransmission();
 }

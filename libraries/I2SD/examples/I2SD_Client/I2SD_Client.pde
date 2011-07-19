@@ -7,7 +7,7 @@
 #include "SD.h"
 #include "Wire.h"
 
-const boolean WRITE_TEST = false;
+const boolean WRITE_TEST = true;
 const int DBG = 13;
 
 I2SD i2sd;
@@ -15,12 +15,17 @@ I2SD i2sd;
 void setup(){
   Serial.begin(57600);
   Wire.begin(); // DON'T FORGET THIS!!!!
+  
+  Serial.println("Clear error...");
+  i2sd.clear_error(); // just in case
+  Serial.println("Error cleared.");
 
   // wait for I2SD hardware to start up
+  Serial.println("PING...");
   while(!i2sd.ping((uint8_t*)"PING", 4)){
     delay(100);
   }
-  Serial.println("PONG validated");
+  Serial.println("PONG received");
 
   if(WRITE_TEST){
     i2sd.open("NEW_FILE.TXT", FILE_WRITE);
@@ -38,15 +43,24 @@ void setup(){
 }
 
 void loop(){
-  const int n_byte = 7 * 31;
+  const int n_byte = 32 * 6;
   char big_data[n_byte];
   unsigned long now = millis();
-
+  // i2sd.seek(51);
   // i2sd.seek(0);
-  i2sd.read((uint8_t*)big_data, n_byte - 1);
-  big_data[n_byte - 1] = NULL;
+  uint8_t n_byte_back = i2sd.read((uint8_t*)big_data, n_byte);
+  // Serial.print("n_byte_back: ");
+  // Serial.println(n_byte_back, DEC);
+  /*
+    for(int i =0; i < 5; i++){
+    Serial.print(big_data[i]);
+    Serial.print(" ");
+    Serial.println(big_data[i], DEC); all are 255 ==> end of file!
+  }
+  */
+  // big_data[n_byte] = NULL;
   Serial.print(big_data);
-
+  // delay(1);
   // speed test: 248000 bytes per second!
   // Serial.println((float)n_byte / (millis() - now)); 
   if(false){
@@ -55,5 +69,6 @@ void loop(){
     digitalWrite(DBG, LOW);
     delay(1);
   }
+  // delay(100);
 }
 

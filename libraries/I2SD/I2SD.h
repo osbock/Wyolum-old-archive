@@ -65,19 +65,23 @@ const uint8_t I2SD_TX_LED_PIN = 2;
 const uint8_t I2SD_RX_LED_PIN = 3;
 const uint8_t I2SD_SLAVE_SELECT = 10;
 
-const uint8_t I2SD_INIT_ERROR = 3;
-const uint8_t I2SD_OPEN_ERROR = 4;
-const uint8_t I2SD_MODE_ERROR = 5;
+const uint8_t I2SD_NO_ERROR = 0;
+const uint8_t I2SD_INIT_ERROR = 1;
+const uint8_t I2SD_OPEN_ERROR = 2;
+const uint8_t I2SD_MODE_ERROR = 3;
+const uint8_t I2SD_EOF_ERROR = 4;
+
 
 const uint8_t I2SD_SLAVE_ID = 81;
 
 // message types
 enum MsgTypes {
-  I2SD_PING_MSG,
-  I2SD_WRITE_MSG = C3SB_WRITE_MSG,
-  I2SD_SEEK_MSG,
-  I2SD_OPEN_MSG,
-  I2SD_N_BYTE_MSG,
+  I2SD_PING_MSG = 1,
+  I2SD_WRITE_MSG = C3SB_WRITE_MSG, // 2
+  I2SD_SEEK_MSG,                   // 3
+  I2SD_OPEN_MSG,                   // 4
+  I2SD_N_BYTE_MSG,                 // 5
+  I2SD_CLEAR_ERROR_MSG,            // 6
 };
 /*const uint8_t I2SD_PING_MSG = 1;
   const uint8_t I2SD_WRITE_MSG = C3SB_WRITE_MSG;
@@ -101,6 +105,7 @@ class I2SD{
   void open(char* filename, uint8_t mode);
   uint8_t read(uint8_t *data, uint8_t n_byte);
   void write(uint8_t *data, uint8_t n_byte);
+  void clear_error();
 };
 // extern I2SD i2sd; // does not work??!
 #endif

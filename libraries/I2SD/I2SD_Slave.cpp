@@ -59,7 +59,9 @@ I2SD_Slave* i2sd_p;
 
 I2SD_Slave::I2SD_Slave(){
 }
-void I2SD_Slave::init(){
+
+boolean I2SD_Slave::init(){
+  error_code = I2SD_NO_ERROR;
   pinMode(I2SD_TX_LED_PIN, OUTPUT);
   pinMode(I2SD_RX_LED_PIN, OUTPUT);
   pinMode(I2SD_SLAVE_SELECT, OUTPUT);
@@ -68,51 +70,40 @@ void I2SD_Slave::init(){
   Wire.onReceive(I2SD_Slave_onReceive);
   Wire.onRequest(I2SD_Slave_onRequest);
   if(!SD.begin(I2SD_SLAVE_SELECT)){
-    err_out(I2SD_INIT_ERROR, "Cannot initialize SD card");
+    err_out(I2SD_INIT_ERROR);//, "Cannot initialize SD card");
   }
-  open("DEFAULT.TXT", FILE_READ);
-  // open("TEST.TXT", FILE_READ);
-  next_pong = false;
+  else{
+    if(open("DEFAULT.TXT", FILE_READ)){
+    }
+    else{
+      err_out(I2SD_OPEN_ERROR);
+    }
+    // open("TEST.TXT", FILE_READ);
+    next_pong = false;
+  }
+  return error_code == I2SD_NO_ERROR;
 }
 
-void I2SD_Slave::open(char* filename, uint8_t mode){
+boolean I2SD_Slave::open(char* filename, uint8_t mode){
   if(mode == FILE_WRITE){
     SD.remove(filename);
   }
   file_mode = mode;
   file = SD.open(filename, mode);
   if(!file){
-    err_out(I2SD_OPEN_ERROR, "Cannot open file");
+    err_out(I2SD_OPEN_ERROR);//, "Cannot open file");
   }
+  return error_code == I2SD_NO_ERROR;
 }
 
 void I2SD_Slave::close(){
   file.close();
 }
-boolean status_ok = true;
 
-void I2SD_Slave::err_out(uint8_t err_no, char* err_msg){
-  if(status_ok == false){
-    // ignore, already in error state
-  }
-  else{
-    status_ok = false;
-    Serial.print("ERROR OUT.  err_no: ");
-    Serial.println(err_no, DEC);
-    Serial.println(err_msg);
-    digitalWrite(I2SD_TX_LED_PIN, HIGH); 
-    digitalWrite(I2SD_RX_LED_PIN, LOW); 
-    while(true){
-      delay(1000);
-      for(int i=0; i < err_no; i++){
-	digitalWrite(I2SD_RX_LED_PIN, HIGH); 
-	delay(200);
-	digitalWrite(I2SD_RX_LED_PIN, LOW); 
-	delay(200);
-      }
-    }
-  }
+void I2SD_Slave::err_out(uint8_t err_no){
+  error_code = err_no;
 }
+
 void I2SD_Slave::setTX_LED(boolean state){
   digitalWrite(I2SD_TX_LED_PIN, state);
 }
@@ -122,85 +113,102 @@ void I2SD_Slave::setRX_LED(boolean state){
 
 // Slave event handler
 void I2SD_Slave_onRequest(){
-  uint8_t buffer[I2C_BUFFER_LEN];
-
-  // Serial.println("I2SD_Slave_onRequest()");
-  // Serial.println(i2sd_p->next_pong, DEC);
-
-  if(i2sd_p->next_pong){
-    i2sd_p->next_pong = false;
-    Wire.send(i2sd_p->pong_data, I2C_BUFFER_LEN);
+  uint8_t i;
+  if(i2sd_p->file.available() == 0){
+    // i2sd_p->err_out(I2SD_EOF_ERROR);
   }
-  else if(i2sd_p->file_mode){
-    i2sd_p->setTX_LED(HIGH);
-    for(uint8_t i = 0; i < I2C_BUFFER_LEN && i2sd_p->file.available(); i++){
-      buffer[i] = i2sd_p->file.read();
+  if(i2sd_p->error_code != I2SD_NO_ERROR){
+    //i2sd_p->buffer[0] = i2sd_p->error_code;
+    //i2sd_p->buffer_size = 1;
+    //i2sd_p->data_ready = true;
+  }
+  if(!i2sd_p->data_ready){
+    if(i2sd_p->file_mode){
+      for(i = 0; i < I2C_BUFFER_LEN && i2sd_p->file.available(); i++){
+	i2sd_p->buffer[i] = i2sd_p->file.read();
+      }
+      i2sd_p->buffer_size=i;
     }
-    Wire.send(buffer, I2C_BUFFER_LEN);
-    i2sd_p->setTX_LED(LOW);
-    // Serial.print((char*)buffer);
   }
+  i2sd_p->setTX_LED(HIGH);
+  Wire.send(i2sd_p->buffer, i2sd_p->buffer_size);
+  i2sd_p->setTX_LED(LOW);
+  i2sd_p->data_ready = false;
+  i2sd_p->buffer_size = 0;
 }
 
 // Slave event handler
 void I2SD_Slave_onReceive(int n_byte){
-
-  i2sd_p->setRX_LED(HIGH);
-  // Serial.print("I2SD_Slave_onReceive(), n_byte:");
-  // Serial.println(n_byte, DEC);
-  // delayMicroseconds(100);
   uint8_t msg_type = Wire.receive();
-  // Serial.print("MSG_TYPE: ");
-  // Serial.print(msg_type, DEC);
-  if(msg_type == I2SD_SEEK_MSG){
-    // grab address
-    Address_t Address;
-    uint8_t i;
-    for(i = 0; 
-	i < sizeof(i2sd_p->cursor) && Wire.available(); 
-	i++){
-      Address.char4[i] = Wire.receive();
-    }
-    if(i == 4){
-      i2sd_p->file.seek(Address.dat32);
-      // Serial.print("SEEK: ");
-      // Serial.println(Address.dat32);
-    }
+  uint8_t i;
+  i2sd_p->setRX_LED(HIGH);
+
+  if(msg_type == I2SD_CLEAR_ERROR_MSG){
+    i2sd_p->error_code = I2SD_NO_ERROR;
+    Serial.println("Error Cleared");
+    return;
   }
-  else if(msg_type == I2SD_PING_MSG){
-    for(uint8_t i = 0; Wire.available(); i++){
-      i2sd_p->pong_data[i] = Wire.receive();
+  else if(i2sd_p->error_code == I2SD_NO_ERROR){
+    // Serial.print("I2SD_Slave_onReceive(), n_byte:");
+    // Serial.println(n_byte, DEC);
+    // delayMicroseconds(100);
+    Serial.print("MSG_TYPE: ");
+    Serial.print(msg_type, DEC);
+    if(msg_type == I2SD_SEEK_MSG){
+      // grab address
+      Address_t Address;
+      for(i = 0; 
+	  i < sizeof(i2sd_p->cursor) && Wire.available(); 
+	  i++){
+	Address.char4[i] = Wire.receive();
+      }
+      if(i == 4){
+	i2sd_p->file.seek(Address.dat32);
+	// Serial.print("SEEK: ");
+	// Serial.println(Address.dat32);
+      }
     }
-    // reply PING data in next request
-    i2sd_p->next_pong = true;
-  }
-  else if(msg_type == I2SD_WRITE_MSG){
-    if(i2sd_p->file_mode == FILE_WRITE){
-      while(Wire.available()){
-	i2sd_p->file.write(Wire.receive());
+    else if(msg_type == I2SD_PING_MSG){
+      for(i = 0; Wire.available(); i++){
+	i2sd_p->buffer[i] = Wire.receive();
+      }
+      Serial.println("PONG");
+      // reply PING data in next request
+      i2sd_p->buffer_size = i;
+      i2sd_p->data_ready = true;
+    }
+    else if(msg_type == I2SD_WRITE_MSG){
+      if(i2sd_p->file_mode == FILE_WRITE){
+	while(Wire.available()){
+	  i2sd_p->file.write(Wire.receive());
+	}
+      }
+      else{
+	i2sd_p->err_out(I2SD_MODE_ERROR);//, "File not in FILE_WRITE mode");
+      }
+    }
+    else if(msg_type == I2SD_OPEN_MSG){
+      uint8_t mode, i;
+      mode = Wire.receive();
+      
+      char filename[I2C_BUFFER_LEN - 1]; // one extra char reserved for 
+      // null terminator
+      for(i = 0; Wire.available() && i < I2C_BUFFER_LEN - 2; i++){
+	filename[i] = Wire.receive();
+      }
+      if(i > 0){
+	filename[i] = NULL; // terminate string just in case
+	Serial.print("Open:");
+	Serial.print(filename);
+	Serial.print(", mode:");
+	Serial.println(mode, DEC);
+	i2sd_p->close();
+	i2sd_p->open(filename, mode);
       }
     }
     else{
-      i2sd_p->err_out(I2SD_MODE_ERROR, "File not in FILE_WRITE mode");
-    }
-  }
-  else if(msg_type == I2SD_OPEN_MSG){
-    uint8_t mode, i;
-    mode = Wire.receive();
-
-    char filename[I2C_BUFFER_LEN - 1]; // one extra char reserved for 
-                                        // null terminator
-    for(i = 0; Wire.available() && i < I2C_BUFFER_LEN - 2; i++){
-      filename[i] = Wire.receive();
-    }
-    if(i > 0){
-      filename[i] = NULL; // terminate string just in case
-      Serial.print("Open:");
-      Serial.print(filename);
-      Serial.print(", mode:");
-      Serial.println(mode, DEC);
-      i2sd_p->close();
-      i2sd_p->open(filename, mode);
+      Serial.print("unknown message type: ");
+      Serial.println(msg_type, DEC);
     }
   }
   i2sd_p->setRX_LED(LOW);

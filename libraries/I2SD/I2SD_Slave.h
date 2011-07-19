@@ -63,12 +63,16 @@ With the understanding that:
 
 class I2SD_Slave{
  public:
+  volatile uint8_t error_code;
+  uint8_t buffer[I2C_BUFFER_LEN]; 
+  volatile uint8_t data_ready;
+  volatile uint8_t buffer_size;
   I2SD_Slave();
-  void init();
-  void err_out(uint8_t err_no, char* err_msg);
+  boolean init();
+  void err_out(uint8_t err_no);
   void setTX_LED(boolean state);
   void setRX_LED(boolean state);
-  void open(char* filename, uint8_t mode);
+  boolean open(char* filename, uint8_t mode);
   void close();
   File file;
   uint8_t file_mode;

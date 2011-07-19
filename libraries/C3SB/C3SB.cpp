@@ -82,11 +82,21 @@ uint8_t C3SB::read_from(uint8_t device_id,
 			uint8_t n_byte){
   other_id = device_id;
   uint8_t out = 0;
+  uint8_t bytes_this_read;
+
   uint8_t n_reads = n_byte / I2C_BUFFER_LEN;
   for(uint8_t i = 0; i < n_reads; i++){
-    out += raw_read(dest + i * I2C_BUFFER_LEN, I2C_BUFFER_LEN);
+     bytes_this_read = raw_read(dest + i * I2C_BUFFER_LEN, I2C_BUFFER_LEN);
+     if(bytes_this_read != I2C_BUFFER_LEN){
+       Serial.print("Missing ");
+       Serial.print(I2C_BUFFER_LEN - bytes_this_read);
+       Serial.println(" bytes.");
+     }
+     out += bytes_this_read;
   }
-  out += raw_read(dest + n_reads * I2C_BUFFER_LEN, n_byte % I2C_BUFFER_LEN);
+  if(n_byte % I2C_BUFFER_LEN){
+    out += raw_read(dest + n_reads * I2C_BUFFER_LEN, n_byte % I2C_BUFFER_LEN);
+  }
   return out;
 }
 
@@ -97,18 +107,20 @@ boolean C3SB::write_to(uint8_t device_id,
 
   uint8_t n_writes = n_byte / (I2C_BUFFER_LEN - 1);
   for(uint8_t i = 0; i < n_writes; i++){
-    raw_write(payload + i * (I2C_BUFFER_LEN - 1), I2C_BUFFER_LEN - 1);
+    raw_send(payload + i * (I2C_BUFFER_LEN - 1), I2C_BUFFER_LEN - 1, true);
   }
-  raw_write(payload + n_writes * (I2C_BUFFER_LEN - 1), 
-	    n_byte % (I2C_BUFFER_LEN - 1));
+  raw_send(payload + n_writes * (I2C_BUFFER_LEN - 1), 
+	    n_byte % (I2C_BUFFER_LEN - 1), true);
 }
 
-void C3SB::raw_write(uint8_t* data, uint8_t n_byte){
+void C3SB::raw_send(uint8_t* data, uint8_t n_byte, boolean write_byte){
   Wire.beginTransmission(other_id);
   // Serial.print("Start to ");
   // Serial.print(other_id, DEC);
   // Serial.print(", ");
-  Wire.send(C3SB_WRITE_MSG);
+  if(write_byte){
+    Wire.send(C3SB_WRITE_MSG);
+  }
   for(int i = 0; i < n_byte && i < I2C_BUFFER_LEN - 1; i++){
     // Serial.print(data[i]);
     Wire.send(data[i]);
