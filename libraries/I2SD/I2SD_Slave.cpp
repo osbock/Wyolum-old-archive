@@ -118,6 +118,9 @@ void I2SD_Slave_onRequest(){
     // i2sd_p->err_out(I2SD_EOF_ERROR);
   }
   if(i2sd_p->error_code != I2SD_NO_ERROR){
+    Serial.print("Error :");
+    Serial.println(i2sd_p->error_code, DEC);
+    
     //i2sd_p->buffer[0] = i2sd_p->error_code;
     //i2sd_p->buffer_size = 1;
     //i2sd_p->data_ready = true;
