@@ -47,7 +47,6 @@ void loop(){
   char big_data[n_byte];
   unsigned long now = millis();
   // i2sd.seek(51);
-  // i2sd.seek(0);
   uint8_t n_byte_back = i2sd.read((uint8_t*)big_data, n_byte);
   // Serial.print("n_byte_back: ");
   // Serial.println(n_byte_back, DEC);

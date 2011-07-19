@@ -114,7 +114,7 @@ void I2SD::open(char* filename, uint8_t mode){
 
 uint8_t I2SD::read(uint8_t *data, uint8_t n_byte){
   uint8_t out = c3sb.read_from(I2SD_SLAVE_ID, data, n_byte);
-  delay(10);
+  delay(0);
   cursor += out;
   if(out % I2C_BUFFER_LEN){
     seek(cursor);

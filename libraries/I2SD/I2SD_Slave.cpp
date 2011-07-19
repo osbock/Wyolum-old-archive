@@ -114,7 +114,7 @@ void I2SD_Slave::setRX_LED(boolean state){
 // Slave event handler
 void I2SD_Slave_onRequest(){
   uint8_t i;
-  if(i2sd_p->file.available() == 0){
+  if(i2sd_p->file.size() >= i2sd_p->file.position() - 1){
     // i2sd_p->err_out(I2SD_EOF_ERROR);
   }
   if(i2sd_p->error_code != I2SD_NO_ERROR){
