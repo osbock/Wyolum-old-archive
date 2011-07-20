@@ -64,7 +64,7 @@ With the understanding that:
 class I2SD_Slave{
  public:
   volatile uint8_t error_code;
-  uint8_t buffer[I2C_BUFFER_LEN]; 
+  uint8_t buffer[I2C_BUFFER_LEN + 1]; 
   volatile uint8_t data_ready;
   volatile uint8_t buffer_size;
   I2SD_Slave();

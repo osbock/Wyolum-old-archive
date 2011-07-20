@@ -13,6 +13,9 @@ const int DBG = 13;
 I2SD i2sd;
 
 void setup(){
+  uint8_t msg_back[100];
+  unsigned long n_byte;
+
   Serial.begin(57600);
   Wire.begin(); // DON'T FORGET THIS!!!!
   
@@ -34,10 +37,22 @@ void setup(){
       "Please note this is longer than 32 chararters.";
     i2sd.write((uint8_t*)msg, strlen(msg) + 1);
     i2sd.open("NEW_FILE.TXT", FILE_READ);
-    uint8_t msg_back[100];
-    unsigned long n_byte = i2sd.read(msg_back, 100);
+    n_byte = i2sd.read(msg_back, 100);
     msg_back[n_byte] = NULL;
     Serial.println((char*)msg_back);
+  }
+  if(false){
+    i2sd.open("NOT_THERE.TXT", FILE_READ);
+    i2sd.read(msg_back, 100);
+    Serial.print("NOT_THERE n_byte: ");
+    Serial.println(n_byte, DEC);
+    Serial.print("NOT_THERE msg_back: ");
+    Serial.println((char*)msg_back);
+    Serial.print("Check LED for error 2");
+    Serial.println("Clear error...");
+    delay(10000);
+    i2sd.clear_error();
+    Serial.println("Error cleared.");
   }
   i2sd.open("TEST.TXT", FILE_READ);
 }

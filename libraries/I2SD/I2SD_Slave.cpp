@@ -69,6 +69,7 @@ boolean I2SD_Slave::init(){
   Wire.begin(I2SD_SLAVE_ID);
   Wire.onReceive(I2SD_Slave_onReceive);
   Wire.onRequest(I2SD_Slave_onRequest);
+  buffer[I2C_BUFFER_LEN] = NULL; // assure no run-away prints
   if(!SD.begin(I2SD_SLAVE_SELECT)){
     err_out(I2SD_INIT_ERROR);//, "Cannot initialize SD card");
   }
@@ -118,8 +119,8 @@ void I2SD_Slave_onRequest(){
     // i2sd_p->err_out(I2SD_EOF_ERROR);
   }
   if(i2sd_p->error_code != I2SD_NO_ERROR){
-    Serial.print("Error :");
-    Serial.println(i2sd_p->error_code, DEC);
+    // Serial.print("Error :");
+    // Serial.println(i2sd_p->error_code, DEC);
     
     i2sd_p->buffer[0] = i2sd_p->error_code;
     i2sd_p->buffer_size = 1;
