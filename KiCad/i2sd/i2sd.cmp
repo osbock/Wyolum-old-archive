@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 07/15/11 14:51:03
+Cmp-Mod V01 Created by CvPCB (2011-03-30 BZR 2932)-stable date = 07/18/11 17:26:52
 
 BeginCmp
 TimeStamp = /4DCD1D3A;
@@ -197,10 +197,10 @@ IdModule  = TQFP32;
 EndCmp
 
 BeginCmp
-TimeStamp = /4E1AB937;
+TimeStamp = /4E241EEB;
 Reference = P1;
-ValeurCmp = CONN_I/O;
-IdModule  = PIN_ARRAY_4x1;
+ValeurCmp = I/O;
+IdModule  = I/O;
 EndCmp
 
 BeginCmp
@@ -218,17 +218,17 @@ IdModule  = PIN_ARRAY_4x1;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DCD1CA7;
+TimeStamp = /4E241CCB;
 Reference = P4;
-ValeurCmp = CONN_I/O;
-IdModule  = PIN_ARRAY_4x1;
+ValeurCmp = CONN_6;
+IdModule  = PIN_ARRAY-6X1;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DCD1CAD;
+TimeStamp = /4E241CD6;
 Reference = P5;
-ValeurCmp = CONN_I/O;
-IdModule  = PIN_ARRAY_4x1;
+ValeurCmp = CONN_6;
+IdModule  = PIN_ARRAY-6X1;
 EndCmp
 
 BeginCmp

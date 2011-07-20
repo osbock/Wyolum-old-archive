@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  07/15/11 14:51:03
+# EESchema Netlist Version 1.1 created  07/18/11 17:26:52
 (
  ( /4DCD1D3A I/O B1 I/O
   ( 1 /B_01 )
@@ -62,7 +62,7 @@
   ( 2 GND )
  )
  ( /4E1ED0F3 c_0805 C4 100n
-  ( 1 N-000020 )
+  ( 1 N-000016 )
   ( 2 GND )
  )
  ( /4E1ECFB8 c_0805 C5 1u
@@ -70,15 +70,15 @@
   ( 2 GND )
  )
  ( /4DCB9634 C_ELCO_SMD C6 47u,10V
-  ( 1 N-000025 )
+  ( 1 N-000049 )
   ( 2 GND )
  )
  ( /4DCB9774 c_0805 C7 100n
-  ( 1 N-000052 )
+  ( 1 N-000009 )
   ( 2 /RESET )
  )
  ( /4E1EC986 c_0805 C8 100n
-  ( 1 N-000025 )
+  ( 1 N-000049 )
   ( 2 GND )
  )
  ( /4E1FEA4E/4E1FEA7E c_0805 C9 100n
@@ -86,11 +86,11 @@
   ( 2 GND )
  )
  ( /4DCFFACF d_0805 D1 LED
-  ( 1 N-000008 )
+  ( 1 N-000006 )
   ( 2 GND )
  )
  ( /4DCFFADF d_0805 D2 LED
-  ( 1 N-000007 )
+  ( 1 N-000004 )
   ( 2 GND )
  )
  ( /4DCA5EC5 TQFP32 IC1 ATMEGA8-AI
@@ -100,8 +100,8 @@
   ( 4 +5V )
   ( 5 GND )
   ( 6 +5V )
-  ( 7 N-000057 )
-  ( 8 N-000043 )
+  ( 7 N-000040 )
+  ( 8 N-000055 )
   ( 9 /B_14 )
   ( 10 /B_13 )
   ( 11 /B_12 )
@@ -127,11 +127,8 @@
   ( 31 /TXD )
   ( 32 /B_03 )
  )
- ( /4E1AB937 PIN_ARRAY_4x1 P1 CONN_I/O
+ ( /4E241EEB I/O P1 I/O
   ( 1 ? )
-  ( 2 ? )
-  ( 3 ? )
-  ( 4 ? )
  )
  ( /4DCA5EE0 PIN_ARRAY_4x1 P2 COMM_R
   ( 1 +5V )
@@ -145,20 +142,24 @@
   ( 3 /I2SD_RTC/SDA )
   ( 4 GND )
  )
- ( /4DCD1CA7 PIN_ARRAY_4x1 P4 CONN_I/O
+ ( /4E241CCB PIN_ARRAY-6X1 P4 CONN_6
+  ( 1 /RESET )
+  ( 2 ? )
+  ( 3 +5V )
+  ( 4 GND )
+  ( 5 GND )
+  ( 6 ? )
+ )
+ ( /4E241CD6 PIN_ARRAY-6X1 P5 CONN_6
   ( 1 ? )
   ( 2 ? )
-  ( 3 /RESET )
+  ( 3 ? )
   ( 4 ? )
- )
- ( /4DCD1CAD PIN_ARRAY_4x1 P5 CONN_I/O
-  ( 1 +5V )
-  ( 2 ? )
-  ( 3 GND )
-  ( 4 ? )
+  ( 5 /I2SD_RTC/SDA )
+  ( 6 /I2SD_RTC/SCL )
  )
  ( /4E1ED2A7 pin_strip_2 P6 CONN_2
-  ( 1 N-000025 )
+  ( 1 N-000049 )
   ( 2 GND )
  )
  ( /4DCB971F pin_strip_6-90 P8 FTDI
@@ -167,7 +168,7 @@
   ( 3 +5V )
   ( 4 /RXD )
   ( 5 /TXD )
-  ( 6 N-000052 )
+  ( 6 N-000009 )
  )
  ( /4DCD1997 ISP P9 ISP
   ( 1 /MISO )
@@ -219,7 +220,7 @@
  )
  ( /4DCFFAF9 r_0805 R5 470E
   ( 1 /B_02 )
-  ( 2 N-000008 )
+  ( 2 N-000006 )
  )
  ( /4DCA5F59 r_0805 R6 10k
   ( 1 +3.3V )
@@ -231,7 +232,7 @@
  )
  ( /4DCFFB11 r_0805 R8 470E
   ( 1 /B_03 )
-  ( 2 N-000007 )
+  ( 2 N-000004 )
  )
  ( /4DCCE748 vite_3mm SC1 SCREW
  )
@@ -280,10 +281,10 @@
   ( 14 +3.3V )
  )
  ( /4E1ECD8D SOT23-5 U3 MIC5219-5.0BM5
-  ( 1 N-000025 )
+  ( 1 N-000049 )
   ( 2 GND )
-  ( 3 N-000025 )
-  ( 4 N-000020 )
+  ( 3 N-000049 )
+  ( 4 N-000016 )
   ( 5 +5V )
  )
  ( /4E1FEA4E/4E1FEA7F DS3231 U4 DS3231N
@@ -305,8 +306,8 @@
   ( 16 /I2SD_RTC/SCL )
  )
  ( /4DCA7D83 XTAL X1 CRYSTAL
-  ( 1 N-000057 )
-  ( 2 N-000043 )
+  ( 1 N-000040 )
+  ( 2 N-000055 )
   ( 3 GND )
  )
 )

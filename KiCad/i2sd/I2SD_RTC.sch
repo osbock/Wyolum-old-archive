@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 07/15/11 17:14:43
+EESchema Schematic File Version 2  date 07/18/11 17:42:20
 LIBS:i2sd
 LIBS:power
 LIBS:i2sd-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title ""
-Date "15 jul 2011"
+Date "18 jul 2011"
 Rev ""
 Comp ""
 Comment1 ""
