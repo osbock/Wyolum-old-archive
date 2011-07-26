@@ -31,8 +31,9 @@
 #include "SPI.h"
 // #include "english.h" // only need one language at a time
 // #include "german.h"
-// #include "english_jr.h"
-#include "german_jr.h"
+#include "english_jr.h"
+// #include "german_jr.h"
+
 #include "mem_font.h"
 #include "rtcBOB.h"
 #include "EDL.h"
@@ -291,8 +292,8 @@ unsigned long last_enter_time = 0;    // for debounce
 ClockTHREE c3;                      // ClockTHREE singleton
 // English faceplate = English();      // Only need one at a time
 // German faceplate = German();      
-// EnglishJr faceplate = EnglishJr();
-GermanJr faceplate = GermanJr();      
+EnglishJr faceplate = EnglishJr();
+// GermanJr faceplate = GermanJr();      
 
 //Font font = Font();                 // Only font at this time.
 MemFont font = MemFont();

@@ -46,12 +46,12 @@ const uint8_t alarm_off_led[3] = {7, 0, 0};
 const uint8_t alarm_on_led[3] = {7, 15, 1};
 
 const uint8_t usb_led[3] = {7, 0, 0};
-const uint8_t year_led[3] = {8, 2, 1};
-const uint8_t month_led[3] = {8, 4, 1};
-const uint8_t day_led[3] = {11, 3, 1};
-const uint8_t hour_led[3] = {11, 6, 1};
-const uint8_t minute_led[3] = {11, 8, 1};
-const uint8_t second_led[3] = {11, 10, 1};
+const uint8_t year_led[3] = {7, 2, 1};
+const uint8_t month_led[3] = {7, 4, 1};
+const uint8_t day_led[3] = {7, 3, 1};
+const uint8_t hour_led[3] = {7, 6, 1};
+const uint8_t minute_led[3] = {7, 8, 1};
+const uint8_t second_led[3] = {7, 10, 1};
 
 class EnglishJr{
  public:
