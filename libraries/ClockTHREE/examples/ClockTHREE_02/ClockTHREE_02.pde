@@ -31,7 +31,8 @@
 #include "SPI.h"
 // #include "english.h" // only need one language at a time
 // #include "german.h"
-#include "english_jr.h"
+// #include "english_jr.h"
+#include "german_jr.h"
 #include "mem_font.h"
 #include "rtcBOB.h"
 #include "EDL.h"
@@ -290,7 +291,8 @@ unsigned long last_enter_time = 0;    // for debounce
 ClockTHREE c3;                      // ClockTHREE singleton
 // English faceplate = English();      // Only need one at a time
 // German faceplate = German();      
-EnglishJr faceplate = EnglishJr();
+// EnglishJr faceplate = EnglishJr();
+GermanJr faceplate = GermanJr();      
 
 //Font font = Font();                 // Only font at this time.
 MemFont font = MemFont();
@@ -860,24 +862,28 @@ void SetTime_setup(void){
   MsTimer2::stop(); // Ticks stop while setting time
   getTime(); // sync with rtcBOB
   SetTime_unit = YEAR;
-  faceplate.display_word(c3, MONO, year_led);
 }
 void SetTime_loop(void) {
   switch(SetTime_unit){
   case YEAR:
     two_digits(YY % 100);
+    faceplate.display_word(c3, MONO, year_led);
     break;
   case MONTH:
     two_digits(MM);
+    faceplate.display_word(c3, MONO, month_led);
     break;
   case DAY:
     two_digits(DD);
+    faceplate.display_word(c3, MONO, day_led);
     break;
   case HOUR:
     two_digits(hh);
+    faceplate.display_word(c3, MONO, hour_led);
     break;
   case MINUTE:
     two_digits(mm);
+    faceplate.display_word(c3, MONO, minute_led);
     break;
   default:
     break;
@@ -971,23 +977,18 @@ void SetTime_mode(void) {
   switch(SetTime_unit){
   case YEAR:
     SetTime_unit = MONTH;
-    faceplate.display_word(c3, MONO, month_led);
     break;
   case MONTH:
     SetTime_unit = DAY;
-    faceplate.display_word(c3, MONO, day_led);
     break;
   case DAY:
     SetTime_unit = HOUR;
-    faceplate.display_word(c3, MONO, hour_led);
     break;
   case HOUR:
     SetTime_unit = MINUTE;
-    faceplate.display_word(c3, MONO, minute_led);
     break;
   default:
     SetTime_unit = YEAR;
-    faceplate.display_word(c3, MONO, year_led);
     break;
   }
 }

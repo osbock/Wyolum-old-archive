@@ -6,6 +6,7 @@
 #include <inttypes.h>
 
 #include "Time.h"
+#include "rtcBOB.h"
 
 #define dtNBR_ALARMS 30 // may need more alarms! // 100 is too many
 

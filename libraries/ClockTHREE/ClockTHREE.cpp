@@ -51,7 +51,6 @@
   to this web page.
 */
 
-// #define CLOCKTHREEJR
 #include "ClockTHREE.h"
 #include "MsTimer2.h"
 #include "Time.h"

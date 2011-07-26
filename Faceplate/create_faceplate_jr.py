@@ -1,3 +1,5 @@
+ # -*- coding: latin-1 -*-
+
 import string
 from numpy import *
 import PIL.Image
@@ -24,7 +26,7 @@ DTHETA = 1
 DEG = pi/180.
 
 
-letters = '''KITRISCTENHALFX 
+english = '''KITRISCTENHALFX 
 QUARTERTWENTYBZ 
 IFIVECMINUTESAL 
 PASTOBTWONEIGHTS
@@ -43,7 +45,18 @@ CHILLYFREEZING--
 TOASTYOUTSIDE---
 IN-HEREWYOLUM---'''.splitlines()
 
+german = '''\
+ES-IST-VIERTEL--
+FÜNF-ZWANZIGZEHN
+VORNACH-HALB----
+EINSZWEIDREI---- 
+VIERFÜNFSECHS-- 
+SIEBENACHTZWÖLF 
+ZEHNELFNEUN-UHR 
+-JMTUMSALARM---'''.splitlines()
+
 # letters = ['.' * 16] * 8
+letters = german
 
 class MyPath:
     UNIT = mm
@@ -482,7 +495,18 @@ def draw(filename, data, fontname='Times-Roman', images=[],
                 9 * inch)
     pcb = MyPath()
     pcb.rect(pcb_bbox)
-    
+
+################################################################################
+    encName = 'winansi'
+    decoder = codecs.lookup(encName)[1]
+    def decodeFunc(txt):
+        if txt is None:
+            return ' '
+        else:
+            return decoder(txt, errors='replace')[0]
+    data = [[decodeFunc(case(char)) for char in line] for line in data]
+################################################################################
+
     for y, l in zip(ys + dy * .27, data[::-1]):
         for x, c in zip(xs + dx / 2., l):
             can.drawCentredString(x, y, c)
@@ -643,13 +667,18 @@ GrenadierNF
 fontnames = '''
 Futura
 '''.split()
-if False: # ClockTHREEjr
+dir = 'Faceplates_jr/German_jr/'
+if True: # ClockTHREEjr
     for fontname in fontnames:
         add_font(fontname)
-        draw('Faceplates_jr/faceplate_jr_%s_upper_R.pdf' % fontname, letters, fontname=fontname, images=[bug],reverse=True, case=string.upper)
-        draw('Faceplates_jr/faceplate_jr_%s_lower_R.pdf' % fontname, letters, fontname=fontname, images=[bug],reverse=True, case=string.lower)
-        draw('Faceplates_jr/faceplate_jr_%s_upper.pdf' % fontname, letters, fontname=fontname, images=[bug],reverse=False, case=string.upper)
-        draw('Faceplates_jr/faceplate_jr_%s_lower.pdf' % fontname, letters, fontname=fontname, images=[bug],reverse=False, case=string.lower)
+        draw('%s/faceplate_jr_%s_upper_R.pdf' % (dir, fontname), letters, 
+             fontname=fontname, images=[bug],reverse=True, case=string.upper)
+        draw('%s/faceplate_jr_%s_lower_R.pdf' % (dir, fontname), letters, 
+             fontname=fontname, images=[bug],reverse=True, case=string.lower)
+        draw('%s/faceplate_jr_%s_upper.pdf' % (dir, fontname), letters, 
+             fontname=fontname, images=[bug],reverse=False, case=string.upper)
+        draw('%s/faceplate_jr_%s_lower.pdf' % (dir, fontname), letters, 
+             fontname=fontname, images=[bug],reverse=False, case=string.lower)
     
 else:
     for fontname in fontnames:

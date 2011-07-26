@@ -189,7 +189,8 @@ void English::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
   }
 
   if(minutes_hack_flag){
-    minutes_hack(c3, mm, ss);
+    minutes_hack(c3, mm, ss);// color changes every 10 seconds ends up at white
+    // minutes_hack(c3, mm, ss, color); // leds light in "color" every minute
   }
   c3.setdisplay(old_display);
   c3.fadeto(new_display, fade_steps);
@@ -199,6 +200,16 @@ void English::display_time(int YY, int MM, int DD, int hh, int mm, int ss,
   }
 }
 
+/*
+void English::minutes_hack(ClockTHREE c3, int mm, int ss, uint8_t color){
+  mm %= 5;
+  uint8_t color, num;
+  num = ss / 10;
+  for(int i = 0; i < mm; i++){
+    c3.setPixel(15, 4 + i, color);
+  }
+}
+*/
 void English::minutes_hack(ClockTHREE c3, int mm, int ss){
   mm %= 5;
   uint8_t color, num;
