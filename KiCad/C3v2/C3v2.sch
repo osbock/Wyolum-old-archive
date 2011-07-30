@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 06/04/11 11:28:25
+EESchema Schematic File Version 2  date 07/29/11 13:59:18
 LIBS:C3v2
 LIBS:power
 LIBS:C3v2-cache
@@ -7,14 +7,14 @@ EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
-Title "ClockTHREE"
-Date "4 jun 2011"
+Title "ClockTHREE Version 2"
+Date "29 jul 2011"
 Rev "A"
 Comp "An Arduino friendly RGB LED Array"
-Comment1 "Wyo Innovations      :: Lumetronics"
+Comment1 "www.wyolum.com"
 Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
-Comment3 "wyoinnovation.blogspot.com"
-Comment4 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
+Comment3 ""
+Comment4 ""
 $EndDescr
 $Comp
 L R R32
@@ -33,11 +33,6 @@ Wire Wire Line
 Wire Wire Line
 	8875 5400 8875 5550
 Connection ~ 5575 7500
-Connection ~ 3500 5550
-Wire Wire Line
-	3500 5550 3500 5850
-Wire Wire Line
-	3500 5850 3675 5850
 Connection ~ 4175 3450
 Wire Wire Line
 	4175 6250 4175 3450
@@ -536,9 +531,6 @@ Connection ~ 2250 800
 Wire Wire Line
 	3350 5450 3500 5450
 Wire Wire Line
-	4075 5850 4175 5850
-Connection ~ 4175 5850
-Wire Wire Line
 	8625 5125 8625 5275
 Wire Wire Line
 	8625 5275 8875 5275
@@ -586,16 +578,6 @@ U 4D28241A
 F0 "C3v2-mech" 60
 F1 "C3v2-mech.sch" 60
 $EndSheet
-$Comp
-L DIODE D1
-U 1 1 4D25BDEF
-P 3875 5850
-F 0 "D1" H 3875 5950 40  0000 C CNN
-F 1 "1N4148" H 3875 5750 40  0000 C CNN
-F 2 "diode_do35" H 3875 5850 60  0001 C CNN
-	1    3875 5850
-	1    0    0    -1  
-$EndComp
 Text Notes 8250 1700 0    40   ~ 0
 Mounting Hole for rowBoB
 Text Notes 8250 3550 0    40   ~ 0
@@ -807,7 +789,7 @@ U 1 1 4C173167
 P 5200 7200
 F 0 "SP1" H 5175 7000 70  0000 C CNN
 F 1 "SPEAKER" H 5275 7400 70  0000 C CNN
-F 2 "SPEAKER" H 5200 7200 60  0001 C CNN
+F 2 "Speaker" H 5200 7200 60  0001 C CNN
 F 3 "http://products.cui.com/GetSpecForDigiKey.aspx?MFGNum=CEM-14R06CT" H 5200 7200 60  0001 C CNN
 F 4 "102-1169-ND" H 5200 7200 60  0001 C CNN "DigiKey"
 	1    5200 7200

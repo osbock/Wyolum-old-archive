@@ -1,8 +1,0 @@
-### Module positions - created on 06/04/11 12:12:10 ###
-### Printed by PcbNew version pcbnew (2011-03-30 BZR 2932)-stable
-## Unit = inches, Angle = deg.
-## Side : Back
-# Ref    Val                  PosX       PosY        Rot     Side
-IC1      DS1307              12.5000     7.8500     270.0    Back
-U1       DS3231              12.5000     7.8500       0.0    Back
-## End

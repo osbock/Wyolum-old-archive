@@ -1,18 +1,17 @@
 Drill report for D:\Users\Anool\Documents\Arduino\Project-C3v2\C3v2\C3v2.brd
-Created on 06/04/11 12:13:08
+Created on 07/30/11 13:10:23
 Selected Drill Unit: Imperial (")
 
 Drill report for through holes :
-T1  0.020"  0.51mm  (270 holes)
-T2  0.025"  0.64mm  (68 holes)
-T3  0.032"  0.81mm  (850 holes)
-T4  0.040"  1.02mm  (217 holes)  (with 9 oblongs)
-T5  0.050"  1.27mm  (10 holes)
+T1  0.020"  0.51mm  (267 holes)
+T2  0.032"  0.81mm  (899 holes)
+T3  0.040"  1.02mm  (216 holes)  (with 9 oblongs)
+T4  0.050"  1.27mm  (10 holes)
+T5  0.052"  1.32mm  (2 holes)
 T6  0.080"  2.03mm  (2 holes)
-T7  0.120"  3.05mm  (6 holes)
+T7  0.120"  3.05mm  (19 holes)
 T8  0.158"  4.00mm  (1 hole)
-T9  0.160"  4.06mm  (14 holes)
 
-total holes count 1438
+total holes count 1416
 
 
