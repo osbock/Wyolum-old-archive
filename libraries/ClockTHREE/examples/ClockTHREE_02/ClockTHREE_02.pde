@@ -29,9 +29,9 @@
 #include "MsTimer2.h"
 #include "ClockTHREE.h"
 #include "SPI.h"
-// #include "english.h" // only need one language at a time
+#include "english.h" // only need one language at a time
 // #include "german.h"
-#include "english_jr.h"
+// #include "english_jr.h"
 // #include "german_jr.h"
 
 #include "mem_font.h"
@@ -72,7 +72,7 @@ struct Mode{
 const uint8_t N_DISPLAY = 3;
 
 // Default display -- N_DISPLAY larger than physical display.
-uint32_t *display = (uint32_t*)calloc(N_DISPLAY * N_COL, sizeof(uint32_t));
+uint32_t *display = (uint32_t*)calloc(N_DISPLAY * N_COL + 2, sizeof(uint32_t));
 
 /* 
  * Special offset pointer for HH:MM:SS countdown display.
@@ -290,16 +290,16 @@ unsigned long last_dec_time = 0;    // for debounce
 unsigned long last_enter_time = 0;    // for debounce
 
 ClockTHREE c3;                      // ClockTHREE singleton
-// English faceplate = English();      // Only need one at a time
+English faceplate = English();      // Only need one at a time
 // German faceplate = German();      
-EnglishJr faceplate = EnglishJr();
+// EnglishJr faceplate = EnglishJr();
 // GermanJr faceplate = GermanJr();      
 
 //Font font = Font();                 // Only font at this time.
 MemFont font = MemFont();
 time_t t;                           // TODO: remove this, not needed (I think)
 uint8_t mode_counter;               // Used for selecting mode
-uint8_t color_i = 3;                // Default color
+uint8_t color_i = 1;                // Default color
 unsigned long count = 0;            // Number of interations current mode has been running.
 uint16_t YY;                        // current time variables.
 uint8_t MM, DD, hh, mm, ss;

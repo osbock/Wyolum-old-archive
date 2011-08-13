@@ -170,7 +170,9 @@ void AlarmClass::updateNextTrigger()
                        // may or may not be repeated
       nextTrigger = time + value;
     }
-    else if(is_5min_repeat()){ // value hold absolute time of original trigger
+    else if(is_5min_repeat()){ 
+      // value hold absolute time of original trigger
+      // 5 minute type alarms also repeat every year
       tm.Year = CalendarYrToTm(year());
       tm.Month = month(value);
       tm.Day = day(value);
