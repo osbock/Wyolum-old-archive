@@ -728,13 +728,9 @@ paths=[
 ]);
 translate(v=[0.381, 0.381, -360.0])
 cylinder(h=720.0, r=0.15, $fn=25);
-translate(v=[15.24, 0.381, -360.0])
-cylinder(h=720.0, r=0.15, $fn=25);
 translate(v=[30.099, 0.381, -360.0])
 cylinder(h=720.0, r=0.15, $fn=25);
 translate(v=[30.099, 22.479, -360.0])
-cylinder(h=720.0, r=0.15, $fn=25);
-translate(v=[15.24, 22.479, -360.0])
 cylinder(h=720.0, r=0.15, $fn=25);
 translate(v=[0.381, 22.479, -360.0])
 cylinder(h=720.0, r=0.15, $fn=25);
@@ -747,12 +743,6 @@ translate(v=[0, 0, 0.1724])
     cylinder(h=2.0, r=0.235, $fn=25);
     cylinder(h=2.0, r=0.15, $fn=25);
 }
-translate(v=[15.24, 0.381, 0])
-translate(v=[0, 0, 0.1724])
-    difference(){
-    cylinder(h=2.0, r=0.235, $fn=25);
-    cylinder(h=2.0, r=0.15, $fn=25);
-}
 translate(v=[30.099, 0.381, 0])
 translate(v=[0, 0, 0.1724])
     difference(){
@@ -760,12 +750,6 @@ translate(v=[0, 0, 0.1724])
     cylinder(h=2.0, r=0.15, $fn=25);
 }
 translate(v=[30.099, 22.479, 0])
-translate(v=[0, 0, 0.1724])
-    difference(){
-    cylinder(h=2.0, r=0.235, $fn=25);
-    cylinder(h=2.0, r=0.15, $fn=25);
-}
-translate(v=[15.24, 22.479, 0])
 translate(v=[0, 0, 0.1724])
     difference(){
     cylinder(h=2.0, r=0.235, $fn=25);
@@ -802,13 +786,9 @@ paths=[
 ]);
 translate(v=[0.381, 0.381, -360.0])
 cylinder(h=720.0, r=0.15, $fn=25);
-translate(v=[15.24, 0.381, -360.0])
-cylinder(h=720.0, r=0.15, $fn=25);
 translate(v=[30.099, 0.381, -360.0])
 cylinder(h=720.0, r=0.15, $fn=25);
 translate(v=[30.099, 22.479, -360.0])
-cylinder(h=720.0, r=0.15, $fn=25);
-translate(v=[15.24, 22.479, -360.0])
 cylinder(h=720.0, r=0.15, $fn=25);
 translate(v=[0.381, 22.479, -360.0])
 cylinder(h=720.0, r=0.15, $fn=25);
@@ -830,13 +810,9 @@ paths=[
 ]);
 translate(v=[0.381, 0.381, -360.0])
 cylinder(h=720.0, r=0.175, $fn=25);
-translate(v=[15.24, 0.381, -360.0])
-cylinder(h=720.0, r=0.175, $fn=25);
 translate(v=[30.099, 0.381, -360.0])
 cylinder(h=720.0, r=0.175, $fn=25);
 translate(v=[30.099, 22.479, -360.0])
-cylinder(h=720.0, r=0.175, $fn=25);
-translate(v=[15.24, 22.479, -360.0])
 cylinder(h=720.0, r=0.175, $fn=25);
 translate(v=[0.381, 22.479, -360.0])
 cylinder(h=720.0, r=0.175, $fn=25);
@@ -858,13 +834,9 @@ paths=[
 ]);
 translate(v=[0.381, 0.381, -360.0])
 cylinder(h=720.0, r=0.175, $fn=25);
-translate(v=[15.24, 0.381, -360.0])
-cylinder(h=720.0, r=0.175, $fn=25);
 translate(v=[30.099, 0.381, -360.0])
 cylinder(h=720.0, r=0.175, $fn=25);
 translate(v=[30.099, 22.479, -360.0])
-cylinder(h=720.0, r=0.175, $fn=25);
-translate(v=[15.24, 22.479, -360.0])
 cylinder(h=720.0, r=0.175, $fn=25);
 translate(v=[0.381, 22.479, -360.0])
 cylinder(h=720.0, r=0.175, $fn=25);

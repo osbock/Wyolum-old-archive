@@ -1168,7 +1168,7 @@ if __name__ == '__main__':
     if len(sys.argv) == 1: # print all
         add_all_fonts()
         # main(fontnames)
-        main(['Orbitron-Black'])
+        main(['GRENADIE', 'GrenadierNF'])
         test()
         # main(['Vollkorn-Regular'])
     else:
