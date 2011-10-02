@@ -100,11 +100,35 @@ class I2SD{
   unsigned long cursor;
 
   C3SB c3sb;
+
+  /* Transmit n_byte bytes of data to I2SD card.
+   * return true if identical bytes are returned from I2SD card
+   */
   boolean ping(uint8_t* ping_data, uint8_t n_byte);
+
+  /* Move file cursor to addr bytes from the beginning of the file
+   */
   void seek(unsigned long addr);
+
+  /* Open a file with the specified name and mode
+   * May induce I2SD_OPEN_ERROR on I2SD card
+   */
   void open(char* filename, uint8_t mode);
+
+  /* Read n_byte bytes of the current file.
+   * File must be open for reading
+   */
   uint8_t read(uint8_t *data, uint8_t n_byte);
+
+  /* Write n_byte bytes of data to current file
+   * File must be open for writing
+   * May induce I2SD_MODE_ERROR on I2SD card
+   */
   void write(uint8_t *data, uint8_t n_byte);
+
+  /* Clear any error on I2SD card.
+   * May induce I2SD_MODE_ERROR on I2SD card
+   */
   void clear_error();
 };
 // extern I2SD i2sd; // does not work??!
