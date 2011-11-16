@@ -318,7 +318,7 @@ def draw(filename, data, images, fontname='Times-Roman',
     c.setLineWidth(.6)
     # label font
     c.setFont(fontname, fontsize)
-    c.drawString(1.25*inch, 10.75*inch , fontname)
+    c.drawString(1.25*inch, 10.65*inch , fontname)
     if reverse:
         c.translate(14. * inch, 0 * inch)
         c.scale(-1, 1)
@@ -608,8 +608,12 @@ def draw(filename, data, images, fontname='Times-Roman',
 
         bottom_frame.drawOn(c)
         
-    face_mounts = [mounts[0], mounts[1], mounts[3],
-                   mounts[6], mounts[8], mounts[11]]
+    face_mounts = [mounts[0],
+                   #mounts[1],
+                   mounts[3],
+                   mounts[6],
+                   #mounts[8],
+                   mounts[11]]
     c.setLineWidth(.5)
     c.setStrokeColor(red)
     for x, y in face_mounts:
@@ -1042,7 +1046,7 @@ PETERSCLOCKTHREE
 '''
 german = [list(l) for l in '''\
 ESXISTYVIERTELY?
-FÜNF@ZWANZIGZEHN
+FÜNFQZWANZIGZEHN
 VORNACHKHALBIER!
 EINSZWEIDREIZEIT 
 VIERFÜNFSECHSOE 
