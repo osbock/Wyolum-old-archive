@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 11/18/2011 5:36:14 PM
+EESchema Schematic File Version 2  date 11/18/2011 6:47:08 PM
 LIBS:i2sd_v3
 LIBS:power
 LIBS:i2sd_v3-cache
@@ -17,10 +17,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L +BATT #PWR08
+L +BATT #PWR09
 U 1 1 4EC101F0
 P 5300 1850
-F 0 "#PWR08" H 5300 1800 20  0001 C CNN
+F 0 "#PWR09" H 5300 1800 20  0001 C CNN
 F 1 "+BATT" H 5300 1950 30  0000 C CNN
 	1    5300 1850
 	1    0    0    -1  
