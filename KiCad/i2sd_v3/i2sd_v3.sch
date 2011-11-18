@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 15 Nov 2011 10:26:12 PM IST
+EESchema Schematic File Version 2  date 11/18/2011 5:36:14 PM
 LIBS:i2sd_v3
 LIBS:power
 LIBS:i2sd_v3-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 2
 Title "Buckler, i2sd, v3, with RTC, with HW addressing"
-Date "15 nov 2011"
+Date "18 nov 2011"
 Rev "3"
 Comp "WyoLum"
 Comment1 ""
@@ -1060,16 +1060,6 @@ F 0 "P9" V 1450 7050 60  0000 C CNN
 F 1 "ISP" V 1550 7050 60  0000 C CNN
 F 2 "ISP" H 1500 7050 60  0001 C CNN
 	1    1500 7050
-	1    0    0    -1  
-$EndComp
-$Comp
-L SCREW SC2
-U 1 1 4DCCE754
-P 6500 7075
-F 0 "SC2" H 6500 6975 40  0000 C CNN
-F 1 "SCREW" H 6500 7175 40  0001 C CNN
-F 2 "vite_3mm" H 6500 7075 60  0001 C CNN
-	1    6500 7075
 	1    0    0    -1  
 $EndComp
 $Comp

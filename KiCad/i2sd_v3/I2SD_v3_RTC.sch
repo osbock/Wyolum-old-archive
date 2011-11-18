@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 15 Nov 2011 10:26:12 PM IST
+EESchema Schematic File Version 2  date 11/18/2011 5:36:14 PM
 LIBS:i2sd_v3
 LIBS:power
 LIBS:i2sd_v3-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title "Buckler, i2sd, v3, with RTC, with HW addressing"
-Date "15 nov 2011"
+Date "18 nov 2011"
 Rev "3"
 Comp "WyoLum"
 Comment1 ""

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 15 Nov 2011 08:28:29 PM IST
+EESchema Schematic File Version 2  date Tue 15 Nov 2011 10:26:12 PM IST
 LIBS:i2sd_v3
 LIBS:power
 LIBS:i2sd_v3-cache
@@ -791,7 +791,7 @@ U 1 1 4E1EC963
 P 8875 1050
 F 0 "C3" H 8775 1150 50  0000 L CNN
 F 1 "2u2 Tant" H 8875 900 50  0000 L CNN
-F 2 "C1" H 8875 1050 60  0001 C CNN
+F 2 "c_0805" H 8875 1050 60  0001 C CNN
 	1    8875 1050
 	1    0    0    -1  
 $EndComp
@@ -1254,7 +1254,7 @@ U 1 1 4DCA7D67
 P 1075 5200
 F 0 "SW1" H 1225 5310 50  0000 C CNN
 F 1 "SW_PUSH" H 1075 5120 50  0000 C CNN
-F 2 "Switch_Push_SPST" H 1075 5200 60  0001 C CNN
+F 2 "SW_SMD" H 1075 5200 60  0001 C CNN
 F 4 "" H 1325 5410 60  0001 C CNN "DigiKey"
 	1    1075 5200
 	0    -1   -1   0   
