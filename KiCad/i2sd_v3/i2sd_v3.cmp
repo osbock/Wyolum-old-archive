@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Tue 15 Nov 2011 10:26:01 PM IST
+Cmp-Mod V01 Created by CvPCB (2011-07-08 BZR 3044)-stable date = 11/22/2011 5:38:30 PM
 
 BeginCmp
 TimeStamp = /4DCD1D3A;
@@ -117,6 +117,27 @@ TimeStamp = /4E96D541;
 Reference = B17;
 ValeurCmp = I/O;
 IdModule  = I/O_ADR;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EC65606;
+Reference = B18;
+ValeurCmp = I/O;
+IdModule  = I/O;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EC65609;
+Reference = B19;
+ValeurCmp = I/O;
+IdModule  = I/O;
+EndCmp
+
+BeginCmp
+TimeStamp = /4E1FEA4E/4ECB8D5B;
+Reference = B20;
+ValeurCmp = I/O;
+IdModule  = I/O;
 EndCmp
 
 BeginCmp
@@ -365,15 +386,15 @@ IdModule  = r_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DCCE748;
-Reference = SC1;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
+TimeStamp = /4E1FEA4E/4ECB8D22;
+Reference = R9;
+ValeurCmp = 10k;
+IdModule  = r_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DCCE754;
-Reference = SC2;
+TimeStamp = /4DCCE748;
+Reference = SC1;
 ValeurCmp = SCREW;
 IdModule  = vite_3mm;
 EndCmp
