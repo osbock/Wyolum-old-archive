@@ -1,6 +1,13 @@
-EESchema Schematic File Version 2  date 11/23/2011 5:46:00 PM
+EESchema Schematic File Version 2  date Wed 23 Nov 2011 11:07:39 PM IST
 LIBS:Nb_v1
 LIBS:power
+LIBS:74xx
+LIBS:analog_switches
+LIBS:interface
+LIBS:microchip
+LIBS:microchip1
+LIBS:motorola
+LIBS:special
 LIBS:Nb_v1-cache
 EELAYER 25  0
 EELAYER END

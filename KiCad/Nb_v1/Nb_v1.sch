@@ -1,6 +1,13 @@
-EESchema Schematic File Version 2  date 11/23/2011 5:46:00 PM
+EESchema Schematic File Version 2  date Wed 23 Nov 2011 11:07:39 PM IST
 LIBS:Nb_v1
 LIBS:power
+LIBS:74xx
+LIBS:analog_switches
+LIBS:interface
+LIBS:microchip
+LIBS:microchip1
+LIBS:motorola
+LIBS:special
 LIBS:Nb_v1-cache
 EELAYER 25  0
 EELAYER END
@@ -16,6 +23,60 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 Comment4 ""
 $EndDescr
+$Comp
+L UDN2981A U?
+U 1 1 4ECD2E2C
+P 7550 -1750
+F 0 "U?" H 7550 -1750 70  0000 C CNN
+F 1 "UDN2981A" H 7550 -1200 70  0000 C CNN
+	1    7550 -1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L UDN2981A U?
+U 1 1 4ECD2E1E
+P 6500 -1750
+F 0 "U?" H 6500 -1750 70  0000 C CNN
+F 1 "UDN2981A" H 6500 -1200 70  0000 C CNN
+	1    6500 -1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74HC595 U?
+U 1 1 4ECD2DFD
+P 11150 -300
+F 0 "U?" H 11300 300 70  0000 C CNN
+F 1 "74HC595" H 11150 -900 70  0000 C CNN
+	1    11150 -300
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74HC595 U?
+U 1 1 4ECD2DF3
+P 9600 -300
+F 0 "U?" H 9750 300 70  0000 C CNN
+F 1 "74HC595" H 9600 -900 70  0000 C CNN
+	1    9600 -300
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74HC595 U?
+U 1 1 4ECD2DE5
+P 8050 -300
+F 0 "U?" H 8200 300 70  0000 C CNN
+F 1 "74HC595" H 8050 -900 70  0000 C CNN
+	1    8050 -300
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74HC595 U?
+U 1 1 4ECD2DDD
+P 6500 -300
+F 0 "U?" H 6650 300 70  0000 C CNN
+F 1 "74HC595" H 6500 -900 70  0000 C CNN
+	1    6500 -300
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
 	700  4700 700  4800
 Wire Wire Line
@@ -34,14 +95,6 @@ Wire Wire Line
 	5625 1675 5625 1650
 Wire Wire Line
 	5925 1500 5875 1500
-Wire Wire Line
-	7750 1500 7800 1500
-Wire Wire Line
-	7750 1300 7800 1300
-Wire Wire Line
-	7750 1100 7800 1100
-Wire Wire Line
-	7750 900  7800 900 
 Wire Wire Line
 	5100 1300 5100 1200
 Wire Wire Line
@@ -147,38 +200,6 @@ Wire Wire Line
 Wire Wire Line
 	2650 2550 2650 2500
 Wire Wire Line
-	7800 3325 7750 3325
-Wire Wire Line
-	7800 3125 7750 3125
-Wire Wire Line
-	7800 2925 7750 2925
-Wire Wire Line
-	7800 2725 7750 2725
-Wire Wire Line
-	7800 2525 7750 2525
-Wire Wire Line
-	7800 2325 7750 2325
-Wire Wire Line
-	7800 2125 7750 2125
-Wire Wire Line
-	7800 1925 7750 1925
-Wire Wire Line
-	7900 5950 7750 5950
-Wire Wire Line
-	7900 5750 7750 5750
-Wire Wire Line
-	7900 5550 7750 5550
-Wire Wire Line
-	7900 5350 7750 5350
-Wire Wire Line
-	7900 5150 7750 5150
-Wire Wire Line
-	7900 4950 7750 4950
-Wire Wire Line
-	7900 4750 7750 4750
-Wire Wire Line
-	7900 4550 7750 4550
-Wire Wire Line
 	3550 600  800  600 
 Connection ~ 3400 600 
 Wire Wire Line
@@ -273,38 +294,6 @@ Wire Wire Line
 	4175 6750 4175 6850
 Wire Wire Line
 	3550 3750 3550 2050
-Wire Wire Line
-	7900 4650 7750 4650
-Wire Wire Line
-	7900 4850 7750 4850
-Wire Wire Line
-	7900 5050 7750 5050
-Wire Wire Line
-	7900 5250 7750 5250
-Wire Wire Line
-	7900 5450 7750 5450
-Wire Wire Line
-	7900 5650 7750 5650
-Wire Wire Line
-	7900 5850 7750 5850
-Wire Wire Line
-	7900 6050 7750 6050
-Wire Wire Line
-	7800 2025 7750 2025
-Wire Wire Line
-	7800 2225 7750 2225
-Wire Wire Line
-	7800 2425 7750 2425
-Wire Wire Line
-	7800 2625 7750 2625
-Wire Wire Line
-	7800 2825 7750 2825
-Wire Wire Line
-	7800 3025 7750 3025
-Wire Wire Line
-	7800 3225 7750 3225
-Wire Wire Line
-	7800 3425 7750 3425
 Wire Wire Line
 	2650 2950 2650 3000
 Wire Wire Line
@@ -432,14 +421,6 @@ Wire Wire Line
 	6300 1350 6300 1200
 Connection ~ 6300 1200
 Wire Wire Line
-	7800 800  7750 800 
-Wire Wire Line
-	7800 1000 7750 1000
-Wire Wire Line
-	7800 1200 7750 1200
-Wire Wire Line
-	7800 1400 7750 1400
-Wire Wire Line
 	6500 1500 6425 1500
 Wire Wire Line
 	5300 1500 5375 1500
@@ -483,26 +464,6 @@ F 2 "pin_strip_2" H 5575 7200 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R35
-U 1 1 4DB9625B
-P 6175 1500
-F 0 "R35" V 6255 1500 50  0000 C CNN
-F 1 "680E" V 6175 1500 50  0000 C CNN
-F 2 "RC03" H 6175 1500 60  0001 C CNN
-	1    6175 1500
-	0    1    1    0   
-$EndComp
-$Comp
-L RVAR R34
-U 1 1 4DB961F4
-P 5625 1500
-F 0 "R34" V 5700 1625 50  0000 C CNN
-F 1 "2k" V 5525 1500 50  0000 C CNN
-F 2 "Pot-Var2" H 5625 1500 60  0001 C CNN
-	1    5625 1500
-	0    1    1    0   
-$EndComp
-$Comp
 L GND #PWR01
 U 1 1 4DB9600D
 P 5100 1300
@@ -511,22 +472,6 @@ F 1 "GND" H 5100 1230 30  0001 C CNN
 	1    5100 1300
 	1    0    0    -1  
 $EndComp
-Text Label 7800 800  0    40   ~ 0
-R01
-Text Label 7800 900  0    40   ~ 0
-R02
-Text Label 7800 1000 0    40   ~ 0
-R03
-Text Label 7800 1100 0    40   ~ 0
-R04
-Text Label 7800 1200 0    40   ~ 0
-R05
-Text Label 7800 1300 0    40   ~ 0
-R06
-Text Label 7800 1400 0    40   ~ 0
-R07
-Text Label 7800 1500 0    40   ~ 0
-R08
 Text Label 5100 1200 0    40   ~ 0
 GND
 Text Label 5100 1050 0    40   ~ 0
@@ -537,25 +482,6 @@ Text Label 5125 800  0    40   ~ 0
 SCK-CLK
 Text Label 5125 900  0    40   ~ 0
 OC1A-LE
-NoConn ~ 7750 700 
-$Comp
-L STP8DP05 U5
-U 1 1 4DB95F47
-P 7150 1500
-F 0 "U5" H 6850 1350 60  0000 C CNN
-F 1 "STP8DP05" H 7700 1400 60  0000 C CNN
-F 2 "dil_16-300_socket" H 7150 1500 60  0001 C CNN
-	1    7150 1500
-	1    0    0    -1  
-$EndComp
-NoConn ~ 7800 2725
-NoConn ~ 7800 2825
-NoConn ~ 7800 2925
-NoConn ~ 7800 3025
-NoConn ~ 7800 3125
-NoConn ~ 7800 3225
-NoConn ~ 7800 3325
-NoConn ~ 7800 3425
 Text Label 4275 3550 0    40   ~ 0
 COL_DRIVER_ENABLE
 $Sheet
@@ -589,7 +515,6 @@ F24 "COL03" I L 8750 4750 60
 F25 "COL02" I L 8750 4650 60 
 F26 "COL01" I L 8750 4550 60 
 $EndSheet
-NoConn ~ 7750 1825
 $Sheet
 S 10200 4775 850  1400
 U 4D28241A
@@ -700,18 +625,6 @@ Text Label 5775 1925 0    40   ~ 0
 SCK-CLK
 Text Label 5775 1825 0    40   ~ 0
 MOSI-SDI
-$Comp
-L STP16DP05 DIL-U1
-U 1 1 4C2C6A39
-P 7150 2625
-F 0 "DIL-U1" H 6975 1775 60  0000 C CNN
-F 1 "STP16DP05" H 7700 1750 60  0000 C CNN
-F 2 "SCK-24_600_ELL" H 7150 2625 60  0001 C CNN
-F 3 "http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=497-5975-1-ND" H 7150 2625 60  0001 C CNN
-F 4 "497-5975-1-ND" H 7150 2625 60  0001 C CNN "DigiKey"
-	1    7150 2625
-	1    0    0    -1  
-$EndComp
 $Comp
 L R R31
 U 1 1 4C1741EB
@@ -851,70 +764,6 @@ F 2 "C2" H 2650 2750 60  0001 C CNN
 	1    2650 2750
 	1    0    0    -1  
 $EndComp
-Text Label 7800 3425 0    40   ~ 0
-R16
-Text Label 7800 3325 0    40   ~ 0
-R15
-Text Label 7800 3225 0    40   ~ 0
-R14
-Text Label 7800 3125 0    40   ~ 0
-R13
-Text Label 7800 3025 0    40   ~ 0
-R12
-Text Label 7800 2925 0    40   ~ 0
-R11
-Text Label 7800 2825 0    40   ~ 0
-R10
-Text Label 7800 2725 0    40   ~ 0
-R09
-Text Label 7800 2625 0    40   ~ 0
-R08
-Text Label 7800 2525 0    40   ~ 0
-R07
-Text Label 7800 2425 0    40   ~ 0
-R06
-Text Label 7800 2325 0    40   ~ 0
-R05
-Text Label 7800 2225 0    40   ~ 0
-R04
-Text Label 7800 2125 0    40   ~ 0
-R03
-Text Label 7800 2025 0    40   ~ 0
-R02
-Text Label 7800 1925 0    40   ~ 0
-R01
-Text Label 7900 6050 0    40   ~ 0
-COL16
-Text Label 7900 5950 0    40   ~ 0
-COL15
-Text Label 7900 5850 0    40   ~ 0
-COL14
-Text Label 7900 5750 0    40   ~ 0
-COL13
-Text Label 7900 5650 0    40   ~ 0
-COL12
-Text Label 7900 5550 0    40   ~ 0
-COL11
-Text Label 7900 5450 0    40   ~ 0
-COL10
-Text Label 7900 5350 0    40   ~ 0
-COL09
-Text Label 7900 5250 0    40   ~ 0
-COL08
-Text Label 7900 5150 0    40   ~ 0
-COL07
-Text Label 7900 5050 0    40   ~ 0
-COL06
-Text Label 7900 4950 0    40   ~ 0
-COL05
-Text Label 7900 4850 0    40   ~ 0
-COL04
-Text Label 7900 4750 0    40   ~ 0
-COL03
-Text Label 7900 4650 0    40   ~ 0
-COL02
-Text Label 7900 4550 0    40   ~ 0
-COL01
 Text Label 3500 5150 0    40   ~ 0
 OC1A-LE
 Text Label 9825 2675 0    47   ~ 0
@@ -967,18 +816,6 @@ Text Notes 8350 6025 1    60   ~ 0
 CA LED, 16 Columns, Anodes
 Text Notes 8350 3200 1    60   ~ 0
 CA LED, 8 Rows, Cathodes
-$Comp
-L 74LS154 U4
-U 1 1 4C109B50
-P 7150 5350
-F 0 "U4" H 6900 5000 60  0000 C CNN
-F 1 "74LS154" H 7400 6250 60  0000 C CNN
-F 2 "DIP-24__600_ELL" H 7150 5350 60  0001 C CNN
-F 3 "http://media.digikey.com/pdf/Data%20Sheets/Texas%20Instruments%20PDFs/SN74154.pdf" H 7150 5350 60  0001 C CNN
-F 4 "296-8757-5-ND" H 7150 5350 60  0001 C CNN "DigiKey"
-	1    7150 5350
-	1    0    0    -1  
-$EndComp
 Text Label 600  3250 0    39   ~ 0
 RES
 Text Label 2550 1450 0    47   ~ 0
