@@ -1,4 +1,4 @@
-update=Wed 23 Nov 2011 11:08:04 PM IST
+update=11/24/2011 6:54:48 PM
 version=1
 last_client=kicad
 [cvpcb]
@@ -107,7 +107,7 @@ offY_E=0
 RptD_X=0
 RptD_Y=100
 RptLab=1
-LabSize=60
+LabSize=40
 [eeschema/libraries]
 LibName1=Nb_v1_libs/Nb_v1
 LibName2=Nb_v1_libs/power
@@ -119,5 +119,6 @@ LibName7=microchip1
 LibName8=motorola
 LibName9=power
 LibName10=special
+LibName11=atmel
 [general]
 version=1
