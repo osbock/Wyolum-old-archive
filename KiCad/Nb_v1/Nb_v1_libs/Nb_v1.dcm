@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: Wed 23 Nov 2011 11:00:15 PM IST
+EESchema-DOCLIB  Version 2.0  Date: Thu 24 Nov 2011 11:33:59 PM IST
 #
 $CMP 74HC595
 D 8 bits serial in // out Shift Register 3 State Out
@@ -18,6 +18,11 @@ $ENDCMP
 $CMP CONN_8
 D Symbole general de connecteur
 K CONN
+$ENDCMP
+#
+$CMP DIODESCH
+D Diode schottky
+K DEV DIODE
 $ENDCMP
 #
 $CMP SW_PUSH

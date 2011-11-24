@@ -1,4 +1,4 @@
-update=11/24/2011 6:54:48 PM
+update=Thu 24 Nov 2011 11:41:49 PM IST
 version=1
 last_client=kicad
 [cvpcb]
@@ -111,14 +111,5 @@ LabSize=40
 [eeschema/libraries]
 LibName1=Nb_v1_libs/Nb_v1
 LibName2=Nb_v1_libs/power
-LibName3=74xx
-LibName4=analog_switches
-LibName5=interface
-LibName6=microchip
-LibName7=microchip1
-LibName8=motorola
-LibName9=power
-LibName10=special
-LibName11=atmel
 [general]
 version=1
