@@ -1,6 +1,7 @@
-EESchema Schematic File Version 2  date 11/25/2011 1:26:45 PM
+EESchema Schematic File Version 2  date 11/25/2011 7:19:25 PM
 LIBS:Nb_v1
 LIBS:power
+LIBS:conn
 LIBS:Nb_v1-cache
 EELAYER 25  0
 EELAYER END
@@ -22,6 +23,7 @@ U 1 1 4DC15770
 P 6350 2100
 F 0 "FM1" H 6350 1950 60  0000 C CNN
 F 1 "FRAME" H 6350 2250 60  0000 C CNN
+F 2 "Frame" H 6350 2100 60  0001 C CNN
 	1    6350 2100
 	1    0    0    -1  
 $EndComp

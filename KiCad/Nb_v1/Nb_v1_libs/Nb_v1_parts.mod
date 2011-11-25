@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  11/23/2011 4:49:32 PM
+PCBNEW-LibModule-V1  11/25/2011 6:46:26 PM
 # encoding utf-8
 $INDEX
 01D01
@@ -19,8 +19,6 @@ FacePlate
 Frame
 FrontCover
 JACK_ALIM
-Mtg
-Mtg
 MtgPost
 PROTO-6
 Pad01
@@ -31,16 +29,14 @@ STP16DP05
 SW-PB
 SW_PB_V
 Speaker
-Volt
-Volt
-Volt
-Volt
 Volt_Reg_78xx
 XTAL
 cnp_3mm_disc
 cnp_6mm_disc
 con-usb-USB-B-H
+dil_08-300_socket
 dil_16-300_socket
+dil_18-300_socket
 dil_28-300_socket
 diode_do35
 diode_do41
@@ -48,6 +44,10 @@ led_10mm_blue
 led_10mm_yellow
 led_5mm_blue
 led_5mm_clear
+led_5mm_green
+led_5mm_yellow
+pin_array_12x1
+pin_array_4x2
 pin_sck_4-90
 pin_socket_2
 pin_strip_2
@@ -65,111 +65,9 @@ vite_3mm
 vite_4mm
 vite_csk_3mm
 $EndINDEX
-$MODULE Volt Reg 78xx
-Po 0 0 0 15 4D0620E9 00000000 ~~
-Li Volt Reg 78xx
-Cd TO220, 2 pins, horizontal
-Sc 00000000
-AR
-Op 0 0 0
-T0 0 -5900 600 600 0 120 N V 21 N"TO220-2-horiz"
-T1 0 -4950 600 600 0 120 N V 21 N"Q***"
-DS 1000 3800 1000 2150 120 21
-DS -1000 3800 -1000 2150 120 21
-DS -2000 2150 2000 2150 120 21
-DS 2000 -3900 -2000 -3900 120 21
-DS 2000 2150 2000 -3900 120 21
-DS -2000 -3900 -2000 2150 120 21
-DS 2000 -1350 -2000 -1350 100 21
-$PAD
-Sh "VO" O 700 1600 0 0 0
-Dr 320 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 1000 3780
-$EndPAD
-$PAD
-Sh "VI" O 700 1600 0 0 0
-Dr 320 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po -1000 3780
-$EndPAD
-$PAD
-Sh "GND" R 5000 7000 0 0 0
-Dr 1575 0 1620
-At STD N 00A08000
-Ne 0 ""
-Po 0 -2620
-$EndPAD
-$PAD
-Sh "GND" O 700 1600 0 0 0
-Dr 320 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 3750
-$EndPAD
-$SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\to220-2_horiz.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$EndMODULE  Volt Reg 78xx
-$MODULE Volt Reg 78xx
-Po 0 0 0 15 4D0620E9 00000000 ~~
-Li Volt Reg 78xx
-Cd TO220, 2 pins, horizontal
-Sc 00000000
-AR
-Op 0 0 0
-T0 0 -5900 600 600 0 120 N V 21 N"TO220-2-horiz"
-T1 0 -4950 600 600 0 120 N V 21 N"Q***"
-DS 1000 3800 1000 2150 120 21
-DS -1000 3800 -1000 2150 120 21
-DS -2000 2150 2000 2150 120 21
-DS 2000 -3900 -2000 -3900 120 21
-DS 2000 2150 2000 -3900 120 21
-DS -2000 -3900 -2000 2150 120 21
-DS 2000 -1350 -2000 -1350 100 21
-$PAD
-Sh "VO" O 700 1600 0 0 0
-Dr 320 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 1000 3780
-$EndPAD
-$PAD
-Sh "VI" O 700 1600 0 0 0
-Dr 320 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po -1000 3780
-$EndPAD
-$PAD
-Sh "GND" R 5000 7000 0 0 0
-Dr 1575 0 1620
-At STD N 00A08000
-Ne 0 ""
-Po 0 -2620
-$EndPAD
-$PAD
-Sh "GND" O 700 1600 0 0 0
-Dr 320 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 3750
-$EndPAD
-$SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\to220-2_horiz.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$EndMODULE  Volt Reg 78xx
-$MODULE Volt Reg 78xx
+$MODULE Volt_Reg_78xx
 Po 0 0 0 15 4D06228D 00000000 ~~
-Li Volt Reg 78xx
+Li Volt_Reg_78xx
 Cd TO220, 2 pins, horizontal
 Sc 00000000
 AR
@@ -212,63 +110,13 @@ Ne 0 ""
 Po 0 3750
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\to220-2_horiz.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\to220-2_horiz.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//to220-2_horiz.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
-$EndMODULE  Volt Reg 78xx
-$MODULE Volt Reg 78xx
-Po 0 0 0 15 4D06228D 00000000 ~~
-Li Volt Reg 78xx
-Cd TO220, 2 pins, horizontal
-Sc 00000000
-AR
-Op 0 0 0
-T0 0 -5900 600 600 0 120 N I 21 N"Volt Reg 78xx"
-T1 0 -4950 600 600 0 120 N V 21 N"U***"
-DS 1000 3800 1000 2150 120 21
-DS -1000 3800 -1000 2150 120 21
-DS -2000 2150 2000 2150 120 21
-DS 2000 -3900 -2000 -3900 120 21
-DS 2000 2150 2000 -3900 120 21
-DS -2000 -3900 -2000 2150 120 21
-DS 2000 -1350 -2000 -1350 100 21
-$PAD
-Sh "VO" O 700 1600 0 0 0
-Dr 320 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 1000 3780
-$EndPAD
-$PAD
-Sh "VI" O 700 1600 0 0 0
-Dr 320 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po -1000 3780
-$EndPAD
-$PAD
-Sh "GND" R 5000 7000 0 0 0
-Dr 1575 0 1620
-At STD N 00A08000
-Ne 0 ""
-Po 0 -2620
-$EndPAD
-$PAD
-Sh "GND" O 700 1600 0 0 0
-Dr 320 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 3750
-$EndPAD
-$SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\to220-2_horiz.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$EndMODULE  Volt Reg 78xx
+$EndMODULE  Volt_Reg_78xx
 $MODULE BUZZER
 Po 0 0 0 15 4C385A53 00000000 ~~
 Li BUZZER
@@ -299,7 +147,8 @@ Ne 2 "VSS"
 Po 1500 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\c_vert_c2v8.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\c_vert_c2v8.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//c_vert_c2v8.wrl"
 Sc 1.500000 1.500000 0.300000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -342,7 +191,8 @@ Ne 0 ""
 Po 0 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\capa_2pas_5x5mm.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\capa_2pas_5x5mm.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//capa_2pas_5x5mm.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -374,7 +224,8 @@ Ne 0 ""
 Po 1000 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\c_vert_c2v10.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\c_vert_c2v10.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//c_vert_c2v10.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -410,7 +261,8 @@ Ne 0 ""
 Po 500 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\cnp_3mm_disc.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\cnp_3mm_disc.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//cnp_3mm_disc.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -447,7 +299,8 @@ Ne 0 ""
 Po 1000 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\cnp_6mm_disc.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\cnp_6mm_disc.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//cnp_6mm_disc.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -584,7 +437,8 @@ Ne 5 "/clock2-Aux/SCL"
 Po -1750 -2000
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\cms_so16.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\cms_so16.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//cms_so16.wrl"
 Sc 0.500000 0.600000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -829,7 +683,8 @@ Ne 9 "/R09R"
 Po 2750 -1900
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\cms_soj24.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\cms_soj24.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//cms_soj24.wrl"
 Sc 0.500000 0.600000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -879,7 +734,8 @@ Ne 0 ""
 Po -886 1280
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\pcb_push.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\pcb_push.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//pcb_push.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -902,7 +758,8 @@ Ne 0 ""
 Po 0 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\vite_2mm5.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\vite_2mm5.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//vite_2mm5.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -925,7 +782,8 @@ Ne 0 ""
 Po 0 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\vite_2mm5.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\vite_2mm5.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//vite_2mm5.wrl"
 Sc 1.200000 1.200000 1.200000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -961,7 +819,8 @@ Ne 0 ""
 Po 500 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\capa_1_pas.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\capa_1_pas.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//capa_1_pas.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1000,7 +859,8 @@ Ne 0 ""
 Po 2000 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\diode_do41.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\diode_do41.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//diode_do41.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1038,7 +898,8 @@ Ne 0 ""
 Po 1500 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\diode_do35.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\diode_do35.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//diode_do35.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1258,7 +1119,8 @@ Ne 0 ""
 Po -6500 -1500
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\dil_28-300_socket.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\dil_28-300_socket.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//dil_28-300_socket.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1450,7 +1312,8 @@ Ne 0 ""
 Po -5500 -3000
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\dil_24-600_socket.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\dil_24-600_socket.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//dil_24-600_socket.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1500,7 +1363,8 @@ Ne 0 ""
 Po 0 500
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\led_5mm_blue.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\led_5mm_blue.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//led_5mm_blue.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1533,7 +1397,8 @@ Ne 0 ""
 Po 0 500
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\led_10mm_blue.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\led_10mm_blue.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//led_10mm_blue.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1566,7 +1431,8 @@ Ne 0 ""
 Po 0 500
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\led_5mm_clear.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\led_5mm_clear.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//led_5mm_clear.wrl"
 Sc 2.000000 2.000000 2.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1758,63 +1624,13 @@ Ne 0 ""
 Po -5500 -3000
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\socket_600_2x12.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\socket_600_2x12.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//socket_600_2x12.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 90.000000
 $EndSHAPE3D
 $EndMODULE  SCK-24_600_ELL
-$MODULE Volt_Reg_78xx
-Po 0 0 0 15 4D21B8A9 00000000 ~~
-Li Volt_Reg_78xx
-Cd TO220, 2 pins, horizontal
-Sc 00000000
-AR
-Op 0 0 0
-T0 0 -5900 600 600 0 60 N V 21 N"Volt_Reg_78xx"
-T1 0 -4950 600 600 0 60 N V 21 N"U***"
-DS 1000 3800 1000 2150 120 21
-DS -1000 3800 -1000 2150 120 21
-DS -2000 2150 2000 2150 120 21
-DS 2000 -3900 -2000 -3900 120 21
-DS 2000 2150 2000 -3900 120 21
-DS -2000 -3900 -2000 2150 120 21
-DS 2000 -1350 -2000 -1350 100 21
-$PAD
-Sh "VO" O 700 1600 0 0 0
-Dr 320 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 1000 3780
-$EndPAD
-$PAD
-Sh "VI" O 700 1600 0 0 0
-Dr 320 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po -1000 3780
-$EndPAD
-$PAD
-Sh "GND" R 5000 7000 0 0 0
-Dr 1575 0 1620
-At STD N 00A0FFFF
-Ne 0 ""
-Po 0 -2620
-$EndPAD
-$PAD
-Sh "GND" O 700 1600 0 0 0
-Dr 320 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 3750
-$EndPAD
-$SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\to220-2_horiz.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$EndMODULE  Volt_Reg_78xx
 $MODULE XTAL
 Po 0 0 0 15 4D21B8CF 00000000 ~~
 Li XTAL
@@ -1852,7 +1668,8 @@ Ne 0 ""
 Po 0 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\capa_2pas_5x5mm.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\capa_2pas_5x5mm.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//capa_2pas_5x5mm.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1893,7 +1710,8 @@ Ne 0 ""
 Po -750 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\to92_3.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\to92_3.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//to92_3.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1929,7 +1747,8 @@ Ne 0 ""
 Po 1000 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\capa_2pas_5x5mm.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\capa_2pas_5x5mm.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//capa_2pas_5x5mm.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1990,7 +1809,8 @@ Ne 0 ""
 Po 1000 1375
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\SW_0773.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\SW_0773.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//SW_0773.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2069,7 +1889,8 @@ Ne 0 ""
 Po 1500 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\socket_1x4_90.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\socket_1x4_90.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//socket_1x4_90.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2105,7 +1926,8 @@ Ne 0 ""
 Po 500 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\socket_1x2.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\socket_1x2.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//socket_1x2.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 90.000000
@@ -2141,7 +1963,8 @@ Ne 0 ""
 Po 500 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\pin_strip_2.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\pin_strip_2.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//pin_strip_2.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2184,7 +2007,8 @@ Ne 0 ""
 Po 1000 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\pin_strip_3.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\pin_strip_3.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//pin_strip_3.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2249,7 +2073,8 @@ Ne 0 ""
 Po 1000 -500
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\pin_strip_3x2.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\pin_strip_3x2.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//pin_strip_3x2.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2299,7 +2124,8 @@ Ne 0 ""
 Po 1500 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\pin_strip_4.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\pin_strip_4.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//pin_strip_4.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2378,7 +2204,8 @@ Ne 0 ""
 Po 1500 -500
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\pin_strip_4x2.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\pin_strip_4x2.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//pin_strip_4x2.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2452,7 +2279,8 @@ Ne 0 ""
 Po 2500 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\pin_strip_6-90.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\pin_strip_6-90.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//pin_strip_6-90.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2530,7 +2358,8 @@ Ne 0 ""
 Po 3500 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\pin_strip_8.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\pin_strip_8.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//pin_strip_8.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2553,84 +2382,21 @@ Ne 0 ""
 Po 0 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\vite_2mm5.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\vite_2mm5.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//vite_2mm5.wrl"
 Sc 1.600000 1.600000 1.600000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  vite_4mm
-$MODULE Mtg Post
-Po 0 0 0 15 4D2832FE 00000000 ~~
-Li Mtg Post
-Sc 00000000
-AR /4D247CC3
-Op 0 0 0
-T0 0 -2250 600 600 0 120 N I 21 N"MP1"
-T1 0 2500 600 600 0 120 N I 21 N"MTG POST"
-DA 0 0 0 -1500 900 150 21
-DA 0 0 0 1500 900 150 21
-DA 0 0 0 -1250 900 150 21
-DA 0 0 0 1250 900 150 21
-DA 0 0 0 -1000 900 150 21
-DA 0 0 0 1000 900 150 21
-DA 0 0 0 -750 900 150 21
-DA 0 0 0 750 900 150 21
-DA 0 0 0 -500 900 150 21
-DA 0 0 0 500 900 150 21
-DA 0 0 0 -250 900 150 21
-DA 0 0 0 250 900 150 21
-DS 0 0 0 2500 150 21
-DS 0 0 0 -2500 150 21
-DS 0 0 -2750 0 150 21
-DS 0 0 2500 0 150 21
-DC 0 0 -1750 0 150 21
-$SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\01Baffle.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$EndMODULE  Mtg Post
-$MODULE Mtg Post
-Po 0 0 0 15 4D2832FE 00000000 ~~
-Li Mtg Post
-Sc 00000000
-AR /4D247CC3
-Op 0 0 0
-T0 0 -2250 600 600 0 120 N I 21 N"MP1"
-T1 0 2500 600 600 0 120 N I 21 N"MTG POST"
-DA 0 0 0 -1500 900 150 21
-DA 0 0 0 1500 900 150 21
-DA 0 0 0 -1250 900 150 21
-DA 0 0 0 1250 900 150 21
-DA 0 0 0 -1000 900 150 21
-DA 0 0 0 1000 900 150 21
-DA 0 0 0 -750 900 150 21
-DA 0 0 0 750 900 150 21
-DA 0 0 0 -500 900 150 21
-DA 0 0 0 500 900 150 21
-DA 0 0 0 -250 900 150 21
-DA 0 0 0 250 900 150 21
-DS 0 0 0 2500 150 21
-DS 0 0 0 -2500 150 21
-DS 0 0 -2750 0 150 21
-DS 0 0 2500 0 150 21
-DC 0 0 -1750 0 150 21
-$SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\01Baffle.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$EndMODULE  Mtg Post
 $MODULE MtgPost
-Po 0 0 0 15 4D2833A5 00000000 ~~
+Po 0 0 0 15 4D2832FE 00000000 ~~
 Li MtgPost
 Sc 00000000
-AR /4D28241A/4D283F93
+AR /4D247CC3
 Op 0 0 0
 T0 0 -2250 600 600 0 120 N I 21 N"MP1"
-T1 0 2500 600 600 0 120 N I 21 N"SCREW"
+T1 0 2500 600 600 0 120 N I 21 N"MTG POST"
 DA 0 0 0 -1500 900 150 21
 DA 0 0 0 1500 900 150 21
 DA 0 0 0 -1250 900 150 21
@@ -2649,9 +2415,10 @@ DS 0 0 -2750 0 150 21
 DS 0 0 2500 0 150 21
 DC 0 0 -1750 0 150 21
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\01MtgPost.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\01Baffle.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//01Baffle.wrl"
 Sc 1.000000 1.000000 1.000000
-Of 0.000000 -0.225000 0.000000
+Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  MtgPost
@@ -2668,7 +2435,8 @@ DS 18000 -18000 18000 18000 150 21
 DS 18000 18000 -18000 18000 150 21
 DS -18000 18000 -18000 -18000 150 21
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\01FrontCover.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\01FrontCover.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//01FrontCover.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 -0.225000 2.500000
 Ro 0.000000 0.000000 0.000000
@@ -2685,7 +2453,8 @@ T0 0 1500 600 600 0 120 N I 21 N"MT14"
 T1 0 -1500 600 600 0 120 N I 21 N"SCREW"
 DC 0 0 -750 0 150 20
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\vite_csk_3mm.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\vite_csk_3mm.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//vite_csk_3mm.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 1.500000
 Ro 0.000000 0.000000 0.000000
@@ -2704,7 +2473,8 @@ DS 12000 -12000 12000 12000 150 21
 DS 12000 12000 -12000 12000 150 21
 DS -12000 12000 -12000 -12000 150 21
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\01Diffuser.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\01Diffuser.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//01Diffuser.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 -0.225000 1.000000
 Ro 0.000000 0.000000 0.000000
@@ -2759,7 +2529,8 @@ Ne 4 "VCC"
 Po 1500 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\pin_strip_4-90.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\pin_strip_4-90.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//pin_strip_4-90.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2795,7 +2566,8 @@ Ne 0 ""
 Po 0 -500
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\cp_5x11mm.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\cp_5x11mm.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//cp_5x11mm.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2865,7 +2637,8 @@ Ne 0 ""
 Po 0 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\batt-02.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\batt-02.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//batt-02.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -3001,7 +2774,8 @@ Ne 14 "VCC"
 Po -3500 -1500
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\dil_16-300_socket.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\dil_16-300_socket.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//dil_16-300_socket.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -3179,7 +2953,8 @@ Ne 1 "GND"
 Po -3000 -1000
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\adjustable_rx2v4.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\adjustable_rx2v4.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//adjustable_rx2v4.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -3227,7 +3002,8 @@ Ne 1 "N-000033"
 Po 0 -1000
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\to92_3.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\to92_3.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//to92_3.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -3276,7 +3052,8 @@ Ne 0 ""
 Po 1250 2000
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\POWER_21.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\POWER_21.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//POWER_21.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -3322,7 +3099,8 @@ Ne 1 "GND"
 Po 500 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\speaker.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\speaker.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//speaker.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 90.000000
@@ -3372,7 +3150,8 @@ Ne 1 "/c3jr-LED/R01"
 Po 0 500
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\led_5mm_clear.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\led_5mm_clear.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//led_5mm_clear.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -3435,7 +3214,8 @@ Ne 3 "N-000003"
 Po 492 3000
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\Usb-B.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\Usb-B.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//Usb-B.wrl"
 Sc 2.700000 2.700000 2.700000
 Of 0.000000 0.000000 0.230000
 Ro 0.000000 0.000000 270.000000
@@ -3459,7 +3239,8 @@ DS 0 -6000 6000 -6000 150 21
 DS -6000 -6000 -6000 0 150 21
 DS 0 -6000 -6000 -6000 150 21
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\Baffle.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\Baffle.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//Baffle.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -3478,7 +3259,8 @@ DS 18000 -18000 18000 18000 150 21
 DS 18000 18000 -18000 18000 150 21
 DS -18000 18000 -18000 -18000 150 21
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\FrntCover.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\FrntCover.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//FrntCover.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -3501,7 +3283,8 @@ DS -15000 15000 -15000 0 100 21
 DS -15000 0 -15000 -15000 100 21
 DS -15000 -15000 0 -15000 100 21
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\BackCover.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\BackCover.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//BackCover.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -3536,7 +3319,8 @@ Ne 0 ""
 Po 1500 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\rc03.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\rc03.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//rc03.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -3559,7 +3343,8 @@ DS -32000 28000 -32000 0 100 21
 DS -32000 0 -32000 -28000 100 21
 DS -32000 -28000 0 -28000 100 21
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\Frame.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\Frame.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//Frame.wrl"
 Sc 10.000000 10.000000 10.000000
 Of 0.000000 0.000000 1.800000
 Ro 0.000000 0.000000 0.000000
@@ -3629,7 +3414,8 @@ Ne 0 ""
 Po 780 492
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\usb-b.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\usb-b.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//usb-b.wrl"
 Sc 1.000000 1.000000 1.000000
 Of -0.215000 0.000000 0.000000
 Ro 0.000000 0.000000 180.000000
@@ -3676,16 +3462,521 @@ Ne 2 "/R01G"
 Po -750 -750
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\led_10mm_rgb.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$SHAPE3D
-Na "C3Jr_v1_libs\\C3Jr_v1_3D_Modules\\led_10mm_rgb.wrl"
+Na "Nb_v1_libs\\Nb_v1_3D\\led_10mm_rgb.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//led_10mm_rgb.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  01D01
+$MODULE dil_08-300_socket
+Po 0 0 0 15 4ECF746D 00000000 ~~
+Li dil_08-300_socket
+Cd IC, DIL08 x 0,3", with socket
+Kw DIL
+Sc 00000000
+AR /4DB95F47
+Op 0 0 0
+T0 -2300 1550 600 600 900 60 N V 21 N "U*"
+T1 0 0 600 600 0 60 N V 21 N ""
+DS -2000 850 2000 850 100 21
+DS 2000 -850 -2000 -850 100 21
+DS 2000 -850 2000 850 100 21
+DS -2000 850 -2000 -850 100 21
+DS -2000 -500 -1500 -500 100 21
+DS -1500 -500 -1500 500 100 21
+DS -1500 500 -2000 500 100 21
+$PAD
+Sh "1" R 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -1500 1500
+$EndPAD
+$PAD
+Sh "2" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -500 1500
+$EndPAD
+$PAD
+Sh "3" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 500 1500
+$EndPAD
+$PAD
+Sh "4" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 1500 1500
+$EndPAD
+$PAD
+Sh "5" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 1500 -1500
+$EndPAD
+$PAD
+Sh "6" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 500 -1500
+$EndPAD
+$PAD
+Sh "7" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -500 -1500
+$EndPAD
+$PAD
+Sh "8" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -1500 -1500
+$EndPAD
+$SHAPE3D
+Na "Nb_v1_libs\\Nb_v1_3D\\dil_8-300_socket.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//dil_8-300_socket.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$EndMODULE  dil_08-300_socket
+$MODULE dil_18-300_socket
+Po 0 0 0 15 4ECF7397 00000000 ~~
+Li dil_18-300_socket
+Cd IC, DIL18 x 0,3", with socket
+Kw DIL
+Sc 00000000
+AR /4DB95F47
+Op 0 0 0
+T0 -4825 1475 600 600 900 60 N V 21 N "U*"
+T1 0 0 600 600 0 60 N V 21 N "Val**"
+DS -4500 850 4500 850 100 21
+DS 4500 -850 -4500 -850 100 21
+DS 4500 -850 4500 850 100 21
+DS -4500 850 -4500 -850 100 21
+DS -4500 -500 -4000 -500 100 21
+DS -4000 -500 -4000 500 100 21
+DS -4000 500 -4500 500 100 21
+$PAD
+Sh "1" R 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -4000 1500
+$EndPAD
+$PAD
+Sh "2" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -3000 1500
+$EndPAD
+$PAD
+Sh "3" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -2000 1500
+$EndPAD
+$PAD
+Sh "4" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -1000 1500
+$EndPAD
+$PAD
+Sh "5" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 1500
+$EndPAD
+$PAD
+Sh "6" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 1000 1500
+$EndPAD
+$PAD
+Sh "7" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 2000 1500
+$EndPAD
+$PAD
+Sh "8" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 3000 1500
+$EndPAD
+$PAD
+Sh "11" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 3000 -1500
+$EndPAD
+$PAD
+Sh "12" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 2000 -1500
+$EndPAD
+$PAD
+Sh "13" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 1000 -1500
+$EndPAD
+$PAD
+Sh "14" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 -1500
+$EndPAD
+$PAD
+Sh "15" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -1000 -1500
+$EndPAD
+$PAD
+Sh "16" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -2000 -1500
+$EndPAD
+$PAD
+Sh "17" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -3000 -1500
+$EndPAD
+$PAD
+Sh "18" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -4000 -1500
+$EndPAD
+$PAD
+Sh "9" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 4000 1500
+$EndPAD
+$PAD
+Sh "10" O 600 1000 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 4000 -1500
+$EndPAD
+$SHAPE3D
+Na "Nb_v1_libs\\Nb_v1_3D\\dil_18-300_socket.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//dil_18-300_socket.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$EndMODULE  dil_18-300_socket
+$MODULE led_5mm_green
+Po 0 0 0 15 4ECF781C 00000000 ~~
+Li led_5mm_green
+Cd 5mm clear led
+Kw led
+Sc 00000000
+AR
+Op 0 0 0
+T0 0 1500 600 600 0 60 N V 21 N "led_5mm_green"
+T1 0 -1500 600 600 0 60 N V 21 N "VAL**"
+DS -780 650 -550 850 120 21
+DS -930 410 -780 650 120 21
+DS -1010 110 -930 410 120 21
+DS -1000 -150 -1010 110 120 21
+DS -930 -410 -1000 -150 120 21
+DS -750 -700 -930 -410 120 21
+DS -530 -880 -750 -700 120 21
+DS -280 -1000 -530 -880 120 21
+DS 20 -1040 -280 -1000 120 21
+DS 0 -1040 300 -1000 120 21
+DS 300 -1000 550 -880 120 21
+DS 550 -880 770 -700 120 21
+DS 770 -700 950 -410 120 21
+DS 950 -410 1020 -150 120 21
+DS 1020 -150 1030 110 120 21
+DS 1030 110 950 410 120 21
+DS 950 410 800 650 120 21
+DS 800 650 570 850 120 21
+DS 570 850 -550 850 120 21
+$PAD
+Sh "1" O 1200 600 0 0 0
+Dr 320 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 -500
+$EndPAD
+$PAD
+Sh "2" O 1200 600 0 0 0
+Dr 320 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 500
+$EndPAD
+$SHAPE3D
+Na "Nb_v1_libs\\Nb_v1_3D\\led_5mm_green.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//led_5mm_green.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$EndMODULE  led_5mm_green
+$MODULE led_5mm_yellow
+Po 0 0 0 15 4ECF7848 00000000 ~~
+Li led_5mm_yellow
+Cd 5mm clear led
+Kw led
+Sc 00000000
+AR
+Op 0 0 0
+T0 0 1500 600 600 0 60 N V 21 N "led_5mm_yellow"
+T1 0 -1500 600 600 0 60 N V 21 N "VAL**"
+DS -780 650 -550 850 120 21
+DS -930 410 -780 650 120 21
+DS -1010 110 -930 410 120 21
+DS -1000 -150 -1010 110 120 21
+DS -930 -410 -1000 -150 120 21
+DS -750 -700 -930 -410 120 21
+DS -530 -880 -750 -700 120 21
+DS -280 -1000 -530 -880 120 21
+DS 20 -1040 -280 -1000 120 21
+DS 0 -1040 300 -1000 120 21
+DS 300 -1000 550 -880 120 21
+DS 550 -880 770 -700 120 21
+DS 770 -700 950 -410 120 21
+DS 950 -410 1020 -150 120 21
+DS 1020 -150 1030 110 120 21
+DS 1030 110 950 410 120 21
+DS 950 410 800 650 120 21
+DS 800 650 570 850 120 21
+DS 570 850 -550 850 120 21
+$PAD
+Sh "1" O 1200 600 0 0 0
+Dr 320 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 -500
+$EndPAD
+$PAD
+Sh "2" O 1200 600 0 0 0
+Dr 320 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 500
+$EndPAD
+$SHAPE3D
+Na "Nb_v1_libs\\Nb_v1_3D\\led_5mm_yellow.wrl"
+Na "Nb_v1_libs//Nb_v1_3D//led_5mm_yellow.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$EndMODULE  led_5mm_yellow
+$MODULE pin_array_4x2
+Po 0 0 0 15 3FAB90E6 00000000 ~~
+Li pin_array_4x2
+Cd Double rangee de contacts 2 x 4 pins
+Kw CONN
+Sc 00000000
+AR
+Op 0 0 0
+T0 0 -1500 400 400 0 80 N V 21 N "PIN_ARRAY_4X2"
+T1 0 1500 400 400 0 80 N I 21 N "Val**"
+DS -2000 -1000 2000 -1000 120 21
+DS 2000 -1000 2000 1000 120 21
+DS 2000 1000 -2000 1000 120 21
+DS -2000 1000 -2000 -1000 120 21
+$PAD
+Sh "1" R 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -1500 500
+$EndPAD
+$PAD
+Sh "2" C 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -1500 -500
+$EndPAD
+$PAD
+Sh "3" C 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -500 500
+$EndPAD
+$PAD
+Sh "4" C 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -500 -500
+$EndPAD
+$PAD
+Sh "5" C 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 500 500
+$EndPAD
+$PAD
+Sh "6" C 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 500 -500
+$EndPAD
+$PAD
+Sh "7" C 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 1500 500
+$EndPAD
+$PAD
+Sh "8" C 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 1500 -500
+$EndPAD
+$SHAPE3D
+Na "pin_array/pins_array_4x2.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$EndMODULE  pin_array_4x2
+$MODULE pin_array_12x1
+Po 0 0 0 15 4ECF9500 00000000 ~~
+Li pin_array_12x1
+Cd Double rangee de contacts 2 x 12 pins
+Kw CONN
+Sc 00000000
+AR 
+Op 0 0 0
+T0 0 -1500 400 400 0 100 N V 21 N "PIN_ARRAY_12X1"
+T1 0 1500 400 400 0 80 N V 21 N "Val**"
+DS 6000 -500 6000 500 150 21
+DS -6000 -500 -6000 500 150 21
+DS -6000 500 6000 500 150 21
+DS 6000 -500 -6000 -500 150 21
+$PAD
+Sh "1" R 600 600 0 0 0
+Dr 320 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -5500 0
+$EndPAD
+$PAD
+Sh "2" C 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -4500 0
+$EndPAD
+$PAD
+Sh "3" C 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -3500 0
+$EndPAD
+$PAD
+Sh "4" C 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -2500 0
+$EndPAD
+$PAD
+Sh "5" C 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -1500 0
+$EndPAD
+$PAD
+Sh "6" C 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -500 0
+$EndPAD
+$PAD
+Sh "7" C 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 500 0
+$EndPAD
+$PAD
+Sh "8" C 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 1500 0
+$EndPAD
+$PAD
+Sh "9" C 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 2500 0
+$EndPAD
+$PAD
+Sh "10" C 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 3500 0
+$EndPAD
+$PAD
+Sh "11" C 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 4500 0
+$EndPAD
+$PAD
+Sh "12" C 600 600 0 0 0
+Dr 400 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 5500 0
+$EndPAD
+$EndMODULE  pin_array_12x1
 $EndLIBRARY
