@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-07-08 BZR 3044)-stable date = 11/25/2011 6:47:58 PM
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Fri 25 Nov 2011 09:45:23 PM IST
 
 BeginCmp
 TimeStamp = /4D28241A/4DC14DAD;
@@ -1023,13 +1023,6 @@ IdModule  = FacePlate;
 EndCmp
 
 BeginCmp
-TimeStamp = /4B3F1092/4DBFE63C;
-Reference = J2;
-ValeurCmp = V_IN;
-IdModule  = con-usb-USB-B-H;
-EndCmp
-
-BeginCmp
 TimeStamp = /4B3F1092/4C109AAC;
 Reference = K1;
 ValeurCmp = PWR_SEL;
@@ -1167,6 +1160,13 @@ TimeStamp = /4C134896/4ECF8C8B;
 Reference = P19;
 ValeurCmp = CONN_12;
 IdModule  = pin_array_12x1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B3F1092/4ECFBE6C;
+Reference = P20;
+ValeurCmp = CONN_2;
+IdModule  = JACK_ALIM;
 EndCmp
 
 BeginCmp
