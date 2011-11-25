@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 24 Nov 2011 11:39:45 PM IST
+EESchema Schematic File Version 2  date 11/25/2011 1:26:01 PM
 LIBS:Nb_v1
 LIBS:power
 LIBS:Nb_v1-cache
@@ -7,13 +7,13 @@ EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
 Sheet 2 4
-Title "ClockTHREE Junior aka C3Jr"
-Date "24 nov 2011"
+Title "NachBau - WordClock"
+Date "25 nov 2011"
 Rev "A"
-Comp "an improved WordClock based on ClockTHREE"
+Comp ""
 Comment1 "www.wyolum.com"
 Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
-Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
+Comment3 ""
 Comment4 ""
 $EndDescr
 Text HLabel 13750 1000 2    40   Input ~ 0
@@ -589,18 +589,6 @@ Wire Wire Line
 	4450 1050 4150 1050
 Wire Wire Line
 	2850 1050 2550 1050
-Wire Wire Line
-	9950 9850 9950 9900
-Wire Wire Line
-	9150 9850 9150 9900
-Wire Wire Line
-	8350 9850 8350 9900
-Wire Wire Line
-	7550 9850 7550 9900
-Wire Wire Line
-	6750 9850 6750 9900
-Wire Wire Line
-	5950 9850 5950 9900
 Wire Wire Line
 	3350 1050 3650 1050
 Wire Wire Line

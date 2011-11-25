@@ -1,6 +1,6 @@
-update=Thu 24 Nov 2011 11:41:49 PM IST
+update=11/25/2011 1:26:43 PM
 version=1
-last_client=kicad
+last_client=eeschema
 [cvpcb]
 version=1
 NetITyp=0
@@ -77,6 +77,8 @@ LibName7=display
 LibName8=valves
 LibName9=led
 LibName10=dip_sockets
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
@@ -111,5 +113,3 @@ LabSize=40
 [eeschema/libraries]
 LibName1=Nb_v1_libs/Nb_v1
 LibName2=Nb_v1_libs/power
-[general]
-version=1

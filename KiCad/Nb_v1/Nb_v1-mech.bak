@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 24 Nov 2011 11:39:45 PM IST
+EESchema Schematic File Version 2  date 11/25/2011 1:26:01 PM
 LIBS:Nb_v1
 LIBS:power
 LIBS:Nb_v1-cache
@@ -7,13 +7,13 @@ EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 3 4
-Title "ClockTHREE Junior aka C3Jr"
-Date "24 nov 2011"
+Title "NachBau - WordClock"
+Date "25 nov 2011"
 Rev "A"
-Comp "an improved WordClock based on ClockTHREE"
+Comp ""
 Comment1 "www.wyolum.com"
 Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
-Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
+Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp

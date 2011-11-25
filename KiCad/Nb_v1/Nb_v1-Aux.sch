@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 24 Nov 2011 11:40:32 PM IST
+EESchema Schematic File Version 2  date 11/25/2011 1:26:45 PM
 LIBS:Nb_v1
 LIBS:power
 LIBS:Nb_v1-cache
@@ -7,13 +7,13 @@ EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 4
-Title "ClockTHREE Junior aka C3Jr"
-Date "24 nov 2011"
+Title "NachBau - WordClock"
+Date "25 nov 2011"
 Rev "A"
-Comp "an improved WordClock based on ClockTHREE"
+Comp ""
 Comment1 "www.wyolum.com"
 Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
-Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
+Comment3 ""
 Comment4 ""
 $EndDescr
 Text HLabel 7600 4525 2    40   Input ~ 0
@@ -22,7 +22,7 @@ Text Label 7350 4525 0    40   ~ 0
 3V3
 Connection ~ 7250 4525
 Wire Wire Line
-	7250 4525 7600 4525
+	7600 4525 7250 4525
 Wire Wire Line
 	7250 4400 7250 4625
 Wire Notes Line
@@ -52,27 +52,18 @@ Wire Wire Line
 	1800 4250 1800 4100
 Connection ~ 850  4700
 Wire Wire Line
-	850  4700 900  4700
-Connection ~ 1400 4700
+	900  4700 850  4700
 Wire Wire Line
-	1400 4700 1200 4700
-Connection ~ 1400 5350
+	1200 4700 1400 4700
+Connection ~ 1400 5200
 Wire Wire Line
-	1400 5350 1400 4050
+	5125 5200 850  5200
 Wire Wire Line
-	1400 4050 1200 4050
-Connection ~ 850  4600
+	1400 4700 1400 5200
 Wire Wire Line
-	850  5150 900  5150
-Connection ~ 800  4500
-Wire Wire Line
-	900  5050 800  5050
-Wire Wire Line
-	800  5050 800  3850
+	800  4100 800  4500
 Wire Wire Line
 	800  4100 3600 4100
-Wire Wire Line
-	800  3850 900  3850
 Wire Notes Line
 	750  3325 750  625 
 Connection ~ 5950 2000
@@ -319,8 +310,6 @@ Wire Wire Line
 	5125 5000 4875 5000
 Wire Wire Line
 	4875 5000 4875 5200
-Wire Wire Line
-	5125 5200 1800 5200
 Connection ~ 2100 5200
 Wire Wire Line
 	2100 5200 2100 4650
@@ -328,7 +317,7 @@ Connection ~ 3050 4100
 Connection ~ 2600 5200
 Connection ~ 1800 5200
 Wire Wire Line
-	1800 4650 1800 5350
+	1800 4650 1800 5200
 Connection ~ 1800 4100
 Connection ~ 3050 5200
 Wire Wire Line
@@ -585,25 +574,10 @@ Wire Notes Line
 	6900 625  750  625 
 Wire Wire Line
 	800  4500 900  4500
-Connection ~ 800  4100
 Wire Wire Line
-	900  3950 850  3950
+	900  4600 850  4600
 Wire Wire Line
-	850  4600 900  4600
-Wire Wire Line
-	850  3950 850  5350
-Wire Wire Line
-	850  5350 1800 5350
-Connection ~ 850  5150
-Wire Wire Line
-	1400 5250 1200 5250
-Connection ~ 1400 5250
-Wire Wire Line
-	850  4050 900  4050
-Connection ~ 850  4050
-Wire Wire Line
-	900  5250 850  5250
-Connection ~ 850  5250
+	850  4600 850  5200
 Wire Wire Line
 	5700 1800 6450 1800
 Wire Wire Line
@@ -656,19 +630,19 @@ F 1 "R" V 7250 4150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR014
+L GND #PWR019
 U 1 1 4ECE864C
 P 7250 5250
-F 0 "#PWR014" H 7250 5250 30  0001 C CNN
+F 0 "#PWR019" H 7250 5250 30  0001 C CNN
 F 1 "GND" H 7250 5180 30  0001 C CNN
 	1    7250 5250
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR015
+L VCC #PWR020
 U 1 1 4ECE863E
 P 7250 3750
-F 0 "#PWR015" H 7250 3850 30  0001 C CNN
+F 0 "#PWR020" H 7250 3850 30  0001 C CNN
 F 1 "VCC" H 7250 3850 30  0000 C CNN
 	1    7250 3750
 	1    0    0    -1  
@@ -718,22 +692,8 @@ F 2 "ds1307_pcf8583-DIL08" H 5200 2050 50  0001 C CNN
 	1    5200 1900
 	1    0    0    -1  
 $EndComp
-NoConn ~ 1200 5150
-NoConn ~ 1200 5050
 NoConn ~ 1200 4600
 NoConn ~ 1200 4500
-NoConn ~ 1200 3950
-NoConn ~ 1200 3850
-$Comp
-L USB-B J3
-U 1 1 4DBFE641
-P 1050 5000
-F 0 "J3" H 1050 5210 60  0000 C CNN
-F 1 "V_IN" H 1060 5140 60  0000 C CNN
-F 2 "con-usb-USB-B-H" H 1050 5000 60  0001 C CNN
-	1    1050 5000
-	1    0    0    -1  
-$EndComp
 $Comp
 L USB-B J2
 U 1 1 4DBFE63C
@@ -742,16 +702,6 @@ F 0 "J2" H 1050 4660 60  0000 C CNN
 F 1 "V_IN" H 1060 4590 60  0000 C CNN
 F 2 "con-usb-USB-B-H" H 1050 4450 60  0001 C CNN
 	1    1050 4450
-	1    0    0    -1  
-$EndComp
-$Comp
-L USB-B J1
-U 1 1 4DBFE43B
-P 1050 3800
-F 0 "J1" H 1050 4010 60  0000 C CNN
-F 1 "V_IN" H 1060 3940 60  0000 C CNN
-F 2 "con-usb-USB-B-H" H 1050 3800 60  0001 C CNN
-	1    1050 3800
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -777,19 +727,19 @@ GND
 Text Label 4800 925  0    40   ~ 0
 VCC
 $Comp
-L GND #PWR016
+L GND #PWR021
 U 1 1 4DBAC297
 P 4675 3025
-F 0 "#PWR016" H 4675 3025 30  0001 C CNN
+F 0 "#PWR021" H 4675 3025 30  0001 C CNN
 F 1 "GND" H 4675 2955 30  0001 C CNN
 	1    4675 3025
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR017
+L VCC #PWR022
 U 1 1 4DBAC28D
 P 4675 825
-F 0 "#PWR017" H 4675 925 30  0001 C CNN
+F 0 "#PWR022" H 4675 925 30  0001 C CNN
 F 1 "VCC" H 4675 925 30  0000 C CNN
 	1    4675 825 
 	1    0    0    -1  
@@ -931,19 +881,19 @@ F 2 "pin_strip_4" H 2050 2400 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR018
+L GND #PWR023
 U 1 1 4C9A49B0
 P 3350 7250
-F 0 "#PWR018" H 3350 7250 30  0001 C CNN
+F 0 "#PWR023" H 3350 7250 30  0001 C CNN
 F 1 "GND" H 3350 7180 30  0001 C CNN
 	1    3350 7250
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR019
+L VCC #PWR024
 U 1 1 4C9A4991
 P 4150 5750
-F 0 "#PWR019" H 4150 5850 30  0001 C CNN
+F 0 "#PWR024" H 4150 5850 30  0001 C CNN
 F 1 "VCC" H 4150 5850 30  0000 C CNN
 	1    4150 5750
 	1    0    0    -1  
@@ -1223,19 +1173,19 @@ F 2 "pin_strip_3" H 8750 1400 60  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR020
+L VCC #PWR025
 U 1 1 4C109AAB
 P 9400 1150
-F 0 "#PWR020" H 9400 1250 30  0001 C CNN
+F 0 "#PWR025" H 9400 1250 30  0001 C CNN
 F 1 "VCC" H 9400 1250 30  0000 C CNN
 	1    9400 1150
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR021
+L GND #PWR026
 U 1 1 4C109AAA
 P 9450 2350
-F 0 "#PWR021" H 9450 2350 30  0001 C CNN
+F 0 "#PWR026" H 9450 2350 30  0001 C CNN
 F 1 "GND" H 9450 2280 30  0001 C CNN
 	1    9450 2350
 	1    0    0    -1  
@@ -1305,10 +1255,10 @@ $EndComp
 Text Label 9150 2050 0    47   ~ 0
 USB5V
 $Comp
-L VDD #PWR022
+L VDD #PWR027
 U 1 1 4C109AA4
 P 9600 1150
-F 0 "#PWR022" H 9600 1250 30  0001 C CNN
+F 0 "#PWR027" H 9600 1250 30  0001 C CNN
 F 1 "VDD" H 9600 1260 30  0000 C CNN
 	1    9600 1150
 	1    0    0    -1  
@@ -1346,19 +1296,19 @@ F 2 "C2" H 2100 4450 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VSS #PWR023
+L VSS #PWR028
 U 1 1 4B3F12CE
 P 3050 5300
-F 0 "#PWR023" H 3050 5300 30  0001 C CNN
+F 0 "#PWR028" H 3050 5300 30  0001 C CNN
 F 1 "VSS" H 3150 5350 30  0000 C CNN
 	1    3050 5300
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR024
+L GND #PWR029
 U 1 1 4B3F12CB
 P 2600 5300
-F 0 "#PWR024" H 2600 5300 30  0001 C CNN
+F 0 "#PWR029" H 2600 5300 30  0001 C CNN
 F 1 "GND" H 2600 5230 30  0001 C CNN
 F 4 "GND" H 2500 5350 60  0000 C CNN "Field1"
 	1    2600 5300

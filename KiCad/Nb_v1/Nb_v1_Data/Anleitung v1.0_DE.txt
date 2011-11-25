@@ -1,0 +1,1767 @@
+QLOCKTWO-Bauanleitung 
+Autor: Christian Ascho, cascho@mac.com 
+Version 1.0 vom 10.3.2011 
+Diese Anleitung gehört: 
+Die QLOCKTWO wurde gebaut 
+vom: 
+bis: 
+To-Do‘s: 
+CC BY-NC-SA 3.0: 
+Namensnennung- 
+Nicht-kommerziell- 
+Weitergabe unter gleichen 
+Bedingungen 3.0 
+Sie dürfen: 
+das Werk bzw. den Inhalt 
+vervielfältigen, verbreiten und 
+öentlich zugänglich machen 
+Abwandlungen und 
+Bearbeitungen des Werkes bzw. 
+Inhaltes anfertigen 
+Zu den folgenden Bedingungen: 
+Namensnennung - Sie müssen den 
+Namen des Autors/Rechteinhabers 
+in der von ihm festgelegten Weise 
+nennen. 
+Keine kommerzielle Nutzung - Dieses 
+Werk bzw. dieser Inhalt darf nicht für 
+kommerzielle Zwecke verwendet werden. 
+Weitergabe unter gleichen Bedingungen - 
+Wenn Sie das lizenzierte Werk bzw. den 
+lizenzierten Inhalt bearbeiten oder in anderer 
+Weise erkennbar als Grundlage für eigenes 
+Schaen verwenden, dürfen Sie die daraufhin 
+neu entstandenen Werke bzw. Inhalte nur 
+unter Verwendung von Lizenzbedingungen 
+weitergeben, die mit denen dieses 
+Lizenzvertrages identisch oder vergleichbar 
+sind.
+Vorwort 
+Diese Bauanleitung beschäftigt sich mit dem Bau einer sogenannten „Wortuhr“. Die Vorlage für 
+diese Wortuhr ist die „QLOCKTWO“ der Firma Biegert & Funk, die als Ernder dieses Uhrentyps 
+gelten dürften. 
+Die Firma Biegert & Funk hat mit großer Wahrscheinlichkeit nicht nur einen erheblichen Entwicklungsaufwand 
+betrieben, um diese Uhr zu entwerfen, sondern auch ein Geschmacksmuster auf die 
+Frontplatte oder das ganze Design angemeldet. 
+Ich möchte daher ausdrücklich darauf hinweisen: Diese Anleitung ist dafür gedacht, eine Wortuhr 
+im QLOCKTWO-Stil für den eigenen Gebrauch „zu Hause“ zu bauen und dabei eine Menge über das 
+sogenannte „physical computing“, also die Verbindung von Kleinstcomputern (Microcontrollern) 
+und der realen, physischen Welt zu lernen. Sie ist nicht dafür gedacht (und daher ist es über die 
+Lizenz ausgeschlossen) irgendwelche kommerziellen Produkte zu unterstützen oder QLOCKTWOs 
+für den Verkauf zu bauen. Ich lehne jedwelche Anfragen im Sinne von „Das Original ist so teuer, 
+können Sie mir nicht eine bauen? Ich bezahle auch das Material!“ ab. 
+Nach diesen ernsten Worten noch ein paar zu anderen Dingen: 
+Diese Anleitung geht davon aus, daß der QLOCKTWO-Bauer seinen Kopf einschaltet und eigenständig mitdenkt. Es wird dringend empfohlen, die 
+Anleitung zuerst ganz durchzuarbeiten und erst dann mit dem Bestellen von Bauteilen zu beginnen. Am besten liest man die Anleitung vor dem Bestellen 
+ein zweites Mal durch - so lange, bis sich keine oenen Fragen mehr ergeben. Viele Dinge sind optional oder lassen sich austauschen: die günstigen 
+weißen LEDs durch tolle, hellere „Superux“ LEDs mit größerem Abstrahlwinkel, die schwarze Folie durch eine rote, den schwarzen Ribba-Rahmen gibt 
+es auch in weiß etc. 
+Und noch eine Anmerkung zu der Frontplatte: es hat sich herausgestellt, daß der einfachste Weg zu einer schönen Frontplatte eine geplottete Folie aus 
+dem Werbefachhandel ist. Diese Folien sind keine Folien wie man sie in den Laserdrucker oder Titenstrahldrucker legen kann, sondern Folien, die mit 
+sogenannten Folienplottern geschnitten werden. Das bedeutet, ein Gerät wie eine CNC-Fräse steuert ein Messer, das dann aufgrund der Vektorangaben 
+in der Zeichnung die Folie einschneidet. Aber nur soweit, daß die Trägerfolie nicht mit eingeschnitten wird. Im Prinzip so, als würde man mit einem 
+Skalpell einen Aufkleber oder eine d-c-x-Folie einritzen. Dann kann man die Folie mit Hilfe einer zweiten Trägerfolie, dem "Application-Tape" auf die 
+Scheibe kleben. Diese Folien können die meisten Digitaldruckereien herstellen. Wenn man mit denen aushandelt, daß man die Buchstaben selbst 
+auslöst, wird es bezahlbar. 
+Na dann: Lötkolben vorwärmen und los! Oder wie Yoda sagen würde: 
+i Möge die Macht mit Dir sein!
+Sicherheitshinweise 
+Lötkolben, Heißklebepistole, Heißkleber und Heißluftpistolen 
+sind genau das: sehr heiß. Reinigungsmittel, 
+insbesondere Isopropanol sind leicht 
+entzündlich. 
+Während dem Aufbau ist überall ein Haufen Spannung 
+und Strom. Bei einer QLOCKTWO mit Steckernetzteil 
+oder Akkubetrieb (die empfohlenen Varianten) 
+ist das kein Problem. Bei dem Einbau eines 
+internen 220 Volt-Netzteils besteht Lebensgefahr. 
+Der Bau einer QLOCKTWO ist gefährlich. Teppichmesser, 
+Skalpelle, Glaskanten und Bohrer sind 
+scharf. SMD-Pinzetten und Bohrer sind spitz. Durch 
+das Abzwicken der Beine von Bauteilen iegen 
+Drahstücke durch die Gegend. Diese sind schädlich 
+für die Augen. 
+Die Matrix besteht aus sehr hellen „super bright“ 
+LEDs, und davon einer ganzen Menge. Niemals 
+direkt in die LED sehen, insbesondere, wenn während 
+dem Aufspielen der Firmware einzelne LEDs 
+aufgrund von Datenmüll in den Shift-Registern 
+ohne Multiplexing leuchten. 
+Die Matrix wird hochfrequent angesteuert und gibt 
+dabei Störimpulse in Form von Radiowellen ab. Das 
+Stört den DCF77-Empfänger, ein Problem, das wir 
+lösen werden. Um andere Dinge, die gestört 
+werden (Herzschrittmacher etc.) muß sich jeder 
+selbst kümmern. 
+Lötdämpfe, Reinigungsmittel, Schleifstaub, Kleber, 
+Farbe etc. sind eigentlich immer Gesundheitsschädlich. 
+Fazit: Der Bau einer QLOCKTWO ist in jeder Hinsicht 
+gefährlich. Es ist ratsam, eine Schutzbrille, Handschuhe 
+und ein Erste-Hilfe-Set parat zu haben. 
+Und? Mann oder Memme? Eben. Das Leben als Tüftler 
+und an sich ist gefährlich, also Kopf einschalten, 
+mitdenken, besonnen arbeiten und loslegen!
+Versionshistorie 
+Links 
+V 1.0 10.3.2011 Erstellt. 
+Aktuelle Firmware etc.: http://code.google.com/p/grosses-bastelwochenende/ 
+Blog des Autors: http://christians-bastel-leben.blogspot.com/ 
+Arduino: http://www.arduino.cc/ 
+Jee-Labs (RBBB): http://jeelabs.org/ 
+Reichelt: http://www.reichelt.de/ 
+Pollin: http://www.pollin.de/
+Materialliste 
+Der Ribba-Rahmen versteht sich von selbst (IKEA).
+Materialliste (fortgesetzt) 
+Eine gute Heißklebepistole. 
+Klebestifte zum Nachfüllen. 
+f Pro-Tipp: Isopropanol, falls man 
+den Heißkleber mal lösen muß. 
+(Siehe Make: Magazine „Simple 
+solution for removing dried 
+hot glue.“)
+Materialliste (fortgesetzt) 
+Fotokarton (Schreibwarengeschäft) 
+Liniale 
+Papierschere 
+Skalpell 
+Wasserfeste Stifte 
+Bleistifte
+Materialliste (fortgesetzt) 
+Alufolie 
+Klebebänder 
+Isolierbänder 
+f Pro-Tipp: Eine Heißluftpistole und 
+Schrumpfschläuche verschiedener 
+Größe erleichtern einem häug die 
+Arbeit.
+Materialliste (fortgesetzt) 
+Ein guter, feiner Lötkolben 
+Eine „Dritte Hand“ ist 
+ein guter Freund 
+(Conrad € 5,-) 
+Ein Bestückunsrahmen ist nicht 
+billig, aber er vereinfacht die Arbeit 
+ungemein. Es geht jedoch auch ohne. 
+Lötfett aus dem Baumarkt 
+Entlötlitze 
+Lötzinn mit einer Seele aus 
+Flußmittel
+Materialliste (fortgesetzt) 
+Ausreichend Silberdraht 
+(ca. 11-12 Meter) f Pro-Tipp: Steckbrettverbinder 
+sind nicht unbedingt nötig, 
+erleichtern die Arbeit aber 
+erheblich (Reichelt € 3,80). 
+Ein Set reicht. 
+farbige Litzen
+Materialliste (fortgesetzt) 
+ache Zangen zum Ziehen 
+der Silberdrähte SMD-Pinzette 
+Kneifzange mit achem Klemme 
+Kopf zum Abzwicken der 
+Bauteilbeine 
+f Pro-Tipp: Papierstapelhalter 
+können gute 
+Dienste leisten, wenn 
+man alleine ist.
+Materialliste (fortgesetzt) 
+7*220 Ohm 
+Widerstand 
+3*Lochrasterplatine 
+1*RBBB (Really Bare Bones Board) 
+f Pro-Tipp: Diese Materialien (ohne RBBB und DCF77) gibt es in einem vorgefertigten Warenkorb unter 
+http://secure.reichelt.de?ACTION=20;AWKID=30025 
+Den RBBB gibt es unter http://jeelabs.com/products/rbbb 
+Den DCF77-Empfänger gibt es bei http://www.pollin.de 
+1*grüne LED 
+1*Uhrenquarz 
+1*DCF77-Empfänger 
+1*Echtzeituhr 
+RTC1307 
+mit Sockel 
+1*Batterie 
+mit Halter 
+1*Z-Diode 
+3*Kurzhubtaster 
+1*gelbe LED 1*lichtabhängiger 
+Widerstand 
+114*weiße LED 
+mit großem 
+Önungswinkel 
+4*74HC595 
+Shift-Register 
+mit Sockeln 
+2*UDN2981A 
+Darlington-Arrays 
+mit Sockeln
+Materialliste (fortgesetzt) 
+Art. Nr. Bezeichnung Einzelpreis Menge Preis 
+0,032768 Mini Uhrenquarz, 0,032768 MHz, TC38 0,15 € 1 0,15 € 
+1/4W 220 Kohleschichtwiderstand 1/4W, 5%, 220 Ohm 0,10 € 10 0,33 € 
+74HC 595 IC-SCHALTUNG 0,30 € 4 1,18 € 
+A 906011 Fotowiderstand 0,95 € 1 0,95 € 
+APS 300 Stecker-Schaltnetzteil, max 600 mA, "EuP" konform 7,35 € 1 7,35 € 
+CR 1225 Lithium-Knopfzelle, 3 Volt, 38 mAh, 12,5x2,5mm 0,75 € 1 0,75 € 
+DS 1307 Real Time Clock I²C 56B NV SRAM, DIP-8 2,35 € 1 2,35 € 
+GS 16 IC-Sockel, 16-polig, doppelter Federkontakt 0,050 € 4 0,20 € 
+GS 18 IC-Sockel, 18-polig, doppelter Federkontakt 0,060 € 2 0,12 € 
+GS 8 IC-Sockel, 8-polig, doppelter Federkontakt 0,040 € 1 0,040 € 
+H25PS050 Punkt-Streifenrasterplati. Hartpapier, 50x100mm 0,81 € 3 2,43 € 
+KZH 12-1 Knopfzellenhalter für Ø 12 mm 1,05 € 1 1,05 € 
+LED 5-05000 WS LED, 5mm, ultrahell, farblos, klar, weiß 0,24 € 114 27,36 € 
+SILBER 0,6MM Silberdraht, Ø 0,6mm, Länge: 10M 1,75 € 1 3,50 € 
+SLH 56 GE LED, 5mm, superhell, eingefärbt, klar, gelb 0,080 € 1 0,080 € 
+SLH 56 GN LED, 5mm, superhell, eingefärbt, klar, grün 0,070 € 1 0,070 € 
+STECKBOARD DBS Steckbrücken-Drahtbrücken-Set 3,80 € 1 3,80 € 
+TASTER 3301D Kurzhubtaster 6x6mm, Höhe: 12,5mm, 12V, vert. 0,16 € 3 0,48 € 
+UDN 2981 A Source Driver, DIL-18 1,75 € 2 3,50 € 
+ZF 3,0 Zener-Diode 0,5W 3,0V 0,040 € 1 0,040 € 
+1/4W 22K Kohleschichtwiderstand 1/4W, 5%, 22 K-Ohm 0,10 € 10 0,33 € 
+Gesamt: 56,06 € 
+Die Artikelnummern sind die von der Firma Reichelt. Zusätzlich brauchen wir von Ikea, Pollin und Jee-Labs 
+Ribba-Rahmen 15,99 € 1 15,99 € 
+810 054 DCF-Empfangsmodul DCF1 4,95 € 1 4,95 € 
+RBBB Really Bare Bones Board 13,50 € 1 13,50 € 
+Gesamt: 90,50 € 
+Dazu kommt dann natürlich noch Kleinkruscht: Fotokarton, Verbrauchsmaterial wie Lötzinn, Litze etc.
+Silberdraht Vcc 
+(Lötseite!) 
+Silberdraht GND 
+(Lötseite!) 
+Vorbereiten der Lochrasterplatinen 
+In den schematischen Darstellungen für die Verdrahtung 
+der Platinen sind die Lochrasterplatinen „ideal“ 
+dargestellt. Jede Reihe hat immer drei Löcher. In der Realität sieht das anders aus. Bei dem Beispiel oben hat die obere 
+Reihe fast immer drei Löcher, die untere hat aber nur zwei Lochreihen. 
+Das ist leider bei fast jeder Platine ein bisschen anders. 
+Damit wir uns nachher einfacher auf der Platinenseite 
+zurechtnden, die kein Kupfer hat, zeichnen wir uns 
+Markierungen auf die Platine. Dazu eignen sich 
+Permanent-Marker und ein Lineal. 
+Wir ziehen rote Linien für die Kontaktächen, die später durch den Silberdraht 
+zu Vcc (“Voltage of the common collector“ - Plus) verbunden 
+werden und blaue Linien durch diejenigen, die später mit dem Silberdraht 
+zu GND werden (Ground, wie der Fachmann sagt). Die dazwischenliegenden 
+Dreierreihen werden mit schwarzen Linien abgetrennt. 
+R
+eihe 
+V c c 
+Z
+wischenlinie R
+eihe GND
+Vorbereiten der Lochrasterplatinen (fortgesetzt) 
+Damit man sich bei der Verkabelung der Lochrasterplatinen 
+nicht vertut, klebt man kleine Chip-Vorlagen auf. 
+Dafür braucht man die Vorlage vom 74HC595 Shift-Register 4 mal, die von dem UDN 
+2981A Darlington-Array 2 mal und die von der RTC1307 Echtzeituhr 1 mal. Die 
+Positionen ndet man auf den schematischen Verkabelungsplänen von dem 
+Kathoden-Multiplexer, Anoden-Mutliplexer und der Steuerplatine (auf den folgenden 
+Seiten). 
+Q1 
+Q2 
+Q3 
+Q4 
+Q5 
+Q6 
+Q7 
+GND 
+VCC 
+Q0 
+SER 
+OE 
+STCLK 
+SHCLK 
+MR 
+Q7‘ 
+Q1 
+Q2 
+Q3 
+Q4 
+Q5 
+Q6 
+Q7 
+GND 
+VCC 
+Q0 
+SER 
+OE 
+STCLK 
+SHCLK 
+MR 
+Q7‘ 
+Q1 
+Q2 
+Q3 
+Q4 
+Q5 
+Q6 
+Q7 
+GND 
+VCC 
+Q0 
+SER 
+OE 
+STCLK 
+SHCLK 
+MR 
+Q7‘ 
+Q1 
+Q2 
+Q3 
+Q4 
+Q5 
+Q6 
+Q7 
+GND 
+VCC 
+Q0 
+SER 
+OE 
+STCLK 
+SHCLK 
+MR 
+Q7‘ 
+X1 
+X2 
+VBAT 
+GND 
+VCC 
+SQW 
+SCL 
+SDA 
+IN1 
+IN2 
+IN3 
+IN4 
+IN5 
+IN6 
+IN7 
+IN8 
+VCC 
+OUT1 
+OUT2 
+OUT3 
+OUT4 
+OUT5 
+OUT6 
+OUT7 
+OUT8 
+GND 
+IN1 
+IN2 
+IN3 
+IN4 
+IN5 
+IN6 
+IN7 
+IN8 
+VCC 
+OUT1 
+OUT2 
+OUT3 
+OUT4 
+OUT5 
+OUT6 
+OUT7 
+OUT8 
+GND 
+4*74HC595 Shift-Register 
+2*UDN2981A 
+Darlington-Array 
+1*RTC1307 
+Real-Time-Clock 
+Achtung! Die Aufkleber 
+sind kleiner als der Chip, da 
+ja die Beine vom Chip bzw. 
+der Fassung noch außenherum 
+passen müssen. 
+Achtung! Die Aufkleber 
+haben die gleichen kleinen 
+„Nasen“ wie die Chips. Auf 
+die richtige Richtung 
+achten!
+Jetzt geht es los! 
+Ok. Wir sind jetzt so weit, daß wir die erste Platine zusammenlöten können. Um 
+sich irrsinnige Mengen an Abisolierungen und Verzinnungen von Kabelmeterware 
+zu ersparen, kann man für die Verbindung auf den Leiterplatten sehr gut 
+Drähte aus einem Steckbrückensortiment für Steckbretter nehmen. 
+Außerdem leistet eine SMD-Pinzette gute Dienste, um die kleinen Brücken in die 
+Platine zu fummeln. 
+Wer keinen Bestückungsrahmen hat, sollte eine zweite Person (Freund/-in, 
+Partner/-in, Geschwister, Eltern, Kinder etc.) zur Hand haben. 
+Die Steckbrücken haben verschiedene Längen. Jede Länge hat eine eigene 
+Farbe. 
+Beim Löten unbedingt darauf 
+achten, daß die Lötstellen gut 
+und sauber sind. Kalte Lötstellen 
+sind im Nachhinein schwer zu 
+nden. Zuerst Bauteilbein und 
+Platine erhitzen, dann Lötzinn 
+zugeben. 
+Besser vorher doppelt prüfen 
+und gegebenenfalls nachlöten. 
+Die Leiterplatten und Fassungen 
+halten einiges aus. (Die Chips 
+nicht, aber dafür haben wir ja die 
+Fassungen.) 
+1. Bein und Kupfer erhitzen 
+2. Lötzinn zugeben 
+3. Fünf Sekunden nicht bewegen
+Der Kathoden-Multiplexer 
+Zuerst verlötet man nur die Kabel (immer mit den achsten 
+Bauteilen anfangen). 
+Die kleinen Verbinder kann man gut selbst aus Silberdraht 
+oder abgezwickten Beinen von Bauteilen biegen. 
+Links: Die Fassungen für die 
+Chips auöten (Achtung mit 
+der Richtung der „Nase“). 
+Rechts: Die Rückseite mit 
+den Silberdrähten für Vcc 
+und GND (Ground). 
+Q 1
+Q 2
+Q 3
+Q 4
+Q 5
+Q 6
+Q 7 
+GND 
+V
+C C
+Q 0 
+SER OE 
+ST 
+CLK 
+SH 
+CLK MR Q
+7‘ 
+Q 1
+Q 2
+Q 3
+Q 4
+Q 5
+Q 6
+Q 7 
+GND 
+V
+C C
+Q 0 
+SER OE 
+ST 
+CLK 
+SH 
+CLK MR Q
+7‘ 
+S
+er 
+ial-I 
+n 
+(v 
+om A 
+noden- 
+M
+ultiple 
+x
+er) 
+O
+utput 
+-Enable 
+S t
+or 
+e
+-
+Clock (La 
+t
+ch)
+S
+er 
+ial- 
+Clock 
+Q0-Q7 und Q0-Q2 
+Matrix (GND) 
+Q3-Q6 je eine Kathode 
+der Eck-LEDs. Oben links, 
+oben rechts, unten rechts, 
+unten links. 
+Silberdraht Vcc 
+(Lötseite!) 
+Silberdraht GND 
+(Lötseite!) 
+1. Spalte 
+der LEDMatrix! 
+Die Widerstände 
+sind optional. Sie 
+sollen die LEDs 
+schützen.
+Der Anoden-Multiplexer 
+Q 1
+Q 2
+Q 3
+Q 4
+Q 5
+Q 6
+Q 7 
+GND 
+V
+C C
+Q 0 
+SER OE 
+ST 
+CLK 
+SH 
+CLK MR Q
+7‘ 
+Q 1
+Q 2
+Q 3
+Q 4
+Q 5
+Q 6
+Q 7 
+GND 
+V
+C C
+Q 0 
+SER OE 
+ST 
+CLK 
+SH 
+CLK MR Q
+7‘ 
+S
+er 
+ial-I 
+n 
+(v 
+om RBBB) 
+S
+er 
+ial- 
+O
+ut 
+(zum K 
+a
+thoden- 
+M
+ultiple 
+x
+er) 
+O
+utput 
+-Enable 
+S t
+or 
+e
+-
+Clock (La 
+t
+ch)
+S
+er 
+ial- 
+Clock 
+Silberdraht Vcc 
+(Lötseite!) 
+Silberdraht GND 
+(Lötseite!) 
+IN
+1 
+IN
+2 
+IN
+3 
+IN
+4 
+IN
+5 
+IN
+6 
+IN
+7 
+IN
+8 
+V
+CC 
+OUT 
+1 
+OUT 
+2 
+OUT 
+3 
+OUT 
+4 
+OUT 
+5 
+OUT 
+6 
+OUT 
+7 
+OUT 
+8 GND 
+IN
+1 
+IN
+2 
+IN
+3 
+IN
+4 
+IN
+5 
+IN
+6 
+IN
+7 
+IN
+8 
+V
+CC 
+OUT 
+1 
+OUT 
+2 
+OUT 
+3 
+OUT 
+4 
+OUT 
+5 
+OUT 
+6 
+OUT 
+7 
+OUT 
+8 GND 
+Out1-Out8 und Out1-Out2 
+zu den Anoden der Matrix 
+1. Reihe 
+der LEDMatrix! 
+Der Anoden-Multiplexer ist im oberen Bereich identisch 
+mit dem Kathoden-Multiplexer. Unten kommen dann 
+zur Verstärkung die UDN2981A-Chips dazu. 
+Links: Die Fassungen für die 
+Chips auöten (Achtung mit 
+der Richtung der „Nase“). 
+Rechts: Die Rückseite mit 
+den Silberdrähten für Vcc 
+und GND (Ground).
+Die Steuerplatine 
+Die Steuerplatine ist das „Herz“ unserer 
+QLOCKTWO und damit etwas aufwändiger. 
+Um nicht durcheinander zu kommen, 
+steckt man die Bauteile zur Probe mal in 
+die Lochrasterplatine und markiert die 
+Umrisse und wichtige Punkte mit einem 
+Permanent-Marker. 
+RBBB 
+GND Batterie (später durch Batteriehalterung verdeckt!) 
+Plus-Pol der Batterie 
+gelbe/grüne Drei Taster-Anschlüsse 
+LED-Anschlüsse 
+S
+er 
+ial- 
+O
+ut (zum A 
+noden-M 
+ultiple 
+x
+er) 
+Sig 
+nal v 
+om DCF77-Empfänger
+O
+utput 
+-Enable 
+T
+ast 
+er 
+„M 
+odus“ 
+T
+ast 
+er 
+„S 
+tunde+“ 
+T
+ast 
+er 
+„M 
+inut 
+e+“(ale zurück zu 
+VC 
+C
+) 
+St 
+or 
+e
+-
+Clock (La 
+t
+ch)
+S
+er 
+ial- 
+Clock 
+Silberdraht Vcc 
+(Lötseite!) 
+Silberdraht GND 
+(Lötseite!) 
+3V für DCF77-Empfänger 
+X
+1 
+X
+2 
+V
+BA 
+T GND 
+V
+C C 
+SQWSCLSD 
+A 
++ 
+Achtung! 
+Quarz ist auf der Lötseite, 
+damit das Gehäuse an 
+Optionaler Schaltungs- GND liegen kann! 
+teil, für eine lichtabhängige 
+Steuerung. 
+D9 D10D11D12D13GNDAREFGNDA0 A1 A2 A3 A4 A5 GND5V 
+D8 D7 D6 D5 5V R 5V GND 
+X 
+T
+D4 D3 D2 X RST 
+ATMega 328
+Die Steuerplatine (fortgesetzt) 
+Oben: Zuerst werden Widerstände und Stromversorgungen 
+angelötet. 
+Unten: Die Leitungen zu den LEDs und Tastern werden 
+angelötet. 
+Rechts: Die SQWSignalleitung 
+(Square- 
+Wave-Signal) und die 
+Leitungen für den 
+I2C-Bus werden angelötet 
+(SCL = Serial Clock 
+Line; SDA = Serial Data 
+Line). 
+S
+er 
+ial- 
+O
+ut (zum A 
+noden-M 
+ultiple 
+x
+er) 
+Sig 
+nal v 
+om DCF77-Empfänger
+O
+utput 
+-Enable 
+T
+ast 
+er 
+„M 
+odus“ 
+T
+ast 
+er 
+„S 
+tunde+“ 
+T
+ast 
+er 
+„M 
+inut 
+e+“(ale zurück zu 
+VC 
+C
+) 
+St 
+or 
+e
+-
+Clock (La 
+t
+ch)
+S
+er 
+ial- 
+Clock 
+Silberdraht Vcc 
+(Lötseite!) 
+Silberdraht GND 
+(Lötseite!) 
+3V für DCF77-Empfänger 
+X
+1 
+X
+2 
+V
+BA 
+T GND 
+V
+C C 
+SQWSCLSD 
+A 
++ 
+Achtung! 
+Quarz ist auf der Lötseite, 
+damit das Gehäuse an 
+Optionaler Schaltungs- GND liegen kann! 
+teil, für eine lichtabhängige 
+Steuerung. 
+D9 D10D11D12D13GNDAREFGNDA0 A1 A2 A3 A4 A5 GND5V 
+D8 D7 D6 D5 5V R 5V GND 
+X 
+T
+D4 D3 D2 X RST 
+ATMega 328
+Die Steuerplatine (fortgesetzt) 
+Oben: Die hohen Bauteile werden aufgelötet. Bei den 
+LEDs auf die richtige Polung achten (ache Gehäuseseite 
+zu GND)! 
+Unten: Rückseite mit Vcc und GND. 
+Rechts: Das RBBB wird 
+eingelötet. Natürlich 
+muß man es vorher 
+zusammenlöten (nach 
+der Anleitung bei 
+JEE-Labs). Mit dem 
+Power-Jack sollte man 
+warten bis die Stromversorgung 
+geklärt ist. 
+S
+er 
+ial- 
+O
+ut (zum A 
+noden-M 
+ultiple 
+x
+er) 
+Sig 
+nal v 
+om DCF77-Empfänger
+O
+utput 
+-Enable 
+T
+ast 
+er 
+„M 
+odus“ 
+T
+ast 
+er 
+„S 
+tunde+“ 
+T
+ast 
+er 
+„M 
+inut 
+e+“(ale zurück zu 
+VC 
+C
+) 
+St 
+or 
+e
+-
+Clock (La 
+t
+ch)
+S
+er 
+ial- 
+Clock 
+Silberdraht Vcc 
+(Lötseite!) 
+Silberdraht GND 
+(Lötseite!) 
+3V für DCF77-Empfänger 
+X
+1 
+X
+2 
+V
+BA 
+T GND 
+V
+C C 
+SQWSCLSD 
+A 
++ 
+Achtung! 
+Quarz ist auf der Lötseite, 
+damit das Gehäuse an 
+Optionaler Schaltungs- GND liegen kann! 
+teil, für eine lichtabhängige 
+Steuerung. 
+D9 D10D11D12D13GNDAREFGNDA0 A1 A2 A3 A4 A5 GND5V 
+D8 D7 D6 D5 5V R 5V GND 
+X 
+T
+D4 D3 D2 X RST 
+ATMega 328
+Ein erster Etappensieg!
+Vorbereiten des Ribba-Rahmens 
+Der Ribba-Rahmen hat 
+auf der Rückseite eine 
+kleine Aussparung, mit 
+derer Hilfe man die 
+Rückwand herausnehmen 
+kann. 
+Aufhänger 
+Rückwand 
+Außenrahmen 
+Schutzpapier 
+Glas (Achtung! Die Kanten sind unbehandelt und das Glas ist daher am Rand sehr scharf!) 
+Innenrahmen 
+Passepartout 
+Als Erstes legen wir die Rückwand auf das Glas und dann 
+den Innenrahmen darauf. Dann zeichnen wir die Innenkante 
+des Innenrahmens auf der Vorder- und Rückseite 
+der Rückwand nach. Diese Fläche ist „Sperräche“ auf 
+der wir später nicht arbeiten können.
+Vorbereiten des Ribba-Rahmens (fortgesetzt) 
+Jetzt werden wir viele Dinge auf 
+die Rückwand zeichnen, also 
+Bleistift spitzen und los! 
+Zuerst schreiben wir „Oben“ und 
+„Unten“ mit einem Permanent- 
+Marker auf beide Seiten. 
+Dann zeichnen wir einen Innenrahmen 
+mit einer Kantenlänge von 
+350 mm auf beide Seiten (Abstand 
+zum Außenrand 75 mm). 
+Danach zeichnen wir das Gitter und die Bohrlöcher auf die Rückseite der Rückwand. Besser gesagt, auf irgendeine Seite, diese wird dadurch zu Rückseite. 
+Wir haben 11 Spalten und 10 Reihen. Ein Kästchen hat damit eine Breite von 350 mm / 11 = 31,82 mm und eine Höhe von 350 mm / 10 = 35 mm. 
+Diese Strecken kann man gut mit dem Zirkel aufnehmen und dann an dem Rand des Innenrahmens abtragen. Dann werden Diagonalen in die Kästchen 
+gezeichnet. Der Schnittpunkt der Diagonalen ist die Vorgabe für das Bohrloch. 
+Natürlich kann man sich auch die Bohrschablone ausdrucken und damit die Löcher markieren. f Pro-Tipp von Michael: Wer keinen Posterplotter hat, 
+kann die Vorlage via Adobes Acrobat Reader in 1:1 „gekachelt“ ausdrucken und zusammenkleben. 
+Die Lochmarkierungen für die 
+Eck-LEDs haben einen Abstand von 
+25 mm zum Rückwand-Rand. 
+Alles nochmal überprüfen, wenn 
+die Löcher erst gebohrt sind, ist es 
+zu spät.
+Löcher bohren 
+Oben: Für die LEDs bohrt man Löcher mit 5 mm Durchmesser. 
+Unten: Für die Silberdrahtdurchführungen nimmt man 
+einen sehr feinen Bohrer. 
+Achtung! Der Ribba-Rahmen ist nicht aus Holz, sondern 
+aus gepresster Pappe. Daher beim Bohren mit wenig 
+Druck arbeiten. 
+Rechts: Fertig 
+gebohrte Rückwand 
+der 
+QLOCKTWO.
+LEDs bestücken und Matrix löten 
+Die weißen LEDs 
+werden nach dem 
+LED-Löt-Schema auf ein 
+Gitter von Silberdrähten 
+gelötet (Kathode unten 
+rechts, Anode oben 
+links). 
+rundes Gehäuse, 
+langes Bein = 
+Anode 
+aches Gehäuse, 
+kurzes Bein = 
+Kathode 
+Oben: Die Polarität und Funktionstüchtigkeit 
+einer LED kann man mit einer alten CR 2032- 
+Knopfzelle testen. Nicht mit anderen Batterien 
+(oder nur mit Vorwiderstand). 
+f Pro-Tipp: Eine CR 2032 kostet 0,33 € bei 
+Reichelt und 4,50 € im Elektrofachhandel. 
+Unten: Zuerst schneiden wir 10 
+Silberdrähte ab und stecken diese 
+durch die Löcher, so daß wir 10 
+Querreihen haben. Die Silberdrähte 
+sollten etwa 2 cm auf der anderen 
+Seite überstehen. 
+Rechts: Dann bestücken wir 
+die erste Reihe oben mit 
+LEDs. Wenn man gleich die 
+ganze Matrix bestückt, 
+erschwert das die Lötarbeit.
+LEDs bestücken und Matrix löten (fortgesetzt) 
+Links: Die Anoden-Beine 
+der LEDs werden umgeboden 
+(die anderen 
+nicht!) und dann auf den 
+Silberdraht gelötet. 
+Der Silberdraht dehnt 
+sich beim Löten aus, 
+daher fangen wir in der 
+Mitte an! 
+Wieder ist eine zweite 
+Person hilfreich, die die 
+Beine runterdrückt. 
+Oben: Der Überstand der Beine wird abgezwickt. 
+Unten: So sollte die erste Hälfte der Matrix aussehen. Da 
+das eine ermüdende Arbeit ist, muß man in dieser Phase 
+besonders auf die Polung der LEDs und sauberes Löten 
+achten. 
+Rechts: Dann werden die 
+Silberdrähte für die 
+Kathoden eingezogen 
+und die Kathoden der 
+LEDs analog zu den 
+Anoden angelötet.
+LEDs bestücken und Matrix löten (fortgesetzt) 
+Gute Arbeit, junger Padawan! 
+i
+Matrix isolieren 
+Links: Für die Isolierung 
+zwischen den Anoden und 
+Kathoden zerlegen wir das 
+Passepartout von dem 
+Ribba-Rahmen. 
+Oben: Wir brauchen zehn Streifen in der Länge der 
+Rahmenbreite. 
+Unten: Wir unterteilen die langen Stücke in 2 cm- 
+Streifen. Das Schneiden der Streifen geht gut mit einem 
+Teppichmesser. 
+Rechts: Die Streifen 
+werden dann vorsichtig 
+zwischen die Anodenreihen 
+(Oberseite) und Kathodenreihen 
+(Unterseite) 
+geschoben. Wenn sich 
+dabei Beine von den 
+Silberdrähten lösen: Super! 
+Wir haben eine kalte 
+Lötstelle gefunden, die uns 
+nachher geärgert hätte. 
+Einfach nachlöten.
+Matrix testen 
+Links: Nachdem die Matrix 
+isoliert ist, geht es an das 
+Testen. Dazu versorgen wir 
+jede Reihe und Spalte 
+einmal kurz mit Strom und 
+schauen, ob die entsprechende 
+LED leuchtet. 
+Oben: Für unser high-tech Matrix-LED-Testgerät biegen 
+wir zwei Silberdrahtstücke zu Spiralen, kleben sie mit 
+Tesa an eine alte CR 2032-Knopfzelle und klemmen 
+Krokodil-Klemmen an. 
+Unten: Die angesprochene LED leuchtet wie erwartet. 
+CR 2032 Knopfzelle 
+gebogener Silberdraht 
+Krokodil-Klemme 
+Minus-Pol 
+Plus-Pol
+Ein weiterer Etappensieg!
+Steuerplatinen anschliessen 
+Diese Flachbandkabel 
+verbinden die Multiplexer 
+mit der LEDMatrix. 
+Kabel zum Verbinden von Vcc und Ground 
+Kabel zum Verbinden 
+von Serial-Data, Latch, 
+Clock, Output-Enable 
+Abgeschirmtes Kabel für 
+die Signalleitung von dem 
+DCF77-Empfänger 
+Taster 
+Kabel zum Verbinden 
+der Taster
+Steuerplatinen anschliessen (fortgesetzt) 
+Die Flachbandkabel (oder auch Einzelkabel) werden 
+abisoliert und verzinnt. Achtung! Wir brauchen einmal 
+10 Adern und einmal 11 Adern! 
+Dann werden sie an die Ausgänge vom Kathoden- und 
+Anodenmultiplexer gelötet. 
+Wie schon vorher erwähnt: Immer, 
+wenn irgendwo bei der Arbeit Kabel 
+wegfallen oder sich lösen: Großartig! 
+Der Fehler hätte uns später geärgert 
+(und da kommen erfahrungsgemäß 
+genug). Nicht ärgern sondern freuen, 
+beseitigen und weiter gehts! 
+kleiner Einschub am Rande:
+Chips bestücken 
+Links: Wenn die Flachbandkabel 
+angelötet sind, können die Chips 
+eingesetzt werden. Ein großer 
+Moment im Leben eines 
+QLOCKTWO-Bastlers! 
+2*UDN2981A 
+4*74HC595
+1*DS1307 
+Rechts: Die Chips sind (aus mir 
+unbekannten Gründen) ein klein 
+wenig größer als die Fassungen. 
+Daher muß man sehr behutsam 
+die Beine etwas zusammendrücken. 
+Unten: Die Chips haben als Markierung 
+für die Richtung eine kleine Aussparung 
+oder „Nase“. Die Fassungen haben diese 
+Nase auch. 
+Unten: Jetzt sind alle Platinen bereit und müssen „nur 
+noch“ an die Matrix angeschlossen und untereinander 
+verbunden werden.
+Steuerplatinen anschliessen (fortgesetzt) 
+Links: Die Flachbandkabel 
+werden am Besten mit einem 
+Skalpell in die Einzeladern aufgetrennt. 
+Ein paar Zentimeter kann 
+man zusammen lassen, da das 
+Kabel unter der Platine geführt 
+wird. 
+Oben: Die Kabel werden an die Matrix angelötet. Achtung! 
+Der mit „1“ markierte Ausgang ist die oberste 
+Reihe, das bedeutet, die Kabel müssen beim Anoden- 
+Multiplexer gekreuzt werden. 
+Unten: Der fertig angelötete Anoden-Multiplexer. 
+Rechts: Der zweite Multiplexer 
+wird genauso angelötet, die 
+Adern müssen aber nicht 
+gekreuzt werden. Danach 
+werden die Ausgänge der Matrix 
+isoliert, damit es keine Kurzschlüsse 
+gibt und die Kabel sich 
+nicht verheddern.
+Steuerplatinen verbinden 
+Links: Mit roten und blauen 
+Kabeln werden die Vcc- und 
+Ground-Bereiche auf den Platinen 
+miteinander verbunden. 
+Rechts: Serial-Clock, Store-Clock 
+(Latch), Serial-Data und Output- 
+Enable werden aus dem RBBB 
+herausgeführt. Das Serial-Out- 
+Kabel muß so lange sein, daß es 
+an den Anoden-Multiplexer oben 
+passt! Der Rest der Kabel wird von 
+Platine zu Platine durchgeschliffen. 
+Unten: Serial-Clock, Store-Clock (Latch) und Output- 
+Enable gehen in den Kathodenmultiplexer rechts rein 
+und links raus. Das Serial-Data-Kabel geht weiter, links 
+kommt es vom Anoden-Multiplexer. 
+Rechts: Serial-Clock, Store-Clock 
+(Latch) und Output-Enable 
+kommen vom Kathoden- 
+Multiplexer. Serial-Data geht vom 
+RBBB kommend oben rein, unten 
+geht es raus und wird an den 
+Kathoden-Multiplexer gereicht. 
+Kathoden-M. RBBB 
+A
+noden-M. Serial-Clock, Store-Clock 
+(Latch), Output-Enable 
+Serial-Data
+Ausug: Wie kommt die Software auf den RBBB? 
+Links: Die Entwicklungsumgebung läd 
+man unter www.arduino.cc kostenlos 
+herunter und installiert sie (zusammen 
+mit den FTDI-Treibern!). 
+Rechts: Der entpackte Arduino-Ordner 
+muß unter Documents (Windows: „My 
+Documents“) liegen. Andernfalls werden 
+die Bibliotheken nicht gefunden. 
+Unten: An den RBBB wird der USB-BUB angeschlossen, 
+dieser via USB an den Computer. 
+Board auswählen: Arduino 
+Duemilanove w/ ATmega328 
+Serial Port auswählen: 
+irgendwas mit USB (je 
+Rechner verschieden). 
+Qlockthree.pde önen 
+Auf das RBBB hochladen
+Es werde Licht! 
+Gute Arbeit für einen Humanoiden! 
+u f Pro-Tipp: Auch ohne Taster kann man gegen Vcc schalten.
+Eck-LEDs anschliessen 
+Links: Die Kathode der Eck-LEDs 
+wird so umgebogen, daß sie 
+durch das kleine Loch passt. 
+Oben: Die LEDs werden in die Löcher gesteckt. 
+Unten: Die Anoden der LEDs werden an 
+die Matrix angelötet. Oben links an die 1. 
+Reihe, oben rechts an die 2., unten rechts 
+an die 3. und unten links an die 4. 
+Rechts: Die Kathoden werden an 
+den Kathoden-Multiplexer 
+angelötet. (Reihenfolge: Oben 
+links, oben rechts, unten rechts, 
+unten links.) 
+rundes Gehäuse, 
+langes Bein = 
+Anode 
+aches Gehäuse, 
+kurzes Bein = 
+Kathode
+DCF77-Empfänger anschliessen 
+Oben: Dem DCF77-Empfänger von Pollin liegt ein 
+falsches Datenblatt bei. Bei neueren Bestellung liegt ein 
+zweites Datenblatt außerhalb der antistatischen Verpackung 
+bei - das ist dann richtig, aber immernoch schwer 
+zu interpretieren. 
+Oben zu sehen: Links ist die gelbe Stromversorgung (die 
+im neuen Datenblatt auf 3 Volt abgesenkt wurde). Der 
+zweite Pin von rechts ist die Signalleitung. Der Empfänger 
+reagiert empndlich auf Störungen aller Art, besonders 
+durch das hochfrequente Multiplexing. Daher wird 
+er räumlich weit weg montiert (oben rechts) und die 
+Signalleitung abgeschirmt. Statt einem abgeschirmtem 
+Kabel kann man auch ein normales Kabel nehmen und 
+in Alufolie einwickeln, die dann auf Ground gelegt wird. 
+Die zwei verbleibenden Pins gehen auf Ground, einer zur 
+Stromversorgung und der andere ist „PON“, womit man 
+den Empfänger schlafen legen kann (was wir aber nicht 
+benutzen). 
+Oben: Der DCF77-Empfänger wird an die Steuerplatine 
+angeschlossen. 
+f Pro-Tipp: Die Qualität des empfangenen Signals lässt 
+sich gut an der LED ablesen. Da das Zeitsignal mit einem 
+Impuls von 100ms Länge (für eine 0) und 200ms Länge 
+(für eine 1) pro Sekunde übertragen wird, muß die LED 
+im Gleichtakt mit der LED von der Real-Time-Clock 
+leuchten. Einmal pro Minute muß sie für eine Sekunde 
+dunkel bleiben, das ist der Synchronisierungs-Punkt. 
+Wenn die LED wild ackert ist der Empfang gestört 
+(durch den Computermonitor oder Ähnliches). 
+Mit der Elektronik sind wir jetzt (fast) fertig! Noch fehlen die Taster, aber die 
+heben wir uns bis zum Schluß auf. Da die Taster ja mit dem Gehäuse und der 
+Steuerplatine verbunden sind, ist das Önen/Schliessen des Ribba-Rahmens 
+dann mühsamer. Also machen wir erst alles Andere fertig, und zum Schluß 
+kommen dann die Taster. Va bene?
+Lichtgitter bauen
+Lichtgitter bauen (fortgesetzt) 
+11*horizontal (zweimal nicht einschneiden) 
+12*vertikal (zweimal nicht einschneiden) 
+Das Lichtgitter soll verhindern, daß die LEDs auf benachbarte Buchstaben leuchten. 
+Dazu schneiden wir aus dem Fotokarton 2,5 cm hohe Streifen mit einer Länge 
+von 35 cm. Diese Streifen unterteilen wir in 11 Teile (auf 11 Streifen) und in 10 Teile 
+(auf 12 Streifen). Entlang diesen Unterteilungen schneiden wir die Streifen bis zur 
+Hälfte zweimal ein. Dann stecken wir die Streifen geschickt ineinander und erhalten 
+das unten abgebildete Gitter. 
+Das ist einer der fummeligsten Arbeiten überhaupt, also ruhig bleiben! 
+350 mm 
+25 mm 
+31,8 mm 
+35 mm 
+An diesen Markierungen doppelt einschneiden!
+Lichtgitter bauen (fortgesetzt)
+Links und rechts: Die zur Hälfte 
+eingeschnittenen Gitterstreifen 
+werden ineinandergesteckt. 
+f Pro-Tipp: Wenn man die Möglichkeit 
+hat, die Gitterstreifen zu 
+Laminieren: unbedingt nutzen! 
+Sie werden dadurch wesentlich 
+stabiler und reißen nicht so 
+schnell aus. 
+Unten: So sieht ein Gitter aus, wenn man den Schnitt nur 
+einmal ausführt! Das ganze Gitter spannt, da das Papier 
+zwar dünn ist, aber eben doch etwas Platz im Schnitt 
+braucht. 
+Unten: So sieht es besser aus. Durch den Doppelschnitt 
+haben die Streifen Platz und das Gitter ist schön regelmäßig. 
+Zur Belohnung kann man es mal aufsetzten 
+(nächste Seite).
+Lichtgitter bauen (fortgesetzt) 
+e 
+Das ist so cool!
+Lichtgitter bauen (fortgesetzt) 
+Links: Jetzt müssen noch die 
+„Außenwände“ montiert werden. 
+Dazu brauchen wir ein paar 2,5 cm 
+hohe Papierstreifen und Klebsto 
+(und etwas Geduld). 
+Rechts: Aus den Papierstreifen 
+machen wir uns einen Haufen 2,5 
+cm hohe „Ecken“, mit denen wir 
+dann die Streifen für die Außenwände 
+an die frei stehenden Gitterstreifen 
+kleben. 
+Für die Eck-LEDs brauchen wir vier separate Kästchen. 
+Das Muster rechts ist im Maßstab 1:1. Einfach 
+ausschneiden, an den gestrichelten Linien falten 
+und zusammenkleben.
+Lichtgitter bauen (fortgesetzt) 
+w 
+Ich fühle die Macht...
+Folie kaschieren 
+ausgelöste Folie 
+Glasplatte 
+Küchenhandtücher 
+Wasser 
+Spülmittel 
+Glasreiniger Küchenrolle 
+Rakel 
+Küchenschwamm 
+(neu) 
+Handschuhe
+Folie kaschieren (fortgesetzt) 
+Zuerst wird die Glasplatte mit 
+dem Glasreiniger sauber geputzt. 
+Was später zwischen Folie und 
+Glas ist, kann nie wieder entfernt 
+werden. 
+Dann wird die Glasplatte mit 
+Spülwasser eingeschmoddert. 
+Tipp: Einfachstes Spülmittel ohne 
+Zusätze wie Handbalsam etc. 
+nehmen. 
+Bei dem Abziehen der Folie von 
+dem Trägermaterial aufpassen, es 
+bleiben gerne die feinen Innenteile 
+von Buchstaben hängen. 
+Am Besten zieht man die Trägerfolie 
+über eine Tischkante nach 
+unten weg. Eine zweite Person ist 
+hier hilfreich!
+Folie kaschieren (fortgesetzt) 
+Links: Die abgezogene Folie. 
+Rechts: Die Folie wird auf das mit 
+Spülmittel eingeschmodderte 
+Glas gelegt. Durch das Spülmittel 
+klebt sie noch nicht fest, sondern 
+ist positionierbar. Wer (so wie ich) 
+viel Spülmittel genommen hat, 
+muß eventuell erst einmal auf der 
+Vorderseite etwas Spülmittel 
+herausdrücken. 
+Unten: Auf der Rückseite drücken wir jetzt von der Mitte 
+ausgehend mit dem Rakel das Spülmittel zwischen Folie 
+und Glas heraus. 
+Unten: Die fertige Frontplatte mit der aufkaschierten 
+Folie liegt zur Probe auf dem Lichtgitter. Das sieht doch 
+schon ganz gut aus, oder?
+Finale: Taster montieren 
+In den Ribba-Rahmen bohren 
+wir drei Löcher. Die Taster 
+sollten nicht alle drei nebeneinander 
+liegen, da man dann 
+später nicht mehr weiss, 
+welcher Taster welche Bedeutung 
+hat. Besser ist es, den 
+Modus-Taster auf die eine und 
+die Stell-Taster auf die andere 
+Seite zu legen. 
+bündig Abschliessen 
+Oben: Die Taster sind eine winziges Fitzelchen zu kurz, 
+wir müssen daher um das Bohrloch herum die Rahmenstärke 
+etwas dünner machen. Der Rahmen ist aus Presspappe, 
+daher geht das mit einem Teppichmesser ganz 
+gut. 
+Unten: Die Rahmenverdünnung sollte so sein, daß der 
+Taster bündig mit dem Rahmen abschließt. Keine Bange, 
+man kann ihn dann immer noch drücken. 
+Rechts: Achtung! Die Taster 
+haben eine schmale und eine 
+breite Seite! Sie schalten 
+zwischen der kurzen Seite, die 
+breiten Seiten bilden einen 
+Kurzschluß.
+Finale: Taster montieren (fortgesetzt) 
+Links: Zwei Beine zwicken wir ab, 
+an die anderen beiden Beine löten 
+wir ein rotes Kabel (das geht später 
+an Vcc) und eine buntes Kabel. 
+Rechts: Die verlöteten Beine 
+biegen wir auf den Taster um. Der 
+Taster ist später zwischen dem 
+Innenrahmen (Abstandshalter) und 
+der Außenwand, daher sollte er so 
+wenig Platz wie möglich einnehmen. 
+Rechts: Um die Taster mit Heißkleber 
+einzugießen wird der Rahmen 
+fest eingespannt, die Taster kann 
+man gut mit Reißzwecken xieren. 
+Reste des Passepartou dienen als 
+dünne Abstandshalter, damit die 
+Taster nicht von unten herausgedrückt 
+werden. 
+Unten: Unsere drei Taster, alle mit dem roten Kabel für 
+Vcc und bunten Kabeln für den Anschluß an das RBBB.
+Finale: Taster montieren (fortgesetzt) 
+O
+utput 
+-Enable 
+T
+ast 
+er 
+„M 
+odus“ 
+T
+ast 
+er 
+„S 
+tunde+“ 
+T
+ast 
+er 
+„M 
+inut 
+e+“(ale zurück zu 
+VC 
+C
+) 
+X
+1 
+X
+2 
+V
+BA 
+T GND 
+V
+C C 
+SQWSCLSD 
+A 
++ 
+D9 D10D11D12D13GNDAREFGNDA0 A1 A2 A3 A4 A5 GND5V 
+D8 D7 D6 D5 5V R 5V GND 
+X 
+T
+D4 D3 D2 X RST 
+ATMega 328 
+Links: Die Taster werden jetzt 
+mit ordentlich Heißkleber 
+„eingegossen“. Sie brauchen 
+dann eine ganze Weile zum 
+Abkühlen, also geduldig sein. 
+Rechts: Für die „Endmontage“ 
+legen wir die Rückwand in 
+den Rahmen ohne Frontplatte, 
+wie sie später auch liegen 
+wird. Sie ist mit Büchern 
+unterlegt, damit sie ein wenig 
+nach oben gedrückt wird. 
+dreimal von den Tastern „zurück zu Vcc“ 
+die drei bunten Kabel von den Tastern 
+Links: Jetzt löten wir 
+die Kabel der Taster 
+an die Steuerplatine. 
+Rote Kabel gehen 
+irgendwo an Vcc, die 
+bunten an das RBBB.
+Finale: Lichtgitter befestigen und Füße schneiden 
+Links: Das Lichtgitter wird mit 
+Heißkleber gepunktet. Einmal 
+rundherum. 
+Empfänger 
+Rechts: Die Ecken werden genauso 
+festgeklebt. Dabei kann man auch 
+gleich den DCF77-Empfänger und 
+seine Antenne festkleben. Die 
+Antenne sollte dabei parallel zum 
+Rahmen ausgerichtet sein. 
+Rechts: Den Korken zerschneiden 
+wir in drei Scheiben, die drei 
+Scheiben in jeweils vier „Kuchenstücke“. 
+Unten: Als Abstandshalter für die Platinen bereiten wir 
+kleine Füße aus Kork vor. Am Besten ist hierzu der 
+Korken eines Barolos aus der Langhe geeignet.
+Finale: Platinen festkleben 
+Links: Vier von den Beinen werden 
+auf die Rückwand geklebt. 
+Oben: Die Platine wird auf die Korkbeine geklebt. 
+Unten: Analog zum Anoden-Multiplexer wird auch der 
+Kathoden-Multiplexer verklebt. 
+Rechts: Die Steuerplatine wird 
+aufgeklebt. Achtung! Der 
+höchste Teil der Platine (der 
+Power-Jack) darf an der Oberkante 
+maximal 2,5 cm von der 
+Bodenplatte entfernt sein. 
+max. 2,5 cm
+Finale: Frontplatte einsetzen 
+i 
+Du hast viel gelernt, junger Padawan!
+GRATULATION!
+Appendix A - wie funktioniert die QLOCKTWO?
+LED-Matrix-Multiplexing: das Shift-Register 
+Die Matrix der QLOCKTWO besteht (neben den vier Eck-LEDs) aus einem Gitter von LEDs mit 10 Reihen und 11 Spalten. Das sind insgesamt 114 LEDs. Es 
+gibt aber keinen Microcontroller mit 114 Ausgängen um jede LED individuell ansteuern zu können. Der von uns verwendete ATmega328- 
+Microcontroller von Atmel hat z. B. 14 digitale und 6 analoge Ein- und Ausgänge. Um die Anzahl der Ausgänge zu erhöhen, bedient man sich häug und 
+gerne dem 74HC595-Shift-Register. 
+Bei einem Shift-Register handelt es sich um einen Baustein, in den Daten (Bits) über eine Leitung hineingeschoben werden (geshiftet), und der diese 
+Daten dann an vielen Ausgängen bereitstellt. Dadurch haben wir plötzlich 8 Ausgänge mehr! 
+74HC595 
+11101010 
+1 1 1 0 1 0 1 0 
++5V 
+Zeit 
+1 1 1 0 1 0 1 0 
+q
+Aber woher weiss das Shift-Register, 
+wann ein Bit zu Ende ist? Ist die Macht 
+mit ihm? 
+Diese Daten-Bits sind sogenannte 
+TTL-Pegel, das Bedeutet, eine binäre 
+0 entspricht 0 Volt (oder auch 
+„Low“), eine binäre 1 entspricht +5 
+Volt (oder auch „High“). 
+Nein, die Macht ist nicht mit ihm, aber zusätzlich zu 
+der Datenleitung (Serial-Data) gibt es noch eine 
+Leitung, die den Takt vorgibt (Serial-Clock). Immer, 
+wenn auf dieser Leitung der Pegel von Low auf High 
+springt, ist ein Bit zu Ende. 
+5V 
+Zeit 
+1 1 1 0 1 0 1 0 
+5V 
+Zeit 
+Serial-Data 
+Serial-Clock 
+rein-shiften
+LED-Matrix-Multiplexing: das Shift-Register (fortgesetzt) 
+a 
+Gut und schön, und woher weiss 
+das Shift-Register dann, wann wir mit den Daten 
+fertig sind? 
+h 
+Jaja Bings sehen aber 
+vier Shift-Register im Bauplan? 
+Zusätzlich zu der Datenleitung (Serial-Data) und der 
+Takt-Leitung (Serial-Clock) gibt es noch einen Riegel 
+(Latch oder Store-Clock). Immer, wenn diese Riegel- 
+Leitung Low ist, dürfen Daten geschrieben werden. Ist 
+sie High, werden die Daten auf den Ausgänge ausgegeben. 
+5V 
+Zeit 
+1 1 1 0 1 0 1 0 
+5V 
+Zeit 
+Serial-Data 
+Serial-Clock 
+5V 
+Zeit 
+Store-Clock (Latch) 
+74HC595 
+...10100110110110110101101 
+1 1 1 0 1 0 1 0 
+74HC595 
+1 1 0 1 0 0 1 1 
+74HC595 
+0 1 1 0 1 1 0 1 
+74HC595 
+1 0 1 0 1 1 0 1 
+Wir brauchen mehr als 8 Ausgänge. Zum Glück reicht aber 
+eine Daten-Leitung. Jedes Shift-Register hat einen „Überlauf“. 
+Schiebt man mehr Daten hinein, als ein Shift-Register 
+aufnehmen kann, werden die überschüssigen Daten aus 
+dem Überlauf herausgeschoben. Diese kann man dann in 
+das nächste Shift-Register reinschieben. 
+Überlauf
+LED-Matrix-Multiplexing: das Shift-Register (fortgesetzt) 
+VCC = Stromversorgung Plus (Voltage Common Collector) 
+QA = Der 1. Ausgang 
+SER = Die seriellen Daten 
+OE = Ausgabe eingeschaltet (Output Enable) 
+RCLK = Store-Clock (Latch) 
+SRCLK = Serial-Clock 
+SRCLR = Serial Clear 
+QH‘ = Der Überlauf 
+Der 2. Ausgang = QB 
+Der 3. Ausgang = QC 
+Der 4. Ausgang = QD 
+Der 5. Ausgang = QE 
+Der 6. Ausgang = QF 
+Der 7. Ausgang = QG 
+Der 8. Ausgang = QH 
+Stromversorgung Minus (Ground) = GND 
+So wie unten wird das Shift-Register im Datenblatt dargestellt. Diejenigen, die ganz genau aufgepasst haben, werden zwei Pins entdecken, die 
+bislang noch nicht beschrieben worden sind. 
+OE = Output Enable (Ausgabe eingeschaltet) ist ein Pin, mit dem man alle Ausgänge Ein- und Ausschalten kann. Der Strich über OE bedeutet das 
+OE ein invertierter Pin ist. Das wiederum bedeutet, OE ist aktiv wenn der Pegel auf Low ist. 
+SRCLR = Serial Clear (Daten löschen) ist ein Pin, mit dem alle Inhalte des Registers löschen kann. Auch SRCLR ist ein invertierter Pin. 
+b 
+Toll: Drei Seiten Erklärungen, 
+und wir haben für 114 LEDs gerade mal 
+4*8=32 Ausgänge! 
+Das stimmt, und daher benutzen wir 
+einen Trick: Nicht jede LED bekommt 
+ihren eigenen Ausgang, sondern eine 
+ganze Reihe von LEDs bekommen einen 
+Ausgang. Und eine Spalte auch! (Rechts 
+schematisch am Beispiel mit 3 mal 3 
+LEDs.)
+LED-Matrix-Multiplexing: die Matrix 
+Der Einfachheit halber betrachten wir im Folgenden nur noch eine 8x8-Matrix, aber das Prinzip gilt auch für unsere (theoretisch bis zu) 16x16-Matrix. 
+74HC595 
+1 1 0 1 1 1 1 1 
+74HC595
+0
+0
+1
+0
+0
+0
+0
+0 
+Wir können jetzt eine LED einschalten, indem wir auf 
+der Seite mit den Plus-Polen der LEDs (Anoden) eine 
+1 ausgeben und auf der Seite mit dem Minus-Polen 
+(Kathode) eine 0. Da eine LED eine Diode ist und den 
+Strom nur in einer Richtung durchlässt, bleiben alle 
+anderen LEDs dunkel, obwohl Spannung anliegt. 
+74HC595 
+1 1 0 1 1 0 1 1 
+74HC595
+0
+0
+1
+1
+0
+0
+0
+0 
+Das Problem dabei ist, schalten wir mehr als eine 
+Reihe und Spalte ein, leuchten immer alle betroenen 
+LEDs! Wir könnten also nie nur die LED oben 
+rechts und unten links leuchten lassen! 
+. Cool! Aber eine LED 
+ist etwas wenig, oder? . Ich wußte immer, daß 
+die Rebellen zu blöd dazu sind!
+LED-Matrix-Multiplexing: die Matrix (fortgesetzt) 
+p 
+Das ist so cool! 
+Und in der QLOCKTWO wird 
+das 3736 pro Sekunde 
+gemacht! 
+Damit wir dennoch beliebige Muster ausgeben können, schalten wir immer nur eine Spalte ein! Erst die Erste, dann die Zweite und so weiter. Und das 
+machen wir so schnell, daß es für das menschliche Auge wie ein stehendes Bild aussieht. So macht das ein Röhrenfernseher übrigens auch. Diesen 
+Eekt nennt man „Nachbildwirkung“ oder „Persistence of vision“. 
+74HC595 
+0 1 1 1 1 1 1 1 
+74HC595
+0
+1
+1
+1
+0
+0
+0
+0 
+1. Spalte 
+74HC595 
+1 0 1 1 1 1 1 1 
+74HC595
+1
+1
+0
+0
+0
+0
+0
+0 
+2. Spalte 
+74HC595 
+1 1 0 1 1 1 1 1 
+74HC595
+1
+1
+0
+0
+0
+0
+0
+0 
+3. Spalte 
+Und so w 
+eit 
+er und so w 
+eit 
+er bis zur 8t 
+en Spalt 
+e
+...
+Darstellung der Wörter 
+Die Wörter, die für die Darstellung der Zeit nötig sind, werden jetzt einfach als Bit-Muster deniert, die man dann über die Shift-Register ausgeben 
+kann. Diese Denitionen sind im Quellcode nach der Denition der Zahlen hinterlegt. 
+#define FUENF matrix[0] |= 0b0000000111100000 
+#define ZEHN matrix[1] |= 0b1111000000000000 
+#define VIERTEL matrix[2] |= 0b0000111111100000 
+#define ZWANZIG matrix[1] |= 0b0000111111100000 
+#define HALB matrix[4] |= 0b1111000000000000 
+#define DREIVIERTEL matrix[2] |= 0b1111111111100000 
+Welche Zeile? 
+Welche LEDs in der Zeile? 
+b 
+So weit kann man das ja 
+verstehen, aber was soll eine 0-te Zeile sein? 
+Und was soll das „|“-Zeichen? 
+In der Programmierung zählt man im Gegensatz zum normalen Leben von Null an. Hat 
+man 16 Zeilen, zählt man von 0 bis 15. Das sind dann auch 16 sogenannte „Zustände“. 
+Das „|“-Zeichen ist ein binäres „Oder“. Es bewirkt letztlich, daß eine Zeile nicht mit dem 
+Wort überschrieben wird, sondern nur überlagert. In der unteren Zeile im Beispiel oben 
+stehen die Wörter „HALB“ und „FÜNF“. Wenn es halb Fünf ist, würde die „FÜNF“ das Wort 
+„HALB“ überschreiben. Durch die Überlagerung leuchten beide Wörter zusammen. 
+{ 
+Diese fünf Bits sind übrig 
+(16 Bits könnten wir ansteuern, aber in der QLOCKTWO brauchen wir nur 11)
+Die Software (stark vereinfacht) 
+void loop() { 
+getDateDs1307(); 
+setWords(hour, minute); 
+setMinutes(minute); 
+if (digitalRead(minutePlusPin) == HIGH) { 
+minute++; 
+} 
+if (digitalRead(hourePlusPin) == HIGH) { 
+hour++; 
+} 
+if (digitalRead(modePin) == HIGH) { 
+mode++; 
+} 
+if(mode != BLANK) { 
+writeMatrix(); 
+} 
+digitalWrite(dcf77Led, digitalRead(dcf77Signal)); 
+digitalWrite(rtcSQWLed, digitalRead(rtcSQWSignal)); 
+const char *v = dcf77.getDateTime(); 
+second = 0; 
+minute = dcf77.getMinutes(); 
+hour = dcf77.getHoures(); 
+setDateDs1307(); 
+} 
+Die loop()-Schleife wird unendlich durchlaufen. 
+Hier lesen wir die Echtzeituhr aus. 
+Die Stunden auf die Matrix schreiben. 
+Die Minuten auf die Matrix schreiben. 
+Wurde der Taster für die Minuten gedrückt? 
+Wurde der Taster für die Stunden gedrückt? 
+Wurde der Taster für den Modus gedrückt? 
+Matrix ausgeben, wenn nicht ausgeschaltet. 
+Status-LED DCF77-Signal. 
+Status-LED Real-Time-Clock. 
+DCF77-Empfänger auslesen. 
+Zeit vom DCF77-Empfänger übernehmen.
+Appendix B - Ausblicke 
+q 
+Und wie geht es jetzt weiter? 
+Ist das alles gewesen? 
+Das ist eine Superux-LED. Sie ist klein, ach 
+und hat neben einer enormen Helligkeit 
+einen Abstrahlwinkel von 120°. Sie ist 
+schwieriger zu verarbeiten, aber man 
+könnte ein acheres und damit eleganteres 
+Gehäuse bauen. 
+Das ist eine RGB-Pixel von bliptronics. Er 
+kann Licht in 32.768 Farben abgeben! Und 
+das mit einem Abstrahlwinkel von 160°! 
+Man stelle sich vor: die Matrix kann die 
+Farben wechseln, oder zwischen den Wörtern 
+überblenden! 
+120° 
+10 mm Höhe! 
+40° 
+470 mm Höhe! 
+(Theoretisch) 
+3 mm Höhe! 
+160° 
+Unsere LEDs
