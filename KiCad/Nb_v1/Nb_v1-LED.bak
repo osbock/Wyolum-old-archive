@@ -1,7 +1,6 @@
-EESchema Schematic File Version 2  date Fri 25 Nov 2011 09:45:57 PM IST
+EESchema Schematic File Version 2  date 11/26/2011 1:39:16 PM
 LIBS:Nb_v1
 LIBS:power
-LIBS:conn
 LIBS:Nb_v1-cache
 EELAYER 25  0
 EELAYER END
@@ -9,7 +8,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 2 4
 Title "NachBau - WordClock"
-Date "25 nov 2011"
+Date "26 nov 2011"
 Rev "A"
 Comp ""
 Comment1 "www.wyolum.com"
@@ -2128,7 +2127,7 @@ U 1 1 4DB3F5FC
 P 2950 1700
 F 0 "D1" H 2950 1800 50  0000 C CNN
 F 1 "LED" H 2950 1600 50  0000 C CNN
-F 2 "d_0805" H 2950 1700 60  0001 C CNN
+F 2 "led_5mm_clear" H 2950 1700 60  0001 C CNN
 	1    2950 1700
 	0    -1   -1   0   
 $EndComp
@@ -2138,7 +2137,7 @@ U 1 1 4DB3F5F7
 P 3750 1700
 F 0 "D2" H 3750 1800 50  0000 C CNN
 F 1 "LED" H 3750 1600 50  0000 C CNN
-F 2 "d_0805" H 3750 1700 60  0001 C CNN
+F 2 "led_5mm_clear" H 3750 1700 60  0001 C CNN
 	1    3750 1700
 	0    -1   -1   0   
 $EndComp

@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 11/25/2011 5:42:29 PM
+EESchema-DOCLIB  Version 2.0  Date: 11/25/2011 6:08:56 PM
 #
 $CMP 74HC595
 D 8 bits serial in // out Shift Register 3 State Out
@@ -13,6 +13,11 @@ $ENDCMP
 $CMP 74LS596
 D 8 bits serial in // out Shift Register Open Collect.
 K HCMOS SR OpenCol
+$ENDCMP
+#
+$CMP CONN_4X2
+D Symbole general de connecteur
+K CONN
 $ENDCMP
 #
 $CMP CONN_8

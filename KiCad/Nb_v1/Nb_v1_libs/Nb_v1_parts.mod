@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  11/25/2011 6:46:26 PM
+PCBNEW-LibModule-V1  11/26/2011 1:42:14 PM
 # encoding utf-8
 $INDEX
 01D01
@@ -20,6 +20,7 @@ Frame
 FrontCover
 JACK_ALIM
 MtgPost
+PCB
 PROTO-6
 Pad01
 Pot-Var2
@@ -58,6 +59,7 @@ pin_strip_4-90
 pin_strip_4x2
 pin_strip_6-90
 pin_strip_8
+rc03_vert
 to92_2N5401
 to92_3
 vite_2mm5
@@ -3886,7 +3888,7 @@ Li pin_array_12x1
 Cd Double rangee de contacts 2 x 12 pins
 Kw CONN
 Sc 00000000
-AR 
+AR
 Op 0 0 0
 T0 0 -1500 400 400 0 100 N V 21 N "PIN_ARRAY_12X1"
 T1 0 1500 400 400 0 80 N V 21 N "Val**"
@@ -3979,4 +3981,55 @@ Ne 0 ""
 Po 5500 0
 $EndPAD
 $EndMODULE  pin_array_12x1
+$MODULE rc03_vert
+Po 0 0 0 15 49FC0F18 00000000 ~~
+Li rc03_vert
+Cd Resistor, RC03 vertical
+Sc 00000000
+AR rc03_vert
+Op 0 0 0
+T0 0 1000 600 600 0 120 N V 21 N "RC03_vert"
+T1 0 -1000 600 600 0 120 N V 21 N "R***"
+DC -500 0 -850 0 120 21
+DS -500 0 500 0 100 21
+$PAD
+Sh "1" C 787 787 0 0 0
+Dr 197 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -500 0
+$EndPAD
+$PAD
+Sh "2" C 787 787 0 0 0
+Dr 197 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 500 0
+$EndPAD
+$SHAPE3D
+Na "Nb_v1_libs\\Nb_v1_3D\\rc03vert.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$EndMODULE  rc03_vert
+$MODULE PCB
+Po 0 0 0 15 4ED09F35 00000000 ~~
+Li PCB
+Sc 00000000
+AR 
+Op 0 0 0
+T0 0 -900 600 600 0 120 N V 21 N "PCB"
+T1 0 1050 600 600 0 120 N V 21 N "VAL**"
+DS -500 -500 500 -500 150 21
+DS 500 -500 500 500 150 21
+DS 500 500 -500 500 150 21
+DS -500 500 -500 -500 150 21
+$SHAPE3D
+Na "Nb_v1_libs\\Nb_v1_3D\\PCB_Material_3D.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$EndMODULE  PCB
 $EndLIBRARY
