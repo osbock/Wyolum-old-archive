@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 11/26/2011 1:49:00 PM
+EESchema Schematic File Version 2  date Sun 27 Nov 2011 12:04:23 AM IST
 LIBS:Nb_v1
 LIBS:power
 LIBS:Nb_v1-cache
@@ -6,7 +6,7 @@ EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
-Sheet 1 4
+Sheet 1 2
 Title "NachBau - WordClock"
 Date "26 nov 2011"
 Rev "A"
@@ -534,12 +534,6 @@ F 1 "GND" H 7825 5105 30  0001 C CNN
 	1    7825 5175
 	1    0    0    -1  
 $EndComp
-$Sheet
-S 10200 5275 925  1425
-U 4C134896
-F0 "Nb_v1-LED" 60
-F1 "Nb_v1-LED.sch" 60
-$EndSheet
 $Comp
 L CONN_12 P5
 U 1 1 4ECF8C7A
@@ -999,12 +993,6 @@ F 2 "pin_strip_2" H 4375 7100 60  0001 C CNN
 	1    4375 7100
 	1    0    0    -1  
 $EndComp
-$Sheet
-S 5875 6850 875  825 
-U 4D28241A
-F0 "Nb_v1-mech" 60
-F1 "Nb_v1-mech.sch" 60
-$EndSheet
 Text Label 3500 5050 0    40   ~ 0
 LED_YEL
 $Comp

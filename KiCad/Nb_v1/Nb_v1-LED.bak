@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 11/26/2011 1:39:16 PM
+EESchema Schematic File Version 2  date Sat 26 Nov 2011 11:38:20 PM IST
 LIBS:Nb_v1
 LIBS:power
 LIBS:Nb_v1-cache
@@ -1009,7 +1009,7 @@ F 0 "P17" H 13000 4600 50  0000 C CNN
 F 1 "CONN_4X2" V 13000 4350 40  0000 C CNN
 F 2 "pin_array_4x2" H 13000 4350 60  0001 C CNN
 	1    13000 4350
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L CONN_12 P18

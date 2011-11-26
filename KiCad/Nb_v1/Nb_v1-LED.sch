@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 11/26/2011 1:49:00 PM
+EESchema Schematic File Version 2  date Sun 27 Nov 2011 12:00:12 AM IST
 LIBS:Nb_v1
 LIBS:power
 LIBS:Nb_v1-cache
@@ -6,7 +6,7 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 2 4
+Sheet 2 3
 Title "NachBau - WordClock"
 Date "26 nov 2011"
 Rev "A"
@@ -1009,7 +1009,7 @@ F 0 "P17" H 13000 4600 50  0000 C CNN
 F 1 "CONN_4X2" V 13000 4350 40  0000 C CNN
 F 2 "pin_array_4x2" H 13000 4350 60  0001 C CNN
 	1    13000 4350
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L CONN_12 P18
