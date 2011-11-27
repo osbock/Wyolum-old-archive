@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 27 Nov 2011 12:04:23 AM IST
+EESchema Schematic File Version 2  date Sun 27 Nov 2011 11:35:01 PM IST
 LIBS:Nb_v1
 LIBS:power
 LIBS:Nb_v1-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 2
 Title "NachBau - WordClock"
-Date "26 nov 2011"
+Date "27 nov 2011"
 Rev "A"
 Comp ""
 Comment1 "www.wyolum.com"
@@ -16,6 +16,7 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Connection ~ 5275 4150
 Connection ~ 8000 2225
 Wire Wire Line
 	8000 2025 8000 2325
@@ -378,8 +379,7 @@ Wire Wire Line
 	5475 2625 5275 2625
 Connection ~ 5275 2625
 Wire Wire Line
-	5200 4150 5475 4150
-Connection ~ 5200 4150
+	5275 4150 5475 4150
 Wire Wire Line
 	5125 3025 5475 3025
 Connection ~ 5125 3025
