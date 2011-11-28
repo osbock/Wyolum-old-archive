@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 11/28/2011 11:03:25 AM
+EESchema Schematic File Version 2  date 11/28/2011 4:15:20 PM
 LIBS:Nb_v1
 LIBS:power
 LIBS:Nb_v1-cache
@@ -16,6 +16,15 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L CRYSTAL X1
+U 1 1 4ED36147
+P 1050 4150
+F 0 "X1" H 1050 4300 60  0000 C CNN
+F 1 "16MHz" H 1050 4000 60  0000 C CNN
+	1    1050 4150
+	1    0    0    -1  
+$EndComp
 Connection ~ 5275 4150
 Connection ~ 8000 2225
 Wire Wire Line
@@ -1393,18 +1402,6 @@ F 1 "10k" V 1000 2500 50  0000 C CNN
 F 2 "RC03" H 1000 2500 60  0001 C CNN
 	1    1000 2500
 	0    1    1    0   
-$EndComp
-$Comp
-L CRYSTAL X1
-U 1 1 4B077AD9
-P 1050 4150
-F 0 "X1" H 1050 4300 60  0000 C CNN
-F 1 "16MHz" H 1050 4000 60  0000 C CNN
-F 2 "XTAL" H 1050 4150 60  0001 C CNN
-F 3 "http://search.murata.co.jp/Ceramy/image/img/w_hinm/L0430E.pdf" H 1050 4150 60  0001 C CNN
-F 4 "490-1214-ND" H 1050 4150 60  0001 C CNN "DigiKey"
-	1    1050 4150
-	1    0    0    -1  
 $EndComp
 $Comp
 L ATMEGA8-P U3
