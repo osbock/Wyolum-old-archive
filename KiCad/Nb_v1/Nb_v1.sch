@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 11/28/2011 5:32:40 PM
+EESchema Schematic File Version 2  date 11/29/2011 4:56:38 PM
 LIBS:Nb_v1
 LIBS:power
 LIBS:Nb_v1-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 2
 Title "NachBau - WordClock"
-Date "28 nov 2011"
+Date "29 nov 2011"
 Rev "A"
 Comp ""
 Comment1 "www.wyolum.com"
@@ -16,6 +16,14 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Label 8050 1525 0    40   ~ 0
+MINS
+Text Label 8050 5050 0    40   ~ 0
+GND
+Wire Wire Line
+	9175 1525 7900 1525
+Wire Wire Line
+	9175 1525 9175 5850
 Wire Wire Line
 	5475 1725 4450 1725
 Wire Wire Line
@@ -40,7 +48,7 @@ Wire Wire Line
 	8250 1725 7900 1725
 Connection ~ 9175 5750
 Wire Wire Line
-	9125 5750 9175 5750
+	9175 5750 9125 5750
 Connection ~ 9175 5550
 Wire Wire Line
 	9175 5550 9125 5550
@@ -493,9 +501,7 @@ Wire Wire Line
 Wire Wire Line
 	7650 4950 8375 4950
 Wire Wire Line
-	9125 5850 9175 5850
-Wire Wire Line
-	9175 5850 9175 5375
+	9175 5850 9125 5850
 Wire Wire Line
 	9175 5650 9125 5650
 Connection ~ 9175 5650
@@ -539,15 +545,6 @@ F 0 "X1" H 1050 4300 60  0000 C CNN
 F 1 "16MHz" H 1050 4000 60  0000 C CNN
 F 2 "XTAL_2" H 1050 4150 60  0001 C CNN
 	1    1050 4150
-	1    0    0    -1  
-$EndComp
-$Comp
-L VCC #PWR01
-U 1 1 4ECF9206
-P 9175 5375
-F 0 "#PWR01" H 9175 5475 30  0001 C CNN
-F 1 "VCC" H 9175 5475 30  0000 C CNN
-	1    9175 5375
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -663,13 +660,13 @@ Text Label 3500 5550 0    40   ~ 0
 SCK
 Text Label 9650 1775 0    40   ~ 0
 SQW
-Text Label 7675 5850 0    40   ~ 0
+Text Label 8050 5850 0    40   ~ 0
 +4M
-Text Label 7675 5750 0    40   ~ 0
+Text Label 8050 5750 0    40   ~ 0
 +3M
-Text Label 7675 5650 0    40   ~ 0
+Text Label 8050 5650 0    40   ~ 0
 +2M
-Text Label 7675 5550 0    40   ~ 0
+Text Label 8050 5550 0    40   ~ 0
 +1M
 $Comp
 L R R26
@@ -844,7 +841,6 @@ NoConn ~ 7900 1125
 NoConn ~ 7900 1225
 NoConn ~ 7900 1325
 NoConn ~ 7900 1425
-NoConn ~ 7900 1525
 Text Label 8050 1625 0    40   ~ 0
 R11
 Text Label 8050 1825 0    40   ~ 0
@@ -1121,27 +1117,27 @@ Text Label 8050 2925 0    40   ~ 0
 R03
 Text Label 8050 3025 0    40   ~ 0
 R02
-Text Label 7700 4950 0    40   ~ 0
+Text Label 8050 4950 0    40   ~ 0
 K11
-Text Label 7700 4850 0    40   ~ 0
+Text Label 8050 4850 0    40   ~ 0
 K10
-Text Label 7700 4750 0    40   ~ 0
+Text Label 8050 4750 0    40   ~ 0
 K09
-Text Label 7700 4650 0    40   ~ 0
+Text Label 8050 4650 0    40   ~ 0
 K08
-Text Label 7700 4550 0    40   ~ 0
+Text Label 8050 4550 0    40   ~ 0
 K07
-Text Label 7700 4450 0    40   ~ 0
+Text Label 8050 4450 0    40   ~ 0
 K06
-Text Label 7700 4350 0    40   ~ 0
+Text Label 8050 4350 0    40   ~ 0
 K05
-Text Label 7700 4250 0    40   ~ 0
+Text Label 8050 4250 0    40   ~ 0
 K04
-Text Label 7700 4150 0    40   ~ 0
+Text Label 8050 4150 0    40   ~ 0
 K03
-Text Label 7700 4050 0    40   ~ 0
+Text Label 8050 4050 0    40   ~ 0
 K02
-Text Label 7700 3950 0    40   ~ 0
+Text Label 8050 3950 0    40   ~ 0
 K01
 $Comp
 L GND #PWR013
