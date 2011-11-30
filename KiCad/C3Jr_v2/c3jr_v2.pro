@@ -1,4 +1,4 @@
-update=11/23/2011 4:49:42 PM
+update=Tue 29 Nov 2011 11:29:24 PM IST
 last_client=kicad
 [cvpcb]
 version=1
@@ -37,9 +37,9 @@ RptD_Y=100
 RptLab=1
 LabSize=40
 [eeschema/libraries]
-LibName1=C3Jr_v1_libs/C3Jr_v1
-LibName2=C3Jr_v1_libs/power
-LibName3=c3jr-cache
+LibName1=C3Jr_v2_libs/C3Jr_v2
+LibName2=C3Jr_v2_libs/power
+LibName3=c3jr_v2-cache
 [pcbnew]
 version=1
 PadDrlX=800
@@ -59,7 +59,7 @@ MSegLar=100
 LastNetListRead=c3jr.net
 [pcbnew/libraries]
 LibDir=../../../../../../../Downloads/KiCAD/Libs;D:/Users/Anool/Downloads/KiCAD/Libs/USB
-LibName1=C3Jr_v1_libs/C3Jr_v1_parts
+LibName1=C3Jr_v2_libs/C3Jr_v2_parts
 [general]
 version=1
 
