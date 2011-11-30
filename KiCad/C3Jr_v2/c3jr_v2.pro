@@ -1,4 +1,4 @@
-update=Tue 29 Nov 2011 11:29:24 PM IST
+update=Wed 30 Nov 2011 11:26:31 PM IST
 last_client=kicad
 [cvpcb]
 version=1
@@ -56,7 +56,7 @@ DrawLar=100
 EdgeLar=150
 TxtLar=120
 MSegLar=100
-LastNetListRead=c3jr.net
+LastNetListRead=c3jr_v2.net
 [pcbnew/libraries]
 LibDir=../../../../../../../Downloads/KiCAD/Libs;D:/Users/Anool/Downloads/KiCAD/Libs/USB
 LibName1=C3Jr_v2_libs/C3Jr_v2_parts
