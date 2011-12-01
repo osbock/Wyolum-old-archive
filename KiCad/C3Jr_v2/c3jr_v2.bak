@@ -1,14 +1,16 @@
-EESchema Schematic File Version 2  date 11/23/2011 4:10:03 PM
-LIBS:C3Jr_v1
+EESchema Schematic File Version 2  date Thu 01 Dec 2011 10:11:21 PM IST
+LIBS:C3Jr_v2
 LIBS:power
-LIBS:c3jr-cache
+LIBS:c3jr_v2-cache
+LIBS:con-hirose
+LIBS:c3jr_v2-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
 Title "ClockTHREE Junior aka C3Jr"
-Date "21 nov 2011"
+Date "1 dec 2011"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -563,8 +565,8 @@ COL_DRIVER_ENABLE
 $Sheet
 S 8750 1675 875  4500
 U 4C134896
-F0 "c3jr-LED" 60
-F1 "c3jr-LED.sch" 60
+F0 "c3jr_v2-LED" 60
+F1 "c3jr_v2-LED.sch" 60
 F2 "VCC" I L 8750 4275 60 
 F3 "R08" I L 8750 2625 60 
 F4 "R07" I L 8750 2525 60 
@@ -595,8 +597,8 @@ NoConn ~ 7750 1825
 $Sheet
 S 10200 4775 850  1400
 U 4D28241A
-F0 "c3jr-mech" 60
-F1 "c3jr-mech.sch" 60
+F0 "c3jr_v2-mech" 60
+F1 "c3jr_v2-mech.sch" 60
 $EndSheet
 Text Notes 5850 2750 0    40   ~ 0
 Mounting Hole for rowBoB
@@ -1092,8 +1094,8 @@ RXD
 $Sheet
 S 10200 1675 850  1400
 U 4B3F1092
-F0 "c3jr-Aux" 60
-F1 "c3jr-Aux.sch" 60
+F0 "c3jr_v2-Aux" 60
+F1 "c3jr_v2-Aux.sch" 60
 F2 "GND" I L 10200 2175 60 
 F3 "VSS" I L 10200 2075 60 
 F4 "SCL" I L 10200 2275 60 

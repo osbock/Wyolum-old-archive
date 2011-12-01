@@ -1,14 +1,16 @@
-EESchema Schematic File Version 2  date 11/23/2011 4:10:03 PM
-LIBS:C3Jr_v1
+EESchema Schematic File Version 2  date Thu 01 Dec 2011 10:11:21 PM IST
+LIBS:C3Jr_v2
 LIBS:power
-LIBS:c3jr-cache
+LIBS:c3jr_v2-cache
+LIBS:con-hirose
+LIBS:c3jr_v2-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 4
 Title "ClockTHREE Junior aka C3Jr"
-Date "21 nov 2011"
+Date "1 dec 2011"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -16,33 +18,29 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 Comment4 ""
 $EndDescr
-NoConn ~ 1200 5150
-NoConn ~ 1200 5050
-NoConn ~ 1200 4600
-NoConn ~ 1200 4500
-NoConn ~ 1200 3950
-NoConn ~ 1200 3850
-Connection ~ 850  5250
+Connection ~ 1475 5350
 Wire Wire Line
-	900  5250 850  5250
-Connection ~ 850  4050
+	1475 5350 1475 5125
 Wire Wire Line
-	900  4050 850  4050
-Connection ~ 1400 5250
+	1475 5125 1400 5125
+Connection ~ 1200 4050
 Wire Wire Line
-	1200 5250 1400 5250
-Connection ~ 850  5150
+	1200 4000 1200 4050
+Connection ~ 1600 4700
+Wire Wire Line
+	1600 5350 1600 4050
+Wire Wire Line
+	1600 4050 1100 4050
+Wire Wire Line
+	1100 4050 1100 4000
 Wire Wire Line
 	850  5350 1800 5350
 Wire Wire Line
-	850  5350 850  3950
+	850  5350 850  4600
 Wire Wire Line
-	900  4600 850  4600
+	850  4600 900  4600
 Wire Wire Line
-	850  3950 900  3950
-Connection ~ 800  4100
-Wire Wire Line
-	800  4500 900  4500
+	900  4500 800  4500
 Wire Wire Line
 	5400 6050 5550 6050
 Wire Wire Line
@@ -627,38 +625,48 @@ Wire Wire Line
 Wire Wire Line
 	5550 6650 5550 6550
 Wire Wire Line
-	900  3850 800  3850
-Wire Wire Line
 	800  4100 3600 4100
+Connection ~ 1600 5350
 Wire Wire Line
-	800  3850 800  5050
-Wire Wire Line
-	800  5050 900  5050
-Connection ~ 800  4500
-Wire Wire Line
-	850  5150 900  5150
-Connection ~ 850  4600
-Wire Wire Line
-	1200 4050 1400 4050
-Wire Wire Line
-	1400 4050 1400 5350
-Connection ~ 1400 5350
-Wire Wire Line
-	1200 4700 1400 4700
-Connection ~ 1400 4700
+	1200 4700 1600 4700
 Wire Wire Line
 	900  4700 850  4700
 Connection ~ 850  4700
+Wire Wire Line
+	1000 4000 1000 4050
+Wire Wire Line
+	1000 4050 800  4050
+Wire Wire Line
+	800  4050 800  4500
+Connection ~ 800  4100
+Wire Wire Line
+	1150 4000 1150 4050
+Connection ~ 1150 4050
+Wire Wire Line
+	1400 4925 1475 4925
+Wire Wire Line
+	1475 4925 1475 4100
+Connection ~ 1475 4100
 $Comp
-L USB-B J3
-U 1 1 4DBFE641
-P 1050 5000
-F 0 "J3" H 1050 5210 60  0000 C CNN
-F 1 "V_IN" H 1060 5140 60  0000 C CNN
-F 2 "con-usb-USB-B-H" H 1050 5000 60  0001 C CNN
-	1    1050 5000
-	1    0    0    -1  
+L CONN_2 P?
+U 1 1 4ED7AD74
+P 1050 5025
+F 0 "P?" V 1000 5025 40  0000 C CNN
+F 1 "CONN_2" V 1100 5025 40  0000 C CNN
+	1    1050 5025
+	-1   0    0    -1  
 $EndComp
+$Comp
+L MINI-USB J1
+U 1 1 4ED7ABE7
+P 1100 3800
+F 0 "J1" H 1150 4050 50  0000 L BNN
+F 1 "MINI-USB" H 965 3500 50  0000 L BNN
+	1    1100 3800
+	0    -1   -1   0   
+$EndComp
+NoConn ~ 1200 4600
+NoConn ~ 1200 4500
 $Comp
 L USB-B J2
 U 1 1 4DBFE63C
@@ -667,16 +675,6 @@ F 0 "J2" H 1050 4660 60  0000 C CNN
 F 1 "V_IN" H 1060 4590 60  0000 C CNN
 F 2 "con-usb-USB-B-H" H 1050 4450 60  0001 C CNN
 	1    1050 4450
-	1    0    0    -1  
-$EndComp
-$Comp
-L USB-B J1
-U 1 1 4DBFE43B
-P 1050 3800
-F 0 "J1" H 1050 4010 60  0000 C CNN
-F 1 "V_IN" H 1060 3940 60  0000 C CNN
-F 2 "con-usb-USB-B-H" H 1050 3800 60  0001 C CNN
-	1    1050 3800
 	1    0    0    -1  
 $EndComp
 Text Label 5550 6050 0    40   ~ 0

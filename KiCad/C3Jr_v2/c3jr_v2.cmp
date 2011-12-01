@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Wed 30 Nov 2011 11:03:12 PM IST
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Thu 01 Dec 2011 10:14:33 PM IST
 
 BeginCmp
 TimeStamp = /4D28241A/4DC14DAD;
@@ -1030,10 +1030,10 @@ IdModule  = FacePlate;
 EndCmp
 
 BeginCmp
-TimeStamp = /4B3F1092/4DBFE43B;
+TimeStamp = /4B3F1092/4ED7ABE7;
 Reference = J1;
 ValeurCmp = V_IN;
-IdModule  = con-usb-USB-B-H;
+IdModule  = con-hirose-UX60-MB-5S8;
 EndCmp
 
 BeginCmp
@@ -1044,10 +1044,10 @@ IdModule  = con-usb-USB-B-H;
 EndCmp
 
 BeginCmp
-TimeStamp = /4B3F1092/4DBFE641;
+TimeStamp = /4B3F1092/4ED7AD74;
 Reference = J3;
 ValeurCmp = V_IN;
-IdModule  = con-usb-USB-B-H;
+IdModule  = JACK_ALIM;
 EndCmp
 
 BeginCmp
