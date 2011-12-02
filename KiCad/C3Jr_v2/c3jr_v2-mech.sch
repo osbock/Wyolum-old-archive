@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/2/2011 4:30:14 PM
+EESchema Schematic File Version 2  date Fri 02 Dec 2011 09:37:47 PM IST
 LIBS:C3Jr_v2
 LIBS:power
 LIBS:c3jr_v2-cache
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 3 4
 Title "ClockTHREE Junior aka C3Jr"
-Date "1 dec 2011"
+Date "2 dec 2011"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"

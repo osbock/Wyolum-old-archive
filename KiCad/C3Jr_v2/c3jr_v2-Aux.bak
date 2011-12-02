@@ -1,8 +1,7 @@
-EESchema Schematic File Version 2  date Thu 01 Dec 2011 10:12:32 PM IST
+EESchema Schematic File Version 2  date 12/2/2011 4:30:14 PM
 LIBS:C3Jr_v2
 LIBS:power
 LIBS:c3jr_v2-cache
-LIBS:con-hirose
 LIBS:c3jr_v2-cache
 EELAYER 25  0
 EELAYER END
