@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 01 Dec 2011 10:11:21 PM IST
+EESchema Schematic File Version 2  date Thu 01 Dec 2011 10:12:32 PM IST
 LIBS:C3Jr_v2
 LIBS:power
 LIBS:c3jr_v2-cache
@@ -648,11 +648,11 @@ Wire Wire Line
 	1475 4925 1475 4100
 Connection ~ 1475 4100
 $Comp
-L CONN_2 P?
+L CONN_2 J3
 U 1 1 4ED7AD74
 P 1050 5025
-F 0 "P?" V 1000 5025 40  0000 C CNN
-F 1 "CONN_2" V 1100 5025 40  0000 C CNN
+F 0 "J3" V 1000 5025 40  0000 C CNN
+F 1 "V_IN" V 1100 5025 40  0000 C CNN
 	1    1050 5025
 	-1   0    0    -1  
 $EndComp
@@ -660,8 +660,8 @@ $Comp
 L MINI-USB J1
 U 1 1 4ED7ABE7
 P 1100 3800
-F 0 "J1" H 1150 4050 50  0000 L BNN
-F 1 "MINI-USB" H 965 3500 50  0000 L BNN
+F 0 "J1" V 1025 4000 50  0000 L BNN
+F 1 "V_IN" V 1025 3475 50  0000 L BNN
 	1    1100 3800
 	0    -1   -1   0   
 $EndComp

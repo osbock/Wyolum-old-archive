@@ -1,4 +1,4 @@
-update=Thu 01 Dec 2011 10:22:23 PM IST
+update=12/2/2011 6:57:18 PM
 last_client=kicad
 [cvpcb]
 version=1
@@ -61,7 +61,6 @@ LabSize=40
 LibName1=C3Jr_v2_libs/C3Jr_v2
 LibName2=C3Jr_v2_libs/power
 LibName3=c3jr_v2-cache
-LibName4=C3Jr_v2_libs/con-hirose
 [general]
 version=1
 
