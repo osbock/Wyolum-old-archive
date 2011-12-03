@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Thu 01 Dec 2011 10:14:33 PM IST
+Cmp-Mod V01 Created by CvPCB (2011-07-08 BZR 3044)-stable date = 12/3/2011 5:47:55 PM
 
 BeginCmp
 TimeStamp = /4D28241A/4DC14DAD;
@@ -1307,6 +1307,13 @@ TimeStamp = /4B3F1092/4DB9703E;
 Reference = P54;
 ValeurCmp = CONN_1;
 IdModule  = vite_4mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDA0FBA;
+Reference = PCB1;
+ValeurCmp = PCB;
+IdModule  = PCB;
 EndCmp
 
 BeginCmp

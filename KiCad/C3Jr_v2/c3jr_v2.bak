@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/2/2011 4:30:14 PM
+EESchema Schematic File Version 2  date 12/3/2011 6:47:14 PM
 LIBS:C3Jr_v2
 LIBS:power
 LIBS:c3jr_v2-cache
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
 Title "ClockTHREE Junior aka C3Jr"
-Date "1 dec 2011"
+Date "3 dec 2011"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -17,8 +17,6 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 Comment4 ""
 $EndDescr
-Text Notes 1500 6600 0    40   ~ 0
-delete me!
 Wire Wire Line
 	700  4700 700  4800
 Wire Wire Line
@@ -453,6 +451,17 @@ Connection ~ 700  4150
 Wire Wire Line
 	1400 4800 1400 4700
 Connection ~ 1050 4800
+$Comp
+L PCB PCB1
+U 1 1 4EDA0FBA
+P 10600 3900
+F 0 "PCB1" H 10600 4200 60  0000 C CNN
+F 1 "PCB" H 10600 3600 60  0000 C CNN
+	1    10600 3900
+	1    0    0    -1  
+$EndComp
+Text Notes 1500 6600 0    40   ~ 0
+delete me!
 $Comp
 L C C12
 U 1 1 4DBBA4E0
@@ -1243,7 +1252,7 @@ L ATMEGA8-P U3
 U 1 1 4B07796D
 P 2350 4350
 F 0 "U3" H 1650 5600 50  0000 L BNN
-F 1 "ATMEGA8-P" V 2150 3700 50  0000 L BNN
+F 1 "ATMEGA8-P" H 2600 2950 50  0000 L BNN
 F 2 "dil_28-300_socket" H 2850 2875 50  0001 C CNN
 	1    2350 4350
 	1    0    0    -1  
