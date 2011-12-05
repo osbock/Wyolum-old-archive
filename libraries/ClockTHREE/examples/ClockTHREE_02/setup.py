@@ -22,9 +22,11 @@ from distutils.core import setup
 import py2exe
 import glob
 
-c_files = ['ClockTHREE_02.pde']
-c_files.extend(glob.glob("../../*.cpp"))
-c_files.extend(glob.glob("../../*.h"))
+dat_files = ['ClockTHREE_02.pde']
+dat_files.extend(glob.glob("../../*.cpp"))
+dat_files.extend(glob.glob("../../*.h"))
+dat_files.append("8x8.txt")
+dat_files.append("README.txt")
 setup(
     # The first three parameters are not required, if at least a
     # 'version' is given, then a versioninfo resource is built from
@@ -32,7 +34,7 @@ setup(
     version = "0.0.1_alpha",
     description = "py2exe C3_GUI",
     name = "py2exe C3_GUI",
-    data_files = c_files,
+    data_files = dat_files,
     # targets to build
     # windows = ["WordClockSet.py"],
     windows = ["C3_GUI.py", "ClockTHREE.py"],
