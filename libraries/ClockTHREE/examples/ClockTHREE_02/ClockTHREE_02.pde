@@ -29,10 +29,10 @@
 #include "MsTimer2.h"
 #include "ClockTHREE.h"
 #include "SPI.h"
-#include "english.h" // only need one language at a time
+// #include "english.h" // only need one language at a time
 // #include "german.h"
-// #include "english_jr.h"
-// #include "german_jr.h"
+#include "english_jr.h"
+//#include "german_jr.h"
 
 #include "mem_font.h"
 #include "rtcBOB.h"
@@ -290,9 +290,9 @@ unsigned long last_dec_time = 0;    // for debounce
 unsigned long last_enter_time = 0;    // for debounce
 
 ClockTHREE c3;                      // ClockTHREE singleton
-English faceplate = English();      // Only need one at a time
+// English faceplate = English();      // Only need one at a time
 // German faceplate = German();      
-// EnglishJr faceplate = EnglishJr();
+EnglishJr faceplate = EnglishJr();
 // GermanJr faceplate = GermanJr();      
 
 //Font font = Font();                 // Only font at this time.
