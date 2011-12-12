@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-07-08 BZR 3044)-stable date = 12/3/2011 5:47:55 PM
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Sun 11 Dec 2011 05:27:55 PM IST
 
 BeginCmp
 TimeStamp = /4D28241A/4DC14DAD;
@@ -1065,6 +1065,13 @@ IdModule  = pin_strip_3;
 EndCmp
 
 BeginCmp
+TimeStamp = /4B3F1092/4EE4972F;
+Reference = K3;
+ValeurCmp = CONN_3;
+IdModule  = 7Seg_Sel;
+EndCmp
+
+BeginCmp
 TimeStamp = /4B3F1092/4DBD1FE5;
 Reference = P1;
 ValeurCmp = 7SegDisp;
@@ -1313,7 +1320,7 @@ BeginCmp
 TimeStamp = /4EDA0FBA;
 Reference = PCB1;
 ValeurCmp = PCB;
-IdModule  = PCB;
+IdModule  = ;
 EndCmp
 
 BeginCmp

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/3/2011 6:47:14 PM
+EESchema Schematic File Version 2  date Sun 11 Dec 2011 05:40:58 PM IST
 LIBS:C3Jr_v2
 LIBS:power
 LIBS:c3jr_v2-cache
@@ -9,7 +9,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 2 4
 Title "ClockTHREE Junior aka C3Jr"
-Date "3 dec 2011"
+Date "11 dec 2011"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -17,22 +17,32 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 Comment4 ""
 $EndDescr
+Text Label 11350 5700 0    40   ~ 0
+C05
+Text Label 12150 5700 0    40   ~ 0
+C04
+Text Label 12950 5700 0    40   ~ 0
+C03
+Text Label 13750 5700 0    40   ~ 0
+C02
+Text Label 14550 5700 0    40   ~ 0
+C01
 Wire Wire Line
-	2550 1450 2550 5000
+	14550 5700 14550 1450
 Wire Wire Line
-	4150 1450 4150 5000
+	12950 5700 12950 1450
 Wire Wire Line
-	5750 1450 5750 5000
+	11350 5700 11350 1450
 Wire Wire Line
-	7350 1450 7350 5000
+	9750 5700 9750 1450
 Wire Wire Line
-	8950 1450 8950 5000
+	8150 5700 8150 1450
 Wire Wire Line
-	10550 1450 10550 5000
+	6550 5700 6550 1450
 Wire Wire Line
-	12150 1450 12150 5000
+	4950 5700 4950 1450
 Wire Wire Line
-	13750 1450 13750 5000
+	3350 5700 3350 1450
 Connection ~ 3750 5450
 Wire Wire Line
 	3750 5450 3750 5400
@@ -82,11 +92,11 @@ Wire Wire Line
 Wire Wire Line
 	8950 5000 9350 5000
 Wire Wire Line
-	6950 5000 6550 5000
+	6550 5000 6950 5000
 Wire Wire Line
-	5350 5000 4950 5000
+	4950 5000 5350 5000
 Wire Wire Line
-	3750 5000 3350 5000
+	3350 5000 3750 5000
 Wire Wire Line
 	2550 5000 2950 5000
 Wire Wire Line
@@ -96,15 +106,15 @@ Wire Wire Line
 Wire Wire Line
 	7350 5000 7750 5000
 Wire Wire Line
-	8550 5000 8150 5000
+	8150 5000 8550 5000
 Wire Wire Line
-	10150 5000 9750 5000
+	9750 5000 10150 5000
 Wire Wire Line
-	11750 5000 11350 5000
+	11350 5000 11750 5000
 Wire Wire Line
-	13350 5000 12950 5000
+	12950 5000 13350 5000
 Wire Wire Line
-	14950 5000 14550 5000
+	14550 5000 14950 5000
 Connection ~ 3350 5000
 Wire Wire Line
 	14150 5400 14150 5450
@@ -1029,21 +1039,43 @@ Wire Wire Line
 	3750 1950 3750 1900
 Connection ~ 3750 1950
 Wire Wire Line
-	14550 5000 14550 1450
+	2550 5700 2550 1450
 Wire Wire Line
-	12950 5000 12950 1450
+	4150 5700 4150 1450
 Wire Wire Line
-	11350 5000 11350 1450
+	5750 5700 5750 1450
 Wire Wire Line
-	9750 5000 9750 1450
+	7350 5700 7350 1450
 Wire Wire Line
-	8150 5000 8150 1450
+	8950 5700 8950 1450
 Wire Wire Line
-	6550 5000 6550 1450
+	10550 5700 10550 1450
 Wire Wire Line
-	4950 5000 4950 1450
+	12150 5700 12150 1450
 Wire Wire Line
-	3350 5000 3350 1450
+	13750 5700 13750 1450
+Text Label 10550 5700 0    40   ~ 0
+C06
+Text Label 9750 5700 0    40   ~ 0
+C07
+Text Label 8950 5700 0    40   ~ 0
+C08
+Text Label 8150 5700 0    40   ~ 0
+C09
+Text Label 7350 5700 0    40   ~ 0
+C10
+Text Label 6550 5700 0    40   ~ 0
+C11
+Text Label 5750 5700 0    40   ~ 0
+C12
+Text Label 4950 5700 0    40   ~ 0
+C13
+Text Label 4150 5700 0    40   ~ 0
+C14
+Text Label 3350 5700 0    40   ~ 0
+C15
+Text Label 2550 5700 0    40   ~ 0
+C16
 $Comp
 L LED D128
 U 1 1 4DB410C9
