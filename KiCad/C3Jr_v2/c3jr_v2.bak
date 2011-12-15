@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/14/2011 4:54:53 PM
+EESchema Schematic File Version 2  date 12/15/2011 5:33:49 PM
 LIBS:C3Jr_v2
 LIBS:power
 LIBS:c3jr_v2-cache
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
 Title "ClockTHREE Junior aka C3Jr_v2 , with stackable board"
-Date "11 dec 2011"
+Date "15 dec 2011"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -17,8 +17,9 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 Comment4 ""
 $EndDescr
-Text Label 9825 3075 0    40   ~ 0
-DBG
+Connection ~ 4850 7600
+Wire Wire Line
+	4550 7600 4850 7600
 Wire Wire Line
 	10200 3075 9825 3075
 Connection ~ 1050 4800
@@ -29,7 +30,7 @@ Wire Wire Line
 	700  4300 700  3950
 Connection ~ 5300 1200
 Wire Wire Line
-	5300 1500 5375 1500
+	5375 1500 5300 1500
 Wire Wire Line
 	6500 1500 6425 1500
 Wire Wire Line
@@ -65,11 +66,8 @@ Wire Wire Line
 	2250 2100 1650 2100
 Wire Wire Line
 	2250 2100 2250 2050
-Connection ~ 4850 7250
 Wire Wire Line
-	4850 7575 4850 7200
-Wire Wire Line
-	4850 7200 4900 7200
+	4850 7675 4850 7250
 Connection ~ 10075 1875
 Connection ~ 10075 1975
 Wire Wire Line
@@ -83,9 +81,9 @@ Wire Wire Line
 Wire Wire Line
 	9825 2275 10200 2275
 Wire Wire Line
-	10200 2075 9825 2075
+	9825 2075 10200 2075
 Wire Wire Line
-	10200 1875 9825 1875
+	9825 1875 10200 1875
 Wire Wire Line
 	3850 5050 3350 5050
 Wire Wire Line
@@ -108,15 +106,15 @@ Wire Wire Line
 Wire Wire Line
 	5575 5775 5575 5800
 Wire Wire Line
-	5575 6300 5575 6950
+	5575 6950 5575 6300
 Wire Wire Line
-	4850 5750 4850 6150
+	4850 6150 4850 5750
 Wire Wire Line
 	4450 6300 4450 6350
 Wire Wire Line
 	4450 6350 4550 6350
 Wire Wire Line
-	4850 7100 4850 7150
+	4850 7150 4850 7100
 Wire Wire Line
 	4850 7150 4900 7150
 Wire Wire Line
@@ -131,7 +129,7 @@ Wire Wire Line
 Wire Wire Line
 	6550 6400 6550 5050
 Wire Wire Line
-	600  3650 1450 3650
+	1450 3650 600  3650
 Wire Wire Line
 	3350 5150 4075 5150
 Wire Wire Line
@@ -228,16 +226,16 @@ Wire Wire Line
 Wire Wire Line
 	3550 3750 3350 3750
 Wire Wire Line
-	2350 2950 2350 2400
+	2350 2400 2350 2950
 Wire Wire Line
-	700  4150 750  4150
+	750  4150 700  4150
 Wire Wire Line
 	2350 5850 2350 6100
 Connection ~ 2050 1000
 Wire Wire Line
-	1850 2050 1850 2200
+	1850 2200 1850 2050
 Wire Wire Line
-	2050 2050 2050 2100
+	2050 2100 2050 2050
 Wire Wire Line
 	1850 1550 1850 1200
 Wire Wire Line
@@ -249,12 +247,12 @@ Wire Wire Line
 Wire Wire Line
 	1250 3450 1250 3550
 Wire Wire Line
-	1450 4150 1350 4150
+	1350 4150 1450 4150
 Wire Wire Line
 	700  3950 1450 3950
 Connection ~ 2350 2500
 Wire Wire Line
-	4175 7250 4175 7575
+	4175 7250 4175 7675
 Wire Wire Line
 	3350 3650 3400 3650
 Wire Wire Line
@@ -367,11 +365,11 @@ Wire Wire Line
 	6300 6300 7150 6300
 Connection ~ 6550 6300
 Wire Wire Line
-	1050 4850 1050 4400
+	1050 4400 1050 4850
 Wire Wire Line
 	3350 4250 3500 4250
 Wire Wire Line
-	4900 7250 4850 7250
+	4850 7250 4900 7250
 Wire Wire Line
 	4850 6600 4850 6550
 Wire Wire Line
@@ -379,7 +377,7 @@ Wire Wire Line
 Wire Wire Line
 	4450 5250 4450 5800
 Wire Wire Line
-	5575 7450 5575 7575
+	5575 7450 5575 7675
 Wire Wire Line
 	3350 3250 5450 3250
 Wire Wire Line
@@ -396,13 +394,13 @@ Wire Wire Line
 Wire Wire Line
 	6225 2825 6225 3350
 Wire Wire Line
-	4700 3450 3350 3450
+	3350 3450 4700 3450
 Wire Wire Line
 	9825 1775 10200 1775
 Wire Wire Line
-	10200 1975 9825 1975
+	9825 1975 10200 1975
 Wire Wire Line
-	10200 2175 9825 2175
+	9825 2175 10200 2175
 Wire Wire Line
 	9825 2375 10200 2375
 Wire Wire Line
@@ -455,6 +453,20 @@ Wire Wire Line
 	1400 4800 700  4800
 Wire Wire Line
 	700  4800 700  4700
+Wire Wire Line
+	4850 7100 4550 7100
+$Comp
+L R R24
+U 1 1 4EE9E1A4
+P 4550 7350
+F 0 "R24" V 4450 7350 50  0000 C CNN
+F 1 "1k" V 4550 7350 50  0000 C CNN
+F 2 "RC03" H 4550 7350 60  0001 C CNN
+	1    4550 7350
+	-1   0    0    1   
+$EndComp
+Text Label 9825 3075 0    40   ~ 0
+DBG
 Text Label 4225 3450 0    40   ~ 0
 DBG
 $Comp
@@ -492,7 +504,7 @@ $Comp
 L R R32
 U 1 1 4DB9676E
 P 5575 7200
-F 0 "R32" V 5655 7200 50  0000 C CNN
+F 0 "R32" V 5675 7200 50  0000 C CNN
 F 1 "LDR" V 5575 7200 50  0000 C CNN
 F 2 "pin_strip_2" H 5575 7200 60  0001 C CNN
 	1    5575 7200
@@ -673,10 +685,10 @@ $EndComp
 $Comp
 L GND #PWR02
 U 1 1 4C9A12A0
-P 5575 7575
-F 0 "#PWR02" H 5575 7575 30  0001 C CNN
-F 1 "GND" H 5575 7505 30  0001 C CNN
-	1    5575 7575
+P 5575 7675
+F 0 "#PWR02" H 5575 7675 30  0001 C CNN
+F 1 "GND" H 5575 7605 30  0001 C CNN
+	1    5575 7675
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -747,22 +759,22 @@ F 1 "VCC" H 7150 4400 30  0000 C CNN
 	1    7150 4300
 	1    0    0    -1  
 $EndComp
-Text Label 4850 7575 0    40   ~ 0
+Text Label 4850 7675 0    40   ~ 0
 GND
 $Comp
 L GND #PWR05
 U 1 1 4C17356A
-P 4850 7575
-F 0 "#PWR05" H 4850 7575 30  0001 C CNN
-F 1 "GND" H 4850 7505 30  0001 C CNN
-	1    4850 7575
+P 4850 7675
+F 0 "#PWR05" H 4850 7675 30  0001 C CNN
+F 1 "GND" H 4850 7605 30  0001 C CNN
+	1    4850 7675
 	1    0    0    -1  
 $EndComp
 $Comp
 L R R30
 U 1 1 4C17353D
 P 4850 6850
-F 0 "R30" V 4775 6850 50  0000 C CNN
+F 0 "R30" V 4750 6850 50  0000 C CNN
 F 1 "100E" V 4850 6850 50  0000 C CNN
 F 2 "RC03" H 4850 6850 60  0001 C CNN
 	1    4850 6850
@@ -772,8 +784,8 @@ $Comp
 L SPEAKER SP1
 U 1 1 4C173167
 P 5200 7200
-F 0 "SP1" H 5175 7000 70  0000 C CNN
-F 1 "SPEAKER" H 5275 7400 70  0000 C CNN
+F 0 "SP1" H 5100 7450 70  0000 C CNN
+F 1 "SPEAKER" H 5100 6950 70  0000 C CNN
 F 2 "Speaker" H 5200 7200 60  0001 C CNN
 F 3 "http://products.cui.com/GetSpecForDigiKey.aspx?MFGNum=CEM-14R06CT" H 5200 7200 60  0001 C CNN
 F 4 "102-1169-ND" H 5200 7200 60  0001 C CNN "DigiKey"
@@ -1139,10 +1151,10 @@ $EndComp
 $Comp
 L GND #PWR010
 U 1 1 4B077DEC
-P 4175 7575
-F 0 "#PWR010" H 4175 7575 30  0001 C CNN
-F 1 "GND" H 4175 7505 30  0001 C CNN
-	1    4175 7575
+P 4175 7675
+F 0 "#PWR010" H 4175 7675 30  0001 C CNN
+F 1 "GND" H 4175 7605 30  0001 C CNN
+	1    4175 7675
 	1    0    0    -1  
 $EndComp
 $Comp
