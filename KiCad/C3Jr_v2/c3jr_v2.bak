@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/15/2011 5:33:49 PM
+EESchema Schematic File Version 2  date Sunday 18 December 2011 08:43:36 PM IST
 LIBS:C3Jr_v2
 LIBS:power
 LIBS:c3jr_v2-cache
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
 Title "ClockTHREE Junior aka C3Jr_v2 , with stackable board"
-Date "15 dec 2011"
+Date "18 dec 2011"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -17,6 +17,15 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 Comment4 ""
 $EndDescr
+$Comp
+L GND #PWR?
+U 1 1 4EEE030D
+P 6225 2650
+F 0 "#PWR?" H 6225 2650 30  0001 C CNN
+F 1 "GND" H 6225 2580 30  0001 C CNN
+	1    6225 2650
+	1    0    0    -1  
+$EndComp
 Connection ~ 4850 7600
 Wire Wire Line
 	4550 7600 4850 7600
@@ -624,9 +633,8 @@ U 4D28241A
 F0 "c3jr_v2-mech" 60
 F1 "c3jr_v2-mech.sch" 60
 $EndSheet
-Text Notes 5850 2750 0    40   ~ 0
+Text Notes 5850 2375 0    40   ~ 0
 Mounting Hole for rowBoB
-NoConn ~ 6225 2650
 $Comp
 L CONN_1 rowBoB1
 U 1 1 4D2315D0

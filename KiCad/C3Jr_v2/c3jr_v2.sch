@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/15/2011 5:34:38 PM
+EESchema Schematic File Version 2  date Sunday 18 December 2011 08:43:59 PM IST
 LIBS:C3Jr_v2
 LIBS:power
 LIBS:c3jr_v2-cache
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
 Title "ClockTHREE Junior aka C3Jr_v2 , with stackable board"
-Date "15 dec 2011"
+Date "18 dec 2011"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -17,6 +17,15 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 Comment4 ""
 $EndDescr
+$Comp
+L GND #PWR01
+U 1 1 4EEE030D
+P 6225 2650
+F 0 "#PWR01" H 6225 2650 30  0001 C CNN
+F 1 "GND" H 6225 2580 30  0001 C CNN
+	1    6225 2650
+	1    0    0    -1  
+$EndComp
 Connection ~ 4850 7600
 Wire Wire Line
 	4550 7600 4850 7600
@@ -531,10 +540,10 @@ F 2 "Pot-Var2" H 5625 1500 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR01
+L GND #PWR02
 U 1 1 4DB9600D
 P 5100 1300
-F 0 "#PWR01" H 5100 1300 30  0001 C CNN
+F 0 "#PWR02" H 5100 1300 30  0001 C CNN
 F 1 "GND" H 5100 1230 30  0001 C CNN
 	1    5100 1300
 	1    0    0    -1  
@@ -624,9 +633,8 @@ U 4D28241A
 F0 "c3jr_v2-mech" 60
 F1 "c3jr_v2-mech.sch" 60
 $EndSheet
-Text Notes 5850 2750 0    40   ~ 0
+Text Notes 5850 2375 0    40   ~ 0
 Mounting Hole for rowBoB
-NoConn ~ 6225 2650
 $Comp
 L CONN_1 rowBoB1
 U 1 1 4D2315D0
@@ -683,19 +691,19 @@ F 2 "Pad01" H 4850 3450 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR02
+L GND #PWR03
 U 1 1 4C9A12A0
 P 5575 7675
-F 0 "#PWR02" H 5575 7675 30  0001 C CNN
+F 0 "#PWR03" H 5575 7675 30  0001 C CNN
 F 1 "GND" H 5575 7605 30  0001 C CNN
 	1    5575 7675
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR03
+L VCC #PWR04
 U 1 1 4C9A1130
 P 4850 5750
-F 0 "#PWR03" H 4850 5850 30  0001 C CNN
+F 0 "#PWR04" H 4850 5850 30  0001 C CNN
 F 1 "VCC" H 4925 5800 30  0000 C CNN
 	1    4850 5750
 	1    0    0    -1  
@@ -751,10 +759,10 @@ F 2 "RC03" H 5575 6050 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L VCC #PWR04
+L VCC #PWR05
 U 1 1 4C173DB8
 P 7150 4300
-F 0 "#PWR04" H 7150 4400 30  0001 C CNN
+F 0 "#PWR05" H 7150 4400 30  0001 C CNN
 F 1 "VCC" H 7150 4400 30  0000 C CNN
 	1    7150 4300
 	1    0    0    -1  
@@ -762,10 +770,10 @@ $EndComp
 Text Label 4850 7675 0    40   ~ 0
 GND
 $Comp
-L GND #PWR05
+L GND #PWR06
 U 1 1 4C17356A
 P 4850 7675
-F 0 "#PWR05" H 4850 7675 30  0001 C CNN
+F 0 "#PWR06" H 4850 7675 30  0001 C CNN
 F 1 "GND" H 4850 7605 30  0001 C CNN
 	1    4850 7675
 	1    0    0    -1  
@@ -861,10 +869,10 @@ COL01
 Text Label 8450 4275 0    40   ~ 0
 VCC
 $Comp
-L GND #PWR06
+L GND #PWR07
 U 1 1 4C1345FF
 P 2650 3000
-F 0 "#PWR06" H 2650 3000 30  0001 C CNN
+F 0 "#PWR07" H 2650 3000 30  0001 C CNN
 F 1 "GND" H 2650 2930 30  0001 C CNN
 	1    2650 3000
 	1    0    0    -1  
@@ -974,19 +982,19 @@ F 2 "C2" H 6300 5675 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR07
+L GND #PWR08
 U 1 1 4C10D99A
 P 6550 6400
-F 0 "#PWR07" H 6550 6400 30  0001 C CNN
+F 0 "#PWR08" H 6550 6400 30  0001 C CNN
 F 1 "GND" H 6550 6330 30  0001 C CNN
 	1    6550 6400
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR08
+L GND #PWR09
 U 1 1 4C10D990
 P 6225 3350
-F 0 "#PWR08" H 6225 3350 30  0001 C CNN
+F 0 "#PWR09" H 6225 3350 30  0001 C CNN
 F 1 "GND" H 6225 3280 30  0001 C CNN
 	1    6225 3350
 	1    0    0    -1  
@@ -1140,64 +1148,64 @@ INC
 Text Label 2550 1200 0    39   ~ 0
 DEC
 $Comp
-L GND #PWR09
+L GND #PWR010
 U 1 1 4B077E18
 P 2350 6100
-F 0 "#PWR09" H 2350 6100 30  0001 C CNN
+F 0 "#PWR010" H 2350 6100 30  0001 C CNN
 F 1 "GND" H 2350 6030 30  0001 C CNN
 	1    2350 6100
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR010
+L GND #PWR011
 U 1 1 4B077DEC
 P 4175 7675
-F 0 "#PWR010" H 4175 7675 30  0001 C CNN
+F 0 "#PWR011" H 4175 7675 30  0001 C CNN
 F 1 "GND" H 4175 7605 30  0001 C CNN
 	1    4175 7675
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR011
+L VCC #PWR012
 U 1 1 4B077CD2
 P 2350 2400
-F 0 "#PWR011" H 2350 2500 30  0001 C CNN
+F 0 "#PWR012" H 2350 2500 30  0001 C CNN
 F 1 "VCC" H 2350 2500 30  0000 C CNN
 	1    2350 2400
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR012
+L GND #PWR013
 U 1 1 4B077CA7
 P 1250 3550
-F 0 "#PWR012" H 1250 3550 30  0001 C CNN
+F 0 "#PWR013" H 1250 3550 30  0001 C CNN
 F 1 "GND" H 1250 3480 30  0001 C CNN
 	1    1250 3550
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR013
+L GND #PWR014
 U 1 1 4B077C8F
 P 1050 4850
-F 0 "#PWR013" H 1050 4850 30  0001 C CNN
+F 0 "#PWR014" H 1050 4850 30  0001 C CNN
 F 1 "GND" H 1050 4780 30  0001 C CNN
 	1    1050 4850
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR014
+L VCC #PWR015
 U 1 1 4B077C1E
 P 800 600
-F 0 "#PWR014" H 800 700 30  0001 C CNN
+F 0 "#PWR015" H 800 700 30  0001 C CNN
 F 1 "VCC" H 800 700 30  0000 C CNN
 	1    800  600 
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR015
+L GND #PWR016
 U 1 1 4B077BF7
 P 1850 2200
-F 0 "#PWR015" H 1850 2200 30  0001 C CNN
+F 0 "#PWR016" H 1850 2200 30  0001 C CNN
 F 1 "GND" H 1850 2130 30  0001 C CNN
 	1    1850 2200
 	1    0    0    -1  
