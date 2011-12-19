@@ -1,3 +1,6 @@
+#ifndef MEM_FONT_H
+#define MEM_FONT_H
+
 #include <avr/pgmspace.h>
 const uint8_t N_CHAR = 128;
 class MemFont{
@@ -8,3 +11,5 @@ class MemFont{
   void getChar(char letter, uint8_t color, uint32_t* out);
  private:
 };
+
+#endif

@@ -6,6 +6,9 @@
 
 #include <inttypes.h>
 #include "Time.h"
+#include "ClockTHREE.h"
+
+
 const uint8_t MONTHS[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30,31, 30, 31};
 const int DS3231_ADDR = 104;
 const int DS3231_TEMP_OFFSET = 0x11;
@@ -22,6 +25,7 @@ time_t getTime();
 
 void setRTC(uint16_t YY, uint8_t MM, uint8_t DD, 
 	    uint8_t hh, uint8_t mm, uint8_t ss);
+void set_control_reg();
 void getRTC_alarm(uint8_t *ahh, uint8_t *amm, uint8_t *ass, uint8_t *alarm_set);
 void setRTC_alarm(uint8_t ahh, uint8_t amm, uint8_t ass, uint8_t alarm_Set);
 

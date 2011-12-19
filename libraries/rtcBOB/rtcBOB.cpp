@@ -50,6 +50,10 @@ void setRTC_alarm(uint8_t ahh, uint8_t amm, uint8_t ass, uint8_t alarm_set){
   rtc_raw_write(DS3231_ALARM1_OFSET + 3, 1, IS_BYTES, date);
 }
 
+void setSquareWave(int val){
+  
+}
+
 void getRTC_alarm(uint8_t *ahh, uint8_t *amm, uint8_t *ass, 
 		  uint8_t *alarm_set){
   uint8_t x;
@@ -111,12 +115,13 @@ bool rtc_raw_read(uint8_t addr,
 
   bool out = false;
   Wire.beginTransmission(DS3231_ADDR); 
-  Wire.send(addr); 
+  // Wire.send(addr); 
+  WIRE_WRITE1(addr);
   Wire.endTransmission();
   Wire.requestFrom(DS3231_ADDR, (int)n_bytes); // request n_bytes bytes 
   if(Wire.available()){
     for(uint8_t i = 0; i < n_bytes; i++){
-      dest[i] = Wire.receive();
+      dest[i] = WIRE_READ;
       if(is_bcd){ // needs to be converted to dec
 	dest[i] = bcd2dec(dest[i]);
       }
@@ -125,6 +130,14 @@ bool rtc_raw_read(uint8_t addr,
   }
   return out;
 }
+void set_control_reg(){
+  // From MaceTech.com
+  // set 1Hz reference square wave
+  Wire.beginTransmission(0x68); // address DS3231
+  WIRE_WRITE1(0x0E); // select register
+  WIRE_WRITE1(0b00000000); // write register bitmap, bit 7 is /EOSC
+  Wire.endTransmission();
+}
 void rtc_raw_write(uint8_t addr,
 		   uint8_t n_byte,
 		   bool is_bcd,
@@ -132,7 +145,7 @@ void rtc_raw_write(uint8_t addr,
   uint8_t byte;
 
   Wire.beginTransmission(DS3231_ADDR); 
-  Wire.send(addr); // start at address addr
+  WIRE_WRITE1(addr); // start at address addr
   for(uint8_t i = 0; i < n_byte; i++){
     if(is_bcd){
       byte = dec2bcd(source[i]);
@@ -140,7 +153,7 @@ void rtc_raw_write(uint8_t addr,
     else{
       byte = source[i];
     }
-    Wire.send(byte);
+    WIRE_WRITE1(byte);
   }
   Wire.endTransmission();  
 }

@@ -8,8 +8,8 @@
 #include <inttypes.h>
 
 typedef unsigned long time_t;
-const time_t MAX_TIME_T = 4294967295; // TJS: maximum unsigned 32 bit integer (rolls over Feb. 7, 2106).
-
+const time_t MAX_TIME_T = 4294967295;  // TJS: maximum unsigned 32 bit integer (rolls over Feb. 7, 2106).
+const time_t CRYSTAL_1HZ_TOLERANCE_uS = 20000;
 typedef enum {timeNotSet, timeNeedsSync, timeSet
 }  timeStatus_t ;
 
@@ -38,6 +38,7 @@ typedef struct  {
 #define  y2kYearToTm(Y)      ((Y) + 30)   
 
 typedef time_t(*getExternalTime)();
+typedef void(*void_void_fct_ptr)();
 //typedef void  (*setExternalTime)(const time_t); // not used in this version
 
 
@@ -84,6 +85,7 @@ int     minute();          // the minute now
 int     minute(time_t t);  // the minute for the given time
 int     second();          // the second now 
 int     second(time_t t);  // the second for the given time
+int     millisecond();     // the millisecond now
 int     day();             // the day now 
 int     day(time_t t);     // the day for the given time
 int     weekday();         // the weekday now (Sunday is day 1) 
@@ -110,6 +112,12 @@ timeStatus_t timeStatus(); // indicates if time has been set and recently synchr
 void    setSyncProvider( getExternalTime getTimeFunction); // identify the external time provider
 void    setSyncInterval(time_t interval); // set the number of seconds between re-sync
 
+/* TJS: one Hertz interrupt to be called on rising edge of one Hz square wave. 
+ *      Used to sync with GPS clock or other 1Hz source to get millisecond time accuracy
+ */
+void set_1Hz_ref(time_t current_time, int interrupt_pin, void(*cb_ptr)());
+void    tick_1Hz();
+ 
 /* low level functions to convert to and from system time                     */
 void breakTime(time_t time, tmElements_t &tm);  // break time_t into elements
 time_t makeTime(tmElements_t &tm);  // convert time elements into time_t

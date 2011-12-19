@@ -29,10 +29,10 @@
 #include "MsTimer2.h"
 #include "ClockTHREE.h"
 #include "SPI.h"
-// #include "english.h" // only need one language at a time
+#include "english.h" // only need one language at a time
 // #include "german.h"
-#include "english_jr.h"
-//#include "german_jr.h"
+// #include "english_jr.h"
+/// #include "german_jr.h"
 
 #include "mem_font.h"
 #include "rtcBOB.h"
@@ -290,9 +290,9 @@ unsigned long last_dec_time = 0;    // for debounce
 unsigned long last_enter_time = 0;    // for debounce
 
 ClockTHREE c3;                      // ClockTHREE singleton
-// English faceplate = English();      // Only need one at a time
+English faceplate = English();      // Only need one at a time
 // German faceplate = German();      
-EnglishJr faceplate = EnglishJr();
+// EnglishJr faceplate = EnglishJr();
 // GermanJr faceplate = GermanJr();      
 
 //Font font = Font();                 // Only font at this time.
@@ -1242,16 +1242,19 @@ void Serial_sync_wait(){
 // Transmit contents of PING message back to sender.
 void pong(){
   for(uint8_t i=0; i < MAX_MSG_LEN - 1; i++){
-    Serial.print(serial_msg[i], BYTE);
+    // Serial.print(serial_msg[i], BYTE);
+    Serial.write(serial_msg[i]);
   }
 }
 
 void send_time(){
   char ser_data[4];
-  Serial.print(ABS_TIME_SET.id, BYTE);
+  // Serial.print(ABS_TIME_SET.id, BYTE);
+  Serial.write(ABS_TIME_SET.id);
   Time_to_Serial(now(), ser_data);
   for(uint8_t i = 0; i < 4; i++){
-    Serial.print(ser_data[i], BYTE);
+    // Serial.print(ser_data[i], BYTE);
+    Serial.write(ser_data[i]);
   }
 }
 
@@ -1303,11 +1306,13 @@ void tod_alarm_get(){
   tm.Month = 1;
   tm.Day = 1;
 
-  Serial.print(TOD_ALARM_SET.id, BYTE);
+  // Serial.print(TOD_ALARM_SET.id, BYTE);
+  Serial.write(TOD_ALARM_SET.id);
   Time_to_Serial(makeTime(tm) % SECS_PER_DAY, serial_msg);
   serial_msg_len = 4;
   for(uint8_t i = 0; i < 4; i++){
-    Serial.print(serial_msg[i], BYTE);
+    // Serial.print(serial_msg[i], BYTE);
+    Serial.write(serial_msg[i]);
   }
   /* // old way
   Serial_time_t data;
@@ -1317,21 +1322,25 @@ void tod_alarm_get(){
   data.dat32 = makeTime(tm);
   data.dat32 %= 86400;
   */
-  Serial.print(alarm_set, BYTE);
+  // Serial.print(alarm_set, BYTE);
+  Serial.write(alarm_set);
 }
 
 void eeprom_dump(){
   for(uint16_t i = 0; i <= MAX_EEPROM_ADDR; i++){
-    Serial.print(EEPROM.read(i), BYTE);
+    // Serial.print(EEPROM.read(i), BYTE);
+    Serial.write(EEPROM.read(i));
   }
 }
 
 void next_alarm_send(){
   Time_to_Serial(Alarm.nextTrigger, serial_msg);
   serial_msg_len = 4;
-  Serial.print(ABS_TIME_SET.id, BYTE);
+  // Serial.print(ABS_TIME_SET.id, BYTE);
+  Serial.write(ABS_TIME_SET.id);
   for(uint8_t i = 0; i < 4; i++){
-    Serial.print(serial_msg[i], BYTE);
+    // Serial.print(serial_msg[i], BYTE);
+    Serial.write(serial_msg[i]);
   }
   // new way (not implimented but could save a little space)
   /*
@@ -1451,9 +1460,11 @@ void scroll_data(){
 
 void Serial_send_err(char *err){
   uint8_t len = strlen(err);
-  Serial.print(ERR_OUT.id, BYTE);
-  // Serial.print(len + 2 + MAX_MSG_LEN, BYTE);
-  Serial.print(len + 2, BYTE);
+  // Serial.print(ERR_OUT.id, BYTE);
+  Serial.write(ERR_OUT.id);
+  //// Serial.print(len + 2 + MAX_MSG_LEN, BYTE);
+  // Serial.print(len + 2, BYTE);
+  Serial.write(len + 2);
   Serial.print(err);
   c3.note(55);
   // Serial.print(serial_msg);
@@ -1465,8 +1476,10 @@ void send_data(){
   uint8_t n_byte;
 
   if(did_read(did, serial_msg, &n_byte)){
-    Serial.print(DATA_SET.id, BYTE);
-    Serial.print(n_byte + 2, BYTE);
+    // Serial.print(DATA_SET.id, BYTE);
+    //Serial.print(n_byte + 2, BYTE);
+    Serial.write(DATA_SET.id);
+    Serial.write(n_byte + 2);
     for(uint8_t i=0; i < n_byte; i++){
       Serial.print(serial_msg[i]);
     }
@@ -1478,9 +1491,11 @@ void send_data(){
 
 void display_send(){
   uint8_t *display_p = (uint8_t *)display;
-  Serial.print(DISPLAY_SET.id, BYTE);
+  // Serial.print(DISPLAY_SET.id, BYTE);
+  Serial.write(DISPLAY_SET.id);
   for(uint8_t i = 0; i < N_COL * sizeof(uint32_t); i++){
-    Serial.print(display_p[i], BYTE);
+    // Serial.print(display_p[i], BYTE);
+    Serial.write(display_p[i]);
   }
 }
 

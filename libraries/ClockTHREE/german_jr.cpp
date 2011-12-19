@@ -215,19 +215,19 @@ void GermanJr::minutes_hack(ClockTHREE c3, int mm, int ss){
   case 0:
     break;
   case 1:
-    c3.setPixel(15, 0, MONO);
+    c3.setPixel(15, 6, MONO);
     break;
   case 2:
-    c3.setPixel(15, 1, MONO);
+    c3.setPixel(15, 5, MONO);
     break;
   case 3:
-    c3.setPixel(15, 0, MONO);
-    c3.setPixel(15, 1, MONO);
+    c3.setPixel(15, 6, MONO);
+    c3.setPixel(15, 5, MONO);
     break;
   case 4:
-    c3.setPixel(15, 0, MONO);
-    c3.setPixel(15, 1, MONO);
-    c3.setPixel(15, 2, MONO);
+    c3.setPixel(15, 6, MONO);
+    c3.setPixel(15, 5, MONO);
+    c3.setPixel(15, 4, MONO);
     break;
   }
 }

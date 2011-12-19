@@ -21,13 +21,18 @@
   1  Nov 2010 - fixed setTime bug (thanks to Korman for this)
 */
 
-#include <WProgram.h> 
+#if defined(ARDUINO) && ARDUINO >= 100
+#include "Arduino.h"
+#else
+#include "WProgram.h"
+#endif
 
 #include "Time.h"
 
 static tmElements_t tm;          // a cache of time elements
 static time_t       cacheTime;   // the time the cache was updated
 static time_t       syncInterval = 300;  // time sync will be attempted after this many seconds
+boolean use_1Hz_ref = false;
 
 void refreshCache( time_t t){
   if( t != cacheTime)
@@ -138,7 +143,8 @@ int year(time_t t) { // the year for the given time
 #define LEAP_YEAR(Y)     ( ((1970+Y)>0) && !((1970+Y)%4) && ( ((1970+Y)%100) || !((1970+Y)%400) ) )
 
 static  const uint8_t monthDays[]={31,28,31,30,31,30,31,31,30,31,30,31}; // API starts months from 1, this array starts from 0
- 
+volatile unsigned long tick_us = 1000000; // TJS: measured number of microseconds per second for use with 1Hz reference
+
 void breakTime(time_t time, tmElements_t &tm){
 // break the given time_t into time components
 // this is a more compact version of the C library localtime function
@@ -230,6 +236,7 @@ static timeStatus_t Status = timeNotSet;
 
 getExternalTime getTimePtr;  // pointer to external sync function
 //setExternalTime setTimePtr; // not used in this version
+void_void_fct_ptr cb_1Hz_ptr;
 
 #ifdef TIME_DRIFT_INFO   // define this to get drift data
 time_t sysUnsyncedTime = 0; // the time sysTime unadjusted by sync  
@@ -237,16 +244,49 @@ time_t sysUnsyncedTime = 0; // the time sysTime unadjusted by sync
 
 
 time_t now(){
-  while( millis() - prevMillis >= 1000){      
-    sysTime++;
-    prevMillis += 1000;	
+  if (use_1Hz_ref){
+    // see if we are still getting pulses
+    unsigned long ms = millis();
+    unsigned long delta_secs;
+
+    if(Status != timeSet || ms - prevMillis > tick_us/1000){
+      Status = timeNeedsSync;
+      delta_secs = ((ms - prevMillis) * 1000) / tick_us;
+#ifdef DBG_PRINTING
+      Serial.print("Lost signal ");
+      // lost signal
+      Serial.print(sysTime);
+      Serial.print(" ");
+      Serial.print(ms);
+      Serial.print(" ");
+      Serial.print(prevMillis);
+      Serial.print(" tick:");
+      Serial.print(tick_us);
+      Serial.print(" ds:");
+      Serial.println(delta_secs);
+#endif
+      if(delta_secs > 0){
+	sysTime += delta_secs;
+	prevMillis = ms;
+      }
+    }
+  }
+  else{
+    while(millis() - prevMillis >= 1000){      
+      sysTime++;
+      prevMillis += 1000;	
 #ifdef TIME_DRIFT_INFO
-    sysUnsyncedTime++; // this can be compared to the synced time to measure long term drift     
+      sysUnsyncedTime++; // this can be compared to the synced time to measure long term drift     
 #endif	
+    }
   }
   if(nextSyncTime <= sysTime){
-	if(getTimePtr != 0){
-	  time_t t = getTimePtr();
+    Status = timeNeedsSync;  // TJS: 1Hz signal lost can also cause this status
+  } // TJS:
+  if(Status == timeNeedsSync){// TJS: 1Hz signal lost can also cause this status
+    if(getTimePtr != 0){
+      // Serial.print("Setting time from time provider!");
+      time_t t = getTimePtr();
       if( t != 0)
         setTime(t);
       else
@@ -300,4 +340,74 @@ void setSyncProvider( getExternalTime getTimeFunction){
 
 void setSyncInterval(time_t interval){ // set the number of seconds between re-sync
   syncInterval = interval;
+}
+
+// TJS: one Hertz interrupt to be called on rising edge of one Hz square wave. 
+// Used to sync with GPS clock or other 1Hz source.
+volatile unsigned long last_tick = 0;  // TJS: micros() at tht last 1Hz reference pulse
+void set_1Hz_ref(time_t current_time, int interrupt_pin, void(*cb_ptr)()){
+  // to be called at START of current_time second to insure that the second 
+  // boundary does not occur during this call
+  // hw inturrupt connected to digital pin 2 (inturrupt 0) 
+  // or pin 3 (interrupt 1)
+  unsigned long half_second_us = MAX_TIME_T;
+  unsigned long start_low_us;
+    
+  setTime(current_time);
+  use_1Hz_ref = true;
+  cb_1Hz_ptr = cb_ptr;
+  nextSyncTime = MAX_TIME_T;
+#ifdef NOTDEF
+  while(half_second_us > tick_us){ // check for integer overflow
+    while(digitalRead(2) == HIGH){ // should already be high when called
+    }
+    unsigned long start_low_us = micros();
+    while(digitalRead(2) == LOW){ // now measure half a second
+    }
+    half_second_us = micros() - start_low_us;
+    current_time += 1;
+  }
+  tick_us = 2 * half_second_us;
+#endif  
+  attachInterrupt(interrupt_pin - 2, tick_1Hz, RISING);
+}
+void tick_1Hz(){ 
+  sysTime++;
+  prevMillis = millis(); // keep track of last update incase we loose signal
+
+  unsigned long currentMicros = micros();
+  unsigned long new_tick;
+
+  if(last_tick < currentMicros){ // ignore integer overflow wraps
+    new_tick = currentMicros - last_tick;
+    if(((tick_us >= new_tick) && (tick_us - new_tick) < CRYSTAL_1HZ_TOLERANCE_uS) ||
+       ((tick_us < new_tick) && (new_tick - tick_us) < CRYSTAL_1HZ_TOLERANCE_uS)){ // ignore crazy short pulses (or long)
+      tick_us = new_tick; 
+     cb_1Hz_ptr();
+    }
+  }
+  last_tick = currentMicros;
+
+}
+/*
+ * TJS: Precision timing available with one hertz reference
+ */
+int millisecond(){
+  int out;
+  if(use_1Hz_ref){
+    // now(); // I don't think now() is necessary
+    unsigned long currentMicros = micros();
+    
+    // check for integer overflow
+    if(last_tick > currentMicros){
+      out = (1000 * (MAX_TIME_T - last_tick + currentMicros + 1)) / tick_us;
+    }
+    else{
+      out = (1000 * (currentMicros - last_tick)) / tick_us;
+    }
+  }
+  else{
+    out = 0;
+  }
+  return out;
 }

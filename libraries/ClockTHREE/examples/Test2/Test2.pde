@@ -19,9 +19,12 @@
 ClockTHREE c3 = ClockTHREE();
 uint32_t *display = (uint32_t*)calloc(N_COL, sizeof(uint32_t));
 void setup(){
+  Serial.begin(57600);
+  Serial.println("setup()");
   c3.init();
   c3.setdisplay(display);
   c3.displayfill(RED);
+  Serial.println("end setup()");
 }
 uint32_t count = 4000;
 boolean dbg = true;
@@ -30,12 +33,22 @@ void loop(){
   uint8_t color_i;
   
   if(count % hold == 0){
+    Serial.println("HERE0");
     color_i = count / hold;
-    color_i %=  N_COLOR;
+    Serial.println("HERE1");
+    // color_i %=  N_COLOR;
+    color_i %=  8;
+    Serial.print(count, DEC);
+    Serial.println(" ");
+    Serial.println(color_i, DEC);
     c3.displayfill(COLORS[color_i]);
-    c3.displayfill(WHITE);
+    Serial.println("HERE3");
+    // c3.displayfill(WHITE);
+    Serial.println("HERE4");
     dbg = !dbg;
+    Serial.println("HERE5");
     digitalWrite(DBG, dbg);
+    Serial.println("THERE");
   }
   
   c3.refresh();
