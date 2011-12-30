@@ -1,6 +1,32 @@
 #include <inttypes.h>
 #include "EDL.h"
-#include "EEPROM.h"
+
+
+/*
+ * Return true if eeprom does not violate EEPROM bounds.
+ */
+bool did_check_eeprom(){
+  uint8_t did, len, n;
+  int16_t addr = 0;
+  bool out = true;
+
+  n = get_n_dids();
+  for(uint8_t i = 0; i < n && addr < MAX_EEPROM_ADDR - 2; i++){
+    addr += EEPROM.read(addr + 1);
+    if(addr > MAX_EEPROM_ADDR){
+      out = false;
+    }
+  }
+  return out;
+}
+
+/*
+ * Return the number if DID's currently stored
+ */
+uint8_t get_n_dids(){
+  return EEPROM.read(MAX_EEPROM_ADDR);
+}
+
 
 /* 
  * Copy DID to data to dest.  
@@ -25,7 +51,7 @@ bool did_read(uint8_t did, char *dest, uint8_t *len_p){
  * return true if successful, false otherwise.
  */
 bool did_write(char* data){
-  uint8_t n = EEPROM.read(MAX_EEPROM_ADDR);
+  uint8_t n = get_n_dids();
   int16_t addr = 0;
   uint8_t did = data[0];
   uint8_t len = data[1];
@@ -163,4 +189,13 @@ bool did_edit(uint8_t did, uint8_t offset, uint8_t new_byte){
     }
   }
   return status;
+}
+
+/*
+ * clear the EEPROM (stuff with all zeros)
+ */
+void did_format_eeprom(){
+  for(uint16_t i = 0; i <= MAX_EEPROM_ADDR; i++){
+    EEPROM.write(i, 0);
+  }
 }

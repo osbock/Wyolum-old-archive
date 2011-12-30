@@ -6,7 +6,18 @@
 
 #include <inttypes.h>
 #include "Time.h"
-#include "ClockTHREE.h"
+#if defined(ARDUINO) && ARDUINO >= 100
+#include "Arduino.h"
+#define WIRE_WRITE(ptr,n_byte) Wire.write((uint8_t*)(ptr), (n_byte))
+#define WIRE_WRITE1(one_byte) Wire.write((uint8_t)(one_byte))
+#define WIRE_READ Wire.read();
+#else
+#include "WProgram.h"
+#define WIRE_WRITE(ptr,n_byte) Wire.send((uint8_t*)(ptr), (n_byte))
+#define WIRE_WRITE1(one_byte) Wire.send((one_byte))
+#define WIRE_READ Wire.receive()
+#endif
+
 
 
 const uint8_t MONTHS[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30,31, 30, 31};
@@ -23,6 +34,7 @@ const int DS3231_ALARM1_OFSET = 0x7;
  */
 time_t getTime();
 
+void setRTC(time_t t);
 void setRTC(uint16_t YY, uint8_t MM, uint8_t DD, 
 	    uint8_t hh, uint8_t mm, uint8_t ss);
 void set_control_reg();

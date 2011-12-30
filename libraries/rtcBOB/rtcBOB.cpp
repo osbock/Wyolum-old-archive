@@ -20,6 +20,11 @@ time_t getTime(){
   return now();
 }
 
+void setRTC(time_t t){
+  tmElements_t tm;
+  breakTime(t, tm);
+  setRTC(tm.Year + 1970, tm.Month, tm.Day, tm.Hour, tm.Minute, tm.Second);
+}
 void setRTC(uint16_t YY, uint8_t MM, uint8_t DD, 
 	    uint8_t hh, uint8_t mm, uint8_t ss){
   uint8_t date[7];
