@@ -203,12 +203,16 @@ void initialize_clock(){
 
 // assumes HHMMDD HHMM are correct
 void seconds_sync(){
+  unsigned long start_s;
   if(now() - last_set_time > RTC_SECOND_STALE_S){
     sws.begin(9600);
-    while(year() < 2011){
+    pause_1Hz();
+    start_s = now();
+    while(now() == start_s){
       feedgps();
     }
     sws.end();
+    unpause_1Hz();
     last_set_time = now();
     save_sync_time();
   }
