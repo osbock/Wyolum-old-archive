@@ -33,6 +33,7 @@ static tmElements_t tm;          // a cache of time elements
 static time_t       cacheTime;   // the time the cache was updated
 static time_t       syncInterval = 300;  // time sync will be attempted after this many seconds
 boolean use_1Hz_ref = false;
+volatile boolean active_1Hz = false;
 
 void refreshCache( time_t t){
   if( t != cacheTime)
@@ -145,6 +146,10 @@ int year(time_t t) { // the year for the given time
 static  const uint8_t monthDays[]={31,28,31,30,31,30,31,31,30,31,30,31}; // API starts months from 1, this array starts from 0
 volatile unsigned long tick_us = 1000000; // TJS: measured number of microseconds per second for use with 1Hz reference
 
+unsigned long get_tick_us(){
+  return tick_us;
+}
+
 void breakTime(time_t time, tmElements_t &tm){
 // break the given time_t into time components
 // this is a more compact version of the C library localtime function
@@ -241,7 +246,6 @@ void_void_fct_ptr cb_1Hz_ptr;
 #ifdef TIME_DRIFT_INFO   // define this to get drift data
 time_t sysUnsyncedTime = 0; // the time sysTime unadjusted by sync  
 #endif
-
 
 time_t now(){
   if (use_1Hz_ref){
@@ -345,7 +349,14 @@ void setSyncInterval(time_t interval){ // set the number of seconds between re-s
 // TJS: one Hertz interrupt to be called on rising edge of one Hz square wave. 
 // Used to sync with GPS clock or other 1Hz source.
 volatile unsigned long last_tick = 0;  // TJS: micros() at tht last 1Hz reference pulse
-void set_1Hz_ref(time_t current_time, int interrupt_pin, void(*cb_ptr)()){
+
+
+/* TJS: one Hertz interrupt to be called on rising edge of one Hz square wave. 
+ *      Used to sync with GPS clock or other 1Hz source to get millisecond time accuracy
+ *      trigger is one of LOW, CHANGE, RISING, or FALLING
+ */
+void set_1Hz_ref(time_t current_time, int interrupt_pin, void(*cb_ptr)(),
+		 int trigger){
   // to be called at START of current_time second to insure that the second 
   // boundary does not occur during this call
   // hw inturrupt connected to digital pin 2 (inturrupt 0) 
@@ -357,44 +368,53 @@ void set_1Hz_ref(time_t current_time, int interrupt_pin, void(*cb_ptr)()){
   use_1Hz_ref = true;
   cb_1Hz_ptr = cb_ptr;
   nextSyncTime = MAX_TIME_T;
-#ifdef NOTDEF
-  while(half_second_us > tick_us){ // check for integer overflow
-    while(digitalRead(2) == HIGH){ // should already be high when called
-    }
-    unsigned long start_low_us = micros();
-    while(digitalRead(2) == LOW){ // now measure half a second
-    }
-    half_second_us = micros() - start_low_us;
-    current_time += 1;
-  }
-  tick_us = 2 * half_second_us;
-#endif  
-  attachInterrupt(interrupt_pin - 2, tick_1Hz, RISING);
+  active_1Hz = true;
+  attachInterrupt(interrupt_pin - 2, tick_1Hz, trigger);
 }
+/*
+ * TJS: Count ticks.  Used to sync with absolute time.
+ */
 void tick_1Hz(){ 
-  sysTime++;
-  prevMillis = millis(); // keep track of last update incase we loose signal
+  cb_1Hz_ptr();          // notify caller
+  prevMillis = millis(); // keep track of last update incase we loose signal 
 
   unsigned long currentMicros = micros();
   unsigned long new_tick;
 
-  if(last_tick < currentMicros){ // ignore integer overflow wraps
-    new_tick = currentMicros - last_tick;
-    if(((tick_us >= new_tick) && (tick_us - new_tick) < CRYSTAL_1HZ_TOLERANCE_uS) ||
-       ((tick_us < new_tick) && (new_tick - tick_us) < CRYSTAL_1HZ_TOLERANCE_uS)){ // ignore crazy short pulses (or long)
-      tick_us = new_tick; 
-     cb_1Hz_ptr();
+  if(active_1Hz){
+    if(last_tick < currentMicros){ // ignore integer overflow wraps
+      new_tick = currentMicros - last_tick;
+      if(((tick_us >= new_tick) && (tick_us - new_tick) < CRYSTAL_1HZ_TOLERANCE_uS) ||
+	 ((tick_us < new_tick) && (new_tick - tick_us) < CRYSTAL_1HZ_TOLERANCE_uS)){ 
+	// ignore crazy short pulses (or long)
+	tick_us = (new_tick + 5 * tick_us) / 6; // exponential low pass filter
+	sysTime++;
+      }
     }
+    last_tick = currentMicros;
   }
-  last_tick = currentMicros;
-
 }
+
+/*
+ * TJS: stop counting ticks.  Used to sync with absolute time.
+ */
+void pause_1Hz(){
+  active_1Hz = false;
+}
+
+/*
+ * TJS: start counting ticks.  Used to sync with absolute time.
+ */
+void unpause_1Hz(){
+  active_1Hz = true;
+}
+
 /*
  * TJS: Precision timing available with one hertz reference
  */
 int millisecond(){
   int out;
-  if(use_1Hz_ref){
+  if(use_1Hz_ref and active_1Hz){
     // now(); // I don't think now() is necessary
     unsigned long currentMicros = micros();
     
@@ -409,5 +429,5 @@ int millisecond(){
   else{
     out = 0;
   }
-  return out;
+  return out % 1000;
 }

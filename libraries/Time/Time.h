@@ -114,13 +114,18 @@ void    setSyncInterval(time_t interval); // set the number of seconds between r
 
 /* TJS: one Hertz interrupt to be called on rising edge of one Hz square wave. 
  *      Used to sync with GPS clock or other 1Hz source to get millisecond time accuracy
+ *      trigger is one of LOW, CHANGE, RISING, or FALLING
  */
-void set_1Hz_ref(time_t current_time, int interrupt_pin, void(*cb_ptr)());
-void    tick_1Hz();
+void set_1Hz_ref(time_t current_time, int interrupt_pin, void(*cb_ptr)(), int trigger);
+void tick_1Hz();
+void pause_1Hz();
+void unpause_1Hz();
  
 /* low level functions to convert to and from system time                     */
 void breakTime(time_t time, tmElements_t &tm);  // break time_t into elements
 time_t makeTime(tmElements_t &tm);  // convert time elements into time_t
+
+unsigned long get_tick_us();
 
 
 #endif /* _Time_h */
