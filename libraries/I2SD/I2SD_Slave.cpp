@@ -128,8 +128,16 @@ void I2SD_Slave_onRequest(){
   }
   if(!i2sd_p->data_ready){
     if(i2sd_p->file_mode){
-      for(i = 0; i < I2C_BUFFER_LEN && i2sd_p->file.available(); i++){
+      for(i = 0; 
+	  i < I2C_BUFFER_LEN && 
+	    i2sd_p->file.position() < i2sd_p->file.size() - 1; 
+	  i++){
 	i2sd_p->buffer[i] = i2sd_p->file.read();
+      }
+      if(i < I2C_BUFFER_LEN){
+	for(uint8_t j=i; j<I2C_BUFFER_LEN; j++){
+	  i2sd_p->buffer[j] = NULL;
+	}
       }
       i2sd_p->buffer_size=i;
     }
@@ -166,10 +174,13 @@ void I2SD_Slave_onReceive(int n_byte){
 	  i++){
 	Address.char4[i] = Wire.receive();
       }
-      if(i == 4){
+      if(i == 4){ // make sure full address received
 	i2sd_p->file.seek(Address.dat32);
-	// Serial.print("SEEK: ");
-	// Serial.println(Address.dat32);
+	Serial.print("SEEK: ");
+	Serial.println(Address.dat32);
+      }
+      else{
+	Serial.print("SEEK address garbled");
       }
     }
     else if(msg_type == I2SD_PING_MSG){
@@ -208,6 +219,7 @@ void I2SD_Slave_onReceive(int n_byte){
 	Serial.println(mode, DEC);
 	i2sd_p->close();
 	i2sd_p->open(filename, mode);
+	Serial.println("File is now open!");
       }
     }
     else{

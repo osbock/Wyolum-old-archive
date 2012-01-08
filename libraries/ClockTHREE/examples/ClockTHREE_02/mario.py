@@ -91,6 +91,8 @@ def run(n):
         time.sleep(delay)
 
 if __name__ == '__main__':
-    C3_interface.connect()
-    run(1000000)
-    C3_interface.trigger_mode()
+    try:
+        C3_interface.connect()
+        run(1000000)
+    finally:
+        C3_interface.trigger_mode()

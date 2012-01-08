@@ -54,9 +54,6 @@ void loop()
 {
   // open the file. note that only one file can be open at a time,
   // so you have to close this one before opening another.
-  if(count == 10){
-    while(1) delay(1000); // stop it already
-  }
   SD.remove("test.txt");
   myFile = SD.open("test.txt", FILE_WRITE);
   
@@ -95,7 +92,22 @@ void loop()
     Serial.println("error opening test.txt");
     err_out(3);
   }
-	// nothing happens after setup
+  while(SD.exists("DEFAULT.TXT")){
+    Serial.println("Delete old DEFAULT.TXT");
+    SD.remove("DEFAULT.TXT");
+  }
+  Serial.println("Write DEFAULT.TXT");
+
+  myFile = SD.open("DEFAULT.TXT", FILE_WRITE);
+  for(int i=0; i < 100; i++){
+    myFile.print(i);
+    myFile.println(" All work and no play makes Jack a dull boy");
+  }
+  myFile.close();
+  Serial.println("FULL STOP");
+  // nothing happens after setup
+
+  while(1) delay(1000); // stop it already
 }
 
 

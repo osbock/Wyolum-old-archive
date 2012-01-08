@@ -241,7 +241,7 @@ def matrix(c2):
     c2.paused = True
     inds = range(N_COL)
     
-    for i in range(50):
+    for i in range(20):
         col_i = random.randrange(N_COL)
         col = c2.screen.buffer[col_i]
         steps = random.randrange(N_ROW)
@@ -254,7 +254,7 @@ def matrix(c2):
             # shift in blues
             for j in range(steps):
                 c2.screen.buffer[col_i] = scroll_down(c2.screen.buffer[col_i])
-                c2.screen.buffer[col_i] |= 1
+                c2.screen.buffer[col_i] |= 4
                 c2.refresh()
     c2.paused = False
 

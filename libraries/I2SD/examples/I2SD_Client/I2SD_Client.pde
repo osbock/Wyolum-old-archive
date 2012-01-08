@@ -31,12 +31,19 @@ void setup(){
   Serial.println("PONG received");
 
   if(WRITE_TEST){
+    Serial.println("Open a NEW_FILE.TXT");
     i2sd.open("NEW_FILE.TXT", FILE_WRITE);
-    i2sd.seek(0);
+    Serial.println("NEW_FILE.TXT Open");
+    // Serial.println("STOP"); while(1) delay(100);
     char* msg="Hello from I2SD_Client.pde. "
       "Please note this is longer than 32 chararters.";
+    Serial.print("Write '");
+    Serial.println(msg);
     i2sd.write((uint8_t*)msg, strlen(msg) + 1);
+    Serial.println("Written");
+    Serial.println("Open a NEW_FILE.TXT for reading");
     i2sd.open("NEW_FILE.TXT", FILE_READ);
+    Serial.println("Open, now read it back");
     n_byte = i2sd.read(msg_back, 100);
     msg_back[n_byte] = NULL;
     Serial.println((char*)msg_back);
@@ -54,35 +61,23 @@ void setup(){
     i2sd.clear_error();
     Serial.println("Error cleared.");
   }
-  i2sd.open("TEST.TXT", FILE_READ);
+  i2sd.open("DEFAULT.TXT", FILE_READ);
 }
 
 void loop(){
   const int n_byte = 32 * 7;
   char big_data[n_byte];
   unsigned long now = millis();
-  // i2sd.seek(51);
   uint8_t n_byte_back = i2sd.read((uint8_t*)big_data, n_byte);
-  // Serial.print("n_byte_back: ");
-  // Serial.println(n_byte_back, DEC);
-  /*
-    for(int i =0; i < 5; i++){
-    Serial.print(big_data[i]);
-    Serial.print(" ");
-    Serial.println(big_data[i], DEC); all are 255 ==> end of file!
+
+  if(big_data[31] == -1){ // -1 at the end of the ascii file
+    int i = 31;
+    while(big_data[i] == -1){
+      big_data[i] = 0;
+      i--;
+    }
   }
-  */
-  // big_data[n_byte] = NULL;
   Serial.print(big_data);
-  // delay(1);
-  // speed test: 248000 bytes per second!
-  // Serial.println((float)n_byte / (millis() - now)); 
-  if(false){
-    digitalWrite(DBG, HIGH);
-    delay(1);
-    digitalWrite(DBG, LOW);
-    delay(1);
-  }
-  // delay(100);
+
 }
 

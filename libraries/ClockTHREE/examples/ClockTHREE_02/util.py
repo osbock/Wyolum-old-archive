@@ -92,7 +92,7 @@ def mono_to_RGB__test__():
 
 def scroll_down(buffer):
     out = (((buffer << 3) & RGB) | 
-           (((buffer << 3) & ROWS[10])) | 
+           (((buffer << 1) & ROWS[10])) | 
            (((buffer << 1) & ROWS[11])))
     out %= 2 ** 32
     return out
