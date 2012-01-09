@@ -29,7 +29,7 @@ HOURGLASS = False
 LASER_CUT_DIR = 'LaserPoint'
 LASER_CUT_DIR = 'Hines'
 
-LASER_THICKNESS = .006 * inch
+LASER_THICKNESS = .02 * mm
 PIECE_GAP = .5 * mm
 DEG = pi/180.
 DTHETA = 2.5
@@ -306,7 +306,7 @@ class Image:
 def draw(filename, data, images, fontname='Times-Roman', 
          fontsize= DEFAULT_FONT_SIZE,
          faceplate=True, baffle=True, CFL=True, horizontal_baffles=False,
-         vertical_baffles=False, scad=False, explode=False, pcb_outline=False,
+         vertical_baffles=False, scad=False, explode=True, pcb_outline=False,
          reverse=False,
          case=string.upper,
          ):
@@ -397,12 +397,13 @@ def draw(filename, data, images, fontname='Times-Roman',
                 pass
 
         alignment_c = canvas.Canvas("led_alignment.pdf",
-                                    pagesize=(1.8*inch, 9*inch)
+                                    pagesize=(1.7*inch, 7.85*inch)
                                     )
-        alignment_c.translate(-XS[0] + .3*inch, 0)
-
-        for x in XS[:2]:
-            for y in YS[1:]:
+        alignment_c.setStrokeColor(red)
+        alignment_c.setLineWidth(LASER_THICKNESS)
+        alignment_c.rect(.25*inch, .25*inch, 1.2 * inch, 7.25 * inch)
+        for x in XS[:2] - XS[0] + .25 * inch:
+            for y in YS[1:] - YS[-1] + .25 * inch:
                 # c.rect(x + lw, y + lw, dx - 2 * lw, dy -2 * lw)
                 alignment_c.circle(x + dx / 2., y + dy / 2., 5.25*mm)
                 pass
@@ -614,6 +615,14 @@ def draw(filename, data, images, fontname='Times-Roman',
                    mounts[6],
                    #mounts[8],
                    mounts[11]]
+    
+    back_mounts = [mounts[0],
+                   mounts[1],
+                   mounts[3],
+                   mounts[6],
+                   mounts[8],
+                   mounts[11]]
+    
     c.setLineWidth(.5)
     c.setStrokeColor(red)
     for x, y in face_mounts:
@@ -647,6 +656,11 @@ def draw(filename, data, images, fontname='Times-Roman',
                                 decodeFunc(chr(186) + 'C'))
             c.drawCentredString(XS[-3] - dx/2, YS[-1] + dy/4,
                                 decodeFunc(chr(186) + 'F'))
+            if False: ## row of DEG symbols
+                for x in XS[1:]:
+                    c.drawCentredString(x - dx/2, YS[-2] + dy/16,
+                                        decodeFunc(chr(186)))
+                
             # draw clock slash
             c.setLineWidth(1 * mm)
             c.setLineJoin(1)
@@ -657,7 +671,8 @@ def draw(filename, data, images, fontname='Times-Roman',
             r = 1.5 * mm
             for i in range(5):
                 y = YS[5 + i] + dy / 2.
-                c.circle(x, y, r, fill=True)
+                if data[4 + i][-1] == ' ':
+                    c.circle(x, y, r, fill=True)
     baffle_h = create_baffle(BAFFLE_HEIGHT,
                              BAFFLE_THICKNESS, 15, dx,
                              tab_width=TAB_WIDTH,
@@ -676,9 +691,10 @@ def draw(filename, data, images, fontname='Times-Roman',
         if explode:
             print >> scad, 'translate(v=[0, 0, -2])'
         for x, y, in face_mounts:
-            bottom_frame.drill(x, y, FRAME_MOUNT_DRILL_R)
             top_frame.drill(x, y, FRAME_MOUNT_DRILL_R)
             clear_cover.drill(x, y, STANDOFF_IR + .25*mm)
+        for x, y, in back_mounts:
+            bottom_frame.drill(x, y, FRAME_MOUNT_DRILL_R)
             back_cover.drill(x, y, STANDOFF_IR + .25*mm)
         keyhole = MyPath()
         Center = 2. * inch, 7.5 * inch  # larger keyhole circle center
@@ -883,22 +899,27 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
 
         C3_logo = Image('Images/ClockTHREE_Logo.png',
                          8*inch, 1*inch)
-        C3_logo.drawOn(bc)
-        textobject = bc.beginText()
-        textobject.setTextOrigin(9.75*inch, .75*inch)
-        textobject.setFont("Orbitron-Black", 14)
-        textobject.textOut('ClockTHREE')
-        bc.drawText(textobject)
+        ###### not used with clear back!
+        # C3_logo.drawOn(bc) 
+        # textobject = bc.beginText()
+        # textobject.setTextOrigin(9.75*inch, .75*inch)
+        # textobject.setFont("Orbitron-Black", 14)
+        # textobject.textOut('ClockTHREE')
+        # bc.drawText(textobject)
         # bc.drawCentredString(10.75*inch, .5*inch, , fontsize=20)
+        ###### not used with clear back!
 
 
         x = 1.25 * inch
         y = 1.50 * inch
-        bc.drawString(x, y, 'WyoLum@gmail.com')
-        bc.drawString(x, y - .25 * inch, 'http://sites.google.com/site/clockthreeishere')
-        bc.drawString(x, y - .5 * inch, 'http://lumetron.com')
-        bc.drawString(x, y - .75 * inch, 'http://wyoinnovation.blogspot.com')
+        
+        ###### not used with clear back!
+        # bc.drawString(x, y, 'WyoLum@gmail.com')
+        # bc.drawString(x, y - .25 * inch, 'http://sites.google.com/site/clockthreeishere')
+        # bc.drawString(x, y - .5 * inch, 'http://lumetron.com')
+        # bc.drawString(x, y - .75 * inch, 'http://wyoinnovation.blogspot.com')
         # bc.line(0, .75 * inch, 13.5 * inch, .75 * inch)
+        ###### not used with clear back!
         
 
         bc.showPage()
@@ -972,31 +993,6 @@ frame();''' % (BAFFLE_THICKNESS/2/cm)
             tf.showPage()
             tf.save()
 
-            
-            tf = canvas.Canvas("%s/top_frame_engraving.pdf" % LASER_CUT_DIR,
-                                pagesize=(13.5 * inch, 10.5 * inch))
-            tf.setLineWidth(LASER_THICKNESS)
-
-            for button in button_logos:
-                button = button.translate(.75 * inch, .75 * inch)
-                print button.x / inch, button.y / inch
-                button.drawOn(tf)
-            # crop marks
-            tf.line(0, .25 * inch, .2 * inch, .25 * inch)
-            tf.line(13.5 * inch, .25 * inch, 13.3 * inch, .25 * inch)
-            tf.line(0, 10.25 * inch, .2 * inch, 10.25 * inch)
-            tf.line(13.5 * inch, 10.25 * inch, 13.3 * inch, 10.25 * inch)
-            tf.line(.25 * inch, 0 * inch, .25 * inch, .2 * inch)
-            tf.line(13.25 * inch, 0 * inch, 13.25 * inch, .2 * inch)
-            tf.line(.25 * inch, 10.5 * inch, .25 * inch, 10.3 * inch)
-            tf.line(13.25 * inch, 10.5 * inch, 13.25 * inch, 10.3 * inch)
-
-            # tf.line(0, .75 * inch, 13.5 * inch, .75 * inch)
-            # for i in range(14):
-            #     tf.line((i + .25) *inch, 0, (i + .25) * inch, 10.5 * inch)
-            tf.showPage()
-            tf.save()
-
             bf = bottom_frame.toPDF("%s/bottom_frame.pdf" % LASER_CUT_DIR)
             bf.showPage()
             bf.save()
@@ -1044,7 +1040,7 @@ DER-MITTERNACHTS
 PETERSCLOCKTHREE
  JMTUMSALARM     
 '''
-german = [list(l) for l in '''\
+german_peter = [list(l) for l in '''\
 ESXISTYVIERTELY?
 F‹NFQZWANZIGZEHN
 VORNACHKHALBIER!
@@ -1058,6 +1054,20 @@ DER%MITTERNACHTS
 PETERSCLOCKTHREE
  JMTUMSALARM     
 '''.splitlines()]
+
+german_erwin = '''ESXISTYZWANZIGY?
+DREIVIERTELZEHNQ
+F‹NF!VORNACHMESZ
+HALBQZWEINSIEBEN
+VIERELFHERSECHS
+ZW÷LF‹NFACHTMEZ
+ZEHNEUNDREIQUHR
+AMINACHMITTAGSZ
+MORGENSABENDSTJ
+DER%MITTERNACHTS
+ERWINSCLOCKTHREE
+ JMTUMSALARM    '''.splitlines()
+german = german_erwin
 example_data = [
         ('I',"T'",'S',' ','A',' ',' ',' ',' ','Q','U','A','R','T','E','R'),
         (' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','P','A','S','T',' '),
@@ -1072,6 +1082,19 @@ example_data = [
         (' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
         (' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
         ]
+
+dutch = '''SHETKISAVIJFMDFS
+HTIENBTZILVOORWR
+OVERMECVANKWARTV
+SHALFPHARTEWOVER
+DHVOORGSC……NWSMU
+TWEEPKCHAPPYDRIE
+VIERFZESYARACHTS
+QZEVENONEWNEGENZ
+KTVIJFILSELFTIEN
+TWAALFVKDITHUURY
+ALARMZOAOFFDYEAR
+JMDUMSNMIELRSVDS'''.splitlines()
 
 # make lower case hack!
 # data = [[c.lower() for c in line] for line in data]
@@ -1117,7 +1140,7 @@ def test():
     # draw("baffle_v.pdf", data, images, faceplate=False, baffle=True, vertical_baffles=True)
     draw("all.pdf", data, images, fontname='Orbitron-Black', faceplate=True, 
          baffle=True, vertical_baffles=True, horizontal_baffles=True,
-         scad=True, explode=False, pcb_outline=True)
+         scad=True, explode=True, pcb_outline=True)
 
 def main(fontnames):
     for fontname in fontnames:
@@ -1128,7 +1151,7 @@ def main(fontnames):
                     break
                 cases = {'Upper':string.upper,
                          'Lower':string.lower}
-                data_dict = {'':data, 'german':german}
+                data_dict = {'':data, 'german':german, 'dutch':dutch}
                 for reverse in [True, False]:
                     for data_name in data_dict:
                         for case in cases:
@@ -1142,10 +1165,17 @@ def main(fontnames):
                                                                                             data_name)
                             if reverse and data_name == 'example':
                                 continue
+                            if data_name == 'dutch':
+                                imgs = []
+                                cfl=False
+                            else:
+                                imgs = images
+                                cfl=True
                             draw(faceplate_filename,
-                                 data_dict[data_name], images, fontname=fontname, 
+                                 data_dict[data_name], imgs, fontname=fontname, 
                                  faceplate=True, baffle=False, case=cases[case],
-                                 reverse=reverse)
+                                 reverse=reverse,
+                                 CFL=cfl)
             except Exception, e:
                 print 'problem.  skipping %s' % fontname, e
                 raise
@@ -1172,10 +1202,18 @@ if __name__ == '__main__':
     if len(sys.argv) == 1: # print all
         add_all_fonts()
         # main(fontnames)
-        main(['GRENADIE', 'GrenadierNF'])
+        fontnames = ['Ubuntu-Bold']
+        for font in fontnames:
+            add_font(font)
+        main(fontnames)
+        # main(['Cantarell-Bold'])
+        # main(['Ubuntu-Bold'])
         test()
         # main(['Vollkorn-Regular'])
     else:
-        main(sys.argv[1:])
+        fontname = sys.argv[1]
+        print fontname
+        add_font(fontname)
+        main(fontname)
         test()
     

@@ -1,5 +1,7 @@
  # -*- coding: latin-1 -*-
 
+import os.path
+from random import choice
 import string
 from numpy import *
 import PIL.Image
@@ -50,13 +52,21 @@ german = '''\
 ES-IST-VIERTEL--
 FÜNF-ZWANZIGZEHN
 VORNACH-HALB----
-EINSZWEIDREI---- 
+EINSZWEIDREI----
 VIERFÜNFSECHS-- 
 SIEBENACHTZWÖLF 
 ZEHNELFNEUN-UHR 
--JMTUMSALARM---'''.splitlines()
+-JMTUMSALARM----'''
+
+new_german = []
+for l in german:
+    if l == '-':
+        l = choice(string.uppercase)
+    new_german.append(l)
+german = ''.join(new_german).splitlines()
 
 # letters = ['.' * 16] * 8
+letters = english
 letters = german
 
 class MyPath:
@@ -214,7 +224,7 @@ class Keyhole(MyPath):
                 self.lineTo(*next)
             self.lineTo(*start)
 
-MARGIN = LASER_THICKNESS/2
+MARGIN = LASER_THICKNESS
 
 def create_baffle(baffle_height, 
                   baffle_thickness, 
@@ -390,11 +400,11 @@ def draw(filename, data, fontname='Times-Roman', images=[],
     print >> scad, '}'
 
     baffle_h = create_baffle(baffle_height=baffle_height, 
-                      baffle_thickness=baffle_thickness,
-                      n_notch=N_COL,
-                      delta=dx,
-                      overhang=.3*inch,
-                      margin=MARGIN)
+                             baffle_thickness=baffle_thickness,
+                             n_notch=N_COL,
+                             delta=dx,
+                             overhang=.3*inch,
+                             margin=MARGIN)
 
     print >> scad, 'module baffle_h(){'
     print >> scad, 'color([ 1, 0.1, 0.1, 0.8 ])'
@@ -424,7 +434,7 @@ def draw(filename, data, fontname='Times-Roman', images=[],
 
 
     if False:
-        # leds
+        # draw leds?
         can.setFillColor(blue)
         for x in led_xs:
             for y in led_ys:
@@ -454,11 +464,17 @@ def draw(filename, data, fontname='Times-Roman', images=[],
     ldr_y = 9*inch - 6.38*mm
     ldr_r = 2.5*mm
     can.circle(ldr_x, ldr_y, ldr_r, fill=True) # ldr
-    if False:
-        can.circle(xs[-1] + dx/2, ys[-1] + dy/2 - .05*inch, 1*mm, fill=True) # 1 minute
-        can.circle(xs[-1] + dx/2, ys[-2] + dy/2 + dy/8 - .05*inch, 1*mm, fill=True) # 2 minutes
-        can.circle(xs[-1] + dx/2, ys[-2] + dy/2 - dy/8 - .05*inch, 1*mm, fill=True) # 2 minutes
-        can.circle(xs[-1] + dx/2, ys[-3] + dy/2 - .05*inch, 1*mm, fill=True) # 1 minute
+    if letters == english:
+        can.circle(xs[-1] + dx/2, ys[-1] + dy/2 - .025*inch, 1*mm, fill=True) # 1 minute
+        can.circle(xs[-1] + dx/2, ys[-2] + dy/2 + dy/8 - .025*inch, 1*mm, fill=True) # 2 minutes
+        can.circle(xs[-1] + dx/2, ys[-2] + dy/2 - dy/8 - .025*inch, 1*mm, fill=True) # 2 minutes
+        can.circle(xs[-1] + dx/2, ys[-3] + dy/2 - .025*inch, 1*mm, fill=True) # 1 minute
+    elif letters == german:
+        can.circle(xs[-1] + dx/2, ys[-5] + dy/2 - .025*inch, 1*mm, fill=True) # 1 minute
+        can.circle(xs[-1] + dx/2, ys[-6] + dy/2 + dy/8 - .025*inch, 1*mm, fill=True) # 2 minutes
+        can.circle(xs[-1] + dx/2, ys[-6] + dy/2 - dy/8 - .025*inch, 1*mm, fill=True) # 2 minutes
+        can.circle(xs[-1] + dx/2, ys[-7] + dy/2 - .025*inch, 1*mm, fill=True) # 1 minute
+
     
     # crop marks # update!
     # can.setLineWidth(LASER_THICKNESS)
@@ -504,7 +520,7 @@ def draw(filename, data, fontname='Times-Roman', images=[],
         if txt is None:
             return ' '
         else:
-            return decoder(txt, errors='replace')[0]
+            return case(decoder(txt, errors='replace')[0])
     data = [[decodeFunc(case(char)) for char in line] for line in data]
 ################################################################################
 
@@ -644,8 +660,23 @@ def draw(filename, data, fontname='Times-Roman', images=[],
     scad.close()
     scad_ex.close()
 
+def findfilecb(target_dest, directory, names):
+    target, dest = target_dest
+    for name in names:
+        if name == target:
+            out = '/'.join([directory, name])
+            dest[0] = out
+            break
+    else:
+        pass
+    
 def add_font(fontname):
-    pdfmetrics.registerFont(TTFont(fontname, 'fonts/%s.ttf' % fontname))
+    arg = ['%s.ttf' % fontname, [None]]
+    x = os.path.walk("fonts", findfilecb, arg)
+    # pdfmetrics.registerFont(TTFont(fontname, 'fonts/%s.ttf' % fontname))
+    if arg[1][0] is not None:
+        pdfmetrics.registerFont(TTFont(fontname, arg[1][0]))
+
 add_font('Futura')
 w = 6.57*mm
 x = 73*mm + 1 * inch - w/2
@@ -659,19 +690,30 @@ not_used = '''
 fontnames = '''Futura
 PermanentMarker
 Cantarell-Bold
-Allerta-Medium
 Futura
 RuslanDisplay
 Grenadie
 GrenadierNF
+Futura
+Allerta-Medium
+Meddon
+SupermercadoOne-Regular
+TerminalDosis-Light
+Cantarell-Bold
 '''
 fontnames = '''
-Futura
+Helvetica-Bold
 '''.split()
-dir = 'Faceplates_jr/German_jr/'
+if letters == english:
+    dir = 'Faceplates_jr/English_jr/'
+elif letters == german:
+    dir = 'Faceplates_jr/German_jr/'
+else:
+    raise 'unknown letters', letters
 if True: # ClockTHREEjr
     for fontname in fontnames:
-        add_font(fontname)
+        if "Helvetica" not in fontname:
+            add_font(fontname)
         draw('%s/faceplate_jr_%s_upper_R.pdf' % (dir, fontname), letters, 
              fontname=fontname, images=[bug],reverse=True, case=string.upper)
         draw('%s/faceplate_jr_%s_lower_R.pdf' % (dir, fontname), letters, 

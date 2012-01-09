@@ -2,6 +2,7 @@ inch = 2.54;
 PEEK = 0;
 module frame(){
   color([ 0, 0, 0, 1.0 ])
+translate(v=[0, 0, -2])
 translate(v=[0, 0, -PEEK])
 difference(){
 linear_extrude(height=0.1724, center=true, convexity=10, twist=0)
@@ -728,9 +729,13 @@ paths=[
 ]);
 translate(v=[0.381, 0.381, -360.0])
 cylinder(h=720.0, r=0.15, $fn=25);
+translate(v=[15.24, 0.381, -360.0])
+cylinder(h=720.0, r=0.15, $fn=25);
 translate(v=[30.099, 0.381, -360.0])
 cylinder(h=720.0, r=0.15, $fn=25);
 translate(v=[30.099, 22.479, -360.0])
+cylinder(h=720.0, r=0.15, $fn=25);
+translate(v=[15.24, 22.479, -360.0])
 cylinder(h=720.0, r=0.15, $fn=25);
 translate(v=[0.381, 22.479, -360.0])
 cylinder(h=720.0, r=0.15, $fn=25);
@@ -764,8 +769,7 @@ translate(v=[0, 0, 0.1724])
 translate(v=[0, 0, 0.0862])
 frame();
 color([ 0, 0, 0, 1 ])
-translate(v=[0, 0, 2.2586])
-translate(v=[0, 0, PEEK])
+translate(v=[0, 0, 8])
 difference(){
 linear_extrude(height=0.1724, center=true, convexity=10, twist=0)
 polygon(points=[
@@ -794,8 +798,7 @@ translate(v=[0.381, 22.479, -360.0])
 cylinder(h=720.0, r=0.15, $fn=25);
 }
   color([ 0.9, 0.9, 0.9, 0.6 ])
-translate(v=[0, 0, 2.6623])
-translate(v=[0, 0, PEEK])
+translate(v=[0, 0, 10])
 difference(){
 linear_extrude(height=0.635, center=true, convexity=10, twist=0)
 polygon(points=[
@@ -818,8 +821,7 @@ translate(v=[0.381, 22.479, -360.0])
 cylinder(h=720.0, r=0.175, $fn=25);
 }
   color([ 0, 0, 0, 0.8 ])
-translate(v=[0, 0, -0.3175])
-translate(v=[0, 0, -PEEK])
+translate(v=[0, 0, -3])
 difference(){
 linear_extrude(height=0.635, center=true, convexity=10, twist=0)
 polygon(points=[
@@ -834,9 +836,13 @@ paths=[
 ]);
 translate(v=[0.381, 0.381, -360.0])
 cylinder(h=720.0, r=0.175, $fn=25);
+translate(v=[15.24, 0.381, -360.0])
+cylinder(h=720.0, r=0.175, $fn=25);
 translate(v=[30.099, 0.381, -360.0])
 cylinder(h=720.0, r=0.175, $fn=25);
 translate(v=[30.099, 22.479, -360.0])
+cylinder(h=720.0, r=0.175, $fn=25);
+translate(v=[15.24, 22.479, -360.0])
 cylinder(h=720.0, r=0.175, $fn=25);
 translate(v=[0.381, 22.479, -360.0])
 cylinder(h=720.0, r=0.175, $fn=25);
@@ -1353,7 +1359,7 @@ translate(v=[0, 15.24, 0])
 baffle_h();
 module baffle_v(){
 color([ 0.1, 1, 0.1, 0.8 ])
-translate(v=[4.584,2.782, 2.3448])
+translate(v=[4.584,2.782, 6])
 rotate(a=90, v=[0, -1, 0])
 rotate(a=90, v=[0, 0, 1])
 linear_extrude(height=0.1724, center=true, convexity=10, twist=0)
@@ -1656,9 +1662,13 @@ paths=[
 [63, 64, 65, 66, 67],
 ]);
 }
+translate(v=[0, -6, 3.5])
 border_h();
+translate(v=[0, 6, 3.5])
 translate(v=[0, 18.4604, 0])
 border_h();
+translate(v=[-3, 0, 0])
 border_v();
 translate(v=[24.5324, 0, 0])
+translate(v=[3, 0, 0])
 border_v();
