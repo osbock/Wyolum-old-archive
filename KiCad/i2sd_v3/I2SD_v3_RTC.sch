@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 11/22/2011 6:28:42 PM
+EESchema Schematic File Version 2  date 1/12/2012 5:17:19 PM
 LIBS:i2sd_v3
 LIBS:power
 LIBS:i2sd_v3-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title "Buckler, i2sd, v3, with RTC, with HW addressing"
-Date "22 nov 2011"
+Date "12 jan 2012"
 Rev "3"
 Comp "WyoLum"
 Comment1 ""
@@ -16,12 +16,18 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 7950 2225 2    50   ~ 0
-Solder Bridge betn\nB2 & B20 to get 1Hz
-Text HLabel 7825 2450 2    50   Input ~ 0
-B_03
-Text Label 7550 2450 0    50   ~ 0
-1Hz
+Text Label 6950 4800 0    60   ~ 0
+RST
+Text Label 6950 4650 0    60   ~ 0
+SQW
+Text Label 6950 4500 0    60   ~ 0
+32k
+Text Label 6950 4350 0    60   ~ 0
+BAT
+Wire Wire Line
+	7250 4800 6950 4800
+Wire Wire Line
+	7250 4500 6950 4500
 Wire Wire Line
 	7400 2450 7825 2450
 Connection ~ 6650 1675
@@ -111,6 +117,24 @@ Connection ~ 5300 1900
 Wire Wire Line
 	6650 2350 6650 2450
 Connection ~ 6650 2450
+Wire Wire Line
+	7250 4350 6950 4350
+Wire Wire Line
+	7250 4650 6950 4650
+Text HLabel 7250 4800 2    60   Input ~ 0
+RST
+Text HLabel 7250 4650 2    60   Input ~ 0
+SQW
+Text HLabel 7250 4500 2    60   Input ~ 0
+32k
+Text HLabel 7250 4350 2    60   Input ~ 0
+BAT
+Text Notes 7950 2225 2    50   ~ 0
+Solder Bridge betn\nB2 & B20 to get 1Hz
+Text HLabel 7825 2450 2    50   Input ~ 0
+B_03
+Text Label 7550 2450 0    50   ~ 0
+1Hz
 $Comp
 L I/O B20
 U 1 1 4ECB8D5B
