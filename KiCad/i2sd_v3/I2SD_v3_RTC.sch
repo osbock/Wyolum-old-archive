@@ -1,6 +1,7 @@
-EESchema Schematic File Version 2  date 1/12/2012 5:17:19 PM
+EESchema Schematic File Version 2  date 1/16/2012 6:29:58 PM
 LIBS:i2sd_v3
 LIBS:power
+LIBS:cmos4000
 LIBS:i2sd_v3-cache
 EELAYER 25  0
 EELAYER END
@@ -8,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title "Buckler, i2sd, v3, with RTC, with HW addressing"
-Date "12 jan 2012"
+Date "16 jan 2012"
 Rev "3"
 Comp "WyoLum"
 Comment1 ""
@@ -16,6 +17,104 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Connection ~ 6650 2350
+Wire Wire Line
+	6650 2350 7825 2350
+Wire Wire Line
+	7250 4650 6950 4650
+Wire Wire Line
+	7250 4350 6950 4350
+Connection ~ 6650 2450
+Wire Wire Line
+	6650 2250 6650 2450
+Connection ~ 5300 1900
+Wire Wire Line
+	5300 2000 5300 1850
+Wire Wire Line
+	7250 4125 4375 4125
+Wire Wire Line
+	4375 4125 4375 2600
+Wire Wire Line
+	6675 2750 6450 2750
+Wire Wire Line
+	6450 2450 6675 2450
+Wire Wire Line
+	7250 3875 4550 3875
+Wire Wire Line
+	4550 3875 4550 3000
+Wire Wire Line
+	4550 3000 4650 3000
+Wire Wire Line
+	4375 2450 4375 1675
+Connection ~ 3950 2425
+Wire Wire Line
+	3950 2425 4175 2425
+Wire Wire Line
+	4175 2425 4175 2575
+Connection ~ 4375 3750
+Wire Wire Line
+	3950 3750 6575 3750
+Wire Wire Line
+	3950 3750 3950 3000
+Wire Wire Line
+	4375 2450 4650 2450
+Connection ~ 6575 3250
+Wire Wire Line
+	6450 3250 6575 3250
+Connection ~ 6575 3050
+Wire Wire Line
+	6575 3050 6450 3050
+Connection ~ 5950 3750
+Wire Wire Line
+	5950 3750 5950 3650
+Connection ~ 5750 3750
+Wire Wire Line
+	4375 2600 4650 2600
+Wire Wire Line
+	6450 2850 6575 2850
+Wire Wire Line
+	6575 2850 6575 3750
+Wire Wire Line
+	5750 3750 5750 3650
+Wire Wire Line
+	5850 3750 5850 3650
+Connection ~ 5850 3750
+Wire Wire Line
+	6450 2950 6575 2950
+Connection ~ 6575 2950
+Wire Wire Line
+	6575 3150 6450 3150
+Connection ~ 6575 3150
+Wire Wire Line
+	5300 1900 3950 1900
+Wire Wire Line
+	3950 1900 3950 2550
+Wire Wire Line
+	4175 2975 4175 3100
+Wire Wire Line
+	4175 3100 3950 3100
+Connection ~ 3950 3100
+Wire Wire Line
+	4650 2850 4500 2850
+Wire Wire Line
+	4500 2850 4500 4000
+Wire Wire Line
+	4500 4000 7250 4000
+Wire Wire Line
+	6450 2600 6675 2600
+Wire Wire Line
+	4375 1675 7050 1675
+Wire Wire Line
+	7050 1675 7050 3750
+Wire Wire Line
+	7050 3750 7250 3750
+Wire Wire Line
+	6650 1750 6650 1675
+Connection ~ 6650 1675
+Wire Wire Line
+	7250 4500 6950 4500
+Wire Wire Line
+	7250 4800 6950 4800
 Text Label 6950 4800 0    60   ~ 0
 RST
 Text Label 6950 4650 0    60   ~ 0
@@ -24,103 +123,6 @@ Text Label 6950 4500 0    60   ~ 0
 32k
 Text Label 6950 4350 0    60   ~ 0
 BAT
-Wire Wire Line
-	7250 4800 6950 4800
-Wire Wire Line
-	7250 4500 6950 4500
-Wire Wire Line
-	7400 2450 7825 2450
-Connection ~ 6650 1675
-Wire Wire Line
-	6650 1850 6650 1675
-Wire Wire Line
-	7250 3750 7050 3750
-Wire Wire Line
-	7050 3750 7050 1675
-Wire Wire Line
-	7050 1675 4375 1675
-Wire Wire Line
-	6450 2600 6675 2600
-Wire Wire Line
-	7250 4000 4500 4000
-Wire Wire Line
-	4500 4000 4500 2850
-Wire Wire Line
-	4500 2850 4650 2850
-Connection ~ 3950 3100
-Wire Wire Line
-	3950 3100 4175 3100
-Wire Wire Line
-	4175 3100 4175 2975
-Wire Wire Line
-	3950 2550 3950 1900
-Wire Wire Line
-	3950 1900 5300 1900
-Connection ~ 6575 3150
-Wire Wire Line
-	6575 3150 6450 3150
-Connection ~ 6575 2950
-Wire Wire Line
-	6450 2950 6575 2950
-Connection ~ 5850 3750
-Wire Wire Line
-	5850 3750 5850 3650
-Wire Wire Line
-	5750 3750 5750 3650
-Wire Wire Line
-	6575 2850 6575 3750
-Wire Wire Line
-	6575 2850 6450 2850
-Wire Wire Line
-	4650 2600 4375 2600
-Connection ~ 5750 3750
-Wire Wire Line
-	5950 3750 5950 3650
-Connection ~ 5950 3750
-Wire Wire Line
-	6575 3050 6450 3050
-Connection ~ 6575 3050
-Wire Wire Line
-	6450 3250 6575 3250
-Connection ~ 6575 3250
-Wire Wire Line
-	4650 2450 4375 2450
-Wire Wire Line
-	3950 3000 3950 3750
-Wire Wire Line
-	3950 3750 6575 3750
-Connection ~ 4375 3750
-Wire Wire Line
-	4175 2575 4175 2425
-Wire Wire Line
-	4175 2425 3950 2425
-Connection ~ 3950 2425
-Wire Wire Line
-	4375 2450 4375 1675
-Wire Wire Line
-	4650 3000 4550 3000
-Wire Wire Line
-	4550 3000 4550 3875
-Wire Wire Line
-	4550 3875 7250 3875
-Wire Wire Line
-	6675 2450 6450 2450
-Wire Wire Line
-	6675 2750 6450 2750
-Wire Wire Line
-	4375 2600 4375 4125
-Wire Wire Line
-	4375 4125 7250 4125
-Wire Wire Line
-	5300 1850 5300 2000
-Connection ~ 5300 1900
-Wire Wire Line
-	6650 2350 6650 2450
-Connection ~ 6650 2450
-Wire Wire Line
-	7250 4350 6950 4350
-Wire Wire Line
-	7250 4650 6950 4650
 Text HLabel 7250 4800 2    60   Input ~ 0
 RST
 Text HLabel 7250 4650 2    60   Input ~ 0
@@ -129,29 +131,19 @@ Text HLabel 7250 4500 2    60   Input ~ 0
 32k
 Text HLabel 7250 4350 2    60   Input ~ 0
 BAT
-Text Notes 7950 2225 2    50   ~ 0
+Text Notes 7950 1950 2    50   ~ 0
 Solder Bridge betn\nB2 & B20 to get 1Hz
-Text HLabel 7825 2450 2    50   Input ~ 0
-B_03
-Text Label 7550 2450 0    50   ~ 0
+Text HLabel 7825 2350 2    50   Input ~ 0
+B_12
+Text Label 7550 2350 0    50   ~ 0
 1Hz
-$Comp
-L I/O B20
-U 1 1 4ECB8D5B
-P 7250 2450
-F 0 "B20" H 7330 2450 40  0000 L CNN
-F 1 "I/O" H 7250 2505 30  0001 C CNN
-F 2 "I/O" H 7250 2450 60  0001 C CNN
-	1    7250 2450
-	-1   0    0    1   
-$EndComp
 $Comp
 L R R9
 U 1 1 4ECB8D22
-P 6650 2100
-F 0 "R9" V 6730 2100 50  0000 C CNN
-F 1 "10k" V 6650 2100 50  0000 C CNN
-	1    6650 2100
+P 6650 2000
+F 0 "R9" V 6730 2000 50  0000 C CNN
+F 1 "10k" V 6650 2000 50  0000 C CNN
+	1    6650 2000
 	1    0    0    -1  
 $EndComp
 $Comp

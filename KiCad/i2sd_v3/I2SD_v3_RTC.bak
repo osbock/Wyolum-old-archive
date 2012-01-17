@@ -1,6 +1,7 @@
-EESchema Schematic File Version 2  date 1/12/2012 5:16:22 PM
+EESchema Schematic File Version 2  date 1/16/2012 6:25:38 PM
 LIBS:i2sd_v3
 LIBS:power
+LIBS:cmos4000
 LIBS:i2sd_v3-cache
 EELAYER 25  0
 EELAYER END
@@ -8,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title "Buckler, i2sd, v3, with RTC, with HW addressing"
-Date "12 jan 2012"
+Date "16 jan 2012"
 Rev "3"
 Comp "WyoLum"
 Comment1 ""
@@ -132,7 +133,7 @@ BAT
 Text Notes 7950 2225 2    50   ~ 0
 Solder Bridge betn\nB2 & B20 to get 1Hz
 Text HLabel 7825 2450 2    50   Input ~ 0
-B_03
+B_12
 Text Label 7550 2450 0    50   ~ 0
 1Hz
 $Comp

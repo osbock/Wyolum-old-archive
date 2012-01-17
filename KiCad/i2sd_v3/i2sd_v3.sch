@@ -1,6 +1,7 @@
-EESchema Schematic File Version 2  date 1/12/2012 5:17:18 PM
+EESchema Schematic File Version 2  date 1/16/2012 6:29:58 PM
 LIBS:i2sd_v3
 LIBS:power
+LIBS:cmos4000
 LIBS:i2sd_v3-cache
 EELAYER 25  0
 EELAYER END
@@ -8,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 2
 Title "Buckler, i2sd, v3, with RTC, with HW addressing"
-Date "12 jan 2012"
+Date "16 jan 2012"
 Rev "3"
 Comp "WyoLum"
 Comment1 ""
@@ -16,14 +17,10 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 9225 6900 0    60   ~ 0
-BAT
-Text Label 9225 6800 0    60   ~ 0
-32k
-Text Label 9225 6700 0    60   ~ 0
-SQW
-Text Label 9225 6600 0    60   ~ 0
-RST
+Text Label 4700 6500 0    50   ~ 0
+3V3
+Wire Wire Line
+	5300 6500 4700 6500
 Wire Wire Line
 	8875 6900 9225 6900
 Wire Wire Line
@@ -595,6 +592,24 @@ Wire Wire Line
 	8875 6100 9225 6100
 Wire Wire Line
 	8875 6700 9225 6700
+Wire Notes Line
+	4750 3750 4050 3750
+Wire Notes Line
+	4750 3750 4750 3950
+Wire Notes Line
+	4750 3950 4050 3950
+Wire Notes Line
+	4050 3950 4050 3750
+Text Notes 4050 3850 0    40   ~ 0
+SQW signal\ncomes to PD7 / B12
+Text Label 9225 6900 0    60   ~ 0
+BAT
+Text Label 9225 6800 0    60   ~ 0
+32k
+Text Label 9225 6700 0    60   ~ 0
+SQW
+Text Label 9225 6600 0    60   ~ 0
+RST
 Text Label 10200 5600 0    40   ~ 0
 BAT
 Text Label 10200 5500 0    40   ~ 0
@@ -612,7 +627,7 @@ SQW
 Text Label 9375 5300 0    40   ~ 0
 RST
 Text Label 9225 6100 0    50   ~ 0
-B_03
+B_12
 Text Notes 4250 1700 1    50   ~ 0
 +5V
 Text Notes 4150 1700 1    50   ~ 0
@@ -752,7 +767,6 @@ NoConn ~ 5300 7325
 NoConn ~ 5300 7225
 NoConn ~ 5300 7125
 NoConn ~ 5300 6900
-NoConn ~ 5300 6500
 Text Label 4700 7625 0    60   ~ 0
 SCL
 Text Label 4700 7525 0    60   ~ 0
@@ -808,11 +822,11 @@ F2 "GND" I R 8875 6500 60
 F3 "SDA" I R 8875 6400 60 
 F4 "SCL" I R 8875 6300 60 
 F5 "5V0" I R 8875 6200 60 
-F6 "B_03" I R 8875 6100 60 
-F7 "RST" I R 8875 6600 60 
-F8 "SQW" I R 8875 6700 60 
-F9 "32k" I R 8875 6800 60 
-F10 "BAT" I R 8875 6900 60 
+F6 "RST" I R 8875 6600 60 
+F7 "SQW" I R 8875 6700 60 
+F8 "32k" I R 8875 6800 60 
+F9 "BAT" I R 8875 6900 60 
+F10 "B_12" I R 8875 6100 60 
 $EndSheet
 $Comp
 L +3.3V #PWR03
