@@ -1,6 +1,6 @@
-update=1/13/2012 3:20:26 PM
+update=1/19/2012 11:41:14 AM
 version=1
-last_client=eeschema
+last_client=kicad
 [cvpcb]
 version=1
 NetITyp=0
@@ -31,8 +31,6 @@ LastNetListRead=i2sd_v3.net
 [pcbnew/libraries]
 LibDir=
 LibName1=i2sd_v3-libs/i2sd_v3
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -68,3 +66,5 @@ LabSize=50
 LibName1=i2sd_v3-libs/i2sd_v3
 LibName2=i2sd_v3-libs/power
 LibName3=cmos4000
+[general]
+version=1
