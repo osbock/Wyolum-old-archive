@@ -143,7 +143,7 @@ void I2SD_Slave_onRequest(){
     }
   }
   i2sd_p->setTX_LED(HIGH);
-  Wire.send(i2sd_p->buffer, i2sd_p->buffer_size);
+  WIRE_WRITE(i2sd_p->buffer, i2sd_p->buffer_size);
   i2sd_p->setTX_LED(LOW);
   i2sd_p->data_ready = false;
   i2sd_p->buffer_size = 0;
@@ -151,7 +151,7 @@ void I2SD_Slave_onRequest(){
 
 // Slave event handler
 void I2SD_Slave_onReceive(int n_byte){
-  uint8_t msg_type = Wire.receive();
+  uint8_t msg_type = WIRE_READ;
   uint8_t i;
   i2sd_p->setRX_LED(HIGH);
 
@@ -172,7 +172,7 @@ void I2SD_Slave_onReceive(int n_byte){
       for(i = 0; 
 	  i < sizeof(i2sd_p->cursor) && Wire.available(); 
 	  i++){
-	Address.char4[i] = Wire.receive();
+	Address.char4[i] = WIRE_READ;
       }
       if(i == 4){ // make sure full address received
 	i2sd_p->file.seek(Address.dat32);
@@ -185,7 +185,7 @@ void I2SD_Slave_onReceive(int n_byte){
     }
     else if(msg_type == I2SD_PING_MSG){
       for(i = 0; Wire.available(); i++){
-	i2sd_p->buffer[i] = Wire.receive();
+	i2sd_p->buffer[i] = WIRE_READ;
       }
       Serial.println("PONG");
       // reply PING data in next request
@@ -195,7 +195,7 @@ void I2SD_Slave_onReceive(int n_byte){
     else if(msg_type == I2SD_WRITE_MSG){
       if(i2sd_p->file_mode == FILE_WRITE){
 	while(Wire.available()){
-	  i2sd_p->file.write(Wire.receive());
+	  i2sd_p->file.write(WIRE_READ);
 	}
       }
       else{
@@ -204,12 +204,12 @@ void I2SD_Slave_onReceive(int n_byte){
     }
     else if(msg_type == I2SD_OPEN_MSG){
       uint8_t mode, i;
-      mode = Wire.receive();
+      mode = WIRE_READ;
       
       char filename[I2C_BUFFER_LEN - 1]; // one extra char reserved for 
       // null terminator
       for(i = 0; Wire.available() && i < I2C_BUFFER_LEN - 2; i++){
-	filename[i] = Wire.receive();
+	filename[i] = WIRE_READ;
       }
       if(i > 0){
 	filename[i] = NULL; // terminate string just in case

@@ -21,25 +21,31 @@ uint32_t *new_display = (uint32_t*)calloc(N_COL, sizeof(uint32_t));
 
 void xmastree(){
   int row, col;
-  // make the tree
+  // clear the screen
   c3.displayfill(DARK);
+
+  // make the tree
   for(int col=6; col < 15; col++){
     for(int row=5 - (col - 6)/2; row <= 5 + (col - 6)/2; row++){
-      c3.setPixel(col, row, GREEN);
+      c3.setPixel(col-2, row, GREEN);
     }
   }
-  
+  // put snow down
+  c3.line(14, 0, 14, 10, WHITE);
+  c3.line(15, 0, 15, 10, WHITE);
+
   // decorate it
-  c3.setPixel(6, 5, WHITE);
-  c3.setPixel(9, 4, REDBLUE);
-  c3.setPixel(10, 7, BLUE);
-  c3.setPixel(11, 5, GREENBLUE);
-  c3.setPixel(12, 2, RED);
-  c3.setPixel(13, 4, WHITE);
-  c3.setPixel(13, 7, REDBLUE);
-  c3.setPixel(14, 1, REDBLUE);
-  c3.setPixel(14, 9, RED);
-  c3.setPixel(15, 5, RED); // stump
+  c3.setPixel(6-2, 5, WHITE);
+  c3.setPixel(9-2, 4, REDBLUE);
+  c3.setPixel(10-2, 7, BLUE);
+  c3.setPixel(11-2, 5, GREENBLUE);
+  c3.setPixel(12-2, 2, RED);
+  c3.setPixel(13-2, 4, WHITE);
+  c3.setPixel(13-2, 7, REDBLUE);
+  c3.setPixel(14-2, 1, REDBLUE);
+  c3.setPixel(14-2, 9, RED);
+  c3.setPixel(15-2, 5, RED); // stump
+
 
 }
 

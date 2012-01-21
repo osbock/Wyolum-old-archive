@@ -54,7 +54,20 @@ With the understanding that:
 */
 #ifndef I2SD_Slave_H
 #define I2SD_Slave_H
-#include <WProgram.h>
+
+// Arduino 1.0 compatibility
+#if defined(ARDUINO) && ARDUINO >= 100
+#include "Arduino.h"
+#define WIRE_WRITE(ptr,n_byte) (Wire.write((uint8_t*)(ptr), (n_byte)))
+#define WIRE_WRITE1(one_byte) (Wire.write((uint8_t)(one_byte)))
+#define WIRE_READ Wire.read()
+#else
+#include "WProgram.h"
+#define WIRE_WRITE(ptr,n_byte) (Wire.send((uint8_t*)(ptr), (n_byte)))
+#define WIRE_WRITE1(one_byte) (Wire.send((one_byte)))
+#define WIRE_READ Wire.receive()
+#endif
+
 #include <inttypes.h>
 #include "I2SD.h"
 #include "C3SB.h"

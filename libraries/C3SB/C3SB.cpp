@@ -119,11 +119,19 @@ void C3SB::raw_send(uint8_t* data, uint8_t n_byte, boolean write_byte){
   // Serial.print(other_id, DEC);
   // Serial.print(", ");
   if(write_byte){
+#if defined(ARDUINO) && ARDUINO >= 100
+    WIRE_WRITE(C3SB_WRITE_MSG, 1);
+#else
     Wire.send(C3SB_WRITE_MSG);
+#endif
   }
   for(int i = 0; i < n_byte && i < I2C_BUFFER_LEN - 1; i++){
     // Serial.print(data[i]);
+#if defined(ARDUINO) && ARDUINO >= 100
+    WIRE_WRITE(data[i], 1);
+#else
     Wire.send(data[i]);
+#endif
   }
   // Serial.println("");
   Wire.endTransmission();
@@ -132,19 +140,23 @@ uint8_t C3SB::raw_read(uint8_t* data, uint8_t n_byte){
   Wire.requestFrom(other_id, n_byte);    // trigger slave handle_resquest()
   uint8_t i;
   for(i = 0; i < n_byte && Wire.available(); i++){
-    data[i] = Wire.receive();
+    data[i] = WIRE_READ;
   }
   return i;
 }
 
 void C3SB::handle_receive(int n_byte){
-  msg_id = Wire.receive();
+  msg_id = WIRE_READ;
   // todo: handle longer reciepts!
 }
 void C3SB::handle_request(){
   // handle descreption requests
   if(msg_id == C3SB_DESC_ID){
+#if defined(ARDUINO) && ARDUINO >= 100
+    WIRE_WRITE(description, I2C_BUFFER_LEN);
+#else
     Wire.send(description, I2C_BUFFER_LEN);
+#endif
   }
   else{
     // user_req_handler(msg_id); // pass on to user routine

@@ -52,7 +52,7 @@ With the understanding that:
 */
 #ifndef ClockTHREE_h
 #define ClockTHREE_h
-// #define CLOCKTHREEJR // uncomment this line for ClockTHREEjr
+#define CLOCKTHREEJR // uncomment this line for ClockTHREEjr
 
 // Arduino 1.0 compatibility
 #if defined(ARDUINO) && ARDUINO >= 100

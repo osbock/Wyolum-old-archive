@@ -48,7 +48,18 @@
   to this web page.
 */
 #include <inttypes.h>
-#include <WProgram.h>
+
+#if defined(ARDUINO) && ARDUINO >= 100
+#include "Arduino.h"
+#define WIRE_WRITE(ptr,n_byte) (Wire.write((uint8_t*)(ptr), (n_byte)))
+#define WIRE_WRITE1(one_byte) (Wire.write((uint8_t)(one_byte)))
+#define WIRE_READ Wire.read()
+#else
+#include "WProgram.h"
+#define WIRE_WRITE(ptr,n_byte) (Wire.send((uint8_t*)(ptr), (n_byte))
+#define WIRE_WRITE1(one_byte) (Wire.send((one_byte)))
+#define WIRE_READ Wire.receive()
+#endif
 
 const uint8_t C3SB_MASTER_ID = 0;
 const uint8_t I2C_BUFFER_LEN = 32;

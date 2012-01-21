@@ -44,7 +44,7 @@ void setup(){
     Serial.println("Open a NEW_FILE.TXT for reading");
     i2sd.open("NEW_FILE.TXT", FILE_READ);
     Serial.println("Open, now read it back");
-    n_byte = i2sd.read(msg_back, 100);
+    n_byte = i2sd.read(msg_back, strlen(msg));
     msg_back[n_byte] = NULL;
     Serial.println((char*)msg_back);
   }
@@ -62,22 +62,19 @@ void setup(){
     Serial.println("Error cleared.");
   }
   i2sd.open("DEFAULT.TXT", FILE_READ);
+  i2sd.seek(0);
 }
 
 void loop(){
   const int n_byte = 32 * 7;
   char big_data[n_byte];
   unsigned long now = millis();
+  delay(100);
   uint8_t n_byte_back = i2sd.read((uint8_t*)big_data, n_byte);
-
-  if(big_data[31] == -1){ // -1 at the end of the ascii file
-    int i = 31;
-    while(big_data[i] == -1){
-      big_data[i] = 0;
-      i--;
+  for(int i = 0; i < n_byte; i++){
+    if(0 < big_data[i] && big_data[i] < 128){
+      Serial.print(big_data[i]);
     }
   }
-  Serial.print(big_data);
-
 }
 

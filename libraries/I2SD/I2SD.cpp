@@ -65,7 +65,11 @@ boolean I2SD::ping(uint8_t* ping_data, uint8_t len){
     buffer[i + 1] = ping_data[i + 0];
   }
   Wire.beginTransmission(I2SD_SLAVE_ID);
+#if defined(ARDUINO) && ARDUINO >= 100
+  WIRE_WRITE(buffer, len + 1);
+#else
   Wire.send(buffer, len + 1); // seek(0) message
+#endif
   Wire.endTransmission();
   
   delay(100);
@@ -73,12 +77,14 @@ boolean I2SD::ping(uint8_t* ping_data, uint8_t len){
   Wire.requestFrom(I2SD_SLAVE_ID, len);
   if(Wire.available() == len){
     for(i = 0; i < len && Wire.available(); i++){
-      char c = Wire.receive(); // receive a byte as character
+      char c = WIRE_READ; // receive a byte as character
+      Serial.print(c);
       if(c != ping_data[i]){
 	out = false;
 	break;
       }
     }
+    Serial.println("");
   }
   else{
     out = false;
@@ -95,7 +101,11 @@ void I2SD::seek(unsigned long addr){
     buffer[i + 1] = Address.char4[i + 0];
   }
   Wire.beginTransmission(I2SD_SLAVE_ID);
+#if defined(ARDUINO) && ARDUINO >= 100
+  WIRE_WRITE(buffer, 5);
+#else:
   Wire.send(buffer, 5); // seek(0) message
+#endif
   Wire.endTransmission();
   cursor = addr;
 }
@@ -106,7 +116,11 @@ void I2SD::open(char* filename, uint8_t mode){
   buffer[1] = mode;
   strcpy((char*)(buffer + 2), filename);
   Wire.beginTransmission(I2SD_SLAVE_ID);
+#if defined(ARDUINO) && ARDUINO >= 100
+  WIRE_WRITE(buffer, strlen(filename) + 3);
+#else
   Wire.send(buffer, strlen(filename) + 3); // open "TEST.TXT" message
+#endif
   Wire.endTransmission();
   cursor = 0;
   delay(10);
@@ -134,6 +148,10 @@ void I2SD::clear_error(){
   // c3sb.raw_send(msg, 1, false);
   // return;
   Wire.beginTransmission(I2SD_SLAVE_ID);
+#if defined(ARDUINO) && ARDUINO >= 100
+  WIRE_WRITE(msg, 1);
+#else
   Wire.send(msg, 1); // seek(0) message
+#endif
   Wire.endTransmission();
 }
