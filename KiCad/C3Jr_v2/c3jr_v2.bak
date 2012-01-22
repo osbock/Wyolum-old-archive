@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 1/5/2012 2:50:43 PM
+EESchema Schematic File Version 2  date 1/7/2012 2:53:50 PM
 LIBS:C3Jr_v2
 LIBS:power
 LIBS:c3jr_v2-cache
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
 Title "ClockTHREE Junior aka C3Jr_v2 , with stackable board"
-Date "4 jan 2012"
+Date "7 jan 2012"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -1107,7 +1107,7 @@ L 74LS154 U4
 U 1 1 4C109B50
 P 7150 5350
 F 0 "U4" H 6900 5000 60  0000 C CNN
-F 1 "74LS154" H 7400 6250 60  0000 C CNN
+F 1 "74HC154" H 7400 6250 60  0000 C CNN
 F 2 "DIP-24__600_ELL" H 7150 5350 60  0001 C CNN
 F 3 "http://media.digikey.com/pdf/Data%20Sheets/Texas%20Instruments%20PDFs/SN74154.pdf" H 7150 5350 60  0001 C CNN
 F 4 "296-8757-5-ND" H 7150 5350 60  0001 C CNN "DigiKey"
