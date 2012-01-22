@@ -24,17 +24,14 @@
 // Arduino 1.0 compatibility
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "Arduino.h"
-#define WIRE_WRITE(ptr,n_byte) Wire.write((uint8_t*)(ptr), (n_byte))
-#define WIRE_READ Wire.read();
 #else
 #include "WProgram.h"
-#define WIRE_WRITE(ptr,n_byte) Wire.send((uint8_t*)(ptr), (n_byte))
-#define WIRE_READ Wire.receive()
 #endif
 
-const uint16_t BAUDRATE = 57600; // official:57600 (Scott Schenker 38400)
-const uint8_t HH_ADDR = 79;
-const uint8_t MM_ADDR = 78;
+// const uint16_t BAUDRATE = 57600; // official:57600 (Scott Schenker 38400)
+const uint8_t HH_ADDR = 80;
+const uint8_t MM_ADDR = 79;
+const uint8_t SS_ADDR = 78;
 
 ClockTHREE c3;
 MemFont font = MemFont();
@@ -82,8 +79,8 @@ void setup(){
   }
   tmElements_t target_tm;
   target_tm.Year = 2012- 1970;
-  target_tm.Month = 3;
-  target_tm.Day = 1;
+  target_tm.Month = 1;
+  target_tm.Day = 22;
   target_tm.Hour = 0;
   target_tm.Minute = 0;
   target_tm.Second = 0;
@@ -105,7 +102,7 @@ void loop(){
   uint8_t mm = minute();
   time_t togo =  target - now();
   int hh_togo, mm_togo, ss_togo;
-  hh_togo = togo / 3600;
+  hh_togo = (togo / 3600) % 24;
   mm_togo = (togo % 3600) / 60;
   ss_togo = togo % 60;
 
@@ -117,67 +114,22 @@ void loop(){
   // buffer[99]++;
   font.getChar('0' + ss_togo / 10, MONO, c3.display);
   font.getChar('0' + ss_togo % 10, MONO, c3.display + ONES_COL);
-  Serial.println("PROBING");
-  for(uint8_t i=0; i<20; i++){
-    Serial.println(i, DEC);
-    Wire.beginTransmission(MM_ADDR);
-    WIRE_WRITE(i, 1);
-    Wire.endTransmission();
-    delay(1000);
-  }
+
+  setDigits(SS_ADDR, ss_togo, false);
   setDigits(MM_ADDR, mm_togo, true);
+  setDigits(HH_ADDR, hh_togo, true);
+
   while(1){
     togo =  target - now();
-    hh_togo = togo / 3600;
+    hh_togo = (togo / 3600) % 24;
     mm_togo = (togo % 3600) / 60;
     ss_togo = togo % 60;
-    // check to see if any thing needs to be scrolled in from the stack
-    for(int i = 0; i < 16; i++){
-      if(stack_counts[i] > 0){
-	stack_counts[i]--;
-	if(stack_counts[i] < 9){
-	  c3.display[i] =  (c3.display[i]  << 1)  | (stack[i] >> 8);
-	  stack[i] <<= 1;
-	}
-      }
-      else if(stack_counts[i] < 0){
-	stack_counts[i]++;
-	if(stack_counts[i] > -9){
-	  c3.display[i] =  (c3.display[i]  >> 1)  | (stack[i] << 8);
-	  stack[i] >>= 1;
-	}
-      }
-    }
-
     c3.refresh(100);
     if(ss_togo != ss){
       ss = ss_togo;
-
-#ifdef NOT_DEFINED
-    Serial.print(target);
-    Serial.print(" ");
-    Serial.print(now());
-    Serial.print(" ");
-    Serial.print(togo);
-    Serial.print(", ");
-    Serial.print(hh_togo);
-    Serial.print(":");
-    Serial.print(mm_togo);
-    Serial.print(":");
-    Serial.println(ss_togo);
-#endif
-
-      uint8_t tens = ss / 10;
-      uint8_t ones = ss % 10;
-      font.getChar('0' + ss % 10, MONO, stack + ONES_COL);
-      for(int i = ONES_COL; i < 16; i++){
-	stack_counts[i] = -9;
-      }
-      if(ones == 9){
-	font.getChar('0' + ss / 10, MONO, stack);
-	for(int i = 0; i < 8; i++){
-	  stack_counts[i] = -11;
-	}
+      scrollDigit(SS_ADDR, ss % 10, 1, -9);
+      if(ss % 10 == 9){
+	scrollDigit(SS_ADDR, ss / 10, 0, -11);
       }
       if (mm_togo != mm){
 	mm = mm_togo;
@@ -189,7 +141,7 @@ void loop(){
 	  hh = hh_togo;
 	  scrollDigit(HH_ADDR, hh % 10, 1, -17);
 	  if(hh % 10 == 9){
-	    scrollDigit(HH_ADDR, hh / 10, 0, -19);
+	    scrollDigit(HH_ADDR, (hh / 10) % 10, 0, -19);
 	  }
 	}
       }
@@ -299,29 +251,52 @@ void Alarm(){
 
 void scrollCol(uint8_t addr, uint8_t col){
   Wire.beginTransmission(addr);
-  WIRE_WRITE(C3JR_SCROLL_LEFT_MSG, 1);
-  WIRE_WRITE(col, 1);
+#if defined(ARDUINO) && ARDUINO >= 100
+  Wire.write(C3JR_SCROLL_LEFT_MSG);
+  Wire.write(col);
+#else
+  Wire.send(C3JR_SCROLL_LEFT_MSG);
+  Wire.send(col);
+#endif
   Wire.endTransmission();
 }
 void setChars(uint8_t addr, char *cc){
   Wire.beginTransmission(addr);
-  WIRE_WRITE(C3JR_SET_CHAR_MSG, 1);
-  WIRE_WRITE(cc[0], 1);
-  WIRE_WRITE(cc[1], 1);
+#if defined(ARDUINO) && ARDUINO >= 100
+  Wire.write(C3JR_SET_CHAR_MSG);
+  Wire.write(cc[0]);
+  Wire.write(cc[1]);
+#else
+  Wire.send(C3JR_SET_CHAR_MSG);
+  Wire.send(cc[0]);
+  Wire.send(cc[1]);
+#endif
   Wire.endTransmission();
 }
 
 void setDigits(uint8_t addr, uint8_t vv, boolean colen_f){
   Wire.beginTransmission(addr);
-  WIRE_WRITE(C3JR_SET_CHAR_MSG, 1);
-  WIRE_WRITE('0' + vv / 10, 1);
-  WIRE_WRITE('0' + vv % 10, 1);
+#if defined(ARDUINO) && ARDUINO >= 100
+  Wire.write(C3JR_SET_CHAR_MSG);
+  Wire.write('0' + (vv / 10) % 10);
+  Wire.write('0' + vv % 10);
+#else
+  WIRE.send(C3JR_SET_CHAR_MSG);
+  WIRE.send('0' + (vv / 10) % 10);
+  WIRE.send('0' + vv % 10);
+#endif
   Wire.endTransmission();
   if(colen_f){
     Wire.beginTransmission(addr);
-    WIRE_WRITE(C3JR_SET_PIXEL_MSG, 1); // set pixel
-    WIRE_WRITE(47 + 128, 1);
-    WIRE_WRITE(79 + 128, 1);
+#if defined(ARDUINO) && ARDUINO >= 100
+    Wire.write(C3JR_SET_PIXEL_MSG); // set pixel
+    Wire.write(47 + 128);
+    Wire.write(79 + 128);
+#else
+    Wire.send(C3JR_SET_PIXEL_MSG); // set pixel
+    Wire.send(47 + 128);
+    Wire.send(79 + 128);
+#endif
     Wire.endTransmission();
   }
 }
@@ -329,9 +304,15 @@ void setDigits(uint8_t addr, uint8_t vv, boolean colen_f){
 
 void scrollChar(uint8_t addr, char v, uint8_t pos, uint8_t stack_pos){
   Wire.beginTransmission(addr);
-  WIRE_WRITE(C3JR_SCROLL_CHAR_V_MSG, 1);
-  WIRE_WRITE(v | (pos<<7), 1);
-  WIRE_WRITE(stack_pos, 1);
+#if defined(ARDUINO) && ARDUINO >= 100
+  Wire.write(C3JR_SCROLL_CHAR_V_MSG);
+  Wire.write(v | (pos<<7));
+  Wire.write(stack_pos);
+#else
+  Wire.send(C3JR_SCROLL_CHAR_V_MSG);
+  Wire.send(v | (pos<<7));
+  Wire.send(stack_pos);
+#endif
   Wire.endTransmission();
 }
 void scrollDigit(uint8_t addr, uint8_t v, uint8_t pos, uint8_t stack_pos){

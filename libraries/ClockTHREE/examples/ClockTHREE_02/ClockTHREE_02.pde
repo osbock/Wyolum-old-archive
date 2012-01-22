@@ -192,7 +192,7 @@ struct MsgDef{
 };
 
 const uint8_t MAX_MSG_LEN = 100; // official: 100
-const uint16_t BAUDRATE = 57600; // official:57600 (Scott Schenker 38400)
+// const uint16_t BAUDRATE = 57600; // official:57600 (Scott Schenker 38400)
 const uint8_t SYNC_BYTE = 254;   // 0xEF; (does not seem to work!)
 const uint8_t VAR_LENGTH = 255;  // 0xFF;
 char* EEPROM_ERR = "EE";

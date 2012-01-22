@@ -79,6 +79,8 @@ const int     N_COL = 16;
 const int   N_COLOR = 2;
 #endif
 
+const unsigned long BAUDRATE = 57600;
+
 const int COL_DRIVER_ENABLE = 17;
 
 const int SPEAKER_PIN = 10;

@@ -151,7 +151,11 @@ void I2SD_Slave_onRequest(){
 
 // Slave event handler
 void I2SD_Slave_onReceive(int n_byte){
-  uint8_t msg_type = WIRE_READ;
+#if defined(ARDUINO) && ARDUINO >= 100
+  uint8_t msg_type = Wire.read(); // WIRE_READ;
+#else
+  uint8_t msg_type = Wire.receive(); // WIRE_READ;
+#endif
   uint8_t i;
   i2sd_p->setRX_LED(HIGH);
 
