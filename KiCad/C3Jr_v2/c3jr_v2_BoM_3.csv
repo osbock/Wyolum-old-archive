@@ -1,61 +1,61 @@
-"Id";"Designator";"Package";"Quantity";"Designation";"Supplier and ref";
-1;"J3";"JACK_ALIM";1;"V_IN";;;
-2;"X1";"XTAL";1;"16MHz";;;
-3;"C9,C7,C6,C3,C10";"C2";5;"100n";;;
-4;"U3";"dil_28-300_socket";1;"ATMEGA8-P";;;
-5;"P51,P50,P49,P52,rowBoB1";"vite_3mm";5;"CONN_1";;;
-6;"P24,P25,P26,P27,P28,P29,P30,P31,P32,P33,P34,P35,P36,P37,P38,P39";"PROTO-6";16;"DIL6";;;
-7;"U4";"DIP-24__600_ELL";1;"74LS154";;;
-8;"SW1";"SW_PB_V";1;"INC";;;
-9;"SW2";"SW_PB_V";1;"DEC";;;
-10;"SW3";"SW_PB_V";1;"MODE";;;
-11;"SW4";"SW_PB_V";1;"RST";;;
-12;"SW5";"SW_PB_V";1;"ENTER";;;
-13;"P43";"Pad01";1;"CONN_1";;;
-14;"P8,P9,P10,P11,P14,P15,P54,P53";"vite_4mm";8;"CONN_1";;;
-15;"C8";"CP_5x11mm";1;"100u";;;
-16;"D258";"led_5mm_blue";1;"DBG";;;
-17;"D260";"led_5mm_blue";1;"PWR";;;
-18;"DIL-U1";"SCK-24_600_ELL";1;"STP16DP05";;;
-19;"BT1";"CR2032";1;"BATT_RTC";;;
-20;"U6";"DS3231";1;"DS3231N";;;
-21;"C11,C12";"cnp_3mm_disc";2;"22p";;;
-22;"U5";"dil_16-300_socket";1;"STP8DP05";;;
-23;"R34";"Pot-Var2";1;"2k";;;
-24;"BF1";"Baffle";1;"BAFFLE";;;
-25;"BP1";"BackPlate";1;"BackPlate";;;
-26;"R36,R38,R37,R23,R19,R18,R17,R22";"RC03";8;"10k";;;
-27;"R35,R33";"RC03";2;"680E";;;
-28;"R20,R21";"RC03";2;"4k7";;;
-29;"R25,R26,R24";"RC03";3;"1k";;;
-30;"R31";"RC03";1;"10K";;;
-31;"R30";"RC03";1;"100E";;;
-32;"FM1";"Frame";1;"FRAME";;;
-33;"FP1";"FacePlate";1;"FacePlate";;;
-34;"PCB1";"PCB";1;"PCB";;;
-35;"P13";"pin_strip_3x2";1;"ISP";;;
-36;"K1";"pin_strip_3";1;"PWR_SEL";;;
-37;"K2";"pin_strip_3";1;"LED_ENABLE";;;
-38;"P7";"pin_strip_6-90";1;"FTDI";;;
-39;"P41";"pin_sck_4-90";1;"STACK-L";;;
-40;"P12";"pin_strip_3";1;"V_OUT";;;
-41;"P42";"pin_strip_4-90";1;"STACK-R";;;
-42;"R32";"pin_strip_2";1;"LDR";;;
-43;"P1";"pin_strip_8";1;"7SegDisp";;;
-44;"CD2";"pin_strip_4";1;"CDOT2";;;
-45;"CD1";"pin_strip_4";1;"CDOT1";;;
-46;"CD3";"pin_strip_4";1;"CDOT3";;;
-47;"Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14,Q15,Q16,Q17";"to92_2N5401";17;"2N5401";;;
-48;"R16,R15,R14,R13,R12,R11,R10,R9,R8,R7,R6,R5,R4,R3,R2,R1";"rc03_vert";16;"100";;;
-49;"D127,D126,D125,D124,D123,D122,D121,D120,D119,D118,D117,D116,D115,D114,D113,D112,D111,D110,D109,D108,D107,D106,D105,D104,D103,D102,D101,D100,D99,D98,D97,D96,D95,D94,D93,D92,D91,D90,D89,D88,D87,D86,D85,D84,D83,D82,D81,D80,D79,D78,D77,D76,D75,D74,D73,D72,D71,D70,D69,D68,D128,D66,D65,D64,D63,D62,D61,D60,D59,D58,D57,D56,D55,D54,D53,D52,D51,D50,D49,D48,D47,D46,D45,D44,D43,D42,D41,D40,D39,D38,D37,D36,D35,D34,D33,D32,D31,D30,D29,D28,D27,D26,D25,D24,D23,D22,D21,D20,D19,D18,D17,D16,D15,D14,D13,D12,D11,D10,D9,D8,D7,D6,D5,D67,D1,D2,D3,D4";"led_5mm_clear";128;"LED";;;
-50;"K3";"7Seg_Sel";1;"7Seg_Sel";;;
-51;"J2";"con-usb-USB-B-H";1;"V_IN";;;
-52;"SP1";"Speaker";1;"SPEAKER";;;
-53;"J1";"con-hirose-UX60-MB-5S8";1;"V_IN";;;
-54;"SW12";"SW-PB-MOD";1;"INC";;;
-55;"SW22";"SW-PB-MOD";1;"DEC";;;
-56;"SW32";"SW-PB-MOD";1;"MODE";;;
-57;"SW42";"SW-PB-MOD";1;"RST";;;
-58;"SW52";"SW-PB-MOD";1;"ENTER";;;
-59;"G1";"Logo-WL3";1;"Logo-WL3";;;
-60;"G***";"OSHW_6mm";1;"LOGO";;;
+"Id"	"Designator"	"Package"	"Quantity"	"Designation"	"Supplier and ref"
+1	"J3"	"JACK_ALIM"	1	"V_IN"	
+2	"X1"	"XTAL"	1	"16MHz"	
+3	"C9,C7,C6,C3,C10"	"C2"	5	"100n"	
+4	"U3"	"dil_28-300_socket"	1	"ATMEGA8-P"	
+5	"P51,P50,P49,P52,rowBoB1"	"vite_3mm"	5	"CONN_1"	
+6	"P24,P25,P26,P27,P28,P29,P30,P31,P32,P33,P34,P35,P36,P37,P38,P39"	"PROTO-6"	16	"DIL6"	
+7	"U4"	"DIP-24__600_ELL"	1	"74LS154"	
+8	"SW1"	"SW_PB_V"	1	"INC"	
+9	"SW2"	"SW_PB_V"	1	"DEC"	
+10	"SW3"	"SW_PB_V"	1	"MODE"	
+11	"SW4"	"SW_PB_V"	1	"RST"	
+12	"SW5"	"SW_PB_V"	1	"ENTER"	
+13	"P43"	"Pad01"	1	"CONN_1"	
+14	"P8,P9,P10,P11,P14,P15,P54,P53"	"vite_4mm"	8	"CONN_1"	
+15	"C1, C2, C8"	"CP_5x11mm"	1	"100u"	
+16	"D258"	"led_5mm_blue"	1	"DBG"	
+17	"D260"	"led_5mm_blue"	1	"PWR"	
+18	"DIL-U1"	"SCK-24_600_ELL"	1	"STP16DP05"	
+19	"BT1"	"CR2032"	1	"BATT_RTC"	
+20	"U6"	"DS3231"	1	"DS3231N"	
+21	"C11,C12"	"cnp_3mm_disc"	2	"22p"	
+22	"U5"	"dil_16-300_socket"	1	"STP8DP05"	
+23	"R34"	"Pot-Var2"	1	"2k"	
+24	"BF1"	"Baffle"	1	"BAFFLE"	
+25	"BP1"	"BackPlate"	1	"BackPlate"	
+26	"R36,R38,R37,R23,R19,R18,R17,R22"	"RC03"	8	"10k"	
+27	"R35,R33"	"RC03"	2	"680E"	
+28	"R20,R21"	"RC03"	2	"4k7"	
+29	"R25,R26,R24"	"RC03"	3	"1k"	
+30	"R31"	"RC03"	1	"10K"	
+31	"R30"	"RC03"	1	"100E"	
+32	"FM1"	"Frame"	1	"FRAME"	
+33	"FP1"	"FacePlate"	1	"FacePlate"	
+34	"PCB1"	"PCB"	1	"PCB"	
+35	"P13"	"pin_strip_3x2"	1	"ISP"	
+36	"K1"	"pin_strip_3"	1	"PWR_SEL"	
+37	"K2"	"pin_strip_3"	1	"LED_ENABLE"	
+38	"P7"	"pin_strip_6-90"	1	"FTDI"	
+39	"P41"	"pin_sck_4-90"	1	"STACK-L"	
+40	"P12"	"pin_strip_3"	1	"V_OUT"	
+41	"P42"	"pin_strip_4-90"	1	"STACK-R"	
+42	"R32"	"pin_strip_2"	1	"LDR"	
+43	"P1"	"pin_strip_8"	1	"7SegDisp"	
+44	"CD2"	"pin_strip_4"	1	"CDOT2"	
+45	"CD1"	"pin_strip_4"	1	"CDOT1"	
+46	"CD3"	"pin_strip_4"	1	"CDOT3"	
+47	"Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14,Q15,Q16,Q17"	"to92_2N5401"	17	"2N5401"	
+48	"R16,R15,R14,R13,R12,R11,R10,R9,R8,R7,R6,R5,R4,R3,R2,R1"	"rc03_vert"	16	"100"	
+49	"D127,D126,D125,D124,D123,D122,D121,D120,D119,D118,D117,D116,D115,D114,D113,D112,D111,D110,D109,D108,D107,D106,D105,D104,D103,D102,D101,D100,D99,D98,D97,D96,D95,D94,D93,D92,D91,D90,D89,D88,D87,D86,D85,D84,D83,D82,D81,D80,D79,D78,D77,D76,D75,D74,D73,D72,D71,D70,D69,D68,D128,D66,D65,D64,D63,D62,D61,D60,D59,D58,D57,D56,D55,D54,D53,D52,D51,D50,D49,D48,D47,D46,D45,D44,D43,D42,D41,D40,D39,D38,D37,D36,D35,D34,D33,D32,D31,D30,D29,D28,D27,D26,D25,D24,D23,D22,D21,D20,D19,D18,D17,D16,D15,D14,D13,D12,D11,D10,D9,D8,D7,D6,D5,D67,D1,D2,D3,D4"	"led_5mm_clear"	128	"LED"	
+50	"K3"	"7Seg_Sel"	1	"7Seg_Sel"	
+51	"J2"	"con-usb-USB-B-H"	1	"V_IN"	
+52	"SP1"	"Speaker"	1	"SPEAKER"	
+53	"J1"	"con-hirose-UX60-MB-5S8"	1	"V_IN"	
+54	"SW12"	"SW-PB-MOD"	1	"INC"	
+55	"SW22"	"SW-PB-MOD"	1	"DEC"	
+56	"SW32"	"SW-PB-MOD"	1	"MODE"	
+57	"SW42"	"SW-PB-MOD"	1	"RST"	
+58	"SW52"	"SW-PB-MOD"	1	"ENTER"	
+59	"G1"	"Logo-WL3"	1	"Logo-WL3"	
+60	"G***"	"OSHW_6mm"	1	"LOGO"	

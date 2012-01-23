@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 22 January 2012 12:19:31 PM IST
+EESchema Schematic File Version 2  date 1/23/2012 5:52:41 PM
 LIBS:C3Jr_v2
 LIBS:power
 LIBS:c3jr_v2-cache
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
 Title "ClockTHREE Junior aka C3Jr_v2 , with stackable board"
-Date "22 jan 2012"
+Date "23 jan 2012"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -17,25 +17,6 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 Comment4 ""
 $EndDescr
-$Sheet
-S 10200 1675 900  1600
-U 4B3F1092
-F0 "c3jr_v2-Aux" 60
-F1 "c3jr_v2-Aux.sch" 60
-F2 "GND" I L 10200 2175 60 
-F3 "VSS" I L 10200 2075 60 
-F4 "SCL" I L 10200 2275 60 
-F5 "SDA" I L 10200 2375 60 
-F6 "MISO" I L 10200 2875 60 
-F7 "RXD" I L 10200 2575 60 
-F8 "TXD" I L 10200 2475 60 
-F9 "RES" I L 10200 2675 60 
-F10 "VDD" I L 10200 1975 60 
-F11 "VCC" I L 10200 1875 60 
-F12 "SCK-CLK" I L 10200 2975 60 
-F13 "MOSI-SDI" I L 10200 2775 60 
-F14 "DBG" I L 10200 3075 60 
-$EndSheet
 Wire Notes Line
 	550  2200 550  1950
 Wire Notes Line
@@ -434,6 +415,8 @@ Wire Wire Line
 	6225 2825 6225 3350
 Wire Wire Line
 	4700 3450 3350 3450
+Wire Wire Line
+	9825 1775 10200 1775
 Wire Wire Line
 	10200 1975 9825 1975
 Wire Wire Line
@@ -1227,6 +1210,8 @@ Text Label 3400 2600 1    39   ~ 0
 SDA
 Text Label 3550 2600 1    39   ~ 0
 SCL
+Text Label 9825 1775 0    47   ~ 0
+VRAW
 Text Label 9825 2075 0    47   ~ 0
 VSS
 Text Label 9825 2175 0    47   ~ 0
@@ -1237,6 +1222,26 @@ Text Label 3500 4250 0    39   ~ 0
 TXD
 Text Label 3500 4150 0    39   ~ 0
 RXD
+$Sheet
+S 10200 1675 900  1600
+U 4B3F1092
+F0 "c3jr_v2-Aux" 60
+F1 "c3jr_v2-Aux.sch" 60
+F2 "GND" I L 10200 2175 60 
+F3 "VSS" I L 10200 2075 60 
+F4 "SCL" I L 10200 2275 60 
+F5 "SDA" I L 10200 2375 60 
+F6 "MISO" I L 10200 2875 60 
+F7 "RXD" I L 10200 2575 60 
+F8 "TXD" I L 10200 2475 60 
+F9 "RES" I L 10200 2675 60 
+F10 "VDD" I L 10200 1975 60 
+F11 "VCC" I L 10200 1875 60 
+F12 "VRAW" I L 10200 1775 60 
+F13 "SCK-CLK" I L 10200 2975 60 
+F14 "MOSI-SDI" I L 10200 2775 60 
+F15 "DBG" I L 10200 3075 60 
+$EndSheet
 Text Label 2550 1050 0    39   ~ 0
 INC
 Text Label 2550 1350 0    39   ~ 0

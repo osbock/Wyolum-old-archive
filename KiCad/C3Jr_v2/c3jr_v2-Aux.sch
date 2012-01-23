@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 22 January 2012 12:19:31 PM IST
+EESchema Schematic File Version 2  date 1/23/2012 5:52:41 PM
 LIBS:C3Jr_v2
 LIBS:power
 LIBS:c3jr_v2-cache
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 4
 Title "ClockTHREE Junior aka C3Jr_v2 , with stackable board"
-Date "22 jan 2012"
+Date "23 jan 2012"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -17,8 +17,22 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 Comment4 ""
 $EndDescr
+Wire Notes Line
+	10700 5875 10700 4700
+Wire Notes Line
+	10700 5875 8600 5875
+Wire Notes Line
+	8600 5875 8600 4700
+Wire Notes Line
+	8600 4700 10700 4700
+Connection ~ 9500 5225
 Wire Wire Line
-	1800 4100 1800 4250
+	9500 5225 9500 5750
+Wire Wire Line
+	9750 5675 9750 5750
+Connection ~ 9300 4925
+Wire Wire Line
+	9300 4925 9300 5275
 Wire Wire Line
 	5800 5750 5250 5750
 Wire Wire Line
@@ -104,7 +118,7 @@ Wire Wire Line
 	6125 1525 6125 1750
 Connection ~ 5975 2400
 Wire Wire Line
-	5975 2400 5850 2400
+	5850 2400 5975 2400
 Connection ~ 5975 2200
 Wire Wire Line
 	5975 2200 5850 2200
@@ -122,7 +136,7 @@ Wire Wire Line
 Wire Wire Line
 	2600 5200 2600 5300
 Wire Wire Line
-	9400 4925 9900 4925
+	9900 4925 9175 4925
 Wire Notes Line
 	6050 3500 6050 5400
 Wire Notes Line
@@ -143,16 +157,10 @@ Wire Notes Line
 	10700 4550 8600 4550
 Wire Notes Line
 	8600 4550 8600 850 
-Wire Notes Line
-	8600 5425 8600 4725
-Wire Notes Line
-	8600 5425 10700 5425
-Wire Notes Line
-	10700 5425 10700 4725
 Wire Wire Line
 	1000 7500 950  7500
 Wire Wire Line
-	9400 5125 9900 5125
+	9175 5125 9900 5125
 Wire Notes Line
 	750  7700 750  5500
 Wire Notes Line
@@ -313,6 +321,10 @@ Wire Wire Line
 	9600 2250 9600 3850
 Wire Wire Line
 	3600 4000 3450 4000
+Wire Wire Line
+	1800 4250 1800 3650
+Wire Wire Line
+	1800 3650 4500 3650
 Connection ~ 10150 1400
 Wire Wire Line
 	9100 4250 10150 4250
@@ -553,11 +565,9 @@ Connection ~ 4150 6950
 Wire Notes Line
 	750  5400 6050 5400
 Wire Wire Line
-	9900 5225 9400 5225
+	9175 5225 9900 5225
 Wire Wire Line
-	9900 5025 9400 5025
-Wire Notes Line
-	10700 4725 8600 4725
+	9900 5025 9175 5025
 Wire Wire Line
 	2900 7500 2950 7500
 Wire Wire Line
@@ -660,6 +670,34 @@ Wire Wire Line
 	5250 6150 5250 6350
 Wire Wire Line
 	5250 6350 5800 6350
+Wire Wire Line
+	9750 5275 9750 4925
+Connection ~ 9750 4925
+Wire Wire Line
+	9300 5675 9300 5750
+Wire Wire Line
+	9300 5750 9750 5750
+Connection ~ 9500 5750
+$Comp
+L CP1 C2
+U 1 1 4F1D4EB4
+P 9750 5475
+F 0 "C2" V 9700 5275 50  0000 L CNN
+F 1 "100u" V 9800 5275 50  0000 L CNN
+F 2 "CP_5x11mm" H 9750 5475 60  0001 C CNN
+	1    9750 5475
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP1 C1
+U 1 1 4F1D4E51
+P 9300 5475
+F 0 "C1" V 9250 5275 50  0000 L CNN
+F 1 "100u" V 9350 5275 50  0000 L CNN
+F 2 "CP_5x11mm" H 9300 5475 60  0001 C CNN
+	1    9300 5475
+	1    0    0    -1  
+$EndComp
 Text HLabel 5800 5750 2    40   Input ~ 0
 DBG
 Text HLabel 5800 6350 2    40   Input ~ 0
@@ -960,7 +998,7 @@ F 2 "vite_3mm" H 1250 2900 60  0001 C CNN
 	1    1250 2900
 	0    -1   -1   0   
 $EndComp
-Text Notes 8600 5525 0    40   ~ 0
+Text Notes 8600 5975 0    40   ~ 0
 Stack-L and Stack-R have inverted pin nos\nsince one is facing Left and other is facing right.\nWhen mounted this way on the board,\ntracks from one to the other will be parallel - no cross over.
 Text HLabel 2550 2550 2    40   Input ~ 0
 SDA
@@ -1166,8 +1204,8 @@ F 2 "PROTO-6" H 1350 5750 60  0001 C CNN
 	1    1350 5750
 	1    0    0    -1  
 $EndComp
-Text Notes 10100 5425 0    60   ~ 0
-STACK COMM
+Text Notes 10000 4800 0    60   ~ 0
+C3SB (i2c bus)
 Text Label 9550 5225 0    40   ~ 0
 GND
 Text Label 9550 5125 0    40   ~ 0
@@ -1177,11 +1215,11 @@ SCL
 $Comp
 L CONN_4 P41
 U 1 1 4C9A16BC
-P 9050 5075
-F 0 "P41" V 9000 5075 50  0000 C CNN
-F 1 "STACK-L" V 9100 5075 50  0000 C CNN
-F 2 "pin_sck_4-90" H 9050 5075 60  0001 C CNN
-	1    9050 5075
+P 8825 5075
+F 0 "P41" V 8775 5075 50  0000 C CNN
+F 1 "STACK-L" V 8875 5075 50  0000 C CNN
+F 2 "pin_sck_4-90" H 8825 5075 60  0001 C CNN
+	1    8825 5075
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -1226,6 +1264,8 @@ F 2 "pin_strip_3" H 3950 4100 60  0001 C CNN
 	1    3950 4100
 	1    0    0    -1  
 $EndComp
+Text Label 3800 3650 0    40   ~ 0
+VRAW
 Text Label 9800 1400 2    40   ~ 0
 VCC
 Text HLabel 10300 4350 2    40   Input ~ 0
@@ -1391,6 +1431,8 @@ Text HLabel 4500 5200 2    47   Input ~ 0
 GND
 Text HLabel 4500 5000 2    47   Input ~ 0
 VSS
+Text HLabel 4500 3650 2    47   Input ~ 0
+VRAW
 Text Notes 5300 5350 0    60   ~ 0
 POWER SUPPLY
 $Comp
