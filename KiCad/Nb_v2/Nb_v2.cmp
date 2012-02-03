@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2011-12-28 BZR 3254)-stable date = 1/29/2012 1:50:24 PM
+Cmp-Mod V01 Created by CvPcb (2011-12-28 BZR 3254)-stable date = 2/3/2012 6:08:08 PM
 
 BeginCmp
 TimeStamp = /4B3F1092/4DBAC690;
@@ -187,6 +187,13 @@ TimeStamp = /4B3F1092/4C109AA6;
 Reference = P11;
 ValeurCmp = CONN_1;
 IdModule  = vite_4mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F2BD464;
+Reference = P12;
+ValeurCmp = CONN_3;
+IdModule  = pin_strip_3;
 EndCmp
 
 BeginCmp
@@ -423,7 +430,7 @@ EndCmp
 BeginCmp
 TimeStamp = /4C17353D;
 Reference = R9;
-ValeurCmp = 100E;
+ValeurCmp = 1k;
 IdModule  = rc03_vert;
 EndCmp
 
