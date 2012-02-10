@@ -1,4 +1,4 @@
-update=2/9/2012 2:01:37 PM
+update=2/10/2012 5:57:40 PM
 version=1
 last_client=eeschema
 [cvpcb]
@@ -11,28 +11,28 @@ LibDir=
 NetType=0
 [cvpcb/libraries]
 EquName1=devcms
+[general]
+version=1
 [pcbnew]
 version=1
-PadDrlX=320
-PadDimH=600
-PadDimV=600
+PadDrlX=400
+PadDimH=700
+PadDimV=700
 BoardThickness=630
 TxtPcbV=800
 TxtPcbH=600
-TxtModV=600
-TxtModH=600
-TxtModW=120
+TxtModV=400
+TxtModH=400
+TxtModW=100
 VEgarde=100
 DrawLar=150
 EdgeLar=150
 TxtLar=120
-MSegLar=150
+MSegLar=100
 LastNetListRead=Nb_v1.net
 [pcbnew/libraries]
 LibDir=
 LibName1=Nb_v2_libs/Nb_v2_parts
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=

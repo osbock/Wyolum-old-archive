@@ -1,4 +1,25 @@
-Cmp-Mod V01 Created by CvPcb (2011-12-28 BZR 3254)-stable date = 2/3/2012 6:08:08 PM
+Cmp-Mod V01 Created by CvPcb (2011-12-28 BZR 3254)-stable date = 2/10/2012 1:45:37 PM
+
+BeginCmp
+TimeStamp = /4ECE351F;
+Reference = A0;
+ValeurCmp = CONN_1;
+IdModule  = Pad01;
+EndCmp
+
+BeginCmp
+TimeStamp = /4ECE351B;
+Reference = A1;
+ValeurCmp = CONN_1;
+IdModule  = Pad01;
+EndCmp
+
+BeginCmp
+TimeStamp = /4C9A4A71;
+Reference = A2;
+ValeurCmp = CONN_1;
+IdModule  = Pad01;
+EndCmp
 
 BeginCmp
 TimeStamp = /4B3F1092/4DBAC690;
@@ -79,30 +100,37 @@ EndCmp
 
 BeginCmp
 TimeStamp = /4B077B46;
-Reference = D126;
+Reference = D1;
 ValeurCmp = GRN;
 IdModule  = led_5mm_green;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ECE3230;
-Reference = D127;
+Reference = D2;
 ValeurCmp = YEL;
 IdModule  = led_5mm_yellow;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B3F1092/4B3F12CA;
-Reference = D128;
+Reference = D3;
 ValeurCmp = PWR;
 IdModule  = led_5mm_blue;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B3F1092/4ECE872F;
-Reference = D129;
+Reference = D4;
 ValeurCmp = 3V3_Z;
 IdModule  = diode_do35;
+EndCmp
+
+BeginCmp
+TimeStamp = /4ECE352C;
+Reference = D13;
+ValeurCmp = CONN_1;
+IdModule  = Pad01;
 EndCmp
 
 BeginCmp
@@ -113,45 +141,24 @@ IdModule  = pin_strip_3;
 EndCmp
 
 BeginCmp
-TimeStamp = /4ECF40D3;
+TimeStamp = /4F338300;
 Reference = P1;
-ValeurCmp = CONN_4;
-IdModule  = pin_strip_4;
+ValeurCmp = DCF77;
+IdModule  = pin_strip_6;
 EndCmp
 
 BeginCmp
-TimeStamp = /4ECE351F;
-Reference = P2;
-ValeurCmp = CONN_1;
-IdModule  = Pad01;
-EndCmp
-
-BeginCmp
-TimeStamp = /4ECE351B;
-Reference = P3;
-ValeurCmp = CONN_1;
-IdModule  = Pad01;
-EndCmp
-
-BeginCmp
-TimeStamp = /4ECE352C;
-Reference = P4;
-ValeurCmp = CONN_1;
-IdModule  = Pad01;
-EndCmp
-
-BeginCmp
-TimeStamp = /4ECF8C7A;
+TimeStamp = /4F338579;
 Reference = P5;
-ValeurCmp = CONN_12;
-IdModule  = pin_array_12x1;
+ValeurCmp = ANODES;
+IdModule  = pin_strip_8x2;
 EndCmp
 
 BeginCmp
-TimeStamp = /4ECF8737;
+TimeStamp = /4F338657;
 Reference = P6;
-ValeurCmp = CONN_12;
-IdModule  = pin_array_12x1;
+ValeurCmp = KATHODES;
+IdModule  = pin_strip_8x2;
 EndCmp
 
 BeginCmp
@@ -190,13 +197,6 @@ IdModule  = vite_4mm;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F2BD464;
-Reference = P12;
-ValeurCmp = CONN_3;
-IdModule  = pin_strip_3;
-EndCmp
-
-BeginCmp
 TimeStamp = /4B3F1092/4C122417;
 Reference = P13;
 ValeurCmp = ISP;
@@ -204,16 +204,9 @@ IdModule  = pin_strip_3x2;
 EndCmp
 
 BeginCmp
-TimeStamp = /4ECF8C6B;
-Reference = P16;
-ValeurCmp = CONN_4X2;
-IdModule  = pin_array_4x2;
-EndCmp
-
-BeginCmp
 TimeStamp = /4B3F1092/4ECFBE6C;
 Reference = P20;
-ValeurCmp = CONN_2;
+ValeurCmp = DC_IN;
 IdModule  = JACK_ALIM;
 EndCmp
 
@@ -327,13 +320,6 @@ TimeStamp = /4B3F1092/4C9A16A1;
 Reference = P42;
 ValeurCmp = STACK-R;
 IdModule  = pin_strip_4-90;
-EndCmp
-
-BeginCmp
-TimeStamp = /4C9A4A71;
-Reference = P43;
-ValeurCmp = CONN_1;
-IdModule  = Pad01;
 EndCmp
 
 BeginCmp
@@ -554,9 +540,9 @@ IdModule  = rc03_vert;
 EndCmp
 
 BeginCmp
-TimeStamp = /4B3F1092/4B3F12C9;
+TimeStamp = /4F338640;
 Reference = R27;
-ValeurCmp = 1k;
+ValeurCmp = R;
 IdModule  = rc03_vert;
 EndCmp
 
@@ -582,38 +568,45 @@ IdModule  = rc03_vert;
 EndCmp
 
 BeginCmp
+TimeStamp = /4B3F1092/4B3F12C9;
+Reference = R31;
+ValeurCmp = 1k;
+IdModule  = rc03_vert;
+EndCmp
+
+BeginCmp
 TimeStamp = /4B680EC2;
 Reference = SW1;
 ValeurCmp = MODE;
-IdModule  = SW_PB_V;
+IdModule  = SW_PB_V_H;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B680EC9;
 Reference = SW2;
 ValeurCmp = HOUR+;
-IdModule  = SW_PB_V;
+IdModule  = SW_PB_V_H;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B6FC330;
 Reference = SW3;
 ValeurCmp = MIN+;
-IdModule  = SW_PB_V;
+IdModule  = SW_PB_V_H;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B6FC25C;
 Reference = SW4;
 ValeurCmp = RST;
-IdModule  = SW-PB;
+IdModule  = SW_PB_V_H;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D1333DE;
 Reference = SW5;
 ValeurCmp = ENTER;
-IdModule  = SW_PB_V;
+IdModule  = SW_PB_V_H;
 EndCmp
 
 BeginCmp
@@ -687,10 +680,10 @@ IdModule  = XTAL_2;
 EndCmp
 
 BeginCmp
-TimeStamp = /4B3F1092/4ECE81EB;
+TimeStamp = /4B3F1092/4F34CF3D;
 Reference = X2;
 ValeurCmp = CRYSTAL;
-IdModule  = XTAL_2;
+IdModule  = XTAL_3;
 EndCmp
 
 EndListe
