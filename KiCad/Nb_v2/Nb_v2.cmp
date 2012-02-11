@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2011-12-28 BZR 3254)-stable date = 2/10/2012 1:45:37 PM
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Sunday 12 February 2012 12:32:08 AM IST
 
 BeginCmp
 TimeStamp = /4ECE351F;
@@ -145,6 +145,20 @@ TimeStamp = /4F338300;
 Reference = P1;
 ValeurCmp = DCF77;
 IdModule  = pin_strip_6;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B3F1092/4F36B6A9;
+Reference = P2;
+ValeurCmp = SDA;
+IdModule  = pin_strip_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B3F1092/4F36B6C8;
+Reference = P3;
+ValeurCmp = SCL;
+IdModule  = pin_strip_2;
 EndCmp
 
 BeginCmp
@@ -575,6 +589,20 @@ IdModule  = rc03_vert;
 EndCmp
 
 BeginCmp
+TimeStamp = /4B3F1092/4F36B481;
+Reference = R32;
+ValeurCmp = 10k;
+IdModule  = rc03_vert;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B3F1092/4F36B49C;
+Reference = R33;
+ValeurCmp = 10k;
+IdModule  = rc03_vert;
+EndCmp
+
+BeginCmp
 TimeStamp = /4B680EC2;
 Reference = SW1;
 ValeurCmp = MODE;
@@ -670,6 +698,13 @@ TimeStamp = /4B3F1092/4F23EA14;
 Reference = U9;
 ValeurCmp = 78L05;
 IdModule  = Volt_Reg_78xx_Vert;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B3F1092/4F36A9A5;
+Reference = U10;
+ValeurCmp = DS3231N;
+IdModule  = DS3231;
 EndCmp
 
 BeginCmp

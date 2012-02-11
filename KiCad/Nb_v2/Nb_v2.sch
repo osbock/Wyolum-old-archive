@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/10/2012 1:45:45 PM
+EESchema Schematic File Version 2  date Sunday 12 February 2012 12:21:59 AM IST
 LIBS:Nb_v2
 LIBS:power
 LIBS:conn
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 2
 Title "NachBau - WordClock"
-Date "10 feb 2012"
+Date "11 feb 2012"
 Rev "A"
 Comp ""
 Comment1 "www.wyolum.com"
