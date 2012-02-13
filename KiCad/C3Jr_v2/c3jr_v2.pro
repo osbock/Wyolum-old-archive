@@ -1,5 +1,5 @@
-update=2/11/2012 5:43:43 PM
-last_client=kicad
+update=2/13/2012 3:37:04 PM
+last_client=eeschema
 [cvpcb]
 version=1
 NetIExt=net
@@ -25,6 +25,8 @@ LastNetListRead=c3jr_v2.net
 [pcbnew/libraries]
 LibDir=../../../../../../../Downloads/KiCAD/Libs;D:/Users/Anool/Downloads/KiCAD/Libs/USB
 LibName1=C3Jr_v2_libs/C3Jr_v2_parts
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=D:/Users/Anool/Downloads/KiCAD/Libs/USB
@@ -60,6 +62,4 @@ LabSize=40
 LibName1=C3Jr_v2_libs/C3Jr_v2
 LibName2=C3Jr_v2_libs/power
 LibName3=c3jr_v2-cache
-[general]
-version=1
 
