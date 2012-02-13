@@ -1,30 +1,10 @@
-update=2/13/2012 3:37:04 PM
-last_client=eeschema
+update=2/13/2012 4:16:39 PM
+last_client=pcbnew
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[pcbnew]
-version=1
-PadDrlX=800
-PadDimH=1500
-PadDimV=1500
-BoardThickness=630
-TxtPcbV=600
-TxtPcbH=600
-TxtModV=600
-TxtModH=600
-TxtModW=120
-VEgarde=100
-DrawLar=100
-EdgeLar=150
-TxtLar=120
-MSegLar=100
-LastNetListRead=c3jr_v2.net
-[pcbnew/libraries]
-LibDir=../../../../../../../Downloads/KiCAD/Libs;D:/Users/Anool/Downloads/KiCAD/Libs/USB
-LibName1=C3Jr_v2_libs/C3Jr_v2_parts
 [general]
 version=1
 [eeschema]
@@ -62,4 +42,24 @@ LabSize=40
 LibName1=C3Jr_v2_libs/C3Jr_v2
 LibName2=C3Jr_v2_libs/power
 LibName3=c3jr_v2-cache
+[pcbnew]
+version=1
+PadDrlX=800
+PadDimH=1500
+PadDimV=1500
+BoardThickness=630
+TxtPcbV=600
+TxtPcbH=600
+TxtModV=600
+TxtModH=600
+TxtModW=120
+VEgarde=100
+DrawLar=100
+EdgeLar=150
+TxtLar=120
+MSegLar=100
+LastNetListRead=c3jr_v2.net
+[pcbnew/libraries]
+LibDir=../../../../../../../Downloads/KiCAD/Libs;D:/Users/Anool/Downloads/KiCAD/Libs/USB
+LibName1=C3Jr_v2_libs/C3Jr_v2_parts
 
