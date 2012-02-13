@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2011-12-28 BZR 3254)-stable date = 2/11/2012 12:00:58 PM
+Cmp-Mod V01 Created by CvPcb (2011-12-28 BZR 3254)-stable date = 2/13/2012 3:13:50 PM
 
 BeginCmp
 TimeStamp = /4D28241A/4DC14DAD;
@@ -1086,17 +1086,17 @@ IdModule  = 7Seg_Sel;
 EndCmp
 
 BeginCmp
-TimeStamp = /4B3F1092/4F36082E;
+TimeStamp = /4B3F1092/4F38DAA4;
 Reference = K4;
 ValeurCmp = SCL;
-IdModule  = pin_strip_3;
+IdModule  = pin_strip_2;
 EndCmp
 
 BeginCmp
-TimeStamp = /4B3F1092/4F3608CC;
+TimeStamp = /4B3F1092/4F38DADB;
 Reference = K5;
 ValeurCmp = SDA;
-IdModule  = pin_strip_3;
+IdModule  = pin_strip_2;
 EndCmp
 
 BeginCmp

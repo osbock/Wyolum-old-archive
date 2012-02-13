@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/11/2012 5:26:33 PM
+EESchema Schematic File Version 2  date 2/13/2012 3:14:02 PM
 LIBS:C3Jr_v2
 LIBS:power
 LIBS:c3jr_v2-cache
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 4
 Title "ClockTHREE Junior aka C3Jr_v2 , with stackable board"
-Date "11 feb 2012"
+Date "13 feb 2012"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -17,6 +17,26 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 Comment4 ""
 $EndDescr
+$Comp
+L CONN_2 K5
+U 1 1 4F38DADB
+P 1200 1400
+F 0 "K5" V 1150 1400 40  0000 C CNN
+F 1 "SDA" V 1250 1400 40  0000 C CNN
+F 2 "pin_strip_2" V 1350 1400 40  0001 C CNN
+	1    1200 1400
+	-1   0    0    1   
+$EndComp
+$Comp
+L CONN_2 K4
+U 1 1 4F38DAA4
+P 1200 1000
+F 0 "K4" V 1150 1000 40  0000 C CNN
+F 1 "SCL" V 1250 1000 40  0000 C CNN
+F 2 "pin_strip_2" V 1350 1000 40  0001 C CNN
+	1    1200 1000
+	-1   0    0    1   
+$EndComp
 NoConn ~ 1150 4000
 NoConn ~ 1100 4000
 Text Notes 4350 2600 0    40   Italic 8
@@ -27,12 +47,8 @@ Text Notes 1100 700  0    40   Italic 8
 Jumpers, to select\nINT or EXT RTC Chip
 Text Label 1950 1500 2    40   ~ 0
 SDA_INT
-Text Label 1950 1300 2    40   ~ 0
-SDA_EXT
 Text Label 1950 1100 2    40   ~ 0
 SCL_INT
-Text Label 1950 900  2    40   ~ 0
-SCL_EXT
 Text Label 2950 2550 0    40   ~ 0
 SDA_INT
 Text Label 2950 2450 0    40   ~ 0
@@ -42,9 +58,7 @@ Wire Wire Line
 Wire Wire Line
 	1550 1500 1950 1500
 Wire Wire Line
-	1550 1300 1950 1300
-Wire Wire Line
-	1550 1000 2100 1000
+	1550 900  2100 900 
 Wire Notes Line
 	10700 5875 10700 4700
 Wire Notes Line
@@ -697,33 +711,11 @@ Wire Wire Line
 	9750 5750 9300 5750
 Connection ~ 9500 5750
 Wire Wire Line
-	1550 900  1950 900 
-Wire Wire Line
 	1550 1100 1950 1100
 Wire Wire Line
-	1550 1400 2100 1400
+	1550 1300 2100 1300
 Wire Wire Line
 	3950 2450 2950 2450
-$Comp
-L CONN_3 K5
-U 1 1 4F3608CC
-P 1200 1400
-F 0 "K5" V 1150 1400 50  0000 C CNN
-F 1 "SDA" V 1250 1400 40  0000 C CNN
-F 2 "pin_strip_3" V 1350 1400 40  0001 C CNN
-	1    1200 1400
-	-1   0    0    1   
-$EndComp
-$Comp
-L CONN_3 K4
-U 1 1 4F36082E
-P 1200 1000
-F 0 "K4" V 1150 1000 50  0000 C CNN
-F 1 "SCL" V 1250 1000 40  0000 C CNN
-F 2 "pin_strip_3" V 1350 1000 40  0001 C CNN
-	1    1200 1000
-	-1   0    0    1   
-$EndComp
 $Comp
 L CP1 C2
 U 1 1 4F1D4EB4
@@ -1042,9 +1034,9 @@ F 2 "vite_3mm" H 1250 2900 60  0001 C CNN
 $EndComp
 Text Notes 8600 5975 0    40   Italic 8
 Stack-L and Stack-R have inverted pin nos\nsince one is facing Left and other is facing right.\nWhen mounted this way on the board,\ntracks from one to the other will be parallel - no cross over.
-Text HLabel 2100 1400 2    40   Input ~ 0
+Text HLabel 2100 1300 2    40   Input ~ 0
 SDA
-Text HLabel 2100 1000 2    40   Input ~ 0
+Text HLabel 2100 900  2    40   Input ~ 0
 SCL
 Text Notes 6575 3300 0    60   ~ 0
 rtcBoB\n
@@ -1059,9 +1051,9 @@ F 2 "pin_strip_4" H 900 2400 60  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Text Label 2700 2550 2    40   ~ 0
-SDA_EXT
+SDA
 Text Label 2700 2450 2    40   ~ 0
-SCL_EXT
+SCL
 Text Label 2450 2350 0    40   ~ 0
 VCC
 Text Label 2450 2250 0    40   ~ 0
