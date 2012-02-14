@@ -1,4 +1,4 @@
-### Module positions - created on 2/13/2012 3:39:06 PM ###
+### Module positions - created on 2/14/2012 6:56:00 PM ###
 ### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Front
@@ -7,7 +7,8 @@ BT1      BATT_RTC             6.3400     1.8550       0.0    Front
 C1       100u                 1.7975     9.0375     180.0    Front
 C2       100u                 7.0775     8.8800       0.0    Front
 C3       100n                 3.6450     9.1600     180.0    Front
-C6       100n                 5.9000     9.3400     270.0    Front
+C4       100n                 6.5075     9.0300     270.0    Front
+C6       100n                 5.8325     9.5175     270.0    Front
 C7       100n                 2.0000     9.2450     270.0    Front
 C8       100u                 6.6950     8.8800     270.0    Front
 C9       100n                 6.8925     9.0300     270.0    Front
@@ -150,14 +151,13 @@ D260     PWR                  4.2300     1.8100      90.0    Front
 DIL-U1   STP16DP05            2.1850     2.1750       0.0    Front
 J1       V_IN                 7.1900     9.4800     180.0    Front
 J2       V_IN                 6.6750     9.4800     180.0    Front
-J3       V_IN                 6.2550     9.0900      90.0    Front
+J3       V_IN                 6.4875     9.8050     180.0    Front
 K1       PWR_SEL              2.3000     9.7000     180.0    Front
 K2       LED_ENABLE           2.3000     9.5000     180.0    Front
 K4       SCL                  7.1200     2.0100       0.0    Front
 K5       SDA                  7.1200     1.8600       0.0    Front
 P1       7SegDisp             5.1850     1.7750       0.0    Front
 P7       FTDI                 1.7500     9.5000       0.0    Front
-P12      V_OUT                5.8625     9.8300     180.0    Front
 P13      ISP                  2.6500     9.8000      90.0    Front
 P41      STACK-L              1.4000     9.0000     270.0    Front
 P42      STACK-R              7.2600     9.0000      90.0    Front
@@ -219,8 +219,9 @@ SW2      DEC                  2.7000     1.2725     270.0    Front
 SW3      MODE                 2.1000     1.2725     270.0    Front
 SW4      RST                  1.5000     1.2725     270.0    Front
 SW5      ENTER                3.9000     1.2725     270.0    Front
+U1       STP8DP05             1.9850     2.1750       0.0    Front
+U2       7805                 6.1025     9.5200       0.0    Front
 U3       ATMEGA8-P            3.4900     9.4500     180.0    Front
 U4       74HC154              5.1200     9.3400     180.0    Front
-U5       STP8DP05             1.9850     2.1750       0.0    Front
 X1       16MHz                3.2400     9.1600     180.0    Front
 ## End

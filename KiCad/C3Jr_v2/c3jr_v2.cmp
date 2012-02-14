@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 2/13/2012 3:38:47 PM
+Cmp-Mod V01 Genere par PcbNew le 2/14/2012 6:56:17 PM
 
 BeginCmp
 TimeStamp = 4F056EE7
@@ -1129,14 +1129,6 @@ IdModule  = pin_strip_4-90;
 EndCmp
 
 BeginCmp
-TimeStamp = 4C1CA962
-Path = /4B3F1092/4C1C8E7F
-Reference = P12;
-ValeurCmp = V_OUT;
-IdModule  = pin_strip_3;
-EndCmp
-
-BeginCmp
 TimeStamp = 4ED5152F
 Path = /4B3F1092/4C9A16BC
 Reference = P41;
@@ -1363,7 +1355,7 @@ EndCmp
 BeginCmp
 TimeStamp = 4DB96705
 Path = /4DB95F47
-Reference = U5;
+Reference = U1;
 ValeurCmp = STP8DP05;
 IdModule  = dil_16-300_socket;
 EndCmp
@@ -2110,6 +2102,22 @@ Path = /4B3F1092/4F38DADB
 Reference = K5;
 ValeurCmp = SDA;
 IdModule  = pin_strip_2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F3A38EC
+Path = /4B3F1092/4F3A3537
+Reference = C4;
+ValeurCmp = 100n;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F3A495E
+Path = /4B3F1092/4F3A34A1
+Reference = U2;
+ValeurCmp = 7805;
+IdModule  = TO-220_Horizontal;
 EndCmp
 
 EndListe

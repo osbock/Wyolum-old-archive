@@ -1,263 +1,63 @@
-ref	value	footprint	Field1	Field2	Field3	Field4	Field5	Field6	Field7	Field8
-BF1	BAFFLE	Baffle
-BP1	BackPlate	BackPlate
-BT1	BATT_RTC	CR2032
-C1	100u	CP_5x11mm
-C2	100u	CP_5x11mm
-C3	100n	C2
-C6	100n	C2
-C7	100n	C2
-C8	100u	CP_5x11mm
-C9	100n	C2
-C10	100n	C2
-C11	22p	cnp_3mm_disc
-C12	22p	cnp_3mm_disc
-CD1	CDOT1	pin_strip_4
-CD2	CDOT2	pin_strip_4
-CD3	CDOT3	pin_strip_4
-D1	LED	led_5mm_clear
-D2	LED	led_5mm_clear
-D3	LED	led_5mm_clear
-D4	LED	led_5mm_clear
-D5	LED	led_5mm_clear
-D6	LED	led_5mm_clear
-D7	LED	led_5mm_clear
-D8	LED	led_5mm_clear
-D9	LED	led_5mm_clear
-D10	LED	led_5mm_clear
-D11	LED	led_5mm_clear
-D12	LED	led_5mm_clear
-D13	LED	led_5mm_clear
-D14	LED	led_5mm_clear
-D15	LED	led_5mm_clear
-D16	LED	led_5mm_clear
-D17	LED	led_5mm_clear
-D18	LED	led_5mm_clear
-D19	LED	led_5mm_clear
-D20	LED	led_5mm_clear
-D21	LED	led_5mm_clear
-D22	LED	led_5mm_clear
-D23	LED	led_5mm_clear
-D24	LED	led_5mm_clear
-D25	LED	led_5mm_clear
-D26	LED	led_5mm_clear
-D27	LED	led_5mm_clear
-D28	LED	led_5mm_clear
-D29	LED	led_5mm_clear
-D30	LED	led_5mm_clear
-D31	LED	led_5mm_clear
-D32	LED	led_5mm_clear
-D33	LED	led_5mm_clear
-D34	LED	led_5mm_clear
-D35	LED	led_5mm_clear
-D36	LED	led_5mm_clear
-D37	LED	led_5mm_clear
-D38	LED	led_5mm_clear
-D39	LED	led_5mm_clear
-D40	LED	led_5mm_clear
-D41	LED	led_5mm_clear
-D42	LED	led_5mm_clear
-D43	LED	led_5mm_clear
-D44	LED	led_5mm_clear
-D45	LED	led_5mm_clear
-D46	LED	led_5mm_clear
-D47	LED	led_5mm_clear
-D48	LED	led_5mm_clear
-D49	LED	led_5mm_clear
-D50	LED	led_5mm_clear
-D51	LED	led_5mm_clear
-D52	LED	led_5mm_clear
-D53	LED	led_5mm_clear
-D54	LED	led_5mm_clear
-D55	LED	led_5mm_clear
-D56	LED	led_5mm_clear
-D57	LED	led_5mm_clear
-D58	LED	led_5mm_clear
-D59	LED	led_5mm_clear
-D60	LED	led_5mm_clear
-D61	LED	led_5mm_clear
-D62	LED	led_5mm_clear
-D63	LED	led_5mm_clear
-D64	LED	led_5mm_clear
-D65	LED	led_5mm_clear
-D66	LED	led_5mm_clear
-D67	LED	led_5mm_clear
-D68	LED	led_5mm_clear
-D69	LED	led_5mm_clear
-D70	LED	led_5mm_clear
-D71	LED	led_5mm_clear
-D72	LED	led_5mm_clear
-D73	LED	led_5mm_clear
-D74	LED	led_5mm_clear
-D75	LED	led_5mm_clear
-D76	LED	led_5mm_clear
-D77	LED	led_5mm_clear
-D78	LED	led_5mm_clear
-D79	LED	led_5mm_clear
-D80	LED	led_5mm_clear
-D81	LED	led_5mm_clear
-D82	LED	led_5mm_clear
-D83	LED	led_5mm_clear
-D84	LED	led_5mm_clear
-D85	LED	led_5mm_clear
-D86	LED	led_5mm_clear
-D87	LED	led_5mm_clear
-D88	LED	led_5mm_clear
-D89	LED	led_5mm_clear
-D90	LED	led_5mm_clear
-D91	LED	led_5mm_clear
-D92	LED	led_5mm_clear
-D93	LED	led_5mm_clear
-D94	LED	led_5mm_clear
-D95	LED	led_5mm_clear
-D96	LED	led_5mm_clear
-D97	LED	led_5mm_clear
-D98	LED	led_5mm_clear
-D99	LED	led_5mm_clear
-D100	LED	led_5mm_clear
-D101	LED	led_5mm_clear
-D102	LED	led_5mm_clear
-D103	LED	led_5mm_clear
-D104	LED	led_5mm_clear
-D105	LED	led_5mm_clear
-D106	LED	led_5mm_clear
-D107	LED	led_5mm_clear
-D108	LED	led_5mm_clear
-D109	LED	led_5mm_clear
-D110	LED	led_5mm_clear
-D111	LED	led_5mm_clear
-D112	LED	led_5mm_clear
-D113	LED	led_5mm_clear
-D114	LED	led_5mm_clear
-D115	LED	led_5mm_clear
-D116	LED	led_5mm_clear
-D117	LED	led_5mm_clear
-D118	LED	led_5mm_clear
-D119	LED	led_5mm_clear
-D120	LED	led_5mm_clear
-D121	LED	led_5mm_clear
-D122	LED	led_5mm_clear
-D123	LED	led_5mm_clear
-D124	LED	led_5mm_clear
-D125	LED	led_5mm_clear
-D126	LED	led_5mm_clear
-D127	LED	led_5mm_clear
-D128	LED	led_5mm_clear
-D258	DBG	led_5mm_blue
-D260	PWR	led_5mm_blue
-DIL-U1	STP16DP05	SCK-24_600_ELL	497-5975-1-ND
-FM1	FRAME	Frame
-FP1	FacePlate	FacePlate
-J1	V_IN	con-hirose-UX60-MB-5S8	http://search.digikey.com/us/en/products/UX60-MB-5ST/H2959CT-ND/597538
-J2	V_IN	con-usb-USB-B-H
-J3	V_IN	JACK_ALIM
-K1	PWR SEL	pin_strip_3
-K2	LED_ENABLE	pin_strip_3
-K3	7Seg_Sel	7Seg_Sel
-K4	SCL	pin_strip_2
-K5	SDA	pin_strip_2
-P1	7SegDisp	pin_strip_8
-P7	FTDI	pin_strip_6-90
-P8	CONN_1	vite_4mm
-P9	CONN_1	vite_4mm
-P10	CONN_1	vite_4mm
-P11	CONN_1	vite_4mm
-P12	V_OUT	pin_strip_3
-P13	ISP	pin_strip_3x2
-P14	CONN_1	vite_4mm
-P15	CONN_1	vite_4mm
-P24	DIL6	PROTO-6
-P25	DIL6	PROTO-6
-P26	DIL6	PROTO-6
-P27	DIL6	PROTO-6
-P28	DIL6	PROTO-6
-P29	DIL6	PROTO-6
-P30	DIL6	PROTO-6
-P31	DIL6	PROTO-6
-P32	DIL6	PROTO-6
-P33	DIL6	PROTO-6
-P34	DIL6	PROTO-6
-P35	DIL6	PROTO-6
-P36	DIL6	PROTO-6
-P37	DIL6	PROTO-6
-P38	DIL6	PROTO-6
-P39	DIL6	PROTO-6
-P41	STACK-L	pin_sck_4-90
-P42	STACK-R	pin_strip_4-90
-P43	CONN_1	Pad01
-P49	CONN_1	vite_3mm
-P50	CONN_1	vite_3mm
-P51	CONN_1	vite_3mm
-P52	CONN_1	vite_3mm
-P53	CONN_1	vite_4mm
-P54	CONN_1	vite_4mm
-PCB1	PCB	PCB
-Q1	2N5401	to92_2N5401
-Q2	2N5401	to92_2N5401
-Q3	2N5401	to92_2N5401
-Q4	2N5401	to92_2N5401
-Q5	2N5401	to92_2N5401
-Q6	2N5401	to92_2N5401
-Q7	2N5401	to92_2N5401
-Q8	2N5401	to92_2N5401
-Q9	2N5401	to92_2N5401
-Q10	2N5401	to92_2N5401
-Q11	2N5401	to92_2N5401
-Q12	2N5401	to92_2N5401
-Q13	2N5401	to92_2N5401
-Q14	2N5401	to92_2N5401
-Q15	2N5401	to92_2N5401
-Q16	2N5401	to92_2N5401
-Q17	2N5401	to92_2N5401	2N5401RLRAGOSCT-ND
-R1	100	rc03_vert
-R2	100	rc03_vert
-R3	100	rc03_vert
-R4	100	rc03_vert
-R5	100	rc03_vert
-R6	100	rc03_vert
-R7	100	rc03_vert
-R8	100	rc03_vert
-R9	100	rc03_vert
-R10	100	rc03_vert
-R11	100	rc03_vert
-R12	100	rc03_vert
-R13	100	rc03_vert
-R14	100	rc03_vert
-R15	100	rc03_vert
-R16	100	rc03_vert
-R17	10k	RC03
-R18	10k	RC03
-R19	10k	RC03
-R20	4k7	RC03
-R21	4k7	RC03
-R22	10k	RC03
-R23	10k	RC03
-R24	1k	RC03
-R25	1k	RC03
-R26	1k	RC03
-R30	100E	RC03
-R31	10K	RC03
-R32	LDR	pin_strip_2
-R33	680E	RC03
-R34	2k	Pot-Var2
-R35	680E	RC03
-R36	10k	RC03
-R37	10k	RC03
-R38	10k	RC03
-rowBoB1	CONN_1	vite_3mm
-SP1	SPEAKER	Speaker	102-1169-ND
-SW1	INC	SW_PB_V	P10884S-ND
-SW2	DEC	SW_PB_V	P10884S-ND
-SW3	MODE	SW_PB_V	P10884S-ND
-SW4	RST	SW_PB_V	P10884S-ND
-SW5	ENTER	SW_PB_V	P10884S-ND
-SW12	INC	SW-PB-MOD	P10884S-ND
-SW22	DEC	SW-PB-MOD	P10884S-ND
-SW32	MODE	SW-PB-MOD	P10884S-ND
-SW42	RST	SW-PB-MOD	P10884S-ND
-SW52	ENTER	SW-PB-MOD	P10884S-ND
-U3	ATMEGA8-P	dil_28-300_socket
-U4	74HC154	DIP-24__600_ELL	296-8757-5-ND
-U5	STP8DP05	dil_16-300_socket
-U6	DS3231N	DS3231
-X1	16MHz	XTAL	490-1214-ND
+"Id";"Designator";"Package";"Quantity";"Designation";"Supplier and ref";
+1;"G2";"OSHW_6mm";1;"LOGO";;;
+2;"G1";"Logo-WL3";1;"Logo-WL3";;;
+3;"J1";"con-hirose-UX60-MB-5S8";1;"V_IN";;;
+4;"R24,R26,R25";"RC03";3;"1k";;;
+5;"SP1";"Speaker";1;"SPEAKER";;;
+6;"J2";"con-usb-USB-B-H";1;"V_IN";;;
+7;"K3";"7Seg_Sel";1;"7Seg_Sel";;;
+8;"D4,D3,D2,D1,D67,D5,D6,D7,D8,D9,D10,D11,D12,D13,D14,D15,D16,D17,D18,D19,D20,D21,D22,D23,D24,D25,D26,D27,D28,D29,D30,D31,D32,D33,D34,D35,D36,D37,D38,D39,D40,D41,D42,D43,D44,D45,D46,D47,D48,D49,D50,D51,D52,D53,D54,D55,D56,D57,D58,D59,D60,D61,D62,D63,D64,D65,D66,D128,D68,D69,D70,D71,D72,D73,D74,D75,D76,D77,D78,D79,D80,D81,D82,D83,D84,D85,D86,D87,D88,D89,D90,D91,D92,D93,D94,D95,D96,D97,D98,D99,D100,D101,D102,D103,D104,D105,D106,D107,D108,D109,D110,D111,D112,D113,D114,D115,D116,D117,D118,D119,D120,D121,D122,D123,D124,D125,D126,D127";"led_5mm_clear";128;"LED";;;
+9;"CD3";"pin_strip_4";1;"CDOT3";;;
+10;"CD1";"pin_strip_4";1;"CDOT1";;;
+11;"CD2";"pin_strip_4";1;"CDOT2";;;
+12;"P1";"pin_strip_8";1;"7SegDisp";;;
+13;"R32";"pin_strip_2";1;"LDR";;;
+14;"P42";"pin_strip_4-90";1;"STACK-R";;;
+15;"P41";"pin_sck_4-90";1;"STACK-L";;;
+16;"P7";"pin_strip_6-90";1;"FTDI";;;
+17;"K2";"pin_strip_3";1;"LED_ENABLE";;;
+18;"K1";"pin_strip_3";1;"PWR_SEL";;;
+19;"P13";"pin_strip_3x2";1;"ISP";;;
+20;"PCB1";"PCB";1;"PCB";;;
+21;"FP1";"FacePlate";1;"FacePlate";;;
+22;"FM1";"Frame";1;"FRAME";;;
+23;"R33,R35";"RC03";2;"680E";;;
+24;"R30";"RC03";1;"100E";;;
+25;"R31";"RC03";1;"10K";;;
+26;"R22,R17,R18,R19,R23,R37,R38,R36";"RC03";8;"10k";;;
+27;"R21,R20";"RC03";2;"4k7";;;
+28;"BP1";"BackPlate";1;"BackPlate";;;
+29;"P53,P54,P15,P14,P11,P10,P9,P8";"vite_4mm";8;"CONN_1";;;
+30;"BF1";"Baffle";1;"BAFFLE";;;
+31;"R34";"Pot-Var2";1;"2k";;;
+32;"U5";"dil_16-300_socket";1;"STP8DP05";;;
+33;"C12,C11";"cnp_3mm_disc";2;"22p";;;
+34;"U6";"DS3231";1;"DS3231N";;;
+35;"BT1";"CR2032";1;"BATT_RTC";;;
+36;"C10,C3,C6,C7,C9,C4";"C2";6;"100n";;;
+37;"DIL-U1";"SCK-24_600_ELL";1;"STP16DP05";;;
+38;"D260";"led_5mm_blue";1;"PWR";;;
+39;"D258";"led_5mm_blue";1;"DBG";;;
+40;"C8,C2,C1";"CP_5x11mm";3;"100u";;;
+41;"rowBoB1,P52,P49,P50,P51";"vite_3mm";5;"CONN_1";;;
+42;"P43";"Pad01";1;"CONN_1";;;
+43;"U4";"DIP-24__600_ELL";1;"74HC154";;;
+44;"P39,P38,P37,P36,P35,P34,P33,P32,P31,P30,P29,P28,P27,P26,P25,P24";"PROTO-6";16;"DIL6";;;
+45;"U3";"dil_28-300_socket";1;"ATMEGA8-P";;;
+46;"X1";"XTAL";1;"16MHz";;;
+47;"J3";"JACK_ALIM";1;"V_IN";;;
+48;"R16,R15,R14,R13,R12,R11,R10,R9,R8,R7,R6,R5,R4,R3,R2,R1";"rc03_vert";16;"100";;;
+49;"Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14,Q15,Q16,Q17";"to92_2N5401";17;"2N5401";;;
+50;"SW5";"SW_PB_V";1;"ENTER";;;
+51;"SW1";"SW_PB_V";1;"INC";;;
+52;"SW2";"SW_PB_V";1;"DEC";;;
+53;"SW3";"SW_PB_V";1;"MODE";;;
+54;"SW4";"SW_PB_V";1;"RST";;;
+55;"SW42";"SW-PB-MOD";1;"RST";;;
+56;"SW32";"SW-PB-MOD";1;"MODE";;;
+57;"SW22";"SW-PB-MOD";1;"DEC";;;
+58;"SW12";"SW-PB-MOD";1;"INC";;;
+59;"SW52";"SW-PB-MOD";1;"ENTER";;;
+60;"K4";"pin_strip_2";1;"SCL";;;
+61;"K5";"pin_strip_2";1;"SDA";;;
+62;"U1";"TO-220_Horizontal";1;"7805";;;

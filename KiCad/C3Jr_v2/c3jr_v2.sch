@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/13/2012 3:14:02 PM
+EESchema Schematic File Version 2  date 2/14/2012 6:32:43 PM
 LIBS:C3Jr_v2
 LIBS:power
 LIBS:c3jr_v2-cache
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
 Title "ClockTHREE Junior aka C3Jr_v2 , with stackable board"
-Date "13 feb 2012"
+Date "14 feb 2012"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -416,8 +416,6 @@ Wire Wire Line
 Wire Wire Line
 	4700 3450 3350 3450
 Wire Wire Line
-	9825 1775 10200 1775
-Wire Wire Line
 	10200 1975 9825 1975
 Wire Wire Line
 	10200 2175 9825 2175
@@ -674,10 +672,10 @@ Text Label 5125 900  0    40   ~ 0
 OC1A-LE
 NoConn ~ 7750 700 
 $Comp
-L STP8DP05 U5
+L STP8DP05 U1
 U 1 1 4DB95F47
 P 7150 1500
-F 0 "U5" H 6850 1350 60  0000 C CNN
+F 0 "U1" H 6850 1350 60  0000 C CNN
 F 1 "STP8DP05" H 7700 1400 60  0000 C CNN
 F 2 "dil_16-300_socket" H 7150 1500 60  0001 C CNN
 	1    7150 1500
@@ -1210,8 +1208,6 @@ Text Label 3400 2600 1    39   ~ 0
 SDA
 Text Label 3550 2600 1    39   ~ 0
 SCL
-Text Label 9825 1775 0    47   ~ 0
-VRAW
 Text Label 9825 2075 0    47   ~ 0
 VSS
 Text Label 9825 2175 0    47   ~ 0
@@ -1237,10 +1233,9 @@ F8 "TXD" I L 10200 2475 60
 F9 "RES" I L 10200 2675 60 
 F10 "VDD" I L 10200 1975 60 
 F11 "VCC" I L 10200 1875 60 
-F12 "VRAW" I L 10200 1775 60 
-F13 "SCK-CLK" I L 10200 2975 60 
-F14 "MOSI-SDI" I L 10200 2775 60 
-F15 "DBG" I L 10200 3075 60 
+F12 "SCK-CLK" I L 10200 2975 60 
+F13 "MOSI-SDI" I L 10200 2775 60 
+F14 "DBG" I L 10200 3075 60 
 $EndSheet
 Text Label 2550 1050 0    39   ~ 0
 INC
