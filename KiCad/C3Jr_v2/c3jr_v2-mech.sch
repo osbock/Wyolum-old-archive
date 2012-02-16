@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/14/2012 6:32:43 PM
+EESchema Schematic File Version 2  date 2/16/2012 10:12:10 AM
 LIBS:C3Jr_v2
 LIBS:power
 LIBS:c3jr_v2-cache

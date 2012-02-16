@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 2/14/2012 6:56:17 PM
+Cmp-Mod V01 Genere par PcbNew le 2/16/2012 12:13:12 PM
 
 BeginCmp
 TimeStamp = 4F056EE7
@@ -1729,134 +1729,6 @@ IdModule  = JACK_ALIM;
 EndCmp
 
 BeginCmp
-TimeStamp = 4C1CA99C
-Path = /4C134896/4C136E60
-Reference = R16;
-ValeurCmp = 100;
-IdModule  = rc03_vert;
-EndCmp
-
-BeginCmp
-TimeStamp = 4C1CA99A
-Path = /4C134896/4C136E5E
-Reference = R15;
-ValeurCmp = 100;
-IdModule  = rc03_vert;
-EndCmp
-
-BeginCmp
-TimeStamp = 4C1CA998
-Path = /4C134896/4C136E5C
-Reference = R14;
-ValeurCmp = 100;
-IdModule  = rc03_vert;
-EndCmp
-
-BeginCmp
-TimeStamp = 4C9B3707
-Path = /4C134896/4C136E59
-Reference = R13;
-ValeurCmp = 100;
-IdModule  = rc03_vert;
-EndCmp
-
-BeginCmp
-TimeStamp = 4D258C6B
-Path = /4C134896/4C136E4C
-Reference = R12;
-ValeurCmp = 100;
-IdModule  = rc03_vert;
-EndCmp
-
-BeginCmp
-TimeStamp = 4C1CA992
-Path = /4C134896/4C136E44
-Reference = R11;
-ValeurCmp = 100;
-IdModule  = rc03_vert;
-EndCmp
-
-BeginCmp
-TimeStamp = 4C1CA990
-Path = /4C134896/4C136E42
-Reference = R10;
-ValeurCmp = 100;
-IdModule  = rc03_vert;
-EndCmp
-
-BeginCmp
-TimeStamp = 4C1CA98E
-Path = /4C134896/4C136E3E
-Reference = R9;
-ValeurCmp = 100;
-IdModule  = rc03_vert;
-EndCmp
-
-BeginCmp
-TimeStamp = 4C1CA98C
-Path = /4C134896/4C136E3B
-Reference = R8;
-ValeurCmp = 100;
-IdModule  = rc03_vert;
-EndCmp
-
-BeginCmp
-TimeStamp = 4C1CA98A
-Path = /4C134896/4C136E25
-Reference = R7;
-ValeurCmp = 100;
-IdModule  = rc03_vert;
-EndCmp
-
-BeginCmp
-TimeStamp = 4C1CA988
-Path = /4C134896/4C136E20
-Reference = R6;
-ValeurCmp = 100;
-IdModule  = rc03_vert;
-EndCmp
-
-BeginCmp
-TimeStamp = 4C1CA986
-Path = /4C134896/4C136E1D
-Reference = R5;
-ValeurCmp = 100;
-IdModule  = rc03_vert;
-EndCmp
-
-BeginCmp
-TimeStamp = 4C1CA984
-Path = /4C134896/4C136E1A
-Reference = R4;
-ValeurCmp = 100;
-IdModule  = rc03_vert;
-EndCmp
-
-BeginCmp
-TimeStamp = 4C1CA982
-Path = /4C134896/4C136E04
-Reference = R3;
-ValeurCmp = 100;
-IdModule  = rc03_vert;
-EndCmp
-
-BeginCmp
-TimeStamp = 4ED667ED
-Path = /4C134896/4C136DFE
-Reference = R2;
-ValeurCmp = 100;
-IdModule  = rc03_vert;
-EndCmp
-
-BeginCmp
-TimeStamp = 4ED667F0
-Path = /4C134896/4C136D55
-Reference = R1;
-ValeurCmp = 100;
-IdModule  = rc03_vert;
-EndCmp
-
-BeginCmp
 TimeStamp = 4ED667F3
 Path = /4C134896/4C136D3C
 Reference = Q1;
@@ -2118,6 +1990,134 @@ Path = /4B3F1092/4F3A34A1
 Reference = U2;
 ValeurCmp = 7805;
 IdModule  = TO-220_Horizontal;
+EndCmp
+
+BeginCmp
+TimeStamp = 4C1CA99C
+Path = /4C134896/4C136E60
+Reference = R16;
+ValeurCmp = 100;
+IdModule  = rc03_vert_LED;
+EndCmp
+
+BeginCmp
+TimeStamp = 4C1CA99A
+Path = /4C134896/4C136E5E
+Reference = R15;
+ValeurCmp = 100;
+IdModule  = rc03_vert_LED;
+EndCmp
+
+BeginCmp
+TimeStamp = 4C1CA998
+Path = /4C134896/4C136E5C
+Reference = R14;
+ValeurCmp = 100;
+IdModule  = rc03_vert_LED;
+EndCmp
+
+BeginCmp
+TimeStamp = 4C9B3707
+Path = /4C134896/4C136E59
+Reference = R13;
+ValeurCmp = 100;
+IdModule  = rc03_vert_LED;
+EndCmp
+
+BeginCmp
+TimeStamp = 4D258C6B
+Path = /4C134896/4C136E4C
+Reference = R12;
+ValeurCmp = 100;
+IdModule  = rc03_vert_LED;
+EndCmp
+
+BeginCmp
+TimeStamp = 4C1CA992
+Path = /4C134896/4C136E44
+Reference = R11;
+ValeurCmp = 100;
+IdModule  = rc03_vert_LED;
+EndCmp
+
+BeginCmp
+TimeStamp = 4C1CA990
+Path = /4C134896/4C136E42
+Reference = R10;
+ValeurCmp = 100;
+IdModule  = rc03_vert_LED;
+EndCmp
+
+BeginCmp
+TimeStamp = 4C1CA98E
+Path = /4C134896/4C136E3E
+Reference = R9;
+ValeurCmp = 100;
+IdModule  = rc03_vert_LED;
+EndCmp
+
+BeginCmp
+TimeStamp = 4C1CA98C
+Path = /4C134896/4C136E3B
+Reference = R8;
+ValeurCmp = 100;
+IdModule  = rc03_vert_LED;
+EndCmp
+
+BeginCmp
+TimeStamp = 4C1CA98A
+Path = /4C134896/4C136E25
+Reference = R7;
+ValeurCmp = 100;
+IdModule  = rc03_vert_LED;
+EndCmp
+
+BeginCmp
+TimeStamp = 4C1CA988
+Path = /4C134896/4C136E20
+Reference = R6;
+ValeurCmp = 100;
+IdModule  = rc03_vert_LED;
+EndCmp
+
+BeginCmp
+TimeStamp = 4C1CA986
+Path = /4C134896/4C136E1D
+Reference = R5;
+ValeurCmp = 100;
+IdModule  = rc03_vert_LED;
+EndCmp
+
+BeginCmp
+TimeStamp = 4C1CA984
+Path = /4C134896/4C136E1A
+Reference = R4;
+ValeurCmp = 100;
+IdModule  = rc03_vert_LED;
+EndCmp
+
+BeginCmp
+TimeStamp = 4C1CA982
+Path = /4C134896/4C136E04
+Reference = R3;
+ValeurCmp = 100;
+IdModule  = rc03_vert_LED;
+EndCmp
+
+BeginCmp
+TimeStamp = 4ED667ED
+Path = /4C134896/4C136DFE
+Reference = R2;
+ValeurCmp = 100;
+IdModule  = rc03_vert_LED;
+EndCmp
+
+BeginCmp
+TimeStamp = 4ED667F0
+Path = /4C134896/4C136D55
+Reference = R1;
+ValeurCmp = 100;
+IdModule  = rc03_vert_LED;
 EndCmp
 
 EndListe

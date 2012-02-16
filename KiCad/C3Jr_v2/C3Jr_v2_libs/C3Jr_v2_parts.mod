@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  2/14/2012 6:42:48 PM
+PCBNEW-LibModule-V1  2/16/2012 9:28:04 AM
 # encoding utf-8
 $INDEX
 7Seg_Sel
@@ -43,6 +43,7 @@ pin_strip_4-90
 pin_strip_6-90
 pin_strip_8
 rc03_vert
+rc03_vert_LED
 to92_2N5401
 vite_3mm
 vite_4mm
@@ -69899,9 +69900,9 @@ Li TO-220_Vertical
 Cd TO-220, Bipolar-BCE, Vertical,
 Kw TO-220, Bipolar-BCE, Vertical,
 Sc 00000000
-AR 
+AR
 Op 0 0 0
-At SMD 
+At SMD
 T0 0 -2000 600 600 0 120 N V 21 N "U"
 T1 0 1500 600 600 0 120 N I 21 N "TO-220_Vertical"
 T2 1450 -500 197 197 0 49 N V 21 N "VO"
@@ -69939,4 +69940,37 @@ Ne 0 ""
 Po 1000 0
 $EndPAD
 $EndMODULE  TO-220_Vertical
+$MODULE rc03_vert_LED
+Po 0 0 0 15 4F3C7EC7 00000000 ~~
+Li rc03_vert_LED
+Cd Resistor, RC03 vertical
+Sc 00000000
+AR /4C134896/4C136D55
+Op 0 0 0
+At SMD 
+T0 1275 0 400 400 0 60 N V 21 N "R1"
+T1 1475 575 400 400 0 60 N I 21 N "100"
+DS -125 0 400 0 100 21
+DC -500 0 -125 25 100 21
+$PAD
+Sh "1" C 600 600 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 1 "/c3jr_v2-LED/COL01"
+Po -500 0
+$EndPAD
+$PAD
+Sh "2" C 600 600 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 2 "N-000129"
+Po 750 0
+$EndPAD
+$SHAPE3D
+Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//rc03vert.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$EndMODULE  rc03_vert_LED
 $EndLIBRARY

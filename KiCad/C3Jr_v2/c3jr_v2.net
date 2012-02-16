@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  2/14/2012 6:33:49 PM
+# EESchema Netlist Version 1.1 created  2/16/2012 9:32:18 AM
 (
  ( /4D28241A/4DC14DAD Baffle BF1 BAFFLE
  )
@@ -954,67 +954,67 @@
   ( 2 N-000039 )
   ( 3 N-000036 )
  )
- ( /4C134896/4C136D55 rc03_vert R1 100
+ ( /4C134896/4C136D55 rc03_vert_LED R1 100
   ( 1 /c3jr_v2-LED/COL01 )
   ( 2 N-000134 )
  )
- ( /4C134896/4C136DFE rc03_vert R2 100
+ ( /4C134896/4C136DFE rc03_vert_LED R2 100
   ( 1 /c3jr_v2-LED/COL02 )
   ( 2 N-000133 )
  )
- ( /4C134896/4C136E04 rc03_vert R3 100
+ ( /4C134896/4C136E04 rc03_vert_LED R3 100
   ( 1 /c3jr_v2-LED/COL03 )
   ( 2 N-000132 )
  )
- ( /4C134896/4C136E1A rc03_vert R4 100
+ ( /4C134896/4C136E1A rc03_vert_LED R4 100
   ( 1 /c3jr_v2-LED/COL04 )
   ( 2 N-000131 )
  )
- ( /4C134896/4C136E1D rc03_vert R5 100
+ ( /4C134896/4C136E1D rc03_vert_LED R5 100
   ( 1 /c3jr_v2-LED/COL05 )
   ( 2 N-000130 )
  )
- ( /4C134896/4C136E20 rc03_vert R6 100
+ ( /4C134896/4C136E20 rc03_vert_LED R6 100
   ( 1 /c3jr_v2-LED/COL06 )
   ( 2 N-000129 )
  )
- ( /4C134896/4C136E25 rc03_vert R7 100
+ ( /4C134896/4C136E25 rc03_vert_LED R7 100
   ( 1 /c3jr_v2-LED/COL07 )
   ( 2 N-000128 )
  )
- ( /4C134896/4C136E3B rc03_vert R8 100
+ ( /4C134896/4C136E3B rc03_vert_LED R8 100
   ( 1 /c3jr_v2-LED/COL08 )
   ( 2 N-000127 )
  )
- ( /4C134896/4C136E3E rc03_vert R9 100
+ ( /4C134896/4C136E3E rc03_vert_LED R9 100
   ( 1 /c3jr_v2-LED/COL09 )
   ( 2 N-000126 )
  )
- ( /4C134896/4C136E42 rc03_vert R10 100
+ ( /4C134896/4C136E42 rc03_vert_LED R10 100
   ( 1 /c3jr_v2-LED/COL10 )
   ( 2 N-000125 )
  )
- ( /4C134896/4C136E44 rc03_vert R11 100
+ ( /4C134896/4C136E44 rc03_vert_LED R11 100
   ( 1 /c3jr_v2-LED/COL11 )
   ( 2 N-000124 )
  )
- ( /4C134896/4C136E4C rc03_vert R12 100
+ ( /4C134896/4C136E4C rc03_vert_LED R12 100
   ( 1 /c3jr_v2-LED/COL12 )
   ( 2 N-000123 )
  )
- ( /4C134896/4C136E59 rc03_vert R13 100
+ ( /4C134896/4C136E59 rc03_vert_LED R13 100
   ( 1 /c3jr_v2-LED/COL13 )
   ( 2 N-000122 )
  )
- ( /4C134896/4C136E5C rc03_vert R14 100
+ ( /4C134896/4C136E5C rc03_vert_LED R14 100
   ( 1 /c3jr_v2-LED/COL14 )
   ( 2 N-000121 )
  )
- ( /4C134896/4C136E5E rc03_vert R15 100
+ ( /4C134896/4C136E5E rc03_vert_LED R15 100
   ( 1 /c3jr_v2-LED/COL15 )
   ( 2 N-000142 )
  )
- ( /4C134896/4C136E60 rc03_vert R16 100
+ ( /4C134896/4C136E60 rc03_vert_LED R16 100
   ( 1 /c3jr_v2-LED/COL16 )
   ( 2 N-000143 )
  )
