@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 12 February 2012 12:21:59 AM IST
+EESchema Schematic File Version 2  date 2/17/2012 6:16:40 PM
 LIBS:Nb_v2
 LIBS:power
 LIBS:conn
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title "NachBau - WordClock"
-Date "11 feb 2012"
+Date "17 feb 2012"
 Rev "A"
 Comp ""
 Comment1 "www.wyolum.com"
@@ -632,6 +632,7 @@ U 1 1 4F36B6C8
 P 4625 2400
 F 0 "P3" V 4575 2400 40  0000 C CNN
 F 1 "SCL" V 4675 2400 40  0000 C CNN
+F 2 "pin_strip_2" V 4775 2400 40  0001 C CNN
 	1    4625 2400
 	0    1    1    0   
 $EndComp
@@ -641,6 +642,7 @@ U 1 1 4F36B6A9
 P 4625 1450
 F 0 "P2" V 4575 1450 40  0000 C CNN
 F 1 "SDA" V 4675 1450 40  0000 C CNN
+F 2 "pin_strip_2" V 4775 1450 40  0001 C CNN
 	1    4625 1450
 	0    -1   -1   0   
 $EndComp
@@ -707,6 +709,7 @@ U 1 1 4F36A9A5
 P 6025 1800
 F 0 "U10" H 6325 2350 60  0000 C CNN
 F 1 "DS3231N" H 5725 1400 60  0000 C CNN
+F 2 "DS3231" H 5725 1500 60  0001 C CNN
 	1    6025 1800
 	1    0    0    -1  
 $EndComp

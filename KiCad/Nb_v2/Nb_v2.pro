@@ -1,6 +1,6 @@
-update=Sunday 12 February 2012 12:33:06 AM IST
+update=2/18/2012 7:07:31 PM
 version=1
-last_client=pcbnew
+last_client=kicad
 [cvpcb]
 version=1
 NetITyp=0
@@ -11,8 +11,6 @@ LibDir=
 NetType=0
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -68,3 +66,5 @@ LastNetListRead=Nb_v2.net
 [pcbnew/libraries]
 LibDir=
 LibName1=Nb_v2_libs/Nb_v2_parts
+[general]
+version=1
