@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 2/16/2012 12:13:12 PM
+Cmp-Mod V01 Genere par PcbNew le 2/18/2012 11:41:09 AM
 
 BeginCmp
 TimeStamp = 4F056EE7
@@ -30,14 +30,6 @@ Path = /4EE9E1A4
 Reference = R24;
 ValeurCmp = 1k;
 IdModule  = RC03;
-EndCmp
-
-BeginCmp
-TimeStamp = 4C1CA7A7
-Path = /4C173167
-Reference = SP1;
-ValeurCmp = SPEAKER;
-IdModule  = Speaker;
 EndCmp
 
 BeginCmp
@@ -1721,14 +1713,6 @@ IdModule  = XTAL;
 EndCmp
 
 BeginCmp
-TimeStamp = 4DBFEF7C
-Path = /4B3F1092/4ED7AD74
-Reference = J3;
-ValeurCmp = V_IN;
-IdModule  = JACK_ALIM;
-EndCmp
-
-BeginCmp
 TimeStamp = 4ED667F3
 Path = /4C134896/4C136D3C
 Reference = Q1;
@@ -1993,6 +1977,22 @@ IdModule  = TO-220_Horizontal;
 EndCmp
 
 BeginCmp
+TimeStamp = 4F3F2EE2
+Path = /4F3F2CF7
+Reference = C5;
+ValeurCmp = 100n;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4C1CA7A7
+Path = /4C173167
+Reference = SP1;
+ValeurCmp = SPEAKER;
+IdModule  = Speaker;
+EndCmp
+
+BeginCmp
 TimeStamp = 4C1CA99C
 Path = /4C134896/4C136E60
 Reference = R16;
@@ -2118,6 +2118,14 @@ Path = /4C134896/4C136D55
 Reference = R1;
 ValeurCmp = 100;
 IdModule  = rc03_vert_LED;
+EndCmp
+
+BeginCmp
+TimeStamp = 4DBFEF7C
+Path = /4B3F1092/4ED7AD74
+Reference = J3;
+ValeurCmp = V_IN;
+IdModule  = JACK_ALIM;
 EndCmp
 
 EndListe

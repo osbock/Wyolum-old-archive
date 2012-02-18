@@ -1,4 +1,4 @@
-### Module positions - created on 2/17/2012 10:12:37 AM ###
+### Module positions - created on 2/18/2012 11:40:28 AM ###
 ### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Front
@@ -8,7 +8,8 @@ C1       100u                 1.7975     9.0375     180.0    Front
 C2       100u                 7.0775     8.8800       0.0    Front
 C3       100n                 3.6450     9.1600     180.0    Front
 C4       100n                 6.5075     9.0300     270.0    Front
-C6       100n                 5.8325     9.5175     270.0    Front
+C5       100n                 1.4625     2.1250     270.0    Front
+C6       100n                 5.5700     9.7850     180.0    Front
 C7       100n                 2.0000     9.2450     270.0    Front
 C8       100u                 6.6950     8.8800     270.0    Front
 C9       100n                 6.8925     9.0300     270.0    Front

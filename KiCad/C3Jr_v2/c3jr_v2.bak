@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/14/2012 6:32:43 PM
+EESchema Schematic File Version 2  date 2/18/2012 10:19:49 AM
 LIBS:C3Jr_v2
 LIBS:power
 LIBS:c3jr_v2-cache
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
 Title "ClockTHREE Junior aka C3Jr_v2 , with stackable board"
-Date "14 feb 2012"
+Date "18 feb 2012"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -17,6 +17,17 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 Comment4 ""
 $EndDescr
+Connection ~ 5100 1200
+Wire Wire Line
+	6500 1200 4975 1200
+Wire Wire Line
+	4975 1200 4975 1350
+Wire Wire Line
+	4975 1350 4750 1350
+Wire Wire Line
+	4750 1350 4750 1325
+Wire Wire Line
+	6225 3350 6225 2825
 Wire Notes Line
 	550  2200 550  1950
 Wire Notes Line
@@ -51,7 +62,7 @@ Wire Wire Line
 	2250 2350 1650 2350
 Connection ~ 1250 3450
 Wire Wire Line
-	1250 3550 1250 3350
+	1250 3350 1250 3550
 Connection ~ 4850 7600
 Wire Wire Line
 	4550 7600 4850 7600
@@ -82,8 +93,6 @@ Wire Wire Line
 Wire Wire Line
 	6300 1350 6500 1350
 Wire Wire Line
-	6500 1050 5100 1050
-Wire Wire Line
 	6500 800  5125 800 
 Wire Wire Line
 	5575 3550 5575 5150
@@ -111,9 +120,9 @@ Wire Wire Line
 Wire Wire Line
 	9825 2275 10200 2275
 Wire Wire Line
-	10200 2075 9825 2075
+	9825 2075 10200 2075
 Wire Wire Line
-	10200 1875 9825 1875
+	9825 1875 10200 1875
 Wire Wire Line
 	3850 5050 3350 5050
 Wire Wire Line
@@ -136,9 +145,9 @@ Wire Wire Line
 Wire Wire Line
 	5575 5775 5575 5800
 Wire Wire Line
-	5575 6300 5575 6950
+	5575 6950 5575 6300
 Wire Wire Line
-	4850 5750 4850 6150
+	4850 6150 4850 5750
 Wire Wire Line
 	4450 6300 4450 6350
 Wire Wire Line
@@ -159,7 +168,7 @@ Wire Wire Line
 Wire Wire Line
 	6550 6400 6550 5050
 Wire Wire Line
-	600  3650 1450 3650
+	1450 3650 600  3650
 Wire Wire Line
 	3350 5150 4075 5150
 Wire Wire Line
@@ -230,8 +239,6 @@ Wire Wire Line
 	4175 6750 4175 6850
 Wire Wire Line
 	3975 1825 6500 1825
-Wire Wire Line
-	6500 2225 6225 2225
 Connection ~ 6225 3025
 Wire Wire Line
 	6500 3025 6225 3025
@@ -252,14 +259,14 @@ Wire Wire Line
 Wire Wire Line
 	3350 3750 3550 3750
 Wire Wire Line
-	2350 2950 2350 2450
+	2350 2450 2350 2950
 Wire Wire Line
 	750  4150 700  4150
 Wire Wire Line
 	2350 5850 2350 6100
 Connection ~ 2050 1050
 Wire Wire Line
-	1850 2300 1850 2400
+	1850 2400 1850 2300
 Wire Wire Line
 	1850 1800 1850 1350
 Wire Wire Line
@@ -267,9 +274,9 @@ Wire Wire Line
 Connection ~ 1850 2350
 Connection ~ 1850 1350
 Wire Wire Line
-	1250 3450 1450 3450
+	1450 3450 1250 3450
 Wire Wire Line
-	1450 4150 1350 4150
+	1350 4150 1450 4150
 Wire Wire Line
 	700  3950 1450 3950
 Connection ~ 2350 2500
@@ -283,7 +290,7 @@ Connection ~ 3400 600
 Wire Wire Line
 	3800 1350 1450 1350
 Wire Wire Line
-	850  1350 800  1350
+	800  1350 850  1350
 Wire Wire Line
 	600  2500 600  3450
 Wire Wire Line
@@ -301,7 +308,7 @@ Wire Wire Line
 	3700 1650 1450 1650
 Connection ~ 1650 1650
 Wire Wire Line
-	6500 2825 6225 2825
+	6225 2825 6500 2825
 Wire Wire Line
 	6500 1925 4025 1925
 Wire Wire Line
@@ -385,7 +392,7 @@ Wire Wire Line
 	6300 6300 7150 6300
 Connection ~ 6550 6300
 Wire Wire Line
-	1050 4850 1050 4400
+	1050 4400 1050 4850
 Wire Wire Line
 	3350 4250 3500 4250
 Wire Wire Line
@@ -412,13 +419,11 @@ Wire Wire Line
 Wire Wire Line
 	5575 5150 6600 5150
 Wire Wire Line
-	6225 2825 6225 3350
+	3350 3450 4700 3450
 Wire Wire Line
-	4700 3450 3350 3450
+	9825 1975 10200 1975
 Wire Wire Line
-	10200 1975 9825 1975
-Wire Wire Line
-	10200 2175 9825 2175
+	9825 2175 10200 2175
 Wire Wire Line
 	9825 2375 10200 2375
 Wire Wire Line
@@ -432,17 +437,15 @@ Wire Wire Line
 Connection ~ 10075 2175
 Connection ~ 10075 2075
 Wire Wire Line
-	800  750  850  750 
+	850  750  800  750 
 Connection ~ 800  750 
 Wire Wire Line
-	2250 1800 2250 750 
+	2250 750  2250 1800
 Connection ~ 4175 3450
 Wire Wire Line
 	6500 700  5125 700 
 Wire Wire Line
 	6500 900  5125 900 
-Wire Wire Line
-	6500 1200 5100 1200
 Wire Wire Line
 	5100 1200 5100 1300
 Wire Wire Line
@@ -482,10 +485,10 @@ Connection ~ 2050 2350
 Wire Wire Line
 	3550 3750 3550 2350
 Wire Wire Line
-	850  1450 800  1450
+	800  1450 850  1450
 Connection ~ 800  1450
 Wire Wire Line
-	850  850  800  850 
+	800  850  850  850 
 Connection ~ 800  850 
 Wire Wire Line
 	1450 1150 1500 1150
@@ -497,6 +500,27 @@ Wire Wire Line
 Wire Wire Line
 	1500 1750 1500 1650
 Connection ~ 1500 1650
+Wire Wire Line
+	6225 2225 6500 2225
+Wire Wire Line
+	4750 925  4750 900 
+Wire Wire Line
+	4750 900  4975 900 
+Wire Wire Line
+	4975 900  4975 1050
+Wire Wire Line
+	4975 1050 6500 1050
+NoConn ~ 7150 3800
+$Comp
+L C C5
+U 1 1 4F3F2CF7
+P 4750 1125
+F 0 "C5" H 4650 1200 50  0000 L CNN
+F 1 "100n" H 4550 1025 50  0000 L CNN
+F 2 "C2" H 4750 1125 60  0001 C CNN
+	1    4750 1125
+	1    0    0    -1  
+$EndComp
 Text Notes 600  2050 0    40   Italic 8
 NOTE : Duplicate Switches\nto allow Vert. and \nHoriz. positions
 $Comp
@@ -729,17 +753,16 @@ U 4D28241A
 F0 "c3jr_v2-mech" 60
 F1 "c3jr_v2-mech.sch" 60
 $EndSheet
-Text Notes 5850 2750 0    40   ~ 0
-Mounting Hole for rowBoB
-NoConn ~ 6225 2650
+Text Notes 7250 3700 0    40   ~ 0
+Mounting Hole\nfor rowBoB
 $Comp
 L CONN_1 rowBoB1
 U 1 1 4D2315D0
-P 6225 2500
-F 0 "rowBoB1" V 6305 2500 40  0000 L CNN
-F 1 "CONN_1" H 6225 2555 30  0001 C CNN
-F 2 "vite_3mm" H 6225 2500 60  0001 C CNN
-	1    6225 2500
+P 7150 3650
+F 0 "rowBoB1" V 7230 3650 40  0000 L CNN
+F 1 "CONN_1" H 7150 3705 30  0001 C CNN
+F 2 "vite_3mm" H 7150 3650 60  0001 C CNN
+	1    7150 3650
 	0    -1   -1   0   
 $EndComp
 Text Label 2550 750  0    40   ~ 0

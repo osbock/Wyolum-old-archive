@@ -1,4 +1,4 @@
-## Module report - date 2/17/2012 10:12:46 AM
+## Module report - date 2/18/2012 11:41:30 AM
 ## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ##
@@ -173,58 +173,6 @@ Shape  Circ
 Layer  all
 $EndPAD
 $EndMODULE  R24
-
-$MODULE "SP1"
-reference "SP1"
-value "SPEAKER"
-footprint "Speaker"
-attribut smd
-position  3.600000  1.950000
-orientation  90.00
-layer component
-$SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//speaker.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 90.000000
-$EndSHAPE3D
-$PAD "1"
-position -0.100000  0.000000
-size  0.080000  0.080000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "2"
-position  0.200000  0.000000
-size  0.080000  0.080000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "2"
-position  0.100000  0.000000
-size  0.080000  0.080000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "1"
-position -0.200000  0.000000
-size  0.080000  0.080000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$EndMODULE  SP1
 
 $MODULE "J2"
 reference "J2"
@@ -8825,8 +8773,8 @@ reference "C6"
 value "100n"
 footprint "C2"
 attribut smd
-position  5.832500  9.517500
-orientation  270.00
+position  5.570000  9.785000
+orientation  180.00
 layer component
 $SHAPE3D
 Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//capa_2pas_5x5mm.wrl"
@@ -8964,49 +8912,6 @@ Shape  Circ
 Layer  all
 $EndPAD
 $EndMODULE  X1
-
-$MODULE "J3"
-reference "J3"
-value "V_IN"
-footprint "JACK_ALIM"
-attribut smd
-position  6.487500  9.805000
-orientation  180.00
-layer component
-$SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//POWER_21.wrl"
-Sc 0.800000 0.800000 0.800000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "2"
-position  0.000000  0.000000
-size  0.180000  0.180000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "1"
-position  0.240000  0.000000
-size  0.180000  0.180000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  all
-$EndPAD
-$PAD "3"
-position  0.125000  0.200000
-size  0.220000  0.120000
-drill  0.140000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Oval
-Layer  all
-$EndPAD
-$EndMODULE  J3
 
 $MODULE "Q1"
 reference "Q1"
@@ -10620,13 +10525,108 @@ $EndPAD
 $PAD "GND"
 position  0.000000 -0.660000
 size  0.200000  0.200000
-drill  0.150000
+drill  0.120000
 shape_offset  0.000000  0.000000
 orientation  90.00
 Shape  Circ
 Layer  all
 $EndPAD
 $EndMODULE  U2
+
+$MODULE "C5"
+reference "C5"
+value "100n"
+footprint "C2"
+attribut smd
+position  1.462500  2.125000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//capa_2pas_5x5mm.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.100000  0.000000
+size  0.060000  0.060000
+drill  0.035000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "2"
+position  0.100000  0.000000
+size  0.060000  0.060000
+drill  0.035000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  C5
+
+$MODULE "SP1"
+reference "SP1"
+value "SPEAKER"
+footprint "Speaker"
+attribut smd
+position  3.600000  1.950000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//speaker.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 90.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.100000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "2"
+position  0.100000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "1"
+position -0.200000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "2"
+position  0.000000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  SP1
 
 $MODULE "R16"
 reference "R16"
@@ -11171,6 +11171,49 @@ Shape  Circ
 Layer  all
 $EndPAD
 $EndMODULE  R1
+
+$MODULE "J3"
+reference "J3"
+value "V_IN"
+footprint "JACK_ALIM"
+attribut smd
+position  6.487500  9.805000
+orientation  180.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//POWER_21.wrl"
+Sc 0.800000 0.800000 0.800000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "2"
+position  0.000000  0.000000
+size  0.180000  0.180000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "1"
+position  0.240000  0.000000
+size  0.180000  0.180000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$PAD "3"
+position  0.125000  0.200000
+size  0.220000  0.120000
+drill  0.140000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Oval
+Layer  all
+$EndPAD
+$EndMODULE  J3
 
 $LINE 
 start 1.000000 10.000000
