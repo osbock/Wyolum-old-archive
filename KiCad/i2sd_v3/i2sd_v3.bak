@@ -1,7 +1,6 @@
-EESchema Schematic File Version 2  date 1/16/2012 6:25:38 PM
+EESchema Schematic File Version 2  date Sunday 19 February 2012 12:00:41 AM IST
 LIBS:i2sd_v3
 LIBS:power
-LIBS:cmos4000
 LIBS:i2sd_v3-cache
 EELAYER 25  0
 EELAYER END
@@ -9,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 2
 Title "Buckler, i2sd, v3, with RTC, with HW addressing"
-Date "16 jan 2012"
+Date "18 feb 2012"
 Rev "3"
 Comp "WyoLum"
 Comment1 ""
@@ -17,10 +16,31 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 4700 6500 0    50   ~ 0
-3V3
+$Comp
+L CRYSTAL_2 X1
+U 1 1 4F3FEE0A
+P 900 3050
+F 0 "X1" V 950 3300 60  0000 C CNN
+F 1 "CRYSTAL_2" V 850 3450 60  0000 C CNN
+	1    900  3050
+	0    1    1    0   
+$EndComp
+Wire Notes Line
+	4750 3675 4050 3675
+Wire Notes Line
+	4750 3675 4750 3525
+Wire Notes Line
+	4750 3525 4050 3525
+Wire Notes Line
+	4050 3525 4050 3675
 Wire Wire Line
-	5300 6500 4700 6500
+	4000 6900 3625 6900
+Wire Wire Line
+	4000 7100 3625 7100
+Wire Wire Line
+	4000 7300 3625 7300
+Wire Wire Line
+	6400 6500 5800 6500
 Wire Wire Line
 	8875 6900 9225 6900
 Wire Wire Line
@@ -74,33 +94,27 @@ Wire Wire Line
 	1400 2800 900  2800
 Wire Wire Line
 	1500 2250 1075 2250
-Connection ~ 5200 6700
+Connection ~ 6300 6700
 Wire Wire Line
-	5200 6700 5200 6800
+	6300 6700 6300 6800
 Wire Wire Line
-	5200 6800 5300 6800
+	6300 6800 6400 6800
 Wire Wire Line
-	5300 7525 4700 7525
+	6400 7525 5800 7525
 Wire Wire Line
 	8875 6400 9225 6400
 Wire Wire Line
 	8875 6200 9225 6200
 Wire Notes Line
-	6000 7750 6000 6300
+	3550 6300 3550 7750
 Wire Notes Line
-	6000 7750 6850 7750
+	4675 7750 4675 6300
 Wire Notes Line
-	6850 7750 6850 6300
+	4675 7750 5550 7750
 Wire Notes Line
-	6850 6300 6000 6300
+	5550 7750 5550 6300
 Wire Notes Line
-	3575 7750 3575 6300
-Wire Notes Line
-	3575 7750 4450 7750
-Wire Notes Line
-	4450 7750 4450 6300
-Wire Notes Line
-	4450 6300 3575 6300
+	5550 6300 4675 6300
 Wire Notes Line
 	625  7750 625  6300
 Wire Notes Line
@@ -110,7 +124,7 @@ Wire Notes Line
 Wire Notes Line
 	1725 6300 625  6300
 Wire Wire Line
-	5300 6600 4700 6600
+	6400 6600 5800 6600
 Wire Wire Line
 	2000 6800 2350 6800
 Wire Wire Line
@@ -188,12 +202,12 @@ Wire Wire Line
 Wire Wire Line
 	9500 4950 9375 4950
 Wire Wire Line
-	3850 6500 3850 6450
-Connection ~ 4000 7500
+	4950 6500 4950 6450
+Connection ~ 5100 7500
 Wire Wire Line
-	4000 7550 4000 7500
+	5100 7550 5100 7500
 Wire Wire Line
-	4150 7000 4150 7050
+	5250 7000 5250 7050
 Connection ~ 5750 1900
 Wire Wire Line
 	5750 1900 6150 1900
@@ -429,15 +443,15 @@ Wire Wire Line
 	6150 2500 5750 2500
 Connection ~ 5750 2500
 Wire Wire Line
-	3850 7050 3850 7000
+	4950 7050 4950 7000
 Wire Wire Line
-	4150 7450 4150 7500
+	5250 7450 5250 7500
 Wire Wire Line
-	4150 7500 3850 7500
+	5250 7500 4950 7500
 Wire Wire Line
-	3850 7500 3850 7450
+	4950 7500 4950 7450
 Wire Wire Line
-	4150 6500 4150 6450
+	5250 6500 5250 6450
 Wire Wire Line
 	9500 4850 9375 4850
 Wire Wire Line
@@ -491,9 +505,9 @@ Wire Wire Line
 Wire Wire Line
 	2850 6800 2900 6800
 Wire Wire Line
-	5300 6400 4700 6400
+	6400 6400 5800 6400
 Wire Wire Line
-	4700 6700 5300 6700
+	5800 6700 6400 6700
 Wire Notes Line
 	3450 6300 1850 6300
 Wire Notes Line
@@ -503,13 +517,13 @@ Wire Notes Line
 Wire Notes Line
 	1850 7750 1850 6300
 Wire Notes Line
-	5850 6300 4600 6300
+	6950 6300 5700 6300
 Wire Notes Line
-	5850 6300 5850 7750
+	6950 6300 6950 7750
 Wire Notes Line
-	5850 7750 4600 7750
+	6950 7750 5700 7750
 Wire Notes Line
-	4600 7750 4600 6300
+	5700 7750 5700 6300
 Wire Notes Line
 	11000 4400 9275 4400
 Wire Notes Line
@@ -523,7 +537,7 @@ Wire Wire Line
 Wire Wire Line
 	8875 6500 9225 6500
 Wire Wire Line
-	5300 7625 4700 7625
+	6400 7625 5800 7625
 Wire Wire Line
 	1075 1950 1075 4900
 Connection ~ 1075 2250
@@ -600,7 +614,49 @@ Wire Notes Line
 	4750 3950 4050 3950
 Wire Notes Line
 	4050 3950 4050 3750
-Text Notes 4050 3850 0    40   ~ 0
+Wire Notes Line
+	3550 6300 4525 6300
+Wire Notes Line
+	4525 6300 4525 7750
+Wire Notes Line
+	4525 7750 3550 7750
+Wire Wire Line
+	4000 7200 3625 7200
+Wire Wire Line
+	4000 7000 3625 7000
+Wire Wire Line
+	4000 6800 3625 6800
+Text Notes 3550 6300 0    60   ~ 0
+BootDrive Header
+Text Notes 3850 6800 0    40   ~ 0
+(PD5)
+Text Label 3625 6800 0    50   ~ 0
+B_14
+Text Notes 4100 3600 0    40   ~ 0
+B14 (PD5) : for\nBootDrive Header
+Text Label 3625 6900 0    50   ~ 0
+RXD
+Text Label 3625 7000 0    50   ~ 0
+TXD
+Text Label 3625 7100 0    50   ~ 0
+5V0
+Text Label 3625 7200 0    50   ~ 0
+GND
+Text Label 3625 7300 0    50   ~ 0
+GND
+$Comp
+L CONN_6 P3
+U 1 1 4F3FE37F
+P 4350 7050
+F 0 "P3" V 4300 7050 60  0000 C CNN
+F 1 "BootDrive" V 4400 7050 60  0000 C CNN
+F 2 "pin_strip_6-90" H 4350 7050 60  0001 C CNN
+	1    4350 7050
+	1    0    0    1   
+$EndComp
+Text Label 5800 6500 0    50   ~ 0
+3V3
+Text Notes 4075 3850 0    40   ~ 0
 SQW signal\ncomes to PD7 / B12
 Text Label 9225 6900 0    60   ~ 0
 BAT
@@ -665,7 +721,6 @@ F 2 "I/O" H 4100 1950 60  0001 C CNN
 	1    4100 1950
 	0    -1   -1   0   
 $EndComp
-NoConn ~ 750  3050
 $Comp
 L C C11
 U 1 1 4EC1290E
@@ -707,11 +762,11 @@ $EndComp
 $Comp
 L PCB PCB1
 U 1 1 4EBCC1B9
-P 10750 6700
-F 0 "PCB1" H 10750 6400 60  0000 C CNN
-F 1 "PCB" H 10750 7000 60  0000 C CNN
-F 2 "PCB" H 10750 6700 60  0001 C CNN
-	1    10750 6700
+P 10900 6700
+F 0 "PCB1" H 10900 6400 60  0000 C CNN
+F 1 "PCB" H 10900 7000 60  0000 C CNN
+F 2 "PCB" H 10900 6700 60  0001 C CNN
+	1    10900 6700
 	1    0    0    -1  
 $EndComp
 Text Notes 8325 5525 0    50   ~ 0
@@ -751,44 +806,44 @@ F 2 "I/O_ADR" H 4225 4050 60  0001 C CNN
 	1    4225 4050
 	-1   0    0    1   
 $EndComp
-NoConn ~ 5300 7000
+NoConn ~ 6400 7000
 $Comp
 L I/O P1
 U 1 1 4E241EEB
-P 5450 7000
-F 0 "P1" H 5530 7000 40  0000 L CNN
-F 1 "I/O" H 5450 7055 30  0001 C CNN
-F 2 "I/O" H 5450 7000 60  0001 C CNN
-	1    5450 7000
+P 6550 7000
+F 0 "P1" H 6630 7000 40  0000 L CNN
+F 1 "I/O" H 6550 7055 30  0001 C CNN
+F 2 "I/O" H 6550 7000 60  0001 C CNN
+	1    6550 7000
 	1    0    0    -1  
 $EndComp
-NoConn ~ 5300 7425
-NoConn ~ 5300 7325
-NoConn ~ 5300 7225
-NoConn ~ 5300 7125
-NoConn ~ 5300 6900
-Text Label 4700 7625 0    60   ~ 0
+NoConn ~ 6400 7425
+NoConn ~ 6400 7325
+NoConn ~ 6400 7225
+NoConn ~ 6400 7125
+NoConn ~ 6400 6900
+Text Label 5800 7625 0    60   ~ 0
 SCL
-Text Label 4700 7525 0    60   ~ 0
+Text Label 5800 7525 0    60   ~ 0
 SDA
 $Comp
 L CONN_6 P5
 U 1 1 4E241CD6
-P 5650 7375
-F 0 "P5" V 5600 7375 60  0000 C CNN
-F 1 "CONN_6" V 5700 7375 60  0000 C CNN
-F 2 "PIN_ARRAY-6X1" H 5650 7375 60  0001 C CNN
-	1    5650 7375
+P 6750 7375
+F 0 "P5" V 6700 7375 60  0000 C CNN
+F 1 "CONN_6" V 6800 7375 60  0000 C CNN
+F 2 "PIN_ARRAY-6X1" H 6750 7375 60  0001 C CNN
+	1    6750 7375
 	1    0    0    -1  
 $EndComp
 $Comp
 L CONN_6 P4
 U 1 1 4E241CCB
-P 5650 6650
-F 0 "P4" V 5600 6650 60  0000 C CNN
-F 1 "CONN_6" V 5700 6650 60  0000 C CNN
-F 2 "PIN_ARRAY-6X1" H 5650 6650 60  0001 C CNN
-	1    5650 6650
+P 6750 6650
+F 0 "P4" V 6700 6650 60  0000 C CNN
+F 1 "CONN_6" V 6800 6650 60  0000 C CNN
+F 2 "PIN_ARRAY-6X1" H 6750 6650 60  0001 C CNN
+	1    6750 6650
 	1    0    0    -1  
 $EndComp
 Text Label 9225 6500 0    60   ~ 0
@@ -801,15 +856,15 @@ Text Label 9225 6200 0    60   ~ 0
 5V0
 Text Notes 9500 3750 0    60   ~ 0
 EXT 9V BATT
-Text Notes 3575 6300 0    60   ~ 0
+Text Notes 4675 6300 0    60   ~ 0
 INDICATORS
 Text Notes 1850 6300 0    60   ~ 0
-FTDI
+FTDI Header
 Text Notes 625  6300 0    60   ~ 0
-ISP/PROG
-Text Notes 5250 6300 2    60   ~ 0
+ISP/PROG Header
+Text Notes 6350 6300 2    60   ~ 0
 I/O BREAKOUT
-Text Label 4700 6700 0    60   ~ 0
+Text Label 5800 6700 0    60   ~ 0
 GND
 Text Label 800  7300 0    60   ~ 0
 GND
@@ -906,14 +961,14 @@ F 2 "c_0805" H 8875 1050 60  0001 C CNN
 	1    8875 1050
 	1    0    0    -1  
 $EndComp
-Text Label 4700 6400 0    60   ~ 0
+Text Label 5800 6400 0    60   ~ 0
 RESET
-Text Label 4700 6600 0    60   ~ 0
+Text Label 5800 6600 0    60   ~ 0
 5V0
 Text Label 2000 7100 0    60   ~ 0
 5V0
-Text Notes 6000 6300 0    60   ~ 0
-Mounting Holes
+Text Notes 10450 6050 0    60   ~ 0
+Mounting Hole
 Text Notes 9425 4525 0    60   ~ 0
 Additional SMD headers for\nrtcBoB/ChronoDot compatibility
 Text Label 10200 5150 0    50   ~ 0
@@ -972,57 +1027,57 @@ F 2 "Sck-04-F-SMT" H 9850 5000 60  0001 C CNN
 	1    9850 5000
 	1    0    0    1   
 $EndComp
-Text Label 4150 6450 0    60   ~ 0
+Text Label 5250 6450 0    60   ~ 0
 B_03
-Text Label 3850 6450 0    60   ~ 0
+Text Label 4950 6450 0    60   ~ 0
 B_02
 $Comp
 L GND #PWR05
 U 1 1 4DCFFB44
-P 4000 7550
-F 0 "#PWR05" H 4000 7550 30  0001 C CNN
-F 1 "GND" H 4000 7480 30  0001 C CNN
-	1    4000 7550
+P 5100 7550
+F 0 "#PWR05" H 5100 7550 30  0001 C CNN
+F 1 "GND" H 5100 7480 30  0001 C CNN
+	1    5100 7550
 	1    0    0    -1  
 $EndComp
 $Comp
 L R R8
 U 1 1 4DCFFB11
-P 4150 6750
-F 0 "R8" V 4230 6750 50  0000 C CNN
-F 1 "470E" V 4150 6750 50  0000 C CNN
-F 2 "r_0805" H 4150 6750 60  0001 C CNN
-	1    4150 6750
+P 5250 6750
+F 0 "R8" V 5330 6750 50  0000 C CNN
+F 1 "470E" V 5250 6750 50  0000 C CNN
+F 2 "r_0805" H 5250 6750 60  0001 C CNN
+	1    5250 6750
 	1    0    0    -1  
 $EndComp
 $Comp
 L R R5
 U 1 1 4DCFFAF9
-P 3850 6750
-F 0 "R5" V 3930 6750 50  0000 C CNN
-F 1 "470E" V 3850 6750 50  0000 C CNN
-F 2 "r_0805" H 3850 6750 60  0001 C CNN
-	1    3850 6750
+P 4950 6750
+F 0 "R5" V 5030 6750 50  0000 C CNN
+F 1 "470E" V 4950 6750 50  0000 C CNN
+F 2 "r_0805" H 4950 6750 60  0001 C CNN
+	1    4950 6750
 	1    0    0    -1  
 $EndComp
 $Comp
 L LED D2
 U 1 1 4DCFFADF
-P 4150 7250
-F 0 "D2" H 4150 7350 50  0000 C CNN
-F 1 "LED" H 4150 7150 50  0000 C CNN
-F 2 "d_0805" H 4150 7250 60  0001 C CNN
-	1    4150 7250
+P 5250 7250
+F 0 "D2" H 5250 7350 50  0000 C CNN
+F 1 "LED" H 5250 7150 50  0000 C CNN
+F 2 "d_0805" H 5250 7250 60  0001 C CNN
+	1    5250 7250
 	0    1    1    0   
 $EndComp
 $Comp
 L LED D1
 U 1 1 4DCFFACF
-P 3850 7250
-F 0 "D1" H 3850 7350 50  0000 C CNN
-F 1 "LED" H 3850 7150 50  0000 C CNN
-F 2 "d_0805" H 3850 7250 60  0001 C CNN
-	1    3850 7250
+P 4950 7250
+F 0 "D1" H 4950 7350 50  0000 C CNN
+F 1 "LED" H 4950 7150 50  0000 C CNN
+F 2 "d_0805" H 4950 7250 60  0001 C CNN
+	1    4950 7250
 	0    1    1    0   
 $EndComp
 $Comp
@@ -1168,11 +1223,11 @@ $EndComp
 $Comp
 L SCREW SC1
 U 1 1 4DCCE748
-P 6350 7075
-F 0 "SC1" H 6350 6975 40  0000 C CNN
-F 1 "SCREW" H 6350 7175 40  0001 C CNN
-F 2 "vite_3mm" H 6350 7075 60  0001 C CNN
-	1    6350 7075
+P 10750 6100
+F 0 "SC1" H 10750 6000 40  0000 C CNN
+F 1 "SCREW" H 10750 6200 40  0001 C CNN
+F 2 "vite_3mm" H 10750 6100 60  0001 C CNN
+	1    10750 6100
 	1    0    0    -1  
 $EndComp
 Text Label 2000 7300 0    60   ~ 0
@@ -1330,16 +1385,6 @@ F 1 "10k" V 4800 1450 50  0000 C CNN
 F 2 "r_0805" H 4800 1450 60  0001 C CNN
 	1    4800 1450
 	1    0    0    -1  
-$EndComp
-$Comp
-L CRYSTAL X1
-U 1 1 4DCA7D83
-P 900 3050
-F 0 "X1" V 950 3300 60  0000 C CNN
-F 1 "CRYSTAL" V 850 3450 60  0000 C CNN
-F 2 "Xtal_SMD2" H 900 3050 60  0001 C CNN
-	1    900  3050
-	0    1    1    0   
 $EndComp
 $Comp
 L SW_PUSH SW1

@@ -1,4 +1,4 @@
-update=2/17/2012 5:59:48 PM
+update=Sunday 19 February 2012 01:03:56 AM IST
 version=1
 last_client=kicad
 [cvpcb]
@@ -65,6 +65,5 @@ LabSize=50
 [eeschema/libraries]
 LibName1=i2sd_v3-libs/i2sd_v3
 LibName2=i2sd_v3-libs/power
-LibName3=cmos4000
 [general]
 version=1

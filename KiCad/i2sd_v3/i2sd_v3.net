@@ -1,342 +1,354 @@
-# EESchema Netlist Version 1.1 created  1/16/2012 6:30:04 PM
+# EESchema Netlist Version 1.1 created  Sunday 19 February 2012 12:02:08 AM IST
 (
- ( /4EC65609 I/O  B19 I/O {Lib=I/O}
-  (    1 /I2SD_v3_RTC/5V0 )
+ ( /4DCD1D3A I/O B1 I/O
+  ( 1 /B_01 )
  )
- ( /4EC65606 I/O  B18 I/O {Lib=I/O}
-  (    1 GND )
+ ( /4E1FEA4E/4E1FEBC6 I/O B2 I/O
+  ( 1 /I2SD_v3_RTC/B_12 )
  )
- ( /4EC1290E c_0805  C11 22p {Lib=C}
-  (    1 GND )
-  (    2 N-000051 )
+ ( /4E1FEA4E/4E1FEBCE I/O B3 I/O
+  ( 1 /I2SD_v3_RTC/RST )
  )
- ( /4EC128EB c_0805  C10 22p {Lib=C}
-  (    1 N-000018 )
-  (    2 GND )
+ ( /4DCD1D41 I/O B4 I/O
+  ( 1 /B_04 )
  )
- ( /4EC0FE5A SD_Micro  SD1 SD_CARD_MICRO {Lib=SD_CARD_MICRO}
-  (    1 ? )
-  (    2 /SD_CS )
-  (    3 /SD_DATA_IN )
-  (    4 +3.3V )
-  (    5 /SD_CLK )
-  (    6 GND )
-  (    7 /MISO )
-  (    8 ? )
-  (    9 ? )
-  (   G1 GND )
-  (   G2 GND )
-  (   G3 GND )
-  (   G4 GND )
-  (   H1 ? )
-  (   H2 ? )
+ ( /4DCD1D43 I/O B5 I/O
+  ( 1 /B_05 )
  )
- ( /4EBCC1B9 PCB  PCB1 PCB {Lib=PCB}
+ ( /4DCD1D46 I/O B6 I/O
+  ( 1 /B_06 )
  )
- ( /4E96D541 I/O_ADR  B17 I/O {Lib=I/O}
-  (    1 GND )
+ ( /4DCD1D49 I/O B7 I/O
+  ( 1 /B_07 )
  )
- ( /4E96D338 I/O_ADR  B16 I/O {Lib=I/O}
-  (    1 GND )
+ ( /4DCD1D4C I/O B8 I/O
+  ( 1 /B_08 )
  )
- ( /4E241EEB I/O  P1 I/O {Lib=I/O}
-  (    1 ? )
+ ( /4DCD1D4D I/O B9 I/O
+  ( 1 /B_09 )
  )
- ( /4E241CD6 PIN_ARRAY-6X1  P5 CONN_6 {Lib=CONN_6}
-  (    1 ? )
-  (    2 ? )
-  (    3 ? )
-  (    4 ? )
-  (    5 /I2SD_v3_RTC/SDA )
-  (    6 /I2SD_v3_RTC/SCL )
+ ( /4DCD1D4F I/O_ADR B10 I/O
+  ( 1 /B_10 )
  )
- ( /4E241CCB PIN_ARRAY-6X1  P4 CONN_6 {Lib=CONN_6}
-  (    1 /RESET )
-  (    2 +3.3V )
-  (    3 /I2SD_v3_RTC/5V0 )
-  (    4 GND )
-  (    5 GND )
-  (    6 ? )
+ ( /4DCD1D50 I/O_ADR B11 I/O
+  ( 1 /B_11 )
  )
- ( /4E1ED2A7 pin_strip_2  P6 CONN_2 {Lib=CONN_2}
-  (    1 N-000038 )
-  (    2 GND )
+ ( /4DCD1D52 I/O B12 I/O
+  ( 1 /I2SD_v3_RTC/B_12 )
  )
- ( /4E1ED0F3 c_0805  C4 100n {Lib=C}
-  (    1 N-000003 )
-  (    2 GND )
+ ( /4DCD1D59 I/O B13 I/O
+  ( 1 /B_13 )
  )
- ( /4E1ECFB8 c_0805  C5 1u {Lib=C}
-  (    1 +3.3V )
-  (    2 GND )
+ ( /4DCD1D5C I/O B14 I/O
+  ( 1 /B_14 )
  )
- ( /4E1ECD8D SOT23-5  U3 MIC5219-5.0BM5 {Lib=MIC5219-5.0}
-  (    1 N-000038 )
-  (    2 GND )
-  (    3 N-000038 )
-  (    4 N-000003 )
-  (    5 /I2SD_v3_RTC/5V0 )
+ ( /4E1FEA4E/4E1FEBD4 I/O B15 I/O
+  ( 1 /I2SD_v3_RTC/32k )
  )
- ( /4E1EC986 c_0805  C8 100n {Lib=C}
-  (    1 N-000038 )
-  (    2 GND )
+ ( /4E96D338 I/O_ADR B16 I/O
+  ( 1 GND )
  )
- ( /4E1EC963 c_0805  C3 2u2_Tant {Lib=C_POL}
-  (    1 /I2SD_v3_RTC/5V0 )
-  (    2 GND )
+ ( /4E96D541 I/O_ADR B17 I/O
+  ( 1 GND )
  )
- ( /4DD75888 Sck-04-F-SMT  P12 CD1 {Lib=CONN_4}
-  (    1 /I2SD_v3_RTC/BAT )
-  (    2 /I2SD_v3_RTC/32k )
-  (    3 /I2SD_v3_RTC/B_12 )
-  (    4 /I2SD_v3_RTC/RST )
+ ( /4EC65606 I/O B18 I/O
+  ( 1 GND )
  )
- ( /4DD75881 Sck-04-F-SMT  P11 CD2 {Lib=CONN_4}
-  (    1 /I2SD_v3_RTC/SDA )
-  (    2 /I2SD_v3_RTC/SCL )
-  (    3 /I2SD_v3_RTC/5V0 )
-  (    4 GND )
+ ( /4EC65609 I/O B19 I/O
+  ( 1 /I2SD_v3_RTC/5V0 )
  )
- ( /4DD75875 Sck-04-F-SMT  P13 CD1 {Lib=CONN_4}
-  (    1 /I2SD_v3_RTC/BAT )
-  (    2 /I2SD_v3_RTC/32k )
-  (    3 /I2SD_v3_RTC/B_12 )
-  (    4 /I2SD_v3_RTC/RST )
+ ( /4E1FEA4E/4E1FEA78 CR1632 BT1 BATT_RTC
+  ( + /I2SD_v3_RTC/BAT )
+  ( - GND )
  )
- ( /4DD7586B Sck-04-F-SMT  P10 CD2 {Lib=CONN_4}
-  (    1 /I2SD_v3_RTC/SDA )
-  (    2 /I2SD_v3_RTC/SCL )
-  (    3 /I2SD_v3_RTC/5V0 )
-  (    4 GND )
+ ( /4DCA7BAC c_0805 C1 100n
+  ( 1 /I2SD_v3_RTC/5V0 )
+  ( 2 GND )
  )
- ( /4DCFFB11 r_0805  R8 470E {Lib=R}
-  (    1 /B_03 )
-  (    2 N-000008 )
+ ( /4DCA5F1E c_0805 C2 1u
+  ( 1 /I2SD_v3_RTC/5V0 )
+  ( 2 GND )
  )
- ( /4DCFFAF9 r_0805  R5 470E {Lib=R}
-  (    1 /B_02 )
-  (    2 N-000010 )
+ ( /4E1EC963 c_0805 C3 2u2_Tant
+  ( 1 /I2SD_v3_RTC/5V0 )
+  ( 2 GND )
  )
- ( /4DCFFADF d_0805  D2 LED {Lib=LED}
-  (    1 N-000008 )
-  (    2 GND )
+ ( /4E1ED0F3 c_0805 C4 100n
+  ( 1 N-000001 )
+  ( 2 GND )
  )
- ( /4DCFFACF d_0805  D1 LED {Lib=LED}
-  (    1 N-000010 )
-  (    2 GND )
+ ( /4E1ECFB8 c_0805 C5 1u
+  ( 1 +3.3V )
+  ( 2 GND )
  )
- ( /4DCD1D5C I/O  B14 I/O {Lib=I/O}
-  (    1 /B_14 )
+ ( /4DCB9634 C_ELCO_SMD C6 47u,10V
+  ( 1 N-000036 )
+  ( 2 GND )
  )
- ( /4DCD1D59 I/O  B13 I/O {Lib=I/O}
-  (    1 /B_13 )
+ ( /4DCB9774 c_0805 C7 100n
+  ( 1 N-000037 )
+  ( 2 /RESET )
  )
- ( /4DCD1D52 I/O  B12 I/O {Lib=I/O}
-  (    1 /I2SD_v3_RTC/B_12 )
+ ( /4E1EC986 c_0805 C8 100n
+  ( 1 N-000036 )
+  ( 2 GND )
  )
- ( /4DCD1D50 I/O_ADR  B11 I/O {Lib=I/O}
-  (    1 /B_11 )
+ ( /4E1FEA4E/4E1FEA7E c_0805 C9 100n
+  ( 1 /I2SD_v3_RTC/BAT )
+  ( 2 GND )
  )
- ( /4DCD1D4F I/O_ADR  B10 I/O {Lib=I/O}
-  (    1 /B_10 )
+ ( /4EC128EB c_0805 C10 22p
+  ( 1 N-000032 )
+  ( 2 GND )
  )
- ( /4DCD1D4D I/O  B9 I/O {Lib=I/O}
-  (    1 /B_09 )
+ ( /4EC1290E c_0805 C11 22p
+  ( 1 GND )
+  ( 2 N-000050 )
  )
- ( /4DCD1D4C I/O  B8 I/O {Lib=I/O}
-  (    1 /B_08 )
+ ( /4DCFFACF d_0805 D1 LED
+  ( 1 N-000003 )
+  ( 2 GND )
  )
- ( /4DCD1D49 I/O  B7 I/O {Lib=I/O}
-  (    1 /B_07 )
+ ( /4DCFFADF d_0805 D2 LED
+  ( 1 N-000002 )
+  ( 2 GND )
  )
- ( /4DCD1D46 I/O  B6 I/O {Lib=I/O}
-  (    1 /B_06 )
+ ( /4DCA5EC5 TQFP32 IC1 ATMEGA8-AI
+  ( 1 /B_02 )
+  ( 2 /B_01 )
+  ( 3 GND )
+  ( 4 /I2SD_v3_RTC/5V0 )
+  ( 5 GND )
+  ( 6 /I2SD_v3_RTC/5V0 )
+  ( 7 N-000032 )
+  ( 8 N-000050 )
+  ( 9 /B_14 )
+  ( 10 /B_13 )
+  ( 11 /I2SD_v3_RTC/B_12 )
+  ( 12 /B_11 )
+  ( 13 /B_10 )
+  ( 14 /SS )
+  ( 15 /MOSI )
+  ( 16 /MISO )
+  ( 17 /SCK )
+  ( 18 /I2SD_v3_RTC/5V0 )
+  ( 19 /B_09 )
+  ( 20 /I2SD_v3_RTC/5V0 )
+  ( 21 GND )
+  ( 22 /B_08 )
+  ( 23 /B_07 )
+  ( 24 /B_06 )
+  ( 25 /B_05 )
+  ( 26 /B_04 )
+  ( 27 /I2SD_v3_RTC/SDA )
+  ( 28 /I2SD_v3_RTC/SCL )
+  ( 29 /RESET )
+  ( 30 /RXD )
+  ( 31 /TXD )
+  ( 32 /B_03 )
  )
- ( /4DCD1D43 I/O  B5 I/O {Lib=I/O}
-  (    1 /B_05 )
+ ( /4E241EEB I/O P1 I/O
+  ( 1 ? )
  )
- ( /4DCD1D41 I/O  B4 I/O {Lib=I/O}
-  (    1 /B_04 )
+ ( /4DCA5EE0 PIN_ARRAY_4x1 P2 COMM_R
+  ( 1 /I2SD_v3_RTC/5V0 )
+  ( 2 /I2SD_v3_RTC/SCL )
+  ( 3 /I2SD_v3_RTC/SDA )
+  ( 4 GND )
  )
- ( /4DCD1D3A I/O  B1 I/O {Lib=I/O}
-  (    1 /B_01 )
+ ( /4F3FE37F pin_strip_6-90 P3 BootDrive
+  ( 1 GND )
+  ( 2 GND )
+  ( 3 /I2SD_v3_RTC/5V0 )
+  ( 4 /TXD )
+  ( 5 /RXD )
+  ( 6 /B_14 )
  )
- ( /4DCD1997 ISP  P9 ISP {Lib=ISP}
-  (    1 /MISO )
-  (    2 /I2SD_v3_RTC/5V0 )
-  (    3 /SCK )
-  (    4 /MOSI )
-  (    5 /RESET )
-  (    6 GND )
+ ( /4E241CCB PIN_ARRAY-6X1 P4 CONN_6
+  ( 1 /RESET )
+  ( 2 +3.3V )
+  ( 3 /I2SD_v3_RTC/5V0 )
+  ( 4 GND )
+  ( 5 GND )
+  ( 6 ? )
  )
- ( /4DCCE748 vite_3mm  SC1 SCREW {Lib=SCREW}
+ ( /4E241CD6 PIN_ARRAY-6X1 P5 CONN_6
+  ( 1 ? )
+  ( 2 ? )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 /I2SD_v3_RTC/SDA )
+  ( 6 /I2SD_v3_RTC/SCL )
  )
- ( /4DCB9774 c_0805  C7 100n {Lib=C}
-  (    1 N-000044 )
-  (    2 /RESET )
+ ( /4E1ED2A7 pin_strip_2 P6 CONN_2
+  ( 1 N-000036 )
+  ( 2 GND )
  )
- ( /4DCB971F pin_strip_6-90  P8 FTDI {Lib=CONN_6}
-  (    1 GND )
-  (    2 GND )
-  (    3 /I2SD_v3_RTC/5V0 )
-  (    4 /RXD )
-  (    5 /TXD )
-  (    6 N-000044 )
+ ( /4DCB971F pin_strip_6-90 P8 FTDI
+  ( 1 GND )
+  ( 2 GND )
+  ( 3 /I2SD_v3_RTC/5V0 )
+  ( 4 /RXD )
+  ( 5 /TXD )
+  ( 6 N-000037 )
  )
- ( /4DCB9634 C_ELCO_SMD  C6 47u,10V {Lib=C_POL}
-  (    1 N-000038 )
-  (    2 GND )
+ ( /4DCD1997 ISP P9 ISP
+  ( 1 /MISO )
+  ( 2 /I2SD_v3_RTC/5V0 )
+  ( 3 /SCK )
+  ( 4 /MOSI )
+  ( 5 /RESET )
+  ( 6 GND )
  )
- ( /4DCB7505 SO14E  U2 74HC125 {Lib=74LS125}
-  (    1 GND )
-  (    2 /SCK )
-  (    3 /SD_CLK )
-  (    4 GND )
-  (    5 /MOSI )
-  (    6 /SD_DATA_IN )
-  (    7 GND )
-  (    8 /SD_CS )
-  (    9 /SS )
-  (   10 GND )
-  (   11 ? )
-  (   12 +3.3V )
-  (   13 +3.3V )
-  (   14 +3.3V )
+ ( /4DD7586B Sck-04-F-SMT P10 CD2
+  ( 1 /I2SD_v3_RTC/SDA )
+  ( 2 /I2SD_v3_RTC/SCL )
+  ( 3 /I2SD_v3_RTC/5V0 )
+  ( 4 GND )
  )
- ( /4DCAC2D1 SOT23-3  U1 MCP1700T-3302E/TT {Lib=MCP_1700}
-  (    1 GND )
-  (    2 +3.3V )
-  (    3 /I2SD_v3_RTC/5V0 )
+ ( /4DD75881 Sck-04-F-SMT P11 CD2
+  ( 1 /I2SD_v3_RTC/SDA )
+  ( 2 /I2SD_v3_RTC/SCL )
+  ( 3 /I2SD_v3_RTC/5V0 )
+  ( 4 GND )
  )
- ( /4DCAC172 r_0805  R2 10k {Lib=R}
-  (    1 /I2SD_v3_RTC/5V0 )
-  (    2 /I2SD_v3_RTC/SDA )
+ ( /4DD75888 Sck-04-F-SMT P12 CD1
+  ( 1 /I2SD_v3_RTC/BAT )
+  ( 2 /I2SD_v3_RTC/32k )
+  ( 3 /I2SD_v3_RTC/B_12 )
+  ( 4 /I2SD_v3_RTC/RST )
  )
- ( /4DCAC161 r_0805  R1 10k {Lib=R}
-  (    1 /I2SD_v3_RTC/5V0 )
-  (    2 /I2SD_v3_RTC/SCL )
+ ( /4DD75875 Sck-04-F-SMT P13 CD1
+  ( 1 /I2SD_v3_RTC/BAT )
+  ( 2 /I2SD_v3_RTC/32k )
+  ( 3 /I2SD_v3_RTC/B_12 )
+  ( 4 /I2SD_v3_RTC/RST )
  )
- ( /4DCA7D83 Xtal_SMD2  X1 CRYSTAL {Lib=CRYSTAL}
-  (    1 N-000018 )
-  (    2 N-000051 )
-  (    3 ? )
+ ( /4EBCC1B9 PCB PCB1 PCB
  )
- ( /4DCA7D67 SW_SMD  SW1 SW_PUSH {Lib=SW_PUSH}
-  (    1 GND )
-  (    2 /RESET )
+ ( /4DCAC161 r_0805 R1 10k
+  ( 1 /I2SD_v3_RTC/5V0 )
+  ( 2 /I2SD_v3_RTC/SCL )
  )
- ( /4DCA7BFC r_0805  R7 10k {Lib=R}
-  (    1 /I2SD_v3_RTC/5V0 )
-  (    2 /RESET )
+ ( /4DCAC172 r_0805 R2 10k
+  ( 1 /I2SD_v3_RTC/5V0 )
+  ( 2 /I2SD_v3_RTC/SDA )
  )
- ( /4DCA7BAC c_0805  C1 100n {Lib=C}
-  (    1 /I2SD_v3_RTC/5V0 )
-  (    2 GND )
+ ( /4DCA5F5F r_0805 R3 10k
+  ( 1 +3.3V )
+  ( 2 /SS )
  )
- ( /4DCA5F5F r_0805  R3 10k {Lib=R}
-  (    1 +3.3V )
-  (    2 /SS )
+ ( /4DCA5F5D r_0805 R4 10k
+  ( 1 +3.3V )
+  ( 2 /MOSI )
  )
- ( /4DCA5F5D r_0805  R4 10k {Lib=R}
-  (    1 +3.3V )
-  (    2 /MOSI )
+ ( /4DCFFAF9 r_0805 R5 470E
+  ( 1 /B_02 )
+  ( 2 N-000003 )
  )
- ( /4DCA5F59 r_0805  R6 10k {Lib=R}
-  (    1 +3.3V )
-  (    2 /SCK )
+ ( /4DCA5F59 r_0805 R6 10k
+  ( 1 +3.3V )
+  ( 2 /SCK )
  )
- ( /4DCA5F1E c_0805  C2 1u {Lib=C}
-  (    1 /I2SD_v3_RTC/5V0 )
-  (    2 GND )
+ ( /4DCA7BFC r_0805 R7 10k
+  ( 1 /I2SD_v3_RTC/5V0 )
+  ( 2 /RESET )
  )
- ( /4DCA5EE0 PIN_ARRAY_4x1  P2 COMM_R {Lib=CONN_4}
-  (    1 /I2SD_v3_RTC/5V0 )
-  (    2 /I2SD_v3_RTC/SCL )
-  (    3 /I2SD_v3_RTC/SDA )
-  (    4 GND )
+ ( /4DCFFB11 r_0805 R8 470E
+  ( 1 /B_03 )
+  ( 2 N-000002 )
  )
- ( /4DCA5EC5 TQFP32  IC1 ATMEGA8-AI {Lib=ATMEGA8-AI}
-  (    1 /B_02 )
-  (    2 /B_01 )
-  (    3 GND )
-  (    4 /I2SD_v3_RTC/5V0 )
-  (    5 GND )
-  (    6 /I2SD_v3_RTC/5V0 )
-  (    7 N-000018 )
-  (    8 N-000051 )
-  (    9 /B_14 )
-  (   10 /B_13 )
-  (   11 /I2SD_v3_RTC/B_12 )
-  (   12 /B_11 )
-  (   13 /B_10 )
-  (   14 /SS )
-  (   15 /MOSI )
-  (   16 /MISO )
-  (   17 /SCK )
-  (   18 /I2SD_v3_RTC/5V0 )
-  (   19 /B_09 )
-  (   20 /I2SD_v3_RTC/5V0 )
-  (   21 GND )
-  (   22 /B_08 )
-  (   23 /B_07 )
-  (   24 /B_06 )
-  (   25 /B_05 )
-  (   26 /B_04 )
-  (   27 /I2SD_v3_RTC/SDA )
-  (   28 /I2SD_v3_RTC/SCL )
-  (   29 /RESET )
-  (   30 /RXD )
-  (   31 /TXD )
-  (   32 /B_03 )
+ ( /4E1FEA4E/4ECB8D22 r_0805 R9 10k
+  ( 1 /I2SD_v3_RTC/5V0 )
+  ( 2 /I2SD_v3_RTC/B_12 )
  )
- ( /4E1FEA4E/4ECB8D22 $noname  R9 10k {Lib=R}
-  (    1 /I2SD_v3_RTC/5V0 )
-  (    2 /I2SD_v3_RTC/B_12 )
+ ( /4DCCE748 vite_3mm SC1 SCREW
  )
- ( /4E1FEA4E/4E1FEBD4 I/O  B15 I/O {Lib=I/O}
-  (    1 /I2SD_v3_RTC/32k )
+ ( /4EC0FE5A SD_Micro SD1 SD_CARD_MICRO
+  ( 1 ? )
+  ( 2 /SD_CS )
+  ( 3 /SD_DATA_IN )
+  ( 4 +3.3V )
+  ( 5 /SD_CLK )
+  ( 6 GND )
+  ( 7 /MISO )
+  ( 8 ? )
+  ( 9 ? )
+  ( G1 GND )
+  ( G2 GND )
+  ( G3 GND )
+  ( G4 GND )
+  ( H1 ? )
+  ( H2 ? )
  )
- ( /4E1FEA4E/4E1FEBCE I/O  B3 I/O {Lib=I/O}
-  (    1 /I2SD_v3_RTC/RST )
+ ( /4DCA7D67 SW_SMD SW1 SW_PUSH
+  ( 1 GND )
+  ( 2 /RESET )
  )
- ( /4E1FEA4E/4E1FEBC6 I/O  B2 I/O {Lib=I/O}
-  (    1 /I2SD_v3_RTC/B_12 )
+ ( /4DCAC2D1 SOT23-3 U1 MCP1700T-3302E/TT
+  ( 1 GND )
+  ( 2 +3.3V )
+  ( 3 /I2SD_v3_RTC/5V0 )
  )
- ( /4E1FEA4E/4E1FEA7F DS3231  U4 DS3231N {Lib=DS3231N}
-  (    1 /I2SD_v3_RTC/32k )
-  (    2 /I2SD_v3_RTC/5V0 )
-  (    3 /I2SD_v3_RTC/B_12 )
-  (    4 /I2SD_v3_RTC/RST )
-  (    5 GND )
-  (    6 GND )
-  (    7 GND )
-  (    8 GND )
-  (    9 GND )
-  (   10 GND )
-  (   11 GND )
-  (   12 GND )
-  (   13 GND )
-  (   14 /I2SD_v3_RTC/BAT )
-  (   15 /I2SD_v3_RTC/SDA )
-  (   16 /I2SD_v3_RTC/SCL )
+ ( /4DCB7505 SO14E U2 74HC125
+  ( 1 GND )
+  ( 2 /SCK )
+  ( 3 /SD_CLK )
+  ( 4 GND )
+  ( 5 /MOSI )
+  ( 6 /SD_DATA_IN )
+  ( 7 GND )
+  ( 8 /SD_CS )
+  ( 9 /SS )
+  ( 10 GND )
+  ( 11 ? )
+  ( 12 +3.3V )
+  ( 13 +3.3V )
+  ( 14 +3.3V )
  )
- ( /4E1FEA4E/4E1FEA7E c_0805  C9 100n {Lib=C}
-  (    1 /I2SD_v3_RTC/BAT )
-  (    2 GND )
+ ( /4E1ECD8D SOT23-5 U3 MIC5219-5.0BM5
+  ( 1 N-000036 )
+  ( 2 GND )
+  ( 3 N-000036 )
+  ( 4 N-000001 )
+  ( 5 /I2SD_v3_RTC/5V0 )
  )
- ( /4E1FEA4E/4E1FEA78 CR1632  BT1 BATT_RTC {Lib=BATT_RTC}
-  (    + /I2SD_v3_RTC/BAT )
-  (    - GND )
+ ( /4E1FEA4E/4E1FEA7F DS3231 U4 DS3231N
+  ( 1 /I2SD_v3_RTC/32k )
+  ( 2 /I2SD_v3_RTC/5V0 )
+  ( 3 /I2SD_v3_RTC/B_12 )
+  ( 4 /I2SD_v3_RTC/RST )
+  ( 5 GND )
+  ( 6 GND )
+  ( 7 GND )
+  ( 8 GND )
+  ( 9 GND )
+  ( 10 GND )
+  ( 11 GND )
+  ( 12 GND )
+  ( 13 GND )
+  ( 14 /I2SD_v3_RTC/BAT )
+  ( 15 /I2SD_v3_RTC/SDA )
+  ( 16 /I2SD_v3_RTC/SCL )
+ )
+ ( /4F3FEE0A Xtal_SMD2 X1 CRYSTAL_2
+  ( 1 N-000032 )
+  ( 2 N-000050 )
  )
 )
 *
 { Allowed footprints by component:
-$component C11
+$component C1
  SM*
  C?
  C1-1
 $endlist
-$component C10
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component C3
  SM*
  C?
  C1-1
@@ -351,34 +363,35 @@ $component C5
  C?
  C1-1
 $endlist
+$component C6
+ SM*
+ C?
+ C1-1
+$endlist
+$component C7
+ SM*
+ C?
+ C1-1
+$endlist
 $component C8
  SM*
  C?
  C1-1
 $endlist
-$component C3
+$component C9
  SM*
  C?
  C1-1
 $endlist
-$component R8
- R?
- SM0603
- SM0805
+$component C10
+ SM*
+ C?
+ C1-1
 $endlist
-$component R5
- R?
- SM0603
- SM0805
-$endlist
-$component D2
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
+$component C11
+ SM*
+ C?
+ C1-1
 $endlist
 $component D1
  LED-3MM
@@ -389,35 +402,27 @@ $component D1
  LED-1206
  LEDV
 $endlist
-$component C7
- SM*
- C?
- C1-1
+$component D2
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
 $endlist
-$component C6
- SM*
- C?
- C1-1
-$endlist
-$component R2
- R?
- SM0603
- SM0805
+$component IC1
+ TQFP32
 $endlist
 $component R1
  R?
  SM0603
  SM0805
 $endlist
-$component R7
+$component R2
  R?
  SM0603
  SM0805
-$endlist
-$component C1
- SM*
- C?
- C1-1
 $endlist
 $component R3
  R?
@@ -429,259 +434,30 @@ $component R4
  SM0603
  SM0805
 $endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+$endlist
 $component R6
  R?
  SM0603
  SM0805
 $endlist
-$component C2
- SM*
- C?
- C1-1
+$component R7
+ R?
+ SM0603
+ SM0805
 $endlist
-$component IC1
- TQFP32
+$component R8
+ R?
+ SM0603
+ SM0805
 $endlist
 $component R9
  R?
  SM0603
  SM0805
 $endlist
-$component C9
- SM*
- C?
- C1-1
-$endlist
 $endfootprintlist
 }
-{ Pin List by Nets
-Net 1 "/I2SD_v3_RTC/SDA" "SDA"
- R2 2
- P2 3
- IC1 27
- P5 5
- P10 1
- U4 15
- P11 1
-Net 2 "/I2SD_v3_RTC/SCL" "SCL"
- P5 6
- P10 2
- IC1 28
- R1 2
- P2 2
- U4 16
- P11 2
-Net 3 "" ""
- U3 4
- C4 1
-Net 4 "/B_04" "B_04"
- IC1 26
- B4 1
-Net 5 "/I2SD_v3_RTC/B_12" "B_12"
- IC1 11
- P12 3
- B12 1
- B2 1
- R9 2
- P13 3
- U4 3
-Net 6 "/I2SD_v3_RTC/5V0" "5V0"
- C2 1
- P2 1
- R2 1
- P8 3
- P9 2
- R1 1
- IC1 20
- U1 3
- IC1 6
- IC1 4
- IC1 18
- R7 1
- C1 1
- R9 1
- U4 2
- B19 1
- P10 3
- P4 3
- P11 3
- C3 1
- U3 5
-Net 7 "/B_03" "B_03"
- R8 1
- IC1 32
-Net 8 "" ""
- R8 2
- D2 1
-Net 9 "/B_02" "B_02"
- IC1 1
- R5 1
-Net 10 "" ""
- R5 2
- D1 1
-Net 16 "/I2SD_v3_RTC/RST" "RST"
- P12 4
- B3 1
- U4 4
- P13 4
-Net 18 "" ""
- C10 1
- X1 1
- IC1 7
-Net 20 "/I2SD_v3_RTC/32k" "32k"
- B15 1
- P12 2
- U4 1
- P13 2
-Net 21 "/I2SD_v3_RTC/BAT" "BAT"
- P12 1
- P13 1
- BT1 +
- C9 1
- U4 14
-Net 27 "/RESET" "RESET"
- IC1 29
- P4 1
- C7 2
- R7 2
- P9 5
- SW1 2
-Net 28 "/B_10" "B_10"
- IC1 13
- B10 1
-Net 29 "/B_07" "B_07"
- B7 1
- IC1 23
-Net 30 "/B_06" "B_06"
- B6 1
- IC1 24
-Net 31 "/B_05" "B_05"
- B5 1
- IC1 25
-Net 32 "/B_08" "B_08"
- IC1 22
- B8 1
-Net 33 "/B_09" "B_09"
- IC1 19
- B9 1
-Net 34 "/B_01" "B_01"
- IC1 2
- B1 1
-Net 35 "/B_14" "B_14"
- B14 1
- IC1 9
-Net 36 "/B_13" "B_13"
- IC1 10
- B13 1
-Net 37 "/B_11" "B_11"
- B11 1
- IC1 12
-Net 38 "" ""
- C8 1
- U3 3
- U3 1
- C6 1
- P6 1
-Net 39 "/RXD" "RXD"
- IC1 30
- P8 4
-Net 40 "/TXD" "TXD"
- P8 5
- IC1 31
-Net 41 "/MISO" "MISO"
- SD1 7
- P9 1
- IC1 16
-Net 42 "/SCK" "SCK"
- P9 3
- IC1 17
- R6 2
- U2 2
-Net 43 "/MOSI" "MOSI"
- U2 5
- R4 2
- IC1 15
- P9 4
-Net 44 "" ""
- P8 6
- C7 1
-Net 45 "+3.3V" "+3.3V"
- SD1 4
- U2 14
- U2 12
- U2 13
- U1 2
- R3 1
- R4 1
- R6 1
- C5 1
- P4 2
-Net 46 "/SS" "SS"
- U2 9
- R3 2
- IC1 14
-Net 48 "/SD_CLK" "SD_CLK"
- U2 3
- SD1 5
-Net 49 "/SD_CS" "SD_CS"
- SD1 2
- U2 8
-Net 50 "/SD_DATA_IN" "SD_DATA_IN"
- SD1 3
- U2 6
-Net 51 "" ""
- X1 2
- C11 2
- IC1 8
-Net 52 "GND" "GND"
- C4 2
- P6 2
- C3 2
- C9 2
- D1 2
- D2 2
- C8 2
- BT1 -
- U3 2
- U4 13
- U4 12
- U4 11
- U4 10
- U4 9
- U4 8
- U4 7
- U4 6
- U4 5
- C5 2
- B17 1
- C10 2
- P4 4
- P4 5
- P2 4
- P8 2
- P8 1
- P9 6
- C6 2
- IC1 21
- IC1 5
- IC1 3
- C1 2
- SW1 1
- C2 2
- C11 1
- U2 10
- U2 7
- U2 4
- U1 1
- B16 1
- U2 1
- SD1 6
- SD1 G1
- P10 4
- P11 4
- B18 1
- SD1 G4
- SD1 G3
- SD1 G2
-}
-#End
