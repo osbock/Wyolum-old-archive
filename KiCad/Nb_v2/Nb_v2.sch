@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/17/2012 6:16:40 PM
+EESchema Schematic File Version 2  date Sunday 19 February 2012 09:05:15 PM IST
 LIBS:Nb_v2
 LIBS:power
 LIBS:conn
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 2
 Title "NachBau - WordClock"
-Date "17 feb 2012"
+Date "19 feb 2012"
 Rev "A"
 Comp ""
 Comment1 "www.wyolum.com"
@@ -767,17 +767,17 @@ L CONN_16X2 P5
 U 1 1 4F3E36CD
 P 8925 2375
 F 0 "P5" H 8925 3225 60  0000 C CNN
-F 1 "CONN_16X2" V 8875 2375 50  0000 C CNN
+F 1 "ANODES" V 8875 2375 50  0000 C CNN
 F 2 "pin_strip_16x2" H 8925 2775 60  0001 C CNN
 	1    8925 2375
-	1    0    0    1   
+	1    0    0    -1  
 $EndComp
 $Comp
 L CONN_16X2 P6
 U 1 1 4F3E36C2
 P 8925 4700
 F 0 "P6" H 8925 5550 60  0000 C CNN
-F 1 "CONN_16X2" V 8875 4700 50  0000 C CNN
+F 1 "KATHODES" V 8875 4700 50  0000 C CNN
 F 2 "pin_strip_16x2" H 8925 5100 60  0001 C CNN
 	1    8925 4700
 	1    0    0    -1  
