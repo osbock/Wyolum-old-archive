@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Sunday 19 February 2012 12:02:08 AM IST
+# EESchema Netlist Version 1.1 created  2/20/2012 1:34:26 PM
 (
  ( /4DCD1D3A I/O B1 I/O
   ( 1 /B_01 )
@@ -156,7 +156,7 @@
   ( 3 /I2SD_v3_RTC/SDA )
   ( 4 GND )
  )
- ( /4F3FE37F pin_strip_6-90 P3 BootDrive
+ ( /4F3FE37F PIN_ARRAY-6X1 P3 BootDrive
   ( 1 GND )
   ( 2 GND )
   ( 3 /I2SD_v3_RTC/5V0 )
@@ -184,7 +184,7 @@
   ( 1 N-000036 )
   ( 2 GND )
  )
- ( /4DCB971F pin_strip_6-90 P8 FTDI
+ ( /4DCB971F PIN_ARRAY-6X1 P8 FTDI
   ( 1 GND )
   ( 2 GND )
   ( 3 /I2SD_v3_RTC/5V0 )

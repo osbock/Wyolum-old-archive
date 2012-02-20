@@ -1,14 +1,14 @@
 Drill report for C:\Users\Anool\Documents\Arduino\clockthree\KiCad\i2sd_v3\i2sd_v3.brd
-Created on 1/9/2012 3:47:45 PM
+Created on 2/20/2012 3:14:42 PM
 Selected Drill Unit: Imperial (")
 
 Drill report for through holes :
-T1  0.025"  0.64mm  (49 holes)
+T1  0.025"  0.64mm  (68 holes)
 T2  0.035"  0.89mm  (2 holes)
-T3  0.040"  1.02mm  (43 holes)
+T3  0.040"  1.02mm  (36 holes)
 T4  0.100"  2.54mm  (1 hole)
 
-total plated holes count 95
+total plated holes count 107
 
 
 Drill report for Not Plated through holes :

@@ -1,0 +1,2849 @@
+## Module report - date 2/20/2012 3:17:23 PM
+## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
+## Unit = inches, Angle = deg.
+##
+
+$BeginDESCRIPTION
+
+$BOARD
+unit INCH
+upper_left_corner  0.644800  0.772100
+lower_right_corner  3.601600  2.210100
+$EndBOARD
+
+$MODULE "P8"
+reference "P8"
+value "FTDI"
+footprint "PIN_ARRAY-6X1"
+attribut none
+position  3.232500  1.710000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//pins_array_6x1.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.250000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$PAD "2"
+position -0.150000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "3"
+position -0.050000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "4"
+position  0.050000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "5"
+position  0.150000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "6"
+position  0.250000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  P8
+
+$MODULE "P3"
+reference "P3"
+value "BootDrive"
+footprint "PIN_ARRAY-6X1"
+attribut none
+position  3.407500  1.710000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//pins_array_6x1.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.250000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$PAD "2"
+position -0.150000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "3"
+position -0.050000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "4"
+position  0.050000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "5"
+position  0.150000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "6"
+position  0.250000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  P3
+
+$MODULE "R9"
+reference "R9"
+value "10k"
+footprint "r_0805"
+attribut none
+position  1.840000  1.832500
+orientation  90.00
+layer copper
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$EndMODULE  R9
+
+$MODULE "U2"
+reference "U2"
+value "74HC125"
+footprint "SO14E"
+attribut smd
+position  1.282500  1.250000
+orientation  0.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//cms_so14.wrl"
+Sc 0.500000 0.350000 0.500000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.150000  0.105000
+size  0.019700  0.061000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.100000  0.105000
+size  0.019700  0.061000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "3"
+position -0.050000  0.105000
+size  0.019700  0.061000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "4"
+position  0.000000  0.105000
+size  0.019700  0.061000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "5"
+position  0.050000  0.105000
+size  0.019700  0.061000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "6"
+position  0.100000  0.105000
+size  0.019700  0.061000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "7"
+position  0.150000  0.105000
+size  0.019700  0.061000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "8"
+position  0.150000 -0.105000
+size  0.019700  0.061000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "9"
+position  0.100000 -0.105000
+size  0.019700  0.061000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "10"
+position  0.050000 -0.105000
+size  0.019700  0.061000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "11"
+position  0.000000 -0.105000
+size  0.019700  0.061000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "12"
+position -0.050000 -0.105000
+size  0.019700  0.061000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "13"
+position -0.100000 -0.105000
+size  0.019700  0.061000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "14"
+position -0.150000 -0.105000
+size  0.019700  0.061000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  U2
+
+$MODULE "B18"
+reference "B18"
+value "I/O"
+footprint "I/O"
+attribut none
+position  2.632500  1.960000
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.040000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  B18
+
+$MODULE "B19"
+reference "B19"
+value "I/O"
+footprint "I/O"
+attribut none
+position  2.732500  1.960000
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.040000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  B19
+
+$MODULE "U4"
+reference "U4"
+value "DS3231N"
+footprint "DS3231"
+attribut smd
+position  1.572500  1.607500
+orientation  180.00
+layer copper
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//cms_so16.wrl"
+Sc 0.500000 0.600000 0.500000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.175000 -0.183100
+size  0.023600  0.078700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "2"
+position -0.125000 -0.183100
+size  0.023600  0.078700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "3"
+position -0.075000 -0.183100
+size  0.023600  0.078700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "4"
+position -0.025000 -0.183100
+size  0.023600  0.078700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "5"
+position  0.025000 -0.183100
+size  0.023600  0.078700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "6"
+position  0.075000 -0.183100
+size  0.023600  0.078700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "7"
+position  0.125000 -0.183100
+size  0.023600  0.078700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "8"
+position  0.175000 -0.183100
+size  0.023600  0.078700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "9"
+position  0.175000  0.183100
+size  0.023600  0.078700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "10"
+position  0.125000  0.183100
+size  0.023600  0.078700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "11"
+position  0.075000  0.183100
+size  0.023600  0.078700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "12"
+position  0.025000  0.183100
+size  0.023600  0.078700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "13"
+position -0.025000  0.183100
+size  0.023600  0.078700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "14"
+position -0.075000  0.183100
+size  0.023600  0.078700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "15"
+position -0.125000  0.183100
+size  0.023600  0.078700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "16"
+position -0.175000  0.183100
+size  0.023600  0.078700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$EndMODULE  U4
+
+$MODULE "U3"
+reference "U3"
+value "MIC5219-5.0BM5"
+footprint "SOT23-5"
+attribut smd
+position  2.905000  1.235000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//SOT23_3.wrl"
+Sc 0.500000 0.500000 0.500000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 180.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.037500  0.052500
+size  0.023600  0.045300
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "3"
+position  0.037500  0.052500
+size  0.023600  0.045300
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position  0.000000  0.052500
+size  0.023600  0.045300
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "4"
+position  0.037500 -0.052500
+size  0.023600  0.045300
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "5"
+position -0.037500 -0.052500
+size  0.023600  0.045300
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  U3
+
+$MODULE "U1"
+reference "U1"
+value "MCP1700T-3302E/TT"
+footprint "SOT23-3"
+attribut smd
+position  2.645000  1.530000
+orientation  180.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//SOT23_3.wrl"
+Sc 0.500000 0.500000 0.500000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 180.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.037500  0.047500
+size  0.031500  0.047200
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "3"
+position  0.000000 -0.047500
+size  0.031500  0.047200
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position  0.037500  0.047500
+size  0.031500  0.047200
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  U1
+
+$MODULE "IC1"
+reference "IC1"
+value "ATMEGA8-AI"
+footprint "TQFP32"
+attribut none
+position  2.252500  1.635000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//tqfp32.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "8"
+position -0.163400  0.110200
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "7"
+position -0.163400  0.078700
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "6"
+position -0.163400  0.047200
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "5"
+position -0.163400  0.015700
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "4"
+position -0.163400 -0.015700
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "3"
+position -0.163400 -0.047200
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.163400 -0.078700
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "1"
+position -0.163400 -0.110200
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "24"
+position  0.163400 -0.110200
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "17"
+position  0.163400  0.110200
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "18"
+position  0.163400  0.078700
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "19"
+position  0.163400  0.047200
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "20"
+position  0.163400  0.015700
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "21"
+position  0.163400 -0.015700
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "22"
+position  0.163400 -0.047200
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "23"
+position  0.163400 -0.078700
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "32"
+position -0.110200 -0.163400
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "31"
+position -0.078700 -0.163400
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "30"
+position -0.047200 -0.163400
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "29"
+position -0.015700 -0.163400
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "28"
+position  0.015700 -0.163400
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "27"
+position  0.047200 -0.163400
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "26"
+position  0.078700 -0.163400
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "25"
+position  0.110200 -0.163400
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "9"
+position -0.110200  0.163400
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "10"
+position -0.078700  0.163400
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "11"
+position -0.047200  0.163400
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "12"
+position -0.015700  0.163400
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "13"
+position  0.015700  0.163400
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "14"
+position  0.047200  0.163400
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "15"
+position  0.078700  0.163400
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "16"
+position  0.110200  0.163400
+size  0.078700  0.017700
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  IC1
+
+$MODULE "D1"
+reference "D1"
+value "LED"
+footprint "d_0805"
+attribut none
+position  2.537500  1.097500
+orientation  0.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.040000  0.000000
+size  0.040000  0.050000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.040000  0.000000
+size  0.040000  0.050000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D1
+
+$MODULE "D2"
+reference "D2"
+value "LED"
+footprint "d_0805"
+attribut none
+position  2.700000  1.097500
+orientation  0.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.040000  0.000000
+size  0.040000  0.050000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.040000  0.000000
+size  0.040000  0.050000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D2
+
+$MODULE "C6"
+reference "C6"
+value "47u,10V"
+footprint "C_ELCO_SMD"
+attribut none
+position  2.892500  1.540000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//c_elec_5x5_3.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 90.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.000000  0.090000
+size  0.064000  0.120000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.002500 -0.090000
+size  0.064000  0.120000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  C6
+
+$MODULE "C2"
+reference "C2"
+value "1u"
+footprint "c_0805"
+attribut none
+position  2.505000  1.400000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//c_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  C2
+
+$MODULE "C1"
+reference "C1"
+value "100n"
+footprint "c_0805"
+attribut none
+position  1.782500  1.652500
+orientation  270.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//c_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  C1
+
+$MODULE "C7"
+reference "C7"
+value "100n"
+footprint "c_0805"
+attribut none
+position  2.640000  1.675000
+orientation  0.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//c_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  C7
+
+$MODULE "C4"
+reference "C4"
+value "100n"
+footprint "c_0805"
+attribut none
+position  2.902500  1.097500
+orientation  180.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//c_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  C4
+
+$MODULE "C8"
+reference "C8"
+value "100n"
+footprint "c_0805"
+attribut none
+position  2.910000  1.367500
+orientation  0.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//c_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  C8
+
+$MODULE "C5"
+reference "C5"
+value "1u"
+footprint "c_0805"
+attribut none
+position  2.645000  1.370000
+orientation  180.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//c_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  C5
+
+$MODULE "C9"
+reference "C9"
+value "100n"
+footprint "c_0805"
+attribut none
+position  1.557500  1.320000
+orientation  0.00
+layer copper
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//c_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "2"
+position -0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$EndMODULE  C9
+
+$MODULE "C10"
+reference "C10"
+value "22p"
+footprint "c_0805"
+attribut none
+position  2.377500  1.135000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//c_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  C10
+
+$MODULE "C11"
+reference "C11"
+value "22p"
+footprint "c_0805"
+attribut none
+position  2.272500  1.135000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//c_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  C11
+
+$MODULE "C3"
+reference "C3"
+value "2u2_Tant"
+footprint "c_0805"
+attribut none
+position  3.067500  1.097500
+orientation  0.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//c_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.040000  0.000000
+size  0.042000  0.056000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  C3
+
+$MODULE "PCB1"
+reference "PCB1"
+value "PCB"
+footprint "PCB"
+attribut none
+position  2.250000  1.600000
+orientation  0.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//i2sd_PCB_Material_3D.wrl"
+Sc 6.300000 3.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$EndMODULE  PCB1
+
+$MODULE "P13"
+reference "P13"
+value "CD1"
+footprint "Sck-04-F-SMT"
+attribut none
+position  2.045000  1.600000
+orientation  90.00
+layer copper
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//socket_1x4.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.150000 -0.065000
+size  0.040000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "2"
+position  0.050000  0.065000
+size  0.040000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "3"
+position -0.050000 -0.065000
+size  0.040000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "4"
+position -0.150000  0.065000
+size  0.040000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$EndMODULE  P13
+
+$MODULE "P10"
+reference "P10"
+value "CD2"
+footprint "Sck-04-F-SMT"
+attribut none
+position  1.595000  1.150000
+orientation  0.00
+layer copper
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//socket_1x4.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.150000 -0.065000
+size  0.040000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "2"
+position  0.050000  0.065000
+size  0.040000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "3"
+position -0.050000 -0.065000
+size  0.040000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "4"
+position -0.150000  0.065000
+size  0.040000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$EndMODULE  P10
+
+$MODULE "P11"
+reference "P11"
+value "CD2"
+footprint "Sck-04-F-SMT"
+attribut none
+position  1.145000  1.600000
+orientation  90.00
+layer copper
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//socket_1x4.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.150000 -0.065000
+size  0.040000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "2"
+position  0.050000  0.065000
+size  0.040000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "3"
+position -0.050000 -0.065000
+size  0.040000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "4"
+position -0.150000  0.065000
+size  0.040000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$EndMODULE  P11
+
+$MODULE "P12"
+reference "P12"
+value "CD1"
+footprint "Sck-04-F-SMT"
+attribut none
+position  1.595000  2.050000
+orientation  0.00
+layer copper
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//socket_1x4.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.150000 -0.065000
+size  0.040000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "2"
+position  0.050000  0.065000
+size  0.040000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "3"
+position -0.050000 -0.065000
+size  0.040000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "4"
+position -0.150000  0.065000
+size  0.040000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$EndMODULE  P12
+
+$MODULE "SW1"
+reference "SW1"
+value "SW_PUSH"
+footprint "SW_SMD"
+attribut none
+position  1.840000  1.972500
+orientation  180.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs/3D Modules/pcb_push.wrl"
+Sc 1.000000 0.400000 0.500000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.102500  0.035000
+size  0.059100  0.039400
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "1"
+position  0.102500  0.035000
+size  0.059100  0.039400
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position  0.102500 -0.035000
+size  0.059100  0.039400
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.102500 -0.035000
+size  0.059100  0.039400
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  SW1
+
+$MODULE "X1"
+reference "X1"
+value "CRYSTAL_2"
+footprint "Xtal_SMD2"
+attribut none
+position  2.202500  1.282500
+orientation  180.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs/3D Modules/r_0805.wrl"
+Sc 1.500000 1.800000 1.000000
+Of 0.000000 0.000000 0.005000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.045000  0.037500
+size  0.051200  0.041300
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position  0.045000 -0.037500
+size  0.051200  0.041300
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "1"
+position -0.045000 -0.037500
+size  0.051200  0.041300
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position  0.045000  0.037500
+size  0.051200  0.041300
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  X1
+
+$MODULE "SD1"
+reference "SD1"
+value "SD_CARD_MICRO"
+footprint "SD_Micro"
+attribut none
+position  1.262500  1.535000
+orientation  270.00
+layer component
+$PAD "5"
+position  0.000000  0.000000
+size  0.060000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "6"
+position  0.000000  0.043300
+size  0.060000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "7"
+position  0.000000  0.086600
+size  0.060000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "8"
+position  0.000000  0.129900
+size  0.060000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "9"
+position  0.000000  0.173200
+size  0.060000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "4"
+position  0.000000 -0.043300
+size  0.060000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "3"
+position  0.000000 -0.086600
+size  0.060000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position  0.000000 -0.129900
+size  0.060000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "1"
+position  0.000000 -0.173200
+size  0.060000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "G1"
+position  0.023600  0.226200
+size  0.060000  0.040000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "G2"
+position  0.408400  0.212600
+size  0.080000  0.060000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "G3"
+position  0.408400 -0.393700
+size  0.060000  0.040000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "G4"
+position  0.015400 -0.361500
+size  0.060000  0.060000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "H1"
+position  0.430000  0.102500
+size  0.045000  0.045000
+drill  0.035000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "H2"
+position  0.430000 -0.212500
+size  0.045000  0.045000
+drill  0.035000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  SD1
+
+$MODULE "B1"
+reference "B1"
+value "I/O"
+footprint "I/O"
+attribut none
+position  2.067500  1.330000
+orientation  90.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.040000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  B1
+
+$MODULE "BT1"
+reference "BT1"
+value "BATT_RTC"
+footprint "CR1632"
+attribut none
+position  2.662500  1.535000
+orientation  180.00
+layer copper
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//batt-02.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "+"
+position -0.410000  0.000000
+size  0.100000  0.260000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "+"
+position  0.410000  0.000000
+size  0.100000  0.260000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "-"
+position  0.000000  0.000000
+size  0.260000  0.260000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$EndMODULE  BT1
+
+$MODULE "B11"
+reference "B11"
+value "I/O"
+footprint "I/O_ADR"
+attribut none
+position  1.922500  1.587500
+orientation  180.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.030000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$EndMODULE  B11
+
+$MODULE "B10"
+reference "B10"
+value "I/O"
+footprint "I/O_ADR"
+attribut none
+position  1.922500  1.712500
+orientation  180.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.030000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$EndMODULE  B10
+
+$MODULE "B17"
+reference "B17"
+value "I/O"
+footprint "I/O_ADR"
+attribut none
+position  1.882500  1.712500
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.030000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$EndMODULE  B17
+
+$MODULE "B16"
+reference "B16"
+value "I/O"
+footprint "I/O_ADR"
+attribut none
+position  1.882500  1.587500
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.030000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$EndMODULE  B16
+
+$MODULE "P5"
+reference "P5"
+value "CONN_6"
+footprint "PIN_ARRAY-6X1"
+attribut none
+position  2.982500  2.110000
+orientation  0.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//pins_array_6x1.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.250000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$PAD "2"
+position -0.150000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "3"
+position -0.050000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "4"
+position  0.050000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "5"
+position  0.150000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "6"
+position  0.250000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  P5
+
+$MODULE "P4"
+reference "P4"
+value "CONN_6"
+footprint "PIN_ARRAY-6X1"
+attribut none
+position  2.282500  2.110000
+orientation  0.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//pins_array_6x1.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.250000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$PAD "2"
+position -0.150000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "3"
+position -0.050000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "4"
+position  0.050000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "5"
+position  0.150000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "6"
+position  0.250000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  P4
+
+$MODULE "P1"
+reference "P1"
+value "I/O"
+footprint "I/O"
+attribut none
+position  2.632500  2.110000
+orientation  180.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.040000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  P1
+
+$MODULE "B15"
+reference "B15"
+value "I/O"
+footprint "I/O"
+attribut none
+position  1.747500  1.870000
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.040000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  B15
+
+$MODULE "B2"
+reference "B2"
+value "I/O"
+footprint "I/O"
+attribut none
+position  1.735000  2.162500
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.040000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  B2
+
+$MODULE "B3"
+reference "B3"
+value "I/O"
+footprint "I/O"
+attribut none
+position  1.587500  1.870000
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.040000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  B3
+
+$MODULE "P6"
+reference "P6"
+value "CONN_2"
+footprint "pin_strip_2"
+attribut none
+position  3.112500  1.260000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//pin_strip_2.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.050000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  P6
+
+$MODULE "P2"
+reference "P2"
+value "COMM_R"
+footprint "PIN_ARRAY_4x1"
+attribut none
+position  3.232500  1.210000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//pin_strip_4.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.150000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$PAD "2"
+position -0.050000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "3"
+position  0.050000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "4"
+position  0.150000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  P2
+
+$MODULE "P9"
+reference "P9"
+value "ISP"
+footprint "ISP"
+attribut none
+position  1.867500  1.180000
+orientation  0.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//pin_strip_3x2.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.100000 0.050000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.000000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$PAD "2"
+position  0.000000 -0.100000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "3"
+position  0.100000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "4"
+position  0.100000 -0.100000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "5"
+position  0.200000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "6"
+position  0.200000 -0.100000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  P9
+
+$MODULE "R8"
+reference "R8"
+value "470E"
+footprint "r_0805"
+attribut none
+position  2.700000  1.192500
+orientation  180.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R8
+
+$MODULE "R5"
+reference "R5"
+value "470E"
+footprint "r_0805"
+attribut none
+position  2.537500  1.192500
+orientation  180.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R5
+
+$MODULE "R2"
+reference "R2"
+value "10k"
+footprint "r_0805"
+attribut none
+position  3.027500  1.935000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R2
+
+$MODULE "R1"
+reference "R1"
+value "10k"
+footprint "r_0805"
+attribut none
+position  3.132500  1.935000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R1
+
+$MODULE "R7"
+reference "R7"
+value "10k"
+footprint "r_0805"
+attribut none
+position  2.640000  1.775000
+orientation  0.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R7
+
+$MODULE "R3"
+reference "R3"
+value "10k"
+footprint "r_0805"
+attribut none
+position  1.532500  1.195000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R3
+
+$MODULE "R4"
+reference "R4"
+value "10k"
+footprint "r_0805"
+attribut none
+position  1.532500  1.352500
+orientation  90.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R4
+
+$MODULE "R6"
+reference "R6"
+value "10k"
+footprint "r_0805"
+attribut none
+position  1.632500  1.352500
+orientation  90.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R6
+
+$MODULE "B8"
+reference "B8"
+value "I/O"
+footprint "I/O"
+attribut none
+position  2.132500  1.960000
+orientation  90.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.040000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  B8
+
+$MODULE "B14"
+reference "B14"
+value "I/O"
+footprint "I/O"
+attribut none
+position  1.967500  1.330000
+orientation  90.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.040000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  B14
+
+$MODULE "B13"
+reference "B13"
+value "I/O"
+footprint "I/O"
+attribut none
+position  1.867500  1.330000
+orientation  90.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.040000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  B13
+
+$MODULE "B12"
+reference "B12"
+value "I/O"
+footprint "I/O"
+attribut none
+position  1.767500  1.330000
+orientation  90.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.040000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  B12
+
+$MODULE "B9"
+reference "B9"
+value "I/O"
+footprint "I/O"
+attribut none
+position  2.032500  1.960000
+orientation  90.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.040000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  B9
+
+$MODULE "B7"
+reference "B7"
+value "I/O"
+footprint "I/O"
+attribut none
+position  2.232500  1.960000
+orientation  90.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.040000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  B7
+
+$MODULE "B6"
+reference "B6"
+value "I/O"
+footprint "I/O"
+attribut none
+position  2.332500  1.960000
+orientation  90.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.040000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  B6
+
+$MODULE "B5"
+reference "B5"
+value "I/O"
+footprint "I/O"
+attribut none
+position  2.432500  1.960000
+orientation  90.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.040000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  B5
+
+$MODULE "B4"
+reference "B4"
+value "I/O"
+footprint "I/O"
+attribut none
+position  2.532500  1.960000
+orientation  180.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.040000  0.040000
+drill  0.025000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  B4
+
+$MODULE "SC1"
+reference "SC1"
+value "SCREW"
+footprint "vite_3mm"
+attribut none
+position  1.872500  2.125000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "i2sd_v3-libs//3D Modules//vite_2mm5.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.000000  0.000000
+size  0.120000  0.120000
+drill  0.100000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  SC1
+
+$LINE 
+start 1.000000 1.000000
+end 3.500000 1.000000
+width 0.010000
+$EndLINE 
+$LINE 
+start 3.500000 2.200000
+end 1.000000 2.200000
+width 0.010000
+$EndLINE 
+$LINE 
+start 3.500000 1.000000
+end 3.500000 2.200000
+width 0.010000
+$EndLINE 
+$LINE 
+start 1.000000 2.200000
+end 1.000000 1.000000
+width 0.010000
+$EndLINE 
+$EndDESCRIPTION
