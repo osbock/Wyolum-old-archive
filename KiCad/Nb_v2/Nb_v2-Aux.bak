@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 19 February 2012 05:51:40 PM IST
+EESchema Schematic File Version 2  date Tuesday 21 February 2012 01:52:59 AM IST
 LIBS:Nb_v2
 LIBS:power
 LIBS:conn
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title "NachBau - WordClock"
-Date "19 feb 2012"
+Date "20 feb 2012"
 Rev "A"
 Comp ""
 Comment1 "www.wyolum.com"
@@ -17,6 +17,10 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Label 4800 2000 0    40   ~ 0
+SCL_INT
+Text Label 4800 1850 0    40   ~ 0
+SDA_INT
 Connection ~ 4875 5000
 Wire Wire Line
 	4875 4925 4875 5200
