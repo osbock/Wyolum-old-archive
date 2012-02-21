@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tuesday 21 February 2012 01:53:29 AM IST
+EESchema Schematic File Version 2  date Tuesday 21 February 2012 09:46:58 PM IST
 LIBS:Nb_v2
 LIBS:power
 LIBS:conn
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 2
 Title "NachBau - WordClock"
-Date "20 feb 2012"
+Date "21 feb 2012"
 Rev "A"
 Comp ""
 Comment1 "www.wyolum.com"
@@ -17,102 +17,17 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 8400 3950 0    40   ~ 0
-K00
-Text Label 8400 5450 0    40   ~ 0
-K15
-Text Label 8400 5350 0    40   ~ 0
-K14
-Text Label 8400 5250 0    40   ~ 0
-K13
-Text Label 8400 5150 0    40   ~ 0
-K12
-Text Label 8400 5050 0    40   ~ 0
-K11
-Text Label 8400 4950 0    40   ~ 0
-K10
-Text Label 8400 4850 0    40   ~ 0
-K09
-Text Label 8400 4750 0    40   ~ 0
-K08
-Text Label 8400 4650 0    40   ~ 0
-K07
-Text Label 8400 4550 0    40   ~ 0
-K06
-Text Label 8400 4450 0    40   ~ 0
-K05
-Text Label 8400 4350 0    40   ~ 0
-K04
-Text Label 8400 4250 0    40   ~ 0
-K03
-Text Label 8400 4150 0    40   ~ 0
-K02
-Text Label 8400 4050 0    40   ~ 0
-K01
-Text Label 8400 1625 0    40   ~ 0
-A15
-Text Label 8400 1725 0    40   ~ 0
-A14
-Text Label 8400 1825 0    40   ~ 0
-A13
-Text Label 8400 1925 0    40   ~ 0
-A12
-Text Label 8400 2025 0    40   ~ 0
-A11
-Text Label 8400 2125 0    40   ~ 0
-A10
-Text Label 8400 2225 0    40   ~ 0
-A09
-Text Label 8400 2325 0    40   ~ 0
-A08
-Text Label 8400 2425 0    40   ~ 0
-A07
-Text Label 8400 2525 0    40   ~ 0
-A06
-Text Label 8400 2625 0    40   ~ 0
-A05
-Text Label 8400 2725 0    40   ~ 0
-A04
-Text Label 8400 2825 0    40   ~ 0
-A03
-Text Label 8400 2925 0    40   ~ 0
-A02
-Text Label 8400 3025 0    40   ~ 0
-A01
-Text Label 8400 3125 0    40   ~ 0
-A00
-Text Label 9400 3125 0    40   ~ 0
-A00
-Text Label 9400 3025 0    40   ~ 0
-A01
-Text Label 9400 2925 0    40   ~ 0
-A02
-Text Label 9400 2825 0    40   ~ 0
-A03
-Text Label 9400 2725 0    40   ~ 0
-A04
-Text Label 9400 2625 0    40   ~ 0
-A05
-Text Label 9400 2525 0    40   ~ 0
-A06
-Text Label 9400 2425 0    40   ~ 0
-A07
-Text Label 9400 2325 0    40   ~ 0
-A08
-Text Label 9400 2225 0    40   ~ 0
-A09
-Text Label 9400 2125 0    40   ~ 0
-A10
-Text Label 9400 2025 0    40   ~ 0
-A11
-Text Label 9400 1925 0    40   ~ 0
-A12
-Text Label 9400 1825 0    40   ~ 0
-A13
-Text Label 9400 1725 0    40   ~ 0
-A14
-Text Label 9400 1625 0    40   ~ 0
-A15
+Text Notes 7850 575  0    40   ~ 0
+3 way header to select\nLED Driver Voltage\n(Unregulated Input or\n5V Regulated)
+Text Label 6950 2075 0    40   ~ 0
+V_LED
+Text Label 9650 3175 0    40   ~ 0
+V_Unreg
+Wire Wire Line
+	10200 3175 9650 3175
+Connection ~ 6950 1025
+Wire Wire Line
+	6950 850  6950 2325
 Wire Wire Line
 	9325 3125 9400 3125
 Wire Wire Line
@@ -238,9 +153,9 @@ Wire Wire Line
 Wire Wire Line
 	10800 5150 10800 5225
 Wire Wire Line
-	10700 5225 10700 5075
+	10700 5075 10700 5225
 Wire Wire Line
-	4375 6600 4375 6950
+	4375 6950 4375 6600
 Connection ~ 4175 7500
 Wire Wire Line
 	10600 5225 10600 4950
@@ -304,9 +219,8 @@ Wire Wire Line
 	6875 5550 7000 5550
 Wire Wire Line
 	6875 5750 7000 5750
-Connection ~ 6950 1025
 Wire Wire Line
-	7000 1025 6950 1025
+	6950 1025 7000 1025
 Wire Wire Line
 	8050 2225 7950 2225
 Wire Wire Line
@@ -344,7 +258,7 @@ Wire Wire Line
 Connection ~ 5125 1725
 Connection ~ 5275 1325
 Wire Wire Line
-	5475 1325 4625 1325
+	4625 1325 5475 1325
 Wire Wire Line
 	5475 3950 5475 3650
 Wire Wire Line
@@ -417,9 +331,9 @@ Wire Wire Line
 Wire Wire Line
 	9650 2375 10200 2375
 Wire Wire Line
-	9650 2175 10200 2175
+	10200 2175 9650 2175
 Wire Wire Line
-	9650 1975 10200 1975
+	10200 1975 9650 1975
 Wire Wire Line
 	3500 3450 3350 3450
 Wire Wire Line
@@ -430,11 +344,11 @@ Wire Wire Line
 Wire Wire Line
 	4500 6900 4500 3550
 Wire Wire Line
-	4375 7450 4375 7575
+	4375 7575 4375 7450
 Wire Wire Line
 	3350 4250 3500 4250
 Wire Wire Line
-	1050 4400 1050 4850
+	1050 4850 1050 4400
 Wire Wire Line
 	2650 2550 2650 2500
 Connection ~ 3425 2900
@@ -451,7 +365,7 @@ Connection ~ 2350 2500
 Wire Wire Line
 	1450 3950 700  3950
 Wire Wire Line
-	1350 4150 1450 4150
+	1450 4150 1350 4150
 Wire Wire Line
 	1250 3550 1250 3450
 Wire Wire Line
@@ -462,13 +376,13 @@ Wire Wire Line
 Wire Wire Line
 	3425 2350 3425 1800
 Wire Wire Line
-	3575 2850 3575 2900
+	3575 2900 3575 2850
 Wire Wire Line
 	2350 5850 2350 6100
 Wire Wire Line
 	750  4150 700  4150
 Wire Wire Line
-	2350 2450 2350 2950
+	2350 2950 2350 2450
 Wire Wire Line
 	600  2500 750  2500
 Wire Wire Line
@@ -481,7 +395,7 @@ Wire Wire Line
 Wire Wire Line
 	2650 2950 2650 3000
 Wire Wire Line
-	1450 3650 600  3650
+	600  3650 1450 3650
 Wire Wire Line
 	1450 3550 1370 3550
 Wire Wire Line
@@ -496,9 +410,9 @@ Wire Wire Line
 Wire Wire Line
 	3350 4750 4200 4750
 Wire Wire Line
-	9650 1875 10200 1875
+	10200 1875 9650 1875
 Wire Wire Line
-	9650 2075 10200 2075
+	10200 2075 9650 2075
 Wire Wire Line
 	9650 2275 10200 2275
 Wire Wire Line
@@ -567,7 +481,7 @@ Connection ~ 5375 2725
 Wire Wire Line
 	5475 1125 4625 1125
 Wire Wire Line
-	5475 1625 4625 1625
+	4625 1625 5475 1625
 Connection ~ 5200 1625
 Wire Wire Line
 	6875 1125 7000 1125
@@ -608,11 +522,9 @@ Wire Wire Line
 Wire Wire Line
 	8025 925  8025 1000
 Wire Wire Line
-	7000 2325 6950 2325
+	6950 2325 7000 2325
 Wire Wire Line
-	6950 2325 6950 600 
-Wire Wire Line
-	6950 600  800  600 
+	800  600  6550 600 
 Connection ~ 5375 600 
 Wire Wire Line
 	6875 5850 7000 5850
@@ -686,7 +598,7 @@ Connection ~ 4375 7500
 Wire Wire Line
 	3975 7500 4375 7500
 Wire Wire Line
-	10500 5225 10500 4825
+	10500 4825 10500 5225
 Wire Wire Line
 	10400 5225 10400 4700
 Wire Wire Line
@@ -723,13 +635,130 @@ Wire Wire Line
 Wire Wire Line
 	7750 5850 7500 5850
 Wire Wire Line
-	3425 2850 3425 3000
+	3425 3000 3425 2850
 Wire Wire Line
 	800  1800 850  1800
 Connection ~ 800  1800
 Connection ~ 3275 2300
 Connection ~ 3425 1800
 Connection ~ 3575 1300
+Wire Wire Line
+	6850 850  6550 850 
+Wire Wire Line
+	6550 850  6550 600 
+Wire Wire Line
+	7050 850  7325 850 
+Wire Wire Line
+	7325 850  7325 600 
+Wire Wire Line
+	7325 600  7525 600 
+Text Label 7525 600  0    40   ~ 0
+V_Unreg
+$Comp
+L CONN_3 K2
+U 1 1 4F43C216
+P 6950 500
+F 0 "K2" V 6900 500 50  0000 C CNN
+F 1 "CONN_3" V 7000 500 40  0000 C CNN
+	1    6950 500 
+	0    -1   -1   0   
+$EndComp
+Text Label 8400 3950 0    40   ~ 0
+K00
+Text Label 8400 5450 0    40   ~ 0
+K15
+Text Label 8400 5350 0    40   ~ 0
+K14
+Text Label 8400 5250 0    40   ~ 0
+K13
+Text Label 8400 5150 0    40   ~ 0
+K12
+Text Label 8400 5050 0    40   ~ 0
+K11
+Text Label 8400 4950 0    40   ~ 0
+K10
+Text Label 8400 4850 0    40   ~ 0
+K09
+Text Label 8400 4750 0    40   ~ 0
+K08
+Text Label 8400 4650 0    40   ~ 0
+K07
+Text Label 8400 4550 0    40   ~ 0
+K06
+Text Label 8400 4450 0    40   ~ 0
+K05
+Text Label 8400 4350 0    40   ~ 0
+K04
+Text Label 8400 4250 0    40   ~ 0
+K03
+Text Label 8400 4150 0    40   ~ 0
+K02
+Text Label 8400 4050 0    40   ~ 0
+K01
+Text Label 8400 1625 0    40   ~ 0
+A15
+Text Label 8400 1725 0    40   ~ 0
+A14
+Text Label 8400 1825 0    40   ~ 0
+A13
+Text Label 8400 1925 0    40   ~ 0
+A12
+Text Label 8400 2025 0    40   ~ 0
+A11
+Text Label 8400 2125 0    40   ~ 0
+A10
+Text Label 8400 2225 0    40   ~ 0
+A09
+Text Label 8400 2325 0    40   ~ 0
+A08
+Text Label 8400 2425 0    40   ~ 0
+A07
+Text Label 8400 2525 0    40   ~ 0
+A06
+Text Label 8400 2625 0    40   ~ 0
+A05
+Text Label 8400 2725 0    40   ~ 0
+A04
+Text Label 8400 2825 0    40   ~ 0
+A03
+Text Label 8400 2925 0    40   ~ 0
+A02
+Text Label 8400 3025 0    40   ~ 0
+A01
+Text Label 8400 3125 0    40   ~ 0
+A00
+Text Label 9400 3125 0    40   ~ 0
+A00
+Text Label 9400 3025 0    40   ~ 0
+A01
+Text Label 9400 2925 0    40   ~ 0
+A02
+Text Label 9400 2825 0    40   ~ 0
+A03
+Text Label 9400 2725 0    40   ~ 0
+A04
+Text Label 9400 2625 0    40   ~ 0
+A05
+Text Label 9400 2525 0    40   ~ 0
+A06
+Text Label 9400 2425 0    40   ~ 0
+A07
+Text Label 9400 2325 0    40   ~ 0
+A08
+Text Label 9400 2225 0    40   ~ 0
+A09
+Text Label 9400 2125 0    40   ~ 0
+A10
+Text Label 9400 2025 0    40   ~ 0
+A11
+Text Label 9400 1925 0    40   ~ 0
+A12
+Text Label 9400 1825 0    40   ~ 0
+A13
+Text Label 9400 1725 0    40   ~ 0
+A14
+Text Label 9400 1625 0    40   ~ 0
+A15
 Text Label 9400 4050 0    40   ~ 0
 K01
 Text Label 9400 4150 0    40   ~ 0
@@ -833,10 +862,10 @@ F 2 "XTAL_2" H 1050 4150 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PWR_FLAG #FLG01
+L PWR_FLAG #FLG1
 U 1 1 4ECF47DE
 P 10425 875
-F 0 "#FLG01" H 10425 1145 30  0001 C CNN
+F 0 "#FLG1" H 10425 1145 30  0001 C CNN
 F 1 "PWR_FLAG" H 10425 1105 30  0000 C CNN
 	1    10425 875 
 	1    0    0    -1  
@@ -846,37 +875,37 @@ GND
 Text Label 10300 975  0    40   ~ 0
 VCC
 $Comp
-L GND #PWR02
+L GND #PWR15
 U 1 1 4ECF431B
 P 10575 1175
-F 0 "#PWR02" H 10575 1175 30  0001 C CNN
+F 0 "#PWR15" H 10575 1175 30  0001 C CNN
 F 1 "GND" H 10575 1105 30  0001 C CNN
 	1    10575 1175
 	1    0    0    -1  
 $EndComp
 $Comp
-L VSS #PWR03
+L VSS #PWR13
 U 1 1 4ECF4312
 P 10250 1175
-F 0 "#PWR03" H 10250 1175 30  0001 C CNN
+F 0 "#PWR13" H 10250 1175 30  0001 C CNN
 F 1 "VSS" H 10250 1105 30  0000 C CNN
 	1    10250 1175
 	1    0    0    -1  
 $EndComp
 $Comp
-L VDD #PWR04
+L VDD #PWR14
 U 1 1 4ECF4307
 P 10575 925
-F 0 "#PWR04" H 10575 1025 30  0001 C CNN
+F 0 "#PWR14" H 10575 1025 30  0001 C CNN
 F 1 "VDD" H 10575 1035 30  0000 C CNN
 	1    10575 925 
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR05
+L VCC #PWR12
 U 1 1 4ECF42FE
 P 10250 925
-F 0 "#PWR05" H 10250 1025 30  0001 C CNN
+F 0 "#PWR12" H 10250 1025 30  0001 C CNN
 F 1 "VCC" H 10250 1025 30  0000 C CNN
 	1    10250 925 
 	1    0    0    -1  
@@ -1046,19 +1075,19 @@ F 2 "RC03" H 7250 3950 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR06
+L GND #PWR11
 U 1 1 4ECE76B4
 P 8050 2300
-F 0 "#PWR06" H 8050 2300 30  0001 C CNN
+F 0 "#PWR11" H 8050 2300 30  0001 C CNN
 F 1 "GND" H 8050 2230 30  0001 C CNN
 	1    8050 2300
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR07
+L GND #PWR10
 U 1 1 4ECE76A3
 P 8025 1000
-F 0 "#PWR07" H 8025 1000 30  0001 C CNN
+F 0 "#PWR10" H 8025 1000 30  0001 C CNN
 F 1 "GND" H 8025 930 30  0001 C CNN
 	1    8025 1000
 	1    0    0    -1  
@@ -1265,19 +1294,19 @@ F 2 "Pad01" H 3650 3450 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR08
+L GND #PWR9
 U 1 1 4C9A12A0
 P 4375 7575
-F 0 "#PWR08" H 4375 7575 30  0001 C CNN
+F 0 "#PWR9" H 4375 7575 30  0001 C CNN
 F 1 "GND" H 4375 7505 30  0001 C CNN
 	1    4375 7575
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR09
+L VCC #PWR8
 U 1 1 4C9A1130
 P 4375 6050
-F 0 "#PWR09" H 4375 6150 30  0001 C CNN
+F 0 "#PWR8" H 4375 6150 30  0001 C CNN
 F 1 "VCC" H 4450 6100 30  0000 C CNN
 	1    4375 6050
 	1    0    0    -1  
@@ -1307,10 +1336,10 @@ VCC
 Text Label 1500 2500 0    40   ~ 0
 VCC
 $Comp
-L GND #PWR010
+L GND #PWR6
 U 1 1 4C1345FF
 P 2650 3000
-F 0 "#PWR010" H 2650 3000 30  0001 C CNN
+F 0 "#PWR6" H 2650 3000 30  0001 C CNN
 F 1 "GND" H 2650 2930 30  0001 C CNN
 	1    2650 3000
 	1    0    0    -1  
@@ -1464,59 +1493,60 @@ F12 "SERIAL_CLOCK" I L 10200 2875 60
 F13 "SCK" I L 10200 2975 60 
 F14 "STORE_CLOCK" I L 10200 2775 60 
 F15 "3V3" I L 10200 3075 60 
+F16 "V_Unreg" I L 10200 3175 60 
 $EndSheet
 Text Label 2700 1300 0    39   ~ 0
 MODE
 $Comp
-L GND #PWR011
+L GND #PWR5
 U 1 1 4B077E18
 P 2350 6100
-F 0 "#PWR011" H 2350 6100 30  0001 C CNN
+F 0 "#PWR5" H 2350 6100 30  0001 C CNN
 F 1 "GND" H 2350 6030 30  0001 C CNN
 	1    2350 6100
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR012
+L VCC #PWR4
 U 1 1 4B077CD2
 P 2350 2450
-F 0 "#PWR012" H 2350 2550 30  0001 C CNN
+F 0 "#PWR4" H 2350 2550 30  0001 C CNN
 F 1 "VCC" H 2350 2550 30  0000 C CNN
 	1    2350 2450
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR013
+L GND #PWR3
 U 1 1 4B077CA7
 P 1250 3550
-F 0 "#PWR013" H 1250 3550 30  0001 C CNN
+F 0 "#PWR3" H 1250 3550 30  0001 C CNN
 F 1 "GND" H 1250 3480 30  0001 C CNN
 	1    1250 3550
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR014
+L GND #PWR2
 U 1 1 4B077C8F
 P 1050 4850
-F 0 "#PWR014" H 1050 4850 30  0001 C CNN
+F 0 "#PWR2" H 1050 4850 30  0001 C CNN
 F 1 "GND" H 1050 4780 30  0001 C CNN
 	1    1050 4850
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR015
+L VCC #PWR1
 U 1 1 4B077C1E
 P 800 600
-F 0 "#PWR015" H 800 700 30  0001 C CNN
+F 0 "#PWR1" H 800 700 30  0001 C CNN
 F 1 "VCC" H 800 700 30  0000 C CNN
 	1    800  600 
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR016
+L GND #PWR7
 U 1 1 4B077BF7
 P 3425 3000
-F 0 "#PWR016" H 3425 3000 30  0001 C CNN
+F 0 "#PWR7" H 3425 3000 30  0001 C CNN
 F 1 "GND" H 3425 2930 30  0001 C CNN
 	1    3425 3000
 	1    0    0    -1  
