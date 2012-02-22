@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 2/20/2012 3:17:10 PM
+Cmp-Mod V01 Genere par PcbNew le 2/22/2012 1:16:15 PM
 
 BeginCmp
 TimeStamp = 4DCB9F3A
@@ -510,6 +510,30 @@ Path = /4DCCE748
 Reference = SC1;
 ValeurCmp = SCREW;
 IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F427497
+Path = OSHW_6mm
+Reference = G***;
+ValeurCmp = LOGO;
+IdModule  = OSHW_6mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F427691
+Path = Logo-WL3
+Reference = G1;
+ValeurCmp = Logo-WL3;
+IdModule  = Logo-WL3;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F427E04
+Path = Logo-WL3
+Reference = G1;
+ValeurCmp = Logo-WL3;
+IdModule  = Logo-WL3;
 EndCmp
 
 EndListe

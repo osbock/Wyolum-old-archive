@@ -1,4 +1,4 @@
-## Module report - date 2/20/2012 3:17:23 PM
+## Module report - date 2/22/2012 1:16:35 PM
 ## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ##
@@ -8,7 +8,7 @@ $BeginDESCRIPTION
 $BOARD
 unit INCH
 upper_left_corner  0.644800  0.772100
-lower_right_corner  3.601600  2.210100
+lower_right_corner  3.783200  2.210100
 $EndBOARD
 
 $MODULE "P8"
@@ -2825,6 +2825,36 @@ Shape  Circ
 Layer  all
 $EndPAD
 $EndMODULE  SC1
+
+$MODULE "G***"
+reference "G***"
+value "LOGO"
+footprint "OSHW_6mm"
+attribut none
+position  1.170000  1.140000
+orientation  0.00
+layer copper
+$EndMODULE  G***
+
+$MODULE "G1"
+reference "G1"
+value "Logo-WL3"
+footprint "Logo-WL3"
+attribut none
+position  2.670000  1.607500
+orientation  0.00
+layer component
+$EndMODULE  G1
+
+$MODULE "G1"
+reference "G1"
+value "Logo-WL3"
+footprint "Logo-WL3"
+attribut none
+position  0.980000  1.915000
+orientation  0.00
+layer copper
+$EndMODULE  G1
 
 $LINE 
 start 1.000000 1.000000

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/20/2012 3:18:37 PM
+EESchema Schematic File Version 2  date 2/22/2012 1:25:25 PM
 LIBS:i2sd_v3
 LIBS:power
 LIBS:i2sd_v3-cache
