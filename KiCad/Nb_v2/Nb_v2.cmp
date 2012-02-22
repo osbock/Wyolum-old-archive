@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le Tuesday 21 February 2012 10:51:33 PM IST
+Cmp-Mod V01 Genere par PcbNew le 2/22/2012 4:18:38 PM
 
 BeginCmp
 TimeStamp = 4ECF7D05
@@ -833,22 +833,6 @@ IdModule  = Volt_Reg_78xx_Vert;
 EndCmp
 
 BeginCmp
-TimeStamp = 4F3E3A31
-Path = /4F3E36C2
-Reference = P6;
-ValeurCmp = KATHODES;
-IdModule  = pin_strip_16x2;
-EndCmp
-
-BeginCmp
-TimeStamp = 4F3E3A2F
-Path = /4F3E36CD
-Reference = P5;
-ValeurCmp = ANODES;
-IdModule  = pin_strip_16x2;
-EndCmp
-
-BeginCmp
 TimeStamp = 4ED09F93
 Path = /4B3F1092/4ED09EA0
 Reference = PCB1;
@@ -862,6 +846,110 @@ Path = /4F43C216
 Reference = K2;
 ValeurCmp = CONN_3;
 IdModule  = pin_strip_3;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F44A7A1
+Path = /4B3F1092/4F44A4E5
+Reference = R34;
+ValeurCmp = 10k;
+IdModule  = rc03_vert;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F44A7A3
+Path = /4B3F1092/4F44A4E9
+Reference = R35;
+ValeurCmp = 10k;
+IdModule  = rc03_vert;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F44A7A4
+Path = /4B3F1092/4F44A4B8
+Reference = D5;
+ValeurCmp = 1N4007;
+IdModule  = diode_do35;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F44A7A5
+Path = /4B3F1092/4F44A49A
+Reference = C2;
+ValeurCmp = 100u;
+IdModule  = CP_5x11mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F44A7A6
+Path = /4B3F1092/4F44A34F
+Reference = C1;
+ValeurCmp = 100n;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F44A7A8
+Path = /4F44A5C2
+Reference = C4;
+ValeurCmp = 100n;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F44A7AA
+Path = /4F44A5DC
+Reference = C5;
+ValeurCmp = 100n;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F44A7AC
+Path = /4F44A5E1
+Reference = C6;
+ValeurCmp = 100n;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F44A7AE
+Path = /4F44A5E6
+Reference = C13;
+ValeurCmp = 100n;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F44A7B0
+Path = /4F44A5EC
+Reference = C14;
+ValeurCmp = 100n;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F44A7B2
+Path = /4F44A5F3
+Reference = C15;
+ValeurCmp = 100n;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F3E3A2F
+Path = /4F3E36CD
+Reference = P5;
+ValeurCmp = ANODES;
+IdModule  = pin_strip_16x2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F3E3A31
+Path = /4F3E36C2
+Reference = P6;
+ValeurCmp = KATHODES;
+IdModule  = pin_strip_16x2;
 EndCmp
 
 EndListe

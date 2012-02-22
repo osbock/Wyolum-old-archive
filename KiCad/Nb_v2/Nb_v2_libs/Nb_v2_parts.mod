@@ -1,43 +1,6 @@
-PCBNEW-LibModule-V1  Tuesday 21 February 2012 07:08:33 PM IST
+PCBNEW-LibModule-V1  2/22/2012 4:11:54 PM
 # encoding utf-8
 $INDEX
-cnp_3mm_disc
-CP_5x11mm
-CR2032
-dil_08-300_socket
-dil_16-300_socket
-dil_18-300_socket
-dil_28-300_socket
-diode_do35
-diode_do41
-DS3231
-JACK_ALIM
-led_5mm_blue
-led_5mm_clear
-led_5mm_green
-led_5mm_yellow
-PCB
-RC03
-rc03_vert
-SW_PB_V_H
-Volt_Reg_78xx_Vert
-C1-1
-C2
-C2V8
-pin_sck_4-90
-pin_socket_2
-pin_strip_2
-pin_strip_3x2
-pin_strip_4-90
-pin_strip_6-90
-pin_strip_16x2
-pin_strip_4
-pin_strip_3
-XTAL_2
-pin_strip_6
-$EndINDEX
-$INDEX
-C1
 C1-1
 C2
 C2V8
@@ -45,17 +8,16 @@ CP_5x11mm
 CR2032
 DS3231
 JACK_ALIM
+Logo-WL3
 MtgPost
 OSHW_6mm
 PCB
 PROTO-6
 Pad01
 RC03
-SCK-24_600_ELL
 SW-PB
 SW_PB_V
 SW_PB_V_H
-Speaker
 Volt_Reg_78xx
 Volt_Reg_78xx_Vert
 XTAL
@@ -88,12 +50,9 @@ pin_strip_6-90
 pin_strip_8
 pin_strip_8x2
 rc03_vert
-to92_2N5401
-to92_3
 vite_2mm5
 vite_3mm
 vite_4mm
-Logo-WL3
 $EndINDEX
 $MODULE Volt_Reg_78xx
 Po 0 0 0 15 4D06228D 00000000 ~~
@@ -70107,13 +70066,38 @@ Of 0.000000 0.375000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  Volt_Reg_78xx_Vert
+$MODULE PCB
+Po 0 0 0 15 4F4378B1 00000000 ~~
+Li PCB
+Sc 00000000
+AR
+Op 0 0 0
+T0 0 -250 200 200 0 10 N I 21 N "PCB"
+T1 0 300 200 200 0 10 N I 21 N "VAL**"
+DS 500 -50 500 50 100 21
+DS -50 -500 50 -500 100 21
+DS -500 -50 -500 50 100 21
+DS 50 500 -50 500 100 21
+$SHAPE3D
+Na "Nb_v1_libs//Nb_v1_3D//PCB_Material_3D.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$SHAPE3D
+Na "Nb_v2_libs/Nb_v2_3D/PCB_Material_3D.wrl"
+Sc 6.400000 3.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$EndMODULE  PCB
 $MODULE pin_strip_16x2
 Po 0 0 0 15 4F3E33FC 00000000 ~~
 Li pin_strip_16x2
 Cd Pin strip 4x2pin
 Kw CONN DEV
 Sc 00000000
-AR
+AR pin_strip_16x2
 Op 0 0 0
 T0 0 -1325 400 400 0 60 N V 21 N "PIN_STRIP_16x2"
 T1 0 -2025 400 400 0 60 N I 21 N "Val**"
@@ -70357,41 +70341,10 @@ Ne 0 ""
 Po 7500 -500
 $EndPAD
 $SHAPE3D
-Na "Nb_v1_libs//Nb_v1_3D//pin_strip_4x2.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$SHAPE3D
-Na "Nb_v2_libs/Nb_v2_3D/pins_array_12x2.wrl"
+Na "Nb_v2_libs\\Nb_v2_3D\\pins_array_16x2.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  pin_strip_16x2
-$MODULE PCB
-Po 0 0 0 15 4F4378B1 00000000 ~~
-Li PCB
-Sc 00000000
-AR 
-Op 0 0 0
-T0 0 -250 200 200 0 10 N I 21 N "PCB"
-T1 0 300 200 200 0 10 N I 21 N "VAL**"
-DS 500 -50 500 50 100 21
-DS -50 -500 50 -500 100 21
-DS -500 -50 -500 50 100 21
-DS 50 500 -50 500 100 21
-$SHAPE3D
-Na "Nb_v1_libs//Nb_v1_3D//PCB_Material_3D.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$SHAPE3D
-Na "Nb_v2_libs/Nb_v2_3D/PCB_Material_3D.wrl"
-Sc 6.400000 3.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$EndMODULE  PCB
 $EndLIBRARY

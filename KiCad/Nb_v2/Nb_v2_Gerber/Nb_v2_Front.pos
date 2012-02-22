@@ -1,0 +1,11 @@
+### Module positions - created on 2/22/2012 4:18:30 PM ###
+### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
+## Unit = inches, Angle = deg.
+## Side : Front
+# Ref    Val                  PosX       PosY        Rot     Side
+SW1      MODE                 5.7650     3.1100      90.0    Front
+SW2      HOUR+                6.1650     3.1100      90.0    Front
+SW3      MIN+                 5.3650     3.1100      90.0    Front
+SW4      RST                  4.9650     3.1100      90.0    Front
+SW5      ENTER                6.5650     3.1100      90.0    Front
+## End
