@@ -1,5 +1,5 @@
-## Module report - date 2/22/2012 4:18:56 PM
-## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
+## Module report - date Friday 24 February 2012 09:51:17 PM IST
+## Created by PcbNew version pcbnew (2011-05-25)-stable
 ## Unit = inches, Angle = deg.
 ##
 
@@ -7,7 +7,7 @@ $BeginDESCRIPTION
 
 $BOARD
 unit INCH
-upper_left_corner  0.589800  0.709600
+upper_left_corner  0.577800  0.709600
 lower_right_corner  7.435400  3.678100
 $EndBOARD
 
@@ -930,7 +930,7 @@ $EndSHAPE3D
 $PAD "1"
 position -0.050000  0.000000
 size  0.059100  0.059100
-drill  0.031500
+drill  0.032000
 shape_offset  0.000000  0.000000
 orientation  0.00
 Shape  Circ
@@ -939,7 +939,7 @@ $EndPAD
 $PAD "2"
 position  0.050000  0.000000
 size  0.059100  0.059100
-drill  0.031500
+drill  0.032000
 shape_offset  0.000000  0.000000
 orientation  0.00
 Shape  Circ
@@ -970,7 +970,7 @@ $EndSHAPE3D
 $PAD "1"
 position -0.050000  0.000000
 size  0.059100  0.059100
-drill  0.031500
+drill  0.032000
 shape_offset  0.000000  0.000000
 orientation  0.00
 Shape  Circ
@@ -979,7 +979,7 @@ $EndPAD
 $PAD "2"
 position  0.050000  0.000000
 size  0.059100  0.059100
-drill  0.031500
+drill  0.032000
 shape_offset  0.000000  0.000000
 orientation  0.00
 Shape  Circ
@@ -2595,7 +2595,7 @@ $EndPAD
 $PAD "-"
 position  0.000000  0.000000
 size  0.250000  0.250000
-drill  0.020000
+drill  0.035000
 shape_offset  0.000000  0.000000
 orientation  0.00
 Shape  Circ
