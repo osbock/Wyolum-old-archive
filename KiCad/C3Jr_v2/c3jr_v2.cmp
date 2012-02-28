@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 2/18/2012 11:41:09 AM
+Cmp-Mod V01 Genere par PcbNew le 2/28/2012 5:42:57 PM
 
 BeginCmp
 TimeStamp = 4F056EE7
@@ -1969,14 +1969,6 @@ IdModule  = C2;
 EndCmp
 
 BeginCmp
-TimeStamp = 4F3A495E
-Path = /4B3F1092/4F3A34A1
-Reference = U2;
-ValeurCmp = 7805;
-IdModule  = TO-220_Horizontal;
-EndCmp
-
-BeginCmp
 TimeStamp = 4F3F2EE2
 Path = /4F3F2CF7
 Reference = C5;
@@ -2126,6 +2118,14 @@ Path = /4B3F1092/4ED7AD74
 Reference = J3;
 ValeurCmp = V_IN;
 IdModule  = JACK_ALIM;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F3A495E
+Path = /4B3F1092/4F3A34A1
+Reference = U2;
+ValeurCmp = 7805;
+IdModule  = TO-220_Horizontal;
 EndCmp
 
 EndListe

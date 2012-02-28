@@ -1,4 +1,4 @@
-## Module report - date 2/18/2012 11:41:30 AM
+## Module report - date 2/28/2012 5:43:10 PM
 ## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ##
@@ -36,7 +36,7 @@ reference "J1"
 value "V_IN"
 footprint "con-hirose-UX60-MB-5S8"
 attribut smd
-position  7.190000  9.480000
+position  7.392500  9.480000
 orientation  180.00
 layer component
 $PAD "1"
@@ -5251,13 +5251,7 @@ orientation  0.00
 layer component
 $SHAPE3D
 Na "C3Jr_v2_libs\\C3Jr_v2_3D_Modules\\PCB_Material_3D.wrl"
-Sc 6.400000 0.500000 9.000000
-Of 0.000000 0.000000 -0.025000
-Ro 90.000000 0.000000 0.000000
-$EndSHAPE3D
-$SHAPE3D
-Na "C3Jr_v2_libs/C3Jr_v2_3D_Modules/PCB_Material_3D.wrl"
-Sc 6.400000 0.500000 9.000000
+Sc 1.000000 0.500000 1.000000
 Of 0.000000 0.000000 -0.025000
 Ro 90.000000 0.000000 0.000000
 $EndSHAPE3D
@@ -5274,7 +5268,7 @@ layer component
 $SHAPE3D
 Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//FrntCover.wrl"
 Sc 0.000000 0.000000 0.000000
-Of 0.000000 0.000000 1.000000
+Of 0.000000 0.000000 2.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  FP1
@@ -5891,7 +5885,7 @@ layer component
 $SHAPE3D
 Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//Baffle.wrl"
 Sc 0.000000 0.000000 0.000000
-Of 0.000000 0.000000 2.000000
+Of 0.000000 0.000000 1.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  BF1
@@ -5903,7 +5897,7 @@ footprint "Pot-Var2"
 attribut smd
 position  4.500000  1.510000
 orientation  90.00
-layer component
+layer copper
 $SHAPE3D
 Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//adjustable_rx2v4.wrl"
 Sc 1.000000 1.000000 1.000000
@@ -5911,7 +5905,7 @@ Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $PAD "1"
-position -0.100000 -0.100000
+position -0.100000  0.100000
 size  0.070000  0.070000
 drill  0.040000
 shape_offset  0.000000  0.000000
@@ -5929,7 +5923,7 @@ Shape  Circ
 Layer  all
 $EndPAD
 $PAD "3"
-position -0.100000  0.100000
+position -0.100000 -0.100000
 size  0.070000  0.070000
 drill  0.040000
 shape_offset  0.000000  0.000000
@@ -5947,7 +5941,7 @@ Shape  Circ
 Layer  all
 $EndPAD
 $PAD "1"
-position  0.000000 -0.100000
+position  0.000000  0.100000
 size  0.070000  0.070000
 drill  0.040000
 shape_offset  0.000000  0.000000
@@ -5956,7 +5950,7 @@ Shape  Circ
 Layer  all
 $EndPAD
 $PAD "3"
-position  0.000000  0.100000
+position  0.000000 -0.100000
 size  0.070000  0.070000
 drill  0.040000
 shape_offset  0.000000  0.000000
@@ -5983,7 +5977,7 @@ Shape  Circ
 Layer  all
 $EndPAD
 $PAD "3"
-position  0.100000  0.100000
+position  0.100000 -0.100000
 size  0.070000  0.070000
 drill  0.040000
 shape_offset  0.000000  0.000000
@@ -5992,7 +5986,7 @@ Shape  Circ
 Layer  all
 $EndPAD
 $PAD "1"
-position  0.100000 -0.100000
+position  0.100000  0.100000
 size  0.070000  0.070000
 drill  0.040000
 shape_offset  0.000000  0.000000
@@ -6019,7 +6013,7 @@ Shape  Circ
 Layer  all
 $EndPAD
 $PAD "1"
-position  0.200000 -0.100000
+position  0.200000  0.100000
 size  0.070000  0.070000
 drill  0.040000
 shape_offset  0.000000  0.000000
@@ -6028,7 +6022,7 @@ Shape  Circ
 Layer  all
 $EndPAD
 $PAD "3"
-position  0.200000  0.100000
+position  0.200000 -0.100000
 size  0.070000  0.070000
 drill  0.040000
 shape_offset  0.000000  0.000000
@@ -6055,24 +6049,6 @@ Shape  Circ
 Layer  all
 $EndPAD
 $PAD "3"
-position  0.400000 -0.100000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "1"
-position -0.300000  0.100000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "1"
 position  0.400000  0.100000
 size  0.070000  0.070000
 drill  0.040000
@@ -6081,8 +6057,26 @@ orientation  0.00
 Shape  Circ
 Layer  all
 $EndPAD
-$PAD "3"
+$PAD "1"
 position -0.300000 -0.100000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "1"
+position  0.400000 -0.100000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "3"
+position -0.300000  0.100000
 size  0.070000  0.070000
 drill  0.040000
 shape_offset  0.000000  0.000000
@@ -6489,7 +6483,7 @@ position  6.340000  1.855000
 orientation  0.00
 layer component
 $SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//batt-02.wrl"
+Na "C3Jr_v2_libs\\C3Jr_v2_3D_Modules\\batt-02.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -10487,52 +10481,6 @@ Layer  all
 $EndPAD
 $EndMODULE  C4
 
-$MODULE "U2"
-reference "U2"
-value "7805"
-footprint "TO-220_Horizontal"
-attribut smd
-position  6.102500  9.520000
-orientation  0.00
-layer component
-$PAD "GND"
-position  0.000000  0.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "VI"
-position -0.100000  0.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "VO"
-position  0.100000  0.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "GND"
-position  0.000000 -0.660000
-size  0.200000  0.200000
-drill  0.120000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Circ
-Layer  all
-$EndPAD
-$EndMODULE  U2
-
 $MODULE "C5"
 reference "C5"
 value "100n"
@@ -11214,6 +11162,58 @@ Shape  Oval
 Layer  all
 $EndPAD
 $EndMODULE  J3
+
+$MODULE "U2"
+reference "U2"
+value "7805"
+footprint "TO-220_Horizontal"
+attribut smd
+position  6.102500  9.520000
+orientation  0.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_libs\\C3Jr_v2_3D_Modules\\to220ab.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.250000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "GND"
+position  0.000000  0.000000
+size  0.100000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Oval
+Layer  all
+$EndPAD
+$PAD "VI"
+position -0.100000  0.000000
+size  0.100000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Oval
+Layer  all
+$EndPAD
+$PAD "VO"
+position  0.100000  0.000000
+size  0.100000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Oval
+Layer  all
+$EndPAD
+$PAD "GND"
+position  0.000000 -0.660000
+size  0.200000  0.200000
+drill  0.150000
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  U2
 
 $LINE 
 start 1.000000 10.000000

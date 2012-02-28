@@ -1,4 +1,4 @@
-### Module positions - created on 2/18/2012 11:40:28 AM ###
+### Module positions - created on 2/28/2012 5:42:49 PM ###
 ### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Front
@@ -150,7 +150,7 @@ D128     LED                  7.2000     7.9500      90.0    Front
 D258     DBG                  3.5400     9.8000     180.0    Front
 D260     PWR                  4.2300     1.8100      90.0    Front
 DIL-U1   STP16DP05            2.1850     2.1750       0.0    Front
-J1       V_IN                 7.1900     9.4800     180.0    Front
+J1       V_IN                 7.3925     9.4800     180.0    Front
 J2       V_IN                 6.6750     9.4800     180.0    Front
 J3       V_IN                 6.4875     9.8050     180.0    Front
 K1       PWR_SEL              2.3000     9.7000     180.0    Front
@@ -209,7 +209,6 @@ R30      100E                 3.2000     2.3525     180.0    Front
 R31      10K                  3.7075     2.3600     180.0    Front
 R32      LDR                  5.1000     1.2200       0.0    Front
 R33      680E                 3.2000     2.4450     180.0    Front
-R34      2k                   4.5000     1.5100      90.0    Front
 R35      680E                 1.3350     1.9100      90.0    Front
 R36      10k                  5.7025     1.9900     180.0    Front
 R37      10k                  5.6250     1.6400     180.0    Front
