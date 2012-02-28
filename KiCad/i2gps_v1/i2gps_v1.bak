@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/23/2012 11:49:41 AM
+EESchema Schematic File Version 2  date 2/23/2012 11:50:56 AM
 LIBS:i2gps_v1
 LIBS:power
 LIBS:i2gps_v1-cache
@@ -662,10 +662,10 @@ TXD
 Text Label 7275 6400 0    50   ~ 0
 RXD
 $Comp
-L CONN_6 P?
+L CONN_6 P7
 U 1 1 4F45D5FA
 P 8025 6650
-F 0 "P?" V 7975 6650 60  0000 C CNN
+F 0 "P7" V 7975 6650 60  0000 C CNN
 F 1 "GPS_UP501" V 8075 6650 60  0000 C CNN
 	1    8025 6650
 	1    0    0    -1  

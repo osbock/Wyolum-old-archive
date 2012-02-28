@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/23/2012 11:50:56 AM
+EESchema Schematic File Version 2  date 2/23/2012 5:46:03 PM
 LIBS:i2gps_v1
 LIBS:power
 LIBS:i2gps_v1-cache

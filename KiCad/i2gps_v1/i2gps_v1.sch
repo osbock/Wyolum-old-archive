@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/23/2012 11:50:56 AM
+EESchema Schematic File Version 2  date 2/23/2012 5:46:03 PM
 LIBS:i2gps_v1
 LIBS:power
 LIBS:i2gps_v1-cache
@@ -16,8 +16,14 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 7050 6300 0    60   Italic 12
-GPS Breakout
+Wire Notes Line
+	4050 3925 4050 3775
+Wire Notes Line
+	4050 3925 4750 3925
+Wire Notes Line
+	4750 3925 4750 3775
+Wire Notes Line
+	4750 3775 4050 3775
 Wire Notes Line
 	7050 7025 7050 6300
 Wire Notes Line
@@ -34,13 +40,13 @@ Wire Wire Line
 	7675 6500 7275 6500
 Connection ~ 10600 1850
 Wire Notes Line
-	4750 3675 4050 3675
+	4750 3750 4050 3750
 Wire Notes Line
-	4750 3675 4750 3525
+	4750 3750 4750 3600
 Wire Notes Line
-	4750 3525 4050 3525
+	4750 3600 4050 3600
 Wire Notes Line
-	4050 3525 4050 3675
+	4050 3600 4050 3750
 Wire Wire Line
 	4000 6900 3625 6900
 Wire Wire Line
@@ -362,7 +368,7 @@ Wire Wire Line
 	5000 4875 5000 1700
 Connection ~ 5000 2650
 Wire Wire Line
-	4800 1700 4800 4775
+	4800 1775 4800 4850
 Connection ~ 4800 2750
 Wire Wire Line
 	5000 800  5000 1200
@@ -614,14 +620,6 @@ Wire Wire Line
 Wire Wire Line
 	10850 6700 10950 6700
 Wire Notes Line
-	4750 3750 4050 3750
-Wire Notes Line
-	4750 3750 4750 3950
-Wire Notes Line
-	4750 3950 4050 3950
-Wire Notes Line
-	4050 3950 4050 3750
-Wire Notes Line
 	3550 6300 4525 6300
 Wire Notes Line
 	4525 6300 4525 7750
@@ -640,15 +638,17 @@ Wire Wire Line
 Wire Wire Line
 	7675 6800 7275 6800
 Wire Notes Line
-	4750 3275 4050 3275
+	4750 3425 4050 3425
 Wire Notes Line
-	4750 3275 4750 3375
+	4750 3425 4750 3575
 Wire Notes Line
-	4750 3375 4050 3375
+	4750 3575 4050 3575
 Wire Notes Line
-	4050 3375 4050 3275
-Text Notes 4100 3350 0    40   Italic 8
-B_03 : GPS 1pps
+	4050 3575 4050 3425
+Text Notes 7050 6300 0    60   Italic 12
+GPS Breakout
+Text Notes 4100 3500 0    40   Italic 8
+B_03 (PD2)\nGPS 1pps
 Text Label 7275 6900 0    50   ~ 0
 B_03
 Text Label 7275 6800 0    50   ~ 0
@@ -707,8 +707,8 @@ Text Notes 3850 6800 0    40   ~ 0
 (PD5)
 Text Label 3625 6800 0    50   ~ 0
 B_14
-Text Notes 4100 3600 0    40   Italic 8
-B14 (PD5) : for\nBootDrive Header
+Text Notes 4100 3675 0    40   Italic 8
+B14 (PD5)\nBootDrive Header
 Text Label 3625 6900 0    50   ~ 0
 RXD
 Text Label 3625 7000 0    50   ~ 0
@@ -732,7 +732,7 @@ $EndComp
 Text Label 5800 6500 0    50   ~ 0
 3V3
 Text Notes 4075 3850 0    40   Italic 8
-SQW signal\ncomes to PD7 / B12
+B_12 (PD7)\nSQW (1pps) signal
 Text Label 10950 6900 0    60   ~ 0
 BAT
 Text Label 10950 6800 0    60   ~ 0
