@@ -1,4 +1,4 @@
-## Module report - date 2/28/2012 5:43:10 PM
+## Module report - date 2/29/2012 3:20:22 PM
 ## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ##
@@ -16,20 +16,10 @@ reference "G2"
 value "LOGO"
 footprint "OSHW_6mm"
 attribut none
-position  5.202500  3.410000
+position  5.000000  4.800000
 orientation  0.00
 layer component
 $EndMODULE  G2
-
-$MODULE "G1"
-reference "G1"
-value "Logo-WL3"
-footprint "Logo-WL3"
-attribut none
-position  2.992500  3.265000
-orientation  0.00
-layer component
-$EndMODULE  G1
 
 $MODULE "J1"
 reference "J1"
@@ -5257,38 +5247,6 @@ Ro 90.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  PCB1
 
-$MODULE "FP1"
-reference "FP1"
-value "FacePlate"
-footprint "FacePlate"
-attribut none
-position  4.200000  5.500000
-orientation  0.00
-layer component
-$SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//FrntCover.wrl"
-Sc 0.000000 0.000000 0.000000
-Of 0.000000 0.000000 2.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$EndMODULE  FP1
-
-$MODULE "FM1"
-reference "FM1"
-value "FRAME"
-footprint "Frame"
-attribut none
-position  4.200000  5.500000
-orientation  0.00
-layer component
-$SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//Frame.wrl"
-Sc 0.000000 0.000000 0.000000
-Of 0.000000 0.000000 3.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$EndMODULE  FM1
-
 $MODULE "R33"
 reference "R33"
 value "680E"
@@ -5833,22 +5791,6 @@ Layer  all
 $EndPAD
 $EndMODULE  R36
 
-$MODULE "BP1"
-reference "BP1"
-value "BackPlate"
-footprint "BackPlate"
-attribut none
-position  4.200000  5.500000
-orientation  0.00
-layer component
-$SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//BackCover.wrl"
-Sc 0.000000 0.000000 0.000000
-Of 0.000000 0.000000 -2.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$EndMODULE  BP1
-
 $MODULE "P53"
 reference "P53"
 value "CONN_1"
@@ -5873,22 +5815,6 @@ Shape  Circ
 Layer  all
 $EndPAD
 $EndMODULE  P53
-
-$MODULE "BF1"
-reference "BF1"
-value "BAFFLE"
-footprint "Baffle"
-attribut none
-position  4.200000  5.500000
-orientation  0.00
-layer component
-$SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//Baffle.wrl"
-Sc 0.000000 0.000000 0.000000
-Of 0.000000 0.000000 1.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$EndMODULE  BF1
 
 $MODULE "R34"
 reference "R34"
@@ -11214,6 +11140,80 @@ Shape  Circ
 Layer  all
 $EndPAD
 $EndMODULE  U2
+
+$MODULE "BF1"
+reference "BF1"
+value "BAFFLE"
+footprint "Baffle"
+attribut none
+position  4.200000  5.500000
+orientation  0.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//Baffle.wrl"
+Sc 0.000000 0.000000 0.000000
+Of 0.000000 0.000000 2.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$EndMODULE  BF1
+
+$MODULE "BP1"
+reference "BP1"
+value "BackPlate"
+footprint "BackPlate"
+attribut none
+position  4.200000  5.500000
+orientation  0.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//BackCover.wrl"
+Sc 0.000000 0.000000 0.000000
+Of 0.000000 0.000000 -2.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$EndMODULE  BP1
+
+$MODULE "FP1"
+reference "FP1"
+value "FacePlate"
+footprint "FacePlate"
+attribut none
+position  4.200000  5.500000
+orientation  0.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//FrntCover.wrl"
+Sc 0.000000 0.000000 0.000000
+Of 0.000000 0.000000 1.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$EndMODULE  FP1
+
+$MODULE "FM1"
+reference "FM1"
+value "FRAME"
+footprint "Frame"
+attribut none
+position  4.200000  5.500000
+orientation  0.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//Frame.wrl"
+Sc 0.000000 0.000000 0.000000
+Of 0.000000 0.000000 3.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$EndMODULE  FM1
+
+$MODULE "G1"
+reference "G1"
+value "Logo-WL3"
+footprint "Logo-WL3"
+attribut none
+position  3.202500  4.672500
+orientation  0.00
+layer component
+$EndMODULE  G1
 
 $LINE 
 start 1.000000 10.000000

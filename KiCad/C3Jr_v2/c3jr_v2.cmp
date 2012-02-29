@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 2/28/2012 5:42:57 PM
+Cmp-Mod V01 Genere par PcbNew le 2/29/2012 3:20:15 PM
 
 BeginCmp
 TimeStamp = 4F056EE7
@@ -6,14 +6,6 @@ Path = OSHW_6mm
 Reference = G2;
 ValeurCmp = LOGO;
 IdModule  = OSHW_6mm;
-EndCmp
-
-BeginCmp
-TimeStamp = 4F056ECF
-Path = Logo-WL3
-Reference = G1;
-ValeurCmp = Logo-WL3;
-IdModule  = Logo-WL3;
 EndCmp
 
 BeginCmp
@@ -1169,22 +1161,6 @@ IdModule  = PCB;
 EndCmp
 
 BeginCmp
-TimeStamp = 4DC14FEA
-Path = /4D28241A/4DC14DC3
-Reference = FP1;
-ValeurCmp = FacePlate;
-IdModule  = FacePlate;
-EndCmp
-
-BeginCmp
-TimeStamp = 4DC1582B
-Path = /4D28241A/4DC15770
-Reference = FM1;
-ValeurCmp = FRAME;
-IdModule  = Frame;
-EndCmp
-
-BeginCmp
 TimeStamp = 4C9A36DE
 Path = /4C9A0F04
 Reference = R33;
@@ -1313,27 +1289,11 @@ IdModule  = RC03;
 EndCmp
 
 BeginCmp
-TimeStamp = 4DC14FE8
-Path = /4D28241A/4DC14DC7
-Reference = BP1;
-ValeurCmp = BackPlate;
-IdModule  = BackPlate;
-EndCmp
-
-BeginCmp
 TimeStamp = 4DC150FF
 Path = /4B3F1092/4DB97039
 Reference = P53;
 ValeurCmp = CONN_1;
 IdModule  = vite_4mm;
-EndCmp
-
-BeginCmp
-TimeStamp = 4DC14FE9
-Path = /4D28241A/4DC14DAD
-Reference = BF1;
-ValeurCmp = BAFFLE;
-IdModule  = Baffle;
 EndCmp
 
 BeginCmp
@@ -2126,6 +2086,46 @@ Path = /4B3F1092/4F3A34A1
 Reference = U2;
 ValeurCmp = 7805;
 IdModule  = TO-220_Horizontal;
+EndCmp
+
+BeginCmp
+TimeStamp = 4DC14FE9
+Path = /4D28241A/4DC14DAD
+Reference = BF1;
+ValeurCmp = BAFFLE;
+IdModule  = Baffle;
+EndCmp
+
+BeginCmp
+TimeStamp = 4DC14FE8
+Path = /4D28241A/4DC14DC7
+Reference = BP1;
+ValeurCmp = BackPlate;
+IdModule  = BackPlate;
+EndCmp
+
+BeginCmp
+TimeStamp = 4DC14FEA
+Path = /4D28241A/4DC14DC3
+Reference = FP1;
+ValeurCmp = FacePlate;
+IdModule  = FacePlate;
+EndCmp
+
+BeginCmp
+TimeStamp = 4DC1582B
+Path = /4D28241A/4DC15770
+Reference = FM1;
+ValeurCmp = FRAME;
+IdModule  = Frame;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F056ECF
+Path = Logo-WL3
+Reference = G1;
+ValeurCmp = Logo-WL3;
+IdModule  = Logo-WL3;
 EndCmp
 
 EndListe
