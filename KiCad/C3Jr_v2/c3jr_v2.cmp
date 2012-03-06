@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 2/29/2012 3:20:15 PM
+Cmp-Mod V01 Genere par PcbNew le 3/6/2012 6:07:44 PM
 
 BeginCmp
 TimeStamp = 4F056EE7
@@ -1121,14 +1121,6 @@ IdModule  = pin_sck_4-90;
 EndCmp
 
 BeginCmp
-TimeStamp = 4ED51382
-Path = /4B3F1092/4C109AA5
-Reference = P7;
-ValeurCmp = FTDI;
-IdModule  = pin_strip_6-90;
-EndCmp
-
-BeginCmp
 TimeStamp = 4ED51532
 Path = /4C134896/4D04EA8D
 Reference = K2;
@@ -2126,6 +2118,14 @@ Path = Logo-WL3
 Reference = G1;
 ValeurCmp = Logo-WL3;
 IdModule  = Logo-WL3;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F560346
+Path = /4B3F1092/4C109AA5
+Reference = P7;
+ValeurCmp = FTDI;
+IdModule  = pin_strip_6;
 EndCmp
 
 EndListe

@@ -1,4 +1,4 @@
-## Module report - date 2/29/2012 3:20:22 PM
+## Module report - date 3/6/2012 6:08:09 PM
 ## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ##
@@ -5004,76 +5004,6 @@ Shape  Circ
 Layer  all
 $EndPAD
 $EndMODULE  P41
-
-$MODULE "P7"
-reference "P7"
-value "FTDI"
-footprint "pin_strip_6-90"
-attribut smd
-position  1.750000  9.500000
-orientation  0.00
-layer component
-$SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//pin_strip_6-90.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position -0.250000  0.000000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  all
-$EndPAD
-$PAD "2"
-position -0.150000  0.000000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "3"
-position -0.050000  0.000000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "4"
-position  0.050000  0.000000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "5"
-position  0.150000  0.000000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "6"
-position  0.250000  0.000000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$EndMODULE  P7
 
 $MODULE "K2"
 reference "K2"
@@ -11214,6 +11144,76 @@ position  3.202500  4.672500
 orientation  0.00
 layer component
 $EndMODULE  G1
+
+$MODULE "P7"
+reference "P7"
+value "FTDI"
+footprint "pin_strip_6"
+attribut smd
+position  1.750000  9.500000
+orientation  0.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_libs\\C3Jr_v2_3D_Modules\\pins_array_6x1.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.250000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$PAD "2"
+position -0.150000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "3"
+position -0.050000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "4"
+position  0.050000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "5"
+position  0.150000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "6"
+position  0.250000  0.000000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  P7
 
 $LINE 
 start 1.000000 10.000000
