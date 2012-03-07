@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 3/6/2012 6:07:44 PM
+Cmp-Mod V01 Genere par PcbNew le 3/7/2012 3:22:49 PM
 
 BeginCmp
 TimeStamp = 4F056EE7
@@ -6,14 +6,6 @@ Path = OSHW_6mm
 Reference = G2;
 ValeurCmp = LOGO;
 IdModule  = OSHW_6mm;
-EndCmp
-
-BeginCmp
-TimeStamp = 4DBFEF7E
-Path = /4B3F1092/4ED7ABE7
-Reference = J1;
-ValeurCmp = V_IN;
-IdModule  = con-hirose-UX60-MB-5S8;
 EndCmp
 
 BeginCmp
@@ -1097,14 +1089,6 @@ IdModule  = pin_strip_8;
 EndCmp
 
 BeginCmp
-TimeStamp = 4C1CA95F
-Path = /4DB9676E
-Reference = R32;
-ValeurCmp = LDR;
-IdModule  = pin_strip_2;
-EndCmp
-
-BeginCmp
 TimeStamp = 4ED51720
 Path = /4B3F1092/4C9A16A1
 Reference = P42;
@@ -1657,14 +1641,6 @@ IdModule  = C2;
 EndCmp
 
 BeginCmp
-TimeStamp = 4C1CA7AB
-Path = /4B077AD9
-Reference = X1;
-ValeurCmp = 16MHz;
-IdModule  = XTAL;
-EndCmp
-
-BeginCmp
 TimeStamp = 4ED667F3
 Path = /4C134896/4C136D3C
 Reference = Q1;
@@ -2126,6 +2102,30 @@ Path = /4B3F1092/4C109AA5
 Reference = P7;
 ValeurCmp = FTDI;
 IdModule  = pin_strip_6;
+EndCmp
+
+BeginCmp
+TimeStamp = 4C1CA95F
+Path = /4DB9676E
+Reference = R32;
+ValeurCmp = LDR;
+IdModule  = pin_strip_2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4DBFEF7E
+Path = /4B3F1092/4ED7ABE7
+Reference = J1;
+ValeurCmp = V_IN;
+IdModule  = con-hirose-UX60-MB-5S8;
+EndCmp
+
+BeginCmp
+TimeStamp = 4C1CA7AB
+Path = /4B077AD9
+Reference = X1;
+ValeurCmp = 16MHz;
+IdModule  = XTAL;
 EndCmp
 
 EndListe
