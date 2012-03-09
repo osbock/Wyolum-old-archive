@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/23/2012 11:50:56 AM
+EESchema Schematic File Version 2  date 3/9/2012 5:54:13 PM
 LIBS:i2gps_v1
 LIBS:power
 LIBS:i2gps_v1-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title "Buckler, i2sd, v3, with RTC, with HW addressing"
-Date "23 feb 2012"
+Date "9 mar 2012"
 Rev "3"
 Comp "WyoLum"
 Comment1 ""
@@ -111,9 +111,6 @@ Wire Wire Line
 	7250 4350 6950 4350
 Wire Wire Line
 	7250 4650 6950 4650
-Wire Wire Line
-	6650 2350 7825 2350
-Connection ~ 6650 2350
 Text Label 6950 4800 0    60   ~ 0
 RST
 Text Label 6950 4650 0    60   ~ 0
@@ -132,10 +129,6 @@ Text HLabel 7250 4350 2    60   Input ~ 0
 BAT
 Text Notes 7950 1950 2    50   ~ 0
 Solder Bridge betn\nB2 & B20 to get 1Hz
-Text HLabel 7825 2350 2    50   Input ~ 0
-B_12
-Text Label 7550 2350 0    50   ~ 0
-1Hz
 $Comp
 L R R9
 U 1 1 4ECB8D22

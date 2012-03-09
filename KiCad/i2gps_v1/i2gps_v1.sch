@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/23/2012 5:46:03 PM
+EESchema Schematic File Version 2  date 3/9/2012 6:29:21 PM
 LIBS:i2gps_v1
 LIBS:power
 LIBS:i2gps_v1-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 2
 Title "Buckler, i2sd, v3, with RTC, with HW addressing"
-Date "23 feb 2012"
+Date "9 mar 2012"
 Rev "3"
 Comp "WyoLum"
 Comment1 ""
@@ -16,6 +16,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Wire Wire Line
+	3400 2750 4800 2750
 Wire Notes Line
 	4050 3925 4050 3775
 Wire Notes Line
@@ -110,7 +112,7 @@ Wire Wire Line
 	1500 2250 1075 2250
 Connection ~ 6300 6700
 Wire Wire Line
-	6300 6700 6300 6800
+	6300 6800 6300 6700
 Wire Wire Line
 	6300 6800 6400 6800
 Wire Wire Line
@@ -148,10 +150,10 @@ Wire Wire Line
 Wire Wire Line
 	2900 7000 2000 7000
 Wire Wire Line
-	2700 7300 2700 7200
+	2700 7200 2700 7300
 Connection ~ 10600 2400
 Wire Wire Line
-	10850 2575 10850 2400
+	10850 2400 10850 2575
 Wire Wire Line
 	10850 2575 10700 2575
 Wire Wire Line
@@ -162,7 +164,7 @@ Connection ~ 10650 1450
 Wire Wire Line
 	10650 1350 10650 1450
 Wire Wire Line
-	10925 1350 10925 1450
+	10925 1450 10925 1350
 Wire Wire Line
 	10925 1450 8875 1450
 Connection ~ 10400 1450
@@ -171,7 +173,7 @@ Wire Wire Line
 Wire Wire Line
 	10400 850  10325 850 
 Wire Wire Line
-	10325 1000 10450 1000
+	10450 1000 10325 1000
 Wire Wire Line
 	10450 1000 10450 700 
 Wire Wire Line
@@ -224,12 +226,12 @@ Wire Wire Line
 	5250 7000 5250 7050
 Connection ~ 5750 1900
 Wire Wire Line
-	5750 1900 6150 1900
+	6150 1900 5750 1900
 Wire Wire Line
 	6150 1900 6150 1950
 Connection ~ 6300 2450
 Wire Wire Line
-	6150 2450 7100 2450
+	7100 2450 6150 2450
 Wire Wire Line
 	6150 2450 6150 2250
 Wire Wire Line
@@ -250,7 +252,7 @@ Wire Wire Line
 	6450 4550 6450 4450
 Connection ~ 5750 3100
 Wire Wire Line
-	6150 3100 5750 3100
+	5750 3100 6150 3100
 Connection ~ 6450 4050
 Wire Wire Line
 	6450 4150 6450 4050
@@ -263,7 +265,7 @@ Connection ~ 5750 1100
 Wire Wire Line
 	5750 1100 5750 4050
 Wire Wire Line
-	5750 4050 7000 4050
+	7000 4050 5750 4050
 Wire Wire Line
 	7000 4050 7000 4650
 Wire Wire Line
@@ -295,8 +297,6 @@ Connection ~ 4800 800
 Wire Wire Line
 	4800 800  4800 1200
 Wire Wire Line
-	3400 2750 4800 2750
-Wire Wire Line
 	3400 2650 5000 2650
 Wire Wire Line
 	5500 4450 5500 3825
@@ -309,7 +309,7 @@ Connection ~ 5400 1100
 Wire Wire Line
 	5400 1200 5400 1100
 Wire Wire Line
-	5200 1200 5200 1100
+	5200 1100 5200 1200
 Connection ~ 7600 1100
 Connection ~ 1075 4975
 Connection ~ 1250 2450
@@ -320,11 +320,11 @@ Connection ~ 1400 2650
 Wire Wire Line
 	1500 2650 975  2650
 Wire Wire Line
-	975  2650 975  800 
+	975  800  975  2650
 Wire Wire Line
-	3400 4350 5400 4350
+	5400 4350 3400 4350
 Wire Wire Line
-	3400 4250 5200 4250
+	5200 4250 3400 4250
 Connection ~ 8400 2400
 Connection ~ 8025 4975
 Wire Wire Line
@@ -332,7 +332,7 @@ Wire Wire Line
 Wire Wire Line
 	8025 4750 8425 4750
 Wire Wire Line
-	7950 4875 5000 4875
+	5000 4875 7950 4875
 Wire Wire Line
 	2350 800  2350 1950
 Wire Wire Line
@@ -361,14 +361,14 @@ Connection ~ 1250 4975
 Wire Wire Line
 	9950 2475 9950 2350
 Wire Wire Line
-	5200 4250 5200 1700
+	5200 1700 5200 4250
 Wire Wire Line
-	5400 4350 5400 1700
+	5400 1700 5400 4350
 Wire Wire Line
-	5000 4875 5000 1700
+	5000 1700 5000 4875
 Connection ~ 5000 2650
 Wire Wire Line
-	4800 1775 4800 4850
+	4800 1700 4800 4775
 Connection ~ 4800 2750
 Wire Wire Line
 	5000 800  5000 1200
@@ -426,7 +426,7 @@ Wire Wire Line
 	3400 2850 3625 2850
 Connection ~ 7100 4975
 Wire Wire Line
-	7100 2450 7100 4975
+	7100 4975 7100 2450
 Connection ~ 7100 3650
 Wire Wire Line
 	9325 2400 9325 2300
@@ -441,14 +441,14 @@ Wire Wire Line
 Wire Wire Line
 	1150 6800 800  6800
 Wire Wire Line
-	6150 3450 6150 3650
+	6150 3650 6150 3450
 Wire Wire Line
-	6150 3650 7100 3650
+	7100 3650 6150 3650
 Connection ~ 6300 3650
 Wire Wire Line
-	6150 2850 6150 3050
+	6150 3050 6150 2850
 Wire Wire Line
-	6150 3050 7100 3050
+	7100 3050 6150 3050
 Connection ~ 6300 3050
 Wire Wire Line
 	6150 2550 6150 2500
@@ -458,7 +458,7 @@ Connection ~ 5750 2500
 Wire Wire Line
 	4950 7050 4950 7000
 Wire Wire Line
-	5250 7450 5250 7500
+	5250 7500 5250 7450
 Wire Wire Line
 	5250 7500 4950 7500
 Wire Wire Line
@@ -474,9 +474,9 @@ Wire Wire Line
 Wire Wire Line
 	5200 1100 8625 1100
 Wire Wire Line
-	8625 1100 8625 1850
+	8625 1850 8625 1100
 Wire Wire Line
-	8625 1850 9400 1850
+	9400 1850 8625 1850
 Wire Wire Line
 	8875 1450 8875 1300
 Wire Wire Line
@@ -485,9 +485,9 @@ Wire Wire Line
 	975  800  9400 800 
 Connection ~ 8700 800 
 Wire Wire Line
-	10600 1650 8700 1650
+	8700 1650 10600 1650
 Wire Wire Line
-	8700 1650 8700 650 
+	8700 650  8700 1650
 Wire Wire Line
 	10450 800  11150 800 
 Connection ~ 10450 800 
@@ -561,9 +561,9 @@ Wire Wire Line
 Wire Wire Line
 	1400 3150 1500 3150
 Wire Wire Line
-	4375 4050 4500 4050
+	4500 4050 4375 4050
 Wire Wire Line
-	4500 4050 4500 4600
+	4500 4600 4500 4050
 Wire Notes Line
 	4425 4600 3325 4600
 Wire Notes Line
@@ -587,9 +587,9 @@ Wire Wire Line
 Wire Wire Line
 	7750 1950 7650 1950
 Wire Wire Line
-	7650 1950 7650 2400
+	7650 2400 7650 1950
 Wire Wire Line
-	7650 2400 10850 2400
+	10850 2400 7650 2400
 Wire Wire Line
 	8500 2400 8500 2250
 Wire Wire Line
@@ -599,14 +599,14 @@ Wire Wire Line
 Wire Wire Line
 	700  2575 700  2550
 Wire Wire Line
-	700  2550 900  2550
+	900  2550 700  2550
 Wire Wire Line
-	900  2550 900  2850
+	900  2850 900  2550
 Connection ~ 900  2800
 Wire Wire Line
-	550  3050 550  4975
+	550  4975 550  3050
 Wire Wire Line
-	550  4975 8025 4975
+	8025 4975 550  4975
 Wire Wire Line
 	4000 2100 4000 2550
 Wire Wire Line
@@ -615,8 +615,6 @@ Wire Wire Line
 	4200 2325 4200 2100
 Wire Wire Line
 	4100 2250 4100 2100
-Wire Wire Line
-	10850 6100 10950 6100
 Wire Wire Line
 	10850 6700 10950 6700
 Wire Notes Line
@@ -654,13 +652,13 @@ B_03
 Text Label 7275 6800 0    50   ~ 0
 BAT
 Text Label 7275 6700 0    50   ~ 0
-5V0
+3V3
 Text Label 7275 6600 0    50   ~ 0
 GND
 Text Label 7275 6500 0    50   ~ 0
-TXD
-Text Label 7275 6400 0    50   ~ 0
 RXD
+Text Label 7275 6400 0    50   ~ 0
+TXD
 $Comp
 L CONN_6 P7
 U 1 1 4F45D5FA
@@ -689,7 +687,6 @@ F6 "RST" I R 10850 6600 60
 F7 "SQW" I R 10850 6700 60 
 F8 "32k" I R 10850 6800 60 
 F9 "BAT" I R 10850 6900 60 
-F10 "B_12" I R 10850 6100 60 
 $EndSheet
 $Comp
 L CRYSTAL_2 X1
@@ -732,7 +729,7 @@ $EndComp
 Text Label 5800 6500 0    50   ~ 0
 3V3
 Text Notes 4075 3850 0    40   Italic 8
-B_12 (PD7)\nSQW (1pps) signal
+B_12 (PD7)\nSQW (1Hz) signal
 Text Label 10950 6900 0    60   ~ 0
 BAT
 Text Label 10950 6800 0    60   ~ 0
@@ -757,8 +754,6 @@ Text Label 8325 3950 0    40   ~ 0
 SQW
 Text Label 8325 3850 0    40   ~ 0
 RST
-Text Label 10950 6100 0    50   ~ 0
-B_12
 Text Notes 4250 1700 1    50   ~ 0
 +5V
 Text Notes 4150 1700 1    50   ~ 0
@@ -1337,7 +1332,7 @@ B_14
 Text Label 3400 3750 0    60   ~ 0
 B_13
 Text Label 3400 3850 0    60   ~ 0
-B_12
+SQW
 Text Label 3400 4050 0    60   ~ 0
 B_11
 Text Label 3400 4150 0    60   ~ 0
