@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 3/9/2012 6:29:22 PM
+EESchema Schematic File Version 2  date 3/10/2012 5:22:51 PM
 LIBS:i2gps_v1
 LIBS:power
 LIBS:i2gps_v1-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title "Buckler, i2sd, v3, with RTC, with HW addressing"
-Date "9 mar 2012"
+Date "10 mar 2012"
 Rev "3"
 Comp "WyoLum"
 Comment1 ""
@@ -127,15 +127,13 @@ Text HLabel 7250 4500 2    60   Input ~ 0
 32k
 Text HLabel 7250 4350 2    60   Input ~ 0
 BAT
-Text Notes 7950 1950 2    50   ~ 0
-Solder Bridge betn\nB2 & B20 to get 1Hz
 $Comp
 L R R9
 U 1 1 4ECB8D22
 P 6650 2000
 F 0 "R9" V 6730 2000 50  0000 C CNN
 F 1 "10k" V 6650 2000 50  0000 C CNN
-F 2 "rc03_vert_LED" H 6650 2000 60  0001 C CNN
+F 2 "r_0805" H 6650 2000 60  0001 C CNN
 	1    6650 2000
 	1    0    0    -1  
 $EndComp
@@ -198,7 +196,7 @@ U 1 1 4E1FEA7F
 P 5550 2800
 F 0 "U4" H 5850 3350 60  0000 C CNN
 F 1 "DS3231N" H 5250 2400 60  0000 C CNN
-F 2 "DIP-24__600_ELL" H 5550 2800 60  0001 C CNN
+F 2 "DS3231" H 5550 2800 60  0001 C CNN
 	1    5550 2800
 	1    0    0    -1  
 $EndComp
@@ -208,7 +206,7 @@ U 1 1 4E1FEA7E
 P 4175 2775
 F 0 "C9" V 4225 2875 50  0000 L CNN
 F 1 "100n" V 4225 2575 50  0000 L CNN
-F 2 "C2" H 4175 2775 60  0001 C CNN
+F 2 "c_0805" H 4175 2775 60  0001 C CNN
 	1    4175 2775
 	1    0    0    -1  
 $EndComp
@@ -232,7 +230,7 @@ U 1 1 4E1FEA78
 P 3950 2800
 F 0 "BT1" H 3650 2600 50  0000 C CNN
 F 1 "BATT_RTC" H 3950 2610 50  0000 C CNN
-F 2 "CR2032" H 3950 2800 60  0001 C CNN
+F 2 "CR1632" H 3950 2800 60  0001 C CNN
 F 4 "BU2032SM-HD-GCT-ND " H 3950 2800 60  0001 C CNN "Digikey"
 	1    3950 2800
 	0    1    1    0   

@@ -1,0 +1,9 @@
+### Module positions - created on 3/10/2012 5:09:43 PM ###
+### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
+## Unit = inches, Angle = deg.
+## Side : Front
+# Ref    Val                  PosX       PosY        Rot     Side
+U1       MCP1700T-3302E/T     2.6450     1.5300     180.0    Front
+U2       74HC125              1.2825     1.2500       0.0    Front
+U3       MIC5219-5.0BM5       2.9050     1.2350      90.0    Front
+## End

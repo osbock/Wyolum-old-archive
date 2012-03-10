@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 3/9/2012 5:54:13 PM
+EESchema Schematic File Version 2  date 3/10/2012 3:22:33 PM
 LIBS:i2gps_v1
 LIBS:power
 LIBS:i2gps_v1-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title "Buckler, i2sd, v3, with RTC, with HW addressing"
-Date "9 mar 2012"
+Date "10 mar 2012"
 Rev "3"
 Comp "WyoLum"
 Comment1 ""
@@ -127,8 +127,6 @@ Text HLabel 7250 4500 2    60   Input ~ 0
 32k
 Text HLabel 7250 4350 2    60   Input ~ 0
 BAT
-Text Notes 7950 1950 2    50   ~ 0
-Solder Bridge betn\nB2 & B20 to get 1Hz
 $Comp
 L R R9
 U 1 1 4ECB8D22

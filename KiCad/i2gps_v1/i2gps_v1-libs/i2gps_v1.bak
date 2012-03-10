@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  3/10/2012 5:02:53 PM
+PCBNEW-LibModule-V1  3/10/2012 5:02:45 PM
 # encoding utf-8
 $INDEX
 C1
@@ -70165,7 +70165,6 @@ Cd vite 2,5mm
 Sc 00000000
 AR /4DCCE748
 Op 0 0 0
-.SolderPasteRatio 8.31822e-314
 T0 0 425 300 300 0 40 N I 21 N "SC1"
 T1 25 -150 300 300 0 40 N I 21 N "SCREW"
 $PAD
