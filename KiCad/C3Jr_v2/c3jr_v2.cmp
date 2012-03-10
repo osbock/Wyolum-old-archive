@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 3/7/2012 3:22:49 PM
+Cmp-Mod V01 Genere par PcbNew le 3/10/2012 5:44:31 PM
 
 BeginCmp
 TimeStamp = 4F056EE7
@@ -1273,14 +1273,6 @@ IdModule  = vite_4mm;
 EndCmp
 
 BeginCmp
-TimeStamp = 4DB96706
-Path = /4DB961F4
-Reference = R34;
-ValeurCmp = 2k;
-IdModule  = Pot-Var2;
-EndCmp
-
-BeginCmp
 TimeStamp = 4DB96705
 Path = /4DB95F47
 Reference = U1;
@@ -2126,6 +2118,14 @@ Path = /4B077AD9
 Reference = X1;
 ValeurCmp = 16MHz;
 IdModule  = XTAL;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F59AECE
+Path = /4DB961F4
+Reference = R34;
+ValeurCmp = 2k;
+IdModule  = Pot-Var2;
 EndCmp
 
 EndListe
