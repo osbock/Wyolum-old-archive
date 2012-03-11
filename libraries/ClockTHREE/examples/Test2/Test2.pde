@@ -43,7 +43,12 @@ void loop(){
     Serial.println(color_i, DEC);
     c3.displayfill(COLORS[color_i]);
     Serial.println("HERE3");
-    // c3.displayfill(WHITE);
+    if(color_i % 2){
+      c3.displayfill(WHITE);
+    }
+    else{
+      c3.displayfill(DARK);
+    }
     Serial.println("HERE4");
     dbg = !dbg;
     Serial.println("HERE5");

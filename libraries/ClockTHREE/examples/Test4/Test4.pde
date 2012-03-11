@@ -113,7 +113,7 @@ void loop(){
   y0 += vy0;
   x1 += vx1;
   y1 += vy1;
-  if(count < 250){
+  if(true){
     c3.displayfill(DARK);
     c3.line(x0, y0, x1, y1, WHITE);
   }

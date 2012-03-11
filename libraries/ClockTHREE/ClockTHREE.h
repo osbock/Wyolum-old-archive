@@ -230,6 +230,7 @@ class ClockTHREE {//:public Screen{
 
   // play a note
   void note(uint16_t freq);
+  void note(uint16_t freq, uint16_t duration_ms);
   void nonote();
 /*
  * Uses RTC if available or INT if not.

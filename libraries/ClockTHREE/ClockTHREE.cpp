@@ -420,10 +420,21 @@ void ClockTHREE::off(){
 }
 
 void ClockTHREE::note(uint16_t freq){
+#ifndef CLOCKTHREEJR
   return;
+#endif
   // commented out to save space.  Not supported on Sanguino
   MsTimer2::stop();
   tone(SPEAKER_PIN, freq);
+}
+
+void ClockTHREE::note(uint16_t freq, uint16_t duration_ms){
+#ifndef CLOCKTHREEJR
+  return;
+#endif
+  // commented out to save space.  Not supported on Sanguino
+  MsTimer2::stop();
+  tone(SPEAKER_PIN, freq, duration_ms);
 }
 
 void ClockTHREE::nonote(){
