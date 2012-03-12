@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 3/10/2012 5:44:31 PM
+Cmp-Mod V01 Genere par PcbNew le 3/12/2012 5:52:16 PM
 
 BeginCmp
 TimeStamp = 4F056EE7
@@ -1281,7 +1281,7 @@ IdModule  = dil_16-300_socket;
 EndCmp
 
 BeginCmp
-TimeStamp = 4DBBA556
+TimeStamp = 4F5DE509
 Path = /4DBBA4E0
 Reference = C12;
 ValeurCmp = 22p;
