@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 3/10/2012 5:22:51 PM
+EESchema Schematic File Version 2  date 3/12/2012 5:57:10 PM
 LIBS:i2gps_v1
 LIBS:power
 LIBS:i2gps_v1-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 2
 Title "Buckler, i2sd, v3, with RTC, with HW addressing"
-Date "10 mar 2012"
+Date "12 mar 2012"
 Rev "3"
 Comp "WyoLum"
 Comment1 ""
@@ -16,6 +16,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Label 7275 6400 0    50   ~ 0
+GPS_Rx
 Text Label 1400 3275 0    50   ~ 0
 PB7
 Text Label 1400 2800 0    50   ~ 0
@@ -647,9 +649,7 @@ Text Label 7275 6700 0    50   ~ 0
 Text Label 7275 6600 0    50   ~ 0
 GND
 Text Label 7275 6500 0    50   ~ 0
-RXD
-Text Label 7275 6400 0    50   ~ 0
-TXD
+GPS_Tx
 $Comp
 L CONN_6 P7
 U 1 1 4F45D5FA
@@ -1144,11 +1144,11 @@ $EndComp
 $Comp
 L I/O B12
 U 1 1 4DCD1D52
-P 3775 3850
-F 0 "B12" H 3855 3850 40  0000 L CNN
-F 1 "I/O" H 3775 3905 30  0001 C CNN
-F 2 "I/O" H 3775 3850 60  0001 C CNN
-	1    3775 3850
+P 3775 3450
+F 0 "B12" H 3855 3450 40  0000 L CNN
+F 1 "I/O" H 3775 3505 30  0001 C CNN
+F 2 "I/O" H 3775 3450 60  0001 C CNN
+	1    3775 3450
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1316,15 +1316,15 @@ ADC6
 Text Label 3400 3650 0    60   ~ 0
 Boot
 Text Label 3400 3750 0    60   ~ 0
-PD6
-Text Label 3400 3850 0    60   ~ 0
+GPS_Tx
+Text Label 3400 3450 0    60   ~ 0
 SQW
 Text Label 3400 4050 0    60   ~ 0
 PB0
 Text Label 3400 4150 0    60   ~ 0
 PB1
 Text Label 3400 2950 0    60   ~ 0
-ADC7
+GPS_Rx
 Text Label 3400 2250 0    60   ~ 0
 PC0
 Text Label 3400 2350 0    60   ~ 0
@@ -1339,7 +1339,7 @@ Text Label 3625 3250 0    60   ~ 0
 TXD
 Text Label 3625 3350 0    60   ~ 0
 1pps
-Text Label 3625 3450 0    60   ~ 0
+Text Label 3625 3850 0    60   ~ 0
 LED2
 Text Label 3400 3550 0    60   ~ 0
 LED1
