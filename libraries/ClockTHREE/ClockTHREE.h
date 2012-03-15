@@ -52,7 +52,8 @@ With the understanding that:
 */
 #ifndef ClockTHREE_h
 #define ClockTHREE_h
-#define CLOCKTHREEJR // uncomment this line for ClockTHREEjr
+// #define CLOCKTHREEJR // uncomment this line for ClockTHREEjr
+#define PEGGY2 // uncomment this line for ClockTHREEjr
 
 // Arduino 1.0 compatibility
 #if defined(ARDUINO) && ARDUINO >= 100
@@ -67,16 +68,23 @@ With the understanding that:
 #include "SPI.h"
 #include "rtcBOB.h"
 // #include "Screen.h"
-#ifndef CLOCKTHREEJR
-const int     N_ROW = 12;
-const int N_RGB_ROW = 10;
-const int     N_COL = 16;
-const int   N_COLOR = 9;
-#else
+#ifdef CLOCKTHREEJR
 const int     N_ROW = 8;
 const int N_RGB_ROW = 0;
 const int     N_COL = 16;
 const int   N_COLOR = 2;
+
+#elif defined PEGGY2
+const int     N_ROW = 25;
+const int N_RGB_ROW = 0;
+const int     N_COL = 25;
+const int   N_COLOR = 2;
+
+#else
+const int     N_ROW = 12;
+const int N_RGB_ROW = 10;
+const int     N_COL = 16;
+const int   N_COLOR = 9;
 #endif
 
 const unsigned long BAUDRATE = 57600;
@@ -84,19 +92,11 @@ const unsigned long BAUDRATE = 57600;
 const int COL_DRIVER_ENABLE = 17;
 
 const int SPEAKER_PIN = 10;
-#ifdef CLOCKTWO
-const int DBG = 12;
-const int MODE_PIN = 5;
-const int INC_PIN = 6;
-const int DEC_PIN = 7;
-const int ENTER_PIN = MODE_PIN;
-#else
 const int DBG = 16;
 const int MODE_PIN = 2;
 const int INC_PIN = 3;
 const int DEC_PIN = 15;
 const int ENTER_PIN = 8;
-#endif
 
 const int LDR_PIN = 0;
 

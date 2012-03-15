@@ -202,6 +202,7 @@ void grab_datetime(unsigned long date,
 		   unsigned long time,
 		   long lat,
 		   long lon,
+		   long alt,
 		   unsigned long speed,
 		   unsigned long course){
   Serial.print(date);

@@ -1,4 +1,8 @@
-#include <NewSoftSerial.h>
+#if defined(ARDUINO) && ARDUINO >= 100
+#include <SoftwareSerial.h>
+#else
+// #include <NewSoftSerial.h>
+#endif
 #include <TinyGPS.h>
 #include "Time.h"
 #include "Wire.h"
@@ -10,7 +14,11 @@
 */
 
 TinyGPS gps;
+#if defined(ARDUINO) && ARDUINO >= 100
+SoftwareSerial sws(5, 4);
+#else
 NewSoftSerial sws(5, 4);
+#endif
 
 #define THIRTY_YEARS 946771200
 const int SQW_PIN = 2;
@@ -35,7 +43,17 @@ void setup()
   Serial.print("Sizeof(gpsobject) = "); Serial.println(sizeof(TinyGPS));
   Serial.println();
   //setRTC(0);
-  set_1Hz_ref(getTime(), SQW_PIN, rtc_interrupt);  // attachInterrupt(0, rtc_interrupt, RISING);
+  set_1Hz_ref(getTime(), SQW_PIN, rtc_interrupt, FALLING);  // attachInterrupt(0, rtc_interrupt, RISING);
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(13, OUTPUT);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  digitalWrite(13, HIGH);
+  delay(200);
+  digitalWrite(2, LOW);
+  digitalWrite(3, LOW);
+  digitalWrite(13, LOW);
 
 }
 
@@ -47,24 +65,22 @@ void loop()
   byte Month, Day, Hour, Minute, Second, Hundredths;
   tmElements_t tm;
 
-  // Every 1 seconds we print an update
-  while (millis() - start < 100)
-  {
-    if (feedgps())
-      newdata = true;
-  }
-  
   if (newdata){
     gps.crack_datetime(&Year, &Month, &Day, &Hour, &Minute, &Second, &Hundredths, &age);
-    // Serial.print("Date: "); Serial.print(static_cast<int>(Month)); Serial.print("/"); Serial.print(static_cast<int>(Day)); Serial.print("/"); Serial.print(Year);
+    Serial.print("Date: "); Serial.print(static_cast<int>(Month)); Serial.print("/"); Serial.print(static_cast<int>(Day)); Serial.print("/"); Serial.print(Year);
     // Serial.print("  Time: "); Serial.print(static_cast<int>(Hour)); Serial.print(":"); Serial.print(static_cast<int>(Minute)); Serial.print(":"); Serial.print(static_cast<int>(Second)); Serial.print("."); Serial.print(static_cast<int>(Hundredths));
     // Serial.print("Second:"); Serial.println(Second, DEC);
     // Serial.print("second():"); Serial.println(second(), DEC);
     // Serial.print("millisecond():"); Serial.println(millisecond(), DEC);
     if(age < 500 && second() != Second || minute() != Minute || hour() != Hour ||
        day() != Day || month() != Month || year() != Year){
-      coarse_sync();
+     coarse_sync();
     }
+  }
+  else{
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(13, LOW);
   }
 }
 

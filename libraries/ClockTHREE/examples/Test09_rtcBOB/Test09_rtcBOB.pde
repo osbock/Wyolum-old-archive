@@ -212,7 +212,7 @@ Jan 6097
    */
 
   
-  setRTC(yyyy, mmm, dd, hh, mm, ss);
+  setRTC(yyyy, mmm, dd, hh - 3, mm, ss);
   setTime(hh, mmm, ss, dd, mm, yyyy);
 
   Serial.print("Time set to ");

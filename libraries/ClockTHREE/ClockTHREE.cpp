@@ -67,18 +67,19 @@ void ClockTHREE::init(){
   pinMode(DBG, OUTPUT);
   pinMode(COL_DRIVER_ENABLE, OUTPUT);
 
-  // digitalWrite(COL_DRIVER_ENABLE, LOW); // Enable col driver (slower)
-  PORTC |= 0b00001000; // Disable col driver
 
   display = NULL;
 
   // set column driver outputs.
-#ifdef CLOCKTWO
-  DDRD |= 0b00001111;
+#ifdef PEGGY2
+  PORTD = 0U;
+  DDRD = 255U;
 #else
+  // digitalWrite(COL_DRIVER_ENABLE, LOW); // Enable col driver (slower)
+  PORTC |= 0b00001000; // Disable col driver
   DDRD |= 0b11110000;
-  pinMode(DEC_PIN, INPUT);
 #endif
+  pinMode(DEC_PIN, INPUT);
   
   ////SET MOSI, SCK Output, all other SPI as input: 
   DDRB |= 0b00101110;
@@ -100,6 +101,8 @@ void ClockTHREE::init(){
 void ClockTHREE::refresh(){
   refresh(1);
 }
+
+#ifndef PEGGY2 // ClockTHREE sr and jr
 // Scan current display n times (if display is not NULL)
 void ClockTHREE::refresh(int n_hold){
   uint8_t col_j;
@@ -121,22 +124,13 @@ void ClockTHREE::refresh(int n_hold){
 	// transfer column to row drivers
 	SPI.transfer(Column.dat8[3]);
 	SPI.transfer(Column.dat8[2]);
-#ifdef SLOW_TRANS
-	PORTC |= 0b00001000; // Disable col driver 
-	SPI.transfer(Column.dat8[1]);
-#else
 	SPI.transfer(Column.dat8[1]);
 	PORTC |= 0b00001000; // Disable col driver 
-#endif
 	SPI.transfer(Column.dat8[0]);
 	PORTB |= 0b00000010; // Start latch pulse 
 	PORTB &= 0b11111101; // End latch pulse 
 
-#ifdef CLOCKTWO
-	PORTD = (PORTD & 0b11110000) | col_j; //only impacts lower 4 bits of PORTD
-#else
 	PORTD = (PORTD & 0b00001111) | (col_j << 4); //only impacts upper 4 bits of PORTD
-#endif
 	PORTC &= 0b11110111; // Enable col driver
 	_delay(my_delay);
 	col_j++;
@@ -145,6 +139,55 @@ void ClockTHREE::refresh(int n_hold){
     }
   }
 }
+#else // PEGGY2
+// PD0, PD1, PD2, PD3,  ----- PD4, PD5, PD6, PD7
+void ClockTHREE::refresh(int n_hold){
+  unsigned int i,k;
+  unsigned char j;
+  unsigned char out1,out2,out3,out4;
+  unsigned long dtemp;
+  union mix_t {
+    unsigned long atemp; 
+    unsigned char c[4];
+  } mix;
+  k = 0;
+  
+  while (k != n_hold){
+    k++;
+    j = 0;
+    while (j < 25) { 
+      if (j == 0){
+	PORTD = 0xa0;
+      }
+      
+      else if (j < 16)
+	PORTD = j;
+      else
+	PORTD = (j - 15) << 4;  
+      
+      dtemp = display[j]; 
+      out4 = dtemp & 255U;
+      dtemp >>= 8;
+      out3 = dtemp & 255U;
+      dtemp >>= 8;
+      out2 = dtemp & 255U;	 
+      dtemp >>= 8;
+      out1 = dtemp & 255U; 	
+
+      
+      SPI.transfer(out1);
+      SPI.transfer(out2);
+      SPI.transfer(out3);
+      PORTD = 0;
+      SPI.transfer(out4); 
+      PORTB |= 2U;    
+      PORTB &= 253U;  
+      
+      j++;
+    }
+  }
+}
+#endif
 
 // Gradually change display to new_display in over "steps" screens
 // return pointer to old display
@@ -204,7 +247,40 @@ uint32_t ClockTHREE::getcol(uint8_t xpos){
   return out;
 }
 
-#ifndef CLOCKTHREEJR
+#if (defined CLOCKTHREEJR || defined PEGGY2)
+/* 
+   ClockTHREEjr or PEGGY2 set pixel.  
+   color -- 1 = on
+            0 = off
+ */
+void ClockTHREE::setPixel(uint8_t xpos, uint8_t ypos, uint8_t color){
+#ifdef PEGGY2
+  uint8_t tmp;
+  tmp = xpos;
+  xpos = ypos;
+  ypos = tmp;
+#endif
+  if(display != NULL){
+    if(ypos < N_ROW && xpos < N_COL){
+      if(color == 0){
+	// clear pixel
+	display[xpos] &= ~((uint32_t)1 << (ypos)); 
+      }
+      else{
+	// set pixel to color
+	display[xpos] |= ((uint32_t)1 << (ypos));
+      }
+    }
+  }
+}
+uint8_t ClockTHREE::getPixel(uint8_t xpos, uint8_t ypos){
+#ifdef PEGGY2
+  return (display[ypos] >> xpos) && 1;
+#else
+  return (display[xpos] >> ypos) && 1;
+#endif
+}
+#else // CLOCKTHREE (sr)
 /* 
  * Turn a pixel to color (0 == off)
  * for rows 10 and 11:
@@ -243,28 +319,6 @@ void ClockTHREE::setPixel(uint8_t xpos, uint8_t ypos, uint8_t color){
     }
   }
 }
-#else
-/* 
-   ClockTHREEjr set pixel.  (define CLOCKTHREEJR in pde file)
-   color -- 1 = on
-            0 = off
- */
-void ClockTHREE::setPixel(uint8_t xpos, uint8_t ypos, uint8_t color){
-  if(display != NULL){
-    if(ypos < N_ROW && xpos < N_COL){
-      if(color == 0){
-	// clear pixel
-	display[xpos] &= ~((uint32_t)1 << (ypos)); 
-      }
-      else{
-	// set pixel to color
-	display[xpos] |= ((uint32_t)1 << (ypos));
-      }
-    }
-  }
-}
-#endif
-// TODO: define for C3jr
 /*
  * Return color value of pixel at xpos, ypos
  * For rows 10 and 11, return 0b000 if MONO pixel is set
@@ -293,6 +347,7 @@ uint8_t ClockTHREE::getPixel(uint8_t xpos, uint8_t ypos){
     }
   }
 }
+#endif
 		
 //Draw a line from (x0,y0) to (x1,y1)
 void ClockTHREE::line(double x0, double y0, double x1, double y1, 

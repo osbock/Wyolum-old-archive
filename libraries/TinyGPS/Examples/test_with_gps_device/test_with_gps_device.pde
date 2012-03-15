@@ -1,4 +1,6 @@
-#include <NewSoftSerial.h>
+//#include <NewSoftSerial.h>
+#include <SoftwareSerial.h>
+
 #include <TinyGPS.h>
 
 /* This sample code demonstrates the normal use of a TinyGPS object.
@@ -7,7 +9,8 @@
 */
 
 TinyGPS gps;
-NewSoftSerial nss(2, 3);
+//NewSoftSerial nss(2, 3);
+SoftwareSerial nss(5, 4);
 
 void gpsdump(TinyGPS &gps);
 bool feedgps();
