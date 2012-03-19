@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 3/14/2012 5:48:02 PM
+EESchema Schematic File Version 2  date 3/14/2012 5:50:38 PM
 LIBS:Gemini_v1
 LIBS:power
 LIBS:device
@@ -35,7 +35,7 @@ EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
-Sheet 4 4
+Sheet 4 5
 Title "Buckler, i2sd, v3, with RTC, with HW addressing"
 Date "14 mar 2012"
 Rev "3"

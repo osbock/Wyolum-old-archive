@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 3/14/2012 5:50:38 PM
+EESchema Schematic File Version 2  date Tuesday 20 March 2012 12:04:09 AM IST
 LIBS:Gemini_v1
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 5
 Title ""
-Date "14 mar 2012"
+Date "19 mar 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -46,33 +46,33 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Sheet
-S 850  3400 1050 600 
+S 850  3950 1050 600 
 U 4F608CE1
 F0 "Gemini_Mech" 60
 F1 "Gemini_Mech.sch" 60
 $EndSheet
 $Sheet
-S 850  2050 1050 975 
+S 850  2450 1050 1000
 U 4E1FEA4E
 F0 "Gemini_rtc" 60
 F1 "Gemini_rtc.sch" 60
-F2 "GND" I R 1900 2550 60 
-F3 "SDA" I R 1900 2450 60 
-F4 "SCL" I R 1900 2350 60 
-F5 "5V0" I R 1900 2250 60 
-F6 "RST" I R 1900 2650 60 
-F7 "SQW" I R 1900 2750 60 
-F8 "32k" I R 1900 2850 60 
-F9 "BAT" I R 1900 2950 60 
+F2 "GND" I R 1900 2950 60 
+F3 "SDA" I R 1900 2850 60 
+F4 "SCL" I R 1900 2750 60 
+F5 "5V0" I R 1900 2650 60 
+F6 "RST" I R 1900 3050 60 
+F7 "SQW" I R 1900 3150 60 
+F8 "32k" I R 1900 3250 60 
+F9 "BAT" I R 1900 3350 60 
 $EndSheet
 $Sheet
-S 850  1500 1050 300 
+S 850  1650 1050 300 
 U 4F60847D
 F0 "Gemini_Target" 60
 F1 "Gemini_Target.sch" 60
 $EndSheet
 $Sheet
-S 850  1000 1050 300 
+S 850  850  1050 300 
 U 4F608446
 F0 "Gemini_Host" 60
 F1 "Gemini_Host.sch" 60
@@ -196,13 +196,13 @@ Text Notes 1800 6200 0    60   Italic 12
 FTDI Header
 Text Notes 4625 6200 0    60   Italic 12
 INDICATORS
-Text Label 2000 2250 0    60   ~ 0
+Text Label 2000 2650 0    60   ~ 0
 5V0
-Text Label 2000 2350 0    60   ~ 0
+Text Label 2000 2750 0    60   ~ 0
 SCL
-Text Label 2000 2450 0    60   ~ 0
+Text Label 2000 2850 0    60   ~ 0
 SDA
-Text Label 2000 2550 0    60   ~ 0
+Text Label 2000 2950 0    60   ~ 0
 GND
 $Comp
 L CONN_6 P?
@@ -244,13 +244,13 @@ F 2 "I/O" H 6500 6900 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 NoConn ~ 6350 6900
-Text Label 2000 2650 0    60   ~ 0
+Text Label 2000 3050 0    60   ~ 0
 RST
-Text Label 2000 2750 0    60   ~ 0
+Text Label 2000 3150 0    60   ~ 0
 SQW
-Text Label 2000 2850 0    60   ~ 0
+Text Label 2000 3250 0    60   ~ 0
 32k
-Text Label 2000 2950 0    60   ~ 0
+Text Label 2000 3350 0    60   ~ 0
 BAT
 Text Label 5750 6400 0    50   ~ 0
 3V3
@@ -319,13 +319,13 @@ Wire Notes Line
 Wire Notes Line
 	3500 6200 4475 6200
 Wire Wire Line
-	1900 2750 2000 2750
+	1900 3150 2000 3150
 Wire Wire Line
 	6350 7525 5750 7525
 Wire Wire Line
-	1900 2550 2000 2550
+	1900 2950 2000 2950
 Wire Wire Line
-	1900 2350 2000 2350
+	1900 2750 2000 2750
 Wire Notes Line
 	5650 7650 5650 6200
 Wire Notes Line
@@ -421,9 +421,9 @@ Wire Notes Line
 Wire Notes Line
 	3500 6200 3500 7650
 Wire Wire Line
-	1900 2250 2000 2250
+	1900 2650 2000 2650
 Wire Wire Line
-	1900 2450 2000 2450
+	1900 2850 2000 2850
 Wire Wire Line
 	6350 7425 5750 7425
 Wire Wire Line
@@ -432,11 +432,11 @@ Wire Wire Line
 	6250 6600 6250 6700
 Connection ~ 6250 6600
 Wire Wire Line
-	1900 2650 2000 2650
+	1900 3050 2000 3050
 Wire Wire Line
-	1900 2850 2000 2850
+	1900 3250 2000 3250
 Wire Wire Line
-	1900 2950 2000 2950
+	1900 3350 2000 3350
 Wire Wire Line
 	6350 6400 5750 6400
 Wire Wire Line

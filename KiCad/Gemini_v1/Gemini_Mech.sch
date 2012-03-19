@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 3/14/2012 5:50:38 PM
+EESchema Schematic File Version 2  date Tuesday 20 March 2012 12:04:09 AM IST
 LIBS:Gemini_v1
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 5
 Title ""
-Date "14 mar 2012"
+Date "19 mar 2012"
 Rev ""
 Comp ""
 Comment1 ""
