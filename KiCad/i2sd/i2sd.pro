@@ -1,6 +1,6 @@
-update=07/21/11 11:03:42
+update=3/17/2012 5:44:59 PM
 version=1
-last_client=eeschema
+last_client=kicad
 [cvpcb]
 version=1
 NetITyp=0
@@ -11,8 +11,6 @@ LibDir=
 NetType=0
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
 [pcbnew]
 version=1
 PadDrlX=400
@@ -67,3 +65,5 @@ LabSize=60
 [eeschema/libraries]
 LibName1=libs/i2sd
 LibName2=libs/power
+[general]
+version=1

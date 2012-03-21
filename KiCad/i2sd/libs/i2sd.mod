@@ -200,7 +200,7 @@ Ne 0 ""
 Po -1000 800
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\pcb_push.wrl"
+Na "libs\\i2sd_3D_Modules\\pcb_push.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 90.000000
@@ -252,7 +252,7 @@ Ne 0 ""
 Po 1000 0
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\capa_2pas_5x5mm.wrl"
+Na "libs\\i2sd_3D_Modules\\capa_2pas_5x5mm.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -288,7 +288,7 @@ Ne 0 ""
 Po 500 0
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\capa_1_pas.wrl"
+Na "libs\\i2sd_3D_Modules\\capa_1_pas.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -334,7 +334,7 @@ Ne 0 ""
 Po 0 0
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\capa_2pas_5x5mm.wrl"
+Na "libs\\i2sd_3D_Modules\\capa_2pas_5x5mm.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -365,7 +365,7 @@ Ne 0 ""
 Po 750 0
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\c_vert_c2v8.wrl"
+Na "libs\\i2sd_3D_Modules\\c_vert_c2v8.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -468,7 +468,7 @@ Ne 0 ""
 Po 1500 -550
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\pins_array_4x1.wrl"
+Na "libs\\i2sd_3D_Modules\\pins_array_4x1.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -505,7 +505,7 @@ Ne 0 ""
 Po -375 0
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\c_0805.wrl"
+Na "libs\\i2sd_3D_Modules\\c_0805.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -544,7 +544,7 @@ Ne 0 ""
 Po -375 0
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\r_0805.wrl"
+Na "libs\\i2sd_3D_Modules\\r_0805.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -630,7 +630,7 @@ Ne 0 ""
 Po 2000 -1000
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\pin_strip_3x2.wrl"
+Na "libs\\i2sd_3D_Modules\\pin_strip_3x2.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.100000 0.050000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -883,7 +883,7 @@ Ne 0 ""
 Po 2500 0
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\pins_array_6x1.wrl"
+Na "libs\\i2sd_3D_Modules\\pins_array_6x1.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -916,7 +916,7 @@ Ne 0 ""
 Po 500 0
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\verti_resistor.wrl"
+Na "libs\\i2sd_3D_Modules\\verti_resistor.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -952,7 +952,7 @@ Ne 0 ""
 Po -375 0
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\r_0805.wrl"
+Na "libs\\i2sd_3D_Modules\\r_0805.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1023,7 +1023,7 @@ Ne 0 ""
 Po -1500 -650
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\socket_1x4.wrl"
+Na "libs\\i2sd_3D_Modules\\socket_1x4.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1272,7 +1272,7 @@ Ne 0 ""
 Po 1100 1880
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\tqfp32.wrl"
+Na "libs\\i2sd_3D_Modules\\tqfp32.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1342,7 +1342,7 @@ Ne 0 ""
 Po 500 -500
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\pins_array_2x2.wrl"
+Na "libs\\i2sd_3D_Modules\\pins_array_2x2.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1389,7 +1389,7 @@ Ne 0 ""
 Po 0 0
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\capa_2pas_5x5mm.wrl"
+Na "libs\\i2sd_3D_Modules\\capa_2pas_5x5mm.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1425,7 +1425,7 @@ Ne 0 ""
 Po 0 -500
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\cp_5x11mm.wrl"
+Na "libs\\i2sd_3D_Modules\\cp_5x11mm.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1489,7 +1489,7 @@ Ne 0 ""
 Po 2500 0
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\pin_strip_6-90.wrl"
+Na "libs\\i2sd_3D_Modules\\pin_strip_6-90.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1563,7 +1563,7 @@ Ne 0 ""
 Po 1500 0
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\pin_strip_4.wrl"
+Na "libs\\i2sd_3D_Modules\\pin_strip_4.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1586,7 +1586,7 @@ Ne 0 ""
 Po 0 0
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\vite_2mm5.wrl"
+Na "libs\\i2sd_3D_Modules\\vite_2mm5.wrl"
 Sc 1.200000 1.200000 1.200000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1724,7 +1724,7 @@ Ne 0 ""
 Po -1500 -950
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\cms_so14.wrl"
+Na "libs\\i2sd_3D_Modules\\cms_so14.wrl"
 Sc 0.500000 0.350000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1773,7 +1773,7 @@ Ne 0 ""
 Po 500 0
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\pin_strip_2.wrl"
+Na "libs\\i2sd_3D_Modules\\pin_strip_2.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1827,7 +1827,7 @@ Ne 0 ""
 Po -500 0
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\pcb_push_spst.wrl"
+Na "libs\\i2sd_3D_Modules\\pcb_push_spst.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 90.000000
@@ -1879,7 +1879,7 @@ Ne 0 ""
 Po 375 500
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\SOT23_3.wrl"
+Na "libs\\i2sd_3D_Modules\\SOT23_3.wrl"
 Sc 0.500000 0.500000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 180.000000
@@ -1946,7 +1946,7 @@ Ne 0 ""
 Po -375 -550
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\SOT23_3.wrl"
+Na "libs\\i2sd_3D_Modules\\SOT23_3.wrl"
 Sc 0.500000 0.500000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 180.000000
@@ -2016,7 +2016,7 @@ Ne 0 ""
 Po 0 0
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\batt-02.wrl"
+Na "libs\\i2sd_3D_Modules\\batt-02.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2153,7 +2153,7 @@ Ne 5 "/clock2-Aux/SCL"
 Po -1750 -2000
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\cms_so16.wrl"
+Na "libs\\i2sd_3D_Modules\\cms_so16.wrl"
 Sc 0.500000 0.600000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2196,7 +2196,7 @@ Ne 0 ""
 Po 0 -750
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\c_elec_5x5_3.wrl"
+Na "libs\\i2sd_3D_Modules\\c_elec_5x5_3.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 90.000000
@@ -2235,7 +2235,7 @@ Ne 0 ""
 Po 5750 0
 $EndPAD
 $SHAPE3D
-Na "libs\\3D Modules\\cr2032.wrl"
+Na "libs\\i2sd_3D_Modules\\cr2032.wrl"
 Sc 10.000000 10.000000 10.000000
 Of 0.000000 0.000000 0.150000
 Ro -90.000000 0.000000 90.000000
