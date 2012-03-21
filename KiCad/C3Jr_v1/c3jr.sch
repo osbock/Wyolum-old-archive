@@ -1,6 +1,7 @@
-EESchema Schematic File Version 2  date 11/23/2011 4:10:03 PM
+EESchema Schematic File Version 2  date 3/19/2012 5:46:04 PM
 LIBS:C3Jr_v1
 LIBS:power
+LIBS:c3jr-cache
 LIBS:c3jr-cache
 EELAYER 25  0
 EELAYER END
@@ -8,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
 Title "ClockTHREE Junior aka C3Jr"
-Date "21 nov 2011"
+Date "19 mar 2012"
 Rev "A"
 Comp "an improved WordClock based on ClockTHREE"
 Comment1 "www.wyolum.com"
@@ -16,8 +17,15 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 "part of the project inspired from : http://www.evilmadscientist.com/article.php/peggy2"
 Comment4 ""
 $EndDescr
-Text Notes 1500 6600 0    40   ~ 0
-delete me!
+$Comp
+L PCB PCB1
+U 1 1 4F672369
+P 1100 7200
+F 0 "PCB1" H 1100 7500 60  0000 C CNN
+F 1 "PCB" H 1100 6900 60  0000 C CNN
+	1    1100 7200
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
 	700  4700 700  4800
 Wire Wire Line

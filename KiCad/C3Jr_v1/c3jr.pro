@@ -1,10 +1,12 @@
-update=11/23/2011 4:49:42 PM
-last_client=kicad
+update=3/19/2012 5:50:04 PM
+last_client=pcbnew
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=D:/Users/Anool/Downloads/KiCAD/Libs/USB
@@ -60,6 +62,4 @@ LastNetListRead=c3jr.net
 [pcbnew/libraries]
 LibDir=../../../../../../../Downloads/KiCAD/Libs;D:/Users/Anool/Downloads/KiCAD/Libs/USB
 LibName1=C3Jr_v1_libs/C3Jr_v1_parts
-[general]
-version=1
 
