@@ -1,4 +1,5 @@
-EESchema Schematic File Version 2  date Tuesday 20 March 2012 12:04:09 AM IST
+EESchema Schematic File Version 2  date Wednesday 21 March 2012 10:16:44 PM IST
+LIBS:numato_kicad_lib
 LIBS:Gemini_v1
 LIBS:power
 LIBS:device
@@ -37,7 +38,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 5
 Title "Buckler, i2sd, v3, with RTC, with HW addressing"
-Date "19 mar 2012"
+Date "21 mar 2012"
 Rev "3"
 Comp "WyoLum"
 Comment1 ""
