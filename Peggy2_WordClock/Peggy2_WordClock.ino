@@ -106,6 +106,16 @@ void setup(){
   delay(200);
   Serial.print("RTC Unix Time:");
   Serial.println(getTime(), DEC);
+  
+  for(int i=0; i < 5; i++){
+    digitalWrite(D1_PIN, LOW);
+    digitalWrite(D2_PIN, HIGH);
+    delay(200)
+    digitalWrite(D1_PIN, HIGH);
+    digitalWrite(D2_PIN, LOW);
+    delay(200)
+  }
+  
 }
 
 unsigned long count = 0;
