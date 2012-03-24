@@ -1,3 +1,4 @@
+from __future__ import print_function
 import sys
 import glob
 import serial
@@ -57,7 +58,7 @@ def read_constants(fn):
                         out[n] = MsgDef(v, out)
                     except Exception, e:
                         if '*' not in line:
-                            print 'problem with ', line, e
+                            print('problem with ', line, e)
                 else:
                     out[n] = v
             except:
@@ -95,14 +96,14 @@ def getSerialports():
         out = []
         import scanwin32
         for order, port, desc, hwid in sorted(scanwin32.comports()):
-            print "%-10s: %s (%s) ->" % (port, desc, hwid),
+            print( "%-10s: %s (%s) ->" % (port, desc, hwid),)
             try:
                 s = serial.Serial(port) # test open
                 s.close()
             except serial.serialutil.SerialException:
-                print "can't be opened"
+                print( "can't be opened")
             else:
-                print "Ready"
+                print("Ready")
                 out.append(port)
     elif sys.platform.startswith('darwin'): # mac
         out = glob.glob('/dev/tty.usb*')
@@ -125,7 +126,7 @@ def connect(serialport='/dev/ttyUSB0', _gmt_offset=None):
         pass
         
     # raw_input('...')
-    print 'serialport', serialport
+    print( 'serialport', serialport)
     ser = serial.Serial(serialport,
                         baudrate=57600,
                         timeout=SER_TIMEOUT)
@@ -181,10 +182,10 @@ def main():
 
     now = time.gmtime(time_req())
     year = now.tm_year
-    print 'year', year
+    print('year', year)
 
     time_set()
-    print time_req()
+    print (time_req())
 
 if __name__ == '__main__':
     connect(getSerialports()[0])
@@ -192,13 +193,13 @@ if __name__ == '__main__':
         for arg in sys.argv[1:]:
             if arg == 'set':
                 time_set()
-                print '      P2 time',  fmt_time(time.gmtime(time_req()))
+                print ('      P2 time',  fmt_time(time.gmtime(time_req())))
             elif arg == 'time':
-                print '      P2 time',  fmt_time(time.gmtime(time_req()))
+                print ('      P2 time',  fmt_time(time.gmtime(time_req())))
             elif arg == 'pc_time':
-                print '     PC TIME:', fmt_time(time.gmtime(to_gmt(time.time())))
+                print ('     PC TIME:', fmt_time(time.gmtime(to_gmt(time.time()))))
             else:
-                print 'huh?', arg
-    else:
-        # read_write_test()
-        main()
+                print ('huh?', arg)
+        else:
+            # read_write_test()
+            main()
