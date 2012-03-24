@@ -81,7 +81,7 @@ void set_row(uint8_t y, uint32_t state){
 }
 
 void setup(){
-  Serial.begin(115200);
+  Serial.begin(57600);
   Serial.println("Peggy2 WordClock 1.0!");
   Serial.println("WyoLum, LLC, 2012");
   Serial.print("Using Peggy2 I2C Address: ");
@@ -90,6 +90,7 @@ void setup(){
   pinMode(D1_PIN, OUTPUT);
   pinMode(D2_PIN, OUTPUT);
 
+#ifdef SDINIT
   Serial.print("Initializing SD card...");
   pinMode(10, OUTPUT);
   digitalWrite(D1_PIN, HIGH); 
@@ -99,6 +100,7 @@ void setup(){
     return;
   }
   Serial.println("SD initialization done.");
+#endif
   Wire.begin();
   clear();
   delay(200);
@@ -119,7 +121,7 @@ uint8_t n_byte_per_display = 4;         // number of bytes used for each 5 minun
 // globals
 int display_idx;                  // display index (0 or 1)
 uint8_t last_min_hack_inc = 0;    // last mininte hack incriment (to know when it has changed)
-uint8_t last_time_inc = 0;        // last time incriment (to know when it has changed)
+uint8_t last_time_inc = 289;        // last time incriment (to know when it has changed)
 uint8_t last_pwm = 0;
 
 time_t last_time = 0;
@@ -131,7 +133,7 @@ void loop(){
   }
   uint8_t word[3];                // will store start_x, start_y, length of word
   time_t spm = getTime() % 86400; // seconds past midnight
-  uint16_t time_inc = spm / 288;  // 5-minute time increment are we in
+  uint16_t time_inc = spm / 300;  // 5-minute time increment are we in
   
   // which mininute hack incriment are we on?
 

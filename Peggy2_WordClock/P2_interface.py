@@ -11,9 +11,6 @@ DID_ALARM_LEN = 12
 SER_TIMEOUT = .1 # Serial timeout, seconds
 eeprom = None
 
-class PingError(Exception):
-    pass
-
 class EEPROMError(Exception):
     pass
 
@@ -115,7 +112,7 @@ def getSerialports():
         out.sort()
     return out
 
-def connect(serialport='/dev/ttyUSB0', _gmt_offset=None, yesping=True):
+def connect(serialport='/dev/ttyUSB0', _gmt_offset=None):
     if _gmt_offset is None:
         local_time = time.localtime()
         _gmt_offset = (local_time.tm_isdst * 3600 - time.timezone)
@@ -130,7 +127,7 @@ def connect(serialport='/dev/ttyUSB0', _gmt_offset=None, yesping=True):
     # raw_input('...')
     print 'serialport', serialport
     ser = serial.Serial(serialport,
-                        baudrate=115200,
+                        baudrate=57600,
                         timeout=SER_TIMEOUT)
     return ser
         
@@ -195,9 +192,9 @@ if __name__ == '__main__':
         for arg in sys.argv[1:]:
             if arg == 'set':
                 time_set()
-                print '      C3 time',  fmt_time(time.gmtime(time_req()))
+                print '      P2 time',  fmt_time(time.gmtime(time_req()))
             elif arg == 'time':
-                print '      C3 time',  fmt_time(time.gmtime(time_req()))
+                print '      P2 time',  fmt_time(time.gmtime(time_req()))
             elif arg == 'pc_time':
                 print '     PC TIME:', fmt_time(time.gmtime(to_gmt(time.time())))
             else:
