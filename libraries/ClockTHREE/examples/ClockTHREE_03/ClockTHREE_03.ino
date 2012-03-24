@@ -7,8 +7,11 @@
 #include "Time.h"
 #include "MsTimer2.h"
 #include "SPI.h"
-#include "dutch_v1.h"
+// #include "dutch_v1.h"
 // #include "english_v1.h"
+#include "english_v3.h"
+// #include "hebrew_v1.h"
+#include "messaging.h"
 
 ClockTHREE c3;                      // ClockTHREE singleton
 uint32_t display[2 * N_COL];               // 2X display (16 columns per display) for swapping back and forth
@@ -18,9 +21,11 @@ uint8_t n_minute_led;               // number of minute hack leds
 uint8_t n_minute_state;             // number of minute hack states to cycle through
 uint8_t n_byte_per_display;         // number of bytes used for each 5 minunte time incriment
 
+unsigned int my_delay = 50;
 // called once
 void setup(){
   Wire.begin();
+  setRTC(2000, 1, 1, 0, 0, 0);
   c3.init();
   c3.setdisplay(display); // 2x actual LED array size for staging data. // required by fade to
 
@@ -30,19 +35,29 @@ void setup(){
   n_minute_led = pgm_read_byte(MINUTE_LEDS + 1);
 
   // MAX Serial
-  Serial.begin(115200);
+  Serial.begin(57600);
+  Serial.println("*********************");
+  Serial.println("");
+  Serial.println("ClockTHREEjr Kickstarter Edition!");
+  Serial.println("WyoLum, LLC 2012");
+  Serial.println("Creative Commons 3.0");
+  Serial.println("CC BY SA");
+  Serial.println("Open Hardware");
+  Serial.println("");
+  Serial.println("*********************");
 }
 
 // globals
 int count;                        // one-up loop counter
 int display_idx;                  // display index (0 or 1)
 uint8_t last_min_hack_inc = 0;    // last mininte hack incriment (to know when it has changed)
-uint8_t last_time_inc = 0;        // last time incriment (to know when it has changed)
+uint8_t last_time_inc = 289;        // last time incriment (to know when it has changed)
 
 void loop(){
+  
   uint8_t word[3];                // will store start_x, start_y, length of word
   time_t spm = getTime() % 86400; // seconds past midnight
-  uint16_t time_inc = spm / 288;  // 5-minute time increment are we in
+  uint16_t time_inc = spm / 300;  // 5-minute time increment are we in
 
   // which mininute hack incriment are we on?
   uint8_t minute_hack_inc = (spm % 300) / (300. / float(n_minute_state));
@@ -66,12 +81,15 @@ void loop(){
     // read minutes hack for next time incement
     minutes_hack(minute_hack_inc, tmp_d);
     c3.fadeto(tmp_d, 32); // 32 fade steps to new display
+
     last_min_hack_inc = minute_hack_inc;
     last_time_inc = time_inc;
   }
   // Keep active LEDs lit
+  // my_refresh(1000);
   c3.refresh(100);
   count++;
+  Serial_loop();
 }
 
 /*
@@ -161,4 +179,41 @@ void minutes_hack(uint8_t i, uint32_t *out){
 // read the ith minute hack from program memory
 uint32_t getminutebits(uint8_t i){
   return pgm_read_dword(MINUTES_HACK + i);
+}
+
+
+void my_refresh(int n_hold){
+  uint8_t col_j;
+  
+  union Column_t {
+    uint32_t dat32; 
+    uint8_t dat8[4];
+  } Column;
+  
+  if(display != NULL){
+    for(int hold_i = 0; hold_i < n_hold; hold_i++){
+      PORTC &= 0b11110111; // Enable col driver
+      // for(col_j=0; col_j < N_COL; col_j++){
+      col_j = 0;
+      _delay(10);
+      while (col_j < N_COL){
+	// Column.dat32 = RGBW_MASKS[rgb_i] & display[col_j];
+	Column.dat32 = display[15 - col_j];
+	// transfer column to row drivers
+	SPI.transfer(Column.dat8[3]);
+	SPI.transfer(Column.dat8[2]);
+	SPI.transfer(Column.dat8[1]);
+	PORTC |= 0b00001000; // Disable col driver 
+	SPI.transfer(Column.dat8[0]);
+	PORTB |= 0b00000010; // Start latch pulse 
+	PORTB &= 0b11111101; // End latch pulse 
+
+	PORTD = (PORTD & 0b00001111) | (col_j << 4); //only impacts upper 4 bits of PORTD
+	PORTC &= 0b11110111; // Enable col driver
+	_delay(my_delay);
+	col_j++;
+      }
+      PORTC |= 0b00001000; // Disable col driver
+    }
+  }
 }

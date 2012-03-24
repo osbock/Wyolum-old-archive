@@ -102,6 +102,7 @@ void ClockTHREE::refresh(){
   refresh(1);
 }
 
+// ClockTHREE sr and jr
 #ifndef PEGGY2 // ClockTHREE sr and jr
 // Scan current display n times (if display is not NULL)
 void ClockTHREE::refresh(int n_hold){
