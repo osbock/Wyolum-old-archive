@@ -113,7 +113,8 @@ def getSerialports():
         out.sort()
     return out
 
-def connect(serialport='/dev/ttyUSB0', _gmt_offset=None):
+# def connect(serialport='/dev/ttyUSB0', _gmt_offset=None):
+def connect(serialport='COM4', _gmt_offset=None):
     if _gmt_offset is None:
         local_time = time.localtime()
         _gmt_offset = (local_time.tm_isdst * 3600 - time.timezone)
