@@ -1,17 +1,23 @@
-Drill report for /home/samata/Documents/clockthree/KiCad/Nb_v2/Nb_v2.brd
-Created on Friday 24 February 2012 09:49:38 PM IST
+Drill report for C:\Users\Anool\Documents\Arduino\clockthree\KiCad\Nb_v2\Nb_v2.brd
+Created on 4/6/2012 11:20:35 AM
 Selected Drill Unit: Imperial (")
 
 Drill report for through holes :
-T1  0.025"  0.64mm  (56 holes)
-T2  0.032"  0.81mm  (202 holes)
+T1  0.025"  0.64mm  (52 holes)
+T2  0.032"  0.81mm  (199 holes)
 T3  0.035"  0.89mm  (13 holes)
 T4  0.040"  1.02mm  (241 holes)  (with 3 oblongs)
-T5  0.050"  1.27mm  (10 holes)
-T6  0.080"  2.03mm  (3 holes)
-T7  0.120"  3.05mm  (4 holes)
-T8  0.160"  4.06mm  (4 holes)
+T5  0.045"  1.14mm  (3 holes)
+T6  0.050"  1.27mm  (10 holes)
+T7  0.080"  2.03mm  (3 holes)
+T8  0.120"  3.05mm  (5 holes)
+T9  0.160"  4.06mm  (4 holes)
 
-total holes count 533
+total plated holes count 530
+
+
+Drill report for Not Plated through holes :
+
+total Not Plated holes count 0
 
 
