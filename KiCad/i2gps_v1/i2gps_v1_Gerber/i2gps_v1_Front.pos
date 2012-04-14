@@ -1,9 +1,33 @@
-### Module positions - created on 3/12/2012 6:05:33 PM ###
+### Module positions - created on 4/14/2012 5:14:11 PM ###
 ### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Front
 # Ref    Val                  PosX       PosY        Rot     Side
+C1       100n                 1.7825     1.6525     270.0    Front
+C2       1u                   2.5050     1.4000     270.0    Front
+C3       2u2_Tant             3.0675     1.0975       0.0    Front
+C4       100n                 2.9025     1.0975     180.0    Front
+C5       1u                   2.6450     1.3700     180.0    Front
+C6       47u,10V              2.8925     1.5400      90.0    Front
+C7       100n                 2.6400     1.6750       0.0    Front
+C8       100n                 2.9100     1.3675       0.0    Front
+C10      22p                  2.3775     1.1350     270.0    Front
+C11      22p                  2.2725     1.1350      90.0    Front
+D1       LED                  2.5375     1.0975       0.0    Front
+D2       LED                  2.7000     1.0975       0.0    Front
+IC1      ATMEGA8-AI           2.2525     1.6350     270.0    Front
+R1       10k                  3.1325     1.9350      90.0    Front
+R2       10k                  3.0275     1.9350      90.0    Front
+R3       10k                  1.5325     1.1950     270.0    Front
+R4       10k                  1.5325     1.3525      90.0    Front
+R5       470E                 2.5375     1.1925     180.0    Front
+R6       10k                  1.6325     1.3525      90.0    Front
+R7       10k                  2.6400     1.7750       0.0    Front
+R8       470E                 2.7000     1.1925     180.0    Front
+SD1      SD_CARD_MICRO        1.2625     1.5350     270.0    Front
+SW1      SW_PUSH              1.8400     1.9725     180.0    Front
 U1       MCP1700T-3302E/T     2.6450     1.5300     180.0    Front
 U2       74HC125              1.2825     1.2500       0.0    Front
 U3       MIC5219-5.0BM5       2.9050     1.2350      90.0    Front
+X1       CRYSTAL_2            2.2025     1.2825     180.0    Front
 ## End

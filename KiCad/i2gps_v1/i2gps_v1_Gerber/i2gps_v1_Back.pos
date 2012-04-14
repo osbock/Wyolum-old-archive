@@ -1,7 +1,14 @@
-### Module positions - created on 3/12/2012 6:05:33 PM ###
+### Module positions - created on 4/14/2012 5:14:11 PM ###
 ### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Back
 # Ref    Val                  PosX       PosY        Rot     Side
+BT1      BATT_RTC             2.6625     1.5350     180.0    Back
+C9       100n                 1.5575     1.3200       0.0    Back
+P10      CD2                  1.5950     1.1500       0.0    Back
+P11      CD2                  1.1450     1.6000      90.0    Back
+P12      CD1                  1.5950     2.0500       0.0    Back
+P13      CD1                  2.0450     1.6000      90.0    Back
+R9       10k                  1.8400     1.8325      90.0    Back
 U4       DS3231N              1.5725     1.6075     180.0    Back
 ## End
