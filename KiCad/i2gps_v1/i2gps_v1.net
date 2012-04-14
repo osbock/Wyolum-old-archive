@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  3/12/2012 4:26:41 PM
+# EESchema Netlist Version 1.1 created  Sunday 15 April 2012 01:51:40 AM IST
 (
  ( /4F45D5FA PIN_ARRAY-6X1  P7 GPS_UP501 {Lib=CONN_6}
   (    1 /GPS_Rx )
@@ -264,7 +264,7 @@
   (    1 /i2gps_v1_rtc/5V0 )
   (    2 GND )
  )
- ( /4DCA5EC5 TQFP32  IC1 ATMEGA8-AI {Lib=ATMEGA8-AI}
+ ( /4DCA5EC5 TQFP32  IC1 ATMEGA328-AU-ND {Lib=ATMEGA8-AI}
   (    1 /i2gps_v1_rtc/SQW )
   (    2 /LED1 )
   (    3 GND )

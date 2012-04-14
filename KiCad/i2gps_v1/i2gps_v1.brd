@@ -1,6 +1,6 @@
-PCBNEW-BOARD Version 1 date 4/14/2012 5:19:19 PM
+PCBNEW-BOARD Version 1 date Sunday 15 April 2012 02:01:39 AM IST
 
-# Created by Pcbnew(2011-12-28 BZR 3254)-stable
+# Created by Pcbnew(2011-05-25)-stable
 
 $GENERAL
 encoding utf-8
@@ -9,7 +9,7 @@ Ly 1FFF8001
 EnabledLayers 1FFC8001
 Links 163
 NoConn 3
-Di 6448 7721 37599 22178
+Di 6328 7721 37599 22225
 Ndraw 102
 Ntrack 980
 Nzone 0
@@ -62,7 +62,7 @@ PadSize 800 800
 PadDrill 400
 Pad2MaskClearance 100
 AuxiliaryAxisOrg 0 0
-PcbPlotParams (pcbplotparams (layerselection 298614785) (usegerberextensions false) (excludeedgelayer false) (linewidth 60) (plotframeref false) (viasonmask false) (mode 1) (useauxorigin false) (hpglpennumber 1) (hpglpenspeed 20) (hpglpendiameter 15) (hpglpenoverlay 0) (pscolor true) (psnegative false) (psa4output false) (plotreference true) (plotvalue true) (plotothertext true) (plotinvisibletext false) (padsonsilk false) (subtractmaskfromsilk false) (outputformat 1) (mirror false) (drillshape 2) (scaleselection 1) (outputdirectory i2gps_v1_Gerber/))
+PcbPlotParams (pcbplotparams (layerselection 298614785) (usegerberextensions false) (excludeedgelayer false) (linewidth 60) (plotframeref false) (viasonmask false) (mode 1) (useauxorigin false) (hpglpennumber 1) (hpglpenspeed 20) (hpglpendiameter 15) (hpglpenoverlay 0) (pscolor true) (psnegative false) (psa4output false) (plotreference true) (plotvalue true) (plotothertext true) (plotinvisibletext false) (padsonsilk false) (subtractmaskfromsilk true) (outputformat 1) (mirror false) (drillshape 2) (scaleselection 1) (outputdirectory i2gps_v1_Gerber/))
 $EndSETUP
 
 $EQUIPOT
@@ -327,6 +327,7 @@ Kw CONN DEV
 Sc 4DCD230C
 AR /4DCD1997
 Op 0 0 0
+At SMD 
 T0 -875 -400 300 300 0 40 N V 21 N "P9"
 T1 2900 -400 300 300 0 40 N V 21 N "ISP"
 DS 350 -475 350 -425 60 21
@@ -430,6 +431,7 @@ Kw CONN DEV
 Sc 4DCB9F33
 AR /4E241CCB
 Op 0 0 0
+At SMD 
 T0 3075 675 300 300 0 40 N V 21 N "P4"
 T1 0 800 300 300 0 40 N I 21 N "CONN_6"
 DS -2150 -475 -2150 -425 60 21
@@ -549,6 +551,7 @@ Kw CONN DEV
 Sc 4DCB9F35
 AR /4E241CD6
 Op 0 0 0
+At SMD 
 T0 -3300 675 300 300 0 40 N V 21 N "P5"
 T1 0 800 300 300 0 40 N I 21 N "CONN_6"
 DS -2150 -475 -2150 -425 60 21
@@ -668,6 +671,7 @@ Kw CONN DEV
 Sc 4EBEB8AB
 AR /4E1ED2A7
 Op 0 0 0
+At SMD 
 T0 550 -775 300 300 2700 40 N V 21 N "P6"
 T1 0 -1225 300 300 2700 40 N I 21 N "CONN_2"
 DS -850 -475 -850 -425 60 21
@@ -735,6 +739,7 @@ Kw CONN DEV
 Sc 4DCB9F3A
 AR /4DCB971F
 Op 0 0 0
+At SMD 
 T0 -500 -775 300 300 900 40 N V 21 N "P8"
 T1 650 -750 300 300 900 40 N V 21 N "FTDI"
 DS -2150 -475 -2150 -425 60 21
@@ -854,6 +859,7 @@ Kw CONN DEV
 Sc 4F8961FD
 AR /4F3FE37F
 Op 0 0 0
+At SMD 
 T0 -2400 -740 300 300 900 40 N V 21 N "P3"
 T1 0 800 300 300 900 40 N V 21 N "BootDrive"
 DS -2150 -475 -2150 -425 60 21
@@ -973,6 +979,7 @@ Kw CONN DEV
 Sc 4F59F6AB
 AR /4F45D5FA
 Op 0 0 0
+At SMD 
 T0 -2580 800 300 300 2700 40 N V 21 N "P7"
 T1 -1600 1280 300 300 2700 40 N V 21 N "GPS_UP501"
 DS -2150 -475 -2150 -425 60 21
@@ -1571,14 +1578,14 @@ Ro 0.000000 0.000000 180.000000
 $EndSHAPE3D
 $EndMODULE  SOT23-3
 $MODULE TQFP32
-Po 22525 16350 2700 15 4F5F2622 4DCB9F4D ~~
+Po 22525 16350 2700 15 4F89DE09 4DCB9F4D ~~
 Li TQFP32
 Sc 4DCB9F4D
 AR /4DCA5EC5
 Op 0 0 0
 At SMD 
-T0 -2350 -1325 300 300 3600 40 N V 21 N "IC1"
-T1 150 0 300 250 3600 40 N V 21 N "ATMEGA8-AI"
+T0 -875 -775 300 300 3600 40 N V 21 N "IC1"
+T1 -2375 0 300 250 3600 40 N V 21 N "ATMEGA328-AU-ND"
 DS -1650 -1650 -1725 -1650 60 21
 DS -1650 -1650 -1650 -1725 60 21
 DS -1600 -1600 -1775 -1600 60 21
@@ -2727,13 +2734,13 @@ Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  SW_SMD
 $MODULE Xtal_SMD2
-Po 22025 12825 1800 15 4F5F2654 4DCBAF13 ~~
+Po 22025 12825 1800 15 4F89DD75 4DCBAF13 ~~
 Li Xtal_SMD2
 Sc 4DCBAF13
 AR /4F3FEE0A
 Op 0 0 0
 At SMD 
-T0 0 -1050 300 300 1800 40 N V 21 N "X1"
+T0 -1250 300 300 300 1800 40 N V 21 N "X1"
 T1 0 1200 300 300 1800 40 N I 21 N "CRYSTAL_2"
 DS 0 -600 0 -725 60 21
 DS 50 -725 50 -600 60 21
@@ -137101,12 +137108,12 @@ $EndMODULE  Logo-WL3
 $TEXTPCB
 Te "1pps|Bt|3V|0V|Tx|Rx"
 Po 34700 13000 340 220 50 900
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "BK|BR|RD|OR|YL|GN"
 Po 33100 17100 340 220 50 900
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 0 21325 11650 23700 11650 100
@@ -137159,7 +137166,7 @@ $EndDRAWSEGMENT
 $TEXTPCB
 Te "GN|YL|OR|RD|BR|BK"
 Po 33100 17100 340 220 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 0 27675 19250 24975 19250 100
@@ -137248,82 +137255,82 @@ $EndDRAWSEGMENT
 $TEXTPCB
 Te "PB1"
 Po 18825 16650 300 300 40 0
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "PB0"
 Po 18825 15400 300 300 40 0
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "HW_ADDR"
 Po 18250 16450 260 300 40 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "Rx|Tx|0V|3V|Bt|1pps"
 Po 34700 13000 340 220 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "SCL"
 Po 32320 21820 250 250 50 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "SDA"
 Po 31320 21820 250 250 50 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "PD5|Rx|Tx|5V|0V|0V"
 Po 34675 19000 340 220 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "OpenHardware"
 Po 11575 21275 260 350 60 0
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "GND"
 Po 15125 12325 250 250 50 0
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "5V0"
 Po 14725 10750 250 250 50 0
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "SCL"
 Po 17125 12350 250 250 50 0
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "SDA"
 Po 16775 10675 250 250 50 0
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "GND"
 Po 12325 18150 250 250 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "5V0"
 Po 10775 17200 250 250 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "SCL"
 Po 12275 16125 250 250 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "SDA"
 Po 10575 15150 250 250 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $COTATION
 Ge 0 24 0
@@ -137354,74 +137361,74 @@ $endCOTATION
 $TEXTPCB
 Te "3V3"
 Po 21325 20375 250 250 50 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "1Hz"
 Po 16725 21725 250 250 30 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "INT/SQW"
 Po 17300 21125 200 250 30 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "PC2"
 Po 24300 19075 250 250 40 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "PC1"
 Po 23300 19075 250 250 40 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "PC0"
 Po 22300 19075 250 250 40 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "ADC"
 nl "7"
 Po 21600 18775 250 250 40 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "ADC"
 nl "6"
 Po 20675 18800 250 250 40 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "PD7"
 Po 17675 12775 250 250 40 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "PD6"
 Po 18700 12775 250 250 40 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "PD5"
 Po 19675 12775 250 250 40 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "PD4"
 Po 20675 12775 250 250 40 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "[-]"
 Po 21580 10600 300 300 40 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "[+]"
 Po 17780 10580 300 300 40 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 0 18300 17475 20375 17475 100
@@ -137438,12 +137445,12 @@ $EndDRAWSEGMENT
 $TEXTPCB
 Te "ardunio buckler interface"
 Po 27825 20325 300 300 40 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "I2GPS_v1"
 Po 27700 10975 1150 1150 200 0
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 0 27825 18750 27825 20050 100
@@ -137456,13 +137463,13 @@ $EndDRAWSEGMENT
 $TEXTPCB
 Te "D | - | +"
 Po 26500 19050 270 300 50 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "IR"
 nl "Rx"
 Po 28200 19150 300 300 50 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 0 27825 20050 24825 20050 100
@@ -137475,82 +137482,82 @@ $EndDRAWSEGMENT
 $TEXTPCB
 Te "I2GPS_v1"
 Po 12225 10575 600 500 90 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "+"
 Po 30425 11750 400 400 60 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "+"
 Po 31125 10300 400 400 60 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "HW_ADDR"
 Po 19275 16650 260 300 40 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "PB0"
 Po 19900 16275 300 300 40 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "PB1"
 Po 19900 17175 300 300 40 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "A4"
 Po 31320 20380 250 250 50 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "A5"
 Po 32320 20380 250 250 50 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "GND"
 Po 24325 20375 250 250 50 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "+"
 Po 30325 15400 300 300 50 1800
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "9VBAT"
 Po 31900 12000 300 300 50 900
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "RST"
 Po 20325 20375 250 250 50 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "RST"
 Po 18350 18800 250 250 50 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "+5V"
 Po 22250 20375 250 250 50 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "GND"
 Po 23300 20375 250 250 50 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "wyolum.com"
 Po 12975 21450 400 400 60 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 0 10000 10000 35000 10000 100
@@ -137559,17 +137566,17 @@ $EndDRAWSEGMENT
 $TEXTPCB
 Te "+"
 Po 27450 10325 400 400 60 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "+"
 Po 25850 10325 400 400 60 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "wyolum.com"
 Po 12150 10475 450 500 60 0
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 0 35000 22000 10000 22000 100

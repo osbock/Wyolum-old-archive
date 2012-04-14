@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 3/12/2012 4:26:37 PM
+EESchema Schematic File Version 2  date Sunday 15 April 2012 01:54:02 AM IST
 LIBS:i2gps_v1
 LIBS:power
 LIBS:i2gps_v1-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title "Buckler, i2sd, v3, with RTC, with HW addressing"
-Date "12 mar 2012"
+Date "14 apr 2012"
 Rev "3"
 Comp "WyoLum"
 Comment1 ""
