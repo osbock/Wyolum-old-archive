@@ -10,7 +10,8 @@
 
 TinyGPS gps;
 //NewSoftSerial nss(2, 3);
-SoftwareSerial nss(5, 4);
+// SoftwareSerial nss(5, 4);
+SoftwareSerial nss(6, A7);
 
 void gpsdump(TinyGPS &gps);
 bool feedgps();

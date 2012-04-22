@@ -9,8 +9,8 @@
 #include "SPI.h"
 // #include "dutch_v1.h"
 // #include "english_v1.h"
-#include "english_v3.h"
-// #include "hebrew_v1.h"
+// #include "english_v3.h"
+#include "hebrew_v1.h"
 #include "messaging.h"
 
 ClockTHREE c3;                      // ClockTHREE singleton
@@ -89,7 +89,7 @@ void loop(){
   // my_refresh(1000);
   c3.refresh(100);
   count++;
-  Serial_loop();
+  messaging_loop();
 }
 
 /*

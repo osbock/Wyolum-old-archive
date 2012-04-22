@@ -25,7 +25,8 @@
 #include "ClockTHREE.h"
 #include "SPI.h"
 
-#include "english_v3.h"
+// #include "english_v3.h"
+#include "hebrew_v1.h"
 
 
 #include "mem_font.h"
@@ -1145,7 +1146,7 @@ uint32_t getminutebits(uint8_t i){
 
 void self_test(){
   boolean state = false;
-  if(!testRTC()){
+  if(!testRTC()){ // RTC Failed  Display X
     display[0] = 0b10000001;
     display[1] = 0b01000010;
     display[2] = 0b00100100;

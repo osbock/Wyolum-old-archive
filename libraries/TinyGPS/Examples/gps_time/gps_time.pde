@@ -14,15 +14,12 @@
 */
 
 TinyGPS gps;
-#if defined(ARDUINO) && ARDUINO >= 100
-SoftwareSerial sws(5, 4);
-#else
-NewSoftSerial sws(5, 4);
-#endif
+//SoftwareSerial sws(6, A7);
+SoftwareSerial sws(A7, 6);
 
 #define THIRTY_YEARS 946771200
-const int SQW_PIN = 2;
-const int PPS_PIN = 3;
+const int SQW_PIN = 3;
+const int PPS_PIN = 2;
 const int  PPS_LED = 13;
 const int SYNC_LED = 12;
 const int  SQW_LED = 11;
@@ -157,6 +154,7 @@ bool feedgps()
 {
   while (sws.available())
   {
+    // Serial.print(sws.read());
     if (gps.encode(sws.read()))
       return true;
   }

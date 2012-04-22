@@ -19,7 +19,7 @@ void setup()
 {
   pinMode(D1_PIN, OUTPUT);
   pinMode(D2_PIN, OUTPUT);
-  Serial.begin(57600);
+  Serial.begin(115200);
   Serial.print("Initializing SD card...");
   // On the Ethernet Shield, CS is pin 4. It's set as an output by default.
   // Note that even if it's not used as the CS pin, the hardware SS pin 
@@ -83,7 +83,7 @@ void loop()
     digitalWrite(D2_PIN, HIGH); 
     // read from the file until there's nothing else in it:
     while (myFile.available()) {
-    	Serial.write(myFile.read());
+      Serial.write(myFile.read());
     }
     // close the file:
     myFile.close();
@@ -92,10 +92,9 @@ void loop()
     Serial.println("error opening test.txt");
     err_out(3);
   }
-  while(SD.exists("DEFAULT.TXT")){
-    Serial.println("Delete old DEFAULT.TXT");
-    SD.remove("DEFAULT.TXT");
-  }
+  Serial.println("Delete old DEFAULT.TXT");
+  SD.remove("DEFAULT.TXT");
+
   Serial.println("Write DEFAULT.TXT");
 
   myFile = SD.open("DEFAULT.TXT", FILE_WRITE);
@@ -104,10 +103,7 @@ void loop()
     myFile.println(" All work and no play makes Jack a dull boy");
   }
   myFile.close();
-  Serial.println("FULL STOP");
-  // nothing happens after setup
-
-  while(1) delay(1000); // stop it already
+  delay(1); // energizer bunny
 }
 
 
