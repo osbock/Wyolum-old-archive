@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 4/6/2012 5:24:49 PM
+Cmp-Mod V01 Genere par PcbNew le 4/27/2012 4:44:20 PM
 
 BeginCmp
 TimeStamp = 4ECF7D05
@@ -396,7 +396,7 @@ BeginCmp
 TimeStamp = 4ECF7CF4
 Path = /4ECE7AC3
 Reference = R12;
-ValeurCmp = R;
+ValeurCmp = 6E8;
 IdModule  = RC03;
 EndCmp
 
@@ -404,7 +404,7 @@ BeginCmp
 TimeStamp = 4ECF7CF6
 Path = /4ECE7AD8
 Reference = R13;
-ValeurCmp = R;
+ValeurCmp = 6E8;
 IdModule  = RC03;
 EndCmp
 
@@ -412,7 +412,7 @@ BeginCmp
 TimeStamp = 4ECF7CF8
 Path = /4ECE7ADE
 Reference = R14;
-ValeurCmp = R;
+ValeurCmp = 6E8;
 IdModule  = RC03;
 EndCmp
 
@@ -420,7 +420,7 @@ BeginCmp
 TimeStamp = 4ECF7CFA
 Path = /4ECE7AE0
 Reference = R15;
-ValeurCmp = R;
+ValeurCmp = 6E8;
 IdModule  = RC03;
 EndCmp
 
@@ -428,7 +428,7 @@ BeginCmp
 TimeStamp = 4ECF7CFC
 Path = /4ECE7AE5
 Reference = R16;
-ValeurCmp = R;
+ValeurCmp = 6E8;
 IdModule  = RC03;
 EndCmp
 
@@ -436,7 +436,7 @@ BeginCmp
 TimeStamp = 4ECF7CFE
 Path = /4ECE7AE8
 Reference = R17;
-ValeurCmp = R;
+ValeurCmp = 6E8;
 IdModule  = RC03;
 EndCmp
 
@@ -444,7 +444,7 @@ BeginCmp
 TimeStamp = 4ECF7D00
 Path = /4ECE7AEB
 Reference = R18;
-ValeurCmp = R;
+ValeurCmp = 6E8;
 IdModule  = RC03;
 EndCmp
 
@@ -452,7 +452,7 @@ BeginCmp
 TimeStamp = 4ECF7D02
 Path = /4ECE7AEF
 Reference = R19;
-ValeurCmp = R;
+ValeurCmp = 6E8;
 IdModule  = RC03;
 EndCmp
 
@@ -460,7 +460,7 @@ BeginCmp
 TimeStamp = 4ECFCACE
 Path = /4ECE7AF1
 Reference = R20;
-ValeurCmp = R;
+ValeurCmp = 6E8;
 IdModule  = RC03;
 EndCmp
 
@@ -468,7 +468,7 @@ BeginCmp
 TimeStamp = 4ED27E54
 Path = /4ECE7AF6
 Reference = R21;
-ValeurCmp = R;
+ValeurCmp = 6E8;
 IdModule  = RC03;
 EndCmp
 
@@ -476,7 +476,7 @@ BeginCmp
 TimeStamp = 4ECF7CF0
 Path = /4ECE7AFC
 Reference = R22;
-ValeurCmp = R;
+ValeurCmp = 6E8;
 IdModule  = RC03;
 EndCmp
 
@@ -484,7 +484,7 @@ BeginCmp
 TimeStamp = 4ECF7CEE
 Path = /4ECE7B02
 Reference = R23;
-ValeurCmp = R;
+ValeurCmp = 6E8;
 IdModule  = RC03;
 EndCmp
 
@@ -492,7 +492,7 @@ BeginCmp
 TimeStamp = 4ECF7CEC
 Path = /4ECE7B06
 Reference = R24;
-ValeurCmp = R;
+ValeurCmp = 6E8;
 IdModule  = RC03;
 EndCmp
 
@@ -500,7 +500,7 @@ BeginCmp
 TimeStamp = 4ECF7CEA
 Path = /4ECE7B0A
 Reference = R25;
-ValeurCmp = R;
+ValeurCmp = 6E8;
 IdModule  = RC03;
 EndCmp
 
@@ -508,7 +508,7 @@ BeginCmp
 TimeStamp = 4ECF7CE8
 Path = /4ECE7B0D
 Reference = R26;
-ValeurCmp = R;
+ValeurCmp = 6E8;
 IdModule  = RC03;
 EndCmp
 
@@ -516,7 +516,7 @@ BeginCmp
 TimeStamp = 4ECF7CE6
 Path = /4F338640
 Reference = R27;
-ValeurCmp = R;
+ValeurCmp = 6E8;
 IdModule  = RC03;
 EndCmp
 
@@ -644,7 +644,7 @@ BeginCmp
 TimeStamp = 4ECF7CE2
 Path = /4B3F1092/4ECE8661
 Reference = R29;
-ValeurCmp = R;
+ValeurCmp = 220;
 IdModule  = rc03_vert;
 EndCmp
 

@@ -1,5 +1,5 @@
-## Module report - date Friday 24 February 2012 09:51:17 PM IST
-## Created by PcbNew version pcbnew (2011-05-25)-stable
+## Module report - date 4/27/2012 4:44:37 PM
+## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ##
 
@@ -7,7 +7,7 @@ $BeginDESCRIPTION
 
 $BOARD
 unit INCH
-upper_left_corner  0.577800  0.709600
+upper_left_corner  0.589800  0.709600
 lower_right_corner  7.435400  3.678100
 $EndBOARD
 
@@ -911,7 +911,7 @@ $MODULE "C12"
 reference "C12"
 value "22p"
 footprint "cnp_3mm_disc"
-attribut none
+attribut smd
 position  4.640000  3.140000
 orientation  270.00
 layer component
@@ -951,7 +951,7 @@ $MODULE "C11"
 reference "C11"
 value "22p"
 footprint "cnp_3mm_disc"
-attribut none
+attribut smd
 position  4.400000  3.140000
 orientation  270.00
 layer component
@@ -991,7 +991,7 @@ $MODULE "C8"
 reference "C8"
 value "100u"
 footprint "CP_5x11mm"
-attribut none
+attribut smd
 position  2.107500  2.412500
 orientation  90.00
 layer component
@@ -1040,7 +1040,7 @@ $MODULE "U6"
 reference "U6"
 value "DS1307"
 footprint "dil_08-300_socket"
-attribut none
+attribut smd
 position  2.160000  1.620000
 orientation  0.00
 layer component
@@ -1134,7 +1134,7 @@ $MODULE "U2"
 reference "U2"
 value "74HC595"
 footprint "dil_16-300_socket"
-attribut none
+attribut smd
 position  3.300000  1.905000
 orientation  180.00
 layer component
@@ -1300,7 +1300,7 @@ $MODULE "U1"
 reference "U1"
 value "74HC595"
 footprint "dil_16-300_socket"
-attribut none
+attribut smd
 position  4.300000  1.905000
 orientation  180.00
 layer component
@@ -1466,7 +1466,7 @@ $MODULE "U4"
 reference "U4"
 value "74HC595"
 footprint "dil_16-300_socket"
-attribut none
+attribut smd
 position  6.200000  1.905000
 orientation  180.00
 layer component
@@ -1632,7 +1632,7 @@ $MODULE "U5"
 reference "U5"
 value "74HC595"
 footprint "dil_16-300_socket"
-attribut none
+attribut smd
 position  5.300000  1.905000
 orientation  180.00
 layer component
@@ -1798,7 +1798,7 @@ $MODULE "U8"
 reference "U8"
 value "UDN2981A"
 footprint "dil_18-300_socket"
-attribut none
+attribut smd
 position  3.350000  1.475000
 orientation  0.00
 layer component
@@ -1982,7 +1982,7 @@ $MODULE "U7"
 reference "U7"
 value "UDN2981A"
 footprint "dil_18-300_socket"
-attribut none
+attribut smd
 position  4.350000  1.475000
 orientation  0.00
 layer component
@@ -2166,7 +2166,7 @@ $MODULE "R11"
 reference "R11"
 value "LDR"
 footprint "pin_strip_2"
-attribut none
+attribut smd
 position  4.235000  3.270000
 orientation  270.00
 layer component
@@ -2206,7 +2206,7 @@ $MODULE "P13"
 reference "P13"
 value "ISP"
 footprint "pin_strip_3x2"
-attribut none
+attribut smd
 position  3.020000  2.410000
 orientation  270.00
 layer component
@@ -2282,7 +2282,7 @@ $MODULE "P7"
 reference "P7"
 value "FTDI"
 footprint "pin_strip_6-90"
-attribut none
+attribut smd
 position  1.290000  2.200000
 orientation  270.00
 layer component
@@ -2558,7 +2558,7 @@ $MODULE "BT1"
 reference "BT1"
 value "BATT_RTC"
 footprint "CR2032"
-attribut none
+attribut smd
 position  2.687500  3.000000
 orientation  180.00
 layer component
@@ -2607,7 +2607,7 @@ $MODULE "P42"
 reference "P42"
 value "STACK-R"
 footprint "pin_strip_4-90"
-attribut none
+attribut smd
 position  6.760000  1.550000
 orientation  90.00
 layer component
@@ -2741,7 +2741,7 @@ $MODULE "D4"
 reference "D4"
 value "3V3_Z"
 footprint "diode_do35"
-attribut none
+attribut smd
 position  5.320000  2.337500
 orientation  0.00
 layer component
@@ -3251,7 +3251,7 @@ $MODULE "X2"
 reference "X2"
 value "CRYSTAL"
 footprint "XTAL_3"
-attribut none
+attribut smd
 position  2.060000  1.885000
 orientation  0.00
 layer component
@@ -3458,9 +3458,9 @@ $EndMODULE  U10
 
 $MODULE "R12"
 reference "R12"
-value "R"
+value "6E8"
 footprint "RC03"
-attribut none
+attribut smd
 position  6.650000  1.475000
 orientation  270.00
 layer component
@@ -3498,9 +3498,9 @@ $EndMODULE  R12
 
 $MODULE "R13"
 reference "R13"
-value "R"
+value "6E8"
 footprint "RC03"
-attribut none
+attribut smd
 position  6.550000  1.475000
 orientation  270.00
 layer component
@@ -3538,9 +3538,9 @@ $EndMODULE  R13
 
 $MODULE "R14"
 reference "R14"
-value "R"
+value "6E8"
 footprint "RC03"
-attribut none
+attribut smd
 position  6.450000  1.475000
 orientation  270.00
 layer component
@@ -3578,9 +3578,9 @@ $EndMODULE  R14
 
 $MODULE "R15"
 reference "R15"
-value "R"
+value "6E8"
 footprint "RC03"
-attribut none
+attribut smd
 position  6.350000  1.475000
 orientation  270.00
 layer component
@@ -3618,9 +3618,9 @@ $EndMODULE  R15
 
 $MODULE "R16"
 reference "R16"
-value "R"
+value "6E8"
 footprint "RC03"
-attribut none
+attribut smd
 position  6.250000  1.475000
 orientation  270.00
 layer component
@@ -3658,9 +3658,9 @@ $EndMODULE  R16
 
 $MODULE "R17"
 reference "R17"
-value "R"
+value "6E8"
 footprint "RC03"
-attribut none
+attribut smd
 position  6.150000  1.475000
 orientation  270.00
 layer component
@@ -3698,9 +3698,9 @@ $EndMODULE  R17
 
 $MODULE "R18"
 reference "R18"
-value "R"
+value "6E8"
 footprint "RC03"
-attribut none
+attribut smd
 position  6.050000  1.475000
 orientation  270.00
 layer component
@@ -3738,9 +3738,9 @@ $EndMODULE  R18
 
 $MODULE "R19"
 reference "R19"
-value "R"
+value "6E8"
 footprint "RC03"
-attribut none
+attribut smd
 position  5.950000  1.475000
 orientation  270.00
 layer component
@@ -3778,9 +3778,9 @@ $EndMODULE  R19
 
 $MODULE "R20"
 reference "R20"
-value "R"
+value "6E8"
 footprint "RC03"
-attribut none
+attribut smd
 position  5.750000  1.475000
 orientation  270.00
 layer component
@@ -3818,9 +3818,9 @@ $EndMODULE  R20
 
 $MODULE "R21"
 reference "R21"
-value "R"
+value "6E8"
 footprint "RC03"
-attribut none
+attribut smd
 position  5.650000  1.475000
 orientation  270.00
 layer component
@@ -3858,9 +3858,9 @@ $EndMODULE  R21
 
 $MODULE "R22"
 reference "R22"
-value "R"
+value "6E8"
 footprint "RC03"
-attribut none
+attribut smd
 position  5.550000  1.475000
 orientation  270.00
 layer component
@@ -3898,9 +3898,9 @@ $EndMODULE  R22
 
 $MODULE "R23"
 reference "R23"
-value "R"
+value "6E8"
 footprint "RC03"
-attribut none
+attribut smd
 position  5.450000  1.475000
 orientation  270.00
 layer component
@@ -3938,9 +3938,9 @@ $EndMODULE  R23
 
 $MODULE "R24"
 reference "R24"
-value "R"
+value "6E8"
 footprint "RC03"
-attribut none
+attribut smd
 position  5.350000  1.475000
 orientation  270.00
 layer component
@@ -3978,9 +3978,9 @@ $EndMODULE  R24
 
 $MODULE "R25"
 reference "R25"
-value "R"
+value "6E8"
 footprint "RC03"
-attribut none
+attribut smd
 position  5.250000  1.475000
 orientation  270.00
 layer component
@@ -4018,9 +4018,9 @@ $EndMODULE  R25
 
 $MODULE "R26"
 reference "R26"
-value "R"
+value "6E8"
 footprint "RC03"
-attribut none
+attribut smd
 position  5.150000  1.475000
 orientation  270.00
 layer component
@@ -4058,9 +4058,9 @@ $EndMODULE  R26
 
 $MODULE "R27"
 reference "R27"
-value "R"
+value "6E8"
 footprint "RC03"
-attribut none
+attribut smd
 position  5.050000  1.475000
 orientation  270.00
 layer component
@@ -4100,7 +4100,7 @@ $MODULE "U3"
 reference "U3"
 value "ATMEGA8-P"
 footprint "dil_28-300_socket"
-attribut none
+attribut smd
 position  4.025000  2.612500
 orientation  0.00
 layer component
@@ -4374,7 +4374,7 @@ $MODULE "D3"
 reference "D3"
 value "PWR"
 footprint "led_5mm_blue"
-attribut none
+attribut smd
 position  3.335000  3.270000
 orientation  0.00
 layer component
@@ -4414,7 +4414,7 @@ $MODULE "D1"
 reference "D1"
 value "GRN"
 footprint "led_5mm_green"
-attribut none
+attribut smd
 position  3.635000  3.270000
 orientation  0.00
 layer component
@@ -4454,7 +4454,7 @@ $MODULE "D2"
 reference "D2"
 value "YEL"
 footprint "led_5mm_yellow"
-attribut none
+attribut smd
 position  3.935000  3.270000
 orientation  0.00
 layer component
@@ -4494,9 +4494,9 @@ $MODULE "R1"
 reference "R1"
 value "10k"
 footprint "rc03_vert"
-attribut none
-position  5.165000  2.880000
-orientation  270.00
+attribut smd
+position  5.164000  2.880000
+orientation  90.00
 layer component
 $SHAPE3D
 Na "Nb_v1_libs//Nb_v1_3D//rc03vert.wrl"
@@ -4534,7 +4534,7 @@ $MODULE "R2"
 reference "R2"
 value "10k"
 footprint "rc03_vert"
-attribut none
+attribut smd
 position  5.565000  2.880000
 orientation  90.00
 layer component
@@ -4574,7 +4574,7 @@ $MODULE "R3"
 reference "R3"
 value "10k"
 footprint "rc03_vert"
-attribut none
+attribut smd
 position  6.365000  2.880000
 orientation  90.00
 layer component
@@ -4614,7 +4614,7 @@ $MODULE "R4"
 reference "R4"
 value "10k"
 footprint "rc03_vert"
-attribut none
+attribut smd
 position  5.965000  2.880000
 orientation  90.00
 layer component
@@ -4654,7 +4654,7 @@ $MODULE "R5"
 reference "R5"
 value "10k"
 footprint "rc03_vert"
-attribut none
+attribut smd
 position  6.765000  2.880000
 orientation  90.00
 layer component
@@ -4694,7 +4694,7 @@ $MODULE "R6"
 reference "R6"
 value "4k7"
 footprint "rc03_vert"
-attribut none
+attribut smd
 position  3.475000  2.287500
 orientation  270.00
 layer component
@@ -4734,7 +4734,7 @@ $MODULE "R7"
 reference "R7"
 value "4k7"
 footprint "rc03_vert"
-attribut none
+attribut smd
 position  3.375000  2.287500
 orientation  270.00
 layer component
@@ -4774,7 +4774,7 @@ $MODULE "R8"
 reference "R8"
 value "1k"
 footprint "rc03_vert"
-attribut none
+attribut smd
 position  3.585000  3.095000
 orientation  180.00
 layer component
@@ -4814,7 +4814,7 @@ $MODULE "R9"
 reference "R9"
 value "1k"
 footprint "rc03_vert"
-attribut none
+attribut smd
 position  3.885000  3.095000
 orientation  180.00
 layer component
@@ -4854,7 +4854,7 @@ $MODULE "R10"
 reference "R10"
 value "10K"
 footprint "rc03_vert"
-attribut none
+attribut smd
 position  4.185000  3.095000
 orientation  180.00
 layer component
@@ -4894,7 +4894,7 @@ $MODULE "R28"
 reference "R28"
 value "10k"
 footprint "rc03_vert"
-attribut none
+attribut smd
 position  1.470000  1.300000
 orientation  270.00
 layer component
@@ -4932,9 +4932,9 @@ $EndMODULE  R28
 
 $MODULE "R29"
 reference "R29"
-value "R"
+value "220"
 footprint "rc03_vert"
-attribut none
+attribut smd
 position  5.420000  2.237500
 orientation  0.00
 layer component
@@ -4974,7 +4974,7 @@ $MODULE "R30"
 reference "R30"
 value "4k7"
 footprint "rc03_vert"
-attribut none
+attribut smd
 position  4.100000  2.167500
 orientation  0.00
 layer component
@@ -5014,7 +5014,7 @@ $MODULE "R31"
 reference "R31"
 value "1k"
 footprint "rc03_vert"
-attribut none
+attribut smd
 position  3.285000  3.095000
 orientation  180.00
 layer component
@@ -5054,7 +5054,7 @@ $MODULE "R32"
 reference "R32"
 value "10k"
 footprint "rc03_vert"
-attribut none
+attribut smd
 position  2.207500  1.157500
 orientation  180.00
 layer component
@@ -5094,7 +5094,7 @@ $MODULE "R33"
 reference "R33"
 value "10k"
 footprint "rc03_vert"
-attribut none
+attribut smd
 position  2.010000  1.157500
 orientation  0.00
 layer component
@@ -5134,7 +5134,7 @@ $MODULE "P3"
 reference "P3"
 value "SCL"
 footprint "pin_strip_2"
-attribut none
+attribut smd
 position  1.697500  1.942500
 orientation  180.00
 layer component
@@ -5174,7 +5174,7 @@ $MODULE "P2"
 reference "P2"
 value "SDA"
 footprint "pin_strip_2"
-attribut none
+attribut smd
 position  1.695000  1.302500
 orientation  0.00
 layer component
@@ -5214,7 +5214,7 @@ $MODULE "C10"
 reference "C10"
 value "100n"
 footprint "C2"
-attribut none
+attribut smd
 position  2.442500  1.955000
 orientation  0.00
 layer component
@@ -5254,7 +5254,7 @@ $MODULE "C9"
 reference "C9"
 value "100n"
 footprint "C2"
-attribut none
+attribut smd
 position  1.470000  3.307500
 orientation  180.00
 layer component
@@ -5294,7 +5294,7 @@ $MODULE "C7"
 reference "C7"
 value "100n"
 footprint "C2"
-attribut none
+attribut smd
 position  1.540000  2.450000
 orientation  180.00
 layer component
@@ -5334,7 +5334,7 @@ $MODULE "C3"
 reference "C3"
 value "100n"
 footprint "C2"
-attribut none
+attribut smd
 position  4.075000  2.337500
 orientation  180.00
 layer component
@@ -5385,7 +5385,7 @@ reference "G***"
 value "LOGO"
 footprint "OSHW_6mm"
 attribut virtual
-position  4.897500  1.395000
+position  3.000000  2.700000
 orientation  0.00
 layer copper
 $EndMODULE  G***
@@ -5405,65 +5405,16 @@ reference "G1"
 value "Logo-WL3"
 footprint "Logo-WL3"
 attribut virtual
-position  3.580000  1.295000
+position  2.170000  2.566000
 orientation  0.00
 layer copper
 $EndMODULE  G1
-
-$MODULE "P20"
-reference "P20"
-value "DC_IN"
-footprint "JACK_ALIM"
-attribut none
-position  1.327500  2.937500
-orientation  0.00
-layer component
-$SHAPE3D
-Na "Nb_v1_libs//Nb_v1_3D//POWER_21.wrl"
-Sc 0.800000 0.800000 0.800000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$SHAPE3D
-Na "Nb_v2_libs/Nb_v2_3D/POWER_21.wrl"
-Sc 0.800000 0.800000 0.800000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "2"
-position  0.000000  0.000000
-size  0.189000  0.189000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "1"
-position  0.240000  0.000000
-size  0.189000  0.189000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  all
-$EndPAD
-$PAD "3"
-position  0.125000  0.200000
-size  0.220000  0.120000
-drill  0.140000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Oval
-Layer  all
-$EndPAD
-$EndMODULE  P20
 
 $MODULE "P41"
 reference "P41"
 value "STACK-L"
 footprint "pin_sck_4-90"
-attribut none
+attribut smd
 position  1.300000  1.550000
 orientation  270.00
 layer component
@@ -5521,7 +5472,7 @@ $MODULE "CD1"
 reference "CD1"
 value "CDOT1"
 footprint "pin_strip_4"
-attribut none
+attribut smd
 position  1.672500  1.620000
 orientation  90.00
 layer component
@@ -5579,7 +5530,7 @@ $MODULE "CD2"
 reference "CD2"
 value "CDOT2"
 footprint "pin_strip_4"
-attribut none
+attribut smd
 position  2.572500  1.620000
 orientation  90.00
 layer component
@@ -5637,7 +5588,7 @@ $MODULE "CD3"
 reference "CD3"
 value "CDOT3"
 footprint "pin_strip_4"
-attribut none
+attribut smd
 position  1.447500  1.620000
 orientation  90.00
 layer component
@@ -5695,7 +5646,7 @@ $MODULE "K1"
 reference "K1"
 value "PWR_SEL"
 footprint "pin_strip_3"
-attribut none
+attribut smd
 position  1.540000  2.600000
 orientation  180.00
 layer component
@@ -5744,7 +5695,7 @@ $MODULE "X1"
 reference "X1"
 value "16MHz"
 footprint "XTAL_2"
-attribut none
+attribut smd
 position  4.520000  2.942500
 orientation  0.00
 layer component
@@ -5802,7 +5753,7 @@ $MODULE "P1"
 reference "P1"
 value "DCF77"
 footprint "pin_strip_6"
-attribut none
+attribut smd
 position  5.220000  2.582500
 orientation  0.00
 layer component
@@ -5878,7 +5829,7 @@ $MODULE "U9"
 reference "U9"
 value "78L05"
 footprint "Volt_Reg_78xx_Vert"
-attribut none
+attribut smd
 position  1.922500  2.632500
 orientation  180.00
 layer component
@@ -5897,7 +5848,7 @@ $EndSHAPE3D
 $PAD "VO"
 position  0.100000  0.000000
 size  0.060000  0.120000
-drill  0.032000
+drill  0.045000
 shape_offset  0.000000  0.000000
 orientation  0.00
 Shape  Oval
@@ -5906,7 +5857,7 @@ $EndPAD
 $PAD "VI"
 position -0.100000  0.000000
 size  0.060000  0.120000
-drill  0.032000
+drill  0.045000
 shape_offset  0.000000  0.000000
 orientation  0.00
 Shape  Oval
@@ -5924,7 +5875,7 @@ $EndPAD
 $PAD "GND"
 position  0.000000  0.000000
 size  0.060000  0.120000
-drill  0.032000
+drill  0.045000
 shape_offset  0.000000  0.000000
 orientation  0.00
 Shape  Oval
@@ -5958,7 +5909,7 @@ $MODULE "K2"
 reference "K2"
 value "CONN_3"
 footprint "pin_strip_3"
-attribut none
+attribut smd
 position  2.825000  1.195000
 orientation  90.00
 layer component
@@ -6003,91 +5954,11 @@ Layer  all
 $EndPAD
 $EndMODULE  K2
 
-$MODULE "R34"
-reference "R34"
-value "10k"
-footprint "rc03_vert"
-attribut none
-position  2.442500  1.345000
-orientation  90.00
-layer component
-$SHAPE3D
-Na "Nb_v1_libs//Nb_v1_3D//rc03vert.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$SHAPE3D
-Na "Nb_v2_libs/Nb_v2_3D/rc03vert.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position -0.050000  0.000000
-size  0.060000  0.060000
-drill  0.025000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "2"
-position  0.050000  0.000000
-size  0.060000  0.060000
-drill  0.025000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$EndMODULE  R34
-
-$MODULE "R35"
-reference "R35"
-value "10k"
-footprint "rc03_vert"
-attribut none
-position  1.387500  1.300000
-orientation  270.00
-layer component
-$SHAPE3D
-Na "Nb_v1_libs//Nb_v1_3D//rc03vert.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$SHAPE3D
-Na "Nb_v2_libs/Nb_v2_3D/rc03vert.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position -0.050000  0.000000
-size  0.060000  0.060000
-drill  0.025000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "2"
-position  0.050000  0.000000
-size  0.060000  0.060000
-drill  0.025000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$EndMODULE  R35
-
 $MODULE "D5"
 reference "D5"
 value "1N4007"
 footprint "diode_do35"
-attribut none
+attribut smd
 position  3.385000  2.905000
 orientation  180.00
 layer component
@@ -6127,7 +5998,7 @@ $MODULE "C2"
 reference "C2"
 value "100u"
 footprint "CP_5x11mm"
-attribut none
+attribut smd
 position  1.872500  2.412500
 orientation  270.00
 layer component
@@ -6176,7 +6047,7 @@ $MODULE "C1"
 reference "C1"
 value "100n"
 footprint "C2"
-attribut none
+attribut smd
 position  1.540000  2.335000
 orientation  180.00
 layer component
@@ -6216,7 +6087,7 @@ $MODULE "C4"
 reference "C4"
 value "100n"
 footprint "C2"
-attribut none
+attribut smd
 position  3.780000  1.905000
 orientation  90.00
 layer component
@@ -6256,7 +6127,7 @@ $MODULE "C5"
 reference "C5"
 value "100n"
 footprint "C2"
-attribut none
+attribut smd
 position  4.787500  1.905000
 orientation  90.00
 layer component
@@ -6296,7 +6167,7 @@ $MODULE "C6"
 reference "C6"
 value "100n"
 footprint "C2"
-attribut none
+attribut smd
 position  5.750000  1.905000
 orientation  90.00
 layer component
@@ -6336,7 +6207,7 @@ $MODULE "C13"
 reference "C13"
 value "100n"
 footprint "C2"
-attribut none
+attribut smd
 position  6.680000  1.905000
 orientation  90.00
 layer component
@@ -6376,7 +6247,7 @@ $MODULE "C14"
 reference "C14"
 value "100n"
 footprint "C2"
-attribut none
+attribut smd
 position  3.850000  1.475000
 orientation  90.00
 layer component
@@ -6416,7 +6287,7 @@ $MODULE "C15"
 reference "C15"
 value "100n"
 footprint "C2"
-attribut none
+attribut smd
 position  4.870000  1.475000
 orientation  90.00
 layer component
@@ -6456,7 +6327,7 @@ $MODULE "P5"
 reference "P5"
 value "ANODES"
 footprint "pin_strip_16x2"
-attribut none
+attribut smd
 position  3.800000  1.140000
 orientation  180.00
 layer component
@@ -6760,7 +6631,7 @@ $MODULE "P6"
 reference "P6"
 value "KATHODES"
 footprint "pin_strip_16x2"
-attribut none
+attribut smd
 position  5.850000  1.140000
 orientation  180.00
 layer component
@@ -7059,6 +6930,74 @@ Shape  Circ
 Layer  all
 $EndPAD
 $EndMODULE  P6
+
+$MODULE "P20"
+reference "P20"
+value "DC_IN"
+footprint "JACK_ALIM"
+attribut smd
+position  1.327500  2.937500
+orientation  0.00
+layer component
+$SHAPE3D
+Na "Nb_v1_libs//Nb_v1_3D//POWER_21.wrl"
+Sc 0.800000 0.800000 0.800000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$SHAPE3D
+Na "Nb_v2_libs/Nb_v2_3D/POWER_21.wrl"
+Sc 0.800000 0.800000 0.800000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "2"
+position  0.000000  0.000000
+size  0.189000  0.189000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "1"
+position  0.240000  0.000000
+size  0.189000  0.189000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$PAD "3"
+position  0.125000  0.200000
+size  0.220000  0.120000
+drill  0.140000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Oval
+Layer  all
+$EndPAD
+$EndMODULE  P20
+
+$MODULE "P4"
+reference "P4"
+value "CONN_1"
+footprint "Pad01"
+attribut smd
+position  1.920000  3.158000
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.400000  0.400000
+drill  0.120000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$EndMODULE  P4
 
 $LINE 
 start 1.000000 3.400000

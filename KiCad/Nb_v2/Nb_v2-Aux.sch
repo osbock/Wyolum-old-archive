@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 4/6/2012 11:10:44 AM
+EESchema Schematic File Version 2  date 4/27/2012 4:35:19 PM
 LIBS:Nb_v2
 LIBS:power
 LIBS:conn
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title "NachBau - WordClock"
-Date "6 apr 2012"
+Date "27 apr 2012"
 Rev "A"
 Comp ""
 Comment1 "www.wyolum.com"
@@ -856,7 +856,7 @@ L R R29
 U 1 1 4ECE8661
 P 7250 4150
 F 0 "R29" V 7330 4150 50  0000 C CNN
-F 1 "R" V 7250 4150 50  0000 C CNN
+F 1 "220" V 7250 4150 50  0000 C CNN
 F 2 "rc03_vert" H 7250 4150 60  0001 C CNN
 	1    7250 4150
 	1    0    0    -1  
