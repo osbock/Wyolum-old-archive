@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 4/14/2012 5:14:23 PM
+Cmp-Mod V01 Genere par PcbNew le 4/27/2012 4:19:35 PM
 
 BeginCmp
 TimeStamp = 4DD75EA2
@@ -132,7 +132,7 @@ BeginCmp
 TimeStamp = 4DCB9F4D
 Path = /4DCA5EC5
 Reference = IC1;
-ValeurCmp = ATMEGA8-AI;
+ValeurCmp = ATMEGA328-AU-ND;
 IdModule  = TQFP32;
 EndCmp
 
@@ -265,7 +265,7 @@ IdModule  = Sck-04-F-SMT;
 EndCmp
 
 BeginCmp
-TimeStamp = 4EC3B715
+TimeStamp = 4F9A6A01
 Path = /4DD75888
 Reference = P12;
 ValeurCmp = CD1;
@@ -534,6 +534,22 @@ Path = Logo-WL3
 Reference = G1;
 ValeurCmp = Logo-WL3;
 IdModule  = Logo-WL3;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F9A5FA0
+Path = /4F9A5A02
+Reference = D3;
+ValeurCmp = RB886GT2R;
+IdModule  = d_VMD2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4F9A5FA2
+Path = /4F9A5A10
+Reference = D4;
+ValeurCmp = RB886GT2R;
+IdModule  = d_VMD2;
 EndCmp
 
 EndListe

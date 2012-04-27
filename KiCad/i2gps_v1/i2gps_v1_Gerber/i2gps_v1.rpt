@@ -1,4 +1,4 @@
-## Module report - date 4/14/2012 5:14:53 PM
+## Module report - date 4/27/2012 4:19:59 PM
 ## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ##
@@ -40,7 +40,7 @@ $MODULE "P9"
 reference "P9"
 value "ISP"
 footprint "ISP"
-attribut none
+attribut smd
 position  1.867500  1.180000
 orientation  0.00
 layer component
@@ -110,7 +110,7 @@ $MODULE "P4"
 reference "P4"
 value "CONN_6"
 footprint "PIN_ARRAY-6X1"
-attribut none
+attribut smd
 position  2.282500  2.110000
 orientation  0.00
 layer component
@@ -180,7 +180,7 @@ $MODULE "P5"
 reference "P5"
 value "CONN_6"
 footprint "PIN_ARRAY-6X1"
-attribut none
+attribut smd
 position  2.982500  2.110000
 orientation  0.00
 layer component
@@ -250,7 +250,7 @@ $MODULE "P6"
 reference "P6"
 value "CONN_2"
 footprint "pin_strip_2"
-attribut none
+attribut smd
 position  3.112500  1.260000
 orientation  270.00
 layer component
@@ -284,7 +284,7 @@ $MODULE "P8"
 reference "P8"
 value "FTDI"
 footprint "PIN_ARRAY-6X1"
-attribut none
+attribut smd
 position  3.232500  1.710000
 orientation  90.00
 layer component
@@ -354,7 +354,7 @@ $MODULE "P3"
 reference "P3"
 value "BootDrive"
 footprint "PIN_ARRAY-6X1"
-attribut none
+attribut smd
 position  3.390000  1.900000
 orientation  90.00
 layer component
@@ -424,7 +424,7 @@ $MODULE "P7"
 reference "P7"
 value "GPS_UP501"
 footprint "PIN_ARRAY-6X1"
-attribut none
+attribut smd
 position  3.390000  1.300000
 orientation  270.00
 layer component
@@ -986,7 +986,7 @@ $EndMODULE  U1
 
 $MODULE "IC1"
 reference "IC1"
-value "ATMEGA8-AI"
+value "ATMEGA328-AU-ND"
 footprint "TQFP32"
 attribut smd
 position  2.252500  1.635000
@@ -1599,7 +1599,7 @@ reference "C9"
 value "100n"
 footprint "c_0805"
 attribut smd
-position  1.557500  1.320000
+position  1.545000  1.320000
 orientation  0.00
 layer copper
 $SHAPE3D
@@ -1745,8 +1745,8 @@ Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $PAD "1"
-position  0.150000 -0.065000
-size  0.040000  0.080000
+position  0.150000 -0.075000
+size  0.040000  0.100000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -1754,8 +1754,8 @@ Shape  Rect
 Layer  copper
 $EndPAD
 $PAD "2"
-position  0.050000  0.065000
-size  0.040000  0.080000
+position  0.050000  0.075000
+size  0.040000  0.100000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -1763,8 +1763,8 @@ Shape  Rect
 Layer  copper
 $EndPAD
 $PAD "3"
-position -0.050000 -0.065000
-size  0.040000  0.080000
+position -0.050000 -0.075000
+size  0.040000  0.100000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -1772,8 +1772,8 @@ Shape  Rect
 Layer  copper
 $EndPAD
 $PAD "4"
-position -0.150000  0.065000
-size  0.040000  0.080000
+position -0.150000  0.075000
+size  0.040000  0.100000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -1798,7 +1798,7 @@ Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $PAD "1"
 position  0.150000 -0.065000
-size  0.040000  0.080000
+size  0.040000  0.100000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -1806,8 +1806,8 @@ Shape  Rect
 Layer  copper
 $EndPAD
 $PAD "2"
-position  0.050000  0.065000
-size  0.040000  0.080000
+position  0.050000  0.075000
+size  0.040000  0.100000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -1815,8 +1815,8 @@ Shape  Rect
 Layer  copper
 $EndPAD
 $PAD "3"
-position -0.050000 -0.065000
-size  0.040000  0.080000
+position -0.050000 -0.075000
+size  0.040000  0.100000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -1824,8 +1824,8 @@ Shape  Rect
 Layer  copper
 $EndPAD
 $PAD "4"
-position -0.150000  0.065000
-size  0.040000  0.080000
+position -0.150000  0.075000
+size  0.040000  0.100000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -1849,8 +1849,8 @@ Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $PAD "1"
-position  0.150000 -0.065000
-size  0.040000  0.080000
+position  0.150000 -0.075000
+size  0.040000  0.100000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -1858,8 +1858,8 @@ Shape  Rect
 Layer  copper
 $EndPAD
 $PAD "2"
-position  0.050000  0.065000
-size  0.040000  0.080000
+position  0.050000  0.075000
+size  0.040000  0.100000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -1867,8 +1867,8 @@ Shape  Rect
 Layer  copper
 $EndPAD
 $PAD "3"
-position -0.050000 -0.065000
-size  0.040000  0.080000
+position -0.050000 -0.075000
+size  0.040000  0.100000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -1876,8 +1876,8 @@ Shape  Rect
 Layer  copper
 $EndPAD
 $PAD "4"
-position -0.150000  0.065000
-size  0.040000  0.080000
+position -0.150000  0.075000
+size  0.040000  0.100000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -1910,8 +1910,8 @@ Shape  Rect
 Layer  copper
 $EndPAD
 $PAD "2"
-position  0.050000  0.065000
-size  0.040000  0.080000
+position  0.050000  0.075000
+size  0.040000  0.100000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -1928,8 +1928,8 @@ Shape  Rect
 Layer  copper
 $EndPAD
 $PAD "4"
-position -0.150000  0.065000
-size  0.040000  0.080000
+position -0.150000  0.075000
+size  0.040000  0.100000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -2873,6 +2873,74 @@ position  0.987500  1.087500
 orientation  0.00
 layer copper
 $EndMODULE  G1
+
+$MODULE "D3"
+reference "D3"
+value "RB886GT2R"
+footprint "d_VMD2"
+attribut smd
+position  3.302000  1.350000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "i2gps_v1-libs\\3D Modules\\r_0805.wrl"
+Sc 0.750000 0.750000 0.750000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "2"
+position  0.022500  0.000000
+size  0.030000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "1"
+position -0.025000  0.000000
+size  0.030000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D3
+
+$MODULE "D4"
+reference "D4"
+value "RB886GT2R"
+footprint "d_VMD2"
+attribut smd
+position  3.236000  1.350000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "i2gps_v1-libs\\3D Modules\\r_0805.wrl"
+Sc 0.750000 0.750000 0.750000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "2"
+position  0.022500  0.000000
+size  0.030000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "1"
+position -0.025000  0.000000
+size  0.030000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D4
 
 $LINE 
 start 1.000000 1.000000

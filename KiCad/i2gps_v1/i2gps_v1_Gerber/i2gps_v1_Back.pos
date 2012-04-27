@@ -1,10 +1,10 @@
-### Module positions - created on Saturday 14 April 2012 09:12:47 PM IST ###
-### Printed by PcbNew version pcbnew (2011-05-25)-stable
+### Module positions - created on 4/27/2012 4:19:14 PM ###
+### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Back
 # Ref    Val                  PosX       PosY        Rot     Side
 BT1      BATT_RTC             2.6625     1.5350     180.0    Back
-C9       100n                 1.5575     1.3200       0.0    Back
+C9       100n                 1.5450     1.3200       0.0    Back
 P10      CD2                  1.5950     1.1500       0.0    Back
 P11      CD2                  1.1450     1.6000      90.0    Back
 P12      CD1                  1.5950     2.0500       0.0    Back

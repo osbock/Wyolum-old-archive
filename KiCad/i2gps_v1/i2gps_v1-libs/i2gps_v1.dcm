@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: Sunday 15 April 2012 01:53:34 AM IST
+EESchema-DOCLIB  Version 2.0  Date: 4/27/2012 2:03:53 PM
 #
 $CMP 74LS125
 D Quad buffer 3 State out
@@ -8,6 +8,11 @@ $ENDCMP
 $CMP CONN_6
 D ymbole general de connecteur
 K CONN
+$ENDCMP
+#
+$CMP DIODESCH
+D Diode schottky
+K DEV DIODE
 $ENDCMP
 #
 #End Doc Library

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 15 April 2012 01:54:18 AM IST
+EESchema Schematic File Version 2  date 4/27/2012 5:56:55 PM
 LIBS:i2gps_v1
 LIBS:power
 LIBS:i2gps_v1-cache
@@ -7,21 +7,19 @@ EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 2
-Title "Buckler, i2sd, v3, with RTC, with HW addressing"
-Date "14 apr 2012"
-Rev "3"
+Title "Buckler+i2sd+RTC+HW addr+GPS+uSD+IRrx"
+Date "27 apr 2012"
+Rev "1"
 Comp "WyoLum"
 Comment1 ""
 Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 7275 6400 0    50   ~ 0
-GPS_Rx
-Text Label 1400 3275 0    50   ~ 0
-PB7
-Text Label 1400 2800 0    50   ~ 0
-PB6
+Wire Notes Line
+	8850 6300 7025 6300
+Wire Wire Line
+	7225 6800 7100 6800
 Wire Notes Line
 	4750 3700 4050 3700
 Wire Wire Line
@@ -35,19 +33,11 @@ Wire Notes Line
 Wire Notes Line
 	4750 3775 4050 3775
 Wire Notes Line
-	7050 7025 7050 6300
-Wire Notes Line
-	7050 7025 8275 7025
-Wire Notes Line
-	8275 7025 8275 6300
-Wire Notes Line
-	8275 6300 7050 6300
+	8850 6300 8850 7025
 Wire Wire Line
-	7675 6900 7275 6900
+	8150 6900 7850 6900
 Wire Wire Line
-	7675 6700 7275 6700
-Wire Wire Line
-	7675 6500 7275 6500
+	8150 6500 7850 6500
 Connection ~ 10600 1850
 Wire Notes Line
 	4750 3700 4750 3550
@@ -314,7 +304,7 @@ Connection ~ 7600 1100
 Connection ~ 1075 4975
 Connection ~ 1250 2450
 Wire Wire Line
-	1250 1425 1250 4975
+	1250 4975 1250 1425
 Connection ~ 2350 800 
 Connection ~ 1400 2650
 Wire Wire Line
@@ -352,7 +342,7 @@ Wire Wire Line
 	1075 4650 1075 4975
 Connection ~ 1250 4975
 Wire Wire Line
-	9950 2350 9950 2475
+	9950 2475 9950 2350
 Wire Wire Line
 	5200 4250 5200 1700
 Wire Wire Line
@@ -494,7 +484,7 @@ Wire Wire Line
 Wire Wire Line
 	11150 2775 10700 2775
 Wire Wire Line
-	2900 7300 2000 7300
+	2000 7300 2900 7300
 Wire Wire Line
 	2900 6900 2000 6900
 Wire Wire Line
@@ -506,7 +496,7 @@ Wire Wire Line
 Wire Wire Line
 	6400 6400 5800 6400
 Wire Wire Line
-	6400 6700 5800 6700
+	5800 6700 6400 6700
 Wire Notes Line
 	3450 6300 1850 6300
 Wire Notes Line
@@ -538,7 +528,7 @@ Wire Wire Line
 Wire Wire Line
 	6400 7625 5800 7625
 Wire Wire Line
-	1075 4050 1075 1950
+	1075 1950 1075 4050
 Connection ~ 1075 2250
 Wire Wire Line
 	900  3275 1400 3275
@@ -577,7 +567,7 @@ Wire Wire Line
 Wire Wire Line
 	8400 2400 8400 2250
 Wire Wire Line
-	700  2975 700  3125
+	700  3125 700  2975
 Wire Wire Line
 	700  2575 700  2550
 Wire Wire Line
@@ -612,11 +602,9 @@ Wire Wire Line
 Wire Wire Line
 	4000 6800 3625 6800
 Wire Wire Line
-	7675 6400 7275 6400
+	8150 6400 7850 6400
 Wire Wire Line
-	7675 6600 7275 6600
-Wire Wire Line
-	7675 6800 7275 6800
+	8150 6600 7850 6600
 Wire Notes Line
 	4750 3225 4050 3225
 Wire Notes Line
@@ -626,38 +614,82 @@ Wire Notes Line
 Wire Notes Line
 	4050 3375 4050 3225
 Wire Wire Line
-	2450 5100 2450 4850
+	2450 4850 2450 5100
+Wire Wire Line
+	7625 6800 8150 6800
+Connection ~ 7675 6800
+Wire Wire Line
+	7100 6400 7775 6400
+Wire Wire Line
+	7775 6400 7775 6700
+Wire Wire Line
+	7775 6700 8150 6700
+Connection ~ 7675 6400
+Wire Notes Line
+	8850 7025 7025 7025
+Wire Notes Line
+	7025 7025 7025 6300
+Text Label 7850 6800 0    50   ~ 0
+GPS_BAT
+Text Label 7850 6700 0    50   ~ 0
+GPS_3V3
 $Comp
-L GND #PWR01
+L DIODESCH D4
+U 1 1 4F9A5A10
+P 7425 6800
+F 0 "D4" H 7425 6900 40  0000 C CNN
+F 1 "RB886GT2R" H 7425 6700 40  0000 C CNN
+F 2 "d_VMD2" H 7425 6800 40  0001 C CNN
+	1    7425 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L DIODESCH D3
+U 1 1 4F9A5A02
+P 7675 6600
+F 0 "D3" V 7675 6500 40  0000 C CNN
+F 1 "RB886GT2R" V 7600 6425 40  0000 C CNN
+F 2 "d_VMD2" V 7700 6425 40  0001 C CNN
+	1    7675 6600
+	0    1    1    0   
+$EndComp
+Text Label 7850 6400 0    50   ~ 0
+GPS_Rx
+Text Label 1400 3275 0    50   ~ 0
+PB7
+Text Label 1400 2800 0    50   ~ 0
+PB6
+$Comp
+L GND #PWR7
 U 1 1 4F5AFC62
 P 2450 5100
-F 0 "#PWR01" H 2450 5100 30  0001 C CNN
+F 0 "#PWR7" H 2450 5100 30  0001 C CNN
 F 1 "GND" H 2450 5030 30  0001 C CNN
 	1    2450 5100
 	1    0    0    -1  
 $EndComp
-Text Notes 7050 6300 0    60   Italic 12
-GPS Breakout
+Text Notes 7025 6300 0    60   Italic 12
+GPS Header
 Text Notes 4075 3300 0    40   Italic 8
 PD2 (1pps)\nGPS 1pps signal
-Text Label 7275 6900 0    50   ~ 0
+Text Label 7850 6900 0    50   ~ 0
 1pps
-Text Label 7275 6800 0    50   ~ 0
+Text Label 7100 6800 0    50   ~ 0
 BAT
-Text Label 7275 6700 0    50   ~ 0
+Text Label 7100 6400 0    50   ~ 0
 3V3
-Text Label 7275 6600 0    50   ~ 0
+Text Label 7850 6600 0    50   ~ 0
 GND
-Text Label 7275 6500 0    50   ~ 0
+Text Label 7850 6500 0    50   ~ 0
 GPS_Tx
 $Comp
 L CONN_6 P7
 U 1 1 4F45D5FA
-P 8025 6650
-F 0 "P7" V 7975 6650 60  0000 C CNN
-F 1 "GPS_UP501" V 8075 6650 60  0000 C CNN
-F 2 "PIN_ARRAY-6X1" V 8175 6650 60  0001 C CNN
-	1    8025 6650
+P 8500 6650
+F 0 "P7" V 8450 6650 60  0000 C CNN
+F 1 "GPS_UP501" V 8550 6650 60  0000 C CNN
+F 2 "PIN_ARRAY-6X1" V 8650 6650 60  0001 C CNN
+	1    8500 6650
 	1    0    0    -1  
 $EndComp
 Text Label 10050 1450 0    50   ~ 0
@@ -753,10 +785,10 @@ DAT
 Text Notes 3875 1475 0    50   Italic 10
 IR SENSOR
 $Comp
-L GND #PWR02
+L GND #PWR4
 U 1 1 4EC6563E
 P 4100 2250
-F 0 "#PWR02" H 4100 2250 30  0001 C CNN
+F 0 "#PWR4" H 4100 2250 30  0001 C CNN
 F 1 "GND" H 4100 2180 30  0001 C CNN
 	1    4100 2250
 	1    0    0    -1  
@@ -834,10 +866,10 @@ NOTE :\nB11+B16 and B10+B17\nSolder Bridges for HW addressing
 Text Label 4500 4150 0    60   ~ 0
 GND
 $Comp
-L GND #PWR03
+L GND #PWR6
 U 1 1 4E96D558
 P 4500 4600
-F 0 "#PWR03" H 4500 4600 30  0001 C CNN
+F 0 "#PWR6" H 4500 4600 30  0001 C CNN
 F 1 "GND" H 4500 4530 30  0001 C CNN
 	1    4500 4600
 	1    0    0    -1  
@@ -919,16 +951,16 @@ FTDI Header
 Text Notes 625  6300 0    60   Italic 12
 ISP/PROG Header
 Text Notes 6550 6300 2    60   Italic 12
-BUCKLER Interface
+BUCKLER Header
 Text Label 5800 6700 0    60   ~ 0
 GND
 Text Label 800  7300 0    60   ~ 0
 GND
 $Comp
-L +3.3V #PWR04
+L +3.3V #PWR2
 U 1 1 4E1EF3E1
 P 7600 975
-F 0 "#PWR04" H 7600 935 30  0001 C CNN
+F 0 "#PWR2" H 7600 935 30  0001 C CNN
 F 1 "+3.3V" H 7600 1085 30  0000 C CNN
 	1    7600 975 
 	1    0    0    -1  
@@ -974,10 +1006,10 @@ F 2 "SOT23-5" H 9875 850 60  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR05
+L GND #PWR3
 U 1 1 4E1EC9C3
 P 9950 1525
-F 0 "#PWR05" H 9950 1525 30  0001 C CNN
+F 0 "#PWR3" H 9950 1525 30  0001 C CNN
 F 1 "GND" H 9950 1455 30  0001 C CNN
 	1    9950 1525
 	1    0    0    -1  
@@ -1073,10 +1105,10 @@ LED1
 Text Label 5250 6450 0    60   ~ 0
 LED2
 $Comp
-L GND #PWR06
+L GND #PWR8
 U 1 1 4DCFFB44
 P 5100 7550
-F 0 "#PWR06" H 5100 7550 30  0001 C CNN
+F 0 "#PWR8" H 5100 7550 30  0001 C CNN
 F 1 "GND" H 5100 7480 30  0001 C CNN
 	1    5100 7550
 	1    0    0    -1  
@@ -1389,10 +1421,10 @@ $EndComp
 Text Label 10025 2400 0    60   ~ 0
 GND
 $Comp
-L GND #PWR07
+L GND #PWR5
 U 1 1 4DCAC327
 P 9950 2475
-F 0 "#PWR07" H 9950 2475 30  0001 C CNN
+F 0 "#PWR5" H 9950 2475 30  0001 C CNN
 F 1 "GND" H 9950 2405 30  0001 C CNN
 	1    9950 2475
 	1    0    0    -1  
@@ -1533,10 +1565,10 @@ F 2 "TQFP32" H 2925 1675 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +5V #PWR08
+L +5V #PWR1
 U 1 1 4D82B1D1
 P 8700 650
-F 0 "#PWR08" H 8700 740 20  0001 C CNN
+F 0 "#PWR1" H 8700 740 20  0001 C CNN
 F 1 "+5V" H 8700 740 30  0000 C CNN
 	1    8700 650 
 	1    0    0    -1  

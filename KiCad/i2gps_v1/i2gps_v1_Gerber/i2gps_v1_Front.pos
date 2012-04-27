@@ -1,5 +1,5 @@
-### Module positions - created on Saturday 14 April 2012 09:12:47 PM IST ###
-### Printed by PcbNew version pcbnew (2011-05-25)-stable
+### Module positions - created on 4/27/2012 4:19:14 PM ###
+### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Front
 # Ref    Val                  PosX       PosY        Rot     Side
@@ -15,7 +15,9 @@ C10      22p                  2.3775     1.1350     270.0    Front
 C11      22p                  2.2725     1.1350      90.0    Front
 D1       LED                  2.5375     1.0975       0.0    Front
 D2       LED                  2.7000     1.0975       0.0    Front
-IC1      ATMEGA8-AI           2.2525     1.6350     270.0    Front
+D3       RB886GT2R            3.3020     1.3500     270.0    Front
+D4       RB886GT2R            3.2360     1.3500     270.0    Front
+IC1      ATMEGA328-AU-ND      2.2525     1.6350     270.0    Front
 P3       BootDrive            3.3900     1.9000      90.0    Front
 P4       CONN_6               2.2825     2.1100       0.0    Front
 P5       CONN_6               2.9825     2.1100       0.0    Front
