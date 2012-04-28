@@ -1,4 +1,4 @@
-## Module report - date 4/27/2012 4:19:59 PM
+## Module report - date 4/28/2012 11:04:24 AM
 ## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ##
@@ -248,7 +248,7 @@ $EndMODULE  P5
 
 $MODULE "P6"
 reference "P6"
-value "CONN_2"
+value "9VBAT"
 footprint "pin_strip_2"
 attribut smd
 position  3.112500  1.260000
@@ -882,7 +882,7 @@ $EndMODULE  U4
 
 $MODULE "U3"
 reference "U3"
-value "MIC5219-5.0BM5"
+value "5V0"
 footprint "SOT23-5"
 attribut smd
 position  2.905000  1.235000
@@ -943,7 +943,7 @@ $EndMODULE  U3
 
 $MODULE "U1"
 reference "U1"
-value "MCP1700T-3302E/TT"
+value "3V3"
 footprint "SOT23-3"
 attribut smd
 position  2.645000  1.530000
@@ -2403,7 +2403,7 @@ $EndMODULE  B3
 
 $MODULE "R8"
 reference "R8"
-value "470E"
+value "1k5"
 footprint "r_0805"
 attribut smd
 position  2.700000  1.192500
@@ -2437,7 +2437,7 @@ $EndMODULE  R8
 
 $MODULE "R5"
 reference "R5"
-value "470E"
+value "1k5"
 footprint "r_0805"
 attribut smd
 position  2.537500  1.192500
@@ -2874,46 +2874,12 @@ orientation  0.00
 layer copper
 $EndMODULE  G1
 
-$MODULE "D3"
-reference "D3"
-value "RB886GT2R"
-footprint "d_VMD2"
-attribut smd
-position  3.302000  1.350000
-orientation  270.00
-layer component
-$SHAPE3D
-Na "i2gps_v1-libs\\3D Modules\\r_0805.wrl"
-Sc 0.750000 0.750000 0.750000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "2"
-position  0.022500  0.000000
-size  0.030000  0.030000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "1"
-position -0.025000  0.000000
-size  0.030000  0.030000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  D3
-
 $MODULE "D4"
 reference "D4"
 value "RB886GT2R"
 footprint "d_VMD2"
 attribut smd
-position  3.236000  1.350000
+position  3.235000  1.335000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -2941,6 +2907,40 @@ Shape  Rect
 Layer  component
 $EndPAD
 $EndMODULE  D4
+
+$MODULE "D3"
+reference "D3"
+value "RB886GT2R"
+footprint "d_VMD2"
+attribut smd
+position  3.302500  1.335000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "i2gps_v1-libs\\3D Modules\\r_0805.wrl"
+Sc 0.750000 0.750000 0.750000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "2"
+position  0.022500  0.000000
+size  0.030000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "1"
+position -0.025000  0.000000
+size  0.030000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D3
 
 $LINE 
 start 1.000000 1.000000

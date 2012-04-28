@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 4/27/2012 4:19:35 PM
+Cmp-Mod V01 Genere par PcbNew le 4/28/2012 11:04:05 AM
 
 BeginCmp
 TimeStamp = 4DD75EA2
@@ -36,7 +36,7 @@ BeginCmp
 TimeStamp = 4EBEB8AB
 Path = /4E1ED2A7
 Reference = P6;
-ValeurCmp = CONN_2;
+ValeurCmp = 9VBAT;
 IdModule  = pin_strip_2;
 EndCmp
 
@@ -116,7 +116,7 @@ BeginCmp
 TimeStamp = 4E1EDACA
 Path = /4E1ECD8D
 Reference = U3;
-ValeurCmp = MIC5219-5.0BM5;
+ValeurCmp = 5V0;
 IdModule  = SOT23-5;
 EndCmp
 
@@ -124,7 +124,7 @@ BeginCmp
 TimeStamp = 4DCB9F4B
 Path = /4DCAC2D1
 Reference = U1;
-ValeurCmp = MCP1700T-3302E/TT;
+ValeurCmp = 3V3;
 IdModule  = SOT23-3;
 EndCmp
 
@@ -380,7 +380,7 @@ BeginCmp
 TimeStamp = 4DD011E2
 Path = /4DCFFB11
 Reference = R8;
-ValeurCmp = 470E;
+ValeurCmp = 1k5;
 IdModule  = r_0805;
 EndCmp
 
@@ -388,7 +388,7 @@ BeginCmp
 TimeStamp = 4DD011E4
 Path = /4DCFFAF9
 Reference = R5;
-ValeurCmp = 470E;
+ValeurCmp = 1k5;
 IdModule  = r_0805;
 EndCmp
 
@@ -537,17 +537,17 @@ IdModule  = Logo-WL3;
 EndCmp
 
 BeginCmp
-TimeStamp = 4F9A5FA0
-Path = /4F9A5A02
-Reference = D3;
+TimeStamp = 4F9A5FA2
+Path = /4F9A5A10
+Reference = D4;
 ValeurCmp = RB886GT2R;
 IdModule  = d_VMD2;
 EndCmp
 
 BeginCmp
-TimeStamp = 4F9A5FA2
-Path = /4F9A5A10
-Reference = D4;
+TimeStamp = 4F9A5FA0
+Path = /4F9A5A02
+Reference = D3;
 ValeurCmp = RB886GT2R;
 IdModule  = d_VMD2;
 EndCmp

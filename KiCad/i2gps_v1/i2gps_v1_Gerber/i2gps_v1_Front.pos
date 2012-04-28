@@ -1,4 +1,4 @@
-### Module positions - created on 4/27/2012 4:19:14 PM ###
+### Module positions - created on 4/28/2012 11:22:33 AM ###
 ### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Front
@@ -15,13 +15,13 @@ C10      22p                  2.3775     1.1350     270.0    Front
 C11      22p                  2.2725     1.1350      90.0    Front
 D1       LED                  2.5375     1.0975       0.0    Front
 D2       LED                  2.7000     1.0975       0.0    Front
-D3       RB886GT2R            3.3020     1.3500     270.0    Front
-D4       RB886GT2R            3.2360     1.3500     270.0    Front
+D3       RB886GT2R            3.3025     1.3350     270.0    Front
+D4       RB886GT2R            3.2350     1.3350     270.0    Front
 IC1      ATMEGA328-AU-ND      2.2525     1.6350     270.0    Front
 P3       BootDrive            3.3900     1.9000      90.0    Front
 P4       CONN_6               2.2825     2.1100       0.0    Front
 P5       CONN_6               2.9825     2.1100       0.0    Front
-P6       CONN_2               3.1125     1.2600     270.0    Front
+P6       9VBAT                3.1125     1.2600     270.0    Front
 P7       GPS_UP501            3.3900     1.3000     270.0    Front
 P8       FTDI                 3.2325     1.7100      90.0    Front
 P9       ISP                  1.8675     1.1800       0.0    Front
@@ -29,14 +29,14 @@ R1       10k                  3.1325     1.9350      90.0    Front
 R2       10k                  3.0275     1.9350      90.0    Front
 R3       10k                  1.5325     1.1950     270.0    Front
 R4       10k                  1.5325     1.3525      90.0    Front
-R5       470E                 2.5375     1.1925     180.0    Front
+R5       1k5                  2.5375     1.1925     180.0    Front
 R6       10k                  1.6325     1.3525      90.0    Front
 R7       10k                  2.6400     1.7750       0.0    Front
-R8       470E                 2.7000     1.1925     180.0    Front
+R8       1k5                  2.7000     1.1925     180.0    Front
 SD1      SD_CARD_MICRO        1.2625     1.5350     270.0    Front
 SW1      SW_PUSH              1.8400     1.9725     180.0    Front
-U1       MCP1700T-3302E/T     2.6450     1.5300     180.0    Front
+U1       3V3                  2.6450     1.5300     180.0    Front
 U2       74HC125              1.2825     1.2500       0.0    Front
-U3       MIC5219-5.0BM5       2.9050     1.2350      90.0    Front
+U3       5V0                  2.9050     1.2350      90.0    Front
 X1       CRYSTAL_2            2.2025     1.2825     180.0    Front
 ## End
