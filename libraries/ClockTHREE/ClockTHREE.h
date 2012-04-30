@@ -51,8 +51,8 @@ With the understanding that:
      to this web page.
 */
 #ifndef ClockTHREE_h
-#define ClockTHREE_h
-// #define CLOCKTHREEJR // uncomment this line for ClockTHREEjr
+#define ClockTHREE_h 
+#define CLOCKTHREEJR // uncomment this line for ClockTHREEjr
 // #define PEGGY2 // uncomment this line for ClockTHREEjr
 
 // Arduino 1.0 compatibility
