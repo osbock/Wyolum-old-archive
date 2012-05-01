@@ -1,4 +1,4 @@
-update=4/30/2012 6:24:43 PM
+update=Tuesday 01 May 2012 10:15:11 PM IST
 version=1
 last_client=kicad
 [cvpcb]
@@ -62,7 +62,7 @@ DrawLar=150
 EdgeLar=150
 TxtLar=120
 MSegLar=150
-LastNetListRead=
+LastNetListRead=C3Jr_v2_nil.net
 [pcbnew/libraries]
 LibDir=
 LibName1=C3Jr_v2_nil_Libs/C3Jr_v2_nil_parts
