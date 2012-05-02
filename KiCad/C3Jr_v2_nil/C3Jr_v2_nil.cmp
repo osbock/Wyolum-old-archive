@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Tuesday 01 May 2012 07:31:05 PM IST
+Cmp-Mod V01 Created by CvPcb (2011-12-28 BZR 3254)-stable date = 5/2/2012 5:23:04 PM
 
 BeginCmp
 TimeStamp = /4F993956;
@@ -354,7 +354,7 @@ BeginCmp
 TimeStamp = /4F15617D;
 Reference = Q1;
 ValeurCmp = PNP;
-IdModule  = to92_2N5401;
+IdModule  = sot89;
 EndCmp
 
 BeginCmp
@@ -456,9 +456,9 @@ IdModule  = msoic-8;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F993948;
+TimeStamp = /4F9FED72;
 Reference = X1;
-ValeurCmp = CRYSTAL;
+ValeurCmp = CRYSTAL2;
 IdModule  = Xtal_SMD2;
 EndCmp
 
