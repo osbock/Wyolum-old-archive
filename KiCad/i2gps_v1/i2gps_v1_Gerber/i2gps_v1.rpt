@@ -1,4 +1,4 @@
-## Module report - date 4/28/2012 11:04:24 AM
+## Module report - date 5/2/2012 7:09:59 PM
 ## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ##
@@ -490,22 +490,6 @@ Layer  all
 $EndPAD
 $EndMODULE  P7
 
-$MODULE "PCB1"
-reference "PCB1"
-value "PCB"
-footprint "PCB"
-attribut none
-position  2.250000  1.600000
-orientation  0.00
-layer component
-$SHAPE3D
-Na "i2gps_v1-libs//3D Modules//i2gps_PCB_Material_3D.wrl"
-Sc 6.400000 3.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$EndMODULE  PCB1
-
 $MODULE "R9"
 reference "R9"
 value "10k"
@@ -986,7 +970,7 @@ $EndMODULE  U1
 
 $MODULE "IC1"
 reference "IC1"
-value "ATMEGA328-AU-ND"
+value "ATMEGA328"
 footprint "TQFP32"
 attribut smd
 position  2.252500  1.635000
@@ -2859,7 +2843,7 @@ reference "G1"
 value "Logo-WL3"
 footprint "Logo-WL3"
 attribut none
-position  2.670000  1.607500
+position  2.670000  1.625000
 orientation  0.00
 layer component
 $EndMODULE  G1
@@ -2941,6 +2925,22 @@ Shape  Rect
 Layer  component
 $EndPAD
 $EndMODULE  D3
+
+$MODULE "PCB1"
+reference "PCB1"
+value "PCB"
+footprint "PCB"
+attribut none
+position  2.250000  1.600000
+orientation  0.00
+layer component
+$SHAPE3D
+Na "i2gps_v1-libs//3D Modules//i2gps_PCB_Material_3D.wrl"
+Sc 6.400000 3.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$EndMODULE  PCB1
 
 $LINE 
 start 1.000000 1.000000

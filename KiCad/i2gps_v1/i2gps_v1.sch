@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 4/28/2012 11:01:58 AM
+EESchema Schematic File Version 2  date 5/2/2012 7:03:54 PM
 LIBS:i2gps_v1
 LIBS:power
 LIBS:i2gps_v1-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 2
 Title "Buckler+i2sd+RTC+HW addr+GPS+uSD+IRrx"
-Date "28 apr 2012"
+Date "2 may 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -1565,7 +1565,7 @@ L ATMEGA8-AI IC1
 U 1 1 4DCA5EC5
 P 2400 3250
 F 0 "IC1" H 1700 4400 50  0000 L BNN
-F 1 "ATMEGA328-AU-ND" H 1750 2500 50  0000 L BNN
+F 1 "ATMEGA328" H 1750 2500 50  0000 L BNN
 F 2 "TQFP32" H 2925 1675 50  0001 C CNN
 	1    2400 3250
 	1    0    0    -1  

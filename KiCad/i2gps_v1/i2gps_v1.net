@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  4/28/2012 11:00:32 AM
+# EESchema Netlist Version 1.1 created  5/2/2012 7:03:59 PM
 (
  ( /4F9A5A10 d_VMD2  D4 RB886GT2R {Lib=DIODESCH}
   (    1 /i2gps_v1_rtc/BAT )
@@ -272,7 +272,7 @@
   (    1 /i2gps_v1_rtc/5V0 )
   (    2 GND )
  )
- ( /4DCA5EC5 TQFP32  IC1 ATMEGA328-AU-ND {Lib=ATMEGA8-AI}
+ ( /4DCA5EC5 TQFP32  IC1 ATMEGA328 {Lib=ATMEGA8-AI}
   (    1 /i2gps_v1_rtc/SQW )
   (    2 /LED1 )
   (    3 GND )

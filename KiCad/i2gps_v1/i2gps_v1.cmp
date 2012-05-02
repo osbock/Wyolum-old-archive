@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 4/28/2012 11:04:05 AM
+Cmp-Mod V01 Genere par PcbNew le 5/2/2012 7:10:08 PM
 
 BeginCmp
 TimeStamp = 4DD75EA2
@@ -65,14 +65,6 @@ IdModule  = PIN_ARRAY-6X1;
 EndCmp
 
 BeginCmp
-TimeStamp = 4EBCC217
-Path = /4EBCC1B9
-Reference = PCB1;
-ValeurCmp = PCB;
-IdModule  = PCB;
-EndCmp
-
-BeginCmp
 TimeStamp = 4ECB90CD
 Path = /4E1FEA4E/4ECB8D22
 Reference = R9;
@@ -132,7 +124,7 @@ BeginCmp
 TimeStamp = 4DCB9F4D
 Path = /4DCA5EC5
 Reference = IC1;
-ValeurCmp = ATMEGA328-AU-ND;
+ValeurCmp = ATMEGA328;
 IdModule  = TQFP32;
 EndCmp
 
@@ -550,6 +542,14 @@ Path = /4F9A5A02
 Reference = D3;
 ValeurCmp = RB886GT2R;
 IdModule  = d_VMD2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4EBCC217
+Path = /4EBCC1B9
+Reference = PCB1;
+ValeurCmp = PCB;
+IdModule  = PCB;
 EndCmp
 
 EndListe
