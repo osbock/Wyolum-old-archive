@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 5/4/2012 5:25:38 PM
+EESchema Schematic File Version 2  date 5/5/2012 12:21:39 PM
 LIBS:C3Jr_v2_nil
 LIBS:ATtiny85_bmp
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "4 may 2012"
+Date "5 may 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -17,6 +17,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Notes 7050 6300 0    60   ~ 12
+C3Jr-Name-in-Lights\n------------------------\nan array of 16 SMD LEDs driven either via Speaker Transistor on C3Jr\nusing SP1 for control signal and P5/P6 for Power (+5V, GND)\nOR, by using on board Transistor with Base Resistor, via any other\navailable control pin on the controller.\nIf using on-board Transistor, Pin 3 of connector P6 gets terminated\non Proto Area, and can be red-wired to appropriate control pin.
 $Comp
 L CONN_1 P3
 U 1 1 4FA3BE36
@@ -348,8 +350,6 @@ F 1 "100n" H 3100 3250 50  0000 L CNN
 	1    3050 3350
 	1    0    0    -1  
 $EndComp
-Text Notes 7250 3700 0    40   ~ 0
-UPPER bank of LEDs
 Text Notes 1350 3300 0    40   ~ 0
 these are also used to\nmount the Upper board\nto C3Jr @ Proto area
 $Comp
