@@ -1,0 +1,35 @@
+### Module positions - created on 5/7/2012 6:07:04 PM ###
+### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
+## Unit = inches, Angle = deg.
+## Side : Front
+# Ref    Val                  PosX       PosY        Rot     Side
+C5       100n                 3.5990     2.3140     270.0    Front
+D1       LED                  2.8000     1.7500      90.0    Front
+D2       LED                  3.6000     1.7500      90.0    Front
+D3       LED                  4.4000     1.7500      90.0    Front
+D4       LED                  5.2000     1.7500      90.0    Front
+D5       LED                  2.8000     1.4000      90.0    Front
+D6       LED                  3.6000     1.4000      90.0    Front
+D7       LED                  4.4000     1.4000      90.0    Front
+D8       LED                  5.2000     1.4000      90.0    Front
+D9       LED                  3.2000     1.7500      90.0    Front
+D10      LED                  4.0000     1.7500      90.0    Front
+D11      LED                  4.8000     1.7500      90.0    Front
+D12      LED                  5.6000     1.7500      90.0    Front
+D13      LED                  3.2000     1.4000      90.0    Front
+D14      LED                  4.0000     1.4000      90.0    Front
+D15      LED                  4.8000     1.4000      90.0    Front
+D16      LED                  5.6000     1.4000      90.0    Front
+P5       DC_IN_1              5.3225     2.3000      90.0    Front
+P6       DC_IN_2              4.3225     2.2500      90.0    Front
+R1       47E                  3.0000     1.7525     270.0    Front
+R2       47E                  3.8000     1.7500     270.0    Front
+R3       47E                  4.6000     1.7500     270.0    Front
+R4       47E                  5.4000     1.7500     270.0    Front
+R5       47E                  3.0000     1.4000     270.0    Front
+R6       47E                  3.8000     1.4000     270.0    Front
+R7       47E                  4.6000     1.4000     270.0    Front
+R8       47E                  5.4000     1.4000     270.0    Front
+R9       1k                   4.1400     2.1125     270.0    Front
+SP1      SPEAKER              3.6000     2.0000      90.0    Front
+## End

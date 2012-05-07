@@ -1,0 +1,14 @@
+"Id";"Designator";"Package";"Quantity";"Designation";"Supplier and ref";
+1;"D1,D9,D2,D10,D3,D11,D12,D4,D8,D16,D15,D7,D14,D6,D13,D5";"d_1206";16;"LED";;;
+2;"R1,R2,R3,R4,R5,R6,R7,R8";"r_0805";8;"47E";;;
+3;"R9";"r_0805";1;"1k";;;
+4;"C5";"c_0805";1;"100n";;;
+5;"P7,P8,P9";"PROTO-6";3;"DIL6";;;
+6;"Q1";"sot223";1;"PBSS9110Z";;;
+7;"G2";"OSHW_6mm";1;"LOGO";;;
+8;"P3,P1,P4";"vite_3mm";3;"CONN_1";;;
+9;"G1";"Logo-WL3";1;"Logo-WL3";;;
+10;"P5";"pin_strip_2";1;"DC_IN_1";;;
+11;"P6";"pin_strip_3";1;"DC_IN_2";;;
+12;"SP1";"pin_strip_2";1;"SPEAKER";;;
+13;"P2";"Pad01";1;"CONN_1";;;
