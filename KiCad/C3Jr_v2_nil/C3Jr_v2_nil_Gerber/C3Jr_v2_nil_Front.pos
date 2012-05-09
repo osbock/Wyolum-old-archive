@@ -1,4 +1,4 @@
-### Module positions - created on 5/7/2012 6:07:04 PM ###
+### Module positions - created on 5/9/2012 1:41:06 PM ###
 ### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Front
@@ -20,8 +20,16 @@ D13      LED                  3.2000     1.4000      90.0    Front
 D14      LED                  4.0000     1.4000      90.0    Front
 D15      LED                  4.8000     1.4000      90.0    Front
 D16      LED                  5.6000     1.4000      90.0    Front
+P1       CONN_1               5.8875     1.4675       0.0    Front
+P2       CONN_1               3.0500     2.4450       0.0    Front
+P3       CONN_1               2.7150     2.1750       0.0    Front
+P4       CONN_1               5.8875     2.3675       0.0    Front
 P5       DC_IN_1              5.3225     2.3000      90.0    Front
 P6       DC_IN_2              4.3225     2.2500      90.0    Front
+P7       DIL6                 4.5225     2.3000       0.0    Front
+P8       DIL6                 4.8225     2.3000       0.0    Front
+P9       DIL6                 5.1225     2.3000       0.0    Front
+Q1       PBSS9110Z            3.8950     2.2480     270.0    Front
 R1       47E                  3.0000     1.7525     270.0    Front
 R2       47E                  3.8000     1.7500     270.0    Front
 R3       47E                  4.6000     1.7500     270.0    Front
