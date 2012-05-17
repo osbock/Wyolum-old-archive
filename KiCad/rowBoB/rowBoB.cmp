@@ -1,52 +1,67 @@
-Cmp-Mod V01 Genere par PcbNew le 12/20/10 19:06:32
+Cmp-Mod V01 Genere par PcbNew le 5/17/2012 10:59:48 AM
 
 BeginCmp
-TimeStamp = /4D0C44F3;
-Reference = C1;
-ValeurCmp = 100n;
-IdModule  = C2;
+TimeStamp = 4D0C6327
+Path = /4D0C44B2
+Reference = U1;
+ValeurCmp = STP16DP05;
+IdModule  = STP16DP05;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D0C4AC4;
-Reference = P1;
-ValeurCmp = DIP01_12;
-IdModule  = DIL01_12;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D0C4AD0;
-Reference = P2;
-ValeurCmp = DIP13_24;
-IdModule  = DIL13_24;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D0C7E2F;
-Reference = P3;
-ValeurCmp = CONN_1;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D0C44EB;
+TimeStamp = 4D0C6326
+Path = /4D0C44EB
 Reference = R1;
 ValeurCmp = 470;
 IdModule  = RC03;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D0C4871;
-Reference = R2;
-ValeurCmp = 2k;
-IdModule  = POT-VAR2;
+TimeStamp = 4D0C6324
+Path = /4D0C4AD0
+Reference = P2;
+ValeurCmp = DIP13_24;
+IdModule  = DIL13_24;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D0C44B2;
-Reference = U1;
-ValeurCmp = STP16DP05;
-IdModule  = STP16DP05;
+TimeStamp = 4D0C6323
+Path = /4D0C4AC4
+Reference = P1;
+ValeurCmp = DIP01_12;
+IdModule  = DIL01_12;
+EndCmp
+
+BeginCmp
+TimeStamp = 4D0C6322
+Path = /4D0C44F3
+Reference = C1;
+ValeurCmp = 100n;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4D0CB44E
+Path = /4D0C7E2F
+Reference = P3;
+ValeurCmp = CONN_1;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 4D0F5944
+Path = Pad
+Reference = Pad;
+ValeurCmp = [NoVal];
+IdModule  = Pad;
+EndCmp
+
+BeginCmp
+TimeStamp = 4D0C6325
+Path = /4D0C4871
+Reference = R2;
+ValeurCmp = 2k;
+IdModule  = Pot-Var2;
 EndCmp
 
 EndListe

@@ -1,13 +1,14 @@
-EESchema Schematic File Version 2  date 12/23/10 16:48:42
+EESchema Schematic File Version 2  date 5/17/2012 10:55:06 AM
 LIBS:rowBoB
 LIBS:power
 LIBS:rowBoB-cache
-EELAYER 24  0
+EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
+encoding utf-8
 Sheet 1 1
 Title "ClockTHREE :: rowBoB"
-Date "23 dec 2010"
+Date "17 may 2012"
 Rev "A"
 Comp "A LED driver break out board for ClockTHREE, and other applications"
 Comment1 "WyoLum"
@@ -28,8 +29,6 @@ F 2 "vite_3mm" H 6800 4700 60  0001 C CNN
 	1    6800 4700
 	0    -1   -1   0   
 $EndComp
-Text Label 4550 5050 0    40   ~ 0
-GND
 Connection ~ 4350 4950
 Wire Wire Line
 	4350 4950 4550 4950

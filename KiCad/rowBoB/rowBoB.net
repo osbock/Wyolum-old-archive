@@ -1,74 +1,74 @@
-# EESchema Netlist Version 1.1 created  12/20/10 18:21:21
+# EESchema Netlist Version 1.1 created  5/17/2012 10:38:51 AM
 (
- ( /4D0C44F3 C2 C1 100n
-  ( 1 /R_EXT )
-  ( 2 /VCC )
+ ( /4D0C7E2F vite_3mm  P3 CONN_1 {Lib=CONN_1}
+  (    1 ? )
  )
- ( /4D0C4AC4 DIL01_12 P1 DIP01_12
-  ( 1 /R_EXT )
-  ( 2 /SDI )
-  ( 3 /CLK )
-  ( 4 /LE-DM1 )
-  ( 5 /Out0 )
-  ( 6 /Out1 )
-  ( 7 /Out2 )
-  ( 8 /Out3 )
-  ( 9 /Out4 )
-  ( 10 /Out5 )
-  ( 11 /Out6 )
-  ( 12 /Out7 )
+ ( /4D0C4AD0 DIL13_24  P2 DIP13_24 {Lib=DIP13_24}
+  (   13 /Out8 )
+  (   14 /Out9 )
+  (   15 /Out10 )
+  (   16 /Out11 )
+  (   17 /Out12 )
+  (   18 /Out13 )
+  (   19 /Out14 )
+  (   20 /Out15 )
+  (   21 /OE-DM2 )
+  (   22 /SD0 )
+  (   23 /R_EXT )
+  (   24 VCC )
  )
- ( /4D0C4AD0 DIL13_24 P2 DIP13_24
-  ( 13 /Out8 )
-  ( 14 /Out9 )
-  ( 15 /Out10 )
-  ( 16 /Out11 )
-  ( 17 /Out12 )
-  ( 18 /Out13 )
-  ( 19 /Out14 )
-  ( 20 /Out15 )
-  ( 21 /OE-DM2 )
-  ( 22 /SD0 )
-  ( 23 /R_EXT )
-  ( 24 /VCC )
+ ( /4D0C4AC4 DIL01_12  P1 DIP01_12 {Lib=DIP01_12}
+  (    1 GND )
+  (    2 /SDI )
+  (    3 /CLK )
+  (    4 /LE-DM1 )
+  (    5 /Out0 )
+  (    6 /Out1 )
+  (    7 /Out2 )
+  (    8 /Out3 )
+  (    9 /Out4 )
+  (   10 /Out5 )
+  (   11 /Out6 )
+  (   12 /Out7 )
  )
- ( /4D0C7E2F vite_3mm P3 CONN_1
-  ( 1 ? )
+ ( /4D0C4871 POT-VAR2  R2 2k {Lib=RVAR}
+  (    1 N-000025 )
+  (    2 /R_EXT )
+  (    3 /R_EXT )
  )
- ( /4D0C44EB RC03 R1 470
-  ( 1 N-000013 )
-  ( 2 N-000024 )
+ ( /4D0C44F3 C2  C1 100n {Lib=C}
+  (    1 GND )
+  (    2 VCC )
  )
- ( /4D0C4871 Pot-Var2 R2 2k
-  ( 1 N-000024 )
-  ( 2 /R_EXT )
-  ( 3 /R_EXT )
+ ( /4D0C44EB RC03  R1 470 {Lib=R}
+  (    1 N-000014 )
+  (    2 N-000025 )
  )
- ( /4D0C44B2 STP16DP05 U1 STP16DP05
-  ( 1 /R_EXT )
-  ( 2 /SDI )
-  ( 3 /CLK )
-  ( 4 /LE-DM1 )
-  ( 5 /Out0 )
-  ( 6 /Out1 )
-  ( 7 /Out2 )
-  ( 8 /Out3 )
-  ( 9 /Out4 )
-  ( 10 /Out5 )
-  ( 11 /Out6 )
-  ( 12 /Out7 )
-  ( 13 /Out8 )
-  ( 14 /Out9 )
-  ( 15 /Out10 )
-  ( 16 /Out11 )
-  ( 17 /Out12 )
-  ( 18 /Out13 )
-  ( 19 /Out14 )
-  ( 20 /Out15 )
-  ( 21 /OE-DM2 )
-  ( 22 /SD0 )
-  ( 23 N-000013 )
-  ( 24 /VCC )
+ ( /4D0C44B2 STP16DP05  U1 STP16DP05 {Lib=STP16DP05}
+  (    1 GND )
+  (    2 /SDI )
+  (    3 /CLK )
+  (    4 /LE-DM1 )
+  (    5 /Out0 )
+  (    6 /Out1 )
+  (    7 /Out2 )
+  (    8 /Out3 )
+  (    9 /Out4 )
+  (   10 /Out5 )
+  (   11 /Out6 )
+  (   12 /Out7 )
+  (   13 /Out8 )
+  (   14 /Out9 )
+  (   15 /Out10 )
+  (   16 /Out11 )
+  (   17 /Out12 )
+  (   18 /Out13 )
+  (   19 /Out14 )
+  (   20 /Out15 )
+  (   21 /OE-DM2 )
+  (   22 /SD0 )
+  (   23 N-000014 )
+  (   24 VCC )
  )
 )
 *
@@ -87,3 +87,87 @@ $component R1
 $endlist
 $endfootprintlist
 }
+{ Pin List by Nets
+Net 1 "/OE-DM2" "OE-DM2"
+ P2 21
+ U1 21
+Net 2 "/R_EXT" "R_EXT"
+ R2 2
+ R2 3
+ P2 23
+Net 3 "/SD0" "SD0"
+ P2 22
+ U1 22
+Net 4 "/Out15" "Out15"
+ U1 20
+ P2 20
+Net 5 "/Out14" "Out14"
+ U1 19
+ P2 19
+Net 6 "/Out13" "Out13"
+ P2 18
+ U1 18
+Net 7 "/Out12" "Out12"
+ U1 17
+ P2 17
+Net 8 "/Out11" "Out11"
+ P2 16
+ U1 16
+Net 9 "/Out10" "Out10"
+ P2 15
+ U1 15
+Net 10 "/Out9" "Out9"
+ U1 14
+ P2 14
+Net 11 "/Out8" "Out8"
+ P2 13
+ U1 13
+Net 12 "/Out7" "Out7"
+ P1 12
+ U1 12
+Net 13 "/Out6" "Out6"
+ P1 11
+ U1 11
+Net 14 "" ""
+ U1 23
+ R1 1
+Net 15 "/SDI" "SDI"
+ U1 2
+ P1 2
+Net 16 "/CLK" "CLK"
+ U1 3
+ P1 3
+Net 17 "/LE-DM1" "LE-DM1"
+ P1 4
+ U1 4
+Net 18 "/Out0" "Out0"
+ U1 5
+ P1 5
+Net 19 "/Out1" "Out1"
+ U1 6
+ P1 6
+Net 20 "/Out2" "Out2"
+ U1 7
+ P1 7
+Net 21 "/Out3" "Out3"
+ U1 8
+ P1 8
+Net 22 "/Out4" "Out4"
+ U1 9
+ P1 9
+Net 23 "/Out5" "Out5"
+ P1 10
+ U1 10
+Net 24 "GND" "GND"
+ P1 1
+ C1 1
+ U1 1
+Net 25 "" ""
+ R1 2
+ R2 1
+Net 27 "VCC" "VCC"
+ P2 24
+ C1 2
+ U1 24
+}
+#End
