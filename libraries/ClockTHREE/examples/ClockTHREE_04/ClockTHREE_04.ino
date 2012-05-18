@@ -25,8 +25,8 @@
 #include "ClockTHREE.h"
 #include "SPI.h"
 
-// #include "english_v3.h"
-#include "hebrew_v1.h"
+#include "english_v3.h"
+// #include "hebrew_v1.h"
 
 
 #include "mem_font.h"
@@ -462,7 +462,6 @@ void Normal_loop(void) {
   }
   // Keep active LEDs lit
   // my_refresh(1000);
-  c3.refresh(100);
   count++;
   
   c3.refresh(16);
