@@ -1,4 +1,4 @@
-PCBNEW-BOARD Version 1 date 5/2/2012 7:05:05 PM
+PCBNEW-BOARD Version 1 date 5/2/2012 7:10:53 PM
 
 # Created by Pcbnew(2011-12-28 BZR 3254)-stable
 
@@ -62,7 +62,7 @@ PadSize 800 800
 PadDrill 400
 Pad2MaskClearance 100
 AuxiliaryAxisOrg 0 0
-PcbPlotParams (pcbplotparams (layerselection 298614785) (usegerberextensions false) (excludeedgelayer false) (linewidth 60) (plotframeref false) (viasonmask false) (mode 1) (useauxorigin false) (hpglpennumber 1) (hpglpenspeed 20) (hpglpendiameter 15) (hpglpenoverlay 0) (pscolor true) (psnegative false) (psa4output false) (plotreference true) (plotvalue true) (plotothertext true) (plotinvisibletext false) (padsonsilk false) (subtractmaskfromsilk true) (outputformat 1) (mirror false) (drillshape 2) (scaleselection 1) (outputdirectory i2gps_v1_Gerber/))
+PcbPlotParams (pcbplotparams (layerselection 2097152) (usegerberextensions false) (excludeedgelayer false) (linewidth 60) (plotframeref false) (viasonmask false) (mode 1) (useauxorigin false) (hpglpennumber 1) (hpglpenspeed 20) (hpglpendiameter 15) (hpglpenoverlay 0) (pscolor true) (psnegative false) (psa4output false) (plotreference true) (plotvalue true) (plotothertext true) (plotinvisibletext false) (padsonsilk false) (subtractmaskfromsilk true) (outputformat 1) (mirror false) (drillshape 2) (scaleselection 1) (outputdirectory i2gps_v1_Gerber/))
 $EndSETUP
 
 $EQUIPOT
