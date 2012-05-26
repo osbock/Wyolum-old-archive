@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 5/26/2012 4:13:08 PM
+EESchema Schematic File Version 2  date Saturday 26 May 2012 11:58:40 PM IST
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
@@ -16,68 +16,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L CONN_4 P5
-U 1 1 4FC0629B
-P 9375 2250
-F 0 "P5" V 9325 2250 50  0000 C CNN
-F 1 "CD2" V 9425 2250 50  0000 C CNN
-F 2 "Sck-04-F-SMT" H 9375 2250 60  0001 C CNN
-	1    9375 2250
-	1    0    0    1   
-$EndComp
-$Comp
-L CONN_4 P11
-U 1 1 4FC0629A
-P 9375 2700
-F 0 "P11" V 9325 2700 50  0000 C CNN
-F 1 "CD1" V 9425 2700 50  0000 C CNN
-F 2 "Sck-04-F-SMT" H 9375 2700 60  0001 C CNN
-	1    9375 2700
-	1    0    0    1   
-$EndComp
-Text Label 8900 2200 0    50   ~ 0
-5V0
-Text Label 8900 2100 0    50   ~ 0
-GND
-Text Label 8900 2300 0    50   ~ 0
-SCL
-Text Label 8900 2400 0    50   ~ 0
-SDA
-Text Notes 8125 1775 0    60   Italic 12
-Additional SMD headers for\nrtcBoB/ChronoDot compatibility
-Text Label 8900 2550 0    40   ~ 0
-RST
-Text Label 8900 2650 0    40   ~ 0
-SQW
-Text Label 8900 2750 0    40   ~ 0
-32k
-Text Label 8900 2850 0    40   ~ 0
-BAT
-Wire Notes Line
-	7975 3000 7975 1650
-Wire Notes Line
-	7975 3000 9700 3000
-Wire Notes Line
-	9700 3000 9700 1650
-Wire Notes Line
-	9700 1650 7975 1650
-Wire Wire Line
-	9025 2750 8900 2750
-Wire Wire Line
-	9025 2550 8900 2550
-Wire Wire Line
-	9025 2650 8900 2650
-Wire Wire Line
-	9025 2850 8900 2850
-Wire Wire Line
-	9025 2400 8900 2400
-Wire Wire Line
-	9025 2200 8900 2200
-Wire Wire Line
-	9025 2100 8900 2100
-Wire Wire Line
-	9025 2300 8900 2300
 Wire Wire Line
 	7250 4800 6950 4800
 Wire Wire Line

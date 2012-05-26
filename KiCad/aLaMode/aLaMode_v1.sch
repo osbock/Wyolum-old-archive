@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 5/26/2012 5:32:18 PM
+EESchema Schematic File Version 2  date Sunday 27 May 2012 12:03:48 AM IST
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
@@ -52,10 +52,6 @@ Wire Wire Line
 	8675 5275 8075 5275
 Wire Wire Line
 	2400 4850 2400 5100
-Wire Notes Line
-	3775 7750 2975 7750
-Wire Notes Line
-	3775 7750 3775 6300
 Wire Notes Line
 	1550 6300 2875 6300
 Wire Notes Line
@@ -116,12 +112,6 @@ Wire Notes Line
 Wire Notes Line
 	4050 3550 4050 3700
 Wire Wire Line
-	3200 6900 3025 6900
-Wire Wire Line
-	3200 7100 3025 7100
-Wire Wire Line
-	3200 7300 3025 7300
-Wire Wire Line
 	8675 4475 8075 4475
 Wire Wire Line
 	10850 6900 10950 6900
@@ -171,8 +161,6 @@ Wire Wire Line
 	10850 6400 10950 6400
 Wire Wire Line
 	10850 6200 10950 6200
-Wire Notes Line
-	2975 7750 2975 6300
 Wire Notes Line
 	3875 6300 3875 7750
 Wire Notes Line
@@ -550,12 +538,6 @@ Wire Wire Line
 Wire Wire Line
 	10850 6700 10950 6700
 Wire Wire Line
-	3200 7200 3025 7200
-Wire Wire Line
-	3200 7000 3025 7000
-Wire Wire Line
-	3200 6800 3025 6800
-Wire Wire Line
 	5800 7325 5500 7325
 Wire Notes Line
 	4750 3225 4050 3225
@@ -612,8 +594,6 @@ Wire Notes Line
 	2875 6300 2875 7750
 Wire Notes Line
 	2875 7750 1550 7750
-Wire Notes Line
-	2975 6300 3775 6300
 Wire Wire Line
 	2400 1950 2400 800 
 Connection ~ 2400 800 
@@ -797,32 +777,8 @@ F 2 "Xtal_SMD2" H 900 3050 60  0001 C CNN
 	1    900  3050
 	0    1    1    0   
 $EndComp
-Text Notes 2975 6300 0    60   Italic 12
-BootDrive Header
-Text Label 3025 6800 0    40   ~ 0
-Boot
 Text Notes 4075 3625 0    40   Italic 8
 PD5 (Boot)\nBootDrive Header
-Text Label 3025 6900 0    40   ~ 0
-RXD
-Text Label 3025 7000 0    40   ~ 0
-TXD
-Text Label 3025 7100 0    40   ~ 0
-5V0
-Text Label 3025 7200 0    40   ~ 0
-GND
-Text Label 3025 7300 0    40   ~ 0
-GND
-$Comp
-L CONN_6 P15
-U 1 1 4F3FE37F
-P 3550 7050
-F 0 "P15" V 3500 7050 60  0000 C CNN
-F 1 "BootDrive" V 3600 7050 60  0000 C CNN
-F 2 "PIN_ARRAY-6X1" H 3550 7050 60  0001 C CNN
-	1    3550 7050
-	1    0    0    1   
-$EndComp
 Text Label 8075 4475 0    40   ~ 0
 3V3
 Text Notes 4075 3850 0    40   Italic 8
