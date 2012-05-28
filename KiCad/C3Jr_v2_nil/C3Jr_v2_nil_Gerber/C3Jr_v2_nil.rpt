@@ -1,4 +1,4 @@
-## Module report - date 5/9/2012 1:34:28 PM
+## Module report - date 5/28/2012 6:56:37 PM
 ## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ##
@@ -7,8 +7,8 @@ $BeginDESCRIPTION
 
 $BOARD
 unit INCH
-upper_left_corner  2.534900  0.746000
-lower_right_corner  6.417800  2.895600
+upper_left_corner  2.218300  0.746000
+lower_right_corner  6.135300  2.790600
 $EndBOARD
 
 $MODULE "D1"
@@ -16,8 +16,8 @@ reference "D1"
 value "LED"
 footprint "d_1206"
 attribut smd
-position  2.800000  1.750000
-orientation  90.00
+position  2.850000  1.400000
+orientation  270.00
 layer component
 $SHAPE3D
 Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
@@ -45,148 +45,12 @@ Layer  component
 $EndPAD
 $EndMODULE  D1
 
-$MODULE "D9"
-reference "D9"
-value "LED"
-footprint "d_1206"
-attribut smd
-position  3.200000  1.750000
-orientation  90.00
-layer component
-$SHAPE3D
-Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
-Sc 2.000000 2.000000 2.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position  0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "2"
-position -0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  D9
-
-$MODULE "D2"
-reference "D2"
-value "LED"
-footprint "d_1206"
-attribut smd
-position  3.600000  1.750000
-orientation  90.00
-layer component
-$SHAPE3D
-Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
-Sc 2.000000 2.000000 2.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position  0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "2"
-position -0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  D2
-
-$MODULE "D10"
-reference "D10"
-value "LED"
-footprint "d_1206"
-attribut smd
-position  4.000000  1.750000
-orientation  90.00
-layer component
-$SHAPE3D
-Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
-Sc 2.000000 2.000000 2.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position  0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "2"
-position -0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  D10
-
-$MODULE "D3"
-reference "D3"
-value "LED"
-footprint "d_1206"
-attribut smd
-position  4.400000  1.750000
-orientation  90.00
-layer component
-$SHAPE3D
-Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
-Sc 2.000000 2.000000 2.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position  0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "2"
-position -0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  D3
-
 $MODULE "D11"
 reference "D11"
 value "LED"
 footprint "d_1206"
 attribut smd
-position  4.800000  1.750000
+position  2.850000  1.750000
 orientation  90.00
 layer component
 $SHAPE3D
@@ -215,12 +79,46 @@ Layer  component
 $EndPAD
 $EndMODULE  D11
 
+$MODULE "D2"
+reference "D2"
+value "LED"
+footprint "d_1206"
+attribut smd
+position  3.150000  1.400000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
+Sc 2.000000 2.000000 2.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D2
+
 $MODULE "D12"
 reference "D12"
 value "LED"
 footprint "d_1206"
 attribut smd
-position  5.600000  1.750000
+position  3.150000  1.750000
 orientation  90.00
 layer component
 $SHAPE3D
@@ -249,13 +147,13 @@ Layer  component
 $EndPAD
 $EndMODULE  D12
 
-$MODULE "D4"
-reference "D4"
+$MODULE "D3"
+reference "D3"
 value "LED"
 footprint "d_1206"
 attribut smd
-position  5.200000  1.750000
-orientation  90.00
+position  3.450000  1.400000
+orientation  270.00
 layer component
 $SHAPE3D
 Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
@@ -281,218 +179,14 @@ orientation  0.00
 Shape  Rect
 Layer  component
 $EndPAD
-$EndMODULE  D4
-
-$MODULE "D8"
-reference "D8"
-value "LED"
-footprint "d_1206"
-attribut smd
-position  5.200000  1.400000
-orientation  90.00
-layer component
-$SHAPE3D
-Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
-Sc 2.000000 2.000000 2.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position  0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "2"
-position -0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  D8
-
-$MODULE "D16"
-reference "D16"
-value "LED"
-footprint "d_1206"
-attribut smd
-position  5.600000  1.400000
-orientation  90.00
-layer component
-$SHAPE3D
-Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
-Sc 2.000000 2.000000 2.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position  0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "2"
-position -0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  D16
-
-$MODULE "D15"
-reference "D15"
-value "LED"
-footprint "d_1206"
-attribut smd
-position  4.800000  1.400000
-orientation  90.00
-layer component
-$SHAPE3D
-Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
-Sc 2.000000 2.000000 2.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position  0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "2"
-position -0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  D15
-
-$MODULE "D7"
-reference "D7"
-value "LED"
-footprint "d_1206"
-attribut smd
-position  4.400000  1.400000
-orientation  90.00
-layer component
-$SHAPE3D
-Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
-Sc 2.000000 2.000000 2.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position  0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "2"
-position -0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  D7
-
-$MODULE "D14"
-reference "D14"
-value "LED"
-footprint "d_1206"
-attribut smd
-position  4.000000  1.400000
-orientation  90.00
-layer component
-$SHAPE3D
-Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
-Sc 2.000000 2.000000 2.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position  0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "2"
-position -0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  D14
-
-$MODULE "D6"
-reference "D6"
-value "LED"
-footprint "d_1206"
-attribut smd
-position  3.600000  1.400000
-orientation  90.00
-layer component
-$SHAPE3D
-Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
-Sc 2.000000 2.000000 2.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position  0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "2"
-position -0.060000  0.000000
-size  0.060000  0.110000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  D6
+$EndMODULE  D3
 
 $MODULE "D13"
 reference "D13"
 value "LED"
 footprint "d_1206"
 attribut smd
-position  3.200000  1.400000
+position  3.450000  1.750000
 orientation  90.00
 layer component
 $SHAPE3D
@@ -521,12 +215,12 @@ Layer  component
 $EndPAD
 $EndMODULE  D13
 
-$MODULE "D5"
-reference "D5"
+$MODULE "D14"
+reference "D14"
 value "LED"
 footprint "d_1206"
 attribut smd
-position  2.800000  1.400000
+position  3.750000  1.750000
 orientation  90.00
 layer component
 $SHAPE3D
@@ -553,14 +247,320 @@ orientation  0.00
 Shape  Rect
 Layer  component
 $EndPAD
-$EndMODULE  D5
+$EndMODULE  D14
+
+$MODULE "D4"
+reference "D4"
+value "LED"
+footprint "d_1206"
+attribut smd
+position  3.750000  1.400000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
+Sc 2.000000 2.000000 2.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D4
+
+$MODULE "D9"
+reference "D9"
+value "LED"
+footprint "d_1206"
+attribut smd
+position  5.250000  1.400000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
+Sc 2.000000 2.000000 2.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D9
+
+$MODULE "D19"
+reference "D19"
+value "LED"
+footprint "d_1206"
+attribut smd
+position  5.250000  1.750000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
+Sc 2.000000 2.000000 2.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D19
+
+$MODULE "D18"
+reference "D18"
+value "LED"
+footprint "d_1206"
+attribut smd
+position  4.950000  1.750000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
+Sc 2.000000 2.000000 2.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D18
+
+$MODULE "D8"
+reference "D8"
+value "LED"
+footprint "d_1206"
+attribut smd
+position  4.950000  1.400000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
+Sc 2.000000 2.000000 2.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D8
+
+$MODULE "D17"
+reference "D17"
+value "LED"
+footprint "d_1206"
+attribut smd
+position  4.650000  1.750000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
+Sc 2.000000 2.000000 2.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D17
+
+$MODULE "D7"
+reference "D7"
+value "LED"
+footprint "d_1206"
+attribut smd
+position  4.650000  1.400000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
+Sc 2.000000 2.000000 2.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D7
+
+$MODULE "D16"
+reference "D16"
+value "LED"
+footprint "d_1206"
+attribut smd
+position  4.350000  1.750000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
+Sc 2.000000 2.000000 2.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D16
+
+$MODULE "D6"
+reference "D6"
+value "LED"
+footprint "d_1206"
+attribut smd
+position  4.350000  1.400000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
+Sc 2.000000 2.000000 2.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D6
 
 $MODULE "R1"
 reference "R1"
-value "47E"
+value "100E"
 footprint "r_0805"
 attribut smd
-position  3.000000  1.752500
+position  3.000000  1.365000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -591,10 +591,10 @@ $EndMODULE  R1
 
 $MODULE "R2"
 reference "R2"
-value "47E"
+value "100E"
 footprint "r_0805"
 attribut smd
-position  3.800000  1.750000
+position  3.300000  1.365000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -625,10 +625,10 @@ $EndMODULE  R2
 
 $MODULE "R3"
 reference "R3"
-value "47E"
+value "100E"
 footprint "r_0805"
 attribut smd
-position  4.600000  1.750000
+position  3.600000  1.365000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -659,10 +659,10 @@ $EndMODULE  R3
 
 $MODULE "R4"
 reference "R4"
-value "47E"
+value "100E"
 footprint "r_0805"
 attribut smd
-position  5.400000  1.750000
+position  3.900000  1.365000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -691,46 +691,12 @@ Layer  component
 $EndPAD
 $EndMODULE  R4
 
-$MODULE "R5"
-reference "R5"
-value "47E"
-footprint "r_0805"
-attribut smd
-position  3.000000  1.400000
-orientation  270.00
-layer component
-$SHAPE3D
-Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/r_0805.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position  0.037500  0.000000
-size  0.051200  0.059000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "2"
-position -0.037500  0.000000
-size  0.051200  0.059000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  R5
-
 $MODULE "R6"
 reference "R6"
-value "47E"
+value "100E"
 footprint "r_0805"
 attribut smd
-position  3.800000  1.400000
+position  4.500000  1.365000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -761,10 +727,10 @@ $EndMODULE  R6
 
 $MODULE "R7"
 reference "R7"
-value "47E"
+value "100E"
 footprint "r_0805"
 attribut smd
-position  4.600000  1.400000
+position  4.800000  1.365000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -795,10 +761,10 @@ $EndMODULE  R7
 
 $MODULE "R8"
 reference "R8"
-value "47E"
+value "100E"
 footprint "r_0805"
 attribut smd
-position  5.400000  1.400000
+position  5.100000  1.365000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -829,10 +795,10 @@ $EndMODULE  R8
 
 $MODULE "R9"
 reference "R9"
-value "1k"
+value "100E"
 footprint "r_0805"
 attribut smd
-position  4.140000  2.112500
+position  5.400000  1.365000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -861,13 +827,47 @@ Layer  component
 $EndPAD
 $EndMODULE  R9
 
+$MODULE "R21"
+reference "R21"
+value "1k"
+footprint "r_0805"
+attribut smd
+position  3.614000  2.326000
+orientation  180.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R21
+
 $MODULE "C5"
 reference "C5"
 value "100n"
 footprint "c_0805"
 attribut smd
-position  3.599000  2.314000
-orientation  270.00
+position  4.192500  2.310000
+orientation  90.00
 layer component
 $SHAPE3D
 Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/c_0805.wrl"
@@ -899,7 +899,7 @@ $MODULE "P7"
 reference "P7"
 value "DIL6"
 footprint "PROTO-6"
-attribut none
+attribut smd
 position  4.522500  2.300000
 orientation  0.00
 layer component
@@ -963,7 +963,7 @@ $MODULE "P8"
 reference "P8"
 value "DIL6"
 footprint "PROTO-6"
-attribut none
+attribut smd
 position  4.822500  2.300000
 orientation  0.00
 layer component
@@ -1027,9 +1027,9 @@ $MODULE "Q1"
 reference "Q1"
 value "PBSS9110Z"
 footprint "sot223"
-attribut none
-position  3.895000  2.248000
-orientation  270.00
+attribut smd
+position  3.895000  2.202500
+orientation  0.00
 layer component
 $SHAPE3D
 Na "C3Jr_v2_nil_Libs/C3Jr_v2_nil_3D_Modules/sot89.wrl"
@@ -1080,7 +1080,7 @@ reference "G2"
 value "LOGO"
 footprint "OSHW_6mm"
 attribut none
-position  5.850000  2.007500
+position  5.106000  2.000000
 orientation  0.00
 layer component
 $EndMODULE  G2
@@ -1089,7 +1089,7 @@ $MODULE "P3"
 reference "P3"
 value "CONN_1"
 footprint "vite_3mm"
-attribut none
+attribut smd
 position  2.715000  2.175000
 orientation  0.00
 layer component
@@ -1104,50 +1104,12 @@ Layer  all
 $EndPAD
 $EndMODULE  P3
 
-$MODULE "P1"
-reference "P1"
-value "CONN_1"
-footprint "vite_3mm"
-attribut none
-position  5.887500  1.467500
-orientation  0.00
-layer component
-$PAD "1"
-position  0.000000  0.000000
-size  0.200000  0.200000
-drill  0.120000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$EndMODULE  P1
-
-$MODULE "P4"
-reference "P4"
-value "CONN_1"
-footprint "vite_3mm"
-attribut none
-position  5.887500  2.367500
-orientation  0.00
-layer component
-$PAD "1"
-position  0.000000  0.000000
-size  0.200000  0.200000
-drill  0.120000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$EndMODULE  P4
-
 $MODULE "G1"
 reference "G1"
 value "Logo-WL3"
 footprint "Logo-WL3"
 attribut none
-position  4.332500  1.920000
+position  4.512000  1.864000
 orientation  0.00
 layer component
 $EndMODULE  G1
@@ -1267,7 +1229,7 @@ $MODULE "P2"
 reference "P2"
 value "CONN_1"
 footprint "Pad01"
-attribut none
+attribut smd
 position  3.050000  2.445000
 orientation  0.00
 layer component
@@ -1292,7 +1254,7 @@ $MODULE "P9"
 reference "P9"
 value "DIL6"
 footprint "PROTO-6"
-attribut none
+attribut smd
 position  5.122500  2.300000
 orientation  0.00
 layer component
@@ -1352,6 +1314,555 @@ Layer  all
 $EndPAD
 $EndMODULE  P9
 
+$MODULE "D5"
+reference "D5"
+value "LED"
+footprint "d_1206"
+attribut smd
+position  4.050000  1.400000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs\\C3Jr_v2_nil_3D_Modules\\c_0805.wrl"
+Sc 2.000000 2.000000 2.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D5
+
+$MODULE "D10"
+reference "D10"
+value "LED"
+footprint "d_1206"
+attribut smd
+position  5.550000  1.400000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs\\C3Jr_v2_nil_3D_Modules\\c_0805.wrl"
+Sc 2.000000 2.000000 2.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D10
+
+$MODULE "D15"
+reference "D15"
+value "LED"
+footprint "d_1206"
+attribut smd
+position  4.050000  1.750000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs\\C3Jr_v2_nil_3D_Modules\\c_0805.wrl"
+Sc 2.000000 2.000000 2.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D15
+
+$MODULE "D20"
+reference "D20"
+value "LED"
+footprint "d_1206"
+attribut smd
+position  5.550000  1.750000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs\\C3Jr_v2_nil_3D_Modules\\c_0805.wrl"
+Sc 2.000000 2.000000 2.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.060000  0.000000
+size  0.060000  0.110000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D20
+
+$MODULE "R5"
+reference "R5"
+value "100E"
+footprint "r_0805"
+attribut smd
+position  4.200000  1.365000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs\\C3Jr_v2_nil_3D_Modules\\r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R5
+
+$MODULE "R11"
+reference "R11"
+value "100E"
+footprint "r_0805"
+attribut smd
+position  3.000000  1.785000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs\\C3Jr_v2_nil_3D_Modules\\r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R11
+
+$MODULE "R12"
+reference "R12"
+value "100E"
+footprint "r_0805"
+attribut smd
+position  3.300000  1.785000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs\\C3Jr_v2_nil_3D_Modules\\r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R12
+
+$MODULE "R13"
+reference "R13"
+value "100E"
+footprint "r_0805"
+attribut smd
+position  3.600000  1.785000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs\\C3Jr_v2_nil_3D_Modules\\r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R13
+
+$MODULE "R14"
+reference "R14"
+value "100E"
+footprint "r_0805"
+attribut smd
+position  3.900000  1.785000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs\\C3Jr_v2_nil_3D_Modules\\r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R14
+
+$MODULE "R15"
+reference "R15"
+value "100E"
+footprint "r_0805"
+attribut smd
+position  4.200000  1.785000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs\\C3Jr_v2_nil_3D_Modules\\r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R15
+
+$MODULE "R16"
+reference "R16"
+value "100E"
+footprint "r_0805"
+attribut smd
+position  4.500000  1.785000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs\\C3Jr_v2_nil_3D_Modules\\r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R16
+
+$MODULE "R17"
+reference "R17"
+value "100E"
+footprint "r_0805"
+attribut smd
+position  4.800000  1.785000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs\\C3Jr_v2_nil_3D_Modules\\r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R17
+
+$MODULE "R18"
+reference "R18"
+value "100E"
+footprint "r_0805"
+attribut smd
+position  5.100000  1.785000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs\\C3Jr_v2_nil_3D_Modules\\r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R18
+
+$MODULE "R19"
+reference "R19"
+value "100E"
+footprint "r_0805"
+attribut smd
+position  5.400000  1.785000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs\\C3Jr_v2_nil_3D_Modules\\r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R19
+
+$MODULE "R20"
+reference "R20"
+value "100E"
+footprint "r_0805"
+attribut smd
+position  5.700000  1.785000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs\\C3Jr_v2_nil_3D_Modules\\r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R20
+
+$MODULE "R10"
+reference "R10"
+value "100E"
+footprint "r_0805"
+attribut smd
+position  5.700000  1.365000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "C3Jr_v2_nil_Libs\\C3Jr_v2_nil_3D_Modules\\r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R10
+
+$LINE 
+start 5.800000 1.217500
+end 5.800000 2.517500
+width 0.015000
+$EndLINE 
 $LINE 
 start 2.550000 2.517500
 end 2.550000 1.217500
@@ -1359,17 +1870,12 @@ width 0.015000
 $EndLINE 
 $LINE 
 start 2.550000 1.217500
-end 6.050000 1.217500
-width 0.015000
-$EndLINE 
-$LINE 
-start 6.050000 2.517500
-end 6.050000 1.217500
+end 5.800000 1.217500
 width 0.015000
 $EndLINE 
 $LINE 
 start 2.550000 2.517500
-end 6.050000 2.517500
+end 5.800000 2.517500
 width 0.015000
 $EndLINE 
 $EndDESCRIPTION

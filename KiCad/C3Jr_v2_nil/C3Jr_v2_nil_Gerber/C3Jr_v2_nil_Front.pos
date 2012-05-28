@@ -1,43 +1,57 @@
-### Module positions - created on 5/9/2012 1:41:06 PM ###
+### Module positions - created on 5/28/2012 6:56:08 PM ###
 ### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Front
 # Ref    Val                  PosX       PosY        Rot     Side
-C5       100n                 3.5990     2.3140     270.0    Front
-D1       LED                  2.8000     1.7500      90.0    Front
-D2       LED                  3.6000     1.7500      90.0    Front
-D3       LED                  4.4000     1.7500      90.0    Front
-D4       LED                  5.2000     1.7500      90.0    Front
-D5       LED                  2.8000     1.4000      90.0    Front
-D6       LED                  3.6000     1.4000      90.0    Front
-D7       LED                  4.4000     1.4000      90.0    Front
-D8       LED                  5.2000     1.4000      90.0    Front
-D9       LED                  3.2000     1.7500      90.0    Front
-D10      LED                  4.0000     1.7500      90.0    Front
-D11      LED                  4.8000     1.7500      90.0    Front
-D12      LED                  5.6000     1.7500      90.0    Front
-D13      LED                  3.2000     1.4000      90.0    Front
-D14      LED                  4.0000     1.4000      90.0    Front
-D15      LED                  4.8000     1.4000      90.0    Front
-D16      LED                  5.6000     1.4000      90.0    Front
-P1       CONN_1               5.8875     1.4675       0.0    Front
+C5       100n                 4.1925     2.3100      90.0    Front
+D1       LED                  2.8500     1.4000     270.0    Front
+D2       LED                  3.1500     1.4000     270.0    Front
+D3       LED                  3.4500     1.4000     270.0    Front
+D4       LED                  3.7500     1.4000     270.0    Front
+D5       LED                  4.0500     1.4000     270.0    Front
+D6       LED                  4.3500     1.4000     270.0    Front
+D7       LED                  4.6500     1.4000     270.0    Front
+D8       LED                  4.9500     1.4000     270.0    Front
+D9       LED                  5.2500     1.4000     270.0    Front
+D10      LED                  5.5500     1.4000     270.0    Front
+D11      LED                  2.8500     1.7500      90.0    Front
+D12      LED                  3.1500     1.7500      90.0    Front
+D13      LED                  3.4500     1.7500      90.0    Front
+D14      LED                  3.7500     1.7500      90.0    Front
+D15      LED                  4.0500     1.7500      90.0    Front
+D16      LED                  4.3500     1.7500      90.0    Front
+D17      LED                  4.6500     1.7500      90.0    Front
+D18      LED                  4.9500     1.7500      90.0    Front
+D19      LED                  5.2500     1.7500      90.0    Front
+D20      LED                  5.5500     1.7500      90.0    Front
 P2       CONN_1               3.0500     2.4450       0.0    Front
 P3       CONN_1               2.7150     2.1750       0.0    Front
-P4       CONN_1               5.8875     2.3675       0.0    Front
 P5       DC_IN_1              5.3225     2.3000      90.0    Front
 P6       DC_IN_2              4.3225     2.2500      90.0    Front
 P7       DIL6                 4.5225     2.3000       0.0    Front
 P8       DIL6                 4.8225     2.3000       0.0    Front
 P9       DIL6                 5.1225     2.3000       0.0    Front
-Q1       PBSS9110Z            3.8950     2.2480     270.0    Front
-R1       47E                  3.0000     1.7525     270.0    Front
-R2       47E                  3.8000     1.7500     270.0    Front
-R3       47E                  4.6000     1.7500     270.0    Front
-R4       47E                  5.4000     1.7500     270.0    Front
-R5       47E                  3.0000     1.4000     270.0    Front
-R6       47E                  3.8000     1.4000     270.0    Front
-R7       47E                  4.6000     1.4000     270.0    Front
-R8       47E                  5.4000     1.4000     270.0    Front
-R9       1k                   4.1400     2.1125     270.0    Front
+Q1       PBSS9110Z            3.8950     2.2025       0.0    Front
+R1       100E                 3.0000     1.3650     270.0    Front
+R2       100E                 3.3000     1.3650     270.0    Front
+R3       100E                 3.6000     1.3650     270.0    Front
+R4       100E                 3.9000     1.3650     270.0    Front
+R5       100E                 4.2000     1.3650     270.0    Front
+R6       100E                 4.5000     1.3650     270.0    Front
+R7       100E                 4.8000     1.3650     270.0    Front
+R8       100E                 5.1000     1.3650     270.0    Front
+R9       100E                 5.4000     1.3650     270.0    Front
+R10      100E                 5.7000     1.3650     270.0    Front
+R11      100E                 3.0000     1.7850      90.0    Front
+R12      100E                 3.3000     1.7850      90.0    Front
+R13      100E                 3.6000     1.7850      90.0    Front
+R14      100E                 3.9000     1.7850      90.0    Front
+R15      100E                 4.2000     1.7850      90.0    Front
+R16      100E                 4.5000     1.7850      90.0    Front
+R17      100E                 4.8000     1.7850      90.0    Front
+R18      100E                 5.1000     1.7850      90.0    Front
+R19      100E                 5.4000     1.7850      90.0    Front
+R20      100E                 5.7000     1.7850      90.0    Front
+R21      1k                   3.6140     2.3260     180.0    Front
 SP1      SPEAKER              3.6000     2.0000      90.0    Front
 ## End
