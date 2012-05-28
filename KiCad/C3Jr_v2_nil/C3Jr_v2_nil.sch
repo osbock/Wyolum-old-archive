@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 06 May 2012 12:23:57 AM IST
+EESchema Schematic File Version 2  date 5/28/2012 12:53:29 PM
 LIBS:C3Jr_v2_nil
 LIBS:ATtiny85_bmp
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "5 may 2012"
+Date "28 may 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -17,8 +17,20 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 4050 1100 0    40   ~ 0
-connection from R33 on C3Jr\n(Base resistor for Speaker Transistor)
+Connection ~ 8750 3400
+Wire Wire Line
+	8750 3250 8750 3400
+Connection ~ 8750 1700
+Wire Wire Line
+	8750 1750 8750 1700
+Wire Wire Line
+	8750 2150 8750 2250
+Wire Wire Line
+	8750 2750 8750 2850
+Wire Wire Line
+	8400 2750 8400 2850
+Wire Wire Line
+	8400 2150 8400 2250
 Connection ~ 4000 1250
 Wire Wire Line
 	4000 1150 4000 3250
@@ -26,11 +38,11 @@ Wire Wire Line
 	9950 3250 9950 2150
 Connection ~ 8050 1700
 Wire Wire Line
-	8250 1700 5600 1700
+	9250 1700 5600 1700
 Wire Wire Line
-	8250 1700 8250 2400
+	9250 1700 9250 2400
 Wire Wire Line
-	8250 2400 8300 2400
+	9250 2400 9300 2400
 Connection ~ 2700 3450
 Wire Wire Line
 	2650 3450 2900 3450
@@ -62,7 +74,7 @@ Wire Wire Line
 Wire Wire Line
 	6250 1250 6500 1250
 Wire Wire Line
-	6800 1050 6800 700 
+	6800 700  6800 1050
 Wire Wire Line
 	7700 1700 7700 1750
 Wire Wire Line
@@ -207,22 +219,84 @@ Wire Wire Line
 	10750 2700 10700 2700
 Connection ~ 10750 2700
 Wire Wire Line
-	10750 2950 10700 2950
+	10700 2950 10750 2950
 Connection ~ 10750 2950
 Wire Wire Line
-	8300 2600 8250 2600
+	9300 2600 9250 2600
 Wire Wire Line
-	8250 2600 8250 3400
+	9250 2600 9250 3400
 Connection ~ 8050 3400
 Wire Wire Line
-	4000 1250 5750 1250
+	5750 1250 4000 1250
 Wire Wire Line
 	4000 3250 4150 3250
 Wire Wire Line
-	8450 3350 8450 3400
+	9450 3350 9450 3400
 Wire Wire Line
-	8450 3400 5600 3400
-Connection ~ 8250 3400
+	9450 3400 5600 3400
+Connection ~ 9250 3400
+Wire Wire Line
+	8400 1750 8400 1700
+Connection ~ 8400 1700
+Wire Wire Line
+	8400 3250 8400 3400
+Connection ~ 8400 3400
+$Comp
+L LED D10
+U 1 1 4FC32749
+P 8750 1950
+F 0 "D10" H 8750 2050 50  0000 C CNN
+F 1 "LED" H 8750 1850 50  0000 C CNN
+	1    8750 1950
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D20
+U 1 1 4FC32748
+P 8750 3050
+F 0 "D20" H 8750 3150 50  0000 C CNN
+F 1 "LED" H 8750 2950 50  0000 C CNN
+	1    8750 3050
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D19
+U 1 1 4FC32747
+P 8400 3050
+F 0 "D19" H 8400 3150 50  0000 C CNN
+F 1 "LED" H 8400 2950 50  0000 C CNN
+	1    8400 3050
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D9
+U 1 1 4FC32746
+P 8400 1950
+F 0 "D9" H 8400 2050 50  0000 C CNN
+F 1 "LED" H 8400 1850 50  0000 C CNN
+	1    8400 1950
+	0    1    1    0   
+$EndComp
+$Comp
+L R R9
+U 1 1 4FC32745
+P 8400 2500
+F 0 "R9" V 8500 2500 50  0000 C CNN
+F 1 "47E" V 8400 2500 50  0000 C CNN
+	1    8400 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R10
+U 1 1 4FC32744
+P 8750 2500
+F 0 "R10" V 8850 2500 50  0000 C CNN
+F 1 "47E" V 8750 2500 50  0000 C CNN
+	1    8750 2500
+	1    0    0    -1  
+$EndComp
+Text Notes 4050 1100 0    40   ~ 0
+connection from R33 on C3Jr\n(Base resistor for Speaker Transistor)
 Text Notes 7050 6300 0    60   ~ 12
 C3Jr-Name-in-Lights\n------------------------\nan array of 16 SMD LEDs driven either via Speaker Transistor on C3Jr\nusing SP1 for control signal and P5/P6 for Power (+5V, GND)\nOR, by using on board Transistor with Base Resistor, via any other\navailable control pin on the controller.\nIf using on-board Transistor, Pin 3 of connector P6 gets terminated\non Proto Area, and can be red-wired to appropriate control pin.
 $Comp
@@ -236,22 +310,12 @@ F 1 "CONN_1" H 1950 1605 30  0001 C CNN
 $EndComp
 NoConn ~ 1950 1700
 $Comp
-L CONN_1 P4
-U 1 1 4FA3BE35
-P 2100 1550
-F 0 "P4" H 2180 1550 40  0000 L CNN
-F 1 "CONN_1" H 2100 1605 30  0001 C CNN
-	1    2100 1550
-	0    -1   -1   0   
-$EndComp
-NoConn ~ 2100 1700
-$Comp
 L PWR_FLAG #FLG01
 U 1 1 4FA3BD94
-P 8450 3350
-F 0 "#FLG01" H 8450 3620 30  0001 C CNN
-F 1 "PWR_FLAG" H 8450 3580 30  0000 C CNN
-	1    8450 3350
+P 9450 3350
+F 0 "#FLG01" H 9450 3620 30  0001 C CNN
+F 1 "PWR_FLAG" H 9450 3580 30  0000 C CNN
+	1    9450 3350
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -275,10 +339,10 @@ $EndComp
 $Comp
 L CONN_2 SP1
 U 1 1 4F9EE042
-P 8650 2500
-F 0 "SP1" V 8600 2500 40  0000 C CNN
-F 1 "SPEAKER" V 8700 2500 40  0000 C CNN
-	1    8650 2500
+P 9650 2500
+F 0 "SP1" V 9600 2500 40  0000 C CNN
+F 1 "SPEAKER" V 9700 2500 40  0000 C CNN
+	1    9650 2500
 	1    0    0    1   
 $EndComp
 Text Notes 10100 1850 0    60   ~ 0
@@ -333,16 +397,6 @@ F 1 "VCC" H 10750 2150 30  0000 C CNN
 $EndComp
 Text Notes 1550 1900 0    40   ~ 0
 Mounting Holes
-NoConn ~ 1650 1700
-$Comp
-L CONN_1 P1
-U 1 1 4F9ED31D
-P 1650 1550
-F 0 "P1" H 1730 1550 40  0000 L CNN
-F 1 "CONN_1" H 1650 1605 30  0001 C CNN
-	1    1650 1550
-	0    -1   -1   0   
-$EndComp
 $Comp
 L C C5
 U 1 1 4F9BCB73
@@ -433,10 +487,10 @@ F 1 "GND" H 6850 3480 30  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R9
+L R R11
 U 1 1 4F1561DE
 P 6000 1250
-F 0 "R9" V 6080 1250 50  0000 C CNN
+F 0 "R11" V 6080 1250 50  0000 C CNN
 F 1 "1k" V 6000 1250 50  0000 C CNN
 	1    6000 1250
 	0    -1   -1   0   
@@ -463,7 +517,7 @@ $Comp
 L R R8
 U 1 1 4F15611D
 P 8050 2500
-F 0 "R8" V 8130 2500 50  0000 C CNN
+F 0 "R8" V 8150 2500 50  0000 C CNN
 F 1 "47E" V 8050 2500 50  0000 C CNN
 	1    8050 2500
 	1    0    0    -1  
@@ -472,7 +526,7 @@ $Comp
 L R R7
 U 1 1 4F15611B
 P 7700 2500
-F 0 "R7" V 7780 2500 50  0000 C CNN
+F 0 "R7" V 7800 2500 50  0000 C CNN
 F 1 "47E" V 7700 2500 50  0000 C CNN
 	1    7700 2500
 	1    0    0    -1  
@@ -481,7 +535,7 @@ $Comp
 L R R6
 U 1 1 4F15611A
 P 7350 2500
-F 0 "R6" V 7430 2500 50  0000 C CNN
+F 0 "R6" V 7450 2500 50  0000 C CNN
 F 1 "47E" V 7350 2500 50  0000 C CNN
 	1    7350 2500
 	1    0    0    -1  
@@ -490,7 +544,7 @@ $Comp
 L R R5
 U 1 1 4F156118
 P 7000 2500
-F 0 "R5" V 7080 2500 50  0000 C CNN
+F 0 "R5" V 7100 2500 50  0000 C CNN
 F 1 "47E" V 7000 2500 50  0000 C CNN
 	1    7000 2500
 	1    0    0    -1  
@@ -499,7 +553,7 @@ $Comp
 L R R4
 U 1 1 4F156116
 P 6650 2500
-F 0 "R4" V 6730 2500 50  0000 C CNN
+F 0 "R4" V 6750 2500 50  0000 C CNN
 F 1 "47E" V 6650 2500 50  0000 C CNN
 	1    6650 2500
 	1    0    0    -1  
@@ -508,7 +562,7 @@ $Comp
 L R R3
 U 1 1 4F156115
 P 6300 2500
-F 0 "R3" V 6380 2500 50  0000 C CNN
+F 0 "R3" V 6400 2500 50  0000 C CNN
 F 1 "47E" V 6300 2500 50  0000 C CNN
 	1    6300 2500
 	1    0    0    -1  
@@ -517,7 +571,7 @@ $Comp
 L R R2
 U 1 1 4F156113
 P 5950 2500
-F 0 "R2" V 6030 2500 50  0000 C CNN
+F 0 "R2" V 6050 2500 50  0000 C CNN
 F 1 "47E" V 5950 2500 50  0000 C CNN
 	1    5950 2500
 	1    0    0    -1  
@@ -526,7 +580,7 @@ $Comp
 L R R1
 U 1 1 4F15610E
 P 5600 2500
-F 0 "R1" V 5680 2500 50  0000 C CNN
+F 0 "R1" V 5700 2500 50  0000 C CNN
 F 1 "47E" V 5600 2500 50  0000 C CNN
 	1    5600 2500
 	1    0    0    -1  
@@ -541,10 +595,10 @@ F 1 "LED" H 7000 1850 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D13
+L LED D15
 U 1 1 4F155F20
 P 7000 3050
-F 0 "D13" H 7000 3150 50  0000 C CNN
+F 0 "D15" H 7000 3150 50  0000 C CNN
 F 1 "LED" H 7000 2950 50  0000 C CNN
 	1    7000 3050
 	0    1    1    0   
@@ -559,10 +613,10 @@ F 1 "LED" H 7350 1850 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D14
+L LED D16
 U 1 1 4F155F1E
 P 7350 3050
-F 0 "D14" H 7350 3150 50  0000 C CNN
+F 0 "D16" H 7350 3150 50  0000 C CNN
 F 1 "LED" H 7350 2950 50  0000 C CNN
 	1    7350 3050
 	0    1    1    0   
@@ -577,19 +631,19 @@ F 1 "LED" H 7700 1850 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D15
+L LED D17
 U 1 1 4F155F1C
 P 7700 3050
-F 0 "D15" H 7700 3150 50  0000 C CNN
+F 0 "D17" H 7700 3150 50  0000 C CNN
 F 1 "LED" H 7700 2950 50  0000 C CNN
 	1    7700 3050
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D16
+L LED D18
 U 1 1 4F155F1B
 P 8050 3050
-F 0 "D16" H 8050 3150 50  0000 C CNN
+F 0 "D18" H 8050 3150 50  0000 C CNN
 F 1 "LED" H 8050 2950 50  0000 C CNN
 	1    8050 3050
 	0    1    1    0   
@@ -613,19 +667,19 @@ F 1 "LED" H 6650 1850 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D12
+L LED D14
 U 1 1 4F155EF1
 P 6650 3050
-F 0 "D12" H 6650 3150 50  0000 C CNN
+F 0 "D14" H 6650 3150 50  0000 C CNN
 F 1 "LED" H 6650 2950 50  0000 C CNN
 	1    6650 3050
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D11
+L LED D13
 U 1 1 4F155EEF
 P 6300 3050
-F 0 "D11" H 6300 3150 50  0000 C CNN
+F 0 "D13" H 6300 3150 50  0000 C CNN
 F 1 "LED" H 6300 2950 50  0000 C CNN
 	1    6300 3050
 	0    1    1    0   
@@ -640,10 +694,10 @@ F 1 "LED" H 6300 1850 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D10
+L LED D12
 U 1 1 4F155EB8
 P 5950 3050
-F 0 "D10" H 5950 3150 50  0000 C CNN
+F 0 "D12" H 5950 3150 50  0000 C CNN
 F 1 "LED" H 5950 2950 50  0000 C CNN
 	1    5950 3050
 	0    1    1    0   
@@ -658,10 +712,10 @@ F 1 "LED" H 5950 1850 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D9
+L LED D11
 U 1 1 4F155EA3
 P 5600 3050
-F 0 "D9" H 5600 3150 50  0000 C CNN
+F 0 "D11" H 5600 3150 50  0000 C CNN
 F 1 "LED" H 5600 2950 50  0000 C CNN
 	1    5600 3050
 	0    1    1    0   

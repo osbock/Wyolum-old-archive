@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Sunday 06 May 2012 12:25:48 AM IST
+# EESchema Netlist Version 1.1 created  5/28/2012 12:54:31 PM
 (
  ( /4F9BCB73 c_0805 C5 100n
   ( 1 +5V )
@@ -6,23 +6,23 @@
  )
  ( /4F155E90 d_1206 D1 LED
   ( 1 /LOAD )
-  ( 2 N-000021 )
+  ( 2 N-000024 )
  )
  ( /4F155EB4 d_1206 D2 LED
   ( 1 /LOAD )
-  ( 2 N-000019 )
+  ( 2 N-000022 )
  )
  ( /4F155EBB d_1206 D3 LED
   ( 1 /LOAD )
-  ( 2 N-000017 )
+  ( 2 N-000020 )
  )
  ( /4F155EF3 d_1206 D4 LED
   ( 1 /LOAD )
-  ( 2 N-000015 )
+  ( 2 N-000018 )
  )
  ( /4F155F21 d_1206 D5 LED
   ( 1 /LOAD )
-  ( 2 N-000023 )
+  ( 2 N-000016 )
  )
  ( /4F155F1F d_1206 D6 LED
   ( 1 /LOAD )
@@ -34,50 +34,60 @@
  )
  ( /4F155F1A d_1206 D8 LED
   ( 1 /LOAD )
-  ( 2 N-000010 )
+  ( 2 N-000011 )
  )
- ( /4F155EA3 d_1206 D9 LED
-  ( 1 N-000022 )
+ ( /4FC32746 d_1206 D9 LED
+  ( 1 /LOAD )
+  ( 2 N-000003 )
+ )
+ ( /4FC32749 d_1206 D10 LED
+  ( 1 /LOAD )
+  ( 2 N-000005 )
+ )
+ ( /4F155EA3 d_1206 D11 LED
+  ( 1 N-000025 )
   ( 2 GND )
  )
- ( /4F155EB8 d_1206 D10 LED
-  ( 1 N-000020 )
+ ( /4F155EB8 d_1206 D12 LED
+  ( 1 N-000023 )
   ( 2 GND )
  )
- ( /4F155EEF d_1206 D11 LED
-  ( 1 N-000018 )
+ ( /4F155EEF d_1206 D13 LED
+  ( 1 N-000021 )
   ( 2 GND )
  )
- ( /4F155EF1 d_1206 D12 LED
-  ( 1 N-000016 )
+ ( /4F155EF1 d_1206 D14 LED
+  ( 1 N-000019 )
   ( 2 GND )
  )
- ( /4F155F20 d_1206 D13 LED
-  ( 1 N-000024 )
+ ( /4F155F20 d_1206 D15 LED
+  ( 1 N-000017 )
   ( 2 GND )
  )
- ( /4F155F1E d_1206 D14 LED
-  ( 1 N-000007 )
+ ( /4F155F1E d_1206 D16 LED
+  ( 1 N-000015 )
   ( 2 GND )
  )
- ( /4F155F1C d_1206 D15 LED
+ ( /4F155F1C d_1206 D17 LED
   ( 1 N-000013 )
   ( 2 GND )
  )
- ( /4F155F1B d_1206 D16 LED
-  ( 1 N-000011 )
+ ( /4F155F1B d_1206 D18 LED
+  ( 1 N-000008 )
   ( 2 GND )
  )
- ( /4F9ED31D vite_3mm P1 CONN_1
-  ( 1 ? )
+ ( /4FC32747 d_1206 D19 LED
+  ( 1 N-000004 )
+  ( 2 GND )
+ )
+ ( /4FC32748 d_1206 D20 LED
+  ( 1 N-000006 )
+  ( 2 GND )
  )
  ( /4F9EEE67 Pad01 P2 CONN_1
-  ( 1 N-000002 )
+  ( 1 N-000026 )
  )
  ( /4FA3BE36 vite_3mm P3 CONN_1
-  ( 1 ? )
- )
- ( /4FA3BE35 vite_3mm P4 CONN_1
   ( 1 ? )
  )
  ( /4F993AD3 pin_strip_2 P5 DC_IN_1
@@ -87,7 +97,7 @@
  ( /4F9FC54E pin_strip_3 P6 DC_IN_2
   ( 1 GND )
   ( 2 +5V )
-  ( 3 N-000002 )
+  ( 3 N-000026 )
  )
  ( /4F9EDA00 PROTO-6 P7 DIL6
   ( 1 GND )
@@ -115,44 +125,52 @@
  )
  ( /4F15617D sot223 Q1 PBSS9110Z
   ( 1 +5V )
-  ( 2 N-000008 )
+  ( 2 N-000009 )
   ( 3 /LOAD )
  )
  ( /4F15610E r_0805 R1 47E
-  ( 1 N-000021 )
-  ( 2 N-000022 )
+  ( 1 N-000024 )
+  ( 2 N-000025 )
  )
  ( /4F156113 r_0805 R2 47E
-  ( 1 N-000019 )
-  ( 2 N-000020 )
+  ( 1 N-000022 )
+  ( 2 N-000023 )
  )
  ( /4F156115 r_0805 R3 47E
-  ( 1 N-000017 )
-  ( 2 N-000018 )
+  ( 1 N-000020 )
+  ( 2 N-000021 )
  )
  ( /4F156116 r_0805 R4 47E
-  ( 1 N-000015 )
-  ( 2 N-000016 )
+  ( 1 N-000018 )
+  ( 2 N-000019 )
  )
  ( /4F156118 r_0805 R5 47E
-  ( 1 N-000023 )
-  ( 2 N-000024 )
+  ( 1 N-000016 )
+  ( 2 N-000017 )
  )
  ( /4F15611A r_0805 R6 47E
   ( 1 N-000014 )
-  ( 2 N-000007 )
+  ( 2 N-000015 )
  )
  ( /4F15611B r_0805 R7 47E
   ( 1 N-000012 )
   ( 2 N-000013 )
  )
  ( /4F15611D r_0805 R8 47E
-  ( 1 N-000010 )
-  ( 2 N-000011 )
- )
- ( /4F1561DE r_0805 R9 1k
-  ( 1 N-000002 )
+  ( 1 N-000011 )
   ( 2 N-000008 )
+ )
+ ( /4FC32745 r_0805 R9 47E
+  ( 1 N-000003 )
+  ( 2 N-000004 )
+ )
+ ( /4FC32744 d_0805 R10 47E
+  ( 1 N-000005 )
+  ( 2 N-000006 )
+ )
+ ( /4F1561DE d_0805 R11 1k
+  ( 1 N-000026 )
+  ( 2 N-000009 )
  )
  ( /4F9EE042 pin_strip_2 SP1 SPEAKER
   ( 1 GND )
@@ -310,6 +328,42 @@ $component D16
  LED-1206
  LEDV
 $endlist
+$component D17
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D18
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D19
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D20
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
 $component R1
  R?
  SM0603
@@ -367,6 +421,20 @@ $component R8
  SM1206
 $endlist
 $component R9
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R10
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R11
  R?
  SM0603
  SM0805
