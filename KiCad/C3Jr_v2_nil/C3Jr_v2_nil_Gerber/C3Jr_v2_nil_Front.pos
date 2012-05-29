@@ -1,4 +1,4 @@
-### Module positions - created on 5/28/2012 6:56:08 PM ###
+### Module positions - created on 5/29/2012 12:18:51 PM ###
 ### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Front
@@ -41,7 +41,7 @@ R6       100E                 4.5000     1.3650     270.0    Front
 R7       100E                 4.8000     1.3650     270.0    Front
 R8       100E                 5.1000     1.3650     270.0    Front
 R9       100E                 5.4000     1.3650     270.0    Front
-R10      100E                 5.7000     1.3650     270.0    Front
+R10      100E                 5.6900     1.3775      90.0    Front
 R11      100E                 3.0000     1.7850      90.0    Front
 R12      100E                 3.3000     1.7850      90.0    Front
 R13      100E                 3.6000     1.7850      90.0    Front
@@ -51,7 +51,7 @@ R16      100E                 4.5000     1.7850      90.0    Front
 R17      100E                 4.8000     1.7850      90.0    Front
 R18      100E                 5.1000     1.7850      90.0    Front
 R19      100E                 5.4000     1.7850      90.0    Front
-R20      100E                 5.7000     1.7850      90.0    Front
+R20      100E                 5.6900     1.7725     270.0    Front
 R21      1k                   3.6140     2.3260     180.0    Front
 SP1      SPEAKER              3.6000     2.0000      90.0    Front
 ## End

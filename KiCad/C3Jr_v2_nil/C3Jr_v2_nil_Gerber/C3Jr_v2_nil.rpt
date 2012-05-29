@@ -1,4 +1,4 @@
-## Module report - date 5/28/2012 6:56:37 PM
+## Module report - date 5/29/2012 12:19:22 PM
 ## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ##
@@ -1109,7 +1109,7 @@ reference "G1"
 value "Logo-WL3"
 footprint "Logo-WL3"
 attribut none
-position  4.512000  1.864000
+position  4.452500  1.865000
 orientation  0.00
 layer component
 $EndMODULE  G1
@@ -1795,8 +1795,8 @@ reference "R20"
 value "100E"
 footprint "r_0805"
 attribut smd
-position  5.700000  1.785000
-orientation  90.00
+position  5.690000  1.772500
+orientation  270.00
 layer component
 $SHAPE3D
 Na "C3Jr_v2_nil_Libs\\C3Jr_v2_nil_3D_Modules\\r_0805.wrl"
@@ -1829,8 +1829,8 @@ reference "R10"
 value "100E"
 footprint "r_0805"
 attribut smd
-position  5.700000  1.365000
-orientation  270.00
+position  5.690000  1.377500
+orientation  90.00
 layer component
 $SHAPE3D
 Na "C3Jr_v2_nil_Libs\\C3Jr_v2_nil_3D_Modules\\r_0805.wrl"
