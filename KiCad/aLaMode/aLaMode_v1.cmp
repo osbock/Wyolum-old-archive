@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2011-12-28 BZR 3254)-stable date = 5/26/2012 4:15:34 PM
+Cmp-Mod V01 Created by CvPcb (2011-12-28 BZR 3254)-stable date = 5/30/2012 2:56:40 PM
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -197,17 +197,10 @@ IdModule  = SIL-7;
 EndCmp
 
 BeginCmp
-TimeStamp = /4E1FEA4E/4FC0629B;
-Reference = P5;
-ValeurCmp = CD2;
-IdModule  = Sck-04-F-SMT;
-EndCmp
-
-BeginCmp
 TimeStamp = /4E1ED2A7;
 Reference = P6;
 ValeurCmp = 9VBAT;
-IdModule  = pin_strip_2;
+IdModule  = JACK_ALIM;
 EndCmp
 
 BeginCmp
@@ -229,20 +222,6 @@ TimeStamp = /4DCD1997;
 Reference = P9;
 ValeurCmp = ISP;
 IdModule  = ISP;
-EndCmp
-
-BeginCmp
-TimeStamp = /4E1FEA4E/4FC0629A;
-Reference = P11;
-ValeurCmp = CD1;
-IdModule  = Sck-04-F-SMT;
-EndCmp
-
-BeginCmp
-TimeStamp = /4F3FE37F;
-Reference = P15;
-ValeurCmp = BootDrive;
-IdModule  = PIN_ARRAY-6X1;
 EndCmp
 
 BeginCmp

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 27 May 2012 12:03:48 AM IST
+EESchema Schematic File Version 2  date 5/30/2012 7:43:14 PM
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 3 4
 Title "Buckler, i2sd, v3, with RTC, with HW addressing"
-Date "26 may 2012"
+Date "30 may 2012"
 Rev "3"
 Comp "WyoLum"
 Comment1 ""
@@ -138,10 +138,10 @@ F 2 "r_0805" H 6650 2000 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +BATT #PWR7
+L +BATT #PWR014
 U 1 1 4EC101F0
 P 5300 1850
-F 0 "#PWR7" H 5300 1800 20  0001 C CNN
+F 0 "#PWR014" H 5300 1800 20  0001 C CNN
 F 1 "+BATT" H 5300 1950 30  0000 C CNN
 	1    5300 1850
 	1    0    0    -1  

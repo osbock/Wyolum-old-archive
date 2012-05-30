@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Saturday 26 May 2012 11:58:40 PM IST
+EESchema Schematic File Version 2  date 5/30/2012 7:41:53 PM
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 4
 Title ""
-Date "26 may 2012"
+Date "30 may 2012"
 Rev ""
 Comp ""
 Comment1 ""

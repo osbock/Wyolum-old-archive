@@ -1,3 +1,16 @@
-EESchema-DOCLIB  Version 2.0  Date: 5/26/2012 1:11:40 PM
+EESchema-DOCLIB  Version 2.0  Date: 5/30/2012 6:26:35 PM
+#
+$CMP CONN_8
+D Symbole general de connecteur
+K CONN
+$ENDCMP
+#
+$CMP MOS_P
+F transistors/mos/*.*
+$ENDCMP
+#
+$CMP MOSFET_P
+F transistors/mos/*.*
+$ENDCMP
 #
 #End Doc Library
