@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2011-12-28 BZR 3254)-stable date = 5/30/2012 2:56:40 PM
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Wednesday 30 May 2012 11:24:13 PM IST
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -36,35 +36,35 @@ IdModule  = c_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DCA5F1E;
+TimeStamp = /4FC07407/4FC61FE5;
 Reference = C2;
-ValeurCmp = 1u;
+ValeurCmp = 100n;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /4E1EC963;
+TimeStamp = /4FC07407/4FC61A0B;
 Reference = C3;
 ValeurCmp = 2u2_Tant;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /4E1ED0F3;
+TimeStamp = /4FC07407/4FC61A06;
 Reference = C4;
 ValeurCmp = 100n;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /4E1ECFB8;
+TimeStamp = /4FC07407/4FC61A07;
 Reference = C5;
 ValeurCmp = 1u;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DCB9634;
+TimeStamp = /4FC07407/4FC61A0C;
 Reference = C6;
 ValeurCmp = 47u,10V;
 IdModule  = C_ELCO_SMD;
@@ -73,13 +73,6 @@ EndCmp
 BeginCmp
 TimeStamp = /4DCB9774;
 Reference = C7;
-ValeurCmp = 100n;
-IdModule  = c_0805;
-EndCmp
-
-BeginCmp
-TimeStamp = /4E1EC986;
-Reference = C8;
 ValeurCmp = 100n;
 IdModule  = c_0805;
 EndCmp
@@ -106,14 +99,14 @@ IdModule  = c_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FBF800A;
+TimeStamp = /4FC5F208;
 Reference = D1;
 ValeurCmp = LED;
 IdModule  = d_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FBF802B;
+TimeStamp = /4FC5F1FE;
 Reference = D2;
 ValeurCmp = LED;
 IdModule  = d_0805;
@@ -131,6 +124,20 @@ TimeStamp = /4F9A5A10;
 Reference = D4;
 ValeurCmp = RB886GT2R;
 IdModule  = d_VMD2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC07407/4FC61A7F;
+Reference = D5;
+ValeurCmp = DIODESCH;
+IdModule  = d_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC07407/4FC62203;
+Reference = D6;
+ValeurCmp = LED;
+IdModule  = d_0805;
 EndCmp
 
 BeginCmp
@@ -197,10 +204,24 @@ IdModule  = SIL-7;
 EndCmp
 
 BeginCmp
-TimeStamp = /4E1ED2A7;
+TimeStamp = /4FC5FB05;
+Reference = P4;
+ValeurCmp = PWM_SERVO;
+IdModule  = SIL-8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC5FB0E;
+Reference = P5;
+ValeurCmp = 5V_SERVO;
+IdModule  = SIL-8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC5FB11;
 Reference = P6;
-ValeurCmp = 9VBAT;
-IdModule  = JACK_ALIM;
+ValeurCmp = GND_SERVO;
+IdModule  = SIL-8;
 EndCmp
 
 BeginCmp
@@ -225,10 +246,24 @@ IdModule  = ISP;
 EndCmp
 
 BeginCmp
+TimeStamp = /4FC07407/4FC61A05;
+Reference = P10;
+ValeurCmp = V_IN;
+IdModule  = JACK_ALIM;
+EndCmp
+
+BeginCmp
 TimeStamp = /4FC07407/4FC07436;
 Reference = PCB1;
 ValeurCmp = PCB;
 IdModule  = PCB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC07407/4FC61E4C;
+Reference = Q1;
+ValeurCmp = MOSFET_P;
+IdModule  = ;
 EndCmp
 
 BeginCmp
@@ -295,6 +330,27 @@ IdModule  = r_0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /4FC07407/4FC61E0A;
+Reference = R10;
+ValeurCmp = 10k;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC07407/4FC61E0E;
+Reference = R11;
+ValeurCmp = 10k;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC07407/4FC621EE;
+Reference = R12;
+ValeurCmp = 1k;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
 TimeStamp = /4EC0FE5A;
 Reference = SD1;
 ValeurCmp = SD_CARD_MICRO;
@@ -316,9 +372,9 @@ IdModule  = SW_SMD;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DCAC2D1;
+TimeStamp = /4FC07407/4FC61EAC;
 Reference = U1;
-ValeurCmp = 3V3;
+ValeurCmp = LP2985-33DBVR;
 IdModule  = SOT23-3;
 EndCmp
 
@@ -330,9 +386,9 @@ IdModule  = SO14E;
 EndCmp
 
 BeginCmp
-TimeStamp = /4E1ECD8D;
+TimeStamp = /4FC07407/4FC61C2F;
 Reference = U3;
-ValeurCmp = 5V0;
+ValeurCmp = NCP1117ST50T3G;
 IdModule  = SOT23-5;
 EndCmp
 
@@ -341,6 +397,13 @@ TimeStamp = /4E1FEA4E/4E1FEA7F;
 Reference = U4;
 ValeurCmp = DS3231N;
 IdModule  = DS3231;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC07407/4FC62038;
+Reference = U5;
+ValeurCmp = LM358N;
+IdModule  = SO14E;
 EndCmp
 
 BeginCmp
