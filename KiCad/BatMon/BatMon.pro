@@ -1,30 +1,10 @@
-update=5/31/2012 1:43:47 PM
-last_client=kicad
+update=Thursday 31 May 2012 08:47:35 PM IST
+last_client=pcbnew
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[pcbnew]
-version=1
-PadDrlX=394
-PadDimH=984
-PadDimV=591
-BoardThickness=630
-TxtPcbV=600
-TxtPcbH=600
-TxtModV=600
-TxtModH=600
-TxtModW=120
-VEgarde=100
-DrawLar=100
-EdgeLar=150
-TxtLar=120
-MSegLar=100
-LastNetListRead=c3jr_v2.net
-[pcbnew/libraries]
-LibDir=../../../../../../../Downloads/KiCAD/Libs;D:/Users/Anool/Downloads/KiCAD/Libs/USB
-LibName1=C3Jr_v2_libs/C3Jr_v2_parts
 [eeschema]
 version=1
 LibDir=D:/Users/Anool/Downloads/KiCAD/Libs/USB
@@ -61,4 +41,24 @@ LibName1=BatMon_Libs/BatMon
 LibName2=BatMon_Libs/power
 [general]
 version=1
+[pcbnew]
+version=1
+PadDrlX=394
+PadDimH=984
+PadDimV=591
+BoardThickness=630
+TxtPcbV=600
+TxtPcbH=600
+TxtModV=600
+TxtModH=600
+TxtModW=120
+VEgarde=100
+DrawLar=100
+EdgeLar=150
+TxtLar=120
+MSegLar=100
+LastNetListRead=c3jr_v2.net
+[pcbnew/libraries]
+LibDir=../../../../../../../Downloads/KiCAD/Libs;D:/Users/Anool/Downloads/KiCAD/Libs/USB
+LibName1=BatMon_Libs/BatMon_parts
 

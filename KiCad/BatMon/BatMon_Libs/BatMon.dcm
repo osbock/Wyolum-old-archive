@@ -1,4 +1,9 @@
-EESchema-DOCLIB  Version 2.0  Date: 5/31/2012 1:34:18 PM
+EESchema-DOCLIB  Version 2.0  Date: Thursday 31 May 2012 07:30:43 PM IST
+#
+$CMP CONN_7
+D Symbole general de connecteur
+K CONN
+$ENDCMP
 #
 $CMP CONN_8
 D Symbole general de connecteur
