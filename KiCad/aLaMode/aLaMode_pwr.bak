@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 5/30/2012 7:41:53 PM
+EESchema Schematic File Version 2  date 5/30/2012 7:43:14 PM
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
@@ -32,7 +32,7 @@ Text Label 4675 5750 0    40   ~ 0
 GND
 Connection ~ 7675 6725
 Wire Wire Line
-	8325 6725 7675 6725
+	7675 6725 8325 6725
 Wire Wire Line
 	8325 6725 8325 6675
 Connection ~ 8325 5675
@@ -56,7 +56,7 @@ Wire Wire Line
 Wire Wire Line
 	5200 4825 5200 4625
 Wire Wire Line
-	6550 3750 6550 4000
+	6550 4000 6550 3750
 Wire Wire Line
 	6550 3750 6600 3750
 Wire Wire Line
@@ -86,11 +86,11 @@ Wire Wire Line
 Wire Wire Line
 	3950 2600 4100 2600
 Wire Wire Line
-	4100 2500 3950 2500
+	3950 2500 4100 2500
 Connection ~ 5875 3050
 Connection ~ 6550 2400
 Wire Wire Line
-	6150 3050 6150 2900
+	6150 2900 6150 3050
 Connection ~ 7200 4000
 Wire Wire Line
 	7675 4000 7675 3900
@@ -112,10 +112,10 @@ Connection ~ 6550 4000
 Wire Wire Line
 	3950 2400 4125 2400
 Wire Wire Line
-	4100 4000 4100 2500
+	4100 2500 4100 4000
 Connection ~ 4100 2600
 Wire Wire Line
-	8025 4000 4100 4000
+	4100 4000 8025 4000
 Wire Wire Line
 	5325 2950 5325 3050
 Connection ~ 5325 3050
