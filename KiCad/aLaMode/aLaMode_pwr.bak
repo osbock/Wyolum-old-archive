@@ -1,6 +1,7 @@
-EESchema Schematic File Version 2  date Thursday 31 May 2012 09:11:13 PM IST
+EESchema Schematic File Version 2  date 6/1/2012 12:49:29 PM
 LIBS:aLaMode
 LIBS:power
+LIBS:Conn-raspberry
 LIBS:aLaMode_v1-cache
 EELAYER 25  0
 EELAYER END
@@ -8,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 4
 Title ""
-Date "31 may 2012"
+Date "1 jun 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -17,9 +18,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Wire Wire Line
-	6550 4100 6550 4000
-Wire Wire Line
-	6550 4000 6550 3750
+	6550 4100 6550 3750
 Wire Wire Line
 	8325 6225 8325 6275
 Wire Wire Line
@@ -27,25 +26,21 @@ Wire Wire Line
 Wire Wire Line
 	7275 5125 6825 5125
 Wire Wire Line
-	5200 5625 5200 5750
-Wire Wire Line
-	5200 5750 5200 5850
+	5200 5625 5200 5850
 Connection ~ 5200 4750
 Wire Wire Line
-	5200 4750 5850 4750
+	5850 4750 5200 4750
 Wire Wire Line
 	5850 4750 5850 5275
 Wire Wire Line
 	6400 4875 6450 4875
 Wire Wire Line
-	6450 4875 6450 3450
+	6450 3450 6450 4875
 Wire Wire Line
-	6450 3450 6550 3450
-Wire Wire Line
-	6550 3450 6600 3450
+	6600 3450 6450 3450
 Connection ~ 6550 3450
 Wire Wire Line
-	6600 3600 6550 3600
+	6550 3600 6600 3600
 Wire Wire Line
 	4075 4325 5950 4325
 Wire Wire Line
@@ -59,15 +54,11 @@ Wire Wire Line
 Wire Wire Line
 	4750 5325 4800 5325
 Wire Wire Line
-	4400 5675 4400 5750
+	4400 5750 4400 5675
 Wire Wire Line
-	4400 5175 4400 5125
+	4400 5175 4400 5075
 Wire Wire Line
-	4400 5125 4400 5075
-Wire Wire Line
-	4525 2400 4750 2400
-Wire Wire Line
-	4750 2400 4925 2400
+	4525 2400 4925 2400
 Connection ~ 5875 2400
 Wire Wire Line
 	5725 2550 5875 2550
@@ -75,36 +66,20 @@ Connection ~ 5325 3050
 Wire Wire Line
 	5325 2950 5325 3050
 Wire Wire Line
-	8025 4000 7675 4000
-Wire Wire Line
-	7675 4000 7200 4000
-Wire Wire Line
-	7200 4000 6550 4000
-Wire Wire Line
-	6550 4000 4100 4000
+	4100 4000 8025 4000
 Connection ~ 4100 2600
 Wire Wire Line
-	4100 4000 4100 2600
-Wire Wire Line
-	4100 2600 4100 2500
+	4100 4000 4100 2500
 Wire Wire Line
 	3950 2400 4125 2400
 Connection ~ 6550 4000
 Wire Wire Line
-	4750 2950 4750 3050
+	4750 3050 4750 2950
 Wire Wire Line
-	4750 3050 5325 3050
-Wire Wire Line
-	5325 3050 5875 3050
-Wire Wire Line
-	5875 3050 6150 3050
+	4750 3050 6150 3050
 Connection ~ 7675 4000
 Wire Wire Line
-	6550 3600 6550 3450
-Wire Wire Line
-	6550 3450 6550 2400
-Wire Wire Line
-	6550 2400 6550 2250
+	6550 2250 6550 3600
 Wire Wire Line
 	6150 2400 6150 2450
 Wire Wire Line
@@ -121,26 +96,14 @@ Wire Wire Line
 Wire Wire Line
 	3950 2600 4100 2600
 Wire Wire Line
-	5875 3025 5875 3050
+	5875 3025 5875 3150
 Wire Wire Line
-	5875 3050 5875 3150
+	8025 3450 7400 3450
 Wire Wire Line
-	8025 3450 7675 3450
-Wire Wire Line
-	7675 3450 7400 3450
-Wire Wire Line
-	5725 2400 5875 2400
-Wire Wire Line
-	5875 2400 6150 2400
-Wire Wire Line
-	6150 2400 6550 2400
-Wire Wire Line
-	6550 2400 8025 2400
+	5725 2400 8025 2400
 Connection ~ 6150 2400
 Wire Wire Line
-	5875 2625 5875 2550
-Wire Wire Line
-	5875 2550 5875 2400
+	5875 2625 5875 2400
 Connection ~ 5875 2550
 Wire Wire Line
 	4750 2500 4750 2400
@@ -159,15 +122,11 @@ Wire Wire Line
 Wire Wire Line
 	6550 3750 6600 3750
 Wire Wire Line
-	5200 4625 5200 4750
+	5200 4625 5200 4825
 Wire Wire Line
-	5200 4750 5200 4825
+	5850 5750 5850 5675
 Wire Wire Line
-	5850 5675 5850 5750
-Wire Wire Line
-	5850 5750 5200 5750
-Wire Wire Line
-	5200 5750 4400 5750
+	4400 5750 5850 5750
 Connection ~ 5200 5750
 Wire Wire Line
 	7275 5325 7200 5325
@@ -176,15 +135,11 @@ Wire Wire Line
 Wire Wire Line
 	7200 5675 8325 5675
 Wire Wire Line
-	8275 5225 8325 5225
+	8325 5225 8275 5225
 Wire Wire Line
-	7675 6825 7675 6725
+	7675 6825 7675 5625
 Wire Wire Line
-	7675 6725 7675 5625
-Wire Wire Line
-	8325 5225 8325 5675
-Wire Wire Line
-	8325 5675 8325 5725
+	8325 5725 8325 5225
 Connection ~ 8325 5675
 Wire Wire Line
 	8325 6675 8325 6725
@@ -304,8 +259,8 @@ $Comp
 L MOSFET_P Q1
 U 1 1 4FC61E4C
 P 6200 4975
-F 0 "Q1" H 6200 5165 60  0000 R CNN
-F 1 "MOSFET_P" H 6200 4795 60  0000 R CNN
+F 0 "Q1" V 6425 5025 60  0000 R CNN
+F 1 "FDN340P" V 6525 5175 60  0000 R CNN
 	1    6200 4975
 	0    -1   -1   0   
 $EndComp
@@ -386,8 +341,8 @@ $Comp
 L C_POL C6
 U 1 1 4FC61A0C
 P 4750 2700
-F 0 "C6" H 4650 2800 50  0000 L CNN
-F 1 "47u,10V" V 4800 2275 50  0000 L CNN
+F 0 "C6" H 4900 2600 50  0000 L CNN
+F 1 "47u,10V" H 4800 2500 50  0000 L CNN
 F 2 "C_ELCO_SMD" H 4750 2700 60  0001 C CNN
 	1    4750 2700
 	-1   0    0    -1  

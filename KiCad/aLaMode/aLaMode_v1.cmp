@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Wednesday 30 May 2012 11:24:13 PM IST
+Cmp-Mod V01 Created by CvPcb (2011-12-28 BZR 3254)-stable date = 6/1/2012 12:02:31 PM
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -25,7 +25,7 @@ BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEA78;
 Reference = BT1;
 ValeurCmp = BATT_RTC;
-IdModule  = CR1632;
+IdModule  = CR1632_2;
 EndCmp
 
 BeginCmp
@@ -207,21 +207,21 @@ BeginCmp
 TimeStamp = /4FC5FB05;
 Reference = P4;
 ValeurCmp = PWM_SERVO;
-IdModule  = SIL-8;
+IdModule  = PIN_ARRAY-8X1;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FC5FB0E;
 Reference = P5;
 ValeurCmp = 5V_SERVO;
-IdModule  = SIL-8;
+IdModule  = PIN_ARRAY-8X1;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FC5FB11;
 Reference = P6;
 ValeurCmp = GND_SERVO;
-IdModule  = SIL-8;
+IdModule  = PIN_ARRAY-8X1;
 EndCmp
 
 BeginCmp
@@ -262,8 +262,8 @@ EndCmp
 BeginCmp
 TimeStamp = /4FC07407/4FC61E4C;
 Reference = Q1;
-ValeurCmp = MOSFET_P;
-IdModule  = ;
+ValeurCmp = FDN340P;
+IdModule  = SOT23-3;
 EndCmp
 
 BeginCmp
@@ -375,7 +375,7 @@ BeginCmp
 TimeStamp = /4FC07407/4FC61EAC;
 Reference = U1;
 ValeurCmp = LP2985-33DBVR;
-IdModule  = SOT23-3;
+IdModule  = SOT23-5;
 EndCmp
 
 BeginCmp
@@ -389,7 +389,7 @@ BeginCmp
 TimeStamp = /4FC07407/4FC61C2F;
 Reference = U3;
 ValeurCmp = NCP1117ST50T3G;
-IdModule  = SOT23-5;
+IdModule  = SOT223;
 EndCmp
 
 BeginCmp
@@ -403,7 +403,7 @@ BeginCmp
 TimeStamp = /4FC07407/4FC62038;
 Reference = U5;
 ValeurCmp = LM358N;
-IdModule  = SO14E;
+IdModule  = SO8E;
 EndCmp
 
 BeginCmp

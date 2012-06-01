@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Wednesday 30 May 2012 11:24:13 PM IST
+# EESchema Netlist Version 1.1 created  6/1/2012 12:02:31 PM
 (
  ( /4E1FEA4E/4E1FEBC6 I/O B2 I/O
   ( 1 /aLaMode_v1_rtc/SQW )
@@ -9,7 +9,7 @@
  ( /4E1FEA4E/4E1FEBD4 I/O B15 I/O
   ( 1 /aLaMode_v1_rtc/32k )
  )
- ( /4E1FEA4E/4E1FEA78 CR1632 BT1 BATT_RTC
+ ( /4E1FEA4E/4E1FEA78 CR1632_2 BT1 BATT_RTC
   ( + /aLaMode_v1_rtc/BAT )
   ( - GND )
  )
@@ -18,7 +18,7 @@
   ( 2 GND )
  )
  ( /4FC07407/4FC61FE5 c_0805 C2 100n
-  ( 1 N-000097 )
+  ( 1 N-000094 )
   ( 2 GND )
  )
  ( /4FC07407/4FC61A0B c_0805 C3 2u2_Tant
@@ -70,7 +70,7 @@
   ( 2 /GPS_BAT )
  )
  ( /4FC07407/4FC61A7F d_0805 D5 DIODESCH
-  ( 1 N-000093 )
+  ( 1 N-000097 )
   ( 2 /aLaMode_pwr/V_IN )
  )
  ( /4FC07407/4FC62203 d_0805 D6 LED
@@ -164,7 +164,7 @@
   ( 6 ? )
   ( 7 ? )
  )
- ( /4FC5FB05 SIL-8 P4 PWM_SERVO
+ ( /4FC5FB05 PIN_ARRAY-8X1 P4 PWM_SERVO
   ( 1 /aLaMode_v1_rtc/SQW )
   ( 2 /PD5 )
   ( 3 /GPS_Tx )
@@ -174,7 +174,7 @@
   ( 7 /aLaMode_pwr/5V0 )
   ( 8 /aLaMode_pwr/5V0 )
  )
- ( /4FC5FB0E SIL-8 P5 5V_SERVO
+ ( /4FC5FB0E PIN_ARRAY-8X1 P5 5V_SERVO
   ( 1 /5V_SERVO )
   ( 2 /5V_SERVO )
   ( 3 /5V_SERVO )
@@ -184,7 +184,7 @@
   ( 7 /5V_SERVO )
   ( 8 /5V_SERVO )
  )
- ( /4FC5FB11 SIL-8 P6 GND_SERVO
+ ( /4FC5FB11 PIN_ARRAY-8X1 P6 GND_SERVO
   ( 1 GND )
   ( 2 GND )
   ( 3 GND )
@@ -219,13 +219,13 @@
   ( 6 GND )
  )
  ( /4FC07407/4FC61A05 JACK_ALIM P10 V_IN
-  ( 1 N-000093 )
+  ( 1 N-000097 )
   ( 2 GND )
   ( 3 GND )
  )
  ( /4FC07407/4FC07436 PCB PCB1 PCB
  )
- ( /4FC07407/4FC61E4C $noname$ Q1 MOSFET_P
+ ( /4FC07407/4FC61E4C SOT23-3 Q1 FDN340P
   ( D ? )
   ( G /aLaMode_pwr/GATE_CMD )
   ( S /aLaMode_pwr/5V0 )
@@ -275,7 +275,7 @@
   ( 2 GND )
  )
  ( /4FC07407/4FC621EE r_0805 R12 1k
-  ( 1 N-000094 )
+  ( 1 N-000093 )
   ( 2 N-000096 )
  )
  ( /4EC0FE5A SD_Micro SD1 SD_CARD_MICRO
@@ -333,7 +333,7 @@
   ( 1 GND )
   ( 2 /RESET )
  )
- ( /4FC07407/4FC61EAC SOT23-3 U1 LP2985-33DBVR
+ ( /4FC07407/4FC61EAC SOT23-5 U1 LP2985-33DBVR
   ( 1 /aLaMode_pwr/5V0 )
   ( 2 GND )
   ( 3 /aLaMode_pwr/5V0 )
@@ -356,7 +356,7 @@
   ( 13 +3.3V )
   ( 14 +3.3V )
  )
- ( /4FC07407/4FC61C2F SOT23-5 U3 NCP1117ST50T3G
+ ( /4FC07407/4FC61C2F SOT223 U3 NCP1117ST50T3G
   ( 1 GND )
   ( 2 /aLaMode_pwr/5V0 )
   ( 3 /aLaMode_pwr/V_IN )
@@ -380,14 +380,14 @@
   ( 15 /aLaMode_v1_rtc/SDA )
   ( 16 /aLaMode_v1_rtc/SCL )
  )
- ( /4FC07407/4FC62038 SO14E U5 LM358N
+ ( /4FC07407/4FC62038 SO8E U5 LM358N
   ( 1 /aLaMode_pwr/GATE_CMD )
   ( 2 +3.3V )
   ( 3 /aLaMode_pwr/CMP )
   ( 4 GND )
   ( 5 /aLaMode_pwr/SCK )
-  ( 6 N-000094 )
-  ( 7 N-000094 )
+  ( 6 N-000093 )
+  ( 7 N-000093 )
   ( 8 N-000095 )
  )
  ( /4F3FEE0A Xtal_SMD2 X1 CRYSTAL_2
