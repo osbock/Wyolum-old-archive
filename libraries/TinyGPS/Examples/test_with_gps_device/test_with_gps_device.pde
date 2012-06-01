@@ -21,7 +21,8 @@ void setup()
 {
   Serial.begin(115200);
   nss.begin(4800);
-  
+  pinMode(13, OUTPUT);
+
   Serial.print("Testing TinyGPS library v. "); Serial.println(TinyGPS::library_version());
   Serial.println("by Mikal Hart");
   Serial.println();
@@ -135,8 +136,12 @@ bool feedgps()
 {
   while (nss.available())
   {
-    if (gps.encode(nss.read()))
+    if (gps.encode(nss.read())){
+      digitalWrite(13, HIGH);
+      delay(100);
       return true;
+    }
   }
+  digitalWrite(13, LOW);
   return false;
 }

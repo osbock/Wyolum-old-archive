@@ -25,7 +25,8 @@
 #include "ClockTHREE.h"
 #include "SPI.h"
 
-#include "english_v3.h"
+#include "english_v0.h"
+// #include "english_v3.h"
 // #include "hebrew_v1.h"
 
 
@@ -1171,6 +1172,7 @@ void self_test(){
 bool testRTC(){
   bool status = true;
   uint8_t date[7];
+  delay(100);
   if(rtc_raw_read(0, 7, true, date)){
     Serial.print("DATE: ");
     // date[2], date[1], date[0], date[4], date[5], date[6]

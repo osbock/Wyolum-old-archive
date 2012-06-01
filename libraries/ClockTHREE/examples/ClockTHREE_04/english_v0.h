@@ -11,7 +11,7 @@ static uint8_t WORDS[] PROGMEM = {
 };
 
 static uint8_t DISPLAYS[] PROGMEM = {
-   4, // number of bytes per state
+   3, // number of bytes per state
 //       q                                            
 //      tu                     ote                    
 //      wa         f t         cwl  es                

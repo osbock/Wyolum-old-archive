@@ -66,6 +66,7 @@ const uint8_t C3JR_CLEAR_MSG = 7;
 const uint8_t C3JR_SCROLL_V_MSG = 8;
 const uint8_t C3JR_DISPLAY_ID_MSG = 9;
 const uint8_t C3JR_TONE_MSG = 10;
+const uint8_t C3JR_FADETO_MSG = 11;
 
 const uint8_t C3JR_DBG_PIN = 1;
 
@@ -75,8 +76,10 @@ class C3JR_Slave{
  public:
   C3JR_Slave();
 
-  uint32_t cols[16];
+  uint32_t cols[2 * N_COL];
   uint8_t next_pong;
+  uint8_t fade_steps;
+
   ClockTHREE c3;
   MemFont font;
   

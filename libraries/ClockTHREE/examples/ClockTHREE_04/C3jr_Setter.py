@@ -1,7 +1,7 @@
 from __future__ import print_function
 from Tkinter import *
 from C3jr_interface import *
-connect()
+connect(getSerialports()[0])
 
 def do_set(*args, **kw):
     for i in range(10):

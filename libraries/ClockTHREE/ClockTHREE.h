@@ -87,7 +87,7 @@ const int     N_COL = 16;
 const int   N_COLOR = 9;
 #endif
 
-const unsigned long BAUDRATE = 57600;
+const unsigned long BAUDRATE = 112500;
 
 const int COL_DRIVER_ENABLE = 17;
 

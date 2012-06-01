@@ -129,7 +129,7 @@ def connect(serialport='/dev/ttyUSB0', _gmt_offset=None):
     # raw_input('...')
     print( 'serialport', serialport)
     ser = serial.Serial(serialport,
-                        baudrate=57600,
+                        baudrate=112500,
                         timeout=SER_TIMEOUT)
     return ser
         

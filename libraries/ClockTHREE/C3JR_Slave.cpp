@@ -109,7 +109,8 @@ void C3JR_Slave_onReceive(int n_byte){
   uint8_t msg_type = WIRE_READ;
   uint8_t i;
   c3jr_p->setDBG_LED(HIGH);
-
+  // Serial.print("Msg rec: ID=");
+  // Serial.println(msg_type);
   if(msg_type == C3JR_SET_MSG){
     for(i = 0; Wire.available(); i++){
       c3jr_p->cols[i]= WIRE_READ;
@@ -120,7 +121,7 @@ void C3JR_Slave_onReceive(int n_byte){
     if(Wire.available()){ // use provided column
       n_row = WIRE_READ;
     }
-    for(int i = 0; i < 16; i++){
+    for(i = 0; i < 16; i++){
       c3jr_p->cols[i] = (c3jr_p->cols[i] << n_row);
     }
   }
@@ -132,7 +133,7 @@ void C3JR_Slave_onReceive(int n_byte){
     else{ // wrap from left
       new_col = c3jr_p->cols[0];
     }
-    for(int i = 0; i < C3JR_N_COL - 1; i++){
+    for(i = 0; i < C3JR_N_COL - 1; i++){
       c3jr_p->cols[i] = c3jr_p->cols[i + 1];
     }
     c3jr_p->cols[C3JR_N_COL - 1] = new_col;
@@ -184,7 +185,7 @@ void C3JR_Slave_onReceive(int n_byte){
       else{
 	stack_pos = 9;
       }
-      for(int i = 0; i < 7; i++){
+      for(i = 0; i < 7; i++){
 	v_stack_counts[i + 8 * pos] = stack_pos;
       }
     }
@@ -209,7 +210,7 @@ void C3JR_Slave_onReceive(int n_byte){
     //     2 bytes ~ freq Hz
     //     2 bytes ~ duration
     uint16_t freq, duration_ms = 0;
-    int i = 0;
+    i = 0;
     while(Wire.available() && i < 4){ // grab stack position
       type_converter.bytes[i] = (int8_t)WIRE_READ;
     }
@@ -218,6 +219,18 @@ void C3JR_Slave_onReceive(int n_byte){
     if(duration_ms > 0){
       c3jr_p->c3.note(freq, duration_ms);
     }
+  }
+  else if(msg_type == C3JR_FADETO_MSG){
+    uint8_t n_step;
+    if(Wire.available()){
+      n_step = (int8_t)WIRE_READ;
+    }
+    i = 0;
+    while(Wire.available() && i < N_COL){ 
+      c3jr_p->cols[N_COL + i] = (int8_t)WIRE_READ; // write to aux display
+      i++;
+    }
+    c3jr_p->fade_steps = n_step;
   }
   else{
     Serial.print("unknown message type: ");

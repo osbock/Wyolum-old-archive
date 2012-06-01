@@ -11,14 +11,21 @@
  
 #include <SD.h>
 const int chipSelect = 10;
-const int D1_PIN = 2;
-const int D2_PIN = 3;
+const int D1_PIN = 4;
+const int D2_PIN = 7;
 File myFile;
 
 void setup()
 {
   pinMode(D1_PIN, OUTPUT);
   pinMode(D2_PIN, OUTPUT);
+  digitalWrite(D1_PIN, HIGH);
+  digitalWrite(D2_PIN, HIGH);
+
+  delay(100);
+  digitalWrite(D1_PIN, LOW);
+  digitalWrite(D2_PIN, LOW);
+
   Serial.begin(115200);
   Serial.print("Initializing SD card...");
   // On the Ethernet Shield, CS is pin 4. It's set as an output by default.
@@ -59,7 +66,7 @@ void loop()
   
   // if the file opened okay, write to it:
   if (myFile) {
-    digitalWrite(D1_PIN, LOW); 
+    digitalWrite(D1_PIN, HIGH); 
     digitalWrite(D2_PIN, HIGH); 
     delay(300);
     Serial.println("Writing to test.txt...");
@@ -103,7 +110,7 @@ void loop()
     myFile.println(" All work and no play makes Jack a dull boy");
   }
   myFile.close();
-  delay(1); // energizer bunny
+  while(1)delay(1); // energizer bunny
 }
 
 
