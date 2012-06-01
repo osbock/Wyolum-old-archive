@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thursday 31 May 2012 08:57:32 PM IST
+EESchema Schematic File Version 2  date 6/1/2012 6:07:33 PM
 LIBS:BatMon
 LIBS:power
 LIBS:BatMon-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title "BatMon - Car Battery Voltage Monitor"
-Date "31 may 2012"
+Date "1 jun 2012"
 Rev "A"
 Comp "it's not Bat Man"
 Comment1 "www.wyolum.com"
@@ -315,19 +315,19 @@ Wire Wire Line
 	4150 7150 4150 5800
 Connection ~ 4150 5900
 $Comp
-L VCC #PWR022
+L VCC #PWR021
 U 1 1 4EDA2127
 P 4150 5800
-F 0 "#PWR022" H 4150 5900 30  0001 C CNN
+F 0 "#PWR021" H 4150 5900 30  0001 C CNN
 F 1 "VCC" H 4150 5900 30  0000 C CNN
 	1    4150 5800
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR023
+L GND #PWR022
 U 1 1 4EDA2121
 P 3350 7250
-F 0 "#PWR023" H 3350 7250 30  0001 C CNN
+F 0 "#PWR022" H 3350 7250 30  0001 C CNN
 F 1 "GND" H 3350 7180 30  0001 C CNN
 	1    3350 7250
 	1    0    0    -1  
