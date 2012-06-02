@@ -1,4 +1,11 @@
-Cmp-Mod V01 Created by CvPcb (2011-12-28 BZR 3254)-stable date = 6/1/2012 12:02:31 PM
+Cmp-Mod V01 Created by CvPcb (2011-12-28 BZR 3254)-stable date = 6/2/2012 3:13:51 PM
+
+BeginCmp
+TimeStamp = /4FBF6CBF/4FC9D8AD;
+Reference = B1;
+ValeurCmp = I/O;
+IdModule  = I/O;
+EndCmp
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -10,6 +17,13 @@ EndCmp
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBCE;
 Reference = B3;
+ValeurCmp = I/O;
+IdModule  = I/O;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FBF6CBF/4FC9D8B5;
+Reference = B4;
 ValeurCmp = I/O;
 IdModule  = I/O;
 EndCmp
@@ -183,9 +197,9 @@ IdModule  = DIP-28__300_ELL;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FBF6CBF/4FBF7150;
+TimeStamp = /4FBF6CBF/4FC86C1D;
 Reference = P1;
-ValeurCmp = GPIO;
+ValeurCmp = PBD-26;
 IdModule  = pin_array_13x2;
 EndCmp
 
@@ -404,6 +418,13 @@ TimeStamp = /4FC07407/4FC62038;
 Reference = U5;
 ValeurCmp = LM358N;
 IdModule  = SO8E;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FBF6CBF/4FC9D559;
+Reference = U6;
+ValeurCmp = 74LS125;
+IdModule  = SO14E;
 EndCmp
 
 BeginCmp
