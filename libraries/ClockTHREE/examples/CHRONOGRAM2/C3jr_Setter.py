@@ -35,8 +35,6 @@ def curry(func, arg):
 def reconnect(port):
     print(port)
     connect(serialport=port)
-def do_scroll():
-    scroll_msg("SCROLL");
 
 tk = Tk()
 f = Frame(tk)
@@ -46,7 +44,6 @@ jr_time_l.grid(row=0, column=1)
 Button(f, text="Get!", command=do_get).grid(row=1, column=0)
 pc_time_l = Label(f, width=35, text="PC Time:", anchor=W, font='Courier')
 pc_time_l.grid(row=1, column=1)
-Button(f, text="SCROLL", command=do_scroll).grid(row=2, column = 0)
 menubar = Menu(tk)
 usbmenu = Menu(menubar, tearoff=0)
 

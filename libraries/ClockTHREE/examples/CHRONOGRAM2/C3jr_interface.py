@@ -79,7 +79,7 @@ class Struct:
         return Struct(**out)
 
 const = {'MAX_EEPROM_ADDR':1023}
-c_files = ['ClockTHREE_04.ino']
+c_files = glob.glob("*.ino")
 c_files.extend(glob.glob("*.h"))
 for file in c_files:
     next = read_constants(file)
@@ -161,7 +161,7 @@ def time_set(now=None):
     dat = wall_clock_to_c3(now)
     ser.write(str(const.ABS_TIME_SET))
     ser.write(dat)
-
+    
 def c3_to_wall_clock(bytes):
     return struct.unpack('<I', bytes)[0]
 
@@ -177,14 +177,6 @@ def from_gmt(t):
 def fmt_time(when):
     return '%02d/%02d/%04d %d:%02d:%02d' % (when.tm_mday, when.tm_mon, when.tm_year,
                                             when.tm_hour, when.tm_min, when.tm_sec)
-
-def scroll_msg(msg):
-    msg_len = len(msg) + 2
-    out_msg = str(const.SERIAL_SCROLL) + struct.pack('B', msg_len) + msg
-    assert len(out_msg) == msg_len
-    ser.write(out_msg)
-    print('OUT: "%s"' % out_msg)
-
 def main():
     ser.flush()
     now = time_req()

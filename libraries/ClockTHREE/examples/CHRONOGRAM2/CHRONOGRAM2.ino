@@ -23,12 +23,10 @@
 #include "Time.h"
 #include "MsTimer2.h"
 #include "ClockTHREE.h"
+#include "C3JR_Driver.h"
 #include "SPI.h"
 
-// #include "english_v0.h"
-#include "english_v3.h"
-// #include "hebrew_v1.h"
-
+#include "english2_v1.h"
 
 #include "mem_font.h"
 #include "rtcBOB.h"
@@ -36,10 +34,26 @@
 // debounce buttons threshold
 const uint8_t DEBOUNCE_THRESH = 200;     // Two button pushes within this time frame are counted only once.
 const uint16_t SERIAL_TIMEOUT_MS = 1000; // Not working as expected.  Turned off.
+const uint8_t RIGHT_ID = C3JR_BASE_ADDR + 1;
+
+uint32_t primary_display[32];
+uint32_t secondary_display[32];
+ClockTHREE left;                      // ClockTHREE singleton (Left had display)
+C3JR_Driver right;                  // Right hand display as seen from front
+
 
 // Define modes
 typedef void (* CallBackPtr)(); // this is a typedef for callback funtions
 inline void do_nothing(void){}  // empty call back
+void clear_display(uint32_t *display){
+  for(uint8_t i = 0; i < 32; i++){
+    display[i] = 0;
+  }
+}
+void fadeto(uint32_t *display, uint8_t steps){ 
+  right.fadeto(display + 16, steps);
+  left.fadeto(display, steps);
+}
 
 /*
  * ClockTHREE is mode driven.  A Mode is like a mini arduino program 
@@ -211,8 +225,6 @@ unsigned long last_inc_time = 0;    // for debounce
 unsigned long last_dec_time = 0;    // for debounce
 unsigned long last_enter_time = 0;    // for debounce
 
-ClockTHREE c3;                      // ClockTHREE singleton
-
 //Font font = Font();                 // Only font at this time.
 MemFont font = MemFont();
 time_t t;                           // TODO: remove this, not needed (I think)
@@ -231,9 +243,7 @@ uint8_t n_minute_led;               // number of minute hack leds
 uint8_t n_minute_state;             // number of minute hack states to cycle through
 uint8_t n_byte_per_display;         // number of bytes used for each 5 minunte time incriment
 
-uint8_t display_idx;
-uint8_t last_min_hack_inc = 0;
-uint16_t last_time_inc = 289;
+uint8_t last_minute;
 /*
  * Called when mode button is pressed
  */
@@ -308,27 +318,30 @@ void tick_interrupt(){
  */
 void update_time(){
   // update global time variables.  resync with Time.h
-  c3.refresh();  // keep display going.
+  left.refresh();  // keep display going.
   YY = year();
-  c3.refresh();
+  left.refresh();
   MM = month();
-  c3.refresh();
+  left.refresh();
   DD = day();
-  c3.refresh();
+  left.refresh();
   hh = hour();
-  c3.refresh();
+  left.refresh();
   mm = minute();
-  c3.refresh();
+  left.refresh();
   ss = second();
-  c3.refresh();
+  left.refresh();
 }
 
 // Main setup function
 void setup(void){
   Serial.begin(BAUDRATE);
-
+  Serial.println("CHRONOGRAM 1.0");
+  Serial.println("WyoLum 2012");
   Wire.begin();
-  c3.init();
+  left.init();
+  left.setdisplay(primary_display);
+  right.init(RIGHT_ID);
   
   mode_p = &NormalMode;
 
@@ -346,8 +359,24 @@ void setup(void){
 
   attachInterrupt(0, mode_interrupt, FALLING); // Does not work on C2
   attachInterrupt(1, inc_interrupt, FALLING);  // Does not work on C2
-  c3.setdisplay(display); // 2x actual LED array size for staging data. // required by fade to
-  c3.set_column_hold(50);
+  // left.setdisplay(display); // 2x actual LED array size for staging data. // required by fade to
+  left.set_column_hold(50);
+  /********************************************************************************/
+  // tests
+#ifdef NOTDEF
+  bool state = false;
+  while(true){
+    state = !state;
+    for(uint8_t row = 0; row < 8; row++){
+      for(uint8_t col = 0; col < 16; col++){
+	left.setPixel(col, row, state);
+	right.set_pixel(col, row, state);
+	left.refresh(16);
+      }
+    }
+  }
+#endif
+  /********************************************************************************/
 
   if(digitalRead(MODE_PIN)){
     self_test();
@@ -362,10 +391,6 @@ void setup(void){
   setSyncInterval(60000);      // update every minute (and on boot)
   update_time();
 
-  // read language constants
-  n_byte_per_display = pgm_read_byte(DISPLAYS);
-  n_minute_state = pgm_read_byte(MINUTE_LEDS);
-  n_minute_led = pgm_read_byte(MINUTE_LEDS + 1);
 }
 
 // main loop function.  Dellegate to mode_p->loop();
@@ -428,50 +453,37 @@ void loop(void){
 */
 void Normal_setup(void){
   tick = true;
+  clear_display(display);
 }
 void Normal_loop(void) {
   tick = true;
   uint8_t word[3];                // will store start_x, start_y, length of word
   time_t spm = getTime() % 86400; // seconds past midnight
-  uint16_t time_inc = spm / 300;  // 5-minute time increment are we in
+  // uint8_t m = minute();
+  uint8_t m = minute();
 
-  // which mininute hack incriment are we on?
-  uint8_t minute_hack_inc = (spm % 300) / (300. / float(n_minute_state));
-
-  // if minute hack or time has changed, update the display
-  if(minute_hack_inc != last_min_hack_inc || time_inc != last_time_inc){
-    
-    // prepare other display on change
-    display_idx++;
-    display_idx %= 2;
-    uint32_t* tmp_d = display + N_COL * (display_idx % 2);
+  if(m != last_minute){
 
     // clear the new display
-    for(int ii = 0; ii < N_COL; ii++){
-      tmp_d[ii] = 0;
-    }
-
+    clear_display(secondary_display);
+    // left.setdisplay(secondary_display);
+    // left.line(0, 0, m % 16, m % 8, 1);
+    // left.setdisplay(primary_display);
     // read display for next time incement
-    getdisplay(time_inc, tmp_d);
+    getdisplay(hour(), HOUR_SEQ, HOUR_WORDS, secondary_display);
+    getdisplay(m, MINUTE_SEQ, MINUTE_WORDS, secondary_display);
   
-    // read minutes hack for next time incement
-    minutes_hack(minute_hack_inc, tmp_d);
-    c3.fadeto(tmp_d, 32); // 32 fade steps to new display
-
-    last_min_hack_inc = minute_hack_inc;
-    last_time_inc = time_inc;
+    fadeto(secondary_display, 16); // 32 fade steps to new display
+    last_minute = m;
   }
-  // Keep active LEDs lit
-  // my_refresh(1000);
   count++;
-  
-  c3.refresh(16);
+  left.refresh(16);
 }
 /*
   Get ready for next mode.
 */
 void Normal_exit(void) {
-  last_time_inc = 289;
+  last_minute = 61;
 }
 /*
   Respond to button presses.
@@ -495,7 +507,7 @@ void Seconds_loop(){
     tick = false;
     two_digits(ss);
   }
-  c3.refresh(16);
+  left.refresh(16);
 }
 void Seconds_exit(void) {
 }
@@ -518,7 +530,7 @@ void Temperature_loop(){
     temp = toF(temp);
   }
   two_digits(temp);
-  c3.refresh(16);
+  left.refresh(16);
 }
 void Temperature_exit(void) {
 }
@@ -539,7 +551,7 @@ void Temperature_mode(){
 }
 
 void SerDisplay_loop(){
-  c3.refresh(16);
+  left.refresh(16);
 }
 
 // Begin SetTime Mode Code 
@@ -555,55 +567,55 @@ void SetTime_loop(void) {
   switch(SetTime_unit){
   case YEAR:
     if(count % 200 > 75){
-      c3.clear();
+      left.clear();
       two_digits(YY % 100);
     }
     else{
-      c3.clear();
+      left.clear();
       font.getChar('Y', MONO, display + 5);  
     }
     // faceplate.display_word(c3, MONO, year_led);
     break;
   case MONTH:
     if(count % 200 > 75){
-      c3.clear();
+      left.clear();
       two_digits(MM);
     }
     else{
-      c3.clear();
+      left.clear();
       font.getChar('M', MONO, display + 5);  
     }
     // faceplate.display_word(c3, MONO, month_led);
     break;
   case DAY:
     if(count % 200 > 75){
-      c3.clear();
+      left.clear();
       two_digits(DD);
     }
     else{
-      c3.clear();
+      left.clear();
       font.getChar('D', MONO, display + 5);  
     }
     // faceplate.display_word(c3, MONO, day_led);
     break;
   case HOUR:
     if(count % 200 > 75){
-      c3.clear();
+      left.clear();
       two_digits(hh);
     }
     else{
-      c3.clear();
+      left.clear();
       font.getChar('H', MONO, display + 5);  
     }
     // faceplate.display_word(c3, MONO, hour_led);
     break;
   case MINUTE:
     if(count % 200 > 75){
-      c3.clear();
+      left.clear();
       two_digits(mm);
     }
     else{
-      c3.clear();
+      left.clear();
       font.getChar('M', MONO, display + 5);  
     }
     // faceplate.display_word(c3, MONO, minute_led);
@@ -611,7 +623,7 @@ void SetTime_loop(void) {
   default:
     break;
   }
-  c3.refresh(16);
+  left.refresh(16);
 }
 /*
   Get ready for next mode.
@@ -696,7 +708,7 @@ void SetTime_dec(void) {
   }
 }
 void SetTime_mode(void) {
-  c3.clear();
+  left.clear();
   switch(SetTime_unit){
   case YEAR:
     SetTime_unit = MONTH;
@@ -737,7 +749,7 @@ void Serial_loop(void) {
 
 	  MSG_DEFS[msg_i]->cb();
 	  //two_digits(val);
-	  //c3.refresh(10000);
+	  //left.refresh(10000);
 	}
 	else{
 	  // Got a sync message unexpectedly. Get ready for new message.
@@ -821,7 +833,7 @@ void Serial_send_err(char *err){
   // Serial.print(len + 2, BYTE);
   Serial.write(len + 2);
   Serial.print(err);
-  c3.note(55);
+  left.note(55);
   // Serial.print(serial_msg);
 }
 
@@ -924,7 +936,7 @@ void Mode_setup(void) {
   font.getChar(Modes[mode_counter].sym, MONO, display + 5);
 }
 void Mode_loop(void) {
-  c3.refresh(16);
+  left.refresh(16);
 }
 void Mode_exit(void) {
 }
@@ -950,10 +962,10 @@ void switchmodes(uint8_t new_mode_id){
   // only switch if we are not in this mode already ... or not...
   // if(new_mode_id != mode_p->id){
   last_mode_id = mode_p->id;
-  c3.clear(); // clear both screens
-  c3.setdisplay(display + N_COL); 
-  c3.clear(); // clear both screens
-  c3.setdisplay(display);
+  left.clear(); // clear both screens
+  left.setdisplay(display + N_COL); 
+  left.clear(); // clear both screens
+  left.setdisplay(display);
   mode_p->exit();
   mode_p = &Modes[new_mode_id];
   mode_p->setup();
@@ -998,7 +1010,7 @@ int my_random(uint8_t min, uint8_t max){
 
 void too_big_fireworks(){ // will not fit special effect // need SD!
   int x, y;
-  c3.refresh(1800);
+  left.refresh(1800);
   //while(1){
     memset(display, 0, N_COL * N_DISPLAY * sizeof(uint32_t));
     for(int k = 0; k < 8; k++){
@@ -1008,37 +1020,37 @@ void too_big_fireworks(){ // will not fit special effect // need SD!
       x = my_random(3, 13);
       y = my_random(3, 10);
       int istart = my_random(0, 10);
-      c3.setdisplay(display + istart * N_COL);
-      // c3.line(7, 11, x, y, WHITE);
+      left.setdisplay(display + istart * N_COL);
+      // left.line(7, 11, x, y, WHITE);
       for(int i = istart; i < istart + 10; i++){
-	c3.setdisplay(display + i * N_COL);
-	c3.circle(x, y, (i + 1 - istart), COLORS[my_random(0, 8)]);
-	c3.circle(x, y, (i + 2 - istart), COLORS[my_random(0, 8)]);
-	c3.circle(x, y, (i + 3 - istart), COLORS[my_random(0, 8)]);
+	left.setdisplay(display + i * N_COL);
+	left.circle(x, y, (i + 1 - istart), COLORS[my_random(0, 8)]);
+	left.circle(x, y, (i + 2 - istart), COLORS[my_random(0, 8)]);
+	left.circle(x, y, (i + 3 - istart), COLORS[my_random(0, 8)]);
       }
       x = my_random(0, 16);
       y = my_random(0, 9);
       istart = my_random(0, 100);
       if(istart < 10){
 	for(int i = istart; i < istart + 10; i++){
-	  c3.setdisplay(display + i * N_COL);
-	  c3.circle(x, y, (i + 1 - istart), COLORS[my_random(0, 8)]);
-	  c3.circle(x, y, (i + 2 - istart), COLORS[my_random(0, 8)]);
-	  c3.circle(x, y, (i + 3 - istart), COLORS[my_random(0, 8)]);
+	  left.setdisplay(display + i * N_COL);
+	  left.circle(x, y, (i + 1 - istart), COLORS[my_random(0, 8)]);
+	  left.circle(x, y, (i + 2 - istart), COLORS[my_random(0, 8)]);
+	  left.circle(x, y, (i + 3 - istart), COLORS[my_random(0, 8)]);
 	}
       }
       int iter = my_random(1, 2);
       for(int j = 0; j < iter; j++){
 	for(int i = 0; i < N_DISPLAY; i++){
-	  c3.setdisplay(display + N_COL * i);
-	  c3.refresh(100);
+	  left.setdisplay(display + N_COL * i);
+	  left.refresh(100);
 	}
       }
     }
     memset(display, 0, N_COL * N_DISPLAY * sizeof(uint32_t));
     for(int i = 0; i < N_COL * 4 + 12; i++){
-      c3.setdisplay(display + i);
-      c3.refresh(180);
+      left.setdisplay(display + i);
+      left.refresh(180);
     }
     //  }
 }
@@ -1055,7 +1067,7 @@ void Time_to_Serial(time_t in, char *out){
 }
 
 /*
- * DISPLAYS: 288 32 bit settings.  one for each 5-minute period.  up to 32 words per setting.
+ * HOUR_SEQ: 60  rows of bit settings.  one for each minute of an hoour.
  * To turn on word one in ith display: 10000000000000000000000000000000
  *
  * WORDS:  3 * n + 1 bytes.  first byte is # words followed by ordered words.
@@ -1063,10 +1075,10 @@ void Time_to_Serial(time_t in, char *out){
  *        Each word is defined by startcol, startrow, len
  */
 
-void getword(int i, uint8_t* out){
-  out[0] = pgm_read_byte(WORDS + 3 * i + 1);
-  out[1] = pgm_read_byte(WORDS + 3 * i + 2);
-  out[2] = pgm_read_byte(WORDS + 3 * i + 3);
+void getword(int i, prog_char* words, uint8_t *out){
+  out[0] = pgm_read_byte(words + 3 * i + 1);
+  out[1] = pgm_read_byte(words + 3 * i + 2);
+  out[2] = pgm_read_byte(words + 3 * i + 3);
 }
 
 /*
@@ -1074,73 +1086,24 @@ void getword(int i, uint8_t* out){
  *   i -- 0 to 287 time increment indexa
  * out -- points to column data to prepare
  */
-void getdisplay(int i, uint32_t* out){
+void getdisplay(int i, prog_char *seq, prog_char *words, uint32_t* out){
   uint8_t bits;     // holds the on off state for 8 words at a time
   uint8_t word[3];  // start columm, start row, length of the current word
-
-  for(uint8_t j = 0; j < n_byte_per_display; j++){ // j is a byte index 
+  uint8_t n_byte_per_step = pgm_read_byte(seq);
+  for(uint8_t j = 0; j < n_byte_per_step; j++){ // j is a byte index 
 
     // read the state for the next set of 8 words
-    bits = pgm_read_byte(DISPLAYS + 1 + (i * n_byte_per_display) + j);
+    bits = pgm_read_byte(seq + 1 + (i * n_byte_per_step) + j);
     for(uint8_t k = 0; k < 8; k++){                     // k is a bit index
       if((bits >> k) & 1){                              // check to see if word is on or off
-	getword(j * 8 + k, word);                       // if on, read location and length
+	getword(j * 8 + k, words, word);                // if on, read location and length
 	for(int m=word[0]; m < word[0] + word[2]; m++){ // and display it
 	  out[m] |= 1 << word[1];
 	}
+	left.refresh(16);
       }
     }
   } 
-}
-
-
-/*
- * MINUTES_HACK (for 4 LEDS cumulative)
- * 00000000000000000000000000000000 // minutes hack = 0
- * 00000000000000000000000000000001 // minutes hack = 1
- * 00000000000000000000000000000011 // minutes hack = 2
- * 00000000000000000000000000000111 // minutes hack = 3
- * 00000000000000000000000000001111 // minutes hack = 4
- *
- * MINUTE_LEDS: n_state, n_led, led0, led2,       led3,       led4
- *                    5,     4,  127,    0, 0b01110000,  0b0001111
- *
- * led_num = (row << 4) & col
- */
-
-/*
- * minutes_hack -- prepare display to show ith minute hack intrement
- *   i -- minute hack index
- * out -- display to prepare
- */
-void minutes_hack(uint8_t i, uint32_t *out){
-  uint8_t col, row, led_num; // position variables for a minute hack LED
-  boolean state;             // on/off state variable for a n minute hack LED
-  
-  // bits is a bit vector that indicates the on/off state for this time incriment i
-  uint32_t bits = getminutebits(i);
-  for(uint8_t j = 0; j < n_minute_led; j++){      // j is a minute-hack LED index
-
-    // read LED location:
-    //     skip first two bytes that contain values for number of minute hack states and number of minute hack leds
-    led_num = pgm_read_byte(MINUTE_LEDS + 2 + j); 
-
-    // pull location information for this LED
-    col =   (led_num & 0b00001111);
-    row =   (led_num & 0b01110000) >> 4; // msb is ignored
-    state = (bits >> j) & 1;
-    if(state){
-      out[col] |= 1<<row;
-    }
-    else{
-      out[col] &= (~(1<<row));
-    }
-  } 
-}
-
-// read the ith minute hack from program memory
-uint32_t getminutebits(uint8_t i){
-  return pgm_read_dword(MINUTES_HACK + i);
 }
 
 
@@ -1155,15 +1118,16 @@ void self_test(){
     display[5] = 0b01000010;
     display[6] = 0b10000001;
     while(1){
-      c3.refresh(1000);
+      left.refresh(1000);
     }
   }
   while(true){
     state = !state;
     for(uint8_t i = 0; i < 8; i++){
       for(uint8_t j = 0; j < 16; j++){
-	c3.setPixel(j, i, state);
-	c3.refresh(100);
+	left.setPixel(j, i, state);
+	right.set_pixel(j, i, state);
+	left.refresh(100);
       }
     }
   }
@@ -1172,7 +1136,6 @@ void self_test(){
 bool testRTC(){
   bool status = true;
   uint8_t date[7];
-  delay(100);
   if(rtc_raw_read(0, 7, true, date)){
     Serial.print("DATE: ");
     // date[2], date[1], date[0], date[4], date[5], date[6]
