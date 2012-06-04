@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 6/2/2012 1:54:49 PM
+EESchema Schematic File Version 2  date 6/4/2012 5:05:30 PM
 LIBS:BatMon
 LIBS:power
 LIBS:BatMon-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title "BatMon - Car Battery Voltage Monitor"
-Date "2 jun 2012"
+Date "4 jun 2012"
 Rev "A"
 Comp "it's not Bat Man"
 Comment1 "www.wyolum.com"

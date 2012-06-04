@@ -1,22 +1,21 @@
-### Module positions - created on 6/2/2012 2:10:37 PM ###
+### Module positions - created on 6/4/2012 6:03:15 PM ###
 ### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Front
 # Ref    Val                  PosX       PosY        Rot     Side
-C1       22p                  2.0300     1.4500      90.0    Front
-C2       22p                  1.5750     1.4500      90.0    Front
 C3       100n                 1.8750     2.2700     270.0    Front
-C4       100n                 1.3475     1.4000     180.0    Front
-C5       100u                 3.0025     1.8000      90.0    Front
-C6       100n                 3.0525     2.1125     270.0    Front
-C7       100n                 2.9525     2.1125      90.0    Front
+C4       100n                 1.7950     1.3925     180.0    Front
+C5       100u                 3.0325     1.8000      90.0    Front
+C6       100n                 3.1275     2.1125     270.0    Front
+C7       100n                 3.0125     2.1125      90.0    Front
 C8       10n                  2.2825     2.2700     270.0    Front
 C9       10n                  2.6750     2.2700     270.0    Front
 C10      10n                  2.7275     1.1450     180.0    Front
-D3       DBG                  2.1250     1.1275     270.0    Front
+D3       DBG                  3.0025     1.1450     180.0    Front
 D4       PWR                  1.6150     2.4200     180.0    Front
-K3       FTDI                 1.7000     1.2450     180.0    Front
-K4       ISP                  1.3950     2.3700     270.0    Front
+K3       FTDI                 1.9450     1.2450     180.0    Front
+K4       ISP                  1.3350     2.3700     270.0    Front
+K5       V_CUTOFF             1.3350     1.1875      90.0    Front
 P1       METER_H              1.1100     1.4700     270.0    Front
 P2       METER_L              1.1100     2.1700      90.0    Front
 P6       I2C                  2.8275     2.0625      90.0    Front
@@ -24,12 +23,15 @@ R1       110k                 1.9850     2.3200     270.0    Front
 R2       40k                  2.0775     2.3200     270.0    Front
 R3       110k                 2.3850     2.3200     270.0    Front
 R4       40k                  2.4750     2.3200     270.0    Front
-R5       10k                  2.2100     1.4500      90.0    Front
-R6       1k                   2.1275     1.4500     270.0    Front
-R7       270E                 2.4425     1.6000     180.0    Front
+R5       10k                  2.2000     1.5000      90.0    Front
+R7       270E                 2.4425     1.5575     180.0    Front
 R8       1k                   1.7650     2.3200      90.0    Front
+R9       800E                 1.5425     1.3875       0.0    Front
+R10      53E                  1.5425     1.2875     180.0    Front
+R11      53E                  1.5425     1.1875     180.0    Front
+R12      3k1                  1.5425     1.0875     180.0    Front
 SW1      RST                  2.4400     1.3000     270.0    Front
 U2       7805                 2.9525     2.4175     180.0    Front
 U3       ATMEGA328-P          2.0000     1.8800     180.0    Front
-X1       16MHz                1.8000     1.5000     180.0    Front
+X1       16MHz                1.8000     1.5700     180.0    Front
 ## End

@@ -1,10 +1,12 @@
-update=6/2/2012 1:57:50 PM
+update=6/4/2012 6:13:33 PM
 last_client=eeschema
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
+[general]
+version=1
 [pcbnew]
 version=1
 PadDrlX=600
@@ -21,12 +23,10 @@ DrawLar=100
 EdgeLar=150
 TxtLar=120
 MSegLar=100
-LastNetListRead=c3jr_v2.net
+LastNetListRead=BatMon.net
 [pcbnew/libraries]
 LibDir=../../../../../../../Downloads/KiCAD/Libs;D:/Users/Anool/Downloads/KiCAD/Libs/USB
 LibName1=BatMon_Libs/BatMon_parts
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=D:/Users/Anool/Downloads/KiCAD/Libs/USB
