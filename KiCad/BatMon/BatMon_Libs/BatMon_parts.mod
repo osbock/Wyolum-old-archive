@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  6/4/2012 5:49:28 PM
+PCBNEW-LibModule-V1  Monday 04 June 2012 10:32:23 PM IST
 # encoding utf-8
 $INDEX
 C2
@@ -127,7 +127,7 @@ Ne 69 "GND"
 Po 0 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//vite_2mm5.wrl"
+Na "C3Jr_v2_libs/C3Jr_v2_3D_Modules/vite_2mm5.wrl"
 Sc 1.600000 1.600000 1.600000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -551,7 +551,7 @@ Ne 4 "/c3jr_v2-Aux/SCL"
 Po -1750 2000
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//cms_so16.wrl"
+Na "C3Jr_v2_libs/C3Jr_v2_3D_Modules/cms_so16.wrl"
 Sc 0.500000 0.600000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -595,7 +595,7 @@ Ne 2 "GND"
 Po 1000 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//pin_strip_3.wrl"
+Na "C3Jr_v2_libs/C3Jr_v2_3D_Modules/pin_strip_3.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -675,7 +675,7 @@ Ne 5 "N-000073"
 Po 2500 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//pin_strip_6-90.wrl"
+Na "C3Jr_v2_libs/C3Jr_v2_3D_Modules/pin_strip_6-90.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -754,7 +754,7 @@ Ne 1 "/c3jr_v2-Aux/7Seg_Data"
 Po 3500 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//pin_strip_8.wrl"
+Na "C3Jr_v2_libs/C3Jr_v2_3D_Modules/pin_strip_8.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -803,7 +803,7 @@ Ne 3 "N-000139"
 Po 0 -1000
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//to92_3.wrl"
+Na "C3Jr_v2_libs/C3Jr_v2_3D_Modules/to92_3.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -928,7 +928,7 @@ Ne 1 "GND"
 Po 0 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//speaker.wrl"
+Na "C3Jr_v2_libs/C3Jr_v2_3D_Modules/speaker.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 90.000000
@@ -961,7 +961,7 @@ Ne 2 "N-000129"
 Po 750 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//rc03vert.wrl"
+Na "C3Jr_v2_libs/C3Jr_v2_3D_Modules/rc03vert.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1008,7 +1008,7 @@ Ne 0 ""
 Po 1250 2000
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//POWER_21.wrl"
+Na "C3Jr_v2_libs/C3Jr_v2_3D_Modules/POWER_21.wrl"
 Sc 0.800000 0.800000 0.800000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -69379,15 +69379,15 @@ Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  bornier2
 $MODULE rc03_vert
-Po 0 0 0 15 4EEDFB8A 00000000 ~~
+Po 0 0 0 15 4FCCA8F0 00000000 ~~
 Li rc03_vert
 Cd Resistor, RC03 vertical
 Sc 00000000
 AR /4FCC8631
 Op 0 0 0
 At SMD 
-T0 1275 0 400 400 0 60 N V 21 N "R12"
-T1 1475 575 400 400 0 60 N V 21 N "3k1"
+T0 25 350 300 300 900 50 N V 21 N "R12"
+T1 1475 575 300 300 0 50 N I 21 N "3k1"
 DC -500 0 -850 0 120 21
 DS -500 0 500 0 100 21
 $PAD

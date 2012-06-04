@@ -1,12 +1,10 @@
-update=6/4/2012 6:13:33 PM
-last_client=eeschema
+update=Monday 04 June 2012 10:47:07 PM IST
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
 [pcbnew]
 version=1
 PadDrlX=600
@@ -61,4 +59,6 @@ LabSize=40
 [eeschema/libraries]
 LibName1=BatMon_Libs/BatMon
 LibName2=BatMon_Libs/power
+[general]
+version=1
 
