@@ -1,8 +1,6 @@
-update=6/2/2012 6:52:29 PM
+update=Sunday 03 June 2012 12:29:08 AM IST
 version=1
-last_client=pcbnew
-[general]
-version=1
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
@@ -63,3 +61,5 @@ LastNetListRead=aLaMode_v1.net
 [pcbnew/libraries]
 LibDir=
 LibName1=aLaMode_Libs/aLaMode_v1
+[general]
+version=1
