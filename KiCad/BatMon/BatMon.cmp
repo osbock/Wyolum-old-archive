@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 6/4/2012 6:03:32 PM
+Cmp-Mod V01 Genere par PcbNew le 6/5/2012 6:36:50 PM
 
 BeginCmp
 TimeStamp = 4FC9CA60
@@ -209,7 +209,7 @@ IdModule  = CP_5x11mm;
 EndCmp
 
 BeginCmp
-TimeStamp = 4FC8AE1D
+TimeStamp = 4FCDEB79
 Path = /4B6FC25C
 Reference = SW1;
 ValeurCmp = RST;
@@ -222,14 +222,6 @@ Path = /4FC76A55
 Reference = K3;
 ValeurCmp = FTDI;
 IdModule  = pin_strip_6;
-EndCmp
-
-BeginCmp
-TimeStamp = 4FC8AE72
-Path = /4FC72760
-Reference = K1;
-ValeurCmp = BAT_MON;
-IdModule  = bornier3;
 EndCmp
 
 BeginCmp
@@ -265,10 +257,10 @@ IdModule  = RC03;
 EndCmp
 
 BeginCmp
-TimeStamp = 4FC8AE20
+TimeStamp = 4FCDF663
 Path = /4C9A0F04
 Reference = R7;
-ValeurCmp = 270E;
+ValeurCmp = 150E;
 IdModule  = RC03;
 EndCmp
 
@@ -329,14 +321,6 @@ IdModule  = pin_strip_3x2;
 EndCmp
 
 BeginCmp
-TimeStamp = 4FC8AE74
-Path = /4FC727C3
-Reference = K2;
-ValeurCmp = LOAD;
-IdModule  = bornier2;
-EndCmp
-
-BeginCmp
 TimeStamp = 4FCC8F94
 Path = /4FCC8631
 Reference = R12;
@@ -345,10 +329,10 @@ IdModule  = rc03_vert;
 EndCmp
 
 BeginCmp
-TimeStamp = 4FCC8F92
-Path = /4FCC862A
-Reference = R11;
-ValeurCmp = 53E;
+TimeStamp = 4FCC8F8E
+Path = /4FCC85F8
+Reference = R9;
+ValeurCmp = 800E;
 IdModule  = rc03_vert;
 EndCmp
 
@@ -361,11 +345,43 @@ IdModule  = rc03_vert;
 EndCmp
 
 BeginCmp
-TimeStamp = 4FCC8F8E
-Path = /4FCC85F8
-Reference = R9;
-ValeurCmp = 800E;
+TimeStamp = 4FCC8F92
+Path = /4FCC862A
+Reference = R11;
+ValeurCmp = 53E;
 IdModule  = rc03_vert;
+EndCmp
+
+BeginCmp
+TimeStamp = 4FC8AE74
+Path = /4FC727C3
+Reference = K2;
+ValeurCmp = LOAD;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4FC8AE72
+Path = /4FC72760
+Reference = K1;
+ValeurCmp = BAT_MON;
+IdModule  = bornier3;
+EndCmp
+
+BeginCmp
+TimeStamp = 4FCDEA3F
+Path = /4FCDE7C6
+Reference = P11;
+ValeurCmp = DIP_SW;
+IdModule  = pin_strip_6b;
+EndCmp
+
+BeginCmp
+TimeStamp = 4FCDEA41
+Path = /4FCDE7D5
+Reference = P12;
+ValeurCmp = DIP_SW;
+IdModule  = pin_strip_6b;
 EndCmp
 
 EndListe
