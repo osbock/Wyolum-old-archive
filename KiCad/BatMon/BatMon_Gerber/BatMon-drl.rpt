@@ -1,5 +1,5 @@
-Drill report for C:\Users\Anool\Documents\Arduino\clockthree\KiCad\BatMon\BatMon.brd
-Created on 6/6/2012 6:01:09 PM
+Drill report for /home/samata/Documents/clockthree/KiCad/BatMon/BatMon.brd
+Created on Wednesday 06 June 2012 09:43:50 PM IST
 Selected Drill Unit: Imperial (")
 
 Drill report for through holes :
@@ -11,11 +11,6 @@ T5  0.050"  1.27mm  (2 holes)
 T6  0.060"  1.52mm  (5 holes)
 T7  0.120"  3.05mm  (4 holes)
 
-total plated holes count 208
-
-
-Drill report for Not Plated through holes :
-
-total Not Plated holes count 0
+total holes count 208
 
 

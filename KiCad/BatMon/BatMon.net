@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  6/6/2012 5:16:18 PM
+# EESchema Netlist Version 1.1 created  Wednesday 06 June 2012 09:34:35 PM IST
 (
  ( /4FCF418A pin_strip_3  K6 V_SEL {Lib=CONN_3}
   (    1 /V_REG )
@@ -9,7 +9,7 @@
   (    1 GND )
   (    2 /RES )
  )
- ( /4FCE3668 DO-35_Vert  D5 ZD_15V {Lib=DIODE_ZENER}
+ ( /4FCE3668 DO-35_Vert  D5 Z15V {Lib=DIODE_ZENER}
   (    1 GND )
   (    2 /V_BAT )
  )
@@ -212,11 +212,11 @@
   (    7 /V_BAT )
   (    8 /SSR )
  )
- ( /4FC7194F DO-35  D2 ZD_5V1 {Lib=DIODE_ZENER}
+ ( /4FC7194F DO-35  D2 Z5V1 {Lib=DIODE_ZENER}
   (    1 GND )
   (    2 /V_I )
  )
- ( /4FC71943 DO-35  D1 ZD_5V1 {Lib=DIODE_ZENER}
+ ( /4FC71943 DO-35  D1 Z5V1 {Lib=DIODE_ZENER}
   (    1 GND )
   (    2 /V_B )
  )

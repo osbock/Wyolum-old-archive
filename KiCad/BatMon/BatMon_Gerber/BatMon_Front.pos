@@ -1,5 +1,5 @@
-### Module positions - created on 6/6/2012 6:01:16 PM ###
-### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
+### Module positions - created on Wednesday 06 June 2012 09:41:55 PM IST ###
+### Printed by PcbNew version pcbnew (2011-05-25)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Front
 # Ref    Val                  PosX       PosY        Rot     Side
@@ -14,7 +14,7 @@ C10      10n                  3.2850     1.1425       0.0    Front
 D3       DBG                  2.9000     1.6350       0.0    Front
 D4       PWR                  1.6750     2.3300     180.0    Front
 K3       FTDI                 2.0050     1.1800     180.0    Front
-K4       ISP                  1.4350     2.2850     270.0    Front
+K4       ISP                  1.3950     2.2850     270.0    Front
 K5       V_CUTOFF             1.3950     1.2225      90.0    Front
 K6       V_SEL                2.2350     1.4350      90.0    Front
 P1       METER_H              1.1700     1.4050     270.0    Front

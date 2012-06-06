@@ -28,8 +28,8 @@
 27;"R10,R11";"rc03_vert";2;"1k5";;;
 28;"K2";"bornier2";1;"LOAD";;;
 29;"K1";"bornier3";1;"BAT_MON";;;
-30;"D5";"DO-35_Vert";1;"ZD_15V";;;
-31;"D2,D1";"DO-35";2;"ZD_5V1";;;
+30;"D5";"DO-35_Vert";1;"Z15V";;;
+31;"D2,D1";"DO-35";2;"Z5V1";;;
 32;"SW2";"SW-PB-MOD";1;"RST";;;
 33;"K6";"pin_strip_3";1;"V_SEL";;;
 34;"K5";"pin_strip_3x2";1;"V_CUTOFF";;;

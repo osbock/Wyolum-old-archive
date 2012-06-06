@@ -1,5 +1,5 @@
-## Module report - date 6/6/2012 6:01:39 PM
-## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
+## Module report - date Wednesday 06 June 2012 09:42:32 PM IST
+## Created by PcbNew version pcbnew (2011-05-25)-stable
 ## Unit = inches, Angle = deg.
 ##
 
@@ -7,8 +7,8 @@ $BeginDESCRIPTION
 
 $BOARD
 unit INCH
-upper_left_corner  0.984900  0.750000
-lower_right_corner  5.295100  2.942600
+upper_left_corner  0.992400  0.750000
+lower_right_corner  5.287600  2.942600
 $EndBOARD
 
 $MODULE "P7"
@@ -1270,7 +1270,7 @@ reference "K4"
 value "ISP"
 footprint "pin_strip_3x2"
 attribut smd
-position  1.435000  2.285000
+position  1.395000  2.285000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -2215,7 +2215,7 @@ $EndMODULE  K1
 
 $MODULE "D5"
 reference "D5"
-value "ZD_15V"
+value "Z15V"
 footprint "DO-35_Vert"
 attribut none
 position  3.357500  2.325000
@@ -2249,7 +2249,7 @@ $EndMODULE  D5
 
 $MODULE "D2"
 reference "D2"
-value "ZD_5V1"
+value "Z5V1"
 footprint "DO-35"
 attribut none
 position  2.625000  2.230000
@@ -2283,7 +2283,7 @@ $EndMODULE  D2
 
 $MODULE "D1"
 reference "D1"
-value "ZD_5V1"
+value "Z5V1"
 footprint "DO-35"
 attribut none
 position  2.235000  2.230000
@@ -2364,7 +2364,7 @@ Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $SHAPE3D
-Na "BatMon_Libs\\BatMon_3D\\jump2_red.wrl"
+Na "BatMon_Libs/BatMon_3D/jump2_red.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.050000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2413,7 +2413,7 @@ Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $SHAPE3D
-Na "BatMon_Libs\\BatMon_3D\\jump2_red.wrl"
+Na "BatMon_Libs/BatMon_3D/jump2_red.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 90.000000
@@ -2489,7 +2489,7 @@ Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $SHAPE3D
-Na "BatMon_Libs\\BatMon_3D\\jump2_red.wrl"
+Na "BatMon_Libs/BatMon_3D/jump2_red.wrl"
 Sc 1.000000 1.000000 1.000000
 Of -0.050000 -0.050000 0.000000
 Ro 0.000000 0.000000 90.000000
@@ -2565,7 +2565,7 @@ Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $SHAPE3D
-Na "BatMon_Libs\\BatMon_3D\\jump2_red.wrl"
+Na "BatMon_Libs/BatMon_3D/jump2_red.wrl"
 Sc 1.000000 1.000000 1.000000
 Of -0.050000 -0.050000 0.000000
 Ro 0.000000 0.000000 90.000000
