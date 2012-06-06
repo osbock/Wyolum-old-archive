@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 6/2/2012 4:03:37 PM
+EESchema Schematic File Version 2  date Wednesday 06 June 2012 10:57:16 PM IST
 LIBS:aLaMode
 LIBS:power
 LIBS:Conn-raspberry
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
 Title "aLaMode"
-Date "2 jun 2012"
+Date "6 jun 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -645,7 +645,7 @@ $EndSheet
 Text Label 7600 975  0    40   ~ 0
 3V3
 Text Notes 4025 6425 0    40   ~ 0
-Connect ext. Servo supply to 5V_Servo and GND_SERVO Connectors, Pins 7/8\nor use jumper link between Pins 7/8 of \nPWM_SERVO and 5V_SERVO connectors when using on board 5V
+Connect ext. Servo supply to 5V_Servo and GND_SERVO Connectors,\nPins 7/8 or use jumper link between Pins 7/8 of \nPWM_SERVO and 5V_SERVO connectors when using on board 5V
 Text Notes 3975 6300 0    60   Italic 12
 SERVO Header
 Text Label 5725 7600 0    40   ~ 0
