@@ -1,5 +1,5 @@
-update=6/5/2012 6:38:52 PM
-last_client=eeschema
+update=6/6/2012 6:02:04 PM
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
@@ -11,22 +11,20 @@ PadDrlX=600
 PadDimH=1200
 PadDimV=1200
 BoardThickness=630
-TxtPcbV=600
-TxtPcbH=600
-TxtModV=600
-TxtModH=600
-TxtModW=120
+TxtPcbV=300
+TxtPcbH=300
+TxtModV=300
+TxtModH=300
+TxtModW=50
 VEgarde=100
 DrawLar=100
-EdgeLar=150
-TxtLar=120
+EdgeLar=100
+TxtLar=50
 MSegLar=100
 LastNetListRead=BatMon.net
 [pcbnew/libraries]
 LibDir=../../../../../../../Downloads/KiCAD/Libs;D:/Users/Anool/Downloads/KiCAD/Libs/USB
 LibName1=BatMon_Libs/BatMon_parts
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=D:/Users/Anool/Downloads/KiCAD/Libs/USB
@@ -61,4 +59,6 @@ LabSize=40
 [eeschema/libraries]
 LibName1=BatMon_Libs/BatMon
 LibName2=BatMon_Libs/power
+[general]
+version=1
 

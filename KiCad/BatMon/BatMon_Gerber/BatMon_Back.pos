@@ -1,9 +1,9 @@
-### Module positions - created on Tuesday 05 June 2012 10:33:28 PM IST ###
-### Printed by PcbNew version pcbnew (2011-05-25)-stable
+### Module positions - created on 6/6/2012 6:01:16 PM ###
+### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Back
 # Ref    Val                  PosX       PosY        Rot     Side
-P3       METER_H              4.6175     1.4700     270.0    Back
-P4       METER_L              4.6175     2.1700      90.0    Back
-U4       ULN2003              5.0650     2.0500      90.0    Back
+P3       METER_H              4.3775     1.4700     270.0    Back
+P4       METER_L              4.3775     2.1700      90.0    Back
+U4       ULN2003              4.8250     2.0500      90.0    Back
 ## End
