@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wednesday 06 June 2012 09:34:42 PM IST
+EESchema Schematic File Version 2  date 6/8/2012 11:37:33 AM
 LIBS:BatMon
 LIBS:power
 LIBS:BatMon-cache

@@ -1,5 +1,5 @@
-update=6/6/2012 6:02:04 PM
-last_client=kicad
+update=6/8/2012 11:48:27 AM
+last_client=eeschema
 [cvpcb]
 version=1
 NetIExt=net
@@ -25,6 +25,8 @@ LastNetListRead=BatMon.net
 [pcbnew/libraries]
 LibDir=../../../../../../../Downloads/KiCAD/Libs;D:/Users/Anool/Downloads/KiCAD/Libs/USB
 LibName1=BatMon_Libs/BatMon_parts
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=D:/Users/Anool/Downloads/KiCAD/Libs/USB
@@ -59,6 +61,4 @@ LabSize=40
 [eeschema/libraries]
 LibName1=BatMon_Libs/BatMon
 LibName2=BatMon_Libs/power
-[general]
-version=1
 
