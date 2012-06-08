@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wednesday 06 June 2012 10:57:16 PM IST
+EESchema Schematic File Version 2  date 6/7/2012 6:03:05 PM
 LIBS:aLaMode
 LIBS:power
 LIBS:Conn-raspberry
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 4
 Title ""
-Date "6 jun 2012"
+Date "7 jun 2012"
 Rev ""
 Comp ""
 Comment1 ""
