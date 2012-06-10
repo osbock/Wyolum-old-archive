@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 6/8/2012 11:37:33 AM
+EESchema Schematic File Version 2  date 6/8/2012 12:29:52 PM
 LIBS:BatMon
 LIBS:power
 LIBS:BatMon-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title "BatMon - Car Battery Voltage Monitor"
-Date "6 jun 2012"
+Date "8 jun 2012"
 Rev "A"
 Comp "it's BatMon, not Bat Man"
 Comment1 "www.wyolum.com"
@@ -1164,6 +1164,7 @@ F 0 "DP1" H 9075 4475 60  0000 C CNN
 F 1 "LED_4X7SEG" H 10400 3500 60  0000 C CNN
 F 2 "LED_4x7Seg" H 10400 3600 60  0001 C CNN
 F 3 "LDQ-N514RI" H 9825 4025 60  0001 C CNN
+F 4 "LDQ-N514RI" H 9825 4025 60  0001 C CNN "Field1"
 	1    9825 4025
 	1    0    0    -1  
 $EndComp
@@ -1246,6 +1247,7 @@ F 0 "U1" H 5475 6300 60  0000 C CNN
 F 1 "SSR" H 5925 6300 60  0000 C CNN
 F 2 "DIP-8__300_ELL" H 5725 6050 60  0001 C CNN
 F 3 "PVDZ172NPbF" H 5725 6050 60  0001 C CNN
+F 4 "PVDZ172NPbF" H 5725 6050 60  0001 C CNN "Field1"
 	1    5725 6050
 	1    0    0    -1  
 $EndComp

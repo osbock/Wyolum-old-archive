@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  6/8/2012 11:37:25 AM
+# EESchema Netlist Version 1.1 created  Sunday 10 June 2012 04:03:24 PM IST
 (
  ( /4C1345CB C2 C3 100n
   ( 1 VCC )
@@ -52,7 +52,7 @@
   ( 1 GND )
   ( 2 /V_BAT )
  )
- ( /4FC75ED5 LED_4x7Seg DP1 LED_4X7SEG
+ ( /4FC75ED5 LED_4x7Seg_2 DP1 LED_4X7SEG
   ( 1 /E )
   ( 2 /D )
   ( 3 /DP )
