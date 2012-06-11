@@ -1,4 +1,4 @@
-### Module positions - created on 6/8/2012 11:49:51 AM ###
+### Module positions - created on 6/11/2012 1:15:06 PM ###
 ### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Front
@@ -17,11 +17,11 @@ K3       FTDI                 2.0050     1.1800     180.0    Front
 K4       ISP                  1.3950     2.2850     270.0    Front
 K5       V_CUTOFF             1.3950     1.2225      90.0    Front
 K6       V_SEL                2.2350     1.4350      90.0    Front
-P1       METER_H              1.1700     1.4050     270.0    Front
-P2       METER_L              1.1700     2.1050      90.0    Front
+P1       METER_H              1.1700     1.4000     270.0    Front
+P2       METER_L              1.1700     2.1000      90.0    Front
 P6       I2C                  2.8775     1.9975      90.0    Front
-P11      DIP_SW               1.0700     1.4550      90.0    Front
-P12      DIP_SW               1.0700     2.0550      90.0    Front
+P11      DIP_SW               1.0700     1.4500      90.0    Front
+P12      DIP_SW               1.0700     2.0500      90.0    Front
 R1       110k                 2.0450     2.2300     270.0    Front
 R2       40k                  2.1375     2.2300     270.0    Front
 R3       110k                 2.4450     2.2300     270.0    Front

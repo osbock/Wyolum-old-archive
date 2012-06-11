@@ -1,5 +1,5 @@
-## Module report - date Wednesday 06 June 2012 09:42:32 PM IST
-## Created by PcbNew version pcbnew (2011-05-25)-stable
+## Module report - date 6/11/2012 1:15:28 PM
+## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ##
 
@@ -7,8 +7,8 @@ $BeginDESCRIPTION
 
 $BOARD
 unit INCH
-upper_left_corner  0.992400  0.750000
-lower_right_corner  5.287600  2.942600
+upper_left_corner  0.791000  0.868400
+lower_right_corner  4.831600  2.612600
 $EndBOARD
 
 $MODULE "P7"
@@ -41,7 +41,7 @@ reference "P10"
 value "CONN_1"
 footprint "vite_3mm"
 attribut none
-position  4.387500  0.927500
+position  4.482500  1.117500
 orientation  0.00
 layer component
 $SHAPE3D
@@ -66,7 +66,7 @@ reference "P9"
 value "CONN_1"
 footprint "vite_3mm"
 attribut none
-position  4.387500  2.712500
+position  4.482500  2.382500
 orientation  0.00
 layer component
 $SHAPE3D
@@ -91,7 +91,7 @@ reference "P8"
 value "CONN_1"
 footprint "vite_3mm"
 attribut none
-position  3.582500  2.352500
+position  3.582500  2.382500
 orientation  0.00
 layer component
 $SHAPE3D
@@ -111,142 +111,12 @@ Layer  all
 $EndPAD
 $EndMODULE  P8
 
-$MODULE "DP1"
-reference "DP1"
-value "LED_4X7SEG"
-footprint "LED_4x7Seg"
-attribut none
-position  4.852500  1.820000
-orientation  270.00
-layer component
-$SHAPE3D
-Na "BatMon_Libs/BatMon_3D/display7seg_d_red.wrl"
-Sc 1.500000 1.250000 1.250000
-Of -0.500000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$SHAPE3D
-Na "BatMon_Libs/BatMon_3D/display7seg_d_red.wrl"
-Sc 1.500000 1.250000 1.250000
-Of 0.500000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position -0.250000  0.300000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "2"
-position -0.150000  0.300000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "3"
-position -0.050000  0.300000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "4"
-position  0.050000  0.300000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "5"
-position  0.150000  0.300000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "6"
-position  0.250000  0.300000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "7"
-position  0.250000 -0.300000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "8"
-position  0.150000 -0.300000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "9"
-position  0.050000 -0.300000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "10"
-position -0.050000 -0.300000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "11"
-position -0.150000 -0.300000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "12"
-position -0.250000 -0.300000
-size  0.070000  0.070000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$EndMODULE  DP1
-
 $MODULE "U4"
 reference "U4"
 value "ULN2003"
 footprint "dil_16-300_socket"
 attribut smd
-position  4.825000  2.050000
+position  4.325000  1.840000
 orientation  90.00
 layer copper
 $SHAPE3D
@@ -517,7 +387,7 @@ reference "P2"
 value "METER_L"
 footprint "pin_strip_7"
 attribut smd
-position  1.170000  2.105000
+position  1.170000  2.100000
 orientation  90.00
 layer component
 $SHAPE3D
@@ -596,7 +466,7 @@ reference "P4"
 value "METER_L"
 footprint "pin_strip_7"
 attribut smd
-position  4.377500  2.170000
+position  3.895000  2.097500
 orientation  90.00
 layer copper
 $SHAPE3D
@@ -675,7 +545,7 @@ reference "P3"
 value "METER_H"
 footprint "pin_strip_7"
 attribut smd
-position  4.377500  1.470000
+position  3.895000  1.397500
 orientation  270.00
 layer copper
 $SHAPE3D
@@ -754,7 +624,7 @@ reference "P1"
 value "METER_H"
 footprint "pin_strip_7"
 attribut smd
-position  1.170000  1.405000
+position  1.170000  1.400000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -1389,7 +1259,7 @@ size  0.070000  0.070000
 drill  0.040000
 shape_offset  0.000000  0.000000
 orientation  0.00
-Shape  Circ
+Shape  Rect
 Layer  all
 $EndPAD
 $PAD "2"
@@ -1434,7 +1304,7 @@ size  0.070000  0.070000
 drill  0.040000
 shape_offset  0.000000  0.000000
 orientation  0.00
-Shape  Circ
+Shape  Rect
 Layer  all
 $EndPAD
 $EndMODULE  SW1
@@ -1514,13 +1384,13 @@ reference "P5"
 value "CONN_1"
 footprint "Pad01"
 attribut none
-position  4.482500  1.170000
-orientation  90.00
-layer component
+position  4.002500  1.097500
+orientation  270.00
+layer copper
 $PAD "1"
 position  0.000000  0.000000
-size  0.080000  0.080000
-drill  0.032000
+size  0.070000  0.070000
+drill  0.040000
 shape_offset  0.000000  0.000000
 orientation  0.00
 Shape  Circ
@@ -2141,7 +2011,7 @@ reference "K2"
 value "LOAD"
 footprint "bornier2"
 attribut none
-position  3.425000  1.435000
+position  3.425000  1.450000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -2175,7 +2045,7 @@ reference "K1"
 value "BAT_MON"
 footprint "bornier3"
 attribut none
-position  3.425000  1.935000
+position  3.425000  1.950000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -2344,7 +2214,7 @@ size  0.070000  0.070000
 drill  0.040000
 shape_offset  0.000000  0.000000
 orientation  0.00
-Shape  Circ
+Shape  Rect
 Layer  all
 $EndPAD
 $EndMODULE  SW2
@@ -2375,7 +2245,7 @@ size  0.065000  0.065000
 drill  0.040000
 shape_offset  0.000000  0.000000
 orientation  0.00
-Shape  Rect
+Shape  Circ
 Layer  all
 $EndPAD
 $PAD "2"
@@ -2479,7 +2349,7 @@ reference "P11"
 value "DIP_SW"
 footprint "pin_strip_6b"
 attribut smd
-position  1.070000  1.455000
+position  1.070000  1.450000
 orientation  90.00
 layer component
 $SHAPE3D
@@ -2555,7 +2425,7 @@ reference "P12"
 value "DIP_SW"
 footprint "pin_strip_6b"
 attribut smd
-position  1.070000  2.055000
+position  1.070000  2.050000
 orientation  90.00
 layer component
 $SHAPE3D
@@ -2626,39 +2496,169 @@ Layer  all
 $EndPAD
 $EndMODULE  P12
 
+$MODULE "DP1"
+reference "DP1"
+value "LED_4X7SEG"
+footprint "LED_4x7Seg_2"
+attribut none
+position  4.172500  1.747500
+orientation  270.00
+layer component
+$SHAPE3D
+Na "BatMon_Libs/BatMon_3D/display7seg_d_red.wrl"
+Sc 1.000000 0.600000 0.800000
+Of -0.330000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$SHAPE3D
+Na "BatMon_Libs/BatMon_3D/display7seg_d_red.wrl"
+Sc 1.000000 0.600000 0.800000
+Of 0.330000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.250000  0.150000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "2"
+position -0.150000  0.150000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "3"
+position -0.050000  0.150000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "4"
+position  0.050000  0.150000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "5"
+position  0.150000  0.150000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "6"
+position  0.250000  0.150000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "7"
+position  0.250000 -0.150000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "8"
+position  0.150000 -0.150000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "9"
+position  0.050000 -0.150000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "10"
+position -0.050000 -0.150000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "11"
+position -0.150000 -0.150000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "12"
+position -0.250000 -0.150000
+size  0.070000  0.070000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  DP1
+
 $LINE 
-start 4.280000 0.820000
-end 5.280000 0.820000
+start 3.800000 1.000000
+end 4.600000 1.000000
 width 0.015000
 $EndLINE 
 $LINE 
-start 4.280000 2.820000
-end 4.280000 0.820000
+start 3.800000 2.500000
+end 3.800000 1.000000
 width 0.015000
 $EndLINE 
 $LINE 
-start 5.280000 2.820000
-end 4.280000 2.820000
+start 4.600000 2.500000
+end 3.800000 2.500000
 width 0.015000
 $EndLINE 
 $LINE 
-start 5.280000 0.820000
-end 5.280000 2.820000
+start 4.600000 1.000000
+end 4.600000 2.500000
 width 0.015000
 $EndLINE 
 $LINE 
-start 1.000000 2.470000
+start 1.000000 2.500000
 end 1.000000 1.000000
 width 0.015000
 $EndLINE 
 $LINE 
-start 3.700000 2.470000
-end 1.000000 2.470000
+start 3.700000 2.500000
+end 1.000000 2.500000
 width 0.015000
 $EndLINE 
 $LINE 
 start 3.700000 1.000000
-end 3.700000 2.470000
+end 3.700000 2.500000
 width 0.015000
 $EndLINE 
 $LINE 
