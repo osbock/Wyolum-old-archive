@@ -1,11 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2011-12-28 BZR 3254)-stable date = 6/2/2012 3:13:51 PM
-
-BeginCmp
-TimeStamp = /4FBF6CBF/4FC9D8AD;
-Reference = B1;
-ValeurCmp = I/O;
-IdModule  = I/O;
-EndCmp
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Monday 11 June 2012 11:47:31 PM IST
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -17,13 +10,6 @@ EndCmp
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBCE;
 Reference = B3;
-ValeurCmp = I/O;
-IdModule  = I/O;
-EndCmp
-
-BeginCmp
-TimeStamp = /4FBF6CBF/4FC9D8B5;
-Reference = B4;
 ValeurCmp = I/O;
 IdModule  = I/O;
 EndCmp
@@ -92,6 +78,13 @@ IdModule  = c_0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /4FD62AE6;
+Reference = C8;
+ValeurCmp = 47u,10V;
+IdModule  = C_ELCO_SMD;
+EndCmp
+
+BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEA7E;
 Reference = C9;
 ValeurCmp = 100n;
@@ -109,6 +102,27 @@ BeginCmp
 TimeStamp = /4EC1290E;
 Reference = C11;
 ValeurCmp = 22p;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FBF6CBF/4FD62B83;
+Reference = C12;
+ValeurCmp = 100n;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FBF6CBF/4FD62BCC;
+Reference = C13;
+ValeurCmp = 100n;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FD62D6E;
+Reference = C14;
+ValeurCmp = 100n;
 IdModule  = c_0805;
 EndCmp
 
@@ -197,9 +211,9 @@ IdModule  = DIP-28__300_ELL;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FBF6CBF/4FC86C1D;
+TimeStamp = /4FBF6CBF/4FD5E087;
 Reference = P1;
-ValeurCmp = PBD-26;
+ValeurCmp = BCM2835_GPIO;
 IdModule  = pin_array_13x2;
 EndCmp
 
@@ -421,10 +435,10 @@ IdModule  = SO8E;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FBF6CBF/4FC9D559;
+TimeStamp = /4FBF6CBF/4FD5DAA4;
 Reference = U6;
-ValeurCmp = 74LS125;
-IdModule  = SO14E;
+ValeurCmp = TSX0108;
+IdModule  = SO20L;
 EndCmp
 
 BeginCmp

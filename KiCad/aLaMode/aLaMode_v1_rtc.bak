@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 6/11/2012 5:51:43 PM
+EESchema Schematic File Version 2  date Monday 11 June 2012 11:30:48 PM IST
 LIBS:aLaMode
 LIBS:power
 LIBS:Conn-raspberry
@@ -139,10 +139,10 @@ F 2 "r_0805" H 6650 2000 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +BATT #PWR019
+L +BATT #PWR14
 U 1 1 4EC101F0
 P 5300 1850
-F 0 "#PWR019" H 5300 1800 20  0001 C CNN
+F 0 "#PWR14" H 5300 1800 20  0001 C CNN
 F 1 "+BATT" H 5300 1950 30  0000 C CNN
 	1    5300 1850
 	1    0    0    -1  
