@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday 11 June 2012 11:32:55 PM IST
+EESchema Schematic File Version 2  date Tuesday 12 June 2012 11:26:21 PM IST
 LIBS:aLaMode
 LIBS:power
 LIBS:Conn-raspberry
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 4
 Title ""
-Date "11 jun 2012"
+Date "12 jun 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -211,9 +211,9 @@ MOSI
 Text HLabel 1500 2875 0    40   Input ~ 0
 MOSI
 Text HLabel 1500 2775 0    40   Output ~ 0
-RST
+RESET
 Text Label 2850 2775 0    40   ~ 0
-RST
+RESET
 Text HLabel 1500 1575 0    40   BiDi ~ 0
 5V0
 Text Label 5900 4400 0    40   ~ 0
@@ -230,6 +230,7 @@ U 1 1 4FD5E087
 P 7250 3900
 F 0 "P1" H 7250 4600 60  0000 C CNN
 F 1 "BCM2835_GPIO" V 7250 3900 50  0000 C CNN
+F 2 "pin_strip_7" H 7250 3900 60  0001 C CNN
 	1    7250 3900
 	1    0    0    -1  
 $EndComp
@@ -311,6 +312,7 @@ U 1 1 4FBF7498
 P 10700 4200
 F 0 "P3" H 10650 4600 60  0000 C CNN
 F 1 "LAN_JTAG" V 10770 4200 60  0000 C CNN
+F 2 "pin_strip_7" H 10700 4200 60  0001 C CNN
 	1    10700 4200
 	1    0    0    -1  
 $EndComp
@@ -320,6 +322,7 @@ U 1 1 4FBF744D
 P 9850 4150
 F 0 "P2" H 9800 4600 60  0000 C CNN
 F 1 "GPU_JTAG" V 9900 4150 60  0000 C CNN
+F 2 "pin_strip_7" H 9850 4150 60  0001 C CNN
 	1    9850 4150
 	1    0    0    -1  
 $EndComp

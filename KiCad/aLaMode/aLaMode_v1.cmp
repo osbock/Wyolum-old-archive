@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Monday 11 June 2012 11:47:31 PM IST
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Tuesday 12 June 2012 02:24:36 PM IST
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -438,7 +438,7 @@ BeginCmp
 TimeStamp = /4FBF6CBF/4FD5DAA4;
 Reference = U6;
 ValeurCmp = TSX0108;
-IdModule  = SO20L;
+IdModule  = tssop-20;
 EndCmp
 
 BeginCmp

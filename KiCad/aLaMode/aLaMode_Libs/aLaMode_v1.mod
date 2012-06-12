@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  Monday 11 June 2012 11:38:29 PM IST
+PCBNEW-LibModule-V1  Tuesday 12 June 2012 02:23:44 PM IST
 # encoding utf-8
 $INDEX
 ARDUINO_SHIELD_2_040pins
@@ -58,6 +58,7 @@ pin_strip_6-90
 r_0805
 vite_3mm
 SO20L
+tssop-20
 $EndINDEX
 $MODULE C2
 Po 0 0 0 15 4E156D65 00000000 ~~
@@ -71556,9 +71557,9 @@ Li SO20L
 Cd Cms SOJ 20 pins large
 Kw CMS SOJ
 Sc 00000000
-AR 
+AR
 Op 0 0 0
-At SMD 
+At SMD
 T0 0 -500 600 600 0 50 N V 21 N "SO20L"
 T1 0 500 600 500 0 50 N V 21 N "VAL****"
 DS 2500 1450 2500 -1450 50 21
@@ -71715,4 +71716,187 @@ Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  SO20L
+$MODULE tssop-20
+Po 0 0 0 15 4FD70315 00000000 ~~
+Li tssop-20
+Cd TSSOP-20
+Sc 00000000
+AR 
+Op 0 0 0
+At SMD 
+T0 0 200 197 197 0 39 N V 21 N "TSSOP-20"
+T1 0 -450 197 197 0 39 N V 21 N "U***"
+DS -1400 -700 -1400 550 60 21
+DS -1400 550 -1250 700 60 21
+DS 1350 700 1350 -700 60 21
+DS -1250 700 1350 700 60 21
+DS -1400 -700 1350 -700 60 21
+DC -1200 500 -1250 600 50 21
+$PAD
+Sh "5" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -128 1102
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "6" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 128 1102
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "7" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 384 1102
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "8" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 640 1102
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "19" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -892 -1100
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "2" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -896 1102
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "3" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -640 1102
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "4" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -384 1102
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "12" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 896 -1102
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "13" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 640 -1102
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "14" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 384 -1102
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "15" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 128 -1102
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "16" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -128 -1102
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "17" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -384 -1102
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "9" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 896 1102
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "18" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -640 -1100
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "1" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1152 1102
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "10" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1152 1102
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "11" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1152 -1102
+.LocalClearance 40
+$EndPAD
+$PAD
+Sh "20" R 165 579 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1152 -1102
+.LocalClearance 40
+$EndPAD
+$SHAPE3D
+Na "aLaMode_Libs/3D Modules/tssop-20.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$EndMODULE  tssop-20
 $EndLIBRARY

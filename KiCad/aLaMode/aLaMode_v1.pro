@@ -1,4 +1,4 @@
-update=Monday 11 June 2012 11:49:35 PM IST
+update=Tuesday 12 June 2012 11:26:27 PM IST
 version=1
 last_client=kicad
 [cvpcb]
@@ -44,8 +44,8 @@ LibName3=aLaMode_Libs/Conn-raspberry
 [pcbnew]
 version=1
 PadDrlX=0
-PadDimH=1500
-PadDimV=800
+PadDimH=165
+PadDimV=579
 BoardThickness=630
 TxtPcbV=300
 TxtPcbH=300
