@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tuesday 12 June 2012 11:26:21 PM IST
+EESchema Schematic File Version 2  date Wednesday 13 June 2012 10:25:36 PM IST
 LIBS:aLaMode
 LIBS:power
 LIBS:Conn-raspberry
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 3 4
 Title "Buckler, i2sd, v3, with RTC, with HW addressing"
-Date "12 jun 2012"
+Date "13 jun 2012"
 Rev "3"
 Comp "WyoLum"
 Comment1 ""
@@ -197,7 +197,7 @@ U 1 1 4E1FEA7F
 P 5550 2800
 F 0 "U4" H 5850 3350 60  0000 C CNN
 F 1 "DS3231N" H 5250 2400 60  0000 C CNN
-F 2 "dil_16-300_socket" H 5550 2800 60  0001 C CNN
+F 2 "DS3231" H 5550 2800 60  0001 C CNN
 	1    5550 2800
 	1    0    0    -1  
 $EndComp
@@ -207,7 +207,7 @@ U 1 1 4E1FEA7E
 P 4175 2775
 F 0 "C9" V 4225 2875 50  0000 L CNN
 F 1 "100n" V 4225 2575 50  0000 L CNN
-F 2 "C2" H 4175 2775 60  0001 C CNN
+F 2 "c_0805" H 4175 2775 60  0001 C CNN
 	1    4175 2775
 	1    0    0    -1  
 $EndComp
@@ -231,7 +231,7 @@ U 1 1 4E1FEA78
 P 3950 2800
 F 0 "BT1" H 3650 2600 50  0000 C CNN
 F 1 "BATT_RTC" H 3950 2610 50  0000 C CNN
-F 2 "CR1632" H 3950 2800 60  0001 C CNN
+F 2 "CR1632_2" H 3950 2800 60  0001 C CNN
 F 4 "BU2032SM-HD-GCT-ND " H 3950 2800 60  0001 C CNN "Digikey"
 	1    3950 2800
 	0    1    1    0   

@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Tuesday 12 June 2012 02:24:36 PM IST
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Wednesday 13 June 2012 10:25:21 PM IST
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -225,10 +225,10 @@ IdModule  = SIL-8;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FBF6CBF/4FBF7498;
+TimeStamp = /4FBF6CBF/4FD8C311;
 Reference = P3;
 ValeurCmp = LAN_JTAG;
-IdModule  = SIL-7;
+IdModule  = SIL-8;
 EndCmp
 
 BeginCmp
@@ -278,6 +278,13 @@ TimeStamp = /4FC07407/4FC61A05;
 Reference = P10;
 ValeurCmp = V_IN;
 IdModule  = JACK_ALIM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FBF6CBF/4FD8C245;
+Reference = P11;
+ValeurCmp = U6_OE;
+IdModule  = pin_strip_2;
 EndCmp
 
 BeginCmp
