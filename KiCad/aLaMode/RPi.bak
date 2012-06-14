@@ -1,7 +1,6 @@
-EESchema Schematic File Version 2  date 6/14/2012 1:27:59 PM
+EESchema Schematic File Version 2  date Thursday 14 June 2012 10:57:49 PM IST
 LIBS:aLaMode
 LIBS:power
-LIBS:Conn-raspberry
 LIBS:aLaMode_v1-cache
 EELAYER 25  0
 EELAYER END
@@ -17,6 +16,15 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L BCM2835_GPIO P1
+U 1 1 4FD9E5BC
+P 7250 3900
+F 0 "P1" H 7250 4600 60  0000 C CNN
+F 1 "BCM2835_GPIO" V 7250 3900 50  0000 C CNN
+	1    7250 3900
+	1    0    0    -1  
+$EndComp
 Text Label 4150 2175 0    40   ~ 0
 U6_OE
 Connection ~ 5625 1325
@@ -165,10 +173,10 @@ $EndComp
 Text Label 5850 1025 0    40   ~ 0
 Rpi_3V3
 $Comp
-L GND #PWR020
+L GND #PWR19
 U 1 1 4FD8C28A
 P 5850 2050
-F 0 "#PWR020" H 5850 2050 30  0001 C CNN
+F 0 "#PWR19" H 5850 2050 30  0001 C CNN
 F 1 "GND" H 5850 1980 30  0001 C CNN
 	1    5850 2050
 	1    0    0    -1  
@@ -184,10 +192,10 @@ F 2 "pin_strip_3" H 6300 1275 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PWR_FLAG #FLG021
+L PWR_FLAG #FLG6
 U 1 1 4FD632B4
 P 6350 3225
-F 0 "#FLG021" H 6350 3495 30  0001 C CNN
+F 0 "#FLG6" H 6350 3495 30  0001 C CNN
 F 1 "PWR_FLAG" H 6350 3455 30  0000 C CNN
 	1    6350 3225
 	1    0    0    -1  
@@ -195,19 +203,19 @@ $EndComp
 Text Label 5900 3300 0    40   ~ 0
 Rpi_3V3
 $Comp
-L GND #PWR022
+L GND #PWR17
 U 1 1 4FD62C0F
 P 2125 2175
-F 0 "#PWR022" H 2125 2175 30  0001 C CNN
+F 0 "#PWR17" H 2125 2175 30  0001 C CNN
 F 1 "GND" H 2125 2105 30  0001 C CNN
 	1    2125 2175
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR023
+L GND #PWR18
 U 1 1 4FD62BFD
 P 2125 3600
-F 0 "#PWR023" H 2125 3600 30  0001 C CNN
+F 0 "#PWR18" H 2125 3600 30  0001 C CNN
 F 1 "GND" H 2125 3530 30  0001 C CNN
 	1    2125 3600
 	1    0    0    -1  
@@ -278,16 +286,6 @@ Text Label 5900 4200 0    40   ~ 0
 Rpi_MOSI
 Text Label 8200 3800 0    40   ~ 0
 Rpi_RST
-$Comp
-L BCM2835_GPIO P1
-U 1 1 4FD5E087
-P 7250 3900
-F 0 "P1" H 7250 4600 60  0000 C CNN
-F 1 "BCM2835_GPIO" V 7250 3900 50  0000 C CNN
-F 2 "pin_array_13x2" H 7250 3900 60  0001 C CNN
-	1    7250 3900
-	1    0    0    -1  
-$EndComp
 $Comp
 L TSX0108 U6
 U 1 1 4FD5DAA4

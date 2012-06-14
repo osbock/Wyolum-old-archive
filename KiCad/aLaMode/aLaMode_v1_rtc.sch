@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 6/14/2012 6:53:41 PM
+EESchema Schematic File Version 2  date Thursday 14 June 2012 11:00:37 PM IST
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
@@ -138,10 +138,10 @@ F 2 "r_0805" H 6650 2000 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +BATT #PWR019
+L +BATT #PWR021
 U 1 1 4EC101F0
 P 5300 1850
-F 0 "#PWR019" H 5300 1800 20  0001 C CNN
+F 0 "#PWR021" H 5300 1800 20  0001 C CNN
 F 1 "+BATT" H 5300 1950 30  0000 C CNN
 	1    5300 1850
 	1    0    0    -1  
