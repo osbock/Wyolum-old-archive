@@ -1,7 +1,6 @@
-EESchema Schematic File Version 2  date Wednesday 13 June 2012 10:25:36 PM IST
+EESchema Schematic File Version 2  date 6/14/2012 6:53:41 PM
 LIBS:aLaMode
 LIBS:power
-LIBS:Conn-raspberry
 LIBS:aLaMode_v1-cache
 EELAYER 25  0
 EELAYER END
@@ -9,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
 Title "aLaMode"
-Date "13 jun 2012"
+Date "14 jun 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -759,7 +758,7 @@ U 1 1 4FC5F208
 P 2500 7375
 F 0 "D1" H 2500 7475 50  0000 C CNN
 F 1 "LED" H 2500 7275 50  0000 C CNN
-F 2 "d_0805" H 2500 7375 60  0001 C CNN
+F 2 "led_0805" H 2500 7375 60  0001 C CNN
 	1    2500 7375
 	0    1    1    0   
 $EndComp
@@ -769,7 +768,7 @@ U 1 1 4FC5F1FE
 P 2800 7375
 F 0 "D2" H 2800 7475 50  0000 C CNN
 F 1 "LED" H 2800 7275 50  0000 C CNN
-F 2 "d_0805" H 2800 7375 60  0001 C CNN
+F 2 "led_0805" H 2800 7375 60  0001 C CNN
 	1    2800 7375
 	0    1    1    0   
 $EndComp
@@ -884,7 +883,7 @@ F7 "MISO" I L 7175 6600 60
 F8 "MOSI" I L 7175 6700 60 
 F9 "5V0" B L 7175 5700 60 
 F10 "SCK" I L 7175 6500 60 
-F12 "RESET" O L 7175 6200 60 
+F11 "RESET" O L 7175 6200 60 
 $EndSheet
 Text Label 3375 7000 3    40   ~ 0
 GPS_BAT

@@ -1,7 +1,6 @@
-EESchema Schematic File Version 2  date Wednesday 13 June 2012 10:25:36 PM IST
+EESchema Schematic File Version 2  date 6/14/2012 6:53:41 PM
 LIBS:aLaMode
 LIBS:power
-LIBS:Conn-raspberry
 LIBS:aLaMode_v1-cache
 EELAYER 25  0
 EELAYER END
@@ -9,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 4
 Title ""
-Date "13 jun 2012"
+Date "14 jun 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -17,6 +16,149 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L BCM2835_GPIO P1
+U 1 1 4FD9E5BC
+P 7250 3900
+F 0 "P1" H 7250 4600 60  0000 C CNN
+F 1 "BCM2835_GPIO" V 7250 3900 50  0000 C CNN
+	1    7250 3900
+	1    0    0    -1  
+$EndComp
+Text Label 4150 2175 0    40   ~ 0
+U6_OE
+Connection ~ 5625 1325
+Wire Wire Line
+	5625 1375 5625 1325
+Connection ~ 5850 1925
+Wire Wire Line
+	5850 1925 5625 1925
+Wire Wire Line
+	5625 1925 5625 1875
+Connection ~ 6350 3300
+Wire Wire Line
+	6350 3225 6350 3300
+Connection ~ 2125 3500
+Wire Wire Line
+	2125 3600 2125 3500
+Wire Wire Line
+	2300 2050 2300 2125
+Wire Wire Line
+	2300 2125 1925 2125
+Wire Wire Line
+	1925 2125 1925 2050
+Connection ~ 1925 1575
+Wire Wire Line
+	1925 1650 1925 1575
+Wire Wire Line
+	3750 1475 2300 1475
+Wire Wire Line
+	7900 3800 8700 3800
+Wire Wire Line
+	3250 2375 1500 2375
+Wire Wire Line
+	3450 1875 3450 1575
+Wire Wire Line
+	1500 3075 3250 3075
+Wire Wire Line
+	1500 2875 3250 2875
+Wire Wire Line
+	1500 2675 3250 2675
+Wire Wire Line
+	3950 3075 4800 3075
+Wire Wire Line
+	4800 3075 4800 4400
+Wire Wire Line
+	4800 4400 6600 4400
+Wire Wire Line
+	3950 2875 5000 2875
+Wire Wire Line
+	5000 2875 5000 4200
+Wire Wire Line
+	5000 4200 6600 4200
+Wire Wire Line
+	3950 2675 8600 2675
+Wire Wire Line
+	8600 2675 8600 3700
+Wire Wire Line
+	8600 3700 7900 3700
+Wire Wire Line
+	3950 2475 5100 2475
+Wire Wire Line
+	5100 2475 5100 3500
+Wire Wire Line
+	5100 3500 6600 3500
+Wire Wire Line
+	8200 3500 7900 3500
+Wire Wire Line
+	3950 2375 5200 2375
+Wire Wire Line
+	5200 2375 5200 3400
+Wire Wire Line
+	5200 3400 6600 3400
+Wire Wire Line
+	7900 3600 8500 3600
+Wire Wire Line
+	8500 3600 8500 2575
+Wire Wire Line
+	8500 2575 3950 2575
+Wire Wire Line
+	8700 3800 8700 2775
+Wire Wire Line
+	8700 2775 3950 2775
+Wire Wire Line
+	3950 2975 4900 2975
+Wire Wire Line
+	4900 2975 4900 4300
+Wire Wire Line
+	4900 4300 6600 4300
+Wire Wire Line
+	3250 2575 1500 2575
+Wire Wire Line
+	3250 2775 1500 2775
+Wire Wire Line
+	3250 2975 1500 2975
+Wire Wire Line
+	1500 3500 3600 3500
+Wire Wire Line
+	3600 3500 3600 3275
+Wire Wire Line
+	3750 1475 3750 1875
+Wire Wire Line
+	3250 2475 1500 2475
+Wire Wire Line
+	3450 1575 1500 1575
+Wire Wire Line
+	2300 1475 2300 1650
+Wire Wire Line
+	2125 2175 2125 2125
+Connection ~ 2125 2125
+Wire Wire Line
+	6600 3300 5900 3300
+Wire Wire Line
+	5950 1425 5850 1425
+Wire Wire Line
+	5850 1425 5850 2050
+Wire Wire Line
+	5950 1225 5850 1225
+Wire Wire Line
+	5850 1225 5850 1025
+Wire Wire Line
+	5950 1325 5225 1325
+Wire Wire Line
+	5225 1325 5225 2175
+Wire Wire Line
+	5225 2175 3950 2175
+$Comp
+L R R13
+U 1 1 4FD98CE2
+P 5625 1625
+F 0 "R13" V 5705 1625 50  0000 C CNN
+F 1 "10k" V 5625 1625 50  0000 C CNN
+F 2 "r_0805" H 5625 1625 60  0001 C CNN
+	1    5625 1625
+	1    0    0    -1  
+$EndComp
 NoConn ~ 10350 3800
 $Comp
 L CONN_8 P3
@@ -28,135 +170,25 @@ F 2 "SIL-8" H 10700 4150 60  0001 C CNN
 	1    10700 4150
 	1    0    0    -1  
 $EndComp
-Text Label 5850 1875 0    40   ~ 0
+Text Label 5850 1025 0    40   ~ 0
 Rpi_3V3
-Wire Wire Line
-	5850 1875 5850 2075
-Wire Wire Line
-	5850 2075 5950 2075
-Wire Wire Line
-	5850 2375 5850 2275
-Wire Wire Line
-	5850 2275 5950 2275
-Wire Wire Line
-	6600 3300 5900 3300
-Connection ~ 2125 2125
-Wire Wire Line
-	2125 2175 2125 2125
-Wire Wire Line
-	2300 1650 2300 1475
-Wire Wire Line
-	1500 1575 3450 1575
-Wire Wire Line
-	3250 2475 1500 2475
-Wire Wire Line
-	3750 1875 3750 1475
-Wire Wire Line
-	3600 3275 3600 3500
-Wire Wire Line
-	3600 3500 1500 3500
-Wire Wire Line
-	3250 2975 1500 2975
-Wire Wire Line
-	3250 2775 1500 2775
-Wire Wire Line
-	3250 2575 1500 2575
-Wire Wire Line
-	6600 4300 4900 4300
-Wire Wire Line
-	4900 4300 4900 2975
-Wire Wire Line
-	4900 2975 3950 2975
-Wire Wire Line
-	3950 2775 8700 2775
-Wire Wire Line
-	8700 2775 8700 3800
-Wire Wire Line
-	3950 2575 8500 2575
-Wire Wire Line
-	8500 2575 8500 3600
-Wire Wire Line
-	8500 3600 7900 3600
-Wire Wire Line
-	6600 3400 5200 3400
-Wire Wire Line
-	5200 3400 5200 2375
-Wire Wire Line
-	5200 2375 3950 2375
-Wire Wire Line
-	8200 3500 7900 3500
-Wire Wire Line
-	6600 3500 5100 3500
-Wire Wire Line
-	5100 3500 5100 2475
-Wire Wire Line
-	5100 2475 3950 2475
-Wire Wire Line
-	7900 3700 8600 3700
-Wire Wire Line
-	8600 3700 8600 2675
-Wire Wire Line
-	8600 2675 3950 2675
-Wire Wire Line
-	6600 4200 5000 4200
-Wire Wire Line
-	5000 4200 5000 2875
-Wire Wire Line
-	5000 2875 3950 2875
-Wire Wire Line
-	6600 4400 4800 4400
-Wire Wire Line
-	4800 4400 4800 3075
-Wire Wire Line
-	4800 3075 3950 3075
-Wire Wire Line
-	1500 2675 3250 2675
-Wire Wire Line
-	1500 2875 3250 2875
-Wire Wire Line
-	1500 3075 3250 3075
-Wire Wire Line
-	3450 1575 3450 1875
-Wire Wire Line
-	3250 2375 1500 2375
-Wire Wire Line
-	8700 3800 7900 3800
-Wire Wire Line
-	3750 1475 2300 1475
-Wire Wire Line
-	1925 1650 1925 1575
-Connection ~ 1925 1575
-Wire Wire Line
-	1925 2050 1925 2125
-Wire Wire Line
-	1925 2125 2300 2125
-Wire Wire Line
-	2300 2125 2300 2050
-Wire Wire Line
-	2125 3600 2125 3500
-Connection ~ 2125 3500
-Wire Wire Line
-	6350 3225 6350 3300
-Connection ~ 6350 3300
-Wire Wire Line
-	5950 2175 3950 2175
 $Comp
 L GND #PWR020
 U 1 1 4FD8C28A
-P 5850 2375
-F 0 "#PWR020" H 5850 2375 30  0001 C CNN
-F 1 "GND" H 5850 2305 30  0001 C CNN
-	1    5850 2375
+P 5850 2050
+F 0 "#PWR020" H 5850 2050 30  0001 C CNN
+F 1 "GND" H 5850 1980 30  0001 C CNN
+	1    5850 2050
 	1    0    0    -1  
 $EndComp
 $Comp
 L CONN_3 P11
 U 1 1 4FD8C245
-P 6300 2175
-F 0 "P11" V 6250 2175 50  0000 C CNN
-F 1 "U6_OE" V 6350 2175 50  0000 C CNN
-F 2 "pin_strip_2" H 6300 2125 60  0001 C CNN
-	1    6300 2175
+P 6300 1325
+F 0 "P11" V 6250 1325 50  0000 C CNN
+F 1 "U6_OE" V 6350 1325 50  0000 C CNN
+F 2 "pin_strip_3" H 6300 1275 60  0001 C CNN
+	1    6300 1325
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -254,16 +286,6 @@ Text Label 5900 4200 0    40   ~ 0
 Rpi_MOSI
 Text Label 8200 3800 0    40   ~ 0
 Rpi_RST
-$Comp
-L BCM2835_GPIO P1
-U 1 1 4FD5E087
-P 7250 3900
-F 0 "P1" H 7250 4600 60  0000 C CNN
-F 1 "BCM2835_GPIO" V 7250 3900 50  0000 C CNN
-F 2 "pin_array_13x2" H 7250 3900 60  0001 C CNN
-	1    7250 3900
-	1    0    0    -1  
-$EndComp
 $Comp
 L TSX0108 U6
 U 1 1 4FD5DAA4

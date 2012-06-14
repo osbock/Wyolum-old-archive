@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Wednesday 13 June 2012 10:25:21 PM IST
+Cmp-Mod V01 Created by CvPcb (2011-12-28 BZR 3254)-stable date = 6/14/2012 1:27:47 PM
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -130,14 +130,14 @@ BeginCmp
 TimeStamp = /4FC5F208;
 Reference = D1;
 ValeurCmp = LED;
-IdModule  = d_0805;
+IdModule  = led_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FC5F1FE;
 Reference = D2;
 ValeurCmp = LED;
-IdModule  = d_0805;
+IdModule  = led_0805;
 EndCmp
 
 BeginCmp
@@ -165,7 +165,7 @@ BeginCmp
 TimeStamp = /4FC07407/4FC62203;
 Reference = D6;
 ValeurCmp = LED;
-IdModule  = d_0805;
+IdModule  = led_0805;
 EndCmp
 
 BeginCmp
@@ -284,7 +284,7 @@ BeginCmp
 TimeStamp = /4FBF6CBF/4FD8C245;
 Reference = P11;
 ValeurCmp = U6_OE;
-IdModule  = pin_strip_2;
+IdModule  = pin_strip_3;
 EndCmp
 
 BeginCmp
@@ -382,6 +382,13 @@ BeginCmp
 TimeStamp = /4FC07407/4FC621EE;
 Reference = R12;
 ValeurCmp = 1k;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FBF6CBF/4FD98CE2;
+Reference = R13;
+ValeurCmp = 10k;
 IdModule  = r_0805;
 EndCmp
 

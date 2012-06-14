@@ -1,7 +1,6 @@
-EESchema Schematic File Version 2  date Wednesday 13 June 2012 10:25:36 PM IST
+EESchema Schematic File Version 2  date 6/14/2012 6:53:41 PM
 LIBS:aLaMode
 LIBS:power
-LIBS:Conn-raspberry
 LIBS:aLaMode_v1-cache
 EELAYER 25  0
 EELAYER END
@@ -9,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 3 4
 Title "Buckler, i2sd, v3, with RTC, with HW addressing"
-Date "13 jun 2012"
+Date "14 jun 2012"
 Rev "3"
 Comp "WyoLum"
 Comment1 ""
