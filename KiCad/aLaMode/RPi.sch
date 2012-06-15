@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thursday 14 June 2012 11:00:37 PM IST
+EESchema Schematic File Version 2  date 6/15/2012 5:59:12 PM
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 4
 Title ""
-Date "14 jun 2012"
+Date "15 jun 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -22,6 +22,7 @@ U 1 1 4FD9E5BC
 P 7250 3900
 F 0 "P1" H 7250 4600 60  0000 C CNN
 F 1 "BCM2835_GPIO" V 7250 3900 50  0000 C CNN
+F 2 "pin_array_13x2" V 7350 3900 50  0001 C CNN
 	1    7250 3900
 	1    0    0    -1  
 $EndComp

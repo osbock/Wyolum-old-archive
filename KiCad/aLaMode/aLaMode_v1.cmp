@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2011-12-28 BZR 3254)-stable date = 6/14/2012 1:27:47 PM
+Cmp-Mod V01 Created by CvPcb (2011-12-28 BZR 3254)-stable date = 6/15/2012 4:04:58 PM
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -66,7 +66,7 @@ EndCmp
 BeginCmp
 TimeStamp = /4FC07407/4FC61A0C;
 Reference = C6;
-ValeurCmp = 47u,10V;
+ValeurCmp = 100u,25V;
 IdModule  = C_ELCO_SMD;
 EndCmp
 
@@ -127,6 +127,13 @@ IdModule  = c_0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /4FC07407/4FDA1E4C;
+Reference = C15;
+ValeurCmp = 1n;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
 TimeStamp = /4FC5F208;
 Reference = D1;
 ValeurCmp = LED;
@@ -169,10 +176,24 @@ IdModule  = led_0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /4FC07407/4FDA1DDC;
+Reference = D7;
+ValeurCmp = DIODE_TRANSIL;
+IdModule  = diode-DO214AA;
+EndCmp
+
+BeginCmp
 TimeStamp = /4FC0B3A3;
 Reference = DIP1;
 ValeurCmp = DIP;
 IdModule  = DIP;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC07407/4FDA1DC6;
+Reference = F1;
+ValeurCmp = FUSE;
+IdModule  = f_1812;
 EndCmp
 
 BeginCmp
@@ -211,7 +232,7 @@ IdModule  = DIP-28__300_ELL;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FBF6CBF/4FD5E087;
+TimeStamp = /4FBF6CBF/4FD9E5BC;
 Reference = P1;
 ValeurCmp = BCM2835_GPIO;
 IdModule  = pin_array_13x2;
@@ -285,6 +306,13 @@ TimeStamp = /4FBF6CBF/4FD8C245;
 Reference = P11;
 ValeurCmp = U6_OE;
 IdModule  = pin_strip_3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC07407/4FDA1DB8;
+Reference = P12;
+ValeurCmp = UUSB_B;
+IdModule  = USB_B_Micro;
 EndCmp
 
 BeginCmp
