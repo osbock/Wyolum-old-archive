@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 6/15/2012 5:59:12 PM
+EESchema Schematic File Version 2  date Friday 15 June 2012 09:02:44 PM IST
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
@@ -16,6 +16,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Notes 5400 1200 0    60   ~ 12
+If using Micro USB -B socket, \nDO NOT INSTALL :\nP10, D5, U3\nApply solder bridge between Pins 2 and 3 of U3\n\nIf using Barrel Socket,\nDO NOT INSTALL :\nP12, F1, D7, C15
 Connection ~ 6525 5350
 Wire Wire Line
 	6525 5200 6525 5350
