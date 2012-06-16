@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 6/15/2012 5:59:12 PM
+EESchema Schematic File Version 2  date 6/16/2012 4:40:58 PM
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 4
 Title ""
-Date "15 jun 2012"
+Date "16 jun 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -16,6 +16,9 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Connection ~ 2100 2700
+Wire Wire Line
+	1900 2700 2100 2700
 Connection ~ 6525 5350
 Wire Wire Line
 	6525 5200 6525 5350
@@ -29,10 +32,10 @@ Wire Wire Line
 	3650 1700 3650 1975
 Connection ~ 4100 1700
 Wire Wire Line
-	1900 1700 4750 1700
+	4750 1700 1900 1700
 Connection ~ 3650 1700
 Wire Wire Line
-	4100 1700 4100 1600
+	4100 1600 4100 1700
 Wire Wire Line
 	1900 1100 2400 1100
 Wire Wire Line
@@ -60,7 +63,7 @@ Wire Wire Line
 Wire Wire Line
 	8425 5175 8225 5175
 Wire Wire Line
-	3800 6975 3800 7200
+	3800 7200 3800 6975
 Wire Wire Line
 	5050 4425 5575 4425
 Connection ~ 5525 4425
@@ -77,9 +80,9 @@ Wire Wire Line
 Wire Wire Line
 	3000 7025 3000 7100
 Wire Wire Line
-	3000 6525 3000 6425
+	3000 6425 3000 6525
 Wire Wire Line
-	3125 3750 3525 3750
+	3525 3750 3125 3750
 Connection ~ 4475 3750
 Wire Wire Line
 	4325 3900 4475 3900
@@ -92,7 +95,7 @@ Connection ~ 2700 3950
 Wire Wire Line
 	2700 5350 2700 3850
 Wire Wire Line
-	2725 3750 2050 3750
+	2050 3750 2725 3750
 Connection ~ 5525 5350
 Wire Wire Line
 	3350 4300 3350 4400
@@ -115,14 +118,14 @@ Wire Wire Line
 Wire Wire Line
 	2050 3950 2700 3950
 Wire Wire Line
-	4475 4375 4475 4500
+	4475 4500 4475 4375
 Wire Wire Line
-	7300 4425 6375 4425
+	6375 4425 7300 4425
 Wire Wire Line
-	4325 3750 7300 3750
+	7300 3750 4325 3750
 Connection ~ 4750 3750
 Wire Wire Line
-	4475 3975 4475 3750
+	4475 3750 4475 3975
 Connection ~ 4475 3900
 Connection ~ 3350 3750
 Wire Wire Line
@@ -152,7 +155,7 @@ Wire Wire Line
 Wire Wire Line
 	9425 5275 9475 5275
 Wire Wire Line
-	8825 6875 8825 5675
+	8825 5675 8825 6875
 Wire Wire Line
 	9475 5275 9475 5775
 Connection ~ 9475 5725
@@ -162,14 +165,14 @@ Wire Wire Line
 	9475 6775 8825 6775
 Connection ~ 8825 6775
 Wire Wire Line
-	3350 3850 3350 3650
+	3350 3650 3350 3850
 Wire Wire Line
 	4550 5675 4550 6025
 Wire Wire Line
 	2625 3650 2625 3750
 Connection ~ 2625 3750
 Wire Wire Line
-	6950 4800 6950 4275
+	6950 4275 6950 4800
 Wire Wire Line
 	9825 5075 9825 4800
 Wire Wire Line
@@ -177,11 +180,11 @@ Wire Wire Line
 Connection ~ 3650 1100
 Connection ~ 4100 1100
 Wire Wire Line
-	3100 1100 4750 1100
+	4750 1100 3100 1100
 Wire Wire Line
 	1900 1900 2100 1900
 Wire Wire Line
-	2100 1900 2100 2475
+	2100 1900 2100 2950
 Wire Wire Line
 	2100 2200 1900 2200
 Connection ~ 2100 2200
@@ -189,6 +192,11 @@ Wire Wire Line
 	6375 4725 6525 4725
 Wire Wire Line
 	6525 4725 6525 4800
+Wire Wire Line
+	1900 2550 2100 2550
+Connection ~ 2100 2550
+Text Notes 5400 1200 0    60   ~ 12
+If using Micro USB -B socket, \nDO NOT INSTALL :\nP10, D5, U3\nApply solder bridge between Pins 2 and 3 of U3\n\nIf using Barrel Socket,\nDO NOT INSTALL :\nP12, F1, D7, C15
 $Comp
 L C C16
 U 1 1 4FDB1F26
@@ -199,7 +207,7 @@ F 2 "c_0805" H 6525 5000 60  0001 C CNN
 	1    6525 5000
 	-1   0    0    -1  
 $EndComp
-Text Notes 1400 2550 0    40   ~ 0
+Text Notes 1175 2875 0    40   ~ 0
 TE - 1981568-1\nor\nFCI - 10118193-0001LF
 Text Notes 2900 1550 0    40   ~ 0
 Bi-directional clamping\nDiode, 5V
@@ -215,10 +223,10 @@ NoConn ~ 1900 1250
 $Comp
 L GND #PWR06
 U 1 1 4FDA1E9F
-P 2100 2475
-F 0 "#PWR06" H 2100 2475 30  0001 C CNN
-F 1 "GND" H 2100 2405 30  0001 C CNN
-	1    2100 2475
+P 2100 2950
+F 0 "#PWR06" H 2100 2950 30  0001 C CNN
+F 1 "GND" H 2100 2880 30  0001 C CNN
+	1    2100 2950
 	-1   0    0    -1  
 $EndComp
 $Comp
