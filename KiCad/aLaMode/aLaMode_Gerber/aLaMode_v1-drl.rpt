@@ -1,0 +1,20 @@
+Drill report for C:\Users\Anool\Documents\Arduino\clockthree\KiCad\aLaMode\aLaMode_v1.brd
+Created on 6/16/2012 7:28:58 PM
+Selected Drill Unit: Imperial (")
+
+Drill report for through holes :
+T1  0.025"  0.64mm  (95 holes)
+T2  0.035"  0.89mm  (30 holes)
+T3  0.040"  1.02mm  (119 holes)
+T4  0.050"  1.27mm  (2 holes)
+T5  0.100"  2.54mm  (3 holes)
+T6  0.120"  3.05mm  (3 holes)
+
+total plated holes count 252
+
+
+Drill report for Not Plated through holes :
+
+total Not Plated holes count 0
+
+
