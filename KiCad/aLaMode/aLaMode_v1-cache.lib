@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: 6/16/2012 7:30:26 PM
+EESchema-LIBRARY Version 2.3  Date: Sunday 17 June 2012 04:58:56 PM IST
 #encoding utf-8
 #
 # +3.3V
@@ -396,7 +396,8 @@ ENDDEF
 #
 # Fuse
 #
-DEF Fuse ~ 0 0 N Y 1 F N
+DEF Fuse F 0 0 N Y 1 F N
+F0 "F" 100 0 60 H V C CNN
 F1 "Fuse" -75 75 50 H V C CNN
 $FPLIST
  R?

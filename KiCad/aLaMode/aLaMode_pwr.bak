@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 6/16/2012 4:40:58 PM
+EESchema Schematic File Version 2  date Sunday 17 June 2012 03:42:20 PM IST
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
@@ -7,15 +7,25 @@ EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 4
-Title ""
-Date "16 jun 2012"
-Rev ""
-Comp ""
+Title "aLaMode"
+Date "17 jun 2012"
+Rev "1"
+Comp "WyoLum"
 Comment1 ""
 Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L FUSE F1
+U 1 1 4FDCE35C
+P 2750 1100
+F 0 "F1" H 2850 1100 60  0000 C CNN
+F 1 "nanoSMDC110F" H 2675 1175 50  0000 C CNN
+F 2 "f_1206" H 2750 1100 60  0001 C CNN
+	1    2750 1100
+	1    0    0    -1  
+$EndComp
 Connection ~ 2100 2700
 Wire Wire Line
 	1900 2700 2100 2700
@@ -260,16 +270,6 @@ F 0 "D7" H 3800 1450 60  0000 C CNN
 F 1 "SMBJ5.0CA-TR" H 3650 1800 60  0000 C CNN
 F 2 "diode-DO214AA" H 3650 1900 60  0001 C CNN
 	1    3650 1400
-	1    0    0    -1  
-$EndComp
-$Comp
-L FUSE F1
-U 1 1 4FDA1DC6
-P 2750 1100
-F 0 "F1" H 2850 1000 50  0000 C CNN
-F 1 "miniSMDC100F" H 2700 1200 50  0000 C CNN
-F 2 "f_1812" H 2700 1300 50  0001 C CNN
-	1    2750 1100
 	1    0    0    -1  
 $EndComp
 $Comp

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 6/16/2012 7:30:26 PM
+EESchema Schematic File Version 2  date Sunday 17 June 2012 04:58:56 PM IST
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
 Title "aLaMode"
-Date "16 jun 2012"
+Date "17 jun 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -16,20 +16,43 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L FUSE F2
+U 1 1 4FDCE342
+P 4675 7575
+F 0 "F2" H 4775 7575 60  0000 C CNN
+F 1 "nanoSMDC110F" H 4600 7650 50  0000 C CNN
+F 2 "f_1206" H 4675 7575 60  0001 C CNN
+	1    4675 7575
+	1    0    0    -1  
+$EndComp
+Text Label 4400 7425 0    40   ~ 0
+5V_INT
+Wire Wire Line
+	5025 7575 5075 7575
+Wire Wire Line
+	5075 7575 5075 7425
+Wire Wire Line
+	5075 7425 4350 7425
+Wire Wire Line
+	4350 7425 4350 7300
+Wire Wire Line
+	4325 7575 4150 7575
+Connection ~ 6350 7400
+Wire Wire Line
+	6350 7000 6350 7400
 Connection ~ 7100 4975
 Wire Wire Line
 	7325 4975 550  4975
 Wire Wire Line
 	7325 4975 7325 4625
-Connection ~ 5725 7600
+Connection ~ 5725 7400
 Wire Wire Line
-	5725 7600 6625 7600
+	5725 7400 6625 7400
 Wire Wire Line
-	6625 7600 6625 7200
+	6625 7400 6625 7000
 Wire Notes Line
-	6825 7750 3975 7750
-Wire Notes Line
-	6825 7750 6825 6325
+	6825 6325 6825 7750
 Wire Notes Line
 	6825 6325 3975 6325
 Wire Wire Line
@@ -58,43 +81,43 @@ Wire Wire Line
 	8350 5700 8625 5700
 Wire Notes Line
 	3975 6325 3975 7750
-Connection ~ 4525 7500
+Connection ~ 4525 7300
 Wire Wire Line
-	4525 7500 4525 7400
+	4525 7300 4525 7200
 Wire Wire Line
-	4525 7400 4575 7400
-Connection ~ 5125 7400
-Wire Wire Line
-	5125 7400 5175 7400
-Connection ~ 5725 7500
-Wire Wire Line
-	5725 7500 5775 7500
-Connection ~ 5725 7300
-Wire Wire Line
-	5725 7300 5775 7300
-Connection ~ 5125 6800
-Connection ~ 5125 7000
-Wire Wire Line
-	5125 7000 5175 7000
+	4525 7200 4575 7200
 Connection ~ 5125 7200
 Wire Wire Line
 	5125 7200 5175 7200
+Connection ~ 5725 7300
+Wire Wire Line
+	5725 7300 5775 7300
 Connection ~ 5725 7100
 Wire Wire Line
 	5725 7100 5775 7100
+Connection ~ 5125 6600
+Connection ~ 5125 6800
+Wire Wire Line
+	5125 6800 5175 6800
+Connection ~ 5125 7000
+Wire Wire Line
+	5125 7000 5175 7000
 Connection ~ 5725 6900
 Wire Wire Line
-	5775 6900 5725 6900
+	5725 6900 5775 6900
+Connection ~ 5725 6700
 Wire Wire Line
-	5125 7300 5175 7300
+	5775 6700 5725 6700
 Wire Wire Line
-	5175 6800 5125 6800
+	5125 7100 5175 7100
 Wire Wire Line
-	4575 7200 4350 7200
+	5175 6600 5125 6600
 Wire Wire Line
 	4575 7000 4350 7000
 Wire Wire Line
 	4575 6800 4350 6800
+Wire Wire Line
+	4575 6600 4350 6600
 Wire Notes Line
 	1325 7750 1325 6300
 Wire Notes Line
@@ -152,7 +175,7 @@ Wire Wire Line
 	3775 7000 3775 6375
 Connection ~ 3375 6925
 Wire Wire Line
-	3375 7250 3375 6875
+	3375 6875 3375 7250
 Wire Notes Line
 	4050 3375 4050 3225
 Wire Notes Line
@@ -177,7 +200,7 @@ Wire Wire Line
 Wire Wire Line
 	700  2550 700  2575
 Wire Wire Line
-	700  2975 700  3125
+	700  3125 700  2975
 Wire Wire Line
 	8400 2400 8400 2250
 Wire Wire Line
@@ -202,7 +225,7 @@ Wire Wire Line
 	1400 3275 900  3275
 Connection ~ 1075 2250
 Wire Wire Line
-	1075 4050 1075 1950
+	1075 1950 1075 4050
 Wire Wire Line
 	8675 5275 8075 5275
 Wire Wire Line
@@ -210,7 +233,7 @@ Wire Wire Line
 Wire Wire Line
 	9800 5900 10050 5900
 Wire Wire Line
-	8675 4375 8075 4375
+	8075 4375 8675 4375
 Wire Wire Line
 	8675 4075 8075 4075
 Wire Wire Line
@@ -222,7 +245,7 @@ Wire Wire Line
 Wire Wire Line
 	1925 7250 1925 6475
 Wire Wire Line
-	1525 7250 1525 6475
+	1525 6475 1525 7250
 Wire Wire Line
 	7600 650  7600 800 
 Wire Wire Line
@@ -323,7 +346,7 @@ Wire Wire Line
 	5200 1700 5200 4250
 Connection ~ 1250 4975
 Wire Wire Line
-	1075 4975 1075 4650
+	1075 4650 1075 4975
 Connection ~ 1250 800 
 Wire Wire Line
 	1250 800  1250 1025
@@ -441,7 +464,7 @@ Wire Wire Line
 Wire Wire Line
 	2025 6700 2025 6475
 Wire Wire Line
-	8075 4275 8675 4275
+	8675 4275 8075 4275
 Wire Wire Line
 	9800 5700 10050 5700
 Wire Wire Line
@@ -529,7 +552,7 @@ Wire Wire Line
 Wire Wire Line
 	10575 5275 10825 5275
 Wire Wire Line
-	2400 5100 2400 4850
+	2400 4850 2400 5100
 Wire Wire Line
 	8675 4975 8075 4975
 Wire Wire Line
@@ -549,39 +572,39 @@ Wire Notes Line
 Wire Notes Line
 	625  6300 625  7750
 Wire Wire Line
+	4575 6700 4350 6700
+Wire Wire Line
 	4575 6900 4350 6900
 Wire Wire Line
 	4575 7100 4350 7100
 Wire Wire Line
-	4575 7300 4350 7300
+	5775 6600 5725 6600
 Wire Wire Line
-	5775 6800 5725 6800
+	5725 6800 5775 6800
+Connection ~ 5725 6800
 Wire Wire Line
 	5725 7000 5775 7000
-Connection ~ 5725 7000
-Wire Wire Line
-	5725 7200 5775 7200
-Wire Wire Line
-	5125 7100 5175 7100
-Connection ~ 5125 7100
 Wire Wire Line
 	5125 6900 5175 6900
 Connection ~ 5125 6900
+Wire Wire Line
+	5125 6700 5175 6700
+Connection ~ 5125 6700
+Connection ~ 5725 7000
+Wire Wire Line
+	5725 7200 5775 7200
 Connection ~ 5725 7200
 Wire Wire Line
-	5725 7400 5775 7400
-Connection ~ 5725 7400
+	5125 7300 5125 6425
 Wire Wire Line
-	5125 6450 5125 7500
+	5125 7300 5175 7300
+Connection ~ 5125 7100
 Wire Wire Line
-	5125 7500 5175 7500
-Connection ~ 5125 7300
+	4350 7300 4575 7300
 Wire Wire Line
-	4350 7500 4575 7500
+	5725 6600 5725 7475
 Wire Wire Line
-	5725 6800 5725 7675
-Wire Wire Line
-	8500 2250 8500 2500
+	8500 2500 8500 2250
 Wire Wire Line
 	8350 5800 8625 5800
 Wire Wire Line
@@ -595,15 +618,29 @@ Wire Wire Line
 Wire Wire Line
 	6900 6300 7175 6300
 Wire Wire Line
-	6625 6750 6625 6625
+	6625 6550 6625 6425
 Wire Wire Line
-	6625 6625 5125 6625
-Connection ~ 5125 6625
+	6625 6425 5125 6425
 Wire Wire Line
 	7325 4225 7325 4050
 Wire Wire Line
 	7325 4050 5750 4050
 Connection ~ 7000 4050
+Wire Wire Line
+	6350 6600 6350 6425
+Connection ~ 6350 6425
+Wire Notes Line
+	3975 7750 6825 7750
+$Comp
+L DIODESCH D8
+U 1 1 4FDCDB4F
+P 6350 6800
+F 0 "D8" H 6350 6900 40  0000 C CNN
+F 1 "MBRM110LT1G" H 6350 6700 40  0000 C CNN
+F 2 "do_457" H 6350 6800 60  0001 C CNN
+	1    6350 6800
+	0    -1   -1   0   
+$EndComp
 $Comp
 L C C14
 U 1 1 4FD62D6E
@@ -617,11 +654,11 @@ $EndComp
 $Comp
 L C_POL C8
 U 1 1 4FD62AE6
-P 6625 6950
-F 0 "C8" H 6775 6850 50  0000 L CNN
-F 1 "47u,10V" H 6675 6750 50  0000 L CNN
-F 2 "C_ELCO_SMD" H 6625 6950 60  0001 C CNN
-	1    6625 6950
+P 6625 6750
+F 0 "C8" H 6500 6850 50  0000 L CNN
+F 1 "47u,10V" V 6550 6450 50  0000 L CNN
+F 2 "C_ELCO_SMD" H 6625 6750 60  0001 C CNN
+	1    6625 6750
 	-1   0    0    -1  
 $EndComp
 Text Label 6900 5700 0    40   ~ 0
@@ -683,73 +720,73 @@ Text Notes 3975 6025 0    40   ~ 0
 Connect ext. Servo supply to 5V_Servo and GND_SERVO Connectors,\nPins 7/8 or use jumper link between Pins 7/8 of \nPWM_SERVO and 5V_SERVO connectors when using on board 5V
 Text Notes 3975 6300 0    60   Italic 12
 SERVO Header
-Text Label 5725 7600 0    40   ~ 0
+Text Label 5725 7400 0    40   ~ 0
 GND
-Text Label 4350 7500 0    40   ~ 0
+Text Label 4150 7575 0    40   ~ 0
 5V0
 $Comp
 L CONN_8 P6
 U 1 1 4FC5FB11
-P 6125 7150
-F 0 "P6" V 6075 7150 60  0000 C CNN
-F 1 "GND_SERVO" V 6175 7150 60  0000 C CNN
-F 2 "Header_Servo" H 6125 7150 60  0001 C CNN
-	1    6125 7150
+P 6125 6950
+F 0 "P6" V 6075 6950 60  0000 C CNN
+F 1 "GND_SERVO" V 6175 6950 60  0000 C CNN
+F 2 "Header_Servo" H 6125 6950 60  0001 C CNN
+	1    6125 6950
 	1    0    0    -1  
 $EndComp
 $Comp
 L CONN_8 P5
 U 1 1 4FC5FB0E
-P 5525 7150
-F 0 "P5" V 5475 7150 60  0000 C CNN
-F 1 "5V_SERVO" V 5575 7150 60  0000 C CNN
-F 2 "Header_Servo" H 5525 7150 60  0001 C CNN
-	1    5525 7150
+P 5525 6950
+F 0 "P5" V 5475 6950 60  0000 C CNN
+F 1 "5V_SERVO" V 5575 6950 60  0000 C CNN
+F 2 "Header_Servo" H 5525 6950 60  0001 C CNN
+	1    5525 6950
 	1    0    0    -1  
 $EndComp
 $Comp
 L CONN_8 P4
 U 1 1 4FC5FB05
-P 4925 7150
-F 0 "P4" V 4875 7150 60  0000 C CNN
-F 1 "PWM_SERVO" V 4975 7150 60  0000 C CNN
-F 2 "Header_Servo" H 4925 7150 60  0001 C CNN
-	1    4925 7150
+P 4925 6950
+F 0 "P4" V 4875 6950 60  0000 C CNN
+F 1 "PWM_SERVO" V 4975 6950 60  0000 C CNN
+F 2 "Header_Servo" H 4925 6950 60  0001 C CNN
+	1    4925 6950
 	1    0    0    -1  
 $EndComp
-Text Notes 4125 7300 0    40   ~ 0
-PWM6
-Text Notes 4125 7200 0    40   ~ 0
-PWM5
 Text Notes 4125 7100 0    40   ~ 0
-PWM4
+PWM6
 Text Notes 4125 7000 0    40   ~ 0
-PWM3
+PWM5
 Text Notes 4125 6900 0    40   ~ 0
-PWM2
+PWM4
 Text Notes 4125 6800 0    40   ~ 0
+PWM3
+Text Notes 4125 6700 0    40   ~ 0
+PWM2
+Text Notes 4125 6600 0    40   ~ 0
 PWM1
-Text Label 4350 7300 0    40   ~ 0
-MOSI
-Text Label 4350 7200 0    40   ~ 0
-SS
 Text Label 4350 7100 0    40   ~ 0
-PB1
+MOSI
 Text Label 4350 7000 0    40   ~ 0
-GPS_Tx
+SS
 Text Label 4350 6900 0    40   ~ 0
-PD5
+PB1
 Text Label 4350 6800 0    40   ~ 0
+GPS_Tx
+Text Label 4350 6700 0    40   ~ 0
+PD5
+Text Label 4350 6600 0    40   ~ 0
 SQW
-Text Label 5125 6450 0    40   ~ 0
+Text Label 5200 6425 0    40   ~ 0
 5V_SERVO
 $Comp
 L GND #PWR02
 U 1 1 4FC5F6EC
-P 5725 7675
-F 0 "#PWR02" H 5725 7675 30  0001 C CNN
-F 1 "GND" H 5725 7605 30  0001 C CNN
-	1    5725 7675
+P 5725 7475
+F 0 "#PWR02" H 5725 7475 30  0001 C CNN
+F 1 "GND" H 5725 7405 30  0001 C CNN
+	1    5725 7475
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -894,8 +931,8 @@ L DIODESCH D4
 U 1 1 4F9A5A10
 P 3375 6675
 F 0 "D4" H 3375 6775 40  0000 C CNN
-F 1 "RB886GT2R" H 3375 6575 40  0000 C CNN
-F 2 "d_VMD2" H 3375 6675 40  0001 C CNN
+F 1 "RB886G" H 3375 6575 40  0000 C CNN
+F 2 "do_457" H 3375 6675 40  0001 C CNN
 	1    3375 6675
 	0    1    1    0   
 $EndComp
@@ -904,8 +941,8 @@ L DIODESCH D3
 U 1 1 4F9A5A02
 P 3575 6925
 F 0 "D3" V 3575 6825 40  0000 C CNN
-F 1 "RB886GT2R" V 3500 6750 40  0000 C CNN
-F 2 "d_VMD2" V 3600 6750 40  0001 C CNN
+F 1 "RB886G" V 3500 6750 40  0000 C CNN
+F 2 "do_457" V 3600 6750 40  0001 C CNN
 	1    3575 6925
 	-1   0    0    1   
 $EndComp
@@ -1082,8 +1119,8 @@ L ISP P9
 U 1 1 4DCD1997
 P 975 7600
 F 0 "P9" V 925 7600 60  0000 C CNN
-F 1 "ISP" V 1025 7600 60  0000 C CNN
-F 2 "Header_ISP" H 975 7600 60  0001 C CNN
+F 1 "ICSP" V 1025 7600 60  0000 C CNN
+F 2 "Header_ICSP" H 975 7600 60  0001 C CNN
 	1    975  7600
 	0    1    1    0   
 $EndComp
