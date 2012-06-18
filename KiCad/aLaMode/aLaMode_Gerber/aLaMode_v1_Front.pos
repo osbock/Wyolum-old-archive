@@ -1,4 +1,4 @@
-### Module positions - created on 6/16/2012 7:27:49 PM ###
+### Module positions - created on 6/18/2012 5:39:54 PM ###
 ### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Front
@@ -10,26 +10,27 @@ C2       100n                 2.1150     1.9875      90.0    Front
 C3       2u2_Tant             1.5875     2.2525     180.0    Front
 C4       100n                 1.5875     2.3525     180.0    Front
 C5       2u2                  1.5875     1.9875       0.0    Front
-C6       100u,25V             1.4475     2.5425      90.0    Front
-C7       100n                 3.4825     1.4200      90.0    Front
+C6       100u,25V             1.4125     2.5425      90.0    Front
+C7       100n                 3.4875     1.4450      90.0    Front
 C8       47u,10V              2.4825     2.9525     270.0    Front
 C14      100n                 2.0550     1.6250     270.0    Front
-C15      1n                   1.2250     2.5825     270.0    Front
+C15      1n                   1.1925     2.5825     270.0    Front
 C16      10n                  1.7650     2.1925      90.0    Front
 D1       LED                  2.5175     1.9875     270.0    Front
 D2       LED                  2.6175     1.9875     270.0    Front
-D3       RB886GT2R            3.7525     1.6875     270.0    Front
-D4       RB886GT2R            3.6525     1.6875     270.0    Front
-D5       DIODESCH             1.6650     2.5825     270.0    Front
+D3       RB886G               3.7525     1.6875     270.0    Front
+D4       RB886G               3.6525     1.6875     270.0    Front
+D5       MBRM110LT1G          1.6650     2.6075      90.0    Front
 D6       LED                  2.3225     1.9875      90.0    Front
-F1       miniSMDC100F         1.1750     2.8450     270.0    Front
+F1       nanoSMDC110F         1.1575     3.0525       0.0    Front
+F2       nanoSMDC110F         2.1725     2.4475      90.0    Front
 IC1      ATMEGA328-PU         3.1900     2.4950     180.0    Front
 P4       PWM_SERVO            2.0000     2.7000      90.0    Front
 P5       5V_SERVO             1.9000     2.7000      90.0    Front
 P6       GND_SERVO            1.8000     2.7000      90.0    Front
 P7       GPS_UP501            3.9075     1.5300       0.0    Front
 P8       FTDI                 3.9075     1.3800     180.0    Front
-P9       ISP                  3.7075     1.9800      90.0    Front
+P9       ICSP                 3.7075     1.9800      90.0    Front
 P10      V_IN                 1.3100     2.8450       0.0    Front
 P11      U6_OE                1.2075     2.0150     180.0    Front
 Q1       FDN340P              1.7650     2.0050     180.0    Front

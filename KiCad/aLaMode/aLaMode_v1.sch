@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 17 June 2012 04:58:56 PM IST
+EESchema Schematic File Version 2  date 6/18/2012 5:39:35 PM
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
 Title "aLaMode"
-Date "17 jun 2012"
+Date "18 jun 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -932,7 +932,7 @@ U 1 1 4F9A5A10
 P 3375 6675
 F 0 "D4" H 3375 6775 40  0000 C CNN
 F 1 "RB886G" H 3375 6575 40  0000 C CNN
-F 2 "do_457" H 3375 6675 40  0001 C CNN
+F 2 "d_VMD2" H 3375 6675 40  0001 C CNN
 	1    3375 6675
 	0    1    1    0   
 $EndComp
@@ -942,7 +942,7 @@ U 1 1 4F9A5A02
 P 3575 6925
 F 0 "D3" V 3575 6825 40  0000 C CNN
 F 1 "RB886G" V 3500 6750 40  0000 C CNN
-F 2 "do_457" V 3600 6750 40  0001 C CNN
+F 2 "d_VMD2" V 3600 6750 40  0001 C CNN
 	1    3575 6925
 	-1   0    0    1   
 $EndComp
@@ -1012,7 +1012,6 @@ P 700 3325
 F 0 "C11" H 725 3225 50  0000 L CNN
 F 1 "22p" H 725 3425 50  0000 L CNN
 F 2 "c_0805" H 700 3325 60  0001 C CNN
-F 4 "490-1734-1-ND" H 700 3525 60  0001 C CNN "Digikey"
 	1    700  3325
 	1    0    0    -1  
 $EndComp
@@ -1023,7 +1022,6 @@ P 700 2775
 F 0 "C10" H 725 2875 50  0000 L CNN
 F 1 "22p" H 725 2675 50  0000 L CNN
 F 2 "c_0805" H 700 2775 60  0001 C CNN
-F 4 "490-1734-1-ND" H 700 2975 60  0001 C CNN "Digikey"
 	1    700  2775
 	1    0    0    -1  
 $EndComp

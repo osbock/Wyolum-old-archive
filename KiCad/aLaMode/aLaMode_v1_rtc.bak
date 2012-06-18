@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 17 June 2012 03:42:20 PM IST
+EESchema Schematic File Version 2  date 6/18/2012 5:38:47 PM
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 3 4
 Title "aLaMode"
-Date "17 jun 2012"
+Date "18 jun 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -231,7 +231,6 @@ P 3950 2800
 F 0 "BT1" H 3650 2600 50  0000 C CNN
 F 1 "BATT_RTC" H 3950 2610 50  0000 C CNN
 F 2 "CR1632_2" H 3950 2800 60  0001 C CNN
-F 4 "BU2032SM-HD-GCT-ND " H 3950 2800 60  0001 C CNN "Digikey"
 	1    3950 2800
 	0    1    1    0   
 $EndComp

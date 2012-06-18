@@ -1,4 +1,4 @@
-## Module report - date 6/16/2012 7:28:18 PM
+## Module report - date 6/18/2012 5:40:17 PM
 ## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ##
@@ -7,7 +7,7 @@ $BeginDESCRIPTION
 
 $BOARD
 unit INCH
-upper_left_corner  0.943900  0.994200
+upper_left_corner  0.945500  0.994200
 lower_right_corner  4.614100  3.275100
 $EndBOARD
 
@@ -31,7 +31,7 @@ size  0.060000  0.060000
 drill  0.040000
 shape_offset  0.000000  0.000000
 orientation  0.00
-Shape  Circ
+Shape  Rect
 Layer  all
 $EndPAD
 $PAD "2"
@@ -40,7 +40,7 @@ size  0.060000  0.060000
 drill  0.040000
 shape_offset  0.000000  0.000000
 orientation  0.00
-Shape  Circ
+Shape  Rect
 Layer  all
 $EndPAD
 $PAD "3"
@@ -49,7 +49,7 @@ size  0.060000  0.060000
 drill  0.040000
 shape_offset  0.000000  0.000000
 orientation  0.00
-Shape  Circ
+Shape  Rect
 Layer  all
 $EndPAD
 $PAD "4"
@@ -58,7 +58,7 @@ size  0.060000  0.060000
 drill  0.040000
 shape_offset  0.000000  0.000000
 orientation  0.00
-Shape  Circ
+Shape  Rect
 Layer  all
 $EndPAD
 $PAD "5"
@@ -67,7 +67,7 @@ size  0.060000  0.060000
 drill  0.040000
 shape_offset  0.000000  0.000000
 orientation  0.00
-Shape  Circ
+Shape  Rect
 Layer  all
 $EndPAD
 $PAD "6"
@@ -76,7 +76,7 @@ size  0.060000  0.060000
 drill  0.040000
 shape_offset  0.000000  0.000000
 orientation  0.00
-Shape  Circ
+Shape  Rect
 Layer  all
 $EndPAD
 $PAD "7"
@@ -85,7 +85,7 @@ size  0.060000  0.060000
 drill  0.040000
 shape_offset  0.000000  0.000000
 orientation  0.00
-Shape  Circ
+Shape  Rect
 Layer  all
 $EndPAD
 $PAD "8"
@@ -94,7 +94,7 @@ size  0.060000  0.060000
 drill  0.040000
 shape_offset  0.000000  0.000000
 orientation  0.00
-Shape  Circ
+Shape  Rect
 Layer  all
 $EndPAD
 $EndMODULE  P6
@@ -230,46 +230,12 @@ Layer  all
 $EndPAD
 $EndMODULE  P10
 
-$MODULE "D5"
-reference "D5"
-value "DIODESCH"
-footprint "d_0805"
-attribut smd
-position  1.665000  2.582500
-orientation  270.00
-layer component
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/sod323.wrl"
-Sc 1.200000 1.500000 0.800000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position  0.040000  0.000000
-size  0.040000  0.050000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "2"
-position -0.040000  0.000000
-size  0.040000  0.050000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  D5
-
 $MODULE "C15"
 reference "C15"
 value "1n"
 footprint "c_0805"
 attribut smd
-position  1.225000  2.582500
+position  1.192500  2.582500
 orientation  270.00
 layer component
 $SHAPE3D
@@ -297,40 +263,6 @@ Shape  Rect
 Layer  component
 $EndPAD
 $EndMODULE  C15
-
-$MODULE "F1"
-reference "F1"
-value "miniSMDC100F"
-footprint "f_1812"
-attribut smd
-position  1.175000  2.845000
-orientation  270.00
-layer component
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/r_0805.wrl"
-Sc 3.000000 2.000000 2.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position  0.120000  0.000000
-size  0.066000  0.124000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "2"
-position -0.120000  0.000000
-size  0.066000  0.124000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  F1
 
 $MODULE "D7"
 reference "D7"
@@ -504,7 +436,7 @@ $EndMODULE  D1
 
 $MODULE "U6"
 reference "U6"
-value "TSX0108"
+value "TXS0108"
 footprint "tssop-20"
 attribut smd
 position  1.387500  1.520000
@@ -851,7 +783,7 @@ $EndSHAPE3D
 $SHAPE3D
 Na "aLaMode_Libs/3D Modules/R_pi.wrl"
 Sc 0.990000 1.000000 0.950000
-Of -0.465000 0.000000 -0.700000
+Of -0.465000 0.000000 -1.200000
 Ro -90.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  PCB1
@@ -1089,7 +1021,7 @@ reference "C7"
 value "100n"
 footprint "c_0805"
 attribut smd
-position  3.482500  1.420000
+position  3.487500  1.445000
 orientation  90.00
 layer component
 $SHAPE3D
@@ -1117,157 +1049,6 @@ Shape  Rect
 Layer  component
 $EndPAD
 $EndMODULE  C7
-
-$MODULE "SD1"
-reference "SD1"
-value "SD_CARD_MICRO"
-footprint "SD_Micro"
-attribut smd
-position  1.610000  1.522500
-orientation  180.00
-layer component
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/sd_socket.wrl"
-Sc 0.500000 0.500000 0.500000
-Of 0.300000 0.080000 0.000000
-Ro 0.000000 0.000000 -90.000000
-$EndSHAPE3D
-$PAD "5"
-position  0.000000  0.000000
-size  0.060000  0.030000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "6"
-position  0.000000  0.043300
-size  0.060000  0.030000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "7"
-position  0.000000  0.086600
-size  0.060000  0.030000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "8"
-position  0.000000  0.129900
-size  0.060000  0.030000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "9"
-position  0.000000  0.173200
-size  0.060000  0.030000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "4"
-position  0.000000 -0.043300
-size  0.060000  0.030000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "3"
-position  0.000000 -0.086600
-size  0.060000  0.030000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "2"
-position  0.000000 -0.129900
-size  0.060000  0.030000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "1"
-position  0.000000 -0.173200
-size  0.060000  0.030000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "G1"
-position  0.023600  0.226200
-size  0.060000  0.040000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "G2"
-position  0.408400  0.212600
-size  0.080000  0.060000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "G3"
-position  0.408400 -0.393700
-size  0.060000  0.040000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "G4"
-position  0.015400 -0.361500
-size  0.060000  0.060000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "H1"
-position  0.430000  0.102500
-size  0.045000  0.045000
-drill  0.035000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "H2"
-position  0.430000 -0.212500
-size  0.045000  0.045000
-drill  0.035000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$EndMODULE  SD1
 
 $MODULE "C1"
 reference "C1"
@@ -1473,74 +1254,6 @@ Layer  component
 $EndPAD
 $EndMODULE  C3
 
-$MODULE "D4"
-reference "D4"
-value "RB886GT2R"
-footprint "d_VMD2"
-attribut smd
-position  3.652500  1.687500
-orientation  270.00
-layer component
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/sod323.wrl"
-Sc 0.800000 0.800000 0.800000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "2"
-position  0.022500  0.000000
-size  0.030000  0.030000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "1"
-position -0.025000  0.000000
-size  0.030000  0.030000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  D4
-
-$MODULE "D3"
-reference "D3"
-value "RB886GT2R"
-footprint "d_VMD2"
-attribut smd
-position  3.752500  1.687500
-orientation  270.00
-layer component
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/sod323.wrl"
-Sc 0.800000 0.800000 0.800000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "2"
-position  0.022500  0.000000
-size  0.030000  0.030000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "1"
-position -0.025000  0.000000
-size  0.030000  0.030000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  D3
-
 $MODULE "DIP1"
 reference "DIP1"
 value "DIP"
@@ -1698,7 +1411,7 @@ reference "R1"
 value "10k"
 footprint "r_0805"
 attribut smd
-position  4.020000  2.815000
+position  4.060000  2.815000
 orientation  90.00
 layer copper
 $SHAPE3D
@@ -1732,7 +1445,7 @@ reference "R2"
 value "10k"
 footprint "r_0805"
 attribut smd
-position  3.915000  2.815000
+position  3.967500  2.815000
 orientation  90.00
 layer copper
 $SHAPE3D
@@ -2625,7 +2338,7 @@ reference "C6"
 value "100u,25V"
 footprint "C_ELCO_SMD"
 attribut smd
-position  1.447500  2.542500
+position  1.412500  2.542500
 orientation  90.00
 layer component
 $SHAPE3D
@@ -2784,146 +2497,6 @@ Shape  Circ
 Layer  all
 $EndPAD
 $EndMODULE  P4
-
-$MODULE "P9"
-reference "P9"
-value "ISP"
-footprint "Header_ISP"
-attribut smd
-position  3.707500  1.980000
-orientation  90.00
-layer component
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/pin_strip_3x2.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position -0.100000  0.050000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "2"
-position -0.100000 -0.050000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "3"
-position  0.000000  0.050000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "4"
-position  0.000000 -0.050000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "5"
-position  0.100000  0.050000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "6"
-position  0.100000 -0.050000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  all
-$EndPAD
-$EndMODULE  P9
-
-$MODULE "P8"
-reference "P8"
-value "FTDI"
-footprint "Header_FTDI"
-attribut smd
-position  3.907500  1.380000
-orientation  180.00
-layer component
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/pins_array_6x1.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position -0.250000  0.000000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  all
-$EndPAD
-$PAD "2"
-position -0.150000  0.000000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  all
-$EndPAD
-$PAD "3"
-position -0.050000  0.000000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "4"
-position  0.050000  0.000000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "5"
-position  0.150000  0.000000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "6"
-position  0.250000  0.000000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$EndMODULE  P8
 
 $MODULE "P7"
 reference "P7"
@@ -4176,6 +3749,501 @@ Shape  Circ
 Layer  all
 $EndPAD
 $EndMODULE  P1
+
+$MODULE "P9"
+reference "P9"
+value "ICSP"
+footprint "Header_ICSP"
+attribut smd
+position  3.707500  1.980000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "aLaMode_Libs/3D Modules/pin_strip_3x2.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.100000  0.050000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "2"
+position -0.100000 -0.050000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "3"
+position  0.000000  0.050000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "4"
+position  0.000000 -0.050000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "5"
+position  0.100000  0.050000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "6"
+position  0.100000 -0.050000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$EndMODULE  P9
+
+$MODULE "P8"
+reference "P8"
+value "FTDI"
+footprint "Header_FTDI"
+attribut smd
+position  3.907500  1.380000
+orientation  180.00
+layer component
+$SHAPE3D
+Na "aLaMode_Libs/3D Modules/pins_array_6x1.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.250000  0.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$PAD "2"
+position -0.150000  0.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$PAD "3"
+position -0.050000  0.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "4"
+position  0.050000  0.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "5"
+position  0.150000  0.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "6"
+position  0.250000  0.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  P8
+
+$MODULE "SD1"
+reference "SD1"
+value "SD_CARD_MICRO"
+footprint "SD_Micro"
+attribut smd
+position  1.610000  1.522500
+orientation  180.00
+layer component
+$SHAPE3D
+Na "aLaMode_Libs/3D Modules/sd_socket.wrl"
+Sc 0.500000 0.500000 0.500000
+Of 0.300000 0.080000 0.000000
+Ro 0.000000 0.000000 -90.000000
+$EndSHAPE3D
+$PAD "5"
+position  0.000000  0.000000
+size  0.060000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "6"
+position  0.000000  0.043300
+size  0.060000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "7"
+position  0.000000  0.086600
+size  0.060000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "8"
+position  0.000000  0.129900
+size  0.060000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "9"
+position  0.000000  0.173200
+size  0.060000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "4"
+position  0.000000 -0.043300
+size  0.060000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "3"
+position  0.000000 -0.086600
+size  0.060000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position  0.000000 -0.129900
+size  0.060000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "1"
+position  0.000000 -0.173200
+size  0.060000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "G1"
+position  0.023600  0.226200
+size  0.060000  0.040000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "G2"
+position  0.408400  0.212600
+size  0.080000  0.060000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "G3"
+position  0.408400 -0.393700
+size  0.060000  0.040000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "G4"
+position  0.015400 -0.361500
+size  0.060000  0.060000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "H1"
+position  0.430000  0.102500
+size  0.045000  0.045000
+drill  0.035000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "H2"
+position  0.430000 -0.212500
+size  0.045000  0.045000
+drill  0.035000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  SD1
+
+$MODULE "D3"
+reference "D3"
+value "RB886G"
+footprint "d_VMD2"
+attribut smd
+position  3.752500  1.687500
+orientation  270.00
+layer component
+$SHAPE3D
+Na "aLaMode_Libs/3D Modules/sod323.wrl"
+Sc 0.800000 0.800000 0.800000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "2"
+position  0.022500  0.000000
+size  0.030000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "1"
+position -0.025000  0.000000
+size  0.030000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D3
+
+$MODULE "D4"
+reference "D4"
+value "RB886G"
+footprint "d_VMD2"
+attribut smd
+position  3.652500  1.687500
+orientation  270.00
+layer component
+$SHAPE3D
+Na "aLaMode_Libs/3D Modules/sod323.wrl"
+Sc 0.800000 0.800000 0.800000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "2"
+position  0.022500  0.000000
+size  0.030000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "1"
+position -0.025000  0.000000
+size  0.030000  0.030000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D4
+
+$MODULE "F1"
+reference "F1"
+value "nanoSMDC110F"
+footprint "f_1206"
+attribut smd
+position  1.157500  3.052500
+orientation  0.00
+layer component
+$SHAPE3D
+Na "aLaMode_Libs/3D Modules/r_0805.wrl"
+Sc 2.000000 1.500000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.075000  0.000000
+size  0.060000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.075000  0.000000
+size  0.060000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  F1
+
+$MODULE "F2"
+reference "F2"
+value "nanoSMDC110F"
+footprint "f_1206"
+attribut smd
+position  2.172500  2.447500
+orientation  90.00
+layer component
+$SHAPE3D
+Na "aLaMode_Libs/3D Modules/r_0805.wrl"
+Sc 2.000000 1.500000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.075000  0.000000
+size  0.060000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.075000  0.000000
+size  0.060000  0.080000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  F2
+
+$MODULE "D5"
+reference "D5"
+value "MBRM110LT1G"
+footprint "do_457"
+attribut smd
+position  1.665000  2.607500
+orientation  90.00
+layer component
+$SHAPE3D
+Na "aLaMode_Libs/3D Modules/sod323.wrl"
+Sc 1.750000 1.750000 1.750000
+Of 0.050000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "2"
+position  0.065000  0.000000
+size  0.105000  0.100000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "1"
+position -0.027500  0.000000
+size  0.030000  0.050000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D5
+
+$MODULE "D8"
+reference "D8"
+value "MBRM110LT1G"
+footprint "do_457"
+attribut smd
+position  2.530000  2.950000
+orientation  180.00
+layer copper
+$SHAPE3D
+Na "aLaMode_Libs/3D Modules/sod323.wrl"
+Sc 1.750000 1.750000 1.750000
+Of 0.050000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "2"
+position  0.065000  0.000000
+size  0.105000  0.100000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "1"
+position -0.027500  0.000000
+size  0.030000  0.050000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$EndMODULE  D8
 
 $LINE 
 start 4.370000 1.000000

@@ -1,4 +1,4 @@
-### Module positions - created on 6/16/2012 7:27:49 PM ###
+### Module positions - created on 6/18/2012 5:39:54 PM ###
 ### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Back
@@ -11,14 +11,15 @@ C11      22p                  2.8800     1.9875      90.0    Back
 C12      100n                 1.1425     1.6300     180.0    Back
 C13      100n                 1.1425     1.3250     180.0    Back
 D7       SMBJ5.0CA-TR         1.1575     3.0025       0.0    Back
+D8       MBRM110LT1G          2.5300     2.9500     180.0    Back
 P2       GPU_JTAG             3.1200     1.7300     270.0    Back
 P3       LAN_JTAG             3.2200     1.7300     270.0    Back
 P12      UUSB_B               1.1625     2.7000       0.0    Back
-R1       10k                  4.0200     2.8150      90.0    Back
-R2       10k                  3.9150     2.8150      90.0    Back
+R1       10k                  4.0600     2.8150      90.0    Back
+R2       10k                  3.9675     2.8150      90.0    Back
 R9       10k                  1.6725     2.6075      90.0    Back
 R13      10k                  1.2450     1.9025     180.0    Back
 U4       DS3231N              1.4040     2.3120     180.0    Back
-U6       TSX0108              1.3875     1.5200       0.0    Back
+U6       TXS0108              1.3875     1.5200       0.0    Back
 X1       CRYSTAL_2            2.9325     2.1650     180.0    Back
 ## End

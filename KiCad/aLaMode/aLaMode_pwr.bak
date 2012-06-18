@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 17 June 2012 03:42:20 PM IST
+EESchema Schematic File Version 2  date 6/18/2012 5:38:47 PM
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 4
 Title "aLaMode"
-Date "17 jun 2012"
+Date "18 jun 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -517,8 +517,8 @@ L DIODESCH D5
 U 1 1 4FC61A7F
 P 2925 3750
 F 0 "D5" H 2925 3850 40  0000 C CNN
-F 1 "DIODESCH" H 2925 3650 40  0000 C CNN
-F 2 "d_0805" H 2925 3750 60  0001 C CNN
+F 1 "MBRM110LT1G" H 2925 3650 40  0000 C CNN
+F 2 "do_457" H 2925 3750 60  0001 C CNN
 	1    2925 3750
 	1    0    0    -1  
 $EndComp
