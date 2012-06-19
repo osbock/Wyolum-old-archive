@@ -1,0 +1,169 @@
+# EESchema Netlist Version 1.1 created  6/19/2012 7:20:39 PM
+(
+ ( /4FE072E2 pin_strip_6  K1 THROBBER {Lib=CONN_6}
+  (    1 /12V )
+  (    2 /12V )
+  (    3 /LED_LAMP )
+  (    4 /~NEUTRAL_DETECT )
+  (    5 GND )
+  (    6 GND )
+ )
+ ( /4FE071E3 SOT23-3  Q1 2N7000 {Lib=MOSFET_N}
+  (    D /LED_LAMP )
+  (    G N-000006 )
+  (    S GND )
+ )
+ ( /4FE06AE0 SO8E  U1 ATTINY45/V {Lib=ATTINY85}
+  (    1 /RST )
+  (    2 ? )
+  (    3 /ND_IN )
+  (    4 GND )
+  (    5 /MOSI_OUT )
+  (    6 /MISO )
+  (    7 /SCK )
+  (    8 /5V )
+ )
+ ( /4FC9C7C5 vite_3mm  P2 CONN_1 {Lib=CONN_1}
+  (    1 GND )
+ )
+ ( /4FC9C7B3 vite_3mm  P1 CONN_1 {Lib=CONN_1}
+  (    1 GND )
+ )
+ ( /4FC8914C c_0805  C2 100n {Lib=C}
+  (    1 /5V )
+  (    2 GND )
+ )
+ ( /4FC89147 c_0805  C1 10n {Lib=C}
+  (    1 /ND_IN )
+  (    2 GND )
+ )
+ ( /4FC76A52 pin_strip_3x2  K2 ISP {Lib=CONN_6}
+  (    1 /MISO )
+  (    2 /5V )
+  (    3 /SCK )
+  (    4 /MOSI_OUT )
+  (    5 /RST )
+  (    6 GND )
+ )
+ ( /4FC7194F d_0805  D2 Z5V1 {Lib=DIODE_ZENER}
+  (    1 GND )
+  (    2 /5V )
+ )
+ ( /4FC71943 d_0805  D1 Z5V1 {Lib=DIODE_ZENER}
+  (    1 GND )
+  (    2 /ND_IN )
+ )
+ ( /4FC71681 r_0805  R2 4K7 {Lib=R}
+  (    1 /5V )
+  (    2 /12V )
+ )
+ ( /4FC7167F r_0805  R3 2k2 {Lib=R}
+  (    1 /MOSI_OUT )
+  (    2 N-000006 )
+ )
+ ( /4EDA0FBA PCB  PCB1 PCB {Lib=PCB}
+ )
+ ( /4C1741EB r_0805  R1 4K7 {Lib=R}
+  (    1 /ND_IN )
+  (    2 /~NEUTRAL_DETECT )
+ )
+)
+*
+{ Allowed footprints by component:
+$component U1
+ 28DIP-ELL600
+ 28dip600
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component D2
+ D?
+ S*
+$endlist
+$component D1
+ D?
+ S*
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 1 "GND" "GND"
+ K1 5
+ D1 1
+ D2 1
+ K2 6
+ C1 2
+ C2 2
+ P1 1
+ P2 1
+ U1 4
+ K1 6
+ Q1 S
+Net 2 "/SCK" "SCK"
+ U1 7
+ K2 3
+Net 3 "/MISO" "MISO"
+ U1 6
+ K2 1
+Net 4 "/LED_LAMP" "LED_LAMP"
+ Q1 D
+ K1 3
+Net 5 "/~NEUTRAL DETECT" "~NEUTRAL DETECT"
+ R1 2
+ K1 4
+Net 6 "" ""
+ Q1 G
+ R3 2
+Net 7 "/MOSI_OUT" "MOSI_OUT"
+ U1 5
+ R3 1
+ K2 4
+Net 8 "/12V" "12V"
+ K1 2
+ K1 1
+ R2 2
+Net 9 "/RST" "RST"
+ K2 5
+ U1 1
+Net 10 "/ND_IN" "ND_IN"
+ D1 2
+ U1 3
+ R1 1
+ C1 1
+Net 12 "/5V" "5V"
+ R2 1
+ D2 2
+ K2 2
+ C2 1
+ U1 8
+}
+#End
