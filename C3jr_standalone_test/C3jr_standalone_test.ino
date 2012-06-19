@@ -87,6 +87,7 @@ void loop(){
   count++;
   if(count >= 128){
     count = 0;
+    refresh(10000 * led_value);
     led_value = !led_value;
   }
 }
