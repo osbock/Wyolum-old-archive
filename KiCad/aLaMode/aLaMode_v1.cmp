@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 6/18/2012 5:40:01 PM
+Cmp-Mod V01 Genere par PcbNew le 6/19/2012 5:15:59 PM
 
 BeginCmp
 TimeStamp = 4FDCCB58
@@ -14,14 +14,6 @@ Path = /4FC5FB0E
 Reference = P5;
 ValeurCmp = 5V_SERVO;
 IdModule  = Header_Servo;
-EndCmp
-
-BeginCmp
-TimeStamp = 4FDB72A9
-Path = /4FC07407/4FC61A05
-Reference = P10;
-ValeurCmp = V_IN;
-IdModule  = JACK_ALIM;
 EndCmp
 
 BeginCmp
@@ -582,6 +574,14 @@ Path = /4FDCDB4F
 Reference = D8;
 ValeurCmp = MBRM110LT1G;
 IdModule  = do_457;
+EndCmp
+
+BeginCmp
+TimeStamp = 4FDB72A9
+Path = /4FC07407/4FC61A05
+Reference = P10;
+ValeurCmp = V_IN;
+IdModule  = JACK_ALIM;
 EndCmp
 
 EndListe

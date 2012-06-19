@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 6/18/2012 5:39:35 PM
+EESchema Schematic File Version 2  date 6/19/2012 2:23:08 PM
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
