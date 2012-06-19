@@ -1,4 +1,4 @@
-update=6/19/2012 7:34:42 PM
+update=Tuesday 19 June 2012 11:55:57 PM IST
 last_client=kicad
 [eeschema]
 version=1
@@ -55,7 +55,7 @@ DrawLar=100
 EdgeLar=100
 TxtLar=50
 MSegLar=100
-LastNetListRead=BatMon.net
+LastNetListRead=Throbber.net
 [pcbnew/libraries]
 LibDir=../../../../../../../Downloads/KiCAD/Libs;D:/Users/Anool/Downloads/KiCAD/Libs/USB
 LibName1=Throbber_Libs/Throbber_parts
