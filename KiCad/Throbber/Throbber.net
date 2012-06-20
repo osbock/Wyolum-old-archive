@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Tuesday 19 June 2012 11:28:17 PM IST
+# EESchema Netlist Version 1.1 created  6/20/2012 6:59:19 PM
 (
  ( /4FC89147 c_0805 C1 10n
   ( 1 /ND_IN )
@@ -16,15 +16,11 @@
   ( 1 GND )
   ( 2 /5V )
  )
- ( /4FE072E2 pin_strip_6b K1 THROBBER
-  ( 1 /12V )
+ ( /4FE1CC8B SOD523F D3 1N4448WT
+  ( 1 N-000012 )
   ( 2 /12V )
-  ( 3 /LED_LAMP )
-  ( 4 /~NEUTRAL_DETECT )
-  ( 5 GND )
-  ( 6 GND )
  )
- ( /4FC76A52 pin_strip_3x2 K2 ISP
+ ( /4FC76A52 pin_strip_6b K2 ISP
   ( 1 /MISO )
   ( 2 /5V )
   ( 3 /SCK )
@@ -32,17 +28,22 @@
   ( 5 /RST )
   ( 6 GND )
  )
- ( /4FC9C7B3 vite_3mm P1 CONN_1
-  ( 1 GND )
+ ( /4FE198D2 pin_strip_2 P1 LAMP
+  ( 1 /12V )
+  ( 2 /LED_LAMP )
  )
- ( /4FC9C7C5 vite_3mm P2 CONN_1
-  ( 1 GND )
+ ( /4FE19888 Header_12V P2 12V
+  ( 1 N-000012 )
+  ( 2 GND )
+ )
+ ( /4FE1996B Pad01 P3 ND
+  ( 1 /~NEUTRAL_DETECT )
  )
  ( /4EDA0FBA PCB PCB1 PCB
  )
  ( /4FE071E3 SOT23-3 Q1 2N7000
   ( D /LED_LAMP )
-  ( G N-000006 )
+  ( G N-000005 )
   ( S GND )
  )
  ( /4C1741EB r_0805 R1 4K7
@@ -55,7 +56,7 @@
  )
  ( /4FC7167F r_0805 R3 2k2
   ( 1 /MOSI_OUT )
-  ( 2 N-000006 )
+  ( 2 N-000005 )
  )
  ( /4FE06AE0 SO8E U1 ATTINY45/V
   ( 1 /RST )
@@ -85,6 +86,10 @@ $component D1
  S*
 $endlist
 $component D2
+ D?
+ S*
+$endlist
+$component D3
  D?
  S*
 $endlist

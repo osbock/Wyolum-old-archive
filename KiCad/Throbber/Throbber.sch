@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 6/19/2012 7:34:39 PM
+EESchema Schematic File Version 2  date 6/20/2012 7:22:01 PM
 LIBS:Throbber
 LIBS:power
 LIBS:Throbber-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title "Throbber - Bike Neutral Indicator"
-Date "19 jun 2012"
+Date "20 jun 2012"
 Rev "A"
 Comp "WyoLum"
 Comment1 "www.wyolum.com"
@@ -16,134 +16,165 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-NoConn ~ 4900 3150
-Connection ~ 3400 4200
 Wire Wire Line
-	3400 4150 3400 4200
-Connection ~ 7200 2250
+	2250 2250 1950 2250
+Connection ~ 3400 4400
 Wire Wire Line
-	7200 3700 7200 2200
+	3050 4400 8650 4400
 Wire Wire Line
-	2450 7450 2850 7450
+	3050 4400 3050 2450
+Connection ~ 7200 4400
+Connection ~ 3700 4400
+Connection ~ 5150 4400
 Wire Wire Line
-	2450 7250 2850 7250
+	1950 1850 8650 1850
 Wire Wire Line
-	2450 7050 2850 7050
+	3050 2450 1950 2450
+Wire Notes Line
+	3350 6650 3350 7550
+Wire Notes Line
+	3350 6650 2150 6650
+Wire Notes Line
+	2150 6650 2150 7550
+Wire Notes Line
+	2150 7550 3350 7550
 Wire Wire Line
-	5400 3050 4900 3050
-Connection ~ 5150 3250
-Wire Wire Line
-	7000 3350 7650 3350
-Wire Wire Line
-	7000 3150 7400 3150
-Connection ~ 3200 2950
-Wire Wire Line
-	2850 2950 3200 2950
-Wire Wire Line
-	3300 1850 8650 1850
-Wire Wire Line
-	3300 1850 3300 3150
-Wire Wire Line
-	3300 3150 2850 3150
-Wire Wire Line
-	8650 1850 8650 2750
-Connection ~ 7200 3600
-Wire Wire Line
-	7500 3700 7500 3600
-Wire Wire Line
-	7500 3600 7200 3600
-Wire Wire Line
-	7200 4100 7200 4500
-Wire Wire Line
-	8150 3350 8200 3350
-Connection ~ 5150 4200
-Wire Wire Line
-	5150 4100 5150 4500
-Wire Wire Line
-	5400 3350 5350 3350
-Connection ~ 5150 3600
-Wire Wire Line
-	4900 3600 5150 3600
-Wire Wire Line
-	4900 3600 4900 3700
-Wire Wire Line
-	750  6675 1100 6675
-Wire Wire Line
-	925  6775 925  6675
-Connection ~ 925  6675
-Wire Wire Line
-	4650 3250 5400 3250
-Wire Wire Line
-	5150 3250 5150 3700
-Wire Wire Line
-	4900 4100 4900 4200
-Wire Wire Line
-	4900 4200 5150 4200
-Wire Wire Line
-	5350 3350 5350 4500
-Wire Wire Line
-	7200 2250 4650 2250
-Wire Wire Line
-	7200 4200 7500 4200
-Wire Wire Line
-	7500 4200 7500 4100
-Connection ~ 7200 4200
-Wire Wire Line
-	7200 3050 7000 3050
-Connection ~ 7200 3050
-Wire Wire Line
-	3700 4200 3700 4500
-Wire Wire Line
-	3200 2250 4150 2250
-Wire Wire Line
-	3200 2250 3200 3050
-Wire Wire Line
-	3200 3050 2850 3050
-Wire Wire Line
-	3200 3350 2850 3350
-Wire Wire Line
-	3200 4200 3700 4200
-Wire Wire Line
-	8650 3650 8650 4500
-Wire Wire Line
-	2850 3450 3200 3450
-Connection ~ 3200 3450
-Wire Wire Line
-	7000 3250 7400 3250
-Wire Wire Line
-	5400 3150 4900 3150
-Wire Wire Line
-	4150 3250 2850 3250
-Wire Wire Line
-	2850 6950 2450 6950
+	2850 7350 2450 7350
 Wire Wire Line
 	2850 7150 2450 7150
 Wire Wire Line
-	2850 7350 2450 7350
-Wire Notes Line
-	2150 7550 3350 7550
-Wire Notes Line
-	2150 7550 2150 6650
-Wire Notes Line
-	2150 6650 3350 6650
-Wire Notes Line
-	3350 6650 3350 7550
+	2850 6950 2450 6950
 Wire Wire Line
-	3200 3350 3200 4200
+	4150 3250 1950 3250
+Wire Wire Line
+	5400 3150 4900 3150
+Wire Wire Line
+	7000 3250 7400 3250
+Wire Wire Line
+	8650 4400 8650 3650
+Wire Wire Line
+	3700 4400 3700 4500
+Connection ~ 7200 3050
+Wire Wire Line
+	7200 3050 7000 3050
+Connection ~ 7200 4200
+Wire Wire Line
+	7500 4100 7500 4200
+Wire Wire Line
+	7500 4200 7200 4200
+Wire Wire Line
+	4650 2250 7200 2250
+Wire Wire Line
+	5350 4400 5350 3350
+Wire Wire Line
+	5150 4200 4900 4200
+Wire Wire Line
+	4900 4200 4900 4100
+Wire Wire Line
+	5150 3250 5150 3700
+Wire Wire Line
+	4650 3250 5400 3250
+Wire Wire Line
+	4900 3700 4900 3600
+Wire Wire Line
+	4900 3600 5150 3600
+Connection ~ 5150 3600
+Wire Wire Line
+	5350 3350 5400 3350
+Wire Wire Line
+	5150 4400 5150 4100
+Connection ~ 5150 4200
+Wire Wire Line
+	8150 3350 8200 3350
+Wire Wire Line
+	7200 4100 7200 4400
+Wire Wire Line
+	7200 3600 7500 3600
+Wire Wire Line
+	7500 3600 7500 3700
+Connection ~ 7200 3600
+Wire Wire Line
+	8650 1850 8650 2750
+Wire Wire Line
+	7000 3150 7400 3150
+Wire Wire Line
+	7000 3350 7650 3350
+Connection ~ 5150 3250
+Wire Wire Line
+	5400 3050 4900 3050
+Wire Wire Line
+	2450 7050 2850 7050
+Wire Wire Line
+	2450 7250 2850 7250
+Wire Wire Line
+	2450 7450 2850 7450
+Wire Wire Line
+	7200 3700 7200 2200
+Connection ~ 7200 2250
+Wire Wire Line
+	3400 4400 3400 4150
+Wire Wire Line
+	1950 1650 3050 1650
+Wire Wire Line
+	3050 1650 3050 2250
+Connection ~ 5350 4400
+Wire Wire Line
+	2650 2250 4150 2250
+Connection ~ 3050 2250
 $Comp
-L PWR_FLAG #FLG01
+L DIODE D3
+U 1 1 4FE1CC8B
+P 2450 2250
+F 0 "D3" H 2450 2350 40  0000 C CNN
+F 1 "1N4448WT" H 2450 2150 40  0000 C CNN
+	1    2450 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 P3
+U 1 1 4FE1996B
+P 1800 3250
+F 0 "P3" H 1880 3250 40  0000 L CNN
+F 1 "ND" H 1800 3305 30  0001 C CNN
+F 2 "Pad01" H 1800 3405 30  0001 C CNN
+	1    1800 3250
+	-1   0    0    1   
+$EndComp
+$Comp
+L CONN_2 P1
+U 1 1 4FE198D2
+P 1600 1750
+F 0 "P1" V 1550 1750 40  0000 C CNN
+F 1 "LAMP" V 1650 1750 40  0000 C CNN
+F 2 "pin_strip_2" V 1750 1750 40  0001 C CNN
+	1    1600 1750
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_2 P2
+U 1 1 4FE19888
+P 1600 2350
+F 0 "P2" V 1550 2350 40  0000 C CNN
+F 1 "12V" V 1650 2350 40  0000 C CNN
+F 2 "Header_12V" V 1750 2350 40  0001 C CNN
+	1    1600 2350
+	-1   0    0    -1  
+$EndComp
+NoConn ~ 4900 3150
+$Comp
+L PWR_FLAG #FLG1
 U 1 1 4FE07A3E
 P 3400 4150
-F 0 "#FLG01" H 3400 4420 30  0001 C CNN
+F 0 "#FLG1" H 3400 4420 30  0001 C CNN
 F 1 "PWR_FLAG" H 3400 4380 30  0000 C CNN
 	1    3400 4150
 	1    0    0    -1  
 $EndComp
 $Comp
-L PWR_FLAG #FLG02
+L PWR_FLAG #FLG2
 U 1 1 4FE079EC
 P 7200 2200
-F 0 "#FLG02" H 7200 2470 30  0001 C CNN
+F 0 "#FLG2" H 7200 2470 30  0001 C CNN
 F 1 "PWR_FLAG" H 7200 2430 30  0000 C CNN
 	1    7200 2200
 	1    0    0    -1  
@@ -152,16 +183,6 @@ Text Label 4900 3150 0    40   ~ 0
 ADC3
 Text Label 4900 3050 0    40   ~ 0
 RST
-$Comp
-L CONN_6 K1
-U 1 1 4FE072E2
-P 2500 3200
-F 0 "K1" V 2450 3200 60  0000 C CNN
-F 1 "THROBBER" V 2550 3200 60  0000 C CNN
-F 2 "pin_strip_6" V 2650 3200 60  0001 C CNN
-	1    2500 3200
-	-1   0    0    -1  
-$EndComp
 Text Label 7250 3350 0    40   ~ 0
 MOSI_OUT
 Text Label 7400 3250 0    40   ~ 0
@@ -178,59 +199,23 @@ F 2 "SOT23-3" H 8100 3350 60  0001 C CNN
 	1    8500 3200
 	1    0    0    -1  
 $EndComp
-$Comp
-L GND #PWR03
-U 1 1 4FE07039
-P 8650 4500
-F 0 "#PWR03" H 8650 4500 30  0001 C CNN
-F 1 "GND" H 8650 4430 30  0001 C CNN
-	1    8650 4500
-	1    0    0    -1  
-$EndComp
 Text Label 4900 1850 0    40   ~ 0
 LED_LAMP
-$Comp
-L GND #PWR04
-U 1 1 4FE06F27
-P 7200 4500
-F 0 "#PWR04" H 7200 4500 30  0001 C CNN
-F 1 "GND" H 7200 4430 30  0001 C CNN
-	1    7200 4500
-	1    0    0    -1  
-$EndComp
 Text Label 4900 3250 0    40   ~ 0
 ND_IN
 Text Label 4900 2250 0    40   ~ 0
 5V
 Text Label 3500 2250 0    40   ~ 0
 12V
-Text Label 3500 4200 0    40   ~ 0
+Text Label 3500 4400 0    40   ~ 0
 GND
 $Comp
-L GND #PWR05
+L GND #PWR1
 U 1 1 4FE06EF0
 P 3700 4500
-F 0 "#PWR05" H 3700 4500 30  0001 C CNN
+F 0 "#PWR1" H 3700 4500 30  0001 C CNN
 F 1 "GND" H 3700 4430 30  0001 C CNN
 	1    3700 4500
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR06
-U 1 1 4FE06E28
-P 5150 4500
-F 0 "#PWR06" H 5150 4500 30  0001 C CNN
-F 1 "GND" H 5150 4430 30  0001 C CNN
-	1    5150 4500
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR07
-U 1 1 4FE06E1E
-P 5350 4500
-F 0 "#PWR07" H 5350 4500 30  0001 C CNN
-F 1 "GND" H 5350 4430 30  0001 C CNN
-	1    5350 4500
 	1    0    0    -1  
 $EndComp
 Text Label 3500 3250 0    40   ~ 0
@@ -244,37 +229,6 @@ F 1 "ATTINY45/V" H 5600 2850 50  0000 L BNN
 F 2 "SO8E" H 6700 2775 50  0001 C CNN
 	1    6200 3200
 	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR08
-U 1 1 4FC9CC08
-P 925 6775
-F 0 "#PWR08" H 925 6775 30  0001 C CNN
-F 1 "GND" H 925 6705 30  0001 C CNN
-	1    925  6775
-	1    0    0    -1  
-$EndComp
-Text Notes 650  6425 0    40   ~ 0
-MOUNTING HOLES
-$Comp
-L CONN_1 P2
-U 1 1 4FC9C7C5
-P 1100 6525
-F 0 "P2" V 1025 6450 40  0000 L CNN
-F 1 "CONN_1" H 1100 6580 30  0001 C CNN
-F 2 "vite_3mm" H 1100 6525 60  0001 C CNN
-	1    1100 6525
-	0    -1   -1   0   
-$EndComp
-$Comp
-L CONN_1 P1
-U 1 1 4FC9C7B3
-P 750 6525
-F 0 "P1" V 675 6550 40  0000 L CNN
-F 1 "CONN_1" H 750 6580 30  0001 C CNN
-F 2 "vite_3mm" H 750 6525 60  0001 C CNN
-	1    750  6525
-	0    -1   -1   0   
 $EndComp
 $Comp
 L C C2
@@ -304,7 +258,7 @@ U 1 1 4FC76A52
 P 3200 7200
 F 0 "K2" V 3150 7200 60  0000 C CNN
 F 1 "ISP" V 3250 7200 60  0000 C CNN
-F 2 "pin_strip_3x2" H 3200 7200 60  0001 C CNN
+F 2 "pin_strip_6b" H 3200 7200 60  0001 C CNN
 	1    3200 7200
 	1    0    0    -1  
 $EndComp
