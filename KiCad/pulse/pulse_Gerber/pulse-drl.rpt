@@ -1,12 +1,12 @@
-Drill report for C:\Users\Anool\Documents\Arduino\clockthree\KiCad\Throbber\Throbber.brd
-Created on 6/20/2012 7:16:12 PM
+Drill report for C:\Users\Anool\Documents\Arduino\clockthree\KiCad\pulse\pulse.brd
+Created on 6/21/2012 5:14:23 PM
 Selected Drill Unit: Imperial (")
 
 Drill report for through holes :
 T1  0.025"  0.64mm  (7 holes)
-T2  0.040"  1.02mm  (9 holes)
+T2  0.040"  1.02mm  (10 holes)
 
-total plated holes count 16
+total plated holes count 17
 
 
 Drill report for Not Plated through holes :

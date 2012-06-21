@@ -1,4 +1,4 @@
-## Module report - date 6/20/2012 7:15:30 PM
+## Module report - date 6/21/2012 4:57:01 PM
 ## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ##
@@ -7,9 +7,77 @@ $BeginDESCRIPTION
 
 $BOARD
 unit INCH
-upper_left_corner -0.015100 -0.034900
+upper_left_corner -0.009900 -0.034900
 lower_right_corner  1.209100  0.520000
 $EndBOARD
+
+$MODULE "D2"
+reference "D2"
+value "Z5V1"
+footprint "SOD323F"
+attribut smd
+position  0.662500  0.230000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "pulse_Libs/pulse_3D/do214aa.wrl"
+Sc 0.500000 0.500000 0.500000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "2"
+position  0.042500  0.000000
+size  0.040000  0.035000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "1"
+position -0.042500  0.000000
+size  0.040000  0.035000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  D2
+
+$MODULE "D1"
+reference "D1"
+value "Z5V1"
+footprint "SOD323F"
+attribut smd
+position  0.337500  0.252500
+orientation  90.00
+layer copper
+$SHAPE3D
+Na "pulse_Libs/pulse_3D/do214aa.wrl"
+Sc 0.500000 0.500000 0.500000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "2"
+position  0.042500  0.000000
+size  0.040000  0.035000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$PAD "1"
+position -0.042500  0.000000
+size  0.040000  0.035000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  copper
+$EndPAD
+$EndMODULE  D1
 
 $MODULE "Q1"
 reference "Q1"
@@ -20,14 +88,14 @@ position  0.790000  0.237500
 orientation  90.00
 layer copper
 $SHAPE3D
-Na "Throbber_Libs\\Throbber_3D\\SOT23_3.wrl"
+Na "pulse_Libs/pulse_3D/SOT23_3.wrl"
 Sc 0.400000 0.400000 0.400000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 180.000000
 $EndSHAPE3D
 $PAD "G"
 position -0.037500 -0.047500
-size  0.031500  0.047200
+size  0.035000  0.050000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -36,7 +104,7 @@ Layer  copper
 $EndPAD
 $PAD "D"
 position  0.000000  0.047500
-size  0.031500  0.047200
+size  0.035000  0.050000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -45,7 +113,7 @@ Layer  copper
 $EndPAD
 $PAD "S"
 position  0.037500 -0.047500
-size  0.031500  0.047200
+size  0.035000  0.050000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -53,94 +121,6 @@ Shape  Rect
 Layer  copper
 $EndPAD
 $EndMODULE  Q1
-
-$MODULE "U1"
-reference "U1"
-value "ATTINY45/V"
-footprint "SO8E"
-attribut smd
-position  0.437500  0.262500
-orientation  270.00
-layer component
-$SHAPE3D
-Na "Throbber_Libs\\Throbber_3D\\cms_so8.wrl"
-Sc 0.500000 0.350000 0.500000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "8"
-position -0.075000 -0.095000
-size  0.024000  0.080000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "1"
-position -0.075000  0.095000
-size  0.024000  0.080000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "7"
-position -0.025000 -0.095000
-size  0.024000  0.080000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "6"
-position  0.025000 -0.095000
-size  0.024000  0.080000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "5"
-position  0.075000 -0.095000
-size  0.024000  0.080000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "2"
-position -0.025000  0.095000
-size  0.024000  0.080000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "3"
-position  0.025000  0.095000
-size  0.024000  0.080000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "4"
-position  0.075000  0.095000
-size  0.024000  0.080000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  U1
 
 $MODULE "R1"
 reference "R1"
@@ -151,7 +131,7 @@ position  0.535000  0.250000
 orientation  90.00
 layer copper
 $SHAPE3D
-Na "Throbber_Libs\\Throbber_3D\\r_0805.wrl"
+Na "pulse_Libs/pulse_3D/r_0805.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -185,7 +165,7 @@ position  0.842500  0.240000
 orientation  90.00
 layer component
 $SHAPE3D
-Na "Throbber_Libs\\Throbber_3D\\r_0805.wrl"
+Na "pulse_Libs/pulse_3D/r_0805.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -219,7 +199,7 @@ position  0.635000  0.242500
 orientation  270.00
 layer copper
 $SHAPE3D
-Na "Throbber_Libs\\Throbber_3D\\r_0805.wrl"
+Na "pulse_Libs/pulse_3D/r_0805.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -244,74 +224,6 @@ Layer  copper
 $EndPAD
 $EndMODULE  R3
 
-$MODULE "D1"
-reference "D1"
-value "Z5V1"
-footprint "d_0805"
-attribut smd
-position  0.337500  0.252500
-orientation  270.00
-layer copper
-$SHAPE3D
-Na "Throbber_Libs\\Throbber_3D\\do214aa.wrl"
-Sc 0.500000 0.500000 0.500000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position  0.040000  0.000000
-size  0.040000  0.050000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  copper
-$EndPAD
-$PAD "2"
-position -0.040000  0.000000
-size  0.040000  0.050000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  copper
-$EndPAD
-$EndMODULE  D1
-
-$MODULE "D2"
-reference "D2"
-value "Z5V1"
-footprint "d_0805"
-attribut smd
-position  0.650000  0.242500
-orientation  270.00
-layer component
-$SHAPE3D
-Na "Throbber_Libs\\Throbber_3D\\do214aa.wrl"
-Sc 0.500000 0.500000 0.500000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position  0.040000  0.000000
-size  0.040000  0.050000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "2"
-position -0.040000  0.000000
-size  0.040000  0.050000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  D2
-
 $MODULE "C1"
 reference "C1"
 value "10n"
@@ -321,14 +233,14 @@ position  0.435000  0.252500
 orientation  90.00
 layer copper
 $SHAPE3D
-Na "Throbber_Libs\\Throbber_3D\\c_0805.wrl"
+Na "pulse_Libs/pulse_3D/c_0805.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $PAD "1"
-position  0.040000  0.000000
-size  0.042000  0.056000
+position  0.037500  0.000000
+size  0.055000  0.045000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -336,8 +248,8 @@ Shape  Rect
 Layer  copper
 $EndPAD
 $PAD "2"
-position -0.040000  0.000000
-size  0.042000  0.056000
+position -0.037500  0.000000
+size  0.055000  0.045000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -355,14 +267,14 @@ position  0.745000  0.242500
 orientation  90.00
 layer component
 $SHAPE3D
-Na "Throbber_Libs\\Throbber_3D\\c_0805.wrl"
+Na "pulse_Libs/pulse_3D/c_0805.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $PAD "1"
-position  0.040000  0.000000
-size  0.042000  0.056000
+position  0.037500  0.000000
+size  0.055000  0.045000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -370,8 +282,8 @@ Shape  Rect
 Layer  component
 $EndPAD
 $PAD "2"
-position -0.040000  0.000000
-size  0.042000  0.056000
+position -0.037500  0.000000
+size  0.055000  0.045000
 drill  0.000000
 shape_offset  0.000000  0.000000
 orientation  0.00
@@ -408,7 +320,7 @@ position  0.587500  0.060000
 orientation  0.00
 layer component
 $SHAPE3D
-Na "Throbber_Libs\\Throbber_3D\\pins_array_6x1.wrl"
+Na "pulse_Libs/pulse_3D/pins_array_6x1.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -469,40 +381,6 @@ Layer  all
 $EndPAD
 $EndMODULE  K2
 
-$MODULE "P2"
-reference "P2"
-value "12V"
-footprint "Header_12V"
-attribut smd
-position  0.130000  0.205000
-orientation  90.00
-layer component
-$SHAPE3D
-Na "BatMon_Libs/BatMon_3D/socket_1x2.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 90.000000
-$EndSHAPE3D
-$PAD "1"
-position -0.100000  0.000000
-size  0.070000  0.250000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  all
-$EndPAD
-$PAD "2"
-position  0.100000  0.000000
-size  0.070000  0.250000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  all
-$EndPAD
-$EndMODULE  P2
-
 $MODULE "P1"
 reference "P1"
 value "LAMP"
@@ -512,7 +390,7 @@ position  0.952500  0.155000
 orientation  90.00
 layer component
 $SHAPE3D
-Na "Throbber_Libs\\Throbber_3D\\pin_strip_2.wrl"
+Na "pulse_Libs/pulse_3D/pin_strip_2.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -546,7 +424,7 @@ position  0.790000  0.372500
 orientation  0.00
 layer component
 $SHAPE3D
-Na "Throbber_Libs\\Throbber_3D\\do214aa.wrl"
+Na "pulse_Libs/pulse_3D/do214aa.wrl"
 Sc 0.500000 0.500000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -580,12 +458,153 @@ position  0.645000  0.205000
 orientation  0.00
 layer component
 $SHAPE3D
-Na "Throbber_Libs\\Throbber_3D\\PCB_Material_3D.wrl"
+Na "pulse_Libs/pulse_3D/PCB_Material_3D.wrl"
 Sc 0.118000 0.300000 0.045000
 Of 0.000000 0.000000 -0.035000
 Ro 90.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  PCB1
+
+$MODULE "P2"
+reference "P2"
+value "12V"
+footprint "Header_12V"
+attribut smd
+position  0.130000  0.205000
+orientation  90.00
+layer component
+$SHAPE3D
+Na "pulse_Libs/pulse_3D/socket_1x2.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 90.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.100000  0.000000
+size  0.070000  0.250000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$PAD "2"
+position  0.100000  0.000000
+size  0.070000  0.250000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$EndMODULE  P2
+
+$MODULE "U1"
+reference "U1"
+value "ATTINY45-20SU"
+footprint "SO8N"
+attribut smd
+position  0.455000  0.262500
+orientation  270.00
+layer component
+$SHAPE3D
+Na "smd/cms_so8.wrl"
+Sc 0.500000 0.380000 0.500000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "8"
+position -0.075000 -0.130000
+size  0.020000  0.055000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "7"
+position -0.025000 -0.130000
+size  0.020000  0.055000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "6"
+position  0.025000 -0.130000
+size  0.020000  0.055000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "5"
+position  0.075000 -0.130000
+size  0.020000  0.055000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "4"
+position  0.075000  0.130000
+size  0.020000  0.055000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "3"
+position  0.025000  0.130000
+size  0.020000  0.055000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.025000  0.130000
+size  0.020000  0.055000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "1"
+position -0.075000  0.130000
+size  0.020000  0.055000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  U1
+
+$MODULE "PB3"
+reference "PB3"
+value "ND"
+footprint "Pad01"
+attribut none
+position  0.320000  0.135000
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.055000  0.055000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  PB3
 
 $LINE 
 start 0.270000 0.020000

@@ -1,104 +1,104 @@
-# EESchema Netlist Version 1.1 created  6/20/2012 6:59:19 PM
+# EESchema Netlist Version 1.1 created  6/21/2012 4:49:12 PM
 (
- ( /4FC89147 c_0805 C1 10n
-  ( 1 /ND_IN )
-  ( 2 GND )
+ ( /4FE302FC Pad01  PB3 ND {Lib=CONN_1}
+  (    1 /ADC3 )
  )
- ( /4FC8914C c_0805 C2 100n
-  ( 1 /5V )
-  ( 2 GND )
+ ( /4FE1CC8B SOD523F  D3 1N4448WT {Lib=DIODE}
+  (    1 N-000011 )
+  (    2 /12V )
  )
- ( /4FC71943 d_0805 D1 Z5V1
-  ( 1 GND )
-  ( 2 /ND_IN )
+ ( /4FE1996B Pad01  P3 ND {Lib=CONN_1}
+  (    1 /~NEUTRAL_DETECT )
  )
- ( /4FC7194F d_0805 D2 Z5V1
-  ( 1 GND )
-  ( 2 /5V )
+ ( /4FE198D2 pin_strip_2  P1 LAMP {Lib=CONN_2}
+  (    1 /12V )
+  (    2 /LED_LAMP )
  )
- ( /4FE1CC8B SOD523F D3 1N4448WT
-  ( 1 N-000012 )
-  ( 2 /12V )
+ ( /4FE19888 Header_12V  P2 12V {Lib=CONN_2}
+  (    1 N-000011 )
+  (    2 GND )
  )
- ( /4FC76A52 pin_strip_6b K2 ISP
-  ( 1 /MISO )
-  ( 2 /5V )
-  ( 3 /SCK )
-  ( 4 /MOSI_OUT )
-  ( 5 /RST )
-  ( 6 GND )
+ ( /4FE071E3 SOT23-3  Q1 2N7000 {Lib=MOSFET_N}
+  (    D /LED_LAMP )
+  (    G N-000006 )
+  (    S GND )
  )
- ( /4FE198D2 pin_strip_2 P1 LAMP
-  ( 1 /12V )
-  ( 2 /LED_LAMP )
+ ( /4FE06AE0 SO8E  U1 ATTINY45-20SU {Lib=ATTINY85}
+  (    1 /RST )
+  (    2 /ADC3 )
+  (    3 /ND_IN )
+  (    4 GND )
+  (    5 /MOSI_OUT )
+  (    6 /MISO )
+  (    7 /SCK )
+  (    8 /5V )
  )
- ( /4FE19888 Header_12V P2 12V
-  ( 1 N-000012 )
-  ( 2 GND )
+ ( /4FC8914C c_0805  C2 100n {Lib=C}
+  (    1 /5V )
+  (    2 GND )
  )
- ( /4FE1996B Pad01 P3 ND
-  ( 1 /~NEUTRAL_DETECT )
+ ( /4FC89147 c_0805  C1 10n {Lib=C}
+  (    1 /ND_IN )
+  (    2 GND )
  )
- ( /4EDA0FBA PCB PCB1 PCB
+ ( /4FC76A52 pin_strip_6b  K2 ISP {Lib=CONN_6}
+  (    1 /MISO )
+  (    2 /5V )
+  (    3 /SCK )
+  (    4 /MOSI_OUT )
+  (    5 /RST )
+  (    6 GND )
  )
- ( /4FE071E3 SOT23-3 Q1 2N7000
-  ( D /LED_LAMP )
-  ( G N-000005 )
-  ( S GND )
+ ( /4FC7194F SOD323F  D2 Z5V1 {Lib=DIODE_ZENER}
+  (    1 GND )
+  (    2 /5V )
  )
- ( /4C1741EB r_0805 R1 4K7
-  ( 1 /ND_IN )
-  ( 2 /~NEUTRAL_DETECT )
+ ( /4FC71943 SOD323F  D1 Z5V1 {Lib=DIODE_ZENER}
+  (    1 GND )
+  (    2 /ND_IN )
  )
- ( /4FC71681 r_0805 R2 4K7
-  ( 1 /5V )
-  ( 2 /12V )
+ ( /4FC71681 r_0805  R2 4K7 {Lib=R}
+  (    1 /5V )
+  (    2 /12V )
  )
- ( /4FC7167F r_0805 R3 2k2
-  ( 1 /MOSI_OUT )
-  ( 2 N-000005 )
+ ( /4FC7167F r_0805  R3 2k2 {Lib=R}
+  (    1 /MOSI_OUT )
+  (    2 N-000006 )
  )
- ( /4FE06AE0 SO8E U1 ATTINY45/V
-  ( 1 /RST )
-  ( 2 ? )
-  ( 3 /ND_IN )
-  ( 4 GND )
-  ( 5 /MOSI_OUT )
-  ( 6 /MISO )
-  ( 7 /SCK )
-  ( 8 /5V )
+ ( /4EDA0FBA PCB  PCB1 PCB {Lib=PCB}
+ )
+ ( /4C1741EB r_0805  R1 4K7 {Lib=R}
+  (    1 /ND_IN )
+  (    2 /~NEUTRAL_DETECT )
  )
 )
 *
 { Allowed footprints by component:
-$component C1
- SM*
- C?
- C1-1
+$component D3
+ D?
+ S*
+$endlist
+$component U1
+ 28DIP-ELL600
+ 28dip600
 $endlist
 $component C2
  SM*
  C?
  C1-1
 $endlist
-$component D1
- D?
- S*
+$component C1
+ SM*
+ C?
+ C1-1
 $endlist
 $component D2
  D?
  S*
 $endlist
-$component D3
+$component D1
  D?
  S*
-$endlist
-$component R1
- R?
- SM0603
- SM0805
- R?-*
- SM1206
 $endlist
 $component R2
  R?
@@ -114,9 +114,67 @@ $component R3
  R?-*
  SM1206
 $endlist
-$component U1
- 28DIP-ELL600
- 28dip600
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
 $endlist
 $endfootprintlist
 }
+{ Pin List by Nets
+Net 1 "/LED_LAMP" "LED_LAMP"
+ P1 2
+ Q1 D
+Net 2 "/MISO" "MISO"
+ K2 1
+ U1 6
+Net 3 "/RST" "RST"
+ K2 5
+ U1 1
+Net 4 "/12V" "12V"
+ R2 2
+ D3 2
+ P1 1
+Net 5 "/~NEUTRAL DETECT" "~NEUTRAL DETECT"
+ P3 1
+ R1 2
+Net 6 "" ""
+ R3 2
+ Q1 G
+Net 7 "/MOSI_OUT" "MOSI_OUT"
+ U1 5
+ K2 4
+ R3 1
+Net 8 "/ND_IN" "ND_IN"
+ C1 1
+ U1 3
+ D1 2
+ R1 1
+Net 9 "GND" "GND"
+ Q1 S
+ K2 6
+ U1 4
+ C2 2
+ C1 2
+ P2 2
+ D2 1
+ D1 1
+Net 10 "/SCK" "SCK"
+ U1 7
+ K2 3
+Net 11 "" ""
+ D3 1
+ P2 1
+Net 12 "/ADC3" "ADC3"
+ PB3 1
+ U1 2
+Net 13 "/5V" "5V"
+ D2 2
+ K2 2
+ C2 1
+ U1 8
+ R2 1
+}
+#End

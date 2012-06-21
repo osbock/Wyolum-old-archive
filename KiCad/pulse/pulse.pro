@@ -1,5 +1,5 @@
-update=6/21/2012 12:14:22 PM
-last_client=pcbnew
+update=6/21/2012 4:50:02 PM
+last_client=eeschema
 [cvpcb]
 version=1
 NetIExt=net
@@ -7,6 +7,26 @@ NetIExt=net
 EquName1=devcms
 [general]
 version=1
+[pcbnew]
+version=1
+PadDrlX=0
+PadDimH=350
+PadDimV=500
+BoardThickness=630
+TxtPcbV=300
+TxtPcbH=300
+TxtModV=300
+TxtModH=300
+TxtModW=50
+VEgarde=100
+DrawLar=100
+EdgeLar=100
+TxtLar=50
+MSegLar=50
+LastNetListRead=pulse.net
+[pcbnew/libraries]
+LibDir=../../../../../../../Downloads/KiCAD/Libs;D:/Users/Anool/Downloads/KiCAD/Libs/USB
+LibName1=pulse_Libs/pulse_parts
 [eeschema]
 version=1
 LibDir=D:/Users/Anool/Downloads/KiCAD/Libs/USB
@@ -41,24 +61,4 @@ LabSize=40
 [eeschema/libraries]
 LibName1=pulse_Libs/power
 LibName2=pulse_Libs/pulse
-[pcbnew]
-version=1
-PadDrlX=600
-PadDimH=1200
-PadDimV=1200
-BoardThickness=630
-TxtPcbV=300
-TxtPcbH=300
-TxtModV=300
-TxtModH=300
-TxtModW=50
-VEgarde=100
-DrawLar=100
-EdgeLar=100
-TxtLar=50
-MSegLar=100
-LastNetListRead=Throbber.net
-[pcbnew/libraries]
-LibDir=../../../../../../../Downloads/KiCAD/Libs;D:/Users/Anool/Downloads/KiCAD/Libs/USB
-LibName1=pulse_Libs/pulse_parts
 
