@@ -1,0 +1,14 @@
+"Id";"Designator";"Package";"Quantity";"Designation";"Supplier and ref";
+1;"Q1";"SOT23-3";1;"2N7000";;;
+2;"U1";"SO8E";1;"ATTINY45/V";;;
+3;"R1,R2";"r_0805";2;"4K7";;;
+4;"R3";"r_0805";1;"2k2";;;
+5;"D1,D2";"d_0805";2;"Z5V1";;;
+6;"C1";"c_0805";1;"10n";;;
+7;"C2";"c_0805";1;"100n";;;
+8;"P3";"Pad01";1;"ND";;;
+9;"K2";"pin_strip_6b";1;"ISP";;;
+10;"P2";"Header_12V";1;"12V";;;
+11;"P1";"pin_strip_2";1;"LAMP";;;
+12;"D3";"SOD523F";1;"1N4448WT";;;
+13;"PCB1";"PCB";1;"PCB";;;

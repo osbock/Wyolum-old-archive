@@ -1,0 +1,122 @@
+# EESchema Netlist Version 1.1 created  6/20/2012 6:59:19 PM
+(
+ ( /4FC89147 c_0805 C1 10n
+  ( 1 /ND_IN )
+  ( 2 GND )
+ )
+ ( /4FC8914C c_0805 C2 100n
+  ( 1 /5V )
+  ( 2 GND )
+ )
+ ( /4FC71943 d_0805 D1 Z5V1
+  ( 1 GND )
+  ( 2 /ND_IN )
+ )
+ ( /4FC7194F d_0805 D2 Z5V1
+  ( 1 GND )
+  ( 2 /5V )
+ )
+ ( /4FE1CC8B SOD523F D3 1N4448WT
+  ( 1 N-000012 )
+  ( 2 /12V )
+ )
+ ( /4FC76A52 pin_strip_6b K2 ISP
+  ( 1 /MISO )
+  ( 2 /5V )
+  ( 3 /SCK )
+  ( 4 /MOSI_OUT )
+  ( 5 /RST )
+  ( 6 GND )
+ )
+ ( /4FE198D2 pin_strip_2 P1 LAMP
+  ( 1 /12V )
+  ( 2 /LED_LAMP )
+ )
+ ( /4FE19888 Header_12V P2 12V
+  ( 1 N-000012 )
+  ( 2 GND )
+ )
+ ( /4FE1996B Pad01 P3 ND
+  ( 1 /~NEUTRAL_DETECT )
+ )
+ ( /4EDA0FBA PCB PCB1 PCB
+ )
+ ( /4FE071E3 SOT23-3 Q1 2N7000
+  ( D /LED_LAMP )
+  ( G N-000005 )
+  ( S GND )
+ )
+ ( /4C1741EB r_0805 R1 4K7
+  ( 1 /ND_IN )
+  ( 2 /~NEUTRAL_DETECT )
+ )
+ ( /4FC71681 r_0805 R2 4K7
+  ( 1 /5V )
+  ( 2 /12V )
+ )
+ ( /4FC7167F r_0805 R3 2k2
+  ( 1 /MOSI_OUT )
+  ( 2 N-000005 )
+ )
+ ( /4FE06AE0 SO8E U1 ATTINY45/V
+  ( 1 /RST )
+  ( 2 ? )
+  ( 3 /ND_IN )
+  ( 4 GND )
+  ( 5 /MOSI_OUT )
+  ( 6 /MISO )
+  ( 7 /SCK )
+  ( 8 /5V )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component D1
+ D?
+ S*
+$endlist
+$component D2
+ D?
+ S*
+$endlist
+$component D3
+ D?
+ S*
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component U1
+ 28DIP-ELL600
+ 28dip600
+$endlist
+$endfootprintlist
+}
