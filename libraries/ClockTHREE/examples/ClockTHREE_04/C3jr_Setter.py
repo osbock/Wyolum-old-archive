@@ -4,11 +4,13 @@ from C3jr_interface import *
 connect(getSerialports()[0])
 
 def do_set(*args, **kw):
+    set_gmt_offset(( + 4) * 3600)
     for i in range(10):
         try:
             while(time.time() % 1 < .99):
                 pass
-            time_set(time.time() - 3600 * 4 + 1)
+            # time_set(time.time() - 3600 * 4 + 1)
+            time_set(time.time() + int(3600 * gmt_var.get())  + 1)
             break
         except AssertionError:
             print('here')
@@ -47,6 +49,14 @@ Button(f, text="Get!", command=do_get).grid(row=1, column=0)
 pc_time_l = Label(f, width=35, text="PC Time:", anchor=W, font='Courier')
 pc_time_l.grid(row=1, column=1)
 Button(f, text="SCROLL", command=do_scroll).grid(row=2, column = 0)
+
+gmt_var = DoubleVar(f)
+gmt_var.set(-4) # default value
+
+w = OptionMenu(f, gmt_var, *range(-12, 12, 1))
+w.grid(row=2, column=0)
+
+
 menubar = Menu(tk)
 usbmenu = Menu(menubar, tearoff=0)
 

@@ -25,8 +25,15 @@
 #include "ClockTHREE.h"
 #include "SPI.h"
 
+
+#include "dutch_v1.h"
 // #include "english_v0.h"
-#include "english_v3.h"
+// #include "english_v2.h"
+// #include "english_v3.h"
+// #include "french_v1.h"
+// #include "german_v1.h"
+// #include "german_v3.h"
+// #include "german_v5.h"
 // #include "hebrew_v1.h"
 
 
