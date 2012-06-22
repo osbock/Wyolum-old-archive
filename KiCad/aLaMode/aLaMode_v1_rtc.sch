@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 6/19/2012 2:23:08 PM
+EESchema Schematic File Version 2  date 6/22/2012 6:23:59 PM
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
@@ -6,9 +6,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
-Sheet 3 4
+Sheet 3 5
 Title "aLaMode"
-Date "18 jun 2012"
+Date "22 jun 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -138,10 +138,10 @@ F 2 "r_0805" H 6650 2000 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +BATT #PWR021
+L +BATT #PWR023
 U 1 1 4EC101F0
 P 5300 1850
-F 0 "#PWR021" H 5300 1800 20  0001 C CNN
+F 0 "#PWR023" H 5300 1800 20  0001 C CNN
 F 1 "+BATT" H 5300 1950 30  0000 C CNN
 	1    5300 1850
 	1    0    0    -1  
@@ -188,8 +188,6 @@ F 2 "I/O" H 6825 2450 60  0001 C CNN
 	1    6825 2450
 	1    0    0    -1  
 $EndComp
-Text Notes 8125 4150 0    60   ~ 0
-rtcBoB\n
 $Comp
 L DS3231N U4
 U 1 1 4E1FEA7F
