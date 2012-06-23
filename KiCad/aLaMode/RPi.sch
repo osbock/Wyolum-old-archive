@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 6/22/2012 6:23:59 PM
+EESchema Schematic File Version 2  date 6/23/2012 3:17:36 PM
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
@@ -6,9 +6,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
-Sheet 4 5
+Sheet 5 4
 Title "aLaMode"
-Date "22 jun 2012"
+Date "23 jun 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -174,10 +174,10 @@ $EndComp
 Text Label 5850 1025 0    40   ~ 0
 Rpi_3V3
 $Comp
-L GND #PWR024
+L GND #PWR021
 U 1 1 4FD8C28A
 P 5850 2050
-F 0 "#PWR024" H 5850 2050 30  0001 C CNN
+F 0 "#PWR021" H 5850 2050 30  0001 C CNN
 F 1 "GND" H 5850 1980 30  0001 C CNN
 	1    5850 2050
 	1    0    0    -1  
@@ -193,10 +193,10 @@ F 2 "Header_U6OE" H 6300 1275 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PWR_FLAG #FLG025
+L PWR_FLAG #FLG022
 U 1 1 4FD632B4
 P 6350 3225
-F 0 "#FLG025" H 6350 3495 30  0001 C CNN
+F 0 "#FLG022" H 6350 3495 30  0001 C CNN
 F 1 "PWR_FLAG" H 6350 3455 30  0000 C CNN
 	1    6350 3225
 	1    0    0    -1  
@@ -204,19 +204,19 @@ $EndComp
 Text Label 5900 3300 0    40   ~ 0
 Rpi_3V3
 $Comp
-L GND #PWR026
+L GND #PWR023
 U 1 1 4FD62C0F
 P 2125 2175
-F 0 "#PWR026" H 2125 2175 30  0001 C CNN
+F 0 "#PWR023" H 2125 2175 30  0001 C CNN
 F 1 "GND" H 2125 2105 30  0001 C CNN
 	1    2125 2175
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR027
+L GND #PWR024
 U 1 1 4FD62BFD
 P 2125 3600
-F 0 "#PWR027" H 2125 3600 30  0001 C CNN
+F 0 "#PWR024" H 2125 3600 30  0001 C CNN
 F 1 "GND" H 2125 3530 30  0001 C CNN
 	1    2125 3600
 	1    0    0    -1  

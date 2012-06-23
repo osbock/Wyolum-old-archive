@@ -1,7 +1,27 @@
-# EESchema Netlist Version 1.1 created  6/22/2012 6:23:47 PM
+# EESchema Netlist Version 1.1 created  6/23/2012 3:17:40 PM
 (
+ ( /4FE58ED6 Header_ICSP  P9 ICSP {Lib=ISP}
+  (    1 /RPi/MISO )
+  (    2 /RPi/5V0 )
+  (    3 /aLaMode_pwr/SCK )
+  (    4 /RPi/MOSI )
+  (    5 /RPi/RESET )
+  (    6 GND )
+ )
+ ( /4FE58ED5 c_0805  C7 100n {Lib=C}
+  (    1 /~RTS )
+  (    2 /RPi/RESET )
+ )
+ ( /4FE58ED4 Header_FTDI  P8 FTDI {Lib=CONN_6}
+  (    1 GND )
+  (    2 GND )
+  (    3 /aLaMode_pwr/USBVCC )
+  (    4 /RPi/RXD )
+  (    5 /RPi/TXD )
+  (    6 /~RTS )
+ )
  ( /4FDCE342 f_1206  F2 nanoSMDC110F {Lib=FUSE}
-  (    1 /aLaMode_pwr/5V0 )
+  (    1 /RPi/5V0 )
   (    2 /5V_INT )
  )
  ( /4FDCDB4F do_457  D8 MBRM110LT1G {Lib=DIODESCH}
@@ -55,21 +75,21 @@
   (    3 /aLaMode_v1_rtc/SQW )
   (    4 /PD4 )
   (    5 /PD5 )
-  (   5V /aLaMode_pwr/5V0 )
+  (   5V /RPi/5V0 )
   (    6 /GPS_Tx )
   (    7 /PD7 )
   (    8 /PB0 )
   (    9 /PB1 )
   (   10 /SS )
   (   11 /RPi/MOSI )
-  (   12 /aLaMode_comm/MISO )
-  (   13 /aLaMode_comm/SCK )
+  (   12 /RPi/MISO )
+  (   13 /aLaMode_pwr/SCK )
   (  3V3 +3.3V )
   (  AD0 /PC0 )
   (  AD1 /PC1 )
   (  AD2 /PC2 )
   (  AD3 /PC3 )
-  (  AD4 /aLaMode_v1_rtc/SDA )
+  (  AD4 /RPi/SDA )
   (  AD5 /aLaMode_v1_rtc/SCL )
   ( AREF /AREF )
   ( GND1 GND )
@@ -89,7 +109,7 @@
   (    4 /1pps )
   (    5 /aLaMode_v1_rtc/SQW )
   (    6 /PD4 )
-  (    7 /aLaMode_pwr/5V0 )
+  (    7 /RPi/5V0 )
   (    8 GND )
   (    9 /PB6 )
   (   10 /PB7 )
@@ -100,16 +120,16 @@
   (   15 /PB1 )
   (   16 /SS )
   (   17 /RPi/MOSI )
-  (   18 /aLaMode_comm/MISO )
-  (   19 /aLaMode_comm/SCK )
-  (   20 /aLaMode_pwr/5V0 )
+  (   18 /RPi/MISO )
+  (   19 /aLaMode_pwr/SCK )
+  (   20 /RPi/5V0 )
   (   21 /AREF )
   (   22 GND )
   (   23 /PC0 )
   (   24 /PC1 )
   (   25 /PC2 )
   (   26 /PC3 )
-  (   27 /aLaMode_v1_rtc/SDA )
+  (   27 /RPi/SDA )
   (   28 /aLaMode_v1_rtc/SCL )
  )
  ( /4F9A5A10 d_VMD2  D4 RB886G {Lib=DIODESCH}
@@ -147,7 +167,7 @@
   (    4 +3.3V )
   (    5 /SD_CLK )
   (    6 GND )
-  (    7 /aLaMode_comm/MISO )
+  (    7 /RPi/MISO )
   (    8 ? )
   (    9 ? )
   (   G1 GND )
@@ -159,7 +179,7 @@
  )
  ( /4DCB7505 SO14E  U2 74HC125 {Lib=74LS125}
   (    1 GND )
-  (    2 /aLaMode_comm/SCK )
+  (    2 /aLaMode_pwr/SCK )
   (    3 /SD_CLK )
   (    4 GND )
   (    5 /RPi/MOSI )
@@ -174,11 +194,11 @@
   (   14 +3.3V )
  )
  ( /4DCAC172 r_0805  R2 10k {Lib=R}
-  (    1 /aLaMode_pwr/5V0 )
-  (    2 /aLaMode_v1_rtc/SDA )
+  (    1 /RPi/5V0 )
+  (    2 /RPi/SDA )
  )
  ( /4DCAC161 r_0805  R1 10k {Lib=R}
-  (    1 /aLaMode_pwr/5V0 )
+  (    1 /RPi/5V0 )
   (    2 /aLaMode_v1_rtc/SCL )
  )
  ( /4DCA7D67 SW_SMD  SW1 SW_PUSH {Lib=SW_PUSH}
@@ -186,11 +206,11 @@
   (    2 /RPi/RESET )
  )
  ( /4DCA7BFC r_0805  R7 10k {Lib=R}
-  (    1 /aLaMode_pwr/5V0 )
+  (    1 /RPi/5V0 )
   (    2 /RPi/RESET )
  )
  ( /4DCA7BAC c_0805  C1 100n {Lib=C}
-  (    1 /aLaMode_pwr/5V0 )
+  (    1 /RPi/5V0 )
   (    2 GND )
  )
  ( /4DCA5F5F r_0805  R3 10k {Lib=R}
@@ -203,140 +223,18 @@
  )
  ( /4DCA5F59 r_0805  R6 10k {Lib=R}
   (    1 +3.3V )
-  (    2 /aLaMode_comm/SCK )
- )
- ( /4FE44C1B/4FE468C3 $noname  B4 I/O {Lib=I/O}
-  (    1 /aLaMode_comm/CBUS3 )
- )
- ( /4FE44C1B/4FE468BD $noname  B1 I/O {Lib=I/O}
-  (    1 /aLaMode_comm/CBUS0 )
- )
- ( /4FE44C1B/4FE46431 $noname  C21 100nF {Lib=C}
-  (    1 N-000110 )
-  (    2 GND )
- )
- ( /4FE44C1B/4FE45898 $noname  P14 CTS<>GND {Lib=CONN_2}
-  (    1 /aLaMode_comm/~CTS )
-  (    2 GND )
- )
- ( /4FE44C1B/4FE456C7 $noname  P13 FT231X_OUT {Lib=CONN_8}
-  (    1 /RPi/TXD )
-  (    2 /RPi/RXD )
-  (    3 /aLaMode_comm/~RTS )
-  (    4 /aLaMode_comm/~CTS )
-  (    5 /aLaMode_comm/~DTR )
-  (    6 /aLaMode_comm/~DSR )
-  (    7 /aLaMode_comm/~DCD )
-  (    8 /aLaMode_comm/~RI )
- )
- ( /4FE44C1B/4FE4562A $noname  C23 4u7 {Lib=C_POL}
-  (    1 /aLaMode_pwr/5V0 )
-  (    2 GND )
- )
- ( /4FE44C1B/4FE45609 $noname  C22 100nF {Lib=C}
-  (    1 /aLaMode_pwr/5V0 )
-  (    2 GND )
- )
- ( /4FE44C1B/4FE455E4 $noname  C17 10nF {Lib=C}
-  (    1 /aLaMode_comm/USBVCC )
-  (    2 GND )
- )
- ( /4FE44C1B/4FE45531 $noname  C18 47p {Lib=C}
-  (    1 /aLaMode_comm/USBD- )
-  (    2 GND )
- )
- ( /4FE44C1B/4FE4552A $noname  C19 47p {Lib=C}
-  (    1 /aLaMode_comm/USBD+ )
-  (    2 GND )
- )
- ( /4FE44C1B/4FE4541E $noname  R19 270E {Lib=R}
-  (    1 N-000112 )
-  (    2 /aLaMode_pwr/5V0 )
- )
- ( /4FE44C1B/4FE4541A $noname  R18 270E {Lib=R}
-  (    1 N-000103 )
-  (    2 /aLaMode_pwr/5V0 )
- )
- ( /4FE44C1B/4FE45412 $noname  D10 LED {Lib=LED}
-  (    1 N-000112 )
-  (    2 /aLaMode_comm/TxLED )
- )
- ( /4FE44C1B/4FE45407 $noname  D9 LED {Lib=LED}
-  (    1 N-000103 )
-  (    2 /aLaMode_comm/RxLED )
- )
- ( /4FE44C1B/4FE45275 $noname  R15 15k {Lib=R}
-  (    1 GND )
-  (    2 /aLaMode_comm/VBUS_SENSE )
- )
- ( /4FE44C1B/4FE4526D $noname  R14 10k {Lib=R}
-  (    1 /aLaMode_comm/VBUS_SENSE )
-  (    2 /aLaMode_comm/USBVCC )
- )
- ( /4FE44C1B/4FE45259 $noname  R17 27E {Lib=R}
-  (    1 /aLaMode_comm/USBD+ )
-  (    2 N-000111 )
- )
- ( /4FE44C1B/4FE45251 $noname  R16 27E {Lib=R}
-  (    1 /aLaMode_comm/USBD- )
-  (    2 N-000104 )
- )
- ( /4FE44C1B/4FE4520E $noname  C20 10nF {Lib=C}
-  (    1 /aLaMode_comm/VBUS_SENSE )
-  (    2 GND )
- )
- ( /4FE44C1B/4FE450CA $noname  U7 FT231XS {Lib=FT231XS}
-  (    1 /aLaMode_comm/~DTR )
-  (    2 /aLaMode_comm/~RTS )
-  (    3 N-000110 )
-  (    4 /RPi/RXD )
-  (    5 /aLaMode_comm/~RI )
-  (    6 GND )
-  (    7 /aLaMode_comm/~DSR )
-  (    8 /aLaMode_comm/~DCD )
-  (    9 /aLaMode_comm/~CTS )
-  (   10 /aLaMode_comm/TxLED )
-  (   11 N-000111 )
-  (   12 N-000104 )
-  (   13 N-000110 )
-  (   14 /aLaMode_comm/VBUS_SENSE )
-  (   15 /aLaMode_pwr/5V0 )
-  (   16 GND )
-  (   17 /aLaMode_comm/RxLED )
-  (   18 /aLaMode_comm/CBUS0 )
-  (   19 /aLaMode_comm/CBUS3 )
-  (   20 /RPi/TXD )
- )
- ( /4FE44C1B/4FE44C6C Header_FTDI  P8 FTDI {Lib=CONN_6}
-  (    1 GND )
-  (    2 /aLaMode_comm/~CTS )
-  (    3 /aLaMode_comm/USBVCC )
-  (    4 /RPi/RXD )
-  (    5 /RPi/TXD )
-  (    6 /aLaMode_comm/~RTS )
- )
- ( /4FE44C1B/4FE44C6B c_0805  C7 100n {Lib=C}
-  (    1 /aLaMode_comm/~RTS )
-  (    2 /RPi/RESET )
- )
- ( /4FE44C1B/4FE44C6A Header_ICSP  P9 ICSP {Lib=ISP}
-  (    1 /aLaMode_comm/MISO )
-  (    2 /aLaMode_pwr/5V0 )
-  (    3 /aLaMode_comm/SCK )
-  (    4 /RPi/MOSI )
-  (    5 /RPi/RESET )
-  (    6 GND )
+  (    2 /aLaMode_pwr/SCK )
  )
  ( /4FC07407/4FE44ABE r_0805  R5 1k5 {Lib=R}
-  (    1 /aLaMode_pwr/5V0 )
+  (    1 /RPi/5V0 )
   (    2 N-000094 )
  )
  ( /4FC07407/4FE44ABD r_0805  R8 1k5 {Lib=R}
   (    1 +3.3V )
-  (    2 N-000095 )
+  (    2 N-000093 )
  )
  ( /4FC07407/4FE44ABB led_0805  D2 LED {Lib=LED}
-  (    1 N-000095 )
+  (    1 N-000093 )
   (    2 GND )
  )
  ( /4FC07407/4FE44ABA led_0805  D1 LED {Lib=LED}
@@ -345,24 +243,24 @@
  )
  ( /4FC07407/4FDCE35C f_1206  F1 nanoSMDC110F {Lib=FUSE}
   (    1 /aLaMode_pwr/USB_IN )
-  (    2 /aLaMode_pwr/5V0 )
+  (    2 /RPi/5V0 )
  )
  ( /4FC07407/4FDB1F26 c_0805  C16 10n {Lib=C}
-  (    1 N-000098 )
+  (    1 N-000096 )
   (    2 GND )
  )
  ( /4FC07407/4FDA1E4C c_0805  C15 1n {Lib=C}
-  (    1 /aLaMode_pwr/5V0 )
+  (    1 /RPi/5V0 )
   (    2 GND )
  )
  ( /4FC07407/4FDA1DDC diode-DO214AA  D7 SMBJ5.0CA-TR {Lib=DIODE_TRANSIL}
-  (    1 /aLaMode_pwr/5V0 )
+  (    1 /RPi/5V0 )
   (    2 GND )
  )
  ( /4FC07407/4FDA1DB8 USB_B_Micro  P12 UUSB_B {Lib=UUSB_B}
   (    1 /aLaMode_pwr/USB_IN )
-  (    2 /aLaMode_comm/USBD- )
-  (    3 /aLaMode_comm/USBD+ )
+  (    2 ? )
+  (    3 ? )
   (    4 ? )
   (    5 GND )
   (   T1 GND )
@@ -373,38 +271,38 @@
   (   T6 GND )
  )
  ( /4FC07407/4FC62203 led_0805  D6 LED {Lib=LED}
-  (    1 N-000100 )
+  (    1 N-000095 )
   (    2 GND )
  )
  ( /4FC07407/4FC621EE r_0805  R12 1k {Lib=R}
-  (    1 N-000093 )
-  (    2 N-000100 )
+  (    1 N-000097 )
+  (    2 N-000095 )
  )
  ( /4FC07407/4FC62038 SO8E  U5 LM358N {Lib=LM358N}
   (    1 /aLaMode_pwr/GATE_CMD )
   (    2 +3.3V )
   (    3 /aLaMode_pwr/CMP )
   (    4 GND )
-  (    5 /aLaMode_comm/SCK )
-  (    6 N-000093 )
-  (    7 N-000093 )
-  (    8 /aLaMode_pwr/5V0 )
+  (    5 /aLaMode_pwr/SCK )
+  (    6 N-000097 )
+  (    7 N-000097 )
+  (    8 /RPi/5V0 )
  )
  ( /4FC07407/4FC61FE5 c_0805  C2 100n {Lib=C}
-  (    1 /aLaMode_pwr/5V0 )
+  (    1 /RPi/5V0 )
   (    2 GND )
  )
  ( /4FC07407/4FC61EAC SOT23-5  U1 LP2985-33DBVR {Lib=LP2985-33DBVR}
-  (    1 /aLaMode_pwr/5V0 )
+  (    1 /RPi/5V0 )
   (    2 GND )
-  (    3 /aLaMode_pwr/5V0 )
-  (    4 N-000098 )
+  (    3 /RPi/5V0 )
+  (    4 N-000096 )
   (    5 +3.3V )
  )
  ( /4FC07407/4FC61E4C SOT23-3  Q1 FDN340P {Lib=MOSFET_P}
-  (    D /aLaMode_comm/USBVCC )
+  (    D /aLaMode_pwr/USBVCC )
   (    G /aLaMode_pwr/GATE_CMD )
-  (    S /aLaMode_pwr/5V0 )
+  (    S /RPi/5V0 )
  )
  ( /4FC07407/4FC61E0E r_0805  R11 10k {Lib=R}
   (    1 /aLaMode_pwr/CMP )
@@ -416,9 +314,9 @@
  )
  ( /4FC07407/4FC61C2F SOT223  U3 NCP1117ST50T3G {Lib=NCP1117ST50T3G}
   (    1 GND )
-  (    2 /aLaMode_pwr/5V0 )
+  (    2 /RPi/5V0 )
   (    3 /aLaMode_pwr/V_IN )
-  (    4 /aLaMode_pwr/5V0 )
+  (    4 /RPi/5V0 )
  )
  ( /4FC07407/4FC61A7F do_457  D5 MBRM110LT1G {Lib=DIODESCH}
   (    1 /aLaMode_pwr/PWR_IN )
@@ -429,7 +327,7 @@
   (    2 GND )
  )
  ( /4FC07407/4FC61A0B c_0805  C3 2u2_Tant {Lib=C_POL}
-  (    1 /aLaMode_pwr/5V0 )
+  (    1 /RPi/5V0 )
   (    2 GND )
  )
  ( /4FC07407/4FC61A07 c_0805  C5 2u2 {Lib=C}
@@ -437,7 +335,7 @@
   (    2 GND )
  )
  ( /4FC07407/4FC61A06 c_0805  C4 100n {Lib=C}
-  (    1 /aLaMode_pwr/5V0 )
+  (    1 /RPi/5V0 )
   (    2 GND )
  )
  ( /4FC07407/4FC61A05 JACK_ALIM  P10 V_IN {Lib=V_IN}
@@ -456,7 +354,7 @@
  ( /4FC07407/4FC07436 PCB  PCB1 PCB {Lib=PCB}
  )
  ( /4E1FEA4E/4ECB8D22 r_0805  R9 10k {Lib=R}
-  (    1 /aLaMode_pwr/5V0 )
+  (    1 /RPi/5V0 )
   (    2 /aLaMode_v1_rtc/SQW )
  )
  ( /4E1FEA4E/4E1FEBD4 I/O  B15 I/O {Lib=I/O}
@@ -470,7 +368,7 @@
  )
  ( /4E1FEA4E/4E1FEA7F DS3231  U4 DS3231N {Lib=DS3231N}
   (    1 /aLaMode_v1_rtc/32k )
-  (    2 /aLaMode_pwr/5V0 )
+  (    2 /RPi/5V0 )
   (    3 /aLaMode_v1_rtc/SQW )
   (    4 /aLaMode_v1_rtc/RST )
   (    5 GND )
@@ -483,7 +381,7 @@
   (   12 GND )
   (   13 GND )
   (   14 /aLaMode_v1_rtc/BAT )
-  (   15 /aLaMode_v1_rtc/SDA )
+  (   15 /RPi/SDA )
   (   16 /aLaMode_v1_rtc/SCL )
  )
  ( /4E1FEA4E/4E1FEA7E c_0805  C9 100n {Lib=C}
@@ -547,7 +445,7 @@
  )
  ( /4FBF6CBF/4FD62B83 c_0805  C12 100n {Lib=C}
   (    1 GND )
-  (    2 /aLaMode_pwr/5V0 )
+  (    2 /RPi/5V0 )
  )
  ( /4FBF6CBF/4FD5DAA4 tssop-20  U6 TXS0108 {Lib=TSX0108}
   (    1 /RPi/Rpi_SDA )
@@ -561,15 +459,15 @@
   (    9 /RPi/Rpi_SCK )
   (   10 /RPi/U6_OE )
   (   11 GND )
-  (   12 /aLaMode_comm/SCK )
-  (   13 /aLaMode_comm/MISO )
+  (   12 /aLaMode_pwr/SCK )
+  (   13 /RPi/MISO )
   (   14 /RPi/MOSI )
   (   15 /RPi/RESET )
   (   16 /RPi/TXD )
   (   17 /RPi/RXD )
   (   18 /aLaMode_v1_rtc/SCL )
-  (   19 /aLaMode_pwr/5V0 )
-  (   20 /aLaMode_v1_rtc/SDA )
+  (   19 /RPi/5V0 )
+  (   20 /RPi/SDA )
  )
  ( /4FBF6CBF/4FBF744D Header_GPU_JTAG  P2 GPU_JTAG {Lib=CONN_8}
   (    1 ? )
@@ -584,6 +482,11 @@
 )
 *
 { Allowed footprints by component:
+$component C7
+ SM*
+ C?
+ C1-1
+$endlist
 $component F2
  R?
  SM0603
@@ -659,94 +562,6 @@ $component R6
  R?
  SM0603
  SM0805
-$endlist
-$component C21
- SM*
- C?
- C1-1
-$endlist
-$component C23
- SM*
- C?
- C1-1
-$endlist
-$component C22
- SM*
- C?
- C1-1
-$endlist
-$component C17
- SM*
- C?
- C1-1
-$endlist
-$component C18
- SM*
- C?
- C1-1
-$endlist
-$component C19
- SM*
- C?
- C1-1
-$endlist
-$component R19
- R?
- SM0603
- SM0805
-$endlist
-$component R18
- R?
- SM0603
- SM0805
-$endlist
-$component D10
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component D9
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component R15
- R?
- SM0603
- SM0805
-$endlist
-$component R14
- R?
- SM0603
- SM0805
-$endlist
-$component R17
- R?
- SM0603
- SM0805
-$endlist
-$component R16
- R?
- SM0603
- SM0805
-$endlist
-$component C20
- SM*
- C?
- C1-1
-$endlist
-$component C7
- SM*
- C?
- C1-1
 $endlist
 $component R5
  R?
@@ -875,251 +690,310 @@ $endlist
 $endfootprintlist
 }
 { Pin List by Nets
-Net 6 "/PC1" "PC1"
+Net 6 "/PC0" "PC0"
+ SHIELD1 AD0
+ IC1 23
+Net 7 "/PC1" "PC1"
  SHIELD1 AD1
  IC1 24
-Net 7 "/PC0" "PC0"
- IC1 23
- SHIELD1 AD0
 Net 8 "/PC2" "PC2"
  SHIELD1 AD2
  IC1 25
 Net 9 "/PC3" "PC3"
  IC1 26
  SHIELD1 AD3
-Net 10 "/PB6" "PB6"
- C10 1
- IC1 9
- X1 1
-Net 11 "/aLaMode_pwr/V_IN" "V_IN"
+Net 10 "/PB1" "PB1"
+ P4 4
+ IC1 15
+ SHIELD1 9
+Net 11 "/PB0" "PB0"
+ IC1 14
+ SHIELD1 8
+Net 12 "/PB7" "PB7"
+ IC1 10
+ X1 2
+ C11 2
+Net 13 "/PD7" "PD7"
+ SHIELD1 7
+ IC1 13
+Net 14 "/aLaMode_pwr/V_IN" "V_IN"
+ C6 1
+ R10 1
+ D5 2
  SHIELD1 V_IN
  U3 3
- D5 2
- R10 1
- C6 1
-Net 12 "/aLaMode_comm/USBVCC" "USBVCC"
+Net 15 "/aLaMode_pwr/USBVCC" "USBVCC"
  Q1 D
  P8 3
- R14 2
- C17 1
-Net 13 "/aLaMode_pwr/5V0" "5V0"
- C2 1
- R7 1
- U5 8
- U3 4
- C1 1
- Q1 S
- C4 1
- U3 2
- U1 1
- R2 1
- C3 1
- R1 1
- IC1 20
- P9 2
- C15 1
- C22 1
- IC1 7
- R19 2
- SHIELD1 5V
- R18 2
- F2 1
- C23 1
- D7 1
- U7 15
- U1 3
- U6 19
- C12 2
- F1 2
- U4 2
- R9 1
- R5 1
-Net 14 "+3.3V" "+3.3V"
- SD1 4
- C5 1
- U5 2
- R6 1
- R3 1
- R4 1
- C14 2
- U2 14
+Net 16 "/aLaMode_pwr/SCK" "SCK"
+ P9 3
+ IC1 19
+ SHIELD1 13
+ U6 12
+ U2 2
+ R6 2
+ U5 5
+Net 17 "+3.3V" "+3.3V"
  U2 13
  U2 12
- U1 5
- P7 4
- R8 1
+ U2 14
+ SD1 4
+ U5 2
  D3 1
+ P7 4
+ C5 1
+ R6 1
+ R4 1
+ R3 1
+ R8 1
+ U1 5
+ C14 2
  SHIELD1 3V3
-Net 15 "/RPi/TXD" "TXD"
- U7 20
- IC1 3
- U6 16
- P8 5
- P13 1
- SHIELD1 1
-Net 16 "/RPi/RXD" "RXD"
- U7 4
- U6 17
- P13 2
- P8 4
- SHIELD1 0
- IC1 2
-Net 17 "/1pps" "1pps"
- IC1 4
- P7 6
- SHIELD1 2
-Net 18 "/aLaMode_v1_rtc/SQW" "SQW"
+Net 18 "/RPi/5V0" "5V0"
+ U3 4
+ U3 2
+ U4 2
+ U5 8
+ C4 1
+ C2 1
+ U1 1
+ U1 3
+ C3 1
+ Q1 S
+ R7 1
+ C15 1
+ R1 1
+ R2 1
+ IC1 7
+ IC1 20
+ R5 1
+ R9 1
+ F2 1
+ SHIELD1 5V
+ C1 1
+ P9 2
+ F1 2
+ C12 2
+ D7 1
+ U6 19
+Net 19 "/~RTS" "~RTS"
+ P8 6
+ C7 1
+Net 20 "/5V_INT" "5V_INT"
+ F2 2
+ P4 7
+ P4 8
+Net 21 "/SS" "SS"
+ P4 5
+ R3 2
+ IC1 16
+ U2 9
+ SHIELD1 10
+Net 22 "/aLaMode_v1_rtc/SQW" "SQW"
  SHIELD1 3
- IC1 5
- R9 2
  B2 1
  U4 3
  P4 1
-Net 19 "/PD4" "PD4"
- SHIELD1 4
+ IC1 5
+ R9 2
+Net 23 "/PD4" "PD4"
  IC1 6
-Net 20 "/PD5" "PD5"
- IC1 11
+ SHIELD1 4
+Net 24 "/PD5" "PD5"
  P4 2
+ IC1 11
  SHIELD1 5
-Net 21 "/GPS_Tx" "GPS_Tx"
+Net 25 "/GPS_Tx" "GPS_Tx"
  IC1 12
- P7 2
- P4 3
  SHIELD1 6
-Net 22 "/PD7" "PD7"
- SHIELD1 7
- IC1 13
-Net 23 "/PB0" "PB0"
- IC1 14
- SHIELD1 8
-Net 24 "/PB1" "PB1"
- IC1 15
- SHIELD1 9
- P4 4
-Net 25 "/5V_SERVO" "5V_SERVO"
+ P4 3
+ P7 2
+Net 26 "/5V_SERVO" "5V_SERVO"
  D8 2
- P5 2
- P5 8
- P5 1
- P5 3
- P5 4
  C8 1
- P5 5
+ P5 3
+ P5 2
+ P5 1
  P5 6
  P5 7
-Net 26 "/SS" "SS"
- IC1 16
- R3 2
- U2 9
- SHIELD1 10
- P4 5
-Net 27 "/5V_INT" "5V_INT"
- P4 8
- P4 7
- F2 2
-Net 29 "/SD_CLK" "SD_CLK"
- U2 3
- SD1 5
-Net 30 "/aLaMode_comm/USBD+" "USBD+"
- P12 3
- C19 1
- R17 1
-Net 31 "/GPS_BAT" "GPS_BAT"
- P7 5
- D4 2
- D3 2
-Net 32 "/RPi/RESET" "RESET"
+ P5 4
+ P5 8
+ P5 5
+Net 27 "/1pps" "1pps"
+ P7 6
+ IC1 4
+ SHIELD1 2
+Net 29 "/SD_DATA_IN" "SD_DATA_IN"
+ U2 6
+ SD1 3
+Net 30 "/SD_CS" "SD_CS"
+ SD1 2
+ U2 8
+Net 31 "/RPi/RESET" "RESET"
+ C7 2
+ IC1 1
+ P9 5
  SHIELD1 RST
  SW1 2
  R7 2
- C7 2
  U6 15
- IC1 1
- P9 5
+Net 32 "/GPS_BAT" "GPS_BAT"
+ D4 2
+ D3 2
+ P7 5
 Net 33 "/aLaMode_v1_rtc/BAT" "BAT"
- BT1 +
+ D4 1
  C9 1
  U4 14
- D4 1
+ BT1 +
 Net 34 "/AREF" "AREF"
  IC1 21
  SHIELD1 AREF
-Net 35 "/aLaMode_v1_rtc/SCL" "SCL"
- SHIELD1 AD5
- U4 16
- U6 18
- R1 2
+Net 35 "/RPi/TXD" "TXD"
+ IC1 3
+ U6 16
+ P8 5
+ SHIELD1 1
+Net 36 "/RPi/RXD" "RXD"
+ U6 17
+ SHIELD1 0
+ IC1 2
+ P8 4
+Net 37 "/aLaMode_v1_rtc/SCL" "SCL"
  IC1 28
-Net 36 "/aLaMode_v1_rtc/SDA" "SDA"
+ U4 16
+ R1 2
+ U6 18
+ SHIELD1 AD5
+Net 38 "/RPi/SDA" "SDA"
  IC1 27
- U4 15
- R2 2
  U6 20
+ R2 2
  SHIELD1 AD4
-Net 37 "/aLaMode_comm/MISO" "MISO"
- SD1 7
- P9 1
+ U4 15
+Net 39 "/RPi/MISO" "MISO"
  U6 13
- IC1 18
+ P9 1
  SHIELD1 12
-Net 38 "/RPi/MOSI" "MOSI"
- P9 4
- SHIELD1 11
- IC1 17
- P4 6
- U6 14
- R4 2
+ SD1 7
+ IC1 18
+Net 40 "/RPi/MOSI" "MOSI"
  U2 5
-Net 39 "/aLaMode_comm/SCK" "SCK"
- IC1 19
- U6 12
- U5 5
- U2 2
- R6 2
- SHIELD1 13
- P9 3
-Net 45 "/aLaMode_v1_rtc/32k" "32k"
- B15 1
- U4 1
+ P9 4
+ P4 6
+ R4 2
+ SHIELD1 11
+ U6 14
+ IC1 17
 Net 46 "/aLaMode_v1_rtc/RST" "RST"
- B3 1
  U4 4
-Net 47 "/SD_CS" "SD_CS"
- U2 8
- SD1 2
-Net 48 "/SD_DATA_IN" "SD_DATA_IN"
- SD1 3
- U2 6
-Net 49 "/aLaMode_comm/USBD-" "USBD-"
- C18 1
- P12 2
- R16 1
-Net 50 "/PB7" "PB7"
- IC1 10
- C11 2
- X1 2
+ B3 1
+Net 47 "/aLaMode_v1_rtc/32k" "32k"
+ U4 1
+ B15 1
+Net 48 "/PB6" "PB6"
+ IC1 9
+ X1 1
+ C10 1
+Net 49 "/SD_CLK" "SD_CLK"
+ U2 3
+ SD1 5
+Net 50 "GND" "GND"
+ P12 T5
+ P12 T4
+ P12 T6
+ P12 T3
+ R13 2
+ P11 3
+ P10 3
+ U5 4
+ P10 2
+ C4 2
+ C5 2
+ C3 2
+ C6 2
+ U3 1
+ R11 2
+ U1 2
+ C2 2
+ P12 T2
+ C16 2
+ D1 2
+ D2 2
+ D6 2
+ P12 T1
+ P12 5
+ D7 2
+ C15 2
+ C12 1
+ C13 1
+ C10 2
+ P1 6
+ U6 11
+ BT1 -
+ U2 4
+ SW1 1
+ P7 3
+ SD1 6
+ SD1 G1
+ SD1 G2
+ SD1 G3
+ SD1 G4
+ C11 1
+ U4 5
+ U4 6
+ U4 7
+ U4 8
+ U4 9
+ U4 10
+ U4 11
+ U4 12
+ U4 13
+ C9 2
+ P8 2
+ C14 1
+ P9 6
+ P8 1
+ D8 1
+ P6 2
+ C8 2
+ SHIELD1 GND1
+ SHIELD1 GND2
+ SHIELD1 GND3
+ IC1 8
+ IC1 22
+ P6 1
+ P6 6
+ P6 7
+ P6 8
+ U2 1
+ U2 7
+ C1 2
+ U2 10
+ P6 3
+ P6 5
+ P6 4
 Net 51 "/RPi/Rpi_MISO" "Rpi_MISO"
- P1 21
  U6 8
+ P1 21
 Net 52 "/RPi/Rpi_3V3" "Rpi_3V3"
- P11 1
  P1 1
- C13 2
+ P11 1
  U6 2
+ C13 2
 Net 55 "/RPi/Rpi_Tx" "Rpi_Tx"
- U6 4
  P1 8
+ U6 4
 Net 84 "/RPi/Rpi_SCL" "Rpi_SCL"
- U6 3
  P1 5
+ U6 3
 Net 85 "/RPi/Rpi_SDA" "Rpi_SDA"
  P1 3
  U6 1
 Net 88 "/RPi/U6_OE" "U6_OE"
+ U6 10
  R13 1
  P11 2
- U6 10
 Net 89 "/RPi/Rpi_MOSI" "Rpi_MOSI"
  U6 7
  P1 19
@@ -1130,176 +1004,36 @@ Net 91 "/RPi/Rpi_RST" "Rpi_RST"
  P1 12
  U6 6
 Net 92 "/RPi/Rpi_Rx" "Rpi_Rx"
- U6 5
  P1 10
+ U6 5
 Net 93 "" ""
- R12 1
- U5 7
- U5 6
-Net 94 "" ""
- D1 1
- R5 2
-Net 95 "" ""
- D2 1
  R8 2
-Net 96 "/aLaMode_pwr/USB_IN" "USB_IN"
- F1 1
- P12 1
-Net 98 "" ""
- C16 1
- U1 4
-Net 99 "/aLaMode_pwr/PWR_IN" "PWR_IN"
- P10 1
- D5 1
-Net 100 "" ""
+ D2 1
+Net 94 "" ""
+ R5 2
+ D1 1
+Net 95 "" ""
  R12 2
  D6 1
-Net 101 "/aLaMode_pwr/CMP" "CMP"
- R11 1
- U5 3
- R10 2
-Net 102 "/aLaMode_pwr/GATE_CMD" "GATE_CMD"
+Net 96 "" ""
+ C16 1
+ U1 4
+Net 97 "" ""
+ R12 1
+ U5 6
+ U5 7
+Net 100 "/aLaMode_pwr/GATE_CMD" "GATE_CMD"
  U5 1
  Q1 G
-Net 103 "" ""
- D9 1
- R18 1
-Net 104 "" ""
- U7 12
- R16 2
-Net 105 "/aLaMode_comm/~CTS" "~CTS"
- P14 1
- P8 2
- P13 4
- U7 9
-Net 106 "/aLaMode_comm/CBUS0" "CBUS0"
- U7 18
- B1 1
-Net 107 "/aLaMode_comm/CBUS3" "CBUS3"
- U7 19
- B4 1
-Net 108 "GND" "GND"
- U1 2
- P12 T4
- U5 4
- C2 2
- SW1 1
- U2 4
- R11 2
- P6 4
- C20 2
- P6 1
- U7 6
- P6 2
- P6 3
- U7 16
- P6 5
- D8 1
- C14 1
- C8 2
- P14 2
- C23 2
- SHIELD1 GND3
- C22 2
- C17 2
- C18 2
- SHIELD1 GND2
- C19 2
- IC1 8
- R15 1
- C21 2
- SHIELD1 GND1
- P8 1
- IC1 22
- P9 6
- U2 1
- U2 7
- U2 10
- D6 2
- C1 2
- P12 T6
- P6 6
- P12 T5
- P6 7
- P6 8
- U4 5
- C12 1
- C13 1
- P1 6
- U6 11
- U4 6
- U4 7
- U4 8
- U4 9
- U4 10
- U4 11
- U4 12
- U4 13
- C9 2
- BT1 -
- C5 2
- C3 2
- C6 2
- C11 1
- C4 2
- C10 2
- U3 1
- SD1 6
- SD1 G1
- SD1 G2
- SD1 G3
- SD1 G4
- P10 3
- P10 2
- P12 5
- P12 T2
- P12 T3
- P12 T1
- P7 3
- R13 2
- P11 3
- D2 2
- D1 2
- C16 2
- D7 2
- C15 2
-Net 109 "/aLaMode_comm/~RTS" "~RTS"
- P13 3
- U7 2
- P8 6
- C7 1
-Net 110 "" ""
- C21 1
- U7 3
- U7 13
-Net 111 "" ""
- R17 2
- U7 11
-Net 112 "" ""
- R19 1
- D10 1
-Net 113 "/aLaMode_comm/~DTR" "~DTR"
- U7 1
- P13 5
-Net 114 "/aLaMode_comm/~DSR" "~DSR"
- U7 7
- P13 6
-Net 115 "/aLaMode_comm/~DCD" "~DCD"
- U7 8
- P13 7
-Net 116 "/aLaMode_comm/~RI" "~RI"
- U7 5
- P13 8
-Net 117 "/aLaMode_comm/RxLED" "RxLED"
- D9 2
- U7 17
-Net 118 "/aLaMode_comm/TxLED" "TxLED"
- D10 2
- U7 10
-Net 119 "/aLaMode_comm/VBUS_SENSE" "VBUS_SENSE"
- R15 2
- R14 1
- U7 14
- C20 1
+Net 101 "/aLaMode_pwr/CMP" "CMP"
+ U5 3
+ R11 1
+ R10 2
+Net 103 "/aLaMode_pwr/USB_IN" "USB_IN"
+ P12 1
+ F1 1
+Net 104 "/aLaMode_pwr/PWR_IN" "PWR_IN"
+ P10 1
+ D5 1
 }
 #End
