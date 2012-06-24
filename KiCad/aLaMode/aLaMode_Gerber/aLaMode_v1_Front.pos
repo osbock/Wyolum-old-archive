@@ -1,5 +1,5 @@
-### Module positions - created on 6/19/2012 5:15:52 PM ###
-### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
+### Module positions - created on Sunday 24 June 2012 07:20:32 PM IST ###
+### Printed by PcbNew version pcbnew (2011-05-25)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Front
 # Ref    Val                  PosX       PosY        Rot     Side
@@ -33,6 +33,7 @@ P8       FTDI                 3.9075     1.3800     180.0    Front
 P9       ICSP                 3.7075     1.9800      90.0    Front
 P10      V_IN                 1.3100     2.8450       0.0    Front
 P11      U6_OE                1.2075     2.0150     180.0    Front
+P13      AREF                 3.4575     1.9800     270.0    Front
 Q1       FDN340P              1.7650     2.0050     180.0    Front
 R3       10k                  2.0550     1.7900     270.0    Front
 R4       10k                  2.0550     1.4575     270.0    Front
@@ -41,7 +42,7 @@ R6       10k                  1.8350     1.3175       0.0    Front
 R7       10k                  2.3225     1.7900     270.0    Front
 R8       1k5                  2.7175     1.9875      90.0    Front
 R10      10k                  2.1150     2.1925      90.0    Front
-R11      10k                  2.2200     2.1925     270.0    Front
+R11      10k                  2.2625     2.1425     180.0    Front
 R12      1k                   2.2200     1.9875      90.0    Front
 SD1      SD_CARD_MICRO        1.6100     1.5225     180.0    Front
 SHIELD1  ARDUINO_SHIELD       1.6575     3.1125       0.0    Front

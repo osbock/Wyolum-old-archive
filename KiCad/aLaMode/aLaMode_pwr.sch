@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 6/23/2012 3:17:36 PM
+EESchema Schematic File Version 2  date Sunday 24 June 2012 07:25:56 PM IST
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
@@ -6,9 +6,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
-Sheet 3 4
+Sheet 2 4
 Title "aLaMode"
-Date "23 jun 2012"
+Date "24 jun 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""

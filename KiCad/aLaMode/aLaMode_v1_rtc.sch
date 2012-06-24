@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 6/23/2012 3:17:36 PM
+EESchema Schematic File Version 2  date Sunday 24 June 2012 07:25:56 PM IST
 LIBS:aLaMode
 LIBS:power
 LIBS:aLaMode_v1-cache
@@ -6,9 +6,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
-Sheet 4 4
+Sheet 3 4
 Title "aLaMode"
-Date "23 jun 2012"
+Date "24 jun 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -17,14 +17,14 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Wire Wire Line
-	7250 4800 6950 4800
+	8050 4800 7050 4800
 Wire Wire Line
-	7250 4500 6950 4500
+	8050 4500 7050 4500
 Connection ~ 6650 1675
 Wire Wire Line
 	6650 1750 6650 1675
 Wire Wire Line
-	7250 3750 7050 3750
+	8050 3750 7050 3750
 Wire Wire Line
 	7050 3750 7050 1675
 Wire Wire Line
@@ -32,7 +32,7 @@ Wire Wire Line
 Wire Wire Line
 	6450 2600 6675 2600
 Wire Wire Line
-	7250 4000 4500 4000
+	8050 4000 4500 4000
 Wire Wire Line
 	4500 4000 4500 2850
 Wire Wire Line
@@ -92,7 +92,7 @@ Wire Wire Line
 Wire Wire Line
 	4550 3000 4550 3875
 Wire Wire Line
-	4550 3875 7250 3875
+	4550 3875 8050 3875
 Wire Wire Line
 	6450 2450 6675 2450
 Wire Wire Line
@@ -100,7 +100,7 @@ Wire Wire Line
 Wire Wire Line
 	4375 2600 4375 4125
 Wire Wire Line
-	4375 4125 7250 4125
+	4375 4125 8050 4125
 Wire Wire Line
 	5300 2000 5300 1850
 Connection ~ 5300 1900
@@ -108,24 +108,24 @@ Wire Wire Line
 	6650 2250 6650 2450
 Connection ~ 6650 2450
 Wire Wire Line
-	7250 4350 6950 4350
+	8050 4350 7050 4350
 Wire Wire Line
-	7250 4650 6950 4650
-Text Label 6950 4800 0    60   ~ 0
+	8050 4650 7050 4650
+Text Label 7050 4800 0    40   ~ 0
 RST
-Text Label 6950 4650 0    60   ~ 0
-SQW
-Text Label 6950 4500 0    60   ~ 0
+Text Label 7050 4650 0    40   ~ 0
+PD3_SQW
+Text Label 7050 4500 0    40   ~ 0
 32k
-Text Label 6950 4350 0    60   ~ 0
+Text Label 7050 4350 0    40   ~ 0
 BAT
-Text HLabel 7250 4800 2    60   Input ~ 0
+Text HLabel 8050 4800 2    60   Input ~ 0
 RST
-Text HLabel 7250 4650 2    60   Input ~ 0
-SQW
-Text HLabel 7250 4500 2    60   Input ~ 0
+Text HLabel 8050 4650 2    60   Input ~ 0
+PD3_SQW
+Text HLabel 8050 4500 2    60   Input ~ 0
 32k
-Text HLabel 7250 4350 2    60   Input ~ 0
+Text HLabel 8050 4350 2    60   Input ~ 0
 BAT
 $Comp
 L R R9
@@ -146,13 +146,13 @@ F 1 "+BATT" H 5300 1950 30  0000 C CNN
 	1    5300 1850
 	1    0    0    -1  
 $EndComp
-Text HLabel 7250 4125 2    60   Input ~ 0
+Text HLabel 8050 4125 2    60   Input ~ 0
 GND
-Text HLabel 7250 4000 2    60   Input ~ 0
+Text HLabel 8050 4000 2    60   Input ~ 0
 SDA
-Text HLabel 7250 3875 2    60   Input ~ 0
+Text HLabel 8050 3875 2    60   Input ~ 0
 SCL
-Text HLabel 7250 3750 2    60   Input ~ 0
+Text HLabel 8050 3750 2    60   Input ~ 0
 5V0
 Text Label 7050 3750 0    40   ~ 0
 5V0
@@ -217,7 +217,7 @@ SCL
 Text Label 7050 4000 0    40   ~ 0
 SDA
 Text Label 6500 2450 0    40   ~ 0
-SQW
+PD3_SQW
 Text Label 6500 2600 0    40   ~ 0
 RST
 Text Label 6500 2750 0    40   ~ 0
