@@ -1,5 +1,5 @@
-### Module positions - created on Sunday 24 June 2012 07:20:32 PM IST ###
-### Printed by PcbNew version pcbnew (2011-05-25)-stable
+### Module positions - created on 6/25/2012 4:24:23 PM ###
+### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Front
 # Ref    Val                  PosX       PosY        Rot     Side
@@ -18,8 +18,8 @@ C15      1n                   1.1925     2.5825     270.0    Front
 C16      10n                  1.7650     2.1925      90.0    Front
 D1       LED                  2.5175     1.9875     270.0    Front
 D2       LED                  2.6175     1.9875     270.0    Front
-D3       RB886G               3.7525     1.6875     270.0    Front
-D4       RB886G               3.6525     1.6875     270.0    Front
+D3       RB886G               3.7825     1.6875     270.0    Front
+D4       RB886G               3.7025     1.6875     270.0    Front
 D5       MBRM110LT1G          1.6650     2.6075      90.0    Front
 D6       LED                  2.3225     1.9875      90.0    Front
 F1       nanoSMDC110F         1.1575     3.0525       0.0    Front

@@ -1,5 +1,5 @@
-### Module positions - created on Sunday 24 June 2012 07:20:32 PM IST ###
-### Printed by PcbNew version pcbnew (2011-05-25)-stable
+### Module positions - created on 6/25/2012 4:24:23 PM ###
+### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ## Side : Back
 # Ref    Val                  PosX       PosY        Rot     Side
@@ -15,8 +15,8 @@ D8       MBRM110LT1G          2.5300     2.9500     180.0    Back
 P2       GPU_JTAG             3.1200     1.7300     270.0    Back
 P3       LAN_JTAG             3.2200     1.7300     270.0    Back
 P12      UUSB_B               1.1625     2.7000       0.0    Back
-R1       10k                  4.0600     2.8150      90.0    Back
-R2       10k                  3.9675     2.8150      90.0    Back
+R1       10k                  4.0350     2.8150      90.0    Back
+R2       10k                  3.9425     2.8150      90.0    Back
 R9       10k                  1.6400     2.6700       0.0    Back
 R13      10k                  1.2450     1.9025     180.0    Back
 U4       DS3231N              1.4375     2.3125     180.0    Back

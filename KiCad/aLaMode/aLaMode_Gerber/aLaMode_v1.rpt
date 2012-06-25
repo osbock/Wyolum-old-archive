@@ -1,5 +1,5 @@
-## Module report - date Sunday 24 June 2012 07:21:18 PM IST
-## Created by PcbNew version pcbnew (2011-05-25)-stable
+## Module report - date 6/25/2012 4:24:43 PM
+## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ##
 
@@ -7,7 +7,7 @@ $BeginDESCRIPTION
 
 $BOARD
 unit INCH
-upper_left_corner  0.788500  0.994200
+upper_left_corner  0.793500  0.994200
 lower_right_corner  4.566600  3.275100
 $EndBOARD
 
@@ -1368,7 +1368,7 @@ reference "R1"
 value "10k"
 footprint "r_0805"
 attribut smd
-position  4.060000  2.815000
+position  4.035000  2.815000
 orientation  90.00
 layer copper
 $SHAPE3D
@@ -1402,7 +1402,7 @@ reference "R2"
 value "10k"
 footprint "r_0805"
 attribut smd
-position  3.967500  2.815000
+position  3.942500  2.815000
 orientation  90.00
 layer copper
 $SHAPE3D
@@ -3124,7 +3124,7 @@ reference "D3"
 value "RB886G"
 footprint "d_VMD2"
 attribut smd
-position  3.752500  1.687500
+position  3.782500  1.687500
 orientation  270.00
 layer component
 $SHAPE3D
@@ -3158,7 +3158,7 @@ reference "D4"
 value "RB886G"
 footprint "d_VMD2"
 attribut smd
-position  3.652500  1.687500
+position  3.702500  1.687500
 orientation  270.00
 layer component
 $SHAPE3D
