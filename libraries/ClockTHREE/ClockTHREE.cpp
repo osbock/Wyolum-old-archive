@@ -202,8 +202,10 @@ uint32_t *ClockTHREE::fadeto(uint32_t *new_display, uint32_t steps){
   }
   setdisplay(new_display);
   // copy new_display to original
-  memcpy(old_display, new_display, N_COL * 4);
-  setdisplay(old_display);
+  // for(int i = 0; i < N_COL; i++){
+  // old_display[i] = new_display[i];
+  // }
+  // setdisplay(old_display);
 }
 
   // Interleave two images at specified duty cycle. DOES NOT WORK :(

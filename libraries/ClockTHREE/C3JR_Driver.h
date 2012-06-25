@@ -109,7 +109,7 @@ class C3JR_Driver{
 
   // helper routine
   void send_msg(uint8_t msg_id, uint8_t msg_len, uint8_t *msg); // helper function
- private:
+private:
   uint8_t addr;
 };
 void C3JR_driver_onRequest();
