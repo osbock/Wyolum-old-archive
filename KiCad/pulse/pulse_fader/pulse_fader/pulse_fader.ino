@@ -13,7 +13,7 @@ When NeutralDetect is LOW, Lamp is 100% ON
  modified 
  By 
  
- This code is in the public domain. 
+ CC By SA License. 
  */
 
 int NeutralDetect = 4;    // NeutralDetect signal to digital pin 4 (ATMega or ATTiny)
@@ -24,6 +24,7 @@ int ledPin = 3;    // LED connected to digital pin 3 (ATMega)
 void setup()
 { 
     pinMode(NeutralDetect, INPUT);
+    pinMode(ledPin, OUTPUT);
 } 
 
 void loop()
@@ -38,9 +39,9 @@ void loop()
   for(int fadeValue = 0 ; fadeValue <= 255; fadeValue +=5)
     {
     // sets the value (range from 0 to 255):
-    analogWrite(ledPin, fadeValue);         
-    // wait for milliseconds to see the dimming effect    
-    delay(35);                            
+    analogWrite(ledPin, fadeValue);
+    // wait for milliseconds to see the dimming effect
+    delay(35);
     }
 
   // fade out from max to min in increments:
