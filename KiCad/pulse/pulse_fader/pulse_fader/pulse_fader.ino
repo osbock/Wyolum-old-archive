@@ -20,40 +20,37 @@ int NeutralDetect = 4;    // NeutralDetect signal to digital pin 4 (ATMega or AT
 //comment out below line depending on use of ATMega or ATTiny
 int ledPin = 3;    // LED connected to digital pin 3 (ATMega)
 //int ledPin = 0;    // LED connected to digital pin 0 (ATTiny)
+int brightness = 0;    // how bright the LED is
+int fadeAmount = 1;    // how many points to fade the LED by
 
 void setup()
 { 
     pinMode(NeutralDetect, INPUT);
     pinMode(ledPin, OUTPUT);
-} 
+}
 
 void loop()
 {
-    // read the value of the NeutralDetect pin:
+   // read the value of the NeutralDetect pin:
   int NDValue = digitalRead(NeutralDetect);
   
     // if the digital value is high , PWM the LED:
   if (NDValue == HIGH)
- {
-  // fade in from min to max in increments:
-  for(int fadeValue = 0 ; fadeValue <= 255; fadeValue +=5)
-    {
-    // sets the value (range from 0 to 255):
-    analogWrite(ledPin, fadeValue);
-    // wait for milliseconds to see the dimming effect
-    delay(35);
-    }
+{ 
+  // set the brightness of LED:
+  analogWrite(ledPin, brightness);    
 
-  // fade out from max to min in increments:
-  for(int fadeValue = 255 ; fadeValue >= 0; fadeValue -=5)
-    {
-    // sets the value (range from 255 to 0):
-    analogWrite(ledPin, fadeValue);
-    // wait for milliseconds to see the dimming effect    
-    delay(35);
-    }
- }
-    else
+  // change the brightness for next time through the loop:
+  brightness = brightness + fadeAmount;
+
+  // reverse the direction of the fading at the ends of the fade: 
+  if (brightness == 0 || brightness == 255) {
+    fadeAmount = -fadeAmount ; 
+  }     
+  // wait for 30 milliseconds to see the dimming effect    
+  delay(10);  
+}  
+   else
     {
     digitalWrite(ledPin,HIGH);
     }
