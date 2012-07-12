@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  7/9/2012 6:39:49 PM
+# EESchema Netlist Version 1.1 created  7/7/2012 3:48:06 PM
 (
  ( /4C1345CB C2 C3 100n
   ( 1 VCC )
@@ -6,7 +6,7 @@
  )
  ( /4FC76A57 C2 C4 100n
   ( 1 /RES )
-  ( 2 N-000001 )
+  ( 2 N-000003 )
  )
  ( /4FC76F28 CP_5x11mm C5 100u
   ( 1 /V_BAT )
@@ -41,30 +41,34 @@
   ( 2 /V_I )
  )
  ( /4B077B46 led_5mm_clear D3 DBG
-  ( 1 N-000044 )
+  ( 1 N-000041 )
   ( 2 GND )
  )
  ( /4FC76F26 led_5mm_blue D4 PWR
-  ( 1 N-000015 )
+  ( 1 N-000006 )
   ( 2 GND )
  )
  ( /4FCE3668 DO-35_Vert D5 Z15V
   ( 1 GND )
   ( 2 /V_BAT )
  )
- ( /4FC75ED5 LED_4x7Seg_2 DP1 LED_4X7SEG
-  ( 1 /E )
-  ( 2 /D )
-  ( 3 /DP )
-  ( 4 /C )
-  ( 5 /G )
-  ( 6 /CC4 )
-  ( 7 /B )
-  ( 8 /CC3 )
-  ( 9 /CC2 )
-  ( 10 /F )
-  ( 11 /A )
-  ( 12 /CC1 )
+ ( /4FF809B9 LED_4x7Seg_3 DP1 LTC4727JR
+  ( 1 /CC1 )
+  ( 2 /CC2 )
+  ( 3 /D )
+  ( 4 ? )
+  ( 5 /E )
+  ( 6 /CC3 )
+  ( 7 /DP )
+  ( 8 /CC4 )
+  ( 9 ? )
+  ( 10 ? )
+  ( 11 /F )
+  ( 12 ? )
+  ( 13 /C )
+  ( 14 /A )
+  ( 15 /G )
+  ( 16 /B )
  )
  ( /4FC72760 bornier3 K1 BAT_MON
   ( 1 GND )
@@ -81,7 +85,7 @@
   ( 3 /V_USB )
   ( 4 /RXD )
   ( 5 /TXD )
-  ( 6 N-000001 )
+  ( 6 N-000003 )
  )
  ( /4FC76A52 pin_strip_3x2 K4 ISP
   ( 1 /MISO )
@@ -123,7 +127,7 @@
   ( 7 /PB0 )
  )
  ( /4FC768D5 pin_strip_7 P3 METER_H
-  ( 1 N-000014 )
+  ( 1 N-000005 )
   ( 2 /B )
   ( 3 /F )
   ( 4 /A )
@@ -141,7 +145,7 @@
   ( 7 /C )
  )
  ( /4FC8901D Pad01 P5 CONN_1
-  ( 1 N-000014 )
+  ( 1 N-000005 )
  )
  ( /4FC99BD5 pin_strip_4 P6 I2C
   ( 1 GND )
@@ -195,7 +199,7 @@
   ( 1 /V_I )
   ( 2 GND )
  )
- ( /4B077B1E rc03_vert R5 10k
+ ( /4B077B1E RC03 R5 10k
   ( 1 VCC )
   ( 2 /RES )
  )
@@ -204,7 +208,7 @@
   ( 2 N-000018 )
  )
  ( /4FC76F27 RC03 R8 1k
-  ( 1 N-000015 )
+  ( 1 N-000006 )
   ( 2 VCC )
  )
  ( /4FCC8AFE rc03_vert R10 1k5
@@ -229,7 +233,7 @@
  )
  ( /4FC72372 DIP-8__300_ELL U1 SSR
   ( 2 N-000018 )
-  ( 3 N-000044 )
+  ( 3 N-000041 )
   ( 5 /V_BAT )
   ( 6 /SSR )
   ( 7 /V_BAT )
@@ -249,8 +253,8 @@
   ( 6 /PD4 )
   ( 7 VCC )
   ( 8 GND )
-  ( 9 N-000060 )
-  ( 10 N-000021 )
+  ( 9 N-000021 )
+  ( 10 N-000022 )
   ( 11 /PD5 )
   ( 12 /PD6 )
   ( 13 /PD7 )
@@ -289,8 +293,8 @@
   ( 16 /CC4 )
  )
  ( /4B077AD9 XTAL X1 16MHz
-  ( 1 N-000060 )
-  ( 2 N-000021 )
+  ( 1 N-000021 )
+  ( 2 N-000022 )
   ( ~ GND )
  )
 )
