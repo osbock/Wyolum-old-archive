@@ -1,0 +1,22 @@
+update=7/12/2012 12:56:42 PM
+last_client=pcbnew
+[pcbnew]
+version=1
+PadDrlX=800
+PadDimH=1000
+PadDimV=1000
+BoardThickness=630
+TxtPcbV=800
+TxtPcbH=600
+TxtModV=400
+TxtModH=400
+TxtModW=50
+VEgarde=100
+DrawLar=150
+EdgeLar=150
+TxtLar=120
+MSegLar=50
+LastNetListRead=aLaMode_v1.net
+[pcbnew/libraries]
+LibDir=
+LibName1=aLaMode_Libs/aLaMode_v1
