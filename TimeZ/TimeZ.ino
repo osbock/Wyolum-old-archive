@@ -335,8 +335,8 @@ void loop(){
 
       gps_t = makeTime(tm_ele);
       
-      time_t local_t = gps_t + local_offset(Year, gps_t, lat, lon);
-
+      time_t local_t = gps_t + local_offset(Year, gps_t, lat, lon) + age / 1000 + 1;
+      delay(1000 - age % 1000); // set time at next second
       setRTC(local_t);
       setTime(local_t);
       Serial.print("Clock Syncrhonized with GPS: Pos is ");
