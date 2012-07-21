@@ -17,6 +17,8 @@
 
 */
 
+#define USE_NIL // comment out if speaker is installed, unless you are already deaf.
+
 #include <avr/pgmspace.h>
 #include <Wire.h>
 #include <string.h>
@@ -26,10 +28,10 @@
 #include "SPI.h"
 
 
-#include "dutch_v1.h"
+// #include "dutch_v1.h"
 // #include "english_v0.h"
 // #include "english_v2.h"
-// #include "english_v3.h"
+#include "english_v3.h"
 // #include "french_v1.h"
 // #include "german_v1.h"
 // #include "german_v3.h"
@@ -241,6 +243,13 @@ uint8_t n_byte_per_display;         // number of bytes used for each 5 minunte t
 uint8_t display_idx;
 uint8_t last_min_hack_inc = 0;
 uint16_t last_time_inc = 289;
+
+// NIL values
+int nil_count = 0;
+double nil_val = 1;
+double nil_rate = 1.1;
+const uint8_t NIL_PIN = 10;
+
 /*
  * Called when mode button is pressed
  */
@@ -373,6 +382,12 @@ void setup(void){
   n_byte_per_display = pgm_read_byte(DISPLAYS);
   n_minute_state = pgm_read_byte(MINUTE_LEDS);
   n_minute_led = pgm_read_byte(MINUTE_LEDS + 1);
+
+#ifdef USE_NIL
+  // setup NIL
+  pinMode(NIL_PIN, OUTPUT);
+  analogWrite(NIL_PIN, 0);
+#endif
 }
 
 // main loop function.  Dellegate to mode_p->loop();
@@ -423,6 +438,12 @@ void loop(void){
     }
     event_q[i] = NO_EVT;
   }
+
+#ifdef USE_NIL
+  // NIL
+  nil_val = cos(nil_count++ / 100.) * 75 + 180;
+  analogWrite(NIL_PIN, (int)nil_val);
+#endif
   n_evt = 0;
   mode_p->loop(); // finally call mode_p loop()
   count++;        // counts times mode_p->loop() has run since mode start
