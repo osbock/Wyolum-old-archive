@@ -20,7 +20,7 @@ int NeutralDetect = 4;    // NeutralDetect signal to digital pin 4 (ATMega or AT
 //comment out below line depending on use of ATMega or ATTiny
 //int ledPin = 3;    // LED connected to digital pin 3 (ATMega)
 
-#define ATMEGA
+// #define ATMEGA
 #define DELAY 1
 
 #ifdef ATMEGA
