@@ -19,7 +19,15 @@ When NeutralDetect is LOW, Lamp is 100% ON
 int NeutralDetect = 4;    // NeutralDetect signal to digital pin 4 (ATMega or ATTiny)
 //comment out below line depending on use of ATMega or ATTiny
 //int ledPin = 3;    // LED connected to digital pin 3 (ATMega)
+
+#define ATMEGA
+#define DELAY 1
+
+#ifdef ATMEGA
+int ledPin = 10;    // LED connected to digital pin 0 (ATTiny)
+#else
 int ledPin = 0;    // LED connected to digital pin 0 (ATTiny)
+#endif
 int brightness = 0;    // how bright the LED is
 int fadeAmount1 = 1;    // how many points to fade the LED by
 int fadeAmount2 = 4;    // how many points to fade the LED by
@@ -29,8 +37,21 @@ void setup()
     pinMode(NeutralDetect, INPUT);
     pinMode(ledPin, OUTPUT);
 }
+int count = 0;
+void loop(){
+  int NDValue = digitalRead(NeutralDetect);
+  float val = cos(count++ / 300.) * 75 + 255 - 75;
+  if (NDValue == LOW){
+    analogWrite(ledPin, (int)val);
+  }
+  else{
+    count = 0;
+    digitalWrite(ledPin,HIGH);
+  }
+  delay(DELAY);
+}
 
-void loop()
+void anools_loop()
 {
    // read the value of the NeutralDetect pin:
   int NDValue = digitalRead(NeutralDetect);
