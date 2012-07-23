@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 6/21/2012 4:50:03 PM
+EESchema Schematic File Version 2  date 7/21/2012 10:30:47 AM
 LIBS:power
 LIBS:pulse
 LIBS:pulse-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title "Throbber - Bike Neutral Indicator"
-Date "21 jun 2012"
+Date "21 jul 2012"
 Rev "A"
 Comp "WyoLum"
 Comment1 "www.wyolum.com"
@@ -314,7 +314,7 @@ L R R2
 U 1 1 4FC71681
 P 4400 2250
 F 0 "R2" V 4325 2250 50  0000 C CNN
-F 1 "4K7" V 4400 2250 50  0000 C CNN
+F 1 "470E" V 4400 2250 50  0000 C CNN
 F 2 "r_0805" H 4400 2250 60  0001 C CNN
 	1    4400 2250
 	0    1    1    0   

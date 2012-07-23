@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 6/21/2012 4:56:51 PM
+Cmp-Mod V01 Genere par PcbNew le 7/21/2012 11:06:05 AM
 
 BeginCmp
 TimeStamp = 4FE0835A
@@ -28,14 +28,6 @@ BeginCmp
 TimeStamp = 4FE08350
 Path = /4C1741EB
 Reference = R1;
-ValeurCmp = 4K7;
-IdModule  = r_0805;
-EndCmp
-
-BeginCmp
-TimeStamp = 4FE08352
-Path = /4FC71681
-Reference = R2;
 ValeurCmp = 4K7;
 IdModule  = r_0805;
 EndCmp
@@ -105,14 +97,6 @@ IdModule  = PCB;
 EndCmp
 
 BeginCmp
-TimeStamp = 4FE1A5EC
-Path = /4FE19888
-Reference = P2;
-ValeurCmp = 12V;
-IdModule  = Header_12V;
-EndCmp
-
-BeginCmp
 TimeStamp = 4FE0834F
 Path = /4FE06AE0
 Reference = U1;
@@ -126,6 +110,22 @@ Path = /4FE302FC
 Reference = PB3;
 ValeurCmp = ND;
 IdModule  = Pad01;
+EndCmp
+
+BeginCmp
+TimeStamp = 4FE08352
+Path = /4FC71681
+Reference = R2;
+ValeurCmp = 470E;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = 4FE1A5EC
+Path = /4FE19888
+Reference = P2;
+ValeurCmp = 12V;
+IdModule  = Header_12V;
 EndCmp
 
 EndListe

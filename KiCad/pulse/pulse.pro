@@ -1,17 +1,15 @@
-update=6/21/2012 4:50:02 PM
-last_client=eeschema
+update=7/21/2012 11:09:44 AM
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
 [pcbnew]
 version=1
-PadDrlX=0
-PadDimH=350
-PadDimV=500
+PadDrlX=320
+PadDimH=460
+PadDimV=460
 BoardThickness=630
 TxtPcbV=300
 TxtPcbH=300
@@ -61,4 +59,6 @@ LabSize=40
 [eeschema/libraries]
 LibName1=pulse_Libs/power
 LibName2=pulse_Libs/pulse
+[general]
+version=1
 

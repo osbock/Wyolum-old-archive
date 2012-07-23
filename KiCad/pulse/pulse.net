@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  6/21/2012 4:49:12 PM
+# EESchema Netlist Version 1.1 created  7/21/2012 10:31:01 AM
 (
  ( /4FE302FC Pad01  PB3 ND {Lib=CONN_1}
   (    1 /ADC3 )
@@ -57,7 +57,7 @@
   (    1 GND )
   (    2 /ND_IN )
  )
- ( /4FC71681 r_0805  R2 4K7 {Lib=R}
+ ( /4FC71681 r_0805  R2 470E {Lib=R}
   (    1 /5V )
   (    2 /12V )
  )
