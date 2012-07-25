@@ -39,8 +39,9 @@ void setup()
 }
 int count = 0;
 void loop(){
+  digitalWrite(NeutralDetect, LOW);
   int NDValue = digitalRead(NeutralDetect);
-  float val = cos(count++ / 300.) * 75 + 255 - 75;
+  float val = cos(count++ / 300.) * 127 + 255 - 127;
   if (NDValue == LOW){
     analogWrite(ledPin, (int)val);
   }
