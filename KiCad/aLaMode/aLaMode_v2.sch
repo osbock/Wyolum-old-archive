@@ -1,14 +1,15 @@
-EESchema Schematic File Version 2  date 7/21/2012 11:11:59 AM
+EESchema Schematic File Version 2  date 7/25/2012 3:08:31 PM
 LIBS:aLaMode
 LIBS:Conn-raspberry
 LIBS:power
+LIBS:aLaMode_v2-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 4
 Title "aLaMode"
-Date "12 jul 2012"
+Date "25 jul 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -661,6 +662,7 @@ U 1 1 4FF3E3D3
 P 7325 5025
 F 0 "P14" V 7275 5025 60  0000 C CNN
 F 1 "ANALOG_5V0" V 7375 5025 60  0000 C CNN
+F 2 "Header_6x1" V 7475 5025 60  0001 C CNN
 	1    7325 5025
 	-1   0    0    1   
 $EndComp
@@ -670,6 +672,7 @@ U 1 1 4FF3E3C8
 P 8025 5025
 F 0 "P15" V 7975 5025 60  0000 C CNN
 F 1 "ANALOG_GND" V 8075 5025 60  0000 C CNN
+F 2 "Header_6x1" V 8175 5025 60  0001 C CNN
 	1    8025 5025
 	-1   0    0    1   
 $EndComp
