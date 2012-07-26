@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 7/25/2012 3:07:11 PM
+EESchema Schematic File Version 2  date 7/25/2012 3:08:31 PM
 LIBS:aLaMode
 LIBS:Conn-raspberry
 LIBS:power
@@ -24,6 +24,7 @@ U 1 1 500FBDD3
 P 7500 3650
 F 0 "P16" V 7450 3650 50  0000 C CNN
 F 1 "5V_LINK" V 7550 3650 50  0000 C CNN
+F 2 "Header_U6OE_SMT" V 7650 3650 50  0001 C CNN
 	1    7500 3650
 	-1   0    0    -1  
 $EndComp
@@ -219,7 +220,7 @@ U 1 1 4FD8C245
 P 6300 1325
 F 0 "P11" V 6250 1325 50  0000 C CNN
 F 1 "U6_OE" V 6350 1325 50  0000 C CNN
-F 2 "Header_U6OE" H 6300 1275 60  0001 C CNN
+F 2 "Header_U6OE_SMT" H 6300 1275 60  0001 C CNN
 	1    6300 1325
 	1    0    0    -1  
 $EndComp

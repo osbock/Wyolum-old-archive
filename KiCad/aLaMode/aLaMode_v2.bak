@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 7/25/2012 3:07:11 PM
+EESchema Schematic File Version 2  date 7/25/2012 3:08:31 PM
 LIBS:aLaMode
 LIBS:Conn-raspberry
 LIBS:power
@@ -662,6 +662,7 @@ U 1 1 4FF3E3D3
 P 7325 5025
 F 0 "P14" V 7275 5025 60  0000 C CNN
 F 1 "ANALOG_5V0" V 7375 5025 60  0000 C CNN
+F 2 "Header_6x1" V 7475 5025 60  0001 C CNN
 	1    7325 5025
 	-1   0    0    1   
 $EndComp
@@ -671,6 +672,7 @@ U 1 1 4FF3E3C8
 P 8025 5025
 F 0 "P15" V 7975 5025 60  0000 C CNN
 F 1 "ANALOG_GND" V 8075 5025 60  0000 C CNN
+F 2 "Header_6x1" V 8175 5025 60  0001 C CNN
 	1    8025 5025
 	-1   0    0    1   
 $EndComp
