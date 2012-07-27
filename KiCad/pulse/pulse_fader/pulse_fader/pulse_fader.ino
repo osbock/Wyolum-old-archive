@@ -1,11 +1,11 @@
 /*
  p.u.l.s.e. Fader for Motorcycle Lamp
  
-When NeutralDetect is HIGH, Lamp fades via PWM,
-When NeutralDetect is LOW, Lamp is 100% ON
+When NeutralDetect is LOW, Lamp fades via PWM,
+When NeutralDetect is HIGH, Lamp is 100% ON
  
  The circuit:
- * LED attached from digital pin 3 (ATMega) 0r pin 0 (ATTiny) to ground.
+ * LED attached from digital pin 3 (ATMega) 0r pin 0 (ATtiny45) to ground.
  * NeutralDetect Switch to digital pin 4.
  
  Created 23 Jun 2012
@@ -16,17 +16,17 @@ When NeutralDetect is LOW, Lamp is 100% ON
  CC By SA License. 
  */
 
-int NeutralDetect = 4;    // NeutralDetect signal to digital pin 4 (ATMega or ATTiny)
-//comment out below line depending on use of ATMega or ATTiny
+int NeutralDetect = 4;    // NeutralDetect signal to digital pin 4 (ATMega or ATtiny45)
+//comment out below line depending on use of ATMega or ATtiny45
 //int ledPin = 3;    // LED connected to digital pin 3 (ATMega)
 
 // #define ATMEGA
 #define DELAY 1
 
 #ifdef ATMEGA
-int ledPin = 10;    // LED connected to digital pin 0 (ATTiny)
+int ledPin = 3;    // LED connected to digital pin 3 (ATMega)
 #else
-int ledPin = 0;    // LED connected to digital pin 0 (ATTiny)
+int ledPin = 0;    // LED connected to digital pin 0 (ATtiny45)
 #endif
 int brightness = 0;    // how bright the LED is
 int fadeAmount1 = 1;    // how many points to fade the LED by
@@ -38,6 +38,7 @@ void setup()
     pinMode(ledPin, OUTPUT);
 }
 int count = 0;
+
 void loop(){
   digitalWrite(NeutralDetect, LOW);
   int NDValue = digitalRead(NeutralDetect);
