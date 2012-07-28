@@ -1,0 +1,57 @@
+### Module positions - created on 7/28/2012 11:32:47 AM ###
+### Printed by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
+## Unit = inches, Angle = deg.
+## Side : Front
+# Ref    Val                  PosX       PosY        Rot     Side
+B2       I/O                  1.1025     2.4500       0.0    Front
+B3       I/O                  1.1675     2.4500       0.0    Front
+B15      I/O                  1.0375     2.4500       0.0    Front
+C2       100n                 2.1150     1.9875      90.0    Front
+C3       2u2_Tant             1.5875     2.2525     180.0    Front
+C4       100n                 1.5875     2.3525     180.0    Front
+C5       2u2                  1.5875     1.9875       0.0    Front
+C6       100u,25V             1.4125     2.5425      90.0    Front
+C7       100n                 3.4875     1.4450      90.0    Front
+C8       47u,10V              2.4825     2.9525     270.0    Front
+C14      100n                 2.0550     1.6250     270.0    Front
+C15      1n                   1.1925     2.5825     270.0    Front
+C16      10n                  1.7400     2.1925      90.0    Front
+D1       LED                  2.5175     1.9875     270.0    Front
+D2       LED                  2.6175     1.9875     270.0    Front
+D3       RB886G               3.7825     1.6875     270.0    Front
+D4       RB886G               3.7025     1.6875     270.0    Front
+D5       MBRM110LT1G          1.6650     2.6075      90.0    Front
+D6       LED                  2.3225     1.9875      90.0    Front
+F1       nanoSMDC110F         1.1575     3.1075       0.0    Front
+F2       nanoSMDC110F         2.1725     2.4475      90.0    Front
+IC1      ATMEGA328-PU         3.1900     2.4475     180.0    Front
+P4       PWM_SERVO            2.0000     2.7000      90.0    Front
+P5       5V_SERVO             1.9000     2.7000      90.0    Front
+P6       GND_SERVO            1.8000     2.7000      90.0    Front
+P7       GPS_UP501            3.9075     1.5300       0.0    Front
+P8       FTDI                 3.9075     1.3800     180.0    Front
+P9       ICSP                 3.7075     1.9800      90.0    Front
+P10      V_IN                 1.3100     2.8450       0.0    Front
+P13      AREF                 3.4575     1.9800     270.0    Front
+P14      ANALOG_5V0           3.9075     2.9125     180.0    Front
+P15      ANALOG_GND           3.9075     2.8125     180.0    Front
+P16      5V_LINK              1.2950     2.0175     270.0    Front
+Q1       FDN340P              1.7450     2.0050     180.0    Front
+R3       10k                  2.0550     1.7900     270.0    Front
+R4       10k                  2.0550     1.4575     270.0    Front
+R5       1k5                  2.4200     1.9875      90.0    Front
+R6       10k                  1.8375     1.3150       0.0    Front
+R7       10k                  2.3225     1.7900     270.0    Front
+R8       1k5                  2.7175     1.9875      90.0    Front
+R10      10k                  2.0875     2.1925      90.0    Front
+R11      10k                  2.1850     2.1925     270.0    Front
+R12      1k                   2.2200     1.9875      90.0    Front
+R14      0E                   1.1900     2.3000     270.0    Front
+SD1      SD_CARD_MICRO        1.6100     1.5225     180.0    Front
+SHIELD1  ARDUINO_SHIELD       1.6575     3.1125       0.0    Front
+SW1      SW_PUSH              2.2425     1.5450     270.0    Front
+U1       LP2985-33DBVR        1.5750     2.1150     270.0    Front
+U2       74HC125              1.8375     1.5725     270.0    Front
+U3       NCP1117ST50T3G       1.2050     2.2475     270.0    Front
+U5       LM358N               1.9250     2.1200       0.0    Front
+## End

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thursday 26 July 2012 10:40:03 PM IST
+EESchema Schematic File Version 2  date 7/28/2012 11:32:13 AM
 LIBS:aLaMode
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 4
 Title "aLaMode"
-Date "25 jul 2012"
+Date "28 jul 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -17,8 +17,10 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-NoConn ~ 1350 1250
-NoConn ~ 1350 1100
+Wire Wire Line
+	3575 3925 3575 3400
+Wire Wire Line
+	3575 3400 3300 3400
 Wire Notes Line
 	7100 3250 7100 4700
 Wire Notes Line
@@ -169,8 +171,6 @@ Wire Wire Line
 Wire Wire Line
 	6400 3700 3425 3700
 Connection ~ 3850 3700
-Wire Wire Line
-	3575 3700 3575 3925
 Connection ~ 3575 3850
 Connection ~ 2450 3700
 Wire Wire Line
@@ -260,6 +260,23 @@ Wire Notes Line
 	4600 7550 4600 5800
 Wire Notes Line
 	600  3250 6725 3250
+Wire Wire Line
+	2800 3400 2575 3400
+Wire Wire Line
+	2575 3400 2575 3700
+Connection ~ 2575 3700
+$Comp
+L R R14
+U 1 1 50137293
+P 3050 3400
+F 0 "R14" V 3130 3400 50  0000 C CNN
+F 1 "0E" V 3050 3400 50  0000 C CNN
+F 2 "r_0805" H 3050 3400 60  0001 C CNN
+	1    3050 3400
+	0    -1   -1   0   
+$EndComp
+NoConn ~ 1350 1250
+NoConn ~ 1350 1100
 $Comp
 L R R5
 U 1 1 4FE44ABE
@@ -336,7 +353,7 @@ F 2 "f_1206" H 2500 950 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 4375 1600 0    60   ~ 12
-If using Micro USB -B socket, \nDO NOT INSTALL :\nP10, D5, U3\nApply solder bridge between Pins 2 and 3 of U3\n\nIf using Barrel Socket,\nDO NOT INSTALL :\nP12, F1, D7, C15
+If using Micro USB -B socket, \nDO NOT INSTALL :\nP10, D5, U3\nAND INSTALL\nResistor R14 across pins 2 and 3 of U3\n\nIf using Barrel Socket,\nDO NOT INSTALL :\nP12, F1, D7, C15, R14
 $Comp
 L C C16
 U 1 1 4FDB1F26
