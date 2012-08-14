@@ -18,6 +18,7 @@
 */
 
 // #define USE_NIL // comment out if speaker is installed, unless you are already deaf.
+#define REVERSE_DISPLAY
 
 #include <avr/pgmspace.h>
 #include <Wire.h>
@@ -486,12 +487,14 @@ void Normal_loop(void) {
     minutes_hack(minute_hack_inc, tmp_d);
 
     // flip display
+#ifdef REVERSE_DISPLAY
     uint32_t tmp32;
     for(int ii = 0; ii < 8; ii++){
       tmp32 = tmp_d[ii];
       tmp_d[ii] = tmp_d[15 - ii];
       tmp_d[15 - ii] = tmp32;
     }
+#endif
     c3.fadeto(tmp_d, 1); // 1 fade steps to new display
 
     last_min_hack_inc = minute_hack_inc;

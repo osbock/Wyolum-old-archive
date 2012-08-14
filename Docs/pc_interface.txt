@@ -58,7 +58,7 @@ Variable length messages.  Payload length is first byte after MID
 MID           length description               payload format 
 0x70         3 + msg send data           1 byte- message length (payload len + 3), 1 byte (data id) DID, char* msg
 0x71         2 + msg error data          1 byte length error message
-
+0x72         2 + scroll data             1 byte - message length (payload len + 2), n - 2 bytes of content
 
 The sync message 0xEF:
 "0xEF" MAX_MSG_LEN times should be followed by a valid DID in the next byte.  If ClockTHREE does not recieve

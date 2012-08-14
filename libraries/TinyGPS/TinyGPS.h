@@ -51,7 +51,10 @@ class TinyGPS
     void add_callback(fix_cb_t fct_ptr); // TJS:
     bool encode(char c); // process one character received from GPS
     TinyGPS &operator << (char c) {encode(c); return *this;}
-    
+    inline unsigned long age(){ // TJS: get fix age only
+      return _last_position_fix == GPS_INVALID_FIX_TIME ? 
+	GPS_INVALID_AGE : millis() - _last_position_fix;
+    }
     // lat/long in hundred thousandths of a degree and age of fix in milliseconds
     inline void get_position(long *latitude, long *longitude, unsigned long *fix_age = 0)
     {
@@ -108,7 +111,7 @@ class TinyGPS
       if (second) *second = (time / 100) % 100;
       if (hundredths) *hundredths = time % 100;
     }
-
+    void reset(); // TJS
     inline float f_altitude()    { return altitude() / 100.0; }
     inline float f_course()      { return course() / 100.0; }
     inline float f_speed_knots() { return speed() / 100.0; }

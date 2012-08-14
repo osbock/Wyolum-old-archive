@@ -14,8 +14,8 @@
 */
 
 TinyGPS gps;
-//SoftwareSerial sws(6, A7);
-SoftwareSerial sws(A7, 6);
+SoftwareSerial sws(6, A7);
+// SoftwareSerial sws(A7, 6);
 
 #define THIRTY_YEARS 946771200
 const int SQW_PIN = 3;
@@ -62,6 +62,7 @@ void loop()
   byte Month, Day, Hour, Minute, Second, Hundredths;
   tmElements_t tm;
 
+  newdata = feedgps();
   if (newdata){
     gps.crack_datetime(&Year, &Month, &Day, &Hour, &Minute, &Second, &Hundredths, &age);
     Serial.print("Date: "); Serial.print(static_cast<int>(Month)); Serial.print("/"); Serial.print(static_cast<int>(Day)); Serial.print("/"); Serial.print(Year);
@@ -71,7 +72,6 @@ void loop()
     // Serial.print("millisecond():"); Serial.println(millisecond(), DEC);
     if(age < 500 && second() != Second || minute() != Minute || hour() != Hour ||
        day() != Day || month() != Month || year() != Year){
-     coarse_sync();
     }
   }
   else{
@@ -79,26 +79,14 @@ void loop()
     digitalWrite(3, LOW);
     digitalWrite(13, LOW);
   }
+  gpsdump(gps);
+  for(int i=0; i < 10000; i++){
+    for(int j=0; j < 10; j++){
+      feedgps();
+    }
+  }
 }
 
-void coarse_sync(){
-  int Year;
-  byte Month, Day, Hour, Minute, Second, Hundredths;
-  unsigned long age;
-
-  // TODO: check pps current
-  gps.crack_datetime(&Year, &Month, &Day, &Hour, &Minute, &Second, &Hundredths, &age);
-  Serial.print(second());
-  Serial.print("!=");
-  delay(1500 - age - 1); // RTC is 500ms behind GPS
-  setRTC(Year, Month, Day, Hour, Minute, Second + 1);
-  setTime(Hour, Minute, Second + 1, Day, Month, Year);
-  Serial.print(second());
-  Serial.print("=");
-  Serial.print(Second + 1);
-  Serial.println(" Coarse Sync");
-  sws.end();
-}
 void printFloat(double number, int digits)
 {
   // Handle negative numbers
@@ -147,15 +135,15 @@ void gpsdump(TinyGPS &gps)
   Serial.print("Date: "); Serial.print(static_cast<int>(month)); Serial.print("/"); Serial.print(static_cast<int>(day)); Serial.print("/"); Serial.print(year);
   Serial.print("  Time: "); Serial.print(static_cast<int>(hour)); Serial.print(":"); Serial.print(static_cast<int>(minute)); Serial.print(":"); Serial.print(static_cast<int>(second)); Serial.print("."); Serial.print(static_cast<int>(hundredths));
   Serial.print("  Fix age: ");  Serial.print(age); Serial.println("ms.");
-  
 }
 
 bool feedgps()
 {
   while (sws.available())
   {
-    // Serial.print(sws.read());
-    if (gps.encode(sws.read()))
+    char c = sws.read();
+    // Serial.print(c);
+    if (gps.encode(c))
       return true;
   }
   return false;

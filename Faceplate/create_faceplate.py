@@ -1202,7 +1202,8 @@ if __name__ == '__main__':
     if len(sys.argv) == 1: # print all
         add_all_fonts()
         # main(fontnames)
-        fontnames = ['Ubuntu-Bold']
+        fontnames = ['Kranky']
+        # fontnames = ['Ubuntu-Bold']
         for font in fontnames:
             add_font(font)
         main(fontnames)

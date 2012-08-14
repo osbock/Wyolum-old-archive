@@ -1,7 +1,8 @@
- # -*- coding: latin-1 -*-
+# -*- coding: latin-1 -*-
 import sys
 sys.path.append('/home/justin/Ubuntu One/WyoLum/CNC')
 from cnc import MyPath
+from baffles import create_baffle
 import os.path
 from random import choice
 import string
@@ -59,30 +60,44 @@ in the night
 ymshsevening'''.splitlines()
   
 
+english = '''
+itdispawteng
+twentyfiveky
+quartermhalf
+pastobtwelve
+tentwoneight
+foursixseven
+fivelevenine
+threes clock
+invthenatsuj
+morningnight
+afternoonz
+ymdhsevening
+'''.splitlines()
 
 letters = english
 
 class Keyhole(MyPath):
-        def __init__(self):
-            MyPath.__init__(self)
+    def __init__(self):
+        MyPath.__init__(self)
 
-            Center = 0.75 * inch, 7.5 * inch  # larger keyhole circle center
-            center = 0.75 * inch, 7.875 * inch # smaller keyhole circle center
-            r = .125 * inch # smaller keyhole circle radius
-            R = .25 * inch  # larger keyhole circle radius
-            phi = arcsin(r/R)
-            
-            start = Center[0] + R * cos(pi/2 + phi), Center[1] + R * sin(pi/2 + phi)
-            self.moveTo(*start)
-            for theta in arange(pi/2 + phi,
-                                2 * pi + pi / 2 - phi +DTHETA*DEG/2,
-                                DTHETA * DEG):
-                next = Center[0] + R * cos(theta), Center[1] + R * sin(theta)
-                self.lineTo(*next)
-            for theta in arange(0, pi, DTHETA * DEG):
-                next = center[0] + r * cos(theta), center[1] + r * sin(theta)
-                self.lineTo(*next)
-            self.lineTo(*start)
+	Center = 0.75 * inch, 7.5 * inch  # larger keyhole circle center
+	center = 0.75 * inch, 7.875 * inch # smaller keyhole circle center
+	r = .125 * inch # smaller keyhole circle radius
+	R = .25 * inch  # larger keyhole circle radius
+	phi = arcsin(r/R)
+	
+	start = Center[0] + R * cos(pi/2 + phi), Center[1] + R * sin(pi/2 + phi)
+	self.moveTo(*start)
+	for theta in arange(pi/2 + phi,
+			    2 * pi + pi / 2 - phi +DTHETA*DEG/2,
+			    DTHETA * DEG):
+            next = Center[0] + R * cos(theta), Center[1] + R * sin(theta)
+            self.lineTo(*next)
+	for theta in arange(0, pi, DTHETA * DEG):
+	    next = center[0] + r * cos(theta), center[1] + r * sin(theta)
+            self.lineTo(*next)
+	self.lineTo(*start)
 
 MARGIN = 2 * LASER_THICKNESS
 
@@ -154,40 +169,21 @@ standoff_or = 5*mm / 2
 standoff_ir = .132*inch / 2
 
 
-baffle_thickness = .06 * inch
-baffle_height = standoff_thickness - pcb_thickness - nut_thickness
-print baffle_height / mm, (pcb_thickness + nut_thickness) / mm, pcb_thickness / inch
-
 faceplate_thickness = .25*inch
 
-
-dx = .453 * inch
-dy = .453 * inch
-DY = (2 * dx)
-DX = (2 * dy) 
-
-N_ROW = 12
-N_COL = 12
 n_row = 25
 n_col = 25
 
-baffle_v = create_baffle(baffle_height=baffle_height, 
-                  baffle_thickness=baffle_thickness,
-                  n_notch=N_ROW,
-                  delta=DY,
-                  overhang=.2*inch,
-                  overhang_height=baffle_height,
-                  overhang_taper=True,
-                  margin=MARGIN)
+dx = .453 * inch
+errx = 1. * mm
+dx -= errx/n_col
+dy = dx
 
-locator = MyPath()
-locator.moveTo(MARGIN, MARGIN)
-locator.lineTo(.28*inch - MARGIN, MARGIN)
-locator.lineTo(.28*inch - MARGIN, DY - baffle_thickness - MARGIN)
-locator.lineTo(MARGIN, DY - baffle_thickness - MARGIN)
-locator.lineTo(MARGIN, MARGIN)
+DX = (2 * dx)
+DY = (2 * dy) 
 
-locator.drill((.28 * inch)/2, (DY - baffle_thickness)/2, 1.8 * mm)
+N_ROW = 12
+N_COL = 12
 
 def draw(filename, data, fontname='Times-Roman', images=[],
          fontsize= DEFAULT_FONT_SIZE,
@@ -195,46 +191,43 @@ def draw(filename, data, fontname='Times-Roman', images=[],
          case=string.upper,
          seven_seg=False,
          ):
-    PCB_W = (11 + 5./16) * inch
+    PCB_W = (11.3) * inch
+    
     PCB_H = (14 + 7./8) *inch
-    W = PCB_W + 2 * inch
-    H = PCB_H + 1 * inch
+    H = 16 * inch
+    W = 11.75 * inch
+    W = 11.324 * inch
+    H = 16 * inch
+    W = 16 * inch
     PAGE_MARGIN = 1*inch
     can = canvas.Canvas(filename,
                         pagesize=(W + 2 * PAGE_MARGIN, H + 2 * PAGE_MARGIN))
-    can.translate(1.5 * inch, 1 * inch) ## PCB Lower left is origen
+    can.translate(1.5 * inch + dx, 1 * inch) ## PCB Lower left is origen
     data = [[case(char) for char in line] for line in data]
     YS = arange(N_ROW) * DY + (3 + 7/16.) * inch + dy / 4
     XS = arange(N_COL) * DX
     ys = arange(n_row) * dy + (3 + 7/16.) * inch
     xs = arange(n_col) * dx +  dx/2
 
-    for x in xs:
+    for x in xs[:-1]:
         for y in ys[:1]:
-	    can.circle(x, y, 2.5 * mm, fill=1)
-    for x in xs[-1:]:
+            # can.circle(x, y, 2.5 * mm, fill=False)
+            pass
+    for x in xs:
         for y in ys:
-	    can.circle(x, y, 2.5 * mm, fill=1)
-            
+            # can.circle(x, y, 2.5 * mm, fill=False)
+            pass
+        
 			    
     led_xs = XS + DX / 2.
     led_ys = YS + DY / 2.
-    baffle_xs = arange(N_COL + 1) * DX + 1.3 * inch
-    baffle_ys = arange(N_ROW + 1) * DY + 1.7 * inch
-
-    baffle_h = create_baffle(baffle_height=baffle_height, 
-                             baffle_thickness=baffle_thickness,
-                             n_notch=N_COL,
-                             delta=DX,
-                             overhang=.3*inch,
-                             margin=MARGIN)
 
     can.setTitle("Peggy2 Faceplate: %s" % fontname)
     can.setFont(fontname, 15)
     can.drawCentredString(4.5 * inch, -.75* inch, 'Peggy2 Faceplate, %s, 0.25" Painted/Etched Acrylic' % fontname)
 
-    can.setFont(fontname, 80)
-    can.drawCentredString(PCB_W/2, 1.5 * inch, 'Peggy2.0')
+    # can.setFont(fontname, 80)
+    #  can.drawCentredString(PCB_W/2, 1.5 * inch, 'Peggy2.0')
 
     can.setFont(fontname, fontsize)
 
@@ -255,7 +248,7 @@ def draw(filename, data, fontname='Times-Roman', images=[],
     letter_bbox = (XS[0], YS[0], XS[-1] - XS[0] + DX, YS[-1] - YS[0] + DY)
     bbox = (0, 0, W, H)
     faceplate = MyPath()
-    faceplate.rect(bbox)
+    # faceplate.rect(bbox)
     
 
     backplate = MyPath()
@@ -268,9 +261,15 @@ def draw(filename, data, fontname='Times-Roman', images=[],
     pcb_bbox = (0, 0, PCB_W, PCB_H)
     pcb = MyPath()
     pcb.rect(pcb_bbox)
-    # pcb.drawOn(can, 1)
 
-    bbox = (-1 * inch, -.5 * inch, W, H)
+    W = DX * 12 + 2 * inch
+    H = DY * 12 + 5 * inch
+    # can.circle(XS[-1] + 1 * DX + 1 * inch, YS[0], DX * 1.3)
+    # can.circle(XS[0] - 1 * inch, YS[0], DX * 1.3)
+    # can.circle(W / 2, H, 1 * inch)
+    # can.circle(W / 2, H -.5 * inch, 1 * inch)
+    # can.circle(W / 2, -.5 * inch, 4 * inch)
+    bbox = (XS[0] - 1 * inch, 0 * inch, W, H)
     edge = MyPath()
     edge.rect(bbox)
     edge.drawOn(can, 1)
@@ -290,27 +289,40 @@ def draw(filename, data, fontname='Times-Roman', images=[],
         for x, c in zip(XS + DX / 2., l):
             can.drawCentredString(x, y, c)
 
-    mount_r = .12 * inch / 2
-    pcb_mounts = array([[.15, .15],
-                        [7 - .15, .15],
-                        [7 - .15, .15 + 1.9],
-                        [7 - .15, .15 + 1.9 + 4.9],
-                        [7 - .15, .15 + 1.9 + 4.9 + 1.9],
-                        [.15, .15 + 1.9 + 4.9 + 1.9],
-                        [.15, .15 + 1.9 + 4.9],
-                        [.15, .15 + 1.9],
-                        ]) * inch + (1 * inch, 0)
+    can.drawCentredString(XS[-2] + DX/2, YS[1] + DY/4,
+                        decodeFunc(chr(186) + 'C'))
+    can.drawCentredString(XS[-1] + DX/2, YS[1] + DY/4,
+                        decodeFunc(chr(186) + 'F'))
+    can.drawCentredString(XS[6] + DX * .6, YS[4] + DY * .3, "o'")
+
+    for x in xs[:-1]:
+        can.drawCentredString(x, ys[0] - .41* inch,
+                              decodeFunc(chr(186)))
+        
+    mount_r = 1.8 * mm
+    magnet_r = 6 * mm
+    pcb_mounts = array([[        1. * inch / 4,         1. * inch / 4],
+                        [PCB_W - 1. * inch / 4,         1. * inch / 4],
+                        [PCB_W - 1. * inch / 4, PCB_H - 1. * inch / 4],
+                        [        1. * inch / 4, PCB_H - 1. * inch / 4]
+                        ]) 
+
+    fp_mounts = array([[     -  1. * inch / 2,         1. * inch / 4],
+                       [PCB_W - 1. * inch / 4,         1. * inch / 4],
+                       [PCB_W - 1. * inch / 4, H - 1. * inch / 2],
+                       [        1. * inch / 4, H - 1. * inch / 2]
+                       ]) 
+
+    for x, y in fp_mounts:
+        pcb.drill(x, y, mount_r)
+        pcb.drill(x, y, magnet_r)
+        backplate.drill(x, y, mount_r)
 
     for x, y in pcb_mounts:
         pcb.drill(x, y, mount_r)
         backplate.drill(x, y, mount_r)
-    face_mounts = array([[.15, .15],
-                         [.15, 9 - .15],
-                         [9 - .15, 9 - .15],
-                         [9 - .15, .15]]) * inch
-    for x, y in face_mounts:
-        faceplate.drill(x, y, mount_r)
-        backplate.drill(x, y, mount_r)
+    pcb.drawOn(can, 1)
+
     faceplate.drawOn(can)
     can.showPage()
     can.save()
@@ -351,9 +363,10 @@ Meddon
 SupermercadoOne-Regular
 TerminalDosis-Light
 Cantarell-Bold
+Helvetica-Bold
 '''
 fontnames = '''
-Helvetica-Bold
+Kranky
 '''.split()
 letters = english
 dir = 'Faceplates_peggy/English_peggy/'
@@ -361,13 +374,14 @@ dir = 'Faceplates_peggy/English_peggy/'
 for fontname in fontnames:
     if "Helvetica" not in fontname:
         add_font(fontname)
-    draw('%s/faceplate_jr_%s_upper.pdf' % (dir, fontname), letters, 
+        print 'added', fontname
+    draw('%s/faceplate_peggy_%s_upper.pdf' % (dir, fontname), letters, 
          fontname=fontname, images=[],reverse=False, case=string.upper)
-    draw('%s/faceplate_jr_%s_lower.pdf' % (dir, fontname), letters, 
+    draw('%s/faceplate_peggy_%s_lower.pdf' % (dir, fontname), letters, 
          fontname=fontname, images=[],reverse=False, case=string.lower)
     break
-    draw('%s/faceplate_jr_%s_upper_R.pdf' % (dir, fontname), letters, 
+    draw('%s/faceplate_peggy_%s_upper_R.pdf' % (dir, fontname), letters, 
          fontname=fontname,reverse=True, case=string.upper)
-    draw('%s/faceplate_jr_%s_lower_R.pdf' % (dir, fontname), letters, 
+    draw('%s/faceplate_peggy_%s_lower_R.pdf' % (dir, fontname), letters, 
          fontname=fontname, images=[],reverse=True, case=string.lower)
     

@@ -58,6 +58,28 @@ TinyGPS::TinyGPS()
 // public methods
 //
 
+void TinyGPS::reset(){ // TJS
+  _time = GPS_INVALID_TIME;
+  _date = GPS_INVALID_DATE;
+  _latitude = GPS_INVALID_ANGLE;
+  _longitude = GPS_INVALID_ANGLE;
+  _altitude = GPS_INVALID_ALTITUDE;
+  _speed = GPS_INVALID_SPEED;
+  _course = GPS_INVALID_ANGLE;
+  _last_time_fix = GPS_INVALID_FIX_TIME;
+  _last_position_fix = GPS_INVALID_FIX_TIME;
+  _parity = 0;
+  _is_checksum_term = false;
+  _sentence_type = _GPS_SENTENCE_OTHER;
+  _term_number = 0;
+  _term_offset = 0;
+  _gps_data_good = false;
+#ifndef _GPS_NO_STATS
+  _encoded_characters = 0;
+  _good_sentences = 0;
+  _failed_checksum = 0;
+#endif
+}
 bool TinyGPS::encode(char c)
 {
   bool valid_sentence = false;
@@ -186,7 +208,7 @@ bool TinyGPS::term_complete()
           _course    = _new_course;
 	  // Serial.println("GPRMC"); // TJS:
 	  if(fix_callback != NULL){ // TJS: 
-	    fix_callback(_date, _time, _latitude, _longitude, 0, _speed, _course); // TJS:
+	    fix_callback(0, _time, _latitude, _longitude, 0, _speed, _course); // TJS:
 	  } // TJS:
           break;
         case _GPS_SENTENCE_GPGGA:

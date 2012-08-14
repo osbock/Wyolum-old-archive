@@ -17,7 +17,7 @@
 
 */
 
-#define USE_NIL // comment out if speaker is installed, unless you are already deaf.
+// #define USE_NIL // comment out if speaker is installed, unless you are already deaf.
 
 #include <avr/pgmspace.h>
 #include <Wire.h>

@@ -3,8 +3,6 @@
 #include "Time.h"
 #include "Wire.h"
 #include "SD.h"
-#include <avr/wdt.h>
-// #include "SPI.h"
 
 #include "Arduino.h"
 #define WIRE_READ Wire.read();
@@ -16,14 +14,14 @@
 
 volatile unsigned long count = 0;
 volatile unsigned long pps_start_us = 0;
-volatile unsigned long pps_tick_us = 1000000;  // filtered
+volatile unsigned long pps_tick_us = 1000000;  // filtered (unused)
 volatile unsigned long _pps_tick_us = 1000000; // unfiltered
 volatile float lat = 1000; // default to bad lat
 volatile float lon = 1000; // default to bad lon
 
 volatile unsigned long rtc_start_us = 0;          
-volatile unsigned long rtc_tick_us = 1000000;  // filtered
-volatile unsigned long _rtc_tick_us = 1000000; // unfiltered
+volatile unsigned long rtc_tick_us = 1000000;  // filtered (unused)
+volatile unsigned long _rtc_tick_us = 1000000; // unfiltered (unused)
 int rtc_set_hour = -1;
 bool dst_flag;
 
@@ -101,11 +99,11 @@ time_t Serial_to_time(char *in){
 }
 
 void setup(){
+  delay(100); // wait for ClockTHREE to start up first.
   sws.begin(9600);
   Serial.begin(115200);
   Serial.println("TimeZ v1.0");
   Serial.println("Copyright WyoLum, LLC, 2012");
-  wdt_enable(WDTO_8S);
 
   Wire.begin(MY_ADDR);
 
@@ -142,14 +140,10 @@ void setup(){
   if (!SD.begin(chipSelect)) {
     ERROR_OUT(4);
   }
-  initialize_clock();
 }
 
 /*
-  Stored in minutes in the file
-  converted to seconds for local vars
-
-  format:StandardTime, Dailight Time 4-byte unsigned
+ * read and return a 2 byte singed integer from current location in myFile
  */
 int readshort(File myFile){
   int16_t out;
@@ -159,6 +153,9 @@ int readshort(File myFile){
   }
   return out;
 }
+/*
+ * write a 2 byte singed integer stored in val to current location in myFile
+ */
 void writeshort(File myFile, int16_t val){
   char *dat = (char*)&val;
   for(uint8_t i=0; i < 2; i++){
@@ -166,6 +163,9 @@ void writeshort(File myFile, int16_t val){
   }
 }
 
+/*
+ * read and return a 4 byte time_t from current location in myFile
+ */
 time_t readtime(File myFile){
   time_t out;
   char *dat = (char*)&out;
@@ -174,6 +174,9 @@ time_t readtime(File myFile){
   }
   return out;
 }
+/*
+ * write a 4 byte time_t (val) to current location in myFile
+ */
 void writetime(File myFile, time_t val){
   char *dat = (char*)&val;
   for(uint8_t i=0; i < 4; i++){
@@ -181,6 +184,9 @@ void writetime(File myFile, time_t val){
   }
 }
 
+/*
+ * read and return a double from current location in myFile
+ */
 time_t readdouble(File myFile){
   double out;
   char *dat = (char*)&out;
@@ -189,6 +195,9 @@ time_t readdouble(File myFile){
   }
   return out;
 }
+/*
+ * write a double (val) to current location in myFile
+ */
 void writedouble(File myFile, double val){
   char *dat = (char*)&val;
   for(uint8_t i=0; i < 4; i++){
@@ -196,7 +205,7 @@ void writedouble(File myFile, double val){
   }
 }
 
-const int RECLEN = 38;
+const int RECLEN = 38; // Record length for GMT offset files.
 /* 
    return signed offset from GMT in minutes
    LAT FILE FORMAT:
@@ -244,9 +253,10 @@ int gmt_offset(float lat, float lon, int16_t *st_p, int16_t *dst_p){
   }
   latfile.close();
 }
+/*
+ * return true if current time t is in dailight savings time.  Uses global lat/lon vars.
+ */
 bool is_dst(uint16_t year, time_t t, float lon){
-  //}
-  // bool is_dst_not_used(uint16_t year, time_t t, float lon){
   File dst_file = SD.open("DST.DAT");
   time_t start, stop;
   bool out;
@@ -262,30 +272,21 @@ bool is_dst(uint16_t year, time_t t, float lon){
   return out;
 }
 
-void initialize_clock(){
-  // insure file is large enough
-}
-
+// return true if pps singal is current
 bool gps_is_active(){
   unsigned long  now_us = micros();
   return (now_us > pps_start_us) && (now_us - pps_start_us) < 1.5e6;
 }
+// return true if real time clock has been set recently
 bool rtc_is_set(){
   return hour() == rtc_set_hour;
 }
 
+// return local time offset in seconds.  including dailight savings time
 long local_offset(int yyyy, time_t now, float flat, float flon){
   dst_flag = is_dst(yyyy, now, lon);
   long my_offset;
   gmt_offset(flat, flon, &tz_offset_st, &tz_offset_dst);
-  /* Serial.println(" "); */
-  /* Serial.print(flat); */
-  /* Serial.print(" "); */
-  /* Serial.print(flon); */
-  /* Serial.print(" "); */
-  /* Serial.print(tz_offset_st); */
-  /* Serial.print(" "); */
-  /* Serial.print(tz_offset_dst); */
 
   if(dst_flag){
     digitalWrite(SQW_LED, HIGH);
@@ -295,11 +296,10 @@ long local_offset(int yyyy, time_t now, float flat, float flon){
     digitalWrite(SQW_LED, LOW);
     my_offset = tz_offset_st;
   }
-  // Serial.print(" ");
-  // Serial.print(my_offset);
-  // Serial.println(" ");
   return my_offset;
 }
+
+// update rtc if necessary (sleep for 1 second)
 void loop(){
   unsigned long age;
   int Year;
@@ -307,23 +307,27 @@ void loop(){
   time_t gps_t;
   tmElements_t tm_ele;
   float flat, flon;
-  //  Serial.println("loop()");
+
+  // if RTC is stale and GPS is active, set RTC
   while(!rtc_is_set() && 
 	gps_is_active()){
-    // feedgps(2); // BROKEN
-    // Serial.println("while..");
+
+    // clear GPS
     gps.reset();
+
+    // feed GPS for a while
     for(int i=0; i<100; i++){
       for(int j=0; j<100; j++){
 	feedgps();
       }
     }
+    
+    // see if year has been upated
     gps.crack_datetime(&Year, &Month, &Day, &Hour, &Minute, &Second, &Hundredths, &age);
     gps.f_get_position(&flat, &flon, &age);
     
     if(Year > 2000 && age < 10000){
-      // Serial.println("set time");
-      
+      // accept new time... set RTC
       lat = flat;
       lon = flon;
       tm_ele.Year = CalendarYrToTm(Year);
@@ -349,29 +353,7 @@ void loop(){
       rtc_set_hour = hour();
     }
   }
-////////////////////////////////////////////////////////////////////////////////
-  // gpsdump(gps);
-
   delay(1000);
-  wdt_reset();  
-}
-
-void do_nothing(){
-}
-bool feedgps(uint8_t secs){
-  bool out = false;
-  // ignore overflow
-  unsigned long stop_ms = millis() + 1000 * secs;
-  Serial.println(stop_ms);
-  while(millis() < stop_ms){
-    Serial.println("HERE1");
-    for(int i=0; i < 1000; i++){
-      out = out || feedgps();
-    }
-    Serial.println("HERE2");
-  }
-  Serial.println(out);
-  return out;
 }
 
 bool feedgps(){
@@ -384,54 +366,4 @@ bool feedgps(){
     }
   }
   return false;
-}
-
-void gpsdump(TinyGPS &gps)
-{
-  long lat, lon;
-  float flat, flon;
-  unsigned long age, date, time, chars;
-  int year;
-  byte month, day, hour, minute, second, hundredths;
-  unsigned short sentences, failed;
-
-  gps.crack_datetime(&year, &month, &day, &hour, &minute, &second, &hundredths, &age);
-  Serial.print("GMT Date: "); Serial.print(static_cast<int>(month)); Serial.print("/"); Serial.print(static_cast<int>(day)); Serial.print("/"); Serial.print(year);
-  Serial.print("GMT Time: "); Serial.print(static_cast<int>(hour)); Serial.print(":"); Serial.print(static_cast<int>(minute)); Serial.print(":"); Serial.print(static_cast<int>(second)); Serial.print("."); Serial.print(static_cast<int>(hundredths));
-  Serial.print("  Fix age: ");  Serial.print(age); Serial.println("ms.");
-}
-
-void printFloat(double number, int digits)
-{
-  // Handle negative numbers
-  if (number < 0.0)
-  {
-     Serial.print('-');
-     number = -number;
-  }
-
-  // Round correctly so that print(1.999, 2) prints as "2.00"
-  double rounding = 0.5;
-  for (uint8_t i=0; i<digits; ++i)
-    rounding /= 10.0;
-  
-  number += rounding;
-
-  // Extract the integer part of the number and print it
-  unsigned long int_part = (unsigned long)number;
-  double remainder = number - (double)int_part;
-  Serial.print(int_part);
-
-  // Print the decimal point, but only if there are digits beyond
-  if (digits > 0)
-    Serial.print("."); 
-
-  // Extract digits from the remainder one at a time
-  while (digits-- > 0)
-  {
-    remainder *= 10.0;
-    int toPrint = int(remainder);
-    Serial.print(toPrint);
-    remainder -= toPrint; 
-  } 
 }

@@ -1,3 +1,9 @@
+/*
+ * This code should be loaded onto an I2GPS driver (GPS not used, SD not used).  
+ * This allows the PEGGY2 to continue to refresh while the driver does time look up and calculations.
+ * 
+ * This code is released to the public domain.
+ */
 #include <Wire.h>
 #include "SPI.h"
 #include "rtcBOB.h"
@@ -16,7 +22,7 @@ union data{
 } _converter;
   
 //******************************************************************************
-// I2SD constants
+// I2GPS constants
 #include <SD.h>
 const int chipSelect = 10;
 const int D1_PIN = 2;
@@ -43,6 +49,7 @@ volatile uint16_t state = STARTING;
 
 long i = 1;
 
+// Clear peggy2
 void clear(){
   for(int slave=0; slave < 3; slave++){
     Wire.beginTransmission(PEGGY2_BASE_ADDR);
@@ -51,6 +58,7 @@ void clear(){
   }
 }
 
+// Set EMSL asterisk PWM
 void set_emsl(uint8_t pwm){
   Wire.beginTransmission(PEGGY2_BASE_ADDR);
   Wire.write(PEGGY2_SET_EMSL_PWM_MSG);
@@ -58,6 +66,7 @@ void set_emsl(uint8_t pwm){
   Wire.endTransmission();
 }
 
+// set a pixel on Peggy2
 void set_pixel(uint8_t x, uint8_t y, bool on){
   if(on){
     y |= (1<<7) * on;
@@ -87,10 +96,11 @@ void setup(){
   Serial.print("Using Peggy2 I2C Address: ");
   Serial.println(PEGGY2_BASE_ADDR);
 
+  // LED are output
   pinMode(D1_PIN, OUTPUT);
   pinMode(D2_PIN, OUTPUT);
 
-#ifdef SDINIT
+#ifdef SDINIT // NOT USED
   Serial.print("Initializing SD card...");
   pinMode(10, OUTPUT);
   digitalWrite(D1_PIN, HIGH); 
@@ -107,20 +117,21 @@ void setup(){
   Serial.print("RTC Unix Time:");
   Serial.println(getTime(), DEC);
   
+  // blink LEDs on I2GPS
   for(int i=0; i < 5; i++){
     digitalWrite(D1_PIN, LOW);
     digitalWrite(D2_PIN, HIGH);
-    delay(200)
+    delay(200);
     digitalWrite(D1_PIN, HIGH);
     digitalWrite(D2_PIN, LOW);
-    delay(200)
+    delay(200);
   }
   
 }
 
 unsigned long count = 0;
 
-ClockTHREE c3;                      // ClockTHREE singleton
+// ClockTHREE c3;                      // ClockTHREE singleton
 uint32_t rows[25];               // 2X display (16 columns per display) for swapping back and forth
 
 // language constants
@@ -134,13 +145,10 @@ uint8_t last_min_hack_inc = 0;    // last mininte hack incriment (to know when i
 uint8_t last_time_inc = 289;        // last time incriment (to know when it has changed)
 uint8_t last_pwm = 0;
 
-time_t last_time = 0;
 void loop(){
   Serial_loop();
   time_t now = getTime();
-  if(now != last_time){
-    last_time = now;
-  }
+
   uint8_t word[3];                // will store start_x, start_y, length of word
   time_t spm = getTime() % 86400; // seconds past midnight
   uint16_t time_inc = spm / 300;  // 5-minute time increment are we in
