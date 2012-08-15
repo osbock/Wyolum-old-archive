@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.0 r9654"
+   sodipodi:docname="New document 1">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="318.99021"
+     inkscape:cy="212.16148"
+     inkscape:document-units="in"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1680"
+     inkscape:window-height="1024"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:15.46501732px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="106.01832"
+       y="861.64294"
+       id="text2985"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2987"
+         x="106.01832"
+         y="861.64294">Dr Nicholas Stock</tspan><tspan
+         sodipodi:role="line"
+         x="106.01832"
+         y="880.97424"
+         id="tspan2989">Inception Sciences</tspan><tspan
+         sodipodi:role="line"
+         x="106.01832"
+         y="900.30548"
+         id="tspan2991">9393 Towne Center Drive Ste 110</tspan><tspan
+         sodipodi:role="line"
+         x="106.01832"
+         y="919.63678"
+         id="tspan2993">San Diego, CA 92121</tspan><tspan
+         sodipodi:role="line"
+         x="106.01832"
+         y="938.96802"
+         id="tspan2995">United States</tspan></text>
+    <g
+       id="g3109"
+       transform="matrix(1.0360824,0,0,1.0360824,165.09107,694.64369)">
+      <g
+         id="g6287"
+         transform="matrix(0.23181563,0,0,0.23181563,34.653715,-26.189215)">
+        <path
+           style="fill:#000000;fill-opacity:1;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:10"
+           d="m 353.6875,346.40625 c -64.64268,1.09425 -126.38141,40.92203 -154.46875,99.125 -27.58533,55.57737 -23.36691,125.611 11.8125,176.84375 30.26945,45.67298 82.72657,76.0846 137.68351,78.62633 55.79602,3.27758 112.17244,-21.25701 147.22274,-64.84508 34.10893,-41.24902 47.96701,-98.77389 35.84375,-151.25 -12.86216,-58.11449 -56.28591,-107.86922 -112.3731,-127.82181 -20.9253,-7.68341 -43.32491,-11.27265 -65.72065,-10.67819 z"
+           id="path3426"
+           inkscape:connector-curvature="0"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600" />
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:10"
+           id="rect3430"
+           width="210"
+           height="210"
+           x="348"
+           y="326.36218"
+           rx="18.571428"
+           ry="0"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600" />
+        <path
+           sodipodi:type="arc"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:10"
+           id="path3434"
+           sodipodi:cx="347.14285"
+           sodipodi:cy="535.2193"
+           sodipodi:rx="140"
+           sodipodi:ry="140"
+           d="m 487.14285,535.2193 c 0,77.31986 -62.68013,140 -140,140 -77.31986,0 -140,-62.68014 -140,-140 0,-77.31987 62.68014,-140 140,-140 77.31987,0 140,62.68013 140,140 z"
+           transform="matrix(1.0612245,0,0,1.0612245,-8.6822161,-44.197101)"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600" />
+        <text
+           xml:space="preserve"
+           style="font-size:200px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Tahoma"
+           x="385.57144"
+           y="587.64783"
+           id="text3436"
+           sodipodi:linespacing="125%"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600"><tspan
+             sodipodi:role="line"
+             id="tspan3438"
+             x="385.57144"
+             y="587.64783"
+             style="font-size:200px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Century Gothic;-inkscape-font-specification:Century Gothic">3</tspan></text>
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect3005"
+           width="21.428572"
+           height="60"
+           x="331.42856"
+           y="333.79074"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600" />
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect3007"
+           width="57.142857"
+           height="45.714287"
+           x="495.71429"
+           y="512.36218"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600" />
+        <path
+           sodipodi:type="arc"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="path3009"
+           sodipodi:cx="322.85715"
+           sodipodi:cy="366.64789"
+           sodipodi:rx="14.285714"
+           sodipodi:ry="15.714286"
+           d="m 337.14286,366.64789 c 0,8.67876 -6.39593,15.71428 -14.28571,15.71428 -7.88978,0 -14.28572,-7.03552 -14.28572,-15.71428 0,-8.67876 6.39594,-15.71429 14.28572,-15.71429 7.88978,0 14.28571,7.03553 14.28571,15.71429 z"
+           transform="matrix(1.030625,0,0,0.93693182,-1.1821422,19.561315)"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600" />
+        <path
+           sodipodi:type="arc"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="path3009-7"
+           sodipodi:cx="322.85715"
+           sodipodi:cy="366.64789"
+           sodipodi:rx="14.285714"
+           sodipodi:ry="15.714286"
+           d="m 337.14286,366.64789 c 0,8.67876 -6.39593,15.71428 -14.28571,15.71428 -7.88978,0 -14.28572,-7.03552 -14.28572,-15.71428 0,-8.67876 6.39594,-15.71429 14.28572,-15.71429 7.88978,0 14.28571,7.03553 14.28571,15.71429 z"
+           transform="translate(195.44642,191.28573)"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600" />
+        <text
+           xml:space="preserve"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="532.85712"
+           y="678.07648"
+           id="text3815"
+           sodipodi:linespacing="125%"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600"><tspan
+             sodipodi:role="line"
+             id="tspan3817"
+             x="532.85712"
+             y="678.07648"
+             style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS" /></text>
+        <text
+           xml:space="preserve"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="280"
+           y="149.36218"
+           id="text3023"
+           sodipodi:linespacing="125%"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600"><tspan
+             sodipodi:role="line"
+             id="tspan3025"
+             x="280"
+             y="149.36218" /></text>
+        <text
+           xml:space="preserve"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="633.25"
+           y="673.96765"
+           id="text3815-1"
+           sodipodi:linespacing="125%"
+           inkscape:transform-center-x="-121"
+           inkscape:transform-center-y="-163"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600"><tspan
+             sodipodi:role="line"
+             id="tspan3817-7"
+             x="633.25"
+             y="673.96765"
+             style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS" /></text>
+        <text
+           xml:space="preserve"
+           style="font-size:55.24565506px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS"
+           x="203.33003"
+           y="752.33984"
+           id="text3102"
+           sodipodi:linespacing="125%"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600"><tspan
+             sodipodi:role="line"
+             id="tspan3104"
+             x="203.33003"
+             y="752.33984"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Century Gothic;-inkscape-font-specification:Century Gothic">ClockTHREE</tspan></text>
+        <g
+           id="g3162"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600">
+          <text
+             xml:space="preserve"
+             style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+             x="532.85712"
+             y="678.07648"
+             id="text3127"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               id="tspan3129"
+               x="532.85712"
+               y="678.07648"
+               style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS" /></text>
+          <text
+             xml:space="preserve"
+             style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+             x="633.25"
+             y="673.96765"
+             id="text3131"
+             sodipodi:linespacing="125%"
+             inkscape:transform-center-x="-121"
+             inkscape:transform-center-y="-163"><tspan
+               sodipodi:role="line"
+               id="tspan3133"
+               x="633.25"
+               y="673.96765"
+               style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS" /></text>
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="391"
+           y="295.36218"
+           id="text3198"
+           sodipodi:linespacing="125%"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600"><tspan
+             sodipodi:role="line"
+             id="tspan3200"
+             x="391"
+             y="295.36218" /></text>
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:10.0024929px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="53.22332"
+       y="771.6037"
+       id="text3988"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3990"
+         x="53.22332"
+         y="771.6037">WyoLum</tspan><tspan
+         sodipodi:role="line"
+         x="53.22332"
+         y="784.10681"
+         id="tspan3992">12334 Coleraine CT</tspan><tspan
+         sodipodi:role="line"
+         x="53.22332"
+         y="796.60992"
+         id="tspan3994">Reston, VA 20191</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3996"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion3998"><rect
+           id="rect4000"
+           width="88.571426"
+           height="61.42857"
+           x="124.28571"
+           y="875.93359" /></flowRegion><flowPara
+         id="flowPara4002"></flowPara></flowRoot>  </g>
+</svg>

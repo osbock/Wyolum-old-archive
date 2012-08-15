@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="315"
+   height="180"
+   id="svg2985"
+   version="1.1"
+   inkscape:version="0.48.0 r9654"
+   sodipodi:docname="wyolum_card_back.svg"
+   inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\wyolum_card_back.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600">
+  <defs
+     id="defs3">
+    <filter
+       id="filter4902"
+       inkscape:label="Invert"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       inkscape:menu="Color"
+       inkscape:menu-tooltip="Invert colors"
+       color-interpolation-filters="sRGB">
+      <feColorMatrix
+         id="feColorMatrix4904"
+         type="saturate"
+         values="1"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="feColorMatrix4906"
+         in="fbSourceGraphic"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 " />
+    </filter>
+    <filter
+       id="filter4908"
+       inkscape:label="Invert"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       inkscape:menu="Color"
+       inkscape:menu-tooltip="Invert colors"
+       color-interpolation-filters="sRGB">
+      <feColorMatrix
+         id="feColorMatrix4910"
+         type="saturate"
+         values="1"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="feColorMatrix4912"
+         in="fbSourceGraphic"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 " />
+    </filter>
+    <filter
+       id="filter5000"
+       inkscape:label="Invert"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       inkscape:menu="Color"
+       inkscape:menu-tooltip="Invert colors"
+       color-interpolation-filters="sRGB">
+      <feColorMatrix
+         id="feColorMatrix5002"
+         type="saturate"
+         values="1"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="feColorMatrix5004"
+         in="fbSourceGraphic"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 " />
+    </filter>
+    <filter
+       id="filter5006"
+       inkscape:label="Invert"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       inkscape:menu="Color"
+       inkscape:menu-tooltip="Invert colors"
+       color-interpolation-filters="sRGB">
+      <feColorMatrix
+         id="feColorMatrix5008"
+         type="saturate"
+         values="1"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="feColorMatrix5010"
+         in="fbSourceGraphic"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 " />
+    </filter>
+    <filter
+       id="filter5012"
+       inkscape:label="Invert"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       inkscape:menu="Color"
+       inkscape:menu-tooltip="Invert colors"
+       color-interpolation-filters="sRGB">
+      <feColorMatrix
+         id="feColorMatrix5014"
+         type="saturate"
+         values="1"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="feColorMatrix5016"
+         in="fbSourceGraphic"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 " />
+    </filter>
+    <filter
+       id="filter5018"
+       inkscape:label="Invert"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       inkscape:menu="Color"
+       inkscape:menu-tooltip="Invert colors"
+       color-interpolation-filters="sRGB">
+      <feColorMatrix
+         id="feColorMatrix5020"
+         type="saturate"
+         values="1"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="feColorMatrix5022"
+         in="fbSourceGraphic"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 " />
+    </filter>
+    <filter
+       id="filter5024"
+       inkscape:label="Invert"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       inkscape:menu="Color"
+       inkscape:menu-tooltip="Invert colors"
+       color-interpolation-filters="sRGB">
+      <feColorMatrix
+         id="feColorMatrix5026"
+         type="saturate"
+         values="1"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="feColorMatrix5028"
+         in="fbSourceGraphic"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 " />
+    </filter>
+    <filter
+       id="filter5006-4"
+       inkscape:label="Invert"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       inkscape:menu="Color"
+       inkscape:menu-tooltip="Invert colors"
+       color-interpolation-filters="sRGB">
+      <feColorMatrix
+         id="feColorMatrix5008-0"
+         type="saturate"
+         values="1"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="feColorMatrix5010-9"
+         in="fbSourceGraphic"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 " />
+    </filter>
+    <filter
+       id="filter5012-4"
+       inkscape:label="Invert"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       inkscape:menu="Color"
+       inkscape:menu-tooltip="Invert colors"
+       color-interpolation-filters="sRGB">
+      <feColorMatrix
+         id="feColorMatrix5014-8"
+         type="saturate"
+         values="1"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="feColorMatrix5016-8"
+         in="fbSourceGraphic"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 " />
+    </filter>
+    <filter
+       id="filter5018-2"
+       inkscape:label="Invert"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       inkscape:menu="Color"
+       inkscape:menu-tooltip="Invert colors"
+       color-interpolation-filters="sRGB">
+      <feColorMatrix
+         id="feColorMatrix5020-4"
+         type="saturate"
+         values="1"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="feColorMatrix5022-5"
+         in="fbSourceGraphic"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 " />
+    </filter>
+    <filter
+       id="filter5024-5"
+       inkscape:label="Invert"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       inkscape:menu="Color"
+       inkscape:menu-tooltip="Invert colors"
+       color-interpolation-filters="sRGB">
+      <feColorMatrix
+         id="feColorMatrix5026-1"
+         type="saturate"
+         values="1"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="feColorMatrix5028-7"
+         in="fbSourceGraphic"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 " />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="173.87042"
+     inkscape:cy="53.448347"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1680"
+     inkscape:window-height="1024"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
+     inkscape:window-maximized="1"
+     units="in" />
+  <metadata
+     id="metadata2989">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-11.338588)">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.3572177;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;filter:url(#filter4908)"
+       id="rect4335"
+       width="314.64279"
+       height="179.64278"
+       x="0.17860885"
+       y="11.517202" />
+    <text
+       xml:space="preserve"
+       style="font-size:17.0697937px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;filter:url(#filter4902);font-family:Sans"
+       x="55.279991"
+       y="31.204685"
+       id="text2992"
+       sodipodi:linespacing="125%"
+       transform="matrix(0,-1,1,0,34.381022,239.69225)"><tspan
+         sodipodi:role="line"
+         x="55.279991"
+         y="31.204685"
+         id="tspan3008"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#b3b3b3;font-family:Courier New;-inkscape-font-specification:Courier New">k<tspan
+   style="font-weight:bold;fill:#000000"
+   id="tspan6999">it</tspan>r<tspan
+   style="font-weight:bold;fill:#000000"
+   id="tspan7003">is</tspan>ctenhalfx </tspan><tspan
+         sodipodi:role="line"
+         x="55.279991"
+         y="52.80331"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#b3b3b3;font-family:Courier New;-inkscape-font-specification:Courier New"
+         id="tspan6985">quartertwentybz </tspan><tspan
+         sodipodi:role="line"
+         x="55.279991"
+         y="74.140556"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#b3b3b3;font-family:Courier New;-inkscape-font-specification:Courier New"
+         id="tspan6987">ifivecminutesal </tspan><tspan
+         sodipodi:role="line"
+         x="55.279991"
+         y="95.477798"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#b3b3b3;font-family:Courier New;-inkscape-font-specification:Courier New"
+         id="tspan6989">pastobtwoneights</tspan><tspan
+         sodipodi:role="line"
+         x="55.279991"
+         y="116.81504"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#b3b3b3;font-family:Courier New;-inkscape-font-specification:Courier New"
+         id="tspan6991">threelevensixten</tspan><tspan
+         sodipodi:role="line"
+         x="55.279991"
+         y="138.15228"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#b3b3b3;font-family:Courier New;-inkscape-font-specification:Courier New"
+         id="tspan6993"><tspan
+   style="font-weight:bold;fill:#000000"
+   id="tspan7007">four</tspan>fivesevenine</tspan><tspan
+         sodipodi:role="line"
+         x="55.279991"
+         y="159.7509"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#b3b3b3;font-family:Courier New;-inkscape-font-specification:Courier New"
+         id="tspan6995">twelvex<tspan
+   style="font-weight:bold;fill:#000000"
+   id="tspan7011">oclock</tspan>yam</tspan><tspan
+         sodipodi:role="line"
+         x="55.279991"
+         y="181.34953"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#b3b3b3;font-family:Courier New;-inkscape-font-specification:Courier New"
+         id="tspan6997"><tspan
+   style="font-weight:bold;fill:#000000"
+   id="tspan7015">pm</tspan>ydmthwmfsualr!</tspan></text>
+    <g
+       id="layer1-7"
+       inkscape:label="Layer 1"
+       transform="matrix(0,-0.11772182,0.11772182,0,201.51447,161.28924)"
+       style="filter:url(#filter5000)">
+      <g
+         id="g6287">
+        <path
+           style="fill:#000000;fill-opacity:1;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:10"
+           d="m 353.6875,346.40625 c -64.64268,1.09425 -126.38141,40.92203 -154.46875,99.125 -27.58533,55.57737 -23.36691,125.611 11.8125,176.84375 30.26945,45.67298 82.72657,76.0846 137.68351,78.62633 55.79602,3.27758 112.17244,-21.25701 147.22274,-64.84508 34.10893,-41.24902 47.96701,-98.77389 35.84375,-151.25 -12.86216,-58.11449 -56.28591,-107.86922 -112.3731,-127.82181 -20.9253,-7.68341 -43.32491,-11.27265 -65.72065,-10.67819 z"
+           id="path3426"
+           inkscape:connector-curvature="0"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600" />
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:10"
+           id="rect3430"
+           width="210"
+           height="210"
+           x="348"
+           y="326.36218"
+           rx="18.571428"
+           ry="0"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600" />
+        <path
+           sodipodi:type="arc"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:10"
+           id="path3434"
+           sodipodi:cx="347.14285"
+           sodipodi:cy="535.2193"
+           sodipodi:rx="140"
+           sodipodi:ry="140"
+           d="m 487.14285,535.2193 c 0,77.31986 -62.68013,140 -140,140 -77.31986,0 -140,-62.68014 -140,-140 0,-77.31987 62.68014,-140 140,-140 77.31987,0 140,62.68013 140,140 z"
+           transform="matrix(1.0612245,0,0,1.0612245,-8.6822161,-44.197101)"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600" />
+        <text
+           xml:space="preserve"
+           style="font-size:200px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Tahoma"
+           x="385.57144"
+           y="587.64783"
+           id="text3436"
+           sodipodi:linespacing="125%"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600"><tspan
+             sodipodi:role="line"
+             id="tspan3438"
+             x="385.57144"
+             y="587.64783"
+             style="font-size:200px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS">3</tspan></text>
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect3005"
+           width="21.428572"
+           height="60"
+           x="331.42856"
+           y="333.79074"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600" />
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect3007"
+           width="57.142857"
+           height="45.714287"
+           x="495.71429"
+           y="512.36218"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600" />
+        <path
+           sodipodi:type="arc"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="path3009"
+           sodipodi:cx="322.85715"
+           sodipodi:cy="366.64789"
+           sodipodi:rx="14.285714"
+           sodipodi:ry="15.714286"
+           d="m 337.14286,366.64789 c 0,8.67876 -6.39593,15.71428 -14.28571,15.71428 -7.88978,0 -14.28572,-7.03552 -14.28572,-15.71428 0,-8.67876 6.39594,-15.71429 14.28572,-15.71429 7.88978,0 14.28571,7.03553 14.28571,15.71429 z"
+           transform="matrix(1.030625,0,0,0.93693182,-1.1821422,19.561315)"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600" />
+        <path
+           sodipodi:type="arc"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="path3009-7"
+           sodipodi:cx="322.85715"
+           sodipodi:cy="366.64789"
+           sodipodi:rx="14.285714"
+           sodipodi:ry="15.714286"
+           d="m 337.14286,366.64789 c 0,8.67876 -6.39593,15.71428 -14.28571,15.71428 -7.88978,0 -14.28572,-7.03552 -14.28572,-15.71428 0,-8.67876 6.39594,-15.71429 14.28572,-15.71429 7.88978,0 14.28571,7.03553 14.28571,15.71429 z"
+           transform="translate(195.44642,191.28573)"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600" />
+        <text
+           xml:space="preserve"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="532.85712"
+           y="678.07648"
+           id="text3815"
+           sodipodi:linespacing="125%"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600"><tspan
+             sodipodi:role="line"
+             id="tspan3817"
+             x="532.85712"
+             y="678.07648"
+             style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS">jr</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="280"
+           y="149.36218"
+           id="text3023"
+           sodipodi:linespacing="125%"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600"><tspan
+             sodipodi:role="line"
+             id="tspan3025"
+             x="280"
+             y="149.36218" /></text>
+        <text
+           xml:space="preserve"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="633.25"
+           y="673.96765"
+           id="text3815-1"
+           sodipodi:linespacing="125%"
+           inkscape:transform-center-x="-121"
+           inkscape:transform-center-y="-163"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600"><tspan
+             sodipodi:role="line"
+             id="tspan3817-7"
+             x="633.25"
+             y="673.96765"
+             style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS">.</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:55.24565506px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS"
+           x="203.33003"
+           y="752.33984"
+           id="text3102"
+           sodipodi:linespacing="125%"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600"><tspan
+             sodipodi:role="line"
+             id="tspan3104"
+             x="203.33003"
+             y="752.33984">ClockTHREE</tspan></text>
+        <g
+           id="g3162"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600">
+          <text
+             xml:space="preserve"
+             style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+             x="532.85712"
+             y="678.07648"
+             id="text3127"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               id="tspan3129"
+               x="532.85712"
+               y="678.07648"
+               style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS">jr</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+             x="633.25"
+             y="673.96765"
+             id="text3131"
+             sodipodi:linespacing="125%"
+             inkscape:transform-center-x="-121"
+             inkscape:transform-center-y="-163"><tspan
+               sodipodi:role="line"
+               id="tspan3133"
+               x="633.25"
+               y="673.96765"
+               style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS">.</tspan></text>
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="391"
+           y="295.36218"
+           id="text3198"
+           sodipodi:linespacing="125%"
+           inkscape:export-filename="C:\Documents and Settings\Justin\My Documents\Arduino\clockthree\Faceplate\Images\ClockTHREEjr_logo2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600"><tspan
+             sodipodi:role="line"
+             id="tspan3200"
+             x="391"
+             y="295.36218" /></text>
+      </g>
+    </g>
+    <path
+       sodipodi:type="arc"
+       style="fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:#b1b1b1;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;filter:url(#filter5024-5)"
+       id="path7019"
+       sodipodi:cx="242.08333"
+       sodipodi:cy="19.671911"
+       sodipodi:rx="1.4583334"
+       sodipodi:ry="1.4583334"
+       d="m 243.54166,19.671911 a 1.4583334,1.4583334 0 1 1 -2.91667,0 1.4583334,1.4583334 0 1 1 2.91667,0 z"
+       transform="matrix(0,-1,1,0,43.064534,268.01035)" />
+    <path
+       transform="matrix(0,-1,1,0,59.882244,267.69784)"
+       sodipodi:type="arc"
+       style="fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:#b1b1b1;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;filter:url(#filter5018-2)"
+       id="path7019-1"
+       sodipodi:cx="242.08333"
+       sodipodi:cy="19.671911"
+       sodipodi:rx="1.4583334"
+       sodipodi:ry="1.4583334"
+       d="m 243.54166,19.671911 a 1.4583334,1.4583334 0 1 1 -2.91667,0 1.4583334,1.4583334 0 1 1 2.91667,0 z" />
+    <path
+       transform="matrix(0,-1,1,0,67.538484,267.6718)"
+       sodipodi:type="arc"
+       style="fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:#b1b1b1;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;filter:url(#filter5012-4)"
+       id="path7019-11"
+       sodipodi:cx="242.08333"
+       sodipodi:cy="19.671911"
+       sodipodi:rx="1.4583334"
+       sodipodi:ry="1.4583334"
+       d="m 243.54166,19.671911 a 1.4583334,1.4583334 0 1 1 -2.91667,0 1.4583334,1.4583334 0 1 1 2.91667,0 z" />
+    <path
+       transform="matrix(0,-1,1,0,84.350998,267.69784)"
+       sodipodi:type="arc"
+       style="fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:#b1b1b1;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;filter:url(#filter5006-4)"
+       id="path7019-3"
+       sodipodi:cx="242.08333"
+       sodipodi:cy="19.671911"
+       sodipodi:rx="1.4583334"
+       sodipodi:ry="1.4583334"
+       d="m 243.54166,19.671911 a 1.4583334,1.4583334 0 1 1 -2.91667,0 1.4583334,1.4583334 0 1 1 2.91667,0 z" />
+    <text
+       xml:space="preserve"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Trebuchet MS;-inkscape-font-specification:Trebuchet MS"
+       x="12.963625"
+       y="58.318707"
+       id="text5093"
+       sodipodi:linespacing="125%"
+       transform="translate(0,11.338588)"><tspan
+         sodipodi:role="line"
+         id="tspan5095"></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.83843422px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Trebuchet MS;-inkscape-font-specification:Trebuchet MS"
+       x="-105.10043"
+       y="192.88295"
+       id="text5097"
+       sodipodi:linespacing="125%"
+       transform="matrix(-0.00676479,-0.99997712,0.99997712,-0.00676479,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan5099"
+         x="-105.10043"
+         y="192.88295"
+         style="font-size:12.22710133px;fill:#ffffff">'</tspan></text>
+  </g>
+</svg>
