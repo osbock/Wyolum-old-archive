@@ -98,6 +98,70 @@ time_t Serial_to_time(char *in){
   return out;
 }
 
+void test_dst(){
+#ifdef TEST_DST  
+  // test daylight savings time
+  //********************************************************************************
+  Serial.println("Dailight Savings test");
+
+for(int yyyy = 2012; yyyy < 2020; yyyy++){
+ time_t t;
+  for(int dd = 1; dd < 31; dd++){
+
+tmElements_t tm_ele;
+tm_ele.Year = CalendarYrToTm(yyyy);
+tm_ele.Month = 3;
+tm_ele.Day = dd;
+tm_ele.Hour = 0;
+tm_ele.Minute = 0;
+tm_ele.Second = 0;
+t = makeTime(tm_ele);
+    Serial.print(yyyy);
+    Serial.print("/3 ");
+    Serial.print(" ");
+    Serial.print(dd);
+    Serial.print(" ");
+    Serial.print(t);
+    Serial.print(" ");
+    if(is_dst(yyyy, t, -77.)){
+      Serial.print(" ");
+	Serial.println("true");
+      }
+    else{
+	Serial.println("false");
+    }      
+  }
+  Serial.println(" ");
+  for(int dd = 1; dd < 31; dd++){
+tmElements_t tm_ele;
+tm_ele.Year = CalendarYrToTm(yyyy);
+tm_ele.Month = 11;
+tm_ele.Day = dd;
+tm_ele.Hour = 0;
+tm_ele.Minute = 0;
+tm_ele.Second = 0;
+t = makeTime(tm_ele);
+    Serial.print(yyyy);
+    Serial.print("/11 ");
+    Serial.print(" ");
+    Serial.print(dd);
+    Serial.print(" ");
+    Serial.print(t);
+    Serial.print(" ");
+    if(is_dst(yyyy, t, -77.)){
+	Serial.println("true");
+      }
+    else{
+	Serial.println("false");
+    }      
+  }
+  Serial.println(" ");
+  Serial.println(" ");
+ }
+//********************************************************************************
+#endif
+}
+
 void setup(){
   delay(100); // wait for ClockTHREE to start up first.
   sws.begin(9600);
@@ -140,6 +204,7 @@ void setup(){
   if (!SD.begin(chipSelect)) {
     ERROR_OUT(4);
   }
+  test_dst();
 }
 
 /*
@@ -260,13 +325,18 @@ bool is_dst(uint16_t year, time_t t, float lon){
   File dst_file = SD.open("DST.DAT");
   time_t start, stop;
   bool out;
-
   if(dst_file){
     year = year % 2000;
     dst_file.seek((year + 0) * 16  + 8 * (lon > -20)); // lat > -20 --> EU, else US 
     start = readtime(dst_file);
     stop = readtime(dst_file);
     out = (start < t) && (t < stop);
+ #ifdef TEST_DST
+    Serial.print(start);Serial.print(" ");
+    Serial.print(t);Serial.print(" ");
+    Serial.print(stop);Serial.print(" ");
+    Serial.print(month(stop));Serial.print(" ");
+#endif
   }
   dst_file.close();
   return out;

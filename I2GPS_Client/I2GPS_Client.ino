@@ -1,8 +1,7 @@
 #include "Wire.h"
+#include "I2GPS.h"
 
 // globals
-const uint8_t I2GPS_I2C_ADDR = 88; // TODO: get from header
-const uint8_t N_DATA_BYTE = 0x20;
 uint8_t address = 0;
 uint8_t gps_data[N_DATA_BYTE];
 unsigned long count = 0;
@@ -24,6 +23,7 @@ void loop(){
   Serial.println("");
   Serial.println("Breakout");
 #endif
+
   Serial.print("UNIX TIME:");
   Serial.println(unserialize_ulong(gps_data+0));
   Serial.print("LAT:");
@@ -57,25 +57,6 @@ void loop(){
   count++;
   delay(1000);
 
-}
-
-
-bool gps_raw_read(uint8_t addr,
-		  uint8_t n_byte,
-		  uint8_t *dest){
-  
-  bool out = false;
-  Wire.beginTransmission(I2GPS_I2C_ADDR); 
-  Wire.write(addr); 
-  Wire.endTransmission();
-  Wire.requestFrom((int)I2GPS_I2C_ADDR, (int)n_byte); // request n_byte bytes 
-  if(Wire.available()){
-    for(uint8_t i = 0; i < n_byte; i++){
-      dest[i] = Wire.read();
-    }
-    out = true;
-  }
-  return out;
 }
 
 union converter_t {
