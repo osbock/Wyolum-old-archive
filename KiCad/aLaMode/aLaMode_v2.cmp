@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 7/28/2012 11:32:58 AM
+Cmp-Mod V01 Genere par PcbNew le 8/23/2012 6:25:34 PM
 
 BeginCmp
 TimeStamp = 4FDCCB58
@@ -473,14 +473,6 @@ IdModule  = Header_ICSP;
 EndCmp
 
 BeginCmp
-TimeStamp = 4FDC441F
-Path = /4FE58ED4
-Reference = P8;
-ValeurCmp = FTDI;
-IdModule  = Header_FTDI;
-EndCmp
-
-BeginCmp
 TimeStamp = 4DD7ABB4
 Path = /4EC0FE5A
 Reference = SD1;
@@ -601,11 +593,19 @@ IdModule  = PCB;
 EndCmp
 
 BeginCmp
-TimeStamp = 4DCB9F4D
-Path = /4FC07AA9
-Reference = IC1;
-ValeurCmp = ATMEGA328-PU;
-IdModule  = DIP-28__300_ELL;
+TimeStamp = 5013784B
+Path = /4FC07407/50137293
+Reference = R14;
+ValeurCmp = 0E;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = 4FDC441F
+Path = /4FE58ED4
+Reference = P8;
+ValeurCmp = FTDI;
+IdModule  = Header_FTDI;
 EndCmp
 
 BeginCmp
@@ -617,11 +617,11 @@ IdModule  = ARDUINO_SHIELD_2_040pins;
 EndCmp
 
 BeginCmp
-TimeStamp = 5013784B
-Path = /4FC07407/50137293
-Reference = R14;
-ValeurCmp = 0E;
-IdModule  = r_0805;
+TimeStamp = 4DCB9F4D
+Path = /4FC07AA9
+Reference = IC1;
+ValeurCmp = ATMEGA328-PU;
+IdModule  = DIP-28__300_ELL;
 EndCmp
 
 EndListe

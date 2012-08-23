@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 7/28/2012 11:32:13 AM
+EESchema Schematic File Version 2  date 8/23/2012 2:30:52 PM
 LIBS:aLaMode
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 3 4
 Title "aLaMode"
-Date "28 jul 2012"
+Date "23 aug 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""

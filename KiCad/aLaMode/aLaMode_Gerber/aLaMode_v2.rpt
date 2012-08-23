@@ -1,4 +1,4 @@
-## Module report - date 7/28/2012 11:34:14 AM
+## Module report - date 8/23/2012 6:26:01 PM
 ## Created by Pcbnew version pcbnew (2011-12-28 BZR 3254)-stable
 ## Unit = inches, Angle = deg.
 ##
@@ -7,8 +7,8 @@ $BeginDESCRIPTION
 
 $BOARD
 unit INCH
-upper_left_corner  0.808500  0.994200
-lower_right_corner  4.566600  3.312600
+upper_left_corner  0.808500  3.494000
+lower_right_corner  4.566600  5.812600
 $EndBOARD
 
 $MODULE "P6"
@@ -16,7 +16,7 @@ reference "P6"
 value "GND_SERVO"
 footprint "Header_Servo"
 attribut smd
-position  1.800000  2.700000
+position  1.800000  5.275000
 orientation  90.00
 layer component
 $SHAPE3D
@@ -104,7 +104,7 @@ reference "P5"
 value "5V_SERVO"
 footprint "Header_Servo"
 attribut smd
-position  1.900000  2.700000
+position  1.900000  5.275000
 orientation  90.00
 layer component
 $SHAPE3D
@@ -192,7 +192,7 @@ reference "C15"
 value "1n"
 footprint "c_0805"
 attribut smd
-position  1.192500  2.582500
+position  1.192500  5.082500
 orientation  270.00
 layer component
 $SHAPE3D
@@ -226,7 +226,7 @@ reference "D7"
 value "SMBJ5.0CA-TR"
 footprint "diode-DO214AA"
 attribut smd
-position  1.157500  3.107500
+position  1.157500  5.607500
 orientation  0.00
 layer copper
 $SHAPE3D
@@ -260,7 +260,7 @@ reference "C16"
 value "10n"
 footprint "c_0805"
 attribut smd
-position  1.740000  2.192500
+position  1.740000  4.692500
 orientation  90.00
 layer component
 $SHAPE3D
@@ -294,7 +294,7 @@ reference "D6"
 value "LED"
 footprint "led_0805"
 attribut smd
-position  2.322500  1.987500
+position  2.322500  4.487500
 orientation  90.00
 layer component
 $SHAPE3D
@@ -328,7 +328,7 @@ reference "D2"
 value "LED"
 footprint "led_0805"
 attribut smd
-position  2.617500  1.987500
+position  2.617500  4.487500
 orientation  270.00
 layer component
 $SHAPE3D
@@ -362,7 +362,7 @@ reference "D1"
 value "LED"
 footprint "led_0805"
 attribut smd
-position  2.517500  1.987500
+position  2.517500  4.487500
 orientation  270.00
 layer component
 $SHAPE3D
@@ -396,7 +396,7 @@ reference "U6"
 value "TXS0108"
 footprint "tssop-20"
 attribut smd
-position  1.387500  1.520000
+position  1.387500  4.020000
 orientation  0.00
 layer copper
 $SHAPE3D
@@ -592,7 +592,7 @@ reference "R13"
 value "10k"
 footprint "r_0805"
 attribut smd
-position  1.245000  1.902500
+position  1.245000  4.402500
 orientation  180.00
 layer copper
 $SHAPE3D
@@ -626,7 +626,7 @@ reference "C14"
 value "100n"
 footprint "c_0805"
 attribut smd
-position  2.055000  1.625000
+position  2.055000  4.125000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -660,7 +660,7 @@ reference "C13"
 value "100n"
 footprint "c_0805"
 attribut smd
-position  1.142500  1.325000
+position  1.142500  3.825000
 orientation  180.00
 layer copper
 $SHAPE3D
@@ -694,7 +694,7 @@ reference "C12"
 value "100n"
 footprint "c_0805"
 attribut smd
-position  1.142500  1.630000
+position  1.142500  4.130000
 orientation  180.00
 layer copper
 $SHAPE3D
@@ -728,7 +728,7 @@ reference "U2"
 value "74HC125"
 footprint "SO14E"
 attribut smd
-position  1.837500  1.572500
+position  1.837500  4.072500
 orientation  270.00
 layer component
 $SHAPE3D
@@ -870,7 +870,7 @@ reference "SW1"
 value "SW_PUSH"
 footprint "SW_SMD"
 attribut smd
-position  2.242500  1.545000
+position  2.242500  4.045000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -922,7 +922,7 @@ reference "C11"
 value "22p"
 footprint "c_0805"
 attribut smd
-position  2.880000  1.967500
+position  2.880000  4.467500
 orientation  270.00
 layer copper
 $SHAPE3D
@@ -956,7 +956,7 @@ reference "C7"
 value "100n"
 footprint "c_0805"
 attribut smd
-position  3.487500  1.445000
+position  3.487500  3.945000
 orientation  90.00
 layer component
 $SHAPE3D
@@ -990,7 +990,7 @@ reference "C1"
 value "100n"
 footprint "c_0805"
 attribut smd
-position  3.200000  2.430000
+position  3.200000  4.930000
 orientation  0.00
 layer copper
 $SHAPE3D
@@ -1024,7 +1024,7 @@ reference "C4"
 value "100n"
 footprint "c_0805"
 attribut smd
-position  1.587500  2.352500
+position  1.587500  4.852500
 orientation  180.00
 layer component
 $SHAPE3D
@@ -1058,7 +1058,7 @@ reference "C5"
 value "2u2"
 footprint "c_0805"
 attribut smd
-position  1.587500  1.987500
+position  1.587500  4.487500
 orientation  0.00
 layer component
 $SHAPE3D
@@ -1092,7 +1092,7 @@ reference "C9"
 value "100n"
 footprint "c_0805"
 attribut smd
-position  1.470000  1.992500
+position  1.470000  4.492500
 orientation  0.00
 layer copper
 $SHAPE3D
@@ -1126,7 +1126,7 @@ reference "C10"
 value "22p"
 footprint "c_0805"
 attribut smd
-position  2.985000  1.967500
+position  2.985000  4.467500
 orientation  270.00
 layer copper
 $SHAPE3D
@@ -1160,7 +1160,7 @@ reference "C3"
 value "2u2_Tant"
 footprint "c_0805"
 attribut smd
-position  1.587500  2.252500
+position  1.587500  4.752500
 orientation  180.00
 layer component
 $SHAPE3D
@@ -1194,7 +1194,7 @@ reference "DIP1"
 value "DIP"
 footprint "DIP"
 attribut none
-position  3.190000  2.447500
+position  3.190000  4.947500
 orientation  0.00
 layer component
 $SHAPE3D
@@ -1210,7 +1210,7 @@ reference "R6"
 value "10k"
 footprint "r_0805"
 attribut smd
-position  1.837500  1.315000
+position  1.837500  3.815000
 orientation  0.00
 layer component
 $SHAPE3D
@@ -1244,7 +1244,7 @@ reference "R4"
 value "10k"
 footprint "r_0805"
 attribut smd
-position  2.055000  1.457500
+position  2.055000  3.957500
 orientation  270.00
 layer component
 $SHAPE3D
@@ -1278,7 +1278,7 @@ reference "R3"
 value "10k"
 footprint "r_0805"
 attribut smd
-position  2.055000  1.790000
+position  2.055000  4.290000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -1312,7 +1312,7 @@ reference "R7"
 value "10k"
 footprint "r_0805"
 attribut smd
-position  2.322500  1.790000
+position  2.322500  4.290000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -1346,7 +1346,7 @@ reference "R1"
 value "10k"
 footprint "r_0805"
 attribut smd
-position  4.107500  2.607500
+position  4.107500  5.107500
 orientation  90.00
 layer copper
 $SHAPE3D
@@ -1380,7 +1380,7 @@ reference "R2"
 value "10k"
 footprint "r_0805"
 attribut smd
-position  4.007500  2.607500
+position  4.007500  5.107500
 orientation  90.00
 layer copper
 $SHAPE3D
@@ -1414,7 +1414,7 @@ reference "R5"
 value "1k5"
 footprint "r_0805"
 attribut smd
-position  2.420000  1.987500
+position  2.420000  4.487500
 orientation  90.00
 layer component
 $SHAPE3D
@@ -1448,7 +1448,7 @@ reference "R8"
 value "1k5"
 footprint "r_0805"
 attribut smd
-position  2.717500  1.987500
+position  2.717500  4.487500
 orientation  90.00
 layer component
 $SHAPE3D
@@ -1482,7 +1482,7 @@ reference "B3"
 value "I/O"
 footprint "I/O"
 attribut smd
-position  1.167500  2.450000
+position  1.167500  4.950000
 orientation  0.00
 layer component
 $PAD "1"
@@ -1501,7 +1501,7 @@ reference "B2"
 value "I/O"
 footprint "I/O"
 attribut smd
-position  1.102500  2.450000
+position  1.102500  4.950000
 orientation  0.00
 layer component
 $PAD "1"
@@ -1520,7 +1520,7 @@ reference "B15"
 value "I/O"
 footprint "I/O"
 attribut smd
-position  1.037500  2.450000
+position  1.037500  4.950000
 orientation  0.00
 layer component
 $PAD "1"
@@ -1539,7 +1539,7 @@ reference "X1"
 value "CRYSTAL_2"
 footprint "Xtal_SMD2"
 attribut smd
-position  2.932500  2.132500
+position  2.932500  4.632500
 orientation  180.00
 layer copper
 $SHAPE3D
@@ -1591,7 +1591,7 @@ reference "U4"
 value "DS3231N"
 footprint "DS3231"
 attribut smd
-position  1.437500  2.312500
+position  1.437500  4.812500
 orientation  180.00
 layer copper
 $SHAPE3D
@@ -1751,7 +1751,7 @@ reference "R9"
 value "10k"
 footprint "r_0805"
 attribut smd
-position  1.640000  2.670000
+position  1.640000  5.170000
 orientation  0.00
 layer copper
 $SHAPE3D
@@ -1785,7 +1785,7 @@ reference "R10"
 value "10k"
 footprint "r_0805"
 attribut smd
-position  2.087500  2.192500
+position  2.087500  4.692500
 orientation  90.00
 layer component
 $SHAPE3D
@@ -1819,7 +1819,7 @@ reference "R11"
 value "10k"
 footprint "r_0805"
 attribut smd
-position  2.185000  2.192500
+position  2.185000  4.692500
 orientation  270.00
 layer component
 $SHAPE3D
@@ -1853,7 +1853,7 @@ reference "R12"
 value "1k"
 footprint "r_0805"
 attribut smd
-position  2.220000  1.987500
+position  2.220000  4.487500
 orientation  90.00
 layer component
 $SHAPE3D
@@ -1887,7 +1887,7 @@ reference "BT1"
 value "BATT_RTC"
 footprint "CR1632_2"
 attribut smd
-position  2.260000  1.977500
+position  2.260000  4.395000
 orientation  90.00
 layer copper
 $SHAPE3D
@@ -1921,7 +1921,7 @@ reference "U1"
 value "LP2985-33DBVR"
 footprint "SOT23-5"
 attribut smd
-position  1.575000  2.115000
+position  1.575000  4.615000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -1982,15 +1982,9 @@ reference "U3"
 value "NCP1117ST50T3G"
 footprint "SOT223"
 attribut smd
-position  1.205000  2.247500
+position  1.205000  4.747500
 orientation  270.00
 layer component
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/SOT223.wrl"
-Sc 0.400000 0.400000 0.400000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
 $PAD "4"
 position  0.000000 -0.125000
 size  0.150000  0.080000
@@ -2034,7 +2028,7 @@ reference "Q1"
 value "FDN340P"
 footprint "SOT23-3"
 attribut smd
-position  1.745000  2.005000
+position  1.745000  4.505000
 orientation  180.00
 layer component
 $SHAPE3D
@@ -2077,7 +2071,7 @@ reference "U5"
 value "LM358N"
 footprint "SO8E"
 attribut smd
-position  1.925000  2.120000
+position  1.925000  4.620000
 orientation  0.00
 layer component
 $SHAPE3D
@@ -2165,7 +2159,7 @@ reference "C2"
 value "100n"
 footprint "c_0805"
 attribut smd
-position  2.115000  1.987500
+position  2.115000  4.487500
 orientation  90.00
 layer component
 $SHAPE3D
@@ -2199,7 +2193,7 @@ reference "G3"
 value "Logo_OH"
 footprint "OSHW_6mm"
 attribut none
-position  3.417500  1.582500
+position  3.417500  4.082500
 orientation  90.00
 layer copper
 $EndMODULE  G3
@@ -2209,7 +2203,7 @@ reference "G4"
 value "Logo_OH"
 footprint "OSHW_6mm"
 attribut none
-position  4.145000  2.495000
+position  4.145000  4.995000
 orientation  90.00
 layer component
 $EndMODULE  G4
@@ -2219,7 +2213,7 @@ reference "G1"
 value "Logo_Wyolum"
 footprint "Logo-WL3"
 attribut none
-position  2.685000  1.835000
+position  2.685000  4.335000
 orientation  90.00
 layer component
 $EndMODULE  G1
@@ -2229,7 +2223,7 @@ reference "G2"
 value "Logo_Wyolum"
 footprint "Logo-WL3"
 attribut none
-position  2.685000  1.835000
+position  2.685000  4.335000
 orientation  90.00
 layer copper
 $EndMODULE  G2
@@ -2239,7 +2233,7 @@ reference "C8"
 value "47u,10V"
 footprint "C_ELCO_SMD"
 attribut smd
-position  2.482500  2.952500
+position  2.482500  5.452500
 orientation  270.00
 layer component
 $SHAPE3D
@@ -2273,7 +2267,7 @@ reference "C6"
 value "100u,25V"
 footprint "C_ELCO_SMD"
 attribut smd
-position  1.412500  2.542500
+position  1.412500  5.042500
 orientation  90.00
 layer component
 $SHAPE3D
@@ -2307,7 +2301,7 @@ reference "P4"
 value "PWM_SERVO"
 footprint "Header_Servo"
 attribut smd
-position  2.000000  2.700000
+position  2.000000  5.275000
 orientation  90.00
 layer component
 $SHAPE3D
@@ -2395,8 +2389,8 @@ reference "P7"
 value "GPS_UP501"
 footprint "Header_GPS"
 attribut smd
-position  3.907500  1.530000
-orientation  0.00
+position  4.295000  3.855000
+orientation  270.00
 layer component
 $SHAPE3D
 Na "aLaMode_Libs/3D Modules/pins_array_6x1.wrl"
@@ -2465,21 +2459,9 @@ reference "P2"
 value "GPU_JTAG"
 footprint "Header_GPU_JTAG"
 attribut smd
-position  3.100000  1.750000
+position  3.100000  4.250000
 orientation  270.00
 layer copper
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_08.wrl"
-Sc 1.000000 1.000000 1.500000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/pin_strip_8.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 -0.050000
-Ro 0.000000 180.000000 0.000000
-$EndSHAPE3D
 $PAD "1"
 position -0.350000  0.000000
 size  0.050000  0.080000
@@ -2559,21 +2541,9 @@ reference "P3"
 value "LAN_JTAG"
 footprint "Header_GPU_JTAG"
 attribut smd
-position  3.200000  1.750000
+position  3.200000  4.250000
 orientation  270.00
 layer copper
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_08.wrl"
-Sc 1.000000 1.000000 1.500000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/pin_strip_8.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 -0.050000
-Ro 0.000000 180.000000 0.000000
-$EndSHAPE3D
 $PAD "1"
 position -0.350000  0.000000
 size  0.050000  0.080000
@@ -2653,7 +2623,7 @@ reference "P12"
 value "UUSB_B"
 footprint "USB_B_Micro"
 attribut smd
-position  1.162500  2.700000
+position  1.162500  5.200000
 orientation  0.00
 layer copper
 $SHAPE3D
@@ -2768,7 +2738,7 @@ reference "P9"
 value "ICSP"
 footprint "Header_ICSP"
 attribut smd
-position  3.707500  1.980000
+position  3.707500  4.480000
 orientation  90.00
 layer component
 $SHAPE3D
@@ -2833,82 +2803,12 @@ Layer  all
 $EndPAD
 $EndMODULE  P9
 
-$MODULE "P8"
-reference "P8"
-value "FTDI"
-footprint "Header_FTDI"
-attribut smd
-position  3.907500  1.380000
-orientation  180.00
-layer component
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/pins_array_6x1.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position -0.250000  0.000000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  all
-$EndPAD
-$PAD "2"
-position -0.150000  0.000000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  all
-$EndPAD
-$PAD "3"
-position -0.050000  0.000000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "4"
-position  0.050000  0.000000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "5"
-position  0.150000  0.000000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "6"
-position  0.250000  0.000000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$EndMODULE  P8
-
 $MODULE "SD1"
 reference "SD1"
 value "SD_CARD_MICRO"
 footprint "SD_Micro"
 attribut smd
-position  1.610000  1.522500
+position  1.610000  4.022500
 orientation  180.00
 layer component
 $SHAPE3D
@@ -3059,7 +2959,7 @@ reference "D3"
 value "RB886G"
 footprint "d_VMD2"
 attribut smd
-position  3.782500  1.687500
+position  3.782500  4.187500
 orientation  270.00
 layer component
 $SHAPE3D
@@ -3093,7 +2993,7 @@ reference "D4"
 value "RB886G"
 footprint "d_VMD2"
 attribut smd
-position  3.702500  1.687500
+position  3.702500  4.187500
 orientation  270.00
 layer component
 $SHAPE3D
@@ -3127,7 +3027,7 @@ reference "F1"
 value "nanoSMDC110F"
 footprint "f_1206"
 attribut smd
-position  1.157500  3.107500
+position  1.157500  5.607500
 orientation  0.00
 layer component
 $SHAPE3D
@@ -3161,7 +3061,7 @@ reference "F2"
 value "nanoSMDC110F"
 footprint "f_1206"
 attribut smd
-position  2.172500  2.447500
+position  2.172500  4.947500
 orientation  90.00
 layer component
 $SHAPE3D
@@ -3195,15 +3095,9 @@ reference "D5"
 value "MBRM110LT1G"
 footprint "do_457"
 attribut smd
-position  1.665000  2.607500
+position  1.665000  5.107500
 orientation  90.00
 layer component
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/sod323.wrl"
-Sc 1.750000 1.750000 1.750000
-Of 0.050000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
 $PAD "2"
 position  0.065000  0.000000
 size  0.105000  0.100000
@@ -3229,7 +3123,7 @@ reference "D8"
 value "MBRM110LT1G"
 footprint "do_457"
 attribut smd
-position  2.530000  2.950000
+position  2.530000  5.450000
 orientation  180.00
 layer copper
 $SHAPE3D
@@ -3263,15 +3157,9 @@ reference "P10"
 value "V_IN"
 footprint "JACK_ALIM"
 attribut smd
-position  1.310000  2.845000
+position  1.310000  5.345000
 orientation  0.00
 layer component
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/POWER_21.wrl"
-Sc 0.800000 0.800000 0.800000
-Of 0.000000 0.000000 0.150000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
 $PAD "2"
 position  0.000000  0.000000
 size  0.120000  0.180000
@@ -3306,7 +3194,7 @@ reference "P1"
 value "BCM2835_GPIO"
 footprint "Header_GPIO"
 attribut none
-position  1.670000  1.140000
+position  1.670000  3.640000
 orientation  0.00
 layer component
 $SHAPE3D
@@ -3574,7 +3462,7 @@ reference "P13"
 value "AREF"
 footprint "Header_A_REF"
 attribut smd
-position  3.457500  1.980000
+position  3.457500  4.480000
 orientation  270.00
 layer component
 $SHAPE3D
@@ -3617,7 +3505,7 @@ reference "P14"
 value "ANALOG_5V0"
 footprint "Header_6x1"
 attribut smd
-position  3.907500  2.912500
+position  3.907500  5.412500
 orientation  180.00
 layer component
 $SHAPE3D
@@ -3687,7 +3575,7 @@ reference "P15"
 value "ANALOG_GND"
 footprint "Header_6x1"
 attribut smd
-position  3.907500  2.812500
+position  3.907500  5.312500
 orientation  180.00
 layer component
 $SHAPE3D
@@ -3757,15 +3645,9 @@ reference "P11"
 value "U6_OE"
 footprint "Header_U6OE_SMT"
 attribut smd
-position  1.145000  2.067500
+position  1.145000  4.567500
 orientation  180.00
 layer copper
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/pin_strip_3.wrl"
-Sc 0.500000 0.500000 0.500000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
 $PAD "3"
 position -0.050000  0.060000
 size  0.030000  0.070000
@@ -3827,7 +3709,7 @@ reference "P16"
 value "5V_LINK"
 footprint "Header_U6OE_SMT"
 attribut smd
-position  1.295000  2.017500
+position  1.295000  4.517500
 orientation  270.00
 layer component
 $SHAPE3D
@@ -3897,29 +3779,473 @@ reference "PCB1"
 value "PCB"
 footprint "PCB"
 attribut none
-position  2.685000  2.067500
+position  2.675000  4.600000
 orientation  0.00
 layer component
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/i2gps_PCB_Material_3D.wrl"
-Sc 8.600000 5.450000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
 $SHAPE3D
 Na "aLaMode_Libs/3D Modules/R_pi.wrl"
 Sc 0.990000 1.000000 0.950000
 Of -0.465000 0.000000 -1.300000
 Ro -90.000000 0.000000 0.000000
 $EndSHAPE3D
+$SHAPE3D
+Na "aLaMode_Libs\\3D Modules\\aLaMode_PCB.wrl"
+Sc 1.000000 1.000000 0.900000
+Of 0.000000 0.000000 -0.030000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
 $EndMODULE  PCB1
+
+$MODULE "R14"
+reference "R14"
+value "0E"
+footprint "r_0805"
+attribut smd
+position  1.190000  4.800000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "aLaMode_Libs/3D Modules/r_0805.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position  0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$PAD "2"
+position -0.037500  0.000000
+size  0.051200  0.059000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  component
+$EndPAD
+$EndMODULE  R14
+
+$MODULE "P8"
+reference "P8"
+value "FTDI"
+footprint "Header_FTDI"
+attribut smd
+position  3.907500  3.880000
+orientation  180.00
+layer component
+$SHAPE3D
+Na "aLaMode_Libs/3D Modules/pins_array_6x1.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "1"
+position -0.250000  0.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$PAD "2"
+position -0.150000  0.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  all
+$EndPAD
+$PAD "3"
+position -0.050000  0.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "4"
+position  0.050000  0.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "5"
+position  0.150000  0.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "6"
+position  0.250000  0.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  P8
+
+$MODULE "SHIELD1"
+reference "SHIELD1"
+value "ARDUINO_SHIELD"
+footprint "ARDUINO_SHIELD_2_040pins"
+attribut smd
+position  1.657500  5.612500
+orientation  0.00
+layer component
+$SHAPE3D
+Na "aLaMode_Libs/3D Modules/conF_08.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 1.450000 0.100000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$SHAPE3D
+Na "aLaMode_Libs/3D Modules/conF_06.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 2.250000 0.100000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$SHAPE3D
+Na "aLaMode_Libs/3D Modules/conF_08.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 2.150000 2.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$SHAPE3D
+Na "aLaMode_Libs/3D Modules/conF_10.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 1.200000 2.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$PAD "AD5"
+position  2.500000 -0.100000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "AD4"
+position  2.400000 -0.100000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "AD3"
+position  2.300000 -0.100000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "AD0"
+position  2.000000 -0.100000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "AD1"
+position  2.100000 -0.100000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "AD2"
+position  2.200000 -0.100000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "V_IN"
+position  1.800000 -0.100000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "GND2"
+position  1.700000 -0.100000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Rect
+Layer  all
+$EndPAD
+$PAD "GND1"
+position  1.600000 -0.100000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Rect
+Layer  all
+$EndPAD
+$PAD "3V3"
+position  1.400000 -0.100000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "RST"
+position  1.300000 -0.100000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "0"
+position  2.500000 -2.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "1"
+position  2.400000 -2.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "2"
+position  2.300000 -2.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "3"
+position  2.200000 -2.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "4"
+position  2.100000 -2.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "5"
+position  2.000000 -2.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "6"
+position  1.900000 -2.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "7"
+position  1.800000 -2.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "8"
+position  1.640000 -2.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "9"
+position  1.540000 -2.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "10"
+position  1.440000 -2.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "11"
+position  1.340000 -2.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "12"
+position  1.240000 -2.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "13"
+position  1.140000 -2.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "GND3"
+position  1.040000 -2.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Rect
+Layer  all
+$EndPAD
+$PAD "AREF"
+position  0.940000 -2.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "5V"
+position  1.500000 -0.100000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "H1"
+position  0.550000 -0.100000
+size  0.180000  0.180000
+drill  0.120000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "H2"
+position  2.600000 -0.300000
+size  0.100000  0.100000
+drill  0.080000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "5V"
+position  1.200000 -0.100000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "NC"
+position  1.100000 -0.100000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "AD4"
+position  0.840000 -2.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$PAD "AD5"
+position  0.740000 -2.000000
+size  0.060000  0.060000
+drill  0.040000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  all
+$EndPAD
+$EndMODULE  SHIELD1
 
 $MODULE "IC1"
 reference "IC1"
 value "ATMEGA328-PU"
 footprint "DIP-28__300_ELL"
 attribut smd
-position  3.190000  2.447500
+position  3.190000  4.947500
 orientation  180.00
 layer component
 $SHAPE3D
@@ -4182,418 +4508,24 @@ Layer  all
 $EndPAD
 $EndMODULE  IC1
 
-$MODULE "SHIELD1"
-reference "SHIELD1"
-value "ARDUINO_SHIELD"
-footprint "ARDUINO_SHIELD_2_040pins"
-attribut smd
-position  1.657500  3.112500
-orientation  0.00
-layer component
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_08.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 1.450000 0.100000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_06.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 2.250000 0.100000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_08.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 2.150000 2.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_10.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 1.200000 2.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "AD5"
-position  2.500000 -0.100000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "AD4"
-position  2.400000 -0.100000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "AD3"
-position  2.300000 -0.100000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "AD0"
-position  2.000000 -0.100000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "AD1"
-position  2.100000 -0.100000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "AD2"
-position  2.200000 -0.100000
-size  0.060000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "V_IN"
-position  1.800000 -0.100000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "GND2"
-position  1.700000 -0.100000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Rect
-Layer  all
-$EndPAD
-$PAD "GND1"
-position  1.600000 -0.100000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Rect
-Layer  all
-$EndPAD
-$PAD "3V3"
-position  1.400000 -0.100000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "RST"
-position  1.300000 -0.100000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "0"
-position  2.500000 -2.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "1"
-position  2.400000 -2.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "2"
-position  2.300000 -2.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "3"
-position  2.200000 -2.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "4"
-position  2.100000 -2.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "5"
-position  2.000000 -2.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "6"
-position  1.900000 -2.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "7"
-position  1.800000 -2.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "8"
-position  1.640000 -2.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "9"
-position  1.540000 -2.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "10"
-position  1.440000 -2.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "11"
-position  1.340000 -2.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "12"
-position  1.240000 -2.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "13"
-position  1.140000 -2.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "GND3"
-position  1.040000 -2.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Rect
-Layer  all
-$EndPAD
-$PAD "AREF"
-position  0.940000 -2.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "5V"
-position  1.500000 -0.100000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "H1"
-position  0.550000 -0.100000
-size  0.180000  0.180000
-drill  0.120000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "H2"
-position  2.600000 -0.300000
-size  0.100000  0.100000
-drill  0.080000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Circ
-Layer  all
-$EndPAD
-$PAD "5V"
-position  1.200000 -0.100000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "NC"
-position  1.100000 -0.100000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "AD4"
-position  0.840000 -2.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$PAD "AD5"
-position  0.740000 -2.000000
-size  0.100000  0.060000
-drill  0.040000
-shape_offset  0.000000  0.000000
-orientation  90.00
-Shape  Oval
-Layer  all
-$EndPAD
-$EndMODULE  SHIELD1
-
-$MODULE "R14"
-reference "R14"
-value "0E"
-footprint "r_0805"
-attribut smd
-position  1.190000  2.300000
-orientation  270.00
-layer component
-$SHAPE3D
-Na "aLaMode_Libs/3D Modules/r_0805.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$PAD "1"
-position  0.037500  0.000000
-size  0.051200  0.059000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$PAD "2"
-position -0.037500  0.000000
-size  0.051200  0.059000
-drill  0.000000
-shape_offset  0.000000  0.000000
-orientation  0.00
-Shape  Rect
-Layer  component
-$EndPAD
-$EndMODULE  R14
-
 $LINE 
-start 4.350000 2.270000
-end 4.350000 3.200000
+start 4.350000 5.700000
+end 4.350000 3.500000
 width 0.005000
 $EndLINE 
 $LINE 
-start 4.350000 1.660000
-end 4.350000 1.000000
+start 1.000000 3.500000
+end 4.350000 3.500000
 width 0.005000
 $EndLINE 
 $LINE 
-start 3.885000 2.270000
-end 4.350000 2.270000
+start 4.350000 5.700000
+end 1.000000 5.700000
 width 0.005000
 $EndLINE 
 $LINE 
-start 3.885000 1.660000
-end 3.885000 2.270000
-width 0.005000
-$EndLINE 
-$LINE 
-start 4.350000 1.660000
-end 3.885000 1.660000
-width 0.005000
-$EndLINE 
-$LINE 
-start 1.000000 1.000000
-end 4.350000 1.000000
-width 0.005000
-$EndLINE 
-$LINE 
-start 4.350000 3.200000
-end 1.000000 3.200000
-width 0.005000
-$EndLINE 
-$LINE 
-start 1.000000 3.200000
-end 1.000000 1.000000
+start 1.000000 5.700000
+end 1.000000 3.500000
 width 0.005000
 $EndLINE 
 $EndDESCRIPTION
