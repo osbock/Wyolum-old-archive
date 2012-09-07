@@ -28,11 +28,13 @@ union converter_t {
   uint8_t byte_dat[4];
 };
 converter_t converter;
+time_t next_log_time = 0;
 
 File file;
 
 uint8_t address = 0;
 uint8_t gps_data[N_DATA_BYTE];
+unsigned int *log_interval_p = (unsigned int *)gps_data + 0x22;
 
 TinyGPS gps;
 SoftwareSerial sws(6, A7);
@@ -43,16 +45,19 @@ bool feedgps();
 
 void setup(){
   Serial.begin(115200);
+  Serial.println("I2GPS Slave v1.0");
+  Serial.println("Copyright WyoLum, LLC 2012");
   sws.begin(9600);
   pinMode(I2GPS_SLAVE_SELECT, OUTPUT);
   if(!SD.begin(I2GPS_SLAVE_SELECT)){
     Serial.println("Cannot open SD card");
   }
+  else{
+    Serial.println("SD card open");
+  }
   if(!SD.open("00N.BIN")){
     Serial.println("Cannot open SD file 00N.BIN");
   }
-  Serial.println("I2GPS Slave v1.0");
-  Serial.println("Copyright WyoLum, LLC 2012");
   Wire.begin(I2GPS_I2C_ADDR);
   Wire.onReceive(I2GPS_onReceive);
   Wire.onRequest(I2GPS_onRequest);
@@ -132,6 +137,21 @@ void loop(){
   }
   serialize_ulong(age, gps_data + I2GPS_FIX_AGE_ADDR);
   gps_data[I2GPS_DIGITAL_RW_ADDR] = PIND; // write to digital pins
+
+  if((*log_interval_p > 0) && 
+     (now() >= next_log_time)){
+    log_data();
+  }
+}
+
+void log_data(){
+  if(file_enabled() && (get_filemode() == FILE_WRITE)){
+    // GPS date
+    // GPS fix
+    // Digital pins
+    // Analog pins
+  }
+  next_log_time = now() + *log_interval_p;
 }
 
 bool file_enabled(){
@@ -173,7 +193,7 @@ void I2GPS_onReceive(int n_byte){
   uint8_t filemode;
   char filename[13];
   filename[12] = 0;
-#ifdef DBG
+#ifndef DBG
   Serial.print("R: <");
   Serial.print(address, HEX);
   Serial.print("> ");
@@ -207,6 +227,7 @@ void I2GPS_onReceive(int n_byte){
 	Serial.println(filename);
 	Serial.print("read? ");
 	Serial.println(filemode==FILE_READ);
+	error(I2GPS_FILE_ERROR);
       }
     }
     else{
@@ -311,4 +332,8 @@ void pps_interrupt(){
   unsigned long  now_us = micros();
   pps_led_state = !pps_led_state;
   digitalWrite(LED2, pps_led_state);
+}
+
+void error(byte code){
+  gps_data[I2GPS_ERROR_ADDR] = code;
 }

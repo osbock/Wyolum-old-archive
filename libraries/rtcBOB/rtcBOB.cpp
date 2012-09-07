@@ -121,7 +121,7 @@ bool rtc_raw_read(uint8_t addr,
   bool out = false;
   Wire.beginTransmission(DS3231_ADDR); 
   // Wire.send(addr); 
-  WIRE_WRITE1(addr);
+  Wire.write((uint8_t)(addr));
   Wire.endTransmission();
   Wire.requestFrom(DS3231_ADDR, (int)n_bytes); // request n_bytes bytes 
   if(Wire.available()){

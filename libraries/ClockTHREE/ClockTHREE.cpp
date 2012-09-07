@@ -201,11 +201,14 @@ uint32_t *ClockTHREE::fadeto(uint32_t *new_display, uint32_t steps){
     refresh((int)(steps / i));
   }
   setdisplay(new_display);
+  //********************************************************************************
+  // only use this for CHRONOGRAM MASTER???
   // copy new_display to original
-  // for(int i = 0; i < N_COL; i++){
-  // old_display[i] = new_display[i];
-  // }
-  // setdisplay(old_display);
+  for(int i = 0; i < N_COL; i++){
+  old_display[i] = new_display[i];
+  }
+  setdisplay(old_display);
+  //********************************************************************************
 }
 
   // Interleave two images at specified duty cycle. DOES NOT WORK :(

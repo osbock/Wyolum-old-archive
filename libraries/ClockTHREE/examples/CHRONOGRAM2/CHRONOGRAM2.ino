@@ -34,7 +34,7 @@
 // debounce buttons threshold
 const uint8_t DEBOUNCE_THRESH = 200;     // Two button pushes within this time frame are counted only once.
 const uint16_t SERIAL_TIMEOUT_MS = 1000; // Not working as expected.  Turned off.
-const uint8_t RIGHT_ID = C3JR_BASE_ADDR + 1;
+const uint8_t RIGHT_ID = C3JR_BASE_ADDR; // NO HW MODS (was +1)
 
 uint32_t primary_display[32];
 uint32_t secondary_display[32];
@@ -51,7 +51,7 @@ void clear_display(uint32_t *display){
   }
 }
 void fadeto(uint32_t *display, uint8_t steps){ 
-  right.fadeto(display + 16, steps);
+  right.fadeto(display + 16, steps); // TODO: uncomment!
   left.fadeto(display, steps);
 }
 
@@ -461,7 +461,6 @@ void Normal_loop(void) {
   time_t spm = getTime() % 86400; // seconds past midnight
   // uint8_t m = minute();
   uint8_t m = minute();
-
   if(m != last_minute){
 
     // clear the new display
@@ -473,7 +472,7 @@ void Normal_loop(void) {
     getdisplay(hour(), HOUR_SEQ, HOUR_WORDS, secondary_display);
     getdisplay(m, MINUTE_SEQ, MINUTE_WORDS, secondary_display);
   
-    fadeto(secondary_display, 16); // 32 fade steps to new display
+    fadeto(secondary_display, 16); // 16 fade steps to new display
     last_minute = m;
   }
   count++;
@@ -562,67 +561,13 @@ void SetTime_setup(void){
   MsTimer2::stop(); // Ticks stop while setting time
   getTime(); // sync with rtcBOB
   SetTime_unit = YEAR;
+  left.clear();
+  right.clear();
+  font.getChar('Y', MONO, primary_display + 5);  
+  two_digits(YY % 100, primary_display + 16);
+  fadeto(primary_display, 1);
 }
 void SetTime_loop(void) {
-  switch(SetTime_unit){
-  case YEAR:
-    if(count % 200 > 75){
-      left.clear();
-      two_digits(YY % 100);
-    }
-    else{
-      left.clear();
-      font.getChar('Y', MONO, display + 5);  
-    }
-    // faceplate.display_word(c3, MONO, year_led);
-    break;
-  case MONTH:
-    if(count % 200 > 75){
-      left.clear();
-      two_digits(MM);
-    }
-    else{
-      left.clear();
-      font.getChar('M', MONO, display + 5);  
-    }
-    // faceplate.display_word(c3, MONO, month_led);
-    break;
-  case DAY:
-    if(count % 200 > 75){
-      left.clear();
-      two_digits(DD);
-    }
-    else{
-      left.clear();
-      font.getChar('D', MONO, display + 5);  
-    }
-    // faceplate.display_word(c3, MONO, day_led);
-    break;
-  case HOUR:
-    if(count % 200 > 75){
-      left.clear();
-      two_digits(hh);
-    }
-    else{
-      left.clear();
-      font.getChar('H', MONO, display + 5);  
-    }
-    // faceplate.display_word(c3, MONO, hour_led);
-    break;
-  case MINUTE:
-    if(count % 200 > 75){
-      left.clear();
-      two_digits(mm);
-    }
-    else{
-      left.clear();
-      font.getChar('M', MONO, display + 5);  
-    }
-    // faceplate.display_word(c3, MONO, minute_led);
-    break;
-  default:
-    break;
-  }
   left.refresh(16);
 }
 /*
@@ -665,6 +610,7 @@ void SetTime_inc(void) {
     two_digits(mm);
     break;
   }
+  SetTime_update_disp();
 }
 void SetTime_dec(void) {
   switch(SetTime_unit){
@@ -706,9 +652,12 @@ void SetTime_dec(void) {
     two_digits(mm);
     break;
   }
+  SetTime_update_disp();
 }
 void SetTime_mode(void) {
   left.clear();
+  fadeto(primary_display, 1);
+
   switch(SetTime_unit){
   case YEAR:
     SetTime_unit = MONTH;
@@ -726,8 +675,34 @@ void SetTime_mode(void) {
     SetTime_unit = YEAR;
     break;
   }
+  SetTime_update_disp();
 }
-
+void SetTime_update_disp(){
+  switch(SetTime_unit){
+  case MONTH:
+    font.getChar('M', MONO, primary_display + 5);  
+    two_digits(MM % 100, primary_display + 16);
+    break;
+  case DAY:
+    font.getChar('D', MONO, primary_display + 5);  
+    two_digits(DD % 100, primary_display + 16);
+    break;
+  case HOUR:
+    font.getChar('H', MONO, primary_display + 5);  
+    two_digits(hh % 100, primary_display + 16);
+    break;
+  case MINUTE:
+    font.getChar('M', MONO, primary_display + 5);  
+    two_digits(mm % 100, primary_display + 16);
+    break;
+  default:
+    font.getChar('Y', MONO, primary_display + 5);  
+    two_digits(YY % 100, primary_display + 16);
+    // SetTime_unit = YEAR;
+    break;
+  }
+  fadeto(primary_display, 1);
+}
 void SetTime_enter(void){
   switchmodes(NORMAL_MODE);
 }
@@ -933,7 +908,9 @@ void Serial_mode(void) {
 void Mode_setup(void) {
   // font.getChar('M', MONO, display);
   mode_counter = 1;
-  font.getChar(Modes[mode_counter].sym, MONO, display + 5);
+  clear_display(primary_display);
+  font.getChar(Modes[mode_counter].sym, MONO, primary_display + 5);
+  fadeto(primary_display, 1);
 }
 void Mode_loop(void) {
   left.refresh(16);
