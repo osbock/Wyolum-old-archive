@@ -149,6 +149,7 @@ class ClockTHREE {//:public Screen{
 
   // Scan current display n times (if display is not NULL)
   void refresh(int n);
+  void refresh_old(int n);
 
   // Gradually change display to new_display in over "steps" screens
   // return pointer to old display
@@ -237,6 +238,7 @@ class ClockTHREE {//:public Screen{
  */
   
   uint32_t* display;
+  uint8_t dim;
   uint8_t xpos;
   uint8_t ypos;
   uint16_t my_delay;

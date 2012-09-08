@@ -505,10 +505,24 @@ void Normal_exit(void) {
   Respond to button presses.
 */
 void Normal_inc(void) {
+#ifdef DIM
+  if(c3.dim > 1){
+    c3.dim /= 2;
+  }
+  Serial.println(c3.dim);
+#else
   switchmodes(SECONDS_MODE);
+#endif
 }
 void Normal_dec(void) {
+#ifdef DIM
+  if(c3.dim < 15){
+    c3.dim *= 2;
+  }
+  Serial.println(c3.dim);
+#else
   switchmodes(TEMPERATURE_MODE);
+#endif
 }
 void Normal_mode(void) {
   switchmodes(MODE_MODE);

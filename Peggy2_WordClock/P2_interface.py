@@ -12,6 +12,8 @@ DID_ALARM_LEN = 12
 SER_TIMEOUT = .1 # Serial timeout, seconds
 eeprom = None
 
+PROGMEM  prog_uint16_t charSet[]  = { 65000, 32796, 16843, 10, 11234};
+
 class EEPROMError(Exception):
     pass
 
@@ -113,8 +115,8 @@ def getSerialports():
         out.sort()
     return out
 
-# def connect(serialport='/dev/ttyUSB0', _gmt_offset=None):
-def connect(serialport='COM4', _gmt_offset=None):
+def connect(serialport='/dev/ttyUSB0', _gmt_offset=None):
+# def connect(serialport='COM4', _gmt_offset=None):
     if _gmt_offset is None:
         local_time = time.localtime()
         _gmt_offset = (local_time.tm_isdst * 3600 - time.timezone)

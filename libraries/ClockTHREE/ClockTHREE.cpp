@@ -92,6 +92,9 @@ void ClockTHREE::init(){
   SPI.transfer(0);
   my_delay = 50;
   
+  // support auto diming
+  dim = 1;
+  pinMode(DBG, OUTPUT); // LED is as an OUTPUT
   // turn off speaker;
   pinMode(SPEAKER_PIN, OUTPUT);
   digitalWrite(SPEAKER_PIN, HIGH);
@@ -104,8 +107,47 @@ void ClockTHREE::refresh(){
 
 // ClockTHREE sr and jr
 #ifndef PEGGY2 // ClockTHREE sr and jr
-// Scan current display n times (if display is not NULL)
 void ClockTHREE::refresh(int n_hold){
+  uint8_t col_j;
+  union Column_t {
+    uint32_t dat32; 
+    uint8_t dat8[4];
+  } Column;
+  
+  if(display != NULL){
+    for(int hold_i = 0; hold_i < n_hold; hold_i++){
+      PORTC &= 0b11110111; // Enable col driver
+      // for(col_j=0; col_j < N_COL; col_j++){
+      col_j = 0;
+      _delay(10);
+      while (col_j < N_COL){
+	// Column.dat32 = RGBW_MASKS[rgb_i] & display[col_j];
+	if((hold_i - col_j) % dim == 0){
+	  Column.dat32 = display[15 - col_j];
+	}
+	else{
+	  Column.dat32 = 0;
+	}
+	// transfer column to row drivers
+	SPI.transfer(Column.dat8[3]);
+	SPI.transfer(Column.dat8[2]);
+	SPI.transfer(Column.dat8[1]);
+	PORTC |= 0b00001000; // Disable col driver 
+	SPI.transfer(Column.dat8[0]);
+	PORTB |= 0b00000010; // Start latch pulse 
+	PORTB &= 0b11111101; // End latch pulse 
+
+	PORTD = (PORTD & 0b00001111) | (col_j << 4); //only impacts upper 4 bits of PORTD
+	PORTC &= 0b11110111; // Enable col driver
+	_delay(my_delay);
+	col_j++;
+      }
+      PORTC |= 0b00001000; // Disable col driver
+    }
+  }
+}
+
+void ClockTHREE::refresh_old(int n_hold){
   uint8_t col_j;
   
   union Column_t {
