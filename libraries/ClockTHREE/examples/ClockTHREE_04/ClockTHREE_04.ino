@@ -492,7 +492,11 @@ void Normal_loop(void) {
   // Keep active LEDs lit
   // my_refresh(1000);
   count++;
-  
+#ifdef AUTO_DIM
+  uint8_t ldr_val;
+  ldr_val = analogRead(LDR_PIN);
+  c3.dim = (ldr_val - MIN_LDR_VAL) * 16 / (MAX_LDR_VAL - MIN_LDR_VAL)
+#endif
   c3.refresh(16);
 }
 /*
