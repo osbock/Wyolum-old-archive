@@ -235,13 +235,14 @@ void setup(){
 }
 
 unsigned long count = 0;
+unsigned long pwm_count = 0;
 
 // ClockTHREE c3;                      // ClockTHREE singleton
 uint32_t rows[25];               // 2X display (16 columns per display) for swapping back and forth
 
 // language constants
 uint8_t n_minute_led;               // number of minute hack leds
-uint8_t n_minute_state = 30;             // number of minute hack states to cycle through
+uint8_t n_minute_state = 29;             // number of minute hack states to cycle through
 uint8_t n_byte_per_display = 4;         // number of bytes used for each 5 minunte time incriment
 
 // globals
@@ -284,8 +285,11 @@ void loop(){
     last_time_inc = time_inc;
   }
   // Keep active LEDs lit
-  delay(10);
-  int pwm = (int)(5 * sin(count / 100.) + 6) * 5;
+  delay(5);
+  int pwm = cos(pwm_count++ / 200.) * 128 + 127;
+  pwm = 0;
+  // analogWrite(NIL_PIN, (int)nil_val);
+  // int pwm = (int)(5 * sin(count / 10000.) + 6) * 5;
   if (pwm  > 255){
     pwm = 255;
   }

@@ -77,6 +77,7 @@ class C3JR_Driver{
   C3JR_Driver();
 
   void init(uint8_t _addr);
+
   // send an entire display array to slave device
   void set_display(uint32_t *display);
 

@@ -12,7 +12,7 @@ DID_ALARM_LEN = 12
 SER_TIMEOUT = .1 # Serial timeout, seconds
 eeprom = None
 
-PROGMEM  prog_uint16_t charSet[]  = { 65000, 32796, 16843, 10, 11234};
+'PROGMEM  prog_uint16_t charSet[]  = { 65000, 32796, 16843, 10, 11234};'
 
 class EEPROMError(Exception):
     pass
