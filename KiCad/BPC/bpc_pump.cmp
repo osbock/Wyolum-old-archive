@@ -1,0 +1,17 @@
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Monday 15 October 2012 10:27:59 PM IST
+
+BeginCmp
+TimeStamp = /507C3755;
+Reference = P1;
+ValeurCmp = PUMP_FLEX;
+IdModule  = Conn_FPC;
+EndCmp
+
+BeginCmp
+TimeStamp = /507C3778;
+Reference = P2;
+ValeurCmp = PUMP_CONN;
+IdModule  = SIL-6;
+EndCmp
+
+EndListe
