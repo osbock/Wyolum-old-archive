@@ -1,5 +1,29 @@
-# EESchema Netlist Version 1.1 created  Monday 15 October 2012 10:27:59 PM IST
+# EESchema Netlist Version 1.1 created  10/16/2012 1:13:12 PM
 (
+ ( /507D0943 Mtg_Hole M1 MTG_HOLE
+  ( ~ ? )
+ )
+ ( /507D0958 Mtg_Hole M2 MTG_HOLE
+  ( ~ ? )
+ )
+ ( /507D0964 Mtg_Hole M3 MTG_HOLE
+  ( ~ ? )
+ )
+ ( /507D094A Mtg_Hole M4 MTG_HOLE
+  ( ~ ? )
+ )
+ ( /507D095D Mtg_Hole M5 MTG_HOLE
+  ( ~ ? )
+ )
+ ( /507D0968 Mtg_Hole M6 MTG_HOLE
+  ( ~ ? )
+ )
+ ( /507D0FDC Mtg_Hole M7 MTG_HOLE
+  ( ~ ? )
+ )
+ ( /507D0FE1 Mtg_Hole M8 MTG_HOLE
+  ( ~ ? )
+ )
  ( /507C3755 Conn_FPC P1 PUMP_FLEX
   ( 1 /VCC )
   ( 2 /VCC )

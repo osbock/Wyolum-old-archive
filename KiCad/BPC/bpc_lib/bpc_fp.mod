@@ -1,8 +1,9 @@
-PCBNEW-LibModule-V1  Monday 15 October 2012 10:26:55 PM IST
+PCBNEW-LibModule-V1  10/16/2012 12:39:06 PM
 # encoding utf-8
 $INDEX
-SIL-6
 Conn_FPC
+Mtg_Hole
+SIL-6
 $EndINDEX
 $MODULE SIL-6
 Po 0 0 0 15 507C3A9B 507C39D9 ~~
@@ -63,13 +64,15 @@ Po 2500 0
 $EndPAD
 $EndMODULE  SIL-6
 $MODULE Conn_FPC
-Po 0 0 0 15 507C4050 00000000 ~~
+Po 0 0 0 15 507D0397 00000000 ~~
 Li Conn_FPC
 Sc 00000000
-AR 
+AR /507C3755
 Op 0 0 0
-T0 0 -900 600 600 0 100 N V 21 N "Conn_FPC"
-T1 0 2425 600 600 0 100 N V 21 N "VAL**"
+T0 -2325 -550 600 600 0 100 N V 21 N "P1"
+T1 0 2425 600 600 0 100 N V 21 N "PUMP_FLEX"
+DS -1400 1475 -1400 1975 100 21
+DS 1400 1475 1400 1975 100 21
 DS 2425 1475 1200 1475 100 21
 DS -2425 1475 -1200 1475 100 21
 DS -2675 0 -1200 0 100 21
@@ -82,7 +85,7 @@ $PAD
 Sh "1" R 240 725 0 0 0
 Dr 0 0 0
 At SMD N 00A88000
-Ne 0 ""
+Ne 5 "/VCC"
 Po -1000 -25
 .LocalClearance 60
 $EndPAD
@@ -90,7 +93,7 @@ $PAD
 Sh "2" R 240 725 0 0 0
 Dr 0 0 0
 At SMD N 00A88000
-Ne 0 ""
+Ne 5 "/VCC"
 Po -600 -25
 .LocalClearance 60
 $EndPAD
@@ -98,7 +101,7 @@ $PAD
 Sh "3" R 240 725 0 0 0
 Dr 0 0 0
 At SMD N 00A88000
-Ne 0 ""
+Ne 1 "/GND"
 Po -200 -25
 .LocalClearance 60
 $EndPAD
@@ -106,7 +109,7 @@ $PAD
 Sh "4" R 240 725 0 0 0
 Dr 0 0 0
 At SMD N 00A88000
-Ne 0 ""
+Ne 4 "/I/OX"
 Po 200 -25
 .LocalClearance 60
 $EndPAD
@@ -114,7 +117,7 @@ $PAD
 Sh "5" R 240 725 0 0 0
 Dr 0 0 0
 At SMD N 00A88000
-Ne 0 ""
+Ne 2 "/I/OR"
 Po 600 -25
 .LocalClearance 60
 $EndPAD
@@ -122,7 +125,7 @@ $PAD
 Sh "6" R 240 725 0 0 0
 Dr 0 0 0
 At SMD N 00A88000
-Ne 0 ""
+Ne 3 "/I/OT"
 Po 1000 -25
 .LocalClearance 60
 $EndPAD
@@ -130,7 +133,7 @@ $PAD
 Sh "1" R 240 660 0 0 0
 Dr 0 0 0
 At SMD N 00A88000
-Ne 0 ""
+Ne 5 "/VCC"
 Po -1000 1475
 .LocalClearance 60
 $EndPAD
@@ -138,7 +141,7 @@ $PAD
 Sh "2" R 240 660 0 0 0
 Dr 0 0 0
 At SMD N 00A88000
-Ne 0 ""
+Ne 5 "/VCC"
 Po -600 1475
 .LocalClearance 60
 $EndPAD
@@ -146,7 +149,7 @@ $PAD
 Sh "3" R 240 660 0 0 0
 Dr 0 0 0
 At SMD N 00A88000
-Ne 0 ""
+Ne 1 "/GND"
 Po -200 1475
 .LocalClearance 60
 $EndPAD
@@ -154,7 +157,7 @@ $PAD
 Sh "4" R 240 660 0 0 0
 Dr 0 0 0
 At SMD N 00A88000
-Ne 0 ""
+Ne 4 "/I/OX"
 Po 200 1475
 .LocalClearance 60
 $EndPAD
@@ -162,7 +165,7 @@ $PAD
 Sh "5" R 240 660 0 0 0
 Dr 0 0 0
 At SMD N 00A88000
-Ne 0 ""
+Ne 2 "/I/OR"
 Po 600 1475
 .LocalClearance 60
 $EndPAD
@@ -170,9 +173,25 @@ $PAD
 Sh "6" R 240 660 0 0 0
 Dr 0 0 0
 At SMD N 00A88000
-Ne 0 ""
+Ne 3 "/I/OT"
 Po 1000 1475
 .LocalClearance 60
 $EndPAD
 $EndMODULE  Conn_FPC
+$MODULE Mtg_Hole
+Po 0 0 0 15 507D0806 00000000 ~~
+Li Mtg_Hole
+Sc 00000000
+AR 
+Op 0 0 0
+T0 0 -1025 400 400 0 50 N I 21 N "Mtg_Hole"
+T1 0 900 400 400 0 50 N I 21 N "VAL**"
+$PAD
+Sh "1" C 1500 1500 0 0 0
+Dr 800 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  Mtg_Hole
 $EndLIBRARY

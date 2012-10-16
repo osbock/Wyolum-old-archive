@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday 15 October 2012 10:28:53 PM IST
+EESchema Schematic File Version 2  date 10/16/2012 1:12:53 PM
 LIBS:conn_6
 LIBS:bpc_pump-cache
 EELAYER 25  0
@@ -7,7 +7,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title "BPC Pump Connector"
-Date "15 oct 2012"
+Date "16 oct 2012"
 Rev "A"
 Comp "WyoLum"
 Comment1 ""
@@ -15,6 +15,94 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+NoConn ~ 4400 5400
+NoConn ~ 3750 5400
+$Comp
+L MTG_HOLE M8
+U 1 1 507D0FE1
+P 4400 5200
+F 0 "M8" H 4500 5050 60  0000 C CNN
+F 1 "MTG_HOLE" H 4400 5350 60  0000 C CNN
+F 2 "Mtg_Hole" H 4400 5450 60  0001 C CNN
+	1    4400 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L MTG_HOLE M7
+U 1 1 507D0FDC
+P 3750 5200
+F 0 "M7" H 3850 5050 60  0000 C CNN
+F 1 "MTG_HOLE" H 3750 5350 60  0000 C CNN
+F 2 "Mtg_Hole" H 3750 5450 60  0001 C CNN
+	1    3750 5200
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4400 4800
+NoConn ~ 3750 4800
+NoConn ~ 3750 4300
+NoConn ~ 4400 4300
+NoConn ~ 4400 3700
+NoConn ~ 3750 3700
+$Comp
+L MTG_HOLE M6
+U 1 1 507D0968
+P 4400 4600
+F 0 "M6" H 4500 4450 60  0000 C CNN
+F 1 "MTG_HOLE" H 4400 4750 60  0000 C CNN
+F 2 "Mtg_Hole" H 4400 4850 60  0001 C CNN
+	1    4400 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L MTG_HOLE M3
+U 1 1 507D0964
+P 3750 4100
+F 0 "M3" H 3850 3950 60  0000 C CNN
+F 1 "MTG_HOLE" H 3750 4250 60  0000 C CNN
+F 2 "Mtg_Hole" H 3750 4350 60  0001 C CNN
+	1    3750 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L MTG_HOLE M5
+U 1 1 507D095D
+P 3750 4600
+F 0 "M5" H 3850 4450 60  0000 C CNN
+F 1 "MTG_HOLE" H 3750 4750 60  0000 C CNN
+F 2 "Mtg_Hole" H 3750 4850 60  0001 C CNN
+	1    3750 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L MTG_HOLE M2
+U 1 1 507D0958
+P 4400 3500
+F 0 "M2" H 4500 3350 60  0000 C CNN
+F 1 "MTG_HOLE" H 4400 3650 60  0000 C CNN
+F 2 "Mtg_Hole" H 4400 3750 60  0001 C CNN
+	1    4400 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L MTG_HOLE M4
+U 1 1 507D094A
+P 4400 4100
+F 0 "M4" H 4500 3950 60  0000 C CNN
+F 1 "MTG_HOLE" H 4400 4250 60  0000 C CNN
+F 2 "Mtg_Hole" H 4400 4350 60  0001 C CNN
+	1    4400 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L MTG_HOLE M1
+U 1 1 507D0943
+P 3750 3500
+F 0 "M1" H 3850 3350 60  0000 C CNN
+F 1 "MTG_HOLE" H 3750 3650 60  0000 C CNN
+F 2 "Mtg_Hole" H 3750 3750 60  0001 C CNN
+	1    3750 3500
+	1    0    0    -1  
+$EndComp
 Text Label 4250 2950 0    60   ~ 0
 I/OT
 Text Label 4200 2850 0    60   ~ 0
