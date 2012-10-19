@@ -1,6 +1,6 @@
-PCBNEW-BOARD Version 1 date 10/16/2012 1:40:18 PM
+PCBNEW-BOARD Version 1 date Friday 19 October 2012 07:38:49 AM IST
 
-# Created by Pcbnew(2012-01-19 BZR 3256)-stable
+# Created by Pcbnew(2011-05-25)-stable
 
 $GENERAL
 encoding utf-8
@@ -8,10 +8,10 @@ LayerCount 2
 Ly 1FFF8001
 EnabledLayers 1FFF8001
 Links 13
-NoConn 0
-Di 6173 9800 41151 24241
-Ndraw 31
-Ntrack 23
+NoConn 1
+Di 6053 9800 41076 24241
+Ndraw 52
+Ntrack 22
 Nzone 0
 BoardThickness 630
 Nmodule 10
@@ -21,7 +21,7 @@ $EndGENERAL
 $SHEETDESCR
 Sheet A4 11700 8267
 Title "BPC Pump Connector"
-Date "16 oct 2012"
+Date "19 oct 2012"
 Rev "A"
 Comp "WyoLum"
 Comment1 ""
@@ -61,7 +61,7 @@ PadSize 700 700
 PadDrill 400
 Pad2MaskClearance 100
 AuxiliaryAxisOrg 0 0
-PcbPlotParams (pcbplotparams (layerselection 304119809) (usegerberextensions false) (excludeedgelayer true) (linewidth 60) (plotframeref false) (viasonmask false) (mode 1) (useauxorigin false) (hpglpennumber 1) (hpglpenspeed 20) (hpglpendiameter 15) (hpglpenoverlay 0) (pscolor true) (psnegative false) (psa4output false) (plotreference true) (plotvalue true) (plotothertext true) (plotinvisibletext false) (padsonsilk false) (subtractmaskfromsilk false) (outputformat 1) (mirror false) (drillshape 1) (scaleselection 1) (outputdirectory bpc_gerber/))
+PcbPlotParams (pcbplotparams (layerselection 299925505) (usegerberextensions false) (excludeedgelayer false) (linewidth 60) (plotframeref false) (viasonmask false) (mode 1) (useauxorigin false) (hpglpennumber 1) (hpglpenspeed 20) (hpglpendiameter 15) (hpglpenoverlay 0) (pscolor true) (psnegative false) (psa4output false) (plotreference true) (plotvalue true) (plotothertext true) (plotinvisibletext false) (padsonsilk false) (subtractmaskfromsilk false) (outputformat 1) (mirror false) (drillshape 1) (scaleselection 1) (outputdirectory bpc_gerber/))
 $EndSETUP
 
 $EQUIPOT
@@ -425,6 +425,94 @@ Ne 0 ""
 Po 0 0
 $EndPAD
 $EndMODULE  Mtg_Hole
+$DRAWSEGMENT
+Po 0 11700 17325 11200 17325 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 12125 16900 11700 17325 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 12125 16400 12125 16900 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 11700 15475 11200 15475 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 12125 15900 11700 15475 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 12125 16400 12125 15900 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 11700 10975 12125 11400 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 11700 12825 12125 12400 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 11200 12825 11700 12825 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 11200 10975 11700 10975 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 12125 11900 12125 12400 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 12125 11900 12125 11400 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 10150 17325 10150 18150 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 11200 17325 10150 17325 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 10150 15475 11200 15475 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 10150 12825 10150 15475 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 11200 12825 10150 12825 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 10150 10150 10150 10975 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 11200 10975 10150 10975 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 25000 18150 25000 10150 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 10150 18150 25000 18150 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 25000 10150 10150 10150 150
+De 21 0 900 0 0
+$EndDRAWSEGMENT
 $COTATION
 Ge 0 24 0
 Va 31000
@@ -493,7 +581,7 @@ $endCOTATION
 $TEXTPCB
 Te "wyolum.com"
 Po 25680 14160 800 800 120 900
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 3 33200 11150 32200 11150 150
@@ -501,10 +589,6 @@ De 21 0 900 0 0
 $EndDRAWSEGMENT
 $DRAWSEGMENT
 Po 3 33200 17150 33200 16150 150
-De 21 0 900 0 0
-$EndDRAWSEGMENT
-$DRAWSEGMENT
-Po 0 25000 10000 25000 18300 150
 De 21 0 900 0 0
 $EndDRAWSEGMENT
 $DRAWSEGMENT
@@ -634,8 +718,6 @@ Po 0 31875 13550 33833 13550 150 -1
 De 15 0 5 0 400000
 Po 0 33833 13550 34733 12650 150 -1
 De 15 0 5 0 0
-Po 0 35150 11650 35150 12650 150 -1
-De 15 0 5 0 C00000
 Po 0 31875 13150 30375 13150 150 -1
 De 15 0 5 0 C00000
 Po 0 31875 13550 30375 13550 150 -1
