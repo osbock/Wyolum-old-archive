@@ -1,13 +1,17 @@
-EESchema Schematic File Version 2  date 10/16/2012 12:50:27 PM
+EESchema Schematic File Version 2  date Thursday 15 November 2012 04:00:21 PM IST
 LIBS:conn_6
+LIBS:conn
+LIBS:device
+LIBS:transistors
+LIBS:power
 LIBS:bpc_pump-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
-Sheet 1 1
+Sheet 1 2
 Title "BPC Pump Connector"
-Date "16 oct 2012"
+Date "15 nov 2012"
 Rev "A"
 Comp "WyoLum"
 Comment1 ""
@@ -15,6 +19,34 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Sheet
+S 9100 625  2025 1200
+U 50A4AC73
+F0 "Valve" 60
+F1 "Valve.sch" 60
+$EndSheet
+NoConn ~ 4400 5400
+NoConn ~ 3750 5400
+$Comp
+L MTG_HOLE M8
+U 1 1 507D0FE1
+P 4400 5200
+F 0 "M8" H 4500 5050 60  0000 C CNN
+F 1 "MTG_HOLE" H 4400 5350 60  0000 C CNN
+F 2 "Mtg_Hole" H 4400 5450 60  0001 C CNN
+	1    4400 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L MTG_HOLE M7
+U 1 1 507D0FDC
+P 3750 5200
+F 0 "M7" H 3850 5050 60  0000 C CNN
+F 1 "MTG_HOLE" H 3750 5350 60  0000 C CNN
+F 2 "Mtg_Hole" H 3750 5450 60  0001 C CNN
+	1    3750 5200
+	1    0    0    -1  
+$EndComp
 NoConn ~ 4400 4800
 NoConn ~ 3750 4800
 NoConn ~ 3750 4300
