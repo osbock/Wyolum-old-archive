@@ -1,6 +1,6 @@
-PCBNEW-BOARD Version 1 date Friday 19 October 2012 07:38:49 AM IST
+PCBNEW-BOARD Version 1 date 11/3/2012 5:31:27 PM
 
-# Created by Pcbnew(2011-05-25)-stable
+# Created by Pcbnew(2012-01-19 BZR 3256)-stable
 
 $GENERAL
 encoding utf-8
@@ -9,8 +9,8 @@ Ly 1FFF8001
 EnabledLayers 1FFF8001
 Links 13
 NoConn 1
-Di 6053 9800 41076 24241
-Ndraw 52
+Di 6173 9800 41151 28380
+Ndraw 53
 Ntrack 22
 Nzone 0
 BoardThickness 630
@@ -21,7 +21,7 @@ $EndGENERAL
 $SHEETDESCR
 Sheet A4 11700 8267
 Title "BPC Pump Connector"
-Date "19 oct 2012"
+Date "3 nov 2012"
 Rev "A"
 Comp "WyoLum"
 Comment1 ""
@@ -425,6 +425,13 @@ Ne 0 ""
 Po 0 0
 $EndPAD
 $EndMODULE  Mtg_Hole
+$TEXTPCB
+Te "All MTG holes to be 3mm or 1/8\" (or M2.5)"
+nl "Motor Ribbon slots not needed"
+nl "Rotate P1 and P2 both-signal I/OT is near P1/P2"
+Po 9980 25280 600 800 120 0
+De 25 1 0 Normal L
+$EndTEXTPCB
 $DRAWSEGMENT
 Po 0 11700 17325 11200 17325 150
 De 21 0 900 0 0
@@ -581,7 +588,7 @@ $endCOTATION
 $TEXTPCB
 Te "wyolum.com"
 Po 25680 14160 800 800 120 900
-De 21 1 0 Normal
+De 21 1 0 Normal C
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 3 33200 11150 32200 11150 150
@@ -680,14 +687,14 @@ Po 0 35000 10000 36000 10000 150
 De 28 0 900 0 0
 $EndDRAWSEGMENT
 $TRACK
-Po 0 34475 13650 35150 13650 150 -1
-De 15 0 1 0 800000
-Po 0 31875 13950 34175 13950 150 -1
-De 15 0 1 0 400000
 Po 0 34175 13950 34475 13650 150 -1
 De 15 0 1 0 0
 Po 0 31875 13950 30375 13950 150 -1
 De 15 0 1 0 C00000
+Po 0 34475 13650 35150 13650 150 -1
+De 15 0 1 0 800000
+Po 0 31875 13950 34175 13950 150 -1
+De 15 0 1 0 400000
 Po 0 31875 14750 33835 14750 150 -1
 De 15 0 2 0 400000
 Po 0 33835 14750 34735 15650 150 -1
