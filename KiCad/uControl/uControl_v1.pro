@@ -1,4 +1,4 @@
-update=11/23/2012 6:15:55 PM
+update=Sunday 25 November 2012 07:56:52 PM IST
 last_client=eeschema
 [cvpcb]
 version=1
@@ -57,8 +57,10 @@ offY_E=0
 RptD_X=0
 RptD_Y=100
 RptLab=1
-LabSize=60
+LabSize=40
 [eeschema/libraries]
 LibName1=uControl_Libs/uControl
 LibName2=uControl_Libs/Conn-raspberry
 LibName3=uControl_Libs/power
+LibName4=device
+LibName5=transistors

@@ -1,15 +1,17 @@
-EESchema Schematic File Version 2  date 11/23/2012 6:16:01 PM
+EESchema Schematic File Version 2  date Sunday 25 November 2012 07:57:00 PM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
+LIBS:device
+LIBS:transistors
 LIBS:uControl_v1-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
-Sheet 1 4
+Sheet 1 5
 Title "uControl"
-Date "23 nov 2012"
+Date "25 nov 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -17,6 +19,12 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Sheet
+S 9500 700  1600 1000
+U 50B2116F
+F0 "Interface" 60
+F1 "interface.sch" 60
+$EndSheet
 Text Label 7825 4575 0    40   ~ 0
 5V0
 Connection ~ 7725 5075
@@ -72,8 +80,6 @@ Wire Notes Line
 	4575 3400 4575 3550
 Wire Notes Line
 	4575 3550 5150 3550
-Wire Wire Line
-	1175 7250 1175 6800
 Wire Notes Line
 	5400 7750 5400 6325
 Wire Notes Line
@@ -203,15 +209,9 @@ Wire Wire Line
 Wire Wire Line
 	8675 4575 8425 4575
 Wire Wire Line
-	775  6075 775  5975
-Wire Wire Line
 	3900 2750 4800 2750
 Wire Notes Line
 	5150 3550 5150 3400
-Wire Wire Line
-	675  7250 675  6800
-Wire Wire Line
-	1075 7250 1075 6800
 Wire Wire Line
 	8675 4175 8425 4175
 Wire Wire Line
@@ -452,20 +452,8 @@ Wire Wire Line
 	4125 2550 3900 2550
 Wire Wire Line
 	9675 6200 10050 6200
-Wire Wire Line
-	975  7250 975  6800
 Wire Notes Line
 	5150 3375 5150 3225
-Wire Wire Line
-	775  6475 775  7250
-Connection ~ 775  6525
-Wire Wire Line
-	1175 5975 1175 6700
-Wire Wire Line
-	1175 6700 875  6700
-Wire Wire Line
-	875  6700 875  7250
-Connection ~ 1175 6525
 Wire Wire Line
 	8625 4275 8625 3975
 Wire Wire Line
@@ -496,8 +484,6 @@ Wire Wire Line
 	8675 5075 8525 5075
 Wire Wire Line
 	8675 4875 8525 4875
-Wire Notes Line
-	550  7750 1275 7750
 Wire Wire Line
 	1975 6600 1750 6600
 Wire Wire Line
@@ -597,12 +583,6 @@ Wire Wire Line
 	4650 7150 4550 7150
 Connection ~ 4550 7150
 Wire Notes Line
-	550  7750 550  5925
-Wire Notes Line
-	550  5925 1275 5925
-Wire Notes Line
-	1275 5925 1275 7750
-Wire Notes Line
 	5150 3375 4575 3375
 Wire Notes Line
 	4575 3375 4575 3225
@@ -692,8 +672,6 @@ F 2 "Header_A_REF" H 975 1325 60  0001 C CNN
 $EndComp
 Text Notes 4600 3475 0    40   Italic 8
 PD3 (SQW)\nRTC 1Hz signal
-Text Label 1175 6800 3    40   ~ 0
-PD4_GPS_Rx
 Text Notes 4875 6325 2    60   Italic 12
 FTDI Header
 Text Notes 5925 6325 2    60   Italic 12
@@ -1034,30 +1012,6 @@ F9 "5V0" B L 7050 5700 60
 F10 "SCK" I L 7050 6500 60 
 F11 "RESET" O L 7050 6200 60 
 $EndSheet
-Text Label 775  6800 3    40   ~ 0
-GPS_BAT
-Text Label 875  6800 3    40   ~ 0
-GPS_3V3
-$Comp
-L DIODESCH D4
-U 1 1 4F9A5A10
-P 775 6275
-F 0 "D4" H 775 6375 40  0000 C CNN
-F 1 "RB886G" H 775 6175 40  0000 C CNN
-F 2 "d_VMD2" H 775 6275 40  0001 C CNN
-	1    775  6275
-	0    1    1    0   
-$EndComp
-$Comp
-L DIODESCH D3
-U 1 1 4F9A5A02
-P 975 6525
-F 0 "D3" V 975 6425 40  0000 C CNN
-F 1 "RB886G" V 900 6350 40  0000 C CNN
-F 2 "d_VMD2" V 1000 6350 40  0001 C CNN
-	1    975  6525
-	-1   0    0    1   
-$EndComp
 Text Label 1925 3300 0    40   ~ 0
 PB7
 Text Label 1925 2800 0    40   ~ 0
@@ -1071,30 +1025,8 @@ F 1 "GND" H 2900 5030 30  0001 C CNN
 	1    2900 5100
 	1    0    0    -1  
 $EndComp
-Text Notes 550  5925 0    60   Italic 12
-GPS Header
 Text Notes 4600 3300 0    40   Italic 8
 PD2 (1pps)\nGPS 1pps signal
-Text Label 675  6800 3    40   ~ 0
-PD2_1pps
-Text Label 775  5975 3    40   ~ 0
-BAT
-Text Label 1175 5975 3    40   ~ 0
-3V3
-Text Label 975  6800 3    40   ~ 0
-GND
-Text Label 1075 6800 3    40   ~ 0
-PD6_GPS_Tx
-$Comp
-L CONN_6 P7
-U 1 1 4F45D5FA
-P 925 7600
-F 0 "P7" V 875 7600 60  0000 C CNN
-F 1 "GPS_UP501" V 975 7600 60  0000 C CNN
-F 2 "Header_GPS" V 1075 7600 60  0001 C CNN
-	1    925  7600
-	0    1    1    0   
-$EndComp
 $Comp
 L CRYSTAL_2 X1
 U 1 1 4F3FEE0A
@@ -1174,7 +1106,7 @@ RESET
 Text Label 4125 3650 0    40   ~ 0
 PD5
 Text Label 4125 3750 0    40   ~ 0
-PD6_GPS_Tx
+Flow_Tx
 Text Label 4125 3450 0    40   ~ 0
 PD3_SQW
 Text Label 4125 4050 0    40   ~ 0
@@ -1198,7 +1130,7 @@ PD2_1pps
 Text Label 4125 3850 0    40   ~ 0
 PD7
 Text Label 4125 3550 0    40   ~ 0
-PD4_GPS_Rx
+Flow_Rx
 NoConn ~ 5850 4300
 Text Label 7600 650  0    40   ~ 0
 5V0
