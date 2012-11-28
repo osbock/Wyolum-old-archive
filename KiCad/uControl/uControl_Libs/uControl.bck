@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 11/27/2012 5:48:21 PM
+EESchema-DOCLIB  Version 2.0  Date: 11/27/2012 5:48:51 PM
 #
 $CMP CONN_8
 D Symbole general de connecteur
@@ -39,6 +39,10 @@ $ENDCMP
 #
 $CMP NPN
 F transistors/bipolar/bc237.pdf
+$ENDCMP
+#
+$CMP PNP
+F transistors/bipolar/bc307.pdf
 $ENDCMP
 #
 $CMP TL072

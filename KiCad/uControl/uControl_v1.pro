@@ -1,4 +1,4 @@
-update=11/27/2012 5:52:04 PM
+update=Wednesday 28 November 2012 10:10:50 PM IST
 last_client=kicad
 [cvpcb]
 version=1
@@ -55,7 +55,7 @@ offY_E=0
 RptD_X=0
 RptD_Y=100
 RptLab=1
-LabSize=40
+LabSize=60
 [eeschema/libraries]
 LibName1=uControl_Libs/uControl
 LibName2=uControl_Libs/Conn-raspberry
