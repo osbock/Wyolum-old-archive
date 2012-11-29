@@ -1,8 +1,13 @@
-EESchema-DOCLIB  Version 2.0  Date: Wednesday 28 November 2012 10:05:05 PM IST
+EESchema-DOCLIB  Version 2.0  Date: 11/29/2012 1:26:55 PM
 #
 $CMP CONN_8
 D Symbole general de connecteur
 K CONN
+$ENDCMP
+#
+$CMP DIODE
+D Diode simple
+K DEV DIODE
 $ENDCMP
 #
 $CMP LM358

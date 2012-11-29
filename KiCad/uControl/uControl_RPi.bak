@@ -1,9 +1,7 @@
-EESchema Schematic File Version 2  date Wednesday 28 November 2012 10:09:36 PM IST
+EESchema Schematic File Version 2  date 11/29/2012 6:26:14 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
-LIBS:device
-LIBS:transistors
 LIBS:uControl_v1-cache
 EELAYER 25  0
 EELAYER END
@@ -11,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 5 5
 Title "uControl"
-Date "28 nov 2012"
+Date "29 nov 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -20,10 +18,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L PWR_FLAG #FLG022
+L PWR_FLAG #FLG6
 U 1 1 50B63C94
 P 5850 1025
-F 0 "#FLG022" H 5850 1295 30  0001 C CNN
+F 0 "#FLG6" H 5850 1295 30  0001 C CNN
 F 1 "PWR_FLAG" H 5850 1255 30  0000 C CNN
 	1    5850 1025
 	1    0    0    -1  
@@ -213,10 +211,10 @@ $EndComp
 Text Label 4150 2175 0    40   ~ 0
 Rpi_3V3
 $Comp
-L GND #PWR023
+L GND #PWR18
 U 1 1 4FD8C28A
 P 5850 2050
-F 0 "#PWR023" H 5850 2050 30  0001 C CNN
+F 0 "#PWR18" H 5850 2050 30  0001 C CNN
 F 1 "GND" H 5850 1980 30  0001 C CNN
 	1    5850 2050
 	1    0    0    -1  
@@ -234,19 +232,19 @@ $EndComp
 Text Label 5900 4100 0    40   ~ 0
 Rpi_3V3
 $Comp
-L GND #PWR024
+L GND #PWR16
 U 1 1 4FD62C0F
 P 2125 2175
-F 0 "#PWR024" H 2125 2175 30  0001 C CNN
+F 0 "#PWR16" H 2125 2175 30  0001 C CNN
 F 1 "GND" H 2125 2105 30  0001 C CNN
 	1    2125 2175
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR025
+L GND #PWR17
 U 1 1 4FD62BFD
 P 2125 3600
-F 0 "#PWR025" H 2125 3600 30  0001 C CNN
+F 0 "#PWR17" H 2125 3600 30  0001 C CNN
 F 1 "GND" H 2125 3530 30  0001 C CNN
 	1    2125 3600
 	1    0    0    -1  
@@ -300,9 +298,9 @@ MISO
 Text Label 2850 2975 0    40   ~ 0
 MISO
 Text Label 2850 2875 0    40   ~ 0
-MOSI
+~MOSI
 Text HLabel 1500 2875 0    40   Input ~ 0
-MOSI
+~MOSI
 Text HLabel 1500 2775 0    40   Output ~ 0
 RESET
 Text Label 2850 2775 0    40   ~ 0

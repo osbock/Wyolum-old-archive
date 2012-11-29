@@ -1,17 +1,15 @@
-EESchema Schematic File Version 2  date Wednesday 28 November 2012 10:09:41 PM IST
+EESchema Schematic File Version 2  date 11/29/2012 6:28:02 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
-LIBS:device
-LIBS:transistors
 LIBS:uControl_v1-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
-Sheet 3 5
+Sheet 4 5
 Title "uControl"
-Date "28 nov 2012"
+Date "29 nov 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -117,7 +115,7 @@ Wire Wire Line
 Text Label 7050 4800 0    40   ~ 0
 RST
 Text Label 7050 4650 0    40   ~ 0
-PD3_SQW
+~PD3
 Text Label 7050 4500 0    40   ~ 0
 32k
 Text Label 7050 4350 0    40   ~ 0
@@ -125,7 +123,7 @@ BAT
 Text HLabel 8050 4800 2    60   Input ~ 0
 RST
 Text HLabel 8050 4650 2    60   Input ~ 0
-PD3_SQW
+~PD3
 Text HLabel 8050 4500 2    60   Input ~ 0
 32k
 Text HLabel 8050 4350 2    60   Input ~ 0
@@ -141,10 +139,10 @@ F 2 "r_0805" H 6650 2000 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +BATT #PWR021
+L +BATT #PWR15
 U 1 1 4EC101F0
 P 5300 1850
-F 0 "#PWR021" H 5300 1800 20  0001 C CNN
+F 0 "#PWR15" H 5300 1800 20  0001 C CNN
 F 1 "+BATT" H 5300 1950 30  0000 C CNN
 	1    5300 1850
 	1    0    0    -1  
@@ -220,7 +218,7 @@ SCL
 Text Label 7050 4000 0    40   ~ 0
 SDA
 Text Label 6500 2450 0    40   ~ 0
-PD3_SQW
+~PD3
 Text Label 6500 2600 0    40   ~ 0
 RST
 Text Label 6500 2750 0    40   ~ 0
