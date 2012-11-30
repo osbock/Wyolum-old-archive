@@ -1,0 +1,178 @@
+# EESchema Netlist Version 1.1 created  11/30/2012 3:51:46 PM
+(
+ ( /50B79422 LED-5MM D1 LED
+  ( 1 /Anode )
+  ( 2 /K1 )
+ )
+ ( /50B79468 LED-5MM D2 LED
+  ( 1 /Anode )
+  ( 2 /K2 )
+ )
+ ( /50B79470 LED-5MM D3 LED
+  ( 1 /Anode )
+  ( 2 /K3 )
+ )
+ ( /50B79475 LED-5MM D4 LED
+  ( 1 /Anode )
+  ( 2 /K4 )
+ )
+ ( /50B7947C LED-5MM D5 LED
+  ( 1 /Anode )
+  ( 2 /K5 )
+ )
+ ( /50B79481 LED-5MM D6 LED
+  ( 1 /Anode )
+  ( 2 /K6 )
+ )
+ ( /50B7948D LED-5MM D7 LED
+  ( 1 /Anode )
+  ( 2 /K7 )
+ )
+ ( /50B79492 LED-5MM D8 LED
+  ( 1 /Anode )
+  ( 2 /K8 )
+ )
+ ( /50B79498 LED-5MM D9 LED
+  ( 1 /Anode )
+  ( 2 /K9 )
+ )
+ ( /50B7949D LED-5MM D10 LED
+  ( 1 /Anode )
+  ( 2 /K10 )
+ )
+ ( /50B796B0 1pin H1 TST
+  ( 1 ? )
+ )
+ ( /50B796BC 1pin H2 TST
+  ( 1 ? )
+ )
+ ( /50B796C1 1pin H3 TST
+  ( 1 ? )
+ )
+ ( /50B79522 PIN_ARRAY_5x2 P1 Kathode
+  ( 1 /K1 )
+  ( 2 /K2 )
+  ( 3 /K3 )
+  ( 4 /K4 )
+  ( 5 /K5 )
+  ( 6 /K6 )
+  ( 7 /K7 )
+  ( 8 /K8 )
+  ( 9 /K9 )
+  ( 10 /K10 )
+ )
+ ( /50B79543 PIN_ARRAY_2X1 P2 Anode
+  ( 1 /Anode )
+  ( 2 /Anode )
+ )
+ ( /50B867CD PIN_ARRAY_5x2 P3 Kathode
+  ( 1 /K1 )
+  ( 2 /K2 )
+  ( 3 /K3 )
+  ( 4 /K4 )
+  ( 5 /K5 )
+  ( 6 /K6 )
+  ( 7 /K7 )
+  ( 8 /K8 )
+  ( 9 /K9 )
+  ( 10 /K10 )
+ )
+ ( /50B8684C PIN_ARRAY_2X1 P4 Anode
+  ( 1 /Anode )
+  ( 2 /Anode )
+ )
+)
+*
+{ Allowed footprints by component:
+$component D1
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D2
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D3
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D4
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D5
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D6
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D7
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D8
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D9
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D10
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$endfootprintlist
+}
