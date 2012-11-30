@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 11/29/2012 6:28:02 PM
+EESchema Schematic File Version 2  date 11/30/2012 11:17:28 AM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 5
 Title "uControl"
-Date "29 nov 2012"
+Date "30 nov 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -17,16 +17,22 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Label 9675 3675 0    40   ~ 0
+IO_T
+Text Label 9675 3575 0    40   ~ 0
+IO_R
 Wire Wire Line
-	9675 3525 10050 3525
+	9675 3675 10050 3675
 Wire Wire Line
-	9675 3275 10050 3275
+	9675 3825 10050 3825
 Wire Wire Line
-	9675 3025 10050 3025
+	9675 3325 10050 3325
 Wire Wire Line
-	9675 2825 10050 2825
+	9675 3075 10050 3075
 Wire Wire Line
-	9675 2625 10050 2625
+	9675 2875 10050 2875
+Wire Wire Line
+	9675 2675 10050 2675
 Wire Wire Line
 	9675 2325 10050 2325
 Wire Notes Line
@@ -117,11 +123,11 @@ Wire Wire Line
 Wire Wire Line
 	4650 7275 4650 7150
 Wire Wire Line
+	9775 5150 10050 5150
+Wire Wire Line
+	9775 4950 10050 4950
+Wire Wire Line
 	9775 4750 10050 4750
-Wire Wire Line
-	9775 4550 10050 4550
-Wire Wire Line
-	9775 4350 10050 4350
 Wire Wire Line
 	9775 1225 10050 1225
 Wire Wire Line
@@ -159,11 +165,11 @@ Wire Wire Line
 Wire Wire Line
 	6675 1725 6425 1725
 Wire Wire Line
-	9675 6450 10050 6450
+	9675 6850 10050 6850
 Wire Wire Line
-	9675 6350 10050 6350
+	9675 6750 10050 6750
 Wire Wire Line
-	9675 6150 10050 6150
+	9675 6550 10050 6550
 Wire Wire Line
 	1400 3250 1400 3300
 Wire Wire Line
@@ -180,9 +186,9 @@ Wire Wire Line
 Wire Wire Line
 	6675 2725 6525 2725
 Wire Wire Line
-	9675 6050 10050 6050
+	9675 6450 10050 6450
 Wire Wire Line
-	9675 5750 10050 5750
+	9675 6150 10050 6150
 Wire Wire Line
 	6425 1825 6675 1825
 Wire Wire Line
@@ -252,9 +258,9 @@ Wire Wire Line
 Wire Wire Line
 	6675 1925 6425 1925
 Wire Wire Line
-	9675 5950 10050 5950
+	9675 6350 10050 6350
 Wire Wire Line
-	9675 5850 10050 5850
+	9675 6250 10050 6250
 Wire Wire Line
 	6675 2825 6525 2825
 Wire Wire Line
@@ -269,7 +275,7 @@ Wire Wire Line
 Wire Wire Line
 	4125 2550 3900 2550
 Wire Wire Line
-	9675 6250 10050 6250
+	9675 6650 10050 6650
 Wire Wire Line
 	6625 1825 6625 1525
 Wire Wire Line
@@ -307,23 +313,23 @@ Wire Wire Line
 Wire Wire Line
 	9775 1125 10050 1125
 Wire Wire Line
-	9775 4450 10050 4450
+	9775 4850 10050 4850
 Wire Wire Line
-	9775 4650 10050 4650
+	9775 5050 10050 5050
 Wire Wire Line
 	9050 925  9050 1225
 Wire Wire Line
 	9050 1225 8575 1225
 Wire Wire Line
-	9775 5050 10050 5050
+	9775 5450 10050 5450
 Wire Wire Line
-	9775 4850 10050 4850
+	9775 5250 10050 5250
 Wire Wire Line
-	9775 4950 10050 4950
+	9775 5350 10050 5350
 Wire Wire Line
-	9775 5150 10050 5150
+	9775 5550 10050 5550
 Wire Wire Line
-	9775 4150 10050 4150
+	9775 4550 10050 4550
 Wire Notes Line
 	5300 6325 4325 6325
 Wire Notes Line
@@ -381,56 +387,60 @@ Wire Notes Line
 Wire Wire Line
 	9675 2425 10050 2425
 Wire Wire Line
-	9675 2725 10050 2725
+	9675 2775 10050 2775
 Wire Wire Line
-	9675 2925 10050 2925
+	9675 2975 10050 2975
 Wire Wire Line
-	9675 3175 10050 3175
+	9675 3225 10050 3225
 Wire Wire Line
-	9675 3425 10050 3425
+	9675 3475 10050 3475
 Wire Wire Line
-	9675 3675 10050 3675
+	9675 3975 10050 3975
+Wire Wire Line
+	10050 3575 9675 3575
 Text Label 9675 2325 0    40   ~ 0
 V_IN
 Text Label 9675 2425 0    40   ~ 0
 5V0
-Text Label 9675 2625 0    40   ~ 0
+Text Label 9675 2675 0    40   ~ 0
 ~MOSI
-Text Label 9675 2725 0    40   ~ 0
+Text Label 9675 2775 0    40   ~ 0
 ~SS
-Text Label 9675 2825 0    40   ~ 0
+Text Label 9675 2875 0    40   ~ 0
 SCK
-Text Label 9675 2925 0    40   ~ 0
+Text Label 9675 2975 0    40   ~ 0
 MISO
-Text Label 9675 3025 0    40   ~ 0
+Text Label 9675 3075 0    40   ~ 0
 Pressure
-Text Label 9675 3175 0    40   ~ 0
+Text Label 9675 3225 0    40   ~ 0
 ~Flow_Tx
-Text Label 9675 3275 0    40   ~ 0
+Text Label 9675 3325 0    40   ~ 0
 Flow_Rx
-Text Label 9675 3425 0    40   ~ 0
-Pump
-Text Label 9675 3525 0    40   ~ 0
+Text Label 9675 3475 0    40   ~ 0
+IO_X
+Text Label 9675 3825 0    40   ~ 0
 ~Valve
-Text Label 9675 3675 0    40   ~ 0
+Text Label 9675 3975 0    40   ~ 0
 GND
 $Sheet
-S 10050 2225 1050 1525
+S 10050 2225 1050 1925
 U 50B2116F
 F0 "Interface" 60
 F1 "interface.sch" 60
-F2 "Pump" I L 10050 3425 60 
-F3 "SCK" I L 10050 2825 60 
-F4 "MISO" I L 10050 2925 60 
-F5 "Pressure" I L 10050 3025 60 
-F6 "V_IN" I L 10050 2325 60 
-F7 "Flow_Rx" O L 10050 3275 60 
-F8 "GND" B L 10050 3675 60 
-F9 "5V0" B L 10050 2425 60 
-F10 "~Valve" I L 10050 3525 60 
-F11 "~Flow_Tx" I L 10050 3175 60 
-F12 "~MOSI" I L 10050 2625 60 
-F13 "~SS" I L 10050 2725 60 
+F2 "SCK" I L 10050 2875 60 
+F3 "MISO" I L 10050 2975 60 
+F4 "Pressure" I L 10050 3075 60 
+F5 "V_IN" I L 10050 2325 60 
+F6 "Flow_Rx" O L 10050 3325 60 
+F7 "GND" B L 10050 3975 60 
+F8 "5V0" B L 10050 2425 60 
+F9 "~Valve" I L 10050 3825 60 
+F10 "~Flow_Tx" I L 10050 3225 60 
+F11 "~MOSI" I L 10050 2675 60 
+F12 "~SS" I L 10050 2775 60 
+F13 "IO_T" O L 10050 3675 60 
+F14 "IO_R" I L 10050 3575 60 
+F15 "IO_X" I L 10050 3475 60 
 $EndSheet
 Text Label 5825 2125 0    40   ~ 0
 5V0
@@ -530,34 +540,34 @@ F 2 "Header_FTDI" H 4800 7625 60  0001 C CNN
 $EndComp
 Text Label 5050 7175 3    40   ~ 0
 ~RTS
-Text Label 9775 4150 0    40   ~ 0
+Text Label 9775 4550 0    40   ~ 0
 5V0
-Text Label 9775 4850 0    40   ~ 0
+Text Label 9775 5250 0    40   ~ 0
 SDA
-Text Label 9775 4950 0    40   ~ 0
+Text Label 9775 5350 0    40   ~ 0
 SCK
-Text Label 9775 5050 0    40   ~ 0
+Text Label 9775 5450 0    40   ~ 0
 MISO
-Text Label 9775 5150 0    40   ~ 0
+Text Label 9775 5550 0    40   ~ 0
 ~MOSI
 $Comp
-L PWR_FLAG #FLG1
+L PWR_FLAG #FLG01
 U 1 1 4FC9DB7D
 P 9050 925
-F 0 "#FLG1" H 9050 1195 30  0001 C CNN
+F 0 "#FLG01" H 9050 1195 30  0001 C CNN
 F 1 "PWR_FLAG" H 9050 1155 30  0000 C CNN
 	1    9050 925 
 	1    0    0    -1  
 $EndComp
-Text Label 9775 4750 0    40   ~ 0
+Text Label 9775 5150 0    40   ~ 0
 SCL
-Text Label 9775 4650 0    40   ~ 0
+Text Label 9775 5050 0    40   ~ 0
 RESET
-Text Label 9775 4550 0    40   ~ 0
+Text Label 9775 4950 0    40   ~ 0
 RXD
-Text Label 9775 4450 0    40   ~ 0
+Text Label 9775 4850 0    40   ~ 0
 TXD
-Text Label 9775 4350 0    40   ~ 0
+Text Label 9775 4750 0    40   ~ 0
 GND
 Text Label 9775 1225 0    40   ~ 0
 SCK
@@ -572,7 +582,7 @@ USBVCC
 Text Label 9775 725  0    40   ~ 0
 V_IN
 $Sheet
-S 10050 625  1050 1300
+S 10050 625  1050 725 
 U 4FC07407
 F0 "pwr" 60
 F1 "uControl_pwr.sch" 60
@@ -626,25 +636,25 @@ F 2 "DIP-28__300_ELL" H 3400 1875 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Sheet
-S 10050 5650 1050 1300
+S 10050 6050 1050 900 
 U 4E1FEA4E
 F0 "rtc" 60
 F1 "uControl_rtc.sch" 60
-F2 "GND" I L 10050 5850 60 
-F3 "SDA" I L 10050 6050 60 
-F4 "SCL" I L 10050 5950 60 
-F5 "5V0" I L 10050 5750 60 
-F6 "RST" I L 10050 6150 60 
-F7 "32k" I L 10050 6350 60 
-F8 "BAT" I L 10050 6450 60 
-F9 "~PD3" I L 10050 6250 60 
+F2 "GND" I L 10050 6250 60 
+F3 "SDA" I L 10050 6450 60 
+F4 "SCL" I L 10050 6350 60 
+F5 "5V0" I L 10050 6150 60 
+F6 "RST" I L 10050 6550 60 
+F7 "32k" I L 10050 6750 60 
+F8 "BAT" I L 10050 6850 60 
+F9 "~PD3" I L 10050 6650 60 
 $EndSheet
 Text Label 8825 1825 0    40   ~ 0
 ~PB1
 Text Label 8825 1925 0    40   ~ 0
 PB0
 Text Label 8825 2125 0    40   ~ 0
-Pump
+IO_X
 Text Label 8825 2225 0    40   ~ 0
 ~Flow_Tx
 Text Label 8825 2325 0    40   ~ 0
@@ -680,30 +690,30 @@ SCL
 Text Label 6425 2125 0    40   ~ 0
 V_IN
 $Sheet
-S 10050 4050 1050 1300
+S 10050 4450 1050 1200
 U 4FBF6CBF
 F0 "RPi" 60
 F1 "uControl_RPi.sch" 60
-F2 "GND" B L 10050 4350 60 
-F3 "TXD" I L 10050 4450 60 
-F4 "RXD" O L 10050 4550 60 
-F5 "SCL" I L 10050 4750 60 
-F6 "SDA" I L 10050 4850 60 
-F7 "MISO" I L 10050 5050 60 
-F8 "5V0" B L 10050 4150 60 
-F9 "SCK" I L 10050 4950 60 
-F10 "RESET" O L 10050 4650 60 
-F11 "~MOSI" I L 10050 5150 60 
+F2 "GND" B L 10050 4750 60 
+F3 "TXD" I L 10050 4850 60 
+F4 "RXD" O L 10050 4950 60 
+F5 "SCL" I L 10050 5150 60 
+F6 "SDA" I L 10050 5250 60 
+F7 "MISO" I L 10050 5450 60 
+F8 "5V0" B L 10050 4550 60 
+F9 "SCK" I L 10050 5350 60 
+F10 "RESET" O L 10050 5050 60 
+F11 "~MOSI" I L 10050 5550 60 
 $EndSheet
 Text Label 1925 3300 0    40   ~ 0
 PB7
 Text Label 1925 2800 0    40   ~ 0
 PB6
 $Comp
-L GND #PWR1
+L GND #PWR02
 U 1 1 4F5AFC62
 P 2900 5100
-F 0 "#PWR1" H 2900 5100 30  0001 C CNN
+F 0 "#PWR02" H 2900 5100 30  0001 C CNN
 F 1 "GND" H 2900 5030 30  0001 C CNN
 	1    2900 5100
 	1    0    0    -1  
@@ -720,13 +730,13 @@ F 2 "Xtal_SMD2" H 1400 3050 60  0001 C CNN
 $EndComp
 Text Label 6425 1725 0    40   ~ 0
 3V3
-Text Label 9675 6450 0    40   ~ 0
+Text Label 9675 6850 0    40   ~ 0
 BAT
-Text Label 9675 6350 0    40   ~ 0
+Text Label 9675 6750 0    40   ~ 0
 32k
-Text Label 9675 6250 0    40   ~ 0
+Text Label 9675 6650 0    40   ~ 0
 ~PD3
-Text Label 9675 6150 0    40   ~ 0
+Text Label 9675 6550 0    40   ~ 0
 RST
 $Comp
 L C C11
@@ -752,13 +762,13 @@ Text Label 6525 2825 0    40   ~ 0
 SCL
 Text Label 6525 2725 0    40   ~ 0
 SDA
-Text Label 9675 5850 0    40   ~ 0
+Text Label 9675 6250 0    40   ~ 0
 GND
-Text Label 9675 6050 0    40   ~ 0
+Text Label 9675 6450 0    40   ~ 0
 SDA
-Text Label 9675 5950 0    40   ~ 0
+Text Label 9675 6350 0    40   ~ 0
 SCL
-Text Label 9675 5750 0    40   ~ 0
+Text Label 9675 6150 0    40   ~ 0
 5V0
 Text Label 6425 1925 0    40   ~ 0
 GND
@@ -793,7 +803,7 @@ TXD
 Text Label 4125 3350 0    40   ~ 0
 PD2
 Text Label 4125 3850 0    40   ~ 0
-Pump
+IO_X
 Text Label 4125 3550 0    40   ~ 0
 Flow_Rx
 Text Label 4800 650  0    40   ~ 0
