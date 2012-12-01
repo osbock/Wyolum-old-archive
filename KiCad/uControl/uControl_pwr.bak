@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 11/30/2012 11:17:28 AM
+EESchema Schematic File Version 2  date Sunday 02 December 2012 02:01:43 AM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 3 5
 Title "uControl"
-Date "30 nov 2012"
+Date "1 dec 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -33,7 +33,7 @@ Wire Wire Line
 Wire Wire Line
 	7250 4125 7250 4075
 Wire Wire Line
-	7550 4575 7550 4525
+	7550 4525 7550 4575
 Wire Wire Line
 	7550 4575 7250 4575
 Wire Wire Line
@@ -52,12 +52,12 @@ Wire Wire Line
 	5700 7475 5700 6800
 Connection ~ 5700 7425
 Wire Wire Line
-	6475 7425 6475 7375
+	6475 7375 6475 7425
 Connection ~ 6350 6400
 Wire Wire Line
-	6475 6400 6475 6425
+	6475 6425 6475 6400
 Wire Wire Line
-	6300 6400 6475 6400
+	6475 6400 6300 6400
 Connection ~ 5700 5975
 Wire Wire Line
 	5700 5975 4900 5975
@@ -75,7 +75,7 @@ Wire Wire Line
 Wire Wire Line
 	7425 6775 7425 6725
 Wire Wire Line
-	4150 4375 4150 6275
+	4150 6275 4150 4375
 Wire Wire Line
 	7450 6100 7450 6250
 Wire Wire Line
@@ -91,10 +91,10 @@ Wire Wire Line
 Wire Wire Line
 	2900 7450 2900 7225
 Wire Wire Line
-	4675 4375 4150 4375
+	4150 4375 4675 4375
 Connection ~ 4625 4375
 Wire Wire Line
-	4625 4525 4675 4525
+	4675 4525 4625 4525
 Wire Wire Line
 	1775 5925 3650 5925
 Wire Wire Line
@@ -116,7 +116,7 @@ Connection ~ 3025 4350
 Wire Wire Line
 	3025 4250 3025 4350
 Wire Wire Line
-	1800 5300 6400 5300
+	6400 5300 1800 5300
 Connection ~ 1800 3900
 Wire Wire Line
 	1800 5300 1800 3800
@@ -124,12 +124,12 @@ Wire Wire Line
 	1400 3700 1825 3700
 Connection ~ 4625 5300
 Wire Wire Line
-	2450 4350 2450 4250
+	2450 4250 2450 4350
 Wire Wire Line
 	2450 4350 3850 4350
 Connection ~ 6050 5300
 Wire Wire Line
-	4625 3550 4625 4525
+	4625 4525 4625 3550
 Wire Wire Line
 	3850 3700 3850 3750
 Connection ~ 6050 4375
@@ -200,11 +200,11 @@ Wire Notes Line
 Wire Wire Line
 	6350 6725 6350 6400
 Wire Wire Line
-	4900 7425 4900 7375
+	4900 7375 4900 7425
 Wire Wire Line
 	6475 6925 6475 6975
 Wire Wire Line
-	6475 7425 4900 7425
+	4900 7425 6475 7425
 Wire Notes Line
 	6725 5800 4600 5800
 Wire Notes Line
@@ -216,10 +216,10 @@ Wire Notes Line
 Wire Notes Line
 	600  3250 6725 3250
 $Comp
-L R R5
+L R R6
 U 1 1 4FE44ABE
 P 7250 3825
-F 0 "R5" V 7330 3825 50  0000 C CNN
+F 0 "R6" V 7330 3825 50  0000 C CNN
 F 1 "1k5" V 7250 3825 50  0000 C CNN
 F 2 "r_0805" H 7250 3825 60  0001 C CNN
 	1    7250 3825

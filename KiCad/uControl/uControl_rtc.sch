@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/1/2012 2:57:47 PM
+EESchema Schematic File Version 2  date Sunday 02 December 2012 02:01:49 AM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -115,7 +115,7 @@ Wire Wire Line
 Text Label 7050 4800 0    40   ~ 0
 RST
 Text Label 7050 4650 0    40   ~ 0
-~PD3
+~PD3_SQW
 Text Label 7050 4500 0    40   ~ 0
 32k
 Text Label 7050 4350 0    40   ~ 0
@@ -123,7 +123,7 @@ BAT
 Text HLabel 8050 4800 2    60   Input ~ 0
 RST
 Text HLabel 8050 4650 2    60   Input ~ 0
-~PD3
+~PD3_SQW
 Text HLabel 8050 4500 2    60   Input ~ 0
 32k
 Text HLabel 8050 4350 2    60   Input ~ 0
