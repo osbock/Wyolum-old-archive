@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 11/30/2012 11:17:28 AM
+EESchema Schematic File Version 2  date 12/1/2012 2:57:47 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 5
 Title "uControl"
-Date "30 nov 2012"
+Date "1 dec 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -17,29 +17,31 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 9675 3675 0    40   ~ 0
+Text Label 9600 3675 0    40   ~ 0
 IO_T
-Text Label 9675 3575 0    40   ~ 0
+Text Label 9600 3575 0    40   ~ 0
 IO_R
 Wire Wire Line
-	9675 3675 10050 3675
+	9600 3675 10050 3675
 Wire Wire Line
-	9675 3825 10050 3825
+	9600 3825 10050 3825
 Wire Wire Line
-	9675 3325 10050 3325
+	9600 3325 10050 3325
 Wire Wire Line
-	9675 3075 10050 3075
+	9600 3075 10050 3075
 Wire Wire Line
-	9675 2875 10050 2875
+	9600 2875 10050 2875
 Wire Wire Line
-	9675 2675 10050 2675
+	9600 2675 10050 2675
 Wire Wire Line
-	9675 2325 10050 2325
+	9600 2325 10050 2325
 Wire Notes Line
 	9325 625  9325 3125
 Connection ~ 5725 2625
 Wire Wire Line
-	5675 2625 5825 2625
+	5675 2625 5725 2625
+Wire Wire Line
+	5725 2625 5825 2625
 Wire Wire Line
 	5825 2625 5825 2125
 Connection ~ 6425 2525
@@ -49,16 +51,32 @@ Connection ~ 6425 2725
 Wire Wire Line
 	6425 2725 6375 2725
 Wire Wire Line
-	6425 2950 6425 2325
+	6425 2950 6425 2825
+Wire Wire Line
+	6425 2825 6425 2725
+Wire Wire Line
+	6425 2725 6425 2625
+Wire Wire Line
+	6425 2625 6425 2525
+Wire Wire Line
+	6425 2525 6425 2425
+Wire Wire Line
+	6425 2425 6425 2325
 Wire Wire Line
 	6425 2325 6375 2325
 Connection ~ 5725 2425
 Wire Wire Line
 	5725 2425 5675 2425
 Wire Wire Line
-	5725 2125 5725 2525
+	5725 2125 5725 2325
 Wire Wire Line
-	5725 2625 5725 2825
+	5725 2325 5725 2425
+Wire Wire Line
+	5725 2425 5725 2525
+Wire Wire Line
+	5725 2625 5725 2725
+Wire Wire Line
+	5725 2725 5725 2825
 Wire Wire Line
 	5725 2825 5675 2825
 Wire Wire Line
@@ -72,14 +90,20 @@ Wire Wire Line
 Wire Wire Line
 	875  3300 825  3300
 Wire Wire Line
-	825  3300 825  2800
+	825  3300 825  3050
+Wire Wire Line
+	825  3050 825  2800
 Wire Wire Line
 	825  2800 875  2800
 Connection ~ 1400 2800
 Wire Wire Line
-	1275 2800 1925 2800
+	1275 2800 1400 2800
 Wire Wire Line
-	1800 1650 1800 4975
+	1400 2800 1925 2800
+Wire Wire Line
+	1800 1650 1800 2450
+Wire Wire Line
+	1800 2450 1800 4975
 Wire Notes Line
 	5400 7750 5400 6325
 Wire Notes Line
@@ -111,7 +135,9 @@ Wire Wire Line
 Wire Wire Line
 	4750 7275 4750 6450
 Wire Wire Line
-	4550 6450 4550 7275
+	4550 6450 4550 7150
+Wire Wire Line
+	4550 7150 4550 7275
 Wire Wire Line
 	4950 7275 4950 6450
 Wire Wire Line
@@ -139,7 +165,9 @@ Wire Wire Line
 Wire Wire Line
 	6675 2525 6525 2525
 Wire Wire Line
-	2900 5100 2900 4850
+	2900 5100 2900 4975
+Wire Wire Line
+	2900 4975 2900 4850
 Wire Wire Line
 	8575 2825 8825 2825
 Wire Wire Line
@@ -190,7 +218,9 @@ Wire Wire Line
 Wire Wire Line
 	9675 6150 10050 6150
 Wire Wire Line
-	6425 1825 6675 1825
+	6425 1825 6625 1825
+Wire Wire Line
+	6625 1825 6675 1825
 Wire Wire Line
 	3900 3350 4125 3350
 Wire Wire Line
@@ -250,13 +280,25 @@ Wire Wire Line
 Wire Wire Line
 	3900 3650 4125 3650
 Wire Wire Line
-	1400 800  4800 800 
+	1400 800  1575 800 
 Wire Wire Line
-	4800 650  4800 1200
+	1575 800  1800 800 
+Wire Wire Line
+	1800 800  2900 800 
+Wire Wire Line
+	2900 800  4600 800 
+Wire Wire Line
+	4600 800  4800 800 
+Wire Wire Line
+	4800 650  4800 800 
+Wire Wire Line
+	4800 800  4800 1200
 Wire Wire Line
 	6675 1625 6425 1625
 Wire Wire Line
-	6675 1925 6425 1925
+	6675 1925 6625 1925
+Wire Wire Line
+	6625 1925 6425 1925
 Wire Wire Line
 	9675 6350 10050 6350
 Wire Wire Line
@@ -264,7 +306,9 @@ Wire Wire Line
 Wire Wire Line
 	6675 2825 6525 2825
 Wire Wire Line
-	1575 4050 1575 1700
+	1575 4050 1575 2250
+Wire Wire Line
+	1575 2250 1575 1700
 Connection ~ 1575 2250
 Wire Wire Line
 	1925 3150 1925 3300
@@ -345,7 +389,9 @@ Wire Wire Line
 	2000 2450 1800 2450
 Connection ~ 1800 2450
 Wire Wire Line
-	1925 3300 1275 3300
+	1925 3300 1400 3300
+Wire Wire Line
+	1400 3300 1275 3300
 Connection ~ 1400 3300
 Wire Wire Line
 	825  3050 750  3050
@@ -353,7 +399,11 @@ Connection ~ 825  3050
 Wire Wire Line
 	750  3050 750  4975
 Wire Wire Line
-	750  4975 2900 4975
+	750  4975 1575 4975
+Wire Wire Line
+	1575 4975 1800 4975
+Wire Wire Line
+	1800 4975 2900 4975
 Connection ~ 1575 4975
 Wire Wire Line
 	1075 1675 1075 1775
@@ -385,42 +435,42 @@ Wire Notes Line
 Wire Notes Line
 	5100 3125 5100 625 
 Wire Wire Line
-	9675 2425 10050 2425
+	9600 2425 10050 2425
 Wire Wire Line
-	9675 2775 10050 2775
+	9600 2775 10050 2775
 Wire Wire Line
-	9675 2975 10050 2975
+	9600 2975 10050 2975
 Wire Wire Line
-	9675 3225 10050 3225
+	9600 3225 10050 3225
 Wire Wire Line
-	9675 3475 10050 3475
+	9600 3475 10050 3475
 Wire Wire Line
-	9675 3975 10050 3975
+	9600 3975 10050 3975
 Wire Wire Line
-	10050 3575 9675 3575
-Text Label 9675 2325 0    40   ~ 0
+	10050 3575 9600 3575
+Text Label 9600 2325 0    40   ~ 0
 V_IN
-Text Label 9675 2425 0    40   ~ 0
+Text Label 9600 2425 0    40   ~ 0
 5V0
-Text Label 9675 2675 0    40   ~ 0
+Text Label 9600 2675 0    40   ~ 0
 ~MOSI
-Text Label 9675 2775 0    40   ~ 0
+Text Label 9600 2775 0    40   ~ 0
 ~SS
-Text Label 9675 2875 0    40   ~ 0
+Text Label 9600 2875 0    40   ~ 0
 SCK
-Text Label 9675 2975 0    40   ~ 0
+Text Label 9600 2975 0    40   ~ 0
 MISO
-Text Label 9675 3075 0    40   ~ 0
-Pressure
-Text Label 9675 3225 0    40   ~ 0
+Text Label 9600 3075 0    40   ~ 0
+PC3_Pressure
+Text Label 9600 3225 0    40   ~ 0
 ~Flow_Tx
-Text Label 9675 3325 0    40   ~ 0
+Text Label 9600 3325 0    40   ~ 0
 Flow_Rx
-Text Label 9675 3475 0    40   ~ 0
+Text Label 9600 3475 0    40   ~ 0
 IO_X
-Text Label 9675 3825 0    40   ~ 0
+Text Label 9600 3825 0    40   ~ 0
 ~Valve
-Text Label 9675 3975 0    40   ~ 0
+Text Label 9600 3975 0    40   ~ 0
 GND
 $Sheet
 S 10050 2225 1050 1925
@@ -429,18 +479,18 @@ F0 "Interface" 60
 F1 "interface.sch" 60
 F2 "SCK" I L 10050 2875 60 
 F3 "MISO" I L 10050 2975 60 
-F4 "Pressure" I L 10050 3075 60 
-F5 "V_IN" I L 10050 2325 60 
-F6 "Flow_Rx" O L 10050 3325 60 
-F7 "GND" B L 10050 3975 60 
-F8 "5V0" B L 10050 2425 60 
-F9 "~Valve" I L 10050 3825 60 
-F10 "~Flow_Tx" I L 10050 3225 60 
-F11 "~MOSI" I L 10050 2675 60 
-F12 "~SS" I L 10050 2775 60 
-F13 "IO_T" O L 10050 3675 60 
-F14 "IO_R" I L 10050 3575 60 
-F15 "IO_X" I L 10050 3475 60 
+F4 "V_IN" I L 10050 2325 60 
+F5 "Flow_Rx" O L 10050 3325 60 
+F6 "GND" B L 10050 3975 60 
+F7 "5V0" B L 10050 2425 60 
+F8 "~Valve" I L 10050 3825 60 
+F9 "~Flow_Tx" I L 10050 3225 60 
+F10 "~MOSI" I L 10050 2675 60 
+F11 "~SS" I L 10050 2775 60 
+F12 "IO_T" O L 10050 3675 60 
+F13 "IO_R" I L 10050 3575 60 
+F14 "IO_X" I L 10050 3475 60 
+F15 "PC3_Pressure" I L 10050 3075 60 
 $EndSheet
 Text Label 5825 2125 0    40   ~ 0
 5V0
@@ -795,7 +845,7 @@ PC1
 Text Label 4125 2450 0    40   ~ 0
 PC2
 Text Label 4125 2550 0    40   ~ 0
-Pressure
+PC3_Pressure
 Text Label 4125 3150 0    40   ~ 0
 RXD
 Text Label 4125 3250 0    40   ~ 0

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 11/30/2012 11:17:28 AM
+EESchema Schematic File Version 2  date 12/1/2012 2:57:47 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 5
 Title ""
-Date "30 nov 2012"
+Date "1 dec 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -146,7 +146,7 @@ SCK
 Text HLabel 1975 1050 0    40   Input ~ 0
 MISO
 Text HLabel 1975 950  0    40   Input ~ 0
-Pressure
+PC3_Pressure
 Text HLabel 1975 850  0    40   BiDi ~ 0
 GND
 Text HLabel 1975 750  0    40   BiDi ~ 0
@@ -266,7 +266,7 @@ Text Label 3350 1250 0    40   ~ 0
 Text Label 3350 1050 0    40   ~ 0
 MISO
 Text Label 3350 950  0    40   ~ 0
-Pressure
+PC3_Pressure
 Text Label 3350 850  0    40   ~ 0
 GND
 Text Label 3350 750  0    40   ~ 0
