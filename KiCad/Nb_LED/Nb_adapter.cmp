@@ -1,0 +1,17 @@
+Cmp-Mod V01 Genere par PcbNew le 12/1/2012 1:08:05 PM
+
+BeginCmp
+TimeStamp = /50B9A8A4;
+Reference = P1;
+ValeurCmp = Kathode;
+IdModule  = PIN_ARRAY_5x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B9A8D3;
+Reference = P6;
+ValeurCmp = Kathodes_Nb;
+IdModule  = pin_array_10x2;
+EndCmp
+
+EndListe
