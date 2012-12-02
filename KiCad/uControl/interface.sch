@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 02 December 2012 02:01:49 AM IST
+EESchema Schematic File Version 2  date Sunday 02 December 2012 11:21:38 PM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 5
 Title ""
-Date "1 dec 2012"
+Date "2 dec 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -388,7 +388,7 @@ F 1 "S1A-E3/61T" H 3025 5975 40  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 Text HLabel 1725 6725 0    40   Input ~ 0
-~Valve
+~PD5_Valve
 Text HLabel 1725 3650 0    40   Input ~ 0
 PD7_IO_X
 Text HLabel 1725 3350 0    40   Input ~ 0
@@ -412,7 +412,7 @@ GND
 Text HLabel 1725 750  0    40   BiDi ~ 0
 3V3
 Text Label 1725 6725 0    40   ~ 0
-~Valve
+~PD5_Valve
 Text Notes 4450 5900 0    40   ~ 0
 Valve on digital PWM port\neither 12V (V_IN) or 5V0
 Text Notes 4850 2750 0    40   ~ 0

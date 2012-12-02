@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 02 December 2012 02:01:49 AM IST
+EESchema Schematic File Version 2  date Sunday 02 December 2012 11:21:38 PM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 5
 Title "uControl"
-Date "1 dec 2012"
+Date "2 dec 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -27,7 +27,7 @@ F3 "MISO" I L 10050 2425 40
 F4 "V_IN" I L 10050 1725 40 
 F5 "GND" B L 10050 1925 40 
 F6 "5V0" B L 10050 1825 40 
-F7 "~Valve" I L 10050 3125 40 
+F7 "~PD5_Valve" I L 10050 3125 40 
 F8 "~MOSI" I L 10050 2125 40 
 F9 "~SS" I L 10050 2225 40 
 F10 "PC3_Pressure" I L 10050 2525 40 
@@ -483,7 +483,7 @@ PD4_Flow_Rx
 Text Label 9600 2825 0    40   ~ 0
 PD7_IO_X
 Text Label 9600 3125 0    40   ~ 0
-~Valve
+~PD5_Valve
 Text Label 9600 1925 0    40   ~ 0
 GND
 Text Label 5825 2125 0    40   ~ 0
@@ -823,7 +823,7 @@ Text Label 6425 1825 0    40   ~ 0
 Text Label 1575 2250 1    40   ~ 0
 RESET
 Text Label 4125 3650 0    40   ~ 0
-~Valve
+~PD5_Valve
 Text Label 4125 3750 0    40   ~ 0
 ~PD6
 Text Label 4125 3450 0    40   ~ 0
