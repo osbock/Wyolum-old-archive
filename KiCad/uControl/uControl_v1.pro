@@ -1,5 +1,5 @@
-update=Sunday 02 December 2012 02:03:09 AM IST
-last_client=kicad
+update=12/3/2012 5:59:05 PM
+last_client=eeschema
 [cvpcb]
 version=1
 NetIExt=net
@@ -25,6 +25,8 @@ LastNetListRead=aLaMode_v2.net
 [pcbnew/libraries]
 LibDir=
 LibName1=aLaMode_Libs/aLaMode_v1
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
@@ -60,5 +62,3 @@ LabSize=60
 LibName1=uControl_Libs/uControl
 LibName2=uControl_Libs/Conn-raspberry
 LibName3=uControl_Libs/power
-[general]
-version=1
