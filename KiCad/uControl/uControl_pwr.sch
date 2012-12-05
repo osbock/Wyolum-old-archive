@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 02 December 2012 11:21:38 PM IST
+EESchema Schematic File Version 2  date 12/5/2012 11:54:40 AM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 3 5
 Title "uControl"
-Date "2 dec 2012"
+Date "5 dec 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -362,7 +362,7 @@ F 1 "+3.3V" H 7150 6210 30  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text HLabel 1775 6125 0    40   BiDi ~ 0
-V_IN
+12V
 Text HLabel 1775 5925 0    40   BiDi ~ 0
 USBVCC
 Text HLabel 5100 6300 0    40   Input ~ 0
@@ -436,7 +436,7 @@ F 2 "c_0805" H 4900 7175 60  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Text Label 1775 6125 0    40   ~ 0
-V_IN
+12V
 Text Label 2175 6725 0    40   ~ 0
 CMP
 Text Label 1775 6025 0    40   ~ 0
@@ -496,7 +496,7 @@ F 2 "SO8E" H 3000 6825 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 2300 3700 0    40   ~ 0
-V_IN
+12V
 $Comp
 L NCP1117ST50T3G U3
 U 1 1 4FC61C2F
@@ -599,7 +599,7 @@ L V_IN P10
 U 1 1 4FC61A05
 P 1100 3800
 F 0 "P10" H 1100 4000 60  0000 C CNN
-F 1 "V_IN" H 1100 3550 60  0000 C CNN
+F 1 "12V" H 1100 3550 60  0000 C CNN
 F 2 "JACK_ALIM" H 1100 3800 60  0001 C CNN
 	1    1100 3800
 	1    0    0    -1  
