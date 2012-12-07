@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/5/2012 11:54:40 AM
+EESchema Schematic File Version 2  date 12/6/2012 4:59:12 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 5
 Title "uControl"
-Date "5 dec 2012"
+Date "6 dec 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -17,6 +17,7 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+NoConn ~ 4750 7275
 Text Label 9600 3725 0    40   ~ 0
 ~PD6_SS2
 Text Label 9600 3625 0    40   ~ 0
@@ -138,8 +139,6 @@ Wire Wire Line
 	5900 7275 5900 6750
 Wire Wire Line
 	6100 7275 6100 6750
-Wire Wire Line
-	4750 7275 4750 6450
 Wire Wire Line
 	4550 6450 4550 7150
 Wire Wire Line
@@ -592,8 +591,6 @@ Text Notes 5925 6325 2    60   Italic 12
 ISP Header
 Text Label 5600 6750 3    40   ~ 0
 GND
-Text Label 4750 6450 3    40   ~ 0
-USBVCC
 Text Label 6100 6750 3    40   ~ 0
 MISO
 Text Label 6000 6750 3    40   ~ 0
