@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/17/2012 12:25:46 PM
+EESchema Schematic File Version 2  date 12/18/2012 11:33:09 AM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 5
 Title "uControl"
-Date "17 dec 2012"
+Date "18 dec 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -402,8 +402,6 @@ Wire Wire Line
 	9600 3225 10050 3225
 Wire Wire Line
 	9600 3425 10050 3425
-Wire Wire Line
-	9600 3725 10050 3725
 $Sheet
 S 10050 1625 1050 2225
 U 50B2116F
@@ -426,13 +424,10 @@ F15 "SCL" I L 10050 3225 40
 F16 "SDA" I L 10050 3325 40 
 F17 "PC1_Pulse" I L 10050 3425 40 
 F18 "PC2_Pr2" I L 10050 3625 40 
-F19 "~PD6_SS2" I L 10050 3725 40 
 F20 "PD4_Flow_Rx" I L 10050 2725 40 
 F21 "PD2_Flow_Tx" O L 10050 2625 40 
 $EndSheet
 NoConn ~ 4750 7275
-Text Label 9600 3725 0    40   ~ 0
-~PD6_SS2
 Text Label 9600 3625 0    40   ~ 0
 PC2_Pr2
 Text Label 9600 3425 0    40   ~ 0
@@ -458,7 +453,7 @@ Pump
 Text Notes 4550 3850 0    40   ~ 0
 Pump
 Text Notes 4550 3750 0    40   ~ 0
-Slave Sel #2 Pr Sensor
+Blank
 Text Notes 4550 3650 0    40   ~ 0
 Valve
 Text Notes 4550 3550 0    40   ~ 0
@@ -602,10 +597,10 @@ MISO
 Text Label 9775 5700 0    40   ~ 0
 ~MOSI
 $Comp
-L PWR_FLAG #FLG1
+L PWR_FLAG #FLG01
 U 1 1 4FC9DB7D
 P 9050 925
-F 0 "#FLG1" H 9050 1195 30  0001 C CNN
+F 0 "#FLG01" H 9050 1195 30  0001 C CNN
 F 1 "PWR_FLAG" H 9050 1155 30  0000 C CNN
 	1    9050 925 
 	1    0    0    -1  
@@ -702,7 +697,7 @@ PB0_IO_R
 Text Label 8825 2125 0    40   ~ 0
 PD7_IO_X
 Text Label 8825 2225 0    40   ~ 0
-~PD6_SS2
+~PD6
 Text Label 8825 2325 0    40   ~ 0
 ~PD5_Valve
 Text Label 8825 2425 0    40   ~ 0
@@ -756,10 +751,10 @@ PB7
 Text Label 1925 2800 0    40   ~ 0
 PB6
 $Comp
-L GND #PWR1
+L GND #PWR02
 U 1 1 4F5AFC62
 P 2900 5100
-F 0 "#PWR1" H 2900 5100 30  0001 C CNN
+F 0 "#PWR02" H 2900 5100 30  0001 C CNN
 F 1 "GND" H 2900 5030 30  0001 C CNN
 	1    2900 5100
 	1    0    0    -1  
@@ -827,7 +822,7 @@ RESET
 Text Label 4125 3650 0    40   ~ 0
 ~PD5_Valve
 Text Label 4125 3750 0    40   ~ 0
-~PD6_SS2
+~PD6
 Text Label 4125 3450 0    40   ~ 0
 ~PD3_SQW
 Text Label 4125 4050 0    40   ~ 0
