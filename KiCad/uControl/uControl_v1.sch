@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/18/2012 11:33:09 AM
+EESchema Schematic File Version 2  date 12/19/2012 6:09:37 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 5
 Title "uControl"
-Date "18 dec 2012"
+Date "19 dec 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -424,8 +424,8 @@ F15 "SCL" I L 10050 3225 40
 F16 "SDA" I L 10050 3325 40 
 F17 "PC1_Pulse" I L 10050 3425 40 
 F18 "PC2_Pr2" I L 10050 3625 40 
-F20 "PD4_Flow_Rx" I L 10050 2725 40 
-F21 "PD2_Flow_Tx" O L 10050 2625 40 
+F19 "PD4_Flow_Rx" I L 10050 2725 40 
+F20 "PD2_Flow_Tx" O L 10050 2625 40 
 $EndSheet
 NoConn ~ 4750 7275
 Text Label 9600 3625 0    40   ~ 0
