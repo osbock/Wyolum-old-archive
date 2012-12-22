@@ -69,8 +69,8 @@ const uint8_t C3JR_TONE_MSG = 10;
 const uint8_t C3JR_FADETO_MSG = 11;
 
 const uint8_t C3JR_DBG_PIN = 1;
-
-const uint8_t C3JR_ADDR_PINS[] = {8, 3, 15, 2};
+//                                enter, inc, dec, mode
+const uint8_t C3JR_ADDR_PINS[] = {    8,   3,  15,    2};
 
 class C3JR_Slave{
  public:

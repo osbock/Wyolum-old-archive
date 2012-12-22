@@ -9,6 +9,8 @@ RED = 0b001
 GREEN = 0b010
 BLUE = 0b100
 
+C3_interface.connect()
+
 N_COL = 16
 ROWS = [
   0b00000000000000000000000000000111,

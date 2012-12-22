@@ -21,6 +21,9 @@ const char SET_BYTE = 'S';
 
 void setup(){
   // start comm protos
+  digitalWrite(A4, HIGH);
+  digitalWrite(A5, HIGH);
+
   Serial.begin(115200); // for debugging
   Serial.println("Begin rtcBOB test");
   Wire.begin();

@@ -41,5 +41,13 @@ void setup(){
 }
 void loop(){
   check_stack();
-  c3jr.c3.refresh(100);
+  if(c3jr.fade_steps > 0){
+    c3jr.c3.fadeto(c3jr.cols + N_COL, c3jr.fade_steps);
+    c3jr.fade_steps = 0;
+    for(uint8_t i=0; i < N_COL; i++){
+      c3jr.cols[i] = c3jr.cols[N_COL + i];
+    }
+    c3jr.c3.setdisplay(c3jr.cols);
+  }
+  c3jr.c3.refresh(16);
 }

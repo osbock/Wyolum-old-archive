@@ -98,6 +98,14 @@ void C3JR_Driver::fadeto(uint32_t *display, uint8_t steps){
   }
   send_msg(C3JR_FADETO_MSG, N_COL + 1, display8);
 }
+void C3JR_Driver::fadeto(uint8_t *display, uint8_t steps){
+  uint8_t display8[N_COL + 1];
+  display8[0] = steps;
+  for(uint8_t i = 0; i < N_COL; i++){
+    display8[i + 1] = display[i];
+  }
+  send_msg(C3JR_FADETO_MSG, N_COL + 1, display8);
+}
 void C3JR_Driver::send_msg(uint8_t msg_id, uint8_t msg_len, uint8_t *msg){
   Wire.beginTransmission(addr);
   Wire.write(msg_id);

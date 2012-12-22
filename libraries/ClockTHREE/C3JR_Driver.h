@@ -108,6 +108,9 @@ class C3JR_Driver{
   // fade to new display (to avoid abrupt changes)
   void fadeto(uint32_t *display, uint8_t steps);
 
+  // fade to new display (to avoid abrupt changes)
+  void fadeto(uint8_t *display, uint8_t steps);
+
   // helper routine
   void send_msg(uint8_t msg_id, uint8_t msg_len, uint8_t *msg); // helper function
 private:

@@ -109,6 +109,7 @@ for file in c_files:
     for key in next:
         # print '%s = %s' % (key, next[key])
         const[key] = next[key]
+const['BAUDRATE'] = 115200
 const = Struct(**const)
 def set_gmt_offset(offset):
     global gmt_offset
