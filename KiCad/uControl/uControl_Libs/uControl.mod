@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  12/22/2012 6:19:09 PM
+PCBNEW-LibModule-V1  Sunday 23 December 2012 01:57:08 PM IST
 # encoding utf-8
 $INDEX
 2SD1834
@@ -62,6 +62,7 @@ led_0805
 r_0805
 tssop-20
 vite_3mm
+Valve
 $EndINDEX
 $MODULE CP_5x11mm
 Po 0 0 0 15 4E158C28 00000000 ~~
@@ -93,7 +94,7 @@ Ne 0 ""
 Po 0 -500
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/cp_5x11mm.wrl"
+Na "uControl_Libs/3D Modules/cp_5x11mm.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -425,7 +426,7 @@ Ne 0 ""
 Po 3000 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_07.wrl"
+Na "uControl_Libs/3D Modules/conF_07.wrl"
 Sc 1.000000 1.000000 1.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -463,7 +464,7 @@ Ne 0 ""
 Po -400 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/c_tant_B.wrl"
+Na "uControl_Libs/3D Modules/c_tant_B.wrl"
 Sc 0.600000 0.600000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -506,7 +507,7 @@ Ne 1 "/aLaMode_v1_rtc/BAT"
 Po 5100 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/bateria_suporte.wrl"
+Na "uControl_Libs/3D Modules/bateria_suporte.wrl"
 Sc 1.800000 1.800000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -561,7 +562,7 @@ Ne 0 ""
 Po -750 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/do214aa.wrl"
+Na "uControl_Libs/3D Modules/do214aa.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -576,7 +577,7 @@ Op 0 0 0
 T0 0 -200 400 400 0 60 N I 21 N "DIP"
 T1 0 300 400 400 0 60 N I 21 N "VAL**"
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/soquete_28_300.wrl"
+Na "uControl_Libs/3D Modules/soquete_28_300.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -721,7 +722,7 @@ Ne 5 "/clock2-Aux/SCL"
 Po -1750 -1831
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/cms_so16.wrl"
+Na "uControl_Libs/3D Modules/cms_so16.wrl"
 Sc 0.500000 0.600000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -778,7 +779,7 @@ Ne 2 "/aLaMode_pwr/V_IN"
 Po -400 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/sod323.wrl"
+Na "uControl_Libs/3D Modules/sod323.wrl"
 Sc 1.200000 1.500000 0.800000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -816,7 +817,7 @@ Ne 0 ""
 Po -250 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/sod323.wrl"
+Na "uControl_Libs/3D Modules/sod323.wrl"
 Sc 0.800000 0.800000 0.800000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -865,7 +866,7 @@ Ne 0 ""
 Po -1200 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/r_0805.wrl"
+Na "uControl_Libs/3D Modules/r_0805.wrl"
 Sc 3.000000 2.000000 2.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1224,7 +1225,7 @@ Ne 1 "GND"
 Po -400 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/cree_clm3c.wrl"
+Na "uControl_Libs/3D Modules/cree_clm3c.wrl"
 Sc 0.750000 0.750000 0.750000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1262,7 +1263,7 @@ Ne 0 ""
 Po -375 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/r_0805.wrl"
+Na "uControl_Libs/3D Modules/r_0805.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1336,7 +1337,7 @@ Ne 0 ""
 Po 3000 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_07.wrl"
+Na "uControl_Libs/3D Modules/conF_07.wrl"
 Sc 1.000000 1.000000 1.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1422,7 +1423,7 @@ Ne 5 "GND"
 Po 750 950
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/cms_so8.wrl"
+Na "uControl_Libs/3D Modules/cms_so8.wrl"
 Sc 0.500000 0.350000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1470,7 +1471,7 @@ Ne 0 ""
 Po 375 475
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/SOT23_3.wrl"
+Na "uControl_Libs/3D Modules/SOT23_3.wrl"
 Sc 0.400000 0.400000 0.400000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 180.000000
@@ -1642,7 +1643,7 @@ Ne 0 ""
 Po 2250 1900
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/cms_so20.wrl"
+Na "uControl_Libs/3D Modules/cms_so20.wrl"
 Sc 0.500000 0.600000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1782,7 +1783,7 @@ Ne 0 ""
 Po -1500 -1050
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/cms_so14.wrl"
+Na "uControl_Libs/3D Modules/cms_so14.wrl"
 Sc 0.500000 0.350000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1852,7 +1853,7 @@ Po -375 -525
 .LocalClearance 50
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/SOT23_5.wrl"
+Na "uControl_Libs/3D Modules/SOT23_5.wrl"
 Sc 0.110000 0.110000 0.110000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1906,7 +1907,7 @@ Ne 0 ""
 Po -900 1250
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/SOT223.wrl"
+Na "uControl_Libs/3D Modules/SOT223.wrl"
 Sc 0.400000 0.400000 0.400000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -1966,7 +1967,7 @@ Ne 0 ""
 Po -1025 -350
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pcb_push.wrl"
+Na "uControl_Libs/3D Modules/pcb_push.wrl"
 Sc 1.000000 0.400000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2154,7 +2155,7 @@ Po -1152 -1102
 .LocalClearance 40
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/tssop-20.wrl"
+Na "uControl_Libs/3D Modules/tssop-20.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2178,7 +2179,7 @@ Ne 0 ""
 Po 0 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/vite_2mm5.wrl"
+Na "uControl_Libs/3D Modules/vite_2mm5.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2242,7 +2243,7 @@ Ne 0 ""
 Po 450 375
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/r_0805.wrl"
+Na "uControl_Libs/3D Modules/r_0805.wrl"
 Sc 1.500000 1.800000 1.000000
 Of 0.000000 0.000000 0.005000
 Ro 0.000000 0.000000 0.000000
@@ -2367,7 +2368,7 @@ Ne 2 "/1pps"
 Po 2500 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pins_array_6x1.wrl"
+Na "uControl_Libs/3D Modules/pins_array_6x1.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2411,7 +2412,7 @@ Ne 2 "GND"
 Po -25 -900
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/c_elec_5x5_3.wrl"
+Na "uControl_Libs/3D Modules/c_elec_5x5_3.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 90.000000
@@ -2496,7 +2497,7 @@ Ne 2 "/RPi/U6_OE"
 Po 0 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pin_strip_3.wrl"
+Na "uControl_Libs/3D Modules/pin_strip_3.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2627,7 +2628,7 @@ Ne 6 "/aLaMode_v1_rtc/5V0"
 Po 3500 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pin_strip_8.wrl"
+Na "uControl_Libs/3D Modules/pin_strip_8.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2736,7 +2737,7 @@ Ne 6 "GND"
 Po 1000 -500
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pin_strip_3x2.wrl"
+Na "uControl_Libs/3D Modules/pin_strip_3x2.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -2823,13 +2824,13 @@ Po 3500 0
 .LocalClearance 70
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_08.wrl"
+Na "uControl_Libs/3D Modules/conF_08.wrl"
 Sc 1.000000 1.000000 1.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pin_strip_8.wrl"
+Na "uControl_Libs/3D Modules/pin_strip_8.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 -0.050000
 Ro 0.000000 180.000000 0.000000
@@ -2950,7 +2951,7 @@ Po -1050 1300
 .LocalClearance 80
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/usb_B_micro_smd.wrl"
+Na "uControl_Libs/3D Modules/usb_B_micro_smd.wrl"
 Sc 1.000000 1.000000 1.000000
 Of -0.100000 0.000000 0.000000
 Ro 0.000000 0.000000 90.000000
@@ -3062,7 +3063,7 @@ Ne 6 "GND"
 Po 1000 -500
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pin_strip_3x2.wrl"
+Na "uControl_Libs/3D Modules/pin_strip_3x2.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -3198,7 +3199,7 @@ Ne 0 ""
 Po 4300 -2125
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/sd_socket.wrl"
+Na "uControl_Libs/3D Modules/sd_socket.wrl"
 Sc 0.500000 0.500000 0.500000
 Of 0.300000 0.080000 0.000000
 Ro 0.000000 0.000000 -90.000000
@@ -3243,7 +3244,7 @@ Ne 1 "/aLaMode_pwr/5V0"
 Po -750 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/r_0805.wrl"
+Na "uControl_Libs/3D Modules/r_0805.wrl"
 Sc 2.000000 1.500000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -3287,7 +3288,7 @@ Ne 2 "GND"
 Po -275 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/sod323.wrl"
+Na "uControl_Libs/3D Modules/sod323.wrl"
 Sc 1.750000 1.750000 1.750000
 Of 0.050000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -69954,7 +69955,7 @@ Ne 2 "GND"
 Po 1250 2000
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/POWER_21.wrl"
+Na "uControl_Libs/3D Modules/POWER_21.wrl"
 Sc 0.800000 0.800000 0.800000
 Of 0.000000 0.000000 0.150000
 Ro 0.000000 0.000000 0.000000
@@ -70157,25 +70158,25 @@ Ne 0 ""
 Po 6000 -500
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_13.wrl"
+Na "uControl_Libs/3D Modules/conF_13.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.050000 -0.550000
 Ro 180.000000 0.000000 0.000000
 $EndSHAPE3D
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_13.wrl"
+Na "uControl_Libs/3D Modules/conF_13.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 -0.050000 -0.550000
 Ro 180.000000 0.000000 0.000000
 $EndSHAPE3D
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_13_long.wrl"
+Na "uControl_Libs/3D Modules/conF_13_long.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.050000 -0.025000
 Ro 180.000000 0.000000 0.000000
 $EndSHAPE3D
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_13_long.wrl"
+Na "uControl_Libs/3D Modules/conF_13_long.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 -0.050000 -0.025000
 Ro 180.000000 0.000000 0.000000
@@ -70236,7 +70237,7 @@ Ne 3 "/aLaMode_pwr/5V0"
 Po 1000 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pin_strip_3.wrl"
+Na "uControl_Libs/3D Modules/pin_strip_3.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -70334,7 +70335,7 @@ Ne 1 "GND"
 Po 2500 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs\\3D Modules\\conF_06.wrl"
+Na "uControl_Libs/3D Modules/conF_06.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -70381,7 +70382,7 @@ Ne 2 "/AREF"
 Po 500 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs\\3D Modules\\pin_strip_2.wrl"
+Na "uControl_Libs/3D Modules/pin_strip_2.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -70448,7 +70449,7 @@ Ne 0 ""
 Po -500 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pin_strip_3.wrl"
+Na "uControl_Libs/3D Modules/pin_strip_3.wrl"
 Sc 0.500000 0.500000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -70467,13 +70468,13 @@ DS 0 0 -200 0 50 21
 DS 0 0 0 200 50 21
 DS 0 0 0 -200 50 21
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/i2gps_PCB_Material_3D.wrl"
+Na "uControl_Libs/3D Modules/i2gps_PCB_Material_3D.wrl"
 Sc 8.600000 5.450000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/R_pi.wrl"
+Na "uControl_Libs/3D Modules/R_pi.wrl"
 Sc 0.990000 1.000000 0.950000
 Of -0.465000 0.000000 -1.300000
 Ro -90.000000 0.000000 0.000000
@@ -70595,7 +70596,7 @@ Ne 4 "/~RTS"
 Po 2500 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pins_array_6x1.wrl"
+Na "uControl_Libs/3D Modules/pins_array_6x1.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -70905,25 +70906,25 @@ Ne 18 "/RPi/SCL"
 Po 7400 -20000
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_08.wrl"
+Na "uControl_Libs/3D Modules/conF_08.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 1.450000 0.100000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_06.wrl"
+Na "uControl_Libs/3D Modules/conF_06.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 2.250000 0.100000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_08.wrl"
+Na "uControl_Libs/3D Modules/conF_08.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 2.150000 2.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_10.wrl"
+Na "uControl_Libs/3D Modules/conF_10.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 1.200000 2.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -71151,7 +71152,7 @@ Ne 19 "/RPi/SCL"
 Po -6500 -1500
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/dil_28-300.wrl"
+Na "uControl_Libs/3D Modules/dil_28-300.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.100000
 Ro 0.000000 0.000000 0.000000
@@ -71292,7 +71293,7 @@ Po 0 -1060
 .LocalClearance 30
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/tssop-20.wrl"
+Na "uControl_Libs/3D Modules/tssop-20.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -71349,7 +71350,7 @@ Ne 0 ""
 Po -600 1250
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/SOT223.wrl"
+Na "uControl_Libs/3D Modules/SOT223.wrl"
 Sc 0.400000 0.400000 0.400000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -71443,7 +71444,7 @@ Po -390 -670
 .LocalClearance 30
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/tssop-20.wrl"
+Na "uControl_Libs/3D Modules/tssop-20.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -71584,7 +71585,7 @@ Po 0 -1060
 .LocalClearance 30
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/tssop-20.wrl"
+Na "uControl_Libs/3D Modules/tssop-20.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -71772,7 +71773,7 @@ Po -1152 -1102
 .LocalClearance 40
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/tssop-20.wrl"
+Na "uControl_Libs/3D Modules/tssop-20.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -71967,101 +71968,6 @@ Po 0 0
 .LocalClearance 50
 $EndPAD
 $EndMODULE  STS21
-$MODULE Pump
-Po 0 0 0 15 50D48082 00000000 ~~
-Li Pump
-Sc 00000000
-AR Pump
-Op 0 0 0
-T0 2250 0 400 400 0 50 N V 21 N "Pump"
-T1 0 0 400 400 0 50 N V 21 N "VAL**"
-DS -5310 -6100 -5310 6100 50 21
-DS -5310 -6100 15950 -6100 50 21
-DS 15950 -6100 15950 6100 50 21
-DS 15950 6100 -5310 6100 50 21
-DA -2350 -2250 -1470 -2250 900 50 21
-DA -2350 -2250 -2350 -3130 900 50 21
-DA -2350 2250 -1470 2250 900 50 21
-DA -2350 2250 -2350 1370 900 50 21
-DS -2350 -3130 -3400 -3130 50 21
-DS -2350 -1370 -3400 -1370 50 21
-DS -2350 3130 -3400 3130 50 21
-DS -3400 1370 -2350 1370 50 21
-DS -3400 -4000 11450 -4000 50 21
-DS 11450 -4000 11450 4000 50 21
-DS 11450 4000 -3400 4000 50 21
-DS -3400 4000 -3400 -4000 50 21
-$PAD
-Sh "1" C 1500 1500 0 0 0
-Dr 800 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 -1380
-$EndPAD
-$PAD
-Sh "2" C 1500 1500 0 0 0
-Dr 800 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 1380
-$EndPAD
-$PAD
-Sh "3" C 1500 1500 0 0 0
-Dr 800 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 7500 1380
-$EndPAD
-$PAD
-Sh "4" C 1500 1500 0 0 0
-Dr 800 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 7500 -1380
-$EndPAD
-$PAD
-Sh "5" C 1500 1500 0 0 0
-Dr 1200 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po -2350 -2250
-$EndPAD
-$PAD
-Sh "6" C 1500 1500 0 0 0
-Dr 1200 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po -2350 2250
-$EndPAD
-$PAD
-Sh "1" C 1500 1500 0 0 0
-Dr 1200 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 -2660
-$EndPAD
-$PAD
-Sh "2" C 1500 1500 0 0 0
-Dr 1200 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 2660
-$EndPAD
-$PAD
-Sh "3" C 1500 1500 0 0 0
-Dr 1200 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 10630 2660
-$EndPAD
-$PAD
-Sh "4" C 1500 1500 0 0 0
-Dr 1200 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 10630 -2660
-$EndPAD
-$EndMODULE  Pump
 $MODULE HDIB002AUY8H5
 Po 0 0 0 15 50D5A0C5 00000000 ~~
 Li HDIB002AUY8H5
@@ -72272,7 +72178,7 @@ $MODULE Conn_Flow
 Po 0 0 0 15 50D5AC33 00000000 ~~
 Li Conn_Flow
 Sc 00000000
-AR 
+AR
 Op 0 0 0
 T0 0 -1240 400 400 0 50 N V 21 N "Conn_Flow"
 T1 0 1360 400 400 0 50 N V 21 N "VAL**"
@@ -72337,4 +72243,167 @@ Ne 0 ""
 Po 5530 0
 $EndPAD
 $EndMODULE  Conn_Flow
+$MODULE Valve
+Po 0 0 0 15 50D6001A 00000000 ~~
+Li Valve
+Sc 00000000
+AR
+Op 0 0 0
+T0 3180 0 400 400 0 50 N V 21 N "Valve"
+T1 810 0 400 400 0 50 N V 21 N "VAL**"
+DS -430 0 -430 1580 50 21
+DS -430 -1580 -430 0 50 21
+DS 400 -1580 -430 -1580 50 21
+DS 400 1580 -430 1580 50 21
+DS 2260 1580 6820 1580 50 21
+DS 6820 -1590 2260 -1580 50 21
+DS 9060 1580 9060 -1580 50 21
+DS 8680 1580 9060 1580 50 21
+DS 8680 -1580 9060 -1580 50 21
+DA 7750 -1580 8680 -1580 900 50 21
+DA 7750 1580 7750 650 900 50 21
+DA 7750 1580 6820 1580 900 50 21
+DA 7750 -1580 7740 -650 900 50 21
+DA 1330 1580 1330 650 900 50 21
+DA 1330 1580 400 1580 900 50 21
+DA 1330 -1580 2260 -1580 900 50 21
+DA 1330 -1580 1330 -650 900 50 21
+$PAD
+Sh "1" C 600 600 0 0 0
+Dr 360 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 -790
+$EndPAD
+$PAD
+Sh "2" C 600 600 0 0 0
+Dr 360 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 790
+$EndPAD
+$PAD
+Sh "3" C 1000 1000 0 0 0
+Dr 380 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 7750 -1400
+$EndPAD
+$PAD
+Sh "4" C 1000 1000 0 0 0
+Dr 380 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 7750 1400
+$EndPAD
+$PAD
+Sh "6" C 1600 1600 0 0 0
+Dr 1200 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 1330 1580
+$EndPAD
+$PAD
+Sh "5" C 1600 1600 0 0 0
+Dr 1200 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 1330 -1580
+$EndPAD
+$EndMODULE  Valve
+$MODULE Pump
+Po 0 0 0 15 50D6C053 00000000 ~~
+Li Pump
+Sc 00000000
+AR Pump
+Op 0 0 0
+T0 2250 0 400 400 0 50 N V 21 N "Pump"
+T1 0 0 400 400 0 50 N V 21 N "VAL**"
+DS -5310 -6100 -5310 6100 50 21
+DS -5310 -6100 15950 -6100 50 21
+DS 15950 -6100 15950 6100 50 21
+DS 15950 6100 -5310 6100 50 21
+DA -2350 -2250 -1470 -2250 900 50 21
+DA -2350 -2250 -2350 -3130 900 50 21
+DA -2350 2250 -1470 2250 900 50 21
+DA -2350 2250 -2350 1370 900 50 21
+DS -2350 -3130 -3400 -3130 50 21
+DS -2350 -1370 -3400 -1370 50 21
+DS -2350 3130 -3400 3130 50 21
+DS -3400 1370 -2350 1370 50 21
+DS -3400 -4000 11450 -4000 50 21
+DS 11450 -4000 11450 4000 50 21
+DS 11450 4000 -3400 4000 50 21
+DS -3400 4000 -3400 -4000 50 21
+$PAD
+Sh "1" C 1500 1500 0 0 0
+Dr 800 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 -1380
+$EndPAD
+$PAD
+Sh "2" C 1500 1500 0 0 0
+Dr 800 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 1380
+$EndPAD
+$PAD
+Sh "3" C 1500 1500 0 0 0
+Dr 800 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 7500 1380
+$EndPAD
+$PAD
+Sh "4" C 1500 1500 0 0 0
+Dr 800 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 7500 -1380
+$EndPAD
+$PAD
+Sh "9" C 1500 1500 0 0 0
+Dr 1200 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -2350 -2250
+$EndPAD
+$PAD
+Sh "10" C 1500 1500 0 0 0
+Dr 1200 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -2350 2250
+$EndPAD
+$PAD
+Sh "5" C 1500 1500 0 0 0
+Dr 1200 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 -2660
+$EndPAD
+$PAD
+Sh "6" C 1500 1500 0 0 0
+Dr 1200 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 2660
+$EndPAD
+$PAD
+Sh "7" C 1500 1500 0 0 0
+Dr 1200 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 10630 2660
+$EndPAD
+$PAD
+Sh "8" C 1500 1500 0 0 0
+Dr 1200 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 10630 -2660
+$EndPAD
+$EndMODULE  Pump
 $EndLIBRARY
