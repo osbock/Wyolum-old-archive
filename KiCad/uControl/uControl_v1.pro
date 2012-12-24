@@ -1,5 +1,5 @@
-update=Sunday 23 December 2012 08:07:43 PM IST
-last_client=kicad
+update=12/24/2012 3:02:22 PM
+last_client=pcbnew
 [cvpcb]
 version=1
 NetIExt=net
@@ -40,11 +40,13 @@ LabSize=40
 LibName1=uControl_Libs/uControl
 LibName2=uControl_Libs/Conn-raspberry
 LibName3=uControl_Libs/power
+[general]
+version=1
 [pcbnew]
 version=1
-PadDrlX=0
-PadDimH=240
-PadDimV=1200
+PadDrlX=400
+PadDimH=600
+PadDimV=600
 BoardThickness=630
 TxtPcbV=800
 TxtPcbH=600
@@ -56,9 +58,7 @@ DrawLar=150
 EdgeLar=150
 TxtLar=120
 MSegLar=50
-LastNetListRead=aLaMode_v2.net
+LastNetListRead=
 [pcbnew/libraries]
-LibDir=
+LibDir=../../../../../Downloads/KiCad/Libraries
 LibName1=uControl_Libs/uControl
-[general]
-version=1

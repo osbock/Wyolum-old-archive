@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 23 December 2012 03:41:47 PM IST
+EESchema Schematic File Version 2  date 12/24/2012 6:15:08 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 5
 Title "uControl"
-Date "23 dec 2012"
+Date "24 dec 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -29,9 +29,7 @@ Wire Wire Line
 Wire Wire Line
 	8000 3750 8000 1675
 Wire Wire Line
-	8000 1675 7150 1675
-Wire Wire Line
-	7150 1675 4375 1675
+	8000 1675 4375 1675
 Wire Wire Line
 	6450 2600 7500 2600
 Wire Wire Line
@@ -46,9 +44,7 @@ Wire Wire Line
 Wire Wire Line
 	4175 3100 4175 2975
 Wire Wire Line
-	3950 2550 3950 2425
-Wire Wire Line
-	3950 2425 3950 1900
+	3950 2550 3950 1900
 Wire Wire Line
 	3950 1900 5300 1900
 Connection ~ 6575 3150
@@ -63,15 +59,7 @@ Wire Wire Line
 Wire Wire Line
 	5750 3750 5750 3650
 Wire Wire Line
-	6575 2850 6575 2950
-Wire Wire Line
-	6575 2950 6575 3050
-Wire Wire Line
-	6575 3050 6575 3150
-Wire Wire Line
-	6575 3150 6575 3250
-Wire Wire Line
-	6575 3250 6575 3750
+	6575 2850 6575 3750
 Wire Wire Line
 	6575 2850 6450 2850
 Wire Wire Line
@@ -89,19 +77,9 @@ Connection ~ 6575 3250
 Wire Wire Line
 	4650 2450 4375 2450
 Wire Wire Line
-	3950 3000 3950 3100
+	3950 3000 3950 3750
 Wire Wire Line
-	3950 3100 3950 3750
-Wire Wire Line
-	3950 3750 4375 3750
-Wire Wire Line
-	4375 3750 5750 3750
-Wire Wire Line
-	5750 3750 5850 3750
-Wire Wire Line
-	5850 3750 5950 3750
-Wire Wire Line
-	5950 3750 6575 3750
+	3950 3750 6575 3750
 Connection ~ 4375 3750
 Wire Wire Line
 	4175 2575 4175 2425
@@ -117,21 +95,15 @@ Wire Wire Line
 Wire Wire Line
 	4550 3875 9050 3875
 Wire Wire Line
-	6450 2450 7150 2450
-Wire Wire Line
-	7150 2450 7500 2450
+	6450 2450 7500 2450
 Wire Wire Line
 	7500 2750 6450 2750
 Wire Wire Line
-	4375 2600 4375 3750
-Wire Wire Line
-	4375 3750 4375 4125
+	4375 2600 4375 4125
 Wire Wire Line
 	4375 4125 9050 4125
 Wire Wire Line
-	5300 2000 5300 1900
-Wire Wire Line
-	5300 1900 5300 1850
+	5300 2000 5300 1850
 Connection ~ 5300 1900
 Wire Wire Line
 	7150 2250 7150 2450
@@ -160,17 +132,17 @@ $Comp
 L R R11
 U 1 1 4ECB8D22
 P 7150 2000
-F 0 "R11" V 7230 2000 50  0000 C CNN
+F 0 "R11" H 7225 2150 50  0000 C CNN
 F 1 "10k" V 7150 2000 50  0000 C CNN
 F 2 "r_0805" H 7150 2000 60  0001 C CNN
 	1    7150 2000
 	1    0    0    -1  
 $EndComp
 $Comp
-L +BATT #PWR16
+L +BATT #PWR021
 U 1 1 4EC101F0
 P 5300 1850
-F 0 "#PWR16" H 5300 1800 20  0001 C CNN
+F 0 "#PWR021" H 5300 1800 20  0001 C CNN
 F 1 "+BATT" H 5300 1950 30  0000 C CNN
 	1    5300 1850
 	1    0    0    -1  
@@ -231,8 +203,8 @@ $Comp
 L C C23
 U 1 1 4E1FEA7E
 P 4175 2775
-F 0 "C23" V 4225 2875 50  0000 L CNN
-F 1 "100n" V 4225 2575 50  0000 L CNN
+F 0 "C23" H 4175 2850 50  0000 L CNN
+F 1 "100n" V 4225 2525 50  0000 L CNN
 F 2 "c_0805" H 4175 2775 60  0001 C CNN
 	1    4175 2775
 	1    0    0    -1  
