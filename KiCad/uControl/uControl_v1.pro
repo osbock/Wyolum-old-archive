@@ -1,5 +1,5 @@
-update=12/24/2012 3:02:22 PM
-last_client=pcbnew
+update=Monday 24 December 2012 10:32:16 PM IST
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
@@ -40,8 +40,6 @@ LabSize=40
 LibName1=uControl_Libs/uControl
 LibName2=uControl_Libs/Conn-raspberry
 LibName3=uControl_Libs/power
-[general]
-version=1
 [pcbnew]
 version=1
 PadDrlX=400
@@ -62,3 +60,5 @@ LastNetListRead=
 [pcbnew/libraries]
 LibDir=../../../../../Downloads/KiCad/Libraries
 LibName1=uControl_Libs/uControl
+[general]
+version=1
