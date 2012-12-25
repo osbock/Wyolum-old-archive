@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday 24 December 2012 10:32:09 PM IST
+EESchema Schematic File Version 2  date 12/25/2012 5:14:27 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 3 5
 Title "uControl"
-Date "24 dec 2012"
+Date "25 dec 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -386,7 +386,7 @@ U 1 1 4FC61A0B
 P 3850 4125
 F 0 "C18" H 3700 4200 50  0000 L CNN
 F 1 "2u2 Tant" H 3500 4025 50  0000 L CNN
-F 2 "c_0805" H 3850 4125 60  0001 C CNN
+F 2 "c_0805_pol" H 3850 4125 60  0001 C CNN
 	1    3850 4125
 	-1   0    0    -1  
 $EndComp
@@ -405,7 +405,7 @@ U 1 1 4FC61A07
 P 6050 4950
 F 0 "C22" H 6100 5050 50  0000 L CNN
 F 1 "2u2" H 6100 4850 50  0000 L CNN
-F 2 "c_0805" H 6050 4950 60  0001 C CNN
+F 2 "c_0805_pol" H 6050 4950 60  0001 C CNN
 	1    6050 4950
 	-1   0    0    -1  
 $EndComp
