@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 12/25/2012 5:14:18 PM
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 12/26/2012 5:33:00 PM
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -288,6 +288,13 @@ IdModule  = OSHW_6mm;
 EndCmp
 
 BeginCmp
+TimeStamp = /50B2116F/50DACF5C;
+Reference = M1;
+ValeurCmp = MANIFOLD;
+IdModule  = Manifold;
+EndCmp
+
+BeginCmp
 TimeStamp = /4FE6E6EC;
 Reference = P1;
 ValeurCmp = AREF;
@@ -498,6 +505,41 @@ IdModule  = PCB;
 EndCmp
 
 BeginCmp
+TimeStamp = /50B2116F/50DAE394;
+Reference = PCB2;
+ValeurCmp = PCB_Pump;
+IdModule  = PCB_Pump;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/50DAE38C;
+Reference = PCB3;
+ValeurCmp = PCB_Flow;
+IdModule  = PCB_Flow;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/50DAE3A1;
+Reference = PCB4;
+ValeurCmp = PCB_Temp;
+IdModule  = PCB_Temp;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/50DAE3A7;
+Reference = PCB5;
+ValeurCmp = PCB_Vlv;
+IdModule  = PCB_Vlv;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/50DAE3BE;
+Reference = PCB6;
+ValeurCmp = PCB_MFold;
+IdModule  = PCB_Mfold;
+EndCmp
+
+BeginCmp
 TimeStamp = /50B2116F/50B4B01E;
 Reference = Q1;
 ValeurCmp = 2SD1834T100;
@@ -668,6 +710,62 @@ EndCmp
 BeginCmp
 TimeStamp = /50B2116F/50D99156;
 Reference = SC12;
+ValeurCmp = SCREW;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/50DAD9E5;
+Reference = SC13;
+ValeurCmp = SCREW;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/50DAD9E6;
+Reference = SC14;
+ValeurCmp = SCREW;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/50DAD9E7;
+Reference = SC15;
+ValeurCmp = SCREW;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/50DAD9E8;
+Reference = SC16;
+ValeurCmp = SCREW;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /50DADA2B;
+Reference = SC17;
+ValeurCmp = SCREW;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /50DADA2A;
+Reference = SC18;
+ValeurCmp = SCREW;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /50DADA29;
+Reference = SC19;
+ValeurCmp = SCREW;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /50DADA28;
+Reference = SC20;
 ValeurCmp = SCREW;
 IdModule  = vite_3mm;
 EndCmp
