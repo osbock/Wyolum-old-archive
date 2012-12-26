@@ -72242,7 +72242,7 @@ Ne 2 "GND"
 Po 1250 2000
 $EndPAD
 $SHAPE3D
-Na "uControl_Libs\\3D Modules\\POWER_21.wrl"
+Na "uControl_Libs/3D Modules/POWER_21.wrl"
 Sc 0.800000 0.800000 0.800000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -72531,7 +72531,7 @@ Ne 0 ""
 Po 22500 -2000
 $EndPAD
 $SHAPE3D
-Na "uControl_Libs\\3D Modules\\uControl_Manifold.wrl"
+Na "uControl_Libs/3D Modules/uControl_Manifold.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -72557,7 +72557,7 @@ Of 0.000000 0.000000 0.000000
 Ro -90.000000 0.000000 0.000000
 $EndSHAPE3D
 $SHAPE3D
-Na "uControl_Libs\\3D Modules\\PCB_Main.wrl"
+Na "uControl_Libs/3D Modules/PCB_Main.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -72576,7 +72576,7 @@ DS 0 0 -200 0 50 21
 DS 0 0 0 200 50 21
 DS 0 0 0 -200 50 21
 $SHAPE3D
-Na "uControl_Libs\\3D Modules\\PCB_Flow.wrl"
+Na "uControl_Libs/3D Modules/PCB_Flow.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -72595,7 +72595,7 @@ DS 0 0 -200 0 50 21
 DS 0 0 0 200 50 21
 DS 0 0 0 -200 50 21
 $SHAPE3D
-Na "uControl_Libs\\3D Modules\\PCB_Pump.wrl"
+Na "uControl_Libs/3D Modules/PCB_Pump.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -72615,7 +72615,7 @@ DS 0 0 -200 0 50 21
 DS 0 0 0 200 50 21
 DS 0 0 0 -200 50 21
 $SHAPE3D
-Na "uControl_Libs\\3D Modules\\PCB_Vlv.wrl"
+Na "uControl_Libs/3D Modules/PCB_Vlv.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -72634,7 +72634,7 @@ DS 0 0 -200 0 50 21
 DS 0 0 0 200 50 21
 DS 0 0 0 -200 50 21
 $SHAPE3D
-Na "uControl_Libs\\3D Modules\\PCB_Temp.wrl"
+Na "uControl_Libs/3D Modules/PCB_Temp.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -72653,7 +72653,7 @@ DS 0 0 -200 0 50 21
 DS 0 0 0 200 50 21
 DS 0 0 0 -200 50 21
 $SHAPE3D
-Na "uControl_Libs\\3D Modules\\PCB_Mfold.wrl"
+Na "uControl_Libs/3D Modules/PCB_Mfold.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -72888,7 +72888,7 @@ Ne 19 "/RPi/SCL"
 Po -6500 -1500
 $EndPAD
 $SHAPE3D
-Na "uControl_Libs\\3D Modules\\dil_28-300_socket.wrl"
+Na "uControl_Libs/3D Modules/dil_28-300_socket.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
