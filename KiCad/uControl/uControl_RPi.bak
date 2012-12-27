@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/26/2012 5:33:10 PM
+EESchema Schematic File Version 2  date 12/27/2012 6:53:42 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 5 5
 Title "uControl"
-Date "26 dec 2012"
+Date "27 dec 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -18,10 +18,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L PWR_FLAG #FLG6
+L PWR_FLAG #FLG022
 U 1 1 50B63C94
 P 5850 1025
-F 0 "#FLG6" H 5850 1295 30  0001 C CNN
+F 0 "#FLG022" H 5850 1295 30  0001 C CNN
 F 1 "PWR_FLAG" H 5850 1255 30  0000 C CNN
 	1    5850 1025
 	1    0    0    -1  
@@ -197,24 +197,13 @@ F 2 "r_0805" H 5625 1625 60  0001 C CNN
 	1    5625 1625
 	1    0    0    -1  
 $EndComp
-NoConn ~ 10350 4600
-$Comp
-L CONN_8 P29
-U 1 1 4FD8C311
-P 10700 4950
-F 0 "P29" H 10650 5400 60  0000 C CNN
-F 1 "LAN_JTAG" V 10750 4950 60  0000 C CNN
-F 2 "Header_GPU_JTAG" H 10700 4950 60  0001 C CNN
-	1    10700 4950
-	1    0    0    -1  
-$EndComp
 Text Label 4150 2175 0    40   ~ 0
 Rpi_3V3
 $Comp
-L GND #PWR19
+L GND #PWR023
 U 1 1 4FD8C28A
 P 5850 2050
-F 0 "#PWR19" H 5850 2050 30  0001 C CNN
+F 0 "#PWR023" H 5850 2050 30  0001 C CNN
 F 1 "GND" H 5850 1980 30  0001 C CNN
 	1    5850 2050
 	1    0    0    -1  
@@ -232,19 +221,19 @@ $EndComp
 Text Label 5900 4100 0    40   ~ 0
 Rpi_3V3
 $Comp
-L GND #PWR17
+L GND #PWR024
 U 1 1 4FD62C0F
 P 2125 2175
-F 0 "#PWR17" H 2125 2175 30  0001 C CNN
+F 0 "#PWR024" H 2125 2175 30  0001 C CNN
 F 1 "GND" H 2125 2105 30  0001 C CNN
 	1    2125 2175
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR18
+L GND #PWR025
 U 1 1 4FD62BFD
 P 2125 3600
-F 0 "#PWR18" H 2125 3600 30  0001 C CNN
+F 0 "#PWR025" H 2125 3600 30  0001 C CNN
 F 1 "GND" H 2125 3530 30  0001 C CNN
 	1    2125 3600
 	1    0    0    -1  
@@ -372,29 +361,4 @@ NoConn ~ 7900 5000
 NoConn ~ 6600 5300
 NoConn ~ 6600 4900
 NoConn ~ 6600 4500
-NoConn ~ 10350 5300
-NoConn ~ 10350 5200
-NoConn ~ 10350 5100
-NoConn ~ 10350 5000
-NoConn ~ 10350 4900
-NoConn ~ 10350 4800
-NoConn ~ 10350 4700
-NoConn ~ 9500 5300
-NoConn ~ 9500 5200
-NoConn ~ 9500 5100
-NoConn ~ 9500 5000
-NoConn ~ 9500 4900
-NoConn ~ 9500 4800
-NoConn ~ 9500 4700
-NoConn ~ 9500 4600
-$Comp
-L CONN_8 P28
-U 1 1 4FBF744D
-P 9850 4950
-F 0 "P28" H 9800 5400 60  0000 C CNN
-F 1 "GPU_JTAG" V 9900 4950 60  0000 C CNN
-F 2 "Header_GPU_JTAG" H 9850 4950 60  0001 C CNN
-	1    9850 4950
-	1    0    0    -1  
-$EndComp
 $EndSCHEMATC

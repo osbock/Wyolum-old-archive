@@ -1,4 +1,4 @@
-update=12/26/2012 6:05:05 PM
+update=12/27/2012 6:53:53 PM
 last_client=kicad
 [cvpcb]
 version=1
@@ -46,19 +46,20 @@ PadDrlX=400
 PadDimH=600
 PadDimV=600
 BoardThickness=630
-TxtPcbV=800
-TxtPcbH=600
+TxtPcbV=400
+TxtPcbH=400
 TxtModV=400
 TxtModH=400
 TxtModW=50
 VEgarde=100
-DrawLar=150
-EdgeLar=150
-TxtLar=120
+DrawLar=50
+EdgeLar=50
+TxtLar=50
 MSegLar=50
-LastNetListRead=
+LastNetListRead=uControl_v1.net
 [pcbnew/libraries]
 LibDir=../../../../../Downloads/KiCad/Libraries
 LibName1=uControl_Libs/uControl
+LibName2=C:/Users/Anool/Documents/Arduino/clockthree/KiCad/C3Jr_v2/C3Jr_v2_libs/C3Jr_v2_parts
 [general]
 version=1
