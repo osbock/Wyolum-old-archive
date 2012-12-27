@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 12/27/2012 3:01:04 PM
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Thursday 27 December 2012 10:04:21 PM IST
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -25,7 +25,7 @@ BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEA78;
 Reference = BT1;
 ValeurCmp = BATT_RTC;
-IdModule  = CR1632_2;
+IdModule  = CR2032;
 EndCmp
 
 BeginCmp
@@ -477,20 +477,6 @@ IdModule  = Header_GPIO;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FBF6CBF/4FBF744D;
-Reference = P28;
-ValeurCmp = GPU_JTAG;
-IdModule  = Header_GPU_JTAG;
-EndCmp
-
-BeginCmp
-TimeStamp = /4FBF6CBF/4FD8C311;
-Reference = P29;
-ValeurCmp = LAN_JTAG;
-IdModule  = Header_GPU_JTAG;
-EndCmp
-
-BeginCmp
 TimeStamp = /4FC07407/4FC07436;
 Reference = PCB1;
 ValeurCmp = PCB;
@@ -509,13 +495,6 @@ TimeStamp = /50B2116F/50DAE38C;
 Reference = PCB3;
 ValeurCmp = PCB_Flow;
 IdModule  = PCB_Flow;
-EndCmp
-
-BeginCmp
-TimeStamp = /50B2116F/50DAE3A1;
-Reference = PCB4;
-ValeurCmp = PCB_Temp;
-IdModule  = PCB_Temp;
 EndCmp
 
 BeginCmp
@@ -759,6 +738,34 @@ EndCmp
 BeginCmp
 TimeStamp = /50DADA28;
 Reference = SC20;
+ValeurCmp = SCREW;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/50DC1602;
+Reference = SC21;
+ValeurCmp = SCREW;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/50DC1601;
+Reference = SC22;
+ValeurCmp = SCREW;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/50DC1600;
+Reference = SC23;
+ValeurCmp = SCREW;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/50DC15FF;
+Reference = SC24;
 ValeurCmp = SCREW;
 IdModule  = vite_3mm;
 EndCmp

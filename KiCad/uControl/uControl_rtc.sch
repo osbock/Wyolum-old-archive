@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/27/2012 6:53:46 PM
+EESchema Schematic File Version 2  date Thursday 27 December 2012 10:04:40 PM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -229,7 +229,7 @@ U 1 1 4E1FEA78
 P 3950 2800
 F 0 "BT1" H 3650 2600 50  0000 C CNN
 F 1 "BATT_RTC" H 3950 2610 50  0000 C CNN
-F 2 "CR1632_2" H 3950 2800 60  0001 C CNN
+F 2 "CR2032" H 3950 2800 60  0001 C CNN
 	1    3950 2800
 	0    1    1    0   
 $EndComp

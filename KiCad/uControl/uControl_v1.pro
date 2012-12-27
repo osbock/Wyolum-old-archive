@@ -1,4 +1,4 @@
-update=12/27/2012 6:53:53 PM
+update=Thursday 27 December 2012 10:13:24 PM IST
 last_client=kicad
 [cvpcb]
 version=1
@@ -60,6 +60,5 @@ LastNetListRead=uControl_v1.net
 [pcbnew/libraries]
 LibDir=../../../../../Downloads/KiCad/Libraries
 LibName1=uControl_Libs/uControl
-LibName2=C:/Users/Anool/Documents/Arduino/clockthree/KiCad/C3Jr_v2/C3Jr_v2_libs/C3Jr_v2_parts
 [general]
 version=1

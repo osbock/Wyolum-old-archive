@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/27/2012 6:53:41 PM
+EESchema Schematic File Version 2  date Thursday 27 December 2012 09:14:42 PM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -17,6 +17,34 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Label 6750 3600 0    40   ~ 0
++Vlv
+Text Label 7700 6375 0    40   ~ 0
+TC
+Text Label 7700 6275 0    40   ~ 0
+T+
+Text Label 7700 5975 0    40   ~ 0
+T-
+Text Label 7700 5875 0    40   ~ 0
+TD
+Text Label 6325 6275 0    40   ~ 0
+TSCL
+Text Label 6325 6175 0    40   ~ 0
+TSDA
+Text Label 4275 5850 0    40   ~ 0
+PT
+Text Label 4275 5750 0    40   ~ 0
+PR
+Text Label 4275 5650 0    40   ~ 0
+PX
+Text Label 4275 5550 0    40   ~ 0
+P-
+Text Label 4275 5450 0    40   ~ 0
+P+
+Text Label 4275 5350 0    40   ~ 0
+P+
+Text Label 2925 3425 0    40   ~ 0
+PD2_Flow_Tx
 $Comp
 L SCREW SC21
 U 1 1 50DC1602
@@ -1361,14 +1389,14 @@ F 4 "EM1NR4R0V_1A" V 3825 3775 40  0001 C CNN "Part_No"
 	1    0    0    -1  
 $EndComp
 Text Label 2950 1175 0    40   ~ 0
-SCK
+P_SCK
 NoConn ~ 3325 1375
 Text Label 2950 1475 0    40   ~ 0
-~MOSI
+P_MOSI
 Text Label 2950 1275 0    40   ~ 0
-~SS
+P_SS
 Text Label 2950 1075 0    40   ~ 0
-MISO
+P_MISO
 Text Label 2950 975  0    40   ~ 0
 PC3_Pr1
 Text Label 2950 875  0    40   ~ 0
