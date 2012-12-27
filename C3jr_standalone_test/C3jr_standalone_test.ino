@@ -81,7 +81,7 @@ const int hold = 2500;
 
 bool led_value = true;
 
-void loop(){
+void rows(){
   setPixel(count % 16, count / 16, led_value);
   refresh(30);
   count++;
@@ -92,6 +92,47 @@ void loop(){
   }
 }
 
+void cols(){
+  setPixel(count % 10, count / 10, led_value);
+  refresh(30);
+  count++;
+  if(count >= 128){
+    count = 0;
+    refresh(10000 * led_value);
+    led_value = !led_value;
+  }
+}
+
+void loop(){
+  // BY ROWS
+  for(int row_i=0; row_i < 8; row_i++){
+    for(int col_j=0; col_j < 16; col_j++){
+      setPixel(col_j, row_i, 1);
+      refresh(30);
+    }
+  }
+  // BY ROWS
+  for(int row_i=0; row_i < 8; row_i++){
+    for(int col_j=0; col_j < 16; col_j++){
+      setPixel(col_j, row_i, 0);
+      refresh(30);
+    }
+  }
+  // BY COLS
+  for(int col_j=0; col_j < 16; col_j++){
+    for(int row_i=0; row_i < 8; row_i++){
+      setPixel(col_j, row_i, 1);
+      refresh(30);
+    }
+  }
+  // BY COLS
+  for(int col_j=0; col_j < 16; col_j++){
+    for(int row_i=0; row_i < 8; row_i++){
+      setPixel(col_j, row_i, 0);
+      refresh(30);
+    }
+  }
+}
 /********************************************************************************
  * RTC code
  ********************************************************************************/
