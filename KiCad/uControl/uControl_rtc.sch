@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/28/2012 6:29:01 PM
+EESchema Schematic File Version 2  date Friday 28 December 2012 10:02:48 PM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -139,10 +139,10 @@ F 2 "rc03_vert" H 7150 2000 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +BATT #PWR18
+L +BATT #PWR023
 U 1 1 4EC101F0
 P 5300 1850
-F 0 "#PWR18" H 5300 1800 20  0001 C CNN
+F 0 "#PWR023" H 5300 1800 20  0001 C CNN
 F 1 "+BATT" H 5300 1950 30  0000 C CNN
 	1    5300 1850
 	1    0    0    -1  

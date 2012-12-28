@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/28/2012 6:29:01 PM
+EESchema Schematic File Version 2  date Friday 28 December 2012 10:02:48 PM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -17,6 +17,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Label 5525 1225 0    40   ~ 0
+Rpi_3V3
 Text Notes 1850 4750 0    40   ~ 0
 Mounting Holes\nfor Raspberry-Pi
 $Comp
@@ -39,20 +41,10 @@ F 2 "vite_3mm" H 1950 5150 40  0001 C CNN
 	1    1950 4950
 	1    0    0    -1  
 $EndComp
-$Comp
-L PWR_FLAG #FLG6
-U 1 1 50B63C94
-P 5850 1025
-F 0 "#FLG6" H 5850 1295 30  0001 C CNN
-F 1 "PWR_FLAG" H 5850 1255 30  0000 C CNN
-	1    5850 1025
-	1    0    0    -1  
-$EndComp
-Connection ~ 5850 1225
 Wire Wire Line
-	5950 1225 5625 1225
+	5950 1225 5525 1225
 Wire Wire Line
-	5625 1225 5625 1375
+	5625 1375 5625 1325
 Wire Wire Line
 	7850 3650 8000 3650
 Wire Wire Line
@@ -62,11 +54,9 @@ Wire Wire Line
 Wire Wire Line
 	3950 2175 5225 2175
 Wire Wire Line
-	5225 2175 5225 1325
+	5225 1325 5225 2175
 Wire Wire Line
-	5225 1325 5950 1325
-Wire Wire Line
-	5850 1225 5850 1025
+	5950 1325 5225 1325
 Wire Wire Line
 	5850 2050 5850 1425
 Wire Wire Line
@@ -85,9 +75,9 @@ Wire Wire Line
 Wire Wire Line
 	3750 1875 3750 1475
 Wire Wire Line
-	3600 3275 3600 3500
+	3600 3500 3600 3275
 Wire Wire Line
-	3600 3500 1500 3500
+	1500 3500 3600 3500
 Wire Wire Line
 	3250 2975 1500 2975
 Wire Wire Line
@@ -160,7 +150,7 @@ Wire Wire Line
 	1925 1650 1925 1575
 Connection ~ 1925 1575
 Wire Wire Line
-	1925 2050 1925 2125
+	1925 2125 1925 2050
 Wire Wire Line
 	1925 2125 2300 2125
 Wire Wire Line
@@ -220,12 +210,12 @@ F 2 "rc03_vert" H 5625 1625 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 4150 2175 0    40   ~ 0
-Rpi_3V3
+Rpi_OE
 $Comp
-L GND #PWR21
+L GND #PWR024
 U 1 1 4FD8C28A
 P 5850 2050
-F 0 "#PWR21" H 5850 2050 30  0001 C CNN
+F 0 "#PWR024" H 5850 2050 30  0001 C CNN
 F 1 "GND" H 5850 1980 30  0001 C CNN
 	1    5850 2050
 	1    0    0    -1  
@@ -243,19 +233,19 @@ $EndComp
 Text Label 5900 4100 0    40   ~ 0
 Rpi_3V3
 $Comp
-L GND #PWR19
+L GND #PWR025
 U 1 1 4FD62C0F
 P 2125 2175
-F 0 "#PWR19" H 2125 2175 30  0001 C CNN
+F 0 "#PWR025" H 2125 2175 30  0001 C CNN
 F 1 "GND" H 2125 2105 30  0001 C CNN
 	1    2125 2175
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR20
+L GND #PWR026
 U 1 1 4FD62BFD
 P 2125 3600
-F 0 "#PWR20" H 2125 3600 30  0001 C CNN
+F 0 "#PWR026" H 2125 3600 30  0001 C CNN
 F 1 "GND" H 2125 3530 30  0001 C CNN
 	1    2125 3600
 	1    0    0    -1  

@@ -1,4 +1,4 @@
-update=12/28/2012 6:29:50 PM
+update=Friday 28 December 2012 10:20:39 PM IST
 last_client=kicad
 [cvpcb]
 version=1
@@ -60,5 +60,7 @@ LastNetListRead=uControl_v1.net
 [pcbnew/libraries]
 LibDir=../../../../../Downloads/KiCad/Libraries
 LibName1=uControl_Libs/uControl
+LibName2=connect
+LibName3=pin_array
 [general]
 version=1

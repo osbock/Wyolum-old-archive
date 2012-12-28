@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/28/2012 6:29:01 PM
+EESchema Schematic File Version 2  date Friday 28 December 2012 10:02:48 PM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -639,10 +639,10 @@ MISO
 Text Label 9775 5700 0    40   ~ 0
 ~MOSI
 $Comp
-L PWR_FLAG #FLG1
+L PWR_FLAG #FLG01
 U 1 1 4FC9DB7D
 P 9050 925
-F 0 "#FLG1" H 9050 1195 30  0001 C CNN
+F 0 "#FLG01" H 9050 1195 30  0001 C CNN
 F 1 "PWR_FLAG" H 9050 1155 30  0000 C CNN
 	1    9050 925 
 	1    0    0    -1  
@@ -780,10 +780,10 @@ PB7
 Text Label 1925 2800 0    40   ~ 0
 PB6
 $Comp
-L GND #PWR1
+L GND #PWR02
 U 1 1 4F5AFC62
 P 2900 5100
-F 0 "#PWR1" H 2900 5100 30  0001 C CNN
+F 0 "#PWR02" H 2900 5100 30  0001 C CNN
 F 1 "GND" H 2900 5030 30  0001 C CNN
 	1    2900 5100
 	1    0    0    -1  

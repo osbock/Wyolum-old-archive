@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/28/2012 6:21:04 PM
+EESchema Schematic File Version 2  date Friday 28 December 2012 10:02:23 PM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -134,7 +134,7 @@ U 1 1 4ECB8D22
 P 7150 2000
 F 0 "R11" H 7225 2150 50  0000 C CNN
 F 1 "10k" V 7150 2000 50  0000 C CNN
-F 2 "r_0805" H 7150 2000 60  0001 C CNN
+F 2 "rc03_vert" H 7150 2000 60  0001 C CNN
 	1    7150 2000
 	1    0    0    -1  
 $EndComp
@@ -205,7 +205,7 @@ U 1 1 4E1FEA7E
 P 4175 2775
 F 0 "C23" H 4175 2850 50  0000 L CNN
 F 1 "100n" V 4225 2525 50  0000 L CNN
-F 2 "c_0805" H 4175 2775 60  0001 C CNN
+F 2 "C2" H 4175 2775 60  0001 C CNN
 	1    4175 2775
 	1    0    0    -1  
 $EndComp

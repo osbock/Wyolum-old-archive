@@ -1,21 +1,21 @@
-PCBNEW-BOARD Version 1 date 12/28/2012 6:29:19 PM
+PCBNEW-BOARD Version 1 date Friday 28 December 2012 10:20:07 PM IST
 
-# Created by Pcbnew(2012-01-19 BZR 3256)-stable
+# Created by Pcbnew(2011-05-25)-stable
 
 $GENERAL
 encoding utf-8
 LayerCount 2
 Ly 1FFF8001
 EnabledLayers 1FFC8001
-Links 280
-NoConn 260
-Di 12449 7296 102101 71205
+Links 279
+NoConn 128
+Di 12474 7296 101601 71205
 Ndraw 207
-Ntrack 50
+Ntrack 379
 Nzone 0
 BoardThickness 630
 Nmodule 123
-Nnets 68
+Nnets 69
 $EndGENERAL
 
 $SHEETDESCR
@@ -35,7 +35,7 @@ InternalUnit 0.000100 INCH
 Layers 2
 Layer[0] Back signal
 Layer[15] Front signal
-TrackWidth 100
+TrackWidth 150
 TrackWidthList 100
 TrackWidthList 100
 TrackWidthList 150
@@ -93,235 +93,235 @@ Na 5 "/Interface/12V"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 6 "/Interface/IO_R"
+Na 6 "/Interface/5V0"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 7 "/Interface/IO_X"
+Na 7 "/Interface/IO_R"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 8 "/Interface/P+"
+Na 8 "/Interface/IO_X"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 9 "/Interface/P-"
+Na 9 "/Interface/P+"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 10 "/Interface/PB0_IO_R"
+Na 10 "/Interface/P-"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 11 "/Interface/PC1_Pulse"
+Na 11 "/Interface/PB0_IO_R"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 12 "/Interface/PC2_Pr2"
+Na 12 "/Interface/PC1_Pulse"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 13 "/Interface/PC3_Pr1"
+Na 13 "/Interface/PC2_Pr2"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 14 "/Interface/PD2_Flow_Tx"
+Na 14 "/Interface/PC3_Pr1"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 15 "/Interface/PD4_Flow_Rx"
+Na 15 "/Interface/PD2_Flow_Tx"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 16 "/Interface/PD7_IO_X"
+Na 16 "/Interface/PD4_Flow_Rx"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 17 "/Interface/PR"
+Na 17 "/Interface/PD7_IO_X"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 18 "/Interface/PT"
+Na 18 "/Interface/PR"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 19 "/Interface/PX"
+Na 19 "/Interface/PT"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 20 "/Interface/P_MISO"
+Na 20 "/Interface/PX"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 21 "/Interface/P_MOSI"
+Na 21 "/Interface/P_MISO"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 22 "/Interface/P_SCK"
+Na 22 "/Interface/P_MOSI"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 23 "/Interface/P_SS"
+Na 23 "/Interface/P_SCK"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 24 "/Interface/SCK"
+Na 24 "/Interface/P_SS"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 25 "/Interface/T+"
+Na 25 "/Interface/SCK"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 26 "/Interface/T-"
+Na 26 "/Interface/SCL"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 27 "/Interface/TC"
+Na 27 "/Interface/T+"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 28 "/Interface/TD"
+Na 28 "/Interface/T-"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 29 "/Interface/TSCL"
+Na 29 "/Interface/TC"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 30 "/Interface/TSDA"
+Na 30 "/Interface/TD"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 31 "/Interface/~MOSI"
+Na 31 "/Interface/TSCL"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 32 "/Interface/~PB1_IO_T"
+Na 32 "/Interface/TSDA"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 33 "/Interface/~PD5_Valve"
+Na 33 "/Interface/~PB1_IO_T"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 34 "/Interface/~SS"
+Na 34 "/Interface/~PD5_Valve"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 35 "/PB6"
+Na 35 "/Interface/~SS"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 36 "/PB7"
+Na 36 "/PB6"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 37 "/PC0"
+Na 37 "/PB7"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 38 "/RPi/MISO"
+Na 38 "/PC0"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 39 "/RPi/RESET"
+Na 39 "/RPi/MISO"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 40 "/RPi/RXD"
+Na 40 "/RPi/RESET"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 41 "/RPi/Rpi_3V3"
+Na 41 "/RPi/RXD"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 42 "/RPi/Rpi_5V0"
+Na 42 "/RPi/Rpi_3V3"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 43 "/RPi/Rpi_MISO"
+Na 43 "/RPi/Rpi_5V0"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 44 "/RPi/Rpi_MOSI"
+Na 44 "/RPi/Rpi_MISO"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 45 "/RPi/Rpi_RST"
+Na 45 "/RPi/Rpi_MOSI"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 46 "/RPi/Rpi_Rx"
+Na 46 "/RPi/Rpi_OE"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 47 "/RPi/Rpi_SCK"
+Na 47 "/RPi/Rpi_RST"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 48 "/RPi/Rpi_SCL"
+Na 48 "/RPi/Rpi_Rx"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 49 "/RPi/Rpi_SDA"
+Na 49 "/RPi/Rpi_SCK"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 50 "/RPi/Rpi_Tx"
+Na 50 "/RPi/Rpi_SCL"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 51 "/RPi/SDA"
+Na 51 "/RPi/Rpi_SDA"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 52 "/RPi/TXD"
+Na 52 "/RPi/Rpi_Tx"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 53 "/pwr/5V0"
+Na 53 "/RPi/SDA"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 54 "/pwr/PWR_IN"
+Na 54 "/RPi/TXD"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 55 "/rtc/32k"
+Na 55 "/RPi/~MOSI"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 56 "/rtc/BAT"
+Na 56 "/pwr/PWR_IN"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 57 "/rtc/RST"
+Na 57 "/rtc/32k"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 58 "/rtc/SCL"
+Na 58 "/rtc/BAT"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 59 "/rtc/~PD3_SQW"
+Na 59 "/rtc/RST"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 60 "/~PD6"
+Na 60 "/rtc/~PD3_SQW"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 61 "/~RTS"
+Na 61 "/~PD6"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 62 "GND"
+Na 62 "/~RTS"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 63 "N-000060"
+Na 63 "GND"
 St ~
 $EndEQUIPOT
 $EQUIPOT
@@ -333,11 +333,15 @@ Na 65 "N-000062"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 66 "N-000067"
+Na 66 "N-000063"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 67 "N-000069"
+Na 67 "N-000068"
+St ~
+$EndEQUIPOT
+$EQUIPOT
+Na 68 "N-000070"
 St ~
 $EndEQUIPOT
 $NCLASS
@@ -353,6 +357,7 @@ AddNet ""
 AddNet "/Interface/+Vlv"
 AddNet "/Interface/-Vlv"
 AddNet "/Interface/12V"
+AddNet "/Interface/5V0"
 AddNet "/Interface/IO_R"
 AddNet "/Interface/IO_X"
 AddNet "/Interface/P+"
@@ -372,13 +377,13 @@ AddNet "/Interface/P_MOSI"
 AddNet "/Interface/P_SCK"
 AddNet "/Interface/P_SS"
 AddNet "/Interface/SCK"
+AddNet "/Interface/SCL"
 AddNet "/Interface/T+"
 AddNet "/Interface/T-"
 AddNet "/Interface/TC"
 AddNet "/Interface/TD"
 AddNet "/Interface/TSCL"
 AddNet "/Interface/TSDA"
-AddNet "/Interface/~MOSI"
 AddNet "/Interface/~PB1_IO_T"
 AddNet "/Interface/~PD5_Valve"
 AddNet "/Interface/~SS"
@@ -390,6 +395,7 @@ AddNet "/RPi/RESET"
 AddNet "/RPi/RXD"
 AddNet "/RPi/Rpi_MISO"
 AddNet "/RPi/Rpi_MOSI"
+AddNet "/RPi/Rpi_OE"
 AddNet "/RPi/Rpi_RST"
 AddNet "/RPi/Rpi_Rx"
 AddNet "/RPi/Rpi_SCK"
@@ -398,20 +404,19 @@ AddNet "/RPi/Rpi_SDA"
 AddNet "/RPi/Rpi_Tx"
 AddNet "/RPi/SDA"
 AddNet "/RPi/TXD"
-AddNet "/pwr/5V0"
+AddNet "/RPi/~MOSI"
 AddNet "/pwr/PWR_IN"
 AddNet "/rtc/32k"
 AddNet "/rtc/BAT"
 AddNet "/rtc/RST"
-AddNet "/rtc/SCL"
 AddNet "/rtc/~PD3_SQW"
 AddNet "/~PD6"
 AddNet "/~RTS"
-AddNet "N-000060"
 AddNet "N-000061"
 AddNet "N-000062"
-AddNet "N-000067"
-AddNet "N-000069"
+AddNet "N-000063"
+AddNet "N-000068"
+AddNet "N-000070"
 $EndNCLASS
 $NCLASS
 Name "Track 10.0 mils"
@@ -470,14 +475,14 @@ $PAD
 Sh "1" C 700 700 0 0 1800
 Dr 320 0 0
 At STD N 00E0FFFF
-Ne 35 "/PB6"
+Ne 36 "/PB6"
 Po -1000 0
 $EndPAD
 $PAD
 Sh "2" C 700 700 0 0 1800
 Dr 320 0 0
 At STD N 00E0FFFF
-Ne 36 "/PB7"
+Ne 37 "/PB7"
 Po 1000 0
 $EndPAD
 $PAD
@@ -525,14 +530,14 @@ $PAD
 Sh "1" C 700 700 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 0 -875
 $EndPAD
 $PAD
 Sh "2" C 700 700 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 39 "/RPi/RESET"
+Ne 40 "/RPi/RESET"
 Po 0 875
 $EndPAD
 $PAD
@@ -553,28 +558,28 @@ $PAD
 Sh "2" C 700 700 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 39 "/RPi/RESET"
+Ne 40 "/RPi/RESET"
 Po 2550 875
 $EndPAD
 $PAD
 Sh "1" C 700 700 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 2550 -875
 $EndPAD
 $PAD
 Sh "2" C 700 700 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 39 "/RPi/RESET"
+Ne 40 "/RPi/RESET"
 Po 1800 500
 $EndPAD
 $PAD
 Sh "1" C 700 700 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1800 -500
 $EndPAD
 $SHAPE3D
@@ -591,7 +596,7 @@ Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  SW_PB_V_H
 $MODULE rc03_vert
-Po 68325 64775 1800 15 50DD77CC 4FD994F8 ~~
+Po 69325 64700 1800 15 50DD77CC 4FD994F8 ~~
 Li rc03_vert
 Cd Resistor, RC03 vertical
 Sc 4FD994F8
@@ -605,14 +610,14 @@ $PAD
 Sh "2" C 600 600 0 0 1800
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -500 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 1800
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 41 "/RPi/Rpi_3V3"
+Ne 46 "/RPi/Rpi_OE"
 Po 500 0
 $EndPAD
 $SHAPE3D
@@ -643,14 +648,14 @@ $PAD
 Sh "2" C 600 600 0 0 0
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 59 "/rtc/~PD3_SQW"
+Ne 60 "/rtc/~PD3_SQW"
 Po -500 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 0
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 500 0
 $EndPAD
 $SHAPE3D
@@ -681,14 +686,14 @@ $PAD
 Sh "2" C 600 600 0 0 900
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 63 "N-000060"
+Ne 64 "N-000061"
 Po -500 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 900
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 24 "/Interface/SCK"
+Ne 25 "/Interface/SCK"
 Po 500 0
 $EndPAD
 $SHAPE3D
@@ -719,7 +724,7 @@ $PAD
 Sh "2" C 600 600 0 0 0
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 64 "N-000061"
+Ne 66 "N-000063"
 Po -500 0
 $EndPAD
 $PAD
@@ -764,7 +769,7 @@ $PAD
 Sh "1" C 600 600 0 0 0
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 500 0
 $EndPAD
 $SHAPE3D
@@ -802,7 +807,7 @@ $PAD
 Sh "1" C 600 600 0 0 0
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 500 0
 $EndPAD
 $SHAPE3D
@@ -833,14 +838,14 @@ $PAD
 Sh "2" C 600 600 0 0 2700
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 10 "/Interface/PB0_IO_R"
+Ne 11 "/Interface/PB0_IO_R"
 Po -500 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 2700
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 6 "/Interface/IO_R"
+Ne 7 "/Interface/IO_R"
 Po 500 0
 $EndPAD
 $SHAPE3D
@@ -871,14 +876,14 @@ $PAD
 Sh "2" C 600 600 0 0 900
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 16 "/Interface/PD7_IO_X"
+Ne 17 "/Interface/PD7_IO_X"
 Po -500 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 900
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 7 "/Interface/IO_X"
+Ne 8 "/Interface/IO_X"
 Po 500 0
 $EndPAD
 $SHAPE3D
@@ -895,7 +900,7 @@ Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  rc03_vert
 $MODULE rc03_vert
-Po 49100 56900 0 15 50DD77CC 50D84E78 ~~
+Po 49100 57750 0 15 50DD77CC 50D84E78 ~~
 Li rc03_vert
 Cd Resistor, RC03 vertical
 Sc 50D84E78
@@ -916,7 +921,7 @@ $PAD
 Sh "1" C 600 600 0 0 0
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 500 0
 $EndPAD
 $SHAPE3D
@@ -947,14 +952,14 @@ $PAD
 Sh "2" C 600 600 0 0 2700
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 58 "/rtc/SCL"
+Ne 26 "/Interface/SCL"
 Po -500 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 2700
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 500 0
 $EndPAD
 $SHAPE3D
@@ -985,14 +990,14 @@ $PAD
 Sh "2" C 600 600 0 0 2700
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 51 "/RPi/SDA"
+Ne 53 "/RPi/SDA"
 Po -500 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 2700
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 500 0
 $EndPAD
 $SHAPE3D
@@ -1023,14 +1028,14 @@ $PAD
 Sh "2" C 600 600 0 0 900
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 39 "/RPi/RESET"
+Ne 40 "/RPi/RESET"
 Po -500 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 900
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 500 0
 $EndPAD
 $SHAPE3D
@@ -1087,14 +1092,14 @@ $PAD
 Sh "1" C 600 600 0 0 2700
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 63 "N-000060"
+Ne 64 "N-000061"
 Po 0 -500
 $EndPAD
 $PAD
 Sh "2" R 600 600 0 0 2700
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 0 500
 $EndPAD
 $SHAPE3D
@@ -1151,14 +1156,14 @@ $PAD
 Sh "1" C 600 600 0 0 2700
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 64 "N-000061"
+Ne 66 "N-000063"
 Po 0 -500
 $EndPAD
 $PAD
 Sh "2" R 600 600 0 0 2700
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 0 500
 $EndPAD
 $SHAPE3D
@@ -1222,7 +1227,7 @@ $PAD
 Sh "2" R 600 600 0 0 2700
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 0 500
 $EndPAD
 $SHAPE3D
@@ -1287,7 +1292,7 @@ $PAD
 Sh "2" R 600 600 0 0 1800
 Dr 320 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 0 -500
 $EndPAD
 $SHAPE3D
@@ -1298,7 +1303,7 @@ Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  CP_5x11mm
 $MODULE C2
-Po 64850 62625 1800 15 50DD7714 4FD63662 ~~
+Po 64850 61900 1800 15 50DD7714 4FD63662 ~~
 Li C2
 Cd Condensateur = 2 pas
 Kw C
@@ -1321,14 +1326,14 @@ $PAD
 Sh "2" C 600 600 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 41 "/RPi/Rpi_3V3"
+Ne 42 "/RPi/Rpi_3V3"
 Po -1000 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1000 0
 $EndPAD
 $SHAPE3D
@@ -1339,7 +1344,7 @@ Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  C2
 $MODULE C2
-Po 61800 62625 0 15 50DD7714 4FD63660 ~~
+Po 61800 61900 0 15 50DD7714 4FD63660 ~~
 Li C2
 Cd Condensateur = 2 pas
 Kw C
@@ -1362,14 +1367,14 @@ $PAD
 Sh "2" C 600 600 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po -1000 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1000 0
 $EndPAD
 $SHAPE3D
@@ -1403,14 +1408,14 @@ $PAD
 Sh "2" C 600 600 0 0 900
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -1000 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 900
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 56 "/rtc/BAT"
+Ne 58 "/rtc/BAT"
 Po 1000 0
 $EndPAD
 $SHAPE3D
@@ -1444,7 +1449,7 @@ $PAD
 Sh "2" C 600 600 0 0 2700
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -1000 0
 $EndPAD
 $PAD
@@ -1485,14 +1490,14 @@ $PAD
 Sh "2" C 600 600 0 0 2700
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -1000 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 2700
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 1000 0
 $EndPAD
 $SHAPE3D
@@ -1551,7 +1556,7 @@ $PAD
 Sh "2" R 600 600 0 0 1800
 Dr 320 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 0 -500
 $EndPAD
 $SHAPE3D
@@ -1585,7 +1590,7 @@ $PAD
 Sh "2" C 600 600 0 0 2700
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -1000 0
 $EndPAD
 $PAD
@@ -1626,7 +1631,7 @@ $PAD
 Sh "2" C 600 600 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -1000 0
 $EndPAD
 $PAD
@@ -1667,14 +1672,14 @@ $PAD
 Sh "2" C 600 600 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -1000 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 1000 0
 $EndPAD
 $SHAPE3D
@@ -1708,7 +1713,7 @@ $PAD
 Sh "2" C 600 600 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -1000 0
 $EndPAD
 $PAD
@@ -1756,7 +1761,7 @@ $PAD
 Sh "1" C 600 600 0 0 900
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1000 0
 $EndPAD
 $SHAPE3D
@@ -1767,7 +1772,7 @@ Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  C2
 $MODULE C2
-Po 76225 64775 0 15 50DD7714 50D84EA7 ~~
+Po 76825 64700 1800 15 50DD7714 50D84EA7 ~~
 Li C2
 Cd Condensateur = 2 pas
 Kw C
@@ -1775,49 +1780,8 @@ Sc 50D84EA7
 AR /50B2116F/50CEC0CF
 Op 0 0 0
 At SMD 
-T0 0 870 400 400 0 60 N V 21 N "C11"
-T1 0 0 400 300 0 60 N V 21 N "100n"
-DS -1500 -450 -1450 -500 50 21
-DS -1500 -400 -1400 -500 50 21
-DS -1500 -350 -1350 -500 50 21
-DS -1300 -500 -1500 -300 50 21
-DS -1500 0 -1500 -500 50 21
-DS -1500 -500 1500 -500 50 21
-DS 1500 -500 1500 500 50 21
-DS 1500 500 -1500 500 50 21
-DS -1500 500 -1500 0 50 21
-$PAD
-Sh "2" C 600 600 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 62 "GND"
-Po -1000 0
-$EndPAD
-$PAD
-Sh "1" C 600 600 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
-Po 1000 0
-$EndPAD
-$SHAPE3D
-Na "uControl_Libs/3D Modules/capa_2pas_5x5mm.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$EndMODULE  C2
-$MODULE C2
-Po 49600 55600 1800 15 50DD7860 50D84E8F ~~
-Li C2
-Cd Condensateur = 2 pas
-Kw C
-Sc 50D84E8F
-AR /50B2116F/50BA6794
-Op 0 0 0
-At SMD 
-T0 0 870 400 400 1800 60 N V 21 N "C10"
-T1 0 0 400 300 2700 60 N V 21 N "100n"
+T0 0 870 400 400 1800 60 N V 21 N "C11"
+T1 0 0 400 300 1800 60 N V 21 N "100n"
 DS -1500 -450 -1450 -500 50 21
 DS -1500 -400 -1400 -500 50 21
 DS -1500 -350 -1350 -500 50 21
@@ -1831,7 +1795,48 @@ $PAD
 Sh "2" C 600 600 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
+Po -1000 0
+$EndPAD
+$PAD
+Sh "1" C 600 600 0 0 1800
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 6 "/Interface/5V0"
+Po 1000 0
+$EndPAD
+$SHAPE3D
+Na "uControl_Libs/3D Modules/capa_2pas_5x5mm.wrl"
+Sc 1.000000 1.000000 1.000000
+Of 0.000000 0.000000 0.000000
+Ro 0.000000 0.000000 0.000000
+$EndSHAPE3D
+$EndMODULE  C2
+$MODULE C2
+Po 49600 56600 1800 15 50DDCCBD 50D84E8F ~~
+Li C2
+Cd Condensateur = 2 pas
+Kw C
+Sc 50D84E8F
+AR /50B2116F/50BA6794
+Op 0 0 0
+At SMD 
+T0 0 870 400 400 1800 60 N V 21 N "C10"
+T1 0 0 400 300 1800 60 N V 21 N "100n"
+DS -1500 -450 -1450 -500 50 21
+DS -1500 -400 -1400 -500 50 21
+DS -1500 -350 -1350 -500 50 21
+DS -1300 -500 -1500 -300 50 21
+DS -1500 0 -1500 -500 50 21
+DS -1500 -500 1500 -500 50 21
+DS 1500 -500 1500 500 50 21
+DS 1500 500 -1500 500 50 21
+DS -1500 500 -1500 0 50 21
+$PAD
+Sh "2" C 600 600 0 0 1800
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 63 "GND"
 Po -1000 0
 $EndPAD
 $PAD
@@ -1849,7 +1854,7 @@ Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  C2
 $MODULE C2
-Po 71725 64775 0 15 50DD789F 50D84EA5 ~~
+Po 72325 64700 1800 15 50DDC6FC 50D84EA5 ~~
 Li C2
 Cd Condensateur = 2 pas
 Kw C
@@ -1857,8 +1862,8 @@ Sc 50D84EA5
 AR /50B2116F/50CCCDB6
 Op 0 0 0
 At SMD 
-T0 0 870 400 400 0 60 N V 21 N "C9"
-T1 0 0 400 300 900 60 N V 21 N "100n"
+T0 0 870 400 400 1800 60 N V 21 N "C9"
+T1 0 0 400 300 1800 60 N V 21 N "100n"
 DS -1500 -450 -1450 -500 50 21
 DS -1500 -400 -1400 -500 50 21
 DS -1500 -350 -1350 -500 50 21
@@ -1869,17 +1874,17 @@ DS 1500 -500 1500 500 50 21
 DS 1500 500 -1500 500 50 21
 DS -1500 500 -1500 0 50 21
 $PAD
-Sh "2" C 600 600 0 0 0
+Sh "2" C 600 600 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -1000 0
 $EndPAD
 $PAD
-Sh "1" C 600 600 0 0 0
+Sh "1" C 600 600 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 1000 0
 $EndPAD
 $SHAPE3D
@@ -1913,7 +1918,7 @@ $PAD
 Sh "2" C 600 600 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -1000 0
 $EndPAD
 $PAD
@@ -1954,14 +1959,14 @@ $PAD
 Sh "2" C 600 600 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -1000 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 1000 0
 $EndPAD
 $SHAPE3D
@@ -1972,7 +1977,7 @@ Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  C2
 $MODULE C2
-Po 81725 64775 0 15 50DD7714 50D84E93 ~~
+Po 81325 64700 1800 15 50DD7714 50D84E93 ~~
 Li C2
 Cd Condensateur = 2 pas
 Kw C
@@ -1980,8 +1985,8 @@ Sc 50D84E93
 AR /50B2116F/50BA6744
 Op 0 0 0
 At SMD 
-T0 0 870 400 400 0 60 N V 21 N "C6"
-T1 0 0 400 300 0 60 N V 21 N "100n"
+T0 0 870 400 400 1800 60 N V 21 N "C6"
+T1 0 0 400 300 1800 60 N V 21 N "100n"
 DS -1500 -450 -1450 -500 50 21
 DS -1500 -400 -1400 -500 50 21
 DS -1500 -350 -1350 -500 50 21
@@ -1992,17 +1997,17 @@ DS 1500 -500 1500 500 50 21
 DS 1500 500 -1500 500 50 21
 DS -1500 500 -1500 0 50 21
 $PAD
-Sh "2" C 600 600 0 0 0
+Sh "2" C 600 600 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -1000 0
 $EndPAD
 $PAD
-Sh "1" C 600 600 0 0 0
+Sh "1" C 600 600 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 1000 0
 $EndPAD
 $SHAPE3D
@@ -2013,7 +2018,7 @@ Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  C2
 $MODULE C2
-Po 45150 67100 0 15 50DD7714 50D84E9B ~~
+Po 44550 67150 1800 15 50DD7714 50D84E9B ~~
 Li C2
 Cd Condensateur = 2 pas
 Kw C
@@ -2021,8 +2026,8 @@ Sc 50D84E9B
 AR /50B2116F/50BEDE7E
 Op 0 0 0
 At SMD 
-T0 0 870 400 400 0 60 N V 21 N "C5"
-T1 0 0 400 300 0 60 N V 21 N "100n"
+T0 0 870 400 400 1800 60 N V 21 N "C5"
+T1 0 0 400 300 1800 60 N V 21 N "100n"
 DS -1500 -450 -1450 -500 50 21
 DS -1500 -400 -1400 -500 50 21
 DS -1500 -350 -1350 -500 50 21
@@ -2033,17 +2038,17 @@ DS 1500 -500 1500 500 50 21
 DS 1500 500 -1500 500 50 21
 DS -1500 500 -1500 0 50 21
 $PAD
-Sh "2" C 600 600 0 0 0
+Sh "2" C 600 600 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po -1000 0
 $EndPAD
 $PAD
-Sh "1" C 600 600 0 0 0
+Sh "1" C 600 600 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1000 0
 $EndPAD
 $SHAPE3D
@@ -2077,14 +2082,14 @@ $PAD
 Sh "2" C 600 600 0 0 900
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 39 "/RPi/RESET"
+Ne 40 "/RPi/RESET"
 Po -1000 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 900
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 61 "/~RTS"
+Ne 62 "/~RTS"
 Po 1000 0
 $EndPAD
 $SHAPE3D
@@ -2114,14 +2119,14 @@ $PAD
 Sh "2" C 600 600 0 0 2700
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -500 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 2700
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 36 "/PB7"
+Ne 37 "/PB7"
 Po 500 0
 $EndPAD
 $SHAPE3D
@@ -2151,14 +2156,14 @@ $PAD
 Sh "2" C 600 600 0 0 2700
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -500 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 2700
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 35 "/PB6"
+Ne 36 "/PB6"
 Po 500 0
 $EndPAD
 $SHAPE3D
@@ -2192,14 +2197,14 @@ $PAD
 Sh "2" C 600 600 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -1000 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 1000 0
 $EndPAD
 $SHAPE3D
@@ -2258,7 +2263,7 @@ Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  vite_3mm
 $MODULE pin_strip_3-90
-Po 68825 66200 0 15 50DD4CA3 4FD8C6F5 ~~
+Po 68825 66200 0 15 50DDC708 4FD8C6F5 ~~
 Li pin_strip_3-90
 Cd Pin strip 3pin 90
 Kw CONN DEV
@@ -2267,7 +2272,7 @@ AR /4FBF6CBF/4FD8C245
 Op 0 0 0
 At SMD 
 T0 -2475 250 400 400 900 60 N V 21 N "P25"
-T1 2425 -425 400 400 900 60 N V 21 N "U6_OE"
+T1 25 1750 400 400 0 60 N V 21 N "U6_OE"
 DS -1500 0 -1400 0 100 21
 DS -500 0 -500 800 100 21
 DS -500 800 -1500 800 100 21
@@ -2288,21 +2293,21 @@ $PAD
 Sh "1" C 700 700 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 41 "/RPi/Rpi_3V3"
+Ne 42 "/RPi/Rpi_3V3"
 Po -1000 0
 $EndPAD
 $PAD
 Sh "2" C 700 700 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 41 "/RPi/Rpi_3V3"
+Ne 46 "/RPi/Rpi_OE"
 Po 0 0
 $EndPAD
 $PAD
 Sh "3" R 700 700 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1000 0
 $EndPAD
 $SHAPE3D
@@ -2345,28 +2350,28 @@ $PAD
 Sh "1" C 700 700 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po -1500 0
 $EndPAD
 $PAD
 Sh "2" C 700 700 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 58 "/rtc/SCL"
+Ne 26 "/Interface/SCL"
 Po -500 0
 $EndPAD
 $PAD
 Sh "3" C 700 700 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 51 "/RPi/SDA"
+Ne 53 "/RPi/SDA"
 Po 500 0
 $EndPAD
 $PAD
 Sh "4" R 700 700 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1500 0
 $EndPAD
 $SHAPE3D
@@ -2409,28 +2414,28 @@ $PAD
 Sh "1" C 700 700 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po -1500 0
 $EndPAD
 $PAD
 Sh "2" C 700 700 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 58 "/rtc/SCL"
+Ne 26 "/Interface/SCL"
 Po -500 0
 $EndPAD
 $PAD
 Sh "3" C 700 700 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 51 "/RPi/SDA"
+Ne 53 "/RPi/SDA"
 Po 500 0
 $EndPAD
 $PAD
 Sh "4" R 700 700 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1500 0
 $EndPAD
 $SHAPE3D
@@ -2471,21 +2476,21 @@ $PAD
 Sh "1" C 700 700 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 11 "/Interface/PC1_Pulse"
+Ne 12 "/Interface/PC1_Pulse"
 Po -1000 0
 $EndPAD
 $PAD
 Sh "2" C 700 700 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 0 0
 $EndPAD
 $PAD
 Sh "3" R 700 700 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1000 0
 $EndPAD
 $SHAPE3D
@@ -2562,42 +2567,42 @@ $PAD
 Sh "AD5" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 58 "/rtc/SCL"
+Ne 26 "/Interface/SCL"
 Po 25000 -1000
 $EndPAD
 $PAD
 Sh "AD4" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 51 "/RPi/SDA"
+Ne 53 "/RPi/SDA"
 Po 24000 -1000
 $EndPAD
 $PAD
 Sh "AD3" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 13 "/Interface/PC3_Pr1"
+Ne 14 "/Interface/PC3_Pr1"
 Po 23000 -1000
 $EndPAD
 $PAD
 Sh "AD0" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 37 "/PC0"
+Ne 38 "/PC0"
 Po 20000 -1000
 $EndPAD
 $PAD
 Sh "AD1" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 11 "/Interface/PC1_Pulse"
+Ne 12 "/Interface/PC1_Pulse"
 Po 21000 -1000
 $EndPAD
 $PAD
 Sh "AD2" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 12 "/Interface/PC2_Pr2"
+Ne 13 "/Interface/PC2_Pr2"
 Po 22000 -1000
 $EndPAD
 $PAD
@@ -2611,14 +2616,14 @@ $PAD
 Sh "GND2" R 600 600 0 0 900
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 17000 -1000
 $EndPAD
 $PAD
 Sh "GND1" R 600 600 0 0 900
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 16000 -1000
 $EndPAD
 $PAD
@@ -2632,112 +2637,112 @@ $PAD
 Sh "RST" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 39 "/RPi/RESET"
+Ne 40 "/RPi/RESET"
 Po 13000 -1000
 $EndPAD
 $PAD
 Sh "0" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 40 "/RPi/RXD"
+Ne 41 "/RPi/RXD"
 Po 25000 -20000
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 52 "/RPi/TXD"
+Ne 54 "/RPi/TXD"
 Po 24000 -20000
 $EndPAD
 $PAD
 Sh "2" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 14 "/Interface/PD2_Flow_Tx"
+Ne 15 "/Interface/PD2_Flow_Tx"
 Po 23000 -20000
 $EndPAD
 $PAD
 Sh "3" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 59 "/rtc/~PD3_SQW"
+Ne 60 "/rtc/~PD3_SQW"
 Po 22000 -20000
 $EndPAD
 $PAD
 Sh "4" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 15 "/Interface/PD4_Flow_Rx"
+Ne 16 "/Interface/PD4_Flow_Rx"
 Po 21000 -20000
 $EndPAD
 $PAD
 Sh "5" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 33 "/Interface/~PD5_Valve"
+Ne 34 "/Interface/~PD5_Valve"
 Po 20000 -20000
 $EndPAD
 $PAD
 Sh "6" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 60 "/~PD6"
+Ne 61 "/~PD6"
 Po 19000 -20000
 $EndPAD
 $PAD
 Sh "7" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 16 "/Interface/PD7_IO_X"
+Ne 17 "/Interface/PD7_IO_X"
 Po 18000 -20000
 $EndPAD
 $PAD
 Sh "8" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 32 "/Interface/~PB1_IO_T"
+Ne 33 "/Interface/~PB1_IO_T"
 Po 16400 -20000
 $EndPAD
 $PAD
 Sh "9" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 10 "/Interface/PB0_IO_R"
+Ne 11 "/Interface/PB0_IO_R"
 Po 15400 -20000
 $EndPAD
 $PAD
 Sh "10" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 34 "/Interface/~SS"
+Ne 35 "/Interface/~SS"
 Po 14400 -20000
 $EndPAD
 $PAD
 Sh "11" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 31 "/Interface/~MOSI"
+Ne 55 "/RPi/~MOSI"
 Po 13400 -20000
 $EndPAD
 $PAD
 Sh "12" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 38 "/RPi/MISO"
+Ne 39 "/RPi/MISO"
 Po 12400 -20000
 $EndPAD
 $PAD
 Sh "13" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 24 "/Interface/SCK"
+Ne 25 "/Interface/SCK"
 Po 11400 -20000
 $EndPAD
 $PAD
 Sh "GND3" R 600 600 0 0 900
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 10400 -20000
 $EndPAD
 $PAD
@@ -2751,14 +2756,14 @@ $PAD
 Sh "5V" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 15000 -1000
 $EndPAD
 $PAD
 Sh "5V" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 12000 -1000
 $EndPAD
 $PAD
@@ -2772,14 +2777,14 @@ $PAD
 Sh "AD4" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 51 "/RPi/SDA"
+Ne 53 "/RPi/SDA"
 Po 8400 -20000
 $EndPAD
 $PAD
 Sh "AD5" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 58 "/rtc/SCL"
+Ne 26 "/Interface/SCL"
 Po 7400 -20000
 $EndPAD
 $SHAPE3D
@@ -2851,7 +2856,7 @@ $PAD
 Sh "1" R 600 800 0 0 2700
 Dr 0 0 0
 At SMD N 00888000
-Ne 62 "GND"
+Ne 63 "GND"
 Po -900 1250
 $EndPAD
 $SHAPE3D
@@ -2908,21 +2913,21 @@ $PAD
 Sh "+" C 1500 1500 0 0 900
 Dr 800 0 0
 At STD N 00AA8000
-Ne 56 "/rtc/BAT"
+Ne 58 "/rtc/BAT"
 Po -4150 0
 $EndPAD
 $PAD
 Sh "+" C 1500 1500 0 0 900
 Dr 800 0 0
 At STD N 00AA8000
-Ne 56 "/rtc/BAT"
+Ne 58 "/rtc/BAT"
 Po 4150 0
 $EndPAD
 $PAD
 Sh "-" C 2500 2500 0 0 900
 Dr 0 0 0
 At SMD N 00550001
-Ne 62 "GND"
+Ne 63 "GND"
 Po 0 0
 $EndPAD
 $SHAPE3D
@@ -3149,28 +3154,28 @@ $PAD
 Sh "1" R 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 27 "/Interface/TC"
+Ne 29 "/Interface/TC"
 Po -1500 0
 $EndPAD
 $PAD
 Sh "2" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 25 "/Interface/T+"
+Ne 27 "/Interface/T+"
 Po -500 0
 $EndPAD
 $PAD
 Sh "3" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 26 "/Interface/T-"
+Ne 28 "/Interface/T-"
 Po 500 0
 $EndPAD
 $PAD
 Sh "4" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 28 "/Interface/TD"
+Ne 30 "/Interface/TD"
 Po 1500 0
 $EndPAD
 $SHAPE3D
@@ -3202,14 +3207,14 @@ $PAD
 Sh "1" R 600 600 0 0 2700
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 30 "/Interface/TSDA"
+Ne 32 "/Interface/TSDA"
 Po -1500 0
 $EndPAD
 $PAD
 Sh "2" C 600 600 0 0 2700
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -500 0
 $EndPAD
 $PAD
@@ -3223,7 +3228,7 @@ $PAD
 Sh "4" C 600 600 0 0 2700
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 29 "/Interface/TSCL"
+Ne 31 "/Interface/TSCL"
 Po 1500 0
 $EndPAD
 $SHAPE3D
@@ -3269,140 +3274,140 @@ $PAD
 Sh "2" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 40 "/RPi/RXD"
+Ne 41 "/RPi/RXD"
 Po -5500 1500
 $EndPAD
 $PAD
 Sh "3" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 52 "/RPi/TXD"
+Ne 54 "/RPi/TXD"
 Po -4500 1500
 $EndPAD
 $PAD
 Sh "4" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 14 "/Interface/PD2_Flow_Tx"
+Ne 15 "/Interface/PD2_Flow_Tx"
 Po -3500 1500
 $EndPAD
 $PAD
 Sh "5" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 59 "/rtc/~PD3_SQW"
+Ne 60 "/rtc/~PD3_SQW"
 Po -2500 1500
 $EndPAD
 $PAD
 Sh "6" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 15 "/Interface/PD4_Flow_Rx"
+Ne 16 "/Interface/PD4_Flow_Rx"
 Po -1500 1500
 $EndPAD
 $PAD
 Sh "7" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po -500 1500
 $EndPAD
 $PAD
 Sh "8" R 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 500 1500
 $EndPAD
 $PAD
 Sh "9" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 35 "/PB6"
+Ne 36 "/PB6"
 Po 1500 1500
 $EndPAD
 $PAD
 Sh "10" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 36 "/PB7"
+Ne 37 "/PB7"
 Po 2500 1500
 $EndPAD
 $PAD
 Sh "11" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 33 "/Interface/~PD5_Valve"
+Ne 34 "/Interface/~PD5_Valve"
 Po 3500 1500
 $EndPAD
 $PAD
 Sh "12" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 60 "/~PD6"
+Ne 61 "/~PD6"
 Po 4500 1500
 $EndPAD
 $PAD
 Sh "13" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 16 "/Interface/PD7_IO_X"
+Ne 17 "/Interface/PD7_IO_X"
 Po 5500 1500
 $EndPAD
 $PAD
 Sh "14" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 32 "/Interface/~PB1_IO_T"
+Ne 33 "/Interface/~PB1_IO_T"
 Po 6500 1500
 $EndPAD
 $PAD
 Sh "1" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 39 "/RPi/RESET"
+Ne 40 "/RPi/RESET"
 Po -6500 1500
 $EndPAD
 $PAD
 Sh "15" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 10 "/Interface/PB0_IO_R"
+Ne 11 "/Interface/PB0_IO_R"
 Po 6500 -1500
 $EndPAD
 $PAD
 Sh "16" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 34 "/Interface/~SS"
+Ne 35 "/Interface/~SS"
 Po 5500 -1500
 $EndPAD
 $PAD
 Sh "17" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 31 "/Interface/~MOSI"
+Ne 55 "/RPi/~MOSI"
 Po 4500 -1500
 $EndPAD
 $PAD
 Sh "18" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 38 "/RPi/MISO"
+Ne 39 "/RPi/MISO"
 Po 3500 -1500
 $EndPAD
 $PAD
 Sh "19" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 24 "/Interface/SCK"
+Ne 25 "/Interface/SCK"
 Po 2500 -1500
 $EndPAD
 $PAD
 Sh "20" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 1500 -1500
 $EndPAD
 $PAD
@@ -3416,49 +3421,49 @@ $PAD
 Sh "22" R 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -500 -1500
 $EndPAD
 $PAD
 Sh "23" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 37 "/PC0"
+Ne 38 "/PC0"
 Po -1500 -1500
 $EndPAD
 $PAD
 Sh "24" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 11 "/Interface/PC1_Pulse"
+Ne 12 "/Interface/PC1_Pulse"
 Po -2500 -1500
 $EndPAD
 $PAD
 Sh "25" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 12 "/Interface/PC2_Pr2"
+Ne 13 "/Interface/PC2_Pr2"
 Po -3500 -1500
 $EndPAD
 $PAD
 Sh "26" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 13 "/Interface/PC3_Pr1"
+Ne 14 "/Interface/PC3_Pr1"
 Po -4500 -1500
 $EndPAD
 $PAD
 Sh "27" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 51 "/RPi/SDA"
+Ne 53 "/RPi/SDA"
 Po -5500 -1500
 $EndPAD
 $PAD
 Sh "28" O 600 900 0 0 1800
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 58 "/rtc/SCL"
+Ne 26 "/Interface/SCL"
 Po -6500 -1500
 $EndPAD
 $SHAPE3D
@@ -4107,14 +4112,14 @@ $PAD
 Sh "1" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 67 "N-000069"
+Ne 68 "N-000070"
 Po -500 0
 $EndPAD
 $PAD
 Sh "2" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 66 "N-000067"
+Ne 67 "N-000068"
 Po 500 0
 $EndPAD
 $SHAPE3D
@@ -4147,21 +4152,21 @@ $PAD
 Sh "2" O 1200 1800 0 0 900
 Dr 460 0 0 O 460 1400
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 0 0
 $EndPAD
 $PAD
 Sh "1" R 1200 1800 0 0 900
 Dr 460 0 0 O 460 1600
 At STD N 00E0FFFF
-Ne 54 "/pwr/PWR_IN"
+Ne 56 "/pwr/PWR_IN"
 Po 2400 0
 $EndPAD
 $PAD
 Sh "3" O 1800 1200 0 0 900
 Dr 1400 0 0 O 1400 460
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1250 2000
 $EndPAD
 $SHAPE3D
@@ -4200,112 +4205,112 @@ $PAD
 Sh "1" R 236 787 0 0 2700
 Dr 0 0 0
 At SMD N 00440001
-Ne 55 "/rtc/32k"
+Ne 57 "/rtc/32k"
 Po -1750 -1831
 $EndPAD
 $PAD
 Sh "2" R 236 787 0 0 2700
 Dr 0 0 0
 At SMD N 00440001
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po -1250 -1831
 $EndPAD
 $PAD
 Sh "3" R 236 787 0 0 2700
 Dr 0 0 0
 At SMD N 00440001
-Ne 59 "/rtc/~PD3_SQW"
+Ne 60 "/rtc/~PD3_SQW"
 Po -750 -1831
 $EndPAD
 $PAD
 Sh "4" R 236 787 0 0 2700
 Dr 0 0 0
 At SMD N 00440001
-Ne 57 "/rtc/RST"
+Ne 59 "/rtc/RST"
 Po -250 -1831
 $EndPAD
 $PAD
 Sh "5" R 236 787 0 0 2700
 Dr 0 0 0
 At SMD N 00440001
-Ne 62 "GND"
+Ne 63 "GND"
 Po 250 -1831
 $EndPAD
 $PAD
 Sh "6" R 236 787 0 0 2700
 Dr 0 0 0
 At SMD N 00440001
-Ne 62 "GND"
+Ne 63 "GND"
 Po 750 -1831
 $EndPAD
 $PAD
 Sh "7" R 236 787 0 0 2700
 Dr 0 0 0
 At SMD N 00440001
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1250 -1831
 $EndPAD
 $PAD
 Sh "8" R 236 787 0 0 2700
 Dr 0 0 0
 At SMD N 00440001
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1750 -1831
 $EndPAD
 $PAD
 Sh "9" R 236 787 0 0 2700
 Dr 0 0 0
 At SMD N 00440001
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1750 1831
 $EndPAD
 $PAD
 Sh "10" R 236 787 0 0 2700
 Dr 0 0 0
 At SMD N 00440001
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1250 1831
 $EndPAD
 $PAD
 Sh "11" R 236 787 0 0 2700
 Dr 0 0 0
 At SMD N 00440001
-Ne 62 "GND"
+Ne 63 "GND"
 Po 750 1831
 $EndPAD
 $PAD
 Sh "12" R 236 787 0 0 2700
 Dr 0 0 0
 At SMD N 00440001
-Ne 62 "GND"
+Ne 63 "GND"
 Po 250 1831
 $EndPAD
 $PAD
 Sh "13" R 236 787 0 0 2700
 Dr 0 0 0
 At SMD N 00440001
-Ne 62 "GND"
+Ne 63 "GND"
 Po -250 1831
 $EndPAD
 $PAD
 Sh "14" R 236 787 0 0 2700
 Dr 0 0 0
 At SMD N 00440001
-Ne 56 "/rtc/BAT"
+Ne 58 "/rtc/BAT"
 Po -750 1831
 $EndPAD
 $PAD
 Sh "15" R 236 787 0 0 2700
 Dr 0 0 0
 At SMD N 00440001
-Ne 51 "/RPi/SDA"
+Ne 53 "/RPi/SDA"
 Po -1250 1831
 $EndPAD
 $PAD
 Sh "16" R 236 787 0 0 2700
 Dr 0 0 0
 At SMD N 00440001
-Ne 58 "/rtc/SCL"
+Ne 26 "/Interface/SCL"
 Po -1750 1831
 $EndPAD
 $SHAPE3D
@@ -4338,14 +4343,14 @@ $PAD
 Sh "4" R 1500 800 0 0 2700
 Dr 0 0 0
 At SMD N 00888000
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 0 -1250
 $EndPAD
 $PAD
 Sh "2" R 600 800 0 0 2700
 Dr 0 0 0
 At SMD N 00888000
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 0 1250
 $EndPAD
 $PAD
@@ -4359,7 +4364,7 @@ $PAD
 Sh "1" R 600 800 0 0 2700
 Dr 0 0 0
 At SMD N 00888000
-Ne 62 "GND"
+Ne 63 "GND"
 Po -900 1250
 $EndPAD
 $SHAPE3D
@@ -4370,7 +4375,7 @@ Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  SOT223
 $MODULE TXS0108EPWR
-Po 63700 65250 0 15 50D839AD 4FC9E067 ~~
+Po 63700 64950 0 15 50D839AD 4FC9E067 ~~
 Li TXS0108EPWR
 Cd TSSOP-20
 Sc 4FC9E067
@@ -4399,7 +4404,7 @@ $PAD
 Sh "5" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 46 "/RPi/Rpi_Rx"
+Ne 48 "/RPi/Rpi_Rx"
 Po -128 1102
 .LocalClearance 40
 $EndPAD
@@ -4407,7 +4412,7 @@ $PAD
 Sh "6" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 45 "/RPi/Rpi_RST"
+Ne 47 "/RPi/Rpi_RST"
 Po 128 1102
 .LocalClearance 40
 $EndPAD
@@ -4415,7 +4420,7 @@ $PAD
 Sh "7" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 44 "/RPi/Rpi_MOSI"
+Ne 45 "/RPi/Rpi_MOSI"
 Po 384 1102
 .LocalClearance 40
 $EndPAD
@@ -4423,7 +4428,7 @@ $PAD
 Sh "8" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 43 "/RPi/Rpi_MISO"
+Ne 44 "/RPi/Rpi_MISO"
 Po 640 1102
 .LocalClearance 40
 $EndPAD
@@ -4431,7 +4436,7 @@ $PAD
 Sh "19" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po -896 -1102
 .LocalClearance 40
 $EndPAD
@@ -4439,7 +4444,7 @@ $PAD
 Sh "2" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 41 "/RPi/Rpi_3V3"
+Ne 42 "/RPi/Rpi_3V3"
 Po -896 1102
 .LocalClearance 40
 $EndPAD
@@ -4447,7 +4452,7 @@ $PAD
 Sh "3" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 48 "/RPi/Rpi_SCL"
+Ne 50 "/RPi/Rpi_SCL"
 Po -640 1102
 .LocalClearance 40
 $EndPAD
@@ -4455,7 +4460,7 @@ $PAD
 Sh "4" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 50 "/RPi/Rpi_Tx"
+Ne 52 "/RPi/Rpi_Tx"
 Po -384 1102
 .LocalClearance 40
 $EndPAD
@@ -4463,7 +4468,7 @@ $PAD
 Sh "12" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 24 "/Interface/SCK"
+Ne 25 "/Interface/SCK"
 Po 896 -1102
 .LocalClearance 40
 $EndPAD
@@ -4471,7 +4476,7 @@ $PAD
 Sh "13" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 38 "/RPi/MISO"
+Ne 39 "/RPi/MISO"
 Po 640 -1102
 .LocalClearance 40
 $EndPAD
@@ -4479,7 +4484,7 @@ $PAD
 Sh "14" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 31 "/Interface/~MOSI"
+Ne 55 "/RPi/~MOSI"
 Po 384 -1102
 .LocalClearance 40
 $EndPAD
@@ -4487,7 +4492,7 @@ $PAD
 Sh "15" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 39 "/RPi/RESET"
+Ne 40 "/RPi/RESET"
 Po 128 -1102
 .LocalClearance 40
 $EndPAD
@@ -4495,7 +4500,7 @@ $PAD
 Sh "16" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 52 "/RPi/TXD"
+Ne 54 "/RPi/TXD"
 Po -128 -1102
 .LocalClearance 40
 $EndPAD
@@ -4503,7 +4508,7 @@ $PAD
 Sh "17" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 40 "/RPi/RXD"
+Ne 41 "/RPi/RXD"
 Po -384 -1102
 .LocalClearance 40
 $EndPAD
@@ -4511,7 +4516,7 @@ $PAD
 Sh "9" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 47 "/RPi/Rpi_SCK"
+Ne 49 "/RPi/Rpi_SCK"
 Po 896 1102
 .LocalClearance 40
 $EndPAD
@@ -4519,7 +4524,7 @@ $PAD
 Sh "18" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 58 "/rtc/SCL"
+Ne 26 "/Interface/SCL"
 Po -640 -1102
 .LocalClearance 40
 $EndPAD
@@ -4527,7 +4532,7 @@ $PAD
 Sh "1" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 49 "/RPi/Rpi_SDA"
+Ne 51 "/RPi/Rpi_SDA"
 Po -1152 1102
 .LocalClearance 40
 $EndPAD
@@ -4535,7 +4540,7 @@ $PAD
 Sh "10" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 41 "/RPi/Rpi_3V3"
+Ne 46 "/RPi/Rpi_OE"
 Po 1152 1102
 .LocalClearance 40
 $EndPAD
@@ -4543,7 +4548,7 @@ $PAD
 Sh "11" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1152 -1102
 .LocalClearance 40
 $EndPAD
@@ -4551,7 +4556,7 @@ $PAD
 Sh "20" R 165 579 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 51 "/RPi/SDA"
+Ne 53 "/RPi/SDA"
 Po -1152 -1102
 .LocalClearance 40
 $EndPAD
@@ -4630,14 +4635,14 @@ $PAD
 Sh "1" C 600 600 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 1000 0
 $EndPAD
 $PAD
 Sh "2" C 600 600 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 42 "/RPi/Rpi_5V0"
+Ne 43 "/RPi/Rpi_5V0"
 Po 0 0
 $EndPAD
 $SHAPE3D
@@ -4664,14 +4669,14 @@ $PAD
 Sh "1" C 600 600 0 0 900
 Dr 360 0 0
 At STD N 00E0FFFF
-Ne 14 "/Interface/PD2_Flow_Tx"
+Ne 15 "/Interface/PD2_Flow_Tx"
 Po 0 0
 $EndPAD
 $PAD
 Sh "2" C 600 600 0 0 900
 Dr 360 0 0
 At STD N 00E0FFFF
-Ne 15 "/Interface/PD4_Flow_Rx"
+Ne 16 "/Interface/PD4_Flow_Rx"
 Po 790 0
 $EndPAD
 $PAD
@@ -4713,12 +4718,12 @@ $PAD
 Sh "8" C 600 600 0 0 900
 Dr 360 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 5530 0
 $EndPAD
 $EndMODULE  Conn_Flow
 $MODULE Conn_Pump_Flex
-Po 69300 32000 900 15 50D82CDB 50D84E8D ~~
+Po 66300 31950 900 15 50D82CDB 50D84E8D ~~
 Li Conn_Pump_Flex
 Sc 50D84E8D
 AR /50B2116F/50D6C4CF
@@ -4741,7 +4746,7 @@ $PAD
 Sh "1" R 240 725 0 0 2700
 Dr 0 0 0
 At SMD N 00A88000
-Ne 8 "/Interface/P+"
+Ne 9 "/Interface/P+"
 Po 1020 1435
 .LocalClearance 60
 $EndPAD
@@ -4749,7 +4754,7 @@ $PAD
 Sh "2" R 240 725 0 0 2700
 Dr 0 0 0
 At SMD N 00A88000
-Ne 8 "/Interface/P+"
+Ne 9 "/Interface/P+"
 Po 620 1435
 .LocalClearance 60
 $EndPAD
@@ -4757,7 +4762,7 @@ $PAD
 Sh "3" R 240 725 0 0 2700
 Dr 0 0 0
 At SMD N 00A88000
-Ne 9 "/Interface/P-"
+Ne 10 "/Interface/P-"
 Po 220 1435
 .LocalClearance 60
 $EndPAD
@@ -4765,7 +4770,7 @@ $PAD
 Sh "4" R 240 725 0 0 2700
 Dr 0 0 0
 At SMD N 00A88000
-Ne 19 "/Interface/PX"
+Ne 20 "/Interface/PX"
 Po -180 1435
 .LocalClearance 60
 $EndPAD
@@ -4773,7 +4778,7 @@ $PAD
 Sh "5" R 240 725 0 0 2700
 Dr 0 0 0
 At SMD N 00A88000
-Ne 17 "/Interface/PR"
+Ne 18 "/Interface/PR"
 Po -580 1435
 .LocalClearance 60
 $EndPAD
@@ -4781,7 +4786,7 @@ $PAD
 Sh "6" R 240 725 0 0 2700
 Dr 0 0 0
 At SMD N 00A88000
-Ne 18 "/Interface/PT"
+Ne 19 "/Interface/PT"
 Po -980 1435
 .LocalClearance 60
 $EndPAD
@@ -4789,7 +4794,7 @@ $PAD
 Sh "1" R 240 660 0 0 2700
 Dr 0 0 0
 At SMD N 00A88000
-Ne 8 "/Interface/P+"
+Ne 9 "/Interface/P+"
 Po 1020 -65
 .LocalClearance 60
 $EndPAD
@@ -4797,7 +4802,7 @@ $PAD
 Sh "2" R 240 660 0 0 2700
 Dr 0 0 0
 At SMD N 00A88000
-Ne 8 "/Interface/P+"
+Ne 9 "/Interface/P+"
 Po 620 -65
 .LocalClearance 60
 $EndPAD
@@ -4805,7 +4810,7 @@ $PAD
 Sh "3" R 240 660 0 0 2700
 Dr 0 0 0
 At SMD N 00A88000
-Ne 9 "/Interface/P-"
+Ne 10 "/Interface/P-"
 Po 220 -65
 .LocalClearance 60
 $EndPAD
@@ -4813,7 +4818,7 @@ $PAD
 Sh "4" R 240 660 0 0 2700
 Dr 0 0 0
 At SMD N 00A88000
-Ne 19 "/Interface/PX"
+Ne 20 "/Interface/PX"
 Po -180 -65
 .LocalClearance 60
 $EndPAD
@@ -4821,7 +4826,7 @@ $PAD
 Sh "5" R 240 660 0 0 2700
 Dr 0 0 0
 At SMD N 00A88000
-Ne 17 "/Interface/PR"
+Ne 18 "/Interface/PR"
 Po -580 -65
 .LocalClearance 60
 $EndPAD
@@ -4829,7 +4834,7 @@ $PAD
 Sh "6" R 240 660 0 0 2700
 Dr 0 0 0
 At SMD N 00A88000
-Ne 18 "/Interface/PT"
+Ne 19 "/Interface/PT"
 Po -980 -65
 .LocalClearance 60
 $EndPAD
@@ -4923,35 +4928,35 @@ $PAD
 Sh "2" R 240 1200 0 0 1800
 Dr 0 0 0
 At SMD N 00888000
-Ne 62 "GND"
+Ne 63 "GND"
 Po -500 2900
 $EndPAD
 $PAD
 Sh "3" R 240 1200 0 0 1800
 Dr 0 0 0
 At SMD N 00888000
-Ne 13 "/Interface/PC3_Pr1"
+Ne 14 "/Interface/PC3_Pr1"
 Po 500 2900
 $EndPAD
 $PAD
 Sh "4" R 240 1200 0 0 1800
 Dr 0 0 0
 At SMD N 00888000
-Ne 20 "/Interface/P_MISO"
+Ne 21 "/Interface/P_MISO"
 Po 1500 2900
 $EndPAD
 $PAD
 Sh "5" R 240 1200 0 0 1800
 Dr 0 0 0
 At SMD N 00888000
-Ne 22 "/Interface/P_SCK"
+Ne 23 "/Interface/P_SCK"
 Po 1500 -2900
 $EndPAD
 $PAD
 Sh "6" R 240 1200 0 0 1800
 Dr 0 0 0
 At SMD N 00888000
-Ne 23 "/Interface/P_SS"
+Ne 24 "/Interface/P_SS"
 Po 500 -2900
 $EndPAD
 $PAD
@@ -4965,7 +4970,7 @@ $PAD
 Sh "8" R 240 1200 0 0 1800
 Dr 0 0 0
 At SMD N 00888000
-Ne 21 "/Interface/P_MOSI"
+Ne 22 "/Interface/P_MOSI"
 Po -1500 -2900
 $EndPAD
 $EndMODULE  HCEM500GUH9P3
@@ -5004,28 +5009,28 @@ $PAD
 Sh "3" R 240 1200 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 62 "GND"
+Ne 63 "GND"
 Po -1000 2900
 $EndPAD
 $PAD
 Sh "2" R 240 1200 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 12 "/Interface/PC2_Pr2"
+Ne 13 "/Interface/PC2_Pr2"
 Po 0 2900
 $EndPAD
 $PAD
 Sh "1" R 240 1200 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 1000 2900
 $EndPAD
 $PAD
 Sh "6" R 240 1200 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 58 "/rtc/SCL"
+Ne 26 "/Interface/SCL"
 Po 1000 -2900
 $EndPAD
 $PAD
@@ -5039,12 +5044,12 @@ $PAD
 Sh "4" R 240 1200 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 51 "/RPi/SDA"
+Ne 53 "/RPi/SDA"
 Po -1000 -2900
 $EndPAD
 $EndMODULE  HDIB002AUY8H5
 $MODULE Header_FTDI
-Po 72600 32000 2700 15 5035E3B8 50D84E7E ~~
+Po 69600 31950 2700 15 5035E3B8 50D84E7E ~~
 Li Header_FTDI
 Cd Connecteur 6 pins
 Kw CONN DEV
@@ -5120,42 +5125,42 @@ $PAD
 Sh "1" R 600 600 0 0 2700
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 8 "/Interface/P+"
+Ne 9 "/Interface/P+"
 Po -2500 0
 $EndPAD
 $PAD
 Sh "2" R 600 600 0 0 2700
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 8 "/Interface/P+"
+Ne 9 "/Interface/P+"
 Po -1500 0
 $EndPAD
 $PAD
 Sh "3" C 600 600 0 0 2700
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 9 "/Interface/P-"
+Ne 10 "/Interface/P-"
 Po -500 0
 $EndPAD
 $PAD
 Sh "4" C 600 600 0 0 2700
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 19 "/Interface/PX"
+Ne 20 "/Interface/PX"
 Po 500 0
 $EndPAD
 $PAD
 Sh "5" C 600 600 0 0 2700
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 17 "/Interface/PR"
+Ne 18 "/Interface/PR"
 Po 1500 0
 $EndPAD
 $PAD
 Sh "6" C 600 600 0 0 2700
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 18 "/Interface/PT"
+Ne 19 "/Interface/PT"
 Po 2500 0
 $EndPAD
 $SHAPE3D
@@ -5254,28 +5259,28 @@ $PAD
 Sh "3" C 600 600 0 0 900
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -500 0
 $EndPAD
 $PAD
 Sh "4" C 600 600 0 0 900
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 7 "/Interface/IO_X"
+Ne 8 "/Interface/IO_X"
 Po 500 0
 $EndPAD
 $PAD
 Sh "5" C 600 600 0 0 900
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 6 "/Interface/IO_R"
+Ne 7 "/Interface/IO_R"
 Po 1500 0
 $EndPAD
 $PAD
 Sh "6" C 600 600 0 0 900
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 32 "/Interface/~PB1_IO_T"
+Ne 33 "/Interface/~PB1_IO_T"
 Po 2500 0
 $EndPAD
 $SHAPE3D
@@ -5286,7 +5291,7 @@ Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  Header_FTDI
 $MODULE Pump
-Po 51000 32000 0 15 50D83658 50D84E7B ~~
+Po 48450 31950 0 15 50D83658 50D84E7B ~~
 Li Pump
 Sc 50D84E7B
 AR /50B2116F/50D6C18B
@@ -5401,7 +5406,7 @@ $PAD
 Sh "1" R 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po -1000 0
 $EndPAD
 $PAD
@@ -5453,7 +5458,7 @@ $PAD
 Sh "5" R 235 610 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 21 "/Interface/P_MOSI"
+Ne 22 "/Interface/P_MOSI"
 Po 500 1060
 .LocalClearance 30
 $EndPAD
@@ -5469,7 +5474,7 @@ $PAD
 Sh "7" R 235 610 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1500 1060
 .LocalClearance 30
 $EndPAD
@@ -5477,7 +5482,7 @@ $PAD
 Sh "10" R 235 610 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 31 "/Interface/~MOSI"
+Ne 55 "/RPi/~MOSI"
 Po 500 -1060
 .LocalClearance 30
 $EndPAD
@@ -5485,7 +5490,7 @@ $PAD
 Sh "2" R 235 610 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 20 "/Interface/P_MISO"
+Ne 21 "/Interface/P_MISO"
 Po -1000 1060
 .LocalClearance 30
 $EndPAD
@@ -5493,7 +5498,7 @@ $PAD
 Sh "3" R 235 610 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 22 "/Interface/P_SCK"
+Ne 23 "/Interface/P_SCK"
 Po -500 1060
 .LocalClearance 30
 $EndPAD
@@ -5501,7 +5506,7 @@ $PAD
 Sh "4" R 235 610 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 23 "/Interface/P_SS"
+Ne 24 "/Interface/P_SS"
 Po 0 1060
 .LocalClearance 30
 $EndPAD
@@ -5509,7 +5514,7 @@ $PAD
 Sh "12" R 235 610 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 24 "/Interface/SCK"
+Ne 25 "/Interface/SCK"
 Po -500 -1060
 .LocalClearance 30
 $EndPAD
@@ -5517,7 +5522,7 @@ $PAD
 Sh "13" R 235 610 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 38 "/RPi/MISO"
+Ne 39 "/RPi/MISO"
 Po -1000 -1060
 .LocalClearance 30
 $EndPAD
@@ -5525,7 +5530,7 @@ $PAD
 Sh "14" R 235 610 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po -1500 -1060
 .LocalClearance 30
 $EndPAD
@@ -5557,7 +5562,7 @@ $PAD
 Sh "11" R 235 610 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 34 "/Interface/~SS"
+Ne 35 "/Interface/~SS"
 Po 0 -1060
 .LocalClearance 30
 $EndPAD
@@ -5595,7 +5600,7 @@ $PAD
 Sh "2" R 120 630 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 62 "GND"
+Ne 63 "GND"
 Po -130 670
 .LocalClearance 30
 $EndPAD
@@ -5611,7 +5616,7 @@ $PAD
 Sh "4" R 120 630 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 29 "/Interface/TSCL"
+Ne 31 "/Interface/TSCL"
 Po 390 670
 .LocalClearance 30
 $EndPAD
@@ -5619,7 +5624,7 @@ $PAD
 Sh "1" R 120 630 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 58 "/rtc/SCL"
+Ne 26 "/Interface/SCL"
 Po -390 670
 .LocalClearance 30
 $EndPAD
@@ -5627,7 +5632,7 @@ $PAD
 Sh "5" R 120 630 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 30 "/Interface/TSDA"
+Ne 32 "/Interface/TSDA"
 Po 390 -670
 .LocalClearance 30
 $EndPAD
@@ -5643,7 +5648,7 @@ $PAD
 Sh "7" R 120 630 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po -130 -670
 .LocalClearance 30
 $EndPAD
@@ -5651,7 +5656,7 @@ $PAD
 Sh "8" R 120 630 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 51 "/RPi/SDA"
+Ne 53 "/RPi/SDA"
 Po -390 -670
 .LocalClearance 30
 $EndPAD
@@ -5695,14 +5700,14 @@ $PAD
 Sh "1" C 600 600 0 0 900
 Dr 360 0 0
 At STD N 00E0FFFF
-Ne 67 "N-000069"
+Ne 68 "N-000070"
 Po 0 -790
 $EndPAD
 $PAD
 Sh "2" C 600 600 0 0 900
 Dr 360 0 0
 At STD N 00E0FFFF
-Ne 66 "N-000067"
+Ne 67 "N-000068"
 Po 0 790
 $EndPAD
 $PAD
@@ -5811,14 +5816,14 @@ $PAD
 Sh "1" R 600 600 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -2500 0
 $EndPAD
 $PAD
 Sh "2" R 600 600 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -1500 0
 $EndPAD
 $PAD
@@ -5832,21 +5837,21 @@ $PAD
 Sh "4" C 600 600 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 40 "/RPi/RXD"
+Ne 41 "/RPi/RXD"
 Po 500 0
 $EndPAD
 $PAD
 Sh "5" C 600 600 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 52 "/RPi/TXD"
+Ne 54 "/RPi/TXD"
 Po 1500 0
 $EndPAD
 $PAD
 Sh "6" C 600 600 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 61 "/~RTS"
+Ne 62 "/~RTS"
 Po 2500 0
 $EndPAD
 $SHAPE3D
@@ -5909,42 +5914,42 @@ $PAD
 Sh "1" C 600 600 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -2500 0
 $EndPAD
 $PAD
 Sh "2" C 600 600 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -1500 0
 $EndPAD
 $PAD
 Sh "3" C 600 600 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -500 0
 $EndPAD
 $PAD
 Sh "4" C 600 600 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 500 0
 $EndPAD
 $PAD
 Sh "5" C 600 600 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1500 0
 $EndPAD
 $PAD
 Sh "6" C 600 600 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 2500 0
 $EndPAD
 $SHAPE3D
@@ -6007,21 +6012,21 @@ $PAD
 Sh "1" C 600 600 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po -2500 0
 $EndPAD
 $PAD
 Sh "2" C 600 600 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po -1500 0
 $EndPAD
 $PAD
 Sh "3" C 600 600 0 0 1800
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po -500 0
 $EndPAD
 $PAD
@@ -6103,7 +6108,7 @@ $PAD
 Sh "3" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 1000 0
 $EndPAD
 $SHAPE3D
@@ -6132,21 +6137,21 @@ $PAD
 Sh "1" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00D0FFFF
-Ne 41 "/RPi/Rpi_3V3"
+Ne 42 "/RPi/Rpi_3V3"
 Po -6000 -500
 $EndPAD
 $PAD
 Sh "2" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00D0FFFF
-Ne 42 "/RPi/Rpi_5V0"
+Ne 43 "/RPi/Rpi_5V0"
 Po -6000 500
 $EndPAD
 $PAD
 Sh "3" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00D0FFFF
-Ne 49 "/RPi/Rpi_SDA"
+Ne 51 "/RPi/Rpi_SDA"
 Po -5000 -500
 $EndPAD
 $PAD
@@ -6160,14 +6165,14 @@ $PAD
 Sh "5" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00D0FFFF
-Ne 48 "/RPi/Rpi_SCL"
+Ne 50 "/RPi/Rpi_SCL"
 Po -4000 -500
 $EndPAD
 $PAD
 Sh "6" R 600 600 0 0 0
 Dr 400 0 0
 At STD N 00D0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -4000 500
 $EndPAD
 $PAD
@@ -6181,7 +6186,7 @@ $PAD
 Sh "8" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00D0FFFF
-Ne 50 "/RPi/Rpi_Tx"
+Ne 52 "/RPi/Rpi_Tx"
 Po -3000 500
 $EndPAD
 $PAD
@@ -6195,7 +6200,7 @@ $PAD
 Sh "10" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00D0FFFF
-Ne 46 "/RPi/Rpi_Rx"
+Ne 48 "/RPi/Rpi_Rx"
 Po -2000 500
 $EndPAD
 $PAD
@@ -6209,7 +6214,7 @@ $PAD
 Sh "12" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00D0FFFF
-Ne 45 "/RPi/Rpi_RST"
+Ne 47 "/RPi/Rpi_RST"
 Po -1000 500
 $EndPAD
 $PAD
@@ -6258,7 +6263,7 @@ $PAD
 Sh "19" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00D0FFFF
-Ne 44 "/RPi/Rpi_MOSI"
+Ne 45 "/RPi/Rpi_MOSI"
 Po 3000 -500
 $EndPAD
 $PAD
@@ -6272,7 +6277,7 @@ $PAD
 Sh "21" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00D0FFFF
-Ne 43 "/RPi/Rpi_MISO"
+Ne 44 "/RPi/Rpi_MISO"
 Po 4000 -500
 $EndPAD
 $PAD
@@ -6286,7 +6291,7 @@ $PAD
 Sh "23" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00D0FFFF
-Ne 47 "/RPi/Rpi_SCK"
+Ne 49 "/RPi/Rpi_SCK"
 Po 5000 -500
 $EndPAD
 $PAD
@@ -6402,42 +6407,42 @@ $PAD
 Sh "1" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 38 "/RPi/MISO"
+Ne 39 "/RPi/MISO"
 Po -1000 500
 $EndPAD
 $PAD
 Sh "2" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po -1000 -500
 $EndPAD
 $PAD
 Sh "3" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 24 "/Interface/SCK"
+Ne 25 "/Interface/SCK"
 Po 0 500
 $EndPAD
 $PAD
 Sh "4" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 31 "/Interface/~MOSI"
+Ne 55 "/RPi/~MOSI"
 Po 0 -500
 $EndPAD
 $PAD
 Sh "5" C 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 39 "/RPi/RESET"
+Ne 40 "/RPi/RESET"
 Po 1000 500
 $EndPAD
 $PAD
 Sh "6" R 600 600 0 0 0
 Dr 400 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1000 -500
 $EndPAD
 $SHAPE3D
@@ -140278,7 +140283,7 @@ $PAD
 Sh "1" C 400 400 0 0 900
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 55 "/rtc/32k"
+Ne 57 "/rtc/32k"
 Po 0 0
 $EndPAD
 $EndMODULE  I/O
@@ -140295,7 +140300,7 @@ $PAD
 Sh "1" C 400 400 0 0 900
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 59 "/rtc/~PD3_SQW"
+Ne 60 "/rtc/~PD3_SQW"
 Po 0 0
 $EndPAD
 $EndMODULE  I/O
@@ -140312,7 +140317,7 @@ $PAD
 Sh "1" C 400 400 0 0 900
 Dr 250 0 0
 At STD N 00E0FFFF
-Ne 57 "/rtc/RST"
+Ne 59 "/rtc/RST"
 Po 0 0
 $EndPAD
 $EndMODULE  I/O
@@ -140337,7 +140342,7 @@ $PAD
 Sh "1" R 160 235 0 0 900
 Dr 0 0 0
 At SMD N 00888000
-Ne 28 "/Interface/TD"
+Ne 30 "/Interface/TD"
 Po -400 550
 .LocalClearance 50
 $EndPAD
@@ -140345,7 +140350,7 @@ $PAD
 Sh "2" R 160 235 0 0 900
 Dr 0 0 0
 At SMD N 00888000
-Ne 26 "/Interface/T-"
+Ne 28 "/Interface/T-"
 Po 0 550
 .LocalClearance 50
 $EndPAD
@@ -140369,7 +140374,7 @@ $PAD
 Sh "5" R 160 235 0 0 900
 Dr 0 0 0
 At SMD N 00888000
-Ne 25 "/Interface/T+"
+Ne 27 "/Interface/T+"
 Po 0 -550
 .LocalClearance 50
 $EndPAD
@@ -140377,7 +140382,7 @@ $PAD
 Sh "6" R 160 235 0 0 900
 Dr 0 0 0
 At SMD N 00888000
-Ne 27 "/Interface/TC"
+Ne 29 "/Interface/TC"
 Po -400 -550
 .LocalClearance 50
 $EndPAD
@@ -140411,14 +140416,14 @@ $PAD
 Sh "1" C 700 700 0 0 2700
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -1500 0
 $EndPAD
 $PAD
 Sh "2" C 700 700 0 0 2700
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 6 "/Interface/IO_R"
+Ne 7 "/Interface/IO_R"
 Po 1500 0
 $EndPAD
 $SHAPE3D
@@ -140455,14 +140460,14 @@ $PAD
 Sh "1" C 700 700 0 0 900
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -1500 0
 $EndPAD
 $PAD
 Sh "2" C 700 700 0 0 900
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 7 "/Interface/IO_X"
+Ne 8 "/Interface/IO_X"
 Po 1500 0
 $EndPAD
 $SHAPE3D
@@ -140545,7 +140550,7 @@ $PAD
 Sh "1" C 700 700 0 0 900
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 54 "/pwr/PWR_IN"
+Ne 56 "/pwr/PWR_IN"
 Po -2000 0
 $EndPAD
 $PAD
@@ -140588,14 +140593,14 @@ $PAD
 Sh "3" O 600 1200 0 0 1800
 Dr 320 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po 1000 0
 $EndPAD
 $PAD
 Sh "1" O 600 1200 0 0 1800
 Dr 320 0 0
 At STD N 00E0FFFF
-Ne 33 "/Interface/~PD5_Valve"
+Ne 34 "/Interface/~PD5_Valve"
 Po -1000 0
 $EndPAD
 $PAD
@@ -140639,14 +140644,14 @@ $PAD
 Sh "2" C 600 600 0 0 2700
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -500 0
 $EndPAD
 $PAD
 Sh "1" C 600 600 0 0 2700
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 53 "/pwr/5V0"
+Ne 6 "/Interface/5V0"
 Po 500 0
 $EndPAD
 $SHAPE3D
@@ -140676,7 +140681,7 @@ $PAD
 Sh "2" C 600 600 0 0 2700
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 62 "GND"
+Ne 63 "GND"
 Po -500 0
 $EndPAD
 $PAD
@@ -140733,14 +140738,14 @@ $PAD
 Sh "1" R 420 560 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 26 "/Interface/T-"
+Ne 28 "/Interface/T-"
 Po 400 0
 $EndPAD
 $PAD
 Sh "2" R 420 560 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 25 "/Interface/T+"
+Ne 27 "/Interface/T+"
 Po -400 0
 $EndPAD
 $SHAPE3D
@@ -140757,42 +140762,42 @@ $EndDRAWSEGMENT
 $TEXTPCB
 Te "FLOW OUT"
 Po 84820 14940 400 400 50 900
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "FLOW IN"
 Po 42740 14200 400 400 50 900
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "STS21"
 Po 33000 44700 400 400 50 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "AIR OUT"
-Po 45400 29780 400 400 50 900
-De 21 1 0 Normal C
+Po 44700 29700 400 400 50 900
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "AIR IN"
-Po 45400 34240 400 400 50 900
-De 21 1 0 Normal C
+Po 44700 34200 400 400 50 900
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "C | + | - | D"
 Po 33000 37720 300 400 50 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "P1500"
-Po 67340 32000 400 400 50 900
-De 21 1 0 Normal C
+Po 64825 31950 400 400 50 900
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "P200"
-Po 62900 32000 400 400 50 900
-De 21 1 0 Normal C
+Po 60350 31950 400 400 50 900
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "12V"
@@ -140806,8 +140811,8 @@ nl ""
 nl "IOR"
 nl ""
 nl "IOT"
-Po 73760 29400 400 340 50 0
-De 21 1 0 Normal C
+Po 70760 29350 400 340 50 0
+De 21 1 0 Normal
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 0 28000 38100 38000 38100 50
@@ -140816,17 +140821,17 @@ $EndDRAWSEGMENT
 $TEXTPCB
 Te "AIR EXHAUST"
 Po 95675 33925 400 400 50 0
-De 26 1 0 Normal C
+De 26 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "REDUCER"
 Po 96350 27225 400 400 50 0
-De 26 1 0 Normal C
+De 26 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "RESTRICTOR"
 Po 96450 15900 400 400 50 0
-De 26 1 0 Normal C
+De 26 1 0 Normal
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 0 82475 33800 92975 33800 1000
@@ -141387,12 +141392,12 @@ $EndDRAWSEGMENT
 $TEXTPCB
 Te "BLK"
 Po 76600 44000 300 300 50 1800
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "GRN"
 Po 71575 44000 300 300 50 1800
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 0 70150 60075 70600 60075 50
@@ -141409,107 +141414,107 @@ $EndDRAWSEGMENT
 $TEXTPCB
 Te "RTC"
 Po 87100 60150 250 250 50 900
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "D12/MISO/#"
 Po 64000 42750 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "AD5/SCL"
 Po 59000 42325 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "AD4/SDA"
 Po 60000 42350 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "AREF"
 Po 61000 41875 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "GND"
 Po 62000 41750 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "D13/SCK"
 Po 63000 42325 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "D11/MOSI"
 Po 65000 42425 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "D10/#"
 Po 66000 42000 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "D9/#"
 Po 67000 41900 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "D8"
 Po 68000 41600 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "D7"
 Po 69600 41575 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "D6/#"
 Po 70600 41900 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "D5/#"
 Po 71600 41900 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "D4"
 Po 72625 41575 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "D3/SQW"
 Po 73325 41950 200 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "D2/1pps"
 Po 74600 41975 200 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "D1/TXD"
 Po 75600 41900 200 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "D0/RXD"
 Po 76600 41925 200 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "I/O L"
 Po 69625 39725 300 300 50 1800
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "I/O H"
 Po 67850 39725 300 300 50 1800
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 0 58475 40000 68475 40000 50
@@ -141562,7 +141567,7 @@ $EndDRAWSEGMENT
 $TEXTPCB
 Te "FTDI"
 Po 74075 44000 300 300 50 1800
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 0 77075 59125 77075 60625 50
@@ -141635,32 +141640,32 @@ $EndDRAWSEGMENT
 $TEXTPCB
 Te "A5"
 Po 76575 60325 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "A4"
 Po 75575 60325 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "A3"
 Po 74575 60325 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "A2"
 Po 73575 60325 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "A1"
 Po 72575 60325 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "A0"
 Po 71575 60325 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 0 70175 60350 70575 60350 50
@@ -141693,67 +141698,67 @@ $EndDRAWSEGMENT
 $TEXTPCB
 Te "Vin"
 Po 69575 58500 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "GND"
 Po 68575 58375 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "GND"
 Po 67575 58375 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "5V0"
 Po 66575 58400 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "3V3"
 Po 65575 58400 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "RST"
 Po 64575 58400 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "5V0"
 Po 63575 58400 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "NC"
 Po 62575 58525 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "5V0"
 Po 77350 58650 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "GND"
 Po 70850 57625 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "3V3"
 Po 70850 58650 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "ANALOG"
 Po 70450 58650 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "POWER"
 Po 61850 59600 300 300 50 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 0 74075 58375 74075 58850 100
@@ -141762,17 +141767,17 @@ $EndDRAWSEGMENT
 $TEXTPCB
 Te "5V0"
 Po 77350 58625 300 300 50 900
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "GND"
 Po 70850 57625 300 300 50 900
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "3V3"
 Po 70850 58625 300 300 50 900
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 0 87500 70000 87500 39500 50
@@ -141781,42 +141786,42 @@ $EndDRAWSEGMENT
 $TEXTPCB
 Te "32k SQW RST"
 Po 85950 60150 200 200 30 2700
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "I/O L"
 Po 69650 39800 300 300 60 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "I/O H"
 Po 67850 39775 300 300 60 0
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "ANALOG"
 Po 70450 58625 300 300 60 900
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "POWER"
 Po 61850 59625 300 300 60 900
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "uControl"
 Po 33250 53750 600 800 120 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "uControl"
 Po 33700 57100 600 800 120 900
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "wyolum.com"
 Po 33450 64050 400 400 60 900
-De 21 1 0 Normal C
+De 21 1 0 Normal
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 0 40000 39500 87500 39500 50
@@ -141825,7 +141830,7 @@ $EndDRAWSEGMENT
 $TEXTPCB
 Te "wyolum.com"
 Po 31150 53450 400 400 60 900
-De 20 0 0 Normal C
+De 20 0 0 Normal
 $EndTEXTPCB
 $DRAWSEGMENT
 Po 0 87500 70000 40000 70000 50
@@ -141836,106 +141841,764 @@ Po 0 40000 70000 40000 39500 50
 De 28 0 900 0 0
 $EndDRAWSEGMENT
 $TRACK
-Po 0 69235 31380 70735 31380 200 -1
-De 15 0 8 0 C00000
-Po 0 70735 30980 70735 30745 200 -1
-De 15 0 8 0 400000
-Po 0 71980 29500 72600 29500 200 -1
-De 15 0 8 0 800000
-Po 0 70735 30745 71980 29500 200 -1
-De 15 0 8 0 0
-Po 0 69235 30980 70735 30980 200 -1
-De 15 0 8 0 C00000
-Po 0 70735 31380 71320 31380 200 -1
-De 15 0 8 0 400000
-Po 0 72200 30500 72600 30500 200 -1
-De 15 0 8 0 800000
-Po 0 71320 31380 72200 30500 200 -1
-De 15 0 8 0 0
-Po 0 70735 31780 71920 31780 200 -1
-De 15 0 9 0 400000
-Po 0 72200 31500 72600 31500 200 -1
-De 15 0 9 0 800000
-Po 0 71920 31780 72200 31500 200 -1
-De 15 0 9 0 0
-Po 0 69235 31780 70735 31780 200 -1
+Po 0 50800 51840 50800 51125 150 -1
+De 15 0 1 0 400000
+Po 0 49775 50100 49200 50100 150 -1
+De 15 0 1 0 800000
+Po 0 50800 51125 49775 50100 150 -1
+De 15 0 1 0 0
+Po 0 45530 43100 44200 43100 100 -1
+De 15 0 1 0 0
+Po 0 44200 43100 43700 43600 100 -1
+De 15 0 1 0 800000
+Po 0 46975 43100 45530 43100 100 -1
+De 15 0 1 0 400000
+Po 0 45530 42430 45530 43100 100 -1
+De 15 0 1 0 400000
+Po 0 45530 43100 45530 43770 100 -1
+De 15 0 1 0 800000
+Po 0 46050 51700 46600 51700 150 -1
+De 15 0 1 0 400000
+Po 0 48350 50950 49200 50100 150 -1
+De 15 0 1 0 800000
+Po 0 47350 50950 48350 50950 150 -1
+De 15 0 1 0 0
+Po 0 46600 51700 47350 50950 150 -1
+De 15 0 1 0 0
+Po 0 48600 57750 48600 56600 150 -1
+De 15 0 1 0 C00000
+Po 0 72575 58625 71575 58625 200 -1
+De 15 0 1 0 C00000
+Po 0 73575 58625 72575 58625 200 -1
+De 15 0 1 0 C00000
+Po 0 57675 60700 57675 58650 200 -1
+De 15 0 1 0 C00000
+Po 0 55175 60700 57675 60700 200 -1
+De 15 0 1 0 C00000
+Po 0 53900 59900 52700 59900 200 -1
+De 15 0 1 0 C00000
+Po 0 55175 60700 54250 60700 200 -1
+De 15 0 1 0 400000
+Po 0 53900 60350 53900 59900 200 -1
+De 15 0 1 0 800000
+Po 0 54250 60700 53900 60350 200 -1
+De 15 0 1 0 0
+Po 0 82100 40700 82500 40700 150 -1
+De 0 0 3 0 400000
+Po 0 82850 41050 82850 41975 150 -1
+De 0 0 3 0 0
+Po 0 82500 40700 82850 41050 150 -1
+De 0 0 3 0 0
+Po 0 85000 43075 85000 42650 150 -1
+De 0 0 3 0 400000
+Po 0 84325 41975 82850 41975 150 -1
+De 0 0 3 0 0
+Po 0 82850 41975 81500 41975 150 -1
+De 0 0 3 0 800000
+Po 0 85000 42650 84325 41975 150 -1
+De 0 0 3 0 0
+Po 0 81500 41975 81500 42525 150 -1
+De 0 0 3 0 400000
+Po 0 80950 43075 80500 43075 150 -1
+De 0 0 3 0 800000
+Po 0 81500 42525 80950 43075 150 -1
+De 0 0 3 0 0
+Po 0 77500 41975 79500 41975 150 -1
+De 0 0 4 0 400000
+Po 0 79500 45000 79500 41975 150 -1
+De 0 0 4 0 400000
+Po 0 79500 41975 79500 41425 150 -1
+De 0 0 4 0 0
+Po 0 80225 40700 81100 40700 150 -1
+De 0 0 4 0 800000
+Po 0 79500 41425 80225 40700 150 -1
+De 0 0 4 0 0
+Po 0 55175 55000 52700 55000 150 -1
+De 15 0 5 0 C00000
+Po 0 52100 41660 51140 41660 150 -1
+De 0 0 5 0 400000
+Po 0 51140 41660 50000 42800 150 -1
+De 0 0 5 0 800000
+Po 0 56100 45600 56950 45600 150 -1
+De 0 0 5 0 400000
+Po 0 57525 46175 57525 46600 150 -1
+De 0 0 5 0 800000
+Po 0 56950 45600 57525 46175 150 -1
+De 0 0 5 0 0
+Po 0 56100 44600 56100 45600 150 -1
+De 0 0 5 0 C00000
+Po 0 52700 61600 55175 61600 200 -1
+De 15 0 5 0 C00000
+Po 0 47900 59200 47900 61200 200 -1
+De 15 0 5 0 400000
+Po 0 48300 61600 52700 61600 200 -1
+De 15 0 5 0 800000
+Po 0 47900 61200 48300 61600 200 -1
+De 15 0 5 0 0
+Po 0 45270 42430 45270 41505 100 -1
+De 15 0 6 0 400000
+Po 0 45575 41200 45975 41200 100 -1
+De 15 0 6 0 800000
+Po 0 45270 41505 45575 41200 100 -1
+De 15 0 6 0 0
+Po 0 53900 53400 52700 53400 150 -1
+De 15 0 6 0 C00000
+Po 0 55175 54100 54200 54100 150 -1
+De 15 0 6 0 400000
+Po 0 53900 53800 53900 53400 150 -1
+De 15 0 6 0 800000
+Po 0 54200 54100 53900 53800 150 -1
+De 15 0 6 0 0
+Po 0 57675 54100 55175 54100 150 -1
+De 15 0 6 0 C00000
+Po 0 57675 51850 57675 54100 150 -1
+De 15 0 6 0 C00000
+Po 0 67400 49900 67400 48275 150 -1
+De 0 0 6 0 C00000
+Po 0 75575 58625 74575 58625 200 -1
+De 15 0 6 0 C00000
+Po 0 76575 58625 75575 58625 200 -1
+De 15 0 6 0 C00000
+Po 0 71325 66200 71325 64700 200 -1
+De 15 0 6 0 C00000
+Po 0 75825 66200 75825 64700 200 -1
+De 15 0 6 0 C00000
+Po 0 81325 66200 81325 65250 200 -1
+De 15 0 6 0 400000
+Po 0 80775 64700 80325 64700 200 -1
+De 15 0 6 0 800000
+Po 0 81325 65250 80775 64700 200 -1
+De 15 0 6 0 0
+Po 0 45550 65600 45550 67150 150 -1
+De 15 0 6 0 C00000
+Po 0 56100 41600 54850 41600 150 -1
+De 0 0 7 0 400000
+Po 0 54500 41950 54500 43300 150 -1
+De 0 0 7 0 800000
+Po 0 54850 41600 54500 41950 150 -1
+De 0 0 7 0 0
+Po 0 57525 41600 56100 41600 150 -1
+De 0 0 7 0 C00000
+Po 0 56100 42600 55625 42600 150 -1
+De 0 0 8 0 400000
+Po 0 55275 43625 54500 44400 150 -1
+De 0 0 8 0 800000
+Po 0 55275 42950 55275 43625 150 -1
+De 0 0 8 0 0
+Po 0 55625 42600 55275 42950 150 -1
+De 0 0 8 0 0
+Po 0 57525 42600 56100 42600 150 -1
+De 0 0 8 0 C00000
+Po 0 66235 31330 67735 31330 200 -1
 De 15 0 9 0 C00000
-Po 0 69235 32580 70735 32580 200 -1
-De 15 0 17 0 C00000
-Po 0 70735 32580 71280 32580 200 -1
-De 15 0 17 0 400000
-Po 0 71280 32580 72200 33500 200 -1
-De 15 0 17 0 0
-Po 0 72200 33500 72600 33500 200 -1
-De 15 0 17 0 800000
-Po 0 70735 32980 70735 33255 200 -1
-De 15 0 18 0 400000
-Po 0 71980 34500 72600 34500 200 -1
-De 15 0 18 0 800000
-Po 0 70735 33255 71980 34500 200 -1
-De 15 0 18 0 0
-Po 0 69235 32980 70735 32980 200 -1
+Po 0 67735 30930 67735 30695 200 -1
+De 15 0 9 0 400000
+Po 0 68980 29450 69600 29450 200 -1
+De 15 0 9 0 800000
+Po 0 67735 30695 68980 29450 200 -1
+De 15 0 9 0 0
+Po 0 66235 30930 67735 30930 200 -1
+De 15 0 9 0 C00000
+Po 0 67735 31330 68320 31330 200 -1
+De 15 0 9 0 400000
+Po 0 69200 30450 69600 30450 200 -1
+De 15 0 9 0 800000
+Po 0 68320 31330 69200 30450 200 -1
+De 15 0 9 0 0
+Po 0 67735 31730 68920 31730 200 -1
+De 15 0 10 0 400000
+Po 0 69200 31450 69600 31450 200 -1
+De 15 0 10 0 800000
+Po 0 68920 31730 69200 31450 200 -1
+De 15 0 10 0 0
+Po 0 66235 31730 67735 31730 200 -1
+De 15 0 10 0 C00000
+Po 0 66235 32530 67735 32530 200 -1
 De 15 0 18 0 C00000
-Po 0 70735 32180 71880 32180 200 -1
+Po 0 67735 32530 68280 32530 200 -1
+De 15 0 18 0 400000
+Po 0 68280 32530 69200 33450 200 -1
+De 15 0 18 0 0
+Po 0 69200 33450 69600 33450 200 -1
+De 15 0 18 0 800000
+Po 0 67735 32930 67735 33205 200 -1
 De 15 0 19 0 400000
-Po 0 72200 32500 72600 32500 200 -1
+Po 0 68980 34450 69600 34450 200 -1
 De 15 0 19 0 800000
-Po 0 71880 32180 72200 32500 200 -1
+Po 0 67735 33205 68980 34450 200 -1
 De 15 0 19 0 0
-Po 0 69235 32180 70735 32180 200 -1
+Po 0 66235 32930 67735 32930 200 -1
 De 15 0 19 0 C00000
+Po 0 67735 32130 68880 32130 200 -1
+De 15 0 20 0 400000
+Po 0 69200 32450 69600 32450 200 -1
+De 15 0 20 0 800000
+Po 0 68880 32130 69200 32450 200 -1
+De 15 0 20 0 0
+Po 0 66235 32130 67735 32130 200 -1
+De 15 0 20 0 C00000
+Po 0 48300 53960 48300 53450 150 -1
+De 15 0 21 0 400000
+Po 0 43050 52750 43050 51700 150 -1
+De 15 0 21 0 800000
+Po 0 43550 53250 43050 52750 150 -1
+De 15 0 21 0 0
+Po 0 48100 53250 43550 53250 150 -1
+De 15 0 21 0 0
+Po 0 48300 53450 48100 53250 150 -1
+De 15 0 21 0 0
+Po 0 49800 53960 49800 54725 150 -1
+De 15 0 22 0 400000
+Po 0 46050 55875 46050 57500 150 -1
+De 15 0 22 0 800000
+Po 0 46750 55175 46050 55875 150 -1
+De 15 0 22 0 0
+Po 0 49350 55175 46750 55175 150 -1
+De 15 0 22 0 0
+Po 0 49800 54725 49350 55175 150 -1
+De 15 0 22 0 0
+Po 0 48800 53960 48800 54350 150 -1
+De 15 0 23 0 400000
+Po 0 43050 55375 43050 57500 150 -1
+De 15 0 23 0 800000
+Po 0 43900 54525 43050 55375 150 -1
+De 15 0 23 0 0
+Po 0 48625 54525 43900 54525 150 -1
+De 15 0 23 0 0
+Po 0 48800 54350 48625 54525 150 -1
+De 15 0 23 0 0
+Po 0 49300 53960 49300 54500 150 -1
+De 15 0 24 0 400000
+Po 0 44050 55675 44050 57500 150 -1
+De 15 0 24 0 800000
+Po 0 44900 54825 44050 55675 150 -1
+De 15 0 24 0 0
+Po 0 48975 54825 44900 54825 150 -1
+De 15 0 24 0 0
+Po 0 49300 54500 48975 54825 150 -1
+De 15 0 24 0 0
+Po 0 62975 42000 62975 40625 150 -1
+De 0 0 25 0 C00000
 Po 0 32040 42860 32040 42040 100 -1
-De 15 0 25 0 0
-Po 0 32500 37960 32500 36800 100 -1
-De 15 0 25 0 800000
-Po 0 32040 42040 32280 41800 100 -1
-De 15 0 25 0 0
-Po 0 32280 41800 32600 41800 100 -1
-De 15 0 25 0 800000
-Po 0 32280 43100 32040 42860 100 -1
-De 15 0 25 0 0
-Po 0 32600 41800 32600 38060 100 -1
-De 15 0 25 0 400000
-Po 0 32600 38060 32500 37960 100 -1
-De 15 0 25 0 0
-Po 0 32450 43100 32280 43100 100 -1
-De 15 0 25 0 400000
-Po 0 33720 43100 33960 42860 100 -1
-De 15 0 26 0 0
-Po 0 33960 42860 33960 42040 100 -1
-De 15 0 26 0 0
-Po 0 33960 42040 33720 41800 100 -1
-De 15 0 26 0 0
-Po 0 33720 41800 33400 41800 100 -1
-De 15 0 26 0 800000
-Po 0 33550 43100 33720 43100 100 -1
-De 15 0 26 0 400000
-Po 0 33400 38020 33500 37920 100 -1
-De 15 0 26 0 0
-Po 0 33500 37920 33500 36800 100 -1
-De 15 0 26 0 800000
-Po 0 33400 41800 33400 38020 100 -1
-De 15 0 26 0 400000
-Po 0 31500 36800 31500 43220 100 -1
-De 15 0 27 0 400000
-Po 0 31780 43500 32450 43500 100 -1
-De 15 0 27 0 800000
-Po 0 31500 43220 31780 43500 100 -1
 De 15 0 27 0 0
-Po 0 34500 36800 34500 43220 100 -1
-De 15 0 28 0 400000
-Po 0 34220 43500 33550 43500 100 -1
-De 15 0 28 0 800000
-Po 0 34500 43220 34220 43500 100 -1
+Po 0 32500 37960 32500 36800 100 -1
+De 15 0 27 0 800000
+Po 0 32040 42040 32280 41800 100 -1
+De 15 0 27 0 0
+Po 0 32280 41800 32600 41800 100 -1
+De 15 0 27 0 800000
+Po 0 32280 43100 32040 42860 100 -1
+De 15 0 27 0 0
+Po 0 32600 41800 32600 38060 100 -1
+De 15 0 27 0 400000
+Po 0 32600 38060 32500 37960 100 -1
+De 15 0 27 0 0
+Po 0 32450 43100 32280 43100 100 -1
+De 15 0 27 0 400000
+Po 0 33720 43100 33960 42860 100 -1
 De 15 0 28 0 0
-Po 0 82390 35500 82390 37010 200 -1
+Po 0 33960 42860 33960 42040 100 -1
+De 15 0 28 0 0
+Po 0 33960 42040 33720 41800 100 -1
+De 15 0 28 0 0
+Po 0 33720 41800 33400 41800 100 -1
+De 15 0 28 0 800000
+Po 0 33550 43100 33720 43100 100 -1
+De 15 0 28 0 400000
+Po 0 33400 38020 33500 37920 100 -1
+De 15 0 28 0 0
+Po 0 33500 37920 33500 36800 100 -1
+De 15 0 28 0 800000
+Po 0 33400 41800 33400 38020 100 -1
+De 15 0 28 0 400000
+Po 0 31500 36800 31500 43220 100 -1
+De 15 0 29 0 400000
+Po 0 31780 43500 32450 43500 100 -1
+De 15 0 29 0 800000
+Po 0 31500 43220 31780 43500 100 -1
+De 15 0 29 0 0
+Po 0 34500 36800 34500 43220 100 -1
+De 15 0 30 0 400000
+Po 0 34220 43500 33550 43500 100 -1
+De 15 0 30 0 800000
+Po 0 34500 43220 34220 43500 100 -1
+De 15 0 30 0 0
+Po 0 45790 43770 45790 44260 100 -1
+De 15 0 31 0 400000
+Po 0 43925 44375 43700 44600 100 -1
+De 15 0 31 0 800000
+Po 0 45675 44375 43925 44375 100 -1
+De 15 0 31 0 0
+Po 0 45790 44260 45675 44375 100 -1
+De 15 0 31 0 0
+Po 0 45790 42430 46345 42430 100 -1
+De 15 0 32 0 400000
+Po 0 44350 41600 43700 41600 100 -1
+De 15 0 32 0 800000
+Po 0 45400 40550 44350 41600 100 -1
+De 15 0 32 0 0
+Po 0 46300 40550 45400 40550 100 -1
+De 15 0 32 0 0
+Po 0 46625 40875 46300 40550 100 -1
+De 15 0 32 0 0
+Po 0 46625 42150 46625 40875 100 -1
+De 15 0 32 0 0
+Po 0 46345 42430 46625 42150 100 -1
+De 15 0 32 0 0
+Po 0 65400 49900 65400 48275 150 -1
+De 0 0 36 0 C00000
+Po 0 65400 48275 65400 46875 150 -1
+De 0 0 36 0 C00000
+Po 0 64400 49900 64400 49275 150 -1
+De 0 0 37 0 400000
+Po 0 64400 49275 63400 48275 150 -1
+De 0 0 37 0 800000
+Po 0 63400 48275 63400 46875 150 -1
+De 0 0 37 0 C00000
+Po 0 73000 46900 75725 46900 150 -1
+De 0 0 40 0 400000
+Po 0 82475 45300 83150 45300 150 -1
+De 0 0 40 0 800000
+Po 0 82200 45575 82475 45300 150 -1
+De 0 0 40 0 0
+Po 0 82200 47125 82200 45575 150 -1
+De 0 0 40 0 0
+Po 0 81700 47625 82200 47125 150 -1
+De 0 0 40 0 0
+Po 0 76450 47625 81700 47625 150 -1
+De 0 0 40 0 0
+Po 0 75725 46900 76450 47625 150 -1
+De 0 0 40 0 0
+Po 0 73000 46900 71500 46900 150 -1
+De 0 0 40 0 C00000
+Po 0 83900 45675 83525 45675 150 -1
+De 0 0 40 0 400000
+Po 0 83525 45675 83150 45300 150 -1
+De 0 0 40 0 800000
+Po 0 83900 45675 85325 45675 150 -1
+De 0 0 40 0 400000
+Po 0 85325 45675 85700 45300 150 -1
+De 0 0 40 0 800000
+Po 0 73500 43300 73500 42825 150 -1
+De 0 0 41 0 400000
+Po 0 76575 42150 76575 40625 150 -1
+De 0 0 41 0 800000
+Po 0 76250 42475 76575 42150 150 -1
+De 0 0 41 0 0
+Po 0 73850 42475 76250 42475 150 -1
+De 0 0 41 0 0
+Po 0 73500 42825 73850 42475 150 -1
+De 0 0 41 0 0
+Po 0 62804 66052 62804 65475 100 -1
+De 15 0 42 0 400000
+Po 0 62804 65475 62800 65475 100 -1
+De 15 0 42 0 0
+Po 0 54600 65475 62800 65475 100 -1
+De 15 0 42 0 0
+Po 0 62800 65475 67100 65475 100 -1
+De 15 0 42 0 0
+Po 0 67100 65475 67825 66200 100 -1
+De 15 0 42 0 800000
+Po 0 54325 65750 54325 68025 100 -1
+De 15 0 42 0 800000
+Po 0 54600 65475 54325 65750 100 -1
+De 15 0 42 0 0
+Po 0 64340 66052 64340 68010 100 -1
+De 15 0 44 0 400000
+Po 0 64340 68010 64325 68025 100 -1
+De 15 0 44 0 800000
+Po 0 64084 66052 64084 67266 100 -1
+De 15 0 45 0 400000
+Po 0 64084 67266 63325 68025 100 -1
+De 15 0 45 0 800000
+Po 0 64852 66052 65977 66052 100 -1
+De 15 0 46 0 400000
+Po 0 68825 66850 68825 66200 100 -1
+De 15 0 46 0 800000
+Po 0 68400 67275 68825 66850 100 -1
+De 15 0 46 0 0
+Po 0 67200 67275 68400 67275 100 -1
+De 15 0 46 0 0
+Po 0 65977 66052 67200 67275 100 -1
+De 15 0 46 0 0
+Po 0 68825 66200 68825 64700 200 -1
+De 15 0 46 0 C00000
+Po 0 63828 66052 63828 67197 100 -1
+De 15 0 47 0 400000
+Po 0 63575 67450 63125 67450 100 -1
+De 15 0 47 0 0
+Po 0 63828 67197 63575 67450 100 -1
+De 15 0 47 0 0
+Po 0 59825 68525 59325 69025 100 -1
+De 15 0 47 0 800000
+Po 0 62650 68525 59825 68525 100 -1
+De 15 0 47 0 0
+Po 0 62825 68350 62650 68525 100 -1
+De 15 0 47 0 0
+Po 0 62825 67750 62825 68350 100 -1
+De 15 0 47 0 0
+Po 0 63125 67450 62825 67750 100 -1
+De 15 0 47 0 0
+Po 0 63572 66052 63572 67053 100 -1
+De 15 0 48 0 400000
+Po 0 63400 67225 62675 67225 100 -1
+De 15 0 48 0 0
+Po 0 63572 67053 63400 67225 100 -1
+De 15 0 48 0 0
+Po 0 58825 68525 58325 69025 100 -1
+De 15 0 48 0 800000
+Po 0 58825 67750 58825 68525 100 -1
+De 15 0 48 0 0
+Po 0 59150 67425 58825 67750 100 -1
+De 15 0 48 0 0
+Po 0 62475 67425 59150 67425 100 -1
+De 15 0 48 0 0
+Po 0 62675 67225 62475 67425 100 -1
+De 15 0 48 0 0
+Po 0 64596 66052 64596 67296 100 -1
+De 15 0 49 0 400000
+Po 0 64596 67296 65325 68025 100 -1
+De 15 0 49 0 800000
+Po 0 63060 66052 63060 66490 100 -1
+De 15 0 50 0 400000
+Po 0 56325 66900 56325 68025 100 -1
+De 15 0 50 0 800000
+Po 0 56600 66625 56325 66900 100 -1
+De 15 0 50 0 0
+Po 0 62925 66625 56600 66625 100 -1
+De 15 0 50 0 0
+Po 0 63060 66490 62925 66625 100 -1
+De 15 0 50 0 0
+Po 0 55325 68025 55325 66475 100 -1
+De 15 0 51 0 400000
+Po 0 55748 66052 62548 66052 100 -1
+De 15 0 51 0 800000
+Po 0 55325 66475 55748 66052 100 -1
+De 15 0 51 0 0
+Po 0 63316 66052 63316 66907 100 -1
+De 15 0 52 0 400000
+Po 0 57825 68525 57325 69025 100 -1
+De 15 0 52 0 800000
+Po 0 57825 67625 57825 68525 100 -1
+De 15 0 52 0 0
+Po 0 58250 67200 57825 67625 100 -1
+De 15 0 52 0 0
+Po 0 62373 67200 58250 67200 100 -1
+De 15 0 52 0 0
+Po 0 62573 67000 62373 67200 100 -1
+De 15 0 52 0 0
+Po 0 63223 67000 62573 67000 100 -1
+De 15 0 52 0 0
+Po 0 63316 66907 63223 67000 100 -1
+De 15 0 52 0 0
+Po 0 72500 43300 72500 42675 150 -1
+De 0 0 54 0 400000
+Po 0 75575 41600 75575 40625 150 -1
+De 0 0 54 0 800000
+Po 0 75050 42125 75575 41600 150 -1
+De 0 0 54 0 0
+Po 0 73050 42125 75050 42125 150 -1
+De 0 0 54 0 0
+Po 0 72500 42675 73050 42125 150 -1
+De 0 0 54 0 0
+Po 0 50000 64325 49025 64325 200 -1
+De 15 0 56 0 400000
+Po 0 49025 64325 47900 63200 200 -1
+De 15 0 56 0 800000
+Po 0 85031 59150 86500 59150 150 -1
+De 0 0 57 0 C00000
+Po 0 81369 60150 80600 60150 150 -1
+De 0 0 58 0 400000
+Po 0 80600 60150 80000 59550 150 -1
+De 0 0 58 0 800000
+Po 0 85031 60650 86000 60650 150 -1
+De 0 0 59 0 400000
+Po 0 86000 60650 86500 61150 150 -1
+De 0 0 59 0 800000
+Po 0 85031 60150 86500 60150 150 -1
+De 0 0 60 0 C00000
+Po 0 71500 44900 71500 43300 150 -1
+De 0 0 62 0 C00000
+Po 0 51200 50100 52200 50100 150 -1
+De 15 0 63 0 400000
+Po 0 52700 50600 52700 51400 150 -1
+De 15 0 63 0 800000
+Po 0 52200 50100 52700 50600 150 -1
+De 15 0 63 0 0
+Po 0 60600 43000 60600 44600 150 -1
+De 0 0 63 0 400000
+Po 0 59500 44600 60600 44600 150 -1
+De 0 0 63 0 0
+Po 0 57525 44600 59500 44600 150 -1
+De 0 0 63 0 400000
+Po 0 60600 44600 62900 44600 150 -1
+De 0 0 63 0 0
+Po 0 62900 44600 63400 45100 150 -1
+De 0 0 63 0 0
+Po 0 63400 45100 63400 45875 150 -1
+De 0 0 63 0 800000
+Po 0 45050 51700 45050 50100 150 -1
+De 15 0 63 0 C00000
+Po 0 50600 56600 51100 56600 150 -1
+De 15 0 63 0 400000
+Po 0 51700 56000 52700 56000 150 -1
+De 15 0 63 0 800000
+Po 0 51100 56600 51700 56000 150 -1
+De 15 0 63 0 0
+Po 0 50600 56600 50600 57425 150 -1
+De 15 0 63 0 400000
+Po 0 50275 57750 49600 57750 150 -1
+De 15 0 63 0 800000
+Po 0 50600 57425 50275 57750 150 -1
+De 15 0 63 0 0
+Po 0 50800 53960 50800 54600 150 -1
+De 15 0 63 0 400000
+Po 0 50600 54800 50600 56600 150 -1
+De 15 0 63 0 800000
+Po 0 50800 54600 50600 54800 150 -1
+De 15 0 63 0 0
+Po 0 52700 51400 53475 51400 150 -1
+De 15 0 63 0 400000
+Po 0 53900 51825 53900 52400 150 -1
+De 15 0 63 0 800000
+Po 0 53475 51400 53900 51825 150 -1
+De 15 0 63 0 0
+Po 0 53900 52400 55175 52400 150 -1
+De 15 0 63 0 400000
+Po 0 55175 53200 55175 52400 150 -1
+De 15 0 63 0 400000
+Po 0 55175 52400 55175 50425 150 -1
+De 15 0 63 0 800000
+Po 0 54500 47400 54500 48600 150 -1
+De 0 0 63 0 400000
+Po 0 55175 49275 55175 50425 150 -1
+De 0 0 63 0 800000
+Po 0 54500 48600 55175 49275 150 -1
+De 0 0 63 0 0
+Po 0 47975 43100 47975 44975 150 -1
+De 0 0 63 0 C00000
+Po 0 47975 43100 47975 41200 150 -1
+De 0 0 63 0 C00000
+Po 0 50000 40800 50000 40300 150 -1
+De 0 0 63 0 400000
+Po 0 50675 40300 50000 40300 150 -1
+De 0 0 63 0 0
+Po 0 50000 40300 48300 40300 150 -1
+De 0 0 63 0 0
+Po 0 47975 40625 47975 41200 150 -1
+De 0 0 63 0 800000
+Po 0 48300 40300 47975 40625 150 -1
+De 0 0 63 0 0
+Po 0 53750 40300 53750 47200 150 -1
+De 0 0 63 0 0
+Po 0 53750 47200 53950 47400 150 -1
+De 0 0 63 0 0
+Po 0 53950 47400 54500 47400 150 -1
+De 0 0 63 0 800000
+Po 0 52100 40870 52100 40300 150 -1
+De 0 0 63 0 400000
+Po 0 54500 40300 53750 40300 150 -1
+De 0 0 63 0 400000
+Po 0 53750 40300 52100 40300 150 -1
+De 0 0 63 0 0
+Po 0 52100 40300 50675 40300 150 -1
+De 0 0 63 0 0
+Po 0 56100 43600 56475 43600 150 -1
+De 0 0 63 0 400000
+Po 0 57475 44600 57525 44600 150 -1
+De 0 0 63 0 800000
+Po 0 56475 43600 57475 44600 150 -1
+De 0 0 63 0 0
+Po 0 61975 40625 61975 41025 150 -1
+De 0 0 63 0 400000
+Po 0 61975 41025 60600 42400 150 -1
+De 0 0 63 0 0
+Po 0 60600 42400 60600 43000 150 -1
+De 0 0 63 0 800000
+Po 0 65400 45875 67575 45875 150 -1
+De 0 0 63 0 400000
+Po 0 67775 46075 67775 47550 150 -1
+De 0 0 63 0 0
+Po 0 67575 45875 67775 46075 150 -1
+De 0 0 63 0 0
+Po 0 63400 45875 65400 45875 150 -1
+De 0 0 63 0 C00000
+Po 0 69400 48275 69400 47925 150 -1
+De 0 0 63 0 400000
+Po 0 69400 47925 69025 47550 150 -1
+De 0 0 63 0 0
+Po 0 69025 47550 67775 47550 150 -1
+De 0 0 63 0 0
+Po 0 66400 47975 66400 49900 150 -1
+De 0 0 63 0 800000
+Po 0 67775 47550 66825 47550 150 -1
+De 0 0 63 0 0
+Po 0 66825 47550 66400 47975 150 -1
+De 0 0 63 0 0
+Po 0 76500 43300 77250 43300 150 -1
+De 0 0 63 0 400000
+Po 0 77475 43075 78500 43075 150 -1
+De 0 0 63 0 800000
+Po 0 77250 43300 77475 43075 150 -1
+De 0 0 63 0 0
+Po 0 75500 43300 76500 43300 150 -1
+De 0 0 63 0 C00000
+Po 0 78500 45000 78500 43075 150 -1
+De 0 0 63 0 C00000
+Po 0 83900 46675 83525 46675 150 -1
+De 0 0 63 0 400000
+Po 0 83525 46675 83150 47050 150 -1
+De 0 0 63 0 800000
+Po 0 83900 46675 85325 46675 150 -1
+De 0 0 63 0 400000
+Po 0 85325 46675 85700 47050 150 -1
+De 0 0 63 0 800000
+Po 0 81369 62650 80600 62650 150 -1
+De 0 0 63 0 400000
+Po 0 80600 62150 80600 62650 150 -1
+De 0 0 63 0 0
+Po 0 80600 62650 80600 63225 150 -1
+De 0 0 63 0 0
+Po 0 82325 63925 82325 64700 150 -1
+De 0 0 63 0 800000
+Po 0 82025 63625 82325 63925 150 -1
+De 0 0 63 0 0
+Po 0 81000 63625 82025 63625 150 -1
+De 0 0 63 0 0
+Po 0 80600 63225 81000 63625 150 -1
+De 0 0 63 0 0
+Po 0 85031 61650 85850 61650 150 -1
+De 0 0 63 0 400000
+Po 0 85031 62150 85850 62150 150 -1
+De 0 0 63 0 400000
+Po 0 85031 61150 85650 61150 150 -1
+De 0 0 63 0 400000
+Po 0 85600 62650 85031 62650 150 -1
+De 0 0 63 0 800000
+Po 0 85850 62400 85600 62650 150 -1
+De 0 0 63 0 0
+Po 0 85850 61350 85850 61650 150 -1
+De 0 0 63 0 0
+Po 0 85850 61650 85850 62150 150 -1
+De 0 0 63 0 0
+Po 0 85850 62150 85850 62400 150 -1
+De 0 0 63 0 0
+Po 0 85650 61150 85850 61350 150 -1
+De 0 0 63 0 0
+Po 0 80000 61550 80600 61550 150 -1
+De 0 0 63 0 400000
+Po 0 81369 61150 80600 61150 150 -1
+De 0 0 63 0 400000
+Po 0 81369 62150 80600 62150 150 -1
+De 0 0 63 0 400000
+Po 0 81369 61650 80600 61650 150 -1
+De 0 0 63 0 400000
+Po 0 80600 61650 80600 61675 150 -1
+De 0 0 63 0 0
+Po 0 81369 60650 80750 60650 150 -1
+De 0 0 63 0 400000
+Po 0 80600 60800 80600 61150 150 -1
+De 0 0 63 0 0
+Po 0 80600 61150 80600 61550 150 -1
+De 0 0 63 0 0
+Po 0 80600 61550 80600 61675 150 -1
+De 0 0 63 0 0
+Po 0 80600 61675 80600 62150 150 -1
+De 0 0 63 0 0
+Po 0 80750 60650 80600 60800 150 -1
+De 0 0 63 0 0
+Po 0 75575 57625 76575 57625 200 -1
+De 15 0 63 0 C00000
+Po 0 74575 57625 75575 57625 200 -1
+De 15 0 63 0 C00000
+Po 0 73575 57625 74575 57625 200 -1
+De 15 0 63 0 C00000
+Po 0 72575 57625 73575 57625 200 -1
+De 15 0 63 0 C00000
+Po 0 71575 57625 72575 57625 200 -1
+De 15 0 63 0 C00000
+Po 0 62800 61900 63850 61900 200 -1
+De 15 0 63 0 C00000
+Po 0 69825 66200 69825 64700 200 -1
+De 15 0 63 0 C00000
+Po 0 74325 66200 74325 65250 200 -1
+De 15 0 63 0 400000
+Po 0 73775 64700 73325 64700 200 -1
+De 15 0 63 0 800000
+Po 0 74325 65250 73775 64700 200 -1
+De 15 0 63 0 0
+Po 0 78825 66200 78825 65225 200 -1
+De 15 0 63 0 400000
+Po 0 78300 64700 77825 64700 200 -1
+De 15 0 63 0 800000
+Po 0 78825 65225 78300 64700 200 -1
+De 15 0 63 0 0
+Po 0 82325 66200 82325 64700 200 -1
+De 15 0 63 0 C00000
+Po 0 52700 57900 52700 56000 200 -1
+De 15 0 63 0 C00000
+Po 0 52700 57900 53900 57900 200 -1
+De 15 0 63 0 400000
+Po 0 53925 57925 53900 57925 200 -1
+De 15 0 63 0 0
+Po 0 53900 57900 53925 57925 200 -1
+De 15 0 63 0 0
+Po 0 53900 58900 53900 57925 200 -1
+De 15 0 63 0 400000
+Po 0 53900 57925 53900 57650 200 -1
+De 15 0 63 0 0
+Po 0 54175 57375 55175 57375 200 -1
+De 15 0 63 0 800000
+Po 0 53900 57650 54175 57375 200 -1
+De 15 0 63 0 0
+Po 0 55175 59800 55175 59325 200 -1
+De 15 0 63 0 400000
+Po 0 54750 58900 53900 58900 200 -1
+De 15 0 63 0 800000
+Po 0 55175 59325 54750 58900 200 -1
+De 15 0 63 0 0
+Po 0 50000 66725 47875 66725 200 -1
+De 15 0 63 0 400000
+Po 0 44425 68025 43550 67150 200 -1
+De 15 0 63 0 800000
+Po 0 46575 68025 44425 68025 200 -1
+De 15 0 63 0 0
+Po 0 47875 66725 46575 68025 200 -1
+De 15 0 63 0 0
+Po 0 50000 66725 51675 66725 200 -1
+De 15 0 63 0 400000
+Po 0 52000 66400 52000 65475 200 -1
+De 15 0 63 0 800000
+Po 0 51675 66725 52000 66400 200 -1
+De 15 0 63 0 0
+Po 0 52700 62600 52700 63575 200 -1
+De 15 0 63 0 400000
+Po 0 52000 64275 52000 65475 200 -1
+De 15 0 63 0 800000
+Po 0 52700 63575 52000 64275 200 -1
+De 15 0 63 0 0
+Po 0 43550 65600 43550 67150 150 -1
+De 15 0 63 0 C00000
+Po 0 61600 43000 62975 43000 150 -1
+De 0 0 64 0 C00000
+Po 0 56175 50425 56575 50425 150 -1
+De 0 0 65 0 400000
+Po 0 56675 50525 56675 51850 150 -1
+De 0 0 65 0 800000
+Po 0 56575 50425 56675 50525 150 -1
+De 0 0 65 0 0
+Po 0 56675 58650 56675 57875 200 -1
 De 15 0 66 0 400000
-Po 0 82390 37010 82100 37300 200 -1
+Po 0 56675 57875 56175 57375 200 -1
 De 15 0 66 0 800000
-Po 0 80810 35500 80810 37010 200 -1
+Po 0 82390 35500 82390 37010 200 -1
 De 15 0 67 0 400000
-Po 0 80810 37010 81100 37300 200 -1
+Po 0 82390 37010 82100 37300 200 -1
 De 15 0 67 0 800000
+Po 0 80810 35500 80810 37010 200 -1
+De 15 0 68 0 400000
+Po 0 80810 37010 81100 37300 200 -1
+De 15 0 68 0 800000
 $EndTRACK
 $ZONE
 $EndZONE
