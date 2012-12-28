@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Thursday 27 December 2012 10:04:21 PM IST
+# EESchema Netlist Version 1.1 created  12/28/2012 6:28:42 PM
 (
  ( /4E1FEA4E/4E1FEBC6 I/O B1 I/O
   ( 1 /rtc/~PD3_SQW )
@@ -13,63 +13,63 @@
   ( + /rtc/BAT )
   ( - GND )
  )
- ( /4DCA7BAC c_0805 C1 100n
-  ( 1 /rtc/5V0 )
+ ( /4DCA7BAC C2 C1 100n
+  ( 1 /pwr/5V0 )
   ( 2 GND )
  )
- ( /4EC128EB c_0805 C2 22p
+ ( /4EC128EB cnp_3mm_disc C2 22p
   ( 1 /PB6 )
   ( 2 GND )
  )
- ( /4EC1290E c_0805 C3 22p
+ ( /4EC1290E cnp_3mm_disc C3 22p
   ( 1 /PB7 )
   ( 2 GND )
  )
- ( /4FE58ED5 c_0805 C4 100n
+ ( /4FE58ED5 C2 C4 100n
   ( 1 /~RTS )
   ( 2 /RPi/RESET )
  )
- ( /50B2116F/50BEDE7E c_0805 C5 100n
+ ( /50B2116F/50BEDE7E C2 C5 100n
   ( 1 GND )
-  ( 2 /rtc/5V0 )
+  ( 2 /pwr/5V0 )
  )
- ( /50B2116F/50BA6744 c_0805 C6 100n
-  ( 1 /rtc/5V0 )
+ ( /50B2116F/50BA6744 C2 C6 100n
+  ( 1 /pwr/5V0 )
   ( 2 GND )
  )
- ( /50B2116F/50CCABCC c_0805 C7 100n
-  ( 1 /rtc/5V0 )
+ ( /50B2116F/50CCABCC C2 C7 100n
+  ( 1 /pwr/5V0 )
   ( 2 GND )
  )
- ( /50B2116F/50CCAB99 c_0805 C8 100n
+ ( /50B2116F/50CCAB99 C2 C8 100n
   ( 1 +3.3V )
   ( 2 GND )
  )
- ( /50B2116F/50CCCDB6 c_0805 C9 100n
-  ( 1 /rtc/5V0 )
+ ( /50B2116F/50CCCDB6 C2 C9 100n
+  ( 1 /pwr/5V0 )
   ( 2 GND )
  )
- ( /50B2116F/50BA6794 c_0805 C10 100n
+ ( /50B2116F/50BA6794 C2 C10 100n
   ( 1 +3.3V )
   ( 2 GND )
  )
- ( /50B2116F/50CEC0CF c_0805 C11 100n
-  ( 1 /rtc/5V0 )
+ ( /50B2116F/50CEC0CF C2 C11 100n
+  ( 1 /pwr/5V0 )
   ( 2 GND )
  )
- ( /50B2116F/50BA67C9 c_0805 C12 100n
+ ( /50B2116F/50BA67C9 C2 C12 100n
   ( 1 GND )
-  ( 2 /pwr/12V )
+  ( 2 /Interface/12V )
  )
- ( /50B2116F/50BA6860 c_0805 C13 100n
+ ( /50B2116F/50BA6860 C2 C13 100n
   ( 1 /Interface/+Vlv )
   ( 2 GND )
  )
- ( /50B2116F/50CCC293 c_0805 C14 100n
-  ( 1 /rtc/5V0 )
+ ( /50B2116F/50CCC293 C2 C14 100n
+  ( 1 /pwr/5V0 )
   ( 2 GND )
  )
- ( /50B2116F/50CCC29B c_0805 C15 100n
+ ( /50B2116F/50CCC29B C2 C15 100n
   ( 1 +3.3V )
   ( 2 GND )
  )
@@ -77,68 +77,72 @@
   ( 1 /Interface/T- )
   ( 2 /Interface/T+ )
  )
- ( /50B2116F/50BA6840 c_0805 C17 100n
-  ( 1 /pwr/12V )
+ ( /50B2116F/50BA6840 C2 C17 100n
+  ( 1 /Interface/12V )
   ( 2 GND )
  )
- ( /4FC07407/4FC61A0B c_0805_pol C18 2u2_Tant
-  ( 1 /rtc/5V0 )
+ ( /4FC07407/4FC61A0B cnp_3mm_disc C18 2u2_Tant
+  ( 1 /pwr/5V0 )
   ( 2 GND )
  )
- ( /4FC07407/4FC61A0C C_ELCO_SMD C19 100u,25V
-  ( 1 /pwr/12V )
+ ( /4FC07407/4FC61A0C CP_5x11mm C19 100u,25V
+  ( 1 /Interface/12V )
   ( 2 GND )
  )
- ( /4FC07407/4FC61A06 c_0805 C20 100n
-  ( 1 /rtc/5V0 )
+ ( /4FC07407/4FC61A06 C2 C20 100n
+  ( 1 /pwr/5V0 )
   ( 2 GND )
  )
- ( /4FC07407/4FDB1F26 c_0805 C21 10n
-  ( 1 N-000063 )
-  ( 2 GND )
- )
- ( /4FC07407/4FC61A07 c_0805_pol C22 2u2
+ ( /4FC07407/50DD4389 C2 C21 100n
   ( 1 +3.3V )
   ( 2 GND )
  )
- ( /4E1FEA4E/4E1FEA7E c_0805 C23 100n
+ ( /4FC07407/50DD442A cnp_3mm_disc C22 2u2_Tant
+  ( 1 +3.3V )
+  ( 2 GND )
+ )
+ ( /4E1FEA4E/4E1FEA7E C2 C23 100n
   ( 1 /rtc/BAT )
   ( 2 GND )
  )
- ( /4FBF6CBF/4FD62B83 c_0805 C24 100n
+ ( /4FBF6CBF/4FD62B83 C2 C24 100n
   ( 1 GND )
-  ( 2 /rtc/5V0 )
+  ( 2 /pwr/5V0 )
  )
- ( /4FBF6CBF/4FD62BCC c_0805 C25 100n
+ ( /4FBF6CBF/4FD62BCC C2 C25 100n
   ( 1 GND )
   ( 2 /RPi/Rpi_3V3 )
  )
- ( /50B2116F/50B7155C S1A-E3 D1 S1A-E3/61T
+ ( /4FC07407/50DD3EB6 CP_5x11mm C26 100u,25V
+  ( 1 /Interface/12V )
+  ( 2 GND )
+ )
+ ( /50B2116F/50B7155C diode_do41 D1 S1A-E3/61T
   ( 1 /Interface/-Vlv )
   ( 2 /Interface/+Vlv )
  )
- ( /50B2116F/50BA3BBD MM5Z3V3T1G D2 MM5Z3V3T1G
-  ( 1 /Interface/IO_R )
+ ( /50B2116F/50BA3BBD diode_do35 D2 MM3Z3V0T1G
+  ( 1 GND )
+  ( 2 /Interface/IO_R )
+ )
+ ( /50B2116F/50B22921 diode_do35 D3 MM3Z3V0T1G
+  ( 1 GND )
+  ( 2 /Interface/IO_X )
+ )
+ ( /4FC07407/4FC61A7F diode_do41 D4 MBRM110LT1G
+  ( 1 /pwr/PWR_IN )
+  ( 2 /Interface/12V )
+ )
+ ( /4FC07407/4FE44ABA led_5mm_clear D5 LED
+  ( 1 N-000062 )
   ( 2 GND )
  )
- ( /50B2116F/50B22921 MM5Z3V3T1G D3 MM5Z3V3T1G
-  ( 1 /Interface/IO_X )
+ ( /4FC07407/4FE44ABB led_5mm_clear D6 LED
+  ( 1 N-000061 )
   ( 2 GND )
  )
- ( /4FC07407/4FC61A7F do_457 D4 MBRM110LT1G
-  ( 1 /pwr/12V )
-  ( 2 /pwr/PWR_IN )
- )
- ( /4FC07407/4FE44ABA led_0805 D5 LED
-  ( 1 N-000066 )
-  ( 2 GND )
- )
- ( /4FC07407/4FE44ABB led_0805 D6 LED
-  ( 1 N-000067 )
-  ( 2 GND )
- )
- ( /4FC07407/4FC62203 led_0805 D7 LED
-  ( 1 N-000064 )
+ ( /4FC07407/4FC62203 led_5mm_clear D7 LED
+  ( 1 N-000060 )
   ( 2 GND )
  )
  ( /4FC07407/4FC075A6 Logo-WL3 G1 Logo_Wyolum
@@ -158,12 +162,12 @@
  ( /4FE6E6EC Header_A_REF P1 AREF
   ( 1 +3.3V )
   ( 2 /AREF )
-  ( 3 /rtc/5V0 )
+  ( 3 /pwr/5V0 )
  )
  ( /4FF3E3D3 Header_6x1 P2 ANALOG_5V0
-  ( 1 /rtc/5V0 )
-  ( 2 /rtc/5V0 )
-  ( 3 /rtc/5V0 )
+  ( 1 /pwr/5V0 )
+  ( 2 /pwr/5V0 )
+  ( 3 /pwr/5V0 )
   ( 4 +3.3V )
   ( 5 +3.3V )
   ( 6 +3.3V )
@@ -178,8 +182,8 @@
  )
  ( /4FE58ED6 Header_ICSP P4 ICSP
   ( 1 /RPi/MISO )
-  ( 2 /rtc/5V0 )
-  ( 3 /RPi/SCK )
+  ( 2 /pwr/5V0 )
+  ( 3 /Interface/SCK )
   ( 4 /Interface/~MOSI )
   ( 5 /RPi/RESET )
   ( 6 GND )
@@ -192,9 +196,9 @@
   ( 5 /RPi/TXD )
   ( 6 /~RTS )
  )
- ( /50B2116F/50BA5553 SIL-3 P6 Pulse
+ ( /50B2116F/50BA5553 pin_strip_3-90 P6 Pulse
   ( 1 /Interface/PC1_Pulse )
-  ( 2 /rtc/5V0 )
+  ( 2 /pwr/5V0 )
   ( 3 GND )
  )
  ( /50B2116F/50D19AF4 HCEM500GUH9P3 P7 Gage_Pr
@@ -208,41 +212,41 @@
   ( 8 /Interface/P_MOSI )
  )
  ( /50B2116F/50D19E1A HDIB002AUY8H5 P8 Abso_Pr
-  ( 1 /rtc/5V0 )
+  ( 1 /pwr/5V0 )
   ( 2 /Interface/PC2_Pr2 )
   ( 3 GND )
-  ( 4 /Interface/SDA )
+  ( 4 /RPi/SDA )
   ( 5 ? )
-  ( 6 /RPi/SCL )
+  ( 6 /rtc/SCL )
  )
- ( /50B2116F/50CCCC5E SIL-4 P9 C3SB
-  ( 1 /rtc/5V0 )
-  ( 2 /RPi/SCL )
-  ( 3 /Interface/SDA )
+ ( /50B2116F/50CCCC5E pin_strip_4-90 P9 C3SB
+  ( 1 /pwr/5V0 )
+  ( 2 /rtc/SCL )
+  ( 3 /RPi/SDA )
   ( 4 GND )
  )
- ( /50B2116F/50CEC0D0 SIL-4 P10 C3SB
-  ( 1 /rtc/5V0 )
-  ( 2 /RPi/SCL )
-  ( 3 /Interface/SDA )
+ ( /50B2116F/50CEC0D0 pin_strip_4-90 P10 C3SB
+  ( 1 /pwr/5V0 )
+  ( 2 /rtc/SCL )
+  ( 3 /RPi/SDA )
   ( 4 GND )
  )
  ( /50B2116F/50B75AE4 SIL-3 P11 VSel_Vlv
-  ( 1 /rtc/5V0 )
+  ( 1 /pwr/5V0 )
   ( 2 /Interface/+Vlv )
-  ( 3 /pwr/12V )
+  ( 3 /Interface/12V )
  )
  ( /50B2116F/50D19ECE Header_5V_Link P12 Valve_Conn
   ( 1 /Interface/+Vlv )
   ( 2 /Interface/-Vlv )
  )
  ( /50B2116F/50D6C569 Header_5V_Link P13 Valve_Conn_BO
-  ( 1 N-000073 )
-  ( 2 N-000071 )
+  ( 1 N-000069 )
+  ( 2 N-000067 )
  )
  ( /50B2116F/50D6C583 Valve P14 Valve
-  ( 1 N-000073 )
-  ( 2 N-000071 )
+  ( 1 N-000069 )
+  ( 2 N-000067 )
  )
  ( /50B2116F/50B21A2A Conn_Flow P15 Flow_Conn
   ( 1 /Interface/PD2_Flow_Tx )
@@ -251,7 +255,7 @@
   ( 4 ? )
   ( 5 ? )
   ( 6 ? )
-  ( 7 /pwr/12V )
+  ( 7 /Interface/12V )
   ( 8 GND )
  )
  ( /50B2116F/50D6BF9C FlowMeter P16 FlowMeter
@@ -261,8 +265,8 @@
   ( 4 ? )
  )
  ( /50B2116F/50B22337 Header_FTDI P17 Pump_Conn
-  ( 1 /pwr/12V )
-  ( 2 /pwr/12V )
+  ( 1 /Interface/12V )
+  ( 2 /Interface/12V )
   ( 3 GND )
   ( 4 /Interface/IO_X )
   ( 5 /Interface/IO_R )
@@ -321,13 +325,13 @@
   ( 2 GND )
   ( 3 GND )
  )
- ( /4FBF6CBF/4FD8C245 Header_U6OE P25 U6_OE
+ ( /4FBF6CBF/4FD8C245 pin_strip_3-90 P25 U6_OE
   ( 1 /RPi/Rpi_3V3 )
   ( 2 /RPi/Rpi_3V3 )
   ( 3 GND )
  )
  ( /4FBF6CBF/500FBDD3 Header_U6OE P26 5V_LINK
-  ( 1 /rtc/5V0 )
+  ( 1 /pwr/5V0 )
   ( 2 /RPi/Rpi_5V0 )
   ( 3 ? )
  )
@@ -369,56 +373,56 @@
  )
  ( /50B2116F/50DAE3BE PCB_Mfold PCB6 PCB_MFold
  )
- ( /50B2116F/50B4B01E 2SD1834 Q1 2SD1834T100
+ ( /50B2116F/50B4B01E TO220-3-V Q1 2SD1834T100
   ( 1 /Interface/~PD5_Valve )
   ( 2 /Interface/-Vlv )
   ( 3 GND )
  )
- ( /4DCA7BFC r_0805 R1 10k
-  ( 1 /rtc/5V0 )
+ ( /4DCA7BFC rc03_vert R1 10k
+  ( 1 /pwr/5V0 )
   ( 2 /RPi/RESET )
  )
- ( /4DCAC172 r_0805 R2 10k
-  ( 1 /rtc/5V0 )
-  ( 2 /Interface/SDA )
+ ( /4DCAC172 rc03_vert R2 10k
+  ( 1 /pwr/5V0 )
+  ( 2 /RPi/SDA )
  )
- ( /4DCAC161 r_0805 R3 10k
-  ( 1 /rtc/5V0 )
-  ( 2 /RPi/SCL )
+ ( /4DCAC161 rc03_vert R3 10k
+  ( 1 /pwr/5V0 )
+  ( 2 /rtc/SCL )
  )
- ( /50B2116F/50CCC15C r_0805 R4 10k
+ ( /50B2116F/50CCC15C rc03_vert R4 10k
   ( 1 GND )
   ( 2 +3.3V )
  )
- ( /50B2116F/50B22950 r_0805 R5 220E
+ ( /50B2116F/50B22950 rc03_vert R5 220E
   ( 1 /Interface/IO_X )
   ( 2 /Interface/PD7_IO_X )
  )
- ( /50B2116F/50BA3B80 r_0805 R6 220E
+ ( /50B2116F/50BA3B80 rc03_vert R6 220E
   ( 1 /Interface/IO_R )
   ( 2 /Interface/PB0_IO_R )
  )
- ( /50B2116F/50CCC247 r_0805 R7 10k
+ ( /50B2116F/50CCC247 rc03_vert R7 10k
   ( 1 GND )
   ( 2 +3.3V )
  )
- ( /4FC07407/4FE44ABE r_0805 R8 1k5
-  ( 1 /rtc/5V0 )
-  ( 2 N-000066 )
+ ( /4FC07407/4FE44ABE rc03_vert R8 1k5
+  ( 1 /pwr/5V0 )
+  ( 2 N-000062 )
  )
- ( /4FC07407/4FE44ABD r_0805 R9 1k5
+ ( /4FC07407/4FE44ABD rc03_vert R9 1k5
   ( 1 +3.3V )
-  ( 2 N-000067 )
+  ( 2 N-000061 )
  )
- ( /4FC07407/4FC621EE r_0805 R10 1k
-  ( 1 /RPi/SCK )
-  ( 2 N-000064 )
+ ( /4FC07407/4FC621EE rc03_vert R10 1k
+  ( 1 /Interface/SCK )
+  ( 2 N-000060 )
  )
- ( /4E1FEA4E/4ECB8D22 r_0805 R11 10k
-  ( 1 /rtc/5V0 )
+ ( /4E1FEA4E/4ECB8D22 rc03_vert R11 10k
+  ( 1 /pwr/5V0 )
   ( 2 /rtc/~PD3_SQW )
  )
- ( /4FBF6CBF/4FD98CE2 r_0805 R12 10k
+ ( /4FBF6CBF/4FD98CE2 rc03_vert R12 10k
   ( 1 /RPi/Rpi_3V3 )
   ( 2 GND )
  )
@@ -470,6 +474,10 @@
  )
  ( /50B2116F/50DC15FF vite_3mm SC24 SCREW
  )
+ ( /4FBF6CBF/50DD59E1 vite_3mm SC25 SCREW
+ )
+ ( /4FBF6CBF/50DD59EB vite_3mm SC26 SCREW
+ )
  ( /4FC06625 ARDUINO_SHIELD_2_040pins SHIELD1 ARDUINO_SHIELD
   ( 0 /RPi/RXD )
   ( 1 /RPi/TXD )
@@ -478,7 +486,7 @@
   ( 3V3 +3.3V )
   ( 4 /Interface/PD4_Flow_Rx )
   ( 5 /Interface/~PD5_Valve )
-  ( 5V /rtc/5V0 )
+  ( 5V /pwr/5V0 )
   ( 6 /~PD6 )
   ( 7 /Interface/PD7_IO_X )
   ( 8 /Interface/~PB1_IO_T )
@@ -486,25 +494,22 @@
   ( 10 /Interface/~SS )
   ( 11 /Interface/~MOSI )
   ( 12 /RPi/MISO )
-  ( 13 /RPi/SCK )
+  ( 13 /Interface/SCK )
   ( AD0 /PC0 )
   ( AD1 /Interface/PC1_Pulse )
   ( AD2 /Interface/PC2_Pr2 )
   ( AD3 /Interface/PC3_Pr1 )
-  ( AD4 /Interface/SDA )
-  ( AD5 /RPi/SCL )
+  ( AD4 /RPi/SDA )
+  ( AD5 /rtc/SCL )
   ( AREF /AREF )
   ( GND1 GND )
   ( GND2 GND )
   ( GND3 GND )
-  ( H1 ? )
-  ( H2 ? )
-  ( H3 ? )
   ( NC ? )
   ( RST /RPi/RESET )
-  ( V_IN /pwr/12V )
+  ( V_IN /Interface/12V )
  )
- ( /4DCA7D67 SW_SMD SW1 SW_PUSH
+ ( /4DCA7D67 SW_PB_V_H SW1 SW_PUSH
   ( 1 GND )
   ( 2 /RPi/RESET )
  )
@@ -520,36 +525,35 @@
   ( 9 ? )
   ( 10 /Interface/~MOSI )
   ( 11 /Interface/~SS )
-  ( 12 /RPi/SCK )
+  ( 12 /Interface/SCK )
   ( 13 /RPi/MISO )
-  ( 14 /rtc/5V0 )
+  ( 14 /pwr/5V0 )
  )
  ( /50B2116F/50CCC02A TXS0102DCTR U2 TXS0102DCT
-  ( 1 /RPi/SCL )
+  ( 1 /rtc/SCL )
   ( 2 GND )
   ( 3 +3.3V )
   ( 4 /Interface/TSCL )
   ( 5 /Interface/TSDA )
   ( 6 +3.3V )
-  ( 7 /rtc/5V0 )
-  ( 8 /Interface/SDA )
+  ( 7 /pwr/5V0 )
+  ( 8 /RPi/SDA )
  )
- ( /4FC07407/4FC61C2F SOT223 U3 NCP1117ST50T3G
+ ( /4FC07407/4FC61C2F SOT223 U3 NCP1117DT50G
   ( 1 GND )
-  ( 2 /rtc/5V0 )
-  ( 3 /pwr/12V )
-  ( 4 /rtc/5V0 )
+  ( 2 /pwr/5V0 )
+  ( 3 /Interface/12V )
+  ( 4 /pwr/5V0 )
  )
- ( /4FC07407/4FC61EAC SOT23-5 U4 LP2985-33DBVR
-  ( 1 /rtc/5V0 )
-  ( 2 GND )
-  ( 3 /rtc/5V0 )
-  ( 4 N-000063 )
-  ( 5 +3.3V )
+ ( /4FC07407/50DD3EB2 SOT223 U4 NCP1117DT33G
+  ( 1 GND )
+  ( 2 +3.3V )
+  ( 3 /Interface/12V )
+  ( 4 +3.3V )
  )
  ( /4E1FEA4E/4E1FEA7F DS3231 U5 DS3231N
   ( 1 /rtc/32k )
-  ( 2 /rtc/5V0 )
+  ( 2 /pwr/5V0 )
   ( 3 /rtc/~PD3_SQW )
   ( 4 /rtc/RST )
   ( 5 GND )
@@ -562,8 +566,8 @@
   ( 12 GND )
   ( 13 GND )
   ( 14 /rtc/BAT )
-  ( 15 /Interface/SDA )
-  ( 16 /RPi/SCL )
+  ( 15 /RPi/SDA )
+  ( 16 /rtc/SCL )
  )
  ( /4FBF6CBF/4FD5DAA4 TXS0108EPWR U6 TXS0108
   ( 1 /RPi/Rpi_SDA )
@@ -577,15 +581,15 @@
   ( 9 /RPi/Rpi_SCK )
   ( 10 /RPi/Rpi_3V3 )
   ( 11 GND )
-  ( 12 /RPi/SCK )
+  ( 12 /Interface/SCK )
   ( 13 /RPi/MISO )
   ( 14 /Interface/~MOSI )
   ( 15 /RPi/RESET )
   ( 16 /RPi/TXD )
   ( 17 /RPi/RXD )
-  ( 18 /RPi/SCL )
-  ( 19 /rtc/5V0 )
-  ( 20 /Interface/SDA )
+  ( 18 /rtc/SCL )
+  ( 19 /pwr/5V0 )
+  ( 20 /RPi/SDA )
  )
  ( /4FC07AA9 DIP-28__300_ELL U7 ATMEGA328-PU
   ( 1 /RPi/RESET )
@@ -594,7 +598,7 @@
   ( 4 /Interface/PD2_Flow_Tx )
   ( 5 /rtc/~PD3_SQW )
   ( 6 /Interface/PD4_Flow_Rx )
-  ( 7 /rtc/5V0 )
+  ( 7 /pwr/5V0 )
   ( 8 GND )
   ( 9 /PB6 )
   ( 10 /PB7 )
@@ -606,18 +610,18 @@
   ( 16 /Interface/~SS )
   ( 17 /Interface/~MOSI )
   ( 18 /RPi/MISO )
-  ( 19 /RPi/SCK )
-  ( 20 /rtc/5V0 )
+  ( 19 /Interface/SCK )
+  ( 20 /pwr/5V0 )
   ( 21 /AREF )
   ( 22 GND )
   ( 23 /PC0 )
   ( 24 /Interface/PC1_Pulse )
   ( 25 /Interface/PC2_Pr2 )
   ( 26 /Interface/PC3_Pr1 )
-  ( 27 /Interface/SDA )
-  ( 28 /RPi/SCL )
+  ( 27 /RPi/SDA )
+  ( 28 /rtc/SCL )
  )
- ( /4F3FEE0A Xtal_SMD2 X1 CRYSTAL_2
+ ( /4F3FEE0A XTAL X1 CRYSTAL_2
   ( 1 /PB6 )
   ( 2 /PB7 )
  )
@@ -745,6 +749,11 @@ $component C24
  C1-1
 $endlist
 $component C25
+ SM*
+ C?
+ C1-1
+$endlist
+$component C26
  SM*
  C?
  C1-1

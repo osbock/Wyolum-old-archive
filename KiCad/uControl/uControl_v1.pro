@@ -1,4 +1,4 @@
-update=Thursday 27 December 2012 10:13:24 PM IST
+update=12/28/2012 6:29:50 PM
 last_client=kicad
 [cvpcb]
 version=1
@@ -42,7 +42,7 @@ LibName2=uControl_Libs/Conn-raspberry
 LibName3=uControl_Libs/power
 [pcbnew]
 version=1
-PadDrlX=400
+PadDrlX=350
 PadDimH=600
 PadDimV=600
 BoardThickness=630

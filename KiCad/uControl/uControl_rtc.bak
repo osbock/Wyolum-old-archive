@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thursday 27 December 2012 09:14:42 PM IST
+EESchema Schematic File Version 2  date 12/28/2012 6:21:04 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 5
 Title "uControl"
-Date "27 dec 2012"
+Date "28 dec 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -139,10 +139,10 @@ F 2 "r_0805" H 7150 2000 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +BATT #PWR021
+L +BATT #PWR18
 U 1 1 4EC101F0
 P 5300 1850
-F 0 "#PWR021" H 5300 1800 20  0001 C CNN
+F 0 "#PWR18" H 5300 1800 20  0001 C CNN
 F 1 "+BATT" H 5300 1950 30  0000 C CNN
 	1    5300 1850
 	1    0    0    -1  
@@ -229,7 +229,7 @@ U 1 1 4E1FEA78
 P 3950 2800
 F 0 "BT1" H 3650 2600 50  0000 C CNN
 F 1 "BATT_RTC" H 3950 2610 50  0000 C CNN
-F 2 "CR1632_2" H 3950 2800 60  0001 C CNN
+F 2 "CR2032" H 3950 2800 60  0001 C CNN
 	1    3950 2800
 	0    1    1    0   
 $EndComp
