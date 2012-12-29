@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 12/28/2012 6:28:42 PM
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 12/29/2012 11:40:29 AM
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -481,6 +481,20 @@ TimeStamp = /4FBF6CBF/4FD9E5BC;
 Reference = P27;
 ValeurCmp = BCM2835_GPIO;
 IdModule  = Header_GPIO;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/50DE8768;
+Reference = P28;
+ValeurCmp = VLV_90_M;
+IdModule  = 2X06/90;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/50DE8761;
+Reference = P29;
+ValeurCmp = VLV_90_F;
+IdModule  = Header_F_6x2;
 EndCmp
 
 BeginCmp

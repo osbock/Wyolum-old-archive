@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Friday 28 December 2012 10:02:48 PM IST
+EESchema Schematic File Version 2  date 12/29/2012 7:23:44 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 5 5
 Title "uControl"
-Date "28 dec 2012"
+Date "29 dec 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -54,9 +54,9 @@ Wire Wire Line
 Wire Wire Line
 	3950 2175 5225 2175
 Wire Wire Line
-	5225 1325 5225 2175
+	5225 2175 5225 1325
 Wire Wire Line
-	5950 1325 5225 1325
+	5225 1325 5950 1325
 Wire Wire Line
 	5850 2050 5850 1425
 Wire Wire Line
@@ -75,9 +75,9 @@ Wire Wire Line
 Wire Wire Line
 	3750 1875 3750 1475
 Wire Wire Line
-	3600 3500 3600 3275
+	3600 3275 3600 3500
 Wire Wire Line
-	1500 3500 3600 3500
+	3600 3500 1500 3500
 Wire Wire Line
 	3250 2975 1500 2975
 Wire Wire Line
@@ -150,7 +150,7 @@ Wire Wire Line
 	1925 1650 1925 1575
 Connection ~ 1925 1575
 Wire Wire Line
-	1925 2125 1925 2050
+	1925 2050 1925 2125
 Wire Wire Line
 	1925 2125 2300 2125
 Wire Wire Line

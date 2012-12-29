@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Friday 28 December 2012 10:02:48 PM IST
+EESchema Schematic File Version 2  date 12/29/2012 7:23:44 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 3 5
 Title "uControl"
-Date "28 dec 2012"
+Date "29 dec 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -415,7 +415,7 @@ L DIODESCH D4
 U 1 1 4FC61A7F
 P 2025 1150
 F 0 "D4" H 2025 1250 40  0000 C CNN
-F 1 "MBRM110LT1G" H 2025 1050 40  0000 C CNN
+F 1 "1N4001" H 2025 1050 40  0000 C CNN
 F 2 "diode_do41" H 2025 1150 60  0001 C CNN
 	1    2025 1150
 	1    0    0    -1  
