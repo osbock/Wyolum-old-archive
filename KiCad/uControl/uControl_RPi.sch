@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/29/2012 7:23:44 PM
+EESchema Schematic File Version 2  date Sunday 30 December 2012 01:31:03 AM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -184,7 +184,7 @@ $EndComp
 Text Label 8000 3650 0    40   ~ 0
 Rpi_5V0
 Text Notes 6450 3550 0    40   Italic 8
-allows hooking up Ras-Pi 5V \nto a La Mode board
+allows hooking up Ras-Pi 5V \nto uControl
 Text Label 7400 3225 0    40   ~ 0
 5V0
 Text Notes 6450 1250 0    60   Italic 12

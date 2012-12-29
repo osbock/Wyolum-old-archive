@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/29/2012 7:23:35 PM
+EESchema Schematic File Version 2  date Sunday 30 December 2012 01:31:00 AM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -17,6 +17,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Notes 7700 4500 0    40   ~ 0
+Dummy Mounting Headers\n2 x 6 way
 $Comp
 L CONN_6 P23
 U 1 1 50DED8EA

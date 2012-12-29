@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  12/29/2012 7:23:40 PM
+# EESchema Netlist Version 1.1 created  Saturday 29 December 2012 11:38:30 PM IST
 (
  ( /50DADA2B vite_3mm  SC17 SCREW {Lib=SCREW}
  )
@@ -461,15 +461,15 @@
   (    1 +3.3V )
   (    2 N-000063 )
  )
- ( /4FC07407/4FE44ABB led_5mm_clear  D6 LED {Lib=LED}
+ ( /4FC07407/4FE44ABB led_5mm_clear  D6 3V3 {Lib=LED}
   (    1 N-000063 )
   (    2 GND )
  )
- ( /4FC07407/4FE44ABA led_5mm_clear  D5 LED {Lib=LED}
+ ( /4FC07407/4FE44ABA led_5mm_clear  D5 5V0 {Lib=LED}
   (    1 N-000062 )
   (    2 GND )
  )
- ( /4FC07407/4FC62203 led_5mm_clear  D7 LED {Lib=LED}
+ ( /4FC07407/4FC62203 led_5mm_clear  D7 BLINK {Lib=LED}
   (    1 N-000061 )
   (    2 GND )
  )

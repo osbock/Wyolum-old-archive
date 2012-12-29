@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/29/2012 7:23:35 PM
+EESchema Schematic File Version 2  date Sunday 30 December 2012 01:31:00 AM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -812,8 +812,8 @@ $Comp
 L C C3
 U 1 1 4EC1290E
 P 1075 3300
-F 0 "C3" V 1050 3350 40  0000 L CNN
-F 1 "22p" V 1125 3350 40  0000 L CNN
+F 0 "C3" V 1025 3175 40  0000 L CNN
+F 1 "22p" V 1100 3200 40  0000 L CNN
 F 2 "cnp_3mm_disc" H 1075 3300 60  0001 C CNN
 	1    1075 3300
 	0    1    1    0   
@@ -822,8 +822,8 @@ $Comp
 L C C2
 U 1 1 4EC128EB
 P 1075 2800
-F 0 "C2" V 1050 2850 40  0000 L CNN
-F 1 "22p" V 1125 2850 40  0000 L CNN
+F 0 "C2" V 1025 2675 40  0000 L CNN
+F 1 "22p" V 1100 2700 40  0000 L CNN
 F 2 "cnp_3mm_disc" H 1075 2800 60  0001 C CNN
 	1    1075 2800
 	0    1    1    0   
