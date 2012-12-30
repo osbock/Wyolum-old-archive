@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 30 December 2012 01:31:00 AM IST
+EESchema Schematic File Version 2  date Sunday 30 December 2012 04:18:15 PM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 5
 Title "uControl"
-Date "29 dec 2012"
+Date "30 dec 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -17,6 +17,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Label 6500 2450 0    40   ~ 0
+SQR
 Wire Wire Line
 	9050 4800 8000 4800
 Wire Wire Line
@@ -115,7 +117,7 @@ Wire Wire Line
 Text Label 8000 4800 0    40   ~ 0
 RST
 Text Label 8000 4650 0    40   ~ 0
-~PD3_SQW
+SQR
 Text Label 8000 4500 0    40   ~ 0
 32k
 Text Label 8000 4350 0    40   ~ 0
@@ -123,7 +125,7 @@ BAT
 Text HLabel 9050 4800 2    60   Input ~ 0
 RST
 Text HLabel 9050 4650 2    60   Input ~ 0
-~PD3_SQW
+SQR
 Text HLabel 9050 4500 2    60   Input ~ 0
 32k
 Text HLabel 9050 4350 2    60   Input ~ 0
@@ -217,8 +219,6 @@ Text Label 8000 3875 0    40   ~ 0
 SCL
 Text Label 8000 4000 0    40   ~ 0
 SDA
-Text Label 6500 2450 0    40   ~ 0
-~PD3_SQW
 Text Label 6500 2600 0    40   ~ 0
 RST
 Text Label 6500 2750 0    40   ~ 0

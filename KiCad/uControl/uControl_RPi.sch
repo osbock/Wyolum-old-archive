@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 30 December 2012 01:31:03 AM IST
+EESchema Schematic File Version 2  date Sunday 30 December 2012 07:34:57 PM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 5 5
 Title "uControl"
-Date "29 dec 2012"
+Date "30 dec 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -17,6 +17,147 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Connection ~ 6300 4100
+Wire Wire Line
+	6300 4000 6300 4100
+Wire Wire Line
+	7400 3225 8000 3225
+Wire Wire Line
+	8000 3225 8000 3550
+Wire Wire Line
+	8000 3550 7850 3550
+Connection ~ 5625 1325
+Connection ~ 5850 1925
+Wire Wire Line
+	5850 1925 5625 1925
+Wire Wire Line
+	5625 1925 5625 1875
+Connection ~ 2125 3500
+Wire Wire Line
+	2125 3600 2125 3500
+Wire Wire Line
+	2300 2050 2300 2125
+Wire Wire Line
+	2300 2125 1925 2125
+Wire Wire Line
+	1925 2125 1925 2050
+Connection ~ 1925 1575
+Wire Wire Line
+	1925 1650 1925 1575
+Wire Wire Line
+	3750 1475 2300 1475
+Wire Wire Line
+	7900 4600 8700 4600
+Wire Wire Line
+	3250 2375 1500 2375
+Wire Wire Line
+	3450 1875 3450 1575
+Wire Wire Line
+	1500 3075 3250 3075
+Wire Wire Line
+	1500 2875 3250 2875
+Wire Wire Line
+	1500 2675 3250 2675
+Wire Wire Line
+	3950 3075 4800 3075
+Wire Wire Line
+	4800 3075 4800 5200
+Wire Wire Line
+	4800 5200 6600 5200
+Wire Wire Line
+	3950 2875 5000 2875
+Wire Wire Line
+	5000 2875 5000 5000
+Wire Wire Line
+	5000 5000 6600 5000
+Wire Wire Line
+	3950 2675 8600 2675
+Wire Wire Line
+	8600 2675 8600 4500
+Wire Wire Line
+	8600 4500 7900 4500
+Wire Wire Line
+	3950 2475 5100 2475
+Wire Wire Line
+	5100 2475 5100 4300
+Wire Wire Line
+	5100 4300 6600 4300
+Wire Wire Line
+	8200 4300 7900 4300
+Wire Wire Line
+	3950 2375 5200 2375
+Wire Wire Line
+	5200 2375 5200 4200
+Wire Wire Line
+	5200 4200 6600 4200
+Wire Wire Line
+	7900 4400 8500 4400
+Wire Wire Line
+	8500 4400 8500 2575
+Wire Wire Line
+	8500 2575 3950 2575
+Wire Wire Line
+	8700 4600 8700 2775
+Wire Wire Line
+	8700 2775 3950 2775
+Wire Wire Line
+	3950 2975 4900 2975
+Wire Wire Line
+	4900 2975 4900 5100
+Wire Wire Line
+	4900 5100 6600 5100
+Wire Wire Line
+	3250 2575 1500 2575
+Wire Wire Line
+	3250 2775 1500 2775
+Wire Wire Line
+	3250 2975 1500 2975
+Wire Wire Line
+	1500 3500 3600 3500
+Wire Wire Line
+	3600 3500 3600 3275
+Wire Wire Line
+	3750 1475 3750 1875
+Wire Wire Line
+	3250 2475 1500 2475
+Wire Wire Line
+	3450 1575 1500 1575
+Wire Wire Line
+	2300 1475 2300 1650
+Wire Wire Line
+	2125 2175 2125 2125
+Connection ~ 2125 2125
+Wire Wire Line
+	5900 4100 6600 4100
+Wire Wire Line
+	5950 1425 5850 1425
+Wire Wire Line
+	5850 1425 5850 2050
+Wire Wire Line
+	5950 1325 5225 1325
+Wire Wire Line
+	5225 1325 5225 2175
+Wire Wire Line
+	5225 2175 3950 2175
+Wire Wire Line
+	7900 4100 8000 4100
+Wire Wire Line
+	8000 4100 8000 3650
+Wire Wire Line
+	8000 3650 7850 3650
+Wire Wire Line
+	5625 1375 5625 1325
+Wire Wire Line
+	5950 1225 5525 1225
+$Comp
+L PWR_FLAG #FLG024
+U 1 1 50E00A24
+P 6300 4000
+F 0 "#FLG024" H 6300 4270 30  0001 C CNN
+F 1 "PWR_FLAG" H 6300 4230 30  0000 C CNN
+	1    6300 4000
+	1    0    0    -1  
+$EndComp
 Text Label 5525 1225 0    40   ~ 0
 Rpi_3V3
 Text Notes 1850 4750 0    40   ~ 0
@@ -41,135 +182,6 @@ F 2 "vite_3mm" H 1950 5150 40  0001 C CNN
 	1    1950 4950
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5950 1225 5525 1225
-Wire Wire Line
-	5625 1375 5625 1325
-Wire Wire Line
-	7850 3650 8000 3650
-Wire Wire Line
-	8000 3650 8000 4100
-Wire Wire Line
-	8000 4100 7900 4100
-Wire Wire Line
-	3950 2175 5225 2175
-Wire Wire Line
-	5225 2175 5225 1325
-Wire Wire Line
-	5225 1325 5950 1325
-Wire Wire Line
-	5850 2050 5850 1425
-Wire Wire Line
-	5850 1425 5950 1425
-Wire Wire Line
-	5900 4100 6600 4100
-Connection ~ 2125 2125
-Wire Wire Line
-	2125 2175 2125 2125
-Wire Wire Line
-	2300 1650 2300 1475
-Wire Wire Line
-	1500 1575 3450 1575
-Wire Wire Line
-	3250 2475 1500 2475
-Wire Wire Line
-	3750 1875 3750 1475
-Wire Wire Line
-	3600 3275 3600 3500
-Wire Wire Line
-	3600 3500 1500 3500
-Wire Wire Line
-	3250 2975 1500 2975
-Wire Wire Line
-	3250 2775 1500 2775
-Wire Wire Line
-	3250 2575 1500 2575
-Wire Wire Line
-	6600 5100 4900 5100
-Wire Wire Line
-	4900 5100 4900 2975
-Wire Wire Line
-	4900 2975 3950 2975
-Wire Wire Line
-	3950 2775 8700 2775
-Wire Wire Line
-	8700 2775 8700 4600
-Wire Wire Line
-	3950 2575 8500 2575
-Wire Wire Line
-	8500 2575 8500 4400
-Wire Wire Line
-	8500 4400 7900 4400
-Wire Wire Line
-	6600 4200 5200 4200
-Wire Wire Line
-	5200 4200 5200 2375
-Wire Wire Line
-	5200 2375 3950 2375
-Wire Wire Line
-	8200 4300 7900 4300
-Wire Wire Line
-	6600 4300 5100 4300
-Wire Wire Line
-	5100 4300 5100 2475
-Wire Wire Line
-	5100 2475 3950 2475
-Wire Wire Line
-	7900 4500 8600 4500
-Wire Wire Line
-	8600 4500 8600 2675
-Wire Wire Line
-	8600 2675 3950 2675
-Wire Wire Line
-	6600 5000 5000 5000
-Wire Wire Line
-	5000 5000 5000 2875
-Wire Wire Line
-	5000 2875 3950 2875
-Wire Wire Line
-	6600 5200 4800 5200
-Wire Wire Line
-	4800 5200 4800 3075
-Wire Wire Line
-	4800 3075 3950 3075
-Wire Wire Line
-	1500 2675 3250 2675
-Wire Wire Line
-	1500 2875 3250 2875
-Wire Wire Line
-	1500 3075 3250 3075
-Wire Wire Line
-	3450 1575 3450 1875
-Wire Wire Line
-	3250 2375 1500 2375
-Wire Wire Line
-	8700 4600 7900 4600
-Wire Wire Line
-	3750 1475 2300 1475
-Wire Wire Line
-	1925 1650 1925 1575
-Connection ~ 1925 1575
-Wire Wire Line
-	1925 2050 1925 2125
-Wire Wire Line
-	1925 2125 2300 2125
-Wire Wire Line
-	2300 2125 2300 2050
-Wire Wire Line
-	2125 3600 2125 3500
-Connection ~ 2125 3500
-Wire Wire Line
-	5625 1875 5625 1925
-Wire Wire Line
-	5625 1925 5850 1925
-Connection ~ 5850 1925
-Connection ~ 5625 1325
-Wire Wire Line
-	7850 3550 8000 3550
-Wire Wire Line
-	8000 3550 8000 3225
-Wire Wire Line
-	8000 3225 7400 3225
 NoConn ~ 7850 3750
 $Comp
 L CONN_3 P26
@@ -212,10 +224,10 @@ $EndComp
 Text Label 4150 2175 0    40   ~ 0
 Rpi_OE
 $Comp
-L GND #PWR024
+L GND #PWR025
 U 1 1 4FD8C28A
 P 5850 2050
-F 0 "#PWR024" H 5850 2050 30  0001 C CNN
+F 0 "#PWR025" H 5850 2050 30  0001 C CNN
 F 1 "GND" H 5850 1980 30  0001 C CNN
 	1    5850 2050
 	1    0    0    -1  
@@ -233,19 +245,19 @@ $EndComp
 Text Label 5900 4100 0    40   ~ 0
 Rpi_3V3
 $Comp
-L GND #PWR025
+L GND #PWR026
 U 1 1 4FD62C0F
 P 2125 2175
-F 0 "#PWR025" H 2125 2175 30  0001 C CNN
+F 0 "#PWR026" H 2125 2175 30  0001 C CNN
 F 1 "GND" H 2125 2105 30  0001 C CNN
 	1    2125 2175
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR026
+L GND #PWR027
 U 1 1 4FD62BFD
 P 2125 3600
-F 0 "#PWR026" H 2125 3600 30  0001 C CNN
+F 0 "#PWR027" H 2125 3600 30  0001 C CNN
 F 1 "GND" H 2125 3530 30  0001 C CNN
 	1    2125 3600
 	1    0    0    -1  

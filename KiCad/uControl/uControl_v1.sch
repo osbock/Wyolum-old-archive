@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 30 December 2012 01:31:03 AM IST
+EESchema Schematic File Version 2  date Sunday 30 December 2012 07:34:57 PM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 5
 Title "uControl"
-Date "29 dec 2012"
+Date "30 dec 2012"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -17,6 +17,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Notes 4550 3450 0    40   ~ 0
+Blank
 $Comp
 L SCREW SC17
 U 1 1 50DADA2B
@@ -502,8 +504,6 @@ Text Notes 4550 3550 0    40   ~ 0
 Flow
 Text Notes 4550 3350 0    40   ~ 0
 Flow
-Text Notes 4550 3450 0    40   ~ 0
-RTC
 Text Label 9600 3025 0    40   ~ 0
 ~PB1_IO_T
 Text Label 9600 2925 0    40   ~ 0
@@ -717,7 +717,7 @@ F5 "5V0" I L 10050 6150 40
 F6 "RST" I L 10050 6550 40 
 F7 "32k" I L 10050 6750 40 
 F8 "BAT" I L 10050 6850 40 
-F9 "~PD3_SQW" I L 10050 6650 40 
+F9 "SQR" I L 10050 6650 40 
 $EndSheet
 Text Label 8825 1825 0    40   ~ 0
 ~PB1_IO_T
@@ -732,7 +732,7 @@ Text Label 8825 2325 0    40   ~ 0
 Text Label 8825 2425 0    40   ~ 0
 PD4_Flow_Rx
 Text Label 8825 2525 0    40   ~ 0
-~PD3_SQW
+~PD3
 Text Label 8825 2625 0    40   ~ 0
 PD2_Flow_Tx
 Text Label 8825 2825 0    40   ~ 0
@@ -805,7 +805,7 @@ BAT
 Text Label 9675 6750 0    40   ~ 0
 32k
 Text Label 9675 6650 0    40   ~ 0
-~PD3_SQW
+SQR
 Text Label 9675 6550 0    40   ~ 0
 RST
 $Comp
@@ -853,7 +853,7 @@ Text Label 4125 3650 0    40   ~ 0
 Text Label 4125 3750 0    40   ~ 0
 ~PD6
 Text Label 4125 3450 0    40   ~ 0
-~PD3_SQW
+~PD3
 Text Label 4125 4050 0    40   ~ 0
 PB0_IO_R
 Text Label 4125 4150 0    40   ~ 0

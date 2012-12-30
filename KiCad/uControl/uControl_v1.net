@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Saturday 29 December 2012 11:38:30 PM IST
+# EESchema Netlist Version 1.1 created  Sunday 30 December 2012 07:34:55 PM IST
 (
  ( /50DADA2B vite_3mm  SC17 SCREW {Lib=SCREW}
  )
@@ -9,9 +9,9 @@
  ( /50DADA28 vite_3mm  SC20 SCREW {Lib=SCREW}
  )
  ( /4FF3E3D3 Header_6x1  P2 ANALOG_5V0 {Lib=CONN_6}
-  (    1 /Interface/5V0 )
-  (    2 /Interface/5V0 )
-  (    3 /Interface/5V0 )
+  (    1 /pwr/5V0 )
+  (    2 /pwr/5V0 )
+  (    3 /pwr/5V0 )
   (    4 +3.3V )
   (    5 +3.3V )
   (    6 +3.3V )
@@ -27,13 +27,13 @@
  ( /4FE6E6EC Header_A_REF  P1 AREF {Lib=CONN_3}
   (    1 +3.3V )
   (    2 /AREF )
-  (    3 /Interface/5V0 )
+  (    3 /pwr/5V0 )
  )
  ( /4FE58ED6 Header_ICSP  P4 ICSP {Lib=ISP}
   (    1 /RPi/MISO )
-  (    2 /Interface/5V0 )
-  (    3 /RPi/SCK )
-  (    4 /RPi/~MOSI )
+  (    2 /pwr/5V0 )
+  (    3 /Interface/SCK )
+  (    4 /Interface/~MOSI )
   (    5 /RPi/RESET )
   (    6 GND )
  )
@@ -53,24 +53,24 @@
   (    0 /RPi/RXD )
   (    1 /RPi/TXD )
   (    2 /Interface/PD2_Flow_Tx )
-  (    3 /rtc/~PD3_SQW )
+  (    3 /~PD3 )
   (    4 /Interface/PD4_Flow_Rx )
   (    5 /Interface/~PD5_Valve )
-  (   5V /Interface/5V0 )
+  (   5V /pwr/5V0 )
   (    6 /~PD6 )
   (    7 /Interface/PD7_IO_X )
   (    8 /Interface/~PB1_IO_T )
   (    9 /Interface/PB0_IO_R )
   (   10 /Interface/~SS )
-  (   11 /RPi/~MOSI )
+  (   11 /Interface/~MOSI )
   (   12 /RPi/MISO )
-  (   13 /RPi/SCK )
+  (   13 /Interface/SCK )
   (  3V3 +3.3V )
   (  AD0 /PC0 )
   (  AD1 /Interface/PC1_Pulse )
   (  AD2 /Interface/PC2_Pr2 )
   (  AD3 /Interface/PC3_Pr1 )
-  (  AD4 /RPi/SDA )
+  (  AD4 /Interface/SDA )
   (  AD5 /Interface/SCL )
   ( AREF /AREF )
   ( GND1 GND )
@@ -78,16 +78,16 @@
   ( GND3 GND )
   (   NC ? )
   (  RST /RPi/RESET )
-  ( V_IN /pwr/12V )
+  ( V_IN /Interface/12V )
  )
  ( /4FC07AA9 DIP-28__300_ELL  U7 ATMEGA328-PU {Lib=ATMEGA8-P}
   (    1 /RPi/RESET )
   (    2 /RPi/RXD )
   (    3 /RPi/TXD )
   (    4 /Interface/PD2_Flow_Tx )
-  (    5 /rtc/~PD3_SQW )
+  (    5 /~PD3 )
   (    6 /Interface/PD4_Flow_Rx )
-  (    7 /Interface/5V0 )
+  (    7 /pwr/5V0 )
   (    8 GND )
   (    9 /PB6 )
   (   10 /PB7 )
@@ -97,17 +97,17 @@
   (   14 /Interface/~PB1_IO_T )
   (   15 /Interface/PB0_IO_R )
   (   16 /Interface/~SS )
-  (   17 /RPi/~MOSI )
+  (   17 /Interface/~MOSI )
   (   18 /RPi/MISO )
-  (   19 /RPi/SCK )
-  (   20 /Interface/5V0 )
+  (   19 /Interface/SCK )
+  (   20 /pwr/5V0 )
   (   21 /AREF )
   (   22 GND )
   (   23 /PC0 )
   (   24 /Interface/PC1_Pulse )
   (   25 /Interface/PC2_Pr2 )
   (   26 /Interface/PC3_Pr1 )
-  (   27 /RPi/SDA )
+  (   27 /Interface/SDA )
   (   28 /Interface/SCL )
  )
  ( /4F3FEE0A XTAL  X1 CRYSTAL_2 {Lib=CRYSTAL_2}
@@ -123,11 +123,11 @@
   (    2 GND )
  )
  ( /4DCAC172 rc03_vert  R2 10k {Lib=R}
-  (    1 /Interface/5V0 )
-  (    2 /RPi/SDA )
+  (    1 /pwr/5V0 )
+  (    2 /Interface/SDA )
  )
  ( /4DCAC161 rc03_vert  R3 10k {Lib=R}
-  (    1 /Interface/5V0 )
+  (    1 /pwr/5V0 )
   (    2 /Interface/SCL )
  )
  ( /4DCA7D67 SW_PB_V_H  SW1 SW_PUSH {Lib=SW_PUSH}
@@ -135,12 +135,48 @@
   (    2 /RPi/RESET )
  )
  ( /4DCA7BFC rc03_vert  R1 10k {Lib=R}
-  (    1 /Interface/5V0 )
+  (    1 /pwr/5V0 )
   (    2 /RPi/RESET )
  )
  ( /4DCA7BAC C2  C1 100n {Lib=C}
-  (    1 /Interface/5V0 )
+  (    1 /pwr/5V0 )
   (    2 GND )
+ )
+ ( /50B2116F/50D6C4CF Conn_Pump_Flex  P19 Pump_Conn_Flex {Lib=CONN_6}
+  (    1 /Interface/12V )
+  (    2 /Interface/P++ )
+  (    3 GND )
+  (    4 /Interface/IO_X )
+  (    5 /Interface/IO_R )
+  (    6 /Interface/~PB1_IO_T )
+ )
+ ( /50B2116F/50E01664 $noname  P28 VLV_90_M {Lib=CONN_12}
+  (    1 /Interface/+Vlv )
+  (    2 /Interface/+Vlv )
+  (    3 /Interface/+Vlv )
+  (    4 /Interface/+Vlv )
+  (    5 /Interface/+Vlv )
+  (    6 /Interface/+Vlv )
+  (    7 /Interface/-Vlv )
+  (    8 /Interface/-Vlv )
+  (    9 /Interface/-Vlv )
+  (   10 /Interface/-Vlv )
+  (   11 /Interface/-Vlv )
+  (   12 /Interface/-Vlv )
+ )
+ ( /50B2116F/50E0165A $noname  P29 VLV_90_F {Lib=CONN_12}
+  (    1 /Interface/+Vlv )
+  (    2 /Interface/+Vlv )
+  (    3 /Interface/+Vlv )
+  (    4 /Interface/+Vlv )
+  (    5 /Interface/+Vlv )
+  (    6 /Interface/+Vlv )
+  (    7 /Interface/-Vlv )
+  (    8 /Interface/-Vlv )
+  (    9 /Interface/-Vlv )
+  (   10 /Interface/-Vlv )
+  (   11 /Interface/-Vlv )
+  (   12 /Interface/-Vlv )
  )
  ( /50B2116F/50DED8EA $noname  P23 Pump {Lib=CONN_6}
   (    1 ? )
@@ -149,14 +185,6 @@
   (    4 ? )
   (    5 ? )
   (    6 ? )
- )
- ( /50B2116F/50DE8768 2X06/90  P28 VLV_90_M {Lib=CONN_2}
-  (    1 ? )
-  (    2 ? )
- )
- ( /50B2116F/50DE8761 Header_F_6x2  P29 VLV_90_F {Lib=CONN_2}
-  (    1 ? )
-  (    2 ? )
  )
  ( /50B2116F/50DC1602 vite_3mm  SC21 SCREW {Lib=SCREW}
  )
@@ -213,28 +241,20 @@
  ( /50B2116F/50D990F0 vite_3mm  SC1 SCREW {Lib=SCREW}
  )
  ( /50B2116F/50D6C583 Valve  P14 Valve {Lib=CONN_2}
-  (    1 N-000071 )
-  (    2 N-000066 )
+  (    1 /Interface/+Vlv )
+  (    2 /Interface/-Vlv )
  )
  ( /50B2116F/50D6C569 Header_5V_Link  P13 Valve_Conn_BO {Lib=CONN_2}
-  (    1 N-000071 )
-  (    2 N-000066 )
- )
- ( /50B2116F/50D6C4CF Conn_Pump_Flex  P19 Pump_Conn_Flex {Lib=CONN_6}
-  (    1 /Interface/P+ )
-  (    2 /Interface/P+ )
-  (    3 /Interface/P- )
-  (    4 /Interface/PX )
-  (    5 /Interface/PR )
-  (    6 /Interface/PT )
+  (    1 /Interface/+Vlv )
+  (    2 /Interface/-Vlv )
  )
  ( /50B2116F/50D6C4BF Header_FTDI  P18 Pump_Conn_BO {Lib=CONN_6}
-  (    1 /Interface/P+ )
-  (    2 /Interface/P+ )
-  (    3 /Interface/P- )
-  (    4 /Interface/PX )
-  (    5 /Interface/PR )
-  (    6 /Interface/PT )
+  (    1 /Interface/12V )
+  (    2 /Interface/P++ )
+  (    3 GND )
+  (    4 /Interface/IO_X )
+  (    5 /Interface/IO_R )
+  (    6 /Interface/~PB1_IO_T )
  )
  ( /50B2116F/50D6BF9C FlowMeter  P16 FlowMeter {Lib=CONN_4}
   (    1 ? )
@@ -247,10 +267,10 @@
   (    2 /Interface/-Vlv )
  )
  ( /50B2116F/50D19E1A HDIB002AUY8H5  P8 Abso_Pr {Lib=CONN_6}
-  (    1 /Interface/5V0 )
+  (    1 /pwr/5V0 )
   (    2 /Interface/PC2_Pr2 )
   (    3 GND )
-  (    4 /RPi/SDA )
+  (    4 /Interface/SDA )
   (    5 ? )
   (    6 /Interface/SCL )
  )
@@ -265,23 +285,23 @@
   (    8 /Interface/P_MOSI )
  )
  ( /50B2116F/50CEC0D0 pin_strip_4-90  P10 C3SB {Lib=CONN_4}
-  (    1 /Interface/5V0 )
+  (    1 /pwr/5V0 )
   (    2 /Interface/SCL )
-  (    3 /RPi/SDA )
+  (    3 /Interface/SDA )
   (    4 GND )
  )
  ( /50B2116F/50CEC0CF C2  C11 100n {Lib=C}
-  (    1 /Interface/5V0 )
+  (    1 /pwr/5V0 )
   (    2 GND )
  )
  ( /50B2116F/50CCCDB6 C2  C9 100n {Lib=C}
-  (    1 /Interface/5V0 )
+  (    1 /pwr/5V0 )
   (    2 GND )
  )
  ( /50B2116F/50CCCC5E pin_strip_4-90  P9 C3SB {Lib=CONN_4}
-  (    1 /Interface/5V0 )
+  (    1 /pwr/5V0 )
   (    2 /Interface/SCL )
-  (    3 /RPi/SDA )
+  (    3 /Interface/SDA )
   (    4 GND )
  )
  ( /50B2116F/50CCCAB6 SIL-4  P21 Temp_Conn_BO {Lib=CONN_4}
@@ -301,7 +321,7 @@
   (    2 GND )
  )
  ( /50B2116F/50CCC293 C2  C14 100n {Lib=C}
-  (    1 /Interface/5V0 )
+  (    1 /pwr/5V0 )
   (    2 GND )
  )
  ( /50B2116F/50CCC247 rc03_vert  R7 10k {Lib=R}
@@ -319,11 +339,11 @@
   (    4 /Interface/TSCL )
   (    5 /Interface/TSDA )
   (    6 +3.3V )
-  (    7 /Interface/5V0 )
-  (    8 /RPi/SDA )
+  (    7 /pwr/5V0 )
+  (    8 /Interface/SDA )
  )
  ( /50B2116F/50CCABCC C2  C7 100n {Lib=C}
-  (    1 /Interface/5V0 )
+  (    1 /pwr/5V0 )
   (    2 GND )
  )
  ( /50B2116F/50CCAB99 C2  C8 100n {Lib=C}
@@ -340,27 +360,27 @@
   (    7 GND )
   (    8 +3.3V )
   (    9 ? )
-  (   10 /RPi/~MOSI )
+  (   10 /Interface/~MOSI )
   (   11 /Interface/~SS )
-  (   12 /RPi/SCK )
+  (   12 /Interface/SCK )
   (   13 /RPi/MISO )
-  (   14 /Interface/5V0 )
+  (   14 /pwr/5V0 )
  )
  ( /50B2116F/50BEDE7E C2  C5 100n {Lib=C}
   (    1 GND )
-  (    2 /Interface/5V0 )
+  (    2 /pwr/5V0 )
  )
  ( /50B2116F/50BA6860 C2  C13 100n {Lib=C}
   (    1 /Interface/+Vlv )
   (    2 GND )
  )
  ( /50B2116F/50BA6840 C2  C17 100n {Lib=C}
-  (    1 /pwr/12V )
+  (    1 /Interface/12V )
   (    2 GND )
  )
  ( /50B2116F/50BA67C9 C2  C12 100n {Lib=C}
   (    1 GND )
-  (    2 /pwr/12V )
+  (    2 /Interface/12V )
  )
  ( /50B2116F/50BA6794 C2  C10 100n {Lib=C}
   (    1 +3.3V )
@@ -371,7 +391,7 @@
   (    2 /Interface/T+ )
  )
  ( /50B2116F/50BA6744 C2  C6 100n {Lib=C}
-  (    1 /Interface/5V0 )
+  (    1 /pwr/5V0 )
   (    2 GND )
  )
  ( /50B2116F/50BA5D3A STS21  P22 Temp {Lib=CONN_6}
@@ -384,7 +404,7 @@
  )
  ( /50B2116F/50BA5553 pin_strip_3-90  P6 Pulse {Lib=CONN_3}
   (    1 /Interface/PC1_Pulse )
-  (    2 /Interface/5V0 )
+  (    2 /pwr/5V0 )
   (    3 GND )
  )
  ( /50B2116F/50BA3BBD diode_do35  D2 1N5225B {Lib=DIODESCH}
@@ -396,9 +416,9 @@
   (    2 /Interface/PB0_IO_R )
  )
  ( /50B2116F/50B75AE4 SIL-3  P11 VSel_Vlv {Lib=CONN_3}
-  (    1 /Interface/5V0 )
+  (    1 /pwr/5V0 )
   (    2 /Interface/+Vlv )
-  (    3 /pwr/12V )
+  (    3 /Interface/12V )
  )
  ( /50B2116F/50B7155C diode_do41  D1 1N4001 {Lib=DIODE}
   (    1 /Interface/-Vlv )
@@ -418,8 +438,8 @@
   (    2 /Interface/IO_X )
  )
  ( /50B2116F/50B22337 Header_FTDI  P17 Pump_Conn {Lib=CONN_6}
-  (    1 /pwr/12V )
-  (    2 /pwr/12V )
+  (    1 /Interface/12V )
+  (    2 /Interface/12V )
   (    3 GND )
   (    4 /Interface/IO_X )
   (    5 /Interface/IO_R )
@@ -432,8 +452,16 @@
   (    4 ? )
   (    5 ? )
   (    6 ? )
-  (    7 /pwr/12V )
+  (    7 /Interface/12V )
   (    8 GND )
+ )
+ ( /4FC07407/50E005ED led_5mm_clear  D8 12V {Lib=LED}
+  (    1 N-000063 )
+  (    2 GND )
+ )
+ ( /4FC07407/50E005EC rc03_vert  R13 1k {Lib=R}
+  (    1 /Interface/12V )
+  (    2 N-000063 )
  )
  ( /4FC07407/50DD442A cnp_3mm_disc  C22 2u2_Tant {Lib=C_POL}
   (    1 +3.3V )
@@ -444,59 +472,59 @@
   (    2 GND )
  )
  ( /4FC07407/50DD3EB6 CP_5x11mm  C26 100u,25V {Lib=C_POL}
-  (    1 /pwr/12V )
+  (    1 /Interface/12V )
   (    2 GND )
  )
  ( /4FC07407/50DD3EB2 SOT223  U4 NCP1117DT33G {Lib=NCP1117ST50T3G}
   (    1 GND )
   (    2 +3.3V )
-  (    3 /pwr/12V )
+  (    3 /Interface/12V )
   (    4 +3.3V )
  )
- ( /4FC07407/4FE44ABE rc03_vert  R8 1k5 {Lib=R}
-  (    1 /Interface/5V0 )
-  (    2 N-000062 )
+ ( /4FC07407/4FE44ABE rc03_vert  R8 330E {Lib=R}
+  (    1 /pwr/5V0 )
+  (    2 N-000064 )
  )
- ( /4FC07407/4FE44ABD rc03_vert  R9 1k5 {Lib=R}
+ ( /4FC07407/4FE44ABD rc03_vert  R9 120E {Lib=R}
   (    1 +3.3V )
-  (    2 N-000063 )
+  (    2 N-000065 )
  )
  ( /4FC07407/4FE44ABB led_5mm_clear  D6 3V3 {Lib=LED}
-  (    1 N-000063 )
+  (    1 N-000065 )
   (    2 GND )
  )
  ( /4FC07407/4FE44ABA led_5mm_clear  D5 5V0 {Lib=LED}
-  (    1 N-000062 )
+  (    1 N-000064 )
   (    2 GND )
  )
  ( /4FC07407/4FC62203 led_5mm_clear  D7 BLINK {Lib=LED}
-  (    1 N-000061 )
+  (    1 N-000062 )
   (    2 GND )
  )
  ( /4FC07407/4FC621EE rc03_vert  R10 1k {Lib=R}
-  (    1 /RPi/SCK )
-  (    2 N-000061 )
+  (    1 /Interface/SCK )
+  (    2 N-000062 )
  )
  ( /4FC07407/4FC61C2F SOT223  U3 NCP1117DT50G {Lib=NCP1117ST50T3G}
   (    1 GND )
-  (    2 /Interface/5V0 )
-  (    3 /pwr/12V )
-  (    4 /Interface/5V0 )
+  (    2 /pwr/5V0 )
+  (    3 /Interface/12V )
+  (    4 /pwr/5V0 )
  )
  ( /4FC07407/4FC61A7F diode_do41  D4 1N4001 {Lib=DIODESCH}
   (    1 /pwr/PWR_IN )
-  (    2 /pwr/12V )
+  (    2 /Interface/12V )
  )
  ( /4FC07407/4FC61A0C CP_5x11mm  C19 100u,25V {Lib=C_POL}
-  (    1 /pwr/12V )
+  (    1 /Interface/12V )
   (    2 GND )
  )
  ( /4FC07407/4FC61A0B cnp_3mm_disc  C18 2u2_Tant {Lib=C_POL}
-  (    1 /Interface/5V0 )
+  (    1 /pwr/5V0 )
   (    2 GND )
  )
  ( /4FC07407/4FC61A06 C2  C20 100n {Lib=C}
-  (    1 /Interface/5V0 )
+  (    1 /pwr/5V0 )
   (    2 GND )
  )
  ( /4FC07407/4FC61A05 JACK_ALIM  P24 12V {Lib=V_IN}
@@ -515,8 +543,8 @@
  ( /4FC07407/4FC07436 PCB  PCB1 PCB {Lib=PCB}
  )
  ( /4E1FEA4E/4ECB8D22 rc03_vert  R11 10k {Lib=R}
-  (    1 /Interface/5V0 )
-  (    2 /rtc/~PD3_SQW )
+  (    1 /pwr/5V0 )
+  (    2 /rtc/SQR )
  )
  ( /4E1FEA4E/4E1FEBD4 I/O  B3 I/O {Lib=I/O}
   (    1 /rtc/32k )
@@ -525,12 +553,12 @@
   (    1 /rtc/RST )
  )
  ( /4E1FEA4E/4E1FEBC6 I/O  B1 I/O {Lib=I/O}
-  (    1 /rtc/~PD3_SQW )
+  (    1 /rtc/SQR )
  )
  ( /4E1FEA4E/4E1FEA7F DS3231  U5 DS3231N {Lib=DS3231N}
   (    1 /rtc/32k )
-  (    2 /Interface/5V0 )
-  (    3 /rtc/~PD3_SQW )
+  (    2 /pwr/5V0 )
+  (    3 /rtc/SQR )
   (    4 /rtc/RST )
   (    5 GND )
   (    6 GND )
@@ -542,7 +570,7 @@
   (   12 GND )
   (   13 GND )
   (   14 /rtc/BAT )
-  (   15 /RPi/SDA )
+  (   15 /Interface/SDA )
   (   16 /Interface/SCL )
  )
  ( /4E1FEA4E/4E1FEA7E C2  C23 100n {Lib=C}
@@ -558,7 +586,7 @@
  ( /4FBF6CBF/50DD59E1 vite_3mm  SC25 SCREW {Lib=SCREW}
  )
  ( /4FBF6CBF/500FBDD3 Header_U6OE  P26 5V_LINK {Lib=CONN_3}
-  (    1 /Interface/5V0 )
+  (    1 /pwr/5V0 )
   (    2 /RPi/Rpi_5V0 )
   (    3 ? )
  )
@@ -605,7 +633,7 @@
  )
  ( /4FBF6CBF/4FD62B83 C2  C24 100n {Lib=C}
   (    1 GND )
-  (    2 /Interface/5V0 )
+  (    2 /pwr/5V0 )
  )
  ( /4FBF6CBF/4FD5DAA4 TXS0108EPWR  U6 TXS0108 {Lib=TSX0108}
   (    1 /RPi/Rpi_SDA )
@@ -619,15 +647,15 @@
   (    9 /RPi/Rpi_SCK )
   (   10 /RPi/Rpi_OE )
   (   11 GND )
-  (   12 /RPi/SCK )
+  (   12 /Interface/SCK )
   (   13 /RPi/MISO )
-  (   14 /RPi/~MOSI )
+  (   14 /Interface/~MOSI )
   (   15 /RPi/RESET )
   (   16 /RPi/TXD )
   (   17 /RPi/RXD )
   (   18 /Interface/SCL )
-  (   19 /Interface/5V0 )
-  (   20 /RPi/SDA )
+  (   19 /pwr/5V0 )
+  (   20 /Interface/SDA )
  )
 )
 *
@@ -771,6 +799,20 @@ $component D3
  D?
  S*
 $endlist
+$component D8
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component R13
+ R?
+ SM0603
+ SM0805
+$endlist
 $component C22
  SM*
  C?
@@ -878,406 +920,430 @@ $endlist
 $endfootprintlist
 }
 { Pin List by Nets
-Net 2 "/Interface/5V0" "5V0"
- P4 2
- P8 1
- R8 1
- R11 1
- C14 1
- U2 7
- C9 1
- R2 1
- P10 1
+Net 2 "/pwr/5V0" "5V0"
  U7 20
+ U3 2
+ R8 1
  R3 1
- U5 2
- C24 2
- P6 2
- C7 1
+ P9 1
+ C14 1
  C1 1
  R1 1
- U3 2
- U7 7
- C18 1
- C6 1
- SHIELD1 5V
+ R2 1
  P26 1
- U3 4
  U6 19
+ C24 2
+ U5 2
+ R11 1
+ U3 4
+ C18 1
  C20 1
- C11 1
- U1 14
  P1 3
- P9 1
- P11 1
- P2 3
- P2 2
+ U2 7
+ C7 1
+ P10 1
+ C11 1
+ C9 1
+ P8 1
  P2 1
+ P2 2
+ P2 3
+ U1 14
+ C6 1
  C5 2
+ U7 7
+ P11 1
+ P6 2
+ SHIELD1 5V
+ P4 2
 Net 3 "+3.3V" "+3.3V"
- C22 1
- P20 3
- R7 2
- C15 1
- C8 1
- P7 1
- U1 1
- U4 4
  SHIELD1 3V3
- U1 8
- R9 1
- U4 2
- P1 1
- R4 2
- U2 6
- P2 6
- U2 3
+ C15 1
+ U4 4
+ C22 1
+ C21 1
  P2 5
  P2 4
+ P2 6
+ P7 1
+ P1 1
+ R7 2
+ R9 1
+ C8 1
+ P20 3
+ U1 1
+ U2 6
+ U2 3
+ U4 2
  C10 1
- C21 1
-Net 4 "/RPi/SCK" "SCK"
- SHIELD1 13
- R10 1
+ R4 2
+ U1 8
+Net 4 "/Interface/SCK" "SCK"
+ U6 12
  U1 12
+ R10 1
+ SHIELD1 13
  P4 3
  U7 19
- U6 12
 Net 5 "/PC0" "PC0"
- U7 23
  SHIELD1 AD0
+ U7 23
 Net 6 "/Interface/PC3_Pr1" "PC3_Pr1"
- P7 3
- SHIELD1 AD3
  U7 26
+ SHIELD1 AD3
+ P7 3
 Net 7 "/Interface/PC2_Pr2" "PC2_Pr2"
  U7 25
- SHIELD1 AD2
  P8 2
+ SHIELD1 AD2
 Net 8 "/Interface/PC1_Pulse" "PC1_Pulse"
- U7 24
  SHIELD1 AD1
+ U7 24
  P6 1
 Net 9 "/Interface/PD7_IO_X" "PD7_IO_X"
+ U7 13
  R5 2
  SHIELD1 7
- U7 13
 Net 10 "/AREF" "AREF"
+ P1 2
  U7 21
  SHIELD1 AREF
- P1 2
 Net 12 "/~RTS" "~RTS"
- C4 1
  P5 6
+ C4 1
 Net 13 "/RPi/RESET" "RESET"
- U6 15
- SW1 2
  R1 2
+ U6 15
  P4 5
+ U7 1
  C4 2
  SHIELD1 RST
- U7 1
-Net 14 "/RPi/~MOSI" "~MOSI"
- SHIELD1 11
- U7 17
- U6 14
- P4 4
+ SW1 2
+Net 14 "/Interface/~MOSI" "~MOSI"
  U1 10
+ U6 14
+ U7 17
+ SHIELD1 11
+ P4 4
 Net 15 "/RPi/MISO" "MISO"
  U1 13
+ SHIELD1 12
+ U7 18
  U6 13
  P4 1
- U7 18
- SHIELD1 12
-Net 16 "/rtc/~PD3_SQW" "~PD3_SQW"
- SHIELD1 3
- B1 1
+Net 16 "/~PD3" "~PD3"
  U7 5
+ SHIELD1 3
+Net 17 "/PB6" "PB6"
+ U7 9
+ C2 1
+ X1 1
+Net 18 "/Interface/PD4_Flow_Rx" "PD4_Flow_Rx"
+ SHIELD1 4
+ U7 6
+ P15 2
+Net 19 "/Interface/PD2_Flow_Tx" "PD2_Flow_Tx"
+ P15 1
+ SHIELD1 2
+ U7 4
+Net 20 "/rtc/SQR" "SQR"
+ B1 1
  R11 2
  U5 3
-Net 17 "/PB6" "PB6"
- X1 1
- C2 1
- U7 9
-Net 18 "/Interface/PD4_Flow_Rx" "PD4_Flow_Rx"
- P15 2
- U7 6
- SHIELD1 4
-Net 19 "/Interface/PD2_Flow_Tx" "PD2_Flow_Tx"
- U7 4
- SHIELD1 2
- P15 1
-Net 20 "/rtc/BAT" "BAT"
+Net 21 "/rtc/BAT" "BAT"
  BT1 +
- C23 1
  U5 14
-Net 21 "/rtc/32k" "32k"
- U5 1
+ C23 1
+Net 22 "/rtc/32k" "32k"
  B3 1
-Net 22 "/rtc/RST" "RST"
+ U5 1
+Net 23 "/rtc/RST" "RST"
  U5 4
  B2 1
-Net 23 "/Interface/~SS" "~SS"
- U7 16
+Net 24 "/Interface/~SS" "~SS"
  U1 11
  SHIELD1 10
-Net 24 "/Interface/PB0_IO_R" "PB0_IO_R"
+ U7 16
+Net 25 "/Interface/PB0_IO_R" "PB0_IO_R"
  U7 15
- R6 2
  SHIELD1 9
-Net 25 "/Interface/~PB1_IO_T" "~PB1_IO_T"
+ R6 2
+Net 26 "/Interface/~PB1_IO_T" "~PB1_IO_T"
  U7 14
- P17 6
  SHIELD1 8
-Net 26 "/~PD6" "~PD6"
+ P18 6
+ P19 6
+ P17 6
+Net 27 "/~PD6" "~PD6"
  U7 12
  SHIELD1 6
-Net 27 "/RPi/SDA" "SDA"
- R2 2
+Net 28 "/Interface/SDA" "SDA"
+ U5 15
+ U7 27
+ P9 3
  U6 20
  U2 8
- P8 4
- P9 3
- U5 15
  P10 3
- U7 27
  SHIELD1 AD4
-Net 28 "/Interface/SCL" "SCL"
- U2 1
- U6 18
- SHIELD1 AD5
+ R2 2
+ P8 4
+Net 29 "/Interface/SCL" "SCL"
  U7 28
- P10 2
- U5 16
  P9 2
- R3 2
+ U6 18
+ U2 1
+ P10 2
  P8 6
-Net 29 "/RPi/RXD" "RXD"
+ R3 2
+ SHIELD1 AD5
+ U5 16
+Net 30 "/RPi/RXD" "RXD"
+ P5 4
+ U7 2
  SHIELD1 0
  U6 17
- U7 2
- P5 4
-Net 30 "/RPi/TXD" "TXD"
- U7 3
- SHIELD1 1
- U6 16
+Net 31 "/RPi/TXD" "TXD"
  P5 5
-Net 31 "/pwr/12V" "12V"
- C12 2
- D4 2
- U4 3
- U3 3
+ U6 16
+ SHIELD1 1
+ U7 3
+Net 32 "/Interface/12V" "12V"
  C17 1
  C26 1
- C19 1
- P11 3
- P15 7
- P17 2
- P17 1
+ C12 2
+ U4 3
  SHIELD1 V_IN
-Net 32 "/PB7" "PB7"
- X1 2
- C3 1
+ P11 3
+ P17 1
+ P17 2
+ U3 3
+ D4 2
+ C19 1
+ R13 1
+ P15 7
+ P18 1
+ P19 1
+Net 33 "/PB7" "PB7"
  U7 10
-Net 33 "/Interface/~PD5_Valve" "~PD5_Valve"
+ C3 1
+ X1 2
+Net 34 "/Interface/~PD5_Valve" "~PD5_Valve"
+ Q1 1
  SHIELD1 5
  U7 11
- Q1 1
-Net 34 "/RPi/Rpi_3V3" "Rpi_3V3"
+Net 35 "/RPi/Rpi_MISO" "Rpi_MISO"
+ P27 21
+ U6 8
+Net 36 "/RPi/Rpi_3V3" "Rpi_3V3"
+ P27 1
  P25 1
  U6 2
- P27 1
  C25 2
-Net 35 "/RPi/Rpi_RST" "Rpi_RST"
- P27 12
- U6 6
-Net 36 "/RPi/Rpi_SDA" "Rpi_SDA"
- U6 1
- P27 3
-Net 37 "/RPi/Rpi_SCL" "Rpi_SCL"
- U6 3
- P27 5
-Net 53 "/RPi/Rpi_Rx" "Rpi_Rx"
- U6 5
- P27 10
-Net 54 "/RPi/Rpi_MOSI" "Rpi_MOSI"
+Net 42 "/RPi/Rpi_MOSI" "Rpi_MOSI"
  U6 7
  P27 19
-Net 55 "/RPi/Rpi_MISO" "Rpi_MISO"
- U6 8
- P27 21
-Net 56 "/RPi/Rpi_SCK" "Rpi_SCK"
- U6 9
- P27 23
-Net 57 "/RPi/Rpi_OE" "Rpi_OE"
+Net 43 "/RPi/Rpi_OE" "Rpi_OE"
  P25 2
- U6 10
  R12 1
-Net 58 "/RPi/Rpi_Tx" "Rpi_Tx"
- P27 8
+ U6 10
+Net 54 "/RPi/Rpi_Tx" "Rpi_Tx"
  U6 4
-Net 59 "/RPi/Rpi_5V0" "Rpi_5V0"
- P27 2
+ P27 8
+Net 55 "/RPi/Rpi_5V0" "Rpi_5V0"
  P26 2
-Net 61 "" ""
+ P27 2
+Net 56 "/RPi/Rpi_SDA" "Rpi_SDA"
+ P27 3
+ U6 1
+Net 57 "/RPi/Rpi_RST" "Rpi_RST"
+ U6 6
+ P27 12
+Net 58 "/RPi/Rpi_Rx" "Rpi_Rx"
+ P27 10
+ U6 5
+Net 59 "/RPi/Rpi_SCL" "Rpi_SCL"
+ P27 5
+ U6 3
+Net 61 "/RPi/Rpi_SCK" "Rpi_SCK"
+ P27 23
+ U6 9
+Net 62 "" ""
  R10 2
  D7 1
-Net 62 "" ""
- D5 1
- R8 2
 Net 63 "" ""
+ R13 2
+ D8 1
+Net 64 "" ""
+ R8 2
+ D5 1
+Net 65 "" ""
  D6 1
  R9 2
-Net 64 "/pwr/PWR_IN" "PWR_IN"
+Net 66 "/pwr/PWR_IN" "PWR_IN"
  D4 1
  P24 1
-Net 65 "GND" "GND"
- R4 1
- U2 2
- C7 2
- C8 2
- P27 6
- C9 2
- P9 4
- C15 2
- P17 3
- P15 8
- D3 1
+Net 67 "/Interface/-Vlv" "-Vlv"
+ P13 2
+ D1 1
+ P28 11
+ P28 12
+ P28 8
+ P28 10
+ P14 2
+ P28 7
+ P29 11
+ P28 9
+ Q1 2
+ P29 12
+ P29 10
+ P29 9
+ P29 8
+ P29 7
+ P12 2
+Net 68 "/Interface/IO_X" "IO_X"
+ P18 4
+ P19 4
+ R5 1
+ D3 2
+ P17 4
+Net 69 "/Interface/IO_R" "IO_R"
+ R6 1
+ D2 2
+ P18 5
+ P19 5
+ P17 5
+Net 70 "/Interface/+Vlv" "+Vlv"
+ P29 3
+ P29 2
+ P29 1
+ P12 1
+ D1 2
+ P11 2
+ C13 1
+ P29 4
+ P29 6
+ P29 5
+ P28 5
+ P28 1
+ P28 2
+ P14 1
+ P13 1
+ P28 3
+ P28 4
+ P28 6
+Net 71 "/Interface/P_MOSI" "P_MOSI"
+ P7 8
+ U1 5
+Net 72 "/Interface/T+" "T+"
+ P21 2
+ C16 2
+ P22 5
+Net 73 "GND" "GND"
  C14 2
- Q1 3
- C11 2
- P10 4
- P7 2
- P8 3
- R7 1
- P20 2
- P6 3
- D2 1
- U1 7
- C13 2
- C17 2
- C12 1
- C10 2
- C6 2
- C5 1
- U6 11
- P25 3
- R12 2
- C25 1
- C24 1
- SW1 1
- U4 1
- U7 22
- C1 2
  C3 2
- C2 2
+ R7 1
+ C15 2
+ R4 1
+ C13 2
+ SHIELD1 GND3
+ SHIELD1 GND2
+ SHIELD1 GND1
  U5 12
- BT1 -
- C23 2
- U5 13
  U5 11
+ C6 2
  U5 10
  U5 9
  U5 8
+ P15 8
  U5 7
- U5 6
- U5 5
- D7 2
+ D3 1
+ P3 2
+ Q1 3
  P3 6
+ P6 3
+ D2 1
+ P3 5
+ C10 2
+ C12 1
+ C17 2
+ U7 8
+ BT1 -
+ C5 1
+ C23 2
+ U5 13
+ C8 2
+ C7 2
+ C9 2
+ P5 1
+ P18 3
+ P4 6
+ C2 2
+ U1 7
+ P20 2
+ U2 2
+ P9 4
+ C11 2
+ U5 6
+ P17 3
+ P3 4
+ P7 2
+ P3 3
+ U5 5
+ P3 1
+ P8 3
+ P5 2
+ P10 4
+ P24 3
+ C18 2
+ C20 2
+ P24 2
+ C19 2
+ D7 2
+ U3 1
  D5 2
  D6 2
- P24 3
- P24 2
- P3 5
- C20 2
- P3 4
- P3 3
- P3 1
- U7 8
- SHIELD1 GND3
- SHIELD1 GND2
- C26 2
- SHIELD1 GND1
- P3 2
- P5 1
+ D8 2
+ U6 11
+ P27 6
  C22 2
  C21 2
- P5 2
- P4 6
- C18 2
- C19 2
- U3 1
-Net 66 "" ""
- P13 2
- P14 2
-Net 71 "" ""
- P14 1
- P13 1
-Net 74 "/Interface/PT" "PT"
- P19 6
- P18 6
-Net 75 "/Interface/TSDA" "TSDA"
- U2 5
- P20 1
-Net 76 "/Interface/TSCL" "TSCL"
- U2 4
- P20 4
-Net 77 "/Interface/TD" "TD"
- P22 1
- P21 4
-Net 78 "/Interface/TC" "TC"
- P22 6
- P21 1
-Net 79 "/Interface/+Vlv" "+Vlv"
- P11 2
- C13 1
- P12 1
- D1 2
-Net 83 "/Interface/PR" "PR"
- P19 5
- P18 5
-Net 89 "/Interface/P+" "P+"
- P19 2
- P18 2
- P18 1
- P19 1
-Net 90 "/Interface/P-" "P-"
- P18 3
+ C26 2
+ U4 1
+ U7 22
+ R12 2
+ P25 3
  P19 3
-Net 91 "/Interface/PX" "PX"
- P18 4
- P19 4
-Net 92 "/Interface/T+" "T+"
- P22 5
- P21 2
- C16 2
-Net 93 "/Interface/P_MOSI" "P_MOSI"
- U1 5
- P7 8
-Net 94 "/Interface/-Vlv" "-Vlv"
- Q1 2
- D1 1
- P12 2
-Net 95 "/Interface/T-" "T-"
+ C25 1
+ C24 1
+ C1 2
+ SW1 1
+Net 86 "/Interface/T-" "T-"
  C16 1
  P21 3
  P22 2
-Net 98 "/Interface/IO_R" "IO_R"
- P17 5
- R6 1
- D2 2
+Net 87 "/Interface/TD" "TD"
+ P21 4
+ P22 1
+Net 88 "/Interface/TSCL" "TSCL"
+ U2 4
+ P20 4
+Net 89 "/Interface/TSDA" "TSDA"
+ U2 5
+ P20 1
+Net 90 "/Interface/P++" "P++"
+ P18 2
+ P19 2
+Net 101 "/Interface/P_SCK" "P_SCK"
+ P7 5
+ U1 3
+Net 102 "/Interface/P_SS" "P_SS"
+ U1 4
+ P7 6
 Net 103 "/Interface/P_MISO" "P_MISO"
  P7 4
  U1 2
-Net 108 "/Interface/IO_X" "IO_X"
- P17 4
- D3 2
- R5 1
-Net 110 "/Interface/P_SS" "P_SS"
- P7 6
- U1 4
-Net 111 "/Interface/P_SCK" "P_SCK"
- P7 5
- U1 3
+Net 104 "/Interface/TC" "TC"
+ P21 1
+ P22 6
 }
 #End
