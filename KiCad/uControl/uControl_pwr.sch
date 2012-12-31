@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/31/2012 2:34:57 PM
+EESchema Schematic File Version 2  date Monday 31 December 2012 11:25:20 PM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power

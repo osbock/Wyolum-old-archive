@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 30 December 2012 07:34:57 PM IST
+EESchema Schematic File Version 2  date 12/31/2012 2:34:57 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 5
 Title ""
-Date "30 dec 2012"
+Date "31 dec 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -55,7 +55,7 @@ Connection ~ 10050 6350
 Wire Wire Line
 	10050 6350 10000 6350
 Wire Wire Line
-	10300 6650 10350 6650
+	10350 6650 10300 6650
 Wire Wire Line
 	10300 6650 10300 6150
 Wire Wire Line
@@ -67,7 +67,7 @@ Connection ~ 10300 5850
 Wire Wire Line
 	10300 5850 10350 5850
 Wire Wire Line
-	10300 6050 10350 6050
+	10350 6050 10300 6050
 Wire Wire Line
 	10300 6050 10300 5550
 Wire Wire Line
@@ -149,7 +149,7 @@ Wire Notes Line
 	4950 3000 4950 575 
 Connection ~ 2425 2850
 Wire Wire Line
-	3225 2850 1900 2850
+	1900 2850 3225 2850
 Wire Wire Line
 	3225 2850 3225 2700
 Wire Notes Line
@@ -169,7 +169,7 @@ Connection ~ 7675 6275
 Wire Wire Line
 	7825 6275 7675 6275
 Wire Wire Line
-	7675 6175 7600 6175
+	7600 6175 7675 6175
 Connection ~ 6425 5450
 Wire Wire Line
 	6625 5450 5950 5450
@@ -212,7 +212,7 @@ Wire Wire Line
 Wire Wire Line
 	1750 1400 1750 1150
 Wire Wire Line
-	2050 1150 2050 1400
+	2050 1400 2050 1150
 Wire Wire Line
 	1050 1475 1125 1475
 Wire Wire Line
@@ -249,14 +249,14 @@ Wire Wire Line
 	6175 1450 7100 1450
 Connection ~ 6750 4900
 Wire Wire Line
-	7000 4900 6750 4900
+	6750 4900 7000 4900
 Wire Wire Line
 	7000 4900 7000 4800
 Connection ~ 3200 4125
 Wire Wire Line
 	3200 4175 3200 4125
 Wire Wire Line
-	7675 5675 8475 5675
+	8475 5675 7675 5675
 Wire Wire Line
 	8475 5675 8475 5925
 Wire Wire Line
@@ -294,7 +294,7 @@ Wire Wire Line
 Wire Wire Line
 	6450 4600 5950 4600
 Wire Wire Line
-	3025 6550 3025 5550
+	3025 5550 3025 6550
 Connection ~ 2575 5650
 Wire Wire Line
 	2575 6100 2575 5650
@@ -316,9 +316,9 @@ Wire Wire Line
 	2525 5650 3125 5650
 Connection ~ 2575 6550
 Wire Wire Line
-	6750 3800 7100 3800
+	7100 3800 6750 3800
 Wire Wire Line
-	6750 4400 6750 3800
+	6750 3800 6750 4400
 Wire Wire Line
 	6750 4800 6750 4975
 Wire Wire Line
@@ -331,7 +331,7 @@ Wire Wire Line
 Wire Wire Line
 	6075 3375 5475 3375
 Wire Wire Line
-	1375 6550 3025 6550
+	3025 6550 1375 6550
 Wire Wire Line
 	1725 5750 1375 5750
 Wire Wire Line
@@ -417,14 +417,14 @@ Wire Wire Line
 Wire Wire Line
 	6675 6075 6575 6075
 Wire Wire Line
-	6575 6925 6575 6075
+	6575 6075 6575 6925
 Wire Wire Line
-	5800 6925 6575 6925
+	6575 6925 5800 6925
 Connection ~ 6275 6925
 Wire Wire Line
-	7675 6075 7600 6075
+	7600 6075 7675 6075
 Wire Wire Line
-	7675 5675 7675 6075
+	7675 6075 7675 5675
 Wire Wire Line
 	7825 5975 7675 5975
 Connection ~ 7675 5975
@@ -506,7 +506,7 @@ Wire Wire Line
 Wire Notes Line
 	11150 3150 11150 5050
 Wire Wire Line
-	10050 5550 10000 5550
+	10000 5550 10050 5550
 Wire Wire Line
 	10050 5550 10050 6050
 Wire Wire Line
@@ -524,7 +524,7 @@ Wire Wire Line
 	10350 5750 10300 5750
 Connection ~ 10300 5750
 Wire Wire Line
-	10050 6150 10000 6150
+	10000 6150 10050 6150
 Wire Wire Line
 	10050 6150 10050 6650
 Wire Wire Line
@@ -586,13 +586,13 @@ $EndComp
 Text Label 6750 3600 0    40   ~ 0
 +Vlv
 Text Label 7700 6375 0    40   ~ 0
-TC
+TSCL
 Text Label 7700 6275 0    40   ~ 0
-T+
+3V3
 Text Label 7700 5975 0    40   ~ 0
-T-
+GND
 Text Label 7700 5875 0    40   ~ 0
-TD
+TSDA
 Text Label 6325 6275 0    40   ~ 0
 TSCL
 Text Label 6325 6175 0    40   ~ 0

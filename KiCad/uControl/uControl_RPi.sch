@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/31/2012 2:34:57 PM
+EESchema Schematic File Version 2  date Monday 31 December 2012 11:25:20 PM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -200,7 +200,7 @@ allows hooking up Ras-Pi 5V \nto uControl
 Text Label 7400 3225 0    40   ~ 0
 5V0
 Text Notes 6450 1250 0    60   Italic 12
-this jumper enables/disables the Voltage Translator U6, \nthereby allowing/dis-allowing communication \nbetween the Raspberry -Pi and a La Mode\nEDIT:Permanenty shorted(23-08-2012)
+this jumper enables/disables the Voltage Translator U6, \nthereby allowing/dis-allowing communication \nbetween the Raspberry-Pi and a La Mode\nEDIT:Permanenty shorted(23-08-2012)
 $Comp
 L BCM2835_GPIO P27
 U 1 1 4FD9E5BC
