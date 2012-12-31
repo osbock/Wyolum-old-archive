@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 30 December 2012 04:18:15 PM IST
+EESchema Schematic File Version 2  date Sunday 30 December 2012 07:34:57 PM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -17,24 +17,27 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 4000 4325 0    40   ~ 0
-Additional, Parallel\nconnector for flow sensor
-Text Label 4000 4125 0    40   ~ 0
+Text Label 4125 5550 0    40   ~ 0
 GND
-Text Label 4000 4025 0    40   ~ 0
+Text Label 4125 5850 0    40   ~ 0
+~PB1_IO_T
+Text Label 4125 5750 0    40   ~ 0
+IO_R
+Text Label 4125 5650 0    40   ~ 0
+IO_X
+Text Label 4125 5350 0    40   ~ 0
 12V
-Text Label 4000 3525 0    40   ~ 0
-PD4_Flow_Rx
-Text Label 4000 3425 0    40   ~ 0
-PD2_Flow_Tx
-NoConn ~ 4300 3925
-NoConn ~ 4300 3825
-NoConn ~ 4300 3725
-NoConn ~ 4300 3625
-Wire Wire Line
-	4000 4125 4300 4125
-Wire Wire Line
-	4000 3525 4300 3525
+$Comp
+L CONN_6 P19
+U 1 1 50D6C4CF
+P 4825 5600
+F 0 "P19" V 4775 5600 60  0000 C CNN
+F 1 "Pump_Conn_Flex" V 4875 5600 40  0000 C CNN
+F 2 "Conn_Pump_Flex" V 4975 5600 40  0001 C CNN
+F 4 "X200" V 4975 5600 40  0001 C CNN "Part_No"
+	1    4825 5600
+	1    0    0    -1  
+$EndComp
 Connection ~ 10050 6400
 Connection ~ 10300 6400
 Wire Wire Line
@@ -52,7 +55,7 @@ Connection ~ 10050 6350
 Wire Wire Line
 	10050 6350 10000 6350
 Wire Wire Line
-	10350 6650 10300 6650
+	10300 6650 10350 6650
 Wire Wire Line
 	10300 6650 10300 6150
 Wire Wire Line
@@ -64,7 +67,7 @@ Connection ~ 10300 5850
 Wire Wire Line
 	10300 5850 10350 5850
 Wire Wire Line
-	10350 6050 10300 6050
+	10300 6050 10350 6050
 Wire Wire Line
 	10300 6050 10300 5550
 Wire Wire Line
@@ -84,11 +87,11 @@ Wire Notes Line
 Wire Wire Line
 	8250 3600 8025 3600
 Wire Wire Line
-	4325 5750 4250 5750
+	4475 5750 4050 5750
 Wire Wire Line
-	4325 5550 4250 5550
+	4475 5550 4050 5550
 Wire Wire Line
-	4325 5350 4250 5350
+	4475 5350 4050 5350
 Wire Wire Line
 	7000 3600 7000 4400
 Wire Notes Line
@@ -101,7 +104,7 @@ Connection ~ 2800 5350
 Wire Wire Line
 	2800 6100 2800 5350
 Wire Wire Line
-	3325 5550 3225 5550
+	3125 5550 3025 5550
 Wire Wire Line
 	5300 6175 5450 6175
 Wire Notes Line
@@ -146,7 +149,7 @@ Wire Notes Line
 	4950 3000 4950 575 
 Connection ~ 2425 2850
 Wire Wire Line
-	1900 2850 3225 2850
+	3225 2850 1900 2850
 Wire Wire Line
 	3225 2850 3225 2700
 Wire Notes Line
@@ -166,7 +169,7 @@ Connection ~ 7675 6275
 Wire Wire Line
 	7825 6275 7675 6275
 Wire Wire Line
-	7600 6175 7675 6175
+	7675 6175 7600 6175
 Connection ~ 6425 5450
 Wire Wire Line
 	6625 5450 5950 5450
@@ -209,7 +212,7 @@ Wire Wire Line
 Wire Wire Line
 	1750 1400 1750 1150
 Wire Wire Line
-	2050 1400 2050 1150
+	2050 1150 2050 1400
 Wire Wire Line
 	1050 1475 1125 1475
 Wire Wire Line
@@ -246,14 +249,14 @@ Wire Wire Line
 	6175 1450 7100 1450
 Connection ~ 6750 4900
 Wire Wire Line
-	6750 4900 7000 4900
+	7000 4900 6750 4900
 Wire Wire Line
 	7000 4900 7000 4800
 Connection ~ 3200 4125
 Wire Wire Line
 	3200 4175 3200 4125
 Wire Wire Line
-	8475 5675 7675 5675
+	7675 5675 8475 5675
 Wire Wire Line
 	8475 5675 8475 5925
 Wire Wire Line
@@ -265,14 +268,14 @@ Wire Wire Line
 Wire Wire Line
 	10075 1000 9725 1000
 Wire Wire Line
-	1375 5850 3325 5850
+	1375 5850 3125 5850
 Wire Wire Line
 	2025 5650 1375 5650
 Connection ~ 2425 5750
 Wire Wire Line
 	2425 6100 2425 5750
 Wire Wire Line
-	2225 5750 3325 5750
+	2225 5750 3125 5750
 Connection ~ 2425 6550
 Wire Wire Line
 	2425 6550 2425 6500
@@ -291,7 +294,7 @@ Wire Wire Line
 Wire Wire Line
 	6450 4600 5950 4600
 Wire Wire Line
-	3225 5550 3225 6550
+	3025 6550 3025 5550
 Connection ~ 2575 5650
 Wire Wire Line
 	2575 6100 2575 5650
@@ -310,12 +313,12 @@ Wire Wire Line
 Wire Wire Line
 	1800 4125 3325 4125
 Wire Wire Line
-	2525 5650 3325 5650
+	2525 5650 3125 5650
 Connection ~ 2575 6550
 Wire Wire Line
-	7100 3800 6750 3800
+	6750 3800 7100 3800
 Wire Wire Line
-	6750 3800 6750 4400
+	6750 4400 6750 3800
 Wire Wire Line
 	6750 4800 6750 4975
 Wire Wire Line
@@ -328,11 +331,11 @@ Wire Wire Line
 Wire Wire Line
 	6075 3375 5475 3375
 Wire Wire Line
-	3225 6550 1375 6550
+	1375 6550 3025 6550
 Wire Wire Line
 	1725 5750 1375 5750
 Wire Wire Line
-	3325 5350 1950 5350
+	3125 5350 1950 5350
 Wire Wire Line
 	9450 900  10075 900 
 Wire Wire Line
@@ -414,14 +417,14 @@ Wire Wire Line
 Wire Wire Line
 	6675 6075 6575 6075
 Wire Wire Line
-	6575 6075 6575 6925
+	6575 6925 6575 6075
 Wire Wire Line
-	6575 6925 5800 6925
+	5800 6925 6575 6925
 Connection ~ 6275 6925
 Wire Wire Line
-	7600 6075 7675 6075
+	7675 6075 7600 6075
 Wire Wire Line
-	7675 6075 7675 5675
+	7675 5675 7675 6075
 Wire Wire Line
 	7825 5975 7675 5975
 Connection ~ 7675 5975
@@ -480,7 +483,7 @@ Wire Wire Line
 	2800 6550 2800 6500
 Connection ~ 2800 6550
 Wire Wire Line
-	3325 5450 2800 5450
+	3125 5450 2800 5450
 Connection ~ 2800 5450
 Wire Notes Line
 	4950 5200 675  5200
@@ -493,17 +496,17 @@ Wire Wire Line
 Connection ~ 6425 3600
 Connection ~ 7000 3600
 Wire Wire Line
-	4250 5450 4325 5450
+	4050 5450 4475 5450
 Wire Wire Line
-	4250 5650 4325 5650
+	4050 5650 4475 5650
 Wire Wire Line
-	4250 5850 4325 5850
+	4050 5850 4475 5850
 Wire Wire Line
 	8025 3800 8250 3800
 Wire Notes Line
 	11150 3150 11150 5050
 Wire Wire Line
-	10000 5550 10050 5550
+	10050 5550 10000 5550
 Wire Wire Line
 	10050 5550 10050 6050
 Wire Wire Line
@@ -521,7 +524,7 @@ Wire Wire Line
 	10350 5750 10300 5750
 Connection ~ 10300 5750
 Wire Wire Line
-	10000 6150 10050 6150
+	10050 6150 10000 6150
 Wire Wire Line
 	10050 6150 10050 6650
 Wire Wire Line
@@ -542,21 +545,6 @@ Wire Wire Line
 	10050 5800 10300 5800
 Connection ~ 10300 5800
 Connection ~ 10050 5800
-Wire Wire Line
-	4000 3425 4300 3425
-Wire Wire Line
-	4000 4025 4300 4025
-$Comp
-L CONN_8 P30
-U 1 1 50E01B6B
-P 4650 3775
-F 0 "P30" V 4600 3775 60  0000 C CNN
-F 1 "Flow_Conn" V 4700 3775 60  0000 C CNN
-F 2 "Conn_Flow" V 4800 3775 60  0001 C CNN
-F 4 "EM1NR4R0V_1A" V 4800 3775 40  0001 C CNN "Part_No"
-	1    4650 3775
-	1    0    0    -1  
-$EndComp
 Text Label 8075 3800 0    40   ~ 0
 -Vlv
 Text Label 8075 3600 0    40   ~ 0
@@ -609,18 +597,8 @@ Text Label 6325 6275 0    40   ~ 0
 TSCL
 Text Label 6325 6175 0    40   ~ 0
 TSDA
-Text Label 4275 5850 0    40   ~ 0
-PT
-Text Label 4275 5750 0    40   ~ 0
-PR
-Text Label 4275 5650 0    40   ~ 0
-PX
-Text Label 4275 5550 0    40   ~ 0
-P-
-Text Label 4275 5450 0    40   ~ 0
-P+
-Text Label 4275 5350 0    40   ~ 0
-P+
+Text Label 4125 5450 0    40   ~ 0
+P++
 Text Label 2925 3425 0    40   ~ 0
 PD2_Flow_Tx
 $Comp
@@ -910,25 +888,14 @@ F 4 "X-1-05-S-F" V 7825 3700 40  0001 C CNN "Part_No"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L CONN_6 P19
-U 1 1 50D6C4CF
-P 4675 5600
-F 0 "P19" V 4625 5600 60  0000 C CNN
-F 1 "Pump_Conn_Flex" V 4725 5600 40  0000 C CNN
-F 2 "Conn_Pump_Flex" V 4825 5600 40  0001 C CNN
-F 4 "X200" V 4825 5600 40  0001 C CNN "Part_No"
-	1    4675 5600
-	1    0    0    -1  
-$EndComp
-$Comp
 L CONN_6 P18
 U 1 1 50D6C4BF
-P 3900 5600
-F 0 "P18" V 3850 5600 60  0000 C CNN
-F 1 "Pump_Conn_BO" V 3950 5600 40  0000 C CNN
-F 2 "Header_FTDI" V 4050 5600 40  0001 C CNN
-F 4 "X200" V 4050 5600 40  0001 C CNN "Part_No"
-	1    3900 5600
+P 3700 5600
+F 0 "P18" V 3650 5600 60  0000 C CNN
+F 1 "Pump_Conn_BO" V 3750 5600 40  0000 C CNN
+F 2 "Header_FTDI" V 3850 5600 40  0001 C CNN
+F 4 "X200" V 3850 5600 40  0001 C CNN "Part_No"
+	1    3700 5600
 	-1   0    0    -1  
 $EndComp
 NoConn ~ 4325 7050
@@ -1497,12 +1464,12 @@ Text Label 2600 5350 0    40   ~ 0
 $Comp
 L CONN_6 P17
 U 1 1 50B22337
-P 3675 5600
-F 0 "P17" V 3625 5600 60  0000 C CNN
-F 1 "Pump_Conn" V 3725 5600 40  0000 C CNN
-F 2 "Header_FTDI" V 3825 5600 40  0001 C CNN
-F 4 "X200" V 3825 5600 40  0001 C CNN "Part_No"
-	1    3675 5600
+P 3475 5600
+F 0 "P17" V 3425 5600 60  0000 C CNN
+F 1 "Pump_Conn" V 3525 5600 40  0000 C CNN
+F 2 "Header_FTDI" V 3625 5600 40  0001 C CNN
+F 4 "X200" V 3625 5600 40  0001 C CNN "Part_No"
+	1    3475 5600
 	1    0    0    -1  
 $EndComp
 Text Label 1800 4125 0    40   ~ 0

@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 12/29/2012 11:40:29 AM
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 12/31/2012 5:30:38 PM
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -213,49 +213,56 @@ EndCmp
 BeginCmp
 TimeStamp = /50B2116F/50B7155C;
 Reference = D1;
-ValeurCmp = S1A-E3/61T;
+ValeurCmp = 1N4001;
 IdModule  = diode_do41;
 EndCmp
 
 BeginCmp
 TimeStamp = /50B2116F/50BA3BBD;
 Reference = D2;
-ValeurCmp = MM3Z3V0T1G;
+ValeurCmp = 1N5225B;
 IdModule  = diode_do35;
 EndCmp
 
 BeginCmp
 TimeStamp = /50B2116F/50B22921;
 Reference = D3;
-ValeurCmp = MM3Z3V0T1G;
+ValeurCmp = 1N5225B;
 IdModule  = diode_do35;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FC07407/4FC61A7F;
 Reference = D4;
-ValeurCmp = MBRM110LT1G;
+ValeurCmp = 1N4001;
 IdModule  = diode_do41;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FC07407/4FE44ABA;
 Reference = D5;
-ValeurCmp = LED;
+ValeurCmp = 5V0;
 IdModule  = led_5mm_clear;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FC07407/4FE44ABB;
 Reference = D6;
-ValeurCmp = LED;
+ValeurCmp = 3V3;
 IdModule  = led_5mm_clear;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FC07407/4FC62203;
 Reference = D7;
-ValeurCmp = LED;
+ValeurCmp = BLINK;
+IdModule  = led_5mm_clear;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC07407/50E005ED;
+Reference = D8;
+ValeurCmp = 12V;
 IdModule  = led_5mm_clear;
 EndCmp
 
@@ -449,7 +456,7 @@ IdModule  = STS21;
 EndCmp
 
 BeginCmp
-TimeStamp = /50B2116F/50D6C18B;
+TimeStamp = /50B2116F/50DED8EA;
 Reference = P23;
 ValeurCmp = Pump;
 IdModule  = Pump;
@@ -484,14 +491,14 @@ IdModule  = Header_GPIO;
 EndCmp
 
 BeginCmp
-TimeStamp = /50B2116F/50DE8768;
+TimeStamp = /50B2116F/50E01664;
 Reference = P28;
 ValeurCmp = VLV_90_M;
 IdModule  = 2X06/90;
 EndCmp
 
 BeginCmp
-TimeStamp = /50B2116F/50DE8761;
+TimeStamp = /50B2116F/50E0165A;
 Reference = P29;
 ValeurCmp = VLV_90_F;
 IdModule  = Header_F_6x2;
@@ -535,7 +542,7 @@ EndCmp
 BeginCmp
 TimeStamp = /50B2116F/50B4B01E;
 Reference = Q1;
-ValeurCmp = 2SD1834T100;
+ValeurCmp = TIP112G;
 IdModule  = TO220-3-V;
 EndCmp
 
@@ -591,14 +598,14 @@ EndCmp
 BeginCmp
 TimeStamp = /4FC07407/4FE44ABE;
 Reference = R8;
-ValeurCmp = 1k5;
+ValeurCmp = 330E;
 IdModule  = rc03_vert;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FC07407/4FE44ABD;
 Reference = R9;
-ValeurCmp = 1k5;
+ValeurCmp = 120E;
 IdModule  = rc03_vert;
 EndCmp
 
@@ -613,13 +620,20 @@ BeginCmp
 TimeStamp = /4E1FEA4E/4ECB8D22;
 Reference = R11;
 ValeurCmp = 10k;
-IdModule  = rc03_vert;
+IdModule  = RC03;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FBF6CBF/4FD98CE2;
 Reference = R12;
 ValeurCmp = 10k;
+IdModule  = rc03_vert;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC07407/50E005EC;
+Reference = R13;
+ValeurCmp = 1k;
 IdModule  = rc03_vert;
 EndCmp
 
