@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 1/1/2013 6:11:29 PM
+EESchema Schematic File Version 2  date Tuesday 01 January 2013 11:07:14 PM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -17,6 +17,24 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L CONN_4 P9
+U 1 1 50E31D7A
+P 10425 1750
+F 0 "P9" V 10375 1750 50  0000 C CNN
+F 1 "C3SB" V 10475 1750 50  0000 C CNN
+F 2 "pin_strip_4-90" H 10425 1750 60  0001 C CNN
+F 4 "CONN HEADER 16POS .100 R/A 30AU" H 10425 1850 60  0001 L CNN "Field4"
+F 5 "Header, Unshrouded, Male pin," H 10425 1950 60  0001 L CNN "Field5"
+F 6 "0.1\" right angle" H 10425 2050 60  0001 L CNN "Field6"
+F 7 "FCI" H 10425 2150 60  0001 L CNN "Field7"
+F 8 "68016-116HLF" H 10425 2250 60  0001 L CNN "Field8"
+F 9 "Digikey" H 10425 2350 60  0001 L CNN "Field9"
+F 10 "609-3317-ND" H 10425 2450 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/68016-116HLF/609-3317-ND/1878554" H 10425 2550 60  0001 L CNN "Field11"
+	1    10425 1750
+	1    0    0    -1  
+$EndComp
 $Comp
 L STS21 P22
 U 1 1 50E2CCF9
@@ -1455,16 +1473,6 @@ Text Label 9725 1800 0    40   ~ 0
 SDA
 Text Label 9725 1700 0    40   ~ 0
 SCL
-$Comp
-L CONN_4 P9
-U 1 1 50CCCC5E
-P 10425 1750
-F 0 "P9" V 10375 1750 50  0000 C CNN
-F 1 "C3SB" V 10475 1750 50  0000 C CNN
-F 2 "pin_strip_4-90" V 10575 1750 50  0001 C CNN
-	1    10425 1750
-	1    0    0    -1  
-$EndComp
 Text Notes 5175 5275 0    40   ~ 0
 Temp Sensor on I2C\nwith 3V3<>5V0 translator
 $Comp

@@ -44,15 +44,15 @@ G2	Logo_Wyolum	Logo-WL3
 G3	Logo_OH	OSHW_6mm
 G4	Logo_OH	OSHW_6mm
 M1	MANIFOLD	Manifold2
-P1	AREF	Header_A_REF
+P1	AREF	Header_A_REF	CONN HEADER 50POS .100" SGL GOLD	Header, Unshrouded, Male pin,	0.1" pitch x 50 nos	Samtec Inc	TSW-150-07-L-S	Digikey	http://www.digikey.com/scripts/DkSearch/dksus.dll?WT.z_header=search_go&lang=en&keywords=SAM1031-50-ND&x=15&y=16&cur=USD
 P2	ANALOG_5V0	Header_6x1
 P3	ANALOG_GND	Header_6x1
-P4	ICSP	Header_ICSP
+P4	ICSP	Header_ICSP	CONN HEADER 6POS .100 STR 15AU	Header, Unshrouded, Male Pin	6 pos, 2 row, 0.1"	FCI	67996-206HLF	Digikey	609-3210-ND
 P5	FTDI	Header_FTDI
 P6	Pulse	pin_strip_3-90
 P7	GAGE_PR	HCEM500GUH9P3	Miniature amplified pressure sensor	HCE Series	SMD single port, barbed port	SensorTechnics	HCEM500GUH9P3	SensorTechnics	HCEM500GUH9P3	http://www.sensortechnics.com/en/products/pressure-sensors-and-transmitters/amplified-pressure-sensors/hce/
 P8	ABSO_PR	HDIB002AUY8H5	Amplified pressure sensor	HDI Series	SMD, 1 port axial	SensorTechnics	HDIB002AUY8H5	SensorTechnics	HDIB002AUY8H5	http://www.sensortechnics.com/en/products/pressure-sensors-and-transmitters/amplified-pressure-sensors/hdi/
-P9	C3SB	pin_strip_4-90
+P9	C3SB	pin_strip_4-90	CONN HEADER 16POS .100 R/A 30AU	Header, Unshrouded, Male pin,	0.1" right angle	FCI	68016-116HLF	Digikey	609-3317-ND	http://www.digikey.com/product-detail/en/68016-116HLF/609-3317-ND/1878554
 P10	C3SB	pin_strip_4-90
 P11	VSel_Vlv	SIL-3
 P12	Valve_Conn	Header_5V_Link

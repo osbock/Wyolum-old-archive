@@ -1,5 +1,5 @@
-update=1/1/2013 6:17:10 PM
-last_client=eeschema
+update=Tuesday 01 January 2013 11:07:23 PM IST
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
@@ -25,8 +25,6 @@ LastNetListRead=uControl_v1.net
 [pcbnew/libraries]
 LibDir=../../../../../Downloads/KiCad/Libraries
 LibName1=uControl_Libs/uControl
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -62,3 +60,5 @@ LabSize=40
 LibName1=uControl_Libs/uControl
 LibName2=uControl_Libs/Conn-raspberry
 LibName3=uControl_Libs/power
+[general]
+version=1

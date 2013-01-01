@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 1/1/2013 5:47:15 PM
+EESchema Schematic File Version 2  date Tuesday 01 January 2013 11:07:11 PM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -17,6 +17,40 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L ISP P4
+U 1 1 50E318A3
+P 5125 7525
+F 0 "P4" V 5075 7525 60  0000 C CNN
+F 1 "ICSP" V 5175 7525 60  0000 C CNN
+F 2 "Header_ICSP" V 4975 7425 60  0001 C CNN
+F 4 "CONN HEADER 6POS .100 STR 15AU" H 5125 7625 60  0001 L CNN "Field4"
+F 5 "Header, Unshrouded, Male Pin" H 5125 7725 60  0001 L CNN "Field5"
+F 6 "6 pos, 2 row, 0.1\"" H 5125 7825 60  0001 L CNN "Field6"
+F 7 "FCI" H 5125 7925 60  0001 L CNN "Field7"
+F 8 "67996-206HLF" H 5125 8025 60  0001 L CNN "Field8"
+F 9 "Digikey" H 5125 8125 60  0001 L CNN "Field9"
+F 10 "609-3210-ND" H 5125 8225 60  0001 L CNN "Field10"
+	1    5125 7525
+	0    1    1    0   
+$EndComp
+$Comp
+L CONN_3 P1
+U 1 1 50E314C3
+P 975 1325
+F 0 "P1" V 925 1325 50  0000 C CNN
+F 1 "AREF" V 1025 1325 50  0000 C CNN
+F 2 "Header_A_REF" H 975 1325 60  0001 C CNN
+F 4 "CONN HEADER 50POS .100\" SGL GOLD" H 975 1425 60  0001 L CNN "Field4"
+F 5 "Header, Unshrouded, Male pin," H 975 1525 60  0001 L CNN "Field5"
+F 6 "0.1\" pitch x 50 nos" H 975 1625 60  0001 L CNN "Field6"
+F 7 "Samtec Inc" H 975 1725 60  0001 L CNN "Field7"
+F 8 "TSW-150-07-L-S" H 975 1825 60  0001 L CNN "Field8"
+F 9 "Digikey" H 975 1925 60  0001 L CNN "Field9"
+F 10 "http://www.digikey.com/scripts/DkSearch/dksus.dll?WT.z_header=search_go&lang=en&keywords=SAM1031-50-ND&x=15&y=16&cur=USD" H 975 2025 60  0001 L CNN "Field10"
+	1    975  1325
+	0    -1   -1   0   
+$EndComp
 $Comp
 L SOCKET_28X0.3 DIP1
 U 1 1 50E2CF80
@@ -759,16 +793,6 @@ Text Label 1225 750  2    40   ~ 0
 5V0
 Text Label 725  750  0    40   ~ 0
 3V3
-$Comp
-L CONN_3 P1
-U 1 1 4FE6E6EC
-P 975 1325
-F 0 "P1" V 925 1325 50  0000 C CNN
-F 1 "AREF" V 1025 1325 50  0000 C CNN
-F 2 "Header_A_REF" H 975 1325 60  0001 C CNN
-	1    975  1325
-	0    -1   -1   0   
-$EndComp
 Text Notes 6425 6225 2    60   Italic 12
 FTDI Header
 Text Notes 5200 6225 2    60   Italic 12
@@ -785,16 +809,6 @@ Text Label 5075 6650 3    40   ~ 0
 ~MOSI
 Text Label 4975 6650 3    40   ~ 0
 RESET
-$Comp
-L ISP P4
-U 1 1 4FE58ED6
-P 5125 7525
-F 0 "P4" V 5075 7525 60  0000 C CNN
-F 1 "ICSP" V 5175 7525 60  0000 C CNN
-F 2 "Header_ICSP" H 5125 7525 60  0001 C CNN
-	1    5125 7525
-	0    1    1    0   
-$EndComp
 Text Label 6100 6350 3    40   ~ 0
 GND
 Text Label 6500 6350 3    40   ~ 0
