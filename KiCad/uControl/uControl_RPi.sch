@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday 31 December 2012 11:25:20 PM IST
+EESchema Schematic File Version 2  date 1/1/2013 6:11:29 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 5 5
 Title "uControl"
-Date "31 dec 2012"
+Date "1 jan 2013"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -17,6 +17,78 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L TSX0108 U6
+U 1 1 50E2BD02
+P 3600 2575
+F 0 "U6" H 3600 2975 40  0000 C CNN
+F 1 "TSX0108" H 3600 2875 40  0000 C CNN
+F 2 "TXS0108EPWR" H 3600 2975 40  0001 C CNN
+F 4 "IC 8BIT NON-INV TRANSLTR 20TSSOP" H 3600 3075 60  0001 L CNN "Field4"
+F 5 "Translator, Bidirectional, Open Drain" H 3600 3175 60  0001 L CNN "Field5"
+F 6 "20-TSSOP (0.173\", 4.40mm Width)" H 3600 3275 60  0001 L CNN "Field6"
+F 7 "Texas Instruments" H 3600 3375 60  0001 L CNN "Field7"
+F 8 "TXS0108EPWR" H 3600 3475 60  0001 L CNN "Field8"
+F 9 "Digikey" H 3600 3575 60  0001 L CNN "Field9"
+F 10 "296-23011-1-ND" H 3600 3675 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/TXS0108EPWR/296-23011-1-ND/1775304" H 3600 3775 60  0001 L CNN "Field11"
+	1    3600 2575
+	-1   0    0    -1  
+$EndComp
+$Comp
+L R_10K R12
+U 1 1 50E2B89D
+P 5625 1625
+F 0 "R12" H 5525 1775 50  0000 C CNN
+F 1 "10K" V 5630 1625 50  0000 C CNN
+F 2 "rc03_vert" V 5730 1625 50  0001 C CNN
+F 4 "RES 10K OHM 1/8W 5% CF AXIAL" H 5625 1725 60  0001 L CNN "Field4"
+F 5 "0.125W, 1/8W" H 5625 1825 60  0001 L CNN "Field5"
+F 6 "Axial" H 5625 1925 60  0001 L CNN "Field6"
+F 7 "Stackpole Electronics Inc" H 5625 2025 60  0001 L CNN "Field7"
+F 8 "CF18JT10K0" H 5625 2125 60  0001 L CNN "Field8"
+F 9 "Digikey" H 5625 2225 60  0001 L CNN "Field9"
+F 10 "CF18JT10K0CT-ND" H 5625 2325 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/CF18JT10K0/CF18JT10K0CT-ND/2022766?cur=USD" H 5625 2425 60  0001 L CNN "Field11"
+	1    5625 1625
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C25
+U 1 1 50E29596
+P 2300 1850
+F 0 "C25" H 2300 1950 50  0000 L CNN
+F 1 "100n" H 2300 1750 50  0000 L CNN
+F 2 "C2" H 2300 1850 50  0001 C CNN
+F 4 "CAP FILM 0.1UF 63VDC RADIAL" H 2300 2050 60  0001 L CNN "Field4"
+F 5 "100nF, 63V" H 2300 2150 60  0001 L CNN "Field5"
+F 6 "R82" H 2300 2250 60  0001 L CNN "Field6"
+F 7 "Kemet" H 2300 2350 60  0001 L CNN "Field7"
+F 8 "R82DC3100AA50J" H 2300 2450 60  0001 L CNN "Field8"
+F 9 "Digikey" H 2300 2550 60  0001 L CNN "Field9"
+F 10 "399-5863-ND" H 2300 2650 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD" H 2300 2750 60  0001 L CNN "Field11"
+	1    2300 1850
+	-1   0    0    1   
+$EndComp
+$Comp
+L C C24
+U 1 1 50E29581
+P 1925 1850
+F 0 "C24" H 1925 1950 50  0000 L CNN
+F 1 "100n" H 1925 1750 50  0000 L CNN
+F 2 "C2" H 1925 1850 50  0001 C CNN
+F 4 "CAP FILM 0.1UF 63VDC RADIAL" H 1925 2050 60  0001 L CNN "Field4"
+F 5 "100nF, 63V" H 1925 2150 60  0001 L CNN "Field5"
+F 6 "R82" H 1925 2250 60  0001 L CNN "Field6"
+F 7 "Kemet" H 1925 2350 60  0001 L CNN "Field7"
+F 8 "R82DC3100AA50J" H 1925 2450 60  0001 L CNN "Field8"
+F 9 "Digikey" H 1925 2550 60  0001 L CNN "Field9"
+F 10 "399-5863-ND" H 1925 2650 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD" H 1925 2750 60  0001 L CNN "Field11"
+	1    1925 1850
+	-1   0    0    1   
+$EndComp
 Connection ~ 6300 4100
 Wire Wire Line
 	6300 4000 6300 4100
@@ -211,16 +283,6 @@ F 2 "Header_GPIO" V 7350 4700 50  0001 C CNN
 	1    7250 4700
 	1    0    0    -1  
 $EndComp
-$Comp
-L R R12
-U 1 1 4FD98CE2
-P 5625 1625
-F 0 "R12" H 5700 1775 50  0000 C CNN
-F 1 "10k" V 5625 1625 50  0000 C CNN
-F 2 "rc03_vert" H 5625 1625 60  0001 C CNN
-	1    5625 1625
-	1    0    0    -1  
-$EndComp
 Text Label 4150 2175 0    40   ~ 0
 Rpi_OE
 $Comp
@@ -261,26 +323,6 @@ F 0 "#PWR027" H 2125 3600 30  0001 C CNN
 F 1 "GND" H 2125 3530 30  0001 C CNN
 	1    2125 3600
 	1    0    0    -1  
-$EndComp
-$Comp
-L C C25
-U 1 1 4FD62BCC
-P 2300 1850
-F 0 "C25" H 2150 1950 50  0000 L CNN
-F 1 "100n" H 2100 1750 50  0000 L CNN
-F 2 "C2" H 2300 1850 60  0001 C CNN
-	1    2300 1850
-	-1   0    0    1   
-$EndComp
-$Comp
-L C C24
-U 1 1 4FD62B83
-P 1925 1850
-F 0 "C24" H 1775 1950 50  0000 L CNN
-F 1 "100n" H 1725 1750 50  0000 L CNN
-F 2 "C2" H 1925 1850 60  0001 C CNN
-	1    1925 1850
-	-1   0    0    1   
 $EndComp
 Text Label 4150 3075 0    40   ~ 0
 Rpi_SCK
@@ -328,16 +370,6 @@ Text Label 5900 5000 0    40   ~ 0
 Rpi_MOSI
 Text Label 8200 4600 0    40   ~ 0
 Rpi_RST
-$Comp
-L TSX0108 U6
-U 1 1 4FD5DAA4
-P 3600 2575
-F 0 "U6" H 3600 2975 40  0000 C CNN
-F 1 "TXS0108" H 3600 2875 40  0000 C CNN
-F 2 "TXS0108EPWR" H 3600 2575 60  0001 C CNN
-	1    3600 2575
-	-1   0    0    -1  
-$EndComp
 Text Label 2850 2675 0    40   ~ 0
 TXD
 Text Label 2850 2575 0    40   ~ 0

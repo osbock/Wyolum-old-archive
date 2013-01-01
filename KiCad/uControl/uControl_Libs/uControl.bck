@@ -1,6 +1,16 @@
-EESchema-DOCLIB  Version 2.0  Date: 12/29/2012 11:29:11 AM
+EESchema-DOCLIB  Version 2.0  Date: 1/1/2013 5:25:55 PM
+#
+$CMP ABSO_PR
+D Symbole general de connecteur
+K CONN
+$ENDCMP
 #
 $CMP CONN_10
+D Symbole general de connecteur
+K CONN
+$ENDCMP
+#
+$CMP CONN_12
 D Symbole general de connecteur
 K CONN
 $ENDCMP
@@ -13,6 +23,11 @@ $ENDCMP
 $CMP DIODE
 D Diode simple
 K DEV DIODE
+$ENDCMP
+#
+$CMP GAGE_PR
+D Symbole general de connecteur
+K CONN
 $ENDCMP
 #
 $CMP LM358
@@ -48,6 +63,10 @@ F transistors/mos/*.*
 $ENDCMP
 #
 $CMP NPN
+F transistors/bipolar/bc237.pdf
+$ENDCMP
+#
+$CMP NPN_TIP112G
 F transistors/bipolar/bc237.pdf
 $ENDCMP
 #

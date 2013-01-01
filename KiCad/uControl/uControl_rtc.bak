@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/31/2012 2:34:57 PM
+EESchema Schematic File Version 2  date 1/1/2013 5:47:15 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 5
 Title "uControl"
-Date "31 dec 2012"
+Date "1 jan 2013"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -17,6 +17,95 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L DS3231N U5
+U 1 1 50E2C1B1
+P 5550 2800
+F 0 "U5" H 5850 3350 60  0000 C CNN
+F 1 "DS3231N" H 5250 2400 60  0000 C CNN
+F 2 "DS3231" H 5250 2500 60  0001 C CNN
+F 4 "IC RTC W/TCXO 16-SOIC" H 5550 3450 60  0001 L CNN "Field4"
+F 5 "Clock/Calendar" H 5550 3550 60  0001 L CNN "Field5"
+F 6 "16-SOIC (0.295\", 7.50mm Width)" H 5550 3650 60  0001 L CNN "Field6"
+F 7 "Maxim Integrated" H 5550 3750 60  0001 L CNN "Field7"
+F 8 "DS3231S#" H 5550 3850 60  0001 L CNN "Field8"
+F 9 "Digikey" H 5550 3950 60  0001 L CNN "Field9"
+F 10 "DS3231S#-ND" H 5550 4050 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/DS3231S%23/DS3231S%23-ND/1197574" H 5550 4150 60  0001 L CNN "Field11"
+	1    5550 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L R_10K R11
+U 1 1 50E2B876
+P 7150 2000
+F 0 "R11" H 7050 2150 50  0000 C CNN
+F 1 "10K" V 7155 2000 50  0000 C CNN
+F 2 "RC03" V 7255 2000 50  0001 C CNN
+F 4 "RES 10K OHM 1/8W 5% CF AXIAL" H 7150 2100 60  0001 L CNN "Field4"
+F 5 "0.125W, 1/8W" H 7150 2200 60  0001 L CNN "Field5"
+F 6 "Axial" H 7150 2300 60  0001 L CNN "Field6"
+F 7 "Stackpole Electronics Inc" H 7150 2400 60  0001 L CNN "Field7"
+F 8 "CF18JT10K0" H 7150 2500 60  0001 L CNN "Field8"
+F 9 "Digikey" H 7150 2600 60  0001 L CNN "Field9"
+F 10 "CF18JT10K0CT-ND" H 7150 2700 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/CF18JT10K0/CF18JT10K0CT-ND/2022766?cur=USD" H 7150 2800 60  0001 L CNN "Field11"
+	1    7150 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C23
+U 1 1 50E2955A
+P 4175 2775
+F 0 "C23" H 4175 2875 50  0000 L CNN
+F 1 "100n" H 4175 2675 50  0000 L CNN
+F 2 "C2" H 4175 2775 50  0001 C CNN
+F 4 "CAP FILM 0.1UF 63VDC RADIAL" H 4175 2975 60  0001 L CNN "Field4"
+F 5 "100nF, 63V" H 4175 3075 60  0001 L CNN "Field5"
+F 6 "R82" H 4175 3175 60  0001 L CNN "Field6"
+F 7 "Kemet" H 4175 3275 60  0001 L CNN "Field7"
+F 8 "R82DC3100AA50J" H 4175 3375 60  0001 L CNN "Field8"
+F 9 "Digikey" H 4175 3475 60  0001 L CNN "Field9"
+F 10 "399-5863-ND" H 4175 3575 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD" H 4175 3675 60  0001 L CNN "Field11"
+	1    4175 2775
+	1    0    0    -1  
+$EndComp
+$Comp
+L BATT_COIN BT2
+U 1 1 50E29191
+P 3525 2825
+F 0 "BT2" V 3400 2600 50  0000 L CNN
+F 1 "BATT_COIN" H 3525 2635 50  0000 L CNN
+F 4 "BATTERY LITHIUM COIN 3V 20MM" H 3525 3125 60  0001 L CNN "Field4"
+F 5 "Lithium, 3V, 225mAh" H 3525 3225 60  0001 L CNN "Field5"
+F 6 "CR2032" H 3525 3325 60  0001 L CNN "Field6"
+F 7 "Panasonic - BSG" H 3525 3425 60  0001 L CNN "Field7"
+F 8 "CR2032" H 3525 3525 60  0001 L CNN "Field8"
+F 9 "Digikey" H 3525 3625 60  0001 L CNN "Field9"
+F 10 "P189-ND" H 3525 3725 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/CR2032/P189-ND/31939?cur=USD" H 3525 3825 60  0001 L CNN "Field11"
+	1    3525 2825
+	0    1    1    0   
+$EndComp
+$Comp
+L BATT_HOLDER BT1
+U 1 1 50E29166
+P 3950 2800
+F 0 "BT1" V 3850 2625 50  0000 L CNN
+F 1 "BATT_HOLDER" H 3975 2675 50  0000 L CNN
+F 2 "CR2032" H 3950 2900 60  0001 L CNN
+F 4 "HOLDER BATTERY COIN 20MM DIA THM" H 3950 3100 60  0001 L CNN "Field4"
+F 5 "Coin Cell, Retainer" H 3950 3200 60  0001 L CNN "Field5"
+F 6 "Coin, 20.0mm" H 3950 3300 60  0001 L CNN "Field6"
+F 7 "Keystone Electronics" H 3950 3400 60  0001 L CNN "Field7"
+F 8 "3003" H 3950 3500 60  0001 L CNN "Field8"
+F 9 "Digikey" H 3950 3600 60  0001 L CNN "Field9"
+F 10 "3003K-ND" H 3950 3700 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/scripts/DkSearch/dksus.dll?x=0&y=0&lang=en&KeyWords=3003K-ND&cur=USD" H 3950 3800 60  0001 L CNN "Field11"
+	1    3950 2800
+	0    1    1    0   
+$EndComp
 Text Label 6500 2450 0    40   ~ 0
 SQR
 Wire Wire Line
@@ -131,16 +220,6 @@ Text HLabel 9050 4500 2    60   Input ~ 0
 Text HLabel 9050 4350 2    60   Input ~ 0
 BAT
 $Comp
-L R R11
-U 1 1 4ECB8D22
-P 7150 2000
-F 0 "R11" H 7225 2150 50  0000 C CNN
-F 1 "10k" V 7150 2000 50  0000 C CNN
-F 2 "rc03_vert" H 7150 2000 60  0001 C CNN
-	1    7150 2000
-	1    0    0    -1  
-$EndComp
-$Comp
 L +BATT #PWR023
 U 1 1 4EC101F0
 P 5300 1850
@@ -191,26 +270,6 @@ F 2 "I/O" H 7650 2450 60  0001 C CNN
 	1    7650 2450
 	1    0    0    -1  
 $EndComp
-$Comp
-L DS3231N U5
-U 1 1 4E1FEA7F
-P 5550 2800
-F 0 "U5" H 5850 3350 60  0000 C CNN
-F 1 "DS3231N" H 5250 2400 60  0000 C CNN
-F 2 "DS3231" H 5550 2800 60  0001 C CNN
-	1    5550 2800
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C23
-U 1 1 4E1FEA7E
-P 4175 2775
-F 0 "C23" H 4175 2850 50  0000 L CNN
-F 1 "100n" V 4225 2525 50  0000 L CNN
-F 2 "C2" H 4175 2775 60  0001 C CNN
-	1    4175 2775
-	1    0    0    -1  
-$EndComp
 Text Label 4750 3750 0    40   ~ 0
 GND
 Text Label 3950 1900 0    40   ~ 0
@@ -223,14 +282,4 @@ Text Label 6500 2600 0    40   ~ 0
 RST
 Text Label 6500 2750 0    40   ~ 0
 32k
-$Comp
-L BATT_RTC BT1
-U 1 1 4E1FEA78
-P 3950 2800
-F 0 "BT1" H 3650 2600 50  0000 C CNN
-F 1 "BATT_RTC" H 3950 2610 50  0000 C CNN
-F 2 "CR2032" H 3950 2800 60  0001 C CNN
-	1    3950 2800
-	0    1    1    0   
-$EndComp
 $EndSCHEMATC
