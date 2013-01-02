@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tuesday 01 January 2013 11:07:11 PM IST
+EESchema Schematic File Version 2  date 1/2/2013 12:42:03 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 5
 Title "uControl"
-Date "1 jan 2013"
+Date "2 jan 2013"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -19,11 +19,11 @@ Comment4 ""
 $EndDescr
 $Comp
 L ISP P4
-U 1 1 50E318A3
+U 1 1 50E3CDC2
 P 5125 7525
 F 0 "P4" V 5075 7525 60  0000 C CNN
 F 1 "ICSP" V 5175 7525 60  0000 C CNN
-F 2 "Header_ICSP" V 4975 7425 60  0001 C CNN
+F 2 "Header_ICSP" V 5275 7525 60  0001 C CNN
 F 4 "CONN HEADER 6POS .100 STR 15AU" H 5125 7625 60  0001 L CNN "Field4"
 F 5 "Header, Unshrouded, Male Pin" H 5125 7725 60  0001 L CNN "Field5"
 F 6 "6 pos, 2 row, 0.1\"" H 5125 7825 60  0001 L CNN "Field6"
@@ -31,23 +31,25 @@ F 7 "FCI" H 5125 7925 60  0001 L CNN "Field7"
 F 8 "67996-206HLF" H 5125 8025 60  0001 L CNN "Field8"
 F 9 "Digikey" H 5125 8125 60  0001 L CNN "Field9"
 F 10 "609-3210-ND" H 5125 8225 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/scripts/DkSearch/dksus.dll?vendor=0&keywords=609-3210-ND" H 5125 8325 60  0001 L CNN "Field11"
 	1    5125 7525
 	0    1    1    0   
 $EndComp
 $Comp
 L CONN_3 P1
-U 1 1 50E314C3
+U 1 1 50E3CCEE
 P 975 1325
 F 0 "P1" V 925 1325 50  0000 C CNN
 F 1 "AREF" V 1025 1325 50  0000 C CNN
-F 2 "Header_A_REF" H 975 1325 60  0001 C CNN
+F 2 "Header_A_REF" V 1125 1325 50  0001 C CNN
 F 4 "CONN HEADER 50POS .100\" SGL GOLD" H 975 1425 60  0001 L CNN "Field4"
 F 5 "Header, Unshrouded, Male pin," H 975 1525 60  0001 L CNN "Field5"
 F 6 "0.1\" pitch x 50 nos" H 975 1625 60  0001 L CNN "Field6"
 F 7 "Samtec Inc" H 975 1725 60  0001 L CNN "Field7"
 F 8 "TSW-150-07-L-S" H 975 1825 60  0001 L CNN "Field8"
 F 9 "Digikey" H 975 1925 60  0001 L CNN "Field9"
-F 10 "http://www.digikey.com/scripts/DkSearch/dksus.dll?WT.z_header=search_go&lang=en&keywords=SAM1031-50-ND&x=15&y=16&cur=USD" H 975 2025 60  0001 L CNN "Field10"
+F 10 "SAM1031-50-ND" H 975 2025 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/scripts/DkSearch/dksus.dll?WT.z_header=search_go&lang=en&keywords=SAM1031-50-ND&x=15&y=16&cur=USD" H 975 2125 60  0001 L CNN "Field11"
 	1    975  1325
 	0    -1   -1   0   
 $EndComp

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tuesday 01 January 2013 11:07:11 PM IST
+EESchema Schematic File Version 2  date 1/2/2013 12:42:03 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 5
 Title ""
-Date "1 jan 2013"
+Date "2 jan 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -17,6 +17,42 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L PUMP_CONN_FLEX P19
+U 1 1 50E3DD89
+P 4825 5600
+F 0 "P19" V 4775 5600 60  0000 C CNN
+F 1 "PUMP_CONN_FLEX" V 4875 5600 40  0000 C CNN
+F 2 "Conn_Pump_Flex" V 4975 5600 40  0001 C CNN
+F 4 "CONN FFC/FPC 6POS 1MM VERT SMD" H 4825 5700 60  0001 L CNN "Field4"
+F 5 "Surface mount, ZIF, " H 4825 5800 60  0001 L CNN "Field5"
+F 6 "1mm pitch, 6 way" H 4825 5900 60  0001 L CNN "Field6"
+F 7 "Molex Inc" H 4825 6000 60  0001 L CNN "Field7"
+F 8 "0526100671" H 4825 6100 60  0001 L CNN "Field8"
+F 9 "Digikey" H 4825 6200 60  0001 L CNN "Field9"
+F 10 "WM7633CT-ND" H 4825 6300 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/0526100671/WM7633CT-ND/699133" H 4825 6400 60  0001 L CNN "Field11"
+	1    4825 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L FLOW_CONN P15
+U 1 1 50E3C2A1
+P 3675 3775
+F 0 "P15" V 3625 3775 60  0000 C CNN
+F 1 "FLOW_CONN" V 3725 3775 60  0000 C CNN
+F 2 "Conn_Flow" V 3825 3775 60  0001 C CNN
+F 4 "CONN HEADER 2MM 8POS TIN" H 3675 3875 60  0001 L CNN "Field4"
+F 5 "Header, Shrouded, Male Pin" H 3675 3975 60  0001 L CNN "Field5"
+F 6 "2mm pitch, 1x8 way" H 3675 4075 60  0001 L CNN "Field6"
+F 7 "Molex Connector Corporation" H 3675 4175 60  0001 L CNN "Field7"
+F 8 "53014-0810" H 3675 4275 60  0001 L CNN "Field8"
+F 9 "Digikey" H 3675 4375 60  0001 L CNN "Field9"
+F 10 "WM18971-ND" H 3675 4475 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-search/en?x=0&y=0&KeyWords=53014-0810" H 3675 4575 60  0001 L CNN "Field11"
+	1    3675 3775
+	1    0    0    -1  
+$EndComp
 $Comp
 L CONN_4 P9
 U 1 1 50E31D7A
@@ -571,16 +607,6 @@ Text Label 4125 5650 0    40   ~ 0
 IO_X
 Text Label 4125 5350 0    40   ~ 0
 12V
-$Comp
-L CONN_6 P19
-U 1 1 50D6C4CF
-P 4825 5600
-F 0 "P19" V 4775 5600 60  0000 C CNN
-F 1 "Pump_Conn_Flex" V 4875 5600 40  0000 C CNN
-F 2 "Conn_Pump_Flex" V 4975 5600 40  0001 C CNN
-	1    4825 5600
-	1    0    0    -1  
-$EndComp
 Connection ~ 10050 6400
 Connection ~ 10300 6400
 Wire Wire Line
@@ -1703,16 +1729,6 @@ NoConn ~ 3325 3725
 NoConn ~ 3325 3625
 Text Label 2925 3525 0    40   ~ 0
 PD4_Flow_Rx
-$Comp
-L CONN_8 P15
-U 1 1 50B21A2A
-P 3675 3775
-F 0 "P15" V 3625 3775 60  0000 C CNN
-F 1 "Flow_Conn" V 3725 3775 60  0000 C CNN
-F 2 "Conn_Flow" V 3825 3775 60  0001 C CNN
-	1    3675 3775
-	1    0    0    -1  
-$EndComp
 Text Label 2950 1175 0    40   ~ 0
 P_SCK
 NoConn ~ 3325 1375

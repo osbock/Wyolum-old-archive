@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tuesday 01 January 2013 11:07:14 PM IST
+EESchema Schematic File Version 2  date 1/2/2013 1:41:08 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 5 5
 Title "uControl"
-Date "1 jan 2013"
+Date "2 jan 2013"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -17,6 +17,24 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L BCM2835_GPIO P27
+U 1 1 50E3D62C
+P 7250 4700
+F 0 "P27" H 7250 5400 60  0000 C CNN
+F 1 "BCM2835_GPIO" V 7250 4700 50  0000 C CNN
+F 2 "Header_GPIO" V 7350 4700 50  0001 C CNN
+F 4 "CONN HEADER FMAL 26PS .1\" DL TIN" H 7250 5500 60  0001 L CNN "Field4"
+F 5 "Header, Female Socket" H 7250 5600 60  0001 L CNN "Field5"
+F 6 "0.1\", 2 row" H 7250 5700 60  0001 L CNN "Field6"
+F 7 "Sullins Connector Solutions" H 7250 5800 60  0001 L CNN "Field7"
+F 8 "PPTC132LFBN-RC" H 7250 5900 60  0001 L CNN "Field8"
+F 9 "Digikey" H 7250 6000 60  0001 L CNN "Field9"
+F 10 "S7081-ND" H 7250 6100 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/PPTC132LFBN-RC/S7081-ND/810219" H 7250 6200 60  0001 L CNN "Field11"
+	1    7250 4700
+	1    0    0    -1  
+$EndComp
 $Comp
 L TSX0108 U6
 U 1 1 50E2BD02
@@ -261,7 +279,7 @@ U 1 1 500FBDD3
 P 7500 3650
 F 0 "P26" V 7450 3650 50  0000 C CNN
 F 1 "5V_LINK" V 7550 3650 50  0000 C CNN
-F 2 "Header_U6OE" V 7650 3650 50  0001 C CNN
+F 2 "Header_U6OE" H 7350 3850 50  0001 C CNN
 	1    7500 3650
 	-1   0    0    -1  
 $EndComp
@@ -273,16 +291,6 @@ Text Label 7400 3225 0    40   ~ 0
 5V0
 Text Notes 6450 1250 0    60   Italic 12
 this jumper enables/disables the Voltage Translator U6, \nthereby allowing/dis-allowing communication \nbetween the Raspberry-Pi and a La Mode\nEDIT:Permanenty shorted(23-08-2012)
-$Comp
-L BCM2835_GPIO P27
-U 1 1 4FD9E5BC
-P 7250 4700
-F 0 "P27" H 7250 5400 60  0000 C CNN
-F 1 "BCM2835_GPIO" V 7250 4700 50  0000 C CNN
-F 2 "Header_GPIO" V 7350 4700 50  0001 C CNN
-	1    7250 4700
-	1    0    0    -1  
-$EndComp
 Text Label 4150 2175 0    40   ~ 0
 Rpi_OE
 $Comp

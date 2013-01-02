@@ -44,10 +44,10 @@ G2	Logo_Wyolum	Logo-WL3
 G3	Logo_OH	OSHW_6mm
 G4	Logo_OH	OSHW_6mm
 M1	MANIFOLD	Manifold2
-P1	AREF	Header_A_REF	CONN HEADER 50POS .100" SGL GOLD	Header, Unshrouded, Male pin,	0.1" pitch x 50 nos	Samtec Inc	TSW-150-07-L-S	Digikey	http://www.digikey.com/scripts/DkSearch/dksus.dll?WT.z_header=search_go&lang=en&keywords=SAM1031-50-ND&x=15&y=16&cur=USD
+P1	AREF	Header_A_REF	CONN HEADER 50POS .100" SGL GOLD	Header, Unshrouded, Male pin,	0.1" pitch x 50 nos	Samtec Inc	TSW-150-07-L-S	Digikey	SAM1031-50-ND	http://www.digikey.com/scripts/DkSearch/dksus.dll?WT.z_header=search_go&lang=en&keywords=SAM1031-50-ND&x=15&y=16&cur=USD
 P2	ANALOG_5V0	Header_6x1
 P3	ANALOG_GND	Header_6x1
-P4	ICSP	Header_ICSP	CONN HEADER 6POS .100 STR 15AU	Header, Unshrouded, Male Pin	6 pos, 2 row, 0.1"	FCI	67996-206HLF	Digikey	609-3210-ND
+P4	ICSP	Header_ICSP	CONN HEADER 6POS .100 STR 15AU	Header, Unshrouded, Male Pin	6 pos, 2 row, 0.1"	FCI	67996-206HLF	Digikey	609-3210-ND	http://www.digikey.com/scripts/DkSearch/dksus.dll?vendor=0&keywords=609-3210-ND
 P5	FTDI	Header_FTDI
 P6	Pulse	pin_strip_3-90
 P7	GAGE_PR	HCEM500GUH9P3	Miniature amplified pressure sensor	HCE Series	SMD single port, barbed port	SensorTechnics	HCEM500GUH9P3	SensorTechnics	HCEM500GUH9P3	http://www.sensortechnics.com/en/products/pressure-sensors-and-transmitters/amplified-pressure-sensors/hce/
@@ -58,11 +58,11 @@ P11	VSel_Vlv	SIL-3
 P12	Valve_Conn	Header_5V_Link
 P13	Valve_Conn_BO	Header_5V_Link
 P14	X_VALVE	Valve	Miniature Pneumatic Solenoid Valve	3 Port, Direct-acting poppet style	8mm Solenoid Valve	Parker Hannifin Corporation	X-1-05-S-F	Parker Hannifin Corporation	X-1-05-S-F	http://ph.parker.com/webapp/wcs/stores/servlet/Product2_10151_12051_12163_-1_14107_14097___ProductDisplay
-P15	Flow_Conn	Conn_Flow
+P15	FLOW_CONN	Conn_Flow	CONN HEADER 2MM 8POS TIN	Header, Shrouded, Male Pin	2mm pitch, 1x8 way	Molex Connector Corporation	53014-0810	Digikey	WM18971-ND	http://www.digikey.com/product-search/en?x=0&y=0&KeyWords=53014-0810
 P16	FLOWMETER	FlowMeter	Mass Flow Meter for Gases	CMOSens EM1	G3/8 thread (BSPP	Sensirion	EM1NR4R0V_1A	Sensirion	EM1NR4R0V_1A	http://www.sensirion.com/en/products/mass-flow-meters-for-gases/mass-flow-meter-em1/
 P17	Pump_Conn	Header_FTDI
 P18	Pump_Conn_BO	Header_FTDI
-P19	Pump_Conn_Flex	Conn_Pump_Flex
+P19	PUMP_CONN_FLEX	Conn_Pump_Flex	CONN FFC/FPC 6POS 1MM VERT SMD	Surface mount, ZIF, 	1mm pitch, 6 way	Molex Inc	0526100671	Digikey	WM7633CT-ND	http://www.digikey.com/product-detail/en/0526100671/WM7633CT-ND/699133
 P20	Temp_Conn	SIL-4
 P21	Temp_Conn_BO	SIL-4
 P22	Temp	STS21	Temperature Sensor, I2C	I2C Temp Sensor	DFN 3mmx3mm	Sensirion	STS21	Sensirion	STS21	http://www.sensirion.com/en/products/humidity-temperature/temperature-sensor-sts21/
@@ -70,7 +70,7 @@ P23	PUMP	Pump	Intelligent Pump	P200/P1500	X-Life Motor	XAVITECH	P200_GAS	XAVITEC
 P24	12V	JACK_ALIM	CONN POWER JACK MALE 2.5MM CLSD	Jack, Male	2.5mm ID, 5.5mm OD	CUI Inc	PJ-002B	Digikey	CP-002B-ND	http://www.digikey.com/product-detail/en/PJ-002B/CP-002B-ND/96965?cur=USD
 P25	U6_OE	pin_strip_3-90
 P26	5V_LINK	Header_U6OE
-P27	BCM2835_GPIO	Header_GPIO
+P27	BCM2835_GPIO	Header_GPIO	CONN HEADER FMAL 26PS .1" DL TIN	Header, Female Socket	0.1", 2 row	Sullins Connector Solutions	PPTC132LFBN-RC	Digikey	S7081-ND	http://www.digikey.com/product-detail/en/PPTC132LFBN-RC/S7081-ND/810219
 P28	VLV_90_M	2X06/90
 P29	VLV_90_F	Header_F_6x2
 PCB1	PCB	PCB
