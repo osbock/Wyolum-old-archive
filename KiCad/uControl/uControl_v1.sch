@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 1/2/2013 1:41:08 PM
+EESchema Schematic File Version 2  date 1/4/2013 9:52:10 AM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 5
 Title "uControl"
-Date "2 jan 2013"
+Date "4 jan 2013"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -494,7 +494,7 @@ L ATMEGA8-P U7
 U 1 1 50E2C28A
 P 2900 3350
 F 0 "U7" H 2250 2900 50  0000 L BNN
-F 1 "ATMEGA8-P" H 2275 2800 50  0000 L BNN
+F 1 "ATMEGA328P" H 2275 2800 50  0000 L BNN
 F 2 "DIP-28__300_ELL" H 3400 1875 50  0001 C CNN
 F 4 "IC MCU AVR 32K FLASH 28PDIP" H 2900 4700 60  0001 L CNN "Field4"
 F 5 "AVR ATMega 8 bit 20Mhz" H 2900 4800 60  0001 L CNN "Field5"
