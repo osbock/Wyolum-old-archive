@@ -1,6 +1,6 @@
-update=1/5/2013 7:02:24 PM
+update=Saturday 05 January 2013 11:58:53 PM IST
 version=1
-last_client=eeschema
+last_client=kicad
 [cvpcb]
 version=1
 NetITyp=0
@@ -31,8 +31,6 @@ LastNetListRead=
 [pcbnew/libraries]
 LibDir=
 LibName1=RowGB_Libs/RowGB_fp
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -66,3 +64,5 @@ RptLab=1
 LabSize=60
 [eeschema/libraries]
 LibName1=RowGB_Libs/RowGB_sym
+[general]
+version=1
