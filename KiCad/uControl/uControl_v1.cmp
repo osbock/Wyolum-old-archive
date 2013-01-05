@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 1/1/2013 6:17:52 PM
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 1/5/2013 12:00:11 PM
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -316,7 +316,7 @@ IdModule  = Manifold2;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FE6E6EC;
+TimeStamp = /50E3CCEE;
 Reference = P1;
 ValeurCmp = AREF;
 IdModule  = Header_A_REF;
@@ -337,7 +337,7 @@ IdModule  = Header_6x1;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FE58ED6;
+TimeStamp = /50E3CDC2;
 Reference = P4;
 ValeurCmp = ICSP;
 IdModule  = Header_ICSP;
@@ -372,7 +372,7 @@ IdModule  = HDIB002AUY8H5;
 EndCmp
 
 BeginCmp
-TimeStamp = /50B2116F/50CCCC5E;
+TimeStamp = /50B2116F/50E31D7A;
 Reference = P9;
 ValeurCmp = C3SB;
 IdModule  = pin_strip_4-90;
@@ -414,9 +414,9 @@ IdModule  = Valve;
 EndCmp
 
 BeginCmp
-TimeStamp = /50B2116F/50B21A2A;
+TimeStamp = /50B2116F/50E3C2A1;
 Reference = P15;
-ValeurCmp = Flow_Conn;
+ValeurCmp = FLOW_CONN;
 IdModule  = Conn_Flow;
 EndCmp
 
@@ -442,9 +442,9 @@ IdModule  = Header_FTDI;
 EndCmp
 
 BeginCmp
-TimeStamp = /50B2116F/50D6C4CF;
+TimeStamp = /50B2116F/50E3DD89;
 Reference = P19;
-ValeurCmp = Pump_Conn_Flex;
+ValeurCmp = PUMP_CONN_FLEX;
 IdModule  = Conn_Pump_Flex;
 EndCmp
 
@@ -498,7 +498,7 @@ IdModule  = Header_U6OE;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FBF6CBF/4FD9E5BC;
+TimeStamp = /4FBF6CBF/50E3D62C;
 Reference = P27;
 ValeurCmp = BCM2835_GPIO;
 IdModule  = Header_GPIO;
@@ -516,6 +516,20 @@ TimeStamp = /50B2116F/50E0165A;
 Reference = P29;
 ValeurCmp = VLV_90_F;
 IdModule  = Header_F_6x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/50E7C248;
+Reference = P30;
+ValeurCmp = X_VALVE_CONN;
+IdModule  = Valve_Conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/50E7C4D6;
+Reference = P31;
+ValeurCmp = FLOW_CONN_CABLE;
+IdModule  = ;
 EndCmp
 
 BeginCmp
@@ -892,7 +906,7 @@ EndCmp
 BeginCmp
 TimeStamp = /50E2C28A;
 Reference = U7;
-ValeurCmp = ATMEGA8-P;
+ValeurCmp = ATMEGA328P;
 IdModule  = DIP-28__300_ELL;
 EndCmp
 

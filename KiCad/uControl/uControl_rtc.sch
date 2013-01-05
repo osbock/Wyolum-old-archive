@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 1/4/2013 9:52:10 AM
+EESchema Schematic File Version 2  date 1/5/2013 12:14:51 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 5
 Title "uControl"
-Date "4 jan 2013"
+Date "5 jan 2013"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""

@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: 1/4/2013 9:52:10 AM
+EESchema-LIBRARY Version 2.3  Date: 1/5/2013 12:14:51 PM
 #encoding utf-8
 #
 # +3.3V
@@ -613,6 +613,32 @@ F7 "Molex Connector Corporation" 0 400 60 H I L CNN
 F8 "53014-0810" 0 500 60 H I L CNN
 F9 "Digikey" 0 600 60 H I L CNN
 F10 "WM18971-ND" 0 700 60 H I L CNN
+F11 "http://www.digikey.com/product-search/en?x=0&y=0&KeyWords=53014-0810" 0 800 60 H I L CNN
+DRAW
+S -100 400 100 -400 0 1 0 N
+X P1 1 -350 350 250 R 50 50 1 1 P I
+X P2 2 -350 250 250 R 50 50 1 1 P I
+X P3 3 -350 150 250 R 50 50 1 1 P I
+X P4 4 -350 50 250 R 50 50 1 1 P I
+X P5 5 -350 -50 250 R 50 50 1 1 P I
+X P6 6 -350 -150 250 R 50 50 1 1 P I
+X P7 7 -350 -250 250 R 50 50 1 1 P I
+X P8 8 -350 -350 250 R 50 50 1 1 P I
+ENDDRAW
+ENDDEF
+#
+# Flow_Conn_Cable
+#
+DEF Flow_Conn_Cable P 0 40 Y N 1 F N
+F0 "P" -50 0 60 V V C CNN
+F1 "Flow_Conn_Cable" 50 0 60 V V C CNN
+F4 "Custom cable assembly" 0 100 60 H I L CNN
+F5 "8 way, 8\" long" 0 200 60 H I L CNN
+F6 "2mm pitch, 1x8 way" 0 300 60 H I L CNN
+F7 "Molex Connector Corporation" 0 400 60 H I L CNN
+F8 "51004-0800+50011-8100" 0 500 60 H I L CNN
+F9 "Digikey" 0 600 60 H I L CNN
+F10 "DCC-961-ND" 0 700 60 H I L CNN
 F11 "http://www.digikey.com/product-search/en?x=0&y=0&KeyWords=53014-0810" 0 800 60 H I L CNN
 DRAW
 S -100 400 100 -400 0 1 0 N
@@ -1277,6 +1303,27 @@ DRAW
 S -100 150 100 -150 0 1 0 N
 X P1 1 -350 100 250 R 60 60 1 1 P I
 X PM 2 -350 -100 250 R 60 60 1 1 P I
+ENDDRAW
+ENDDEF
+#
+# X_VALVE_CONN
+#
+DEF X_VALVE_CONN P 0 40 Y N 1 F N
+F0 "P" -50 0 40 V V C CNN
+F1 "X_VALVE_CONN" 50 0 40 V V C CNN
+F4 "CONN RECEPT 2MM VERT AU 3POS" 0 100 60 H I L CNN
+F5 "Receptacle, Female" 0 200 60 H I L CNN
+F6 "2mm pitch x 3 way" 0 300 60 H I L CNN
+F7 "Harwin Inc" 0 400 60 H I L CNN
+F8 "M22-7130342" 0 500 60 H I L CNN
+F9 "Digikey" 0 600 60 H I L CNN
+F10 "952-1350-5-ND" 0 700 60 H I L CNN
+F11 "http://www.digikey.com/product-detail/en/M22-7130342/952-1350-5-ND/2264331" 0 800 60 H I L CNN
+DRAW
+S -100 150 100 -150 0 1 0 N
+X P1 1 -350 100 250 R 50 50 1 1 P I
+X P2 2 -350 0 250 R 50 50 1 1 P I
+X P3 3 -350 -100 250 R 50 50 1 1 P I
 ENDDRAW
 ENDDEF
 #

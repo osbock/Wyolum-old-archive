@@ -1,10 +1,10 @@
 Drill report for C:\Users\Anool\Documents\Arduino\clockthree\KiCad\uControl\uControl_v1.brd
-Created on 1/4/2013 9:58:01 AM
+Created on 1/5/2013 12:09:16 PM
 Selected Drill Unit: Imperial (")
 
 Drill report for through holes :
 T1  0.025"  0.64mm  (51 holes)
-T2  0.035"  0.89mm  (136 holes)
+T2  0.035"  0.89mm  (137 holes)
 T3  0.040"  1.02mm  (164 holes)
 T4  0.046"  1.17mm  (3 holes)  (with 3 oblongs)
 T5  0.050"  1.27mm  (2 holes)
@@ -12,7 +12,7 @@ T6  0.080"  2.03mm  (7 holes)
 T7  0.120"  3.05mm  (38 holes)
 T8  0.130"  3.30mm  (4 holes)  (with 4 oblongs)
 
-total plated holes count 405
+total plated holes count 406
 
 
 Drill report for Not Plated through holes :
