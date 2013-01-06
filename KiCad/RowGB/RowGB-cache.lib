@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: 1/5/2013 6:42:37 PM
+EESchema-LIBRARY Version 2.3  Date: Sunday 06 January 2013 05:57:23 PM IST
 #encoding utf-8
 #
 # C2
@@ -24,6 +24,33 @@ S -65 -15 65 -40 0 1 0 F
 S -65 15 65 40 0 1 0 F
 X ~ 1 0 200 170 D 40 40 1 1 P
 X ~ 2 0 -200 170 U 40 40 1 1 P
+ENDDRAW
+ENDDEF
+#
+# C_POL_1
+#
+DEF C_POL_1 C 0 10 N N 1 F N
+F0 "C" -100 100 50 H V L CNN
+F1 "C_POL_1" 0 -150 50 H V L CNN
+F4 "CAP ALUM 100UF 16V 20% RADIAL" 0 200 60 H I L CNN
+F5 "100u,16V" 0 300 60 H I L CNN
+F6 "Radial, Can, 6.3mm dia" 0 400 60 H I L CNN
+F7 "Panasonic Electronic Components" 0 500 60 H I L CNN
+F8 "ECE-A1CKA101" 0 600 60 H I L CNN
+F9 "Digikey" 0 700 60 H I L CNN
+F10 "P833-ND" 0 800 60 H I L CNN
+F11 "http://www.digikey.com/product-detail/en/ECE-A1CKA101/P833-ND/44757?cur=USD" 0 900 60 H I L CNN
+$FPLIST
+ SM*
+ C?
+ C1-1
+$ENDFPLIST
+DRAW
+T 0 35 60 60 0 0 0 +  Normal 0 C C
+S -65 -30 65 -55 0 1 0 F
+S -65 0 65 25 0 1 0 N
+X + 1 0 200 175 D 40 40 1 1 P
+X - 2 0 -250 200 U 40 40 1 1 P
 ENDDRAW
 ENDDEF
 #

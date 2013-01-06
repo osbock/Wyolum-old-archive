@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  1/5/2013 6:42:29 PM
+# EESchema Netlist Version 1.1 created  Sunday 06 January 2013 05:57:07 PM IST
 (
  ( /50E7E7CE c_0805 C1 100n
   ( 1 GND )
@@ -64,6 +64,10 @@
   ( 1 GND )
   ( 2 /5V )
  )
+ ( /50E95E82 CP_5x11mm C17 47uF,10V
+  ( 1 /5V )
+  ( 2 GND )
+ )
  ( /50E7EA04 CONN_N P1 CONN_N
   ( 1 /5V )
   ( 2 /Data_In )
@@ -73,32 +77,35 @@
  ( /50E7EA0C CONN_W P2 CONN_W
   ( 1 /5V )
   ( 2 /Data_In )
-  ( 3 N-000020 )
+  ( 3 N-000039 )
   ( 4 GND )
  )
  ( /50E7F7C5 CONN_E P3 CONN_E
   ( 1 /5V )
   ( 2 /Data_Out )
-  ( 3 N-000006 )
+  ( 3 N-000041 )
   ( 4 GND )
  )
  ( /50E7F7B7 CONN_S P4 CONN_S
   ( 1 /5V )
   ( 2 /Data_Out )
-  ( 3 N-000037 )
+  ( 3 N-000040 )
   ( 4 GND )
  )
  ( /50E7F981 pad P5 CONN_1
   ( 1 N-000038 )
  )
  ( /50E7F986 pad P6 CONN_1
-  ( 1 N-000020 )
+  ( 1 N-000039 )
  )
  ( /50E7F991 pad P7 CONN_1
-  ( 1 N-000006 )
+  ( 1 N-000041 )
  )
  ( /50E7F989 pad P8 CONN_1
-  ( 1 N-000037 )
+  ( 1 N-000040 )
+ )
+ ( /50E96A4D PCB PCB1 CONN_1
+  ( 1 ? )
  )
  ( /50E8262D Screw S1 CONN_1
   ( 1 ? )
@@ -319,6 +326,11 @@ $component C15
  C1-1
 $endlist
 $component C16
+ SM*
+ C?
+ C1-1
+$endlist
+$component C17
  SM*
  C?
  C1-1

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 1/5/2013 6:42:37 PM
+EESchema Schematic File Version 2  date Sunday 06 January 2013 05:57:23 PM IST
 LIBS:RowGB_sym
 LIBS:RowGB-cache
 EELAYER 25  0
@@ -7,7 +7,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "5 jan 2013"
+Date "6 jan 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -15,52 +15,25 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 5400 7050 0    60   ~ 0
-Mounting Screws
-NoConn ~ 6100 6850
-NoConn ~ 5900 6850
-NoConn ~ 5700 6850
-NoConn ~ 5500 6850
+Text Notes 6600 7050 0    60   ~ 0
+PCB
+NoConn ~ 6700 6850
 $Comp
-L CONN_1 S4
-U 1 1 50E82641
-P 6100 6700
-F 0 "S4" V 6180 6700 40  0000 L CNN
-F 1 "CONN_1" H 6100 6755 30  0001 C CNN
-F 2 "Screw" H 6100 6855 30  0001 C CNN
-	1    6100 6700
+L CONN_1 PCB1
+U 1 1 50E96A4D
+P 6700 6700
+F 0 "PCB1" V 6780 6700 40  0000 L CNN
+F 1 "CONN_1" H 6700 6755 30  0001 C CNN
+F 2 "PCB" H 6700 6700 60  0001 C CNN
+	1    6700 6700
 	0    -1   -1   0   
 $EndComp
-$Comp
-L CONN_1 S3
-U 1 1 50E8263D
-P 5900 6700
-F 0 "S3" V 5980 6700 40  0000 L CNN
-F 1 "CONN_1" H 5900 6755 30  0001 C CNN
-F 2 "Screw" H 5900 6855 30  0001 C CNN
-	1    5900 6700
-	0    -1   -1   0   
-$EndComp
-$Comp
-L CONN_1 S2
-U 1 1 50E82639
-P 5700 6700
-F 0 "S2" V 5780 6700 40  0000 L CNN
-F 1 "CONN_1" H 5700 6755 30  0001 C CNN
-F 2 "Screw" H 5700 6855 30  0001 C CNN
-	1    5700 6700
-	0    -1   -1   0   
-$EndComp
-$Comp
-L CONN_1 S1
-U 1 1 50E8262D
-P 5500 6700
-F 0 "S1" V 5580 6700 40  0000 L CNN
-F 1 "CONN_1" H 5500 6755 30  0001 C CNN
-F 2 "Screw" H 5500 6855 30  0001 C CNN
-	1    5500 6700
-	0    -1   -1   0   
-$EndComp
+Text Label 1450 7250 0    60   ~ 0
+GND
+Text Label 1450 6400 0    60   ~ 0
+5V
+Wire Wire Line
+	1450 7050 1450 7250
 Wire Wire Line
 	1350 2350 1350 2450
 Wire Wire Line
@@ -396,6 +369,72 @@ Wire Wire Line
 Wire Wire Line
 	4250 6800 4200 6800
 Connection ~ 1350 2400
+Wire Wire Line
+	1450 6600 1450 6400
+$Comp
+L C_POL_1 C17
+U 1 1 50E95E82
+P 1450 6800
+F 0 "C17" H 1250 6900 50  0000 L CNN
+F 1 "47uF,10V" H 1450 6650 50  0000 L CNN
+F 2 "CP_5x11mm" H 1450 6800 60  0001 C CNN
+F 4 "CAP ALUM 100UF 16V 20% RADIAL" H 1450 7000 60  0001 L CNN "Field4"
+F 5 "100u,16V" H 1450 7100 60  0001 L CNN "Field5"
+F 6 "Radial, Can, 6.3mm dia" H 1450 7200 60  0001 L CNN "Field6"
+F 7 "Panasonic Electronic Components" H 1450 7300 60  0001 L CNN "Field7"
+F 8 "ECE-A1CKA101" H 1450 7400 60  0001 L CNN "Field8"
+F 9 "Digikey" H 1450 7500 60  0001 L CNN "Field9"
+F 10 "P833-ND" H 1450 7600 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/ECE-A1CKA101/P833-ND/44757?cur=USD" H 1450 7700 60  0001 L CNN "Field11"
+	1    1450 6800
+	1    0    0    -1  
+$EndComp
+Text Notes 5400 7050 0    60   ~ 0
+Mounting Screws
+NoConn ~ 6100 6850
+NoConn ~ 5900 6850
+NoConn ~ 5700 6850
+NoConn ~ 5500 6850
+$Comp
+L CONN_1 S4
+U 1 1 50E82641
+P 6100 6700
+F 0 "S4" V 6180 6700 40  0000 L CNN
+F 1 "CONN_1" H 6100 6755 30  0001 C CNN
+F 2 "Screw" H 6100 6855 30  0001 C CNN
+	1    6100 6700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_1 S3
+U 1 1 50E8263D
+P 5900 6700
+F 0 "S3" V 5980 6700 40  0000 L CNN
+F 1 "CONN_1" H 5900 6755 30  0001 C CNN
+F 2 "Screw" H 5900 6855 30  0001 C CNN
+	1    5900 6700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_1 S2
+U 1 1 50E82639
+P 5700 6700
+F 0 "S2" V 5780 6700 40  0000 L CNN
+F 1 "CONN_1" H 5700 6755 30  0001 C CNN
+F 2 "Screw" H 5700 6855 30  0001 C CNN
+	1    5700 6700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_1 S1
+U 1 1 50E8262D
+P 5500 6700
+F 0 "S1" V 5580 6700 40  0000 L CNN
+F 1 "CONN_1" H 5500 6755 30  0001 C CNN
+F 2 "Screw" H 5500 6855 30  0001 C CNN
+	1    5500 6700
+	0    -1   -1   0   
+$EndComp
 $Comp
 L PWR_FLAG #FLG01
 U 1 1 50E7FB12

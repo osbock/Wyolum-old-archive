@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 1/5/2013 6:42:29 PM
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Sunday 06 January 2013 05:57:07 PM IST
 
 BeginCmp
 TimeStamp = /50E7E7CE;
@@ -113,6 +113,13 @@ IdModule  = c_0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /50E95E82;
+Reference = C17;
+ValeurCmp = 47uF,10V;
+IdModule  = CP_5x11mm;
+EndCmp
+
+BeginCmp
 TimeStamp = /50E7EA04;
 Reference = P1;
 ValeurCmp = CONN_N;
@@ -166,6 +173,13 @@ TimeStamp = /50E7F989;
 Reference = P8;
 ValeurCmp = CONN_1;
 IdModule  = pad;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E96A4D;
+Reference = PCB1;
+ValeurCmp = CONN_1;
+IdModule  = PCB;
 EndCmp
 
 BeginCmp
