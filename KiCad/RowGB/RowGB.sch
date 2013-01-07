@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 06 January 2013 05:57:23 PM IST
+EESchema Schematic File Version 2  date 1/7/2013 2:11:28 PM
 LIBS:RowGB_sym
 LIBS:RowGB-cache
 EELAYER 25  0
@@ -7,7 +7,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "6 jan 2013"
+Date "7 jan 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -15,6 +15,58 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L CONN_E P3
+U 1 1 50EA8A1D
+P 4600 6750
+F 0 "P3" V 4550 6750 50  0000 C CNN
+F 1 "CONN_E" V 4650 6750 50  0000 C CNN
+F 4 "CONN HEADER 50POS .100\" SGL GOLD" H 4600 6850 60  0001 L CNN "Field4"
+F 5 "Header, Unshrouded, Male pin," H 4600 6950 60  0001 L CNN "Field5"
+F 6 "0.1\"" H 4600 7050 60  0001 L CNN "Field6"
+F 7 "Samtec Inc" H 4600 7150 60  0001 L CNN "Field7"
+F 8 "TSW-150-07-L-S" H 4600 7250 60  0001 L CNN "Field8"
+F 9 "Digikey" H 4600 7350 60  0001 L CNN "Field9"
+F 10 "SAM1031-50-ND" H 4600 7450 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/scripts/DkSearch/dksus.dll?WT.z_header=search_go&lang=en&keywords=SAM1031-50-ND&x=15&y=16&cur=USD" H 4600 7550 60  0001 L CNN "Field11"
+	1    4600 6750
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_W P2
+U 1 1 50EA89E6
+P 2200 6750
+F 0 "P2" V 2150 6750 50  0000 C CNN
+F 1 "CONN_W" V 2250 6750 50  0000 C CNN
+F 4 "CONN HEADER 50POS .100\" SGL GOLD" H 2200 6850 60  0001 L CNN "Field4"
+F 5 "Header, Unshrouded, Male pin," H 2200 6950 60  0001 L CNN "Field5"
+F 6 "0.1\"" H 2200 7050 60  0001 L CNN "Field6"
+F 7 "Samtec Inc" H 2200 7150 60  0001 L CNN "Field7"
+F 8 "TSW-150-07-L-S" H 2200 7250 60  0001 L CNN "Field8"
+F 9 "Digikey" H 2200 7350 60  0001 L CNN "Field9"
+F 10 "SAM1031-50-ND" H 2200 7450 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/scripts/DkSearch/dksus.dll?WT.z_header=search_go&lang=en&keywords=SAM1031-50-ND&x=15&y=16&cur=USD" H 2200 7550 60  0001 L CNN "Field11"
+	1    2200 6750
+	-1   0    0    -1  
+$EndComp
+$Comp
+L C_POL_1 C17
+U 1 1 50EA6BA3
+P 1450 6800
+F 0 "C17" H 1300 6900 50  0000 L CNN
+F 1 "47u,8V" H 1450 6650 50  0000 L CNN
+F 2 "c_2917" H 1450 6750 50  0001 C CNN
+F 4 "CAP ALUM 47UF 8V 20% SMD" H 1450 7000 60  0001 L CNN "Field4"
+F 5 "47u,8V" H 1450 7100 60  0001 L CNN "Field5"
+F 6 "2917 (7343 Metric)" H 1450 7200 60  0001 L CNN "Field6"
+F 7 "Panasonic Electronic Components" H 1450 7300 60  0001 L CNN "Field7"
+F 8 "EEF-CD0K470R" H 1450 7400 60  0001 L CNN "Field8"
+F 9 "Digikey" H 1450 7500 60  0001 L CNN "Field9"
+F 10 "PCE3606CT-ND" H 1450 7600 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/EEF-CD0K470R/PCE3606CT-ND/614442" H 1450 7700 60  0001 L CNN "Field11"
+	1    1450 6800
+	1    0    0    -1  
+$EndComp
 Text Notes 6600 7050 0    60   ~ 0
 PCB
 NoConn ~ 6700 6850
@@ -371,24 +423,6 @@ Wire Wire Line
 Connection ~ 1350 2400
 Wire Wire Line
 	1450 6600 1450 6400
-$Comp
-L C_POL_1 C17
-U 1 1 50E95E82
-P 1450 6800
-F 0 "C17" H 1250 6900 50  0000 L CNN
-F 1 "47uF,10V" H 1450 6650 50  0000 L CNN
-F 2 "CP_5x11mm" H 1450 6800 60  0001 C CNN
-F 4 "CAP ALUM 100UF 16V 20% RADIAL" H 1450 7000 60  0001 L CNN "Field4"
-F 5 "100u,16V" H 1450 7100 60  0001 L CNN "Field5"
-F 6 "Radial, Can, 6.3mm dia" H 1450 7200 60  0001 L CNN "Field6"
-F 7 "Panasonic Electronic Components" H 1450 7300 60  0001 L CNN "Field7"
-F 8 "ECE-A1CKA101" H 1450 7400 60  0001 L CNN "Field8"
-F 9 "Digikey" H 1450 7500 60  0001 L CNN "Field9"
-F 10 "P833-ND" H 1450 7600 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-detail/en/ECE-A1CKA101/P833-ND/44757?cur=USD" H 1450 7700 60  0001 L CNN "Field11"
-	1    1450 6800
-	1    0    0    -1  
-$EndComp
 Text Notes 5400 7050 0    60   ~ 0
 Mounting Screws
 NoConn ~ 6100 6850
@@ -653,24 +687,6 @@ F 2 "pad" H 3450 6605 30  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L CONN4_S P3
-U 1 1 50E7F7C5
-P 4600 6750
-F 0 "P3" V 4550 6750 50  0000 C CNN
-F 1 "CONN_E" V 4650 6750 50  0000 C CNN
-F 2 "CONN_E" V 4750 6750 50  0001 C CNN
-F 4 "Conn Socket Strip SKT 5 POS 2.54mm Solder RA Thru-Hole" H 4600 6850 60  0001 L CNN "Field4"
-F 5 "Header, Female" H 4600 6950 60  0001 L CNN "Field5"
-F 6 "0.1\" right angle" H 4600 7050 60  0001 L CNN "Field6"
-F 7 "Samtec" H 4600 7150 60  0001 L CNN "Field7"
-F 8 "BCS-104-L-S-HE" H 4600 7250 60  0001 L CNN "Field8"
-F 9 "Arrow" H 4600 7350 60  0001 L CNN "Field9"
-F 10 "BCS-104-L-S-HE" H 4600 7450 60  0001 L CNN "Field10"
-F 11 "http://components.arrow.com/part/detail/2769370S3578027N1004" H 4600 7550 60  0001 L CNN "Field11"
-	1    4600 6750
-	1    0    0    -1  
-$EndComp
-$Comp
 L CONN4_S P4
 U 1 1 50E7F7B7
 P 3400 7600
@@ -714,24 +730,6 @@ Text Label 3650 6900 0    60   ~ 0
 GND
 Text Label 3650 6600 0    60   ~ 0
 5V
-$Comp
-L CONN_W P2
-U 1 1 50E7EA0C
-P 2200 6750
-F 0 "P2" V 2150 6750 50  0000 C CNN
-F 1 "CONN_W" V 2250 6750 50  0000 C CNN
-F 2 "CONN_W" V 2350 6750 50  0001 C CNN
-F 4 "CONN HEADER 16POS .100 R/A 30AU" H 2200 6850 60  0001 L CNN "Field4"
-F 5 "Header, Unshrouded, Male pin," H 2200 6950 60  0001 L CNN "Field5"
-F 6 "0.1\" right angle" H 2200 7050 60  0001 L CNN "Field6"
-F 7 "FCI" H 2200 7150 60  0001 L CNN "Field7"
-F 8 "68016-116HLF" H 2200 7250 60  0001 L CNN "Field8"
-F 9 "Digikey" H 2200 7350 60  0001 L CNN "Field9"
-F 10 "609-3317-ND" H 2200 7450 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-detail/en/68016-116HLF/609-3317-ND/1878554" H 2200 7550 60  0001 L CNN "Field11"
-	1    2200 6750
-	-1   0    0    -1  
-$EndComp
 $Comp
 L C2 C16
 U 1 1 50E7E80E
