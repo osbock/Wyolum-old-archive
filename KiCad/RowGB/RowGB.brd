@@ -2512,7 +2512,7 @@ Ne 19 "GND"
 Po -1600 0
 $EndPAD
 $SHAPE3D
-Na "RowGB_Libs\\3D_Modules\\chip_cms_pol.wrl"
+Na "RowGB_Libs/3D_Modules/chip_cms_pol.wrl"
 Sc 0.400000 0.500000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 180.000000

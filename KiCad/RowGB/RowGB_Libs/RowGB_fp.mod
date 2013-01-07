@@ -75,7 +75,7 @@ Ne 4 "VCC"
 Po 1500 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//pin_strip_4-90.wrl"
+Na "RowGB_Libs/3D_Modules/pin_strip_4-90.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -139,7 +139,7 @@ Ne 3 "GND"
 Po 1500 0
 $EndPAD
 $SHAPE3D
-Na "C3Jr_v2_libs//C3Jr_v2_3D_Modules//socket_1x4_90.wrl"
+Na "RowGB_Libs/3D_Modules/socket_1x4_90.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -704,7 +704,7 @@ Ne 0 ""
 Po -1600 0
 $EndPAD
 $SHAPE3D
-Na "RowGB_Libs\\3D_Modules\\chip_cms_pol.wrl"
+Na "RowGB_Libs/3D_Modules/chip_cms_pol.wrl"
 Sc 0.400000 0.500000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 180.000000
