@@ -1,0 +1,23 @@
+Drill report for C:\Users\Anool\Documents\Arduino\clockthree\KiCad\Nb_v2\Nb_v3.brd
+Created on 1/25/2013 5:44:52 PM
+Selected Drill Unit: Imperial (")
+
+Drill report for through holes :
+T1  0.025"  0.64mm  (58 holes)
+T2  0.032"  0.81mm  (201 holes)
+T3  0.035"  0.89mm  (20 holes)
+T4  0.040"  1.02mm  (241 holes)  (with 3 oblongs)
+T5  0.045"  1.14mm  (3 holes)
+T6  0.050"  1.27mm  (14 holes)
+T7  0.080"  2.03mm  (1 hole)
+T8  0.120"  3.05mm  (5 holes)
+T9  0.160"  4.06mm  (4 holes)
+
+total plated holes count 547
+
+
+Drill report for Not Plated through holes :
+
+total Not Plated holes count 0
+
+
