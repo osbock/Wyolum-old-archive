@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 1/5/2013 11:44:24 AM
+EESchema-DOCLIB  Version 2.0  Date: 1/25/2013 10:21:37 AM
 #
 $CMP ABSO_PR
 D Symbole general de connecteur
@@ -30,7 +30,7 @@ D Symbole general de connecteur
 K CONN
 $ENDCMP
 #
-$CMP Flow_Conn_Cable
+$CMP FLOW_CONN_CABLE
 D Symbole general de connecteur
 K CONN
 $ENDCMP

@@ -1,132 +1,133 @@
-"ref"	"value"	"footprint"	"Field1"	"Field2"	"Field3"	"Field4"	"Field5"	"Field6"	"Field7"	"Field8"
-"B1"	"I/O"	"I/O"								
-"B2"	"I/O"	"I/O"								
-"B3"	"I/O"	"I/O"								
-"BT1"	"BATT_HOLDER"	"CR2032"	"HOLDER BATTERY COIN 20MM DIA THM"	"Coin Cell, Retainer"	"Coin, 20.0mm"	"Keystone Electronics"	3003	"Digikey"	"3003K-ND"	"http://www.digikey.com/scripts/DkSearch/dksus.dll?x=0&y=0&lang=en&KeyWords=3003K-ND&cur=USD"
-"BT2"	"BATT_COIN"		"BATTERY LITHIUM COIN 3V 20MM"	"Lithium, 3V, 225mAh"	"CR2032"	"Panasonic - BSG"	"CR2032"	"Digikey"	"P189-ND"	"http://www.digikey.com/product-detail/en/CR2032/P189-ND/31939?cur=USD"
-"C1"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C2"	"22p"	"cnp_3mm_disc"	"CAP CER 22PF 50V 5% RADIAL"	"22pF, 50V"	"Radial"	"Vishay BC Components"	"K220J15C0GF5TH5"	"Digikey"	"BC1034CT-ND"	"http://www.digikey.com/product-detail/en/K220J15C0GF5TH5/BC1034CT-ND/286656?cur=USD"
-"C3"	"22p"	"cnp_3mm_disc"	"CAP CER 22PF 50V 5% RADIAL"	"22pF, 50V"	"Radial"	"Vishay BC Components"	"K220J15C0GF5TH5"	"Digikey"	"BC1034CT-ND"	"http://www.digikey.com/product-detail/en/K220J15C0GF5TH5/BC1034CT-ND/286656?cur=USD"
-"C4"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C5"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C6"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C7"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C8"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C9"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C10"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C11"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C12"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C13"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C14"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C15"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C16"	"100n"	"c_0805"	"CAP CER 0.1UF 25V 10% X7R 0805"	"100nF, 25V"	"Surface Mount, MLCC"	"Kemet"	"C0805C104K3RACTU"	"Digikey"	"399-1168-1-ND"	"http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443"
-"C17"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C18"	"2u2 Tant"	"cnp_3mm_disc"	"CAP TANT 2.2UF 16V 10% RADIAL"	"2u2,16V"	"Radial, 0.1"""	"AVX Corporation"	"TAP225K016SCS"	"Digikey"	"478-1868-ND"	"http://www.digikey.com/product-detail/en/TAP225K016SCS/478-1868-ND/563971"
-"C19"	"100u,16V"	"CP_6.3x7mm"	"CAP ALUM 100UF 16V 20% RADIAL"	"100u,16V"	"Radial, Can, 6.3mm dia"	"Panasonic Electronic Components"	"ECE-A1CKA101"	"Digikey"	"P833-ND"	"http://www.digikey.com/product-detail/en/ECE-A1CKA101/P833-ND/44757?cur=USD"
-"C20"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C21"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C22"	"2u2 Tant"	"cnp_3mm_disc"	"CAP TANT 2.2UF 16V 10% RADIAL"	"2u2,16V"	"Radial, 0.1"""	"AVX Corporation"	"TAP225K016SCS"	"Digikey"	"478-1868-ND"	"http://www.digikey.com/product-detail/en/TAP225K016SCS/478-1868-ND/563971"
-"C23"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C24"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C25"	"100n"	"C2"	"CAP FILM 0.1UF 63VDC RADIAL"	"100nF, 63V"	"R82"	"Kemet"	"R82DC3100AA50J"	"Digikey"	"399-5863-ND"	"http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD"
-"C26"	"100u,16V"	"CP_6.3x7mm"	"CAP ALUM 100UF 16V 20% RADIAL"	"100u,16V"	"Radial, Can, 6.3mm dia"	"Panasonic Electronic Components"	"ECE-A1CKA101"	"Digikey"	"P833-ND"	"http://www.digikey.com/product-detail/en/ECE-A1CKA101/P833-ND/44757?cur=USD"
-"D1"	"1N4001"	"diode_do41"	"DIODE GEN PURPOSE 50V 1A DO41"	"50V, 1A"	"DO-204AL, DO-41, Axial"	"Fairchild Semiconductor"	"1N4001"	"Digikey"	"1N4001FSCT-ND"	"http://www.digikey.com/product-detail/en/1N4001/1N4001FSCT-ND/1532742"
-"D2"	"1N5225B"	"diode_do35"	"DIODE ZENER 3.0V 500MW DO35"	"3V, 500mW"	"DO-204AH, DO-35, Axial"	"Vishay Semiconductor Diodes Division"	"1N5225B-TR"	"Digikey"	"1N5225BCT-ND"	"http://www.digikey.com/product-detail/en/1N5225B-TR/1N5225BCT-ND/3104340"
-"D3"	"1N5225B"	"diode_do35"	"DIODE ZENER 3.0V 500MW DO35"	"3V, 500mW"	"DO-204AH, DO-35, Axial"	"Vishay Semiconductor Diodes Division"	"1N5225B-TR"	"Digikey"	"1N5225BCT-ND"	"http://www.digikey.com/product-detail/en/1N5225B-TR/1N5225BCT-ND/3104340"
-"D4"	"1N4001"	"diode_do41"	"DIODE GEN PURPOSE 50V 1A DO41"	"50V, 1A"	"DO-204AL, DO-41, Axial"	"Fairchild Semiconductor"	"1N4001"	"Digikey"	"1N4001FSCT-ND"	"http://www.digikey.com/product-detail/en/1N4001/1N4001FSCT-ND/1532742"
-"D5"	"5V0"	"led_5mm_clear"	"LED SS 5MM 625NM RED DIFF"	"2V, 10mA"	"Round with Domed Top, 5mm, T-1 3/4"	"Kingbright Corp"	"WP7113ID"	"Digikey"	"754-1264-ND"	"http://www.digikey.com/product-detail/en/WP7113ID/754-1264-ND/1747663"
-"D6"	"3V3"	"led_5mm_clear"	"LED SS 5MM 625NM RED DIFF"	"2V, 10mA"	"Round with Domed Top, 5mm, T-1 3/4"	"Kingbright Corp"	"WP7113ID"	"Digikey"	"754-1264-ND"	"http://www.digikey.com/product-detail/en/WP7113ID/754-1264-ND/1747663"
-"D7"	"BLINK"	"led_5mm_clear"	"LED SS 5MM 625NM RED DIFF"	"2V, 10mA"	"Round with Domed Top, 5mm, T-1 3/4"	"Kingbright Corp"	"WP7113ID"	"Digikey"	"754-1264-ND"	"http://www.digikey.com/product-detail/en/WP7113ID/754-1264-ND/1747663"
-"D8"	"12V"	"led_5mm_clear"	"LED SS 5MM 625NM RED DIFF"	"2V, 10mA"	"Round with Domed Top, 5mm, T-1 3/4"	"Kingbright Corp"	"WP7113ID"	"Digikey"	"754-1264-ND"	"http://www.digikey.com/product-detail/en/WP7113ID/754-1264-ND/1747663"
-"DIP1"	"SOCKET_28X0.3"		"CONN IC SOCKET VERT 28POS TIN"	"Thru Hole Open Frame Tin"	"DIP, 0.3"" (7.62mm) Row Spacing"	"TE Connectivity"	"1-390261-9"	"Digikey"	"A100210-ND"	"http://www.digikey.com/product-detail/en/1-390261-9/A100210-ND/990628?cur=USD"
-"G1"	"Logo_Wyolum"	"Logo-WL3"								
-"G2"	"Logo_Wyolum"	"Logo-WL3"								
-"G3"	"Logo_OH"	"OSHW_6mm"								
-"G4"	"Logo_OH"	"OSHW_6mm"								
-"M1"	"MANIFOLD"	"Manifold2"								
-"P1"	"AREF"	"Header_A_REF"	"CONN HEADER 50POS .100"" SGL GOLD"	"Header, Unshrouded, Male pin,"	"0.1"" pitch x 50 nos"	"Samtec Inc"	"TSW-150-07-L-S"	"Digikey"	"SAM1031-50-ND"	"http://www.digikey.com/scripts/DkSearch/dksus.dll?WT.z_header=search_go&lang=en&keywords=SAM1031-50-ND&x=15&y=16&cur=USD"
-"P2"	"ANALOG_5V0"	"Header_6x1"								
-"P3"	"ANALOG_GND"	"Header_6x1"								
-"P4"	"ICSP"	"Header_ICSP"	"CONN HEADER 6POS .100 STR 15AU"	"Header, Unshrouded, Male Pin"	"6 pos, 2 row, 0.1"""	"FCI"	"67996-206HLF"	"Digikey"	"609-3210-ND"	"http://www.digikey.com/scripts/DkSearch/dksus.dll?vendor=0&keywords=609-3210-ND"
-"P5"	"FTDI"	"Header_FTDI"								
-"P6"	"Pulse"	"pin_strip_3-90"								
-"P7"	"GAGE_PR"	"HCEM500GUH9P3"	"Miniature amplified pressure sensor"	"HCE Series"	"SMD single port, barbed port"	"SensorTechnics"	"HCEM500GUH9P3"	"SensorTechnics"	"HCEM500GUH9P3"	"http://www.sensortechnics.com/en/products/pressure-sensors-and-transmitters/amplified-pressure-sensors/hce/"
-"P8"	"ABSO_PR"	"HDIB002AUY8H5"	"Amplified pressure sensor"	"HDI Series"	"SMD, 1 port axial"	"SensorTechnics"	"HDIB002AUY8H5"	"SensorTechnics"	"HDIB002AUY8H5"	"http://www.sensortechnics.com/en/products/pressure-sensors-and-transmitters/amplified-pressure-sensors/hdi/"
-"P9"	"C3SB"	"pin_strip_4-90"	"CONN HEADER 16POS .100 R/A 30AU"	"Header, Unshrouded, Male pin,"	"0.1"" right angle"	"FCI"	"68016-116HLF"	"Digikey"	"609-3317-ND"	"http://www.digikey.com/product-detail/en/68016-116HLF/609-3317-ND/1878554"
-"P10"	"C3SB"	"pin_strip_4-90"								
-"P11"	"VSel_Vlv"	"SIL-3"								
-"P12"	"Valve_Conn"	"Header_5V_Link"								
-"P13"	"Valve_Conn_BO"	"Header_5V_Link"								
-"P14"	"X_VALVE"	"Valve"	"Miniature Pneumatic Solenoid Valve"	"3 Port, Direct-acting poppet style"	"8mm Solenoid Valve"	"Parker Hannifin Corporation"	"X-1-05-S-F"	"Parker Hannifin Corporation"	"X-1-05-S-F"	"http://ph.parker.com/webapp/wcs/stores/servlet/Product2_10151_12051_12163_-1_14107_14097___ProductDisplay"
-"P15"	"FLOW_CONN"	"Conn_Flow"	"CONN HEADER 2MM 8POS TIN"	"Header, Shrouded, Male Pin"	"2mm pitch, 1x8 way"	"Molex Connector Corporation"	"53014-0810"	"Digikey"	"WM18971-ND"	"http://www.digikey.com/product-search/en?x=0&y=0&KeyWords=53014-0810"
-"P16"	"FLOWMETER"	"FlowMeter"	"Mass Flow Meter for Gases"	"CMOSens EM1"	"G3/8 thread (BSPP"	"Sensirion"	"EM1NR4R0V_1A"	"Sensirion"	"EM1NR4R0V_1A"	"http://www.sensirion.com/en/products/mass-flow-meters-for-gases/mass-flow-meter-em1/"
-"P17"	"Pump_Conn"	"Header_FTDI"								
-"P18"	"Pump_Conn_BO"	"Header_FTDI"								
-"P19"	"PUMP_CONN_FLEX"	"Conn_Pump_Flex"	"CONN FFC/FPC 6POS 1MM VERT SMD"	"Surface mount, ZIF, "	"1mm pitch, 6 way"	"Molex Inc"	526100671	"Digikey"	"WM7633CT-ND"	"http://www.digikey.com/product-detail/en/0526100671/WM7633CT-ND/699133"
-"P20"	"Temp_Conn"	"SIL-4"								
-"P21"	"Temp_Conn_BO"	"SIL-4"								
-"P22"	"Temp"	"STS21"	"Temperature Sensor, I2C"	"I2C Temp Sensor"	"DFN 3mmx3mm"	"Sensirion"	"STS21"	"Sensirion"	"STS21"	"http://www.sensirion.com/en/products/humidity-temperature/temperature-sensor-sts21/"
-"P23"	"PUMP"	"Pump"	"Intelligent Pump"	"P200/P1500"	"X-Life Motor"	"XAVITECH"	"P200_GAS"	"XAVITECH"	"P200_GAS"	"http://www.xavitech.com/products"
-"P24"	"12V"	"JACK_ALIM"	"CONN POWER JACK MALE 2.5MM CLSD"	"Jack, Male"	"2.5mm ID, 5.5mm OD"	"CUI Inc"	"PJ-002B"	"Digikey"	"CP-002B-ND"	"http://www.digikey.com/product-detail/en/PJ-002B/CP-002B-ND/96965?cur=USD"
-"P25"	"U6_OE"	"pin_strip_3-90"								
-"P26"	"5V_LINK"	"Header_U6OE"								
-"P27"	"BCM2835_GPIO"	"Header_GPIO"	"CONN HEADER FMAL 26PS .1"" DL TIN"	"Header, Female Socket"	"0.1"", 2 row"	"Sullins Connector Solutions"	"PPTC132LFBN-RC"	"Digikey"	"S7081-ND"	"http://www.digikey.com/product-detail/en/PPTC132LFBN-RC/S7081-ND/810219"
-"P28"	"VLV_90_M"	"2X06/90"								
-"P29"	"VLV_90_F"	"Header_F_6x2"								
-"P30"	"X_VALVE_CONN"	"Valve_Conn"	"CONN RECEPT 2MM VERT AU 3POS"	"Receptacle, Female"	"2mm pitch x 3 way"	"Harwin Inc"	"M22-7130342"	"Digikey"	"952-1350-5-ND"	"http://www.digikey.com/product-detail/en/M22-7130342/952-1350-5-ND/2264331"
-"P31"	"FLOW_CONN_CABLE"		"Custom cable assembly"	"8 way, 8"" long"	"2mm pitch, 1x8 way"	"Molex Connector Corporation"	"51004-0800+50011-8100"	"Digikey"	"DCC-961-ND"	"http://www.digikey.com/product-search/en?x=0&y=0&KeyWords=53014-0810"
-"PCB1"	"PCB"	"PCB"								
-"PCB2"	"PCB_Pump"	"PCB_Pump"								
-"PCB3"	"PCB_Flow"	"PCB_Flow"								
-"PCB5"	"PCB_Vlv"	"PCB_Vlv"								
-"PCB6"	"PCB_MFold"	"PCB_Mfold"								
-"Q1"	"TIP112G"	"TO220-3-V"	"TRANS DARL NPN 2A 100V TO220AB"	"2A, 100V, 2W"	"TO-220-3"	"ON Semiconductor"	"TIP112G"	"Digikey"	"TIP112GOS-ND"	"http://www.digikey.com/scripts/dksearch/dksus.dll?vendor=0&keywords=TIP112G"
-"R1"	"10K"	"rc03_vert"	"RES 10K OHM 1/8W 5% CF AXIAL"	"0.125W, 1/8W"	"Axial"	"Stackpole Electronics Inc"	"CF18JT10K0"	"Digikey"	"CF18JT10K0CT-ND"	"http://www.digikey.com/product-detail/en/CF18JT10K0/CF18JT10K0CT-ND/2022766?cur=USD"
-"R2"	"10K"	"rc03_vert"	"RES 10K OHM 1/8W 5% CF AXIAL"	"0.125W, 1/8W"	"Axial"	"Stackpole Electronics Inc"	"CF18JT10K0"	"Digikey"	"CF18JT10K0CT-ND"	"http://www.digikey.com/product-detail/en/CF18JT10K0/CF18JT10K0CT-ND/2022766?cur=USD"
-"R3"	"10K"	"rc03_vert"	"RES 10K OHM 1/8W 5% CF AXIAL"	"0.125W, 1/8W"	"Axial"	"Stackpole Electronics Inc"	"CF18JT10K0"	"Digikey"	"CF18JT10K0CT-ND"	"http://www.digikey.com/product-detail/en/CF18JT10K0/CF18JT10K0CT-ND/2022766?cur=USD"
-"R4"	"10K"	"rc03_vert"	"RES 10K OHM 1/8W 5% CF AXIAL"	"0.125W, 1/8W"	"Axial"	"Stackpole Electronics Inc"	"CF18JT10K0"	"Digikey"	"CF18JT10K0CT-ND"	"http://www.digikey.com/product-detail/en/CF18JT10K0/CF18JT10K0CT-ND/2022766?cur=USD"
-"R5"	"220E"	"rc03_vert"	"RES 220 OHM 1/8W 5% CF AXIAL"	"0.125W, 1/8W"	"Axial"	"Stackpole Electronics Inc"	"CF18JT220R"	"Digikey"	"CF18JT220RCT-ND"	"http://www.digikey.com/product-detail/en/CF18JT220R/CF18JT220RCT-ND/2022726"
-"R6"	"220E"	"rc03_vert"	"RES 220 OHM 1/8W 5% CF AXIAL"	"0.125W, 1/8W"	"Axial"	"Stackpole Electronics Inc"	"CF18JT220R"	"Digikey"	"CF18JT220RCT-ND"	"http://www.digikey.com/product-detail/en/CF18JT220R/CF18JT220RCT-ND/2022726"
-"R7"	"10K"	"rc03_vert"	"RES 10K OHM 1/8W 5% CF AXIAL"	"0.125W, 1/8W"	"Axial"	"Stackpole Electronics Inc"	"CF18JT10K0"	"Digikey"	"CF18JT10K0CT-ND"	"http://www.digikey.com/product-detail/en/CF18JT10K0/CF18JT10K0CT-ND/2022766?cur=USD"
-"R8"	"330E"	"rc03_vert"	"RES 330 OHM 1/8W 5% CF AXIAL"	"0.125W, 1/8W"	"Axial"	"Stackpole Electronics Inc"	"CF18JT330R"	"Digikey"	"CF18JT330RCT-ND"	"http://www.digikey.com/product-detail/en/CF18JT330R/CF18JT330RCT-ND/2022730"
-"R9"	"120E"	"rc03_vert"	"RES 120 OHM 1/8W 5% CF AXIAL"	"0.125W, 1/8W"	"Axial"	"Stackpole Electronics Inc"	"CF18JT120R"	"Digikey"	"CF18JT120RCT-ND"	"http://www.digikey.com/product-detail/en/CF18JT120R/CF18JT120RCT-ND/2022720"
-"R10"	"1k"	"rc03_vert"	"RES 1k OHM 1/8W 5% CF AXIAL"	"0.125W, 1/8W"	"Axial"	"Stackpole Electronics Inc"	"CF18JT1K00"	"Digikey"	"CF18JT1K00CT-ND"	"http://www.digikey.com/product-detail/en/CF18JT1K00/CF18JT1K00CT-ND/2022742"
-"R11"	"10K"	"RC03"	"RES 10K OHM 1/8W 5% CF AXIAL"	"0.125W, 1/8W"	"Axial"	"Stackpole Electronics Inc"	"CF18JT10K0"	"Digikey"	"CF18JT10K0CT-ND"	"http://www.digikey.com/product-detail/en/CF18JT10K0/CF18JT10K0CT-ND/2022766?cur=USD"
-"R12"	"10K"	"rc03_vert"	"RES 10K OHM 1/8W 5% CF AXIAL"	"0.125W, 1/8W"	"Axial"	"Stackpole Electronics Inc"	"CF18JT10K0"	"Digikey"	"CF18JT10K0CT-ND"	"http://www.digikey.com/product-detail/en/CF18JT10K0/CF18JT10K0CT-ND/2022766?cur=USD"
-"R13"	"1k"	"rc03_vert"	"RES 1k OHM 1/8W 5% CF AXIAL"	"0.125W, 1/8W"	"Axial"	"Stackpole Electronics Inc"	"CF18JT1K00"	"Digikey"	"CF18JT1K00CT-ND"	"http://www.digikey.com/product-detail/en/CF18JT1K00/CF18JT1K00CT-ND/2022742"
-"SC1"	"SCREW"	"vite_3mm"								
-"SC2"	"SCREW"	"vite_3mm"								
-"SC3"	"SCREW"	"vite_3mm"								
-"SC4"	"SCREW"	"vite_3mm"								
-"SC5"	"SCREW"	"vite_3mm"								
-"SC6"	"SCREW"	"vite_3mm"								
-"SC7"	"SCREW"	"vite_3mm"								
-"SC8"	"SCREW"	"vite_3mm"								
-"SC9"	"SCREW"	"vite_3mm"								
-"SC10"	"SCREW"	"vite_3mm"								
-"SC11"	"SCREW"	"vite_3mm"								
-"SC12"	"SCREW"	"vite_3mm"								
-"SC13"	"SCREW"	"vite_3mm"								
-"SC14"	"SCREW"	"vite_3mm"								
-"SC15"	"SCREW"	"vite_3mm"								
-"SC16"	"SCREW"	"vite_3mm"								
-"SC17"	"SCREW"	"vite_3mm"								
-"SC18"	"SCREW"	"vite_3mm"								
-"SC19"	"SCREW"	"vite_3mm"								
-"SC20"	"SCREW"	"vite_3mm"								
-"SC21"	"SCREW"	"vite_3mm"								
-"SC22"	"SCREW"	"vite_3mm"								
-"SC23"	"SCREW"	"vite_3mm"								
-"SC24"	"SCREW"	"vite_3mm"								
-"SC25"	"SCREW"	"vite_3mm"								
-"SC26"	"SCREW"	"vite_3mm"								
-"SHIELD1"	"ARDUINO_SHIELD"	"ARDUINO_SHIELD_2_040pins"								
-"SW1"	"Reset"	"SW_PB_V_H"	"SWITCH TACTILE SPST-NO 0.05A 12V"	"SPST, NO"	"Top actuated 6.00mm x 6.00mm"	"TE Connectivity"	"FSM2JH"	"Digikey"	"450-1649-ND"	"http://www.digikey.com/product-detail/en/FSM2JH/450-1649-ND/1632535?cur=USD"
-"U1"	"TXB0104D"	"TXB0104D"	"IC VOLT-LEVEL TRANSLATOR 14-SOIC"	"Translator, Bidirectional"	"14-SOIC (0.154"", 3.90mm Width)"	"Texas Instruments"	"TXB0104DR"	"Digikey"	"296-21928-1-ND"	"http://www.digikey.com/product-detail/en/TXB0104DR/296-21928-1-ND/1629281"
-"U2"	"TXS0102DCT"	"TXS0102DCTR"	"IC VOLT-LVL TRANSL 2BIT BI SM8"	"Translator, Bidirectional, Open Drain"	"8-LSSOP (0.11"", 2.80mm Width)"	"Texas Instruments"	"TXS0102DCTR"	"Digikey"	"296-21978-1-ND"	"http://www.digikey.com/product-detail/en/TXS0102DCTR/296-21978-1-ND/1632671"
-"U3"	"NCP1117ST50T3G"	"SOT223"	"IC REG LDO 5V 1A DPAK-3"	"5V, 1A"	"TO-252-3, DPak (2 Leads + Tab), SC-63"	"ON Semiconductor"	"NCP1117DT50G"	"Digikey"	"NCP1117DT50GOS-ND"	"http://www.digikey.com/product-detail/en/NCP1117DT50G/NCP1117DT50GOS-ND/1483320"
-"U4"	"NCP1117DT33G"	"SOT223"	"IC REG LDO 3.3V 1A DPAK-3"	"3.3V, 1A"	"TO-252-3, DPak (2 Leads + Tab), SC-63"	"ON Semiconductor"	"NCP1117DT33RKG"	"Digikey"	"NCP1117DT33RKGOSCT-ND"	"http://www.digikey.com/product-detail/en/NCP1117DT33RKG/NCP1117DT33RKGOSCT-ND/1967215"
-"U5"	"DS3231N"	"DS3231"	"IC RTC W/TCXO 16-SOIC"	"Clock/Calendar"	"16-SOIC (0.295"", 7.50mm Width)"	"Maxim Integrated"	"DS3231S#"	"Digikey"	"DS3231S#-ND"	"http://www.digikey.com/product-detail/en/DS3231S%23/DS3231S%23-ND/1197574"
-"U6"	"TSX0108"	"TXS0108EPWR"	"IC 8BIT NON-INV TRANSLTR 20TSSOP"	"Translator, Bidirectional, Open Drain"	"20-TSSOP (0.173"", 4.40mm Width)"	"Texas Instruments"	"TXS0108EPWR"	"Digikey"	"296-23011-1-ND"	"http://www.digikey.com/product-detail/en/TXS0108EPWR/296-23011-1-ND/1775304"
-"U7"	"ATMEGA328P"	"DIP-28__300_ELL"	"IC MCU AVR 32K FLASH 28PDIP"	"AVR ATMega 8 bit 20Mhz"	"28-DIP (0.300"", 7.62mm)"	"Atmel"	"ATMEGA328-PU"	"Digikey"	"ATMEGA328-PU-ND"	"http://www.digikey.com/product-detail/en/ATMEGA328-PU/ATMEGA328-PU-ND/2271026?cur=USD"
-"X1"	"16MHz"	"XTAL"	"CER RESONATOR 16.00MHZ"	"16Mhz Ceramic built in capacitor"	"Radial - 3 Lead, 2.50mm Pitch"	"ECS Inc"	"ZTT-16.00MX"	"Digikey"	"X908-ND"	"http://www.digikey.com/product-detail/en/ZTT-16.00MX/X908-ND/170095?cur=USD"
+ref	value	footprint	Field1	Field2	Field3	Field4	Field5	Field6	Field7	Field8
+B1	I/O	I/O
+B2	I/O	I/O
+B3	I/O	I/O
+BT1	BATT_HOLDER	CR2032	HOLDER BATTERY COIN 20MM DIA THM	Coin Cell, Retainer	Coin, 20.0mm	Keystone Electronics	3003	Digikey	3003K-ND	http://www.digikey.com/scripts/DkSearch/dksus.dll?x=0&y=0&lang=en&KeyWords=3003K-ND&cur=USD
+BT2	BATT_COIN		BATTERY LITHIUM COIN 3V 20MM	Lithium, 3V, 225mAh	CR2032	Panasonic - BSG	CR2032	Digikey	P189-ND	http://www.digikey.com/product-detail/en/CR2032/P189-ND/31939?cur=USD
+C1	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C2	22p	cnp_3mm_disc	CAP CER 22PF 50V 5% RADIAL	22pF, 50V	Radial	Vishay BC Components	K220J15C0GF5TH5	Digikey	BC1034CT-ND	http://www.digikey.com/product-detail/en/K220J15C0GF5TH5/BC1034CT-ND/286656?cur=USD
+C3	22p	cnp_3mm_disc	CAP CER 22PF 50V 5% RADIAL	22pF, 50V	Radial	Vishay BC Components	K220J15C0GF5TH5	Digikey	BC1034CT-ND	http://www.digikey.com/product-detail/en/K220J15C0GF5TH5/BC1034CT-ND/286656?cur=USD
+C4	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C5	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C6	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C7	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C8	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C9	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C10	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C11	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C12	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C13	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C14	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C15	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C16	100n	c_0805	CAP CER 0.1UF 25V 10% X7R 0805	100nF, 25V	Surface Mount, MLCC	Kemet	C0805C104K3RACTU	Digikey	399-1168-1-ND	http://www.digikey.com/product-detail/en/C0805C104K3RACTU/399-1168-1-ND/411443
+C17	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C18	2u2 Tant	cnp_3mm_disc	CAP TANT 2.2UF 16V 10% RADIAL	2u2,16V	Radial, 0.1"	AVX Corporation	TAP225K016SCS	Digikey	478-1868-ND	http://www.digikey.com/product-detail/en/TAP225K016SCS/478-1868-ND/563971
+C19	100u,16V	CP_6.3x7mm	CAP ALUM 100UF 16V 20% RADIAL	100u,16V	Radial, Can, 6.3mm dia	Panasonic Electronic Components	ECE-A1CKA101	Digikey	P833-ND	http://www.digikey.com/product-detail/en/ECE-A1CKA101/P833-ND/44757?cur=USD
+C20	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C21	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C22	2u2 Tant	cnp_3mm_disc	CAP TANT 2.2UF 16V 10% RADIAL	2u2,16V	Radial, 0.1"	AVX Corporation	TAP225K016SCS	Digikey	478-1868-ND	http://www.digikey.com/product-detail/en/TAP225K016SCS/478-1868-ND/563971
+C23	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C24	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C25	100n	C2	CAP FILM 0.1UF 63VDC RADIAL	100nF, 63V	R82	Kemet	R82DC3100AA50J	Digikey	399-5863-ND	http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD
+C26	100u,16V	CP_6.3x7mm	CAP ALUM 100UF 16V 20% RADIAL	100u,16V	Radial, Can, 6.3mm dia	Panasonic Electronic Components	ECE-A1CKA101	Digikey	P833-ND	http://www.digikey.com/product-detail/en/ECE-A1CKA101/P833-ND/44757?cur=USD
+C27	100u,16V	CP_6.3x7mm	CAP ALUM 100UF 16V 20% RADIAL	100u,16V	Radial, Can, 6.3mm dia	Panasonic Electronic Components	ECE-A1CKA101	Digikey	P833-ND	http://www.digikey.com/product-detail/en/ECE-A1CKA101/P833-ND/44757?cur=USD
+D1	1N4001	diode_do41	DIODE GEN PURPOSE 50V 1A DO41	50V, 1A	DO-204AL, DO-41, Axial	Fairchild Semiconductor	1N4001	Digikey	1N4001FSCT-ND	http://www.digikey.com/product-detail/en/1N4001/1N4001FSCT-ND/1532742
+D2	1N5225B	diode_do35	DIODE ZENER 3.0V 500MW DO35	3V, 500mW	DO-204AH, DO-35, Axial	Vishay Semiconductor Diodes Division	1N5225B-TR	Digikey	1N5225BCT-ND	http://www.digikey.com/product-detail/en/1N5225B-TR/1N5225BCT-ND/3104340
+D3	1N5225B	diode_do35	DIODE ZENER 3.0V 500MW DO35	3V, 500mW	DO-204AH, DO-35, Axial	Vishay Semiconductor Diodes Division	1N5225B-TR	Digikey	1N5225BCT-ND	http://www.digikey.com/product-detail/en/1N5225B-TR/1N5225BCT-ND/3104340
+D4	1N4001	diode_do41	DIODE GEN PURPOSE 50V 1A DO41	50V, 1A	DO-204AL, DO-41, Axial	Fairchild Semiconductor	1N4001	Digikey	1N4001FSCT-ND	http://www.digikey.com/product-detail/en/1N4001/1N4001FSCT-ND/1532742
+D5	5V0	led_5mm_clear	LED SS 5MM 625NM RED DIFF	2V, 10mA	Round with Domed Top, 5mm, T-1 3/4	Kingbright Corp	WP7113ID	Digikey	754-1264-ND	http://www.digikey.com/product-detail/en/WP7113ID/754-1264-ND/1747663
+D6	3V3	led_5mm_clear	LED SS 5MM 625NM RED DIFF	2V, 10mA	Round with Domed Top, 5mm, T-1 3/4	Kingbright Corp	WP7113ID	Digikey	754-1264-ND	http://www.digikey.com/product-detail/en/WP7113ID/754-1264-ND/1747663
+D7	BLINK	led_5mm_clear	LED SS 5MM 625NM RED DIFF	2V, 10mA	Round with Domed Top, 5mm, T-1 3/4	Kingbright Corp	WP7113ID	Digikey	754-1264-ND	http://www.digikey.com/product-detail/en/WP7113ID/754-1264-ND/1747663
+D8	12V	led_5mm_clear	LED SS 5MM 625NM RED DIFF	2V, 10mA	Round with Domed Top, 5mm, T-1 3/4	Kingbright Corp	WP7113ID	Digikey	754-1264-ND	http://www.digikey.com/product-detail/en/WP7113ID/754-1264-ND/1747663
+DIP1	SOCKET_28X0.3		CONN IC SOCKET VERT 28POS TIN	Thru Hole Open Frame Tin	DIP, 0.3" (7.62mm) Row Spacing	TE Connectivity	1-390261-9	Digikey	A100210-ND	http://www.digikey.com/product-detail/en/1-390261-9/A100210-ND/990628?cur=USD
+G1	Logo_Wyolum	Logo-WL3
+G2	Logo_Wyolum	Logo-WL3
+G3	Logo_OH	OSHW_6mm
+G4	Logo_OH	OSHW_6mm
+M1	MANIFOLD	Manifold2
+P1	AREF	Header_A_REF	CONN HEADER 50POS .100" SGL GOLD	Header, Unshrouded, Male pin,	0.1" pitch x 50 nos	Samtec Inc	TSW-150-07-L-S	Digikey	SAM1031-50-ND	http://www.digikey.com/scripts/DkSearch/dksus.dll?WT.z_header=search_go&lang=en&keywords=SAM1031-50-ND&x=15&y=16&cur=USD
+P2	ANALOG_5V0	Header_6x1
+P3	ANALOG_GND	Header_6x1
+P4	ICSP	Header_ICSP	CONN HEADER 6POS .100 STR 15AU	Header, Unshrouded, Male Pin	6 pos, 2 row, 0.1"	FCI	67996-206HLF	Digikey	609-3210-ND	http://www.digikey.com/scripts/DkSearch/dksus.dll?vendor=0&keywords=609-3210-ND
+P5	FTDI	Header_FTDI
+P6	Pulse	pin_strip_3-90
+P7	GAGE_PR	HCEM500GUH9P3	Miniature amplified pressure sensor	HCE Series	SMD single port, barbed port	SensorTechnics	HCEM500GUH9P3	SensorTechnics	HCEM500GUH9P3	http://www.sensortechnics.com/en/products/pressure-sensors-and-transmitters/amplified-pressure-sensors/hce/
+P8	ABSO_PR	HDIB002AUY8H5	Amplified pressure sensor	HDI Series	SMD, 1 port axial	SensorTechnics	HDIB002AUY8H5	SensorTechnics	HDIB002AUY8H5	http://www.sensortechnics.com/en/products/pressure-sensors-and-transmitters/amplified-pressure-sensors/hdi/
+P9	C3SB	pin_strip_4-90	CONN HEADER 16POS .100 R/A 30AU	Header, Unshrouded, Male pin,	0.1" right angle	FCI	68016-116HLF	Digikey	609-3317-ND	http://www.digikey.com/product-detail/en/68016-116HLF/609-3317-ND/1878554
+P10	C3SB	pin_strip_4-90
+P11	VSel_Vlv	SIL-3
+P12	Valve_Conn	Header_5V_Link
+P13	Valve_Conn_BO	Header_5V_Link
+P14	X_VALVE	Valve	Miniature Pneumatic Solenoid Valve	3 Port, Direct-acting poppet style	8mm Solenoid Valve	Parker Hannifin Corporation	X-1-05-S-F	Parker Hannifin Corporation	X-1-05-S-F	http://ph.parker.com/webapp/wcs/stores/servlet/Product2_10151_12051_12163_-1_14107_14097___ProductDisplay
+P15	FLOW_CONN	Conn_Flow	CONN HEADER 2MM 8POS TIN	Header, Shrouded, Male Pin	2mm pitch, 1x8 way	Molex Connector Corporation	53014-0810	Digikey	WM18971-ND	http://www.digikey.com/product-search/en?x=0&y=0&KeyWords=53014-0810
+P16	FLOWMETER	FlowMeter	Mass Flow Meter for Gases	CMOSens EM1	G3/8 thread (BSPP	Sensirion	EM1NR4R0V_1A	Sensirion	EM1NR4R0V_1A	http://www.sensirion.com/en/products/mass-flow-meters-for-gases/mass-flow-meter-em1/
+P17	Pump_Conn	Header_FTDI
+P18	Pump_Conn_BO	Header_FTDI
+P19	PUMP_CONN_FLEX	Conn_Pump_Flex	CONN FFC/FPC 6POS 1MM VERT SMD	Surface mount, ZIF, 	1mm pitch, 6 way	Molex Inc	0526100671	Digikey	WM7633CT-ND	http://www.digikey.com/product-detail/en/0526100671/WM7633CT-ND/699133
+P20	Temp_Conn	SIL-4
+P21	Temp_Conn_BO	SIL-4
+P22	Temp	STS21	Temperature Sensor, I2C	I2C Temp Sensor	DFN 3mmx3mm	Sensirion	STS21	Sensirion	STS21	http://www.sensirion.com/en/products/humidity-temperature/temperature-sensor-sts21/
+P23	PUMP	Pump	Intelligent Pump	P200/P1500	X-Life Motor	XAVITECH	P200_GAS	XAVITECH	P200_GAS	http://www.xavitech.com/products
+P24	12V	JACK_ALIM	CONN POWER JACK MALE 2.5MM CLSD	Jack, Male	2.5mm ID, 5.5mm OD	CUI Inc	PJ-002B	Digikey	CP-002B-ND	http://www.digikey.com/product-detail/en/PJ-002B/CP-002B-ND/96965?cur=USD
+P25	U6_OE	pin_strip_3-90
+P26	5V_LINK	Header_U6OE
+P27	BCM2835_GPIO	Header_GPIO	CONN HEADER FMAL 26PS .1" DL TIN	Header, Female Socket	0.1", 2 row	Sullins Connector Solutions	PPTC132LFBN-RC	Digikey	S7081-ND	http://www.digikey.com/product-detail/en/PPTC132LFBN-RC/S7081-ND/810219
+P28	VLV_90_M	2X06/90
+P29	VLV_90_F	Header_F_6x2
+P30	X_VALVE_CONN	Valve_Conn	CONN RECEPT 2MM VERT AU 3POS	Receptacle, Female	2mm pitch x 3 way	Harwin Inc	M22-7130342	Digikey	952-1350-5-ND	http://www.digikey.com/product-detail/en/M22-7130342/952-1350-5-ND/2264331
+P31	FLOW_CONN_CABLE		Custom cable assembly	8 way, 8" long	2mm pitch, 1x8 way	Molex Connector Corporation	51004-0800+50011-8100	Digikey	DCC-961-ND	http://www.digikey.com/product-search/en?x=0&y=0&KeyWords=53014-0810
+PCB1	PCB	PCB
+PCB2	PCB_Pump	PCB_Pump
+PCB3	PCB_Flow	PCB_Flow
+PCB5	PCB_Vlv	PCB_Vlv
+PCB6	PCB_MFold	PCB_Mfold
+Q1	TIP112G	TO220-3-V	TRANS DARL NPN 2A 100V TO220AB	2A, 100V, 2W	TO-220-3	ON Semiconductor	TIP112G	Digikey	TIP112GOS-ND	http://www.digikey.com/scripts/dksearch/dksus.dll?vendor=0&keywords=TIP112G
+R1	10K	rc03_vert	RES 10K OHM 1/8W 5% CF AXIAL	0.125W, 1/8W	Axial	Stackpole Electronics Inc	CF18JT10K0	Digikey	CF18JT10K0CT-ND	http://www.digikey.com/product-detail/en/CF18JT10K0/CF18JT10K0CT-ND/2022766?cur=USD
+R2	10K	rc03_vert	RES 10K OHM 1/8W 5% CF AXIAL	0.125W, 1/8W	Axial	Stackpole Electronics Inc	CF18JT10K0	Digikey	CF18JT10K0CT-ND	http://www.digikey.com/product-detail/en/CF18JT10K0/CF18JT10K0CT-ND/2022766?cur=USD
+R3	10K	rc03_vert	RES 10K OHM 1/8W 5% CF AXIAL	0.125W, 1/8W	Axial	Stackpole Electronics Inc	CF18JT10K0	Digikey	CF18JT10K0CT-ND	http://www.digikey.com/product-detail/en/CF18JT10K0/CF18JT10K0CT-ND/2022766?cur=USD
+R4	10K	rc03_vert	RES 10K OHM 1/8W 5% CF AXIAL	0.125W, 1/8W	Axial	Stackpole Electronics Inc	CF18JT10K0	Digikey	CF18JT10K0CT-ND	http://www.digikey.com/product-detail/en/CF18JT10K0/CF18JT10K0CT-ND/2022766?cur=USD
+R5	47E	rc03_vert	RES 47 OHM 1/8W 5% CF AXIAL	0.125W, 1/8W	Axial	Stackpole Electronics Inc	CF18JT47R0	Digikey	CF18JT47R0CT-ND	http://www.digikey.com/product-detail/en/CF18JT47R0/CF18JT47R0CT-ND/2022710
+R6	47E	rc03_vert	RES 47 OHM 1/8W 5% CF AXIAL	0.125W, 1/8W	Axial	Stackpole Electronics Inc	CF18JT47R0	Digikey	CF18JT47R0CT-ND	http://www.digikey.com/product-detail/en/CF18JT47R0/CF18JT47R0CT-ND/2022710
+R7	10K	rc03_vert	RES 10K OHM 1/8W 5% CF AXIAL	0.125W, 1/8W	Axial	Stackpole Electronics Inc	CF18JT10K0	Digikey	CF18JT10K0CT-ND	http://www.digikey.com/product-detail/en/CF18JT10K0/CF18JT10K0CT-ND/2022766?cur=USD
+R8	330E	rc03_vert	RES 330 OHM 1/8W 5% CF AXIAL	0.125W, 1/8W	Axial	Stackpole Electronics Inc	CF18JT330R	Digikey	CF18JT330RCT-ND	http://www.digikey.com/product-detail/en/CF18JT330R/CF18JT330RCT-ND/2022730
+R9	120E	rc03_vert	RES 120 OHM 1/8W 5% CF AXIAL	0.125W, 1/8W	Axial	Stackpole Electronics Inc	CF18JT120R	Digikey	CF18JT120RCT-ND	http://www.digikey.com/product-detail/en/CF18JT120R/CF18JT120RCT-ND/2022720
+R10	1k	rc03_vert	RES 1k OHM 1/8W 5% CF AXIAL	0.125W, 1/8W	Axial	Stackpole Electronics Inc	CF18JT1K00	Digikey	CF18JT1K00CT-ND	http://www.digikey.com/product-detail/en/CF18JT1K00/CF18JT1K00CT-ND/2022742
+R11	10K	RC03	RES 10K OHM 1/8W 5% CF AXIAL	0.125W, 1/8W	Axial	Stackpole Electronics Inc	CF18JT10K0	Digikey	CF18JT10K0CT-ND	http://www.digikey.com/product-detail/en/CF18JT10K0/CF18JT10K0CT-ND/2022766?cur=USD
+R12	10K	rc03_vert	RES 10K OHM 1/8W 5% CF AXIAL	0.125W, 1/8W	Axial	Stackpole Electronics Inc	CF18JT10K0	Digikey	CF18JT10K0CT-ND	http://www.digikey.com/product-detail/en/CF18JT10K0/CF18JT10K0CT-ND/2022766?cur=USD
+R13	1k	rc03_vert	RES 1k OHM 1/8W 5% CF AXIAL	0.125W, 1/8W	Axial	Stackpole Electronics Inc	CF18JT1K00	Digikey	CF18JT1K00CT-ND	http://www.digikey.com/product-detail/en/CF18JT1K00/CF18JT1K00CT-ND/2022742
+SC1	SCREW	vite_3mm
+SC2	SCREW	vite_3mm
+SC3	SCREW	vite_3mm
+SC4	SCREW	vite_3mm
+SC5	SCREW	vite_3mm
+SC6	SCREW	vite_3mm
+SC7	SCREW	vite_3mm
+SC8	SCREW	vite_3mm
+SC9	SCREW	vite_3mm
+SC10	SCREW	vite_3mm
+SC11	SCREW	vite_3mm
+SC12	SCREW	vite_3mm
+SC13	SCREW	vite_3mm
+SC14	SCREW	vite_3mm
+SC15	SCREW	vite_3mm
+SC16	SCREW	vite_3mm
+SC17	SCREW	vite_3mm
+SC18	SCREW	vite_3mm
+SC19	SCREW	vite_3mm
+SC20	SCREW	vite_3mm
+SC21	SCREW	vite_3mm
+SC22	SCREW	vite_3mm
+SC23	SCREW	vite_3mm
+SC24	SCREW	vite_3mm
+SC25	SCREW	vite_3mm
+SC26	SCREW	vite_3mm
+SHIELD1	ARDUINO_SHIELD	ARDUINO_SHIELD_2_040pins
+SW1	Reset	SW_PB_V_H	SWITCH TACTILE SPST-NO 0.05A 12V	SPST, NO	Top actuated 6.00mm x 6.00mm	TE Connectivity	FSM2JH	Digikey	450-1649-ND	http://www.digikey.com/product-detail/en/FSM2JH/450-1649-ND/1632535?cur=USD
+U1	TXB0104D	TXB0104D	IC VOLT-LEVEL TRANSLATOR 14-SOIC	Translator, Bidirectional	14-SOIC (0.154", 3.90mm Width)	Texas Instruments	TXB0104DR	Digikey	296-21928-1-ND	http://www.digikey.com/product-detail/en/TXB0104DR/296-21928-1-ND/1629281
+U2	TXS0102DCT	TXS0102DCTR	IC VOLT-LVL TRANSL 2BIT BI SM8	Translator, Bidirectional, Open Drain	8-LSSOP (0.11", 2.80mm Width)	Texas Instruments	TXS0102DCTR	Digikey	296-21978-1-ND	http://www.digikey.com/product-detail/en/TXS0102DCTR/296-21978-1-ND/1632671
+U3	NCP1117ST50T3G	SOT223	IC REG LDO 5V 1A DPAK-3	5V, 1A	TO-252-3, DPak (2 Leads + Tab), SC-63	ON Semiconductor	NCP1117DT50G	Digikey	NCP1117DT50GOS-ND	http://www.digikey.com/product-detail/en/NCP1117DT50G/NCP1117DT50GOS-ND/1483320
+U4	NCP1117DT33G	SOT223	IC REG LDO 3.3V 1A DPAK-3	3.3V, 1A	TO-252-3, DPak (2 Leads + Tab), SC-63	ON Semiconductor	NCP1117DT33RKG	Digikey	NCP1117DT33RKGOSCT-ND	http://www.digikey.com/product-detail/en/NCP1117DT33RKG/NCP1117DT33RKGOSCT-ND/1967215
+U5	DS3231N	DS3231	IC RTC W/TCXO 16-SOIC	Clock/Calendar	16-SOIC (0.295", 7.50mm Width)	Maxim Integrated	DS3231S#	Digikey	DS3231S#-ND	http://www.digikey.com/product-detail/en/DS3231S%23/DS3231S%23-ND/1197574
+U6	TSX0108	TXS0108EPWR	IC 8BIT NON-INV TRANSLTR 20TSSOP	Translator, Bidirectional, Open Drain	20-TSSOP (0.173", 4.40mm Width)	Texas Instruments	TXS0108EPWR	Digikey	296-23011-1-ND	http://www.digikey.com/product-detail/en/TXS0108EPWR/296-23011-1-ND/1775304
+U7	ATMEGA328P	DIP-28__300_ELL	IC MCU AVR 32K FLASH 28PDIP	AVR ATMega 8 bit 20Mhz	28-DIP (0.300", 7.62mm)	Atmel	ATMEGA328-PU	Digikey	ATMEGA328-PU-ND	http://www.digikey.com/product-detail/en/ATMEGA328-PU/ATMEGA328-PU-ND/2271026?cur=USD
+X1	16MHz	XTAL	CER RESONATOR 16.00MHZ	16Mhz Ceramic built in capacitor	Radial - 3 Lead, 2.50mm Pitch	ECS Inc	ZTT-16.00MX	Digikey	X908-ND	http://www.digikey.com/product-detail/en/ZTT-16.00MX/X908-ND/170095?cur=USD
