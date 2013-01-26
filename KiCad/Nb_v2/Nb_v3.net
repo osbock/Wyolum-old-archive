@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  1/25/2013 3:04:44 PM
+# EESchema Netlist Version 1.1 created  Saturday 26 January 2013 04:16:10 PM IST
 (
  ( /4F44A5F3 C2  C15 100n {Lib=C}
   (    1 /V_LED )
@@ -449,16 +449,16 @@
   (    2 N-000110 )
  )
  ( /4B3F1092/51023B2B diode_do35  D8 1N4148 {Lib=DIODE}
-  (    1 N-000108 )
+  (    1 N-000111 )
   (    2 N-000109 )
  )
  ( /4B3F1092/51023B28 diode_do35  D7 1N4148 {Lib=DIODE}
-  (    1 N-000111 )
-  (    2 N-000108 )
+  (    1 N-000107 )
+  (    2 N-000111 )
  )
  ( /4B3F1092/51023B20 diode_do35  D6 1N4148 {Lib=DIODE}
   (    1 VCC )
-  (    2 N-000111 )
+  (    2 N-000107 )
  )
  ( /4B3F1092/4F7E7970 Pad01  P4 CONN_1 {Lib=CONN_1}
   (    1 GND )
@@ -549,7 +549,7 @@
   (    7 /Nb_v3-Aux/SQW )
   (    8 VCC )
  )
- ( /4B3F1092/4DBAC17C rc03_vert  R28 10k {Lib=R}
+ ( /4B3F1092/4DBAC17C rc03_vert  R28 4k7 {Lib=R}
   (    1 /Nb_v3-Aux/SQW )
   (    2 VCC )
  )
@@ -605,17 +605,17 @@
   (    1 N-000129 )
   (    2 N-000129 )
   (    3 N-000129 )
+  (    4 N-000122 )
+  (    5 N-000122 )
+  (    6 N-000122 )
+ )
+ ( /4B3F1092/4C9A3554 PROTO-6  P33 DIL6 {Lib=DIL6}
+  (    1 N-000123 )
+  (    2 N-000123 )
+  (    3 N-000123 )
   (    4 N-000121 )
   (    5 N-000121 )
   (    6 N-000121 )
- )
- ( /4B3F1092/4C9A3554 PROTO-6  P33 DIL6 {Lib=DIL6}
-  (    1 N-000122 )
-  (    2 N-000122 )
-  (    3 N-000122 )
-  (    4 N-000123 )
-  (    5 N-000123 )
-  (    6 N-000123 )
  )
  ( /4B3F1092/4C9A3551 PROTO-6  P32 DIL6 {Lib=DIL6}
   (    1 N-000124 )
@@ -629,22 +629,22 @@
   (    1 N-000126 )
   (    2 N-000126 )
   (    3 N-000126 )
-  (    4 N-000135 )
-  (    5 N-000135 )
-  (    6 N-000135 )
+  (    4 N-000136 )
+  (    5 N-000136 )
+  (    6 N-000136 )
  )
  ( /4B3F1092/4C9A354B PROTO-6  P30 DIL6 {Lib=DIL6}
-  (    1 N-000136 )
-  (    2 N-000136 )
-  (    3 N-000136 )
-  (    4 N-000137 )
-  (    5 N-000137 )
-  (    6 N-000137 )
+  (    1 N-000137 )
+  (    2 N-000137 )
+  (    3 N-000137 )
+  (    4 N-000138 )
+  (    5 N-000138 )
+  (    6 N-000138 )
  )
  ( /4B3F1092/4C9A3547 PROTO-6  P29 DIL6 {Lib=DIL6}
-  (    1 N-000138 )
-  (    2 N-000138 )
-  (    3 N-000138 )
+  (    1 N-000135 )
+  (    2 N-000135 )
+  (    3 N-000135 )
   (    4 N-000139 )
   (    5 N-000139 )
   (    6 N-000139 )
@@ -748,7 +748,7 @@
  )
  ( /4B3F1092/4B3F12C9 rc03_vert  R31 1k {Lib=R}
   (    1 N-000118 )
-  (    2 /Nb_v3-Aux/VOUT )
+  (    2 VCC )
  )
  ( /4B3F1092/4B3F12C7 CP_5x11mm  C8 100u {Lib=CP1}
   (    1 /Nb_v3-Aux/V_Unreg )
@@ -1144,124 +1144,125 @@ $endfootprintlist
 { Pin List by Nets
 Net 1 "/OUTPUT_ENABLE" "OUTPUT_ENABLE"
  U4 13
- U1 13
- U3 5
- R30 2
  U5 13
  U2 13
+ R30 2
+ U1 13
+ U3 5
 Net 2 "VCC" "VCC"
- R29 1
- C3 1
- R1 2
- P42 4
- U2 10
- U1 10
  C10 1
  D6 1
+ R10 2
+ R32 2
  U10 2
+ U4 10
+ R33 2
  U5 16
  SW5 1
- R33 2
- R32 2
+ R29 1
+ U5 10
+ CD2 3
+ U6 8
+ U4 16
  R28 2
- R7 1
+ P36 5
+ P36 4
+ C3 1
+ P37 4
+ P37 5
+ P37 6
+ P36 6
+ SW3 1
+ U3 21
+ U3 20
+ SW2 1
+ SW1 1
+ U3 7
+ U1 16
+ U1 10
  P13 2
  K1 2
  P41 1
+ R7 1
  U2 16
+ P42 4
+ U2 10
  R6 1
- U5 10
- U4 16
- CD2 3
- U4 10
- R10 2
- U6 8
- U1 16
- P37 5
- P37 6
- P37 4
- C13 1
- C6 1
- R30 1
- C5 1
- C4 1
+ R1 2
+ R31 2
  K2 1
- SW1 1
- P36 5
- SW2 1
- U3 7
- P36 6
- P36 4
- U3 21
- U3 20
- SW3 1
+ C4 1
+ C5 1
+ C6 1
+ C13 1
+ R30 1
 Net 4 "/A15" "A15"
  U7 11
- P5 2
  P5 1
+ P5 2
 Net 5 "/A04" "A04"
+ U8 14
  P5 23
  P5 24
- U8 14
 Net 6 "/A05" "A05"
- U8 13
  P5 22
  P5 21
+ U8 13
 Net 7 "/A06" "A06"
- P5 19
  P5 20
+ P5 19
  U8 12
 Net 8 "/A09" "A09"
  P5 14
  P5 13
  U7 17
 Net 9 "/A10" "A10"
- P5 12
  P5 11
  U7 16
+ P5 12
 Net 10 "/A11" "A11"
- P5 9
  P5 10
  U7 15
+ P5 9
 Net 11 "/A12" "A12"
  U7 14
- P5 7
  P5 8
+ P5 7
 Net 12 "/A13" "A13"
- U7 13
- P5 6
  P5 5
+ P5 6
+ U7 13
 Net 13 "/A14" "A14"
- U7 12
  P5 4
  P5 3
+ U7 12
 Net 14 "/K06" "K06"
- R18 1
- P6 13
  P6 14
+ P6 13
+ R18 1
 Net 15 "/K11" "K11"
+ R23 1
  P6 23
  P6 24
- R23 1
 Net 16 "/K07" "K07"
- P6 16
- P6 15
  R19 1
+ P6 15
+ P6 16
 Net 17 "/K12" "K12"
- P6 25
  P6 26
  R24 1
+ P6 25
 Net 18 "/K08" "K08"
- P6 17
  R20 1
  P6 18
+ P6 17
 Net 19 "/K13" "K13"
- R25 1
  P6 28
  P6 27
+ R25 1
 Net 20 "/K15" "K15"
- P6 32
  P6 31
+ P6 32
  R27 1
 Net 21 "/PON" "PON"
  P1 2
@@ -1271,39 +1272,39 @@ Net 22 "/DCF77" "DCF77"
  P1 4
 Net 23 "/Nb_v3-Aux/3V3" "3V3"
  P1 6
- D4 2
  R29 2
+ D4 2
 Net 24 "/A08" "A08"
  P5 16
- U7 18
  P5 15
+ U7 18
 Net 25 "/A03" "A03"
- U8 15
- P5 25
  P5 26
+ P5 25
+ U8 15
 Net 26 "/A07" "A07"
- P5 18
  U8 11
  P5 17
+ P5 18
 Net 27 "/K00" "K00"
- P6 2
- R12 1
  P6 1
+ R12 1
+ P6 2
 Net 28 "/K01" "K01"
- R13 1
  P6 4
  P6 3
+ R13 1
 Net 29 "/K02" "K02"
  P6 5
- R14 1
  P6 6
+ R14 1
 Net 30 "/K03" "K03"
  R15 1
  P6 8
  P6 7
 Net 31 "/K04" "K04"
- P6 10
  R16 1
+ P6 10
  P6 9
 Net 32 "/K09" "K09"
  P6 19
@@ -1314,49 +1315,49 @@ Net 33 "/K14" "K14"
  P6 30
  P6 29
 Net 34 "/K05" "K05"
- R17 1
  P6 12
+ R17 1
  P6 11
 Net 35 "/K10" "K10"
+ R22 1
  P6 22
  P6 21
- R22 1
 Net 36 "/Nb_v3-Aux/SCL" "SCL"
- P41 2
- P42 3
  U3 28
  P3 2
- R7 2
- U6 6
  CD2 2
+ U6 6
+ P41 2
+ P42 3
+ R7 2
 Net 37 "/Nb_v3-Aux/SDA" "SDA"
- U3 27
- CD2 1
  U6 5
- P42 2
- P41 3
- R6 2
+ CD2 1
  P2 1
+ P41 3
+ P42 2
+ U3 27
+ R6 2
 Net 38 "/Nb_v3-Aux/SQW" "SQW"
- CD1 3
- CD3 3
  U3 4
- U10 3
  R28 1
  U6 7
+ U10 3
+ CD1 3
+ CD3 3
 Net 39 "/Nb_v3-Aux/V_Unreg" "V_Unreg"
- C8 1
- C9 1
- P20 1
  K2 3
+ C8 1
+ P20 1
+ C9 1
  U9 VI
 Net 40 "/MIN+" "MIN+"
+ SW3 2
  U3 11
  R2 1
- SW3 2
 Net 41 "/Nb_v3-Aux/TXD" "TXD"
- P7 5
  U3 3
+ P7 5
 Net 42 "" ""
  U3 23
  A0 1
@@ -1364,62 +1365,62 @@ Net 43 "" ""
  A1 1
  U3 24
 Net 44 "/Nb_v3-Aux/SCK" "SCK"
- U3 19
- D13 1
  P13 3
+ D13 1
+ U3 19
 Net 45 "/MODE" "MODE"
- SW1 2
- R4 1
  U3 13
+ R4 1
+ SW1 2
 Net 46 "/HOUR+" "HOUR+"
- U3 12
  SW2 2
  R3 1
+ U3 12
 Net 47 "" ""
- R8 1
  D1 1
+ R8 1
 Net 48 "/LED_GRN" "LED_GRN"
  U3 6
  R8 2
 Net 49 "/Nb_v3-Aux/RES" "RES"
- U3 1
- R1 1
+ P13 5
  C7 1
  SW4 2
- P13 5
+ U3 1
+ R1 1
 Net 50 "/Nb_v3-Aux/RXD" "RXD"
  P7 4
  U3 2
 Net 51 "" ""
- U8 7
  U2 1
+ U8 7
 Net 52 "" ""
- U8 6
  U2 2
+ U8 6
 Net 53 "" ""
- U8 5
  U2 3
+ U8 5
 Net 54 "" ""
- U8 4
  U2 4
+ U8 4
 Net 55 "" ""
- U2 5
  U8 3
+ U2 5
 Net 56 "" ""
- U2 6
  U8 2
+ U2 6
 Net 57 "" ""
  U8 1
  U2 7
 Net 58 "/SERIAL_03" "SERIAL_03"
- U2 9
  U4 14
+ U2 9
 Net 59 "" ""
- U8 8
  U2 15
+ U8 8
 Net 60 "" ""
- R13 2
  U4 1
+ R13 2
 Net 61 "" ""
  U4 2
  R14 2
@@ -1427,8 +1428,8 @@ Net 62 "" ""
  U4 3
  R15 2
 Net 63 "" ""
- U4 4
  R16 2
+ U4 4
 Net 64 "" ""
  U4 5
  R17 2
@@ -1436,14 +1437,14 @@ Net 65 "" ""
  R18 2
  U4 6
 Net 66 "" ""
- U7 4
  U1 4
+ U7 4
 Net 67 "" ""
- U7 7
  U1 1
+ U7 7
 Net 68 "" ""
- U7 6
  U1 2
+ U7 6
 Net 69 "" ""
  U7 5
  U1 3
@@ -1454,251 +1455,250 @@ Net 71 "" ""
  U7 3
  U1 5
 Net 72 "" ""
- U1 6
  U7 2
+ U1 6
 Net 73 "" ""
  U1 7
  U7 1
 Net 74 "/SERIAL_02" "SERIAL_02"
- U1 9
  U2 14
+ U1 9
 Net 75 "/SERIAL_01" "SERIAL_01"
  U3 16
  U1 14
 Net 76 "" ""
- U7 8
  U1 15
+ U7 8
 Net 77 "" ""
- R20 2
  U5 15
+ R20 2
 Net 78 "" ""
+ C12 1
  U3 10
  X1 2
- C12 1
 Net 79 "/LED_YEL" "LED_YEL"
  R9 2
  U3 14
 Net 80 "/SERIAL_04" "SERIAL_04"
- U5 14
  U4 9
+ U5 14
 Net 81 "/ENTER" "ENTER"
  R5 1
  SW5 2
 Net 82 "/LDR" "LDR"
- R10 1
- R11 1
  U3 26
+ R11 1
+ R10 1
 Net 83 "" ""
- U3 25
  A2 1
+ U3 25
 Net 84 "" ""
- R9 1
  D2 1
+ R9 1
 Net 85 "" ""
- U5 2
  R22 2
+ U5 2
 Net 86 "/Nb_v3-Aux/SERIAL_CLOCK" "SERIAL_CLOCK"
- U1 11
- U4 11
- P13 1
- U2 11
- U5 11
  U3 18
+ U1 11
+ P13 1
+ U5 11
+ U4 11
+ U2 11
 Net 87 "/Nb_v3-Aux/STORE_CLOCK" "STORE_CLOCK"
- U4 12
  U3 17
- P13 4
- U1 12
- U2 12
  U5 12
+ U4 12
+ U1 12
+ P13 4
+ U2 12
 Net 88 "" ""
  U4 15
  R12 2
 Net 89 "" ""
- U5 1
  R21 2
+ U5 1
 Net 90 "" ""
- U5 3
  R23 2
+ U5 3
 Net 91 "" ""
  R24 2
  U5 4
 Net 92 "" ""
- R25 2
  U5 5
+ R25 2
 Net 93 "" ""
- R26 2
  U5 6
+ R26 2
 Net 94 "" ""
  U5 7
  R27 2
 Net 95 "" ""
  X1 1
- U3 9
  C11 1
+ U3 9
 Net 96 "/A02" "A02"
- U8 16
  P5 28
  P5 27
+ U8 16
 Net 97 "/V_LED" "V_LED"
- U7 9
- U8 9
- C14 1
  K2 2
+ U7 9
+ C14 1
+ U8 9
  C15 1
 Net 98 "GND" "GND"
- D3 2
- P8 1
- C3 2
- P9 1
- P10 1
- P11 1
- P7 1
- P7 2
- U7 10
- P13 6
- R3 2
- R4 2
- C9 2
- D1 2
- U2 8
- P42 1
- P41 4
- X1 3
- U8 10
- U3 8
- SW4 1
- R2 2
- P37 1
- P37 3
- P37 2
- P36 3
  P36 2
- P36 1
+ C9 2
+ P42 1
+ P36 3
+ P41 4
+ U7 10
+ U10 6
+ C11 2
+ U8 10
+ C12 2
  U3 22
+ X1 3
+ U3 8
+ U1 8
+ P13 6
+ P7 2
+ P7 1
+ SW4 1
+ P11 1
+ P10 1
+ P9 1
+ P8 1
+ R4 2
+ R3 2
+ D1 2
+ P36 1
+ U2 8
+ P37 3
+ D3 2
+ P37 2
+ P37 1
  D4 1
- P20 2
- U6 4
- U5 8
- U4 8
- CD2 4
- U9 GND
- X2 3
- D2 2
- U10 13
- U10 12
  U10 11
- U10 10
  U10 9
+ U10 8
+ U10 7
+ U6 4
+ P20 2
+ P1 5
  C13 2
  C4 2
  C5 2
  C6 2
  C14 2
  C15 2
- U10 6
- D5 1
- C16 2
- P4 1
- C1 2
- C2 2
- C17 2
- U10 7
- R5 2
- U10 5
- C11 2
- P1 5
+ U10 10
  P1 1
- R11 2
- U1 8
- C10 2
+ P4 1
  C8 2
- C12 2
- U10 8
+ U10 12
+ R11 2
+ C1 2
+ R2 2
+ C2 2
+ D5 1
+ U10 5
+ C3 2
+ R5 2
+ D2 2
+ CD2 4
+ U5 8
+ U9 GND
+ X2 3
+ U10 13
+ C16 2
  R35 2
+ C10 2
+ C17 2
+ U4 8
 Net 99 "/A01" "A01"
  P5 29
  U8 17
  P5 30
 Net 100 "/A00" "A00"
- P5 32
  P5 31
  U8 18
+ P5 32
 Net 101 "" ""
  X2 1
  U6 1
 Net 102 "/Nb_v3-Aux/BAT" "BAT"
- C17 1
  U6 3
- U10 14
+ C17 1
  R34 2
  C16 1
+ U10 14
 Net 103 "" ""
  U6 2
  X2 2
-Net 108 "" ""
- D8 1
- D7 2
+Net 107 "" ""
+ D6 2
+ D7 1
 Net 109 "" ""
- R35 1
  D8 2
+ R35 1
  D9 1
 Net 110 "" ""
  R34 1
  D9 2
 Net 111 "" ""
- D6 2
- D7 1
-Net 112 "/Nb_v3-Aux/VOUT" "VOUT"
- K1 1
- D5 2
- R31 2
- C2 1
- C1 1
- U9 VO
-Net 113 "/Nb_v3-Aux/32k" "32k"
- R33 1
- U10 1
- CD3 2
- CD1 2
-Net 114 "/Nb_v3-Aux/BAT_CD" "BAT_CD"
+ D8 1
+ D7 2
+Net 112 "/Nb_v3-Aux/BAT_CD" "BAT_CD"
  CD3 1
  CD1 1
-Net 115 "/Nb_v3-Aux/RST" "RST"
- R32 1
- U10 4
- CD3 4
+Net 113 "/Nb_v3-Aux/32k" "32k"
+ CD3 2
+ CD1 2
+ R33 1
+ U10 1
+Net 114 "/Nb_v3-Aux/RST" "RST"
  CD1 4
-Net 116 "/Nb_v3-Aux/SCL_INT" "SCL_INT"
+ U10 4
+ R32 1
+ CD3 4
+Net 115 "/Nb_v3-Aux/VOUT" "VOUT"
+ U9 VO
+ C1 1
+ K1 1
+ D5 2
+ C2 1
+Net 116 "/Nb_v3-Aux/SDA_INT" "SDA_INT"
+ U10 15
+ P2 2
+Net 117 "/Nb_v3-Aux/SCL_INT" "SCL_INT"
  U10 16
  P3 1
-Net 117 "/Nb_v3-Aux/SDA_INT" "SDA_INT"
- P2 2
- U10 15
 Net 118 "" ""
- D3 1
  R31 1
+ D3 1
 Net 119 "" ""
  C7 2
  P7 6
 Net 120 "/Nb_v3-Aux/USB5V" "USB5V"
- P7 3
  K1 3
+ P7 3
 Net 121 "" ""
+ P33 4
+ P33 6
+ P33 5
+Net 122 "" ""
  P34 6
  P34 5
  P34 4
-Net 122 "" ""
- P33 3
- P33 2
- P33 1
 Net 123 "" ""
- P33 5
- P33 6
- P33 4
+ P33 2
+ P33 3
+ P33 1
 Net 124 "" ""
- P32 3
  P32 2
+ P32 3
  P32 1
 Net 125 "" ""
  P32 4
@@ -1709,13 +1709,13 @@ Net 126 "" ""
  P31 2
  P31 3
 Net 127 "" ""
- P35 2
  P35 3
+ P35 2
  P35 1
 Net 128 "" ""
- P35 4
- P35 5
  P35 6
+ P35 5
+ P35 4
 Net 129 "" ""
  P34 3
  P34 1
@@ -1729,56 +1729,56 @@ Net 131 "" ""
  P27 5
  P27 6
 Net 132 "" ""
- P26 1
- P26 3
  P26 2
+ P26 3
+ P26 1
 Net 133 "" ""
- P25 1
- P25 2
  P25 3
+ P25 2
+ P25 1
 Net 134 "" ""
- P25 6
- P25 5
  P25 4
+ P25 5
+ P25 6
 Net 135 "" ""
- P31 4
- P31 5
- P31 6
-Net 136 "" ""
- P30 2
- P30 1
- P30 3
-Net 137 "" ""
- P30 4
- P30 6
- P30 5
-Net 138 "" ""
+ P29 2
  P29 3
  P29 1
- P29 2
+Net 136 "" ""
+ P31 4
+ P31 6
+ P31 5
+Net 137 "" ""
+ P30 3
+ P30 2
+ P30 1
+Net 138 "" ""
+ P30 6
+ P30 5
+ P30 4
 Net 139 "" ""
- P29 4
  P29 6
  P29 5
+ P29 4
 Net 140 "" ""
  P28 3
  P28 2
  P28 1
 Net 141 "" ""
+ P26 6
  P26 4
  P26 5
- P26 6
 Net 142 "" ""
  P24 6
- P24 5
  P24 4
+ P24 5
 Net 143 "" ""
  P24 1
- P24 3
  P24 2
+ P24 3
 Net 144 "" ""
- P28 4
  P28 5
+ P28 4
  P28 6
 }
 #End

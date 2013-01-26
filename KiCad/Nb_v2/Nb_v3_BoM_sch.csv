@@ -99,7 +99,7 @@ R24	6E8	RC03
 R25	6E8	RC03
 R26	6E8	RC03
 R27	6E8	RC03
-R28	10k	rc03_vert
+R28	4k7	rc03_vert
 R29	220	rc03_vert
 R30	4k7	rc03_vert
 R31	1k	rc03_vert

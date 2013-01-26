@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 1/25/2013 3:04:35 PM
+EESchema Schematic File Version 2  date Saturday 26 January 2013 04:15:26 PM IST
 LIBS:Nb_v2
 LIBS:power
 LIBS:Nb_v3-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title "NachBau - WordClock"
-Date "25 jan 2013"
+Date "26 jan 2013"
 Rev "A"
 Comp ""
 Comment1 "www.wyolum.com"
@@ -16,6 +16,10 @@ Comment2 "wyojustin@gmail.com :: anool.m@gmail.com"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Label 5775 4100 0    40   ~ 0
+VCC
+Wire Wire Line
+	5775 4200 5775 4100
 Wire Wire Line
 	5625 900  6425 900 
 Connection ~ 1800 3225
@@ -35,7 +39,7 @@ Connection ~ 975  2725
 Wire Wire Line
 	975  2725 1600 2725
 Wire Wire Line
-	975  2750 975  2650
+	975  2650 975  2750
 Wire Wire Line
 	975  1700 975  1675
 Wire Wire Line
@@ -58,14 +62,13 @@ Wire Wire Line
 Connection ~ 3425 5200
 Wire Wire Line
 	3425 5200 3425 4650
-Connection ~ 3050 4100
 Wire Wire Line
-	2550 5300 2550 4400
+	2550 4400 2550 5300
 Wire Wire Line
 	2150 4100 1450 4100
 Connection ~ 4875 5000
 Wire Wire Line
-	4875 4925 4875 5200
+	4875 5200 4875 4925
 Wire Wire Line
 	4925 1850 5175 1850
 Wire Wire Line
@@ -84,7 +87,7 @@ Wire Wire Line
 Wire Wire Line
 	6875 2750 6875 2650
 Wire Wire Line
-	7075 2900 7075 2650
+	7075 2650 7075 2900
 Connection ~ 7700 1950
 Wire Wire Line
 	7700 2750 7700 1850
@@ -155,7 +158,7 @@ Wire Wire Line
 Wire Wire Line
 	3925 925  3925 1025
 Wire Wire Line
-	3050 5300 3050 5150
+	3050 5300 3050 5200
 Wire Wire Line
 	9400 4925 9900 4925
 Wire Notes Line
@@ -331,7 +334,7 @@ Wire Wire Line
 	10300 4050 9100 4050
 Connection ~ 9450 2150
 Wire Wire Line
-	10300 2150 9100 2150
+	9100 2150 10300 2150
 Wire Wire Line
 	10300 1850 9100 1850
 Connection ~ 9600 2650
@@ -348,7 +351,7 @@ Connection ~ 2100 5200
 Wire Wire Line
 	5125 5000 4875 5000
 Wire Wire Line
-	3050 4700 3050 4750
+	5775 4700 5775 4750
 Connection ~ 4875 5200
 Wire Wire Line
 	9100 1750 9100 1650
@@ -375,7 +378,7 @@ Wire Wire Line
 	9600 2550 9650 2550
 Connection ~ 9600 2550
 Wire Wire Line
-	9450 2150 9450 2350
+	9450 2350 9450 2150
 Connection ~ 9450 2250
 Wire Wire Line
 	9100 1300 9150 1300
@@ -384,7 +387,7 @@ Wire Wire Line
 Wire Wire Line
 	9150 1300 9150 950 
 Wire Wire Line
-	10300 1650 9550 1650
+	9550 1650 10300 1650
 Wire Wire Line
 	10300 1950 9100 1950
 Wire Wire Line
@@ -397,7 +400,7 @@ Wire Wire Line
 Wire Wire Line
 	9150 950  10300 950 
 Wire Wire Line
-	9100 1400 10300 1400
+	10300 1400 9100 1400
 Connection ~ 10150 1400
 Wire Wire Line
 	9600 3850 9100 3850
@@ -539,13 +542,11 @@ Wire Wire Line
 Wire Wire Line
 	5675 3125 5625 3125
 Wire Wire Line
-	3050 4200 3050 4100
-Wire Wire Line
 	3925 1525 3925 2000
 Wire Wire Line
 	2750 3025 2750 2200
 Wire Wire Line
-	3725 2000 4200 2000
+	4200 2000 3725 2000
 Connection ~ 3925 2000
 Wire Notes Line
 	750  3325 750  625 
@@ -572,7 +573,7 @@ Wire Notes Line
 Wire Notes Line
 	8425 3500 6225 3500
 Wire Wire Line
-	7250 4625 7250 4400
+	7250 4400 7250 4625
 Wire Wire Line
 	7600 4525 7250 4525
 Connection ~ 7250 4525
@@ -619,7 +620,7 @@ Wire Wire Line
 Wire Wire Line
 	2100 3600 2100 4250
 Wire Wire Line
-	2950 4100 5125 4100
+	5125 4100 2950 4100
 Wire Wire Line
 	3425 4100 3425 4250
 Connection ~ 3425 4100
@@ -650,7 +651,7 @@ Wire Wire Line
 	1600 2725 1600 850 
 Connection ~ 1600 1050
 Wire Wire Line
-	1500 1550 1500 2150
+	1500 2150 1500 1550
 Connection ~ 1500 1675
 Wire Wire Line
 	2050 3150 2050 3225
@@ -658,6 +659,17 @@ Connection ~ 2050 3225
 Wire Wire Line
 	1800 2750 1800 1050
 Connection ~ 1800 1050
+Wire Wire Line
+	5775 5150 5775 5275
+$Comp
+L VSS #PWR?
+U 1 1 5103B38D
+P 5775 5275
+F 0 "#PWR?" H 5775 5275 30  0001 C CNN
+F 1 "VSS" H 5875 5325 30  0000 C CNN
+	1    5775 5275
+	1    0    0    -1  
+$EndComp
 $Comp
 L C C17
 U 1 1 51024EF7
@@ -1097,7 +1109,7 @@ L R R28
 U 1 1 4DBAC17C
 P 3925 1275
 F 0 "R28" V 3975 1050 50  0000 C CNN
-F 1 "10k" V 3925 1275 50  0000 C CNN
+F 1 "4k7" V 3925 1275 50  0000 C CNN
 F 2 "rc03_vert" H 3925 1275 60  0001 C CNN
 	1    3925 1275
 	-1   0    0    1   
@@ -1575,21 +1587,21 @@ $EndComp
 $Comp
 L LED D3
 U 1 1 4B3F12CA
-P 3050 4950
-F 0 "D3" H 3050 5050 50  0000 C CNN
-F 1 "PWR" H 3050 4850 50  0000 C CNN
-F 2 "led_5mm_blue" H 3050 4950 60  0001 C CNN
-	1    3050 4950
+P 5775 4950
+F 0 "D3" H 5775 5050 50  0000 C CNN
+F 1 "PWR" H 5775 4850 50  0000 C CNN
+F 2 "led_5mm_blue" H 5775 4950 60  0001 C CNN
+	1    5775 4950
 	0    1    1    0   
 $EndComp
 $Comp
 L R R31
 U 1 1 4B3F12C9
-P 3050 4450
-F 0 "R31" V 3130 4450 50  0000 C CNN
-F 1 "1k" V 3050 4450 50  0000 C CNN
-F 2 "rc03_vert" H 3050 4450 60  0001 C CNN
-	1    3050 4450
+P 5775 4450
+F 0 "R31" V 5855 4450 50  0000 C CNN
+F 1 "1k" V 5775 4450 50  0000 C CNN
+F 2 "rc03_vert" H 5775 4450 60  0001 C CNN
+	1    5775 4450
 	-1   0    0    1   
 $EndComp
 $Comp
