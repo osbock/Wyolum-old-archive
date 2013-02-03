@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 1/25/2013 10:37:04 AM
+EESchema Schematic File Version 2  date Sunday 03 February 2013 04:45:49 PM IST
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 5
 Title "uControl"
-Date "25 jan 2013"
+Date "3 feb 2013"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -17,6 +17,14 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text GLabel 6425 1925 0    40   Input ~ 0
+GND
+Text GLabel 6425 2125 0    40   Input ~ 0
+12V
+Text GLabel 1225 750  2    40   Input ~ 0
+5V0
+Text GLabel 725  750  0    40   Input ~ 0
+3V3
 $Comp
 L ISP P4
 U 1 1 50E3CDC2
@@ -791,10 +799,6 @@ F 2 "Header_6x1" V 5975 2575 60  0001 C CNN
 	1    5825 2575
 	-1   0    0    1   
 $EndComp
-Text Label 1225 750  2    40   ~ 0
-5V0
-Text Label 725  750  0    40   ~ 0
-3V3
 Text Notes 6425 6225 2    60   Italic 12
 FTDI Header
 Text Notes 5200 6225 2    60   Italic 12
@@ -950,8 +954,6 @@ Text Label 8825 1125 0    40   ~ 0
 SDA
 Text Label 8825 1025 0    40   ~ 0
 SCL
-Text Label 6425 2125 0    40   ~ 0
-12V
 $Sheet
 S 10050 4700 1050 1100
 U 4FBF6CBF
@@ -1003,8 +1005,6 @@ Text Label 9675 6350 0    40   ~ 0
 SCL
 Text Label 9675 6150 0    40   ~ 0
 5V0
-Text Label 6425 1925 0    40   ~ 0
-GND
 Text Label 6425 1625 0    40   ~ 0
 RESET
 Text Label 6425 1825 0    40   ~ 0
