@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 1/25/2013 2:57:16 PM
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 1/29/2013 5:52:36 PM
 
 BeginCmp
 TimeStamp = /4ECE351F;
@@ -22,10 +22,10 @@ IdModule  = Pad01;
 EndCmp
 
 BeginCmp
-TimeStamp = /4B3F1092/51024F9C;
+TimeStamp = /4B3F1092/5107BECE;
 Reference = BT1;
-ValeurCmp = CR2032;
-IdModule  = CR2032;
+ValeurCmp = BATT_RTC;
+IdModule  = BT2;
 EndCmp
 
 BeginCmp
@@ -710,7 +710,7 @@ EndCmp
 BeginCmp
 TimeStamp = /4B3F1092/4DBAC17C;
 Reference = R28;
-ValeurCmp = 10k;
+ValeurCmp = 4k7;
 IdModule  = rc03_vert;
 EndCmp
 

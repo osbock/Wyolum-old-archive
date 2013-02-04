@@ -2,6 +2,7 @@ ref	value	footprint	Field1	Field2	Field3	Field4	Field5	Field6	Field7	Field8
 A0	CONN_1	Pad01
 A1	CONN_1	Pad01
 A2	CONN_1	Pad01
+BT1	BATT_RTC	
 C1	100n	C2
 C2	100u	CP_5x11mm
 C3	100n	C2

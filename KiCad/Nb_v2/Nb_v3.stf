@@ -1,7 +1,7 @@
 comp = "A0" module = "Pad01"
 comp = "A1" module = "Pad01"
 comp = "A2" module = "Pad01"
-comp = "BT1" module = "CR2032"
+comp = "BT1" module = "BT2"
 comp = "C1" module = "C2"
 comp = "C2" module = "CP_5x11mm"
 comp = "C3" module = "C2"
