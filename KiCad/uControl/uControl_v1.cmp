@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 1/25/2013 10:31:43 AM
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 2/5/2013 2:52:26 PM
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -222,6 +222,27 @@ TimeStamp = /50B2116F/51020D1A;
 Reference = C27;
 ValeurCmp = 100u,16V;
 IdModule  = CP_6.3x7mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC07407/5110C539;
+Reference = C28;
+ValeurCmp = 100u,16V;
+IdModule  = CP_6.3x7mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC07407/5110C53A;
+Reference = C29;
+ValeurCmp = 100n;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC07407/5110C538;
+Reference = C30;
+ValeurCmp = 2u2_Tant;
+IdModule  = cnp_3mm_disc;
 EndCmp
 
 BeginCmp
@@ -537,6 +558,20 @@ TimeStamp = /50B2116F/50E7C4D6;
 Reference = P31;
 ValeurCmp = FLOW_CONN_CABLE;
 IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/5110C1B9;
+Reference = P32;
+ValeurCmp = FLOWMETER;
+IdModule  = FlowMeter;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC07407/5110CCA7;
+Reference = P33;
+ValeurCmp = UUSB_B;
+IdModule  = USB_B_Micro;
 EndCmp
 
 BeginCmp
@@ -915,6 +950,13 @@ TimeStamp = /50E2C28A;
 Reference = U7;
 ValeurCmp = ATMEGA328P;
 IdModule  = DIP-28__300_ELL;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC07407/5110C535;
+Reference = U8;
+ValeurCmp = NCP1117ST50T3G;
+IdModule  = SOT223;
 EndCmp
 
 BeginCmp

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 03 February 2013 04:45:49 PM IST
+EESchema Schematic File Version 2  date 2/5/2013 3:30:20 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 5 5
 Title "uControl"
-Date "3 feb 2013"
+Date "5 feb 2013"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -240,10 +240,10 @@ Wire Wire Line
 Wire Wire Line
 	5950 1225 5525 1225
 $Comp
-L PWR_FLAG #FLG024
+L PWR_FLAG #FLG025
 U 1 1 50E00A24
 P 6300 4000
-F 0 "#FLG024" H 6300 4270 30  0001 C CNN
+F 0 "#FLG025" H 6300 4270 30  0001 C CNN
 F 1 "PWR_FLAG" H 6300 4230 30  0000 C CNN
 	1    6300 4000
 	1    0    0    -1  
@@ -294,10 +294,10 @@ this jumper enables/disables the Voltage Translator U6, \nthereby allowing/dis-a
 Text Label 4150 2175 0    40   ~ 0
 Rpi_OE
 $Comp
-L GND #PWR025
+L GND #PWR026
 U 1 1 4FD8C28A
 P 5850 2050
-F 0 "#PWR025" H 5850 2050 30  0001 C CNN
+F 0 "#PWR026" H 5850 2050 30  0001 C CNN
 F 1 "GND" H 5850 1980 30  0001 C CNN
 	1    5850 2050
 	1    0    0    -1  
@@ -315,19 +315,19 @@ $EndComp
 Text Label 5900 4100 0    40   ~ 0
 Rpi_3V3
 $Comp
-L GND #PWR026
+L GND #PWR027
 U 1 1 4FD62C0F
 P 2125 2175
-F 0 "#PWR026" H 2125 2175 30  0001 C CNN
+F 0 "#PWR027" H 2125 2175 30  0001 C CNN
 F 1 "GND" H 2125 2105 30  0001 C CNN
 	1    2125 2175
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR027
+L GND #PWR028
 U 1 1 4FD62BFD
 P 2125 3600
-F 0 "#PWR027" H 2125 3600 30  0001 C CNN
+F 0 "#PWR028" H 2125 3600 30  0001 C CNN
 F 1 "GND" H 2125 3530 30  0001 C CNN
 	1    2125 3600
 	1    0    0    -1  

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 03 February 2013 04:18:28 PM IST
+EESchema Schematic File Version 2  date 2/5/2013 2:55:58 PM
 LIBS:uControl
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,7 +9,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 5
 Title ""
-Date "3 feb 2013"
+Date "5 feb 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -17,6 +17,30 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Notes 4250 4475 0    30   ~ 0
+Additional footprint for\nalternate mounting position
+NoConn ~ 4250 4650
+NoConn ~ 4250 4750
+NoConn ~ 4250 4850
+NoConn ~ 4250 4950
+$Comp
+L FLOWMETER P32
+U 1 1 5110C1B9
+P 4600 4800
+F 0 "P32" V 4550 4800 50  0000 C CNN
+F 1 "FLOWMETER" V 4650 4800 40  0000 C CNN
+F 2 "FlowMeter" V 4750 4800 40  0001 C CNN
+F 4 "Mass Flow Meter for Gases" H 4600 4900 60  0001 L CNN "Field4"
+F 5 "CMOSens EM1" H 4600 5000 60  0001 L CNN "Field5"
+F 6 "G3/8 thread (BSPP" H 4600 5100 60  0001 L CNN "Field6"
+F 7 "Sensirion" H 4600 5200 60  0001 L CNN "Field7"
+F 8 "EM1NR4R0V_1A" V 4750 4600 40  0000 L CNN "Field8"
+F 9 "Sensirion" H 4600 5400 60  0001 L CNN "Field9"
+F 10 "EM1NR4R0V_1A" H 4600 5500 60  0001 L CNN "Field10"
+F 11 "http://www.sensirion.com/en/products/mass-flow-meters-for-gases/mass-flow-meter-em1/" H 4600 5600 60  0001 L CNN "Field11"
+	1    4600 4800
+	1    0    0    -1  
+$EndComp
 $Comp
 L R_47E R5
 U 1 1 51020F8D
@@ -818,24 +842,22 @@ F 11 "http://www.xavitech.com/products" H 4800 7600 60  0001 L CNN "Field11"
 	1    4800 6800
 	1    0    0    -1  
 $EndComp
-Text Notes 4825 5025 1    40   ~ 0
-EM1NR4R0V_1A
 $Comp
 L FLOWMETER P16
 U 1 1 50E2B14F
-P 4650 4800
-F 0 "P16" V 4600 4800 50  0000 C CNN
-F 1 "FLOWMETER" V 4700 4800 40  0000 C CNN
-F 2 "FlowMeter" V 4800 4800 40  0001 C CNN
-F 4 "Mass Flow Meter for Gases" H 4650 4900 60  0001 L CNN "Field4"
-F 5 "CMOSens EM1" H 4650 5000 60  0001 L CNN "Field5"
-F 6 "G3/8 thread (BSPP" H 4650 5100 60  0001 L CNN "Field6"
-F 7 "Sensirion" H 4650 5200 60  0001 L CNN "Field7"
-F 8 "EM1NR4R0V_1A" H 4650 5300 60  0001 L CNN "Field8"
-F 9 "Sensirion" H 4650 5400 60  0001 L CNN "Field9"
-F 10 "EM1NR4R0V_1A" H 4650 5500 60  0001 L CNN "Field10"
-F 11 "http://www.sensirion.com/en/products/mass-flow-meters-for-gases/mass-flow-meter-em1/" H 4650 5600 60  0001 L CNN "Field11"
-	1    4650 4800
+P 3950 4800
+F 0 "P16" V 3900 4800 50  0000 C CNN
+F 1 "FLOWMETER" V 4000 4800 40  0000 C CNN
+F 2 "FlowMeter" V 4100 4800 40  0001 C CNN
+F 4 "Mass Flow Meter for Gases" H 3950 4900 60  0001 L CNN "Field4"
+F 5 "CMOSens EM1" H 3950 5000 60  0001 L CNN "Field5"
+F 6 "G3/8 thread (BSPP" H 3950 5100 60  0001 L CNN "Field6"
+F 7 "Sensirion" H 3950 5200 60  0001 L CNN "Field7"
+F 8 "EM1NR4R0V_1A" V 4100 4600 40  0000 L CNN "Field8"
+F 9 "Sensirion" H 3950 5400 60  0001 L CNN "Field9"
+F 10 "EM1NR4R0V_1A" H 3950 5500 60  0001 L CNN "Field10"
+F 11 "http://www.sensirion.com/en/products/mass-flow-meters-for-gases/mass-flow-meter-em1/" H 3950 5600 60  0001 L CNN "Field11"
+	1    3950 4800
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1528,10 +1550,10 @@ NoConn ~ 4450 6850
 NoConn ~ 4450 6750
 NoConn ~ 4450 6650
 NoConn ~ 4450 6550
-NoConn ~ 4300 4950
-NoConn ~ 4300 4850
-NoConn ~ 4300 4750
-NoConn ~ 4300 4650
+NoConn ~ 3600 4950
+NoConn ~ 3600 4850
+NoConn ~ 3600 4750
+NoConn ~ 3600 4650
 $Comp
 L CONN_2 P12
 U 1 1 50D19ECE
