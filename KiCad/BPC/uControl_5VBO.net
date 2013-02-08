@@ -1,0 +1,94 @@
+# EESchema Netlist Version 1.1 created  2/8/2013 6:19:48 PM
+(
+ ( /5114C6C5 bornier2  P2 5V_OUT_GND {Lib=CONN_2}
+  (    1 /5V )
+  (    2 /GND )
+ )
+ ( /5114C68F bornier2  P1 GND_IN_12V {Lib=CONN_2}
+  (    1 /GND )
+  (    2 /12V )
+ )
+ ( /5114C67C LED-5MM  D1 12V {Lib=LED}
+  (    1 N-000001 )
+  (    2 /GND )
+ )
+ ( /5114C670 R1  R1 1k {Lib=R}
+  (    1 /12V )
+  (    2 N-000001 )
+ )
+ ( /5114C663 C2  C3 100n {Lib=C}
+  (    1 /5V )
+  (    2 /GND )
+ )
+ ( /5114C65E C2  C1 100n {Lib=C}
+  (    1 /12V )
+  (    2 /GND )
+ )
+ ( /5114C656 C1.5V8V  C2 100u,25V {Lib=CP1}
+  (    1 /12V )
+  (    2 /GND )
+ )
+ ( /5114C63E TO220_VERT  U1 7805 {Lib=7805}
+  (    1 /12V )
+  (    2 /GND )
+  (    3 /5V )
+ )
+)
+*
+{ Allowed footprints by component:
+$component D1
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component C3
+ SM*
+ C?
+ C1-1
+$endlist
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ CP*
+ SM*
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 1 "" ""
+ D1 1
+ R1 2
+Net 2 "/GND" "GND"
+ U1 2
+ C2 2
+ C1 2
+ C3 2
+ D1 2
+ P1 1
+ P2 2
+Net 3 "/5V" "5V"
+ U1 3
+ P2 1
+ C3 1
+Net 4 "/12V" "12V"
+ R1 1
+ P1 2
+ C1 1
+ C2 1
+ U1 1
+}
+#End

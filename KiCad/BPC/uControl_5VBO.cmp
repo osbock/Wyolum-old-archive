@@ -1,0 +1,59 @@
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 2/8/2013 4:10:45 PM
+
+BeginCmp
+TimeStamp = /5114C65E;
+Reference = C1;
+ValeurCmp = 100n;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5114C656;
+Reference = C2;
+ValeurCmp = 100u,25V;
+IdModule  = C1.5V8V;
+EndCmp
+
+BeginCmp
+TimeStamp = /5114C663;
+Reference = C3;
+ValeurCmp = 100n;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5114C67C;
+Reference = D1;
+ValeurCmp = 12V;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /5114C68F;
+Reference = P1;
+ValeurCmp = IN_12V;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5114C6C5;
+Reference = P2;
+ValeurCmp = OUT_5V;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5114C670;
+Reference = R1;
+ValeurCmp = 1k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /5114C63E;
+Reference = U1;
+ValeurCmp = 7805;
+IdModule  = TO220-3-V;
+EndCmp
+
+EndListe
