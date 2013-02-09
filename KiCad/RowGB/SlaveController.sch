@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wednesday 09 January 2013 07:47:09 PM IST
+EESchema Schematic File Version 2  date 2/9/2013 12:51:24 PM
 LIBS:RowGB_sym
 LIBS:RowGB-cache
 EELAYER 25  0
@@ -7,7 +7,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title ""
-Date "9 jan 2013"
+Date "9 feb 2013"
 Rev ""
 Comp ""
 Comment1 ""

@@ -1,13 +1,13 @@
-EESchema Schematic File Version 2  date Wednesday 09 January 2013 07:47:09 PM IST
+EESchema Schematic File Version 2  date 2/9/2013 2:40:07 PM
 LIBS:RowGB_sym
 LIBS:RowGB-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
-Sheet 1 2
+Sheet 1 1
 Title ""
-Date "9 jan 2013"
+Date "9 feb 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -15,12 +15,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 7450 6250 0    40   ~ 0
-Data_In
-Wire Wire Line
-	7750 6250 7450 6250
-Wire Wire Line
-	7750 6450 7450 6450
 Wire Wire Line
 	1450 6600 1450 6400
 Connection ~ 1350 2400
@@ -360,21 +354,6 @@ Wire Wire Line
 	1350 2350 1350 2450
 Wire Wire Line
 	1450 7050 1450 7250
-Wire Wire Line
-	7450 6650 7750 6650
-Text Label 7450 6650 0    40   ~ 0
-GND
-Text Label 7450 6450 0    40   ~ 0
-5V
-$Sheet
-S 7750 5900 3150 1100
-U 50ED424F
-F0 "SlaveController" 60
-F1 "SlaveController.sch" 60
-F2 "GND" I L 7750 6650 60 
-F3 "5V" I L 7750 6450 60 
-F4 "Data_In" I L 7750 6250 60 
-$EndSheet
 $Comp
 L CONN_E P3
 U 1 1 50EA8A1D
@@ -390,7 +369,7 @@ F 9 "Digikey" H 4600 7350 60  0001 L CNN "Field9"
 F 10 "SAM1031-50-ND" H 4600 7450 60  0001 L CNN "Field10"
 F 11 "http://www.digikey.com/scripts/DkSearch/dksus.dll?WT.z_header=search_go&lang=en&keywords=SAM1031-50-ND&x=15&y=16&cur=USD" H 4600 7550 60  0001 L CNN "Field11"
 	1    4600 6750
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L CONN_W P2
