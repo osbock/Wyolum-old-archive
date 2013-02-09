@@ -118,4 +118,5 @@ private:
 };
 void C3JR_driver_onRequest();
 void C3JR_driver_onReceive(int n_byte);
+
 #endif

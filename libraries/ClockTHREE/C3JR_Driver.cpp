@@ -114,3 +114,4 @@ void C3JR_Driver::send_msg(uint8_t msg_id, uint8_t msg_len, uint8_t *msg){
   }
   Wire.endTransmission();
 }
+
