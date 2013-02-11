@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  2/11/2013 3:29:31 PM
+PCBNEW-LibModule-V1  Monday 11 February 2013 08:45:59 PM IST
 # encoding utf-8
 $INDEX
 CONN_E
@@ -20,6 +20,7 @@ c_2917
 pad
 pin_sck_4-90
 pin_strip_4-90
+ShortLink
 $EndINDEX
 $MODULE pin_strip_4-90
 Po 0 0 0 15 4EE4A2D9 00000000 ~~
@@ -1088,7 +1089,7 @@ Li SIL-2
 Cd Connecteurs 2 pins
 Kw CONN DEV
 Sc 00000000
-AR 
+AR
 Op 0 0 0
 T0 0 -1000 681 428 0 107 N V 21 N "SIL-2"
 T1 0 -1000 600 400 0 100 N I 21 N "Val**"
@@ -1111,4 +1112,35 @@ Ne 0 ""
 Po 500 0
 $EndPAD
 $EndMODULE  SIL-2
+$MODULE ShortLink
+Po 0 0 0 15 51190B05 00000000 ~~
+Li ShortLink
+Cd Connecteurs 2 pins
+Kw CONN DEV
+Sc 00000000
+AR /5118A740
+Op 0 0 0
+T0 -825 -775 300 300 0 50 N V 21 N "P126"
+T1 600 -750 300 300 0 50 N I 21 N "F>G"
+DS -1000 500 -1000 -500 120 21
+DS -1000 -500 1000 -500 120 21
+DS 1000 -500 1000 500 120 21
+DS 1000 500 -1000 500 120 21
+$PAD
+Sh "1" T 800 400 -200 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 2 "/Row_G/DI_G"
+Po -500 0
+.LocalClearance 50
+$EndPAD
+$PAD
+Sh "2" T 800 400 200 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 1 "/Row_F/DO_F"
+Po 500 0
+.LocalClearance 50
+$EndPAD
+$EndMODULE  ShortLink
 $EndLIBRARY

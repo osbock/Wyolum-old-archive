@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/11/2013 5:42:38 PM
+EESchema Schematic File Version 2  date 2/11/2013 6:29:22 PM
 LIBS:RowGB_sym
 LIBS:power
 LIBS:TiM-cache
@@ -16,6 +16,16 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+NoConn ~ 4500 7500
+$Comp
+L CONN_1 PCB101
+U 1 1 5118E269
+P 4500 7350
+F 0 "PCB101" H 4580 7350 40  0000 L CNN
+F 1 "CONN_1" H 4500 7405 30  0001 C CNN
+	1    4500 7350
+	0    -1   -1   0   
+$EndComp
 Text Notes 5125 5050 0    60   ~ 12
 Jumpers to create\na Series connected TiM
 Wire Notes Line
@@ -47,17 +57,11 @@ Wire Wire Line
 	1600 6750 1600 6800
 Connection ~ 1600 7350
 Wire Wire Line
-	1600 7300 1600 7350
+	1600 7300 1600 7400
 Wire Wire Line
-	1600 7350 1600 7400
+	1850 6800 1200 6800
 Wire Wire Line
-	1850 6800 1600 6800
-Wire Wire Line
-	1600 6800 1200 6800
-Wire Wire Line
-	1200 7350 1600 7350
-Wire Wire Line
-	1600 7350 1850 7350
+	1200 7350 1850 7350
 Wire Wire Line
 	7350 6350 8000 6350
 Wire Wire Line

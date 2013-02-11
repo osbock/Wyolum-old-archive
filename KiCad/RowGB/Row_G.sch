@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/11/2013 6:29:22 PM
+EESchema Schematic File Version 2  date Tuesday 12 February 2013 12:06:40 AM IST
 LIBS:RowGB_sym
 LIBS:power
 LIBS:TiM-cache
