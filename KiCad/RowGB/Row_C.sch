@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tuesday 12 February 2013 12:06:40 AM IST
+EESchema Schematic File Version 2  date 2/13/2013 1:59:50 PM
 LIBS:RowGB_sym
 LIBS:power
 LIBS:TiM-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 7 9
 Title "TiM - The Intelligent Matrix"
-Date "11 feb 2013"
+Date "13 feb 2013"
 Rev ""
 Comp "WyoLum"
 Comment1 "www.wyolum.com"
@@ -543,52 +543,6 @@ F 1 "GND" H 1150 2330 30  0001 C CNN
 	1    1150 2400
 	1    0    0    -1  
 $EndComp
-$Comp
-L CONN_1 S301
-U 1 1 5118AB79
-P 5300 6650
-F 0 "S301" V 5380 6650 40  0000 L CNN
-F 1 "CONN_1" H 5300 6705 30  0001 C CNN
-F 2 "Screw" H 5300 6805 30  0001 C CNN
-	1    5300 6650
-	0    -1   -1   0   
-$EndComp
-$Comp
-L CONN_1 S302
-U 1 1 5118AB73
-P 5500 6650
-F 0 "S302" V 5580 6650 40  0000 L CNN
-F 1 "CONN_1" H 5500 6705 30  0001 C CNN
-F 2 "Screw" H 5500 6805 30  0001 C CNN
-	1    5500 6650
-	0    -1   -1   0   
-$EndComp
-$Comp
-L CONN_1 S303
-U 1 1 5118AB6D
-P 5700 6650
-F 0 "S303" V 5780 6650 40  0000 L CNN
-F 1 "CONN_1" H 5700 6705 30  0001 C CNN
-F 2 "Screw" H 5700 6805 30  0001 C CNN
-	1    5700 6650
-	0    -1   -1   0   
-$EndComp
-$Comp
-L CONN_1 S304
-U 1 1 5118AB67
-P 5900 6650
-F 0 "S304" V 5980 6650 40  0000 L CNN
-F 1 "CONN_1" H 5900 6705 30  0001 C CNN
-F 2 "Screw" H 5900 6805 30  0001 C CNN
-	1    5900 6650
-	0    -1   -1   0   
-$EndComp
-NoConn ~ 5300 6800
-NoConn ~ 5500 6800
-NoConn ~ 5700 6800
-NoConn ~ 5900 6800
-Text Notes 5200 7000 0    60   ~ 0
-Mounting Screws
 Text Label 1250 6350 0    60   ~ 0
 5V
 Text Label 1250 7200 0    60   ~ 0

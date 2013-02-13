@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Monday 11 February 2013 08:36:22 PM IST
+# EESchema Netlist Version 1.1 created  2/13/2013 5:11:30 PM
 (
  ( /511688A7/5118AB57 c_0805 C101 100n
   ( 1 GND )
@@ -544,7 +544,7 @@
   ( 1 5V )
   ( 2 GND )
  )
- ( /5117DB74 SIL-2 P101 PWR_NW
+ ( /5117DB74 SIL-PWR P101 PWR_NW
   ( 1 5V )
   ( 2 GND )
  )
@@ -572,15 +572,15 @@
   ( 3 /Row_F/DI_F )
   ( 4 /Row_E/DI_E )
  )
- ( /5117DB92 SIL-2 P106 PWR_NE
+ ( /5117DB92 SIL-PWR P106 PWR_NE
   ( 1 5V )
   ( 2 GND )
  )
- ( /5117DBB4 SIL-2 P107 PWR_W
+ ( /5117DBB4 SIL-PWR-2 P107 PWR_W
   ( 1 5V )
   ( 2 GND )
  )
- ( /5117DBCC SIL-2 P108 PWR_E
+ ( /5117DBCC SIL-PWR P108 PWR_E
   ( 1 5V )
   ( 2 GND )
  )
@@ -608,7 +608,7 @@
   ( 3 /Row_B/DO_B )
   ( 4 /Row_A/DO_A )
  )
- ( /5117DADB SIL-2 P113 PWR_SW
+ ( /5117DADB SIL-PWR-2 P113 PWR_SW
   ( 1 5V )
   ( 2 GND )
  )
@@ -636,7 +636,7 @@
   ( 3 /Row_F/DO_F )
   ( 4 /Row_E/DO_E )
  )
- ( /5117DB48 SIL-2 P118 PWR_SE
+ ( /5117DB48 SIL-PWR-2 P118 PWR_SE
   ( 1 5V )
   ( 2 GND )
  )
@@ -701,30 +701,6 @@
  ( /511688A7/5118AB63 Screw S104 CONN_1
   ( 1 ? )
  )
- ( /51178F3E/5118AB7C Screw S201 CONN_1
-  ( 1 ? )
- )
- ( /51178F3E/5118AB71 Screw S202 CONN_1
-  ( 1 ? )
- )
- ( /51178F3E/5118AB6B Screw S203 CONN_1
-  ( 1 ? )
- )
- ( /51178F3E/51189822 Screw S204 CONN_1
-  ( 1 ? )
- )
- ( /51179283/5118AB79 Screw S301 CONN_1
-  ( 1 ? )
- )
- ( /51179283/5118AB73 Screw S302 CONN_1
-  ( 1 ? )
- )
- ( /51179283/5118AB6D Screw S303 CONN_1
-  ( 1 ? )
- )
- ( /51179283/5118AB67 Screw S304 CONN_1
-  ( 1 ? )
- )
  ( /51179344/5118AB7B Screw S401 CONN_1
   ( 1 ? )
  )
@@ -747,30 +723,6 @@
   ( 1 ? )
  )
  ( /51179413/5118AB68 Screw S504 CONN_1
-  ( 1 ? )
- )
- ( /511794A8/5118AB7D Screw S601 CONN_1
-  ( 1 ? )
- )
- ( /511794A8/5118AB72 Screw S602 CONN_1
-  ( 1 ? )
- )
- ( /511794A8/5118AB6A Screw S603 CONN_1
-  ( 1 ? )
- )
- ( /511794A8/5118AB62 Screw S604 CONN_1
-  ( 1 ? )
- )
- ( /5117954B/5118AB7A Screw S701 CONN_1
-  ( 1 ? )
- )
- ( /5117954B/5118AB74 Screw S702 CONN_1
-  ( 1 ? )
- )
- ( /5117954B/51189823 Screw S703 CONN_1
-  ( 1 ? )
- )
- ( /5117954B/5118AB64 Screw S704 CONN_1
   ( 1 ? )
  )
  ( /5117961B/5118AB78 Screw S801 CONN_1

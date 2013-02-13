@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tuesday 12 February 2013 12:06:40 AM IST
+EESchema Schematic File Version 2  date 2/13/2013 1:59:50 PM
 LIBS:RowGB_sym
 LIBS:power
 LIBS:TiM-cache
@@ -8,7 +8,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 5 9
 Title "TiM - The Intelligent Matrix"
-Date "11 feb 2013"
+Date "13 feb 2013"
 Rev ""
 Comp "WyoLum"
 Comment1 "www.wyolum.com"

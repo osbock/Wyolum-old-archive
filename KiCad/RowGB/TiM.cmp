@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Monday 11 February 2013 08:36:22 PM IST
+Cmp-Mod V01 Genere par PcbNew le 2/13/2013 5:12:52 PM
 
 BeginCmp
 TimeStamp = /511688A7/5118AB57;
@@ -956,7 +956,7 @@ BeginCmp
 TimeStamp = /5117DB74;
 Reference = P101;
 ValeurCmp = PWR_NW;
-IdModule  = SIL-2;
+IdModule  = SIL-PWR;
 EndCmp
 
 BeginCmp
@@ -991,21 +991,21 @@ BeginCmp
 TimeStamp = /5117DB92;
 Reference = P106;
 ValeurCmp = PWR_NE;
-IdModule  = SIL-2;
+IdModule  = SIL-PWR;
 EndCmp
 
 BeginCmp
 TimeStamp = /5117DBB4;
 Reference = P107;
 ValeurCmp = PWR_W;
-IdModule  = SIL-2;
+IdModule  = SIL-PWR-2;
 EndCmp
 
 BeginCmp
 TimeStamp = /5117DBCC;
 Reference = P108;
 ValeurCmp = PWR_E;
-IdModule  = SIL-2;
+IdModule  = SIL-PWR;
 EndCmp
 
 BeginCmp
@@ -1040,7 +1040,7 @@ BeginCmp
 TimeStamp = /5117DADB;
 Reference = P113;
 ValeurCmp = PWR_SW;
-IdModule  = SIL-2;
+IdModule  = SIL-PWR-2;
 EndCmp
 
 BeginCmp
@@ -1075,7 +1075,7 @@ BeginCmp
 TimeStamp = /5117DB48;
 Reference = P118;
 ValeurCmp = PWR_SE;
-IdModule  = SIL-2;
+IdModule  = SIL-PWR-2;
 EndCmp
 
 BeginCmp
@@ -1205,62 +1205,6 @@ IdModule  = Screw;
 EndCmp
 
 BeginCmp
-TimeStamp = /51178F3E/5118AB7C;
-Reference = S201;
-ValeurCmp = CONN_1;
-IdModule  = Screw;
-EndCmp
-
-BeginCmp
-TimeStamp = /51178F3E/5118AB71;
-Reference = S202;
-ValeurCmp = CONN_1;
-IdModule  = Screw;
-EndCmp
-
-BeginCmp
-TimeStamp = /51178F3E/5118AB6B;
-Reference = S203;
-ValeurCmp = CONN_1;
-IdModule  = Screw;
-EndCmp
-
-BeginCmp
-TimeStamp = /51178F3E/51189822;
-Reference = S204;
-ValeurCmp = CONN_1;
-IdModule  = Screw;
-EndCmp
-
-BeginCmp
-TimeStamp = /51179283/5118AB79;
-Reference = S301;
-ValeurCmp = CONN_1;
-IdModule  = Screw;
-EndCmp
-
-BeginCmp
-TimeStamp = /51179283/5118AB73;
-Reference = S302;
-ValeurCmp = CONN_1;
-IdModule  = Screw;
-EndCmp
-
-BeginCmp
-TimeStamp = /51179283/5118AB6D;
-Reference = S303;
-ValeurCmp = CONN_1;
-IdModule  = Screw;
-EndCmp
-
-BeginCmp
-TimeStamp = /51179283/5118AB67;
-Reference = S304;
-ValeurCmp = CONN_1;
-IdModule  = Screw;
-EndCmp
-
-BeginCmp
 TimeStamp = /51179344/5118AB7B;
 Reference = S401;
 ValeurCmp = CONN_1;
@@ -1312,62 +1256,6 @@ EndCmp
 BeginCmp
 TimeStamp = /51179413/5118AB68;
 Reference = S504;
-ValeurCmp = CONN_1;
-IdModule  = Screw;
-EndCmp
-
-BeginCmp
-TimeStamp = /511794A8/5118AB7D;
-Reference = S601;
-ValeurCmp = CONN_1;
-IdModule  = Screw;
-EndCmp
-
-BeginCmp
-TimeStamp = /511794A8/5118AB72;
-Reference = S602;
-ValeurCmp = CONN_1;
-IdModule  = Screw;
-EndCmp
-
-BeginCmp
-TimeStamp = /511794A8/5118AB6A;
-Reference = S603;
-ValeurCmp = CONN_1;
-IdModule  = Screw;
-EndCmp
-
-BeginCmp
-TimeStamp = /511794A8/5118AB62;
-Reference = S604;
-ValeurCmp = CONN_1;
-IdModule  = Screw;
-EndCmp
-
-BeginCmp
-TimeStamp = /5117954B/5118AB7A;
-Reference = S701;
-ValeurCmp = CONN_1;
-IdModule  = Screw;
-EndCmp
-
-BeginCmp
-TimeStamp = /5117954B/5118AB74;
-Reference = S702;
-ValeurCmp = CONN_1;
-IdModule  = Screw;
-EndCmp
-
-BeginCmp
-TimeStamp = /5117954B/51189823;
-Reference = S703;
-ValeurCmp = CONN_1;
-IdModule  = Screw;
-EndCmp
-
-BeginCmp
-TimeStamp = /5117954B/5118AB64;
-Reference = S704;
 ValeurCmp = CONN_1;
 IdModule  = Screw;
 EndCmp
