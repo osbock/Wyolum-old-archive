@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le 2/13/2013 5:12:52 PM
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 2/14/2013 6:09:51 PM
 
 BeginCmp
 TimeStamp = /511688A7/5118AB57;
@@ -953,10 +953,24 @@ IdModule  = c_2917;
 EndCmp
 
 BeginCmp
+TimeStamp = /511CD9F8;
+Reference = L101;
+ValeurCmp = OSHW;
+IdModule  = OSHW_6mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /511CD9F5;
+Reference = L102;
+ValeurCmp = Wyolum;
+IdModule  = Logo-WL3;
+EndCmp
+
+BeginCmp
 TimeStamp = /5117DB74;
 Reference = P101;
 ValeurCmp = PWR_NW;
-IdModule  = SIL-PWR;
+IdModule  = SIL-PWR-2;
 EndCmp
 
 BeginCmp
@@ -991,21 +1005,21 @@ BeginCmp
 TimeStamp = /5117DB92;
 Reference = P106;
 ValeurCmp = PWR_NE;
-IdModule  = SIL-PWR;
+IdModule  = SIL-PWR-2;
 EndCmp
 
 BeginCmp
 TimeStamp = /5117DBB4;
 Reference = P107;
 ValeurCmp = PWR_W;
-IdModule  = SIL-PWR-2;
+IdModule  = SIL-PWR;
 EndCmp
 
 BeginCmp
 TimeStamp = /5117DBCC;
 Reference = P108;
 ValeurCmp = PWR_E;
-IdModule  = SIL-PWR;
+IdModule  = SIL-PWR-2;
 EndCmp
 
 BeginCmp
@@ -1040,7 +1054,7 @@ BeginCmp
 TimeStamp = /5117DADB;
 Reference = P113;
 ValeurCmp = PWR_SW;
-IdModule  = SIL-PWR-2;
+IdModule  = SIL-PWR;
 EndCmp
 
 BeginCmp
@@ -1075,7 +1089,7 @@ BeginCmp
 TimeStamp = /5117DB48;
 Reference = P118;
 ValeurCmp = PWR_SE;
-IdModule  = SIL-PWR-2;
+IdModule  = SIL-PWR;
 EndCmp
 
 BeginCmp

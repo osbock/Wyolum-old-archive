@@ -1,0 +1,22 @@
+update=2/14/2013 6:09:24 PM
+last_client=pcbnew
+[pcbnew]
+version=1
+PadDrlX=400
+PadDimH=700
+PadDimV=700
+BoardThickness=630
+TxtPcbV=800
+TxtPcbH=600
+TxtModV=600
+TxtModH=600
+TxtModW=120
+VEgarde=100
+DrawLar=150
+EdgeLar=150
+TxtLar=120
+MSegLar=150
+LastNetListRead=TiM.net
+[pcbnew/libraries]
+LibDir=
+LibName1=RowGB_Libs/RowGB_fp

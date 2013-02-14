@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  2/13/2013 5:11:30 PM
+# EESchema Netlist Version 1.1 created  2/14/2013 6:09:51 PM
 (
  ( /511688A7/5118AB57 c_0805 C101 100n
   ( 1 GND )
@@ -544,7 +544,13 @@
   ( 1 5V )
   ( 2 GND )
  )
- ( /5117DB74 SIL-PWR P101 PWR_NW
+ ( /511CD9F8 OSHW_6mm L101 OSHW
+  ( 1 ? )
+ )
+ ( /511CD9F5 Logo-WL3 L102 Wyolum
+  ( 1 ? )
+ )
+ ( /5117DB74 SIL-PWR-2 P101 PWR_NW
   ( 1 5V )
   ( 2 GND )
  )
@@ -572,15 +578,15 @@
   ( 3 /Row_F/DI_F )
   ( 4 /Row_E/DI_E )
  )
- ( /5117DB92 SIL-PWR P106 PWR_NE
+ ( /5117DB92 SIL-PWR-2 P106 PWR_NE
   ( 1 5V )
   ( 2 GND )
  )
- ( /5117DBB4 SIL-PWR-2 P107 PWR_W
+ ( /5117DBB4 SIL-PWR P107 PWR_W
   ( 1 5V )
   ( 2 GND )
  )
- ( /5117DBCC SIL-PWR P108 PWR_E
+ ( /5117DBCC SIL-PWR-2 P108 PWR_E
   ( 1 5V )
   ( 2 GND )
  )
@@ -608,7 +614,7 @@
   ( 3 /Row_B/DO_B )
   ( 4 /Row_A/DO_A )
  )
- ( /5117DADB SIL-PWR-2 P113 PWR_SW
+ ( /5117DADB SIL-PWR P113 PWR_SW
   ( 1 5V )
   ( 2 GND )
  )
@@ -636,7 +642,7 @@
   ( 3 /Row_F/DO_F )
   ( 4 /Row_E/DO_E )
  )
- ( /5117DB48 SIL-PWR-2 P118 PWR_SE
+ ( /5117DB48 SIL-PWR P118 PWR_SE
   ( 1 5V )
   ( 2 GND )
  )
