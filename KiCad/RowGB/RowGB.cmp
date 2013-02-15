@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Wednesday 09 January 2013 05:11:32 PM IST
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 2/14/2013 6:45:03 PM
 
 BeginCmp
 TimeStamp = /50E7E7CE;
@@ -120,13 +120,6 @@ IdModule  = c_2917;
 EndCmp
 
 BeginCmp
-TimeStamp = /50ED424F/50ED4B91;
-Reference = C18;
-ValeurCmp = 100n;
-IdModule  = c_0805;
-EndCmp
-
-BeginCmp
 TimeStamp = /50E7EA04;
 Reference = P1;
 ValeurCmp = CONN_N;
@@ -144,7 +137,7 @@ BeginCmp
 TimeStamp = /50EA8A1D;
 Reference = P3;
 ValeurCmp = CONN_E;
-IdModule  = CONN_E;
+IdModule  = CONN_S2;
 EndCmp
 
 BeginCmp
@@ -179,41 +172,6 @@ BeginCmp
 TimeStamp = /50E7F989;
 Reference = P8;
 ValeurCmp = CONN_1;
-IdModule  = pad;
-EndCmp
-
-BeginCmp
-TimeStamp = /50ED424F/50ED4827;
-Reference = P9;
-ValeurCmp = C3SB_In;
-IdModule  = CONN_N;
-EndCmp
-
-BeginCmp
-TimeStamp = /50ED424F/50ED4EA5;
-Reference = P10;
-ValeurCmp = Data_In;
-IdModule  = pad;
-EndCmp
-
-BeginCmp
-TimeStamp = /50ED424F/50ED5151;
-Reference = P11;
-ValeurCmp = ISP;
-IdModule  = Header_ISP;
-EndCmp
-
-BeginCmp
-TimeStamp = /50ED424F/50ED55F7;
-Reference = P12;
-ValeurCmp = C3SB_Out;
-IdModule  = CONN_S;
-EndCmp
-
-BeginCmp
-TimeStamp = /50ED424F/50ED4EBA;
-Reference = PB3;
-ValeurCmp = PB3;
 IdModule  = pad;
 EndCmp
 
@@ -362,13 +320,6 @@ TimeStamp = /50E7FA78;
 Reference = U16;
 ValeurCmp = RGB_WS2811;
 IdModule  = RGB_WS2811;
-EndCmp
-
-BeginCmp
-TimeStamp = /50ED424F/50ED42DB;
-Reference = U17;
-ValeurCmp = ATTINY45-20SU;
-IdModule  = SO8N;
 EndCmp
 
 EndListe

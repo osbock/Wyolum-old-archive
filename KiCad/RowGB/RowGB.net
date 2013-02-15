@@ -1,16 +1,16 @@
-# EESchema Netlist Version 1.1 created  2/9/2013 12:53:31 PM
+# EESchema Netlist Version 1.1 created  2/15/2013 1:14:15 PM
 (
  ( /50EA8A1D $noname  P3 CONN_E {Lib=CONN_E}
-  (    1 GND )
-  (    2 N-000041 )
-  (    3 /Data_Out )
-  (    4 /5V )
+  (    1 /5V )
+  (    2 /Data_Out )
+  (    3 N-000041 )
+  (    4 GND )
  )
  ( /50EA89E6 $noname  P2 CONN_W {Lib=CONN_W}
-  (    1 /5V )
-  (    2 /Data_In )
-  (    3 N-000039 )
-  (    4 GND )
+  (    1 GND )
+  (    2 N-000039 )
+  (    3 /Data_In )
+  (    4 /5V )
  )
  ( /50EA6BA3 c_2917  C17 47u,8V {Lib=C_POL_1}
   (    1 /5V )
@@ -164,16 +164,16 @@
   (    1 N-000038 )
  )
  ( /50E7F7B7 CONN_S  P4 CONN_S {Lib=CONN4_S}
-  (    1 /5V )
-  (    2 /Data_Out )
-  (    3 N-000040 )
-  (    4 GND )
+  (    1 GND )
+  (    2 N-000040 )
+  (    3 /Data_Out )
+  (    4 /5V )
  )
  ( /50E7EA04 CONN_N  P1 CONN_N {Lib=CONN_N}
-  (    1 /5V )
-  (    2 /Data_In )
-  (    3 N-000038 )
-  (    4 GND )
+  (    1 GND )
+  (    2 N-000038 )
+  (    3 /Data_In )
+  (    4 /5V )
  )
  ( /50E7E80E c_0805  C16 100n {Lib=C2}
   (    1 GND )
@@ -342,27 +342,26 @@ Net 2 "/D_08" "D_08"
  U7 1
  U8 2
 Net 4 "/D_09" "D_09"
- U9 2
  U8 1
+ U9 2
 Net 5 "/D_07" "D_07"
- U6 1
  U7 2
+ U6 1
 Net 8 "/D_11" "D_11"
  U11 2
  U10 1
 Net 10 "/D_04" "D_04"
- U4 2
  U3 1
+ U4 2
 Net 13 "/D_06" "D_06"
- U6 2
  U5 1
+ U6 2
 Net 21 "/5V" "5V"
- C14 2
- C15 2
- C13 2
  C12 2
+ C15 2
+ C14 2
+ C13 2
  C11 2
- P2 1
  C9 2
  C8 2
  C7 2
@@ -370,130 +369,131 @@ Net 21 "/5V" "5V"
  C5 2
  C4 2
  C10 2
- P3 4
- P4 1
- U13 5
- U5 3
- P1 1
- U13 3
- U3 3
- U6 5
- U4 3
- C2 2
- U4 5
- C3 2
+ P3 1
  U15 5
- U1 5
- U7 5
- U1 3
- U7 3
- U14 3
- U16 3
- U3 5
- U8 5
- U6 3
- U8 3
- U12 5
- U2 3
- U9 5
+ C17 1
+ P2 4
  U14 5
+ U12 5
+ U12 3
+ U13 5
+ U13 3
+ U14 3
+ U16 5
+ U15 3
+ C1 2
+ C2 2
+ C3 2
+ U1 5
+ U1 3
+ U3 3
+ U8 5
+ U8 3
+ U9 5
  U9 3
- U2 5
  U10 5
  U10 3
- U12 3
- U16 5
- C1 2
- C17 1
- U5 5
  U11 5
- U15 3
  U11 3
+ U5 3
+ U3 5
+ U4 5
+ U4 3
+ U5 5
+ U6 5
+ U6 3
+ U7 5
+ U7 3
+ U16 3
+ P1 4
+ U2 3
+ U2 5
  C16 2
+ P4 4
 Net 24 "/D_13" "D_13"
  U13 2
  U12 1
 Net 27 "/D_14" "D_14"
- U14 2
  U13 1
+ U14 2
 Net 29 "/D_15" "D_15"
- U15 2
  U14 1
+ U15 2
 Net 30 "/Data_Out" "Data_Out"
- P3 3
+ P3 2
  U16 1
- P4 2
-Net 31 "/D_05" "D_05"
- U5 2
- U4 1
-Net 32 "/D_10" "D_10"
- U10 2
- U9 1
-Net 33 "/D_12" "D_12"
- U12 2
- U11 1
-Net 34 "/D_16" "D_16"
- U15 1
- U16 2
-Net 37 "/Data_In" "Data_In"
- U1 2
- P1 2
- P2 2
-Net 38 "" ""
- P5 1
- P1 3
-Net 39 "" ""
- P2 3
- P6 1
-Net 40 "" ""
  P4 3
+Net 31 "/D_05" "D_05"
+ U4 1
+ U5 2
+Net 32 "/D_10" "D_10"
+ U9 1
+ U10 2
+Net 33 "/D_12" "D_12"
+ U11 1
+ U12 2
+Net 34 "/D_16" "D_16"
+ U16 2
+ U15 1
+Net 37 "/Data_In" "Data_In"
+ P1 3
+ P2 3
+ U1 2
+Net 38 "" ""
+ P1 2
+ P5 1
+Net 39 "" ""
+ P6 1
+ P2 2
+Net 40 "" ""
  P8 1
+ P4 2
 Net 41 "" ""
  P7 1
- P3 2
+ P3 3
 Net 42 "/D_02" "D_02"
- U1 1
  U2 2
+ U1 1
 Net 43 "/D_03" "D_03"
  U2 1
  U3 2
 Net 44 "GND" "GND"
- C17 2
- U5 6
- U9 6
- U10 6
- U11 6
- U4 6
  U8 6
+ C12 1
+ C10 1
+ U7 6
+ C11 1
+ U4 6
+ U3 6
+ U9 6
+ C4 1
+ U10 6
+ C5 1
+ U11 6
+ C6 1
+ C7 1
+ P2 1
+ C8 1
+ U2 6
+ U5 6
+ C9 1
  U12 6
  U6 6
- U7 6
- P4 4
  C1 1
  C2 1
  U1 6
- C3 1
  C16 1
- P1 4
- C15 1
- C14 1
- C13 1
- C12 1
- C11 1
- C10 1
- U2 6
- C9 1
- C8 1
- C7 1
- C6 1
- C5 1
- C4 1
- U3 6
- U15 6
- P3 1
+ P4 1
+ C3 1
  U13 6
+ C13 1
+ C17 2
+ C14 1
+ P3 4
+ C15 1
  U14 6
- P2 4
+ U15 6
+ P1 1
  U16 6
 }
 #End
