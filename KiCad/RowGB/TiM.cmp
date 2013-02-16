@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 2/14/2013 6:09:51 PM
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 2/16/2013 2:33:32 PM
 
 BeginCmp
 TimeStamp = /511688A7/5118AB57;
@@ -1093,94 +1093,94 @@ IdModule  = SIL-PWR;
 EndCmp
 
 BeginCmp
-TimeStamp = /5118AA20;
+TimeStamp = /511F175B;
 Reference = P119;
-ValeurCmp = CONN_1;
-IdModule  = pad;
+ValeurCmp = DO_H_SER;
+IdModule  = SIL-PWR-2;
 EndCmp
 
 BeginCmp
-TimeStamp = /5118AA27;
+TimeStamp = /511F1738;
 Reference = P120;
-ValeurCmp = CONN_1;
-IdModule  = pad;
+ValeurCmp = DI_A_SER;
+IdModule  = SIL-PWR-2;
 EndCmp
 
 BeginCmp
-TimeStamp = /5118AA19;
+TimeStamp = /511F1A68;
 Reference = P121;
-ValeurCmp = CONN_1;
-IdModule  = pad;
+ValeurCmp = DI_A_SER;
+IdModule  = SIL-PWR;
 EndCmp
 
 BeginCmp
-TimeStamp = /5118AA2A;
+TimeStamp = /511F1A88;
 Reference = P122;
-ValeurCmp = CONN_1;
-IdModule  = pad;
+ValeurCmp = DO_H_SER;
+IdModule  = SIL-PWR-2;
 EndCmp
 
 BeginCmp
-TimeStamp = /5118AA3A;
+TimeStamp = /511F1413;
 Reference = P123;
-ValeurCmp = CONN_1;
-IdModule  = pad;
+ValeurCmp = DI_A_Ser;
+IdModule  = SIL-PWR;
 EndCmp
 
 BeginCmp
-TimeStamp = /5118AA33;
+TimeStamp = /511F170C;
 Reference = P124;
-ValeurCmp = CONN_1;
-IdModule  = pad;
+ValeurCmp = DO_H_Ser;
+IdModule  = SIL-PWR;
 EndCmp
 
 BeginCmp
 TimeStamp = /5118A74D;
 Reference = P125;
 ValeurCmp = G>H;
-IdModule  = ShortLink;
+IdModule  = ShortLink2;
 EndCmp
 
 BeginCmp
 TimeStamp = /5118A740;
 Reference = P126;
 ValeurCmp = F>G;
-IdModule  = ShortLink;
+IdModule  = ShortLink2;
 EndCmp
 
 BeginCmp
 TimeStamp = /5118A737;
 Reference = P127;
 ValeurCmp = E>F;
-IdModule  = ShortLink;
+IdModule  = ShortLink2;
 EndCmp
 
 BeginCmp
 TimeStamp = /5118A72D;
 Reference = P128;
 ValeurCmp = D>E;
-IdModule  = ShortLink;
+IdModule  = ShortLink2;
 EndCmp
 
 BeginCmp
 TimeStamp = /5118A723;
 Reference = P129;
 ValeurCmp = C>D;
-IdModule  = ShortLink;
+IdModule  = ShortLink2;
 EndCmp
 
 BeginCmp
 TimeStamp = /5118A719;
 Reference = P130;
 ValeurCmp = B>C;
-IdModule  = ShortLink;
+IdModule  = ShortLink2;
 EndCmp
 
 BeginCmp
 TimeStamp = /5118A707;
 Reference = P131;
 ValeurCmp = A>B;
-IdModule  = ShortLink;
+IdModule  = ShortLink2;
 EndCmp
 
 BeginCmp

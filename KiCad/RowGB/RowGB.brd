@@ -2470,7 +2470,7 @@ Ne 1 "/5V"
 Po 1500 0
 $EndPAD
 $SHAPE3D
-Na "RowGB_Libs\\3D_Modules\\pin_strip_4-90.wrl"
+Na "RowGB_Libs/3D_Modules/pin_strip_4-90.wrl"
 Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000

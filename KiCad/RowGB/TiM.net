@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  2/14/2013 6:09:51 PM
+# EESchema Netlist Version 1.1 created  2/16/2013 2:33:32 PM
 (
  ( /511688A7/5118AB57 c_0805 C101 100n
   ( 1 GND )
@@ -646,49 +646,55 @@
   ( 1 5V )
   ( 2 GND )
  )
- ( /5118AA20 pad P119 CONN_1
+ ( /511F175B SIL-PWR-2 P119 DO_H_SER
   ( 1 /Row_H/DO_H )
+  ( 2 /Row_H/DO_H )
  )
- ( /5118AA27 pad P120 CONN_1
+ ( /511F1738 SIL-PWR-2 P120 DI_A_SER
   ( 1 /Row_A/DI_A )
+  ( 2 /Row_A/DI_A )
  )
- ( /5118AA19 pad P121 CONN_1
+ ( /511F1A68 SIL-PWR P121 DI_A_SER
   ( 1 /Row_A/DI_A )
+  ( 2 /Row_A/DI_A )
  )
- ( /5118AA2A pad P122 CONN_1
+ ( /511F1A88 SIL-PWR-2 P122 DO_H_SER
   ( 1 /Row_H/DO_H )
+  ( 2 /Row_H/DO_H )
  )
- ( /5118AA3A pad P123 CONN_1
+ ( /511F1413 SIL-PWR P123 DI_A_Ser
   ( 1 /Row_A/DI_A )
+  ( 2 /Row_A/DI_A )
  )
- ( /5118AA33 pad P124 CONN_1
+ ( /511F170C SIL-PWR P124 DO_H_Ser
   ( 1 /Row_H/DO_H )
+  ( 2 /Row_H/DO_H )
  )
- ( /5118A74D ShortLink P125 G>H
+ ( /5118A74D ShortLink2 P125 G>H
   ( 1 /Row_H/DI_H )
   ( 2 /Row_G/DO_G )
  )
- ( /5118A740 ShortLink P126 F>G
+ ( /5118A740 ShortLink2 P126 F>G
   ( 1 /Row_G/DI_G )
   ( 2 /Row_F/DO_F )
  )
- ( /5118A737 ShortLink P127 E>F
+ ( /5118A737 ShortLink2 P127 E>F
   ( 1 /Row_F/DI_F )
   ( 2 /Row_E/DO_E )
  )
- ( /5118A72D ShortLink P128 D>E
+ ( /5118A72D ShortLink2 P128 D>E
   ( 1 /Row_E/DI_E )
   ( 2 /Row_D/DO_D )
  )
- ( /5118A723 ShortLink P129 C>D
+ ( /5118A723 ShortLink2 P129 C>D
   ( 1 /Row_D/DI_D )
   ( 2 /Row_C/DO_C )
  )
- ( /5118A719 ShortLink P130 B>C
+ ( /5118A719 ShortLink2 P130 B>C
   ( 1 /Row_C/DI_C )
   ( 2 /Row_B/DO_B )
  )
- ( /5118A707 ShortLink P131 A>B
+ ( /5118A707 ShortLink2 P131 A>B
   ( 1 /Row_B/DI_B )
   ( 2 /Row_A/DO_A )
  )

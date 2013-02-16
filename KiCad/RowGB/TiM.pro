@@ -1,4 +1,4 @@
-update=2/15/2013 2:36:47 PM
+update=2/16/2013 3:38:01 PM
 version=1
 last_client=eeschema
 [cvpcb]
@@ -13,9 +13,9 @@ NetType=0
 EquName1=devcms
 [pcbnew]
 version=1
-PadDrlX=320
-PadDimH=600
-PadDimV=600
+PadDrlX=0
+PadDimH=800
+PadDimV=400
 BoardThickness=630
 TxtPcbV=800
 TxtPcbH=600
@@ -26,7 +26,7 @@ VEgarde=100
 DrawLar=150
 EdgeLar=150
 TxtLar=120
-MSegLar=150
+MSegLar=100
 LastNetListRead=TiM.net
 [pcbnew/libraries]
 LibDir=
@@ -63,7 +63,7 @@ offY_E=0
 RptD_X=0
 RptD_Y=100
 RptLab=1
-LabSize=60
+LabSize=40
 [eeschema/libraries]
 LibName1=RowGB_Libs/RowGB_sym
 LibName2=power
