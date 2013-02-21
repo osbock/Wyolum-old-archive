@@ -1,11 +1,11 @@
-EESchema Schematic File Version 2  date 2/9/2013 12:51:24 PM
+EESchema Schematic File Version 2  date 2/20/2013 11:25:51 AM
 LIBS:RowGB_sym
-LIBS:RowGB-cache
+LIBS:power
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
-Sheet 2 2
+Sheet 1 1
 Title ""
 Date "9 feb 2013"
 Rev ""
