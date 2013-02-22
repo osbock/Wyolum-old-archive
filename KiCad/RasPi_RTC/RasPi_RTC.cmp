@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = Thursday 21 February 2013 11:07:57 PM IST
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 2/22/2013 4:10:24 PM
 
 BeginCmp
 TimeStamp = /5124B63C;
@@ -8,58 +8,23 @@ IdModule  = CR2032;
 EndCmp
 
 BeginCmp
-TimeStamp = /5124B14C;
-Reference = C1;
-ValeurCmp = 100n;
-IdModule  = C2;
-EndCmp
-
-BeginCmp
-TimeStamp = /5124B14B;
-Reference = C2;
-ValeurCmp = 100n;
-IdModule  = C2;
-EndCmp
-
-BeginCmp
-TimeStamp = /5124B640;
-Reference = C3;
-ValeurCmp = 0.47mF,5V5;
-IdModule  = CP_14x10mm;
-EndCmp
-
-BeginCmp
 TimeStamp = /5124B63D;
 Reference = C4;
 ValeurCmp = 100n;
-IdModule  = C2;
+IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /5124B63E;
 Reference = C5;
 ValeurCmp = 100n;
-IdModule  = C2;
-EndCmp
-
-BeginCmp
-TimeStamp = /5124B643;
-Reference = D1;
-ValeurCmp = 1N4148;
-IdModule  = diode_do35;
-EndCmp
-
-BeginCmp
-TimeStamp = /5124B642;
-Reference = D2;
-ValeurCmp = 1N4148;
-IdModule  = diode_do35;
+IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /5124B143;
 Reference = P1;
-ValeurCmp = BCM2835_GPIO;
+ValeurCmp = RasPi_GPIO;
 IdModule  = Header_GPIO;
 EndCmp
 
@@ -67,21 +32,21 @@ BeginCmp
 TimeStamp = /5124B656;
 Reference = P2;
 ValeurCmp = CONN_1;
-IdModule  = vite_3mm;
+IdModule  = Pad01;
 EndCmp
 
 BeginCmp
 TimeStamp = /5124B655;
 Reference = P3;
 ValeurCmp = CONN_1;
-IdModule  = vite_3mm;
+IdModule  = Pad01;
 EndCmp
 
 BeginCmp
 TimeStamp = /5124B654;
 Reference = P4;
 ValeurCmp = CONN_1;
-IdModule  = vite_3mm;
+IdModule  = Pad01;
 EndCmp
 
 BeginCmp
@@ -92,52 +57,59 @@ IdModule  = vite_3mm;
 EndCmp
 
 BeginCmp
+TimeStamp = /51272B80;
+Reference = P6;
+ValeurCmp = CONN_1;
+IdModule  = PCB;
+EndCmp
+
+BeginCmp
+TimeStamp = /51274AAF;
+Reference = P7;
+ValeurCmp = CONN_1;
+IdModule  = Logo-WL3;
+EndCmp
+
+BeginCmp
+TimeStamp = /51274AAC;
+Reference = P8;
+ValeurCmp = CONN_1;
+IdModule  = OSHW_6mm;
+EndCmp
+
+BeginCmp
 TimeStamp = /5124B652;
 Reference = R1;
 ValeurCmp = 4k7;
-IdModule  = rc03_vert;
+IdModule  = r_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /5124B1B5;
 Reference = R2;
 ValeurCmp = 4k7;
-IdModule  = rc03_vert;
+IdModule  = r_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /5124BEE6;
 Reference = R3;
 ValeurCmp = 4k7;
-IdModule  = rc03_vert;
+IdModule  = r_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /5124B64A;
 Reference = R4;
 ValeurCmp = 4k7;
-IdModule  = rc03_vert;
+IdModule  = r_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /5124B649;
 Reference = R5;
 ValeurCmp = 4k7;
-IdModule  = rc03_vert;
-EndCmp
-
-BeginCmp
-TimeStamp = /5124B641;
-Reference = R6;
-ValeurCmp = 820E;
-IdModule  = rc03_vert;
-EndCmp
-
-BeginCmp
-TimeStamp = /5124B63F;
-Reference = R7;
-ValeurCmp = 4k7;
-IdModule  = rc03_vert;
+IdModule  = r_0805;
 EndCmp
 
 BeginCmp
