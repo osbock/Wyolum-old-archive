@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/22/2013 4:14:14 PM
+EESchema Schematic File Version 2  date 2/22/2013 6:06:50 PM
 LIBS:RasPi_RTC
 LIBS:RasPi_RTC2
 LIBS:Conn-raspberry
@@ -266,19 +266,6 @@ F 2 "Pad01" H 10300 5400 60  0001 C CNN
 	1    10300 5400
 	1    0    0    -1  
 $EndComp
-$Comp
-L CONN_1 P5
-U 1 1 5124B653
-P 825 7325
-F 0 "P5" H 725 7400 40  0000 L CNN
-F 1 "CONN_1" H 825 7380 30  0001 C CNN
-F 2 "vite_3mm" H 825 7325 60  0001 C CNN
-	1    825  7325
-	0    -1   -1   0   
-$EndComp
-NoConn ~ 825  7475
-Text Notes 600  7625 0    40   ~ 0
-Mounting Hole
 $Comp
 L R R1
 U 1 1 5124B652

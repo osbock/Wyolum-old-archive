@@ -1,9 +1,9 @@
-EESchema Schematic File Version 2  date 2/22/2013 6:03:09 PM
-LIBS:RasPi_RTC
-LIBS:RasPi_RTC2
+EESchema Schematic File Version 2  date 2/22/2013 6:40:34 PM
 LIBS:Conn-raspberry
 LIBS:power
-LIBS:RasPi_RTC-cache
+LIBS:RasPi_RTC
+LIBS:RasPi_RTC2
+LIBS:RasPi_RTC_th-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
@@ -18,33 +18,26 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-NoConn ~ 2400 7475
-NoConn ~ 1950 7475
-Text Notes 2275 7625 0    40   ~ 0
-OSH Logo
-Text Notes 1800 7625 0    40   ~ 0
-WL Logo
-$Comp
-L CONN_1 P7
-U 1 1 51274AAF
-P 1950 7325
-F 0 "P7" H 1850 7400 40  0000 L CNN
-F 1 "CONN_1" H 1950 7380 30  0001 C CNN
-F 2 "Logo-WL3" H 1950 7325 60  0001 C CNN
-	1    1950 7325
-	0    -1   -1   0   
-$EndComp
-$Comp
-L CONN_1 P8
-U 1 1 51274AAC
-P 2400 7325
-F 0 "P8" H 2300 7400 40  0000 L CNN
-F 1 "CONN_1" H 2400 7380 30  0001 C CNN
-F 2 "OSHW_6mm" H 2400 7325 60  0001 C CNN
-	1    2400 7325
-	0    -1   -1   0   
-$EndComp
-NoConn ~ 3150 1900
+Text Notes 5150 2275 0    40   ~ 0
+Solder Bridges
+Text Label 4750 3850 0    40   ~ 0
+Rpi_SQW
+Text Label 4750 3000 0    40   ~ 0
+Rpi_32k
+Text Label 5925 3850 2    40   ~ 0
+SQW
+Text Label 5925 3000 2    40   ~ 0
+32k
+Wire Wire Line
+	5925 3000 5425 3000
+Wire Wire Line
+	5425 3000 5425 2925
+Wire Wire Line
+	4750 3850 5225 3850
+Wire Wire Line
+	5225 3850 5225 3750
+Wire Wire Line
+	3150 3000 3800 3000
 Wire Wire Line
 	1600 1025 1600 1900
 Wire Wire Line
@@ -196,6 +189,65 @@ Wire Wire Line
 Wire Wire Line
 	10150 5250 9225 5250
 Connection ~ 9625 5250
+Wire Wire Line
+	1850 3000 1150 3000
+Wire Wire Line
+	5225 2925 5225 3000
+Wire Wire Line
+	5225 3000 4750 3000
+Wire Wire Line
+	5425 3750 5425 3850
+Wire Wire Line
+	5425 3850 5925 3850
+$Comp
+L CONN_2 P?
+U 1 1 51276DCE
+P 5325 3400
+F 0 "P?" V 5275 3400 40  0000 C CNN
+F 1 "SQW" V 5375 3400 40  0000 C CNN
+	1    5325 3400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_2 P?
+U 1 1 51276DC4
+P 5325 2575
+F 0 "P?" V 5275 2575 40  0000 C CNN
+F 1 "32k" V 5375 2575 40  0000 C CNN
+	1    5325 2575
+	0    -1   -1   0   
+$EndComp
+Text Label 3800 3000 2    40   ~ 0
+Rpi_32k
+Text Label 1150 3000 0    40   ~ 0
+Rpi_SQW
+NoConn ~ 2400 7475
+NoConn ~ 1950 7475
+Text Notes 2275 7625 0    40   ~ 0
+OSH Logo
+Text Notes 1800 7625 0    40   ~ 0
+WL Logo
+$Comp
+L CONN_1 P7
+U 1 1 51274AAF
+P 1950 7325
+F 0 "P7" H 1850 7400 40  0000 L CNN
+F 1 "CONN_1" H 1950 7380 30  0001 C CNN
+F 2 "Logo-WL3" H 1950 7325 60  0001 C CNN
+	1    1950 7325
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_1 P8
+U 1 1 51274AAC
+P 2400 7325
+F 0 "P8" H 2300 7400 40  0000 L CNN
+F 1 "CONN_1" H 2400 7380 30  0001 C CNN
+F 2 "OSHW_6mm" H 2400 7325 60  0001 C CNN
+	1    2400 7325
+	0    -1   -1   0   
+$EndComp
+NoConn ~ 3150 1900
 Text Notes 1450 7625 0    40   ~ 0
 PCB
 NoConn ~ 1525 7475
@@ -220,7 +272,6 @@ F 1 "PWR_FLAG" H 3800 1255 30  0000 C CNN
 	1    3800 1025
 	1    0    0    -1  
 $EndComp
-NoConn ~ 1850 3000
 NoConn ~ 1850 2900
 NoConn ~ 1850 2800
 NoConn ~ 3150 2400
@@ -232,7 +283,7 @@ U 1 1 5124BEE6
 P 6325 4925
 F 0 "R3" V 6425 4925 50  0000 C CNN
 F 1 "4k7" V 6325 4925 50  0000 C CNN
-F 2 "r_0805" H 6325 4925 60  0001 C CNN
+F 2 "rc03_vert" H 6325 4925 60  0001 C CNN
 	1    6325 4925
 	1    0    0    -1  
 $EndComp
@@ -272,7 +323,7 @@ U 1 1 5124B652
 P 5925 4925
 F 0 "R1" V 5825 4925 50  0000 C CNN
 F 1 "4k7" V 5925 4925 50  0000 C CNN
-F 2 "r_0805" H 5925 4925 60  0001 C CNN
+F 2 "rc03_vert" H 5925 4925 60  0001 C CNN
 	1    5925 4925
 	-1   0    0    1   
 $EndComp
@@ -367,7 +418,7 @@ U 1 1 5124B64A
 P 9625 4525
 F 0 "R4" V 9525 4500 50  0000 C CNN
 F 1 "4k7" V 9625 4525 50  0000 C CNN
-F 2 "r_0805" H 9625 4525 60  0001 C CNN
+F 2 "rc03_vert" H 9625 4525 60  0001 C CNN
 	1    9625 4525
 	-1   0    0    1   
 $EndComp
@@ -377,7 +428,7 @@ U 1 1 5124B649
 P 9875 4525
 F 0 "R5" V 9775 4500 50  0000 C CNN
 F 1 "4k7" V 9875 4525 50  0000 C CNN
-F 2 "r_0805" H 9875 4525 60  0001 C CNN
+F 2 "rc03_vert" H 9875 4525 60  0001 C CNN
 	1    9875 4525
 	-1   0    0    1   
 $EndComp
@@ -398,7 +449,7 @@ U 1 1 5124B63E
 P 4075 6400
 F 0 "C5" V 4025 6450 50  0000 L CNN
 F 1 "100n" V 4125 6150 50  0000 L CNN
-F 2 "c_0805" H 4075 6400 60  0001 C CNN
+F 2 "cnp_3mm_disc" H 4075 6400 60  0001 C CNN
 	1    4075 6400
 	1    0    0    -1  
 $EndComp
@@ -408,7 +459,7 @@ U 1 1 5124B63D
 P 3825 6400
 F 0 "C4" V 3775 6450 50  0000 L CNN
 F 1 "100n" V 3875 6150 50  0000 L CNN
-F 2 "c_0805" H 3825 6400 60  0001 C CNN
+F 2 "cnp_3mm_disc" H 3825 6400 60  0001 C CNN
 	1    3825 6400
 	1    0    0    -1  
 $EndComp
@@ -428,7 +479,7 @@ U 1 1 5124B1B5
 P 6125 4925
 F 0 "R2" V 6225 4925 50  0000 C CNN
 F 1 "4k7" V 6125 4925 50  0000 C CNN
-F 2 "r_0805" H 6125 4925 60  0001 C CNN
+F 2 "rc03_vert" H 6125 4925 60  0001 C CNN
 	1    6125 4925
 	1    0    0    -1  
 $EndComp
@@ -450,7 +501,6 @@ NoConn ~ 1850 2200
 NoConn ~ 1850 2400
 NoConn ~ 1850 2500
 NoConn ~ 1850 2600
-NoConn ~ 3150 3000
 NoConn ~ 3150 3100
 NoConn ~ 3150 2900
 NoConn ~ 3150 2700
