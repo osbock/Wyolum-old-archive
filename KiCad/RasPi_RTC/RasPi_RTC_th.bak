@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/22/2013 6:40:34 PM
+EESchema Schematic File Version 2  date 2/22/2013 6:40:55 PM
 LIBS:Conn-raspberry
 LIBS:power
 LIBS:RasPi_RTC
@@ -200,19 +200,19 @@ Wire Wire Line
 Wire Wire Line
 	5425 3850 5925 3850
 $Comp
-L CONN_2 P?
+L CONN_2 P9
 U 1 1 51276DCE
 P 5325 3400
-F 0 "P?" V 5275 3400 40  0000 C CNN
+F 0 "P9" V 5275 3400 40  0000 C CNN
 F 1 "SQW" V 5375 3400 40  0000 C CNN
 	1    5325 3400
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_2 P?
+L CONN_2 P5
 U 1 1 51276DC4
 P 5325 2575
-F 0 "P?" V 5275 2575 40  0000 C CNN
+F 0 "P5" V 5275 2575 40  0000 C CNN
 F 1 "32k" V 5375 2575 40  0000 C CNN
 	1    5325 2575
 	0    -1   -1   0   
