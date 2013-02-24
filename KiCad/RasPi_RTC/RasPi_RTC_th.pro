@@ -1,8 +1,6 @@
-update=2/23/2013 11:53:49 AM
+update=Sunday 24 February 2013 02:25:35 PM IST
 version=1
-last_client=eeschema
-[general]
-version=1
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
@@ -60,7 +58,8 @@ RptD_Y=100
 RptLab=1
 LabSize=60
 [eeschema/libraries]
-LibName1=RasPi_RTC_Libs/Conn-raspberry
-LibName2=RasPi_RTC_Libs/power
-LibName3=RasPi_RTC_Libs/RasPi_RTC
-LibName4=RasPi_RTC_Libs/RasPi_RTC2
+LibName1=RasPi_RTC_Libs/power
+LibName2=RasPi_RTC_Libs/RasPi_RTC
+LibName3=RasPi_RTC_Libs/RasPi_RTC2
+[general]
+version=1

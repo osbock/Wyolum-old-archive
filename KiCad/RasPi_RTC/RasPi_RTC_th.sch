@@ -1,5 +1,4 @@
-EESchema Schematic File Version 2  date 2/23/2013 11:53:21 AM
-LIBS:Conn-raspberry
+EESchema Schematic File Version 2  date Sunday 24 February 2013 02:25:04 PM IST
 LIBS:power
 LIBS:RasPi_RTC
 LIBS:RasPi_RTC2
