@@ -1,0 +1,388 @@
+# EESchema Netlist Version 1.1 created  2/20/2013 3:28:42 PM
+(
+ ( /50E7E7CE c_0805 C1 100n
+  ( 1 GND )
+  ( 2 /SlaveController/5V )
+ )
+ ( /50E7E7E3 c_0805 C2 100n
+  ( 1 GND )
+  ( 2 /SlaveController/5V )
+ )
+ ( /50E7E7E6 c_0805 C3 100n
+  ( 1 GND )
+  ( 2 /SlaveController/5V )
+ )
+ ( /50E7E7EB c_0805 C4 100n
+  ( 1 GND )
+  ( 2 /SlaveController/5V )
+ )
+ ( /50E7E7EE c_0805 C5 100n
+  ( 1 GND )
+  ( 2 /SlaveController/5V )
+ )
+ ( /50E7E7F0 c_0805 C6 100n
+  ( 1 GND )
+  ( 2 /SlaveController/5V )
+ )
+ ( /50E7E7F2 c_0805 C7 100n
+  ( 1 GND )
+  ( 2 /SlaveController/5V )
+ )
+ ( /50E7E7F4 c_0805 C8 100n
+  ( 1 GND )
+  ( 2 /SlaveController/5V )
+ )
+ ( /50E7E7FB c_0805 C9 100n
+  ( 1 GND )
+  ( 2 /SlaveController/5V )
+ )
+ ( /50E7E7FE c_0805 C10 100n
+  ( 1 GND )
+  ( 2 /SlaveController/5V )
+ )
+ ( /50E7E800 c_0805 C11 100n
+  ( 1 GND )
+  ( 2 /SlaveController/5V )
+ )
+ ( /50E7E802 c_0805 C12 100n
+  ( 1 GND )
+  ( 2 /SlaveController/5V )
+ )
+ ( /50E7E805 c_0805 C13 100n
+  ( 1 GND )
+  ( 2 /SlaveController/5V )
+ )
+ ( /50E7E80B c_0805 C14 100n
+  ( 1 GND )
+  ( 2 /SlaveController/5V )
+ )
+ ( /50E7E80C c_0805 C15 100n
+  ( 1 GND )
+  ( 2 /SlaveController/5V )
+ )
+ ( /50E7E80E c_0805 C16 100n
+  ( 1 GND )
+  ( 2 /SlaveController/5V )
+ )
+ ( /50EA6BA3 c_2917 C17 47u,8V
+  ( 1 /SlaveController/5V )
+  ( 2 GND )
+ )
+ ( /51248BDF/50ED4B91 c_0805 C18 100n
+  ( 1 /SlaveController/5V )
+  ( 2 GND )
+ )
+ ( /50E7EA04 CONN_N P1 CONN_N
+  ( 1 GND )
+  ( 2 N-000040 )
+  ( 3 /SlaveController/Data_In )
+  ( 4 /SlaveController/5V )
+ )
+ ( /50EA89E6 CONN_W P2 CONN_W
+  ( 1 GND )
+  ( 2 N-000041 )
+  ( 3 /SlaveController/Data_In )
+  ( 4 /SlaveController/5V )
+ )
+ ( /50EA8A1D CONN_S P3 CONN_E
+  ( 1 /SlaveController/5V )
+  ( 2 /Data_Out )
+  ( 3 N-000042 )
+  ( 4 GND )
+ )
+ ( /50E7F7B7 CONN_S P4 CONN_S
+  ( 1 GND )
+  ( 2 N-000039 )
+  ( 3 /Data_Out )
+  ( 4 /SlaveController/5V )
+ )
+ ( /50E7F981 pad P5 CONN_1
+  ( 1 N-000040 )
+ )
+ ( /50E7F986 pad P6 CONN_1
+  ( 1 N-000041 )
+ )
+ ( /50E7F991 pad P7 CONN_1
+  ( 1 N-000042 )
+ )
+ ( /50E7F989 pad P8 CONN_1
+  ( 1 N-000039 )
+ )
+ ( /51248BDF/50ED4827 CONN_N P9 C3SB_In
+  ( 1 /SlaveController/5V )
+  ( 2 /SlaveController/SCK_SCL )
+  ( 3 /SlaveController/MOSI_SDA )
+  ( 4 GND )
+ )
+ ( /51248BDF/50ED4EA5 pad P10 Data_In
+  ( 1 /SlaveController/Data_In )
+ )
+ ( /51248BDF/50ED5151 Header_ISP P11 ISP
+  ( 1 /SlaveController/MISO )
+  ( 2 /SlaveController/5V )
+  ( 3 /SlaveController/SCK_SCL )
+  ( 4 /SlaveController/MOSI_SDA )
+  ( 5 /SlaveController/RST )
+  ( 6 GND )
+ )
+ ( /51248BDF/50ED55F7 CONN_S P12 C3SB_Out
+  ( 1 /SlaveController/5V )
+  ( 2 /SlaveController/SCK_SCL )
+  ( 3 /SlaveController/MOSI_SDA )
+  ( 4 GND )
+ )
+ ( /51248BDF/50ED4EBA pad PB3 PB3
+  ( 1 /SlaveController/PB3 )
+ )
+ ( /50E96A4D PCB PCB1 CONN_1
+  ( 1 ? )
+ )
+ ( /50E8262D Screw S1 CONN_1
+  ( 1 ? )
+ )
+ ( /50E82639 Screw S2 CONN_1
+  ( 1 ? )
+ )
+ ( /50E8263D Screw S3 CONN_1
+  ( 1 ? )
+ )
+ ( /50E82641 Screw S4 CONN_1
+  ( 1 ? )
+ )
+ ( /50E6FD46 RGB_WS2811 U1 RGB_WS2811
+  ( 1 /D_02 )
+  ( 2 /SlaveController/Data_In )
+  ( 3 /SlaveController/5V )
+  ( 4 ? )
+  ( 5 /SlaveController/5V )
+  ( 6 GND )
+ )
+ ( /50E7FA4C RGB_WS2811 U2 RGB_WS2811
+  ( 1 /D_03 )
+  ( 2 /D_02 )
+  ( 3 /SlaveController/5V )
+  ( 4 ? )
+  ( 5 /SlaveController/5V )
+  ( 6 GND )
+ )
+ ( /50E7FA4F RGB_WS2811 U3 RGB_WS2811
+  ( 1 /D_04 )
+  ( 2 /D_03 )
+  ( 3 /SlaveController/5V )
+  ( 4 ? )
+  ( 5 /SlaveController/5V )
+  ( 6 GND )
+ )
+ ( /50E7FA53 RGB_WS2811 U4 RGB_WS2811
+  ( 1 /D_05 )
+  ( 2 /D_04 )
+  ( 3 /SlaveController/5V )
+  ( 4 ? )
+  ( 5 /SlaveController/5V )
+  ( 6 GND )
+ )
+ ( /50E7FA56 RGB_WS2811 U5 RGB_WS2811
+  ( 1 /D_06 )
+  ( 2 /D_05 )
+  ( 3 /SlaveController/5V )
+  ( 4 ? )
+  ( 5 /SlaveController/5V )
+  ( 6 GND )
+ )
+ ( /50E7FA58 RGB_WS2811 U6 RGB_WS2811
+  ( 1 /D_07 )
+  ( 2 /D_06 )
+  ( 3 /SlaveController/5V )
+  ( 4 ? )
+  ( 5 /SlaveController/5V )
+  ( 6 GND )
+ )
+ ( /50E7FA5B RGB_WS2811 U7 RGB_WS2811
+  ( 1 /D_08 )
+  ( 2 /D_07 )
+  ( 3 /SlaveController/5V )
+  ( 4 ? )
+  ( 5 /SlaveController/5V )
+  ( 6 GND )
+ )
+ ( /50E7FA5E RGB_WS2811 U8 RGB_WS2811
+  ( 1 /D_09 )
+  ( 2 /D_08 )
+  ( 3 /SlaveController/5V )
+  ( 4 ? )
+  ( 5 /SlaveController/5V )
+  ( 6 GND )
+ )
+ ( /50E7FA60 RGB_WS2811 U9 RGB_WS2811
+  ( 1 /D_10 )
+  ( 2 /D_09 )
+  ( 3 /SlaveController/5V )
+  ( 4 ? )
+  ( 5 /SlaveController/5V )
+  ( 6 GND )
+ )
+ ( /50E7FA65 RGB_WS2811 U10 RGB_WS2811
+  ( 1 /D_11 )
+  ( 2 /D_10 )
+  ( 3 /SlaveController/5V )
+  ( 4 ? )
+  ( 5 /SlaveController/5V )
+  ( 6 GND )
+ )
+ ( /50E7FA68 RGB_WS2811 U11 RGB_WS2811
+  ( 1 /D_12 )
+  ( 2 /D_11 )
+  ( 3 /SlaveController/5V )
+  ( 4 ? )
+  ( 5 /SlaveController/5V )
+  ( 6 GND )
+ )
+ ( /50E7FA6A RGB_WS2811 U12 RGB_WS2811
+  ( 1 /D_13 )
+  ( 2 /D_12 )
+  ( 3 /SlaveController/5V )
+  ( 4 ? )
+  ( 5 /SlaveController/5V )
+  ( 6 GND )
+ )
+ ( /50E7FA6D RGB_WS2811 U13 RGB_WS2811
+  ( 1 /D_14 )
+  ( 2 /D_13 )
+  ( 3 /SlaveController/5V )
+  ( 4 ? )
+  ( 5 /SlaveController/5V )
+  ( 6 GND )
+ )
+ ( /50E7FA71 RGB_WS2811 U14 RGB_WS2811
+  ( 1 /D_15 )
+  ( 2 /D_14 )
+  ( 3 /SlaveController/5V )
+  ( 4 ? )
+  ( 5 /SlaveController/5V )
+  ( 6 GND )
+ )
+ ( /50E7FA74 RGB_WS2811 U15 RGB_WS2811
+  ( 1 /D_16 )
+  ( 2 /D_15 )
+  ( 3 /SlaveController/5V )
+  ( 4 ? )
+  ( 5 /SlaveController/5V )
+  ( 6 GND )
+ )
+ ( /50E7FA78 RGB_WS2811 U16 RGB_WS2811
+  ( 1 /Data_Out )
+  ( 2 /D_16 )
+  ( 3 /SlaveController/5V )
+  ( 4 ? )
+  ( 5 /SlaveController/5V )
+  ( 6 GND )
+ )
+ ( /51248BDF/50ED42DB SO8N U17 ATTINY45-20SU
+  ( 1 /SlaveController/RST )
+  ( 2 /SlaveController/PB3 )
+  ( 3 /SlaveController/Data_In )
+  ( 4 GND )
+  ( 5 /SlaveController/MOSI_SDA )
+  ( 6 /SlaveController/MISO )
+  ( 7 /SlaveController/SCK_SCL )
+  ( 8 /SlaveController/5V )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component C3
+ SM*
+ C?
+ C1-1
+$endlist
+$component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$component C5
+ SM*
+ C?
+ C1-1
+$endlist
+$component C6
+ SM*
+ C?
+ C1-1
+$endlist
+$component C7
+ SM*
+ C?
+ C1-1
+$endlist
+$component C8
+ SM*
+ C?
+ C1-1
+$endlist
+$component C9
+ SM*
+ C?
+ C1-1
+$endlist
+$component C10
+ SM*
+ C?
+ C1-1
+$endlist
+$component C11
+ SM*
+ C?
+ C1-1
+$endlist
+$component C12
+ SM*
+ C?
+ C1-1
+$endlist
+$component C13
+ SM*
+ C?
+ C1-1
+$endlist
+$component C14
+ SM*
+ C?
+ C1-1
+$endlist
+$component C15
+ SM*
+ C?
+ C1-1
+$endlist
+$component C16
+ SM*
+ C?
+ C1-1
+$endlist
+$component C17
+ SM*
+ C?
+ C1-1
+$endlist
+$component C18
+ SM*
+ C?
+ C1-1
+$endlist
+$component U17
+ 28DIP-ELL600
+ 28dip600
+$endlist
+$endfootprintlist
+}
