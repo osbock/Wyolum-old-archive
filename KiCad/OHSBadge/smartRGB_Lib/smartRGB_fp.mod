@@ -514,7 +514,7 @@ Ne 5 "GND"
 Po 750 950
 $EndPAD
 $SHAPE3D
-Na "pulse_Libs/pulse_3D/cms_so8.wrl"
+Na "smartRGB_Lib/smartRGB_3D/cms_so8.wrl"
 Sc 0.500000 0.350000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
@@ -68203,7 +68203,7 @@ Ne 6 "/SlaveController/RST"
 Po -750 1350
 $EndPAD
 $SHAPE3D
-Na "smd/cms_so8.wrl"
+Na "smartRGB_Lib/smartRGB_3D/cms_so8.wrl"
 Sc 0.500000 0.380000 0.500000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
