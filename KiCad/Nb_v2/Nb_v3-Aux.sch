@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/1/2013 2:38:01 PM
+EESchema Schematic File Version 2  date 07-Mar-13 9:12:48 AM
 LIBS:Nb_v2
 LIBS:power
 LIBS:Nb_v3-cache
@@ -667,6 +667,7 @@ U 1 1 5107BECE
 P 1800 2800
 F 0 "BT1" H 1800 3000 50  0000 C CNN
 F 1 "BATT_RTC" H 1800 2675 50  0000 C CNN
+F 2 "BT2" H 1800 2775 50  0001 C CNN
 	1    1800 2800
 	0    1    1    0   
 $EndComp

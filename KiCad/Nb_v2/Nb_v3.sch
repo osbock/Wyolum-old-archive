@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/1/2013 2:38:01 PM
+EESchema Schematic File Version 2  date 07-Mar-13 9:12:47 AM
 LIBS:Nb_v2
 LIBS:power
 LIBS:Nb_v3-cache
