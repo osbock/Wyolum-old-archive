@@ -1,6 +1,6 @@
-update=2/4/2013 3:14:06 PM
+update=Sunday 10 March 2013 05:50:38 PM IST
 version=1
-last_client=eeschema
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
@@ -26,8 +26,6 @@ LastNetListRead=Nb_v3.net
 [pcbnew/libraries]
 LibDir=
 LibName1=Nb_v2_libs/Nb_v2_parts
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -62,3 +60,5 @@ LabSize=60
 [eeschema/libraries]
 LibName1=Nb_v2_libs/Nb_v2
 LibName2=Nb_v2_libs/power
+[general]
+version=1
