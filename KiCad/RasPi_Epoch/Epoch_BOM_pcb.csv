@@ -1,0 +1,14 @@
+"Id";"Designator";"Package";"Quantity";"Designation";"Supplier and ref";
+1;"P4,P3,P2";"Pad01";3;"CONN_1";;;
+2;"P1";"Header_GPIO";1;"RasPi_GPIO";;;
+3;"P6";"PCB";1;"CONN_1";;;
+4;"U1";"DS3231";1;"DS3231N";;;
+5;"P8";"OSHW_6mm";1;"CONN_1";;;
+6;"P7";"Logo-WL3";1;"CONN_1";;;
+7;"P5";"ShortLink3";1;"32k";;;
+8;"P9";"ShortLink3";1;"SQW";;;
+9;"C5,C4";"cnp_3mm_disc";2;"100n";;;
+10;"R1,R2,R3,R4,R5";"rc03_vert";5;"4k7";;;
+11;"BT1";"CR2032";1;"BATT_RTC";;;
+12;"U2";"dil_08-300_socket";1;"DS1307";;;
+13;"X1";"XTAL_3";1;"CRYSTAL";;;

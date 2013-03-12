@@ -1,0 +1,21 @@
+ref	value	footprint	Field1	Field2	Field3	Field4	Field5	Field6	Field7	Field8
+BT1	BATT_RTC	CR2032
+C4	100n	cnp_3mm_disc
+C5	100n	cnp_3mm_disc
+P1	RasPi_GPIO	Header_GPIO
+P2	CONN_1	Pad01
+P3	CONN_1	Pad01
+P4	CONN_1	Pad01
+P5	32k	
+P6	CONN_1	PCB
+P7	CONN_1	Logo-WL3
+P8	CONN_1	OSHW_6mm
+P9	SQW	
+R1	4k7	rc03_vert
+R2	4k7	rc03_vert
+R3	4k7	rc03_vert
+R4	4k7	rc03_vert
+R5	4k7	rc03_vert
+U1	DS3231N	DS3231
+U2	DS1307	dil_08-300_socket
+X1	CRYSTAL	XTAL_3
