@@ -1,0 +1,290 @@
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 12-Mar-13 6:22:22 PM
+
+BeginCmp
+TimeStamp = /50E7E7CE;
+Reference = C1;
+ValeurCmp = 100n;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7E7EB;
+Reference = C4;
+ValeurCmp = 100n;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7E7F2;
+Reference = C7;
+ValeurCmp = 100n;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7E7FB;
+Reference = C9;
+ValeurCmp = 100n;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7E802;
+Reference = C12;
+ValeurCmp = 100n;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7E80C;
+Reference = C15;
+ValeurCmp = 100n;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /50EA6BA3;
+Reference = C17;
+ValeurCmp = 47u,8V;
+IdModule  = c_2917;
+EndCmp
+
+BeginCmp
+TimeStamp = /51248BDF/50ED4B91;
+Reference = C18;
+ValeurCmp = 100n;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /50EA89E6;
+Reference = P2;
+ValeurCmp = CONN_W;
+IdModule  = CONN_E;
+EndCmp
+
+BeginCmp
+TimeStamp = /50EA8A1D;
+Reference = P3;
+ValeurCmp = CONN_E;
+IdModule  = CONN_S;
+EndCmp
+
+BeginCmp
+TimeStamp = /51248BDF/50ED4827;
+Reference = P9;
+ValeurCmp = C3SB_In;
+IdModule  = CONN_E;
+EndCmp
+
+BeginCmp
+TimeStamp = /51248BDF/50ED4EA5;
+Reference = P10;
+ValeurCmp = Data_In;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /51248BDF/50ED5151;
+Reference = P11;
+ValeurCmp = ISP;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /51248BDF/50ED55F7;
+Reference = P12;
+ValeurCmp = C3SB_Out;
+IdModule  = CONN_S;
+EndCmp
+
+BeginCmp
+TimeStamp = /51248BDF/50ED4EBA;
+Reference = PB3;
+ValeurCmp = PB3;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E96A4D;
+Reference = PCB1;
+ValeurCmp = CONN_1;
+IdModule  = PCB;
+EndCmp
+
+BeginCmp
+TimeStamp = /51248BDF/51384E1E;
+Reference = R1;
+ValeurCmp = 10k;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /51248BDF/51384E25;
+Reference = R2;
+ValeurCmp = 10k;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E8262D;
+Reference = S1;
+ValeurCmp = CONN_1;
+IdModule  = Screw;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E82639;
+Reference = S2;
+ValeurCmp = CONN_1;
+IdModule  = Screw;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E8263D;
+Reference = S3;
+ValeurCmp = CONN_1;
+IdModule  = Screw;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E82641;
+Reference = S4;
+ValeurCmp = CONN_1;
+IdModule  = Screw;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E6FD46;
+Reference = U1;
+ValeurCmp = RGB_WS2811;
+IdModule  = RGB_WS2811;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7FA4C;
+Reference = U2;
+ValeurCmp = RGB_WS2811;
+IdModule  = RGB_WS2811;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7FA4F;
+Reference = U3;
+ValeurCmp = RGB_WS2811;
+IdModule  = RGB_WS2811;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7FA53;
+Reference = U4;
+ValeurCmp = RGB_WS2811;
+IdModule  = RGB_WS2811;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7FA56;
+Reference = U5;
+ValeurCmp = RGB_WS2811;
+IdModule  = RGB_WS2811;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7FA58;
+Reference = U6;
+ValeurCmp = RGB_WS2811;
+IdModule  = RGB_WS2811;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7FA5B;
+Reference = U7;
+ValeurCmp = RGB_WS2811;
+IdModule  = RGB_WS2811;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7FA5E;
+Reference = U8;
+ValeurCmp = RGB_WS2811;
+IdModule  = RGB_WS2811;
+EndCmp
+
+BeginCmp
+TimeStamp = /51385043;
+Reference = U9;
+ValeurCmp = RGB_WS2811;
+IdModule  = RGB_WS2811;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7FA60;
+Reference = U10;
+ValeurCmp = RGB_WS2811;
+IdModule  = RGB_WS2811;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7FA65;
+Reference = U11;
+ValeurCmp = RGB_WS2811;
+IdModule  = RGB_WS2811;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7FA68;
+Reference = U12;
+ValeurCmp = RGB_WS2811;
+IdModule  = RGB_WS2811;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7FA6A;
+Reference = U13;
+ValeurCmp = RGB_WS2811;
+IdModule  = RGB_WS2811;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7FA6D;
+Reference = U14;
+ValeurCmp = RGB_WS2811;
+IdModule  = RGB_WS2811;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7FA71;
+Reference = U15;
+ValeurCmp = RGB_WS2811;
+IdModule  = RGB_WS2811;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7FA74;
+Reference = U16;
+ValeurCmp = RGB_WS2811;
+IdModule  = RGB_WS2811;
+EndCmp
+
+BeginCmp
+TimeStamp = /50E7FA78;
+Reference = U17;
+ValeurCmp = RGB_WS2811;
+IdModule  = RGB_WS2811;
+EndCmp
+
+BeginCmp
+TimeStamp = /513850D0;
+Reference = U18;
+ValeurCmp = RGB_WS2811;
+IdModule  = RGB_WS2811;
+EndCmp
+
+BeginCmp
+TimeStamp = /51248BDF/50ED42DB;
+Reference = U19;
+ValeurCmp = ATTINY45-20SU;
+IdModule  = SO8E;
+EndCmp
+
+EndListe
