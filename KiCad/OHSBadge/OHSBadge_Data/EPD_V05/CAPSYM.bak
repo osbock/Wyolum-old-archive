@@ -1,0 +1,14 @@
+EESchema-LIBRARY Version 2.0 Version 1.0
+### Library: CAPSYM ###
+# VCC_CIRCLE
+#
+DEF VCC_CIRCLE #PWR 0 30 Y Y 1 0 N
+F0 "#PWR" 0 0 55 H V
+F1 "VCC_CIRCLE" 0 0 55 H V
+DRAW
+C 50 -15 30 0 1 0
+P 2 0 1 0  50 -50  50 -30
+ENDDRAW
+ENDDEF
+#
+#End Library

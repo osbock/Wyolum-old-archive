@@ -1,0 +1,15 @@
+EESchema-LIBRARY Version 2.3  Date: 14-Mar-13 2:36:00 PM
+#encoding utf-8
+#
+# VCC_CIRCLE
+#
+DEF VCC_CIRCLE #PWR 0 30 Y Y 1 F N
+F0 "#PWR" 0 100 55 H V C CNN
+F1 "VCC_CIRCLE" 0 200 55 H V C CNN
+DRAW
+C 0 0 25 0 1 0 N
+X ~ 1 0 -75 50 U 27 27 1 1 P
+ENDDRAW
+ENDDEF
+#
+#End Library
