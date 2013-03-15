@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Friday 15 March 2013 09:53:07 PM IST
+# EESchema Netlist Version 1.1 created  Friday 15 March 2013 10:32:32 PM IST
 (
  ( /5124B63C CR2032 BT1 BATT_RTC
   ( + /BAT )
@@ -40,6 +40,9 @@
   ( 25 ? )
   ( 26 ? )
  )
+ ( /5143534F Pad01 P2 I/O
+  ( 1 /SQW )
+ )
  ( /51272B80 PCB P6 CONN_1
   ( 1 ? )
  )
@@ -53,21 +56,9 @@
   ( 1 /Rpi_SQW )
   ( 2 /SQW )
  )
- ( /5124B652 rc03_vert R1 4k7
-  ( 1 /SQW )
-  ( 2 /Rpi_3V3 )
- )
- ( /5124B1B5 rc03_vert R2 4k7
-  ( 1 /Rpi_3V3 )
-  ( 2 /Rpi_SDA )
- )
- ( /5124BEE6 rc03_vert R3 4k7
-  ( 1 /Rpi_3V3 )
-  ( 2 /Rpi_SCL )
- )
  ( /5124B64F dil_08-300_socket U2 DS1307
-  ( 1 N-000013 )
-  ( 2 N-000001 )
+  ( 1 N-000026 )
+  ( 2 N-000008 )
   ( 3 /BAT )
   ( 4 GND )
   ( 5 /Rpi_SDA )
@@ -76,8 +67,8 @@
   ( 8 /Rpi_5V0 )
  )
  ( /5124B64E XTAL_3 X1 CRYSTAL
-  ( 1 N-000013 )
-  ( 2 N-000001 )
+  ( 1 N-000026 )
+  ( 2 N-000008 )
   ( 3 GND )
  )
 )
@@ -95,21 +86,6 @@ $component C5
 $endlist
 $component P1
  pin_array_13x2
-$endlist
-$component R1
- R?
- SM0603
- SM0805
-$endlist
-$component R2
- R?
- SM0603
- SM0805
-$endlist
-$component R3
- R?
- SM0603
- SM0805
 $endlist
 $endfootprintlist
 }

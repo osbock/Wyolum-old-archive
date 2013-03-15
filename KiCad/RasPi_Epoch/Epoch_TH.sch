@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Friday 15 March 2013 09:54:40 PM IST
+EESchema Schematic File Version 2  date Friday 15 March 2013 10:32:39 PM IST
 LIBS:RasPi_RTC
 LIBS:RasPi_RTC2
 LIBS:power
@@ -17,135 +17,126 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-NoConn ~ 3150 3000
-Connection ~ 4400 5650
 Wire Wire Line
-	4400 5175 4400 5650
+	4000 5650 5475 5650
+Wire Wire Line
+	5475 5650 5475 5550
 Wire Notes Line
-	6100 7000 6100 3675
+	1025 7000 1025 3675
 Wire Notes Line
-	6100 7000 10875 7000
+	1025 7000 5850 7000
 Wire Notes Line
-	10875 7000 10875 3675
+	5850 7000 5850 3675
 Wire Notes Line
-	10875 3675 6100 3675
-Connection ~ 4650 4575
+	5850 3675 1025 3675
 Wire Wire Line
-	4075 4575 4900 4575
+	3150 1900 3675 1900
 Wire Wire Line
-	4900 4575 4900 4675
+	5925 3000 5425 3000
 Wire Wire Line
-	4750 3000 5225 3000
-Wire Wire Line
-	5225 3000 5225 2900
-Wire Wire Line
-	1600 1025 1600 1900
-Wire Wire Line
-	3025 6700 1725 6700
-Connection ~ 4650 5450
-Wire Wire Line
-	4650 5175 4650 5450
-Wire Wire Line
-	3025 4575 2350 4575
-Wire Wire Line
-	1850 1900 1150 1900
-Wire Wire Line
-	1150 2000 1850 2000
-Wire Wire Line
-	1150 2100 1850 2100
-Connection ~ 1600 1900
-Wire Wire Line
-	1725 6700 1725 6650
-Connection ~ 2100 6700
-Wire Wire Line
-	2100 6600 2100 6700
-Wire Wire Line
-	2350 4575 2350 6200
-Wire Wire Line
-	2950 5200 2800 5200
-Wire Wire Line
-	2950 5650 2950 5900
-Wire Wire Line
-	2950 5650 3100 5650
-Wire Wire Line
-	3100 5450 2950 5450
-Wire Wire Line
-	2950 5450 2950 5200
-Wire Wire Line
-	1725 4700 4075 4700
-Wire Wire Line
-	4000 5450 5375 5450
-Connection ~ 3025 4575
-Wire Wire Line
-	3025 4475 3025 5250
-Connection ~ 3025 6700
-Wire Wire Line
-	3025 5250 3100 5250
-Wire Wire Line
-	3025 6825 3025 5850
-Wire Wire Line
-	4000 5650 5375 5650
-Wire Wire Line
-	4000 5850 4075 5850
-Wire Wire Line
-	4075 5850 4075 4700
-Wire Wire Line
-	3025 5850 3100 5850
-Wire Wire Line
-	2800 5200 2800 5350
-Wire Wire Line
-	2800 5750 2800 5900
-Wire Wire Line
-	2800 5900 2950 5900
-Wire Wire Line
-	2650 5550 2500 5550
-Wire Wire Line
-	5375 5250 4000 5250
-Wire Wire Line
-	2500 5550 2500 6700
-Connection ~ 2500 6700
-Connection ~ 1725 4700
-Wire Wire Line
-	2350 6700 2350 6600
-Connection ~ 2350 6700
-Wire Wire Line
-	2100 6200 2100 4700
-Connection ~ 2100 4700
-Wire Wire Line
-	1725 4500 1725 6200
-Connection ~ 1725 6150
-Wire Wire Line
-	4650 4675 4650 4575
-Wire Wire Line
-	4900 5175 4900 5250
-Connection ~ 4900 5250
-Wire Wire Line
-	3800 1025 3800 2100
-Wire Wire Line
-	3800 2100 3150 2100
+	5425 3000 5425 2900
 Wire Wire Line
 	1850 3000 1150 3000
 Wire Wire Line
-	5425 2900 5425 3000
+	3150 2100 3800 2100
 Wire Wire Line
-	5425 3000 5925 3000
+	3800 2100 3800 1025
+Connection ~ 1725 6150
 Wire Wire Line
-	3150 1900 3675 1900
-Wire Notes Line
-	5850 3675 1025 3675
-Wire Notes Line
-	5850 3675 5850 7000
-Wire Notes Line
-	5850 7000 1025 7000
-Wire Notes Line
-	1025 7000 1025 3675
+	1725 6200 1725 4500
+Connection ~ 2100 4700
 Wire Wire Line
-	4400 4675 4400 4575
-Connection ~ 4400 4575
+	2100 6200 2100 4700
+Connection ~ 2350 6700
+Wire Wire Line
+	2350 6700 2350 6600
+Connection ~ 1725 4700
+Connection ~ 2500 6700
+Wire Wire Line
+	2500 6700 2500 5550
+Wire Wire Line
+	4950 5250 4000 5250
+Wire Wire Line
+	2500 5550 2650 5550
+Wire Wire Line
+	2800 5900 2950 5900
+Wire Wire Line
+	2800 5900 2800 5750
+Wire Wire Line
+	2800 5350 2800 5200
+Wire Wire Line
+	3100 5850 3025 5850
+Wire Wire Line
+	4075 5850 4075 4700
+Wire Wire Line
+	4075 5850 4000 5850
+Wire Wire Line
+	3025 5850 3025 6825
+Wire Wire Line
+	3100 5250 3025 5250
+Connection ~ 3025 6700
+Wire Wire Line
+	3025 5250 3025 4475
+Connection ~ 3025 4575
+Wire Wire Line
+	4000 5450 4950 5450
+Wire Wire Line
+	4075 4700 1725 4700
+Wire Wire Line
+	2950 5450 2950 5200
+Wire Wire Line
+	2950 5450 3100 5450
+Wire Wire Line
+	3100 5650 2950 5650
+Wire Wire Line
+	2950 5650 2950 5900
+Wire Wire Line
+	2950 5200 2800 5200
+Wire Wire Line
+	2350 6200 2350 4575
+Wire Wire Line
+	2100 6600 2100 6700
+Connection ~ 2100 6700
+Wire Wire Line
+	1725 6650 1725 6700
+Connection ~ 1600 1900
+Wire Wire Line
+	1150 2100 1850 2100
+Wire Wire Line
+	1150 2000 1850 2000
+Wire Wire Line
+	1150 1900 1850 1900
+Wire Wire Line
+	2350 4575 3025 4575
+Wire Wire Line
+	1725 6700 3025 6700
+Wire Wire Line
+	1600 1025 1600 1900
+Wire Wire Line
+	5225 2900 5225 3000
+Wire Wire Line
+	5225 3000 4750 3000
+Wire Notes Line
+	10875 3675 6100 3675
+Wire Notes Line
+	10875 3675 10875 7000
+Wire Notes Line
+	10875 7000 6100 7000
+Wire Notes Line
+	6100 7000 6100 3675
+$Comp
+L I/O P2
+U 1 1 5143534F
+P 5475 5400
+F 0 "P2" V 5525 5400 40  0000 L CNN
+F 1 "I/O" H 5475 5455 30  0001 C CNN
+F 2 "Pad01" H 5475 5400 60  0001 C CNN
+	1    5475 5400
+	0    -1   -1   0   
+$EndComp
+NoConn ~ 3150 3000
 Text Notes 1075 3825 0    60   ~ 0
-DS1307 (Optional)\nVcc is tied to 5V0 on Ras-Pi, but SCL and SDA are pulled up to 3V3.\nNeed to verify if this works.
-Text Label 4075 4575 0    40   ~ 0
-Rpi_3V3
+DS1307 (Optional)\nVcc is tied to 5V0 on Ras-Pi, but SCL and SDA are forced to 3V3\nsince no pull up resistors are used.\nNeed to verify if this works.
 $Comp
 L +5V #PWR01
 U 1 1 513CF776
@@ -229,26 +220,6 @@ NoConn ~ 3150 2400
 NoConn ~ 3150 2300
 NoConn ~ 3150 2200
 $Comp
-L R R3
-U 1 1 5124BEE6
-P 4900 4925
-F 0 "R3" H 5000 5050 50  0000 C CNN
-F 1 "4k7" V 4900 4925 50  0000 C CNN
-F 2 "rc03_vert" H 4900 4925 60  0001 C CNN
-	1    4900 4925
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R1
-U 1 1 5124B652
-P 4400 4925
-F 0 "R1" H 4300 4800 50  0000 C CNN
-F 1 "4k7" V 4400 4925 50  0000 C CNN
-F 2 "rc03_vert" H 4400 4925 60  0001 C CNN
-	1    4400 4925
-	-1   0    0    1   
-$EndComp
-$Comp
 L GND #PWR03
 U 1 1 5124B650
 P 3025 6825
@@ -263,11 +234,11 @@ Text Label 2575 6700 0    40   ~ 0
 GND
 Text Label 1825 4700 0    40   ~ 0
 BAT
-Text Label 5375 5250 0    40   ~ 0
+Text Label 4950 5250 0    40   ~ 0
 Rpi_SCL
-Text Label 5375 5450 0    40   ~ 0
+Text Label 4950 5450 0    40   ~ 0
 Rpi_SDA
-Text Label 5375 5650 0    40   ~ 0
+Text Label 4950 5650 0    40   ~ 0
 SQW
 $Comp
 L DS1307 U2
@@ -327,16 +298,6 @@ F 1 "BATT_RTC" H 1500 6325 50  0000 C CNN
 F 2 "CR2032" H 1725 6425 50  0001 C CNN
 	1    1725 6450
 	0    1    1    0   
-$EndComp
-$Comp
-L R R2
-U 1 1 5124B1B5
-P 4650 4925
-F 0 "R2" H 4750 5050 50  0000 C CNN
-F 1 "4k7" V 4650 4925 50  0000 C CNN
-F 2 "rc03_vert" H 4650 4925 60  0001 C CNN
-	1    4650 4925
-	1    0    0    -1  
 $EndComp
 NoConn ~ 1850 2300
 NoConn ~ 1850 2700
