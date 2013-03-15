@@ -1,108 +1,108 @@
-# EESchema Netlist Version 1.1 created  15-Mar-13 5:05:41 PM
+# EESchema Netlist Version 1.1 created  Friday 15 March 2013 09:34:04 PM IST
 (
- ( /5124B63C CR2032 BT1 BATT_RTC
-  ( + /BAT )
-  ( - GND )
+ ( /5142B8D2 c_0805  C1 100n {Lib=C}
+  (    1 /Rpi_3V3 )
+  (    2 GND )
  )
- ( /5142B8D2 c_0805 C1 100n
-  ( 1 /Rpi_3V3 )
-  ( 2 GND )
+ ( /51276DCE ShortLink3  P9 SQW {Lib=CONN_2}
+  (    1 /Rpi_SQW )
+  (    2 /SQW )
  )
- ( /5124B63D c_0805 C4 100n
-  ( 1 /BAT )
-  ( 2 GND )
+ ( /51276DC4 ShortLink3  P5 32k {Lib=CONN_2}
+  (    1 /Rpi_32k )
+  (    2 /32k )
  )
- ( /5124B143 Header_GPIO P1 RasPi_GPIO
-  ( 1 /Rpi_3V3 )
-  ( 2 ? )
-  ( 3 /Rpi_SDA )
-  ( 4 ? )
-  ( 5 /Rpi_SCL )
-  ( 6 GND )
-  ( 7 ? )
-  ( 8 ? )
-  ( 9 ? )
-  ( 10 ? )
-  ( 11 ? )
-  ( 12 ? )
-  ( 13 ? )
-  ( 14 ? )
-  ( 15 ? )
-  ( 16 ? )
-  ( 17 ? )
-  ( 18 ? )
-  ( 19 ? )
-  ( 20 ? )
-  ( 21 ? )
-  ( 22 ? )
-  ( 23 /Rpi_SQW )
-  ( 24 /Rpi_32k )
-  ( 25 ? )
-  ( 26 ? )
+ ( /51274AAF Logo-WL3  P7 CONN_1 {Lib=CONN_1}
+  (    1 ? )
  )
- ( /5124B656 Pad01 P2 CONN_1
-  ( 1 /SQW )
+ ( /51274AAC OSHW_6mm  P8 CONN_1 {Lib=CONN_1}
+  (    1 ? )
  )
- ( /5124B655 Pad01 P3 CONN_1
-  ( 1 /RST )
+ ( /51272B80 PCB  P6 CONN_1 {Lib=CONN_1}
+  (    1 ? )
  )
- ( /5124B654 Pad01 P4 CONN_1
-  ( 1 /32k )
+ ( /5124BEE6 r_0805  R3 4k7 {Lib=R}
+  (    1 /Rpi_3V3 )
+  (    2 /Rpi_SCL )
  )
- ( /51276DC4 ShortLink3 P5 32k
-  ( 1 /Rpi_32k )
-  ( 2 /32k )
+ ( /5124B656 Pad01  P2 CONN_1 {Lib=CONN_1}
+  (    1 /SQW )
  )
- ( /51272B80 PCB P6 CONN_1
-  ( 1 ? )
+ ( /5124B655 Pad01  P3 RST {Lib=CONN_1}
+  (    1 /RST )
  )
- ( /51274AAF Logo-WL3 P7 CONN_1
-  ( 1 ? )
+ ( /5124B654 Pad01  P4 CONN_1 {Lib=CONN_1}
+  (    1 /32k )
  )
- ( /51274AAC OSHW_6mm P8 CONN_1
-  ( 1 ? )
+ ( /5124B652 r_0805  R1 4k7 {Lib=R}
+  (    1 /SQW )
+  (    2 /Rpi_3V3 )
  )
- ( /51276DCE ShortLink3 P9 SQW
-  ( 1 /Rpi_SQW )
-  ( 2 /SQW )
+ ( /5124B64D DS3231  U1 DS3231N {Lib=DS3231N}
+  (    1 /32k )
+  (    2 /Rpi_3V3 )
+  (    3 /SQW )
+  (    4 /RST )
+  (    5 GND )
+  (    6 GND )
+  (    7 GND )
+  (    8 GND )
+  (    9 GND )
+  (   10 GND )
+  (   11 GND )
+  (   12 GND )
+  (   13 GND )
+  (   14 /BAT )
+  (   15 /Rpi_SDA )
+  (   16 /Rpi_SCL )
  )
- ( /5124B652 r_0805 R1 4k7
-  ( 1 /SQW )
-  ( 2 /Rpi_3V3 )
+ ( /5124B64A r_0805  R4 4k7 {Lib=R}
+  (    1 /RST )
+  (    2 /Rpi_3V3 )
  )
- ( /5124B1B5 r_0805 R2 4k7
-  ( 1 /Rpi_3V3 )
-  ( 2 /Rpi_SDA )
+ ( /5124B649 r_0805  R5 4k7 {Lib=R}
+  (    1 /32k )
+  (    2 /Rpi_3V3 )
  )
- ( /5124BEE6 r_0805 R3 4k7
-  ( 1 /Rpi_3V3 )
-  ( 2 /Rpi_SCL )
+ ( /5124B63D c_0805  C4 100n {Lib=C}
+  (    1 /BAT )
+  (    2 GND )
  )
- ( /5124B64A r_0805 R4 4k7
-  ( 1 /RST )
-  ( 2 /Rpi_3V3 )
+ ( /5124B63C CR2032  BT1 BATT_RTC {Lib=BATT_RTC}
+  (    + /BAT )
+  (    - GND )
  )
- ( /5124B649 r_0805 R5 4k7
-  ( 1 /32k )
-  ( 2 /Rpi_3V3 )
+ ( /5124B1B5 r_0805  R2 4k7 {Lib=R}
+  (    1 /Rpi_3V3 )
+  (    2 /Rpi_SDA )
  )
- ( /5124B64D DS3231 U1 DS3231N
-  ( 1 /32k )
-  ( 2 /Rpi_3V3 )
-  ( 3 /SQW )
-  ( 4 /RST )
-  ( 5 GND )
-  ( 6 GND )
-  ( 7 GND )
-  ( 8 GND )
-  ( 9 GND )
-  ( 10 GND )
-  ( 11 GND )
-  ( 12 GND )
-  ( 13 GND )
-  ( 14 /BAT )
-  ( 15 /Rpi_SDA )
-  ( 16 /Rpi_SCL )
+ ( /5124B143 Header_GPIO  P1 RasPi_GPIO {Lib=BCM2835_GPIO}
+  (    1 /Rpi_3V3 )
+  (    2 ? )
+  (    3 /Rpi_SDA )
+  (    4 ? )
+  (    5 /Rpi_SCL )
+  (    6 GND )
+  (    7 ? )
+  (    8 ? )
+  (    9 ? )
+  (   10 ? )
+  (   11 ? )
+  (   12 ? )
+  (   13 ? )
+  (   14 ? )
+  (   15 ? )
+  (   16 ? )
+  (   17 ? )
+  (   18 ? )
+  (   19 ? )
+  (   20 ? )
+  (   21 ? )
+  (   22 ? )
+  (   23 /Rpi_SQW )
+  (   24 /Rpi_32k )
+  (   25 ? )
+  (   26 ? )
  )
 )
 *
@@ -112,25 +112,12 @@ $component C1
  C?
  C1-1
 $endlist
-$component C4
- SM*
- C?
- C1-1
-$endlist
-$component P1
- pin_array_13x2
+$component R3
+ R?
+ SM0603
+ SM0805
 $endlist
 $component R1
- R?
- SM0603
- SM0805
-$endlist
-$component R2
- R?
- SM0603
- SM0805
-$endlist
-$component R3
  R?
  SM0603
  SM0805
@@ -145,5 +132,76 @@ $component R5
  SM0603
  SM0805
 $endlist
+$component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+$endlist
+$component P1
+ pin_array_13x2
+$endlist
 $endfootprintlist
 }
+{ Pin List by Nets
+Net 1 "/BAT" "BAT"
+ BT1 +
+ U1 14
+ C4 1
+Net 2 "GND" "GND"
+ U1 6
+ BT1 -
+ P1 6
+ U1 8
+ U1 7
+ C1 2
+ U1 5
+ U1 10
+ U1 11
+ U1 12
+ U1 13
+ U1 9
+ C4 2
+Net 3 "/Rpi_SDA" "Rpi_SDA"
+ P1 3
+ R2 2
+ U1 15
+Net 4 "/Rpi_SCL" "Rpi_SCL"
+ P1 5
+ U1 16
+ R3 2
+Net 5 "/32k" "32k"
+ R5 1
+ P4 1
+ U1 1
+ P5 2
+Net 8 "/SQW" "SQW"
+ P9 2
+ R1 1
+ U1 3
+ P2 1
+Net 26 "/Rpi_3V3" "Rpi_3V3"
+ C1 1
+ U1 2
+ P1 1
+ R1 2
+ R2 1
+ R3 1
+ R5 2
+ R4 2
+Net 27 "/Rpi_SQW" "Rpi_SQW"
+ P1 23
+ P9 1
+Net 29 "/Rpi_32k" "Rpi_32k"
+ P1 24
+ P5 1
+Net 33 "/RST" "RST"
+ U1 4
+ P3 1
+ R4 1
+}
+#End

@@ -1,6 +1,6 @@
-update=15-Mar-13 4:57:10 PM
+update=Friday 15 March 2013 09:54:46 PM IST
 version=1
-last_client=pcbnew
+last_client=kicad
 [cvpcb]
 version=1
 NetITyp=0
@@ -11,8 +11,6 @@ LibDir=
 NetType=0
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -64,7 +62,9 @@ DrawLar=150
 EdgeLar=150
 TxtLar=120
 MSegLar=150
-LastNetListRead=
+LastNetListRead=Epoch_TH.net
 [pcbnew/libraries]
 LibDir=
 LibName1=RasPi_RTC_Libs/RasPi_RTC
+[general]
+version=1
