@@ -1,5 +1,9 @@
-# EESchema Netlist Version 1.1 created  Monday 11 March 2013 03:35:29 AM IST
+# EESchema Netlist Version 1.1 created  15-Mar-13 11:31:58 AM
 (
+ ( /5142B8D2 cnp_3mm_disc  C1 100n {Lib=C}
+  (    1 /Rpi_3V3 )
+  (    2 GND )
+ )
  ( /51276DCE $noname  P9 SQW {Lib=CONN_2}
   (    1 /Rpi_SQW )
   (    2 /SQW )
@@ -18,7 +22,7 @@
   (    1 ? )
  )
  ( /5124BEE6 rc03_vert  R3 4k7 {Lib=R}
-  (    1 /Rpi_5V0 )
+  (    1 /Rpi_3V3 )
   (    2 /Rpi_SCL )
  )
  ( /5124B656 Pad01  P2 CONN_1 {Lib=CONN_1}
@@ -35,8 +39,8 @@
   (    2 /Rpi_3V3 )
  )
  ( /5124B64F dil_08-300_socket  U2 DS1307 {Lib=DS1307}
-  (    1 N-000028 )
-  (    2 N-000012 )
+  (    1 N-000014 )
+  (    2 N-000001 )
   (    3 /BAT )
   (    4 GND )
   (    5 /Rpi_SDA )
@@ -45,8 +49,8 @@
   (    8 /Rpi_5V0 )
  )
  ( /5124B64E XTAL_3  X1 CRYSTAL {Lib=CRYSTAL}
-  (    1 N-000028 )
-  (    2 N-000012 )
+  (    1 N-000014 )
+  (    2 N-000001 )
   (    3 GND )
  )
  ( /5124B64D DS3231  U1 DS3231N {Lib=DS3231N}
@@ -88,7 +92,7 @@
   (    - GND )
  )
  ( /5124B1B5 rc03_vert  R2 4k7 {Lib=R}
-  (    1 /Rpi_5V0 )
+  (    1 /Rpi_3V3 )
   (    2 /Rpi_SDA )
  )
  ( /5124B143 Header_GPIO  P1 RasPi_GPIO {Lib=BCM2835_GPIO}
@@ -122,6 +126,11 @@
 )
 *
 { Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
 $component R3
  R?
  SM0603
@@ -163,75 +172,77 @@ $endlist
 $endfootprintlist
 }
 { Pin List by Nets
-Net 1 "/BAT" "BAT"
+Net 1 "" ""
+ X1 2
+ U2 2
+Net 2 "/BAT" "BAT"
  U2 3
  U1 14
  BT1 +
  C4 1
-Net 2 "/Rpi_3V3" "Rpi_3V3"
- R5 2
- R4 2
- R1 2
- P1 1
- U1 2
 Net 3 "GND" "GND"
- C4 2
  P1 6
  BT1 -
+ C4 2
  C5 2
- U1 11
- U1 12
  U1 10
- U1 9
- U1 5
- U1 13
- X1 3
+ C1 2
+ U1 11
  U1 6
+ U1 5
  U1 7
  U1 8
+ U1 9
  U2 4
+ U1 12
+ X1 3
+ U1 13
 Net 4 "/Rpi_SDA" "Rpi_SDA"
- U1 15
  R2 2
- P1 3
  U2 5
+ U1 15
+ P1 3
 Net 5 "/Rpi_SCL" "Rpi_SCL"
- U1 16
  R3 2
- U2 6
+ U1 16
  P1 5
-Net 11 "/SQW" "SQW"
- P9 2
- U1 3
- P2 1
+ U2 6
+Net 6 "/SQW" "SQW"
  R1 1
+ P2 1
+ U1 3
+ P9 2
  U2 7
-Net 12 "" ""
- X1 2
- U2 2
-Net 27 "/Rpi_5V0" "Rpi_5V0"
- P1 2
- U2 8
- R3 1
- C5 1
- R2 1
-Net 28 "" ""
- X1 1
+Net 14 "" ""
  U2 1
-Net 29 "/Rpi_32k" "Rpi_32k"
- P5 1
- P1 24
-Net 30 "/RST" "RST"
+ X1 1
+Net 29 "/RST" "RST"
  P3 1
- R4 1
  U1 4
-Net 31 "/32k" "32k"
- P4 1
+ R4 1
+Net 30 "/32k" "32k"
+ P5 2
  R5 1
  U1 1
- P5 2
-Net 32 "/Rpi_SQW" "Rpi_SQW"
- P9 1
+ P4 1
+Net 32 "/Rpi_5V0" "Rpi_5V0"
+ C5 1
+ P1 2
+ U2 8
+Net 33 "/Rpi_3V3" "Rpi_3V3"
+ U1 2
+ P1 1
+ R3 1
+ R1 2
+ C1 1
+ R2 1
+ R5 2
+ R4 2
+Net 34 "/Rpi_SQW" "Rpi_SQW"
  P1 23
+ P9 1
+Net 35 "/Rpi_32k" "Rpi_32k"
+ P1 24
+ P5 1
 }
 #End
