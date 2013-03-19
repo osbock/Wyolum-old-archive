@@ -1,7 +1,8 @@
-EESchema Schematic File Version 2  date 15-Mar-13 6:10:49 PM
+EESchema Schematic File Version 2  date 18-Mar-13 12:16:24 PM
 LIBS:RasPi_RTC
 LIBS:RasPi_RTC2
 LIBS:power
+LIBS:Epoch_smd-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
@@ -49,7 +50,7 @@ Wire Wire Line
 Wire Wire Line
 	1600 1025 1600 1900
 Wire Wire Line
-	4125 6700 4500 6700
+	4500 6700 4125 6700
 Connection ~ 10000 5400
 Wire Wire Line
 	9225 5400 10150 5400
@@ -85,7 +86,7 @@ Wire Wire Line
 	8725 6825 8725 6300
 Connection ~ 9350 5600
 Wire Wire Line
-	9350 6700 9350 5500
+	9350 5500 9350 6700
 Wire Wire Line
 	9350 5500 9225 5500
 Connection ~ 9350 5700
@@ -115,7 +116,7 @@ Wire Wire Line
 Wire Wire Line
 	9800 4775 9800 5250
 Wire Wire Line
-	10000 4150 10000 4275
+	10000 4275 10000 4150
 Wire Wire Line
 	7425 5650 7150 5650
 Connection ~ 4125 4550
@@ -150,7 +151,7 @@ Wire Wire Line
 	9600 4775 9600 5100
 Connection ~ 9600 5100
 Wire Wire Line
-	9350 4150 10000 4150
+	10000 4150 9350 4150
 Wire Notes Line
 	5850 3675 1025 3675
 Wire Notes Line
@@ -160,9 +161,9 @@ Wire Notes Line
 Wire Notes Line
 	1025 7000 1025 3675
 Wire Wire Line
-	7075 6700 7075 6600
+	7075 6600 7075 6700
 Wire Wire Line
-	9350 6700 7075 6700
+	7075 6700 9350 6700
 Connection ~ 8525 6700
 $Comp
 L C C1
@@ -294,7 +295,7 @@ L CONN_1 P3
 U 1 1 5124B655
 P 10300 5250
 F 0 "P3" H 10200 5325 40  0000 L CNN
-F 1 "CONN_1" H 10300 5305 30  0001 C CNN
+F 1 "RST" H 10300 5305 30  0001 C CNN
 F 2 "Pad01" H 10300 5250 60  0001 C CNN
 	1    10300 5250
 	1    0    0    -1  

@@ -1,0 +1,101 @@
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 16-Mar-13 11:45:02 AM
+
+BeginCmp
+TimeStamp = /5124B63C;
+Reference = BT1;
+ValeurCmp = BATT_RTC;
+IdModule  = CR2032;
+EndCmp
+
+BeginCmp
+TimeStamp = /5124B63D;
+Reference = C4;
+ValeurCmp = 100n;
+IdModule  = cnp_3mm_disc;
+EndCmp
+
+BeginCmp
+TimeStamp = /5124B63E;
+Reference = C5;
+ValeurCmp = 100n;
+IdModule  = cnp_3mm_disc;
+EndCmp
+
+BeginCmp
+TimeStamp = /5124B143;
+Reference = P1;
+ValeurCmp = RasPi_GPIO;
+IdModule  = Header_GPIO;
+EndCmp
+
+BeginCmp
+TimeStamp = /5143534F;
+Reference = P2;
+ValeurCmp = I/O;
+IdModule  = Pad01;
+EndCmp
+
+BeginCmp
+TimeStamp = /51272B80;
+Reference = P6;
+ValeurCmp = CONN_1;
+IdModule  = PCB;
+EndCmp
+
+BeginCmp
+TimeStamp = /51274AAF;
+Reference = P7;
+ValeurCmp = CONN_1;
+IdModule  = Logo-WL3;
+EndCmp
+
+BeginCmp
+TimeStamp = /51274AAC;
+Reference = P8;
+ValeurCmp = CONN_1;
+IdModule  = OSHW_6mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /51276DCE;
+Reference = P9;
+ValeurCmp = SQW;
+IdModule  = ShortLink3;
+EndCmp
+
+BeginCmp
+TimeStamp = /51440D12;
+Reference = R1;
+ValeurCmp = 4k7;
+IdModule  = rc03_vert;
+EndCmp
+
+BeginCmp
+TimeStamp = /51440D20;
+Reference = R2;
+ValeurCmp = 4k7;
+IdModule  = rc03_vert;
+EndCmp
+
+BeginCmp
+TimeStamp = /51440D24;
+Reference = R3;
+ValeurCmp = 4k7;
+IdModule  = rc03_vert;
+EndCmp
+
+BeginCmp
+TimeStamp = /5124B64F;
+Reference = U2;
+ValeurCmp = DS1307;
+IdModule  = dil_08-300_socket;
+EndCmp
+
+BeginCmp
+TimeStamp = /5124B64E;
+Reference = X1;
+ValeurCmp = CRYSTAL;
+IdModule  = XTAL_3;
+EndCmp
+
+EndListe

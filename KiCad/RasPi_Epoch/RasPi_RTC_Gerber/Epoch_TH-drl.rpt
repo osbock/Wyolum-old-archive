@@ -1,0 +1,18 @@
+Drill report for C:\Users\Anool\Documents\Arduino\clockthree\KiCad\RasPi_Epoch\Epoch_TH.brd
+Created on 18-Mar-13 12:49:46 PM
+Selected Drill Unit: Imperial (")
+
+Drill report for through holes :
+T1  0.025"  0.64mm  (1 hole)
+T2  0.035"  0.89mm  (22 holes)
+T3  0.040"  1.02mm  (26 holes)
+T4  0.080"  2.03mm  (2 holes)
+
+total plated holes count 51
+
+
+Drill report for Not Plated through holes :
+
+total Not Plated holes count 0
+
+

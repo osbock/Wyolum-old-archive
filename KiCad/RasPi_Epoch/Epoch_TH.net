@@ -1,85 +1,112 @@
-# EESchema Netlist Version 1.1 created  Friday 15 March 2013 10:32:32 PM IST
+# EESchema Netlist Version 1.1 created  16-Mar-13 12:36:40 PM
 (
- ( /5124B63C CR2032 BT1 BATT_RTC
-  ( + /BAT )
-  ( - GND )
+ ( /51440D24 rc03_vert  R3 2k2 {Lib=R}
+  (    1 /Rpi_3V3 )
+  (    2 /SQW )
  )
- ( /5124B63D cnp_3mm_disc C4 100n
-  ( 1 /BAT )
-  ( 2 GND )
+ ( /51440D20 rc03_vert  R2 2k2 {Lib=R}
+  (    1 /Rpi_3V3 )
+  (    2 /Rpi_SDA )
  )
- ( /5124B63E cnp_3mm_disc C5 100n
-  ( 1 /Rpi_5V0 )
-  ( 2 GND )
+ ( /51440D12 rc03_vert  R1 2k2 {Lib=R}
+  (    1 /Rpi_3V3 )
+  (    2 /Rpi_SCL )
  )
- ( /5124B143 Header_GPIO P1 RasPi_GPIO
-  ( 1 /Rpi_3V3 )
-  ( 2 /Rpi_5V0 )
-  ( 3 /Rpi_SDA )
-  ( 4 ? )
-  ( 5 /Rpi_SCL )
-  ( 6 GND )
-  ( 7 ? )
-  ( 8 ? )
-  ( 9 ? )
-  ( 10 ? )
-  ( 11 ? )
-  ( 12 ? )
-  ( 13 ? )
-  ( 14 ? )
-  ( 15 ? )
-  ( 16 ? )
-  ( 17 ? )
-  ( 18 ? )
-  ( 19 ? )
-  ( 20 ? )
-  ( 21 ? )
-  ( 22 ? )
-  ( 23 /Rpi_SQW )
-  ( 24 ? )
-  ( 25 ? )
-  ( 26 ? )
+ ( /5143534F Pad01  P2 I/O {Lib=I/O}
+  (    1 /SQW )
  )
- ( /5143534F Pad01 P2 I/O
-  ( 1 /SQW )
+ ( /51276DCE ShortLink3  P9 SQW {Lib=CONN_2}
+  (    1 /Rpi_SQW )
+  (    2 /SQW )
  )
- ( /51272B80 PCB P6 CONN_1
-  ( 1 ? )
+ ( /51274AAF Logo-WL3  P7 CONN_1 {Lib=CONN_1}
+  (    1 ? )
  )
- ( /51274AAF Logo-WL3 P7 CONN_1
-  ( 1 ? )
+ ( /51274AAC OSHW_6mm  P8 CONN_1 {Lib=CONN_1}
+  (    1 ? )
  )
- ( /51274AAC OSHW_6mm P8 CONN_1
-  ( 1 ? )
+ ( /51272B80 PCB  P6 CONN_1 {Lib=CONN_1}
+  (    1 ? )
  )
- ( /51276DCE ShortLink3 P9 SQW
-  ( 1 /Rpi_SQW )
-  ( 2 /SQW )
+ ( /5124B64F dil_08-300_socket  U2 DS1307 {Lib=DS1307}
+  (    1 N-000028 )
+  (    2 N-000015 )
+  (    3 /BAT )
+  (    4 GND )
+  (    5 /Rpi_SDA )
+  (    6 /Rpi_SCL )
+  (    7 /SQW )
+  (    8 /Rpi_5V0 )
  )
- ( /5124B64F dil_08-300_socket U2 DS1307
-  ( 1 N-000026 )
-  ( 2 N-000008 )
-  ( 3 /BAT )
-  ( 4 GND )
-  ( 5 /Rpi_SDA )
-  ( 6 /Rpi_SCL )
-  ( 7 /SQW )
-  ( 8 /Rpi_5V0 )
+ ( /5124B64E XTAL_3  X1 CRYSTAL {Lib=CRYSTAL}
+  (    1 N-000028 )
+  (    2 N-000015 )
+  (    3 GND )
  )
- ( /5124B64E XTAL_3 X1 CRYSTAL
-  ( 1 N-000026 )
-  ( 2 N-000008 )
-  ( 3 GND )
+ ( /5124B63E cnp_3mm_disc  C5 100n {Lib=C}
+  (    1 /Rpi_5V0 )
+  (    2 GND )
+ )
+ ( /5124B63D cnp_3mm_disc  C4 100n {Lib=C}
+  (    1 /BAT )
+  (    2 GND )
+ )
+ ( /5124B63C CR2032  BT1 BATT_RTC {Lib=BATT_RTC}
+  (    + /BAT )
+  (    - GND )
+ )
+ ( /5124B143 Header_GPIO  P1 RasPi_GPIO {Lib=BCM2835_GPIO}
+  (    1 /Rpi_3V3 )
+  (    2 /Rpi_5V0 )
+  (    3 /Rpi_SDA )
+  (    4 ? )
+  (    5 /Rpi_SCL )
+  (    6 GND )
+  (    7 ? )
+  (    8 ? )
+  (    9 ? )
+  (   10 ? )
+  (   11 ? )
+  (   12 ? )
+  (   13 ? )
+  (   14 ? )
+  (   15 ? )
+  (   16 ? )
+  (   17 ? )
+  (   18 ? )
+  (   19 ? )
+  (   20 ? )
+  (   21 ? )
+  (   22 ? )
+  (   23 /Rpi_SQW )
+  (   24 ? )
+  (   25 ? )
+  (   26 ? )
  )
 )
 *
 { Allowed footprints by component:
-$component C4
+$component R3
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+$endlist
+$component C5
  SM*
  C?
  C1-1
 $endlist
-$component C5
+$component C4
  SM*
  C?
  C1-1
@@ -89,3 +116,48 @@ $component P1
 $endlist
 $endfootprintlist
 }
+{ Pin List by Nets
+Net 1 "GND" "GND"
+ P1 6
+ C5 2
+ C4 2
+ X1 3
+ BT1 -
+ U2 4
+Net 15 "" ""
+ X1 2
+ U2 2
+Net 26 "/Rpi_5V0" "Rpi_5V0"
+ P1 2
+ C5 1
+ U2 8
+Net 27 "/Rpi_SDA" "Rpi_SDA"
+ R2 2
+ P1 3
+ U2 5
+Net 28 "" ""
+ U2 1
+ X1 1
+Net 29 "/BAT" "BAT"
+ BT1 +
+ C4 1
+ U2 3
+Net 30 "/SQW" "SQW"
+ U2 7
+ P9 2
+ P2 1
+ R3 2
+Net 31 "/Rpi_SCL" "Rpi_SCL"
+ R1 2
+ U2 6
+ P1 5
+Net 32 "/Rpi_SQW" "Rpi_SQW"
+ P1 23
+ P9 1
+Net 33 "/Rpi_3V3" "Rpi_3V3"
+ P1 1
+ R3 1
+ R1 1
+ R2 1
+}
+#End

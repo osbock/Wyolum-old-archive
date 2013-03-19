@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Friday 15 March 2013 09:39:13 PM IST
+EESchema Schematic File Version 2  date 18-Mar-13 12:17:40 PM
 LIBS:RasPi_RTC
 LIBS:RasPi_RTC2
 LIBS:power
