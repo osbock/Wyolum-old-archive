@@ -1,4 +1,4 @@
-PCBNEW-BOARD Version 1 date 18-Mar-13 12:33:13 PM
+PCBNEW-BOARD Version 1 date 18-Mar-13 12:35:21 PM
 
 # Created by Pcbnew(2012-01-19 BZR 3256)-stable
 
@@ -57,8 +57,8 @@ TextPcbSize 600 800
 EdgeModWidth 150
 TextModSize 600 600
 TextModWidth 120
-PadSize 600 600
-PadDrill 320
+PadSize 2500 2500
+PadDrill 250
 Pad2MaskClearance 100
 AuxiliaryAxisOrg 0 0
 PcbPlotParams (pcbplotparams (layerselection 301760513) (usegerberextensions false) (excludeedgelayer false) (linewidth 60) (plotframeref false) (viasonmask false) (mode 1) (useauxorigin false) (hpglpennumber 1) (hpglpenspeed 20) (hpglpendiameter 15) (hpglpenoverlay 0) (pscolor true) (psnegative false) (psa4output false) (plotreference true) (plotvalue true) (plotothertext true) (plotinvisibletext false) (padsonsilk false) (subtractmaskfromsilk true) (outputformat 1) (mirror false) (drillshape 1) (scaleselection 1) (outputdirectory RasPi_RTC_Gerber/))
@@ -67525,7 +67525,7 @@ Po 350 0
 $EndPAD
 $EndMODULE  ShortLink3
 $MODULE CR2032
-Po 19400 17500 900 0 51434551 51434055 ~~
+Po 19400 17500 900 0 5146BCAF 51434055 ~~
 Li CR2032
 Cd CR2032
 Sc 51434055
@@ -67580,7 +67580,7 @@ Po 4150 0
 $EndPAD
 $PAD
 Sh "-" C 2500 2500 0 0 900
-Dr 200 0 0
+Dr 250 0 0
 At STD N 00500001
 Ne 10 "GND"
 Po 0 0
