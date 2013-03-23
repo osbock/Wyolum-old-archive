@@ -1,0 +1,80 @@
+/*--------------------------------------------------------------------
+  
+  --------------------------------------------------------------------*/
+
+#include "TiM.h"
+TiM::TiM(){
+}
+void TiM::setup(uint16_t _n_strip, uint16_t _led_per_strip, uint8_t *pins) {
+  uint16_t i, j;
+  n_strip = _n_strip;
+  led_per_strip = _led_per_strip;
+  for(i = 0; i < n_strip; i++){
+    strips[i].setup(led_per_strip, pins[i], NEO_GRB + NEO_KHZ800);
+    strips[i].begin();
+    for(j = 0; j < led_per_strip; j++){
+      strips[i].setPixelColor(j, 0);
+    }
+    strips[i].show();
+  }
+}
+
+void TiM::show(void) {
+  uint16_t i;
+  for(i = 0; i < n_strip; i++){
+    strips[i].show();
+  }
+}
+
+// Set pixel color from separate R,G,B components:
+void TiM::setPixel(uint16_t strip_i, uint16_t led_i, uint8_t r, uint8_t g, uint8_t b){
+  strips[strip_i].setPixelColor(led_i, r, g, b);
+}
+void TiM::setPixel(uint16_t strip_i, uint16_t led_i, uint32_t c) {
+  strips[strip_i].setPixelColor(led_i, c);
+}
+void TiM::setall(uint32_t c){
+  uint16_t strip_i;
+  uint16_t led_j;
+    
+  for(strip_i = 0; strip_i < n_strip; strip_i++){
+    for(led_j = 0; led_j < led_per_strip; led_j++){
+      strips[strip_i].setPixelColor(led_j, c);
+    }
+  }
+}
+
+// Query color from previously-set pixel (returns packed 32-bit RGB value)
+uint32_t TiM::getPixel(uint16_t strip_i, uint16_t led_j) {
+  return strips[strip_i].getPixelColor(led_j);
+}
+
+// Convert separate R,G,B into packed 32-bit RGB color.
+// Packed format is always RGB, regardless of LED strand color order.
+uint32_t Color(uint8_t r, uint8_t g, uint8_t b) {
+  return ((uint32_t)r << 16) | ((uint32_t)g <<  8) | b;
+}
+
+uint32_t Wheel(byte WheelPos, uint8_t imax) {
+  uint32_t r, g, b;
+  if(WheelPos < 85) {
+    r = WheelPos * 3;
+    g = 255 - WheelPos * 3;
+    b = 0;
+  } else if(WheelPos < 170) {
+    WheelPos -= 85;
+    r = 255 - WheelPos * 3;
+    g = 0;
+    b = WheelPos * 3;
+  } else {
+    WheelPos -= 170;
+    r = 0;
+    g = WheelPos * 3;
+    b = 255 - WheelPos * 3;
+  }
+  r = r * imax / 255;
+  g = g * imax / 255;
+  b = b * imax / 255;
+  return Color(r, g, b);
+}
+
