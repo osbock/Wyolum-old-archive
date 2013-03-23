@@ -12,18 +12,15 @@ int row, col;
 
 void loop(){
   uint32_t color = Wheel(count % 256, 255);
-  tim.setPixel(row, col, 0);
-  row++;
-  row %= 8;
-  if(count % 8 == 7){
-    col++;
-    col %= 32;
+  for(row = 0; row < 8; row++){
+    tim.setPixel(row, col, 0);
   }
+  col++;
+  col %= 32;
+  for(row = 0; row < 8; row++){
     tim.setPixel(row, col, color);
-  if(count % 8 == 7){
-    tim.show();
   }
-  // tim.setall(color);
+  tim.show();
   count++;
 }
 
