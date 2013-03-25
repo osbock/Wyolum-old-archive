@@ -19,6 +19,22 @@ void TiM::setup(uint16_t _n_strip, uint16_t _led_per_strip, uint8_t *pins) {
   }
 }
 
+void TiM::setup(uint16_t _n_strip, uint16_t _led_per_strip, uint8_t *pins,
+		  uint8_t *pixels) {
+  uint16_t i, j;
+  n_strip = _n_strip;
+  led_per_strip = _led_per_strip;
+  for(i = 0; i < n_strip; i++){
+    strips[i].setup(led_per_strip, pins[i], NEO_GRB + NEO_KHZ800,
+		    pixels);
+    strips[i].begin();
+    for(j = 0; j < led_per_strip; j++){
+      strips[i].setPixelColor(j, 0);
+    }
+    strips[i].show();
+  }
+}
+
 void TiM::show(void) {
   uint16_t i;
   for(i = 0; i < n_strip; i++){
@@ -33,20 +49,30 @@ void TiM::setPixel(uint16_t strip_i, uint16_t led_i, uint8_t r, uint8_t g, uint8
 void TiM::setPixel(uint16_t strip_i, uint16_t led_i, uint32_t c) {
   strips[strip_i].setPixelColor(led_i, c);
 }
+void TiM::setrow(uint8_t row, uint32_t c){
+  uint16_t led_j;
+  for(led_j = 0; led_j < led_per_strip; led_j++){
+    strips[row].setPixelColor(led_j, c);
+  }
+}
 void TiM::setall(uint32_t c){
   uint16_t strip_i;
-  uint16_t led_j;
-    
   for(strip_i = 0; strip_i < n_strip; strip_i++){
-    for(led_j = 0; led_j < led_per_strip; led_j++){
-      strips[strip_i].setPixelColor(led_j, c);
-    }
+    setrow(strip_i, c);
   }
 }
 
 // Query color from previously-set pixel (returns packed 32-bit RGB value)
 uint32_t TiM::getPixel(uint16_t strip_i, uint16_t led_j) {
   return strips[strip_i].getPixelColor(led_j);
+}
+
+void TiM::scroll_down(){
+  for(int8_t row = n_strip - 1; row > 0; row--){
+    for(uint16_t byte_i = 0; byte_i < strips[0].numBytes; byte_i++){
+      strips[row].pixels[byte_i] = strips[row - 1].pixels[byte_i];
+    }
+  }
 }
 
 // Convert separate R,G,B into packed 32-bit RGB color.

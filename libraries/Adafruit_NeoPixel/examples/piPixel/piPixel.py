@@ -1,3 +1,4 @@
+from numpy import arange
 import struct
 import time
 import numpy
@@ -12,30 +13,26 @@ class NeoPixel:
     def __init__(self, N, port, pin):
         self.ser = serial.Serial(port, baudrate=115200, timeout=.1)
         self.N = N
-        self.buffer = numpy.zeros((N, 3), numpy.byte)
+        self.buffer = numpy.zeros((8, N, 3), numpy.byte)
         # TODO: record pin
 
     def show(self):
-        msg = (chr(0) * 2) + self.buffer.tostring()
-        self.ser.write(msg)
-        time.sleep(.1)
+        for col, row in enumerate(self.buffer):
+            self.ser.write(chr(col))
+            self.ser.write(row.tostring())
+            time.sleep(.01)
 
-    def setPixelColor(self, i, color):
-        self.buffer[i] = color
+    def setPixelColor(self, row, col, color):
+        self.buffer[row, col] = color
         
     def getPixelColor(self, i):
         return self.buffer[i]
 
-    def update1(self, i, color):
+    def update1(self, row, col, color):
         '''
         Update a single pixel
         '''
-        self.buffer[i] = color
-
-        offset = struct.pack('H', 3 * i)
-        msg = offset + self.buffer[i].tostring()
-        self.ser.write(msg)
-        time.sleep(.01)
+        self.buffer[row, col] = color
 
     def setAll(self, color):
         self.buffer[:,0] = color[0]
@@ -80,7 +77,7 @@ def wheel(WheelPos, imax):
     return Color(r, g, b)
 
 def test():
-    N = 250
+    N = 64
     buffer = numpy.zeros((N, 3), numpy.byte)
     strip = NeoPixel(N, '/dev/ttyUSB0', A5)
     with strip:
@@ -90,25 +87,28 @@ def test():
         WHITE = Color(255, 255, 255)
         colors = [RED, GREEN, BLUE, WHITE]
         
-        if False: # wheel
+        if True: # wheel
             for i in range(N):
                 strip.setAll(wheel(i * 255 / N, 255))
-                strip.show()
+            strip.show()
         if True: # R, G, B
             for i in range(1):
                 for color in colors:
                     strip.setAll(color)
-                    strip.show()
-                    time.sleep(1)
+                strip.show()
+                time.sleep(1)
 
         if False: ## colors one pix at a time
             for color in colors:
-                for i in range(N):
-                    strip.update1(i, color)
+                for row in range(8):
+                    for col in range(N):
+                        strip.update1(row, col, color)
         if True: ## bright rainbow
-            for intensity in arange(10, 255, 5.):
-                for i in range(N):    
-                    strip.update1(i, wheel(i * 255 / N, intensity));
+            for intensity in arange(10, 25, 5.):
+                for row in range(8):
+                    for col in range(N):    
+                        strip.update1(row, col, wheel(i * 255 / N, intensity));
+                strip.show()
         for i in range(0):
             strip.rotate(30)
         strip.off()

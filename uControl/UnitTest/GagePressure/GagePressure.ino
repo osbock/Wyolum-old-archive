@@ -1,10 +1,10 @@
 #include <SPI.h>
 #include <Wire.h>
-const unsigned short GAGE_MIN_COUNT = 2949;  // 2731;
-const unsigned short GAGE_MAX_COUNT = 24794; // 21845;
-const unsigned short GAGE_COUNT_RANGE = GAGE_MAX_COUNT; // - GAGE_MIN_COUNT;
-const unsigned short GAGE_MAX_PRESSURE_MB = 2000;
-const float GAGE_SENSITIVITY = float(GAGE_COUNT_RANGE) / GAGE_MAX_PRESSURE_MB;
+const unsigned short GAGE_MIN_COUNT = 0xA3D; 
+const unsigned short GAGE_MAX_COUNT = 0X5FFF;
+const unsigned short GAGE_COUNT_RANGE = GAGE_MAX_COUNT - GAGE_MIN_COUNT;
+const unsigned short GAGE_MAX_PRESSURE_MB = 500;
+const float GAGE_SENSITIVITY = ((float)GAGE_COUNT_RANGE) / GAGE_MAX_PRESSURE_MB;
 
 const byte IO_X = 7;
 const byte IO_R = 8;
@@ -50,11 +50,15 @@ void setup(){
 void loop(){
 
   unsigned short bits;
-  Serial.print("digital value: ");
-  Serial.print(my_spi_transfer(), DEC);
+  // Serial.print("digital value: ");
+  unsigned short count = my_spi_transfer();
+  Serial.print(count, DEC);
+  Serial.println(); return;// TODO: DELETE ME
+  Serial.print(" = ");
+  Serial.print(EUC(count));
   int sensorValue = analogRead(A3);
   // print out the value you read:
-  Serial.print(", analog value: ");
+  Serial.print("mmHG, analog value: ");
   Serial.println(sensorValue);
   delay(100);
 }

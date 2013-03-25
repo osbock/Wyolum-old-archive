@@ -28,21 +28,24 @@ class TiM {
 
   // Setup number of LEDs, pin number, LED type
   void setup(uint16_t n_strip, uint16_t led_per_strip, uint8_t *pins);
+  void setup(uint16_t n_strip, uint16_t led_per_strip, uint8_t *pins,
+	     uint8_t *pixels);
 
   void begin(void);
   void show(void);
   void setPixel(uint16_t strip_i, uint16_t led_j, uint8_t r, uint8_t g, uint8_t b); /*  */
   void setPixel(uint16_t strip_i, uint16_t led_j, uint32_t c);
+  void setrow(uint8_t row, uint32_t c);
   void setall(uint32_t c);
 
   uint16_t numStrip(void);
   uint32_t getPixel(uint16_t strip_i, uint16_t led_j);
-  
+  void scroll_down();
   uint16_t led_per_strip;
-private:
-
   Adafruit_NeoPixel strips[8];
   uint16_t n_strip;
+private:
+
   uint8_t *pins;           // Output pins
 };
 uint32_t Color(uint8_t r, uint8_t g, uint8_t b);

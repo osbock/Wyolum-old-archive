@@ -10,7 +10,7 @@
 Adafruit_NeoPixel strip = Adafruit_NeoPixel();
 
 void setup() {
-  strip.setup(60, 6, NEO_GRB + NEO_KHZ800);
+  strip.setup(64, 2, NEO_GRB + NEO_KHZ800);
   strip.begin();
   strip.show(); // Initialize all pixels to 'off'
 }
@@ -20,8 +20,8 @@ void loop() {
   colorWipe(strip.Color(255, 0, 0), 50); // Red
   colorWipe(strip.Color(0, 255, 0), 50); // Green
   colorWipe(strip.Color(0, 0, 255), 50); // Blue
-  rainbow(20);
-  rainbowCycle(20);
+  // rainbow(20);
+  rainbowCycle(0);
 }
 
 // Fill the dots one after the other with a color

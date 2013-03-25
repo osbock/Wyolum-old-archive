@@ -40,6 +40,7 @@ class Adafruit_NeoPixel {
   // Constructor: number of LEDs, pin number, LED type
   Adafruit_NeoPixel();
   void setup(uint16_t n, uint8_t p=6, uint8_t t=NEO_GRB + NEO_KHZ800);
+  void setup(uint16_t n, uint8_t p, uint8_t t, uint8_t *_pixels);
 
   void
     begin(void),
@@ -57,7 +58,7 @@ class Adafruit_NeoPixel {
   uint8_t     *pixels;        // Holds LED color values (3 bytes each)
   uint16_t     numBytes;      // Size of 'pixels' buffer below
   
-private:
+  // private:
 
   uint16_t
     numLEDs;       // Number of RGB LEDs in strip

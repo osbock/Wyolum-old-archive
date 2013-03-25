@@ -37,17 +37,26 @@
 
 Adafruit_NeoPixel::Adafruit_NeoPixel() {
 }
+void Adafruit_NeoPixel::setup(uint16_t n, uint8_t p, uint8_t t){
+  uint8_t *_pixels = (uint8_t *)malloc(numBytes);
+  if(_pixels){
+    setup(n, p, t, _pixels);
+  }
+}
 
-void Adafruit_NeoPixel::setup(uint16_t n, uint8_t p, uint8_t t) {
+void Adafruit_NeoPixel::setup(uint16_t n, uint8_t p, uint8_t t, 
+			      uint8_t *_pixels) {
   numBytes = n * 3;
-  if((pixels = (uint8_t *)malloc(numBytes))) {
-    memset(pixels, 0, numBytes);
+  if(_pixels){// = (uint8_t *)malloc(numBytes)){
+    pixels = _pixels;
+    // memset(pixels, 0, numBytes);
     numLEDs = n;
     type    = t;
     pin     = p;
     port    = portOutputRegister(digitalPinToPort(p));
     pinMask = digitalPinToBitMask(p);
     endTime = 0L;
+    begin();
   } else {
     numLEDs = 0;
   }

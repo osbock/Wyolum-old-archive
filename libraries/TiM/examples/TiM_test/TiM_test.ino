@@ -17,7 +17,7 @@ int row, col;
 void loop(){
   // grab a color from the color wheel
   //                     HUE 0-255  brightness 0-255
-  uint32_t color = Wheel(count % 256, 25);
+  uint32_t color = Wheel(count % 256, 255);
   
   // turn off column
   for(row = 0; row < 8; row++){
@@ -34,5 +34,6 @@ void loop(){
   // update the display
   tim.show();
   count++;
+  delay(100);
 }
 
