@@ -4,24 +4,22 @@ TiM tim;
 
 // Use Arduino Pins 2-9 for controling the rows of TiM
 uint8_t pins[8] = {2, 3, 4, 5, 6, 7, 8, 9};
-uint8_t rule = 16;
+uint8_t rule;
+const uint16_t n_led_per_row = 32;
 
 void setup(){
   rule = 16; // rainbow one row at a time
   rule = 26; // bad assed psycadelic rain:22 26 82 90 102 126 146 150
   // each Pin has 32 leds
   //    #rows #led pin_ids
-  // Serial.begin(115200);
-  tim.setup(8, 64, pins);
-  tim.setrow(0, Color(0, 25, 0));
-  tim.setall(Color(1, 1, 1));
+  Serial.begin(115200);
+  tim.setup(8, n_led_per_row, pins);
   init_rule();
 }
 
 uint32_t count = 0;
 uint16_t row, col;
-const uint16_t n_led = 64;
-const uint16_t n_bit = 24 * n_led;
+const uint16_t n_bit = 24 * n_led_per_row;
 
 // Class BitArray
 bool BitArray_get(uint8_t *arr, int16_t idx){
@@ -53,36 +51,54 @@ void update(){
   uint8_t cells;
   int16_t bit_idx;
   bool bit;
-  for(bit_idx = 0; bit_idx < n_bit; bit_idx++){
+  for(bit_idx = n_bit / 2; bit_idx < n_bit; bit_idx++){
     cells = 0;
-    if(bit_idx > 1){
+    if(bit_idx > n_bit / 2){
       cells += BitArray_get(tim.strips[1].pixels, bit_idx - 1) << 2;
     }
     cells += BitArray_get(tim.strips[1].pixels, bit_idx + 0) << 1;
-    cells += BitArray_get(tim.strips[1].pixels, bit_idx + 1) << 0;
+    if(bit_idx < n_bit - 1){
+      cells += BitArray_get(tim.strips[1].pixels, bit_idx + 1) << 0;
+    }
     bit = compute(cells, rule);
     BitArray_set(tim.strips[0].pixels, bit_idx, bit);
   }
 }
 void init_rule(){
     tim.setall(Color(0, 0, 0));
-    BitArray_set(tim.strips[0].pixels, 24 * 8, true);
     BitArray_set(tim.strips[0].pixels, 24 * 24 + 1, true);
 }
-void loop(){
-#ifdef NOT_DEF
-  if(Serial.available()){
-    while(Serial.available()){
-      Serial.read();
+void scroll_down(){
+  for(int8_t row = 8 - 1; row > 0; row--){
+    for(uint16_t byte_i = 0; byte_i < 16*3; byte_i++){
+      tim.strips[row].pixels[byte_i] = tim.strips[row - 1].pixels[byte_i];
     }
-    rule ++;
-    init_rule();
-    Serial.println(rule);
   }
-#endif
-  tim.scroll_down();
+  for(uint16_t byte_i = 0; byte_i < 16*3; byte_i++){
+    tim.strips[0].pixels[byte_i] = tim.strips[7].pixels[byte_i + 16*3];
+  }
+  for(int8_t row = 8 - 1; row > 0; row--){
+    for(uint16_t byte_i = 16*3; byte_i < 32*3; byte_i++){
+      tim.strips[row].pixels[byte_i] = tim.strips[row - 1].pixels[byte_i];
+    }
+  }
+}
+void loop(){
+  scroll_down();
   update();
   tim.show();
   count++;
+  interact();
 }
 
+void interact(){
+  if(Serial.available()){
+    rule++;
+    rule %= 256;
+    init_rule();
+    Serial.println(rule);
+    while(Serial.available()){
+      Serial.read();
+    }
+  }
+}

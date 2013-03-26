@@ -11,28 +11,22 @@ void TiM::setup(uint16_t _n_strip, uint16_t _led_per_strip, uint8_t *pins) {
   led_per_strip = _led_per_strip;
   for(i = 0; i < n_strip; i++){
     strips[i].setup(led_per_strip, pins[i], NEO_GRB + NEO_KHZ800);
-    strips[i].begin();
-    for(j = 0; j < led_per_strip; j++){
-      strips[i].setPixelColor(j, 0);
-    }
-    strips[i].show();
   }
+  setall(Color(0, 0, 0));
+  show();
 }
 
 void TiM::setup(uint16_t _n_strip, uint16_t _led_per_strip, uint8_t *pins,
-		  uint8_t *pixels) {
+		uint8_t *pixels) {
   uint16_t i, j;
   n_strip = _n_strip;
   led_per_strip = _led_per_strip;
   for(i = 0; i < n_strip; i++){
     strips[i].setup(led_per_strip, pins[i], NEO_GRB + NEO_KHZ800,
 		    pixels);
-    strips[i].begin();
-    for(j = 0; j < led_per_strip; j++){
-      strips[i].setPixelColor(j, 0);
-    }
-    strips[i].show();
   }
+  setall(Color(0, 0, 0));
+  show();
 }
 
 void TiM::show(void) {

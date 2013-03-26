@@ -38,10 +38,9 @@
 Adafruit_NeoPixel::Adafruit_NeoPixel() {
 }
 void Adafruit_NeoPixel::setup(uint16_t n, uint8_t p, uint8_t t){
+  numBytes = n * 3;
   uint8_t *_pixels = (uint8_t *)malloc(numBytes);
-  if(_pixels){
-    setup(n, p, t, _pixels);
-  }
+  setup(n, p, t, _pixels);
 }
 
 void Adafruit_NeoPixel::setup(uint16_t n, uint8_t p, uint8_t t, 
