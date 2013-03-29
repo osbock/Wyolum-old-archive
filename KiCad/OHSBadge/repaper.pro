@@ -1,6 +1,6 @@
-update=Wednesday 27 March 2013 06:02:54 PM IST
+update=29-Mar-13 11:55:23 AM
 version=1
-last_client=eeschema
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
@@ -36,8 +36,6 @@ LibName8=led
 LibName9=dip_sockets
 LibName10=pga_sockets
 LibName11=valves
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -49,3 +47,5 @@ LabSize=60
 [eeschema/libraries]
 LibName1=power
 LibName2=repaper_lib/repaper_sym
+[general]
+version=1
