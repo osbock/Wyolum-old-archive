@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  Friday 29 March 2013 10:49:36 PM IST
+PCBNEW-LibModule-V1  30-Mar-13 3:42:59 PM
 # encoding utf-8
 Units mm
 $INDEX
@@ -35,12 +35,16 @@ SO14E
 SO20L
 SO8E
 SOT223
+SOT23
 SOT23-3
 SOT23-3-Temp
 SOT23-5
+SOT323
 SW_SMD
+Sck-10-F-SMT
 USB_B_Micro
 Xtal_SMD2
+ZIF-40-0.5
 c_0805
 d_0805
 d_VMD2
@@ -69496,7 +69500,7 @@ $MODULE SD_Micro
 Po 0 0 0 15 4FDCCA8F 00000000 ~~
 Li SD_Micro
 Sc 0
-AR /4EC0FE5A
+AR /5152F006
 Op 0 0 0
 At SMD
 T0 11.303 -1.5875 0.762 0.762 0 0.127 N V 21 N "SD1"
@@ -69520,21 +69524,21 @@ $PAD
 Sh "5" R 1.524 0.762 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 3 "/SD_CLK"
+Ne 2 "/SPI_CLK_COG"
 Po 0 0
 $EndPAD
 $PAD
 Sh "6" R 1.524 0.762 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 6 "GND"
+Ne 5 "GND"
 Po 0 1.09982
 $EndPAD
 $PAD
 Sh "7" R 1.524 0.762 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 2 "/RPi/MISO"
+Ne 3 "/SPI_MISO_COG"
 Po 0 2.19964
 $EndPAD
 $PAD
@@ -69555,21 +69559,21 @@ $PAD
 Sh "4" R 1.524 0.762 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 1 "+3.3V"
+Ne 6 "N-0000039"
 Po 0 -1.09982
 $EndPAD
 $PAD
 Sh "3" R 1.524 0.762 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 5 "/SD_DATA_IN"
+Ne 4 "/SPI_MOSI_COG"
 Po 0 -2.19964
 $EndPAD
 $PAD
 Sh "2" R 1.524 0.762 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 4 "/SD_CS"
+Ne 1 "/FLASH_CS_COG"
 Po 0 -3.29946
 $EndPAD
 $PAD
@@ -69583,28 +69587,28 @@ $PAD
 Sh "G1" R 1.524 1.016 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 6 "GND"
+Ne 5 "GND"
 Po 0.59944 5.74548
 $EndPAD
 $PAD
 Sh "G2" R 2.032 1.524 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 6 "GND"
+Ne 5 "GND"
 Po 10.37336 5.40004
 $EndPAD
 $PAD
 Sh "G3" R 1.524 1.016 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 6 "GND"
+Ne 5 "GND"
 Po 10.37336 -9.99998
 $EndPAD
 $PAD
 Sh "G4" R 1.524 1.524 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 6 "GND"
+Ne 5 "GND"
 Po 0.39116 -9.1821
 $EndPAD
 $PAD
@@ -69623,6 +69627,12 @@ Po 10.922 -5.3975
 $EndPAD
 $SHAPE3D
 Na "aLaMode_Libs/3D Modules/sd_socket.wrl"
+Sc 0.5 0.5 0.5
+Of 0.3 0.08 0
+Ro 0 0 -90
+$EndSHAPE3D
+$SHAPE3D
+Na "repaper_lib/repaper_3D/sd_socket.wrl"
 Sc 0.5 0.5 0.5
 Of 0.3 0.08 0
 Ro 0 0 -90
@@ -69847,11 +69857,11 @@ Li SO20L
 Cd Cms SOJ 20 pins large
 Kw CMS SOJ
 Sc 0
-AR 
+AR /5152C285
 Op 0 0 0
 At SMD
-T0 0 -1.27 1.524 1.524 0 0.127 N V 21 N "SO20L"
-T1 0 1.27 1.524 1.27 0 0.127 N V 21 N "VAL****"
+T0 0 -1.27 1.524 1.524 0 0.127 N V 21 N "U4"
+T1 0 1.27 1.524 1.27 0 0.127 N V 21 N "TXS0108"
 DS -5.842 3.683 -5.842 3.2385 0.254 21
 DS -6.096 3.683 -6.096 2.9845 0.254 21
 DS -6.35 2.7305 -5.3975 3.683 0.254 21
@@ -69870,7 +69880,7 @@ $PAD
 Sh "11" R 0.508 1.27 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 17 "GND"
 Po 5.715 -4.826
 $EndPAD
 $PAD
@@ -69884,112 +69894,112 @@ $PAD
 Sh "13" R 0.508 1.27 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 3 "//RESET"
 Po 3.175 -4.826
 $EndPAD
 $PAD
 Sh "14" R 0.508 1.27 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 4 "/BUSY"
 Po 1.905 -4.826
 $EndPAD
 $PAD
 Sh "15" R 0.508 1.27 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 7 "/FLASH_CS"
 Po 0.635 -4.826
 $EndPAD
 $PAD
 Sh "16" R 0.508 1.27 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 2 "//EPD_CS"
 Po -0.635 -4.826
 $EndPAD
 $PAD
 Sh "17" R 0.508 1.27 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 12 "/SPI_MISO"
 Po -1.905 -4.826
 $EndPAD
 $PAD
 Sh "18" R 0.508 1.27 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 14 "/SPI_MOSI"
 Po -3.175 -4.826
 $EndPAD
 $PAD
 Sh "19" R 0.508 1.27 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 16 "/VCC5V"
 Po -4.445 -4.826
 $EndPAD
 $PAD
 Sh "20" R 0.508 1.27 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 1 "20"
+Ne 10 "/SPI_CLK"
 Po -5.715 -4.826
 $EndPAD
 $PAD
 Sh "1" R 0.508 1.27 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 11 "/SPI_CLK_COG"
 Po -5.715 4.826
 $EndPAD
 $PAD
 Sh "2" R 0.508 1.27 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 1 "+3.3V"
 Po -4.445 4.826
 $EndPAD
 $PAD
 Sh "3" R 0.508 1.27 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 15 "/SPI_MOSI_COG"
 Po -3.175 4.826
 $EndPAD
 $PAD
 Sh "4" R 0.508 1.27 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 13 "/SPI_MISO_COG"
 Po -1.905 4.826
 $EndPAD
 $PAD
 Sh "5" R 0.508 1.27 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 6 "/EPD_CS_COG"
 Po -0.635 4.826
 $EndPAD
 $PAD
 Sh "6" R 0.508 1.27 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 8 "/FLASH_CS_COG"
 Po 0.635 4.826
 $EndPAD
 $PAD
 Sh "7" R 0.508 1.27 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 5 "/BUSY_COG"
 Po 1.905 4.826
 $EndPAD
 $PAD
 Sh "8" R 0.508 1.27 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 9 "/RESET_COG"
 Po 3.175 4.826
 $EndPAD
 $PAD
@@ -70003,11 +70013,11 @@ $PAD
 Sh "10" R 0.508 1.27 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 1 "+3.3V"
 Po 5.715 4.826
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/cms_so20.wrl"
+Na "repaper_lib/repaper_3D/cms_so20.wrl"
 Sc 0.5 0.6 0.5
 Of 0 0 0
 Ro 0 0 0
@@ -70153,6 +70163,48 @@ Of 0 0 0
 Ro 0 0 0
 $EndSHAPE3D
 $EndMODULE SOT223
+$MODULE SOT23
+Po 0 0 0 15 5051A6D7 00000000 ~~
+Li SOT23
+Kw SOT23
+Sc 0
+AR /514F4549
+Op 0 0 0
+T0 1.99898 -0.09906 0.762 0.762 900 0.11938 N V 21 N "Q1"
+T1 0.0635 0 0.50038 0.50038 0 0.09906 N V 21 N "AP2305"
+DC -1.17602 0.35052 -1.30048 0.44958 0.07874 21
+DS 1.27 -0.508 1.27 0.508 0.07874 21
+DS -1.3335 -0.508 -1.3335 0.508 0.07874 21
+DS 1.27 0.508 -1.3335 0.508 0.07874 21
+DS -1.3335 -0.508 1.27 -0.508 0.07874 21
+$PAD
+Sh "3" R 0.8001 1.00076 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 2 "/VCC_T"
+Po 0 -1.09982
+$EndPAD
+$PAD
+Sh "2" R 0.8001 1.00076 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 1 "+3.3V"
+Po 0.9525 1.09982
+$EndPAD
+$PAD
+Sh "1" R 0.8001 1.00076 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 3 "N-0000016"
+Po -0.9525 1.09982
+$EndPAD
+$SHAPE3D
+Na "repaper_lib/repaper_3D/SOT23_3.wrl"
+Sc 0.4 0.4 0.4
+Of 0 0 0
+Ro 0 0 180
+$EndSHAPE3D
+$EndMODULE SOT23
 $MODULE SOT23-3
 Po 0 0 0 15 4FC861CC 00000000 ~~
 Li SOT23-3
@@ -70206,11 +70258,11 @@ Po 0 0 0 15 5155CC25 00000000 ~~
 Li SOT23-3-Temp
 Cd SOT23-5
 Sc 0
-AR SOT23-3
+AR /5155C609
 Op 0 0 0
 At SMD
-T0 0 -2.667 0.762 0.762 0 0.1016 N V 21 N "SOT23-3-Temp"
-T1 0 0 0.762 0.762 0 0.1016 N I 21 N "VAL***"
+T0 0 -2.667 0.762 0.762 0 0.1016 N V 21 N "U1"
+T1 0 0 0.762 0.762 0 0.1016 N I 21 N "MCP9700AT-E/TT"
 DS -0.762 -0.635 -1.7145 -0.635 0.1524 21
 DS -1.7145 -0.635 -1.7145 2.159 0.1524 21
 DS -1.7145 2.159 1.651 2.159 0.1524 21
@@ -70225,25 +70277,25 @@ $PAD
 Sh "1" R 0.8001 1.19888 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 1 "+3.3V"
 Po -0.9525 1.2065
 $EndPAD
 $PAD
 Sh "3" R 0.8001 1.19888 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 3 "GND"
 Po 0 -1.2065
 $EndPAD
 $PAD
 Sh "2" R 0.8001 1.19888 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 2 "/TEMPERATURE"
 Po 0.9525 1.2065
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/SOT23_3.wrl"
+Na "repaper_lib/repaper_3D/SOT23_3.wrl"
 Sc 0.4 0.4 0.4
 Of 0 0 0
 Ro 0 0 180
@@ -70254,11 +70306,11 @@ Po 0 0 0 15 4FC85C58 00000000 ~~
 Li SOT23-5
 Cd SOT23-5
 Sc 0
-AR SOT23-3
+AR /514F45BE
 Op 0 0 0
 At SMD
-T0 0 -2.794 0.762 0.762 0 0.1016 N V 21 N "SOT23-5"
-T1 0 0 0.762 0.762 0 0.1016 N I 21 N "VAL***"
+T0 0 -2.794 0.762 0.762 0 0.1016 N V 21 N "U3"
+T1 0 0 0.762 0.762 0 0.1016 N I 21 N "TPS77030"
 DS -0.3175 -2.286 -1.5875 -2.286 0.1524 21
 DS 0.3175 -2.286 1.5875 -2.286 0.1524 21
 DS -0.3175 -2.286 -0.3175 -0.508 0.1524 21
@@ -70271,7 +70323,7 @@ $PAD
 Sh "1" R 0.59944 1.1176 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 2 "/VCC5V"
 Po -0.9525 1.3335
 .SolderMask 0.127
 .LocalClearance 0.127
@@ -70280,7 +70332,7 @@ $PAD
 Sh "3" R 0.59944 1.1176 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 3 "GND"
 Po 0.9525 1.3335
 .SolderMask 0.127
 .LocalClearance 0.127
@@ -70289,7 +70341,7 @@ $PAD
 Sh "2" R 0.59944 1.1176 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 3 "GND"
 Po 0 1.3335
 .SolderMask 0.127
 .LocalClearance 0.127
@@ -70307,27 +70359,71 @@ $PAD
 Sh "5" R 0.59944 1.1176 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 1 "+3.3V"
 Po -0.9525 -1.3335
 .SolderMask 0.127
 .LocalClearance 0.127
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/SOT23_5.wrl"
-Sc 0.11 0.11 0.11
+Na "repaper_lib/repaper_3D/SOT23_5.wrl"
+Sc 0.1 0.1 0.1
 Of 0 0 0
 Ro 0 0 0
 $EndSHAPE3D
 $EndMODULE SOT23-5
+$MODULE SOT323
+Po 0 0 0 15 5156B0A7 00000000 ~~
+Li SOT323
+Kw SMD SOT
+Sc 0
+AR /514F4568
+Op 0 0 0
+At SMD
+T0 0.127 -2.032 0.762 0.762 0 0.09906 N V 21 N "Q4"
+T1 0 0 0.70104 0.70104 0 0.09906 N I 21 N "2N7002KW"
+DC 1.05 -0.1 1.05 -0.2 0.15 21
+DS 0 -0.35 -1.3 -0.35 0.15 21
+DS -1.3 -0.35 -1.3 0.35 0.15 21
+DS -1.3 0.35 1.3 0.35 0.15 21
+DS 1.3 0.35 1.3 -0.35 0.15 21
+DS 1.3 -0.35 0 -0.35 0.15 21
+$PAD
+Sh "2" R 0.59944 1.00076 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 3 "GND"
+Po -0.65024 -0.94996
+$EndPAD
+$PAD
+Sh "1" R 0.59944 1.00076 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 1 "/DISCHARGE"
+Po 0.65024 -0.94996
+$EndPAD
+$PAD
+Sh "3" R 0.59944 1.00076 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 2 "/VGH"
+Po 0 0.94996
+$EndPAD
+$SHAPE3D
+Na "repaper_lib/repaper_3D/SOT323.wrl"
+Sc 0.4 0.4 0.4
+Of 0 0 0.001
+Ro 0 0 0
+$EndSHAPE3D
+$EndMODULE SOT323
 $MODULE SW_SMD
 Po 0 0 0 15 4F4209D0 00000000 ~~
 Li SW_SMD
 Sc 0
-AR SW_SMD
+AR /5156E178
 Op 0 0 0
 At SMD
-T0 0 -2.4765 0.762 0.762 0 0.1016 N V 21 N "SW_SMD"
-T1 0 2.667 0.762 0.762 0 0.1016 N V 21 N "VAL**"
+T0 0 -2.4765 0.762 0.762 0 0.1016 N V 21 N "SW3"
+T1 0 2.667 0.762 0.762 0 0.1016 N V 21 N "DOWN"
 DC 0 0 -0.508 0 0.1524 21
 DS -1.4605 1.778 -3.556 1.778 0.1524 21
 DS -3.556 1.778 -3.556 1.905 0.1524 21
@@ -70348,37 +70444,163 @@ $PAD
 Sh "1" R 1.50114 1.00076 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 1 "/RXD"
 Po -2.6035 0.889
 $EndPAD
 $PAD
 Sh "1" R 1.50114 1.00076 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 1 "/RXD"
 Po 2.6035 0.889
 $EndPAD
 $PAD
 Sh "2" R 1.50114 1.00076 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 2 "GND"
 Po 2.6035 -0.889
 $EndPAD
 $PAD
 Sh "2" R 1.50114 1.00076 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 2 "GND"
 Po -2.6035 -0.889
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pcb_push.wrl"
+Na "repaper_lib/repaper_3D/pcb_push.wrl"
 Sc 1 0.4 0.5
 Of 0 0 0
 Ro 0 0 0
 $EndSHAPE3D
 $EndMODULE SW_SMD
+$MODULE Sck-10-F-SMT
+Po 0 0 0 15 515686DA 00000000 ~~
+Li Sck-10-F-SMT
+Sc 0
+AR 
+Op 0 0 0
+At SMD
+T0 0 -3.7465 0.762 0.762 0 0.1016 N V 21 N "Sck-10-F-SMT"
+T1 0 3.683 0.762 0.762 0 0.1016 N V 21 N "VAL**"
+DS -12.827 -1.27 -12.192 -1.27 0.15 21
+DS -12.827 1.27 -9.652 1.27 0.15 21
+DS -12.827 -1.27 -12.827 1.27 0.15 21
+DS -7.112 -1.27 -7.747 -1.27 0.1524 21
+DS -7.747 1.27 -4.572 1.27 0.1524 21
+DS -7.493 1.27 -8.128 1.27 0.1524 21
+DS -7.493 -1.27 -10.668 -1.27 0.1524 21
+DS 2.667 -1.27 -0.508 -1.27 0.1524 21
+DS -2.032 -1.27 -5.588 -1.27 0.1524 21
+DS -7.112 -1.27 -7.747 -1.27 0.1524 21
+DS 2.667 1.27 2.032 1.27 0.1524 21
+DS 0.508 1.27 -3.048 1.27 0.1524 21
+DS -7.747 1.27 -4.572 1.27 0.1524 21
+DS 10.16 0 12.827 0 0.1524 21
+DS 12.827 0 12.827 -0.127 0.1524 21
+DS 12.827 -0.127 10.16 -0.127 0.1524 21
+DS 10.16 -0.127 10.16 -0.254 0.1524 21
+DS 10.16 -0.254 12.827 -0.254 0.1524 21
+DS 12.827 -0.254 12.827 -0.381 0.1524 21
+DS 12.827 -0.381 10.16 -0.381 0.1524 21
+DS 10.16 -0.381 10.16 -0.508 0.1524 21
+DS 10.16 -0.508 12.827 -0.508 0.1524 21
+DS 12.827 -0.508 12.827 -0.635 0.1524 21
+DS 12.827 -0.635 10.16 -0.635 0.1524 21
+DS 10.16 -0.635 10.16 -0.762 0.1524 21
+DS 10.16 -0.762 12.827 -0.762 0.1524 21
+DS 12.827 -0.762 12.827 -0.889 0.1524 21
+DS 12.827 -0.889 10.16 -0.889 0.1524 21
+DS 10.16 -0.889 10.16 -1.016 0.1524 21
+DS 10.16 -1.016 12.827 -1.016 0.1524 21
+DS 12.827 -1.016 12.827 -1.143 0.1524 21
+DS 12.827 -1.143 10.16 -1.143 0.1524 21
+DS 10.16 1.27 10.16 -1.27 0.1524 21
+DS 2.413 1.27 5.588 1.27 0.1524 21
+DS 10.668 1.27 7.112 1.27 0.1524 21
+DS 12.827 1.27 12.192 1.27 0.1524 21
+DS 3.048 -1.27 2.413 -1.27 0.1524 21
+DS 8.128 -1.27 4.572 -1.27 0.1524 21
+DS 12.827 -1.27 9.652 -1.27 0.1524 21
+DS 12.827 1.27 12.827 -1.27 0.1524 21
+$PAD
+Sh "9" R 1.016 2.032 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -8.89 1.651
+$EndPAD
+$PAD
+Sh "10" R 1.016 2.032 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -11.43 -1.651
+$EndPAD
+$PAD
+Sh "8" R 1.016 2.032 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -6.35 -1.651
+$EndPAD
+$PAD
+Sh "7" R 1.016 2.032 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.81 1.651
+$EndPAD
+$PAD
+Sh "6" R 1.016 2.032 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.27 -1.651
+$EndPAD
+$PAD
+Sh "5" R 1.016 2.032 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.27 1.651
+$EndPAD
+$PAD
+Sh "1" R 1.016 2.032 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 11.43 1.651
+$EndPAD
+$PAD
+Sh "2" R 1.016 2.032 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 8.89 -1.651
+$EndPAD
+$PAD
+Sh "3" R 1.016 2.032 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 6.35 1.651
+$EndPAD
+$PAD
+Sh "4" R 1.016 2.032 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.81 -1.651
+$EndPAD
+$SHAPE3D
+Na "i2gps_v1-libs//3D Modules//socket_1x4.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$EndMODULE Sck-10-F-SMT
 $MODULE USB_B_Micro
 Po 0 0 0 15 4FDC66FA 00000000 ~~
 Li USB_B_Micro
@@ -70564,16 +70786,455 @@ Of 0 0 0.005
 Ro 0 0 0
 $EndSHAPE3D
 $EndMODULE Xtal_SMD2
+$MODULE ZIF-40-0.5
+Po 0 0 0 15 51569E6C 00000000 ~~
+Li ZIF-40-0.5
+Sc 0
+AR 
+Op 0 0 0
+T0 0 -2.4765 1 1 0 0.15 N V 21 N "ZIF-40-0.5"
+T1 0 -4.1275 1 1 0 0.15 N V 21 N "VAL**"
+DS 10.1 0 10.1 -0.8 0.15 21
+DS 10.1 -0.8 -10.1 -0.8 0.15 21
+DS -10.1 -0.8 -10.1 0 0.15 21
+DS -10.1 0 -11.7 0 0.15 21
+DS 11.7 0 10.1 0 0.15 21
+DS -13.05 4.6 13.05 4.6 0.15 21
+DS -11.7 3.7 -11.7 3.95 0.15 21
+DS -11.7 3.95 -13.05 3.95 0.15 21
+DS -13.05 3.95 -13.05 4.6 0.15 21
+DS 11.7 3.7 11.7 3.95 0.15 21
+DS 11.7 3.95 13.05 3.95 0.15 21
+DS 13.05 3.95 13.05 4.6 0.15 21
+$PAD
+Sh "1" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 9.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "2" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 9.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "3" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 8.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "4" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 8.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "5" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 7.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "6" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 7.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "7" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 6.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "8" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 6.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "9" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 5.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "10" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 5.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "11" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 4.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "12" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 4.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "13" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 3.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "14" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 3.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "15" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "16" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "17" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 1.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "18" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 1.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "19" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 0.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "20" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 0.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "21" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -0.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "22" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -0.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "23" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -1.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "24" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -1.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "25" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "26" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "27" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -3.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "28" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -3.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "29" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -4.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "30" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -4.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "31" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -5.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "32" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -5.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "33" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -6.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "34" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -6.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "35" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -7.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "36" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -7.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "37" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -8.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "38" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -8.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "39" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -9.25 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "40" R 0.3 1.2 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -9.75 0
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "41" R 2.7 3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 11.7 1.85
+.SolderMask 0.1
+.SolderPaste -0.1
+$EndPAD
+$PAD
+Sh "42" R 2.7 3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -11.7 1.85
+.SolderMask 0.1
+.SolderPaste -0.1
+$EndPAD
+$EndMODULE ZIF-40-0.5
 $MODULE c_0805
 Po 0 0 0 15 4F42056D 00000000 ~~
 Li c_0805
 Cd SMT capacitor, 0805
 Sc 0
-AR c_0805
+AR /514F4569
 Op 0 0 0
 At SMD
-T0 0 -1.651 0.762 0.762 0 0.1016 N V 21 N "c_0805"
-T1 0 1.7145 0.762 0.762 0 0.1016 N I 21 N "C***"
+T0 0 -1.651 0.762 0.762 0 0.1016 N V 21 N "C10"
+T1 0 1.7145 0.762 0.762 0 0.1016 N I 21 N "2.2u,10V"
 DS 1.905 1.0795 0.127 1.0795 0.1524 21
 DS 1.905 -1.0795 0.127 -1.0795 0.1524 21
 DS -1.016 1.0795 -1.905 1.0795 0.1524 21
@@ -70585,19 +71246,19 @@ $PAD
 Sh "1" R 1.0668 1.4224 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 2 "GND"
 Po 1.016 0
 $EndPAD
 $PAD
 Sh "2" R 1.0668 1.4224 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 1 "/VCL"
 Po -1.016 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/c_tant_B.wrl"
-Sc 0.6 0.6 0.5
+Na "repaper_lib/repaper_3D/C0805.wrl"
+Sc 0.4 0.4 0.4
 Of 0 0 0
 Ro 0 0 0
 $EndSHAPE3D
@@ -70948,11 +71609,11 @@ Po 0 0 0 15 4F420886 00000000 ~~
 Li r_0805
 Cd SMT resistor, 0805
 Sc 0
-AR r_0805
+AR /514F45A5
 Op 0 0 0
 At SMD
-T0 0 -1.651 0.762 0.762 0 0.1016 N V 21 N "r_0805"
-T1 0 1.7145 0.762 0.762 0 0.1016 N I 21 N "R***"
+T0 0 -1.651 0.762 0.762 0 0.1016 N V 21 N "R11"
+T1 0 1.7145 0.762 0.762 0 0.1016 N I 21 N "100k"
 DS 0.381 1.0795 1.9685 1.0795 0.1524 21
 DS 1.9685 1.0795 1.9685 -1.0795 0.1524 21
 DS 1.9685 -1.0795 0.381 -1.0795 0.1524 21
@@ -70964,19 +71625,19 @@ $PAD
 Sh "1" R 1.30048 1.4986 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 1 "/BORDER"
 Po 0.9525 0
 $EndPAD
 $PAD
 Sh "2" R 1.30048 1.4986 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 0 ""
+Ne 2 "/VCOM"
 Po -0.9525 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/r_0805.wrl"
-Sc 1 1 1
+Na "repaper_lib/repaper_3D/R0805.wrl"
+Sc 0.4 0.4 0.4
 Of 0 0 0
 Ro 0 0 0
 $EndSHAPE3D

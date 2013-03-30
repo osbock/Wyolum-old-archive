@@ -1,6 +1,13 @@
-update=Friday 29 March 2013 10:51:15 PM IST
+update=30-Mar-13 3:43:15 PM
 version=1
-last_client=kicad
+last_client=pcbnew
+[general]
+version=1
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
 [eeschema]
 version=1
 LibDir=
@@ -12,18 +19,13 @@ LabSize=60
 [eeschema/libraries]
 LibName1=power
 LibName2=repaper_lib/repaper_sym
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
 [pcbnew]
 version=1
 LastNetListRead=repaper.net
 UseCmpFile=1
 PadDrill=0
-PadSizeH=0.8001
-PadSizeV=1.19888
+PadSizeH=0.635
+PadSizeV=1.143
 PcbTextSizeV=1
 PcbTextSizeH=1
 PcbTextThickness=0.3
@@ -38,13 +40,3 @@ ModuleOutlineThickness=0.15
 [pcbnew/libraries]
 LibDir=
 LibName1=repaper_lib/repaper
-LibName2=connect
-LibName3=discret
-LibName4=pin_array
-LibName5=divers
-LibName6=libcms
-LibName7=smd_capacitors
-LibName8=smd_dil
-LibName9=smd_resistors
-[general]
-version=1
