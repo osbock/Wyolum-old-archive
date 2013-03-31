@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 30-Mar-13 5:07:47 PM
+EESchema Schematic File Version 2  date Sunday 31 March 2013 11:53:46 PM IST
 LIBS:power
 LIBS:repaper_sym
 LIBS:repaper-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "30 mar 2013"
+Date "31 mar 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -151,7 +151,7 @@ Wire Wire Line
 Wire Wire Line
 	900  6550 900  6900
 Wire Wire Line
-	750  6600 1250 6600
+	900  6600 1250 6600
 Wire Wire Line
 	2100 6600 2100 6900
 Wire Wire Line
@@ -794,11 +794,11 @@ F 4 "0805/2.2u/25V/Y5V" V -1200 7375 60  0001 C CNN "Field4"
 $EndComp
 Text Label 1900 5625 0    24   ~ 0
 /EPD_CS
-Text Label 1025 4525 2    24   ~ 0
+Text Label 1025 4625 2    24   ~ 0
 /EPD_CS
 Text Label 1900 5675 0    24   ~ 0
 FLASH_CS
-Text Label 1025 4625 2    24   ~ 0
+Text Label 1025 4525 2    24   ~ 0
 FLASH_CS
 Text Label 1275 6025 2    24   ~ 0
 /RESET
@@ -864,11 +864,11 @@ Text Label 6250 3200 0    24   ~ 0
 DISCHARGE
 Text Label 1900 5975 0    24   ~ 0
 DISCHARGE
-Text Label 2025 4525 0    24   ~ 0
+Text Label 2025 4625 0    24   ~ 0
 EPD_CS_COG
 Text Label 1200 2775 0    30   ~ 0
 FLASH_CS_COG
-Text Label 2025 4625 0    24   ~ 0
+Text Label 2025 4525 0    24   ~ 0
 FLASH_CS_COG
 Text Label 1900 5575 0    24   ~ 0
 GND
@@ -896,19 +896,19 @@ Text Label 2025 4225 0    24   ~ 0
 SPI_CLK_COG
 Text Label 1900 5875 0    24   ~ 0
 SPI_MISO
-Text Label 1025 4425 2    24   ~ 0
+Text Label 1025 4325 2    24   ~ 0
 SPI_MISO
 Text Label 1200 3025 0    30   ~ 0
 SPI_MISO_COG
-Text Label 2025 4425 0    24   ~ 0
+Text Label 2025 4325 0    24   ~ 0
 SPI_MISO_COG
 Text Label 1900 5825 0    24   ~ 0
 SPI_MOSI
-Text Label 1025 4325 2    24   ~ 0
+Text Label 1025 4425 2    24   ~ 0
 SPI_MOSI
 Text Label 1200 2825 0    30   ~ 0
 SPI_MOSI_COG
-Text Label 2025 4325 0    24   ~ 0
+Text Label 2025 4425 0    24   ~ 0
 SPI_MOSI_COG
 Text Label 1275 5775 2    24   ~ 0
 SW2
@@ -925,7 +925,7 @@ UART_TX
 Text Label 875  700  0    24   ~ 0
 VCC3V
 Text Label 1275 5575 2    24   ~ 0
-5V0
+VCC5V
 Text Label 9300 2600 0    24   ~ 0
 VCC_T
 Text Label 9300 2500 0    24   ~ 0
@@ -1470,8 +1470,6 @@ F 3 "" H 2550 3400 60  0001 C CNN
 	1    2550 3400
 	1    0    0    -1  
 $EndComp
-Text Label 1850 3350 0    40   ~ 0
-GND
 $Comp
 L VCC_CIRCLE #PWR10
 U 1 1 5152FB77
@@ -1577,7 +1575,7 @@ RXD
 Text Label 6175 6875 0    40   ~ 0
 TXD
 Text Label 6175 5875 0    40   ~ 0
-ENABLE_5V
+VCC5V
 Text Label 6175 5775 0    40   ~ 0
 SPI_MOSI
 Text Label 6175 5675 0    40   ~ 0
@@ -1657,19 +1655,6 @@ F 3 "" H 2150 3950 60  0000 C CNN
 	1    2150 3950
 	1    0    0    -1  
 $EndComp
-$Comp
-L PWR_FLAG #FLG021
-U 1 1 51531060
-P 750 6550
-F 0 "#FLG021" H 750 6455 30  0001 C CNN
-F 1 "PWR_FLAG" H 750 6725 30  0000 C CNN
-F 2 "" H 750 6550 60  0000 C CNN
-F 3 "" H 750 6550 60  0000 C CNN
-	1    750  6550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	750  6550 750  6600
 Wire Wire Line
 	2500 7175 2500 7150
 Connection ~ 2300 7175
@@ -1832,10 +1817,10 @@ Wire Wire Line
 	8775 6475 8950 6475
 Connection ~ 8950 6475
 $Comp
-L GND #PWR022
+L GND #PWR021
 U 1 1 5156E539
 P 8950 6750
-F 0 "#PWR022" H 8950 6750 30  0001 C CNN
+F 0 "#PWR021" H 8950 6750 30  0001 C CNN
 F 1 "GND" H 8950 6820 30  0001 C CNN
 F 2 "" H 8950 6750 60  0000 C CNN
 F 3 "" H 8950 6750 60  0000 C CNN
@@ -1910,4 +1895,12 @@ Wire Wire Line
 Connection ~ 7225 4875
 Text Label 7325 4875 0    40   ~ 0
 VCC3V
+Text Label 1200 2700 0    30   ~ 0
+VCC3V
+Text Label 1600 1350 0    30   ~ 0
+GND
+Text Label 1200 3350 0    30   ~ 0
+GND
+Text Label 1700 5175 0    30   ~ 0
+GND
 $EndSCHEMATC

@@ -1,8 +1,6 @@
-update=30-Mar-13 3:43:15 PM
+update=Sunday 31 March 2013 11:54:27 PM IST
 version=1
-last_client=pcbnew
-[general]
-version=1
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
@@ -40,3 +38,5 @@ ModuleOutlineThickness=0.15
 [pcbnew/libraries]
 LibDir=
 LibName1=repaper_lib/repaper
+[general]
+version=1

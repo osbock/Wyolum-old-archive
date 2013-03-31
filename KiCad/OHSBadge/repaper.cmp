@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 30-Mar-13 3:39:40 PM
+Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Sunday 31 March 2013 05:39:30 PM IST
 
 BeginCmp
 TimeStamp = /5151E19B;
@@ -361,7 +361,7 @@ BeginCmp
 TimeStamp = /5152EA95;
 Reference = SHIELD1;
 ValeurCmp = ARDUINO_SHIELD;
-IdModule  = ARDUINO_SHIELD_2_040pins;
+IdModule  = ARDUINO_BUCKLER;
 EndCmp
 
 BeginCmp
