@@ -221,25 +221,25 @@ Ne 15 "/TEMPERATURE"
 Po -44.704 2.54
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_08.wrl"
+Na "repaper_lib/repaper_3D/conF_08.wrl"
 Sc 1 1 1
 Of 1.45 0.1 0
 Ro 0 0 0
 $EndSHAPE3D
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_06.wrl"
+Na "repaper_lib/repaper_3D/conF_06.wrl"
 Sc 1 1 1
 Of 2.25 0.1 0
 Ro 0 0 0
 $EndSHAPE3D
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_08.wrl"
+Na "repaper_lib/repaper_3D/conF_08.wrl"
 Sc 1 1 1
 Of 2.15 2 0
 Ro 0 0 0
 $EndSHAPE3D
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_10.wrl"
+Na "repaper_lib/repaper_3D/conF_10.wrl"
 Sc 1 1 1
 Of 1.2 2 0
 Ro 0 0 0
@@ -275,7 +275,7 @@ Ne 0 ""
 Po 0 -1.27
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/cp_5x11mm.wrl"
+Na "repaper_lib/repaper_3D/cp_5x11mm.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -318,7 +318,7 @@ Ne 1 "/aLaMode_v1_rtc/BAT"
 Po 12.954 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/bateria_suporte.wrl"
+Na "repaper_lib/repaper_3D/bateria_suporte.wrl"
 Sc 1.8 1.8 1
 Of 0 0 0
 Ro 0 0 0
@@ -362,7 +362,7 @@ Ne 2 "GND"
 Po -0.0635 -2.286
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/c_elec_5x5_3.wrl"
+Na "repaper_lib/repaper_3D/c_elec_5x5_3.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 90
@@ -377,7 +377,7 @@ Op 0 0 0
 T0 0 -0.508 1.016 1.016 0 0.1524 N I 21 N "DIP"
 T1 0 0.762 1.016 1.016 0 0.1524 N I 21 N "VAL**"
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/soquete_28_300.wrl"
+Na "repaper_lib/repaper_3D/soquete_28_300.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -605,7 +605,7 @@ Ne 19 "/RPi/SCL"
 Po -16.51 -3.81
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/dil_28-300.wrl"
+Na "repaper_lib/repaper_3D/dil_28-300.wrl"
 Sc 1 1 1
 Of 0 0 0.1
 Ro 0 0 0
@@ -750,7 +750,7 @@ Ne 5 "/clock2-Aux/SCL"
 Po -4.445 -4.65074
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/cms_so16.wrl"
+Na "repaper_lib/repaper_3D/cms_so16.wrl"
 Sc 0.5 0.6 0.5
 Of 0 0 0
 Ro 0 0 0
@@ -797,7 +797,7 @@ Ne 2 "/AREF"
 Po 1.27 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs\\3D Modules\\pin_strip_2.wrl"
+Na "repaper_lib/repaper_3D/pin_strip_2.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -895,7 +895,7 @@ Ne 1 "GND"
 Po 6.35 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs\\3D Modules\\conF_06.wrl"
+Na "repaper_lib/repaper_3D/conF_06.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -956,7 +956,7 @@ Ne 3 "/aLaMode_pwr/5V0"
 Po 2.54 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pin_strip_3.wrl"
+Na "repaper_lib/repaper_3D/pin_strip_3.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -1078,7 +1078,7 @@ Ne 4 "/~RTS"
 Po 6.35 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pins_array_6x1.wrl"
+Na "repaper_lib/repaper_3D/pins_array_6x1.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -1281,25 +1281,25 @@ Ne 0 ""
 Po 15.24 -1.27
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_13.wrl"
+Na "repaper_lib/repaper_3D/conF_13.wrl"
 Sc 1 1 1
 Of 0 0.05 -0.55
 Ro 180 0 0
 $EndSHAPE3D
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_13.wrl"
+Na "repaper_lib/repaper_3D/conF_13.wrl"
 Sc 1 1 1
 Of 0 -0.05 -0.55
 Ro 180 0 0
 $EndSHAPE3D
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_13_long.wrl"
+Na "repaper_lib/repaper_3D/conF_13_long.wrl"
 Sc 1 1 1
 Of 0 0.05 -0.025
 Ro 180 0 0
 $EndSHAPE3D
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_13_long.wrl"
+Na "repaper_lib/repaper_3D/conF_13_long.wrl"
 Sc 1 1 1
 Of 0 -0.05 -0.025
 Ro 180 0 0
@@ -1424,7 +1424,7 @@ Ne 2 "/1pps"
 Po 6.35 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pins_array_6x1.wrl"
+Na "repaper_lib/repaper_3D/pins_array_6x1.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -1511,13 +1511,13 @@ Po 8.89 0
 .LocalClearance 0.1778
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_08.wrl"
+Na "repaper_lib/repaper_3D/conF_08.wrl"
 Sc 1 1 1.5
 Of 0 0 0
 Ro 0 0 0
 $EndSHAPE3D
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pin_strip_8.wrl"
+Na "repaper_lib/repaper_3D/pin_strip_8.wrl"
 Sc 1 1 1
 Of 0 0 -0.05
 Ro 0 180 0
@@ -1629,7 +1629,7 @@ Ne 6 "GND"
 Po 2.54 -1.27
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pin_strip_3x2.wrl"
+Na "repaper_lib/repaper_3D/pin_strip_3x2.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -1738,7 +1738,7 @@ Ne 6 "GND"
 Po 2.54 -1.27
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pin_strip_3x2.wrl"
+Na "repaper_lib/repaper_3D/pin_strip_3x2.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -1812,7 +1812,7 @@ Ne 0 ""
 Po 7.62 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_07.wrl"
+Na "repaper_lib/repaper_3D/conF_07.wrl"
 Sc 1 1 1.5
 Of 0 0 0
 Ro 0 0 0
@@ -1943,7 +1943,7 @@ Ne 6 "/aLaMode_v1_rtc/5V0"
 Po 8.89 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pin_strip_8.wrl"
+Na "repaper_lib/repaper_3D/pin_strip_8.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -2028,7 +2028,7 @@ Ne 2 "/RPi/U6_OE"
 Po 0 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pin_strip_3.wrl"
+Na "repaper_lib/repaper_3D/pin_strip_3.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -2095,7 +2095,7 @@ Ne 0 ""
 Po -1.27 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/pin_strip_3.wrl"
+Na "repaper_lib/repaper_3D/pin_strip_3.wrl"
 Sc 0.5 0.5 0.5
 Of 0 0 0
 Ro 0 0 0
@@ -2158,7 +2158,7 @@ Ne 2 "GND"
 Po 3.175 5.08
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/POWER_21.wrl"
+Na "repaper_lib/repaper_3D/POWER_21.wrl"
 Sc 0.8 0.8 0.8
 Of 0 0 0.15
 Ro 0 0 0
@@ -69086,13 +69086,13 @@ DS 0 0 -0.508 0 0.127 21
 DS 0 0 0 0.508 0.127 21
 DS 0 0 0 -0.508 0.127 21
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/i2gps_PCB_Material_3D.wrl"
+Na "repaper_lib/repaper_3D/i2gps_PCB_Material_3D.wrl"
 Sc 8.6 5.45 1
 Of 0 0 0
 Ro 0 0 0
 $EndSHAPE3D
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/R_pi.wrl"
+Na "repaper_lib/repaper_3D/R_pi.wrl"
 Sc 0.99 1 0.95
 Of -0.465 0 -1.3
 Ro -90 0 0
@@ -69486,7 +69486,7 @@ Ne 0 ""
 Po 10.922 -5.3975
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/sd_socket.wrl"
+Na "repaper_lib/repaper_3D/sd_socket.wrl"
 Sc 0.5 0.5 0.5
 Of 0.3 0.08 0
 Ro 0 0 -90
@@ -69565,7 +69565,7 @@ Ne 0 ""
 Po 7.62 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/conF_07.wrl"
+Na "repaper_lib/repaper_3D/conF_07.wrl"
 Sc 1 1 1.5
 Of 0 0 0
 Ro 0 0 0
@@ -69705,7 +69705,7 @@ Ne 0 ""
 Po -3.81 -2.667
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/cms_so14.wrl"
+Na "repaper_lib/repaper_3D/cms_so14.wrl"
 Sc 0.5 0.35 0.5
 Of 0 0 0
 Ro 0 0 0
@@ -69963,7 +69963,7 @@ Ne 5 "GND"
 Po 1.905 2.413
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/cms_so8.wrl"
+Na "repaper_lib/repaper_3D/cms_so8.wrl"
 Sc 0.5 0.35 0.5
 Of 0 0 0
 Ro 0 0 0
@@ -70017,7 +70017,7 @@ Ne 0 ""
 Po -2.286 3.175
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/SOT223.wrl"
+Na "repaper_lib/repaper_3D/SOT223.wrl"
 Sc 0.4 0.4 0.4
 Of 0 0 0
 Ro 0 0 0
@@ -70107,7 +70107,7 @@ Ne 0 ""
 Po 0.9525 1.2065
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/SOT23_3.wrl"
+Na "repaper_lib/repaper_3D/SOT23_3.wrl"
 Sc 0.4 0.4 0.4
 Of 0 0 0
 Ro 0 0 180
@@ -70455,7 +70455,7 @@ Ne 0 ""
 Po 3.81 -1.651
 $EndPAD
 $SHAPE3D
-Na "i2gps_v1-libs//3D Modules//socket_1x4.wrl"
+Na "repaper_lib/repaper_3D/socket_1x4.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -70576,7 +70576,7 @@ Po -2.667 3.302
 .LocalClearance 0.2032
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/usb_B_micro_smd.wrl"
+Na "repaper_lib/repaper_3D/usb_B_micro_smd.wrl"
 Sc 1 1 1
 Of -0.1 0 0
 Ro 0 0 90
@@ -70640,7 +70640,7 @@ Ne 0 ""
 Po 1.143 0.9525
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/r_0805.wrl"
+Na "repaper_lib/repaper_3D/r_0805.wrl"
 Sc 1.5 1.8 1
 Of 0 0 0.005
 Ro 0 0 0
@@ -71184,7 +71184,7 @@ Ne 2 "/aLaMode_pwr/V_IN"
 Po -1.016 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/sod323.wrl"
+Na "repaper_lib/repaper_3D/sod323.wrl"
 Sc 1.2 1.5 0.8
 Of 0 0 0
 Ro 0 0 0
@@ -71222,7 +71222,7 @@ Ne 0 ""
 Po -0.635 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/sod323.wrl"
+Na "repaper_lib/repaper_3D/sod323.wrl"
 Sc 0.8 0.8 0.8
 Of 0 0 0
 Ro 0 0 0
@@ -71277,7 +71277,7 @@ Ne 0 ""
 Po -1.905 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/do214aa.wrl"
+Na "repaper_lib/repaper_3D/do214aa.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -71321,7 +71321,7 @@ Ne 2 "GND"
 Po -0.6985 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/sod323.wrl"
+Na "repaper_lib/repaper_3D/sod323.wrl"
 Sc 1.75 1.75 1.75
 Of 0.05 0 0
 Ro 0 0 0
@@ -71366,7 +71366,7 @@ Ne 1 "/aLaMode_pwr/5V0"
 Po -1.905 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/r_0805.wrl"
+Na "repaper_lib/repaper_3D/r_0805.wrl"
 Sc 2 1.5 1
 Of 0 0 0
 Ro 0 0 0
@@ -71415,7 +71415,7 @@ Ne 0 ""
 Po -3.048 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/r_0805.wrl"
+Na "repaper_lib/repaper_3D/r_0805.wrl"
 Sc 3 2 2
 Of 0 0 0
 Ro 0 0 0
@@ -71468,7 +71468,7 @@ Ne 1 "GND"
 Po -1.016 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/cree_clm3c.wrl"
+Na "repaper_lib/repaper_3D/cree_clm3c.wrl"
 Sc 0.75 0.75 0.75
 Of 0 0 0
 Ro 0 0 0
@@ -71694,7 +71694,7 @@ Po -2.92608 -2.79908
 .LocalClearance 0.1016
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/tssop-20.wrl"
+Na "repaper_lib/repaper_3D/tssop-20.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -71718,7 +71718,7 @@ Ne 0 ""
 Po 0 0
 $EndPAD
 $SHAPE3D
-Na "aLaMode_Libs/3D Modules/vite_2mm5.wrl"
+Na "repaper_lib/repaper_3D/vite_2mm5.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0

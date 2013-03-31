@@ -599,7 +599,7 @@
     (pad 4 smd rect (at 3.81 1.651 90) (size 1.016 2.032)
       (layers B.Cu B.Paste B.Mask)
     )
-    (model "i2gps_v1-libs//3D Modules//socket_1x4.wrl"
+    (model "repaper_lib/repaper_3D/socket_1x4.wrl"
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -694,7 +694,7 @@
       (layers B.Cu B.Paste B.Mask)
       (net 39 /SPI_MISO)
     )
-    (model "i2gps_v1-libs//3D Modules//socket_1x4.wrl"
+    (model "repaper_lib/repaper_3D/socket_1x4.wrl"
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2064,7 +2064,7 @@
     (pad H2 thru_hole circle (at 10.922 5.3975) (size 1.143 1.143) (drill 0.889)
       (layers *.Cu *.Mask B.SilkS)
     )
-    (model "aLaMode_Libs/3D Modules/sd_socket.wrl"
+    (model "repaper_lib/repaper_3D/sd_socket.wrl"
       (at (xyz 0.3 0.08 0))
       (scale (xyz 0.5 0.5 0.5))
       (rotate (xyz 0 0 -90))
@@ -2902,22 +2902,22 @@
       (layers *.Cu *.Mask F.SilkS)
       (net 43 /TEMPERATURE)
     )
-    (model "aLaMode_Libs/3D Modules/conF_08.wrl"
+    (model "repaper_lib/repaper_3D/conF_08.wrl"
       (at (xyz 1.45 0.1 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
-    (model "aLaMode_Libs/3D Modules/conF_06.wrl"
+    (model "repaper_lib/repaper_3D/conF_06.wrl"
       (at (xyz 2.25 0.1 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
-    (model "aLaMode_Libs/3D Modules/conF_08.wrl"
+    (model "repaper_lib/repaper_3D/conF_08.wrl"
       (at (xyz 2.15 2 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
-    (model "aLaMode_Libs/3D Modules/conF_10.wrl"
+    (model "repaper_lib/repaper_3D/conF_10.wrl"
       (at (xyz 1.2 2 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
