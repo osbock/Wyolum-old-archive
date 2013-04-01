@@ -1,4 +1,18 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 01-Apr-13 11:56:31 AM
+Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Monday 01 April 2013 09:57:57 PM IST
+
+BeginCmp
+TimeStamp = /5159E678;
+Reference = B1;
+ValeurCmp = I/O;
+IdModule  = I/O;
+EndCmp
+
+BeginCmp
+TimeStamp = /5159E685;
+Reference = B2;
+ValeurCmp = I/O;
+IdModule  = I/O;
+EndCmp
 
 BeginCmp
 TimeStamp = /5151E19B;
@@ -36,6 +50,13 @@ IdModule  = c_0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /5159A716;
+Reference = C6;
+ValeurCmp = 22pF;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
 TimeStamp = /514F459B;
 Reference = C7;
 ValeurCmp = 1u,16V;
@@ -46,6 +67,13 @@ BeginCmp
 TimeStamp = /514F458E;
 Reference = C8;
 ValeurCmp = 0.1u,16V;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5159A733;
+Reference = C9;
+ValeurCmp = 22pF;
 IdModule  = c_0805;
 EndCmp
 
@@ -197,6 +225,13 @@ IdModule  = c_0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /5159FCA4;
+Reference = C31;
+ValeurCmp = 0.1u,16V;
+IdModule  = C0603;
+EndCmp
+
+BeginCmp
 TimeStamp = /514F45A0;
 Reference = D1;
 ValeurCmp = BAT54SW;
@@ -229,6 +264,27 @@ TimeStamp = /515928D2;
 Reference = P1;
 ValeurCmp = PCB;
 IdModule  = PCB;
+EndCmp
+
+BeginCmp
+TimeStamp = /5159ED45;
+Reference = P2;
+ValeurCmp = ISP;
+IdModule  = Header_ISP;
+EndCmp
+
+BeginCmp
+TimeStamp = /5159FC79;
+Reference = P3;
+ValeurCmp = FTDI;
+IdModule  = Header_FTDI;
+EndCmp
+
+BeginCmp
+TimeStamp = /515A0196;
+Reference = P4;
+ValeurCmp = C3SB;
+IdModule  = PIN_ARRAY_4x1;
 EndCmp
 
 BeginCmp
@@ -323,6 +379,13 @@ IdModule  = r_0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /5159CC69;
+Reference = R7;
+ValeurCmp = 10k;
+IdModule  = R0402;
+EndCmp
+
+BeginCmp
 TimeStamp = /514F45AE;
 Reference = R9;
 ValeurCmp = 2k;
@@ -393,10 +456,24 @@ IdModule  = SW_SMD;
 EndCmp
 
 BeginCmp
+TimeStamp = /5159CC57;
+Reference = SW4;
+ValeurCmp = RST;
+IdModule  = ;
+EndCmp
+
+BeginCmp
 TimeStamp = /5155C609;
 Reference = U1;
 ValeurCmp = MCP9700AT-E/TT;
 IdModule  = SOT23-3-Temp;
+EndCmp
+
+BeginCmp
+TimeStamp = /51598471;
+Reference = U2;
+ValeurCmp = ATMEGA328-AU-ND;
+IdModule  = TQFP32;
 EndCmp
 
 BeginCmp
@@ -411,6 +488,13 @@ TimeStamp = /5152C285;
 Reference = U4;
 ValeurCmp = TXS0108;
 IdModule  = SO20L;
+EndCmp
+
+BeginCmp
+TimeStamp = /51598480;
+Reference = X1;
+ValeurCmp = CRYSTAL_16MHz;
+IdModule  = ;
 EndCmp
 
 EndListe

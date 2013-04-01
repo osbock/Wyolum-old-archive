@@ -1,11 +1,6 @@
-update=01-Apr-13 6:08:51 PM
+update=Monday 01 April 2013 10:05:34 PM IST
 version=1
-last_client=eeschema
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
+last_client=kicad
 [pcbnew]
 version=1
 LastNetListRead=repaper.net
@@ -25,10 +20,9 @@ DrawSegmentWidth=0.2
 BoardOutlineThickness=0.15
 ModuleOutlineThickness=0.15
 [pcbnew/libraries]
-LibDir=
 LibName1=repaper_lib/repaper
-[general]
-version=1
+LibName2=/home/samata/Documents/clockthree/KiCad/i2gps_v1/i2gps_v1-libs/i2gps_v1
+LibDir=
 [eeschema]
 version=1
 LibDir=
@@ -36,8 +30,15 @@ NetFmtName=
 RptD_X=0
 RptD_Y=100
 RptLab=1
-LabSize=60
+LabSize=40
 [eeschema/libraries]
 LibName1=power
 LibName2=repaper_lib/repaper_sym
-LibName3=C:/Users/Anool/Documents/Arduino/clockthree/KiCad/i2gps_v1/i2gps_v1-libs/i2gps_v1
+LibName3=/home/samata/Documents/clockthree/KiCad/i2gps_v1/i2gps_v1-libs/i2gps_v1
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
+[general]
+version=1
