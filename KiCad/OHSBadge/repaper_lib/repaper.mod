@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  Sunday 31 March 2013 08:30:35 PM IST
+PCBNEW-LibModule-V1  01-Apr-13 4:22:56 PM
 # encoding utf-8
 Units mm
 $INDEX
@@ -58,14 +58,14 @@ tssop-20
 vite_3mm
 $EndINDEX
 $MODULE ARDUINO_BUCKLER
-Po 0 0 0 15 5158271F 00000000 ~~
+Po 0 0 0 15 51592C86 00000000 ~~
 Li ARDUINO_BUCKLER
 Sc 0
 AR /5152EA95
 Op 0 0 0
 At SMD
-T0 66.167 7.112 0.762 0.762 900 0.127 N I 21 N "SHIELD1"
-T1 67.2465 4.699 0.762 0.762 900 0.127 N I 21 N "ARDUINO_SHIELD"
+T0 -1.0795 -0.635 0.762 0.762 1800 0.127 N I 21 N "SHIELD1"
+T1 -3.556 -1.778 0.762 0.762 1800 0.127 N I 21 N "ARDUINO_SHIELD"
 DS 1.27 0 2.54 1.27 0.15 21
 DS 1.27 0 -63.5 0 0.15 21
 DS -19.05 0.9525 -19.05 4.1275 0.127 21
@@ -221,27 +221,15 @@ Ne 15 "/TEMPERATURE"
 Po -44.704 2.54
 $EndPAD
 $SHAPE3D
-Na "repaper_lib/repaper_3D/conF_08.wrl"
+Na "repaper_lib/repaper_3D/pin_strip_10-90.wrl"
 Sc 1 1 1
-Of 1.45 0.1 0
+Of -1.31 -0.1 0
 Ro 0 0 0
 $EndSHAPE3D
 $SHAPE3D
-Na "repaper_lib/repaper_3D/conF_06.wrl"
+Na "repaper_lib/repaper_3D/pin_strip_8-90.wrl"
 Sc 1 1 1
-Of 2.25 0.1 0
-Ro 0 0 0
-$EndSHAPE3D
-$SHAPE3D
-Na "repaper_lib/repaper_3D/conF_08.wrl"
-Sc 1 1 1
-Of 2.15 2 0
-Ro 0 0 0
-$EndSHAPE3D
-$SHAPE3D
-Na "repaper_lib/repaper_3D/conF_10.wrl"
-Sc 1 1 1
-Of 1.2 2 0
+Of -0.35 -0.1 0
 Ro 0 0 0
 $EndSHAPE3D
 $EndMODULE ARDUINO_BUCKLER
@@ -69077,25 +69065,19 @@ $MODULE PCB
 Po 0 0 0 15 50124538 00000000 ~~
 Li PCB
 Sc 0
-AR /4FC07407/4FC07436
+AR /515928D2
 Op 0 0 0
-T0 0 -1.27 0.762 0.762 0 0.127 N I 21 N "PCB1"
+T0 0 -1.27 0.762 0.762 0 0.127 N I 21 N "P1"
 T1 0 1.27 0.762 0.762 0 0.127 N I 21 N "PCB"
 DS 0 0 0.508 0 0.127 21
 DS 0 0 -0.508 0 0.127 21
 DS 0 0 0 0.508 0.127 21
 DS 0 0 0 -0.508 0.127 21
 $SHAPE3D
-Na "repaper_lib/repaper_3D/i2gps_PCB_Material_3D.wrl"
-Sc 8.6 5.45 1
-Of 0 0 0
+Na "repaper_lib/repaper_3D/repaper_PCB.wrl"
+Sc 1 1 0.9
+Of 0 0 -0.01
 Ro 0 0 0
-$EndSHAPE3D
-$SHAPE3D
-Na "repaper_lib/repaper_3D/R_pi.wrl"
-Sc 0.99 1 0.95
-Of -0.465 0 -1.3
-Ro -90 0 0
 $EndSHAPE3D
 $EndMODULE PCB
 $MODULE SD Micro
@@ -70750,7 +70732,7 @@ $PAD
 Sh "8" R 0.3 1.2 0 0 0
 Dr 0 0 0
 At SMD N 00A88000
-Ne 37 "N-0000065"
+Ne 37 "N-0000063"
 Po 6.25 0
 .SolderMask 0.1
 .SolderPaste -0.1
@@ -71094,6 +71076,12 @@ Po -11.7 1.85
 .SolderMask 0.1
 .SolderPaste -0.1
 $EndPAD
+$SHAPE3D
+Na "repaper_lib/repaper_3D/eink_epd.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
 $EndMODULE ZIF-40-0.5
 $MODULE c_0805
 Po 0 0 0 15 4F42056D 00000000 ~~

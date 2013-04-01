@@ -1,8 +1,8 @@
 (export (version D)
   (design
-    (source /home/samata/Documents/clockthree/KiCad/OHSBadge/repaper.sch)
-    (date "Sunday 31 March 2013 09:09:51 PM IST")
-    (tool "eeschema (2013-mar-13)-testing"))
+    (source C:/Users/Anool/Documents/Arduino/clockthree/KiCad/OHSBadge/repaper.sch)
+    (date "01-Apr-13 11:56:17 AM")
+    (tool "eeschema (2013-03-15 BZR 4003)-stable"))
   (components
     (comp (ref Q5)
       (value 2N7002KW)
@@ -423,7 +423,12 @@
         (field (name Field4) 0402/0R/5%))
       (libsource (lib repaper_sym) (part R))
       (sheetpath (names /) (tstamps /))
-      (tstamp 5156EA89)))
+      (tstamp 5156EA89))
+    (comp (ref P1)
+      (value PCB)
+      (libsource (lib repaper_sym) (part PCB))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 515928D2)))
   (libparts
     (libpart (lib repaper_sym) (part ARDUINO_SHIELD)
       (fields
@@ -664,12 +669,16 @@
         (pin (num G3) (name ~) (type passive))
         (pin (num G4) (name ~) (type passive))
         (pin (num H1) (name ~) (type passive))
-        (pin (num H2) (name ~) (type passive)))))
+        (pin (num H2) (name ~) (type passive))))
+    (libpart (lib repaper_sym) (part PCB)
+      (fields
+        (field (name Reference) P)
+        (field (name Value) PCB))))
   (libraries
-    (library (logical repaper-cache)
-      (uri /home/samata/Documents/clockthree/KiCad/OHSBadge/repaper-cache.lib))
     (library (logical repaper_sym)
-      (uri repaper_lib/repaper_sym.lib)))
+      (uri repaper_lib\repaper_sym.lib))
+    (library (logical repaper-cache)
+      (uri C:\Users\Anool\Documents\Arduino\clockthree\KiCad\OHSBadge\repaper-cache.lib)))
   (nets
     (net (code 1) (name "")
       (node (ref U4) (pin 12)))

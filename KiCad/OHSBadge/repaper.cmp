@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Sunday 31 March 2013 05:39:30 PM IST
+Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 01-Apr-13 11:56:31 AM
 
 BeginCmp
 TimeStamp = /5151E19B;
@@ -222,6 +222,13 @@ TimeStamp = /514F45B3;
 Reference = J4;
 ValeurCmp = ZIF-40-0.5;
 IdModule  = ZIF-40-0.5;
+EndCmp
+
+BeginCmp
+TimeStamp = /515928D2;
+Reference = P1;
+ValeurCmp = PCB;
+IdModule  = PCB;
 EndCmp
 
 BeginCmp

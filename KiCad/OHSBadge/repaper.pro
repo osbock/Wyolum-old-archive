@@ -1,22 +1,11 @@
-update=Sunday 31 March 2013 11:54:27 PM IST
+update=01-Apr-13 6:08:51 PM
 version=1
-last_client=kicad
+last_client=eeschema
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[eeschema]
-version=1
-LibDir=
-NetFmtName=
-RptD_X=0
-RptD_Y=100
-RptLab=1
-LabSize=60
-[eeschema/libraries]
-LibName1=power
-LibName2=repaper_lib/repaper_sym
 [pcbnew]
 version=1
 LastNetListRead=repaper.net
@@ -40,3 +29,15 @@ LibDir=
 LibName1=repaper_lib/repaper
 [general]
 version=1
+[eeschema]
+version=1
+LibDir=
+NetFmtName=
+RptD_X=0
+RptD_Y=100
+RptLab=1
+LabSize=60
+[eeschema/libraries]
+LibName1=power
+LibName2=repaper_lib/repaper_sym
+LibName3=C:/Users/Anool/Documents/Arduino/clockthree/KiCad/i2gps_v1/i2gps_v1-libs/i2gps_v1
