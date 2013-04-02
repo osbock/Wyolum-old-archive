@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Monday 01 April 2013 09:57:57 PM IST
+Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 02-Apr-13 7:22:58 PM
 
 BeginCmp
 TimeStamp = /5159E678;
@@ -228,7 +228,7 @@ BeginCmp
 TimeStamp = /5159FCA4;
 Reference = C31;
 ValeurCmp = 0.1u,16V;
-IdModule  = C0603;
+IdModule  = c_0805;
 EndCmp
 
 BeginCmp
@@ -236,20 +236,6 @@ TimeStamp = /514F45A0;
 Reference = D1;
 ValeurCmp = BAT54SW;
 IdModule  = SOT323;
-EndCmp
-
-BeginCmp
-TimeStamp = /514F454F;
-Reference = J1;
-ValeurCmp = HEADER1X10MS2.54;
-IdModule  = Sck-10-F-SMT;
-EndCmp
-
-BeginCmp
-TimeStamp = /514F45C1;
-Reference = J2;
-ValeurCmp = HEADER1X10MS2.54;
-IdModule  = Sck-10-F-SMT;
 EndCmp
 
 BeginCmp
@@ -284,7 +270,7 @@ BeginCmp
 TimeStamp = /515A0196;
 Reference = P4;
 ValeurCmp = C3SB;
-IdModule  = PIN_ARRAY_4x1;
+IdModule  = Header_6x1;
 EndCmp
 
 BeginCmp
@@ -382,7 +368,7 @@ BeginCmp
 TimeStamp = /5159CC69;
 Reference = R7;
 ValeurCmp = 10k;
-IdModule  = R0402;
+IdModule  = r_0805;
 EndCmp
 
 BeginCmp
@@ -431,7 +417,7 @@ BeginCmp
 TimeStamp = /5152EA95;
 Reference = SHIELD1;
 ValeurCmp = ARDUINO_SHIELD;
-IdModule  = ARDUINO_BUCKLER;
+IdModule  = ARDUINO_SHIELD_2_040pins;
 EndCmp
 
 BeginCmp
@@ -459,7 +445,7 @@ BeginCmp
 TimeStamp = /5159CC57;
 Reference = SW4;
 ValeurCmp = RST;
-IdModule  = ;
+IdModule  = SW_SMD;
 EndCmp
 
 BeginCmp
@@ -494,7 +480,7 @@ BeginCmp
 TimeStamp = /51598480;
 Reference = X1;
 ValeurCmp = CRYSTAL_16MHz;
-IdModule  = ;
+IdModule  = Xtal_SMD2;
 EndCmp
 
 EndListe
