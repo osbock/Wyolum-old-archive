@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 02-Apr-13 7:24:11 PM
+EESchema Schematic File Version 2  date 03-Apr-13 1:31:23 PM
 LIBS:power
 LIBS:repaper_sym
 LIBS:repaper-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "2 apr 2013"
+Date "3 apr 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -2341,7 +2341,7 @@ B9 E4 83 0F 3E B8 01 1F 43 DC BE 38 77 EE DC F2 E5 CB 57 AD 5A 55 5A 5A 2A BE 77
 A5 8D 19 33 66 EA D4 A9 29 29 29 BE E9 0E 3E F8 E0 83 DB F0 31 C4 ED 0E 42 C8 6F BF FD B6 7B F7 
 EE D2 D2 D2 63 C7 8E 9D 3F 7F BE BE BE BE A1 A1 C1 68 34 2A 14 0A A5 52 E9 E7 E7 17 19 19 19 17 
 17 17 1F 1F 9F 93 93 D3 BB 77 EF A0 A0 A0 5B DD 6A 1F 7C F0 E1 8F 80 FF 07 08 D1 6F 67 D0 89 54 
-48 00 00 00 00 49 45 4E 44 AE 42 60 82 EB $EndBitmap
+48 00 00 00 00 49 45 4E 44 AE 42 60 82 6E $EndBitmap
 EndData
 $EndBitmap
 Text Label 5975 1050 0    40   ~ 0
@@ -3348,10 +3348,6 @@ NoConn ~ 5975 2350
 NoConn ~ 5975 2250
 NoConn ~ 5975 2150
 NoConn ~ 5975 2050
-Text Label 3575 2650 0    40   ~ 0
-SCL
-Text Label 3575 2750 0    40   ~ 0
-SDA
 Wire Wire Line
 	3575 2650 3825 2650
 Wire Wire Line
@@ -3372,4 +3368,8 @@ Text Label 3575 1750 0    40   ~ 0
 VCC5V
 Text Label 3575 1450 0    40   ~ 0
 VCC5V
+Text Label 3575 2650 0    40   ~ 0
+SDA
+Text Label 3575 2750 0    40   ~ 0
+SCL
 $EndSCHEMATC

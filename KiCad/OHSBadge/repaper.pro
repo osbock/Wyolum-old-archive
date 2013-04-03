@@ -1,8 +1,6 @@
-update=02-Apr-13 7:00:54 PM
+update=03-Apr-13 6:13:10 PM
 version=1
-last_client=pcbnew
-[general]
-version=1
+last_client=kicad
 [eeschema]
 version=1
 LibDir=
@@ -40,3 +38,5 @@ ModuleOutlineThickness=0.15
 [pcbnew/libraries]
 LibDir=
 LibName1=repaper_lib/repaper
+[general]
+version=1

@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: 02-Apr-13 7:27:02 PM
+EESchema-LIBRARY Version 2.3  Date: 03-Apr-13 5:46:31 PM
 #encoding utf-8
 #
 # +3.3V
@@ -34,9 +34,9 @@ T 0 100 200 40 0 0 0 PWM  Normal 0 L C
 T 0 100 300 40 0 0 0 PWM  Normal 0 L C
 T 0 100 400 40 0 0 0 PWM  Normal 0 L C
 T 0 250 600 40 0 0 0 SCK  Normal 0 L C
-T 0 -350 -700 40 0 0 0 SCL  Normal 0 L C
+T 0 -350 -800 40 0 0 0 SCL  Normal 0 L C
 T 0 250 1000 40 0 0 0 SCL  Normal 0 L C
-T 0 -350 -800 40 0 0 0 SDA  Normal 0 L C
+T 0 -350 -700 40 0 0 0 SDA  Normal 0 L C
 T 0 250 900 40 0 0 0 SDA  Normal 0 L C
 T 0 250 300 40 0 0 0 SS  Normal 0 L C
 T 0 250 -700 40 0 0 0 TXD  Normal 0 L C
