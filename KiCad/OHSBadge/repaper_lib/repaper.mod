@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  03-Apr-13 5:33:03 PM
+PCBNEW-LibModule-V1  Thursday 04 April 2013 07:18:10 PM IST
 # encoding utf-8
 Units mm
 $INDEX
@@ -49,6 +49,7 @@ TQFP32_Thermal
 USB_B_Micro
 Xtal_SMD2
 ZIF-40-0.5
+ZIF-40-0.5-M
 c_0805
 d_0805
 d_VMD2
@@ -72217,6 +72218,461 @@ Of 0 0 0
 Ro 0 0 0
 $EndSHAPE3D
 $EndMODULE ZIF-40-0.5
+$MODULE ZIF-40-0.5-M
+Po 0 0 0 15 515D8476 00000000 ~~
+Li ZIF-40-0.5-M
+Sc 0
+AR /514F45B3
+Op 0 0 0
+T0 0 6.731 1 1 0 0.15 N V 21 N "J4"
+T1 0 5.2705 1 1 0 0.15 N V 21 N "ZIF-40-0.5-M"
+DS -13.05 12.179 -13.05 11.529 0.15 21
+DS -11.7 12.179 -13.05 12.179 0.15 21
+DS -11.7 12.429 -11.7 12.179 0.15 21
+DS 13.05 12.179 13.05 11.529 0.15 21
+DS 11.7 12.179 13.05 12.179 0.15 21
+DS 11.7 12.429 11.7 12.179 0.15 21
+DS 13.05 11.529 -13.05 11.529 0.15 21
+DS -11.7 16.129 -10.1 16.129 0.15 21
+DS 10.1 16.129 11.7 16.129 0.15 21
+DS 10.1 16.929 10.1 16.129 0.15 21
+DS -10.1 16.929 10.1 16.929 0.15 21
+DS -10.1 16.129 -10.1 16.929 0.15 21
+DS -10.758 11.5165 -10.758 9.7665 0.15 21
+DS 9.742 11.5165 9.742 9.7665 0.15 21
+DS 10.25 6.5 8.75 9.5 0.15 21
+DS 8.75 9.5 8.75 11.25 0.15 21
+DS -13.25 9.5 -13.25 11.25 0.15 21
+DS -13.25 9.5 -10.25 6.5 0.15 21
+DS -14.75 11.25 -14.75 82.25 0.15 21
+DS -14.75 82.25 31.25 82.25 0.15 21
+DS 31.25 82.25 31.25 11.25 0.15 21
+DS 31.25 11.25 -14.75 11.25 0.15 21
+$PAD
+Sh "42" R 2.7 3 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 0 ""
+Po 11.7 14.3
+.SolderMask 0.1
+.SolderPaste -0.1
+$EndPAD
+$PAD
+Sh "41" R 2.7 3 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 0 ""
+Po -11.7 14.3
+.SolderMask 0.1
+.SolderPaste -0.1
+$EndPAD
+$PAD
+Sh "1" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 30 "/VCOM"
+Po 9.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "2" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 30 "/VCOM"
+Po 9.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "3" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 1 "/BORDER"
+Po 8.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "4" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 33 "/VDL"
+Po 8.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "5" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 32 "/VDH"
+Po 7.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "6" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 35 "/VGL"
+Po 7.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "7" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 34 "/VGH"
+Po 6.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "8" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 36 "GND"
+Po 6.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "9" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 28 "/VCC_T"
+Po 5.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "10" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 28 "/VCC_T"
+Po 5.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "11" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 31 "/VCOM_DRIVER"
+Po 4.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "12" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 4 "/C11P"
+Po 4.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "13" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 3 "/C11M"
+Po 3.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "14" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 6 "/C12P"
+Po 3.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "15" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 5 "/C12M"
+Po 2.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "16" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 8 "/C13P"
+Po 2.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "17" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 7 "/C13M"
+Po 1.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "18" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 10 "/C14P"
+Po 1.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "19" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 9 "/C14M"
+Po 0.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "20" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 12 "/C15P"
+Po 0.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "21" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 11 "/C15M"
+Po -0.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "22" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 14 "/C16P"
+Po -0.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "23" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 13 "/C16M"
+Po -1.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "24" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 16 "/C21P"
+Po -1.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "25" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 15 "/C21M"
+Po -2.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "26" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 18 "/C31P"
+Po -2.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "27" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 17 "/C31M"
+Po -3.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "28" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 19 "/C41M"
+Po -3.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "29" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 20 "/C41P"
+Po -4.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "30" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 21 "/C42M"
+Po -4.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "31" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 22 "/C42P"
+Po -5.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "32" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 29 "/VCL"
+Po -5.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "33" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 37 "N-000005"
+Po -6.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "34" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 24 "/RESET_COG"
+Po -6.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "35" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 26 "/SPI_MISO_COG"
+Po -7.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "36" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 27 "/SPI_MOSI_COG"
+Po -7.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "37" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 25 "/SPI_CLK_COG"
+Po -8.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "38" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 36 "GND"
+Po -8.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "39" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 2 "/BUSY_COG"
+Po -9.25 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$PAD
+Sh "40" R 0.3 1.2 0 0 1800
+Dr 0 0 0
+At SMD N 00540001
+Ne 23 "/EPD_CS_COG"
+Po -9.75 16.129
+.SolderMask 0.1
+.SolderPaste -0.1
+.LocalClearance 0.1
+$EndPAD
+$SHAPE3D
+Na "repaper_lib/repaper_3D/eink_epd.wrl"
+Sc 1 1 1
+Of 0.32 -1.84 0
+Ro 0 0 -90
+$EndSHAPE3D
+$EndMODULE ZIF-40-0.5-M
 $MODULE c_0805
 Po 0 0 0 15 4F42056D 00000000 ~~
 Li c_0805

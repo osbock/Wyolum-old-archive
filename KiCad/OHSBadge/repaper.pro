@@ -1,4 +1,4 @@
-update=03-Apr-13 6:13:10 PM
+update=Thursday 04 April 2013 09:49:45 PM IST
 version=1
 last_client=kicad
 [eeschema]
@@ -21,9 +21,9 @@ EquName1=devcms
 version=1
 LastNetListRead=repaper.net
 UseCmpFile=1
-PadDrill=1.016
-PadSizeH=1.524
-PadSizeV=1.524
+PadDrill=0
+PadSizeH=2.7
+PadSizeV=3
 PcbTextSizeV=1
 PcbTextSizeH=1
 PcbTextThickness=0.3
@@ -38,5 +38,7 @@ ModuleOutlineThickness=0.15
 [pcbnew/libraries]
 LibDir=
 LibName1=repaper_lib/repaper
+LibName2=repaper_lib/repaper_logo
+LibName3=repaper_lib/seeed_logo
 [general]
 version=1
