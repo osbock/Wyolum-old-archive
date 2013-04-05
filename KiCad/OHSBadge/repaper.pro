@@ -1,17 +1,6 @@
-update=Thursday 04 April 2013 09:49:45 PM IST
+update=05-Apr-13 9:01:45 AM
 version=1
-last_client=kicad
-[eeschema]
-version=1
-LibDir=
-NetFmtName=
-RptD_X=0
-RptD_Y=100
-RptLab=1
-LabSize=40
-[eeschema/libraries]
-LibName1=power
-LibName2=repaper_lib/repaper_sym
+last_client=eeschema
 [cvpcb]
 version=1
 NetIExt=net
@@ -42,3 +31,14 @@ LibName2=repaper_lib/repaper_logo
 LibName3=repaper_lib/seeed_logo
 [general]
 version=1
+[eeschema]
+version=1
+LibDir=
+NetFmtName=
+RptD_X=0
+RptD_Y=100
+RptLab=1
+LabSize=40
+[eeschema/libraries]
+LibName1=power
+LibName2=repaper_lib/repaper_sym
