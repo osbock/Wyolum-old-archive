@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: 06-Apr-13 11:50:27 AM
+EESchema-LIBRARY Version 2.3  Date: Sunday 07 April 2013 12:42:34 PM IST
 #encoding utf-8
 #
 # ARDUINO_SHIELD
@@ -116,6 +116,56 @@ X PC6(/RESET) 29 -900 1000 200 R 40 40 1 1 B I
 ENDDRAW
 ENDDEF
 #
+# Batt_Coin
+#
+DEF Batt_Coin BT 0 0 N Y 1 F N
+F0 "BT" 0 200 50 H V L CNN
+F1 "Batt_Coin" 0 -190 50 H V L CNN
+F2 "~" 0 0 60 H V C CNN
+F3 "~" 0 0 60 H V C CNN
+F4 "BATTERY LITHIUM COIN 3V 20MM" 0 300 60 H I L CNN
+F5 "Lithium, 3V, 225mAh" 0 400 60 H I L CNN
+F6 "CR2032" 0 500 60 H I L CNN
+F7 "Panasonic - BSG" 0 600 60 H I L CNN
+F8 "CR2032" 0 700 60 H I L CNN
+F9 "Digikey" 0 800 60 H I L CNN
+F10 "P189-ND" 0 900 60 H I L CNN
+F11 "http://www.digikey.com/product-detail/en/CR2032/P189-ND/31939?cur=USD" 0 1000 60 H I L CNN
+DRAW
+T 900 -150 0 60 0 0 0 [+]  Normal 0 C C
+T 900 100 0 60 0 0 0 [-]  Normal 0 C C
+S -50 90 -40 -90 0 1 0 F
+S 0 50 -20 -50 0 1 0 F
+P 2 0 1 0  -50 0  -100 0 N
+P 2 0 1 0  0 0  50 0 N
+ENDDRAW
+ENDDEF
+#
+# Batt_Holder
+#
+DEF Batt_Holder BT 0 0 N Y 1 F N
+F0 "BT" 0 200 50 H V L CNN
+F1 "Batt_Holder" 0 -190 50 H V L CNN
+F2 "~" 0 0 60 H V C CNN
+F3 "~" 0 0 60 H V C CNN
+F4 "HOLDER BATTERY COIN 20MM DIA THM" 0 300 60 H I L CNN
+F5 "Coin Cell, Retainer" 0 400 60 H I L CNN
+F6 "Coin, 20.0mm" 0 500 60 H I L CNN
+F7 "Keystone Electronics" 0 600 60 H I L CNN
+F8 "3003" 0 700 60 H I L CNN
+F9 "Digikey" 0 800 60 H I L CNN
+F10 "3003K-ND" 0 900 60 H I L CNN
+F11 "http://www.digikey.com/scripts/DkSearch/dksus.dll?x=0&y=0&lang=en&KeyWords=3003K-ND&cur=USD" 0 1000 60 H I L CNN
+DRAW
+S -50 90 -40 -90 0 1 0 F
+S 0 50 -20 -50 0 1 0 F
+P 2 0 1 0  -75 0  -50 0 N
+P 2 0 1 0  0 0  25 0 N
+X + + -125 0 50 R 50 50 1 1 P
+X - - 75 0 50 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # CAP_NP
 #
 DEF CAP_NP C? 0 30 N N 1 F N
@@ -211,6 +261,21 @@ DRAW
 S -100 100 100 -100 0 1 0 N
 X P1 1 -350 50 250 R 50 50 1 1 P I
 X P2 2 -350 -50 250 R 50 50 1 1 P I
+ENDDRAW
+ENDDEF
+#
+# CONN_3
+#
+DEF CONN_3 P 0 40 Y N 1 F N
+F0 "P" -50 0 50 V V C CNN
+F1 "CONN_3" 50 0 50 V V C CNN
+F2 "~" 0 -50 60 H V C CNN
+F3 "~" 0 -50 60 H V C CNN
+DRAW
+S -100 150 100 -150 0 1 0 N
+X P1 1 -350 100 250 R 50 50 1 1 P I
+X P2 2 -350 0 250 R 50 50 1 1 P I
+X P3 3 -350 -100 250 R 50 50 1 1 P I
 ENDDRAW
 ENDDEF
 #

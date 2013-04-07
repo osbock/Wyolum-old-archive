@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Thursday 04 April 2013 07:18:58 PM IST
+Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Sunday 07 April 2013 01:53:36 PM IST
 
 BeginCmp
 TimeStamp = /5159E678;
@@ -12,6 +12,27 @@ TimeStamp = /5159E685;
 Reference = B2;
 ValeurCmp = I/O;
 IdModule  = I/O;
+EndCmp
+
+BeginCmp
+TimeStamp = /515FE54A;
+Reference = B3;
+ValeurCmp = I/O;
+IdModule  = I/O;
+EndCmp
+
+BeginCmp
+TimeStamp = /51612040;
+Reference = BT1;
+ValeurCmp = Batt_Clip;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /516122F7;
+Reference = BT2;
+ValeurCmp = BATT_COIN;
+IdModule  = ;
 EndCmp
 
 BeginCmp
@@ -197,7 +218,7 @@ IdModule  = c_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /514F4561;
+TimeStamp = /515FDC02;
 Reference = C27;
 ValeurCmp = 0.1u,16V;
 IdModule  = c_0805;
@@ -211,7 +232,7 @@ IdModule  = c_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /514F458D;
+TimeStamp = /515FD8EE;
 Reference = C29;
 ValeurCmp = 0.1u,16V;
 IdModule  = c_0805;
@@ -285,6 +306,20 @@ TimeStamp = /515A0196;
 Reference = P4;
 ValeurCmp = C3SB;
 IdModule  = pin_strip_4-90;
+EndCmp
+
+BeginCmp
+TimeStamp = /515FD331;
+Reference = P5;
+ValeurCmp = JST_3V3;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /51612C27;
+Reference = P6;
+ValeurCmp = CONN_3;
+IdModule  = Header_A_REF;
 EndCmp
 
 BeginCmp
@@ -437,14 +472,14 @@ EndCmp
 BeginCmp
 TimeStamp = /5156E165;
 Reference = SW1;
-ValeurCmp = SEL;
+ValeurCmp = UP;
 IdModule  = SW_SMD;
 EndCmp
 
 BeginCmp
 TimeStamp = /5156E172;
 Reference = SW2;
-ValeurCmp = UP;
+ValeurCmp = SEL;
 IdModule  = SW_SMD;
 EndCmp
 
@@ -477,9 +512,9 @@ IdModule  = TQFP32;
 EndCmp
 
 BeginCmp
-TimeStamp = /514F45BE;
+TimeStamp = /515FB571;
 Reference = U3;
-ValeurCmp = TPS77030;
+ValeurCmp = MCP1700T-33;
 IdModule  = SOT23-5;
 EndCmp
 
@@ -493,7 +528,7 @@ EndCmp
 BeginCmp
 TimeStamp = /51598480;
 Reference = X1;
-ValeurCmp = CRYSTAL_16MHz;
+ValeurCmp = CRYSTAL_8MHz;
 IdModule  = Xtal_SMD2;
 EndCmp
 
