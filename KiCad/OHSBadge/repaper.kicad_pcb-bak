@@ -1,7 +1,7 @@
 (kicad_pcb (version 3) (host pcbnew "(2013-03-15 BZR 4003)-stable")
 
   (general
-    (links 0)
+    (links 204)
     (no_connects 204)
     (area 25.336499 35.496499 127.063501 114.363501)
     (thickness 1.6)
@@ -3503,13 +3503,13 @@
     )
   )
 
-  (module ARDUINO_SHIELD_040pins (layer F.Cu) (tedit 51627D37) (tstamp 515B115B)
+  (module ARDUINO_SHIELD_040pins (layer F.Cu) (tedit 5162A8C2) (tstamp 515B115B)
     (at 58.166 101.6)
     (path /5152EA95)
-    (fp_text reference SHIELD1 (at 5.715 -57.15) (layer F.SilkS)
+    (fp_text reference SHIELD1 (at 28.448 -5.0165) (layer F.SilkS)
       (effects (font (size 1.524 1.524) (thickness 0.3048)))
     )
-    (fp_text value ARDUINO_SHIELD (at 10.16 -54.61) (layer F.SilkS) hide
+    (fp_text value ARDUINO_SHIELD (at 43.3705 -5.1435) (layer F.SilkS) hide
       (effects (font (size 1.524 1.524) (thickness 0.3048)))
     )
     (fp_line (start 68.58 -38.1) (end 68.58 -5.08) (layer F.SilkS) (width 0.15))
