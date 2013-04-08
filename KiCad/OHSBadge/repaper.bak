@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 07 April 2013 10:35:57 PM IST
+EESchema Schematic File Version 2  date 08-Apr-13 4:51:51 PM
 LIBS:repaper_sym
 LIBS:power
 LIBS:repaper-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "7 apr 2013"
+Date "8 apr 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -912,7 +912,7 @@ NoConn ~ 3825 1050
 Text Label 5975 2750 0    40   ~ 0
 RXD
 Text Label 5975 2650 0    40   ~ 0
-TXD_3V3
+TXD
 Text Label 5975 1550 0    40   ~ 0
 SPI_MOSI
 Text Label 5975 1450 0    40   ~ 0
@@ -985,7 +985,6 @@ NoConn ~ 3825 2350
 NoConn ~ 3825 2450
 NoConn ~ 3825 2550
 NoConn ~ 3825 2050
-NoConn ~ 3825 1550
 $Comp
 L MCP9700AT-E/TT U1
 U 1 1 5155C609
@@ -1104,12 +1103,12 @@ GND
 $Comp
 L PCB P1
 U 1 1 515928D2
-P 9700 6950
-F 0 "P1" H 9700 6900 60  0000 C CNN
-F 1 "PCB" H 9700 7000 60  0000 C CNN
-F 2 "" H 9700 6950 60  0000 C CNN
-F 3 "" H 9700 6950 60  0000 C CNN
-	1    9700 6950
+P 10925 5825
+F 0 "P1" H 10925 5775 60  0000 C CNN
+F 1 "PCB" H 10925 5875 60  0000 C CNN
+F 2 "" H 10925 5825 60  0000 C CNN
+F 3 "" H 10925 5825 60  0000 C CNN
+	1    10925 5825
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1217,9 +1216,9 @@ SDA_3V3
 Text Label 2025 4625 0    30   ~ 0
 SCL_3V3
 Text Label 6150 5350 0    40   ~ 0
-AD6
+AD6_3V3
 Text Label 6150 5450 0    40   ~ 0
-AD7
+AD7_3V3
 Text Label 3850 4100 0    40   ~ 0
 3V3
 Text Label 4000 5150 0    40   ~ 0
@@ -1294,103 +1293,103 @@ $EndComp
 $Comp
 L I/O B1
 U 1 1 5159E678
-P 6425 5350
-F 0 "B1" H 6505 5350 40  0000 L CNN
-F 1 "I/O" H 6425 5295 30  0001 C CNN
-F 2 "~" H 6425 5350 60  0000 C CNN
-F 3 "~" H 6425 5350 60  0000 C CNN
-	1    6425 5350
+P 6550 5350
+F 0 "B1" H 6630 5350 40  0000 L CNN
+F 1 "I/O" H 6550 5295 30  0001 C CNN
+F 2 "~" H 6550 5350 60  0000 C CNN
+F 3 "~" H 6550 5350 60  0000 C CNN
+	1    6550 5350
 	1    0    0    -1  
 $EndComp
 $Comp
 L I/O B2
 U 1 1 5159E685
-P 6425 5450
-F 0 "B2" H 6505 5450 40  0000 L CNN
-F 1 "I/O" H 6425 5395 30  0001 C CNN
-F 2 "~" H 6425 5450 60  0000 C CNN
-F 3 "~" H 6425 5450 60  0000 C CNN
-	1    6425 5450
+P 6550 5450
+F 0 "B2" H 6630 5450 40  0000 L CNN
+F 1 "I/O" H 6550 5395 30  0001 C CNN
+F 2 "~" H 6550 5450 60  0000 C CNN
+F 3 "~" H 6550 5450 60  0000 C CNN
+	1    6550 5450
 	1    0    0    -1  
 $EndComp
 $Comp
 L ISP P2
 U 1 1 5159ED45
-P 8525 6450
-F 0 "P2" V 8525 6250 60  0000 C CNN
-F 1 "ISP" V 8525 6600 60  0000 C CNN
-F 2 "" H 8525 6450 60  0000 C CNN
-F 3 "" H 8525 6450 60  0000 C CNN
-	1    8525 6450
+P 8675 6450
+F 0 "P2" V 8675 6250 60  0000 C CNN
+F 1 "ISP" V 8675 6600 60  0000 C CNN
+F 2 "" H 8675 6450 60  0000 C CNN
+F 3 "" H 8675 6450 60  0000 C CNN
+	1    8675 6450
 	1    0    0    -1  
 $EndComp
 Text Label 7900 6200 0    40   ~ 0
-SPI_MISO
+SPI_MISO_3V3
 Text Label 7900 6300 0    40   ~ 0
-VCC5V
+3V3
 Text Label 7900 6400 0    40   ~ 0
-SPI_CLK
+SPI_CLK_3V3
 Text Label 7900 6500 0    40   ~ 0
-SPI_MOSI
+SPI_MOSI_3V3
 Text Label 4100 4550 0    40   ~ 0
 RST_3V3
 Text Label 7900 6600 0    40   ~ 0
-RST
+RST_3V3
 Text Label 7900 6700 0    40   ~ 0
 GND
 $Comp
 L ISP P3
 U 1 1 5159FC79
-P 9700 6450
-F 0 "P3" V 9700 6275 60  0000 C CNN
-F 1 "FTDI" V 9700 6600 60  0000 C CNN
-F 2 "" H 9700 6450 60  0000 C CNN
-F 3 "" H 9700 6450 60  0000 C CNN
-	1    9700 6450
+P 9875 6450
+F 0 "P3" V 9875 6275 60  0000 C CNN
+F 1 "FTDI" V 9875 6600 60  0000 C CNN
+F 2 "" H 9875 6450 60  0000 C CNN
+F 3 "" H 9875 6450 60  0000 C CNN
+	1    9875 6450
 	1    0    0    -1  
 $EndComp
 $Comp
 L CAPACITOR_NON_POL_2 C31
 U 1 1 5159FCA4
-P 9000 6750
-F 0 "C31" V 9025 6825 27  0000 L TNN
-F 1 "0.1u,16V" V 9075 6700 27  0000 L TNN
-F 2 "C0603" H 9050 6800 27  0001 L TNN
-F 3 "" H 9000 6750 60  0001 C CNN
-F 4 "0603/0.1uF/16V" H 1950 1750 60  0001 C CNN "Field4"
-	1    9000 6750
+P 9300 6750
+F 0 "C31" V 9325 6825 27  0000 L TNN
+F 1 "0.1u,16V" V 9375 6700 27  0000 L TNN
+F 2 "C0603" H 9350 6800 27  0001 L TNN
+F 3 "" H 9300 6750 60  0001 C CNN
+F 4 "0603/0.1uF/16V" H 2250 1750 60  0001 C CNN "Field4"
+	1    9300 6750
 	0    -1   1    0   
 $EndComp
-Text Label 8775 6700 0    40   ~ 0
+Text Label 9075 6700 0    40   ~ 0
 RST
-Text Label 8775 6600 0    40   ~ 0
-TXD_3V3
-Text Label 8775 6500 0    40   ~ 0
+Text Label 9075 6600 0    40   ~ 0
+TXD
+Text Label 9075 6500 0    40   ~ 0
 RXD
-Text Label 8775 6400 0    40   ~ 0
+Text Label 9075 6400 0    40   ~ 0
 VCC5V
-Text Label 8775 6300 0    40   ~ 0
+Text Label 9075 6300 0    40   ~ 0
 GND
-Text Label 8775 6200 0    40   ~ 0
+Text Label 9075 6200 0    40   ~ 0
 GND
 $Comp
 L CONN_4 P4
 U 1 1 515A0196
-P 10575 6350
-F 0 "P4" V 10525 6350 50  0000 C CNN
-F 1 "C3SB" V 10625 6350 50  0000 C CNN
-F 2 "" H 10575 6350 60  0000 C CNN
-F 3 "" H 10575 6350 60  0000 C CNN
-	1    10575 6350
+P 10925 6350
+F 0 "P4" V 10875 6350 50  0000 C CNN
+F 1 "C3SB" V 10975 6350 50  0000 C CNN
+F 2 "" H 10925 6350 60  0000 C CNN
+F 3 "" H 10925 6350 60  0000 C CNN
+	1    10925 6350
 	1    0    0    -1  
 $EndComp
-Text Label 9950 6200 0    40   ~ 0
+Text Label 10350 6400 0    40   ~ 0
 SDA
-Text Label 9950 6300 0    40   ~ 0
+Text Label 10350 6300 0    40   ~ 0
 SCL
-Text Label 9950 6400 0    40   ~ 0
+Text Label 10350 6200 0    40   ~ 0
 VCC5V
-Text Label 9950 6500 0    40   ~ 0
+Text Label 10350 6500 0    40   ~ 0
 GND
 Text Notes 7900 7075 0    40   ~ 8
 Interfaces_Communication
@@ -1981,9 +1980,9 @@ Wire Wire Line
 Wire Wire Line
 	6025 5250 6150 5250
 Wire Wire Line
-	6025 5350 6275 5350
+	6025 5350 6400 5350
 Wire Wire Line
-	6025 5450 6275 5450
+	6025 5450 6400 5450
 Wire Wire Line
 	5725 1650 5975 1650
 Wire Wire Line
@@ -2009,47 +2008,47 @@ Wire Wire Line
 Wire Wire Line
 	750  6600 750  6550
 Wire Wire Line
-	8175 6200 7900 6200
+	8325 6200 7900 6200
 Wire Wire Line
-	7900 6300 8175 6300
+	7900 6300 8325 6300
 Wire Wire Line
-	7900 6400 8175 6400
+	7900 6400 8325 6400
 Wire Wire Line
-	7900 6500 8175 6500
+	7900 6500 8325 6500
 Wire Wire Line
-	7900 6600 8175 6600
+	7900 6600 8325 6600
 Wire Wire Line
-	7900 6700 8175 6700
+	7900 6700 8325 6700
 Wire Wire Line
-	9350 6700 9100 6700
+	9525 6700 9400 6700
 Wire Wire Line
-	9100 6700 9100 6750
+	9400 6700 9400 6750
 Wire Wire Line
-	9100 6750 9075 6750
+	9400 6750 9375 6750
 Wire Wire Line
-	8900 6750 8875 6750
+	9200 6750 9175 6750
 Wire Wire Line
-	8875 6750 8875 6700
+	9175 6750 9175 6700
 Wire Wire Line
-	8875 6700 8775 6700
+	9175 6700 9075 6700
 Wire Wire Line
-	8775 6600 9350 6600
+	9075 6600 9525 6600
 Wire Wire Line
-	8775 6500 9350 6500
+	9075 6500 9525 6500
 Wire Wire Line
-	8775 6400 9350 6400
+	9075 6400 9525 6400
 Wire Wire Line
-	8775 6300 9350 6300
+	9075 6300 9525 6300
 Wire Wire Line
-	8775 6200 9350 6200
+	9075 6200 9525 6200
 Wire Wire Line
-	10225 6200 9950 6200
+	10575 6200 10350 6200
 Wire Wire Line
-	9950 6300 10225 6300
+	10350 6300 10575 6300
 Wire Wire Line
-	9950 6400 10225 6400
+	10350 6400 10575 6400
 Wire Wire Line
-	9950 6500 10225 6500
+	10350 6500 10575 6500
 Wire Notes Line
 	7800 7100 7800 6050
 Wire Notes Line
@@ -2112,7 +2111,7 @@ F 3 "~" H 2125 6975 60  0000 C CNN
 	1    2125 6975
 	0    -1   -1   0   
 $EndComp
-Text Label 9100 6700 0    40   ~ 0
+Text Label 9400 6700 0    40   ~ 0
 DTR
 $Comp
 L MCP1700T-33 U3
@@ -2133,12 +2132,6 @@ Text Label 6150 4950 0    40   ~ 0
 SEL
 Text Label 6150 5050 0    40   ~ 0
 DOWN
-Text Label 2025 4225 0    30   ~ 0
-SPI_MOSI_3V3
-Text Label 2025 4325 0    30   ~ 0
-SPI_MISO_3V3
-Text Label 2025 4425 0    30   ~ 0
-SPI_CLK_3V3
 Text Label 2025 4925 0    30   ~ 0
 RXD_3V3
 Text Label 6150 6250 0    40   ~ 0
@@ -2153,14 +2146,8 @@ Text Label 925  4525 0    30   ~ 0
 SDA
 Text Label 925  4625 0    30   ~ 0
 SCL
-Text Label 925  4225 0    30   ~ 0
-SPI_MOSI
-Text Label 925  4325 0    30   ~ 0
-SPI_MISO
-Text Label 925  4425 0    30   ~ 0
-SPI_CLK
 Text Label 925  4925 0    30   ~ 0
-RXD
+TXD
 Wire Wire Line
 	900  7075 900  7175
 Connection ~ 900  6600
@@ -2196,12 +2183,6 @@ Wire Wire Line
 Connection ~ 2325 6600
 Wire Wire Line
 	2325 7175 2325 6975
-Text Notes 8800 5050 0    40   ~ 8
-NOTE : Do we want to connect 3V3 between Arduino shield header\nand rest of circuit ? Could cause problem if 3V3 BATT is also\nconnected at the same time.
-Text Notes 8800 5800 0    40   ~ 8
-NOTE :\n3V3 regulator is not installed by default.\nBadge runs off 3V3 coin battery.\nH1 and H2 OR P5 allow lanyard wires to connect to external battery.
-Text Notes 8800 5350 0    40   ~ 8
-NOTE :\n3V3 operation requires 8MHz resonator - please confirm
 $Comp
 L CAPACITOR_NON_POL_2 C29
 U 1 1 515FD8EE
@@ -2250,8 +2231,6 @@ Wire Wire Line
 Connection ~ 3450 5150
 Text Label 925  6600 0    30   ~ 0
 VCC5V
-Text Notes 8800 5550 0    40   ~ 8
-NOTE :\nWhere does SPI_SS_3V3 connect to?\nOr is it "Not connected" ?
 $Comp
 L I/O B3
 U 1 1 515FE54A
@@ -2271,20 +2250,12 @@ Wire Notes Line
 	600  5600 600  3575
 Wire Notes Line
 	2925 3575 2925 5600
-Wire Wire Line
-	925  5350 2025 5350
-Text Label 925  5350 0    30   ~ 0
-TXD_3V3
-Text Label 2025 5350 0    30   ~ 0
-TXD_3V3
-Text Label 2025 4825 0    30   ~ 0
-SPI_SS_3V3
 Text Label 925  4825 0    30   ~ 0
-SPI_SS
+RXD
+Text Label 2025 4825 0    30   ~ 0
+TXD_3V3
 Text Label 5975 1650 0    40   ~ 0
 SPI_SS
-Text Notes 8800 4850 0    40   ~ 8
-NOTE :\nTXD and RXD should be swapped here?
 Wire Wire Line
 	3375 1650 3825 1650
 Text Label 3575 1650 0    40   ~ 0
@@ -2389,4 +2360,48 @@ Wire Notes Line
 	600  6275 3625 6275
 Wire Notes Line
 	3625 7750 600  7750
+Text Label 2025 4425 0    30   ~ 0
+AD6_3V3
+Text Label 2025 4325 0    30   ~ 0
+AD7_3V3
+Text Label 2025 4225 0    30   ~ 0
+SPI_SS_3V3
+Text Label 925  4425 0    30   ~ 0
+AD6
+Text Label 925  4325 0    30   ~ 0
+AD7
+Text Label 925  4225 0    30   ~ 0
+SPI_SS
+$Comp
+L I/O B4
+U 1 1 51627367
+P 775 4325
+F 0 "B4" H 855 4325 40  0000 L CNN
+F 1 "I/O" H 775 4270 30  0001 C CNN
+F 2 "~" H 775 4325 60  0000 C CNN
+F 3 "~" H 775 4325 60  0000 C CNN
+	1    775  4325
+	-1   0    0    1   
+$EndComp
+$Comp
+L I/O B5
+U 1 1 5162736D
+P 775 4425
+F 0 "B5" H 855 4425 40  0000 L CNN
+F 1 "I/O" H 775 4370 30  0001 C CNN
+F 2 "~" H 775 4425 60  0000 C CNN
+F 3 "~" H 775 4425 60  0000 C CNN
+	1    775  4425
+	-1   0    0    1   
+$EndComp
+NoConn ~ 3825 950 
+Text Label 1950 6600 0    30   ~ 0
+Batt_3V
+Wire Wire Line
+	3575 1550 3825 1550
+Text Label 3575 1550 0    40   ~ 0
+RST
+NoConn ~ 5975 1350
+NoConn ~ 5975 1450
+NoConn ~ 5975 1550
 $EndSCHEMATC
