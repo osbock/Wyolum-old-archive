@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 08-Apr-13 4:52:07 PM
+EESchema Schematic File Version 2  date 08-Apr-13 7:07:21 PM
 LIBS:repaper_sym
 LIBS:power
 LIBS:repaper-cache
@@ -2395,7 +2395,7 @@ F 3 "~" H 775 4425 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 NoConn ~ 3825 950 
-Text Label 1950 6600 0    30   ~ 0
+Text Label 2000 6600 0    30   ~ 0
 Batt_3V
 Wire Wire Line
 	3575 1550 3825 1550
