@@ -1,7 +1,7 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 09-Apr-13 5:54:55 PM
+Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Tuesday 09 April 2013 10:19:47 PM IST
 
 BeginCmp
-TimeStamp = /5159E678;
+TimeStamp = /51645932;
 Reference = B1;
 ValeurCmp = I/O;
 IdModule  = I/O;
@@ -477,6 +477,13 @@ IdModule  = r_0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /51644CDF;
+Reference = R13;
+ValeurCmp = 10k;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
 TimeStamp = /5152D993;
 Reference = R16;
 ValeurCmp = 10k;
@@ -522,6 +529,13 @@ BeginCmp
 TimeStamp = /5159CC57;
 Reference = SW4;
 ValeurCmp = RST;
+IdModule  = SW-PB;
+EndCmp
+
+BeginCmp
+TimeStamp = /51644781;
+Reference = SW5;
+ValeurCmp = MODE;
 IdModule  = SW-PB;
 EndCmp
 

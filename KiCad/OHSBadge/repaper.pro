@@ -1,4 +1,4 @@
-update=09-Apr-13 6:32:12 PM
+update=Tuesday 09 April 2013 10:41:22 PM IST
 version=1
 last_client=kicad
 [pcbnew]
@@ -40,6 +40,5 @@ LabSize=40
 [eeschema/libraries]
 LibName1=repaper_lib/repaper_sym
 LibName2=power
-LibName3=C:/Users/Anool/Documents/Arduino/clockthree/KiCad/Nb_v2/Nb_v2_libs/Nb_v2
 [general]
 version=1
