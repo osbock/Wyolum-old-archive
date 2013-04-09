@@ -1,4 +1,4 @@
-update=Tuesday 09 April 2013 12:04:08 AM IST
+update=09-Apr-13 4:36:14 PM
 version=1
 last_client=kicad
 [eeschema]
@@ -16,20 +16,20 @@ LibName2=power
 version=1
 LastNetListRead=repaper.net
 UseCmpFile=1
-PadDrill=0.635
-PadSizeH=15.24
-PadSizeV=15.24
-PcbTextSizeV=1
-PcbTextSizeH=1
-PcbTextThickness=0.3
-ModuleTextSizeV=1
-ModuleTextSizeH=1
-ModuleTextSizeThickness=0.15
+PadDrill=0
+PadSizeH=5.715
+PadSizeV=5.715
+PcbTextSizeV=0.762
+PcbTextSizeH=0.762
+PcbTextThickness=0.127
+ModuleTextSizeV=0.762
+ModuleTextSizeH=0.762
+ModuleTextSizeThickness=0.127
 SolderMaskClearance=0
 SolderMaskMinWidth=0
-DrawSegmentWidth=0.2
+DrawSegmentWidth=0.127
 BoardOutlineThickness=0.127
-ModuleOutlineThickness=0.15
+ModuleOutlineThickness=0.1524
 [pcbnew/libraries]
 LibName1=repaper_lib/repaper
 LibName2=repaper_lib/repaper_logo
