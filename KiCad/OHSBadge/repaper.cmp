@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 09-Apr-13 4:04:55 PM
+Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 09-Apr-13 5:54:55 PM
 
 BeginCmp
 TimeStamp = /5159E678;
@@ -267,6 +267,13 @@ IdModule  = c_0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /516423B4;
+Reference = C32;
+ValeurCmp = 0.1u,16V;
+IdModule  = c_0805;
+EndCmp
+
+BeginCmp
 TimeStamp = /514F45A0;
 Reference = D1;
 ValeurCmp = BAT54SW;
@@ -435,6 +442,13 @@ IdModule  = r_0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /5164235D;
+Reference = R8;
+ValeurCmp = 10k;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
 TimeStamp = /514F45AE;
 Reference = R9;
 ValeurCmp = 2k;
@@ -540,10 +554,24 @@ IdModule  = SO20L;
 EndCmp
 
 BeginCmp
+TimeStamp = /51642104;
+Reference = U5;
+ValeurCmp = DS1307;
+IdModule  = SO8E;
+EndCmp
+
+BeginCmp
 TimeStamp = /51598480;
 Reference = X1;
 ValeurCmp = CRYSTAL_8MHz;
 IdModule  = Xtal_SMD2;
+EndCmp
+
+BeginCmp
+TimeStamp = /516420F9;
+Reference = X2;
+ValeurCmp = 32.768kHz;
+IdModule  = XTAL_3;
 EndCmp
 
 EndListe

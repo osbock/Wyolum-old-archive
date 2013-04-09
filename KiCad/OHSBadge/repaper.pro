@@ -1,24 +1,13 @@
-update=09-Apr-13 4:36:14 PM
+update=09-Apr-13 6:32:12 PM
 version=1
 last_client=kicad
-[eeschema]
-version=1
-LibDir=
-NetFmtName=PcbnewAdvanced
-RptD_X=0
-RptD_Y=100
-RptLab=1
-LabSize=40
-[eeschema/libraries]
-LibName1=repaper_lib/repaper_sym
-LibName2=power
 [pcbnew]
 version=1
 LastNetListRead=repaper.net
 UseCmpFile=1
-PadDrill=0
-PadSizeH=5.715
-PadSizeV=5.715
+PadDrill=1.016
+PadSizeH=2.54
+PadSizeV=2.54
 PcbTextSizeV=0.762
 PcbTextSizeH=0.762
 PcbTextThickness=0.127
@@ -40,5 +29,17 @@ version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
+[eeschema]
+version=1
+LibDir=
+NetFmtName=PcbnewAdvanced
+RptD_X=0
+RptD_Y=100
+RptLab=1
+LabSize=40
+[eeschema/libraries]
+LibName1=repaper_lib/repaper_sym
+LibName2=power
+LibName3=C:/Users/Anool/Documents/Arduino/clockthree/KiCad/Nb_v2/Nb_v2_libs/Nb_v2
 [general]
 version=1
