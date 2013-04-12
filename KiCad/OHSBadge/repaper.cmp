@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Thursday 11 April 2013 05:46:32 PM IST
+Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 12-Apr-13 6:36:50 PM
 
 BeginCmp
 TimeStamp = /51645932;
@@ -88,7 +88,7 @@ BeginCmp
 TimeStamp = /5159A716;
 Reference = C6;
 ValeurCmp = 22pF;
-IdModule  = c_0805;
+IdModule  = c_0603;
 EndCmp
 
 BeginCmp
@@ -109,7 +109,7 @@ BeginCmp
 TimeStamp = /5159A733;
 Reference = C9;
 ValeurCmp = 22pF;
-IdModule  = c_0805;
+IdModule  = c_0603;
 EndCmp
 
 BeginCmp
@@ -309,6 +309,34 @@ IdModule  = d_VMD2;
 EndCmp
 
 BeginCmp
+TimeStamp = /51680ADA;
+Reference = G1;
+ValeurCmp = WYO;
+IdModule  = wyo_logo;
+EndCmp
+
+BeginCmp
+TimeStamp = /51680AE0;
+Reference = G2;
+ValeurCmp = seeed;
+IdModule  = seeed;
+EndCmp
+
+BeginCmp
+TimeStamp = /51680AE6;
+Reference = G3;
+ValeurCmp = repaper;
+IdModule  = repaper_logo;
+EndCmp
+
+BeginCmp
+TimeStamp = /51680AEC;
+Reference = G4;
+ValeurCmp = OSHW;
+IdModule  = OSHW_logo;
+EndCmp
+
+BeginCmp
 TimeStamp = /515C1434;
 Reference = H1;
 ValeurCmp = I/O;
@@ -362,6 +390,13 @@ TimeStamp = /515FD331;
 Reference = P5;
 ValeurCmp = JST_3V3;
 IdModule  = CONN_JST-2_SMD;
+EndCmp
+
+BeginCmp
+TimeStamp = /5167F945;
+Reference = P6;
+ValeurCmp = V_IN;
+IdModule  = JACK_ALIM;
 EndCmp
 
 BeginCmp
@@ -612,8 +647,8 @@ EndCmp
 BeginCmp
 TimeStamp = /51598480;
 Reference = X1;
-ValeurCmp = CRYSTAL_8MHz;
-IdModule  = Xtal_SMD2;
+ValeurCmp = 8MHz;
+IdModule  = Xtal_SMD;
 EndCmp
 
 BeginCmp
