@@ -14,8 +14,8 @@
 
   (page A3)
   (layers
-    (15 F.Cu signal hide)
-    (0 B.Cu signal hide)
+    (15 F.Cu signal)
+    (0 B.Cu signal)
     (16 B.Adhes user)
     (17 F.Adhes user)
     (18 B.Paste user)
@@ -32,7 +32,7 @@
   )
 
   (setup
-    (last_trace_width 0.508)
+    (last_trace_width 0.254)
     (user_trace_width 0.2032)
     (user_trace_width 0.254)
     (user_trace_width 0.381)
@@ -61,11 +61,11 @@
     (pad_drill 0)
     (pad_to_mask_clearance 0)
     (aux_axis_origin 0 0)
-    (visible_elements 7FFF7FFF)
+    (visible_elements 7FFFFFFF)
     (pcbplotparams
-      (layerselection 3178497)
+      (layerselection 285179905)
       (usegerberextensions true)
-      (excludeedgelayer true)
+      (excludeedgelayer false)
       (linewidth 152400)
       (plotframeref false)
       (viasonmask false)
@@ -82,12 +82,12 @@
       (plotothertext true)
       (plotinvisibletext false)
       (padsonsilk false)
-      (subtractmaskfromsilk false)
+      (subtractmaskfromsilk true)
       (outputformat 1)
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory ""))
+      (outputdirectory OHSBadge_gerber/))
   )
 
   (net 0 "")
