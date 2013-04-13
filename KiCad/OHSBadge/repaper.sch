@@ -1,14 +1,14 @@
-EESchema Schematic File Version 2  date Friday 12 April 2013 10:34:49 PM IST
+EESchema Schematic File Version 2  date 13-Apr-13 2:38:42 PM
 LIBS:repaper_sym
 LIBS:power
 LIBS:repaper-cache
-EELAYER 24 0
+EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "12 apr 2013"
+Date "13 apr 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -402,8 +402,8 @@ $Comp
 L P_MOSFET_3 Q1
 U 1 1 514F4549
 P 1775 850
-F 0 "Q1" V 1800 875 27  0000 L TNN
-F 1 "AP2305" V 1750 875 27  0000 L TNN
+F 0 "Q1" V 1975 850 27  0000 L TNN
+F 1 "DMG2301U-7" V 2025 850 27  0000 L TNN
 F 2 "SOT23" H 1825 900 27  0001 L TNN
 F 3 "" H 1775 850 60  0001 C CNN
 	1    1775 850 

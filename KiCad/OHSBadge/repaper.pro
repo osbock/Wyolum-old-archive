@@ -1,4 +1,4 @@
-update=12-Apr-13 6:46:34 PM
+update=13-Apr-13 2:39:14 PM
 version=1
 last_client=kicad
 [cvpcb]
@@ -10,15 +10,15 @@ EquName1=devcms
 version=1
 LastNetListRead=repaper.net
 UseCmpFile=1
-PadDrill=1.016
-PadSizeH=1.524
-PadSizeV=1.524
+PadDrill=0
+PadSizeH=15.24
+PadSizeV=15.24
 PcbTextSizeV=0.762
 PcbTextSizeH=0.762
 PcbTextThickness=0.127
 ModuleTextSizeV=1.016
 ModuleTextSizeH=1.016
-ModuleTextSizeThickness=0.2032
+ModuleTextSizeThickness=0.1524
 SolderMaskClearance=0
 SolderMaskMinWidth=0
 DrawSegmentWidth=0.127

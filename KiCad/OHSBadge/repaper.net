@@ -1,8 +1,8 @@
 (export (version D)
   (design
-    (source /home/samata/Documents/clockthree/KiCad/OHSBadge/repaper.sch)
-    (date "Friday 12 April 2013 10:34:34 PM IST")
-    (tool "eeschema (2013-mar-13)-testing"))
+    (source C:/Users/Anool/Documents/Arduino/clockthree/KiCad/OHSBadge/repaper.sch)
+    (date "13-Apr-13 11:26:02 AM")
+    (tool "eeschema (2013-03-15 BZR 4003)-stable"))
   (components
     (comp (ref Q5)
       (value 2N7002KW)
@@ -252,7 +252,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 514F4569))
     (comp (ref Q1)
-      (value AP2305)
+      (value DMG2301U-7)
       (footprint SOT23)
       (libsource (lib repaper_sym) (part P_MOSFET_3))
       (sheetpath (names /) (tstamps /))
@@ -1129,10 +1129,10 @@
         (pin (num H1) (name ~) (type passive))
         (pin (num H2) (name ~) (type passive)))))
   (libraries
-    (library (logical repaper-cache)
-      (uri /home/samata/Documents/clockthree/KiCad/OHSBadge/repaper-cache.lib))
     (library (logical repaper_sym)
-      (uri repaper_lib/repaper_sym.lib)))
+      (uri repaper_lib\repaper_sym.lib))
+    (library (logical repaper-cache)
+      (uri C:\Users\Anool\Documents\Arduino\clockthree\KiCad\OHSBadge\repaper-cache.lib)))
   (nets
     (net (code 1) (name /TXD)
       (node (ref SHIELD1) (pin 1))
