@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/samata/Documents/clockthree/KiCad/OHSBadge/repaper.sch)
-    (date "Sunday 14 April 2013 02:28:50 PM IST")
+    (date "Tuesday 16 April 2013 08:37:24 PM IST")
     (tool "eeschema (2013-mar-13)-testing"))
   (components
     (comp (ref Q5)

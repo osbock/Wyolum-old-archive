@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday 14 April 2013 02:28:56 PM IST
+EESchema Schematic File Version 2  date Tuesday 16 April 2013 08:37:29 PM IST
 LIBS:repaper_sym
 LIBS:power
 LIBS:repaper-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "14 apr 2013"
+Date "16 apr 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -340,13 +340,13 @@ $EndComp
 $Comp
 L CAP_NP C30
 U 1 1 514F455F
-P 8025 6400
-F 0 "C30" H 8100 6450 30  0000 L TNN
-F 1 "2.2u,16V" H 8100 6400 30  0000 L TNN
-F 2 "c_0805" H 8075 6450 27  0001 L TNN
-F 3 "" H 8025 6400 60  0001 C CNN
-F 4 "0805/2.2uF/16V/Y5V" H 8025 -4950 60  0001 C CNN "Field4"
-	1    8025 6400
+P 8425 6400
+F 0 "C30" H 8500 6450 30  0000 L TNN
+F 1 "2.2u,16V" H 8500 6400 30  0000 L TNN
+F 2 "c_0805" H 8475 6450 27  0001 L TNN
+F 3 "" H 8425 6400 60  0001 C CNN
+F 4 "0805/2.2uF/16V/Y5V" H 8425 -4950 60  0001 C CNN "Field4"
+	1    8425 6400
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1316,7 +1316,7 @@ $Comp
 L I/O H1
 U 1 1 515C1434
 P 7875 6200
-F 0 "H1" V 7950 6175 30  0000 L BNN
+F 0 "H1" V 7900 6250 30  0000 L BNN
 F 1 "I/O" H 7875 6255 30  0001 C CNN
 F 2 "vite_3mm" H 7875 6200 60  0001 C CNN
 F 3 "~" H 7875 6200 60  0000 C CNN
@@ -1327,7 +1327,7 @@ $Comp
 L I/O H2
 U 1 1 515C1441
 P 7875 6375
-F 0 "H2" V 7925 6400 30  0000 R TNN
+F 0 "H2" V 7875 6325 30  0000 R TNN
 F 1 "I/O" H 7875 6430 30  0001 C CNN
 F 2 "vite_3mm" H 7875 6375 60  0001 C CNN
 F 3 "~" H 7875 6375 60  0000 C CNN
@@ -1368,9 +1368,9 @@ Text Label 925  4375 0    30   ~ 0
 SCL
 Text Label 925  4575 0    30   ~ 0
 TXD
-Text Notes 7875 6150 0    30   ~ 0
+Text Notes 8000 6225 0    30   ~ 0
 [+]
-Text Notes 7875 6450 0    30   ~ 0
+Text Notes 8000 6375 0    30   ~ 0
 [-]
 $Comp
 L CONN_2 P5
@@ -1462,8 +1462,8 @@ $Comp
 L BATT_COIN BT2
 U 1 1 516122F7
 P 10525 6825
-F 0 "BT2" H 10375 6925 30  0000 L CNN
-F 1 "BATT_COIN" H 10525 6925 30  0000 L CNN
+F 0 "BT2" V 10475 6925 30  0000 L CNN
+F 1 "BATT_COIN" V 10525 6925 30  0000 L CNN
 F 2 "" H 10525 6825 60  0001 C CNN
 F 3 "~" H 10525 6825 60  0000 C CNN
 F 4 "BATTERY LITHIUM COIN 3V 20MM" H 10525 6525 60  0001 L CNN "Field4"
@@ -1643,7 +1643,7 @@ Wire Wire Line
 Wire Wire Line
 	8400 925  10300 925 
 Wire Wire Line
-	8025 6000 8025 6300
+	8425 6000 8425 6300
 Wire Wire Line
 	7800 6000 8475 6000
 Wire Wire Line
@@ -1673,7 +1673,7 @@ Wire Wire Line
 Wire Wire Line
 	10300 2075 9850 2075
 Wire Wire Line
-	9850 2075 9850 2275
+	9850 2275 9850 2075
 Wire Wire Line
 	8900 2275 8900 2375
 Wire Wire Line
@@ -1685,7 +1685,7 @@ Wire Wire Line
 Wire Wire Line
 	8700 4125 8700 4225
 Wire Wire Line
-	9850 2275 7800 2275
+	7800 2275 9850 2275
 Wire Wire Line
 	2400 700  2400 1100
 Wire Wire Line
@@ -2167,14 +2167,14 @@ Wire Wire Line
 Wire Wire Line
 	3575 1450 4025 1450
 Wire Wire Line
-	8025 6475 8025 6575
-Connection ~ 8025 6000
+	8425 6475 8425 6575
+Connection ~ 8425 6000
 Wire Wire Line
 	9925 6350 9925 6625
 Connection ~ 9925 6575
 Wire Wire Line
 	7875 6525 7875 6675
-Connection ~ 8025 6575
+Connection ~ 8425 6575
 Wire Wire Line
 	10525 6575 10525 6550
 Wire Wire Line
@@ -2464,7 +2464,7 @@ $EndComp
 Wire Wire Line
 	9425 6300 9425 6000
 Connection ~ 9425 6000
-Text Label 8200 6000 0    30   ~ 0
+Text Label 7950 6000 0    30   ~ 0
 V_IN
 $Comp
 L PWR_FLAG #FLG027
@@ -2683,4 +2683,12 @@ Wire Wire Line
 	10900 6000 10900 5925
 Wire Wire Line
 	7800 2775 7800 2825
+Text Notes 1675 5775 0    40   ~ 0
+or\nBQ32000
+Text Notes 10625 6900 0    30   ~ 0
+CR2450\nor\nCR2032
+Text Notes 7100 6525 0    30   ~ 0
+7.2V LiPo\n9V Battery\n12V Wall Wart
+Text Notes 7925 6275 0    30   ~ 0
+Lanyard\nHoles
 $EndSCHEMATC
