@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Sunday 14 April 2013 12:06:01 AM IST
+Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 16-Apr-13 5:12:11 PM
 
 BeginCmp
 TimeStamp = /51645932;
@@ -32,7 +32,7 @@ BeginCmp
 TimeStamp = /51612040;
 Reference = BT1;
 ValeurCmp = Batt_Clip;
-IdModule  = CR2032_SMD;
+IdModule  = CR2450_SMD;
 EndCmp
 
 BeginCmp
