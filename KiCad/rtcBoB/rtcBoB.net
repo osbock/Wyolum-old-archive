@@ -1,99 +1,216 @@
-# EESchema Netlist Version 1.1 created  12/23/10 16:53:01
-(
- ( /4C9C4864 CR2032 BT1 BATT_RTC
-  ( + N-000005 )
-  ( - GND )
- )
- ( /4C9B49BE C2 C1 100n
-  ( 1 /BAT )
-  ( 2 GND )
- )
- ( /4C9C6FF2 vite_2mm5 H1 CONN_1
-  ( 1 ? )
- )
- ( /4C9C6FFE vite_2mm5 H2 CONN_1
-  ( 1 ? )
- )
- ( /4C9C7001 vite_2mm5 H3 CONN_1
-  ( 1 ? )
- )
- ( /4C9C7003 vite_2mm5 H4 CONN_1
-  ( 1 ? )
- )
- ( /4C9B49C7 SCK-04-F-SMT P1 CDOT1
-  ( 1 /BAT )
-  ( 2 /32k )
-  ( 3 /SQW )
-  ( 4 /RST )
- )
- ( /4C9B49C8 SCK-04-F-SMT P2 CDOT2
-  ( 1 /SDA )
-  ( 2 /SCL )
-  ( 3 /VCC )
-  ( 4 GND )
- )
- ( /4D0C8A06 pin_strip_2 P3 CONN_2
-  ( 1 N-000005 )
-  ( 2 /BAT )
- )
- ( /4C9B49C1 rc03_vert R1 10k
-  ( 1 /VCC )
-  ( 2 /SQW )
- )
- ( /4C9B49C0 rc03_vert R2 10k
-  ( 1 /VCC )
-  ( 2 /RST )
- )
- ( /4C9B49BF rc03_vert R3 10k
-  ( 1 /VCC )
-  ( 2 /32k )
- )
- ( /4C9B49C6 DS3231 U1 DS3231
-  ( 1 /32k )
-  ( 2 /VCC )
-  ( 3 /SQW )
-  ( 4 /RST )
-  ( 5 GND )
-  ( 6 GND )
-  ( 7 GND )
-  ( 8 GND )
-  ( 9 GND )
-  ( 10 GND )
-  ( 11 GND )
-  ( 12 GND )
-  ( 13 GND )
-  ( 14 /BAT )
-  ( 15 /SDA )
-  ( 16 /SCL )
- )
-)
-*
-{ Allowed footprints by component:
-$component C1
- SM*
- C?
- C1-1
-$endlist
-$component R1
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R2
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R3
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$endfootprintlist
-}
+(export (version D)
+  (design
+    (source /home/samata/Documents/clockthree/KiCad/rtcBoB/rtcBoB.sch)
+    (date "Sunday 21 April 2013 08:14:05 PM IST")
+    (tool "eeschema (2013-mar-13)-testing"))
+  (components
+    (comp (ref P3)
+      (value CONN_2)
+      (footprint pin_strip_2)
+      (libsource (lib rtcBoB) (part CONN_2))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 4D0C8A06))
+    (comp (ref H4)
+      (value CONN_1)
+      (footprint vite_2mm5)
+      (libsource (lib rtcBoB) (part CONN_1))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 4C9C7003))
+    (comp (ref H3)
+      (value CONN_1)
+      (footprint vite_2mm5)
+      (libsource (lib rtcBoB) (part CONN_1))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 4C9C7001))
+    (comp (ref H2)
+      (value CONN_1)
+      (footprint vite_2mm5)
+      (libsource (lib rtcBoB) (part CONN_1))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 4C9C6FFE))
+    (comp (ref H1)
+      (value CONN_1)
+      (footprint vite_2mm5)
+      (libsource (lib rtcBoB) (part CONN_1))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 4C9C6FF2))
+    (comp (ref BT1)
+      (value BATT_RTC)
+      (footprint CR2032)
+      (libsource (lib rtcBoB) (part BATT_LI-PO))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 4C9C4864))
+    (comp (ref P2)
+      (value CDOT2)
+      (footprint SCK-04-F-SMT)
+      (libsource (lib rtcBoB) (part CONN_4))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 4C9B49C8))
+    (comp (ref P1)
+      (value CDOT1)
+      (footprint SCK-04-F-SMT)
+      (libsource (lib rtcBoB) (part CONN_4))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 4C9B49C7))
+    (comp (ref U1)
+      (value DS3231)
+      (footprint CR2032)
+      (libsource (lib rtcBoB) (part DS3231N))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 4C9B49C6))
+    (comp (ref R1)
+      (value 10k)
+      (footprint rc03_vert)
+      (libsource (lib rtcBoB) (part R))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 4C9B49C1))
+    (comp (ref R2)
+      (value 10k)
+      (footprint rc03_vert)
+      (libsource (lib rtcBoB) (part R))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 4C9B49C0))
+    (comp (ref R3)
+      (value 10k)
+      (footprint rc03_vert)
+      (libsource (lib rtcBoB) (part R))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 4C9B49BF))
+    (comp (ref C1)
+      (value 100n)
+      (footprint C2)
+      (libsource (lib rtcBoB) (part C))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 4C9B49BE)))
+  (libparts
+    (libpart (lib rtcBoB) (part Batt_Li-Po)
+      (fields
+        (field (name Reference) BT)
+        (field (name Value) Batt_Li-Po))
+      (pins
+        (pin (num +) (name +) (type passive))
+        (pin (num -) (name -) (type passive))))
+    (libpart (lib rtcBoB) (part C)
+      (footprints
+        (fp SM*)
+        (fp C?)
+        (fp C1-1))
+      (fields
+        (field (name Reference) C)
+        (field (name Value) C))
+      (pins
+        (pin (num 1) (name ~) (type passive))
+        (pin (num 2) (name ~) (type passive))))
+    (libpart (lib rtcBoB) (part CONN_1)
+      (fields
+        (field (name Reference) P)
+        (field (name Value) CONN_1))
+      (pins
+        (pin (num 1) (name 1) (type passive))))
+    (libpart (lib rtcBoB) (part CONN_2)
+      (fields
+        (field (name Reference) P)
+        (field (name Value) CONN_2))
+      (pins
+        (pin (num 1) (name P1) (type passive))
+        (pin (num 2) (name PM) (type passive))))
+    (libpart (lib rtcBoB) (part CONN_4)
+      (fields
+        (field (name Reference) P)
+        (field (name Value) CONN_4))
+      (pins
+        (pin (num 1) (name P1) (type passive))
+        (pin (num 2) (name P2) (type passive))
+        (pin (num 3) (name P3) (type passive))
+        (pin (num 4) (name P4) (type passive))))
+    (libpart (lib rtcBoB) (part DS3231N)
+      (fields
+        (field (name Reference) U)
+        (field (name Value) DS3231N))
+      (pins
+        (pin (num 1) (name 32KHz) (type output))
+        (pin (num 2) (name Vcc) (type power_in))
+        (pin (num 3) (name "!(INT)/SQR") (type output))
+        (pin (num 4) (name "!(Reset)") (type BiDi))
+        (pin (num 5) (name NC) (type passive))
+        (pin (num 6) (name NC) (type passive))
+        (pin (num 7) (name NC) (type passive))
+        (pin (num 8) (name NC) (type passive))
+        (pin (num 9) (name NC) (type passive))
+        (pin (num 10) (name NC) (type passive))
+        (pin (num 11) (name NC) (type passive))
+        (pin (num 12) (name NC) (type passive))
+        (pin (num 13) (name GND) (type power_in))
+        (pin (num 14) (name Vbat) (type power_in))
+        (pin (num 15) (name SDA) (type BiDi))
+        (pin (num 16) (name SCL) (type input))))
+    (libpart (lib rtcBoB) (part R)
+      (footprints
+        (fp R?)
+        (fp SM0603)
+        (fp SM0805)
+        (fp R?-*)
+        (fp SM1206))
+      (fields
+        (field (name Reference) R)
+        (field (name Value) R))
+      (pins
+        (pin (num 1) (name ~) (type passive))
+        (pin (num 2) (name ~) (type passive)))))
+  (libraries
+    (library (logical rtcBoB)
+      (uri libs/rtcBoB.lib)))
+  (nets
+    (net (code 1) (name "")
+      (node (ref H2) (pin 1)))
+    (net (code 2) (name "")
+      (node (ref H1) (pin 1)))
+    (net (code 3) (name "")
+      (node (ref H3) (pin 1)))
+    (net (code 4) (name "")
+      (node (ref H4) (pin 1)))
+    (net (code 5) (name "")
+      (node (ref P3) (pin 1))
+      (node (ref BT1) (pin +)))
+    (net (code 6) (name /RST)
+      (node (ref R2) (pin 2))
+      (node (ref U1) (pin 4))
+      (node (ref P1) (pin 4)))
+    (net (code 7) (name /SQW)
+      (node (ref P1) (pin 3))
+      (node (ref U1) (pin 3))
+      (node (ref R1) (pin 2)))
+    (net (code 8) (name /SCL)
+      (node (ref U1) (pin 16))
+      (node (ref P2) (pin 2)))
+    (net (code 9) (name GND)
+      (node (ref C1) (pin 2))
+      (node (ref U1) (pin 13))
+      (node (ref U1) (pin 12))
+      (node (ref U1) (pin 11))
+      (node (ref U1) (pin 10))
+      (node (ref U1) (pin 9))
+      (node (ref P2) (pin 4))
+      (node (ref U1) (pin 8))
+      (node (ref U1) (pin 7))
+      (node (ref U1) (pin 6))
+      (node (ref U1) (pin 5))
+      (node (ref BT1) (pin -)))
+    (net (code 10) (name /32k)
+      (node (ref U1) (pin 1))
+      (node (ref R3) (pin 2))
+      (node (ref P1) (pin 2)))
+    (net (code 11) (name /BAT)
+      (node (ref C1) (pin 1))
+      (node (ref U1) (pin 14))
+      (node (ref P3) (pin 2))
+      (node (ref P1) (pin 1)))
+    (net (code 12) (name /SDA)
+      (node (ref P2) (pin 1))
+      (node (ref U1) (pin 15)))
+    (net (code 13) (name /VCC)
+      (node (ref U1) (pin 2))
+      (node (ref R3) (pin 1))
+      (node (ref R2) (pin 1))
+      (node (ref P2) (pin 3))
+      (node (ref R1) (pin 1)))))
