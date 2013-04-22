@@ -1,0 +1,11 @@
+"Id";"Designator";"Package";"Quantity";"Designation";"Supplier and ref";
+1;"P3";"pin_strip_2";1;"CONN_2";;;
+2;"U1";"DS3231";1;"DS3231";;;
+3;"H4,H3,H2,H1";"vite_2mm5";4;"CONN_1";;;
+4;"P1";"Sck-04-F-SMT";1;"CDOT1";;;
+5;"P2";"Sck-04-F-SMT";1;"CDOT2";;;
+6;"R1,R2,R3";"r_0805";3;"10k";;;
+7;"C1";"c_0805";1;"100n";;;
+8;"G1,G1";"Logo-WL3";2;"Logo-WL3";;;
+9;"G***";"OSHW_6mm";1;"LOGO";;;
+10;"BT1";"CR2032_SMD";1;"BATT_RTC";;;
