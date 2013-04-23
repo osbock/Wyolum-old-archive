@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 17-Apr-13 1:23:41 PM
+EESchema Schematic File Version 2  date 19-Apr-13 11:41:17 AM
 LIBS:repaper_sym
 LIBS:power
 LIBS:repaper-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "17 apr 2013"
+Date "19 apr 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -556,7 +556,7 @@ Text Label 2775 700  0    24   ~ 0
 VCC_T
 Text Label 875  1725 0    24   ~ 0
 3V3
-Text Label 10700 6000 0    30   ~ 0
+Text Label 10600 6000 0    30   ~ 0
 3V3
 Text Label 7575 575  0    24   ~ 0
 /EPD_CS_3V3
@@ -2529,8 +2529,8 @@ $Comp
 L DIODESCH D2
 U 1 1 5166D733
 P 10525 6150
-F 0 "D2" V 10575 6025 30  0000 C CNN
-F 1 "DB2S20500L" V 10500 5950 30  0000 C CNN
+F 0 "D2" V 10600 6100 30  0000 C CNN
+F 1 "DB2S20500L" H 10525 6225 30  0000 C CNN
 F 2 "d_VMD2" H 10525 6150 60  0001 C CNN
 F 3 "~" H 10525 6150 60  0000 C CNN
 	1    10525 6150
@@ -2705,4 +2705,45 @@ $EndComp
 Wire Wire Line
 	2725 5750 2725 5800
 Connection ~ 2725 5800
+$Comp
+L I/O H5
+U 1 1 5170D6BA
+P 2150 7525
+F 0 "H5" V 2225 7475 40  0000 L CNN
+F 1 "I/O" H 2150 7580 30  0001 C CNN
+F 2 "vite_3mm" H 2150 7525 60  0001 C CNN
+F 3 "~" H 2150 7525 60  0000 C CNN
+	1    2150 7525
+	0    -1   -1   0   
+$EndComp
+$Comp
+L I/O H6
+U 1 1 5170D6F4
+P 2350 7525
+F 0 "H6" V 2425 7475 40  0000 L CNN
+F 1 "I/O" H 2350 7580 30  0001 C CNN
+F 2 "vite_3mm" H 2350 7525 60  0001 C CNN
+F 3 "~" H 2350 7525 60  0000 C CNN
+	1    2350 7525
+	0    -1   -1   0   
+$EndComp
+NoConn ~ 2350 7675
+NoConn ~ 2150 7675
+$Comp
+L S_LINK SL1
+U 1 1 5170DF18
+P 10750 6150
+F 0 "SL1" H 10850 6100 30  0000 C CNN
+F 1 "S_LINK" H 10900 6150 30  0000 C CNN
+F 2 "ShortLink" H 10750 6150 60  0001 C CNN
+F 3 "" H 10750 6150 60  0000 C CNN
+	1    10750 6150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10750 6050 10750 6000
+Connection ~ 10750 6000
+Wire Wire Line
+	10750 6275 10750 6300
+Connection ~ 10750 6300
 $EndSCHEMATC

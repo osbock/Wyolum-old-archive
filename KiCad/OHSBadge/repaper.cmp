@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 17-Apr-13 1:23:16 PM
+Cmp-Mod V01 Created by PcbNew date = 23-Apr-13 2:20:24 PM
 
 BeginCmp
 TimeStamp = /51645932;
@@ -344,10 +344,24 @@ IdModule  = vite_3mm;
 EndCmp
 
 BeginCmp
+TimeStamp = /5170D6BA;
+Reference = H5;
+ValeurCmp = I/O;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /5170D6F4;
+Reference = H6;
+ValeurCmp = I/O;
+IdModule  = vite_3mm;
+EndCmp
+
+BeginCmp
 TimeStamp = /514F45B3;
 Reference = J4;
 ValeurCmp = ZIF-40-0.5;
-IdModule  = ZIF-40-0.5-M_Hirose;
+IdModule  = ZIF-40-0.5-M_seeed;
 EndCmp
 
 BeginCmp
@@ -557,7 +571,7 @@ BeginCmp
 TimeStamp = /5152F006;
 Reference = SD1;
 ValeurCmp = SD_CARD_MICRO;
-IdModule  = SD_Micro;
+IdModule  = SD_Micro_seeed;
 EndCmp
 
 BeginCmp
@@ -565,6 +579,13 @@ TimeStamp = /5152EA95;
 Reference = SHIELD1;
 ValeurCmp = ARDUINO_SHIELD;
 IdModule  = ARDUINO_SHIELD_040pins;
+EndCmp
+
+BeginCmp
+TimeStamp = /5170DF18;
+Reference = SL1;
+ValeurCmp = S_LINK;
+IdModule  = ShortLink;
 EndCmp
 
 BeginCmp
