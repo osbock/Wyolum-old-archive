@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 11-May-13 2:22:19 PM
+EESchema Schematic File Version 2  date 13-May-13 4:40:00 PM
 LIBS:repaper_sym
 LIBS:power
 LIBS:repaper-cache
