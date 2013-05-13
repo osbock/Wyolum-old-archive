@@ -1,24 +1,11 @@
-update=06-May-13 4:28:49 PM
+update=11-May-13 2:45:44 PM
 version=1
-last_client=pcbnew
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[eeschema]
-version=1
-LibDir=
-NetFmtName=PcbnewAdvanced
-RptD_X=0
-RptD_Y=100
-RptLab=1
-LabSize=30
-[eeschema/libraries]
-LibName1=repaper_lib/repaper_sym
-LibName2=power
-[general]
-version=1
 [pcbnew]
 version=1
 LastNetListRead=repaper.net
@@ -44,3 +31,16 @@ LibName2=repaper_lib/OSHW
 LibName3=repaper_lib/repaper_logo
 LibName4=repaper_lib/seeed_logo
 LibName5=repaper_lib/wyo_logo
+[eeschema]
+version=1
+LibDir=
+NetFmtName=PcbnewAdvanced
+RptD_X=0
+RptD_Y=100
+RptLab=1
+LabSize=30
+[eeschema/libraries]
+LibName1=repaper_lib/repaper_sym
+LibName2=power
+[general]
+version=1

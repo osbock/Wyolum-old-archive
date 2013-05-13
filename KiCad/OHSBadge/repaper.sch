@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 19-Apr-13 11:41:17 AM
+EESchema Schematic File Version 2  date 11-May-13 2:22:19 PM
 LIBS:repaper_sym
 LIBS:power
 LIBS:repaper-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "19 apr 2013"
+Date "11 may 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -831,9 +831,9 @@ NoConn ~ 4025 1350
 NoConn ~ 4025 1250
 NoConn ~ 4025 1150
 NoConn ~ 4025 1050
-Text Label 6275 2750 0    40   ~ 0
-RXD
 Text Label 6275 2650 0    40   ~ 0
+RXD
+Text Label 6275 2750 0    40   ~ 0
 TXD
 Text Label 6275 1550 0    40   ~ 0
 SPI_MOSI
@@ -1366,7 +1366,7 @@ Text Label 925  4275 0    30   ~ 0
 SDA
 Text Label 925  4375 0    30   ~ 0
 SCL
-Text Label 925  4575 0    30   ~ 0
+Text Label 925  4675 0    30   ~ 0
 TXD
 Text Notes 8000 6225 0    30   ~ 0
 [+]
@@ -1431,7 +1431,7 @@ F 3 "~" H 6650 6750 60  0000 C CNN
 	1    6650 6750
 	1    0    0    -1  
 $EndComp
-Text Label 925  4675 0    30   ~ 0
+Text Label 925  4575 0    30   ~ 0
 RXD
 Text Label 2025 4675 0    30   ~ 0
 TXD_3V3

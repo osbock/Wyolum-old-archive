@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 19-Apr-13 11:40:31 AM
+EESchema Schematic File Version 2  date 11-May-13 2:08:33 PM
 LIBS:repaper_sym
 LIBS:power
 LIBS:repaper-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "19 apr 2013"
+Date "11 may 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -831,9 +831,9 @@ NoConn ~ 4025 1350
 NoConn ~ 4025 1250
 NoConn ~ 4025 1150
 NoConn ~ 4025 1050
-Text Label 6275 2750 0    40   ~ 0
-RXD
 Text Label 6275 2650 0    40   ~ 0
+RXD
+Text Label 6275 2750 0    40   ~ 0
 TXD
 Text Label 6275 1550 0    40   ~ 0
 SPI_MOSI
@@ -1366,7 +1366,7 @@ Text Label 925  4275 0    30   ~ 0
 SDA
 Text Label 925  4375 0    30   ~ 0
 SCL
-Text Label 925  4575 0    30   ~ 0
+Text Label 925  4675 0    30   ~ 0
 TXD
 Text Notes 8000 6225 0    30   ~ 0
 [+]
@@ -1431,7 +1431,7 @@ F 3 "~" H 6650 6750 60  0000 C CNN
 	1    6650 6750
 	1    0    0    -1  
 $EndComp
-Text Label 925  4675 0    30   ~ 0
+Text Label 925  4575 0    30   ~ 0
 RXD
 Text Label 2025 4675 0    30   ~ 0
 TXD_3V3
@@ -2711,7 +2711,7 @@ U 1 1 5170D6BA
 P 2150 7525
 F 0 "H5" V 2225 7475 40  0000 L CNN
 F 1 "I/O" H 2150 7580 30  0001 C CNN
-F 2 "~" H 2150 7525 60  0000 C CNN
+F 2 "vite_3mm" H 2150 7525 60  0001 C CNN
 F 3 "~" H 2150 7525 60  0000 C CNN
 	1    2150 7525
 	0    -1   -1   0   
@@ -2722,7 +2722,7 @@ U 1 1 5170D6F4
 P 2350 7525
 F 0 "H6" V 2425 7475 40  0000 L CNN
 F 1 "I/O" H 2350 7580 30  0001 C CNN
-F 2 "~" H 2350 7525 60  0000 C CNN
+F 2 "vite_3mm" H 2350 7525 60  0001 C CNN
 F 3 "~" H 2350 7525 60  0000 C CNN
 	1    2350 7525
 	0    -1   -1   0   
@@ -2735,7 +2735,7 @@ U 1 1 5170DF18
 P 10750 6150
 F 0 "SL1" H 10850 6100 30  0000 C CNN
 F 1 "S_LINK" H 10900 6150 30  0000 C CNN
-F 2 "" H 10750 6150 60  0000 C CNN
+F 2 "ShortLink" H 10750 6150 60  0001 C CNN
 F 3 "" H 10750 6150 60  0000 C CNN
 	1    10750 6150
 	1    0    0    -1  
