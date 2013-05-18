@@ -30,7 +30,7 @@ void serial_interact(){
   uint16_t i;
       
   if(Serial.available()){
-    strip.setup(64, 2 + row, NEO_GRB + NEO_KHZ800, strip.pixels);
+    strip.changePin(2 + row);
     i = 0;
     while(i < 64 * 3){
       if(Serial.available()){

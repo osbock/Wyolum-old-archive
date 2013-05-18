@@ -29,7 +29,7 @@ class TiM {
   // Setup number of LEDs, pin number, LED type
   void setup(uint16_t n_strip, uint16_t led_per_strip, uint8_t *pins);
   void setup(uint16_t n_strip, uint16_t led_per_strip, uint8_t *pins,
-	     uint8_t *pixels);
+	     uint8_t *_pixels);
 
   void begin(void);
   void show(void);

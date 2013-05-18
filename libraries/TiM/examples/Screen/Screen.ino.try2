@@ -1,0 +1,87 @@
+#include <Adafruit_NeoPixel.h>
+#include <SD.h>
+
+// Parameter 1 = number of pixels in strip
+// Parameter 2 = pin number (most are valid)
+// Parameter 3 = pixel type flags, add together as needed:
+//   NEO_RGB     Pixels are wired for RGB bitstream
+//   NEO_GRB     Pixels are wired for GRB bitstream
+//   NEO_KHZ400  400 KHz bitstream (e.g. FLORA pixels)
+//   NEO_KHZ800  800 KHz bitstream (e.g. High Density LED strip)
+const uint8_t n_strip = 8;
+const uint16_t n_led_per_strip = 32;
+const uint8_t n_byte_per_led = 3;
+const uint16_t n_byte_per_strip = n_led_per_strip * n_byte_per_led;
+uint8_t buffer[n_byte_per_strip];
+
+Adafruit_NeoPixel strips[n_strip];
+Adafruit_NeoPixel strip; //  = Adafruit_NeoPixel();
+
+// Use Arduino Pins 2-9 for controling the strips of TiM
+uint8_t pins[8] = {2, 3, 4, 5, 6, 7, 8, 9};
+
+File display_file;
+
+
+  uint16_t row, col;
+  uint8_t r, g, b, brightness=20;
+  
+  col = x;
+  row = y;
+  // xy2tim(x, y, &row, &col);
+  
+  display_file.seek((uint16_t)n_byte_per_strip * row + (uint16_t)n_byte_per_led * col);
+  display_file.write((color >> 8) & 255);
+  display_file.write((color >> 16) & 255);
+  display_file.write((color >> 0) & 255);
+}
+
+void SD_show(){
+  Serial.print("SD_show() ");
+  display_file.seek(0);
+  Serial.println(display_file.read(), DEC);
+  display_file.seek(0);
+  
+  for(uint8_t i = 0; i < n_strip; i++){
+    // display_file.read(strips[i].pixels, n_byte_per_strip);
+    for(uint16_t j = 0; j < n_byte_per_strip; j++){
+      // strips[i].pixels[j] = display_file.read();
+      strips[i].pixels[j] = show_count++ % 25;
+    }
+    Serial.println(strips[i].pixels[0], DEC);
+    strips[i].show();
+  }
+}
+
+void setup() {
+  display_file = SD.open("_.DSP", FILE_WRITE);
+  for(uint8_t i=0; i < n_strip; i++){
+    strips[i].setup(32, pins[i], NEO_GRB + NEO_KHZ800, buffer);
+    strip = strips[i];
+    strip.begin();
+    strip.show(); // Initialize all pixels to 'off'
+    display_file.write(buffer, n_byte_per_strip);
+  }
+}
+
+void loop() {
+  // Some example procedures showing how to display to the pixels:
+  for(uint8_t i=0; i < n_strip; i++){
+    strip = strips[i];
+    colorWipe(strip.Color(25, 0, 0), 2);
+    colorWipe(strip.Color(0, 25, 0), 2);
+    colorWipe(strip.Color(0, 0, 25), 2);
+  }
+}
+
+// Fill the dots one after the other with a color
+void colorWipe(uint32_t c, uint8_t wait) {
+  for(uint16_t i=0; i<strip.numPixels(); i++){
+    SD_setPixel(i, 0, c);
+    // strip.setPixelColor(i, c);
+    // strip.show();
+    // delay(wait);
+  }
+  SD_show();
+}
+

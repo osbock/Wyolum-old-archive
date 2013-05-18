@@ -14,7 +14,7 @@ int cursor = 0;
 int last_end = 0;
 bool new_data = false;
 
-unsigned short flow_rates[N_FLOW_RATE];
+short flow_rates[N_FLOW_RATE];
 
 //                          328_RX, 328_TX
 SoftwareSerial flow_serial(FLOW_TX, FLOW_RX, true);
@@ -53,7 +53,7 @@ void setup(){
   if(true){
     run_command("s\n");
     run_command("mod=f\n");
-    run_command("res=5\n");
+    run_command("res=7\n");
   }
   digitalWrite(VALVE_PIN, LOW);
   Serial.println("Staring");
@@ -66,7 +66,7 @@ void setup(){
 
 }
 short convert(){
-  unsigned short out;
+  short out;
   int flow_count = 0;
 
   if(last_end > cursor){//  move data to start of buffer.

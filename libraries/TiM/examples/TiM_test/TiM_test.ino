@@ -8,7 +8,9 @@ uint8_t pins[8] = {2, 3, 4, 5, 6, 7, 8, 9};
 void setup(){
   // each Pin has 32 leds
   //    #rows #led pin_ids
-  tim.setup(8, 32, pins);
+  tim.setup(8, 64, pins);
+  tim.setall(Color(0, 0, 0));
+  tim.show();
 }
 
 uint32_t count = 0;
@@ -20,20 +22,19 @@ void loop(){
   uint32_t color = Wheel(count % 256, 255);
   
   // turn off column
-  for(row = 0; row < 8; row++){
+  for(row = 0; row < tim.n_strip; row++){
     tim.setPixel(row, col, 0);
   }
 
   // turn on new column
   col++;
-  col %= 32;
-  for(row = 0; row < 8; row++){
+  col %= tim.strips[0].numLEDs;
+  for(row = 0; row < tim.n_strip; row++){
     tim.setPixel(row, col, color);
   }
 
   // update the display
   tim.show();
   count++;
-  delay(100);
 }
 

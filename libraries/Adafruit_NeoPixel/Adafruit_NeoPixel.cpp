@@ -51,22 +51,28 @@ void Adafruit_NeoPixel::setup(uint16_t n, uint8_t p, uint8_t t,
     // memset(pixels, 0, numBytes);
     numLEDs = n;
     type    = t;
-    pin     = p;
-    port    = portOutputRegister(digitalPinToPort(p));
-    pinMask = digitalPinToBitMask(p);
     endTime = 0L;
+    changePin(p);
     begin();
   } else {
     numLEDs = 0;
   }
 }
+void Adafruit_NeoPixel::changePin(uint8_t p){
+  pin     = p;
+  port    = portOutputRegister(digitalPinToPort(p));
+  pinMask = digitalPinToBitMask(p);
+}
 
 void Adafruit_NeoPixel::begin(void) {
   pinMode(pin, OUTPUT);
   digitalWrite(pin, LOW);
+  changed = true;
 }
 
 void Adafruit_NeoPixel::show(void) {
+  if(!changed) return;
+  changed = false;
 
   if(!numLEDs) return;
 
@@ -446,6 +452,7 @@ void Adafruit_NeoPixel::show(void) {
 void Adafruit_NeoPixel::setPixelColor(
  uint16_t n, uint8_t r, uint8_t g, uint8_t b) {
   if(n < numLEDs) {
+    changed = true;
     uint8_t *p = &pixels[n * 3];
     if((type & NEO_COLMASK) == NEO_GRB) { *p++ = g; *p++ = r; }
     else                                { *p++ = r; *p++ = g; }
@@ -456,6 +463,7 @@ void Adafruit_NeoPixel::setPixelColor(
 // Set pixel color from 'packed' 32-bit RGB color:
 void Adafruit_NeoPixel::setPixelColor(uint16_t n, uint32_t c) {
   if(n < numLEDs) {
+    changed = true;
     uint8_t *p = &pixels[n * 3];
     if((type & NEO_COLMASK) == NEO_GRB) { *p++ = c >>  8; *p++ = c >> 16; }
     else                                { *p++ = c >> 16; *p++ = c >>  8; }

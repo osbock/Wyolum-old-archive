@@ -17,13 +17,13 @@ void TiM::setup(uint16_t _n_strip, uint16_t _led_per_strip, uint8_t *pins) {
 }
 
 void TiM::setup(uint16_t _n_strip, uint16_t _led_per_strip, uint8_t *pins,
-		uint8_t *pixels) {
+		uint8_t *_pixels){
   uint16_t i, j;
   n_strip = _n_strip;
   led_per_strip = _led_per_strip;
   for(i = 0; i < n_strip; i++){
     strips[i].setup(led_per_strip, pins[i], NEO_GRB + NEO_KHZ800,
-		    pixels);
+		    _pixels);
   }
   setall(Color(0, 0, 0));
   show();

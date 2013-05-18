@@ -32,6 +32,7 @@
 #define NEO_KHZ400  0x00 // 400 KHz datastream
 #define NEO_KHZ800  0x02 // 800 KHz datastream
 #define NEO_SPDMASK 0x02
+#define BLACK (uint32_t)0x00
 
 class Adafruit_NeoPixel {
 
@@ -41,6 +42,7 @@ class Adafruit_NeoPixel {
   Adafruit_NeoPixel();
   void setup(uint16_t n, uint8_t p=6, uint8_t t=NEO_GRB + NEO_KHZ800);
   void setup(uint16_t n, uint8_t p, uint8_t t, uint8_t *_pixels);
+  void changePin(uint8_t p);
 
   void
     begin(void),
@@ -59,6 +61,7 @@ class Adafruit_NeoPixel {
   uint16_t     numBytes;      // Size of 'pixels' buffer below
   
   // private:
+  bool changed;
 
   uint16_t
     numLEDs;       // Number of RGB LEDs in strip
