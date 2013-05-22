@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: 19-Apr-13 11:33:41 AM
+EESchema-LIBRARY Version 2.3  Date: 19-Apr-13 11:35:56 AM
 #encoding utf-8
 #
 # ARDUINO_SHIELD
@@ -665,7 +665,7 @@ ENDDEF
 #
 # S_LINK
 #
-DEF S_LINK SL 0 40 Y Y 1 F N
+DEF S_LINK SL 0 40 N Y 1 F N
 F0 "SL" 150 -75 60 H V C CNN
 F1 "S_LINK" 225 50 60 H V C CNN
 F2 "~" 0 0 60 H V C CNN

@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 06-May-13 4:29:19 PM
+Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 22-May-13 2:47:48 PM
 
 BeginCmp
 TimeStamp = /51645932;
@@ -302,6 +302,13 @@ IdModule  = d_VMD2;
 EndCmp
 
 BeginCmp
+TimeStamp = /519C8C9E;
+Reference = D3;
+ValeurCmp = DEBUG;
+IdModule  = led_0805;
+EndCmp
+
+BeginCmp
 TimeStamp = /51680ADA;
 Reference = G1;
 ValeurCmp = WYO;
@@ -395,7 +402,7 @@ EndCmp
 BeginCmp
 TimeStamp = /515FD331;
 Reference = P5;
-ValeurCmp = JST_3V3;
+ValeurCmp = JST_3V7;
 IdModule  = CONN_JST-2_SMD;
 EndCmp
 
@@ -557,6 +564,13 @@ BeginCmp
 TimeStamp = /51644CDF;
 Reference = R13;
 ValeurCmp = 10k;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /519C8CAC;
+Reference = R14;
+ValeurCmp = 1k5;
 IdModule  = r_0805;
 EndCmp
 

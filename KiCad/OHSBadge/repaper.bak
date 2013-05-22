@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 11-May-13 2:22:19 PM
+EESchema Schematic File Version 2  date 22-May-13 6:06:35 PM
 LIBS:repaper_sym
 LIBS:power
 LIBS:repaper-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "11 may 2013"
+Date "22 may 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -162,12 +162,12 @@ $EndComp
 $Comp
 L P_MOSFET_3 Q7
 U 1 1 514F4590
-P 8550 4075
-F 0 "Q7" H 8725 4175 27  0000 L TNN
-F 1 "BSS84W" H 8725 4125 27  0000 L TNN
-F 2 "SOT323" H 8600 4125 27  0001 L TNN
-F 3 "" H 8550 4075 60  0001 C CNN
-	1    8550 4075
+P 8550 3925
+F 0 "Q7" H 8725 4025 27  0000 L TNN
+F 1 "BSS84W" H 8725 3975 27  0000 L TNN
+F 2 "SOT323" H 8600 3975 27  0001 L TNN
+F 3 "" H 8550 3925 60  0001 C CNN
+	1    8550 3925
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -460,7 +460,7 @@ Text Label 9500 3075 0    24   ~ 0
 BORDER
 Text Label 7575 925  0    24   ~ 0
 BORDER
-Text Label 8200 4075 0    24   ~ 0
+Text Label 8200 3925 0    24   ~ 0
 BORDER_CONTROL
 Text Label 10000 1925 0    24   ~ 0
 C11M
@@ -550,7 +550,7 @@ Text Label 8125 3575 0    24   ~ 0
 VGL
 Text Label 7800 2275 0    24   ~ 0
 VCC_T
-Text Label 8200 4225 0    24   ~ 0
+Text Label 8200 4075 0    24   ~ 0
 VCC_T
 Text Label 2775 700  0    24   ~ 0
 VCC_T
@@ -1377,7 +1377,7 @@ L CONN_2 P5
 U 1 1 515FD331
 P 9475 7025
 F 0 "P5" V 9475 7025 30  0000 C CNN
-F 1 "JST_3V3" V 9525 7025 30  0000 C CNN
+F 1 "JST_3V7" V 9525 7025 30  0000 C CNN
 F 2 "CONN_JST-2_SMD" H 9475 6925 60  0001 C CNN
 F 3 "~" H 9475 6925 60  0000 C CNN
 	1    9475 7025
@@ -1539,7 +1539,7 @@ Wire Wire Line
 Wire Wire Line
 	7575 925  8150 925 
 Wire Wire Line
-	8200 4075 8550 4075
+	8200 3925 8550 3925
 Wire Wire Line
 	7575 625  10300 625 
 Wire Wire Line
@@ -1633,7 +1633,7 @@ Wire Wire Line
 Wire Wire Line
 	1075 1300 1075 1350
 Wire Wire Line
-	8700 3725 8700 3925
+	8700 3725 8700 3775
 Wire Wire Line
 	7550 3325 7800 3325
 Wire Wire Line
@@ -1683,7 +1683,7 @@ Wire Wire Line
 Wire Wire Line
 	9900 2125 10300 2125
 Wire Wire Line
-	8700 4125 8700 4225
+	8700 3975 8700 4075
 Wire Wire Line
 	9850 2275 7800 2275
 Wire Wire Line
@@ -1812,7 +1812,7 @@ Wire Wire Line
 Wire Wire Line
 	10325 6575 10325 6475
 Wire Wire Line
-	8700 4225 8200 4225
+	8700 4075 8200 4075
 Wire Notes Line
 	600  1475 600  500 
 Wire Wire Line
@@ -2249,11 +2249,11 @@ Wire Wire Line
 Wire Wire Line
 	2325 6000 2275 6000
 Wire Wire Line
-	2850 5800 2275 5800
+	2275 5800 2850 5800
 Wire Wire Line
 	1325 6000 1325 6175
 Wire Wire Line
-	2850 5750 2850 5800
+	2850 5800 2850 5750
 Wire Wire Line
 	2850 5200 2850 5500
 Wire Wire Line
@@ -2746,4 +2746,58 @@ Connection ~ 10750 6000
 Wire Wire Line
 	10750 6275 10750 6300
 Connection ~ 10750 6300
+$Comp
+L LED D3
+U 1 1 519C8C9E
+P 10925 5175
+F 0 "D3" V 10925 4950 30  0000 C CNN
+F 1 "DEBUG" V 10875 5000 30  0000 C CNN
+F 2 "~" H 10925 5175 60  0000 C CNN
+F 3 "~" H 10925 5175 60  0000 C CNN
+	1    10925 5175
+	0    1    1    0   
+$EndComp
+$Comp
+L R R14
+U 1 1 519C8CAC
+P 10925 4775
+F 0 "R14" H 10975 4775 27  0000 L TNN
+F 1 "1k5" V 10910 4710 27  0000 L TNN
+F 2 "r_0805" H 10975 4825 27  0001 L TNN
+F 3 "" H 10925 4775 60  0001 C CNN
+F 4 "0402/100k/5%" H -4525 -3025 60  0001 C CNN "Field4"
+	1    10925 4775
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	10925 4900 10925 4975
+Wire Wire Line
+	10925 5375 10925 5475
+$Comp
+L GND #PWR029
+U 1 1 519C90C8
+P 10925 5475
+F 0 "#PWR029" H 10925 5475 30  0001 C CNN
+F 1 "GND" H 10925 5545 30  0001 C CNN
+F 2 "" H 10925 5475 60  0000 C CNN
+F 3 "" H 10925 5475 60  0000 C CNN
+	1    10925 5475
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10925 4650 10925 4600
+Wire Wire Line
+	10925 4600 10475 4600
+Text Label 10475 4600 0    40   ~ 0
+AD7_3V3
+Wire Notes Line
+	10325 4475 11175 4475
+Wire Notes Line
+	11175 4475 11175 5575
+Wire Notes Line
+	11175 5575 10325 5575
+Wire Notes Line
+	10325 5575 10325 4475
+Text Notes 10350 5550 0    40   ~ 8
+DEBUG LED
 $EndSCHEMATC

@@ -1,11 +1,6 @@
-update=11-May-13 2:45:44 PM
+update=22-May-13 6:07:11 PM
 version=1
-last_client=kicad
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
+last_client=eeschema
 [pcbnew]
 version=1
 LastNetListRead=repaper.net
@@ -15,22 +10,29 @@ PadSizeH=11.43
 PadSizeV=11.43
 PcbTextSizeV=0.762
 PcbTextSizeH=0.762
-PcbTextThickness=0.1524
+PcbTextThickness=0.127
 ModuleTextSizeV=0.762
 ModuleTextSizeH=0.762
-ModuleTextSizeThickness=0.1524
+ModuleTextSizeThickness=0.127
 SolderMaskClearance=0
 SolderMaskMinWidth=0
 DrawSegmentWidth=0.127
 BoardOutlineThickness=0.127
 ModuleOutlineThickness=0.127
 [pcbnew/libraries]
-LibDir=
 LibName1=repaper_lib/repaper
 LibName2=repaper_lib/OSHW
 LibName3=repaper_lib/repaper_logo
 LibName4=repaper_lib/seeed_logo
 LibName5=repaper_lib/wyo_logo
+LibDir=
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
@@ -42,5 +44,3 @@ LabSize=30
 [eeschema/libraries]
 LibName1=repaper_lib/repaper_sym
 LibName2=power
-[general]
-version=1
