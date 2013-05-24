@@ -1,6 +1,6 @@
-update=22-May-13 6:07:11 PM
+update=23-May-13 11:47:07 AM
 version=1
-last_client=eeschema
+last_client=kicad
 [pcbnew]
 version=1
 LastNetListRead=repaper.net
@@ -31,8 +31,6 @@ version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -44,3 +42,5 @@ LabSize=30
 [eeschema/libraries]
 LibName1=repaper_lib/repaper_sym
 LibName2=power
+[general]
+version=1
