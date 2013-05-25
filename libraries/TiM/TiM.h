@@ -42,7 +42,7 @@ class TiM {
   uint32_t getPixel(uint16_t strip_i, uint16_t led_j);
   void scroll_down();
   uint16_t led_per_strip;
-  Adafruit_NeoPixel strips[8];
+  Adafruit_NeoPixel strips[16];
   uint16_t n_strip;
 private:
 
