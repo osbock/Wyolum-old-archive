@@ -1,6 +1,6 @@
-update=23-May-13 6:37:58 PM
+update=03-Jun-13 5:25:02 PM
 version=1
-last_client=pcbnew
+last_client=eeschema
 [cvpcb]
 version=1
 NetIExt=net
@@ -8,16 +8,6 @@ NetIExt=net
 EquName1=devcms
 [general]
 version=1
-[eeschema]
-version=1
-LibDir=
-NetFmtName=
-RptD_X=0
-RptD_Y=100
-RptLab=1
-LabSize=60
-[eeschema/libraries]
-LibName1=OHSBadge_lib/OHSBadge_sym
 [pcbnew]
 version=1
 LastNetListRead=
@@ -43,3 +33,13 @@ LibName2=OHSBadge_lib/OSHW
 LibName3=OHSBadge_lib/repaper_logo
 LibName4=OHSBadge_lib/seeed_logo
 LibName5=OHSBadge_lib/wyo_logo
+[eeschema]
+version=1
+LibDir=
+NetFmtName=
+RptD_X=0
+RptD_Y=100
+RptLab=1
+LabSize=60
+[eeschema/libraries]
+LibName1=OHSBadge_lib/OHSBadge_sym
