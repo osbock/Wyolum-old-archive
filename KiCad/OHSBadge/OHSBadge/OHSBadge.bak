@@ -1,7 +1,7 @@
-EESchema Schematic File Version 2  date 23-May-13 11:57:11 AM
+EESchema Schematic File Version 2
 LIBS:OHSBadge_sym
 LIBS:OHSBadge-cache
-EELAYER 27 0
+EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -1129,7 +1129,7 @@ Text Label 6150 7050 0    40   ~ 0
 SPI_CLK_3V3
 Text Label 6150 6750 0    40   ~ 0
 SPI_SS_3V3
-Text Label 6150 4750 0    40   ~ 0
+Text Label 6150 5450 0    40   ~ 0
 TEMPERATURE
 Text Label 2025 4275 0    30   ~ 0
 SDA_3V3
@@ -1137,7 +1137,7 @@ Text Label 2025 4375 0    30   ~ 0
 SCL_3V3
 Text Label 6150 5350 0    40   ~ 0
 MODE
-Text Label 6150 5450 0    40   ~ 0
+Text Label 6150 4750 0    40   ~ 0
 AD7_3V3
 Text Label 3825 4100 0    40   ~ 0
 3V3
@@ -2722,8 +2722,8 @@ $Comp
 L S_LINK SL1
 U 1 1 5170DF18
 P 10750 6150
-F 0 "SL1" H 10850 6100 30  0000 C CNN
-F 1 "S_LINK" H 10900 6150 30  0000 C CNN
+F 0 "SL1" H 10875 6175 30  0000 C CNN
+F 1 "S_LINK" H 10900 6225 30  0000 C CNN
 F 2 "ShortLink" H 10750 6150 60  0001 C CNN
 F 3 "" H 10750 6150 60  0000 C CNN
 	1    10750 6150
@@ -2807,4 +2807,16 @@ Text Label 6150 5950 0    40   ~ 0
 SEL
 Text Label 6150 5850 0    40   ~ 0
 UP
+Text Notes 8325 5275 0    30   ~ 0
+NOTE : S_LINK (SL1) is bridged [ D2 is bypassed ] when powering the Badge\nfrom the Coin Battery.\nWhen using ANY OTHER power source (Lipo on JST, 5V on USB, 12V Barrel\nsocket etc), Unbridge D2 (remove solder from link SL1).\nThe Coin Battery can then be used as power source for RTC.\nIf RTC is not used,  REMOVE the Coin Battery.
+Text Notes 10825 6200 0    30   ~ 0
+see NOTE
+Wire Notes Line
+	8300 5200 10150 5200
+Wire Notes Line
+	10150 5200 10150 5550
+Wire Notes Line
+	10150 5550 8300 5550
+Wire Notes Line
+	8300 5550 8300 5200
 $EndSCHEMATC

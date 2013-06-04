@@ -1,13 +1,11 @@
-update=03-Jun-13 5:25:02 PM
+update=Tuesday 04 June 2013 09:30:42 PM IST
 version=1
-last_client=eeschema
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
 [pcbnew]
 version=1
 LastNetListRead=
@@ -43,3 +41,5 @@ RptLab=1
 LabSize=60
 [eeschema/libraries]
 LibName1=OHSBadge_lib/OHSBadge_sym
+[general]
+version=1
