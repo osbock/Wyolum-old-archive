@@ -1,29 +1,15 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 23-May-13 11:52:36 AM
-
-BeginCmp
-TimeStamp = /51645932;
-Reference = A3;
-ValeurCmp = I/O;
-IdModule  = I/O;
-EndCmp
+Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 05-Jun-13 3:45:54 PM
 
 BeginCmp
 TimeStamp = /51627367;
-Reference = AD7;
+Reference = A0;
 ValeurCmp = I/O;
 IdModule  = I/O;
 EndCmp
 
 BeginCmp
 TimeStamp = /5159E685;
-Reference = AD7_3V3;
-ValeurCmp = I/O;
-IdModule  = I/O;
-EndCmp
-
-BeginCmp
-TimeStamp = /5162736D;
-Reference = B3;
+Reference = A0_3V3;
 ValeurCmp = I/O;
 IdModule  = I/O;
 EndCmp
@@ -305,7 +291,7 @@ BeginCmp
 TimeStamp = /519C8C9E;
 Reference = D3;
 ValeurCmp = DEBUG;
-IdModule  = ;
+IdModule  = led_0805;
 EndCmp
 
 BeginCmp
@@ -334,6 +320,13 @@ TimeStamp = /51680AEC;
 Reference = G4;
 ValeurCmp = OSHW;
 IdModule  = OSHW_logo;
+EndCmp
+
+BeginCmp
+TimeStamp = /51AE0BF3;
+Reference = G5;
+ValeurCmp = OSHW;
+IdModule  = OHS2013;
 EndCmp
 
 BeginCmp
@@ -368,7 +361,7 @@ BeginCmp
 TimeStamp = /514F45B3;
 Reference = J4;
 ValeurCmp = ZIF-40-0.5;
-IdModule  = ZIF-40-0.5-M_Hirose;
+IdModule  = ZIF-40-0.5-M_seeed;
 EndCmp
 
 BeginCmp
@@ -585,7 +578,7 @@ BeginCmp
 TimeStamp = /5152F006;
 Reference = SD1;
 ValeurCmp = SD_CARD_MICRO;
-IdModule  = SD_Micro;
+IdModule  = SD_Micro_seeed;
 EndCmp
 
 BeginCmp
@@ -662,7 +655,7 @@ BeginCmp
 TimeStamp = /5152C285;
 Reference = U4;
 ValeurCmp = TXS0108;
-IdModule  = SO20L;
+IdModule  = TXS0108EPWR;
 EndCmp
 
 BeginCmp
@@ -698,6 +691,20 @@ TimeStamp = /516420F9;
 Reference = X2;
 ValeurCmp = 32.768kHz;
 IdModule  = XTAL_3;
+EndCmp
+
+BeginCmp
+TimeStamp = /51645932;
+Reference = XA3;
+ValeurCmp = I/O;
+IdModule  = I/O;
+EndCmp
+
+BeginCmp
+TimeStamp = /5162736D;
+Reference = XB3;
+ValeurCmp = I/O;
+IdModule  = I/O;
 EndCmp
 
 EndListe

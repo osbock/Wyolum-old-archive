@@ -1,6 +1,6 @@
-update=Tuesday 04 June 2013 09:30:42 PM IST
+update=05-Jun-13 3:48:51 PM
 version=1
-last_client=kicad
+last_client=eeschema
 [cvpcb]
 version=1
 NetIExt=net
@@ -31,15 +31,15 @@ LibName2=OHSBadge_lib/OSHW
 LibName3=OHSBadge_lib/repaper_logo
 LibName4=OHSBadge_lib/seeed_logo
 LibName5=OHSBadge_lib/wyo_logo
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
-NetFmtName=
+NetFmtName=PcbnewAdvanced
 RptD_X=0
 RptD_Y=100
 RptLab=1
 LabSize=60
 [eeschema/libraries]
 LibName1=OHSBadge_lib/OHSBadge_sym
-[general]
-version=1
