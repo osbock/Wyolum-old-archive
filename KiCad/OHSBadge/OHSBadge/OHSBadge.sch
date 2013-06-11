@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 11-Jun-13 3:34:23 PM
+EESchema Schematic File Version 2  date 11-Jun-13 4:01:15 PM
 LIBS:OHSBadge_sym
 LIBS:OHSBadge-cache
 EELAYER 27 0
@@ -6,7 +6,7 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
+Title "BADGEr_v4"
 Date "11 jun 2013"
 Rev ""
 Comp ""
@@ -2452,10 +2452,6 @@ Wire Wire Line
 Wire Wire Line
 	9225 6625 9225 6000
 Connection ~ 9225 6000
-Wire Wire Line
-	3775 2050 4025 2050
-Text Label 3775 2050 0    40   ~ 0
-V_IN
 Text Label 10900 6300 0    30   ~ 0
 BATT_3V
 $Comp
@@ -2810,4 +2806,5 @@ Text Label 3775 1450 0    40   ~ 0
 VCC5V
 NoConn ~ 4025 1650
 NoConn ~ 6125 1150
+NoConn ~ 4025 2050
 $EndSCHEMATC
