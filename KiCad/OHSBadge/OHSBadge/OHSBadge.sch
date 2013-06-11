@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 07-Jun-13 5:07:04 PM
+EESchema Schematic File Version 2  date 11-Jun-13 3:34:23 PM
 LIBS:OHSBadge_sym
 LIBS:OHSBadge-cache
 EELAYER 27 0
@@ -7,7 +7,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "7 jun 2013"
+Date "11 jun 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -928,8 +928,6 @@ F 4 "0603/0.1uF/16V" H -5950 -2025 60  0001 C CNN "Field4"
 	1    1100 2975
 	-1   0    0    -1  
 $EndComp
-Text Label 6275 1150 0    40   ~ 0
-3V3
 $Comp
 L SW_PUSH SW1
 U 1 1 5156E165
@@ -1291,20 +1289,18 @@ Text Label 2925 6725 0    40   ~ 0
 GND
 Text Notes 700  7300 0    40   ~ 8
 Interfaces_Communication
-NoConn ~ 6275 1750
-NoConn ~ 6275 1850
-NoConn ~ 6275 2550
-NoConn ~ 6275 2450
-NoConn ~ 6275 2350
-NoConn ~ 6275 2250
-NoConn ~ 6275 2150
-NoConn ~ 6275 2050
+NoConn ~ 6125 1750
+NoConn ~ 6125 1850
+NoConn ~ 6125 2550
+NoConn ~ 6125 2450
+NoConn ~ 6125 2350
+NoConn ~ 6125 2250
+NoConn ~ 6125 2150
+NoConn ~ 6125 2050
 Text Label 3775 1950 0    40   ~ 0
 GND
 Text Label 3775 1850 0    40   ~ 0
 GND
-Text Label 3775 1450 0    40   ~ 0
-SH_5V
 Text Label 3775 2650 0    40   ~ 0
 SDA
 Text Label 3775 2750 0    40   ~ 0
@@ -1434,8 +1430,6 @@ Text Label 2025 4675 0    30   ~ 0
 TXD_3V3
 Text Label 6275 1650 0    40   ~ 0
 SPI_SS
-Text Label 3775 1650 0    40   ~ 0
-SH_3V
 $Comp
 L BATT_HOLDER BT1
 U 1 1 51612040
@@ -1473,17 +1467,6 @@ F 10 "P189-ND" H 10525 5925 60  0001 L CNN "Field10"
 F 11 "http://www.digikey.com/product-detail/en/CR2032/P189-ND/31939?cur=USD" H 10525 5825 60  0001 L CNN "Field11"
 	1    10525 6825
 	0    1    1    0   
-$EndComp
-$Comp
-L PWR_FLAG #FLG025
-U 1 1 5161337E
-P 3575 1625
-F 0 "#FLG025" H 3575 1530 30  0001 C CNN
-F 1 "PWR_FLAG" V 3475 1675 30  0000 C CNN
-F 2 "" H 3575 1625 60  0000 C CNN
-F 3 "" H 3575 1625 60  0000 C CNN
-	1    3575 1625
-	1    0    0    -1  
 $EndComp
 Text Label 1925 4075 0    30   ~ 0
 A0_3V3
@@ -1905,14 +1888,6 @@ Wire Wire Line
 Wire Wire Line
 	10250 2525 10250 3275
 Wire Wire Line
-	6125 2550 6275 2550
-Wire Wire Line
-	6125 2350 6275 2350
-Wire Wire Line
-	6125 2150 6275 2150
-Wire Wire Line
-	6125 1850 6275 1850
-Wire Wire Line
 	6125 1450 6275 1450
 Wire Wire Line
 	6125 1250 6275 1250
@@ -1922,16 +1897,6 @@ Wire Wire Line
 	6125 1350 6275 1350
 Wire Wire Line
 	6125 1550 6275 1550
-Wire Wire Line
-	6125 1750 6275 1750
-Wire Wire Line
-	6125 2050 6275 2050
-Wire Wire Line
-	6125 2250 6275 2250
-Wire Wire Line
-	6125 2450 6275 2450
-Wire Wire Line
-	6275 1150 6125 1150
 Wire Wire Line
 	2150 3450 2150 3500
 Connection ~ 2150 3450
@@ -2180,10 +2145,6 @@ Wire Wire Line
 	3750 5150 3450 5150
 Connection ~ 3450 5150
 Wire Wire Line
-	3575 1650 4025 1650
-Wire Wire Line
-	3575 1650 3575 1625
-Wire Wire Line
 	3775 1550 4025 1550
 Wire Wire Line
 	7150 4800 7150 4850
@@ -2293,10 +2254,10 @@ GND
 Text Label 1325 5200 0    30   ~ 0
 3V3
 $Comp
-L GND #PWR026
+L GND #PWR025
 U 1 1 51642116
 P 1325 6175
-F 0 "#PWR026" H 1325 6175 30  0001 C CNN
+F 0 "#PWR025" H 1325 6175 30  0001 C CNN
 F 1 "GND" H 1325 6105 30  0001 C CNN
 F 2 "" H 1325 6175 60  0001 C CNN
 F 3 "" H 1325 6175 60  0001 C CNN
@@ -2632,10 +2593,10 @@ $EndComp
 Wire Wire Line
 	2575 4925 2575 4075
 $Comp
-L PWR_FLAG #FLG027
+L PWR_FLAG #FLG026
 U 1 1 516131E6
 P 10750 5925
-F 0 "#FLG027" H 10750 5830 30  0001 C CNN
+F 0 "#FLG026" H 10750 5830 30  0001 C CNN
 F 1 "PWR_FLAG" H 10750 6100 30  0000 C CNN
 F 2 "" H 10750 5925 60  0000 C CNN
 F 3 "" H 10750 5925 60  0000 C CNN
@@ -2781,10 +2742,10 @@ Wire Wire Line
 Wire Wire Line
 	9425 5375 9425 5475
 $Comp
-L GND #PWR028
+L GND #PWR027
 U 1 1 51B1B0BC
 P 9425 5475
-F 0 "#PWR028" H 9425 5475 30  0001 C CNN
+F 0 "#PWR027" H 9425 5475 30  0001 C CNN
 F 1 "GND" H 9425 5545 30  0001 C CNN
 F 2 "" H 9425 5475 60  0000 C CNN
 F 3 "" H 9425 5475 60  0000 C CNN
@@ -2845,4 +2806,8 @@ Text Label 10900 6350 0    30   ~ 0
 BATT
 Text Label 10975 5700 0    30   ~ 0
 BATT
+Text Label 3775 1450 0    40   ~ 0
+VCC5V
+NoConn ~ 4025 1650
+NoConn ~ 6125 1150
 $EndSCHEMATC
