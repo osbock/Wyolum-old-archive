@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 13-Jun-13 6:42:02 PM
+Cmp-Mod V01 Created by PcbNew date = Thursday 13 June 2013 09:53:17 PM IST
 
 BeginCmp
 TimeStamp = /51627367;
@@ -18,35 +18,35 @@ BeginCmp
 TimeStamp = /51B9D690;
 Reference = AD0;
 ValeurCmp = I/O;
-IdModule  = I/O;
+IdModule  = Breakout;
 EndCmp
 
 BeginCmp
 TimeStamp = /51B9D68A;
 Reference = AD1;
 ValeurCmp = I/O;
-IdModule  = I/O;
+IdModule  = Breakout;
 EndCmp
 
 BeginCmp
 TimeStamp = /51B9D684;
 Reference = AD2;
 ValeurCmp = I/O;
-IdModule  = I/O;
+IdModule  = Breakout;
 EndCmp
 
 BeginCmp
 TimeStamp = /51B9D67E;
 Reference = AD3;
 ValeurCmp = I/O;
-IdModule  = I/O;
+IdModule  = Breakout;
 EndCmp
 
 BeginCmp
 TimeStamp = /51B9C518;
 Reference = AREF1;
 ValeurCmp = I/O;
-IdModule  = I/O;
+IdModule  = Breakout;
 EndCmp
 
 BeginCmp
@@ -459,70 +459,70 @@ BeginCmp
 TimeStamp = /51B9C7E4;
 Reference = PD2;
 ValeurCmp = I/O;
-IdModule  = I/O;
+IdModule  = Breakout;
 EndCmp
 
 BeginCmp
 TimeStamp = /51B9C7CC;
 Reference = PD4;
 ValeurCmp = I/O;
-IdModule  = I/O;
+IdModule  = Breakout;
 EndCmp
 
 BeginCmp
 TimeStamp = /51B9C7C5;
 Reference = PD5;
 ValeurCmp = I/O;
-IdModule  = I/O;
+IdModule  = Breakout;
 EndCmp
 
 BeginCmp
 TimeStamp = /51B9C7BF;
 Reference = PD6;
 ValeurCmp = I/O;
-IdModule  = I/O;
+IdModule  = Breakout;
 EndCmp
 
 BeginCmp
 TimeStamp = /51B9C7B9;
 Reference = PD7;
 ValeurCmp = I/O;
-IdModule  = I/O;
+IdModule  = Breakout;
 EndCmp
 
 BeginCmp
 TimeStamp = /51B9C790;
 Reference = PD8;
 ValeurCmp = I/O;
-IdModule  = I/O;
+IdModule  = Breakout;
 EndCmp
 
 BeginCmp
 TimeStamp = /51B9C78A;
 Reference = PD9;
 ValeurCmp = I/O;
-IdModule  = I/O;
+IdModule  = Breakout;
 EndCmp
 
 BeginCmp
 TimeStamp = /51B9C52A;
 Reference = PD11;
 ValeurCmp = I/O;
-IdModule  = I/O;
+IdModule  = Breakout;
 EndCmp
 
 BeginCmp
 TimeStamp = /51B9C524;
 Reference = PD12;
 ValeurCmp = I/O;
-IdModule  = I/O;
+IdModule  = Breakout;
 EndCmp
 
 BeginCmp
 TimeStamp = /51B9C51E;
 Reference = PD13;
 ValeurCmp = I/O;
-IdModule  = I/O;
+IdModule  = Breakout;
 EndCmp
 
 BeginCmp
@@ -795,14 +795,14 @@ BeginCmp
 TimeStamp = /51B9D6B0;
 Reference = V1;
 ValeurCmp = I/O;
-IdModule  = I/O;
+IdModule  = Breakout;
 EndCmp
 
 BeginCmp
 TimeStamp = /51B9D6C1;
 Reference = V2;
 ValeurCmp = I/O;
-IdModule  = I/O;
+IdModule  = Breakout;
 EndCmp
 
 BeginCmp
