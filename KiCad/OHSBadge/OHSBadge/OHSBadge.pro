@@ -1,4 +1,4 @@
-update=11-Jun-13 4:01:33 PM
+update=13-Jun-13 6:32:02 PM
 version=1
 last_client=eeschema
 [cvpcb]
@@ -43,3 +43,4 @@ RptLab=1
 LabSize=60
 [eeschema/libraries]
 LibName1=OHSBadge_lib/OHSBadge_sym
+LibName2=power
