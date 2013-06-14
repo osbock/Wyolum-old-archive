@@ -1,24 +1,11 @@
-update=Thursday 13 June 2013 09:13:13 PM IST
+update=14-Jun-13 5:31:42 PM
 version=1
-last_client=pcbnew
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
-[eeschema]
-version=1
-LibDir=
-NetFmtName=PcbnewAdvanced
-RptD_X=0
-RptD_Y=100
-RptLab=1
-LabSize=60
-[eeschema/libraries]
-LibName1=OHSBadge_lib/OHSBadge_sym
-LibName2=power
 [pcbnew]
 version=1
 LastNetListRead=OHSBadge.net
@@ -46,3 +33,16 @@ LibName3=OHSBadge_lib/repaper_logo
 LibName4=OHSBadge_lib/seeed_logo
 LibName5=OHSBadge_lib/wyo_logo
 LibName6=OHSBadge_lib/OHSBadge_archive
+[eeschema]
+version=1
+LibDir=
+NetFmtName=PcbnewAdvanced
+RptD_X=0
+RptD_Y=100
+RptLab=1
+LabSize=60
+[eeschema/libraries]
+LibName1=OHSBadge_lib/OHSBadge_sym
+LibName2=power
+[general]
+version=1

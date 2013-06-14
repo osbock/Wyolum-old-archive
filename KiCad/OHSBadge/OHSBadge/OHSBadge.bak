@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 13-Jun-13 6:47:58 PM
+EESchema Schematic File Version 2  date 14-Jun-13 5:09:37 PM
 LIBS:OHSBadge_sym
 LIBS:power
 LIBS:OHSBadge-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "BADGEr_v4"
-Date "13 jun 2013"
+Date "14 jun 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -1631,7 +1631,7 @@ Wire Wire Line
 Wire Wire Line
 	10300 2075 9850 2075
 Wire Wire Line
-	9850 2075 9850 2275
+	9850 2275 9850 2075
 Wire Wire Line
 	8900 2275 8900 2375
 Wire Wire Line
@@ -1643,7 +1643,7 @@ Wire Wire Line
 Wire Wire Line
 	8700 3975 8700 4075
 Wire Wire Line
-	9850 2275 7800 2275
+	7800 2275 9850 2275
 Wire Wire Line
 	2400 700  2400 1100
 Wire Wire Line
@@ -2710,11 +2710,11 @@ F 3 "" H 2200 7600 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4025 1450 3700 1450
+	4025 1450 3750 1450
 Wire Wire Line
-	3700 1450 3700 1750
+	3750 1450 3750 1750
 Wire Wire Line
-	3700 1750 4025 1750
+	3750 1750 4025 1750
 Wire Wire Line
 	9425 4900 9425 4975
 Wire Wire Line
@@ -2831,7 +2831,7 @@ F 3 "~" H 6550 1550 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6650 1150 6125 1150
+	6125 1150 6650 1150
 Text Label 6150 1850 0    40   ~ 0
 PD8
 Text Label 6150 1750 0    40   ~ 0
@@ -3024,33 +3024,61 @@ F 3 "~" H 5075 1950 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4025 2050 3750 2050
+	3525 2050 4025 2050
 $Comp
 L I/O V1
 U 1 1 51B9D6B0
-P 3600 2050
-F 0 "V1" H 3650 2050 40  0000 L CNN
-F 1 "I/O" H 3600 1995 30  0001 C CNN
-F 2 "I/O" H 3600 2050 60  0001 C CNN
-F 3 "~" H 3600 2050 60  0000 C CNN
-	1    3600 2050
+P 3375 2050
+F 0 "V1" H 3425 2050 40  0000 L CNN
+F 1 "I/O" H 3375 1995 30  0001 C CNN
+F 2 "I/O" H 3375 2050 60  0001 C CNN
+F 3 "~" H 3375 2050 60  0000 C CNN
+	1    3375 2050
 	-1   0    0    1   
 $EndComp
 Text Label 3875 2050 2    40   ~ 0
 VIN
 Wire Wire Line
-	4025 1650 3750 1650
+	3525 1650 4025 1650
 $Comp
 L I/O V2
 U 1 1 51B9D6C1
-P 3600 1650
-F 0 "V2" H 3650 1650 40  0000 L CNN
-F 1 "I/O" H 3600 1595 30  0001 C CNN
-F 2 "I/O" H 3600 1650 60  0001 C CNN
-F 3 "~" H 3600 1650 60  0000 C CNN
-	1    3600 1650
+P 3375 1650
+F 0 "V2" H 3425 1650 40  0000 L CNN
+F 1 "I/O" H 3375 1595 30  0001 C CNN
+F 2 "I/O" H 3375 1650 60  0001 C CNN
+F 3 "~" H 3375 1650 60  0000 C CNN
+	1    3375 1650
 	-1   0    0    1   
 $EndComp
 Text Label 3875 1650 2    40   ~ 0
 3V
+$Comp
+L PWR_FLAG #FLG031
+U 1 1 51BAFB74
+P 3575 2000
+F 0 "#FLG031" H 3575 2095 30  0001 C CNN
+F 1 "PWR_FLAG" H 3575 2180 30  0000 C CNN
+F 2 "" H 3575 2000 60  0000 C CNN
+F 3 "" H 3575 2000 60  0000 C CNN
+	1    3575 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L PWR_FLAG #FLG032
+U 1 1 51BAFB81
+P 3575 1600
+F 0 "#FLG032" H 3575 1695 30  0001 C CNN
+F 1 "PWR_FLAG" H 3575 1780 30  0000 C CNN
+F 2 "" H 3575 1600 60  0000 C CNN
+F 3 "" H 3575 1600 60  0000 C CNN
+	1    3575 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3575 2000 3575 2050
+Connection ~ 3575 2050
+Wire Wire Line
+	3575 1600 3575 1650
+Connection ~ 3575 1650
 $EndSCHEMATC
