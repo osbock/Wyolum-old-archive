@@ -1,7 +1,7 @@
-Drill report for C:/Users/Anool/Documents/Arduino/clockthree/KiCad/aLaMode_v3/aLaMode_v3.brd
-Created on 12-Jun-13 3:11:40 PM
+Drill report for C:\Users\Anool\Documents\Arduino\clockthree\KiCad\aLaMode_v3\aLaMode_v3.brd
+Created on 14-Jun-13 12:24:51 PM
 Drill report for plated through holes :
-T1  0.64mm  0.025"  (101 holes)
+T1  0.64mm  0.025"  (102 holes)
 T2  0.89mm  0.035"  (30 holes)
 T3  1.02mm  0.040"  (131 holes)
 T4  1.17mm  0.046"  (3 holes)  (with 3 slots)
@@ -9,7 +9,7 @@ T5  1.27mm  0.050"  (2 holes)
 T6  2.03mm  0.080"  (1 hole)
 T7  3.05mm  0.120"  (1 hole)
 
-Total plated holes count 269
+Total plated holes count 270
 
 
 Drill report for unplated through holes :
