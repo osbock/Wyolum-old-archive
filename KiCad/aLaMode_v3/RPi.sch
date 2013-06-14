@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12-Jun-13 2:07:35 PM
+EESchema Schematic File Version 2  date 14-Jun-13 12:23:48 PM
 LIBS:aLaMode
 LIBS:Conn-raspberry
 LIBS:power
@@ -9,9 +9,9 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 4
 Title "aLaMode_v3"
-Date "12 jun 2013"
-Rev "1"
-Comp "WyoLum"
+Date "14 jun 2013"
+Rev "3"
+Comp "WyoLum :: http://wyolum.com/projects/alamode/"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -206,10 +206,10 @@ $EndComp
 Text Label 5850 1025 0    40   ~ 0
 Rpi_3V3
 $Comp
-L GND #PWR021
+L GND #PWR022
 U 1 1 4FD8C28A
 P 5850 2050
-F 0 "#PWR021" H 5850 2050 30  0001 C CNN
+F 0 "#PWR022" H 5850 2050 30  0001 C CNN
 F 1 "GND" H 5850 1980 30  0001 C CNN
 F 2 "" H 5850 2050 60  0001 C CNN
 F 3 "" H 5850 2050 60  0001 C CNN
@@ -230,10 +230,10 @@ $EndComp
 Text Label 5900 4100 0    40   ~ 0
 Rpi_3V3
 $Comp
-L GND #PWR022
+L GND #PWR023
 U 1 1 4FD62C0F
 P 2125 2175
-F 0 "#PWR022" H 2125 2175 30  0001 C CNN
+F 0 "#PWR023" H 2125 2175 30  0001 C CNN
 F 1 "GND" H 2125 2105 30  0001 C CNN
 F 2 "" H 2125 2175 60  0001 C CNN
 F 3 "" H 2125 2175 60  0001 C CNN
@@ -241,10 +241,10 @@ F 3 "" H 2125 2175 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR023
+L GND #PWR024
 U 1 1 4FD62BFD
 P 2125 3600
-F 0 "#PWR023" H 2125 3600 30  0001 C CNN
+F 0 "#PWR024" H 2125 3600 30  0001 C CNN
 F 1 "GND" H 2125 3530 30  0001 C CNN
 F 2 "" H 2125 3600 60  0001 C CNN
 F 3 "" H 2125 3600 60  0001 C CNN
@@ -404,10 +404,10 @@ F 3 "" H 9850 4950 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PWR_FLAG #FLG024
+L PWR_FLAG #FLG025
 U 1 1 51B85026
 P 6300 3950
-F 0 "#FLG024" H 6300 4220 30  0001 C CNN
+F 0 "#FLG025" H 6300 4220 30  0001 C CNN
 F 1 "PWR_FLAG" H 6300 4180 30  0000 C CNN
 F 2 "" H 6300 3950 60  0000 C CNN
 F 3 "" H 6300 3950 60  0000 C CNN
@@ -417,4 +417,6 @@ $EndComp
 Wire Wire Line
 	6300 3950 6300 4100
 Connection ~ 6300 4100
+Text Notes 6200 1150 0    60   ~ 12
+DNP
 $EndSCHEMATC

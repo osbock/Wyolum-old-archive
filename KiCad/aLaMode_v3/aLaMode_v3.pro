@@ -1,5 +1,5 @@
-update=12-Jun-13 2:06:58 PM
-last_client=cvpcb
+update=14-Jun-13 12:23:44 PM
+last_client=eeschema
 [general]
 version=1
 [pcbnew]
@@ -22,6 +22,11 @@ LastNetListRead=aLaMode_v2.net
 [pcbnew/libraries]
 LibName1=aLaMode_Libs/aLaMode_v3
 LibDir=
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
 [eeschema]
 version=1
 LibDir=
@@ -34,8 +39,3 @@ LabSize=60
 LibName1=aLaMode_Libs/aLaMode
 LibName2=aLaMode_Libs/Conn-raspberry
 LibName3=aLaMode_Libs/power
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
