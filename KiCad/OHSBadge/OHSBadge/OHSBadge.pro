@@ -1,6 +1,6 @@
-update=14-Jun-13 5:31:42 PM
+update=15-Jun-13 12:52:35 PM
 version=1
-last_client=kicad
+last_client=eeschema
 [cvpcb]
 version=1
 NetIExt=net
@@ -33,6 +33,8 @@ LibName3=OHSBadge_lib/repaper_logo
 LibName4=OHSBadge_lib/seeed_logo
 LibName5=OHSBadge_lib/wyo_logo
 LibName6=OHSBadge_lib/OHSBadge_archive
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
@@ -44,5 +46,3 @@ LabSize=60
 [eeschema/libraries]
 LibName1=OHSBadge_lib/OHSBadge_sym
 LibName2=power
-[general]
-version=1

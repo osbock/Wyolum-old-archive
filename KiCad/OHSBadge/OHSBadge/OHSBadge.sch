@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 14-Jun-13 5:11:23 PM
+EESchema Schematic File Version 2  date 15-Jun-13 12:53:14 PM
 LIBS:OHSBadge_sym
 LIBS:power
 LIBS:OHSBadge-cache
