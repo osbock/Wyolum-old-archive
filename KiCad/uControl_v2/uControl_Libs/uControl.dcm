@@ -1,0 +1,97 @@
+EESchema-DOCLIB  Version 2.0  Date: 2/5/2013 2:40:44 PM
+#
+$CMP ABSO_PR
+D Symbole general de connecteur
+K CONN
+$ENDCMP
+#
+$CMP CONN_10
+D Symbole general de connecteur
+K CONN
+$ENDCMP
+#
+$CMP CONN_12
+D Symbole general de connecteur
+K CONN
+$ENDCMP
+#
+$CMP CONN_8
+D Symbole general de connecteur
+K CONN
+$ENDCMP
+#
+$CMP DIODE
+D Diode simple
+K DEV DIODE
+$ENDCMP
+#
+$CMP FLOW_CONN
+D Symbole general de connecteur
+K CONN
+$ENDCMP
+#
+$CMP FLOW_CONN_CABLE
+D Symbole general de connecteur
+K CONN
+$ENDCMP
+#
+$CMP GAGE_PR
+D Symbole general de connecteur
+K CONN
+$ENDCMP
+#
+$CMP LM358
+D Dual Op amp (low power)
+K ampliop
+F ns/lm158.pdf
+$ENDCMP
+#
+$CMP LM358N
+D Dual Op amp (low power)
+K ampliop
+F ns/lm158.pdf
+$ENDCMP
+#
+$CMP LMC6062
+D Dual Op amp (low power)
+K ampliop
+F op_amps/lmc6062.pdf
+$ENDCMP
+#
+$CMP LMC6082
+D Dual Op amp (low power)
+K ampliop
+F op_amps/lmc6082.pdf
+$ENDCMP
+#
+$CMP MOS_P
+F transistors/mos/*.*
+$ENDCMP
+#
+$CMP MOSFET_P
+F transistors/mos/*.*
+$ENDCMP
+#
+$CMP NPN
+F transistors/bipolar/bc237.pdf
+$ENDCMP
+#
+$CMP NPN_TIP112G
+F transistors/bipolar/bc237.pdf
+$ENDCMP
+#
+$CMP PNP
+F transistors/bipolar/bc307.pdf
+$ENDCMP
+#
+$CMP TL072
+D Dual Op amp (low power)
+K ampliop
+$ENDCMP
+#
+$CMP TL082
+D Dual Op amp (Cmos)
+K ampliop
+$ENDCMP
+#
+#End Doc Library
