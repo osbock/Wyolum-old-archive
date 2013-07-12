@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 14-Jun-13 5:11:13 PM
+Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 12-Jul-13 5:23:44 PM
 
 BeginCmp
 TimeStamp = /51627367;
@@ -771,9 +771,9 @@ IdModule  = TXS0108EPWR;
 EndCmp
 
 BeginCmp
-TimeStamp = /51642104;
+TimeStamp = /51DFF89E;
 Reference = U5;
-ValeurCmp = DS1307;
+ValeurCmp = BQ32000;
 IdModule  = SO8E;
 EndCmp
 
