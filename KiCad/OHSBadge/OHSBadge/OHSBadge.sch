@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12-Jul-13 5:23:58 PM
+EESchema Schematic File Version 2  date 15-Jul-13 6:13:20 PM
 LIBS:OHSBadge_sym
 LIBS:power
 LIBS:OHSBadge-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "BADGEr_v4"
-Date "12 jul 2013"
+Date "15 jul 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -1204,7 +1204,7 @@ F 2 "Header_ISP" H 1475 6675 60  0001 C CNN
 F 3 "" H 1475 6675 60  0000 C CNN
 F 4 "DNP" H 1475 6675 30  0000 C CNN "Field4"
 	1    1475 6675
-	1    0    0    1   
+	1    0    0    -1  
 $EndComp
 Text Label 700  6425 0    40   ~ 0
 SPI_MISO_3V3
@@ -2262,8 +2262,6 @@ Text Label 2400 5400 0    30   ~ 0
 SCL_3V3
 Text Label 2400 5600 0    30   ~ 0
 SDA_3V3
-Text Notes 1150 7075 0    30   ~ 0
-Pins flipped since\nconnector is on\nsolder side
 $Comp
 L SW_PUSH SW5
 U 1 1 51644781
