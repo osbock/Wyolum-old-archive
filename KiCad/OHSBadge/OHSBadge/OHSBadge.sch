@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 15-Jul-13 6:13:20 PM
+EESchema Schematic File Version 2  date 16-Jul-13 1:47:04 PM
 LIBS:OHSBadge_sym
 LIBS:power
 LIBS:OHSBadge-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "BADGEr_v4"
-Date "15 jul 2013"
+Date "16 jul 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -2257,7 +2257,7 @@ F 4 "0603/0.1uF/16V" H -6350 725 60  0001 C CNN "Field4"
 	-1   0    0    -1  
 $EndComp
 Text Label 700  5250 0    30   ~ 0
-Batt_3V
+Batt_RTC
 Text Label 2400 5400 0    30   ~ 0
 SCL_3V3
 Text Label 2400 5600 0    30   ~ 0
@@ -2765,9 +2765,9 @@ Wire Wire Line
 Text Label 10975 4800 0    30   ~ 0
 BATT_3V
 Text Label 10900 6350 0    30   ~ 0
-BATT
+BATT_RTC
 Text Label 10975 5700 0    30   ~ 0
-BATT
+BATT_RTC
 Text Label 3775 1450 0    40   ~ 0
 VCC5V
 $Comp
