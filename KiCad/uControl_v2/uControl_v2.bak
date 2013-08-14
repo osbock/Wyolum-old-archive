@@ -1,14 +1,14 @@
-EESchema Schematic File Version 2
+EESchema Schematic File Version 2  date 14-Aug-13 6:24:29 PM
 LIBS:Conn-raspberry
 LIBS:power
 LIBS:uControl
-EELAYER 24 0
+EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 5
 Title "uControl"
-Date "5 feb 2013"
+Date "14 aug 2013"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -717,16 +717,11 @@ F7 "~PD5_Valve" I L 10050 3125 40
 F8 "~MOSI" I L 10050 2125 40 
 F9 "~SS" I L 10050 2225 40 
 F10 "PC3_Pr1" I L 10050 2525 40 
-F11 "PD7_IO_X" I L 10050 2825 40 
-F12 "~PB1_IO_T" O L 10050 2925 40 
-F13 "PB0_IO_R" I L 10050 3025 40 
-F14 "3V3" B L 10050 2025 40 
-F15 "SCL" I L 10050 3225 40 
-F16 "SDA" I L 10050 3325 40 
-F17 "PC1_Pulse" I L 10050 3425 40 
-F18 "PC2_Pr2" I L 10050 3625 40 
-F19 "PD4_Flow_Rx" I L 10050 2725 40 
-F20 "PD2_Flow_Tx" O L 10050 2625 40 
+F11 "3V3" B L 10050 2025 40 
+F12 "SCL" I L 10050 3225 40 
+F13 "SDA" I L 10050 3325 40 
+F14 "PC1_Pulse" I L 10050 3425 40 
+F15 "PC2_Pr2" I L 10050 3625 40 
 $EndSheet
 NoConn ~ 6300 7175
 Text Label 9600 3625 0    40   ~ 0
@@ -748,19 +743,19 @@ Pressure
 Text Notes 4550 4250 0    40   ~ 0
 Slave Sel #1 Pr Sensor
 Text Notes 4550 4150 0    40   ~ 0
-Pump
+PUMP (ex Pump ~PB1_IO_T)
 Text Notes 4550 4050 0    40   ~ 0
-Pump
+Blank (ex Pump PB0_IO_R)
 Text Notes 4550 3850 0    40   ~ 0
-Pump
+Blank (ex Pump PD7_IO_X)
 Text Notes 4550 3750 0    40   ~ 0
 Blank
 Text Notes 4550 3650 0    40   ~ 0
 Valve
 Text Notes 4550 3550 0    40   ~ 0
-Flow
+Blank (ex Flow_Rx)
 Text Notes 4550 3350 0    40   ~ 0
-Flow
+Blank (ex Flow_Tx)
 Text Label 9600 3025 0    40   ~ 0
 ~PB1_IO_T
 Text Label 9600 2925 0    40   ~ 0
@@ -1042,9 +1037,9 @@ Text Label 4125 3750 0    40   ~ 0
 Text Label 4125 3450 0    40   ~ 0
 ~PD3
 Text Label 4125 4050 0    40   ~ 0
-PB0_IO_R
+PB0
 Text Label 4125 4150 0    40   ~ 0
-~PB1_IO_T
+~PB1
 Text Label 4125 2250 0    40   ~ 0
 PC0
 Text Label 4125 2350 0    40   ~ 0
@@ -1058,11 +1053,11 @@ RXD
 Text Label 4125 3250 0    40   ~ 0
 TXD
 Text Label 4125 3350 0    40   ~ 0
-PD2_Flow_Tx
+PD2
 Text Label 4125 3850 0    40   ~ 0
-PD7_IO_X
+PD7
 Text Label 4125 3550 0    40   ~ 0
-PD4_Flow_Rx
+PD4
 Text Label 4800 650  0    40   ~ 0
 5V0
 Text Label 4125 2650 0    40   ~ 0

@@ -1,14 +1,14 @@
-EESchema Schematic File Version 2
+EESchema Schematic File Version 2  date 14-Aug-13 6:24:40 PM
 LIBS:Conn-raspberry
 LIBS:power
 LIBS:uControl
-EELAYER 24 0
+EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 5
 Title ""
-Date "5 feb 2013"
+Date "14 aug 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -25,51 +25,41 @@ NoConn ~ 4250 4950
 $Comp
 L R_47E R5
 U 1 1 51020F8D
-P -725 6325
-F 0 "R5" V -750 6150 50  0000 C CNN
-F 1 "47E" V -720 6325 50  0000 C CNN
-F 2 "rc03_vert" V -620 6325 50  0001 C CNN
-F 3 "" H -725 6325 60  0001 C CNN
-F 4 "RES 47 OHM 1/8W 5% CF AXIAL" H -725 6425 60  0001 L CNN "Field4"
-F 5 "0.125W, 1/8W" H -725 6525 60  0001 L CNN "Field5"
-F 6 "Axial" H -725 6625 60  0001 L CNN "Field6"
-F 7 "Stackpole Electronics Inc" H -725 6725 60  0001 L CNN "Field7"
-F 8 "CF18JT47R0" H -725 6825 60  0001 L CNN "Field8"
-F 9 "Digikey" H -725 6925 60  0001 L CNN "Field9"
-F 10 "CF18JT47R0CT-ND" H -725 7025 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-detail/en/CF18JT47R0/CF18JT47R0CT-ND/2022710" H -725 7125 60  0001 L CNN "Field11"
-	1    -725 6325
+P 3525 6650
+F 0 "R5" V 3500 6475 50  0000 C CNN
+F 1 "47E" V 3530 6650 50  0000 C CNN
+F 2 "rc03_vert" V 3630 6650 50  0001 C CNN
+F 3 "" H 3525 6650 60  0001 C CNN
+F 4 "RES 47 OHM 1/8W 5% CF AXIAL" H 3525 6750 60  0001 L CNN "Field4"
+F 5 "0.125W, 1/8W" H 3525 6850 60  0001 L CNN "Field5"
+F 6 "Axial" H 3525 6950 60  0001 L CNN "Field6"
+F 7 "Stackpole Electronics Inc" H 3525 7050 60  0001 L CNN "Field7"
+F 8 "CF18JT47R0" H 3525 7150 60  0001 L CNN "Field8"
+F 9 "Digikey" H 3525 7250 60  0001 L CNN "Field9"
+F 10 "CF18JT47R0CT-ND" H 3525 7350 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/CF18JT47R0/CF18JT47R0CT-ND/2022710" H 3525 7450 60  0001 L CNN "Field11"
+	1    3525 6650
 	1    0    0    -1  
 $EndComp
 $Comp
 L R_47E R6
 U 1 1 51020F65
-P -550 6325
-F 0 "R6" V -575 6150 50  0000 C CNN
-F 1 "47E" V -545 6325 50  0000 C CNN
-F 2 "rc03_vert" V -445 6325 50  0001 C CNN
-F 3 "" H -550 6325 60  0001 C CNN
-F 4 "RES 47 OHM 1/8W 5% CF AXIAL" H -550 6425 60  0001 L CNN "Field4"
-F 5 "0.125W, 1/8W" H -550 6525 60  0001 L CNN "Field5"
-F 6 "Axial" H -550 6625 60  0001 L CNN "Field6"
-F 7 "Stackpole Electronics Inc" H -550 6725 60  0001 L CNN "Field7"
-F 8 "CF18JT47R0" H -550 6825 60  0001 L CNN "Field8"
-F 9 "Digikey" H -550 6925 60  0001 L CNN "Field9"
-F 10 "CF18JT47R0CT-ND" H -550 7025 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-detail/en/CF18JT47R0/CF18JT47R0CT-ND/2022710" H -550 7125 60  0001 L CNN "Field11"
-	1    -550 6325
+P 3700 6650
+F 0 "R6" V 3675 6475 50  0000 C CNN
+F 1 "47E" V 3705 6650 50  0000 C CNN
+F 2 "rc03_vert" V 3805 6650 50  0001 C CNN
+F 3 "" H 3700 6650 60  0001 C CNN
+F 4 "RES 47 OHM 1/8W 5% CF AXIAL" H 3700 6750 60  0001 L CNN "Field4"
+F 5 "0.125W, 1/8W" H 3700 6850 60  0001 L CNN "Field5"
+F 6 "Axial" H 3700 6950 60  0001 L CNN "Field6"
+F 7 "Stackpole Electronics Inc" H 3700 7050 60  0001 L CNN "Field7"
+F 8 "CF18JT47R0" H 3700 7150 60  0001 L CNN "Field8"
+F 9 "Digikey" H 3700 7250 60  0001 L CNN "Field9"
+F 10 "CF18JT47R0CT-ND" H 3700 7350 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/CF18JT47R0/CF18JT47R0CT-ND/2022710" H 3700 7450 60  0001 L CNN "Field11"
+	1    3700 6650
 	1    0    0    -1  
 $EndComp
-Connection ~ 3925 5550
-Wire Wire Line
-	3925 5550 3925 6550
-Wire Wire Line
-	3925 6550 3800 6550
-Wire Wire Line
-	3800 6550 3800 6475
-Connection ~ 3800 5350
-Wire Wire Line
-	3800 6025 3800 5350
 Connection ~ 10050 5800
 Connection ~ 10300 5800
 Wire Wire Line
@@ -89,7 +79,17 @@ Wire Wire Line
 Wire Wire Line
 	10050 6650 10000 6650
 Wire Wire Line
-	10050 6150 10050 6650
+	10050 6150 10050 6250
+Wire Wire Line
+	10050 6250 10050 6350
+Wire Wire Line
+	10050 6350 10050 6400
+Wire Wire Line
+	10050 6400 10050 6450
+Wire Wire Line
+	10050 6450 10050 6550
+Wire Wire Line
+	10050 6550 10050 6650
 Wire Wire Line
 	10050 6150 10000 6150
 Connection ~ 10300 5750
@@ -100,40 +100,44 @@ Wire Wire Line
 	10300 5950 10350 5950
 Connection ~ 10050 5950
 Wire Wire Line
-	10000 5950 10050 5950
+	10050 5950 10000 5950
 Connection ~ 10050 5750
 Wire Wire Line
 	10050 5750 10000 5750
 Wire Wire Line
 	10050 6050 10000 6050
 Wire Wire Line
-	10050 5550 10050 6050
+	10050 5550 10050 5650
+Wire Wire Line
+	10050 5650 10050 5750
+Wire Wire Line
+	10050 5750 10050 5800
+Wire Wire Line
+	10050 5800 10050 5850
+Wire Wire Line
+	10050 5850 10050 5950
+Wire Wire Line
+	10050 5950 10050 6050
 Wire Wire Line
 	10050 5550 10000 5550
 Wire Notes Line
 	11150 3150 11150 5050
 Wire Wire Line
 	8025 3800 8250 3800
-Wire Wire Line
-	3750 5850 4425 5850
-Wire Wire Line
-	3750 5650 4425 5650
-Wire Wire Line
-	3750 5450 4425 5450
 Connection ~ 7000 3600
 Connection ~ 6425 3600
 Wire Wire Line
-	5925 3600 7100 3600
+	5925 3600 6425 3600
+Wire Wire Line
+	6425 3600 7000 3600
+Wire Wire Line
+	7000 3600 7100 3600
 Wire Notes Line
 	675  575  4950 575 
 Wire Notes Line
 	675  3150 4950 3150
 Wire Notes Line
 	4950 5200 675  5200
-Connection ~ 2550 5450
-Wire Wire Line
-	2825 5450 2550 5450
-Connection ~ 2550 6550
 Wire Wire Line
 	2550 6550 2550 6500
 Wire Wire Line
@@ -182,7 +186,9 @@ Wire Wire Line
 Wire Wire Line
 	9725 1800 10075 1800
 Wire Wire Line
-	9725 1600 10075 1600
+	9725 1600 9925 1600
+Wire Wire Line
+	9925 1600 10075 1600
 Wire Notes Line
 	5100 5200 5100 7125
 Wire Notes Line
@@ -191,12 +197,16 @@ Connection ~ 7675 5975
 Wire Wire Line
 	7825 5975 7675 5975
 Wire Wire Line
-	7675 5675 7675 6075
+	7675 5675 7675 5975
+Wire Wire Line
+	7675 5975 7675 6075
 Wire Wire Line
 	7675 6075 7600 6075
 Connection ~ 6275 6925
 Wire Wire Line
-	5800 6925 6575 6925
+	5800 6925 6275 6925
+Wire Wire Line
+	6275 6925 6575 6925
 Wire Wire Line
 	6575 6925 6575 6075
 Wire Wire Line
@@ -210,7 +220,9 @@ Wire Wire Line
 	6425 5500 6425 5450
 Connection ~ 6275 5975
 Wire Wire Line
-	6275 5450 6275 6375
+	6275 5450 6275 5975
+Wire Wire Line
+	6275 5975 6275 6375
 Wire Wire Line
 	6525 6175 6150 6175
 Wire Wire Line
@@ -238,9 +250,13 @@ Wire Wire Line
 Wire Wire Line
 	2575 1150 2575 1200
 Wire Wire Line
-	2050 1150 2575 1150
+	2050 1150 2425 1150
 Wire Wire Line
-	1900 2500 1900 2900
+	2425 1150 2575 1150
+Wire Wire Line
+	1900 2500 1900 2850
+Wire Wire Line
+	1900 2850 1900 2900
 Wire Wire Line
 	1050 1275 1175 1275
 Wire Wire Line
@@ -268,7 +284,9 @@ Wire Wire Line
 Wire Wire Line
 	8475 6550 7675 6550
 Wire Wire Line
-	7675 6550 7675 6175
+	7675 6550 7675 6275
+Wire Wire Line
+	7675 6275 7675 6175
 Wire Wire Line
 	10775 800  10775 750 
 Wire Wire Line
@@ -280,9 +298,11 @@ Wire Wire Line
 Wire Wire Line
 	9450 900  10075 900 
 Wire Wire Line
-	1775 5350 2825 5350
+	1325 6550 1975 6550
 Wire Wire Line
-	1125 6550 2775 6550
+	1975 6550 2325 6550
+Wire Wire Line
+	2325 6550 2550 6550
 Wire Wire Line
 	5475 3375 6075 3375
 Wire Wire Line
@@ -293,14 +313,20 @@ Connection ~ 6750 4275
 Wire Wire Line
 	6425 4150 6425 4275
 Wire Wire Line
-	6750 4800 6750 4975
+	6750 4800 6750 4900
 Wire Wire Line
-	6750 3800 6750 4400
+	6750 4900 6750 4975
+Wire Wire Line
+	6750 3800 6750 4275
+Wire Wire Line
+	6750 4275 6750 4400
 Wire Wire Line
 	6750 3800 7100 3800
 Connection ~ 2325 6550
 Wire Wire Line
-	2250 3825 3425 3825
+	2250 3825 3200 3825
+Wire Wire Line
+	3200 3825 3425 3825
 Wire Wire Line
 	2250 3625 3425 3625
 Wire Wire Line
@@ -308,17 +334,23 @@ Wire Wire Line
 Wire Wire Line
 	3325 875  1050 875 
 Wire Wire Line
-	1050 775  3325 775 
+	1050 775  3225 775 
+Wire Wire Line
+	3225 775  3325 775 
 Wire Wire Line
 	1050 975  3325 975 
 Wire Wire Line
-	2250 3725 3425 3725
+	2250 3725 2975 3725
 Wire Wire Line
-	2775 6550 2775 5550
+	2975 3725 3425 3725
+Wire Wire Line
+	2175 5550 2175 5975
 Wire Wire Line
 	6450 4600 5950 4600
 Wire Wire Line
-	2325 6500 2325 6625
+	2325 6500 2325 6550
+Wire Wire Line
+	2325 6550 2325 6625
 Wire Wire Line
 	6425 3750 6425 3600
 Wire Wire Line
@@ -350,9 +382,13 @@ Wire Wire Line
 	7000 4900 6750 4900
 Connection ~ 6750 4900
 Wire Wire Line
-	6175 1450 7100 1450
+	6175 1450 6400 1450
 Wire Wire Line
-	6175 1250 7100 1250
+	6400 1450 7100 1450
+Wire Wire Line
+	6175 1250 6550 1250
+Wire Wire Line
+	6550 1250 7100 1250
 Wire Wire Line
 	7100 1350 6175 1350
 Wire Wire Line
@@ -394,7 +430,9 @@ Wire Wire Line
 Wire Wire Line
 	2250 3925 3425 3925
 Wire Wire Line
-	2425 1150 2425 2300
+	2425 1150 2425 1700
+Wire Wire Line
+	2425 1700 2425 2300
 Connection ~ 2425 1700
 Wire Wire Line
 	5950 5675 5950 5450
@@ -403,7 +441,9 @@ Wire Wire Line
 Wire Wire Line
 	5650 5450 5250 5450
 Wire Wire Line
-	5800 6475 5800 7000
+	5800 6475 5800 6925
+Wire Wire Line
+	5800 6925 5800 7000
 Wire Wire Line
 	6275 6875 6275 6925
 Connection ~ 5800 6925
@@ -424,7 +464,11 @@ Wire Wire Line
 Wire Wire Line
 	6625 6175 6625 5450
 Wire Wire Line
-	6625 5450 5950 5450
+	6625 5450 6425 5450
+Wire Wire Line
+	6425 5450 6275 5450
+Wire Wire Line
+	6275 5450 5950 5450
 Connection ~ 6425 5450
 Wire Wire Line
 	7675 6175 7600 6175
@@ -434,7 +478,9 @@ Connection ~ 7675 6275
 Wire Wire Line
 	9725 1700 10075 1700
 Wire Wire Line
-	9725 1900 10075 1900
+	9725 1900 9925 1900
+Wire Wire Line
+	9925 1900 10075 1900
 Wire Wire Line
 	9925 1900 9925 2075
 Connection ~ 9925 1900
@@ -447,7 +493,9 @@ Wire Notes Line
 Wire Wire Line
 	3225 2850 3225 2700
 Wire Wire Line
-	1900 2850 3225 2850
+	1900 2850 2425 2850
+Wire Wire Line
+	2425 2850 3225 2850
 Connection ~ 2425 2850
 Wire Notes Line
 	4950 575  4950 3000
@@ -473,11 +521,15 @@ Connection ~ 9925 2750
 Wire Wire Line
 	9925 2925 9925 2750
 Wire Wire Line
-	9725 2750 10075 2750
+	9725 2750 9925 2750
+Wire Wire Line
+	9925 2750 10075 2750
 Wire Wire Line
 	9725 2550 10075 2550
 Wire Wire Line
-	9725 2450 10075 2450
+	9725 2450 9925 2450
+Wire Wire Line
+	9925 2450 10075 2450
 Wire Wire Line
 	9725 2650 10075 2650
 Wire Wire Line
@@ -492,10 +544,7 @@ Wire Notes Line
 Wire Wire Line
 	5300 6175 5450 6175
 Wire Wire Line
-	2775 5550 2825 5550
-Wire Wire Line
-	2550 5350 2550 6100
-Connection ~ 2550 5350
+	2175 5550 2650 5550
 Wire Notes Line
 	675  7125 4950 7125
 Wire Notes Line
@@ -505,11 +554,9 @@ Wire Notes Line
 Wire Wire Line
 	7000 3600 7000 4400
 Wire Wire Line
-	3750 5350 4425 5350
+	3850 5350 4325 5350
 Wire Wire Line
-	3750 5550 4425 5550
-Wire Wire Line
-	4425 5750 3750 5750
+	3850 5550 4325 5550
 Wire Wire Line
 	8250 3600 8025 3600
 Wire Notes Line
@@ -527,7 +574,17 @@ Connection ~ 10050 5850
 Wire Wire Line
 	10350 5550 10300 5550
 Wire Wire Line
-	10300 5550 10300 6050
+	10300 5550 10300 5650
+Wire Wire Line
+	10300 5650 10300 5750
+Wire Wire Line
+	10300 5750 10300 5800
+Wire Wire Line
+	10300 5800 10300 5850
+Wire Wire Line
+	10300 5850 10300 5950
+Wire Wire Line
+	10300 5950 10300 6050
 Wire Wire Line
 	10300 6050 10350 6050
 Wire Wire Line
@@ -539,7 +596,17 @@ Connection ~ 10300 5650
 Wire Wire Line
 	10350 6150 10300 6150
 Wire Wire Line
-	10300 6150 10300 6650
+	10300 6150 10300 6250
+Wire Wire Line
+	10300 6250 10300 6350
+Wire Wire Line
+	10300 6350 10300 6400
+Wire Wire Line
+	10300 6400 10300 6450
+Wire Wire Line
+	10300 6450 10300 6550
+Wire Wire Line
+	10300 6550 10300 6650
 Wire Wire Line
 	10300 6650 10350 6650
 Wire Wire Line
@@ -605,25 +672,6 @@ $EndComp
 NoConn ~ 8250 3700
 NoConn ~ 8250 4400
 NoConn ~ 8250 4200
-$Comp
-L PUMP_CONN_FLEX P19
-U 1 1 50E3DD89
-P 4775 5600
-F 0 "P19" V 4725 5600 60  0000 C CNN
-F 1 "PUMP_CONN_FLEX" V 4825 5600 40  0000 C CNN
-F 2 "Conn_Pump_Flex" V 4925 5600 40  0001 C CNN
-F 3 "" H 4775 5600 60  0001 C CNN
-F 4 "CONN FFC/FPC 6POS 1MM VERT SMD" H 4775 5700 60  0001 L CNN "Field4"
-F 5 "Surface mount, ZIF, " H 4775 5800 60  0001 L CNN "Field5"
-F 6 "1mm pitch, 6 way" H 4775 5900 60  0001 L CNN "Field6"
-F 7 "Molex Inc" H 4775 6000 60  0001 L CNN "Field7"
-F 8 "0526100671" H 4775 6100 60  0001 L CNN "Field8"
-F 9 "Digikey" H 4775 6200 60  0001 L CNN "Field9"
-F 10 "WM7633CT-ND" H 4775 6300 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-detail/en/0526100671/WM7633CT-ND/699133" H 4775 6400 60  0001 L CNN "Field11"
-	1    4775 5600
-	1    0    0    -1  
-$EndComp
 $Comp
 L CONN_4 P9
 U 1 1 50E31D7A
@@ -1105,12 +1153,6 @@ F 11 "http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/257129
 $EndComp
 Text Label 4075 5550 0    40   ~ 0
 GND
-Text Label 4075 5850 0    40   ~ 0
-~PB1_IO_T
-Text Label 4075 5750 0    40   ~ 0
-IO_R
-Text Label 4075 5650 0    40   ~ 0
-IO_X
 Text Label 4075 5350 0    40   ~ 0
 12V
 Text Label 8075 3800 0    40   ~ 0
@@ -1159,8 +1201,6 @@ Text Label 6325 6275 0    40   ~ 0
 TSCL
 Text Label 6325 6175 0    40   ~ 0
 TSDA
-Text Label 4075 5450 0    40   ~ 0
-12V
 Text Label 3025 3925 0    40   ~ 0
 SDA
 $Comp
@@ -1463,17 +1503,6 @@ F 3 "" H 7675 3700 60  0001 C CNN
 	1    7675 3700
 	-1   0    0    -1  
 $EndComp
-$Comp
-L CONN_6 P18
-U 1 1 50D6C4BF
-P 3400 5600
-F 0 "P18" V 3350 5600 60  0000 C CNN
-F 1 "Pump_Conn_BO" V 3450 5600 40  0000 C CNN
-F 2 "Header_FTDI" V 3550 5600 40  0001 C CNN
-F 3 "" H 3400 5600 60  0001 C CNN
-	1    3400 5600
-	-1   0    0    -1  
-$EndComp
 NoConn ~ 4450 7050
 NoConn ~ 4450 6950
 NoConn ~ 4450 6850
@@ -1687,7 +1716,7 @@ F 3 "" H 5575 3600 60  0001 C CNN
 $EndComp
 Text HLabel 5950 4600 0    40   Input ~ 0
 ~PD5_Valve
-Text HLabel 1775 5350 0    40   Input ~ 0
+Text HLabel 1500 5350 0    40   Input ~ 0
 12V
 Text HLabel 2250 3625 0    40   Input ~ 0
 SCL
@@ -1741,21 +1770,10 @@ F 3 "" H 2325 6625 60  0001 C CNN
 $EndComp
 Text Notes 700  5275 0    40   ~ 0
 Pump, 12V DC [P54E01R]\non digital port ~PB1
-Text Label 1125 6550 0    40   ~ 0
+Text Label 1325 6550 0    40   ~ 0
 GND
 Text Label 2350 5350 0    40   ~ 0
 12V
-$Comp
-L CONN_6 P17
-U 1 1 50B22337
-P 3175 5600
-F 0 "P17" V 3125 5600 60  0000 C CNN
-F 1 "Pump_Conn" V 3225 5600 40  0000 C CNN
-F 2 "Header_FTDI" V 3325 5600 40  0001 C CNN
-F 3 "" H 3175 5600 60  0001 C CNN
-	1    3175 5600
-	1    0    0    -1  
-$EndComp
 Text Label 2250 3825 2    40   ~ 0
 GND
 Text Label 2975 3625 0    40   ~ 0
@@ -1823,7 +1841,7 @@ F 3 "" H 4600 4800 60  0001 C CNN
 $EndComp
 Text Notes 4500 6350 0    30   ~ 0
 Symbol for Pump\n[P54E01R]\nFootprint
-Text Notes 4375 5975 0    30   ~ 0
+Text Notes 4250 5675 0    30   ~ 0
 Pump cable assembly
 $Comp
 L NPN_TIP112G Q?
@@ -1866,28 +1884,82 @@ $EndComp
 $Comp
 L D_1N5225B D3
 U 1 1 50E2A27F
-P -350 6375
-F 0 "D3" V -450 6425 40  0000 C CNN
-F 1 "1N5225B" H -100 6425 40  0000 C CNN
-F 2 "diode_do35" H -100 6525 40  0001 C CNN
-F 3 "" H -350 6375 60  0001 C CNN
-F 4 "DIODE ZENER 3.0V 500MW DO35" H -350 6575 60  0001 L CNN "Field4"
-F 5 "3V, 500mW" H -350 6675 60  0001 L CNN "Field5"
-F 6 "DO-204AH, DO-35, Axial" H -350 6775 60  0001 L CNN "Field6"
-F 7 "Vishay Semiconductor Diodes Division" H -350 6875 60  0001 L CNN "Field7"
-F 8 "1N5225B-TR" H -350 6975 60  0001 L CNN "Field8"
-F 9 "Digikey" H -350 7075 60  0001 L CNN "Field9"
-F 10 "1N5225BCT-ND" H -350 7175 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-detail/en/1N5225B-TR/1N5225BCT-ND/3104340" H -350 7275 60  0001 L CNN "Field11"
-	1    -350 6375
+P 3900 6700
+F 0 "D3" V 3800 6750 40  0000 C CNN
+F 1 "1N5225B" H 4150 6750 40  0000 C CNN
+F 2 "diode_do35" H 4150 6850 40  0001 C CNN
+F 3 "" H 3900 6700 60  0001 C CNN
+F 4 "DIODE ZENER 3.0V 500MW DO35" H 3900 6900 60  0001 L CNN "Field4"
+F 5 "3V, 500mW" H 3900 7000 60  0001 L CNN "Field5"
+F 6 "DO-204AH, DO-35, Axial" H 3900 7100 60  0001 L CNN "Field6"
+F 7 "Vishay Semiconductor Diodes Division" H 3900 7200 60  0001 L CNN "Field7"
+F 8 "1N5225B-TR" H 3900 7300 60  0001 L CNN "Field8"
+F 9 "Digikey" H 3900 7400 60  0001 L CNN "Field9"
+F 10 "1N5225BCT-ND" H 3900 7500 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/1N5225B-TR/1N5225BCT-ND/3104340" H 3900 7600 60  0001 L CNN "Field11"
+	1    3900 6700
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
 	1975 5500 1975 5350
 Connection ~ 1975 5350
 Wire Wire Line
-	1975 5900 1975 6025
+	1975 5900 1975 5975
+Wire Wire Line
+	1975 5975 1975 6025
 Wire Wire Line
 	1975 6425 1975 6550
 Connection ~ 1975 6550
+Connection ~ 1975 5975
+Wire Wire Line
+	1500 5350 1975 5350
+Wire Wire Line
+	1975 5350 2325 5350
+Wire Wire Line
+	2325 5350 2550 5350
+Wire Wire Line
+	2550 5350 2650 5350
+$Comp
+L CONN_2 P17
+U 1 1 520B8E5C
+P 3000 5450
+F 0 "P17" V 2950 5450 50  0000 C CNN
+F 1 "Pump_Conn" V 3150 5450 40  0000 C CNN
+F 2 "Header_5V_Link" V 3150 5450 40  0001 C CNN
+F 3 "" H 3000 5450 60  0001 C CNN
+	1    3000 5450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2175 5975 1975 5975
+Wire Wire Line
+	2550 6100 2550 5350
+Connection ~ 2550 5350
+Wire Wire Line
+	2325 6050 2325 5350
+Connection ~ 2325 5350
+Wire Wire Line
+	1675 6225 1325 6225
+$Comp
+L CONN_2 P18
+U 1 1 520B933C
+P 3500 5450
+F 0 "P18" V 3450 5450 50  0000 C CNN
+F 1 "Pump_Cable" V 3650 5450 40  0000 C CNN
+F 2 "Header_5V_Link" V 3650 5450 40  0001 C CNN
+F 3 "" H 3500 5450 60  0001 C CNN
+	1    3500 5450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_2 P19
+U 1 1 520B93B7
+P 4675 5450
+F 0 "P19" V 4625 5450 50  0000 C CNN
+F 1 "Pump_Cable" V 4825 5450 40  0000 C CNN
+F 2 "Header_5V_Link" V 4825 5450 40  0001 C CNN
+F 3 "" H 4675 5450 60  0001 C CNN
+	1    4675 5450
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
