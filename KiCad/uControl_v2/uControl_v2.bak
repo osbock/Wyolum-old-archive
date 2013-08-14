@@ -1,8 +1,9 @@
-EESchema Schematic File Version 2  date 14-Aug-13 6:24:29 PM
+EESchema Schematic File Version 2
 LIBS:Conn-raspberry
 LIBS:power
 LIBS:uControl
-EELAYER 27 0
+LIBS:uControl_v2-cache
+EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -16,10 +17,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 6425 1925 0    40   Input ~ 0
-GND
-Text GLabel 6425 2125 0    40   Input ~ 0
-12V
 Text GLabel 1225 750  2    40   Input ~ 0
 5V0
 Text GLabel 725  750  0    40   Input ~ 0
@@ -63,25 +60,6 @@ F 11 "http://www.digikey.com/scripts/DkSearch/dksus.dll?WT.z_header=search_go&la
 	0    -1   -1   0   
 $EndComp
 $Comp
-L SOCKET_28X0.3 DIP1
-U 1 1 50E2CF80
-P 2900 5400
-F 0 "DIP1" H 2900 5350 60  0000 C CNN
-F 1 "SOCKET_28X0.3" H 2900 5450 60  0000 C CNN
-F 2 "" H 2900 5400 60  0001 C CNN
-F 3 "" H 2900 5400 60  0001 C CNN
-F 4 "CONN IC SOCKET VERT 28POS TIN" H 2900 5450 60  0001 L CNN "Field4"
-F 5 "Thru Hole Open Frame Tin" H 2900 5550 60  0001 L CNN "Field5"
-F 6 "DIP, 0.3\" (7.62mm) Row Spacing" H 2900 5650 60  0001 L CNN "Field6"
-F 7 "TE Connectivity" H 2900 5750 60  0001 L CNN "Field7"
-F 8 "1-390261-9" H 2900 5850 60  0001 L CNN "Field8"
-F 9 "Digikey" H 2900 5950 60  0001 L CNN "Field9"
-F 10 "A100210-ND" H 2900 6050 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-detail/en/1-390261-9/A100210-ND/990628?cur=USD" H 2900 6150 60  0001 L CNN "Field11"
-	1    2900 5400
-	1    0    0    -1  
-$EndComp
-$Comp
 L SW_PUSH SW1
 U 1 1 50E2C59C
 P 1575 4350
@@ -105,17 +83,17 @@ Wire Wire Line
 Wire Notes Line
 	4675 7650 5650 7650
 Wire Wire Line
-	9600 3425 10050 3425
+	9600 2825 10050 2825
 Wire Wire Line
-	9600 3225 10050 3225
-Wire Wire Line
-	9600 3025 10050 3025
+	9600 3325 10050 3325
 Wire Wire Line
 	9600 3125 10050 3125
 Wire Wire Line
 	9600 2725 10050 2725
 Wire Wire Line
-	9600 2525 10050 2525
+	9600 2625 10050 2625
+Wire Wire Line
+	9600 3725 10050 3725
 Wire Wire Line
 	9600 2325 10050 2325
 Wire Wire Line
@@ -124,30 +102,6 @@ Wire Wire Line
 	9600 1725 10050 1725
 Wire Notes Line
 	9325 625  9325 3125
-Connection ~ 5625 2625
-Wire Wire Line
-	5575 2625 5675 2625
-Wire Wire Line
-	5675 2625 5675 2125
-Connection ~ 6225 2525
-Wire Wire Line
-	6225 2525 6175 2525
-Connection ~ 6225 2725
-Wire Wire Line
-	6225 2725 6175 2725
-Wire Wire Line
-	6225 2325 6225 2950
-Wire Wire Line
-	6225 2325 6175 2325
-Connection ~ 5625 2425
-Wire Wire Line
-	5625 2425 5575 2425
-Wire Wire Line
-	5625 2125 5625 2525
-Wire Wire Line
-	5625 2625 5625 2825
-Wire Wire Line
-	5625 2825 5575 2825
 Wire Wire Line
 	725  750  725  1775
 Wire Wire Line
@@ -214,35 +168,9 @@ Wire Wire Line
 Wire Wire Line
 	9775 1025 10050 1025
 Wire Wire Line
-	6675 2325 6425 2325
-Wire Wire Line
-	6675 2525 6425 2525
-Wire Wire Line
 	2950 4850 2950 5100
 Wire Wire Line
-	8575 2825 8825 2825
-Wire Wire Line
-	8575 2625 8825 2625
-Wire Wire Line
-	8575 2425 8825 2425
-Wire Wire Line
-	8575 2225 8825 2225
-Wire Wire Line
-	8575 1925 8825 1925
-Wire Wire Line
-	8575 1725 8825 1725
-Wire Wire Line
-	8575 1525 8825 1525
-Wire Wire Line
-	8575 1325 8825 1325
-Wire Wire Line
-	8575 1125 8825 1125
-Wire Wire Line
-	6675 2125 6425 2125
-Wire Wire Line
 	3900 2750 4800 2750
-Wire Wire Line
-	6675 1725 6425 1725
 Wire Wire Line
 	9675 6850 10050 6850
 Wire Wire Line
@@ -257,19 +185,10 @@ Wire Wire Line
 	1925 2950 1925 2800
 Wire Wire Line
 	2000 2250 1575 2250
-Connection ~ 6625 1925
-Wire Wire Line
-	6625 1925 6625 2025
-Wire Wire Line
-	6625 2025 6675 2025
-Wire Wire Line
-	6675 2725 6425 2725
 Wire Wire Line
 	9675 6450 10050 6450
 Wire Wire Line
 	9675 6150 10050 6150
-Wire Wire Line
-	6425 1825 6675 1825
 Wire Wire Line
 	3900 3350 4125 3350
 Wire Wire Line
@@ -280,10 +199,6 @@ Wire Wire Line
 Connection ~ 4800 800 
 Wire Wire Line
 	3900 2650 4600 2650
-Wire Wire Line
-	2000 2650 1400 2650
-Wire Wire Line
-	1400 2650 1400 800 
 Wire Wire Line
 	3900 4350 4125 4350
 Wire Wire Line
@@ -328,19 +243,11 @@ Wire Wire Line
 Wire Wire Line
 	3900 3650 4125 3650
 Wire Wire Line
-	1400 800  4800 800 
-Wire Wire Line
 	4800 650  4800 1200
-Wire Wire Line
-	6675 1625 6425 1625
-Wire Wire Line
-	6425 1925 6675 1925
 Wire Wire Line
 	9675 6350 10050 6350
 Wire Wire Line
 	9675 6250 10050 6250
-Wire Wire Line
-	6675 2825 6425 2825
 Wire Wire Line
 	1575 1700 1575 4050
 Connection ~ 1575 2250
@@ -355,35 +262,10 @@ Wire Wire Line
 Wire Wire Line
 	9675 6650 10050 6650
 Wire Wire Line
-	6625 1825 6625 1525
-Wire Wire Line
-	6625 1525 6675 1525
-Connection ~ 6625 1825
-Wire Wire Line
-	8575 1025 8825 1025
-Wire Wire Line
-	8575 1425 8825 1425
-Wire Wire Line
-	8575 1625 8825 1625
-Wire Wire Line
-	8575 1825 8825 1825
-Wire Wire Line
-	8575 2125 8825 2125
-Wire Wire Line
-	8575 2325 8825 2325
-Wire Wire Line
-	8575 2525 8825 2525
-Wire Wire Line
-	8575 2725 8825 2725
-Wire Wire Line
-	975  2550 2000 2550
+	725  2550 2000 2550
 Wire Wire Line
 	2900 800  2900 1850
 Connection ~ 2900 800 
-Wire Wire Line
-	6675 2625 6425 2625
-Wire Wire Line
-	6675 2425 6425 2425
 Wire Wire Line
 	9775 925  10050 925 
 Wire Wire Line
@@ -392,10 +274,6 @@ Wire Wire Line
 	9775 5000 10050 5000
 Wire Wire Line
 	9775 5200 10050 5200
-Wire Wire Line
-	9050 925  9050 1225
-Wire Wire Line
-	9050 1225 8575 1225
 Wire Wire Line
 	9775 5600 10050 5600
 Wire Wire Line
@@ -435,23 +313,6 @@ Wire Wire Line
 	1075 1775 1225 1775
 Wire Wire Line
 	1225 1775 1225 750 
-Wire Wire Line
-	5625 2325 5575 2325
-Connection ~ 5625 2325
-Wire Wire Line
-	5625 2525 5575 2525
-Wire Wire Line
-	5575 2725 5625 2725
-Connection ~ 5625 2725
-Wire Wire Line
-	6225 2825 6175 2825
-Connection ~ 6225 2825
-Wire Wire Line
-	6225 2625 6175 2625
-Connection ~ 6225 2625
-Wire Wire Line
-	6175 2425 6225 2425
-Connection ~ 6225 2425
 Wire Notes Line
 	9325 625  5100 625 
 Wire Notes Line
@@ -465,17 +326,11 @@ Wire Wire Line
 Wire Wire Line
 	9600 2425 10050 2425
 Wire Wire Line
-	9600 2625 10050 2625
-Wire Wire Line
-	9600 2825 10050 2825
-Wire Wire Line
 	9600 1925 10050 1925
-Wire Wire Line
-	10050 2925 9600 2925
 Wire Wire Line
 	9600 2025 10050 2025
 Wire Wire Line
-	9600 3325 10050 3325
+	9600 3425 10050 3425
 Wire Wire Line
 	9600 3625 10050 3625
 Wire Wire Line
@@ -500,25 +355,6 @@ F 10 "X908-ND" H 1400 3900 60  0001 L CNN "Field10"
 F 11 "http://www.digikey.com/product-detail/en/ZTT-16.00MX/X908-ND/170095?cur=USD" H 1400 4000 60  0001 L CNN "Field11"
 	1    1400 3050
 	0    1    1    0   
-$EndComp
-$Comp
-L ATMEGA8-P U7
-U 1 1 50E2C28A
-P -3600 3300
-F 0 "U7" H -4250 2850 50  0000 L BNN
-F 1 "ATMEGA328P" H -4225 2750 50  0000 L BNN
-F 2 "DIP-28__300_ELL" H -3100 1825 50  0001 C CNN
-F 3 "" H -3600 3300 60  0001 C CNN
-F 4 "IC MCU AVR 32K FLASH 28PDIP" H -3600 4650 60  0001 L CNN "Field4"
-F 5 "AVR ATMega 8 bit 20Mhz" H -3600 4750 60  0001 L CNN "Field5"
-F 6 "28-DIP (0.300\", 7.62mm)" H -3600 4850 60  0001 L CNN "Field6"
-F 7 "Atmel" H -3600 4950 60  0001 L CNN "Field7"
-F 8 "ATMEGA328-PU" H -3600 5050 60  0001 L CNN "Field8"
-F 9 "Digikey" H -3600 5150 60  0001 L CNN "Field9"
-F 10 "ATMEGA328-PU-ND" H -3600 5250 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-detail/en/ATMEGA328-PU/ATMEGA328-PU-ND/2271026?cur=USD" H -3600 5350 60  0001 L CNN "Field11"
-	1    -3600 3300
-	1    0    0    -1  
 $EndComp
 $Comp
 L R_10K R3
@@ -713,24 +549,27 @@ F3 "MISO" I L 10050 2425 40
 F4 "12V" I L 10050 1725 40 
 F5 "GND" B L 10050 1925 40 
 F6 "5V0" B L 10050 1825 40 
-F7 "~PD5_Valve" I L 10050 3125 40 
+F7 "~PD5_Valve" I L 10050 2725 40 
 F8 "~MOSI" I L 10050 2125 40 
 F9 "~SS" I L 10050 2225 40 
-F10 "PC3_Pr1" I L 10050 2525 40 
+F10 "PC3_Pr1" I L 10050 3725 40 
 F11 "3V3" B L 10050 2025 40 
-F12 "SCL" I L 10050 3225 40 
-F13 "SDA" I L 10050 3325 40 
-F14 "PC1_Pulse" I L 10050 3425 40 
-F15 "PC2_Pr2" I L 10050 3625 40 
+F12 "SCL" I L 10050 3325 40 
+F13 "SDA" I L 10050 3425 40 
+F14 "PC2_Pr2" I L 10050 3625 40 
+F15 "PD4_Valve2" I L 10050 2625 40 
+F16 "~PB1_Pump" I L 10050 3125 40 
+F17 "~PD6_Spk" I L 10050 2825 40 
+F18 "PB0_ACL" I L 10050 3025 40 
 $EndSheet
 NoConn ~ 6300 7175
 Text Label 9600 3625 0    40   ~ 0
 PC2_Pr2
+Text Label 9600 2825 0    40   ~ 0
+~PD6_Spk
 Text Label 9600 3425 0    40   ~ 0
-PC1_Pulse
-Text Label 9600 3325 0    40   ~ 0
 SDA
-Text Label 9600 3225 0    40   ~ 0
+Text Label 9600 3325 0    40   ~ 0
 SCL
 Text Label 9600 2025 0    40   ~ 0
 3V3
@@ -743,23 +582,21 @@ Pressure
 Text Notes 4550 4250 0    40   ~ 0
 Slave Sel #1 Pr Sensor
 Text Notes 4550 4150 0    40   ~ 0
-PUMP (ex Pump ~PB1_IO_T)
+PUMP PWM (ex Pump ~PB1_IO_T)
 Text Notes 4550 4050 0    40   ~ 0
-Blank (ex Pump PB0_IO_R)
+Slave Sel Accel ADXL345 (ex Pump PB0_IO_R)
 Text Notes 4550 3850 0    40   ~ 0
 Blank (ex Pump PD7_IO_X)
 Text Notes 4550 3750 0    40   ~ 0
-Blank
+Speaker PWM (ex Blank)
 Text Notes 4550 3650 0    40   ~ 0
-Valve
+Valve #1 PWM
 Text Notes 4550 3550 0    40   ~ 0
-Blank (ex Flow_Rx)
+Valve #2 (ex Flow_Rx)
 Text Notes 4550 3350 0    40   ~ 0
 Blank (ex Flow_Tx)
-Text Label 9600 3025 0    40   ~ 0
-~PB1_IO_T
-Text Label 9600 2925 0    40   ~ 0
-PB0_IO_R
+Text Label 9600 3125 0    40   ~ 0
+~PB1_Pump
 Text Label 9600 1725 0    40   ~ 0
 12V
 Text Label 9600 1825 0    40   ~ 0
@@ -772,46 +609,14 @@ Text Label 9600 2325 0    40   ~ 0
 SCK
 Text Label 9600 2425 0    40   ~ 0
 MISO
-Text Label 9600 2525 0    40   ~ 0
+Text Label 9600 3725 0    40   ~ 0
 PC3_Pr1
 Text Label 9600 2625 0    40   ~ 0
-PD2_Flow_Tx
+PD4_Valve2
 Text Label 9600 2725 0    40   ~ 0
-PD4_Flow_Rx
-Text Label 9600 2825 0    40   ~ 0
-PD7_IO_X
-Text Label 9600 3125 0    40   ~ 0
 ~PD5_Valve
 Text Label 9600 1925 0    40   ~ 0
 GND
-Text Label 5675 2125 0    40   ~ 0
-5V0
-Text Label 6225 2950 0    40   ~ 0
-GND
-Text Label 5625 2125 2    40   ~ 0
-3V3
-$Comp
-L CONN_6 P2
-U 1 1 4FF3E3D3
-P 5225 2575
-F 0 "P2" V 5175 2575 60  0000 C CNN
-F 1 "ANALOG_5V0" V 5275 2575 60  0000 C CNN
-F 2 "Header_6x1" V 5375 2575 60  0001 C CNN
-F 3 "" H 5225 2575 60  0001 C CNN
-	1    5225 2575
-	-1   0    0    1   
-$EndComp
-$Comp
-L CONN_6 P3
-U 1 1 4FF3E3C8
-P 5825 2575
-F 0 "P3" V 5775 2575 60  0000 C CNN
-F 1 "ANALOG_GND" V 5875 2575 60  0000 C CNN
-F 2 "Header_6x1" V 5975 2575 60  0001 C CNN
-F 3 "" H 5825 2575 60  0001 C CNN
-	1    5825 2575
-	-1   0    0    1   
-$EndComp
 Text Notes 6425 6225 2    60   Italic 12
 FTDI Header
 Text Notes 5200 6225 2    60   Italic 12
@@ -859,17 +664,6 @@ Text Label 9775 5600 0    40   ~ 0
 MISO
 Text Label 9775 5700 0    40   ~ 0
 ~MOSI
-$Comp
-L PWR_FLAG #FLG01
-U 1 1 4FC9DB7D
-P 9050 925
-F 0 "#FLG01" H 9050 1195 30  0001 C CNN
-F 1 "PWR_FLAG" H 9050 1155 30  0000 C CNN
-F 2 "" H 9050 925 60  0001 C CNN
-F 3 "" H 9050 925 60  0001 C CNN
-	1    9050 925 
-	1    0    0    -1  
-$EndComp
 Text Label 9775 5300 0    40   ~ 0
 SCL
 Text Label 9775 5200 0    40   ~ 0
@@ -911,14 +705,6 @@ F 3 "" H 7625 2025 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 NoConn ~ 6675 1425
-Text Label 6425 2625 0    40   ~ 0
-PC3_Pr1
-Text Label 6425 2525 0    40   ~ 0
-PC2_Pr2
-Text Label 6425 2425 0    40   ~ 0
-PC1_Pulse
-Text Label 6425 2325 0    40   ~ 0
-PC0
 $Sheet
 S 10050 6050 1050 900 
 U 4E1FEA4E
@@ -933,44 +719,8 @@ F7 "32k" I L 10050 6750 40
 F8 "BAT" I L 10050 6850 40 
 F9 "SQR" I L 10050 6650 40 
 $EndSheet
-Text Label 8825 1825 0    40   ~ 0
-~PB1_IO_T
-Text Label 8825 1925 0    40   ~ 0
-PB0_IO_R
-Text Label 8825 2125 0    40   ~ 0
-PD7_IO_X
-Text Label 8825 2225 0    40   ~ 0
-~PD6
-Text Label 8825 2325 0    40   ~ 0
-~PD5_Valve
-Text Label 8825 2425 0    40   ~ 0
-PD4_Flow_Rx
-Text Label 8825 2525 0    40   ~ 0
-~PD3
-Text Label 8825 2625 0    40   ~ 0
-PD2_Flow_Tx
-Text Label 8825 2825 0    40   ~ 0
-RXD
-Text Label 8825 2725 0    40   ~ 0
-TXD
-Text Label 8825 1725 0    40   ~ 0
-~SS
-Text Label 8825 1625 0    40   ~ 0
-~MOSI
-Text Label 8825 1525 0    40   ~ 0
-MISO
-Text Label 8825 1425 0    40   ~ 0
-SCK
-Text Label 8825 1325 0    40   ~ 0
-GND
 Text Label 1025 2550 0    40   ~ 0
 AREF
-Text Label 8825 1225 0    40   ~ 0
-AREF
-Text Label 8825 1125 0    40   ~ 0
-SDA
-Text Label 8825 1025 0    40   ~ 0
-SCL
 $Sheet
 S 10050 4700 1050 1100
 U 4FBF6CBF
@@ -992,18 +742,16 @@ PB7
 Text Label 1925 2800 0    40   ~ 0
 PB6
 $Comp
-L GND #PWR02
+L GND #PWR01
 U 1 1 4F5AFC62
 P 2950 5100
-F 0 "#PWR02" H 2950 5100 30  0001 C CNN
+F 0 "#PWR01" H 2950 5100 30  0001 C CNN
 F 1 "GND" H 2950 5030 30  0001 C CNN
 F 2 "" H 2950 5100 60  0001 C CNN
 F 3 "" H 2950 5100 60  0001 C CNN
 	1    2950 5100
 	1    0    0    -1  
 $EndComp
-Text Label 6425 1725 0    40   ~ 0
-3V3
 Text Label 9675 6850 0    40   ~ 0
 BAT
 Text Label 9675 6750 0    40   ~ 0
@@ -1012,10 +760,6 @@ Text Label 9675 6650 0    40   ~ 0
 SQR
 Text Label 9675 6550 0    40   ~ 0
 RST
-Text Label 6425 2825 0    40   ~ 0
-SCL
-Text Label 6425 2725 0    40   ~ 0
-SDA
 Text Label 9675 6250 0    40   ~ 0
 GND
 Text Label 9675 6450 0    40   ~ 0
@@ -1024,26 +768,22 @@ Text Label 9675 6350 0    40   ~ 0
 SCL
 Text Label 9675 6150 0    40   ~ 0
 5V0
-Text Label 6425 1625 0    40   ~ 0
-RESET
-Text Label 6425 1825 0    40   ~ 0
-5V0
 Text Label 1575 2250 1    40   ~ 0
 RESET
 Text Label 4125 3650 0    40   ~ 0
 ~PD5_Valve
 Text Label 4125 3750 0    40   ~ 0
-~PD6
+~PD6_Spk
 Text Label 4125 3450 0    40   ~ 0
 ~PD3
 Text Label 4125 4050 0    40   ~ 0
-PB0
+PB0_ACL
 Text Label 4125 4150 0    40   ~ 0
-~PB1
+~PB1_Pump
 Text Label 4125 2250 0    40   ~ 0
 PC0
 Text Label 4125 2350 0    40   ~ 0
-PC1_Pulse
+PC1
 Text Label 4125 2450 0    40   ~ 0
 PC2_Pr2
 Text Label 4125 2550 0    40   ~ 0
@@ -1057,7 +797,7 @@ PD2
 Text Label 4125 3850 0    40   ~ 0
 PD7
 Text Label 4125 3550 0    40   ~ 0
-PD4
+PD4_Valve2
 Text Label 4800 650  0    40   ~ 0
 5V0
 Text Label 4125 2650 0    40   ~ 0
@@ -1094,4 +834,70 @@ Wire Wire Line
 Wire Wire Line
 	2850 1950 2850 1850
 Connection ~ 2900 1850
+NoConn ~ 6675 1525
+NoConn ~ 6675 1625
+NoConn ~ 6675 1725
+NoConn ~ 6675 1825
+NoConn ~ 6675 1925
+NoConn ~ 6675 2025
+NoConn ~ 6675 2125
+NoConn ~ 6675 2325
+NoConn ~ 6675 2425
+NoConn ~ 6675 2525
+NoConn ~ 6675 2625
+NoConn ~ 6675 2725
+NoConn ~ 6675 2825
+NoConn ~ 8575 2825
+NoConn ~ 8575 2725
+NoConn ~ 8575 2625
+NoConn ~ 8575 2525
+NoConn ~ 8575 2425
+NoConn ~ 8575 2325
+NoConn ~ 8575 2225
+NoConn ~ 8575 2125
+NoConn ~ 8575 1925
+NoConn ~ 8575 1825
+NoConn ~ 8575 1725
+NoConn ~ 8575 1625
+NoConn ~ 8575 1525
+NoConn ~ 8575 1425
+NoConn ~ 8575 1325
+NoConn ~ 8575 1225
+NoConn ~ 8575 1125
+NoConn ~ 8575 1025
+Wire Wire Line
+	1425 800  4800 800 
+Wire Wire Line
+	1425 800  1425 2650
+Wire Wire Line
+	1425 2650 2000 2650
+NoConn ~ 3900 2850
+NoConn ~ 3900 2950
+NoConn ~ 4125 3350
+NoConn ~ 4125 3450
+NoConn ~ 4125 3850
+Text Notes 4400 2250 0    40   ~ 0
+Blank (ex Pulse)
+Text Notes 4400 2350 0    40   ~ 0
+Blank
+NoConn ~ 4125 2250
+NoConn ~ 4125 2350
+$Comp
+L PWR_FLAG #FLG02
+U 1 1 520CA632
+P 725 2475
+F 0 "#FLG02" H 725 2745 30  0001 C CNN
+F 1 "PWR_FLAG" H 725 2705 30  0000 C CNN
+F 2 "" H 725 2475 60  0000 C CNN
+F 3 "" H 725 2475 60  0000 C CNN
+	1    725  2475
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	725  2475 725  2550
+Connection ~ 975  2550
+Wire Wire Line
+	10050 3025 9600 3025
+Text Label 9600 3025 0    40   ~ 0
+PB0_ACL
 $EndSCHEMATC

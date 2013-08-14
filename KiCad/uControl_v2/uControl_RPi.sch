@@ -1,8 +1,9 @@
-EESchema Schematic File Version 2  date 14-Aug-13 6:24:40 PM
+EESchema Schematic File Version 2
 LIBS:Conn-raspberry
 LIBS:power
 LIBS:uControl
-EELAYER 27 0
+LIBS:uControl_v2-cache
+EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8

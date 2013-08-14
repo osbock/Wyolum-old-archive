@@ -1,8 +1,9 @@
-EESchema Schematic File Version 2  date 14-Aug-13 6:24:40 PM
+EESchema Schematic File Version 2
 LIBS:Conn-raspberry
 LIBS:power
 LIBS:uControl
-EELAYER 27 0
+LIBS:uControl_v2-cache
+EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -16,21 +17,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Wire Notes Line
-	600  7650 600  5400
-Wire Wire Line
-	3425 5750 5975 5750
-Connection ~ 5775 7350
-Wire Wire Line
-	5775 7350 5975 7350
-Connection ~ 5775 7000
-Wire Wire Line
-	5775 7000 5975 7000
-Connection ~ 5775 6850
-Wire Wire Line
-	5775 6850 5975 6850
-Wire Wire Line
-	5975 6550 5775 6550
 Wire Notes Line
 	600  4825 600  3075
 Wire Notes Line
@@ -184,171 +170,8 @@ Wire Wire Line
 	7925 925  7925 875 
 Wire Notes Line
 	7175 600  8275 600 
-Wire Wire Line
-	3575 5750 3575 6150
-Wire Notes Line
-	600  7650 6725 7650
-Connection ~ 3575 5750
-Wire Wire Line
-	3425 5900 3575 5900
-Connection ~ 3025 6650
-Wire Wire Line
-	3025 6300 3025 6650
-Wire Wire Line
-	2450 6600 2450 6650
-Wire Wire Line
-	2450 6650 3850 6650
-Wire Wire Line
-	3850 6150 3850 5750
-Wire Wire Line
-	3850 6650 3850 6600
-Connection ~ 3575 6650
-Wire Wire Line
-	3575 6750 3575 6550
-Connection ~ 3850 5750
-Connection ~ 3575 5900
-Connection ~ 2450 5750
-Wire Wire Line
-	2450 6150 2450 5750
-Wire Notes Line
-	600  5400 6725 5400
-Wire Wire Line
-	2625 5750 1800 5750
 Wire Notes Line
 	6725 3075 6725 4825
-Wire Wire Line
-	5775 6700 5975 6700
-Connection ~ 5775 6700
-Wire Wire Line
-	5775 7200 5975 7200
-Connection ~ 5775 7200
-Wire Wire Line
-	5975 6350 5775 6350
-Wire Wire Line
-	5775 6350 5775 7525
-Connection ~ 5775 6550
-Wire Notes Line
-	6725 5400 6725 7650
-$Comp
-L GND #PWR011
-U 1 1 5110CD00
-P 5775 7525
-F 0 "#PWR011" H 5775 7525 30  0001 C CNN
-F 1 "GND" H 5775 7455 30  0001 C CNN
-F 2 "" H 5775 7525 60  0001 C CNN
-F 3 "" H 5775 7525 60  0001 C CNN
-	1    5775 7525
-	-1   0    0    -1  
-$EndComp
-NoConn ~ 5975 6200
-NoConn ~ 5975 6050
-NoConn ~ 5975 5900
-$Comp
-L UUSB_B P33
-U 1 1 5110CCA7
-P 6325 6050
-F 0 "P33" H 6325 6600 60  0000 C CNN
-F 1 "5VRpi" H 6325 6500 60  0000 C CNN
-F 2 "" H 6325 6050 60  0001 C CNN
-F 3 "" H 6325 6050 60  0001 C CNN
-	1    6325 6050
-	-1   0    0    -1  
-$EndComp
-Text Label 4750 5750 0    40   ~ 0
-5VRpi
-Text Label 1800 5750 0    40   ~ 0
-12V
-Text Label 2775 6650 0    40   ~ 0
-GND
-$Comp
-L GND #PWR012
-U 1 1 5110C540
-P 3575 6750
-F 0 "#PWR012" H 3575 6750 30  0001 C CNN
-F 1 "GND" H 3575 6680 30  0001 C CNN
-F 2 "" H 3575 6750 60  0001 C CNN
-F 3 "" H 3575 6750 60  0001 C CNN
-	1    3575 6750
-	-1   0    0    -1  
-$EndComp
-$Comp
-L C C29
-U 1 1 5110C53A
-P 3575 6350
-F 0 "C29" H 3575 6450 50  0000 L CNN
-F 1 "100n" H 3575 6250 50  0000 L CNN
-F 2 "C2" H 3575 6350 50  0001 C CNN
-F 3 "" H 3575 6350 60  0001 C CNN
-F 4 "CAP FILM 0.1UF 63VDC RADIAL" H 3575 6550 60  0001 L CNN "Field4"
-F 5 "100nF, 63V" H 3575 6650 60  0001 L CNN "Field5"
-F 6 "R82" H 3575 6750 60  0001 L CNN "Field6"
-F 7 "Kemet" H 3575 6850 60  0001 L CNN "Field7"
-F 8 "R82DC3100AA50J" H 3575 6950 60  0001 L CNN "Field8"
-F 9 "Digikey" H 3575 7050 60  0001 L CNN "Field9"
-F 10 "399-5863-ND" H 3575 7150 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD" H 3575 7250 60  0001 L CNN "Field11"
-	1    3575 6350
-	1    0    0    -1  
-$EndComp
-$Comp
-L C_POL_1 C28
-U 1 1 5110C539
-P 2450 6350
-F 0 "C28" H 2300 6400 50  0000 L CNN
-F 1 "100u,16V" H 2450 6200 50  0000 L CNN
-F 2 "CP_6.3x7mm" H 2450 6300 50  0001 C CNN
-F 3 "" H 2450 6350 60  0001 C CNN
-F 4 "CAP ALUM 100UF 16V 20% RADIAL" H 2450 6550 60  0001 L CNN "Field4"
-F 5 "100u,16V" H 2450 6650 60  0001 L CNN "Field5"
-F 6 "Radial, Can, 6.3mm dia" H 2450 6750 60  0001 L CNN "Field6"
-F 7 "Panasonic Electronic Components" H 2450 6850 60  0001 L CNN "Field7"
-F 8 "ECE-A1CKA101" H 2450 6950 60  0001 L CNN "Field8"
-F 9 "Digikey" H 2450 7050 60  0001 L CNN "Field9"
-F 10 "P833-ND" H 2450 7150 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-detail/en/ECE-A1CKA101/P833-ND/44757?cur=USD" H 2450 7250 60  0001 L CNN "Field11"
-	1    2450 6350
-	1    0    0    -1  
-$EndComp
-$Comp
-L C_POL_2 C30
-U 1 1 5110C538
-P 3850 6350
-F 0 "C30" H 3875 6225 50  0000 L CNN
-F 1 "2u2 Tant" H 3875 6150 50  0000 L CNN
-F 2 "cnp_3mm_disc" H 3875 6250 50  0001 C CNN
-F 3 "" H 3850 6350 60  0001 C CNN
-F 4 "CAP TANT 2.2UF 16V 10% RADIAL" H 3850 6550 60  0001 L CNN "Field4"
-F 5 "2u2,16V" H 3850 6650 60  0001 L CNN "Field5"
-F 6 "Radial, 0.1\"" H 3850 6750 60  0001 L CNN "Field6"
-F 7 "AVX Corporation" H 3850 6850 60  0001 L CNN "Field7"
-F 8 "TAP225K016SCS" H 3850 6950 60  0001 L CNN "Field8"
-F 9 "Digikey" H 3850 7050 60  0001 L CNN "Field9"
-F 10 "478-1868-ND" H 3850 7150 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-detail/en/TAP225K016SCS/478-1868-ND/563971" H 3850 7250 60  0001 L CNN "Field11"
-	1    3850 6350
-	1    0    0    -1  
-$EndComp
-$Comp
-L NCP1117ST50T3G U8
-U 1 1 5110C535
-P 3025 5900
-F 0 "U8" H 2875 5900 60  0000 C CNN
-F 1 "NCP1117ST50T3G" H 3025 6200 60  0000 C CNN
-F 2 "SOT223" H 3025 6300 60  0001 C CNN
-F 3 "" H 3025 5900 60  0001 C CNN
-F 4 "IC REG LDO 5V 1A DPAK-3" H 3025 6000 60  0001 L CNN "Field4"
-F 5 "5V, 1A" H 3025 6100 60  0001 L CNN "Field5"
-F 6 "TO-252-3, DPak (2 Leads + Tab), SC-63" H 3025 6200 60  0001 L CNN "Field6"
-F 7 "ON Semiconductor" H 3025 6300 60  0001 L CNN "Field7"
-F 8 "NCP1117DT50G" H 3025 6400 60  0001 L CNN "Field8"
-F 9 "Digikey" H 3025 6500 60  0001 L CNN "Field9"
-F 10 "NCP1117DT50GOS-ND" H 3025 6600 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-detail/en/NCP1117DT50G/NCP1117DT50GOS-ND/1483320" H 3025 6700 60  0001 L CNN "Field11"
-	1    3025 5900
-	1    0    0    -1  
-$EndComp
-Text Notes 600  5400 0    60   Italic 12
-5V0 Regulator for Raspberry-Pi
 Text Notes 600  600  0    60   Italic 12
 5V0 Regulator for uControl
 $Comp
