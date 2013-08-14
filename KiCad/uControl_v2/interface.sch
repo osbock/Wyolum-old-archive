@@ -1,8 +1,8 @@
-EESchema Schematic File Version 2  date 13-Aug-13 5:34:33 PM
+EESchema Schematic File Version 2
 LIBS:Conn-raspberry
 LIBS:power
 LIBS:uControl
-EELAYER 27 0
+EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -17,67 +17,48 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Text Notes 4250 4475 0    30   ~ 0
-Additional footprint for\nalternate mounting position
+Additional footprint for\nalternate mounting position\n(not used)
 NoConn ~ 4250 4650
 NoConn ~ 4250 4750
 NoConn ~ 4250 4850
 NoConn ~ 4250 4950
 $Comp
-L FLOWMETER P32
-U 1 1 5110C1B9
-P 4600 4800
-F 0 "P32" V 4550 4800 50  0000 C CNN
-F 1 "FLOWMETER" V 4650 4800 40  0000 C CNN
-F 2 "FlowMeter" V 4750 4800 40  0001 C CNN
-F 3 "" H 4600 4800 60  0001 C CNN
-F 4 "Mass Flow Meter for Gases" H 4600 4900 60  0001 L CNN "Field4"
-F 5 "CMOSens EM1" H 4600 5000 60  0001 L CNN "Field5"
-F 6 "G3/8 thread (BSPP" H 4600 5100 60  0001 L CNN "Field6"
-F 7 "Sensirion" H 4600 5200 60  0001 L CNN "Field7"
-F 8 "EM1NR4R0V_1A" V 4750 4600 40  0000 L CNN "Field8"
-F 9 "Sensirion" H 4600 5400 60  0001 L CNN "Field9"
-F 10 "EM1NR4R0V_1A" H 4600 5500 60  0001 L CNN "Field10"
-F 11 "http://www.sensirion.com/en/products/mass-flow-meters-for-gases/mass-flow-meter-em1/" H 4600 5600 60  0001 L CNN "Field11"
-	1    4600 4800
-	1    0    0    -1  
-$EndComp
-$Comp
 L R_47E R5
 U 1 1 51020F8D
-P 2025 5650
-F 0 "R5" V 2000 5475 50  0000 C CNN
-F 1 "47E" V 2030 5650 50  0000 C CNN
-F 2 "rc03_vert" V 2130 5650 50  0001 C CNN
-F 3 "" H 2025 5650 60  0001 C CNN
-F 4 "RES 47 OHM 1/8W 5% CF AXIAL" H 2025 5750 60  0001 L CNN "Field4"
-F 5 "0.125W, 1/8W" H 2025 5850 60  0001 L CNN "Field5"
-F 6 "Axial" H 2025 5950 60  0001 L CNN "Field6"
-F 7 "Stackpole Electronics Inc" H 2025 6050 60  0001 L CNN "Field7"
-F 8 "CF18JT47R0" H 2025 6150 60  0001 L CNN "Field8"
-F 9 "Digikey" H 2025 6250 60  0001 L CNN "Field9"
-F 10 "CF18JT47R0CT-ND" H 2025 6350 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-detail/en/CF18JT47R0/CF18JT47R0CT-ND/2022710" H 2025 6450 60  0001 L CNN "Field11"
-	1    2025 5650
-	0    1    1    0   
+P -725 6325
+F 0 "R5" V -750 6150 50  0000 C CNN
+F 1 "47E" V -720 6325 50  0000 C CNN
+F 2 "rc03_vert" V -620 6325 50  0001 C CNN
+F 3 "" H -725 6325 60  0001 C CNN
+F 4 "RES 47 OHM 1/8W 5% CF AXIAL" H -725 6425 60  0001 L CNN "Field4"
+F 5 "0.125W, 1/8W" H -725 6525 60  0001 L CNN "Field5"
+F 6 "Axial" H -725 6625 60  0001 L CNN "Field6"
+F 7 "Stackpole Electronics Inc" H -725 6725 60  0001 L CNN "Field7"
+F 8 "CF18JT47R0" H -725 6825 60  0001 L CNN "Field8"
+F 9 "Digikey" H -725 6925 60  0001 L CNN "Field9"
+F 10 "CF18JT47R0CT-ND" H -725 7025 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/CF18JT47R0/CF18JT47R0CT-ND/2022710" H -725 7125 60  0001 L CNN "Field11"
+	1    -725 6325
+	1    0    0    -1  
 $EndComp
 $Comp
 L R_47E R6
 U 1 1 51020F65
-P 1725 5750
-F 0 "R6" V 1700 5575 50  0000 C CNN
-F 1 "47E" V 1730 5750 50  0000 C CNN
-F 2 "rc03_vert" V 1830 5750 50  0001 C CNN
-F 3 "" H 1725 5750 60  0001 C CNN
-F 4 "RES 47 OHM 1/8W 5% CF AXIAL" H 1725 5850 60  0001 L CNN "Field4"
-F 5 "0.125W, 1/8W" H 1725 5950 60  0001 L CNN "Field5"
-F 6 "Axial" H 1725 6050 60  0001 L CNN "Field6"
-F 7 "Stackpole Electronics Inc" H 1725 6150 60  0001 L CNN "Field7"
-F 8 "CF18JT47R0" H 1725 6250 60  0001 L CNN "Field8"
-F 9 "Digikey" H 1725 6350 60  0001 L CNN "Field9"
-F 10 "CF18JT47R0CT-ND" H 1725 6450 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-detail/en/CF18JT47R0/CF18JT47R0CT-ND/2022710" H 1725 6550 60  0001 L CNN "Field11"
-	1    1725 5750
-	0    1    1    0   
+P -550 6325
+F 0 "R6" V -575 6150 50  0000 C CNN
+F 1 "47E" V -545 6325 50  0000 C CNN
+F 2 "rc03_vert" V -445 6325 50  0001 C CNN
+F 3 "" H -550 6325 60  0001 C CNN
+F 4 "RES 47 OHM 1/8W 5% CF AXIAL" H -550 6425 60  0001 L CNN "Field4"
+F 5 "0.125W, 1/8W" H -550 6525 60  0001 L CNN "Field5"
+F 6 "Axial" H -550 6625 60  0001 L CNN "Field6"
+F 7 "Stackpole Electronics Inc" H -550 6725 60  0001 L CNN "Field7"
+F 8 "CF18JT47R0" H -550 6825 60  0001 L CNN "Field8"
+F 9 "Digikey" H -550 6925 60  0001 L CNN "Field9"
+F 10 "CF18JT47R0CT-ND" H -550 7025 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/CF18JT47R0/CF18JT47R0CT-ND/2022710" H -550 7125 60  0001 L CNN "Field11"
+	1    -550 6325
+	1    0    0    -1  
 $EndComp
 Connection ~ 3925 5550
 Wire Wire Line
@@ -106,9 +87,9 @@ Connection ~ 10050 6250
 Wire Wire Line
 	10050 6250 10000 6250
 Wire Wire Line
-	10000 6650 10050 6650
+	10050 6650 10000 6650
 Wire Wire Line
-	10050 6650 10050 6150
+	10050 6150 10050 6650
 Wire Wire Line
 	10050 6150 10000 6150
 Connection ~ 10300 5750
@@ -124,9 +105,9 @@ Connection ~ 10050 5750
 Wire Wire Line
 	10050 5750 10000 5750
 Wire Wire Line
-	10000 6050 10050 6050
+	10050 6050 10000 6050
 Wire Wire Line
-	10050 6050 10050 5550
+	10050 5550 10050 6050
 Wire Wire Line
 	10050 5550 10000 5550
 Wire Notes Line
@@ -142,7 +123,7 @@ Wire Wire Line
 Connection ~ 7000 3600
 Connection ~ 6425 3600
 Wire Wire Line
-	7100 3600 5925 3600
+	5925 3600 7100 3600
 Wire Notes Line
 	675  575  4950 575 
 Wire Notes Line
@@ -201,7 +182,7 @@ Wire Wire Line
 Wire Wire Line
 	9725 1800 10075 1800
 Wire Wire Line
-	10075 1600 9725 1600
+	9725 1600 10075 1600
 Wire Notes Line
 	5100 5200 5100 7125
 Wire Notes Line
@@ -210,7 +191,7 @@ Connection ~ 7675 5975
 Wire Wire Line
 	7825 5975 7675 5975
 Wire Wire Line
-	7675 6075 7675 5675
+	7675 5675 7675 6075
 Wire Wire Line
 	7675 6075 7600 6075
 Connection ~ 6275 6925
@@ -240,9 +221,9 @@ Wire Wire Line
 Connection ~ 2425 1150
 Wire Wire Line
 	2250 1700 2425 1700
-Connection ~ 2975 4025
+Connection ~ 2975 3725
 Wire Wire Line
-	2975 4025 2975 4625
+	2975 3725 2975 4625
 Wire Wire Line
 	2975 4625 3200 4625
 Wire Wire Line
@@ -255,11 +236,11 @@ Wire Wire Line
 Wire Wire Line
 	1450 1150 1750 1150
 Wire Wire Line
-	2575 1200 2575 1150
+	2575 1150 2575 1200
 Wire Wire Line
-	2575 1150 2050 1150
+	2050 1150 2575 1150
 Wire Wire Line
-	1900 2900 1900 2500
+	1900 2500 1900 2900
 Wire Wire Line
 	1050 1275 1175 1275
 Wire Wire Line
@@ -299,9 +280,7 @@ Wire Wire Line
 Wire Wire Line
 	9450 900  10075 900 
 Wire Wire Line
-	2100 5350 2825 5350
-Wire Wire Line
-	1475 5750 1125 5750
+	1775 5350 2825 5350
 Wire Wire Line
 	1125 6550 2775 6550
 Wire Wire Line
@@ -314,18 +293,16 @@ Connection ~ 6750 4275
 Wire Wire Line
 	6425 4150 6425 4275
 Wire Wire Line
-	6750 4975 6750 4800
+	6750 4800 6750 4975
 Wire Wire Line
-	6750 4400 6750 3800
+	6750 3800 6750 4400
 Wire Wire Line
 	6750 3800 7100 3800
 Connection ~ 2325 6550
 Wire Wire Line
-	2825 5650 2275 5650
+	2250 3825 3425 3825
 Wire Wire Line
-	3325 4125 1800 4125
-Wire Wire Line
-	2150 3525 3325 3525
+	2250 3625 3425 3625
 Wire Wire Line
 	2950 1475 3325 1475
 Wire Wire Line
@@ -335,16 +312,13 @@ Wire Wire Line
 Wire Wire Line
 	1050 975  3325 975 
 Wire Wire Line
-	3325 4025 1800 4025
-Wire Wire Line
-	2325 6100 2325 5650
-Connection ~ 2325 5650
+	2250 3725 3425 3725
 Wire Wire Line
 	2775 6550 2775 5550
 Wire Wire Line
 	6450 4600 5950 4600
 Wire Wire Line
-	2325 6625 2325 6500
+	2325 6500 2325 6625
 Wire Wire Line
 	6425 3750 6425 3600
 Wire Wire Line
@@ -355,18 +329,6 @@ Wire Wire Line
 	6075 3700 6075 3875
 Wire Wire Line
 	6075 3875 5475 3875
-Wire Wire Line
-	2175 6550 2175 6500
-Connection ~ 2175 6550
-Wire Wire Line
-	2825 5750 1975 5750
-Wire Wire Line
-	2175 6100 2175 5750
-Connection ~ 2175 5750
-Wire Wire Line
-	1775 5650 1125 5650
-Wire Wire Line
-	1125 5850 2825 5850
 Wire Wire Line
 	9725 1000 10075 1000
 Wire Wire Line
@@ -380,17 +342,17 @@ Wire Wire Line
 Wire Wire Line
 	8475 5675 7675 5675
 Wire Wire Line
-	3200 4175 3200 4125
-Connection ~ 3200 4125
+	3200 4175 3200 3825
+Connection ~ 3200 3825
 Wire Wire Line
 	7000 4800 7000 4900
 Wire Wire Line
 	7000 4900 6750 4900
 Connection ~ 6750 4900
 Wire Wire Line
-	7100 1450 6175 1450
+	6175 1450 7100 1450
 Wire Wire Line
-	7100 1250 6175 1250
+	6175 1250 7100 1250
 Wire Wire Line
 	7100 1350 6175 1350
 Wire Wire Line
@@ -430,7 +392,7 @@ Wire Wire Line
 Wire Wire Line
 	1450 1600 1450 1650
 Wire Wire Line
-	2150 3425 3325 3425
+	2250 3925 3425 3925
 Wire Wire Line
 	2425 1150 2425 2300
 Connection ~ 2425 1700
@@ -441,7 +403,7 @@ Wire Wire Line
 Wire Wire Line
 	5650 5450 5250 5450
 Wire Wire Line
-	5800 7000 5800 6475
+	5800 6475 5800 7000
 Wire Wire Line
 	6275 6875 6275 6925
 Connection ~ 5800 6925
@@ -472,7 +434,7 @@ Connection ~ 7675 6275
 Wire Wire Line
 	9725 1700 10075 1700
 Wire Wire Line
-	10075 1900 9725 1900
+	9725 1900 10075 1900
 Wire Wire Line
 	9925 1900 9925 2075
 Connection ~ 9925 1900
@@ -483,9 +445,9 @@ Wire Wire Line
 Wire Notes Line
 	675  5200 675  7125
 Wire Wire Line
-	3225 2700 3225 2850
+	3225 2850 3225 2700
 Wire Wire Line
-	3225 2850 1900 2850
+	1900 2850 3225 2850
 Connection ~ 2425 2850
 Wire Notes Line
 	4950 575  4950 3000
@@ -511,11 +473,11 @@ Connection ~ 9925 2750
 Wire Wire Line
 	9925 2925 9925 2750
 Wire Wire Line
-	10075 2750 9725 2750
+	9725 2750 10075 2750
 Wire Wire Line
 	9725 2550 10075 2550
 Wire Wire Line
-	10075 2450 9725 2450
+	9725 2450 10075 2450
 Wire Wire Line
 	9725 2650 10075 2650
 Wire Wire Line
@@ -599,51 +561,28 @@ Connection ~ 10050 6400
 $Comp
 L C_POL_1 C27
 U 1 1 51020D1A
-P 3800 6225
-F 0 "C27" H 3650 6300 50  0000 L CNN
-F 1 "100u,16V" H 3400 6100 50  0000 L CNN
-F 2 "CP_6.3x7mm" H 3400 6200 50  0001 C CNN
-F 3 "" H 3800 6225 60  0001 C CNN
-F 4 "CAP ALUM 100UF 16V 20% RADIAL" H 3800 6425 60  0001 L CNN "Field4"
-F 5 "100u,16V" H 3800 6525 60  0001 L CNN "Field5"
-F 6 "Radial, Can, 6.3mm dia" H 3800 6625 60  0001 L CNN "Field6"
-F 7 "Panasonic Electronic Components" H 3800 6725 60  0001 L CNN "Field7"
-F 8 "ECE-A1CKA101" H 3800 6825 60  0001 L CNN "Field8"
-F 9 "Digikey" H 3800 6925 60  0001 L CNN "Field9"
-F 10 "P833-ND" H 3800 7025 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-detail/en/ECE-A1CKA101/P833-ND/44757?cur=USD" H 3800 7125 60  0001 L CNN "Field11"
-	1    3800 6225
+P 2325 6250
+F 0 "C27" V 2375 6025 50  0000 L CNN
+F 1 "100u,16V" V 2200 6025 50  0000 L CNN
+F 2 "CP_6.3x7mm" H 1925 6225 50  0001 C CNN
+F 3 "" H 2325 6250 60  0001 C CNN
+F 4 "CAP ALUM 100UF 16V 20% RADIAL" H 2325 6450 60  0001 L CNN "Field4"
+F 5 "100u,16V" H 2325 6550 60  0001 L CNN "Field5"
+F 6 "Radial, Can, 6.3mm dia" H 2325 6650 60  0001 L CNN "Field6"
+F 7 "Panasonic Electronic Components" H 2325 6750 60  0001 L CNN "Field7"
+F 8 "ECE-A1CKA101" H 2325 6850 60  0001 L CNN "Field8"
+F 9 "Digikey" H 2325 6950 60  0001 L CNN "Field9"
+F 10 "P833-ND" H 2325 7050 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/ECE-A1CKA101/P833-ND/44757?cur=USD" H 2325 7150 60  0001 L CNN "Field11"
+	1    2325 6250
 	1    0    0    -1  
 $EndComp
-$Comp
-L FLOW_CONN_CABLE P31
-U 1 1 50E7C4D6
-P 4600 3775
-F 0 "P31" V 4550 3775 60  0000 C CNN
-F 1 "FLOW_CONN_CABLE" V 4650 3775 40  0000 C CNN
-F 2 "" H 4600 3775 60  0001 C CNN
-F 3 "" H 4600 3775 60  0001 C CNN
-F 4 "Custom cable assembly" H 4600 3875 60  0001 L CNN "Field4"
-F 5 "8 way, 8\" long" H 4600 3975 60  0001 L CNN "Field5"
-F 6 "2mm pitch, 1x8 way" H 4600 4075 60  0001 L CNN "Field6"
-F 7 "Molex Connector Corporation" H 4600 4175 60  0001 L CNN "Field7"
-F 8 "51004-0800+50011-8100" H 4600 4275 60  0001 L CNN "Field8"
-F 9 "Digikey" H 4600 4375 60  0001 L CNN "Field9"
-F 10 "DCC-961-ND" H 4600 4475 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-search/en?x=0&y=0&KeyWords=53014-0810" H 4600 4575 60  0001 L CNN "Field11"
-	1    4600 3775
-	1    0    0    -1  
-$EndComp
-Text Notes 4025 3300 0    40   ~ 0
+Text Notes 4050 3275 0    30   ~ 0
 Flow Sensor cable assembly
-NoConn ~ 4250 4125
-NoConn ~ 4250 4025
 NoConn ~ 4250 3925
 NoConn ~ 4250 3825
 NoConn ~ 4250 3725
 NoConn ~ 4250 3625
-NoConn ~ 4250 3525
-NoConn ~ 4250 3425
 $Comp
 L X_VALVE_CONN P30
 U 1 1 50E7C248
@@ -683,25 +622,6 @@ F 9 "Digikey" H 4775 6200 60  0001 L CNN "Field9"
 F 10 "WM7633CT-ND" H 4775 6300 60  0001 L CNN "Field10"
 F 11 "http://www.digikey.com/product-detail/en/0526100671/WM7633CT-ND/699133" H 4775 6400 60  0001 L CNN "Field11"
 	1    4775 5600
-	1    0    0    -1  
-$EndComp
-$Comp
-L FLOW_CONN P15
-U 1 1 50E3C2A1
-P 3675 3775
-F 0 "P15" V 3625 3775 60  0000 C CNN
-F 1 "FLOW_CONN" V 3725 3775 60  0000 C CNN
-F 2 "Conn_Flow" V 3825 3775 60  0001 C CNN
-F 3 "" H 3675 3775 60  0001 C CNN
-F 4 "CONN HEADER 2MM 8POS TIN" H 3675 3875 60  0001 L CNN "Field4"
-F 5 "Header, Shrouded, Male Pin" H 3675 3975 60  0001 L CNN "Field5"
-F 6 "2mm pitch, 1x8 way" H 3675 4075 60  0001 L CNN "Field6"
-F 7 "Molex Connector Corporation" H 3675 4175 60  0001 L CNN "Field7"
-F 8 "53014-0810" H 3675 4275 60  0001 L CNN "Field8"
-F 9 "Digikey" H 3675 4375 60  0001 L CNN "Field9"
-F 10 "WM18971-ND" H 3675 4475 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-search/en?x=0&y=0&KeyWords=53014-0810" H 3675 4575 60  0001 L CNN "Field11"
-	1    3675 3775
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -837,24 +757,15 @@ F 11 "http://www.digikey.com/scripts/dksearch/dksus.dll?vendor=0&keywords=TIP112
 	1    6650 4600
 	1    0    0    -1  
 $EndComp
-Text Notes 4850 6500 2    40   ~ 0
-P200
 $Comp
 L PUMP P23
 U 1 1 50E2B32E
 P 4800 6800
 F 0 "P23" V 4750 6800 60  0000 C CNN
 F 1 "PUMP" V 4850 6800 60  0000 C CNN
-F 2 "Pump" V 4950 6800 60  0001 C CNN
+F 2 "" V 4950 6800 60  0001 C CNN
 F 3 "" H 4800 6800 60  0001 C CNN
-F 4 "Intelligent Pump" H 4800 6900 60  0001 L CNN "Field4"
-F 5 "P200/P1500" H 4800 7000 60  0001 L CNN "Field5"
-F 6 "X-Life Motor" H 4800 7100 60  0001 L CNN "Field6"
-F 7 "XAVITECH" H 4800 7200 60  0001 L CNN "Field7"
-F 8 "P200_GAS" H 4800 7300 60  0001 L CNN "Field8"
-F 9 "XAVITECH" H 4800 7400 60  0001 L CNN "Field9"
-F 10 "P200_GAS" H 4800 7500 60  0001 L CNN "Field10"
-F 11 "http://www.xavitech.com/products" H 4800 7600 60  0001 L CNN "Field11"
+F 4 "http://www.xavitech.com/products" H 4800 7600 60  0001 L CNN "Field11"
 	1    4800 6800
 	1    0    0    -1  
 $EndComp
@@ -864,16 +775,8 @@ U 1 1 50E2B14F
 P 3950 4800
 F 0 "P16" V 3900 4800 50  0000 C CNN
 F 1 "FLOWMETER" V 4000 4800 40  0000 C CNN
-F 2 "FlowMeter" V 4100 4800 40  0001 C CNN
+F 2 "" V 4100 4800 40  0001 C CNN
 F 3 "" H 3950 4800 60  0001 C CNN
-F 4 "Mass Flow Meter for Gases" H 3950 4900 60  0001 L CNN "Field4"
-F 5 "CMOSens EM1" H 3950 5000 60  0001 L CNN "Field5"
-F 6 "G3/8 thread (BSPP" H 3950 5100 60  0001 L CNN "Field6"
-F 7 "Sensirion" H 3950 5200 60  0001 L CNN "Field7"
-F 8 "EM1NR4R0V_1A" V 4100 4600 40  0000 L CNN "Field8"
-F 9 "Sensirion" H 3950 5400 60  0001 L CNN "Field9"
-F 10 "EM1NR4R0V_1A" H 3950 5500 60  0001 L CNN "Field10"
-F 11 "http://www.sensirion.com/en/products/mass-flow-meters-for-gases/mass-flow-meter-em1/" H 3950 5600 60  0001 L CNN "Field11"
 	1    3950 4800
 	1    0    0    -1  
 $EndComp
@@ -902,7 +805,7 @@ U 1 1 50E2AD07
 P 7450 1500
 F 0 "P8" V 7400 1500 60  0000 C CNN
 F 1 "ABSO_PR" V 7500 1500 60  0000 C CNN
-F 2 "HDIB002AUY8H5" H 7300 1300 60  0001 L CNN
+F 2 "HDIB002AUY8H5" V 7625 1150 60  0000 L CNN
 F 3 "" H 7450 1500 60  0001 C CNN
 F 4 "Amplified pressure sensor" H 7450 1500 60  0001 L CNN "Field4"
 F 5 "HDI Series" H 7450 1600 60  0001 L CNN "Field5"
@@ -921,7 +824,7 @@ U 1 1 50E2ABAC
 P 3675 1125
 F 0 "P7" V 3625 1125 60  0000 C CNN
 F 1 "GAGE_PR" V 3725 1125 60  0000 C CNN
-F 2 "HCEM500GUH9P3" V 3525 1025 60  0001 C CNN
+F 2 "HCEM500GUH9P3" V 3850 1125 60  0000 C CNN
 F 3 "" H 3675 1125 60  0001 C CNN
 F 4 "Miniature amplified pressure sensor" H 3675 1225 60  0001 L CNN "Field4"
 F 5 "HCE Series" H 3675 1325 60  0001 L CNN "Field5"
@@ -933,44 +836,6 @@ F 10 "HCEM500GUH9P3" H 3675 1825 60  0001 L CNN "Field10"
 F 11 "http://www.sensortechnics.com/en/products/pressure-sensors-and-transmitters/amplified-pressure-sensors/hce/" H 3675 1925 60  0001 L CNN "Field11"
 	1    3675 1125
 	1    0    0    -1  
-$EndComp
-$Comp
-L D_1N5225B D3
-U 1 1 50E2A27F
-P 2325 6300
-F 0 "D3" V 2225 6350 40  0000 C CNN
-F 1 "1N5225B" H 2575 6350 40  0000 C CNN
-F 2 "diode_do35" H 2575 6450 40  0001 C CNN
-F 3 "" H 2325 6300 60  0001 C CNN
-F 4 "DIODE ZENER 3.0V 500MW DO35" H 2325 6500 60  0001 L CNN "Field4"
-F 5 "3V, 500mW" H 2325 6600 60  0001 L CNN "Field5"
-F 6 "DO-204AH, DO-35, Axial" H 2325 6700 60  0001 L CNN "Field6"
-F 7 "Vishay Semiconductor Diodes Division" H 2325 6800 60  0001 L CNN "Field7"
-F 8 "1N5225B-TR" H 2325 6900 60  0001 L CNN "Field8"
-F 9 "Digikey" H 2325 7000 60  0001 L CNN "Field9"
-F 10 "1N5225BCT-ND" H 2325 7100 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-detail/en/1N5225B-TR/1N5225BCT-ND/3104340" H 2325 7200 60  0001 L CNN "Field11"
-	1    2325 6300
-	0    -1   -1   0   
-$EndComp
-$Comp
-L D_1N5225B D2
-U 1 1 50E2A266
-P 2175 6300
-F 0 "D2" V 2075 6350 40  0000 C CNN
-F 1 "1N5225B" H 2425 6350 40  0000 C CNN
-F 2 "diode_do35" H 2425 6450 40  0001 C CNN
-F 3 "" H 2175 6300 60  0001 C CNN
-F 4 "DIODE ZENER 3.0V 500MW DO35" H 2175 6500 60  0001 L CNN "Field4"
-F 5 "3V, 500mW" H 2175 6600 60  0001 L CNN "Field5"
-F 6 "DO-204AH, DO-35, Axial" H 2175 6700 60  0001 L CNN "Field6"
-F 7 "Vishay Semiconductor Diodes Division" H 2175 6800 60  0001 L CNN "Field7"
-F 8 "1N5225B-TR" H 2175 6900 60  0001 L CNN "Field8"
-F 9 "Digikey" H 2175 7000 60  0001 L CNN "Field9"
-F 10 "1N5225BCT-ND" H 2175 7100 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-detail/en/1N5225B-TR/1N5225BCT-ND/3104340" H 2175 7200 60  0001 L CNN "Field11"
-	1    2175 6300
-	0    -1   -1   0   
 $EndComp
 $Comp
 L D_1N4001 D1
@@ -1296,8 +1161,8 @@ Text Label 6325 6175 0    40   ~ 0
 TSDA
 Text Label 4075 5450 0    40   ~ 0
 12V
-Text Label 2925 3425 0    40   ~ 0
-PD2_Flow_Tx
+Text Label 3025 3925 0    40   ~ 0
+SDA
 $Comp
 L SCREW SC21
 U 1 1 50DC1602
@@ -1771,7 +1636,7 @@ PC2_Pr2
 Text Label 6175 1750 0    40   ~ 0
 SCL
 Text Notes 5150 675  0    40   ~ 0
-Absolute Pressure Sensor #2 on I2C Bus
+Absolute Pressure Sensor #2 on I2C Bus [HDIB002AUY8H5]
 Text HLabel 6175 1350 0    40   Input ~ 0
 PC2_Pr2
 Text Label 6175 1250 0    40   ~ 0
@@ -1803,17 +1668,7 @@ F 3 "" H 10425 1000 60  0001 C CNN
 $EndComp
 Text HLabel 5475 3875 0    40   BiDi ~ 0
 5V0
-Text Label 2350 5750 0    40   ~ 0
-IO_R
-Text HLabel 1125 5850 0    40   Output ~ 0
-~PB1_IO_T
-Text HLabel 1125 5750 0    40   Input ~ 0
-PB0_IO_R
-Text Label 1175 5850 0    40   ~ 0
-~PB1_IO_T
-Text Label 1175 5750 0    40   ~ 0
-PB0_IO_R
-Text Label 1800 4025 0    40   ~ 0
+Text Label 2250 3725 2    40   ~ 0
 12V
 Text Label 6750 3800 0    40   ~ 0
 -Vlv
@@ -1832,14 +1687,12 @@ F 3 "" H 5575 3600 60  0001 C CNN
 $EndComp
 Text HLabel 5950 4600 0    40   Input ~ 0
 ~PD5_Valve
-Text HLabel 1125 5650 0    40   Input ~ 0
-PD7_IO_X
-Text HLabel 2100 5350 0    40   Input ~ 0
+Text HLabel 1775 5350 0    40   Input ~ 0
 12V
-Text HLabel 2150 3525 0    40   Input ~ 0
-PD4_Flow_Rx
-Text HLabel 2150 3425 0    40   Output ~ 0
-PD2_Flow_Tx
+Text HLabel 2250 3625 0    40   Input ~ 0
+SCL
+Text HLabel 2250 3925 0    40   Input ~ 0
+SDA
 Text HLabel 1050 1475 0    40   Input ~ 0
 ~MOSI
 Text HLabel 1050 1275 0    40   Input ~ 0
@@ -1859,9 +1712,9 @@ Text Label 6125 4600 0    40   ~ 0
 Text Notes 5125 3225 0    40   ~ 0
 Valve on digital PWM port\neither 12V (V_IN) or 5V0
 Text Notes 700  3225 0    40   ~ 0
-Flow Meter on Serial
+Flow Meter on I2C : SFM3000\nAddress : 64 (h40)
 Text Notes 700  675  0    40   ~ 0
-Gage Sensor #1 on SPI Bus
+Gage Sensor #1 on SPI Bus [HCEM500GUH9P3]
 Text Label 5475 3375 0    40   ~ 0
 12V
 $Comp
@@ -1886,12 +1739,8 @@ F 3 "" H 2325 6625 60  0001 C CNN
 	1    2325 6625
 	1    0    0    -1  
 $EndComp
-Text Label 2350 5650 0    40   ~ 0
-IO_X
 Text Notes 700  5275 0    40   ~ 0
-Pump on digital port\nV_IN = 12V DC\nIO_X = 3V3 for pump control
-Text Label 1175 5650 0    40   ~ 0
-PD7_IO_X
+Pump, 12V DC [P54E01R]\non digital port ~PB1
 Text Label 1125 6550 0    40   ~ 0
 GND
 Text Label 2350 5350 0    40   ~ 0
@@ -1907,14 +1756,10 @@ F 3 "" H 3175 5600 60  0001 C CNN
 	1    3175 5600
 	1    0    0    -1  
 $EndComp
-Text Label 1800 4125 0    40   ~ 0
+Text Label 2250 3825 2    40   ~ 0
 GND
-NoConn ~ 3325 3925
-NoConn ~ 3325 3825
-NoConn ~ 3325 3725
-NoConn ~ 3325 3625
-Text Label 2925 3525 0    40   ~ 0
-PD4_Flow_Rx
+Text Label 2975 3625 0    40   ~ 0
+SCL
 Text Label 2950 1175 0    40   ~ 0
 P_SCK
 NoConn ~ 3325 1375
@@ -1930,4 +1775,119 @@ Text Label 2950 875  0    40   ~ 0
 GND
 Text Label 2950 775  0    40   ~ 0
 3V3
+Text Notes 3575 4475 0    30   ~ 0
+Symbol for FlowMeter\nFootprint
+Text Notes 3450 3275 0    30   ~ 0
+Symbol for FlowMeter\nConnector
+$Comp
+L FLOWMETER P15
+U 1 1 520A7D50
+P 3775 3775
+F 0 "P15" V 3725 3775 50  0000 C CNN
+F 1 "FLOW_CONN" V 3825 3775 40  0000 C CNN
+F 2 "FlowMeter" V 3925 3775 40  0001 C CNN
+F 3 "" H 3775 3775 60  0001 C CNN
+F 4 "Mass Flow Meter for Gases" H 3775 3875 60  0001 L CNN "Field4"
+F 5 "CMOSens EM1" H 3775 3975 60  0001 L CNN "Field5"
+F 6 "G3/8 thread (BSPP" H 3775 4075 60  0001 L CNN "Field6"
+F 7 "Sensirion" H 3775 4175 60  0001 L CNN "Field7"
+F 8 "SFM3000" V 3925 3575 40  0000 L CNN "Field8"
+F 9 "Sensirion" H 3775 4375 60  0001 L CNN "Field9"
+F 10 "EM1NR4R0V_1A" H 3775 4475 60  0001 L CNN "Field10"
+F 11 "http://www.sensirion.com/en/products/mass-flow-meters-for-gases/mass-flow-meter-em1/" H 3775 4575 60  0001 L CNN "Field11"
+	1    3775 3775
+	1    0    0    -1  
+$EndComp
+$Comp
+L FLOWMETER P31
+U 1 1 520A7E50
+P 4600 3775
+F 0 "P31" V 4550 3775 50  0000 C CNN
+F 1 "FLOW_CABLE" V 4650 3775 40  0000 C CNN
+F 2 "" V 4750 3775 40  0001 C CNN
+F 3 "" H 4600 3775 60  0001 C CNN
+F 4 "http://www.sensirion.com/en/products/mass-flow-meters-for-gases/mass-flow-meter-em1/" H 4600 4575 60  0001 L CNN "Field11"
+	1    4600 3775
+	1    0    0    -1  
+$EndComp
+$Comp
+L FLOWMETER P32
+U 1 1 520A7EC8
+P 4600 4800
+F 0 "P32" V 4550 4800 50  0000 C CNN
+F 1 "FLOWMETER" V 4650 4800 40  0000 C CNN
+F 2 "" V 4750 4800 40  0001 C CNN
+F 3 "" H 4600 4800 60  0001 C CNN
+	1    4600 4800
+	1    0    0    -1  
+$EndComp
+Text Notes 4500 6350 0    30   ~ 0
+Symbol for Pump\n[P54E01R]\nFootprint
+Text Notes 4375 5975 0    30   ~ 0
+Pump cable assembly
+$Comp
+L NPN_TIP112G Q?
+U 1 1 520AA298
+P 1875 6225
+F 0 "Q?" H 1850 6050 50  0000 C CNN
+F 1 "TIP112G" H 1750 5975 50  0000 C CNN
+F 2 "TO220-3-V" H 2065 6225 30  0001 C CNN
+F 3 "" H 1875 6225 60  0001 C CNN
+F 4 "TRANS DARL NPN 2A 100V TO220AB" H 1875 6225 60  0001 L CNN "Field4"
+F 5 "2A, 100V, 2W" H 1875 6325 60  0001 L CNN "Field5"
+F 6 "TO-220-3" H 1875 6425 60  0001 L CNN "Field6"
+F 7 "ON Semiconductor" H 1875 6525 60  0001 L CNN "Field7"
+F 8 "TIP112G" H 1875 6625 60  0001 L CNN "Field8"
+F 9 "Digikey" H 1875 6725 60  0001 L CNN "Field9"
+F 10 "TIP112GOS-ND" H 1875 6825 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/scripts/dksearch/dksus.dll?vendor=0&keywords=TIP112G" H 1875 6925 60  0001 L CNN "Field11"
+	1    1875 6225
+	1    0    0    -1  
+$EndComp
+$Comp
+L D_1N4001 D2
+U 1 1 520AA2A6
+P 1975 5700
+F 0 "D2" V 1875 5775 40  0000 C CNN
+F 1 "1N4001" V 1800 5850 40  0000 C CNN
+F 2 "diode_do41" V 1900 5850 40  0001 C CNN
+F 3 "" H 1975 5700 60  0001 C CNN
+F 4 "DIODE GEN PURPOSE 50V 1A DO41" H 1975 5900 60  0001 L CNN "Field4"
+F 5 "50V, 1A" H 1975 6000 60  0001 L CNN "Field5"
+F 6 "DO-204AL, DO-41, Axial" H 1975 6100 60  0001 L CNN "Field6"
+F 7 "Fairchild Semiconductor" H 1975 6200 60  0001 L CNN "Field7"
+F 8 "1N4001" H 1975 6300 60  0001 L CNN "Field8"
+F 9 "Digikey" H 1975 6400 60  0001 L CNN "Field9"
+F 10 "1N4001FSCT-ND" H 1975 6500 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/1N4001/1N4001FSCT-ND/1532742" H 1975 6600 60  0001 L CNN "Field11"
+	1    1975 5700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L D_1N5225B D3
+U 1 1 50E2A27F
+P -350 6375
+F 0 "D3" V -450 6425 40  0000 C CNN
+F 1 "1N5225B" H -100 6425 40  0000 C CNN
+F 2 "diode_do35" H -100 6525 40  0001 C CNN
+F 3 "" H -350 6375 60  0001 C CNN
+F 4 "DIODE ZENER 3.0V 500MW DO35" H -350 6575 60  0001 L CNN "Field4"
+F 5 "3V, 500mW" H -350 6675 60  0001 L CNN "Field5"
+F 6 "DO-204AH, DO-35, Axial" H -350 6775 60  0001 L CNN "Field6"
+F 7 "Vishay Semiconductor Diodes Division" H -350 6875 60  0001 L CNN "Field7"
+F 8 "1N5225B-TR" H -350 6975 60  0001 L CNN "Field8"
+F 9 "Digikey" H -350 7075 60  0001 L CNN "Field9"
+F 10 "1N5225BCT-ND" H -350 7175 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/1N5225B-TR/1N5225BCT-ND/3104340" H -350 7275 60  0001 L CNN "Field11"
+	1    -350 6375
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1975 5500 1975 5350
+Connection ~ 1975 5350
+Wire Wire Line
+	1975 5900 1975 6025
+Wire Wire Line
+	1975 6425 1975 6550
+Connection ~ 1975 6550
 $EndSCHEMATC

@@ -1,5 +1,5 @@
-update=13-Aug-13 5:07:55 PM
-last_client=eeschema
+update=Wednesday 14 August 2013 08:58:17 AM IST
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
@@ -37,3 +37,5 @@ LabSize=60
 LibName1=uControl_Libs/Conn-raspberry
 LibName2=uControl_Libs/power
 LibName3=uControl_Libs/uControl
+[general]
+version=1

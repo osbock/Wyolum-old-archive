@@ -1,8 +1,8 @@
-EESchema Schematic File Version 2  date 13-Aug-13 5:34:33 PM
+EESchema Schematic File Version 2
 LIBS:Conn-raspberry
 LIBS:power
 LIBS:uControl
-EELAYER 27 0
+EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -101,7 +101,7 @@ F 11 "http://www.digikey.com/product-detail/en/FSM2JH/450-1649-ND/1632535?cur=US
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	1250 3050 750  3050
+	750  3050 1250 3050
 Wire Notes Line
 	4675 7650 5650 7650
 Wire Wire Line
@@ -136,7 +136,7 @@ Connection ~ 6225 2725
 Wire Wire Line
 	6225 2725 6175 2725
 Wire Wire Line
-	6225 2950 6225 2325
+	6225 2325 6225 2950
 Wire Wire Line
 	6225 2325 6175 2325
 Connection ~ 5625 2425
@@ -157,9 +157,9 @@ Wire Wire Line
 Wire Wire Line
 	975  1675 975  2550
 Wire Wire Line
-	875  3300 825  3300
+	825  3300 875  3300
 Wire Wire Line
-	825  3300 825  2800
+	825  2800 825  3300
 Wire Wire Line
 	825  2800 875  2800
 Connection ~ 1400 2800
@@ -218,7 +218,7 @@ Wire Wire Line
 Wire Wire Line
 	6675 2525 6425 2525
 Wire Wire Line
-	2900 5100 2900 4850
+	2950 4850 2950 5100
 Wire Wire Line
 	8575 2825 8825 2825
 Wire Wire Line
@@ -288,7 +288,6 @@ Wire Wire Line
 	3900 4350 4125 4350
 Wire Wire Line
 	3900 4250 4125 4250
-Connection ~ 2900 4975
 Wire Wire Line
 	4125 4450 3900 4450
 Wire Wire Line
@@ -335,7 +334,7 @@ Wire Wire Line
 Wire Wire Line
 	6675 1625 6425 1625
 Wire Wire Line
-	6675 1925 6425 1925
+	6425 1925 6675 1925
 Wire Wire Line
 	9675 6350 10050 6350
 Wire Wire Line
@@ -343,10 +342,10 @@ Wire Wire Line
 Wire Wire Line
 	6675 2825 6425 2825
 Wire Wire Line
-	1575 4050 1575 1700
+	1575 1700 1575 4050
 Connection ~ 1575 2250
 Wire Wire Line
-	1925 3150 1925 3300
+	1925 3300 1925 3150
 Wire Wire Line
 	1925 3150 2000 3150
 Wire Wire Line
@@ -379,7 +378,7 @@ Wire Wire Line
 Wire Wire Line
 	975  2550 2000 2550
 Wire Wire Line
-	2900 800  2900 1950
+	2900 800  2900 1850
 Connection ~ 2900 800 
 Wire Wire Line
 	6675 2625 6425 2625
@@ -422,13 +421,13 @@ Wire Wire Line
 	2000 2450 1800 2450
 Connection ~ 1800 2450
 Wire Wire Line
-	1925 3300 1275 3300
+	1275 3300 1925 3300
 Connection ~ 1400 3300
 Connection ~ 825  3050
 Wire Wire Line
 	750  3050 750  4975
 Wire Wire Line
-	750  4975 2900 4975
+	750  4975 2950 4975
 Connection ~ 1575 4975
 Wire Wire Line
 	1075 1675 1075 1775
@@ -505,20 +504,20 @@ $EndComp
 $Comp
 L ATMEGA8-P U7
 U 1 1 50E2C28A
-P 2900 3350
-F 0 "U7" H 2250 2900 50  0000 L BNN
-F 1 "ATMEGA328P" H 2275 2800 50  0000 L BNN
-F 2 "DIP-28__300_ELL" H 3400 1875 50  0001 C CNN
-F 3 "" H 2900 3350 60  0001 C CNN
-F 4 "IC MCU AVR 32K FLASH 28PDIP" H 2900 4700 60  0001 L CNN "Field4"
-F 5 "AVR ATMega 8 bit 20Mhz" H 2900 4800 60  0001 L CNN "Field5"
-F 6 "28-DIP (0.300\", 7.62mm)" H 2900 4900 60  0001 L CNN "Field6"
-F 7 "Atmel" H 2900 5000 60  0001 L CNN "Field7"
-F 8 "ATMEGA328-PU" H 2900 5100 60  0001 L CNN "Field8"
-F 9 "Digikey" H 2900 5200 60  0001 L CNN "Field9"
-F 10 "ATMEGA328-PU-ND" H 2900 5300 60  0001 L CNN "Field10"
-F 11 "http://www.digikey.com/product-detail/en/ATMEGA328-PU/ATMEGA328-PU-ND/2271026?cur=USD" H 2900 5400 60  0001 L CNN "Field11"
-	1    2900 3350
+P -3600 3300
+F 0 "U7" H -4250 2850 50  0000 L BNN
+F 1 "ATMEGA328P" H -4225 2750 50  0000 L BNN
+F 2 "DIP-28__300_ELL" H -3100 1825 50  0001 C CNN
+F 3 "" H -3600 3300 60  0001 C CNN
+F 4 "IC MCU AVR 32K FLASH 28PDIP" H -3600 4650 60  0001 L CNN "Field4"
+F 5 "AVR ATMega 8 bit 20Mhz" H -3600 4750 60  0001 L CNN "Field5"
+F 6 "28-DIP (0.300\", 7.62mm)" H -3600 4850 60  0001 L CNN "Field6"
+F 7 "Atmel" H -3600 4950 60  0001 L CNN "Field7"
+F 8 "ATMEGA328-PU" H -3600 5050 60  0001 L CNN "Field8"
+F 9 "Digikey" H -3600 5150 60  0001 L CNN "Field9"
+F 10 "ATMEGA328-PU-ND" H -3600 5250 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/ATMEGA328-PU/ATMEGA328-PU-ND/2271026?cur=USD" H -3600 5350 60  0001 L CNN "Field11"
+	1    -3600 3300
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -718,16 +717,11 @@ F7 "~PD5_Valve" I L 10050 3125 40
 F8 "~MOSI" I L 10050 2125 40 
 F9 "~SS" I L 10050 2225 40 
 F10 "PC3_Pr1" I L 10050 2525 40 
-F11 "PD7_IO_X" I L 10050 2825 40 
-F12 "~PB1_IO_T" O L 10050 2925 40 
-F13 "PB0_IO_R" I L 10050 3025 40 
-F14 "3V3" B L 10050 2025 40 
-F15 "SCL" I L 10050 3225 40 
-F16 "SDA" I L 10050 3325 40 
-F17 "PC1_Pulse" I L 10050 3425 40 
-F18 "PC2_Pr2" I L 10050 3625 40 
-F19 "PD4_Flow_Rx" I L 10050 2725 40 
-F20 "PD2_Flow_Tx" O L 10050 2625 40 
+F11 "3V3" B L 10050 2025 40 
+F12 "SCL" I L 10050 3225 40 
+F13 "SDA" I L 10050 3325 40 
+F14 "PC1_Pulse" I L 10050 3425 40 
+F15 "PC2_Pr2" I L 10050 3625 40 
 $EndSheet
 NoConn ~ 6300 7175
 Text Label 9600 3625 0    40   ~ 0
@@ -749,19 +743,19 @@ Pressure
 Text Notes 4550 4250 0    40   ~ 0
 Slave Sel #1 Pr Sensor
 Text Notes 4550 4150 0    40   ~ 0
-Pump
+PUMP (ex Pump ~PB1_IO_T)
 Text Notes 4550 4050 0    40   ~ 0
-Pump
+Blank (ex Pump PB0_IO_R)
 Text Notes 4550 3850 0    40   ~ 0
-Pump
+Blank (ex Pump PD7_IO_X)
 Text Notes 4550 3750 0    40   ~ 0
 Blank
 Text Notes 4550 3650 0    40   ~ 0
 Valve
 Text Notes 4550 3550 0    40   ~ 0
-Flow
+Blank (ex Flow_Rx)
 Text Notes 4550 3350 0    40   ~ 0
-Flow
+Blank (ex Flow_Tx)
 Text Label 9600 3025 0    40   ~ 0
 ~PB1_IO_T
 Text Label 9600 2925 0    40   ~ 0
@@ -1000,12 +994,12 @@ PB6
 $Comp
 L GND #PWR02
 U 1 1 4F5AFC62
-P 2900 5100
-F 0 "#PWR02" H 2900 5100 30  0001 C CNN
-F 1 "GND" H 2900 5030 30  0001 C CNN
-F 2 "" H 2900 5100 60  0001 C CNN
-F 3 "" H 2900 5100 60  0001 C CNN
-	1    2900 5100
+P 2950 5100
+F 0 "#PWR02" H 2950 5100 30  0001 C CNN
+F 1 "GND" H 2950 5030 30  0001 C CNN
+F 2 "" H 2950 5100 60  0001 C CNN
+F 3 "" H 2950 5100 60  0001 C CNN
+	1    2950 5100
 	1    0    0    -1  
 $EndComp
 Text Label 6425 1725 0    40   ~ 0
@@ -1043,9 +1037,9 @@ Text Label 4125 3750 0    40   ~ 0
 Text Label 4125 3450 0    40   ~ 0
 ~PD3
 Text Label 4125 4050 0    40   ~ 0
-PB0_IO_R
+PB0
 Text Label 4125 4150 0    40   ~ 0
-~PB1_IO_T
+~PB1
 Text Label 4125 2250 0    40   ~ 0
 PC0
 Text Label 4125 2350 0    40   ~ 0
@@ -1059,11 +1053,11 @@ RXD
 Text Label 4125 3250 0    40   ~ 0
 TXD
 Text Label 4125 3350 0    40   ~ 0
-PD2_Flow_Tx
+PD2
 Text Label 4125 3850 0    40   ~ 0
-PD7_IO_X
+PD7
 Text Label 4125 3550 0    40   ~ 0
-PD4_Flow_Rx
+PD4
 Text Label 4800 650  0    40   ~ 0
 5V0
 Text Label 4125 2650 0    40   ~ 0
@@ -1078,4 +1072,26 @@ Text Label 4125 4550 0    40   ~ 0
 SCK
 Text Label 4125 4450 0    40   ~ 0
 MISO
+$Comp
+L ATMEGA328-AU-ND U7
+U 1 1 520A592B
+P 2900 3250
+F 0 "U7" H 2300 2650 50  0000 L BNN
+F 1 "ATMEGA328-AU-ND" H 2300 2500 50  0000 L BNN
+F 2 "TQFP32" H 3425 1675 50  0001 C CNN
+F 3 "" H 2900 3250 60  0000 C CNN
+	1    2900 3250
+	1    0    0    -1  
+$EndComp
+Connection ~ 2950 4975
+Wire Wire Line
+	2850 4850 2850 4975
+Connection ~ 2850 4975
+Wire Wire Line
+	2950 1850 2950 1950
+Wire Wire Line
+	2850 1850 2950 1850
+Wire Wire Line
+	2850 1950 2850 1850
+Connection ~ 2900 1850
 $EndSCHEMATC
