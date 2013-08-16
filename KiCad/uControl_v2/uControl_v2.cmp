@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 16-Aug-13 2:36:12 PM
+Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Friday 16 August 2013 10:54:33 PM IST
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -501,14 +501,14 @@ BeginCmp
 TimeStamp = /50B2116F/520A7D50;
 Reference = P15;
 ValeurCmp = Flow_Conn;
-IdModule  = Header_4;
+IdModule  = Conn_Flow_SFM3000_Male;
 EndCmp
 
 BeginCmp
 TimeStamp = /50B2116F/50E2B14F;
 Reference = P16;
 ValeurCmp = FLOWMETER;
-IdModule  = FlowMeter;
+IdModule  = FlowMeter_CFM3000;
 EndCmp
 
 BeginCmp
@@ -529,7 +529,7 @@ BeginCmp
 TimeStamp = /50B2116F/50E2B32E;
 Reference = P23;
 ValeurCmp = PUMP;
-IdModule  = Pump;
+IdModule  = Pump_P54E01R;
 EndCmp
 
 BeginCmp
@@ -564,7 +564,7 @@ BeginCmp
 TimeStamp = /50B2116F/520A7E50;
 Reference = P31;
 ValeurCmp = FLOW_CABLE;
-IdModule  = Header_4;
+IdModule  = ;
 EndCmp
 
 BeginCmp
