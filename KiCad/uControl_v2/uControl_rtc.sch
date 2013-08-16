@@ -1,15 +1,15 @@
-EESchema Schematic File Version 2
+EESchema Schematic File Version 2  date 16-Aug-13 2:36:24 PM
 LIBS:Conn-raspberry
 LIBS:power
 LIBS:uControl
 LIBS:uControl_v2-cache
-EELAYER 24 0
+EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 5
 Title "uControl"
-Date "14 aug 2013"
+Date "16 aug 2013"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -41,7 +41,7 @@ L R_10K R11
 U 1 1 50E2B876
 P 7150 2000
 F 0 "R11" H 7050 2150 50  0000 C CNN
-F 1 "10K" V 7155 2000 50  0000 C CNN
+F 1 "10k" V 7155 2000 50  0000 C CNN
 F 2 "r_0805" V 7255 2000 50  0001 C CNN
 F 3 "" H 7150 2000 60  0001 C CNN
 F 4 "RES 10K OHM 1/8W 5% CF AXIAL" H 7150 2100 60  0001 L CNN "Field4"
@@ -226,10 +226,10 @@ Text HLabel 9050 4500 2    60   Input ~ 0
 Text HLabel 9050 4350 2    60   Input ~ 0
 BAT
 $Comp
-L +BATT #PWR028
+L +BATT #PWR025
 U 1 1 4EC101F0
 P 5300 1850
-F 0 "#PWR028" H 5300 1800 20  0001 C CNN
+F 0 "#PWR025" H 5300 1800 20  0001 C CNN
 F 1 "+BATT" H 5300 1950 30  0000 C CNN
 F 2 "" H 5300 1850 60  0001 C CNN
 F 3 "" H 5300 1850 60  0001 C CNN
