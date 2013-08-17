@@ -1,87 +1,87 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 17-Aug-13 4:17:06 PM
+Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Saturday 17 August 2013 09:37:05 PM IST
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
 Reference = B1;
-ValeurCmp = I/O;
-IdModule  = I/O;
+ValeurCmp = I_O;
+IdModule  = I_O;
 EndCmp
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBCE;
 Reference = B2;
-ValeurCmp = I/O;
-IdModule  = I/O;
+ValeurCmp = I_O;
+IdModule  = I_O;
 EndCmp
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBD4;
 Reference = B3;
-ValeurCmp = I/O;
-IdModule  = I/O;
+ValeurCmp = I_O;
+IdModule  = I_O;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FBF6CBF/520DE17F;
 Reference = B4;
 ValeurCmp = A_INT1;
-IdModule  = I/O;
+IdModule  = I_O;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FBF6CBF/520DE179;
 Reference = B5;
 ValeurCmp = A_INT2;
-IdModule  = I/O;
+IdModule  = I_O;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FBF6CBF/520DE1FA;
 Reference = B6;
 ValeurCmp = A_SDO;
-IdModule  = I/O;
+IdModule  = I_O;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FBF6CBF/520DEC11;
 Reference = B7;
 ValeurCmp = A_CS;
-IdModule  = I/O;
+IdModule  = I_O;
 EndCmp
 
 BeginCmp
 TimeStamp = /520E3AF6;
 Reference = B8;
 ValeurCmp = PC0;
-IdModule  = I/O;
+IdModule  = I_O;
 EndCmp
 
 BeginCmp
 TimeStamp = /520E3DD3;
 Reference = B9;
 ValeurCmp = PC1;
-IdModule  = I/O;
+IdModule  = I_O;
 EndCmp
 
 BeginCmp
 TimeStamp = /520E3DD9;
 Reference = B10;
 ValeurCmp = PC6;
-IdModule  = I/O;
+IdModule  = I_O;
 EndCmp
 
 BeginCmp
 TimeStamp = /520E3ECF;
 Reference = B11;
 ValeurCmp = PC7;
-IdModule  = I/O;
+IdModule  = I_O;
 EndCmp
 
 BeginCmp
 TimeStamp = /520E5284;
 Reference = B12;
 ValeurCmp = PB0;
-IdModule  = I/O;
+IdModule  = I_O;
 EndCmp
 
 BeginCmp

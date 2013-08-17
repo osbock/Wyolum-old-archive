@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  17-Aug-13 3:23:02 PM
+PCBNEW-LibModule-V1  Sunday 18 August 2013 01:16:26 AM IST
 # encoding utf-8
 Units mm
 $INDEX
@@ -41,7 +41,7 @@ Header_ICSP
 Header_ISP
 Header_Servo
 Header_U6OE
-I/O
+I_O
 JACK_ALIM
 Logo-WL3
 MM3Z3V0T1G
@@ -2202,13 +2202,19 @@ Po 29.7942 12.1412
 $EndPAD
 $EndMODULE FlowMeter
 $MODULE FlowMeter_CFM3000
-Po 0 0 0 15 520E5D4B 00000000 ~~
+Po 0 0 0 15 520FCE22 00000000 ~~
 Li FlowMeter_CFM3000
 Sc 0
-AR 
+AR /50B2116F/50E2B14F
 Op 0 0 0
-T0 0 -2.5 1.016 1.016 0 0.127 N V 21 N "FlowMeter_CFM3000"
-T1 0 2.5 1.016 1.016 0 0.127 N V 21 N "VAL**"
+T0 0 -2.5 1.016 1.016 0 0.127 N V 21 N "P16"
+T1 0 2.5 1.016 1.016 0 0.127 N V 21 N "FLOWMETER"
+DS 26.75 12 26.75 12.5 0.127 21
+DS 26.75 12.5 141 12.5 0.127 21
+DS 141 12.5 141 -12.5 0.127 21
+DS 26.75 -12 26.75 -12.5 0.127 21
+DS 26.75 -12.5 41 -12.5 0.127 21
+DS 41 -12.5 141 -12.5 0.127 21
 DS -26.75 12 -41 11 0.127 21
 DS -41 -11 -26.75 -12 0.127 21
 DS 41 11 26.75 12 0.127 21
@@ -2259,14 +2265,14 @@ $PAD
 Sh "1" C 5 5 0 0 0
 Dr 3.5 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 2 "N-00000142"
 Po -10.5 -13
 $EndPAD
 $PAD
 Sh "2" C 5 5 0 0 0
 Dr 3.5 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 1 "N-00000137"
 Po 10.5 13
 $EndPAD
 $EndMODULE FlowMeter_CFM3000
@@ -2477,7 +2483,7 @@ Ne 1 "/Tb_Power/5V0"
 Po 1.27 0
 $EndPAD
 $SHAPE3D
-Na "tboard_Libs/tboard_3D/pin_strip_2.wrl"
+Na "uControl_Libs/3D Modules/pin_strip_2.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -2619,7 +2625,7 @@ Ne 3 "GND"
 Po 2.54 0
 $EndPAD
 $SHAPE3D
-Na "tboard_Libs/tboard_3D/pin_strip_3.wrl"
+Na "uControl_Libs/3D Modules/pin_strip_3.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -2691,7 +2697,7 @@ Ne 3 "GND"
 Po 1.27 0
 $EndPAD
 $SHAPE3D
-Na "tboard_Libs/tboard_3D/pin_strip_3.wrl"
+Na "uControl_Libs/3D Modules/pin_strip_4.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -3209,7 +3215,7 @@ Ro 0 0 0
 $EndSHAPE3D
 $EndMODULE Header_F_6x2
 $MODULE Header_GPIO
-Po 0 0 0 15 50FD0AB3 00000000 ~~
+Po 0 0 0 15 520FD30D 00000000 ~~
 Li Header_GPIO
 Cd Double rangee de contacts 2 x 12 pins
 Kw CONN
@@ -3248,7 +3254,7 @@ $PAD
 Sh "4" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 12 "N-0000081"
 Po -12.7 -1.27
 $EndPAD
 $PAD
@@ -3269,7 +3275,7 @@ $PAD
 Sh "7" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 13 "N-0000082"
 Po -7.62 1.27
 $EndPAD
 $PAD
@@ -3283,7 +3289,7 @@ $PAD
 Sh "9" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 14 "N-0000083"
 Po -5.08 1.27
 $EndPAD
 $PAD
@@ -3297,7 +3303,7 @@ $PAD
 Sh "11" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 17 "N-0000087"
 Po -2.54 1.27
 $EndPAD
 $PAD
@@ -3311,42 +3317,42 @@ $PAD
 Sh "13" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 19 "N-0000089"
 Po 0 1.27
 $EndPAD
 $PAD
 Sh "14" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 20 "N-0000090"
 Po 0 -1.27
 $EndPAD
 $PAD
 Sh "15" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 16 "N-0000086"
 Po 2.54 1.27
 $EndPAD
 $PAD
 Sh "16" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 23 "N-0000093"
 Po 2.54 -1.27
 $EndPAD
 $PAD
 Sh "17" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 25 "N-0000095"
 Po 5.08 1.27
 $EndPAD
 $PAD
 Sh "18" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 26 "N-0000096"
 Po 5.08 -1.27
 $EndPAD
 $PAD
@@ -3360,7 +3366,7 @@ $PAD
 Sh "20" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 15 "N-0000084"
 Po 7.62 -1.27
 $EndPAD
 $PAD
@@ -3374,7 +3380,7 @@ $PAD
 Sh "22" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 18 "N-0000088"
 Po 10.16 -1.27
 $EndPAD
 $PAD
@@ -3388,22 +3394,36 @@ $PAD
 Sh "24" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 21 "N-0000091"
 Po 12.7 -1.27
 $EndPAD
 $PAD
 Sh "25" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 22 "N-0000092"
 Po 15.24 1.27
 $EndPAD
 $PAD
 Sh "26" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 24 "N-0000094"
 Po 15.24 -1.27
+$EndPAD
+$PAD
+Sh "" C 6.096 6.096 0 0 0
+Dr 3.048 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 7.874 34.29
+$EndPAD
+$PAD
+Sh "" C 6.096 6.096 0 0 0
+Dr 3.048 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 62.484 8.763
 $EndPAD
 $SHAPE3D
 Na "uControl_Libs/3D Modules/conF_13_long.wrl"
@@ -3659,16 +3679,20 @@ Ro 0 0 0
 $EndSHAPE3D
 $EndMODULE Header_ICSP
 $MODULE Header_ISP
-Po 0 0 0 15 51E3EF82 00000000 ~~
+Po 0 0 0 15 520FD11A 00000000 ~~
 Li Header_ISP
 Cd Connecteur 6 pins
 Kw CONN DEV
 Sc 0
-AR /5159ED45
+AR /50E3CDC2
 Op 0 0 0
 At SMD
-T0 -4.953 1.3335 0.762 0.762 900 0.127 N V 21 N "P2"
-T1 -4.8895 1.524 0.762 0.762 2700 0.127 N I 21 N "ISP"
+T0 -4.953 1.3335 0.762 0.762 900 0.127 N V 21 N "P4"
+T1 -4.8895 1.524 0.762 0.762 2700 0.127 N I 21 N "ICSP"
+DS -1.905 2.54 -1.27 2.54 0.1524 21
+DS -1.27 2.54 -1.27 1.905 0.1524 21
+DS -3.175 2.54 -3.81 2.54 0.1524 21
+DS -3.81 2.54 -3.81 1.905 0.1524 21
 DS 1.27 -1.905 1.27 -0.635 0.1524 21
 DS 1.27 -0.635 1.905 0 0.1524 21
 DS 1.905 0 3.175 0 0.1524 21
@@ -3682,9 +3706,7 @@ DS 3.175 -2.54 3.81 -1.905 0.1524 21
 DS 3.81 1.905 3.175 2.54 0.1524 21
 DS 1.27 1.905 0.635 2.54 0.1524 21
 DS 1.905 2.54 1.27 1.905 0.1524 21
-DS -1.27 1.905 -1.905 2.54 0.1524 21
 DS -0.635 2.54 -1.27 1.905 0.1524 21
-DS -3.175 2.54 -3.81 1.905 0.1524 21
 DS 3.81 -1.905 3.81 1.905 0.1524 21
 DS 3.175 2.54 1.905 2.54 0.1524 21
 DS 0.635 2.54 -0.635 2.54 0.1524 21
@@ -3710,39 +3732,39 @@ $PAD
 Sh "5" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 2 "/RST_3V3"
+Ne 4 "/RPi/RESET"
 Po -2.54 -1.27
 $EndPAD
 $PAD
 Sh "4" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 5 "/SPI_MOSI_3V3"
+Ne 3 "/Interface/~MOSI"
 Po 0 1.27
 $EndPAD
 $PAD
 Sh "3" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 3 "/SPI_CLK_3V3"
+Ne 2 "/Interface/SCK"
 Po 0 -1.27
 $EndPAD
 $PAD
 Sh "2" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 1 "/3V3"
+Ne 5 "5V0"
 Po 2.54 1.27
 $EndPAD
 $PAD
 Sh "1" C 1.524 1.524 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
-Ne 4 "/SPI_MISO_3V3"
+Ne 1 "/Interface/MISO"
 Po 2.54 -1.27
 $EndPAD
 $SHAPE3D
-Na "OHSBadge_lib/OHSBadge_3D/pin_strip_3x2-90.wrl"
+Na "uControl_Libs/3D Modules/pin_strip_3x2.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 180
@@ -3964,14 +3986,14 @@ Of 0 0 0
 Ro 0 0 0
 $EndSHAPE3D
 $EndMODULE Header_U6OE
-$MODULE I/O
+$MODULE I_O
 Po 0 0 0 15 4F420696 00000000 ~~
-Li I/O
+Li I_O
 Sc 0
 AR 
 Op 0 0 0
 At SMD
-T0 0 -0.508 0.254 0.254 0 0.0254 N I 21 N "I/O"
+T0 0 -0.508 0.254 0.254 0 0.0254 N I 21 N "I_O"
 T1 0 0.508 0.254 0.254 0 0.0254 N I 21 N "B*"
 $PAD
 Sh "1" C 1.016 1.016 0 0 0
@@ -3980,7 +4002,13 @@ At STD N 00E0FFFF
 Ne 0 ""
 Po 0 0
 $EndPAD
-$EndMODULE I/O
+$SHAPE3D
+Na "uControl_Libs/3D Modules/pin_strip_1.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$EndMODULE I_O
 $MODULE JACK_ALIM
 Po 0 0 0 15 50D6D286 00000000 ~~
 Li JACK_ALIM
@@ -71208,16 +71236,10 @@ DS 0 0 -0.508 0 0.127 21
 DS 0 0 0 0.508 0.127 21
 DS 0 0 0 -0.508 0.127 21
 $SHAPE3D
-Na "uControl_Libs/3D Modules/R_pi.wrl"
+Na "uControl_Libs/3D Modules/PCB_Main.wrl"
 Sc 2 2 1
 Of 0 0 0
 Ro -90 0 0
-$EndSHAPE3D
-$SHAPE3D
-Na "uControl_Libs/3D Modules/PCB_Main.wrl"
-Sc 1 1 1
-Of 0 0 0
-Ro 0 0 0
 $EndSHAPE3D
 $EndMODULE PCB
 $MODULE PCB_Flow
@@ -71412,40 +71434,41 @@ Po 26.924 -6.858
 $EndPAD
 $EndMODULE Pump
 $MODULE Pump_P54E01R
-Po 0 0 0 15 520E1EBE 00000000 ~~
+Po 0 0 0 15 520FCB22 00000000 ~~
 Li Pump_P54E01R
 Sc 0
-AR 
+AR /50B2116F/50E2B32E
 Op 0 0 0
-T0 7 -13 1.016 1.016 0 0.127 N V 21 N "Pump_P54E01R"
-T1 23 -13 1.016 1.016 0 0.127 N V 21 N "VAL**"
-DS 29.75 -1.25 29.75 -0.5 0.127 21
-DS 29.75 -0.5 30.25 0 0.127 21
-DS 30.25 0 29.75 0.5 0.127 21
-DS 29.75 0.5 29.75 1.25 0.127 21
-DS 29.75 1.25 29.75 2 0.127 21
-DS 29.75 2 30.25 2.5 0.127 21
-DS 30.25 2.5 31 2.5 0.127 21
-DS 31 2.5 31.75 2.5 0.127 21
-DS 31.75 2.5 32.25 2 0.127 21
-DS 32.25 2 32.25 1.25 0.127 21
-DS 32.25 1.25 32.25 0.5 0.127 21
-DS 32.25 0.5 31.75 0 0.127 21
-DS 31.75 0 32.25 -0.5 0.127 21
-DS 32.25 -0.5 32.25 -1.25 0.127 21
-DS 32.25 -1.25 32.25 -2 0.127 21
-DS 32.25 -2 31.75 -2.5 0.127 21
-DS 31.75 -2.5 31 -2.5 0.127 21
-DS 31 -2.5 30.25 -2.5 0.127 21
-DS 30.25 -2.5 29.75 -2 0.127 21
-DS 29.75 -2 29.75 -1.25 0.127 21
+T0 7 -13 1.016 1.016 0 0.127 N V 21 N "P23"
+T1 23 -13 1.016 1.016 0 0.127 N V 21 N "PUMP"
+DS 20 12 1.5 12 0.127 21
+DS 20 -12 1.5 -12 0.127 21
+DS 20 -12 20 12 0.127 21
+DS 23.25 -1.25 23.25 -0.5 0.127 21
+DS 23.25 -0.5 23.75 0 0.127 21
+DS 23.75 0 23.25 0.5 0.127 21
+DS 23.25 0.5 23.25 1.25 0.127 21
+DS 23.25 1.25 23.25 2 0.127 21
+DS 23.25 2 23.75 2.5 0.127 21
+DS 23.75 2.5 24.5 2.5 0.127 21
+DS 24.5 2.5 25.25 2.5 0.127 21
+DS 25.25 2.5 25.75 2 0.127 21
+DS 25.75 2 25.75 1.25 0.127 21
+DS 25.75 1.25 25.75 0.5 0.127 21
+DS 25.75 0.5 25.25 0 0.127 21
+DS 25.25 0 25.75 -0.5 0.127 21
+DS 25.75 -0.5 25.75 -1.25 0.127 21
+DS 25.75 -1.25 25.75 -2 0.127 21
+DS 25.75 -2 25.25 -2.5 0.127 21
+DS 25.25 -2.5 24.5 -2.5 0.127 21
+DS 24.5 -2.5 23.75 -2.5 0.127 21
+DS 23.75 -2.5 23.25 -2 0.127 21
+DS 23.25 -2 23.25 -1.25 0.127 21
 DS -31 13.5 0 13.5 0.127 21
 DS -31 13.5 -31.5 13 0.127 21
 DS -31.5 13 -31.5 -13 0.127 21
 DS -31 -13.5 0 -13.5 0.127 21
 DS -31 -13.5 -31.5 -13 0.127 21
-DS 26.5 12 1.5 12 0.127 21
-DS 1.5 -12 26.5 -12 0.127 21
 DS 1.5 12 0 10.5 0.127 21
 DS 1.5 -12 0 -10.5 0.127 21
 DS -36 -8 -31.5 -8 0.127 21
@@ -71460,53 +71483,58 @@ DS -38 1.5 -36 2 0.127 21
 DS -31.5 -2 -36 -2 0.127 21
 DS -36 -2 -36 2 0.127 21
 DS -36 2 -31.5 2 0.127 21
-DS 26.5 -3 28 -3 0.127 21
-DS 28 -3 28 3 0.127 21
-DS 28 3 26.5 3 0.127 21
-DS 26.5 -12 26.5 12 0.127 21
+DS 20 -3 21.5 -3 0.127 21
+DS 21.5 -3 21.5 3 0.127 21
+DS 21.5 3 20 3 0.127 21
 DS 0 -13.5 0 13.5 0.127 21
 $PAD
 Sh "1" C 2 2 0 0 0
 Dr 1 0 0
 At STD N 00E0FFFF
-Ne 0 ""
-Po 31 -1.25
+Ne 2 "5V0"
+Po 24.5 -1.25
 $EndPAD
 $PAD
 Sh "2" C 2 2 0 0 0
 Dr 1 0 0
 At STD N 00E0FFFF
-Ne 0 ""
-Po 31 1.25
+Ne 1 "/Interface/Pump"
+Po 24.5 1.25
 $EndPAD
 $PAD
 Sh "3" C 6 6 0 0 0
 Dr 3 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 4 "N-00000125"
 Po -7.5 -18
 $EndPAD
 $PAD
 Sh "4" C 6 6 0 0 0
 Dr 3 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 5 "N-00000126"
 Po -7.5 18
 $EndPAD
 $PAD
 Sh "5" C 6 6 0 0 0
 Dr 3 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 6 "N-00000127"
 Po -25.5 18
 $EndPAD
 $PAD
 Sh "6" C 6 6 0 0 0
 Dr 3 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 3 "N-00000123"
 Po -25.5 -18
 $EndPAD
+$SHAPE3D
+Na "uControl_Libs/3D Modules/Pump.wrl"
+Sc 4 4 4
+Of 0 0 0.6
+Ro 0 0 0
+$EndSHAPE3D
 $EndMODULE Pump_P54E01R
 $MODULE RC03
 Po 0 0 0 15 50E28383 00000000 ~~
@@ -71717,13 +71745,7 @@ Ne 0 ""
 Po 10.5 -5.2
 $EndPAD
 $SHAPE3D
-Na "repaper_lib/repaper_3D/sd_socket.wrl"
-Sc 0.5 0.5 0.5
-Of 0.3 0.08 0
-Ro 0 0 -90
-$EndSHAPE3D
-$SHAPE3D
-Na "repaper_lib/repaper_3D/sd_socket.wrl"
+Na "uControl_Libs/3D Modules/sd_socket.wrl"
 Sc 0.5 0.5 0.5
 Of 0.3 0.08 0
 Ro 0 0 -90
@@ -72424,8 +72446,8 @@ Po 0 -2.6924
 .LocalClearance 0.0762
 $EndPAD
 $SHAPE3D
-Na "uControl_Libs/3D Modules/tssop-20.wrl"
-Sc 1 1 1
+Na "uControl_Libs/3D Modules/cms_so14.wrl"
+Sc 0.5 0.35 0.5
 Of 0 0 0
 Ro 0 0 0
 $EndSHAPE3D
@@ -72608,7 +72630,7 @@ Po -0.9525 -1.3335
 .LocalClearance 0.127
 $EndPAD
 $SHAPE3D
-Na "tboard_Libs/tboard_3D/SOT23_5.wrl"
+Na "uControl_Libs/3D Modules/SOT23_5.wrl"
 Sc 0.1 0.1 0.1
 Of 0 0 0
 Ro 0 0 0
@@ -72737,7 +72759,7 @@ Ne 1 "/UP"
 Po -2.25 3.25
 $EndPAD
 $SHAPE3D
-Na "repaper_lib/repaper_3D/pcb_push.wrl"
+Na "uControl_Libs/3D Modules/pcb_push.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -72879,7 +72901,7 @@ Ne 1 "/3V3"
 Po 2.2606 -4.0894
 $EndPAD
 $SHAPE3D
-Na "tboard_Libs/tboard_3D/smd_push2.wrl"
+Na "uControl_Libs/3D Modules/smd_push2.wrl"
 Sc 1.25 1.25 1.25
 Of 0 0 0
 Ro 0 0 0
@@ -73038,7 +73060,7 @@ Ne 1 "GND"
 Po 0 0
 $EndPAD
 $SHAPE3D
-Na "tboard_Libs/tboard_3D/speaker.wrl"
+Na "uControl_Libs/3D Modules/speaker.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 90
@@ -73429,7 +73451,7 @@ Po 2.79908 4.15036
 .LocalClearance 0.127
 $EndPAD
 $SHAPE3D
-Na "i2gps_v1-libs//3D Modules//tqfp32.wrl"
+Na "uControl_Libs/3D Modules/tqfp32.wrl"
 Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
@@ -74323,7 +74345,7 @@ Ne 2 "N-0000058"
 Po 1.1 0.8
 $EndPAD
 $SHAPE3D
-Na "repaper_lib/repaper_3D/R0805.wrl"
+Na "uControl_Libs/3D Modules/r_0805.wrl"
 Sc 1 1.2 1
 Of 0 0 0.005
 Ro 0 0 0
@@ -74358,7 +74380,7 @@ Ne 0 ""
 Po 1.85 0
 $EndPAD
 $SHAPE3D
-Na "tboard_Libs/tboard_3D/crystal_low_profile.wrl"
+Na "uControl_Libs/3D Modules/crystal_low_profile.wrl"
 Sc 0.5 0.5 0.5
 Of 0 0 0
 Ro 0 0 0
@@ -74397,8 +74419,8 @@ Ne 0 ""
 Po -0.9 0
 $EndPAD
 $SHAPE3D
-Na "tboard_Libs/tboard_3D/C0603.wrl"
-Sc 1 1 1
+Na "uControl_Libs/3D Modules/C0603.wrl"
+Sc 0.7 0.7 0.7
 Of 0 0 0
 Ro 0 0 0
 $EndSHAPE3D
@@ -74437,8 +74459,8 @@ Ne 0 ""
 Po -0.9 0
 $EndPAD
 $SHAPE3D
-Na "uControl_Libs/3D Modules/c_tant_B.wrl"
-Sc 0.6 0.6 0.5
+Na "uControl_Libs/3D Modules/c_0805.wrl"
+Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
 $EndSHAPE3D
@@ -74480,7 +74502,7 @@ Po -1.016 0
 $EndPAD
 $SHAPE3D
 Na "uControl_Libs/3D Modules/chip_cms_pol.wrl"
-Sc 0.12 0.12 0.12
+Sc 0.12 0.12 0.2
 Of 0 0 0
 Ro 0 0 180
 $EndSHAPE3D
@@ -74557,7 +74579,7 @@ Po -1.016 0
 $EndPAD
 $SHAPE3D
 Na "uControl_Libs/3D Modules/sod323.wrl"
-Sc 1.2 1.5 0.8
+Sc 1.2 1.2 0.8
 Of 0 0 0
 Ro 0 0 0
 $EndSHAPE3D
@@ -74702,7 +74724,7 @@ Po -2.05 0
 $EndPAD
 $SHAPE3D
 Na "uControl_Libs/3D Modules/do214aa.wrl"
-Sc 1 1 1
+Sc 1 0.7 0.7
 Of 0 0 0
 Ro 0 0 0
 $EndSHAPE3D
@@ -74881,7 +74903,7 @@ Ne 1 "GND"
 Po -1.016 0
 $EndPAD
 $SHAPE3D
-Na "tboard_Libs/tboard_3D/cree_clm3c.wrl"
+Na "uControl_Libs/3D Modules/cree_clm3c.wrl"
 Sc 0.75 0.75 0.75
 Of 0 0 0
 Ro 0 0 0
@@ -75096,8 +75118,8 @@ Ne 0 ""
 Po -0.9 0
 $EndPAD
 $SHAPE3D
-Na "tboard_Libs/tboard_3D/C0603.wrl"
-Sc 1 1 1
+Na "uControl_Libs/3D Modules/r_0805.wrl"
+Sc 0.75 0.75 0.75
 Of 0 0 0
 Ro 0 0 0
 $EndSHAPE3D
@@ -75133,8 +75155,8 @@ Ne 0 ""
 Po -0.95 0
 $EndPAD
 $SHAPE3D
-Na "uControl_Libs/3D Modules/c_tant_B.wrl"
-Sc 0.6 0.6 0.5
+Na "uControl_Libs/3D Modules/r_0805.wrl"
+Sc 1 1 1
 Of 0 0 0
 Ro 0 0 0
 $EndSHAPE3D
