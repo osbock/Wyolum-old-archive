@@ -23,11 +23,12 @@ flange_h = 3*mm;
 // flange_or = 8.985*mm;
 flange_or = 10*mm;
 flange_ir = 4.16*mm;
+female_h = 20.34*mm;
 module female(flange_h=flange_h,
 	      flange_or=flange_or, 
 	      flange_ir=flange_ir){
   // female
-  translate([0, 0, 20.34*mm])
+  translate([0, 0, female_h])
   scale(1/scale){
     difference(){
       tube(7*mm, 1*mm, w); // manifold-connect
@@ -129,8 +130,9 @@ wall_thickness = 1*mm;
 difference(){
   union(){
     //translate([0, 0*mm, 0*mm])female();
-    // color("white") enclosure_mockup();
-    color("blue")translate([0, 0*mm, -12*mm-tol]) chuck();
+    //color("white") enclosure_mockup();
+    //rotate(90, [0, 0, 1])
+    //color("blue")translate([0, 0*mm, -12*mm-tol]) chuck();
   }
   //translate([-50*mm, 0, -50*mm])cube([100*mm, 100*mm, 100*mm]);
 }

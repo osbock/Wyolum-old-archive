@@ -1,6 +1,6 @@
 include <manifold_parts.scad>
 
-$fn = 150;
+// $fn = 150;
 
 scale = 1.;
 inch = 25.4 * scale;
