@@ -1,20 +1,20 @@
-PC0;1;"B8";;
-PC1;1;"B9";;
-PC6;1;"B10";;
-PC7;1;"B11";;
-PB0;1;"B12";;
 I/O;3;"B1 B2 B3";I/O;
 A_INT1;1;"B4";I/O;
 A_INT2;1;"B5";I/O;
 A_SDO;1;"B6";I/O;
 A_CS;1;"B7";I/O;
+PC0;1;"B8";I/O;
+PC1;1;"B9";I/O;
+PC6;1;"B10";I/O;
+PC7;1;"B11";I/O;
+PB0;1;"B12";I/O;
 BATT_COIN;1;"BT2";;;BATTERY LITHIUM COIN 3V 20MM;Lithium, 3V, 225mAh;CR2032;Panasonic - BSG;CR2032;Digikey;P189-ND
 BATT_HOLDER;1;"BT1";CR2032;;HOLDER BATTERY COIN 20MM DIA THM;Coin Cell, Retainer;Coin, 20.0mm;Keystone Electronics;3003;Digikey;3003K-ND
 22p;2;"C2 C3";c_0603;;CAP CER 22PF 50V 5% RADIAL;22pF, 50V;Radial;Vishay BC Components;K220J15C0GF5TH5;Digikey;BC1034CT-ND
-100n;24;"C1 C4 C5 C7 C8 C9 C10 C11 C12 C13 C14 C15 C16 C17 C20 C21 C23 C24 C25 C28 C30 C31 C32 C33";c_0805;;CAP FILM 0.1UF 63VDC RADIAL;100nF, 63V;R82;Kemet;R82DC3100AA50J;Digikey;399-5863-ND
+100n;24;"C1 C4 C5 C7 C8 C9 C10 C11 C12 C13 C14 C15 C16 C17 C20 C21 C23 C24 C25 C28 C30 C31 C32 C33";c_0603;;CAP FILM 0.1UF 63VDC RADIAL;100nF, 63V;R82;Kemet;R82DC3100AA50J;Digikey;399-5863-ND
 2u2 Tant;2;"C18 C22";c_0805_pol;;CAP TANT 2.2UF 16V 10% RADIAL;2u2,16V;Radial, 0.1";AVX Corporation;TAP225K016SCS;Digikey;478-1868-ND
 100u,16V;4;"C6 C19 C26 C27";C_ELCO_SMD;;CAP ALUM 100UF 16V 20% RADIAL;100u,16V;Radial, Can, 6.3mm dia;Panasonic Electronic Components;ECE-A1CKA101;Digikey;P833-ND
-1N4001;5;"D1 D2 D3 D4 D9";d_0805;;DIODE GEN PURPOSE 50V 1A DO41;50V, 1A;DO-204AL, DO-41, Axial;Fairchild Semiconductor;1N4001;Digikey;1N4001FSCT-ND
+1N4007;5;"D1 D2 D3 D4 D9";diode-DO214AC;;DIODE GEN PURPOSE 50V 1A DO41;50V, 1A;DO-204AL, DO-41, Axial;Fairchild Semiconductor;1N4001;Digikey;1N4001FSCT-ND
 5V0;1;"D5";led_0805;;LED SS 5MM 625NM RED DIFF;2V, 10mA;Round with Domed Top, 5mm, T-1 3/4;Kingbright Corp;WP7113ID;Digikey;754-1264-ND
 3V3;1;"D6";led_0805;;LED SS 5MM 625NM RED DIFF;2V, 10mA;Round with Domed Top, 5mm, T-1 3/4;Kingbright Corp;WP7113ID;Digikey;754-1264-ND
 BLINK;1;"D7";led_0805;;LED SS 5MM 625NM RED DIFF;2V, 10mA;Round with Domed Top, 5mm, T-1 3/4;Kingbright Corp;WP7113ID;Digikey;754-1264-ND
@@ -22,56 +22,49 @@ BLINK;1;"D7";led_0805;;LED SS 5MM 625NM RED DIFF;2V, 10mA;Round with Domed Top, 
 Logo_Wyolum;2;"G1 G2";Logo-WL3;
 Logo_OH;2;"G3 G4";OSHW_6mm;
 MANIFOLD;1;"M1";Manifold2;
-FLOWMETER;1;"P16";FlowMeter;
+FLOW_CABLE;1;"P31";;;http://www.sensirion.com/en/products/mass-flow-meters-for-gases/mass-flow-meter-em1/
+Flow_Conn;1;"P15";Conn_Flow_SFM3000_Male;;Mass Flow Meter for Gases;CMOSens EM1;G3/8 thread (BSPP;Sensirion;SFM3000;Sensirion;EM1NR4R0V_1A
+FLOWMETER;1;"P16";FlowMeter_CFM3000;
 GAGE_PR;1;"P7";HCEM500GUH9P3;;Miniature amplified pressure sensor;HCE Series;SMD single port, barbed port;SensorTechnics;HCEM500GUH9P3;SensorTechnics;HCEM500GUH9P3
 ABSO_PR;1;"P8";HDIB002AUY8H5;;Amplified pressure sensor;HDI Series;SMD, 1 port axial;SensorTechnics;HDIB002AUY8H5;SensorTechnics;HDIB002AUY8H5
 Valve1;1;"P12";Header_2;
-Valve_Conn_BO;1;"P13";Header_2;
 Pump_Conn;1;"P17";Header_2;
 Pump_Cable;1;"P18";Header_2;
 Valve2;1;"P35";Header_2;
-Valve2_Conn_BO;1;"P36";Header_2;
 AREF;1;"P1";Header_3;;CONN HEADER 50POS .100" SGL GOLD;Header, Unshrouded, Male pin,;0.1" pitch x 50 nos;Samtec Inc;TSW-150-07-L-S;Digikey;SAM1031-50-ND
 VSel_Vlv;1;"P11";Header_3;
 VSel_Vlv2;1;"P34";Header_3;
-Flow_Conn;1;"P15";Header_4;;Mass Flow Meter for Gases;CMOSens EM1;G3/8 thread (BSPP;Sensirion;SFM3000;Sensirion;EM1NR4R0V_1A
-FLOW_CABLE;1;"P31";Header_4;;http://www.sensirion.com/en/products/mass-flow-meters-for-gases/mass-flow-meter-em1/
 FTDI;1;"P5";Header_FTDI;
 BCM2835_GPIO;1;"P27";Header_GPIO;;CONN HEADER FMAL 26PS .1" DL TIN;Header, Female Socket;0.1", 2 row;Sullins Connector Solutions;PPTC132LFBN-RC;Digikey;S7081-ND
 ICSP;1;"P4";Header_ISP;;CONN HEADER 6POS .100 STR 15AU;Header, Unshrouded, Male Pin;6 pos, 2 row, 0.1";FCI;67996-206HLF;Digikey;609-3210-ND
 12V;1;"P24";JACK_ALIM;;CONN POWER JACK MALE 2.5MM CLSD;Jack, Male;2.5mm ID, 5.5mm OD;CUI Inc;PJ-002B;Digikey;CP-002B-ND
 C3SB;1;"P9";pin_strip_4-90;;CONN HEADER 16POS .100 R/A 30AU;Header, Unshrouded, Male pin,;0.1" right angle;FCI;68016-116HLF;Digikey;609-3317-ND
 C3SB;1;"P10";pin_strip_4-90;
-PUMP;1;"P23";Pump;;http://www.xavitech.com/products
+PUMP;1;"P23";Pump_P54E01R;;http://www.xavitech.com/products
 U6_OE;1;"P25";ShortLink2;
 5V_LINK;1;"P26";ShortLink2;
-X_VALVE;1;"P14";Valve;;Miniature Pneumatic Solenoid Valve;3 Port, Direct-acting poppet style;8mm Solenoid Valve;Parker Hannifin Corporation;X-1-05-S-F;Parker Hannifin Corporation;X-1-05-S-F
-X_VALVE2;1;"P38";Valve;;Miniature Pneumatic Solenoid Valve;3 Port, Direct-acting poppet style;8mm Solenoid Valve;Parker Hannifin Corporation;X-1-05-S-F;Parker Hannifin Corporation;X-1-05-S-F
+X_VALVE;1;"P14";X_Valve_2;;Miniature Pneumatic Solenoid Valve;3 Port, Direct-acting poppet style;8mm Solenoid Valve;Parker Hannifin Corporation;X-1-05-S-F;Parker Hannifin Corporation;X-1-05-S-F
+X_VALVE2;1;"P38";X_Valve_2;;Miniature Pneumatic Solenoid Valve;3 Port, Direct-acting poppet style;8mm Solenoid Valve;Parker Hannifin Corporation;X-1-05-S-F;Parker Hannifin Corporation;X-1-05-S-F
 PCB;1;"PCB1";PCB;
-PCB_Flow;1;"PCB3";PCB_Flow;
-PCB_MFold;1;"PCB6";PCB_Mfold;
-PCB_Pump;1;"PCB2";PCB_Pump;
-PCB_Vlv2;1;"PCB4";PCB_Vlv;
-PCB_Vlv;1;"PCB5";PCB_Vlv;
-TIP112G;4;"Q1 Q2 Q3 Q4";DPAK_3;;TRANS DARL NPN 2A 100V TO220AB;2A, 100V, 2W;TO-220-3;ON Semiconductor;TIP112G;Digikey;TIP112GOS-ND
-1k;1;"R6";r_0805;;RES 10K OHM 1/8W 5% CF AXIAL;0.125W, 1/8W;Axial;Stackpole Electronics Inc;CF18JT10K0;Digikey;CF18JT10K0CT-ND
-1k;2;"R10 R13";r_0805;;RES 1k OHM 1/8W 5% CF AXIAL;0.125W, 1/8W;Axial;Stackpole Electronics Inc;CF18JT1K00;Digikey;CF18JT1K00CT-ND
-8k;4;"R5 R14 R15 R16";r_0805;;RES 10K OHM 1/8W 5% CF AXIAL;0.125W, 1/8W;Axial;Stackpole Electronics Inc;CF18JT10K0;Digikey;CF18JT10K0CT-ND
-10k;9;"R1 R2 R3 R4 R7 R11 R12 R21 R22";r_0805;;RES 10K OHM 1/8W 5% CF AXIAL;0.125W, 1/8W;Axial;Stackpole Electronics Inc;CF18JT10K0;Digikey;CF18JT10K0CT-ND
-16k;4;"R17 R18 R19 R20";r_0805;;RES 10K OHM 1/8W 5% CF AXIAL;0.125W, 1/8W;Axial;Stackpole Electronics Inc;CF18JT10K0;Digikey;CF18JT10K0CT-ND
-330E;1;"R8";r_0805;;RES 330 OHM 1/8W 5% CF AXIAL;0.125W, 1/8W;Axial;Stackpole Electronics Inc;CF18JT330R;Digikey;CF18JT330RCT-ND
-120E;1;"R9";r_0805;;RES 120 OHM 1/8W 5% CF AXIAL;0.125W, 1/8W;Axial;Stackpole Electronics Inc;CF18JT120R;Digikey;CF18JT120RCT-ND
+BCP5416TA;4;"Q1 Q2 Q3 Q4";SOT223;;TRANS DARL NPN 2A 100V TO220AB;2A, 100V, 2W;TO-220-3;ON Semiconductor;TIP112G;Digikey;TIP112GOS-ND
+1k;1;"R6";r_0603;;RES 10K OHM 1/8W 5% CF AXIAL;0.125W, 1/8W;Axial;Stackpole Electronics Inc;CF18JT10K0;Digikey;CF18JT10K0CT-ND
+1k;2;"R10 R13";r_0603;;RES 1k OHM 1/8W 5% CF AXIAL;0.125W, 1/8W;Axial;Stackpole Electronics Inc;CF18JT1K00;Digikey;CF18JT1K00CT-ND
+8k;4;"R5 R14 R15 R16";r_0603;;RES 10K OHM 1/8W 5% CF AXIAL;0.125W, 1/8W;Axial;Stackpole Electronics Inc;CF18JT10K0;Digikey;CF18JT10K0CT-ND
+10k;9;"R1 R2 R3 R4 R7 R11 R12 R21 R22";r_0603;;RES 10K OHM 1/8W 5% CF AXIAL;0.125W, 1/8W;Axial;Stackpole Electronics Inc;CF18JT10K0;Digikey;CF18JT10K0CT-ND
+16k;4;"R17 R18 R19 R20";r_0603;;RES 10K OHM 1/8W 5% CF AXIAL;0.125W, 1/8W;Axial;Stackpole Electronics Inc;CF18JT10K0;Digikey;CF18JT10K0CT-ND
+330E;1;"R8";r_0603;;RES 330 OHM 1/8W 5% CF AXIAL;0.125W, 1/8W;Axial;Stackpole Electronics Inc;CF18JT330R;Digikey;CF18JT330RCT-ND
+120E;1;"R9";r_0603;;RES 120 OHM 1/8W 5% CF AXIAL;0.125W, 1/8W;Axial;Stackpole Electronics Inc;CF18JT120R;Digikey;CF18JT120RCT-ND
 SCREW;26;"SC1 SC2 SC3 SC4 SC5 SC6 SC7 SC8 SC9 SC10 SC11 SC12 SC13 SC14 SC15 SC16 SC17 SC18 SC19 SC20 SC25 SC26 SC27 SC28 SC29 SC30";vite_3mm;
 SD_CARD_MICRO;1;"SD1";SD_Micro_seeed;
 ARDUINO_SHIELD;1;"SHIELD1";ARDUINO_SHIELD_2_040pins;
 BUZZER;1;"SP1";Speaker;
-INT0;1;"SW2";;;SWITCH TACTILE SPST-NO 0.05A 12V;SPST, NO;Top actuated 6.00mm x 6.00mm;TE Connectivity;FSM2JH;Digikey;450-1649-ND
-INT1;1;"SW3";;;SWITCH TACTILE SPST-NO 0.05A 12V;SPST, NO;Top actuated 6.00mm x 6.00mm;TE Connectivity;FSM2JH;Digikey;450-1649-ND
 Reset;1;"SW1";SW_PB_V_H;;SWITCH TACTILE SPST-NO 0.05A 12V;SPST, NO;Top actuated 6.00mm x 6.00mm;TE Connectivity;FSM2JH;Digikey;450-1649-ND
+INT0;1;"SW2";SW_PB_V_H;;SWITCH TACTILE SPST-NO 0.05A 12V;SPST, NO;Top actuated 6.00mm x 6.00mm;TE Connectivity;FSM2JH;Digikey;450-1649-ND
+INT1;1;"SW3";SW_PB_V_H;;SWITCH TACTILE SPST-NO 0.05A 12V;SPST, NO;Top actuated 6.00mm x 6.00mm;TE Connectivity;FSM2JH;Digikey;450-1649-ND
 ADXL345;1;"U2";ADXL345;
-NCP1117DT50G;1;"U3";DPAK_3;;IC REG LDO 5V 1A DPAK-3;5V, 1A;TO-252-3, DPak (2 Leads + Tab), SC-63;ON Semiconductor;NCP1117DT50G;Digikey;NCP1117DT50GOS-ND
-NCP1117DT33G;1;"U4";DPAK_3;;IC REG LDO 3.3V 1A DPAK-3;3.3V, 1A;TO-252-3, DPak (2 Leads + Tab), SC-63;ON Semiconductor;NCP1117DT33RKG;Digikey;NCP1117DT33RKGOSCT-ND
 DS3231N;1;"U5";DS3231;;IC RTC W/TCXO 16-SOIC;Clock/Calendar;16-SOIC (0.295", 7.50mm Width);Maxim Integrated;DS3231S#;Digikey;DS3231S#-ND
+NCP1117ST50T3G;1;"U3";SOT223;;IC REG LDO 5V 1A DPAK-3;5V, 1A;TO-252-3, DPak (2 Leads + Tab), SC-63;ON Semiconductor;NCP1117DT50G;Digikey;NCP1117DT50GOS-ND
+NCP1117ST33T3G;1;"U4";SOT223;;IC REG LDO 3.3V 1A DPAK-3;3.3V, 1A;TO-252-3, DPak (2 Leads + Tab), SC-63;ON Semiconductor;NCP1117DT33RKG;Digikey;NCP1117DT33RKGOSCT-ND
 ATMEGA328-AU-ND;1;"U7";TQFP32;
 TXB0104D;2;"U1 U9";TXB0104D;;IC VOLT-LEVEL TRANSLATOR 14-SOIC;Translator, Bidirectional;14-SOIC (0.154", 3.90mm Width);Texas Instruments;TXB0104DR;Digikey;296-21928-1-ND
 TSX0108;1;"U6";TXS0108EPWR;;IC 8BIT NON-INV TRANSLTR 20TSSOP;Translator, Bidirectional, Open Drain;20-TSSOP (0.173", 4.40mm Width);Texas Instruments;TXS0108EPWR;Digikey;296-23011-1-ND
