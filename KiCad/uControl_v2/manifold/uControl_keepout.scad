@@ -70,7 +70,7 @@ module Gage(){
 }
 
 module Pump(){
-  translate([-pump_h/2, 1.5*inch, -2 * flow_r + pump_r])
+  translate([-pump_h/2, 1.25*inch, -2 * flow_r + pump_r])
     rotate(90, [0, 1, 0]){
     translate([0, 0, pump_h])cylinder(r=1.5*mm, h=10*mm);
     cylinder(r=pump_r, h=pump_h);
@@ -108,7 +108,7 @@ module Unit(){
     union(){
     female();
     translate([0, 0, -2*mm])
-      // rotate(90, [0, 0, -1])
+      rotate(90, [0, 0, -1])
       chuck();
     rotate(90, [0, 0, -1])
       enclosure_mockup();
@@ -139,8 +139,8 @@ module Holes(){
 }
 //rotate(180, [0, 0, 1])
 //rotate(90, [-1, 0, 0])
-//Unit();
-Holes();
+Unit();
+// Holes();
 
 
 
