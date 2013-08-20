@@ -17,10 +17,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 1225 750  2    40   Input ~ 0
-5V0
-Text GLabel 725  750  0    40   Input ~ 0
-3V3
 $Comp
 L ISP P4
 U 1 1 50E3CDC2
@@ -1359,4 +1355,8 @@ F 3 "" H 3250 1725 60  0001 C CNN
 $EndComp
 Wire Wire Line
 	3250 1575 3250 1725
+Text Label 1225 750  2    40   ~ 0
+5V0
+Text Label 725  750  2    40   ~ 0
+3V3
 $EndSCHEMATC

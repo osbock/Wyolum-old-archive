@@ -244,9 +244,9 @@ Text HLabel 9050 3875 2    60   Input ~ 0
 SCL
 Text HLabel 9050 3750 2    60   Input ~ 0
 5V0
-Text Label 8000 3750 0    40   ~ 0
+Text Label 8050 3750 0    40   ~ 0
 5V0
-Text Label 8000 4125 0    40   ~ 0
+Text Label 8050 4125 0    40   ~ 0
 GND
 $Comp
 L I_O B3
@@ -285,9 +285,9 @@ Text Label 4750 3750 0    40   ~ 0
 GND
 Text Label 3950 1900 0    40   ~ 0
 BAT
-Text Label 8000 3875 0    40   ~ 0
+Text Label 8050 3875 0    40   ~ 0
 SCL
-Text Label 8000 4000 0    40   ~ 0
+Text Label 8050 4000 0    40   ~ 0
 SDA
 Text Label 6500 2600 0    40   ~ 0
 RST

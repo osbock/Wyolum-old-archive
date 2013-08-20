@@ -1423,8 +1423,6 @@ Text Notes 700  3225 0    40   ~ 0
 Speaker, 5V DC\ndigital PWM port ~PD6
 Text Label 1075 4850 0    40   ~ 0
 GND
-Text Label 1850 3450 0    40   ~ 0
-12V
 $Comp
 L NPN_TIP112G Q4
 U 1 1 520BE371
@@ -1553,8 +1551,6 @@ Wire Notes Line
 	7350 7100 7350 3150
 Text Label 5000 2050 0    40   ~ 0
 5V0
-Text Label 1075 3450 0    40   ~ 0
-5V0
 Connection ~ 2050 3450
 Connection ~ 2325 3450
 Text Label 2350 5550 0    40   ~ 0
@@ -1613,4 +1609,6 @@ Text Label 3150 6600 0    40   ~ 0
 Pump
 NoConn ~ 3525 5350
 NoConn ~ 3525 5550
+Text Label 1075 3450 0    40   ~ 0
+5V0
 $EndSCHEMATC
