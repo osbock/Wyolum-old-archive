@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Tuesday 20 August 2013 08:11:20 PM IST
+Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Wednesday 21 August 2013 09:29:28 PM IST
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -267,29 +267,8 @@ IdModule  = c_0603;
 EndCmp
 
 BeginCmp
-TimeStamp = /520D7C95;
-Reference = C30;
-ValeurCmp = 100n;
-IdModule  = c_0603;
-EndCmp
-
-BeginCmp
 TimeStamp = /50B2116F/520BA0BA;
 Reference = C31;
-ValeurCmp = 100n;
-IdModule  = c_0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /520D7C87;
-Reference = C32;
-ValeurCmp = 100n;
-IdModule  = c_0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /520D7385;
-Reference = C33;
 ValeurCmp = 100n;
 IdModule  = c_0603;
 EndCmp
@@ -396,7 +375,7 @@ BeginCmp
 TimeStamp = /50E3CCEE;
 Reference = P1;
 ValeurCmp = AREF;
-IdModule  = Header_3;
+IdModule  = ShortLink2;
 EndCmp
 
 BeginCmp
@@ -645,13 +624,6 @@ IdModule  = r_0603;
 EndCmp
 
 BeginCmp
-TimeStamp = /520D7C79;
-Reference = R7;
-ValeurCmp = 10k;
-IdModule  = r_0603;
-EndCmp
-
-BeginCmp
 TimeStamp = /4FC07407/50E2BAF0;
 Reference = R8;
 ValeurCmp = 330E;
@@ -876,20 +848,6 @@ IdModule  = vite_3mm;
 EndCmp
 
 BeginCmp
-TimeStamp = /520D7064;
-Reference = SD1;
-ValeurCmp = SD_CARD_MICRO;
-IdModule  = SD_Micro_seeed;
-EndCmp
-
-BeginCmp
-TimeStamp = /4FC06625;
-Reference = SHIELD1;
-ValeurCmp = ARDUINO_SHIELD;
-IdModule  = ARDUINO_SHIELD_2_040pins;
-EndCmp
-
-BeginCmp
 TimeStamp = /50B2116F/520C03EF;
 Reference = SP1;
 ValeurCmp = BUZZER;
@@ -964,13 +922,6 @@ TimeStamp = /520A592B;
 Reference = U7;
 ValeurCmp = ATMEGA328-AU-ND;
 IdModule  = TQFP32;
-EndCmp
-
-BeginCmp
-TimeStamp = /520D7C6B;
-Reference = U9;
-ValeurCmp = TXB0104D;
-IdModule  = TXB0104D;
 EndCmp
 
 BeginCmp

@@ -18,11 +18,11 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Wire Wire Line
-	6375 3800 6600 3800
+	5250 3800 6600 3800
 Connection ~ 5500 3600
 Connection ~ 4925 3600
 Wire Wire Line
-	4725 3600 5600 3600
+	4725 3600 6600 3600
 Wire Wire Line
 	2550 6550 2550 6425
 Connection ~ 5525 1125
@@ -109,8 +109,6 @@ Wire Wire Line
 	5250 4800 5250 4975
 Wire Wire Line
 	5250 3800 5250 4400
-Wire Wire Line
-	5250 3800 5600 3800
 Connection ~ 2325 6550
 Wire Wire Line
 	5000 2150 5850 2150
@@ -245,8 +243,6 @@ Wire Wire Line
 	2175 5550 2650 5550
 Wire Wire Line
 	5500 3600 5500 4475
-Wire Wire Line
-	6600 3600 6375 3600
 Wire Notes Line
 	11150 1725 8875 1725
 $Comp
@@ -620,10 +616,6 @@ F 11 "http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/257129
 	1    1450 1400
 	1    0    0    -1  
 $EndComp
-Text Label 6375 3800 0    40   ~ 0
--Vlv
-Text Label 6375 3600 0    40   ~ 0
-+Vlv
 Text Label 5250 3600 0    40   ~ 0
 +Vlv
 Text Label 5075 2250 0    40   ~ 0
@@ -835,17 +827,6 @@ NoConn ~ 5850 2925
 NoConn ~ 5850 2825
 NoConn ~ 5850 2725
 NoConn ~ 5850 2625
-$Comp
-L CONN_2 P12
-U 1 1 50D19ECE
-P 5950 3700
-F 0 "P12" V 5900 3700 50  0000 C CNN
-F 1 "Valve1" V 6000 3700 40  0000 C CNN
-F 2 "Header_2" V 6100 3700 40  0001 C CNN
-F 3 "" H 5950 3700 60  0001 C CNN
-	1    5950 3700
-	1    0    0    -1  
-$EndComp
 NoConn ~ 6225 1325
 Text Label 5300 1225 0    40   ~ 0
 SDA
@@ -879,10 +860,10 @@ SDA
 Text Label 8950 1100 0    40   ~ 0
 SCL
 $Comp
-L GND #PWR08
+L GND #PWR04
 U 1 1 50CCABF0
 P 2575 1650
-F 0 "#PWR08" H 2575 1650 30  0001 C CNN
+F 0 "#PWR04" H 2575 1650 30  0001 C CNN
 F 1 "GND" H 2575 1580 30  0001 C CNN
 F 2 "" H 2575 1650 60  0001 C CNN
 F 3 "" H 2575 1650 60  0001 C CNN
@@ -890,10 +871,10 @@ F 3 "" H 2575 1650 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR09
+L GND #PWR05
 U 1 1 50CCABEC
 P 1450 1650
-F 0 "#PWR09" H 1450 1650 30  0001 C CNN
+F 0 "#PWR05" H 1450 1650 30  0001 C CNN
 F 1 "GND" H 1450 1580 30  0001 C CNN
 F 2 "" H 1450 1650 60  0001 C CNN
 F 3 "" H 1450 1650 60  0001 C CNN
@@ -901,10 +882,10 @@ F 3 "" H 1450 1650 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR010
+L GND #PWR06
 U 1 1 50CCAA70
 P 1900 2900
-F 0 "#PWR010" H 1900 2900 30  0001 C CNN
+F 0 "#PWR06" H 1900 2900 30  0001 C CNN
 F 1 "GND" H 1900 2830 30  0001 C CNN
 F 2 "" H 1900 2900 60  0001 C CNN
 F 3 "" H 1900 2900 60  0001 C CNN
@@ -979,10 +960,10 @@ Pressure Sensor #1, Gage, SPI Bus [HCEM500GUH9P3]
 Text Label 4275 3375 0    40   ~ 0
 12V
 $Comp
-L GND #PWR011
+L GND #PWR07
 U 1 1 50B4B058
 P 5250 4975
-F 0 "#PWR011" H 5250 4975 30  0001 C CNN
+F 0 "#PWR07" H 5250 4975 30  0001 C CNN
 F 1 "GND" H 5250 4905 30  0001 C CNN
 F 2 "" H 5250 4975 60  0001 C CNN
 F 3 "" H 5250 4975 60  0001 C CNN
@@ -990,10 +971,10 @@ F 3 "" H 5250 4975 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR012
+L GND #PWR08
 U 1 1 50B4B052
 P 2325 6625
-F 0 "#PWR012" H 2325 6625 30  0001 C CNN
+F 0 "#PWR08" H 2325 6625 30  0001 C CNN
 F 1 "GND" H 2325 6555 30  0001 C CNN
 F 2 "" H 2325 6625 60  0001 C CNN
 F 3 "" H 2325 6625 60  0001 C CNN
@@ -1148,11 +1129,11 @@ $EndComp
 Wire Wire Line
 	6000 800  6125 800 
 Wire Wire Line
-	6400 5850 6625 5850
+	5250 5850 6625 5850
 Connection ~ 5500 5650
 Connection ~ 4925 5650
 Wire Wire Line
-	4725 5650 5600 5650
+	4725 5650 6625 5650
 Wire Wire Line
 	4275 5425 4775 5425
 Wire Wire Line
@@ -1166,8 +1147,6 @@ Wire Wire Line
 	5250 6850 5250 7025
 Wire Wire Line
 	5250 5850 5250 6450
-Wire Wire Line
-	5250 5850 5600 5850
 Wire Wire Line
 	4950 6650 4625 6650
 Wire Wire Line
@@ -1191,8 +1170,6 @@ Wire Notes Line
 	4225 5200 4225 7100
 Wire Wire Line
 	5500 5650 5500 6525
-Wire Wire Line
-	6625 5650 6400 5650
 $Comp
 L NPN_TIP112G Q3
 U 1 1 520BA090
@@ -1269,10 +1246,6 @@ F 11 "http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/257129
 	1    5500 6650
 	1    0    0    -1  
 $EndComp
-Text Label 6400 5850 0    40   ~ 0
--Vlv2
-Text Label 6400 5650 0    40   ~ 0
-+Vlv2
 Text Label 5250 5650 0    40   ~ 0
 +Vlv2
 $Comp
@@ -1321,17 +1294,6 @@ F 3 "" H 7100 6900 60  0001 C CNN
 $EndComp
 Text Notes 6650 6800 0    40   ~ 0
 Mounting Holes
-$Comp
-L CONN_2 P35
-U 1 1 520BA0E8
-P 5950 5750
-F 0 "P35" V 5900 5750 50  0000 C CNN
-F 1 "Valve2" V 6000 5750 40  0000 C CNN
-F 2 "Header_2" V 6100 5750 40  0001 C CNN
-F 3 "" H 5950 5750 60  0001 C CNN
-	1    5950 5750
-	1    0    0    -1  
-$EndComp
 Text HLabel 4425 5925 0    40   BiDi ~ 0
 5V0
 Text Label 5250 5850 0    40   ~ 0
@@ -1358,10 +1320,10 @@ Valve #2 on digital port PD4\neither 12V (V_IN) or 5V0
 Text Label 4275 5425 0    40   ~ 0
 12V
 $Comp
-L GND #PWR013
+L GND #PWR09
 U 1 1 520BA0FB
 P 5250 7025
-F 0 "#PWR013" H 5250 7025 30  0001 C CNN
+F 0 "#PWR09" H 5250 7025 30  0001 C CNN
 F 1 "GND" H 5250 6955 30  0001 C CNN
 F 2 "" H 5250 7025 60  0001 C CNN
 F 3 "" H 5250 7025 60  0001 C CNN
@@ -1409,10 +1371,10 @@ F 11 "http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/257129
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR014
+L GND #PWR010
 U 1 1 520BE35E
 P 1825 4925
-F 0 "#PWR014" H 1825 4925 30  0001 C CNN
+F 0 "#PWR010" H 1825 4925 30  0001 C CNN
 F 1 "GND" H 1825 4855 30  0001 C CNN
 F 2 "" H 1825 4925 60  0001 C CNN
 F 3 "" H 1825 4925 60  0001 C CNN
@@ -1591,12 +1553,8 @@ Text Label 1850 4150 0    40   ~ 0
 Spk
 Text Notes 2725 5675 0    30   ~ 0
 Connector at uC_v2
-Text Notes 5750 3950 0    30   ~ 0
-Connector at uC_v2
 Text Notes 6600 3925 0    30   ~ 0
 Valve Footprint
-Text Notes 5775 5975 0    30   ~ 0
-Connector at uC_v2
 Text Notes 6725 5975 0    30   ~ 0
 Valve Footprint
 Wire Wire Line
