@@ -1,5 +1,6 @@
 include <manifold_parts.scad>
 include <fast_connect4.scad>
+include <dimlines.scad>
 $fn=150;
 mm = 1.;
 inch = 24.5;
@@ -88,14 +89,15 @@ module Interior(){
   color([0, 1, 0, .3])
   translate([-interior_w/2, 0, 0])
   rotate(90, [0, 0, 1])
-  rotate(90, [1, 0, 0])
-  linear_extrude(height=interior_w)
-    polygon(points=[
-		    [-pcb_l/2, -2*flow_r - pcb_t - 10*mm],
-		    [pcb_l/2, -2*flow_r - pcb_t - 10*mm],
-		    [pcb_l/2, 60*mm],
-		    [-pcb_l/2,0*mm]
-		    ], paths=[[0, 1, 2, 3]]);
+    rotate(90, [1, 0, 0]){
+    linear_extrude(height=interior_w)
+      polygon(points=[
+		      [-pcb_l/2, -2*flow_r - pcb_t - 10*mm],
+		      [pcb_l/2, -2*flow_r - pcb_t - 10*mm],
+		      [pcb_l/2, 60*mm],
+		      [-pcb_l/2,0*mm]
+		      ], paths=[[0, 1, 2, 3]]);
+  }
 }
 
 module Unit(){
@@ -139,8 +141,20 @@ module Holes(){
 }
 //rotate(180, [0, 0, 1])
 //rotate(90, [-1, 0, 0])
-Unit();
-// Holes();
+// Unit();
+Holes();
+
+module dims(){
+  translate([-interior_w/2, -100, 0])
+    dimensions(length=interior_w, line_width=2, loc=0);
+  translate([-120, pcb_l/2, 0])rotate(-90, [0, 0, 1])
+    dimensions(length=pcb_l, line_width=2, loc=0);
+  translate([-120, pcb_l/2 + 10, -2 * flow_r - pcb_t - 10*mm])rotate(-90, [0,  1, 0])
+    dimensions(length=60*mm + 2 * flow_r + pcb_t + 10*mm, line_width=2, loc=0);
+  translate([-120, -pcb_l/2 - 10, -2 * flow_r - pcb_t - 10*mm])rotate(-90, [0,  1, 0])
+    dimensions(length=35*mm, line_width=2, loc=1);
+}
+dims();
 
 
 

@@ -1,5 +1,7 @@
 include <manifold_parts.scad>
 include <fast_connect4.scad>
+include <dimlines.scad>
+
 $fn=150;
 mm = 1.;
 inch = 24.5;
@@ -123,7 +125,17 @@ module blank(){
 }
 
 //translate([sfm3000_l + inlet_overlap, 0, 0])inlet_tube();
-//boolx_valve();
 //sfm3000();
-inlet_tube();
+//translate([0, -25, 0])color("black"){
+//  dimensions(length=sfm3000_l, line_width=1, loc=1);
+//}
+
+//translate([0, 2*inch, 0])
+//boolx_valve();
+
+//inlet_tube();
+
+//translate([2*inch, 2*inch, 0])
 //hce_gage();
+
+

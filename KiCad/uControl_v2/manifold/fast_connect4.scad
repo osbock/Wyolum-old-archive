@@ -127,6 +127,8 @@ module enclosure_mockup(wall_thickness=1*mm){
 }
 
 wall_thickness = 1*mm;
+rotate(90, [0, 1, 0])
+rotate(90, [0, 1, 0])
 difference(){
   union(){
     //translate([0, 0*mm, 0*mm])female();
