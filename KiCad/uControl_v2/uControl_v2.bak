@@ -322,7 +322,7 @@ PUMP PWM (ex Pump ~PB1_IO_T)
 Text Notes 4550 4050 0    40   ~ 0
 Blank (ex Pump PB0_IO_R)
 Text Notes 4550 3850 0    40   ~ 0
-CS SDCard (ex Pump PD7_IO_X)
+Blank (ex Pump PD7_IO_X)
 Text Notes 4550 3750 0    40   ~ 0
 Speaker PWM (ex Blank)
 Text Notes 4550 3650 0    40   ~ 0
@@ -520,7 +520,7 @@ TXD
 Text Label 4125 3350 0    40   ~ 0
 PD2
 Text Label 4125 3850 0    40   ~ 0
-PD7_SD
+PD7
 Text Label 4125 3550 0    40   ~ 0
 PD4_Valve2
 Text Label 4800 650  0    40   ~ 0
@@ -1042,4 +1042,15 @@ Text Label 1225 750  2    40   ~ 0
 5V0
 Text Label 725  750  2    40   ~ 0
 3V3
+$Comp
+L I_O B4
+U 1 1 52150F0F
+P 4275 3850
+F 0 "B4" H 4355 3850 40  0000 L CNN
+F 1 "PB0" H 4275 3905 30  0001 C CNN
+F 2 "I_O" H 4275 3850 60  0001 C CNN
+F 3 "" H 4275 3850 60  0000 C CNN
+	1    4275 3850
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
