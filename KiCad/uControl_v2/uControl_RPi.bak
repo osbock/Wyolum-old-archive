@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 24-Aug-13 6:54:37 PM
+EESchema Schematic File Version 2  date 24-Aug-13 6:55:00 PM
 LIBS:Conn-raspberry
 LIBS:power
 LIBS:uControl
@@ -730,10 +730,10 @@ GPIO4
 Wire Wire Line
 	3050 6400 3425 6400
 $Comp
-L PIPOWER J?
+L PIPOWER P12
 U 1 1 5218C5A8
 P 4075 6700
-F 0 "J?" H 4075 7400 60  0000 C CNN
+F 0 "P12" H 4075 7400 60  0000 C CNN
 F 1 "PIPOWER" V 4075 6700 50  0000 C CNN
 F 2 "" H 4075 6700 60  0000 C CNN
 F 3 "" H 4075 6700 60  0000 C CNN
