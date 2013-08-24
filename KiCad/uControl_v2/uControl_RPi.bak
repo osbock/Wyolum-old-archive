@@ -1,15 +1,15 @@
-EESchema Schematic File Version 2
+EESchema Schematic File Version 2  date 24-Aug-13 6:54:37 PM
 LIBS:Conn-raspberry
 LIBS:power
 LIBS:uControl
 LIBS:uControl_v2-cache
-EELAYER 24 0
+EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 5
 Title "uControl"
-Date "17 aug 2013"
+Date "24 aug 2013"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -391,7 +391,6 @@ NoConn ~ 4725 5200
 NoConn ~ 3425 4800
 NoConn ~ 3425 4700
 NoConn ~ 3425 4600
-NoConn ~ 3425 4400
 Text Label 4875 4300 0    40   ~ 0
 GND
 Text Label 4875 4500 0    40   ~ 0
@@ -682,4 +681,83 @@ Text Label 8950 2600 2    40   ~ 0
 GND
 Text Label 10825 2325 2    40   ~ 0
 GND
+Wire Wire Line
+	3050 6300 3425 6300
+Wire Wire Line
+	4875 6300 4725 6300
+Wire Wire Line
+	3050 6200 3425 6200
+Wire Wire Line
+	3050 6100 3425 6100
+Wire Wire Line
+	4725 6100 4875 6100
+Text Label 3050 6100 0    40   ~ 0
+Rpi_3V3
+NoConn ~ 4725 6800
+NoConn ~ 4725 6900
+NoConn ~ 4725 7100
+NoConn ~ 4725 7300
+NoConn ~ 4725 7200
+NoConn ~ 3425 6800
+NoConn ~ 3425 6700
+NoConn ~ 3425 6600
+Text Label 4875 6300 0    40   ~ 0
+GND
+Text Label 3050 6300 0    40   ~ 0
+Rpi_SCL
+Text Label 3050 6200 0    40   ~ 0
+Rpi_SDA
+NoConn ~ 4725 6200
+NoConn ~ 4725 6700
+NoConn ~ 4725 7000
+NoConn ~ 3425 7300
+NoConn ~ 3425 6900
+NoConn ~ 3425 6500
+NoConn ~ 4725 6400
+NoConn ~ 4725 6500
+NoConn ~ 4725 6600
+NoConn ~ 3425 7000
+NoConn ~ 3425 7100
+NoConn ~ 3425 7200
+Text Label 4875 6100 0    40   ~ 0
+Rpi_5V0
+Wire Wire Line
+	3425 4400 3050 4400
+Text Label 3050 4400 0    40   ~ 0
+GPIO4
+Text Label 3050 6400 0    40   ~ 0
+GPIO4
+Wire Wire Line
+	3050 6400 3425 6400
+$Comp
+L PIPOWER J?
+U 1 1 5218C5A8
+P 4075 6700
+F 0 "J?" H 4075 7400 60  0000 C CNN
+F 1 "PIPOWER" V 4075 6700 50  0000 C CNN
+F 2 "" H 4075 6700 60  0000 C CNN
+F 3 "" H 4075 6700 60  0000 C CNN
+	1    4075 6700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4875 7500 4725 7500
+Text Label 4875 7500 0    40   ~ 0
+GND
+Wire Wire Line
+	3425 7400 3300 7400
+Wire Wire Line
+	3300 7400 3300 7500
+Wire Wire Line
+	900  7500 3425 7500
+Connection ~ 3300 7500
+Text Label 3050 7500 0    40   ~ 0
+PWR_IN
+Wire Wire Line
+	4725 7400 4800 7400
+Wire Wire Line
+	4800 7400 4800 7500
+Connection ~ 4800 7500
+Text HLabel 900  7500 0    40   BiDi ~ 0
+PWR_IN
 $EndSCHEMATC

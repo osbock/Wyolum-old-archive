@@ -1,15 +1,15 @@
-EESchema Schematic File Version 2
+EESchema Schematic File Version 2  date 24-Aug-13 6:54:37 PM
 LIBS:Conn-raspberry
 LIBS:power
 LIBS:uControl
 LIBS:uControl_v2-cache
-EELAYER 24 0
+EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 5
 Title "uControl"
-Date "17 aug 2013"
+Date "24 aug 2013"
 Rev "1"
 Comp "WyoLum"
 Comment1 ""
@@ -428,6 +428,7 @@ F3 "GND" B L 10050 1125 40
 F4 "3V3" B L 10050 1025 40 
 F5 "5V0" B L 10050 925 40 
 F6 "12V" B L 10050 825 40 
+F7 "PWR_IN" B L 10050 725 40 
 $EndSheet
 $Sheet
 S 10050 6050 1050 900 
@@ -446,7 +447,7 @@ $EndSheet
 Text Label 1025 2550 0    40   ~ 0
 AREF
 $Sheet
-S 10050 4500 1050 1200
+S 10050 4500 1050 1300
 U 4FBF6CBF
 F0 "RPi" 60
 F1 "uControl_RPi.sch" 60
@@ -461,6 +462,7 @@ F9 "SCK" I L 10050 5400 40
 F10 "RESET" O L 10050 5100 40 
 F11 "~MOSI" I L 10050 5600 40 
 F12 "3V3" I L 10050 4700 40 
+F13 "PWR_IN" B L 10050 5700 40 
 $EndSheet
 Text Label 1925 3300 0    40   ~ 0
 PB7
@@ -1053,4 +1055,12 @@ F 3 "" H 4275 3850 60  0000 C CNN
 	1    4275 3850
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	10050 725  9775 725 
+Text Label 9775 725  0    40   ~ 0
+PWR_IN
+Wire Wire Line
+	10050 5700 9775 5700
+Text Label 9775 5700 0    40   ~ 0
+PWR_IN
 $EndSCHEMATC
