@@ -5,7 +5,7 @@
     (no_connects 287)
     (area 22.198 16.11884 251.552 185.052)
     (thickness 1.6002)
-    (drawings 24)
+    (drawings 29)
     (tracks 0)
     (zones 0)
     (modules 125)
@@ -61,7 +61,7 @@
     (pad_drill 1.016)
     (pad_to_mask_clearance 0.254)
     (aux_axis_origin 0 0)
-    (visible_elements 7FFE737F)
+    (visible_elements 7FFEF37F)
     (pcbplotparams
       (layerselection 281018368)
       (usegerberextensions false)
@@ -260,7 +260,7 @@
   )
 
   (module pin_strip_4-90 (layer Front) (tedit 4EE4A2D9) (tstamp 50D84E70)
-    (at 81.994 169.069)
+    (at 74 167)
     (descr "Pin strip 4pin 90")
     (tags "CONN DEV")
     (path /50B2116F/50CEC0D0)
@@ -313,7 +313,7 @@
   )
 
   (module pin_strip_4-90 (layer Front) (tedit 4EE4A2D9) (tstamp 50D84E6E)
-    (at 94.694 169.069)
+    (at 87 167)
     (descr "Pin strip 4pin 90")
     (tags "CONN DEV")
     (path /50B2116F/50E31D7A)
@@ -806,7 +806,7 @@
   )
 
   (module JACK_ALIM (layer Front) (tedit 50D6D286) (tstamp 4FDB72A9)
-    (at 209.95 165.75 180)
+    (at 210 160 180)
     (descr "module 1 pin (ou trou mecanique de percage)")
     (tags "CONN JACK")
     (path /4FC07407/50E2B59E)
@@ -941,7 +941,7 @@
   )
 
   (module TXS0108EPWR (layer Front) (tedit 50D839AD) (tstamp 4FC9E067)
-    (at 99.5875 145.2625 90)
+    (at 91.5875 145.2625 90)
     (descr TSSOP-20)
     (path /4FBF6CBF/50E2BD02)
     (attr smd)
@@ -1139,7 +1139,7 @@
   )
 
   (module TXB0104D (layer Front) (tedit 50D84540) (tstamp 50D84E6C)
-    (at 115 113.5 180)
+    (at 119 103 180)
     (descr SOIC14)
     (path /50B2116F/50E2BDB8)
     (attr smd)
@@ -1239,7 +1239,7 @@
   )
 
   (module Header_FTDI (layer Front) (tedit 5035E3B8) (tstamp 4FDC441F)
-    (at 213.6 124.7 270)
+    (at 212 116 270)
     (descr "Connecteur 6 pins")
     (tags "CONN DEV")
     (path /4FE58ED4)
@@ -1411,7 +1411,7 @@
   )
 
   (module CR2032 (layer Front) (tedit 520F216A) (tstamp 50DC78D2)
-    (at 212.2 146.15 270)
+    (at 210 139.3 270)
     (descr CR2032)
     (path /4E1FEA4E/50E29166)
     (attr smd)
@@ -1828,7 +1828,7 @@
   )
 
   (module C_ELCO_SMD (layer Front) (tedit 4FDC3BD3) (tstamp 5102131C)
-    (at 195.5 80 180)
+    (at 203.6 79.7 180)
     (path /50B2116F/51020D1A)
     (attr smd)
     (fp_text reference C27 (at -3.175 2.921 180) (layer F.SilkS)
@@ -2017,7 +2017,7 @@
   )
 
   (module r_0603 (layer Front) (tedit 520F47FA) (tstamp 4EBEB8AE)
-    (at 96.5875 151.2625 270)
+    (at 88.5875 151.2625 270)
     (descr "SMT capacitor, 0603")
     (path /50E2B7FE)
     (fp_text reference R2 (at 0 -1.55 270) (layer F.SilkS)
@@ -2050,7 +2050,7 @@
   )
 
   (module r_0603 (layer Front) (tedit 520F47FA) (tstamp 4EBEB8B1)
-    (at 94.5875 151.2625 270)
+    (at 86.5875 151.2625 270)
     (descr "SMT capacitor, 0603")
     (path /50E2B80B)
     (fp_text reference R3 (at 0 -1.55 270) (layer F.SilkS)
@@ -2083,7 +2083,7 @@
   )
 
   (module r_0603 (layer Front) (tedit 520F47FA) (tstamp 50D84E78)
-    (at 108.5 113.5 90)
+    (at 112.5 103 90)
     (descr "SMT capacitor, 0603")
     (path /50B2116F/50E2B821)
     (fp_text reference R4 (at 0 -1.55 90) (layer F.SilkS)
@@ -2248,7 +2248,7 @@
   )
 
   (module r_0603 (layer Front) (tedit 520F47FA) (tstamp 4FD994F8)
-    (at 109.5125 172.6625)
+    (at 101.5125 172.6625)
     (descr "SMT capacitor, 0603")
     (path /4FBF6CBF/50E2B89D)
     (fp_text reference R12 (at 0 -1.55) (layer F.SilkS)
@@ -2615,7 +2615,7 @@
   )
 
   (module diode-DO214AC (layer Front) (tedit 520F2BBE) (tstamp 50D84E8C)
-    (at 190.5 80 90)
+    (at 198.6 79.7 90)
     (descr DIODE)
     (tags DIODE)
     (path /50B2116F/520AA2A6)
@@ -2713,7 +2713,7 @@
   )
 
   (module Header_2 (layer Front) (tedit 51E0EF15) (tstamp 50D84E7C)
-    (at 187.04 80 270)
+    (at 195.14 79.7 270)
     (descr "Connecteur 2 pins")
     (tags "CONN DEV")
     (path /50B2116F/520B8E5C)
@@ -3050,7 +3050,7 @@
   )
 
   (module c_0603 (layer Front) (tedit 520F47D6) (tstamp 4DCB9F27)
-    (at 209.6 131.05)
+    (at 208 122.35)
     (descr "SMT capacitor, 0603")
     (path /50E2949E)
     (fp_text reference C4 (at 0 -1.55) (layer F.SilkS)
@@ -3118,7 +3118,7 @@
   )
 
   (module c_0603 (layer Front) (tedit 520F47D6) (tstamp 50D84E9F)
-    (at 122 114.5 180)
+    (at 125.55 104.25 180)
     (descr "SMT capacitor, 0603")
     (path /50B2116F/50E295F0)
     (fp_text reference C7 (at 0 -1.55 180) (layer F.SilkS)
@@ -3152,7 +3152,7 @@
   )
 
   (module c_0603 (layer Front) (tedit 520F47D6) (tstamp 50D84E9D)
-    (at 122 112.5 180)
+    (at 125.55 101.75 180)
     (descr "SMT capacitor, 0603")
     (path /50B2116F/50E29607)
     (fp_text reference C8 (at 0 -1.55 180) (layer F.SilkS)
@@ -3186,7 +3186,7 @@
   )
 
   (module c_0603 (layer Front) (tedit 520F47D6) (tstamp 50D84EA5)
-    (at 94.694 166.021 180)
+    (at 87 164 180)
     (descr "SMT capacitor, 0603")
     (path /50B2116F/50E29615)
     (fp_text reference C9 (at 0 -1.55 180) (layer F.SilkS)
@@ -3220,7 +3220,7 @@
   )
 
   (module c_0603 (layer Front) (tedit 520F47D6) (tstamp 50D84E8F)
-    (at 126.5 102.5 270)
+    (at 130.25 92.9 270)
     (descr "SMT capacitor, 0603")
     (path /50B2116F/50E29621)
     (fp_text reference C10 (at 0 -1.55 270) (layer F.SilkS)
@@ -3254,7 +3254,7 @@
   )
 
   (module c_0603 (layer Front) (tedit 520F47D6) (tstamp 50D84EA7)
-    (at 81.994 166.021 180)
+    (at 74 164 180)
     (descr "SMT capacitor, 0603")
     (path /50B2116F/50E2962F)
     (fp_text reference C11 (at 0 -1.55 180) (layer F.SilkS)
@@ -3322,13 +3322,13 @@
   )
 
   (module c_0603 (layer Front) (tedit 520F47D6) (tstamp 50D84E97)
-    (at 200.25 80 90)
+    (at 199.5 74.2 180)
     (descr "SMT capacitor, 0603")
     (path /50B2116F/50E29685)
-    (fp_text reference C17 (at 0 -1.55 90) (layer F.SilkS)
+    (fp_text reference C17 (at 0 -1.55 180) (layer F.SilkS)
       (effects (font (size 0.7 0.7) (thickness 0.1)))
     )
-    (fp_text value 100n (at 0 1.65 90) (layer F.SilkS) hide
+    (fp_text value 100n (at 0 1.65 180) (layer F.SilkS) hide
       (effects (font (size 0.7 0.7) (thickness 0.1)))
     )
     (fp_line (start 0.25 0.75) (end 0.25 -0.75) (layer F.SilkS) (width 0.127))
@@ -3340,11 +3340,11 @@
     (fp_line (start -1.55 0.75) (end -1.55 -0.75) (layer F.SilkS) (width 0.127))
     (fp_line (start 0.2 0.5) (end -0.2 0.5) (layer F.SilkS) (width 0.127))
     (fp_line (start -0.2 -0.5) (end 0.2 -0.5) (layer F.SilkS) (width 0.127))
-    (pad 1 smd rect (at 0.9 0 90) (size 1.15 1.1)
+    (pad 1 smd rect (at 0.9 0 180) (size 1.15 1.1)
       (layers Front F.Paste F.Mask)
       (net 7 /Interface/12V)
     )
-    (pad 2 smd rect (at -0.9 0 90) (size 1.15 1.1)
+    (pad 2 smd rect (at -0.9 0 180) (size 1.15 1.1)
       (layers Front F.Paste F.Mask)
       (net 61 GND)
     )
@@ -3458,7 +3458,7 @@
   )
 
   (module c_0603 (layer Front) (tedit 520F47D6) (tstamp 4FD63660)
-    (at 98.5875 151.2625 270)
+    (at 90.5875 151.2625 270)
     (descr "SMT capacitor, 0603")
     (path /4FBF6CBF/50E29581)
     (fp_text reference C24 (at 0 -1.55 270) (layer F.SilkS)
@@ -3492,7 +3492,7 @@
   )
 
   (module c_0603 (layer Front) (tedit 520F47D6) (tstamp 4FD63662)
-    (at 100.5875 151.2625 270)
+    (at 92.5875 151.2625 270)
     (descr "SMT capacitor, 0603")
     (path /4FBF6CBF/50E29596)
     (fp_text reference C25 (at 0 -1.55 270) (layer F.SilkS)
@@ -3634,7 +3634,7 @@
   )
 
   (module ADXL345 (layer Front) (tedit 520D0FC9) (tstamp 5211AFCD)
-    (at 99.5875 131.2625)
+    (at 91.5875 131.2625)
     (path /4FBF6CBF/520DE12A)
     (fp_text reference U2 (at 0 4.325) (layer F.SilkS)
       (effects (font (size 0.8 0.8) (thickness 0.15)))
@@ -3760,7 +3760,7 @@
   )
 
   (module c_0603 (layer Front) (tedit 520F47D6) (tstamp 5211AF72)
-    (at 98.5875 136.3625 90)
+    (at 90.5875 136.3625 90)
     (descr "SMT capacitor, 0603")
     (path /4FBF6CBF/520DE14E)
     (fp_text reference C15 (at 0 -1.55 90) (layer F.SilkS)
@@ -3794,7 +3794,7 @@
   )
 
   (module c_0603 (layer Front) (tedit 520F47D6) (tstamp 5211AF63)
-    (at 100.5375 136.3625 90)
+    (at 92.5375 136.3625 90)
     (descr "SMT capacitor, 0603")
     (path /4FBF6CBF/520DE15C)
     (fp_text reference C16 (at 0 -1.55 90) (layer F.SilkS)
@@ -3828,7 +3828,7 @@
   )
 
   (module c_0603 (layer Front) (tedit 520F47D6) (tstamp 5211AF54)
-    (at 45 85.025)
+    (at 57.85 85.075)
     (descr "SMT capacitor, 0603")
     (path /50B2116F/520BA0BA)
     (fp_text reference C31 (at 0 -1.55) (layer F.SilkS)
@@ -3930,7 +3930,7 @@
   )
 
   (module C_ELCO_SMD (layer Front) (tedit 4FDC3BD3) (tstamp 5211AF27)
-    (at 96.1875 125.1125 90)
+    (at 88.1875 125.1125 90)
     (path /4FBF6CBF/520DE16A)
     (attr smd)
     (fp_text reference C6 (at -3.175 2.921 90) (layer F.SilkS)
@@ -3971,7 +3971,7 @@
   )
 
   (module diode-DO214AC (layer Front) (tedit 520F2BBE) (tstamp 5211AF13)
-    (at 45 82.025)
+    (at 57.85 82.075)
     (descr DIODE)
     (tags DIODE)
     (path /50B2116F/520BA0AC)
@@ -4018,7 +4018,7 @@
   )
 
   (module Header_3 (layer Front) (tedit 51E0EF4A) (tstamp 5211AEE5)
-    (at 45 103.525 270)
+    (at 57.85 103.575 270)
     (descr "Connecteur 6 pins")
     (tags "CONN DEV")
     (path /50B2116F/520BA0F1)
@@ -4069,7 +4069,7 @@
   )
 
   (module Pump_P54E01R (layer Front) (tedit 520FCB22) (tstamp 50D84E7B)
-    (at 160 80)
+    (at 167.15 79.7)
     (path /50B2116F/50E2B32E)
     (fp_text reference P23 (at 7 -13) (layer F.SilkS)
       (effects (font (size 1.016 1.016) (thickness 0.127)))
@@ -4151,7 +4151,7 @@
   )
 
   (module Header_ISP (layer Front) (tedit 520FD11A) (tstamp 4DCD230C)
-    (at 212.35 111.4 90)
+    (at 126 124 90)
     (descr "Connecteur 6 pins")
     (tags "CONN DEV")
     (path /50E3CDC2)
@@ -4312,7 +4312,7 @@
   )
 
   (module X_Valve_2 (layer Front) (tedit 520F3242) (tstamp 52115633)
-    (at 55 80 270)
+    (at 46 80 270)
     (path /50B2116F/520BA09E)
     (attr smd)
     (fp_text reference P38 (at 9.271 6.985 270) (layer F.SilkS)
@@ -4442,7 +4442,7 @@
   )
 
   (module HCEM500GUH9P3 (layer Front) (tedit 50D5A103) (tstamp 50D84E86)
-    (at 115 100 90)
+    (at 119 90 90)
     (path /50B2116F/50E2ABAC)
     (attr smd)
     (fp_text reference P7 (at 5.588 0 180) (layer F.SilkS)
@@ -4556,7 +4556,7 @@
   )
 
   (module ShortLink2 (layer Front) (tedit 52137236) (tstamp 500E67D3)
-    (at 110.3375 174.8625)
+    (at 102.3375 174.8625)
     (descr "Connecteurs 2 pins")
     (tags "CONN DEV")
     (path /4FBF6CBF/500FBDD3)
@@ -4589,7 +4589,7 @@
   )
 
   (module ShortLink2 (layer Front) (tedit 52137236) (tstamp 4FD8C6F5)
-    (at 110.3375 170.3625 180)
+    (at 102.3375 170.3625 180)
     (descr "Connecteurs 2 pins")
     (tags "CONN DEV")
     (path /4FBF6CBF/4FD8C245)
@@ -4623,7 +4623,7 @@
   )
 
   (module ShortLink2 (layer Front) (tedit 52137236) (tstamp 52159739)
-    (at 110.3375 127.3625 180)
+    (at 102.3375 127.3625 180)
     (descr "Connecteurs 2 pins")
     (tags "CONN DEV")
     (path /4FBF6CBF/52137E59)
@@ -4657,7 +4657,7 @@
   )
 
   (module ShortLink2 (layer Front) (tedit 52137236) (tstamp 52159746)
-    (at 110.3375 133.3625 180)
+    (at 102.3375 133.3625 180)
     (descr "Connecteurs 2 pins")
     (tags "CONN DEV")
     (path /4FBF6CBF/52137E96)
@@ -4691,7 +4691,7 @@
   )
 
   (module ShortLink2 (layer Front) (tedit 52137236) (tstamp 52159753)
-    (at 110.3375 130.3625 180)
+    (at 102.3375 130.3625 180)
     (descr "Connecteurs 2 pins")
     (tags "CONN DEV")
     (path /4FBF6CBF/52137EA4)
@@ -4780,7 +4780,7 @@
   )
 
   (module SOT223 (layer Front) (tedit 52137CFA) (tstamp 52115702)
-    (at 45 93.025)
+    (at 57.85 93.075)
     (descr "module CMS SOT223 4 pins")
     (tags "CMS SOT")
     (path /50B2116F/520BA090)
@@ -4835,7 +4835,7 @@
   )
 
   (module SOT223 (layer Front) (tedit 52137CFA) (tstamp 5211571E)
-    (at 192.25 88.75 90)
+    (at 200.35 88.45 90)
     (descr "module CMS SOT223 4 pins")
     (tags "CMS SOT")
     (path /50B2116F/520AA298)
@@ -5086,7 +5086,7 @@
   )
 
   (module Header_GPIO (layer Back) (tedit 5217A0D5) (tstamp 50E17432)
-    (at 112 152 90)
+    (at 105 152 90)
     (descr "Double rangee de contacts 2 x 12 pins")
     (tags CONN)
     (path /4FBF6CBF/50E3D62C)
@@ -5495,10 +5495,15 @@
     )
   )
 
+  (gr_line (start 222.25 128.55) (end 222.25 25.4) (angle 90) (layer Edge.Cuts) (width 0.127))
+  (gr_line (start 222.25 150.05) (end 222.25 177.8) (angle 90) (layer Edge.Cuts) (width 0.127))
+  (gr_line (start 217.5 145.8) (end 222.25 150.05) (angle 90) (layer Edge.Cuts) (width 0.127))
+  (gr_line (start 217.5 139.3) (end 217.5 145.8) (angle 90) (layer Edge.Cuts) (width 0.127))
+  (gr_line (start 217.5 132.8) (end 222.25 128.55) (angle 90) (layer Edge.Cuts) (width 0.127))
+  (gr_line (start 217.5 139.3) (end 217.5 132.8) (angle 90) (layer Edge.Cuts) (width 0.127))
   (gr_text "SPACE FOR PI-POWER" (at 173.9 140.25) (layer Eco2.User)
     (effects (font (size 3 3) (thickness 0.2)))
   )
-  (gr_line (start 222.25 25.4) (end 222.25 177.8) (angle 90) (layer Edge.Cuts) (width 0.127))
   (dimension 9.271 (width 0.127) (layer Dwgs.User)
     (gr_text "0.3650 \"" (at 191.008 89.53754) (layer Dwgs.User)
       (effects (font (size 1.016 1.016) (thickness 0.127)))
