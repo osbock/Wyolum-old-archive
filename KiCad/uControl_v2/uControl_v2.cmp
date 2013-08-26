@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-15 BZR 4003)-stable date = 24-Aug-13 6:34:26 PM
+Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Monday 26 August 2013 08:19:08 PM IST
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -456,10 +456,17 @@ IdModule  = Header_3;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FBF6CBF/5218C2EB;
+TimeStamp = /4FBF6CBF/5218C5A8;
 Reference = P12;
-ValeurCmp = PiPower;
+ValeurCmp = PIPOWER;
 IdModule  = PiPower;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC07407/521B769C;
+Reference = P13;
+ValeurCmp = PWR_IN;
+IdModule  = Header_2;
 EndCmp
 
 BeginCmp
@@ -507,7 +514,7 @@ EndCmp
 BeginCmp
 TimeStamp = /4FC07407/50E2B59E;
 Reference = P24;
-ValeurCmp = 12V;
+ValeurCmp = PWR_IN;
 IdModule  = JACK_ALIM;
 EndCmp
 
