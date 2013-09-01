@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Monday 26 August 2013 08:19:08 PM IST
+Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Sunday 01 September 2013 12:40:24 PM IST
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -375,7 +375,7 @@ BeginCmp
 TimeStamp = /50B2116F/50DACF5C;
 Reference = M1;
 ValeurCmp = MANIFOLD;
-IdModule  = Manifold2;
+IdModule  = ;
 EndCmp
 
 BeginCmp
@@ -687,169 +687,71 @@ IdModule  = r_0603;
 EndCmp
 
 BeginCmp
-TimeStamp = /50B2116F/50D990F0;
+TimeStamp = /50DADA2B;
 Reference = SC1;
 ValeurCmp = SCREW;
 IdModule  = vite_3mm;
 EndCmp
 
 BeginCmp
-TimeStamp = /50B2116F/50D990F9;
+TimeStamp = /522315E7;
 Reference = SC2;
 ValeurCmp = SCREW;
 IdModule  = vite_3mm;
 EndCmp
 
 BeginCmp
-TimeStamp = /50B2116F/50D990FC;
+TimeStamp = /52230B6D;
 Reference = SC3;
 ValeurCmp = SCREW;
 IdModule  = vite_3mm;
 EndCmp
 
 BeginCmp
-TimeStamp = /50B2116F/50D990FE;
+TimeStamp = /522315ED;
 Reference = SC4;
 ValeurCmp = SCREW;
 IdModule  = vite_3mm;
 EndCmp
 
 BeginCmp
-TimeStamp = /50B2116F/50D99149;
+TimeStamp = /52230B73;
 Reference = SC5;
 ValeurCmp = SCREW;
 IdModule  = vite_3mm;
 EndCmp
 
 BeginCmp
-TimeStamp = /50B2116F/50D99148;
+TimeStamp = /522315DB;
 Reference = SC6;
 ValeurCmp = SCREW;
 IdModule  = vite_3mm;
 EndCmp
 
 BeginCmp
-TimeStamp = /50B2116F/50D99147;
+TimeStamp = /522315F3;
 Reference = SC7;
 ValeurCmp = SCREW;
 IdModule  = vite_3mm;
 EndCmp
 
 BeginCmp
-TimeStamp = /50B2116F/50D99146;
+TimeStamp = /522315D5;
 Reference = SC8;
 ValeurCmp = SCREW;
 IdModule  = vite_3mm;
 EndCmp
 
 BeginCmp
-TimeStamp = /50B2116F/50D99159;
+TimeStamp = /522315E1;
 Reference = SC9;
 ValeurCmp = SCREW;
 IdModule  = vite_3mm;
 EndCmp
 
 BeginCmp
-TimeStamp = /50B2116F/50D99158;
+TimeStamp = /522315F9;
 Reference = SC10;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /50B2116F/50D99157;
-Reference = SC11;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /50B2116F/50D99156;
-Reference = SC12;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /50B2116F/50DAD9E5;
-Reference = SC13;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /50B2116F/50DAD9E6;
-Reference = SC14;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /50B2116F/50DAD9E7;
-Reference = SC15;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /50B2116F/50DAD9E8;
-Reference = SC16;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /50DADA2B;
-Reference = SC17;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /50DADA2A;
-Reference = SC18;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /50DADA29;
-Reference = SC19;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /50DADA28;
-Reference = SC20;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /50B2116F/520BA0C9;
-Reference = SC27;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /50B2116F/520BA0CF;
-Reference = SC28;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /50B2116F/520BA0D5;
-Reference = SC29;
-ValeurCmp = SCREW;
-IdModule  = vite_3mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /50B2116F/520BA0DB;
-Reference = SC30;
 ValeurCmp = SCREW;
 IdModule  = vite_3mm;
 EndCmp
