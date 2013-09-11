@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  24-Aug-13 6:43:20 PM
+PCBNEW-LibModule-V1  11-Sep-13 8:27:13 AM
 # encoding utf-8
 Units mm
 $INDEX
@@ -73342,15 +73342,15 @@ Po 0.8255 0
 $EndPAD
 $EndMODULE ShortLink
 $MODULE ShortLink2
-Po 0 0 0 15 52137236 00000000 ~~
+Po 0 0 0 15 522FDC01 00000000 ~~
 Li ShortLink2
 Cd Connecteurs 2 pins
 Kw CONN DEV
 Sc 0
-AR /4FBF6CBF/500FBDD3
+AR /50E3CCEE
 Op 0 0 0
-T0 3.048 -0.9144 0.762 0.762 0 0.127 N V 21 N "P26"
-T1 -3.7338 -0.8128 0.762 0.762 0 0.127 N V 21 N "5V_LINK"
+T0 3.048 -0.9144 0.762 0.762 0 0.127 N V 21 N "P1"
+T1 -3.7338 -0.8128 0.762 0.762 0 0.127 N V 21 N "AREF"
 DS -1.905 0.889 1.905 0.889 0.15 21
 DS -1.905 -0.889 1.905 -0.889 0.15 21
 DA 1.905 0 1.905 -0.889 900 0.1524 21
@@ -73361,25 +73361,25 @@ $PAD
 Sh "1" T 1.524 0.762 -0.508 0 0
 Dr 0 0 0
 At SMD N 00A88000
-Ne 2 "5V0"
+Ne 1 "+3.3V"
 Po -1.7145 0
-.LocalClearance 0.127
+.LocalClearance 0.1
 $EndPAD
 $PAD
 Sh "3" T 1.524 0.762 0.508 0 0
 Dr 0 0 0
 At SMD N 00A88000
-Ne 1 "/RPi/Rpi_5V0"
+Ne 3 "/Interface/5V0"
 Po 1.7145 0
-.LocalClearance 0.127
+.LocalClearance 0.1
 $EndPAD
 $PAD
 Sh "2" R 1.4 1.4 0 0 0
 Dr 0 0 0
 At SMD N 00888000
-Ne 2 "5V0"
+Ne 2 "/AREF"
 Po 0 0
-.LocalClearance 0.127
+.LocalClearance 0.1
 $EndPAD
 $EndMODULE ShortLink2
 $MODULE Speaker
