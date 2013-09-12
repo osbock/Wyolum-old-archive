@@ -1,5 +1,5 @@
-update=Monday 02 September 2013 12:26:33 AM GST
-last_client=kicad
+update=12-Sep-13 9:43:37 PM
+last_client=pcbnew
 [cvpcb]
 version=1
 NetIExt=net
@@ -17,27 +17,26 @@ LabSize=40
 LibName1=uControl_Libs/Conn-raspberry
 LibName2=uControl_Libs/power
 LibName3=uControl_Libs/uControl
+[general]
+version=1
 [pcbnew]
 version=1
 LastNetListRead=uControl_v2.net
 UseCmpFile=1
-PadDrill="    0.600000"
-PadDrillOvalY="    0.600000"
-PadSizeH="    1.400000"
-PadSizeV="    1.400000"
-PcbTextSizeV="    1.500000"
-PcbTextSizeH="    1.500000"
-PcbTextThickness="    0.300000"
-ModuleTextSizeV="    1.500000"
-ModuleTextSizeH="    1.500000"
-ModuleTextSizeThickness="    0.150000"
-SolderMaskClearance="    0.200000"
-SolderMaskMinWidth="    0.000000"
-DrawSegmentWidth="    0.200000"
-BoardOutlineThickness="    0.150000"
-ModuleOutlineThickness="    0.150000"
+PadDrill=1.016
+PadSizeH=2.54
+PadSizeV=2.54
+PcbTextSizeV=1.016
+PcbTextSizeH=1.016
+PcbTextThickness=0.127
+ModuleTextSizeV=1.016
+ModuleTextSizeH=1.016
+ModuleTextSizeThickness=0.127
+SolderMaskClearance=0.254
+SolderMaskMinWidth=0
+DrawSegmentWidth=0.1524
+BoardOutlineThickness=0.127
+ModuleOutlineThickness=0.1524
 [pcbnew/libraries]
 LibDir=
 LibName1=uControl_Libs/uControl
-[general]
-version=1
