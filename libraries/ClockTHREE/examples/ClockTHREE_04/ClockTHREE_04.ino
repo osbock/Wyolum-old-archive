@@ -19,7 +19,7 @@
 
 // #define USE_NIL // comment out if speaker is installed, unless you are already deaf.
 // #define USE_USA_DST // use standard USA dailight savings time rule
-#define USE_EURO_DST // use dailight savings time for europe
+#define USE_EURO_DST // use dailight savings time for europe (TJS)
 
 #include <avr/pgmspace.h>
 #include <Wire.h>
