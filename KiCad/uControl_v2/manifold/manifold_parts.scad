@@ -82,3 +82,7 @@ module barb(r1, r2, h1, h2, h3, wall){
       taper(r2, r1, h2, wall);
   }
 }
+module board(){
+  import("uControl_v2.stl");
+}
+

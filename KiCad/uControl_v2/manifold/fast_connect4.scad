@@ -1,5 +1,8 @@
 include <manifold_parts.scad>
 // include <fast_connect.scad>
+module board(){
+  import("uControl_v2.stl");
+}
 
 $fn = 150;
 
@@ -57,6 +60,8 @@ chuck_h = 17*mm;
 chuck_radius = 8*mm;
 cuff_clearance = 8*mm;
 barb_length = 10*mm;
+barb_tilt = -80;
+
 module chuck(w=w, chuck_radius=chuck_radius, cuff_clearance=cuff_clearance, barb_length=barb_length){
   difference(){
     scale(1/scale){
@@ -67,7 +72,7 @@ module chuck(w=w, chuck_radius=chuck_radius, cuff_clearance=cuff_clearance, barb
 	  tube(cuff_clearance, chuck_radius - w, w);
 	  // translate([5.1*mm/2, 0, -4*mm/2])
 	  translate([0*mm/2, 0, -4*mm/2])
-	    rotate(-90, [0, 1, 0]){
+	    rotate(barb_tilt, [0, 1, 0]){
 	    //elbow(5.1*mm/2 - w, w);
 	    rotate(180, [1, 0, 0]){
 	      translate([0, 0, chuck_radius*mm])
@@ -88,7 +93,7 @@ module chuck(w=w, chuck_radius=chuck_radius, cuff_clearance=cuff_clearance, barb
     translate([0,0, -cuff_clearance-w-4*mm/2-1*mm])
       cylinder(h=30, r=1*mm);
     translate([0,0, -4.2*mm-cuff_clearance+w/2])
-      rotate(90, [0, 1, 0])
+      rotate(180 + barb_tilt, [0, 1, 0])
       cylinder(h=30, r=1*mm);
     // Slice
     /*
@@ -128,14 +133,15 @@ module enclosure_mockup(wall_thickness=1*mm){
 
 wall_thickness = 1*mm;
 rotate(90, [0, 1, 0])
-rotate(90, [0, 1, 0])
 difference(){
   union(){
-    //translate([0, 0*mm, 0*mm])female();
-    //color("white") enclosure_mockup();
-    //rotate(90, [0, 0, 1])
-    //color("blue")translate([0, 0*mm, -12*mm-tol]) chuck();
+    translate([0, 0*mm, 0*mm])female();
+    color("white") enclosure_mockup();
+    rotate(90, [0, 0, 1])
+    color("blue")translate([0, 0*mm, -12*mm-tol]) chuck();
+
   }
   //translate([-50*mm, 0, -50*mm])cube([100*mm, 100*mm, 100*mm]);
 }
+	   //board();
 
