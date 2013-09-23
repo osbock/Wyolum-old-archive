@@ -1,0 +1,56 @@
+[Files]
+silk-top=OHSBadge-F_SilkS.gto
+silk-bottom=OHSBadge-B_SilkS.gbo
+gerber-edge=OHSBadge-Edge_Cuts.gbr
+mask-top=OHSBadge-F_Mask.gts
+mask-bottom=OHSBadge-B_Mask.gbs
+drillfile=OHSBadge.drl
+pos-top=BADGEr_v4_CENTROID-top.csv
+pos-bottom=BADGEr_v4_CENTROID-bottom.csv
+bom=
+[File-dates]
+silk-top=1ce82e5 f9758240
+silk-bottom=1ce82e5 f8f6dc60
+gerber-edge=1ce82e5 f99e18e0
+mask-top=1ce82e5 f9908450
+mask-bottom=1ce82e5 f98a69d0
+drillfile=1ce82e5 fc5fa9e0
+pos-top=1ce8933 3e1baf06
+pos-bottom=1ce8933 3e212d46
+margins-top=1ce82e5 f9908450
+[Config]
+origin=0.0 0.0 mm
+outline=0.1270 mm
+margins-top=0.0635 0.0635 0.0635 0.0635 mm
+margins-bottom=0.0745 0.0635 0.0625 0.0635 mm
+margins-adjusted=1
+silk-top=101.7380 78.8780 mm
+silk-bottom=101.7480 78.8780 mm
+dpi-top=600.0000
+dpi-bottom=600.0000
+format=vpintrinsic
+[Outline-top]
+rc1=3 1532 2402 1711
+rc2=1016 1502 2402 1531
+rc3=3 1502 626 1531
+rc4=3 1050 2402 1501
+rc5=323 451 2402 1049
+rc6=3 451 233 1049
+rc7=234 389 322 450
+count=7
+[Outline-bottom]
+rc1=2 1532 2401 1711
+rc2=1016 1502 2401 1531
+rc3=2 1502 625 1531
+rc4=2 1050 2401 1501
+rc5=323 451 2401 1049
+rc6=2 451 232 1049
+rc7=233 389 322 450
+count=7
+[Settings]
+sortorder=C R L X D Q T U J K P
+[Zone]
+sort=1
+columns=4.0054
+rows=3.1054
+order=0

@@ -1,0 +1,12 @@
+# Created by VisualPlace version 1.7.4877 at Thu Jul 25 18:04:02 2013
+# Report origin: (0.0/0.0) = lower left corner of PCB
+# Units: inch
+"Designator","Value","X","Y","Rotation","Side","Package"
+
+"D3","DEBUG","3.8008","1.7050","180.0","Top","led_0805"
+"J4","ZIF-40-0.5","0.1700","7.7854","90.0","Top","ZIF-40-0.5-M_see"
+"SW3","DOWN","2.2000","8.7504","180.0","Top","SW_SMD"
+"SW5","MODE","1.4000","8.7504","180.0","Top","SW_SMD"
+"SW4","RST","3.1850","8.7504","180.0","Top","SW_SMD"
+"SW2","SEL","2.5992","0.2275","180.0","Top","SW_SMD"
+"SW1","UP","1.7992","0.2621","180.0","Top","SW_SMD"

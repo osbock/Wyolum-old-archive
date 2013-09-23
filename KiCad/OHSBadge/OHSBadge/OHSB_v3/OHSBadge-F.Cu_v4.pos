@@ -1,0 +1,13 @@
+### Module positions - created on Sunday 21 July 2013 08:02:16 PM IST ###
+### Printed by Pcbnew version pcbnew (2013-mar-13)-testing
+## Unit = inches, Angle = deg.
+## Side : F.Cu
+# Ref    Val                  Package         PosX       PosY        Rot     Side
+D3       DEBUG            led_0805            4.8015    -2.7970     180.0    F.Cu
+J4       ZIF-40-0.5       ZIF-40-0.5-M_see    1.1700    -3.2850      90.0    F.Cu
+SW1      UP               SW_SMD              2.8000    -4.2500     180.0    F.Cu
+SW2      SEL              SW_SMD              3.6000    -4.2500     180.0    F.Cu
+SW3      DOWN             SW_SMD              3.2000    -4.2500     180.0    F.Cu
+SW4      RST              SW_SMD              4.1850    -4.2500     180.0    F.Cu
+SW5      MODE             SW_SMD              2.4000    -4.2500     180.0    F.Cu
+## End
