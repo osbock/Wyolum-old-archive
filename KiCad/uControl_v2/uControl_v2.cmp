@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Sunday 01 September 2013 12:40:24 PM IST
+Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Friday 27 September 2013 10:08:23 PM IST
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -274,6 +274,13 @@ IdModule  = c_0603;
 EndCmp
 
 BeginCmp
+TimeStamp = /50B2116F/5245AF72;
+Reference = C29;
+ValeurCmp = 100n;
+IdModule  = c_0603;
+EndCmp
+
+BeginCmp
 TimeStamp = /50B2116F/520BA0BA;
 Reference = C31;
 ValeurCmp = 100n;
@@ -341,6 +348,13 @@ TimeStamp = /50B2116F/520BA0AC;
 Reference = D9;
 ValeurCmp = 1N4007;
 IdModule  = diode-DO214AC;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/5245AF94;
+Reference = D10;
+ValeurCmp = ZD5V1;
+IdModule  = d_0805;
 EndCmp
 
 BeginCmp
@@ -491,10 +505,10 @@ IdModule  = FlowMeter_CFM3000;
 EndCmp
 
 BeginCmp
-TimeStamp = /50B2116F/520B8E5C;
+TimeStamp = /50B2116F/50E2B32E;
 Reference = P17;
-ValeurCmp = Pump_Conn;
-IdModule  = Header_2;
+ValeurCmp = PUMP;
+IdModule  = Pump_P54E01R_02;
 EndCmp
 
 BeginCmp
@@ -502,13 +516,6 @@ TimeStamp = /50B2116F/520B933C;
 Reference = P18;
 ValeurCmp = Pump_Cable;
 IdModule  = ;
-EndCmp
-
-BeginCmp
-TimeStamp = /50B2116F/50E2B32E;
-Reference = P23;
-ValeurCmp = PUMP;
-IdModule  = Pump_P54E01R;
 EndCmp
 
 BeginCmp
@@ -624,9 +631,23 @@ IdModule  = r_0603;
 EndCmp
 
 BeginCmp
+TimeStamp = /50B2116F/5245AF3C;
+Reference = R5;
+ValeurCmp = 20k;
+IdModule  = r_0603;
+EndCmp
+
+BeginCmp
 TimeStamp = /50B2116F/520C03E7;
 Reference = R6;
 ValeurCmp = 1k;
+IdModule  = r_0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /50B2116F/5245AF64;
+Reference = R7;
+ValeurCmp = 10k;
 IdModule  = r_0603;
 EndCmp
 

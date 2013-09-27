@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  Thursday 26 September 2013 09:50:56 PM IST
+PCBNEW-LibModule-V1  Friday 27 September 2013 10:33:05 PM IST
 # encoding utf-8
 Units mm
 $INDEX
@@ -71939,12 +71939,12 @@ Ro 0 0 0
 $EndSHAPE3D
 $EndMODULE Pump_P54E01R
 $MODULE Pump_P54E01R_02
-Po 0 0 0 15 52445EAC 00000000 ~~
+Po 0 0 0 15 5245BA40 00000000 ~~
 Li Pump_P54E01R_02
 Sc 0
 AR /50B2116F/50E2B32E
 Op 0 0 0
-T0 7 -13 0.889 0.889 0 0.127 N V 21 N "P23"
+T0 7 -13 0.889 0.889 0 0.127 N V 21 N "P17"
 T1 18.2255 -12.9425 0.889 0.889 0 0.127 N V 21 N "PUMP"
 DS 23.75 3.75 23.25 4.25 0.127 21
 DS 23.25 4.25 23.25 5 0.127 21
@@ -72020,88 +72020,88 @@ $PAD
 Sh "5" C 2 2 0 0 0
 Dr 1 0 0
 At STD N 00E0FFFF
-Ne 2 "/Interface/Pump"
+Ne 5 "N-0000096"
 Po 24.5 5
 $EndPAD
 $PAD
 Sh "4" C 2 2 0 0 0
 Dr 1 0 0
 At STD N 00E0FFFF
-Ne 2 "/Interface/Pump"
+Ne 2 "/Interface/P_PWM"
 Po 24.5 2.5
 $EndPAD
 $PAD
 Sh "3" C 2 2 0 0 0
 Dr 1 0 0
 At STD N 00E0FFFF
-Ne 1 "/Interface/12V"
+Ne 4 "N-0000095"
 Po 24.5 0
 $EndPAD
 $PAD
 Sh "1" C 2 2 0 0 0
 Dr 1 0 0
 At STD N 00E0FFFF
-Ne 1 "/Interface/12V"
+Ne 3 "/Interface/Pump"
 Po 24.5 -5
 $EndPAD
 $PAD
 Sh "2" C 2 2 0 0 0
 Dr 1 0 0
 At STD N 00E0FFFF
-Ne 2 "/Interface/Pump"
+Ne 1 "/Interface/12V"
 Po 24.5 -2.5
 $EndPAD
 $PAD
-Sh "6" C 6 6 0 0 0
+Sh "" C 6 6 0 0 0
 Dr 3 0 0
 At STD N 00E0FFFF
-Ne 6 "N-0000097"
+Ne 0 ""
 Po -11 -18
 $EndPAD
 $PAD
-Sh "6" C 6 6 0 0 0
+Sh "" C 6 6 0 0 0
 Dr 3 0 0
 At STD N 00E0FFFF
-Ne 5 "N-00000113"
+Ne 0 ""
 Po -11 18
 $EndPAD
 $PAD
-Sh "6" C 6 6 0 0 0
+Sh "" C 6 6 0 0 0
 Dr 3 0 0
 At STD N 00E0FFFF
-Ne 3 "N-00000107"
+Ne 0 ""
 Po -25 18
 $EndPAD
 $PAD
-Sh "6" C 6 6 0 0 0
+Sh "" C 6 6 0 0 0
 Dr 3 0 0
 At STD N 00E0FFFF
-Ne 4 "N-00000108"
+Ne 0 ""
 Po -25 -18
 $EndPAD
 $PAD
-Sh "6" C 6 6 0 0 0
+Sh "" C 6 6 0 0 0
 Dr 3 0 0
 At STD N 00E0FFFF
 Ne 0 ""
 Po 3 -18
 $EndPAD
 $PAD
-Sh "6" C 6 6 0 0 0
+Sh "" C 6 6 0 0 0
 Dr 3 0 0
 At STD N 00E0FFFF
 Ne 0 ""
 Po 17 -18
 $EndPAD
 $PAD
-Sh "6" C 6 6 0 0 0
+Sh "" C 6 6 0 0 0
 Dr 3 0 0
 At STD N 00E0FFFF
 Ne 0 ""
 Po 3 18
 $EndPAD
 $PAD
-Sh "6" C 6 6 0 0 0
+Sh "" C 6 6 0 0 0
 Dr 3 0 0
 At STD N 00E0FFFF
 Ne 0 ""
