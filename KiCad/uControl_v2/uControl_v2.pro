@@ -1,22 +1,10 @@
-update=12-Sep-13 9:43:37 PM
-last_client=pcbnew
+update=28-Sep-13 3:47:41 PM
+last_client=eeschema
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[eeschema]
-version=1
-LibDir=
-NetFmtName=
-RptD_X=0
-RptD_Y=100
-RptLab=1
-LabSize=40
-[eeschema/libraries]
-LibName1=uControl_Libs/Conn-raspberry
-LibName2=uControl_Libs/power
-LibName3=uControl_Libs/uControl
 [general]
 version=1
 [pcbnew]
@@ -40,3 +28,15 @@ ModuleOutlineThickness=0.1524
 [pcbnew/libraries]
 LibDir=
 LibName1=uControl_Libs/uControl
+[eeschema]
+version=1
+LibDir=
+NetFmtName=
+RptD_X=0
+RptD_Y=100
+RptLab=1
+LabSize=40
+[eeschema/libraries]
+LibName1=uControl_Libs/Conn-raspberry
+LibName2=uControl_Libs/power
+LibName3=uControl_Libs/uControl
