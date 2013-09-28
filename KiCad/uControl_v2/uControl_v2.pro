@@ -1,4 +1,4 @@
-update=28-Sep-13 3:47:41 PM
+update=28-Sep-13 5:37:36 PM
 last_client=eeschema
 [cvpcb]
 version=1
@@ -31,7 +31,7 @@ LibName1=uControl_Libs/uControl
 [eeschema]
 version=1
 LibDir=
-NetFmtName=
+NetFmtName=PcbnewAdvanced
 RptD_X=0
 RptD_Y=100
 RptLab=1
