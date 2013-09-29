@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  Friday 27 September 2013 10:33:05 PM IST
+PCBNEW-LibModule-V1  Sunday 29 September 2013 05:01:02 PM IST
 # encoding utf-8
 Units mm
 $INDEX
@@ -18,6 +18,7 @@ Conn_Flow
 Conn_Flow_SFM3000
 Conn_Flow_SFM3000_Male
 Conn_Pump_Flex
+Conn_Pump_SHR05VS_Male
 DIP
 DIP-28__300_ELL
 DPAK_3
@@ -61,6 +62,7 @@ PiPower
 Pump
 Pump_P54E01R
 Pump_P54E01R_02
+Pump_P54E01R_03
 RC03
 S1A-E3
 SD_Micro_seeed
@@ -1728,6 +1730,76 @@ Po -2.4892 -0.1651
 .LocalClearance 0.1524
 $EndPAD
 $EndMODULE Conn_Pump_Flex
+$MODULE Conn_Pump_SHR05VS_Male
+Po 0 0 0 15 5247C23B 00000000 ~~
+Li Conn_Pump_SHR05VS_Male
+Sc 0
+AR /50B2116F/520A7D50
+Op 0 0 0
+At SMD
+T0 0 6.6 0.889 0.889 0 0.127 N V 21 N "P15"
+T1 0 5 0.889 0.889 0 0.127 N V 21 N "Flow_Pump"
+DS 2.6 3.3 0 3.3 0.1524 21
+DS 2.4 0.5 3 0.5 0.1524 21
+DS 3 0.5 3 1.4 0.1524 21
+DS -3 1.4 -3 0.5 0.1524 21
+DS -3 0.5 -2.4 0.5 0.1524 21
+DS 0 3.3 -2.6 3.3 0.1524 21
+$PAD
+Sh "1" R 0.6 1.55 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 2 "/Interface/SCL"
+Po -2 0
+.LocalClearance 0.2
+$EndPAD
+$PAD
+Sh "2" R 0.6 1.55 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 1 "/Interface/5V0"
+Po -1 0
+.LocalClearance 0.2
+$EndPAD
+$PAD
+Sh "3" R 0.6 1.55 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 4 "GND"
+Po 0 0
+.LocalClearance 0.2
+$EndPAD
+$PAD
+Sh "4" R 0.6 1.55 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 3 "/Interface/SDA"
+Po 1 0
+.LocalClearance 0.2
+$EndPAD
+$PAD
+Sh "" R 1.2 2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.3 2.5
+$EndPAD
+$PAD
+Sh "" R 1.2 2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.3 2.5
+$EndPAD
+$PAD
+Sh "5" R 0.6 1.55 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2 0
+.LocalClearance 0.2
+$EndPAD
+$EndMODULE Conn_Pump_SHR05VS_Male
 $MODULE DIP
 Po 0 0 0 15 4FDC1A80 00000000 ~~
 Li DIP
@@ -72114,6 +72186,163 @@ Of 0 0 0.6
 Ro 0 0 0
 $EndSHAPE3D
 $EndMODULE Pump_P54E01R_02
+$MODULE Pump_P54E01R_03
+Po 0 0 0 15 52480E10 00000000 ~~
+Li Pump_P54E01R_03
+Sc 0
+AR /50B2116F/50E2B32E
+Op 0 0 0
+T0 7 -13 0.889 0.889 0 0.127 N V 21 N "P17"
+T1 18.2255 -12.9425 0.889 0.889 0 0.127 N V 21 N "PUMP"
+DS 20 12 1.5 12 0.127 21
+DS 20 -12 1.5 -12 0.127 21
+DS 20 -12 20 12 0.127 21
+DS -31 13.5 0 13.5 0.127 21
+DS -31 13.5 -31.5 13 0.127 21
+DS -31.5 13 -31.5 -13 0.127 21
+DS -31 -13.5 0 -13.5 0.127 21
+DS -31 -13.5 -31.5 -13 0.127 21
+DS 1.5 12 0 10.5 0.127 21
+DS 1.5 -12 0 -10.5 0.127 21
+DS -36 -8 -31.5 -8 0.127 21
+DS -36 -12 -36 -8 0.127 21
+DS -31.5 -12 -36 -12 0.127 21
+DS -38 -8.5 -36 -8 0.127 21
+DS -38 -11.5 -38 -8.5 0.127 21
+DS -36 -12 -38 -11.5 0.127 21
+DS -36 -2 -38 -1.5 0.127 21
+DS -38 -1.5 -38 1.5 0.127 21
+DS -38 1.5 -36 2 0.127 21
+DS -31.5 -2 -36 -2 0.127 21
+DS -36 -2 -36 2 0.127 21
+DS -36 2 -31.5 2 0.127 21
+DS 20 -3 21.5 -3 0.127 21
+DS 21.5 -3 21.5 3 0.127 21
+DS 21.5 3 20 3 0.127 21
+DS 0 -13.5 0 13.5 0.127 21
+DS 29.3 -2.6 29.3 0 0.1524 21
+DS 26.5 -2.4 26.5 -3 0.1524 21
+DS 26.5 -3 27.4 -3 0.1524 21
+DS 27.4 3 26.5 3 0.1524 21
+DS 26.5 3 26.5 2.4 0.1524 21
+DS 29.3 0 29.3 2.6 0.1524 21
+$PAD
+Sh "" C 6 6 0 0 0
+Dr 3 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -11 -18
+$EndPAD
+$PAD
+Sh "" C 6 6 0 0 0
+Dr 3 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -11 18
+$EndPAD
+$PAD
+Sh "" C 6 6 0 0 0
+Dr 3 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -25 18
+$EndPAD
+$PAD
+Sh "" C 6 6 0 0 0
+Dr 3 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -25 -18
+$EndPAD
+$PAD
+Sh "" C 6 6 0 0 0
+Dr 3 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 3 -18
+$EndPAD
+$PAD
+Sh "" C 6 6 0 0 0
+Dr 3 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 17 -18
+$EndPAD
+$PAD
+Sh "" C 6 6 0 0 0
+Dr 3 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 3 18
+$EndPAD
+$PAD
+Sh "" C 6 6 0 0 0
+Dr 3 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 17 18
+$EndPAD
+$PAD
+Sh "1" R 0.6 1.55 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 26 2
+.LocalClearance 0.2
+$EndPAD
+$PAD
+Sh "2" R 0.6 1.55 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 26 1
+.LocalClearance 0.2
+$EndPAD
+$PAD
+Sh "3" R 0.6 1.55 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 26 0
+.LocalClearance 0.2
+$EndPAD
+$PAD
+Sh "4" R 0.6 1.55 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 26 -1
+.LocalClearance 0.2
+$EndPAD
+$PAD
+Sh "" R 1.2 2 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 28.5 3.3
+$EndPAD
+$PAD
+Sh "" R 1.2 2 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 28.5 -3.3
+$EndPAD
+$PAD
+Sh "5" R 0.6 1.55 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 26 -2
+.LocalClearance 0.2
+$EndPAD
+$SHAPE3D
+Na "uControl_Libs/3D Modules/Pump.wrl"
+Sc 4 4 4
+Of 0 0 0.6
+Ro 0 0 0
+$EndSHAPE3D
+$EndMODULE Pump_P54E01R_03
 $MODULE RC03
 Po 0 0 0 15 50E28383 00000000 ~~
 Li RC03

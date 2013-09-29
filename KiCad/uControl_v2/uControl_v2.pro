@@ -1,12 +1,10 @@
-update=28-Sep-13 5:37:36 PM
-last_client=eeschema
+update=Saturday 28 September 2013 11:20:23 PM IST
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
 [pcbnew]
 version=1
 LastNetListRead=uControl_v2.net
@@ -40,3 +38,5 @@ LabSize=40
 LibName1=uControl_Libs/Conn-raspberry
 LibName2=uControl_Libs/power
 LibName3=uControl_Libs/uControl
+[general]
+version=1

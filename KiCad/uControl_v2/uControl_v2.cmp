@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Friday 27 September 2013 10:08:23 PM IST
+Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Sunday 29 September 2013 05:03:03 PM IST
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -351,13 +351,6 @@ IdModule  = diode-DO214AC;
 EndCmp
 
 BeginCmp
-TimeStamp = /50B2116F/5245AF94;
-Reference = D10;
-ValeurCmp = ZD5V1;
-IdModule  = d_0805;
-EndCmp
-
-BeginCmp
 TimeStamp = /4FC07407/4FC075A6;
 Reference = G1;
 ValeurCmp = Logo_Wyolum;
@@ -508,7 +501,7 @@ BeginCmp
 TimeStamp = /50B2116F/50E2B32E;
 Reference = P17;
 ValeurCmp = PUMP;
-IdModule  = Pump_P54E01R_02;
+IdModule  = Pump_P54E01R_03;
 EndCmp
 
 BeginCmp
@@ -633,7 +626,7 @@ EndCmp
 BeginCmp
 TimeStamp = /50B2116F/5245AF3C;
 Reference = R5;
-ValeurCmp = 20k;
+ValeurCmp = 4k7;
 IdModule  = r_0603;
 EndCmp
 
@@ -641,13 +634,6 @@ BeginCmp
 TimeStamp = /50B2116F/520C03E7;
 Reference = R6;
 ValeurCmp = 1k;
-IdModule  = r_0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /50B2116F/5245AF64;
-Reference = R7;
-ValeurCmp = 10k;
 IdModule  = r_0603;
 EndCmp
 
