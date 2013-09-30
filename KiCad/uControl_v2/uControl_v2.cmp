@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Sunday 29 September 2013 05:03:03 PM IST
+Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Monday 30 September 2013 08:28:42 PM IST
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -466,7 +466,7 @@ BeginCmp
 TimeStamp = /4FBF6CBF/5218C5A8;
 Reference = P12;
 ValeurCmp = PIPOWER;
-IdModule  = PiPower;
+IdModule  = PiPower_2;
 EndCmp
 
 BeginCmp

@@ -1,31 +1,10 @@
-update=Saturday 28 September 2013 11:20:23 PM IST
+update=Monday 30 September 2013 08:53:44 PM IST
 last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[pcbnew]
-version=1
-LastNetListRead=uControl_v2.net
-UseCmpFile=1
-PadDrill=1.016
-PadSizeH=2.54
-PadSizeV=2.54
-PcbTextSizeV=1.016
-PcbTextSizeH=1.016
-PcbTextThickness=0.127
-ModuleTextSizeV=1.016
-ModuleTextSizeH=1.016
-ModuleTextSizeThickness=0.127
-SolderMaskClearance=0.254
-SolderMaskMinWidth=0
-DrawSegmentWidth=0.1524
-BoardOutlineThickness=0.127
-ModuleOutlineThickness=0.1524
-[pcbnew/libraries]
-LibDir=
-LibName1=uControl_Libs/uControl
 [eeschema]
 version=1
 LibDir=
@@ -38,5 +17,27 @@ LabSize=40
 LibName1=uControl_Libs/Conn-raspberry
 LibName2=uControl_Libs/power
 LibName3=uControl_Libs/uControl
+[pcbnew]
+version=1
+LastNetListRead=uControl_v2.net
+UseCmpFile=1
+PadDrill="    1.016000"
+PadDrillOvalY="    1.016000"
+PadSizeH="    1.270000"
+PadSizeV="    1.270000"
+PcbTextSizeV="    0.889000"
+PcbTextSizeH="    0.889000"
+PcbTextThickness="    0.127000"
+ModuleTextSizeV="    0.889000"
+ModuleTextSizeH="    0.889000"
+ModuleTextSizeThickness="    0.127000"
+SolderMaskClearance="    0.254000"
+SolderMaskMinWidth="    0.000000"
+DrawSegmentWidth="    0.152400"
+BoardOutlineThickness="    0.127000"
+ModuleOutlineThickness="    0.152400"
+[pcbnew/libraries]
+LibDir=
+LibName1=uControl_Libs/uControl
 [general]
 version=1
