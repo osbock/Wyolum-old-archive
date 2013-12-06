@@ -428,7 +428,6 @@ F8 "5V0" B L 10050 4600 40
 F9 "SCK" I L 10050 5400 40 
 F10 "RESET" O L 10050 5100 40 
 F11 "~MOSI" I L 10050 5600 40 
-F12 "3V3" I L 10050 4700 40 
 F13 "PWR_IN" B L 10050 5700 40 
 $EndSheet
 Text Label 1925 3300 0    40   ~ 0
@@ -787,10 +786,6 @@ Wire Wire Line
 Wire Wire Line
 	725  2475 725  2550
 Connection ~ 975  2550
-Text Label 9775 4700 0    40   ~ 0
-3V3
-Wire Wire Line
-	9775 4700 10050 4700
 Text Notes 4550 2450 0    40   ~ 0
 Analog, from Absolute Pr Sensor
 Text Notes 4550 2550 0    40   ~ 0

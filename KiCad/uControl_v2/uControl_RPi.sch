@@ -460,8 +460,6 @@ Wire Wire Line
 	10500 1000 10500 1625
 Wire Wire Line
 	10625 1625 10625 1725
-Text Label 10550 1525 0    40   ~ 0
-3V3
 Wire Wire Line
 	10425 1525 10825 1525
 Connection ~ 10500 1525
@@ -540,8 +538,6 @@ Wire Wire Line
 Connection ~ 10825 1625
 Text Label 8950 1725 0    40   ~ 0
 ACL_SDO
-Text Label 8950 1625 0    40   ~ 0
-ACL_CS
 Wire Notes Line
 	11125 575  11125 4525
 Wire Notes Line
@@ -572,8 +568,6 @@ Text Label 8950 2125 0    40   ~ 0
 ACL_INT1
 Text Label 8950 2225 0    40   ~ 0
 ACL_INT2
-Text HLabel 7675 1000 0    40   Input ~ 0
-3V3
 Wire Wire Line
 	7675 1000 10500 1000
 Text Label 3450 1925 0    40   ~ 0
@@ -760,4 +754,6 @@ Wire Wire Line
 Connection ~ 4800 7500
 Text HLabel 900  7500 0    40   BiDi ~ 0
 PWR_IN
+Text Label 7675 1000 0    40   ~ 0
+Rpi_3V3
 $EndSCHEMATC

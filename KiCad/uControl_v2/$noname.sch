@@ -1,0 +1,270 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:uControl_v2-cache
+EELAYER 24 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "noname.sch"
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Wire Line
+	3475 4125 4125 4125
+Wire Wire Line
+	4525 4125 6075 4125
+Connection ~ 5025 4125
+Wire Wire Line
+	5025 4000 5025 4200
+$Comp
+L C_POL_1 C?
+U 1 1 529B3F7D
+P 5400 3775
+F 0 "C?" V 5450 3550 50  0000 L CNN
+F 1 "100u,16V" V 5275 3550 50  0000 L CNN
+F 2 "C_ELCO_SMD" H 5000 3750 50  0001 C CNN
+F 3 "" H 5400 3775 60  0001 C CNN
+F 4 "CAP ALUM 100UF 16V 20% RADIAL" H 5400 3975 60  0001 L CNN "Field4"
+F 5 "100u,16V" H 5400 4075 60  0001 L CNN "Field5"
+F 6 "Radial, Can, 6.3mm dia" H 5400 4175 60  0001 L CNN "Field6"
+F 7 "Panasonic Electronic Components" H 5400 4275 60  0001 L CNN "Field7"
+F 8 "ECE-A1CKA101" H 5400 4375 60  0001 L CNN "Field8"
+F 9 "Digikey" H 5400 4475 60  0001 L CNN "Field9"
+F 10 "P833-ND" H 5400 4575 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/ECE-A1CKA101/P833-ND/44757?cur=USD" H 5400 4675 60  0001 L CNN "Field11"
+	1    5400 3775
+	1    0    0    -1  
+$EndComp
+$Comp
+L PUMP P?
+U 1 1 529B3F84
+P 6700 2800
+F 0 "P?" V 6650 2800 40  0000 C CNN
+F 1 "PUMP" V 6750 2800 40  0000 C CNN
+F 2 "Pump_P54E01R_02" V 6850 2800 60  0001 C CNN
+F 3 "" H 6700 2800 60  0001 C CNN
+F 4 "http://www.xavitech.com/products" H 6700 3600 60  0001 L CNN "Field11"
+	1    6700 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 529B3F92
+P 5625 3800
+F 0 "C?" H 5625 3900 50  0000 L CNN
+F 1 "100n" H 5625 3700 50  0000 L CNN
+F 2 "c_0603" H 5625 3800 50  0001 C CNN
+F 3 "" H 5625 3800 60  0001 C CNN
+F 4 "CAP FILM 0.1UF 63VDC RADIAL" H 5625 4000 60  0001 L CNN "Field4"
+F 5 "100nF, 63V" H 5625 4100 60  0001 L CNN "Field5"
+F 6 "R82" H 5625 4200 60  0001 L CNN "Field6"
+F 7 "Kemet" H 5625 4300 60  0001 L CNN "Field7"
+F 8 "R82DC3100AA50J" H 5625 4400 60  0001 L CNN "Field8"
+F 9 "Digikey" H 5625 4500 60  0001 L CNN "Field9"
+F 10 "399-5863-ND" H 5625 4600 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD" H 5625 4700 60  0001 L CNN "Field11"
+	1    5625 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 529B3F99
+P 5025 4200
+F 0 "#PWR?" H 5025 4200 30  0001 C CNN
+F 1 "GND" H 5025 4130 30  0001 C CNN
+F 2 "" H 5025 4200 60  0001 C CNN
+F 3 "" H 5025 4200 60  0001 C CNN
+	1    5025 4200
+	1    0    0    -1  
+$EndComp
+Text Notes 2825 2100 0    40   ~ 0
+Pump, 12V DC [P54E01R]\non digital port ~PB1
+Text Label 3475 4125 0    40   ~ 0
+GND
+Text Label 3475 2550 0    40   ~ 0
+12V
+Text Notes 6600 3175 0    30   ~ 0
+Pump [P54E01R]\nFootprint
+$Comp
+L NPN_TIP112G Q?
+U 1 1 529B3FAC
+P 4325 4025
+F 0 "Q?" V 4225 3875 50  0000 C CNN
+F 1 "NPN" V 4225 4250 50  0000 C CNN
+F 2 "SOT223" H 4515 4025 30  0001 C CNN
+F 3 "" H 4325 4025 60  0001 C CNN
+F 4 "TRANS DARL NPN 2A 100V TO220AB" H 4325 4025 60  0001 L CNN "Field4"
+F 5 "2A, 100V, 2W" H 4325 4125 60  0001 L CNN "Field5"
+F 6 "TO-220-3" H 4325 4225 60  0001 L CNN "Field6"
+F 7 "ON Semiconductor" H 4325 4325 60  0001 L CNN "Field7"
+F 8 "TIP112G" H 4325 4425 60  0001 L CNN "Field8"
+F 9 "Digikey" H 4325 4525 60  0001 L CNN "Field9"
+F 10 "TIP112GOS-ND" H 4325 4625 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/scripts/dksearch/dksus.dll?vendor=0&keywords=TIP112G" H 4325 4725 60  0001 L CNN "Field11"
+	1    4325 4025
+	0    1    1    0   
+$EndComp
+$Comp
+L D_1N4001 D?
+U 1 1 529B3FBA
+P 4325 4350
+F 0 "D?" H 4200 4400 40  0000 C CNN
+F 1 "1N4007" H 4325 4225 40  0000 C CNN
+F 2 "diode-DO214AC" V 4250 4500 40  0001 C CNN
+F 3 "" H 4325 4350 60  0001 C CNN
+F 4 "DIODE GEN PURPOSE 50V 1A DO41" H 4325 4550 60  0001 L CNN "Field4"
+F 5 "50V, 1A" H 4325 4650 60  0001 L CNN "Field5"
+F 6 "DO-204AL, DO-41, Axial" H 4325 4750 60  0001 L CNN "Field6"
+F 7 "Fairchild Semiconductor" H 4325 4850 60  0001 L CNN "Field7"
+F 8 "1N4001" H 4325 4950 60  0001 L CNN "Field8"
+F 9 "Digikey" H 4325 5050 60  0001 L CNN "Field9"
+F 10 "1N4001FSCT-ND" H 4325 5150 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/1N4001/1N4001FSCT-ND/1532742" H 4325 5250 60  0001 L CNN "Field11"
+	1    4325 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3475 2550 5875 2550
+Wire Wire Line
+	3475 3725 4325 3725
+Text Label 3475 3725 0    40   ~ 0
+~PB1_Pump
+Text Notes 6525 3350 0    40   ~ 0
+1 GND\n2 12V\n3 FG\n4 PWM\n5 NC
+$Comp
+L R_10K R?
+U 1 1 529B3FDB
+P 5025 3175
+F 0 "R?" H 5075 3350 50  0000 C CNN
+F 1 "4k7" V 5030 3175 50  0000 C CNN
+F 2 "r_0603" V 5130 3175 50  0001 C CNN
+F 3 "" H 5025 3175 60  0001 C CNN
+F 4 "RES 10K OHM 1/8W 5% CF AXIAL" H 5025 3275 60  0001 L CNN "Field4"
+F 5 "0.125W, 1/8W" H 5025 3375 60  0001 L CNN "Field5"
+F 6 "Axial" H 5025 3475 60  0001 L CNN "Field6"
+F 7 "Stackpole Electronics Inc" H 5025 3575 60  0001 L CNN "Field7"
+F 8 "CF18JT10K0" H 5025 3675 60  0001 L CNN "Field8"
+F 9 "Digikey" H 5025 3775 60  0001 L CNN "Field9"
+F 10 "CF18JT10K0CT-ND" H 5025 3875 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/CF18JT10K0/CF18JT10K0CT-ND/2022766?cur=USD" H 5025 3975 60  0001 L CNN "Field11"
+	1    5025 3175
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 529B3FE9
+P 5025 3800
+F 0 "C?" H 5050 3875 50  0000 L CNN
+F 1 "100n" H 5025 3700 50  0000 L CNN
+F 2 "c_0603" H 5025 3800 50  0001 C CNN
+F 3 "" H 5025 3800 60  0001 C CNN
+F 4 "CAP FILM 0.1UF 63VDC RADIAL" H 5025 4000 60  0001 L CNN "Field4"
+F 5 "100nF, 63V" H 5025 4100 60  0001 L CNN "Field5"
+F 6 "R82" H 5025 4200 60  0001 L CNN "Field6"
+F 7 "Kemet" H 5025 4300 60  0001 L CNN "Field7"
+F 8 "R82DC3100AA50J" H 5025 4400 60  0001 L CNN "Field8"
+F 9 "Digikey" H 5025 4500 60  0001 L CNN "Field9"
+F 10 "399-5863-ND" H 5025 4600 60  0001 L CNN "Field10"
+F 11 "http://www.digikey.com/product-detail/en/R82DC3100AA50J/399-5863-ND/2571298?cur=USD" H 5025 4700 60  0001 L CNN "Field11"
+	1    5025 3800
+	1    0    0    -1  
+$EndComp
+Text Label 5150 3475 0    40   ~ 0
+Pump
+Wire Wire Line
+	5875 2550 5875 2650
+Wire Wire Line
+	5875 2650 6350 2650
+NoConn ~ 6350 2750
+Wire Wire Line
+	6350 2850 5875 2850
+Wire Wire Line
+	5875 2850 5875 3475
+NoConn ~ 6350 2950
+NoConn ~ 6350 3050
+Wire Wire Line
+	6350 2550 6075 2550
+Wire Wire Line
+	6075 2550 6075 4125
+Wire Wire Line
+	5875 3475 5025 3475
+Wire Wire Line
+	5025 3425 5025 3600
+Wire Wire Line
+	5025 2850 5025 2925
+Wire Wire Line
+	3475 2850 5025 2850
+Connection ~ 5025 3475
+Wire Wire Line
+	5400 3675 5400 2550
+Connection ~ 5400 2550
+Wire Wire Line
+	5625 3600 5625 2550
+Connection ~ 5625 2550
+Wire Wire Line
+	5625 4000 5625 4125
+Connection ~ 5625 4125
+Wire Wire Line
+	5400 3925 5400 4125
+Connection ~ 5400 4125
+Text Label 3475 2850 0    40   ~ 0
+5V0
+Wire Wire Line
+	4325 3725 4325 3825
+Wire Wire Line
+	4525 4350 4675 4350
+Wire Wire Line
+	4675 4350 4675 4125
+Connection ~ 4675 4125
+Wire Wire Line
+	4125 4350 4000 4350
+Wire Wire Line
+	4000 4350 4000 4125
+Connection ~ 4000 4125
+$Comp
+L FET_N Q?
+U 1 1 529B427F
+P 2575 5150
+F 0 "Q?" H 2478 5400 70  0000 C CNN
+F 1 "FET_N" H 2428 4903 60  0000 C CNN
+F 2 "" H 2575 5150 60  0000 C CNN
+F 3 "" H 2575 5150 60  0000 C CNN
+	1    2575 5150
+	0    -1   -1   0   
+$EndComp
+$EndSCHEMATC

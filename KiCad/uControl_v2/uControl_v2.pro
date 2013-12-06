@@ -1,10 +1,12 @@
-update=Monday 30 September 2013 08:53:44 PM IST
-last_client=kicad
+update=Saturday 30 November 2013 11:17:10 PM IST
+last_client=pcbnew
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
@@ -39,5 +41,4 @@ ModuleOutlineThickness="    0.152400"
 [pcbnew/libraries]
 LibDir=
 LibName1=uControl_Libs/uControl
-[general]
-version=1
+LibName2=uControl_Libs/FlyingBone-master/kicad/FlyingBone-footprints
