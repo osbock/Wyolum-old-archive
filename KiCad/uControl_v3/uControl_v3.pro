@@ -1,22 +1,10 @@
-update=Monday 30 September 2013 08:53:44 PM IST
-last_client=kicad
+update=Saturday 07 December 2013 09:26:34 PM IST
+last_client=eeschema
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[eeschema]
-version=1
-LibDir=
-NetFmtName=PcbnewAdvanced
-RptD_X=0
-RptD_Y=100
-RptLab=1
-LabSize=40
-[eeschema/libraries]
-LibName1=uControl_Libs/Conn-raspberry
-LibName2=uControl_Libs/power
-LibName3=uControl_Libs/uControl
 [pcbnew]
 version=1
 LastNetListRead=uControl_v2.net
@@ -41,3 +29,17 @@ LibDir=
 LibName1=uControl_Libs/uControl
 [general]
 version=1
+[eeschema]
+version=1
+LibDir=
+NetFmtName=PcbnewAdvanced
+RptD_X=0
+RptD_Y=100
+RptLab=1
+LabSize=40
+[eeschema/libraries]
+LibName1=uControl_Libs/FlyingBone-master/kicad/FlyingBone-cache
+LibName2=uControl_Libs/Conn-raspberry
+LibName3=uControl_Libs/power
+LibName4=uControl_Libs/uControl
+LibName5=uControl_Libs/FlyingBone-master/lib/beaglebone
