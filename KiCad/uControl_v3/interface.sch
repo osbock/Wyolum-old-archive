@@ -1,9 +1,7 @@
 EESchema Schematic File Version 2
-LIBS:FlyingBone-cache
 LIBS:Conn-raspberry
 LIBS:power
 LIBS:uControl
-LIBS:beaglebone
 LIBS:uControl_v3-cache
 EELAYER 24 0
 EELAYER END

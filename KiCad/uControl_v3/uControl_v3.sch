@@ -1,9 +1,7 @@
 EESchema Schematic File Version 2
-LIBS:FlyingBone-cache
 LIBS:Conn-raspberry
 LIBS:power
 LIBS:uControl
-LIBS:beaglebone
 LIBS:uControl_v3-cache
 EELAYER 24 0
 EELAYER END
@@ -1137,4 +1135,52 @@ U 52A366F4
 F0 "BBB" 50
 F1 "BBB.sch" 50
 $EndSheet
+Text Label 1075 5850 0    40   ~ 0
+5V0
+Text Label 1075 6550 0    40   ~ 0
+SDA
+Text Label 1075 6650 0    40   ~ 0
+SCK
+Text Label 1075 6750 0    40   ~ 0
+MISO
+Text Label 1075 6850 0    40   ~ 0
+~MOSI
+Text Label 1075 6450 0    40   ~ 0
+SCL
+Text Label 1075 6350 0    40   ~ 0
+RESET
+Text Label 1075 6250 0    40   ~ 0
+RXD
+Text Label 1075 6150 0    40   ~ 0
+TXD
+Text Label 1075 6050 0    40   ~ 0
+GND
+Wire Wire Line
+	1075 6450 1350 6450
+Wire Wire Line
+	1075 6250 1350 6250
+Wire Wire Line
+	1075 6050 1350 6050
+Wire Wire Line
+	1075 6150 1350 6150
+Wire Wire Line
+	1075 6350 1350 6350
+Wire Wire Line
+	1075 6750 1350 6750
+Wire Wire Line
+	1075 6550 1350 6550
+Wire Wire Line
+	1075 6650 1350 6650
+Wire Wire Line
+	1075 6850 1350 6850
+Wire Wire Line
+	1075 5850 1350 5850
+Text Label 1075 5950 0    40   ~ 0
+3V3
+Wire Wire Line
+	1075 5950 1350 5950
+Wire Wire Line
+	1350 6950 1075 6950
+Text Label 1075 6950 0    40   ~ 0
+PWR_IN
 $EndSCHEMATC
