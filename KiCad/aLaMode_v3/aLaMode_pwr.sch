@@ -1,9 +1,9 @@
-EESchema Schematic File Version 2  date 14-Jun-13 12:23:48 PM
+EESchema Schematic File Version 2
 LIBS:aLaMode
 LIBS:Conn-raspberry
 LIBS:power
 LIBS:aLaMode_v3-cache
-EELAYER 27 0
+EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
