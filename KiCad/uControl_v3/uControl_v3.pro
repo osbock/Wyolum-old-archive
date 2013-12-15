@@ -1,5 +1,17 @@
-update=Monday 09 December 2013 11:33:11 PM IST
+update=Sunday 15 December 2013 08:07:00 PM IST
 last_client=kicad
+[eeschema]
+version=1
+LibDir=
+NetFmtName=PcbnewAdvanced
+RptD_X=0
+RptD_Y=100
+RptLab=1
+LabSize=40
+[eeschema/libraries]
+LibName1=uControl_Libs/Conn-raspberry
+LibName2=uControl_Libs/power
+LibName3=uControl_Libs/uControl
 [cvpcb]
 version=1
 NetIExt=net
@@ -27,17 +39,5 @@ ModuleOutlineThickness="    0.152400"
 [pcbnew/libraries]
 LibDir=
 LibName1=uControl_Libs/uControl
-[eeschema]
-version=1
-LibDir=
-NetFmtName=PcbnewAdvanced
-RptD_X=0
-RptD_Y=100
-RptLab=1
-LabSize=40
-[eeschema/libraries]
-LibName1=uControl_Libs/Conn-raspberry
-LibName2=uControl_Libs/power
-LibName3=uControl_Libs/uControl
 [general]
 version=1
