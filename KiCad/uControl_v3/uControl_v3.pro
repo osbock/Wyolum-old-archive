@@ -1,5 +1,5 @@
-update=Sunday 15 December 2013 08:07:00 PM IST
-last_client=kicad
+update=Sunday 15 December 2013 11:15:25 PM IST
+last_client=pcbnew
 [eeschema]
 version=1
 LibDir=
@@ -17,27 +17,27 @@ version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
+[general]
+version=1
 [pcbnew]
 version=1
-LastNetListRead=uControl_v2.net
+LastNetListRead=
 UseCmpFile=1
 PadDrill="    1.016000"
 PadDrillOvalY="    1.016000"
-PadSizeH="    1.270000"
-PadSizeV="    1.270000"
-PcbTextSizeV="    0.889000"
-PcbTextSizeH="    0.889000"
-PcbTextThickness="    0.127000"
-ModuleTextSizeV="    0.889000"
-ModuleTextSizeH="    0.889000"
+PadSizeH="    1.524000"
+PadSizeV="    1.524000"
+PcbTextSizeV="    1.016000"
+PcbTextSizeH="    1.016000"
+PcbTextThickness="    0.203200"
+ModuleTextSizeV="    0.762000"
+ModuleTextSizeH="    0.762000"
 ModuleTextSizeThickness="    0.127000"
-SolderMaskClearance="    0.254000"
+SolderMaskClearance="    0.000000"
 SolderMaskMinWidth="    0.000000"
-DrawSegmentWidth="    0.152400"
-BoardOutlineThickness="    0.127000"
+DrawSegmentWidth="    0.200000"
+BoardOutlineThickness="    0.200000"
 ModuleOutlineThickness="    0.152400"
 [pcbnew/libraries]
 LibDir=
 LibName1=uControl_Libs/uControl
-[general]
-version=1
