@@ -1,5 +1,5 @@
-update=Sunday 15 December 2013 11:15:25 PM IST
-last_client=pcbnew
+update=Saturday 28 December 2013 01:47:59 AM IST
+last_client=kicad
 [eeschema]
 version=1
 LibDir=
@@ -17,8 +17,6 @@ version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
 [pcbnew]
 version=1
 LastNetListRead=
@@ -41,3 +39,5 @@ ModuleOutlineThickness="    0.152400"
 [pcbnew/libraries]
 LibDir=
 LibName1=uControl_Libs/uControl
+[general]
+version=1

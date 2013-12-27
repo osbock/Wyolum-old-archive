@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Sunday 15 December 2013 07:20:20 PM IST
+Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Friday 27 December 2013 09:56:21 PM IST
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -330,21 +330,21 @@ IdModule  = c_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /52A366F4/52A6123C;
+TimeStamp = /52AE0B2E;
 Reference = C42;
 ValeurCmp = 100u,16V;
 IdModule  = C_ELCO_SMD;
 EndCmp
 
 BeginCmp
-TimeStamp = /52A366F4/52A61220;
+TimeStamp = /52AE0B12;
 Reference = C43;
 ValeurCmp = 100n;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /52A366F4/52A6122E;
+TimeStamp = /52AE0B20;
 Reference = C44;
 ValeurCmp = 100n;
 IdModule  = c_0805;
@@ -603,7 +603,7 @@ IdModule  = PIN_ARRAY_23X2;
 EndCmp
 
 BeginCmp
-TimeStamp = /52A366F4/52A61268;
+TimeStamp = /52AE0B55;
 Reference = P23;
 ValeurCmp = Alt_Add;
 IdModule  = ShortLink2;
@@ -617,14 +617,14 @@ IdModule  = JACK_ALIM;
 EndCmp
 
 BeginCmp
-TimeStamp = /52A366F4/52A61276;
+TimeStamp = /52AE0B63;
 Reference = P28;
 ValeurCmp = Int1;
 IdModule  = ShortLink2;
 EndCmp
 
 BeginCmp
-TimeStamp = /52A366F4/52A61284;
+TimeStamp = /52AE0B71;
 Reference = P29;
 ValeurCmp = Int2;
 IdModule  = ShortLink2;
@@ -764,6 +764,13 @@ IdModule  = r_0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /52A366F4/52BDB750;
+Reference = R12;
+ValeurCmp = 4k7;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
 TimeStamp = /4FC07407/50E2BB2F;
 Reference = R13;
 ValeurCmp = 1k;
@@ -830,6 +837,27 @@ BeginCmp
 TimeStamp = /520EF51D;
 Reference = R22;
 ValeurCmp = 10k;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52A366F4/52BDB756;
+Reference = R23;
+ValeurCmp = 4k75;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52A366F4/52BDB75C;
+Reference = R24;
+ValeurCmp = 220;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52A366F4/52BDB459;
+Reference = R25;
+ValeurCmp = 220;
 IdModule  = r_0805;
 EndCmp
 
@@ -932,6 +960,27 @@ IdModule  = SW_PB_V_H;
 EndCmp
 
 BeginCmp
+TimeStamp = /52A366F4/52BDB401;
+Reference = SW4;
+ValeurCmp = PWR_BBB;
+IdModule  = SW_PB_V_H;
+EndCmp
+
+BeginCmp
+TimeStamp = /52A366F4/52BDB7DB;
+Reference = SW5;
+ValeurCmp = SW_PUSH;
+IdModule  = SW_PB_V_H;
+EndCmp
+
+BeginCmp
+TimeStamp = /52A366F4/52BDB818;
+Reference = SW6;
+ValeurCmp = SW_PUSH;
+IdModule  = SW_PB_V_H;
+EndCmp
+
+BeginCmp
 TimeStamp = /50B2116F/50E2BDB8;
 Reference = U1;
 ValeurCmp = TXB0104D;
@@ -948,7 +997,7 @@ EndCmp
 BeginCmp
 TimeStamp = /4FC07407/52ACCF51;
 Reference = U4;
-ValeurCmp = TPS62133;
+ValeurCmp = TPS62132;
 IdModule  = TPS62132;
 EndCmp
 
@@ -988,7 +1037,7 @@ IdModule  = BEAGLEBONE;
 EndCmp
 
 BeginCmp
-TimeStamp = /52A366F4/52A611FC;
+TimeStamp = /52AE0AEE;
 Reference = U11;
 ValeurCmp = ADXL345;
 IdModule  = ADXL345;
