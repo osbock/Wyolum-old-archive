@@ -3,13 +3,13 @@ LIBS:Conn-raspberry
 LIBS:power
 LIBS:uControl
 LIBS:uControl_v3-cache
-EELAYER 24 0
+EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 5
 Title ""
-Date ""
+Date "28 dec 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -1622,7 +1622,7 @@ F 3 "" H 1200 7000 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 2675 6175 2    40   ~ 0
-GPIO1_7
+TIMER6
 Text Label 1700 4975 0    40   ~ 0
 5V0
 Text Label 1200 6475 0    40   ~ 0
@@ -1894,7 +1894,7 @@ Wire Wire Line
 	1400 2050 1775 2050
 Connection ~ 1400 2050
 Text Label 1775 1900 2    40   ~ 0
-GPIO1_6
+TIMER5
 Text Label 1775 2050 2    40   ~ 0
 GPIO1_29
 $EndSCHEMATC
