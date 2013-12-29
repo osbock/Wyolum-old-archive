@@ -3,7 +3,7 @@ LIBS:Conn-raspberry
 LIBS:power
 LIBS:uControl
 LIBS:uControl_v3-cache
-EELAYER 27 0
+EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -375,7 +375,6 @@ F3 "GND" B L 10050 1125 40
 F4 "3V3" B L 10050 1025 40 
 F5 "5V0" B L 10050 925 40 
 F6 "12V" B L 10050 825 40 
-F7 "PWR_IN" B L 10050 725 40 
 $EndSheet
 $Sheet
 S 10050 6050 1050 900 
@@ -960,10 +959,6 @@ F 3 "" H 4275 3850 60  0000 C CNN
 	1    4275 3850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	10050 725  9775 725 
-Text Label 9775 725  0    40   ~ 0
-PWR_IN
 $Comp
 L SCREW SC3
 U 1 1 52230B6D
@@ -1246,7 +1241,7 @@ Text Label 1750 6100 0    40   ~ 0
 ACL_SDO
 Text Label 1750 6000 0    40   ~ 0
 ACL_CS
-Text Notes 700  5150 0    40   ~ 0
+Text Notes 750  5250 0    40   ~ 0
 Accelerometer, 3V3 I2C
 Wire Wire Line
 	1325 6500 2025 6500

@@ -1,0 +1,26 @@
+Drill report for /home/samata/Documents/clockthree/KiCad/uControl_v3/uControl_v3.kicad_pcb
+Created on Sunday 29 December 2013 09:42:09 PM IST
+Drill report for plated through holes :
+T1  0.30mm  0.012"  (10 holes)
+T2  0.64mm  0.025"  (113 holes)
+T3  0.80mm  0.032"  (99 holes)
+T4  0.81mm  0.032"  (2 holes)
+T5  1.00mm  0.039"  (13 holes)
+T6  1.02mm  0.040"  (174 holes)
+T7  1.17mm  0.046"  (3 holes)  (with 3 slots)
+T8  1.27mm  0.050"  (12 holes)
+T9  1.52mm  0.060"  (4 holes)
+T10  2.03mm  0.080"  (2 holes)
+T11  3.00mm  0.118"  (8 holes)
+T12  3.05mm  0.120"  (10 holes)
+T13  3.17mm  0.125"  (4 holes)
+T14  3.50mm  0.138"  (2 holes)
+
+Total plated holes count 456
+
+
+Drill report for unplated through holes :
+
+Total unplated holes count 0
+
+

@@ -3,7 +3,7 @@ LIBS:Conn-raspberry
 LIBS:power
 LIBS:uControl
 LIBS:uControl_v3-cache
-EELAYER 27 0
+EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -405,10 +405,6 @@ F 3 "" H 10750 6600 60  0001 C CNN
 	1    10750 6600
 	1    0    0    -1  
 $EndComp
-Text HLabel 6400 950  2    40   BiDi ~ 0
-PWR_IN
-Text Label 6150 950  0    40   ~ 0
-PWR_IN
 $Comp
 L CONN_2 P13
 U 1 1 521B769C
@@ -681,7 +677,7 @@ Connection ~ 2725 2475
 Wire Wire Line
 	1500 1525 1900 1525
 Wire Wire Line
-	1650 950  1650 2275
+	1650 1525 1650 2275
 Connection ~ 1575 1725
 Wire Wire Line
 	4250 2400 4250 2550
@@ -692,8 +688,6 @@ Connection ~ 2325 1525
 Connection ~ 1650 1525
 Connection ~ 2325 2475
 Connection ~ 1575 2475
-Wire Wire Line
-	6400 950  1650 950 
 Wire Wire Line
 	6400 1075 2325 1075
 Wire Wire Line

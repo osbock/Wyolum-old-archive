@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Friday 27 December 2013 09:56:21 PM IST
+Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Sunday 29 December 2013 08:41:12 PM IST
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -25,6 +25,20 @@ BeginCmp
 TimeStamp = /52150F0F;
 Reference = B4;
 ValeurCmp = PB0;
+IdModule  = I_O;
+EndCmp
+
+BeginCmp
+TimeStamp = /52A366F4/52C04621;
+Reference = B5;
+ValeurCmp = 5V_ATMega;
+IdModule  = I_O;
+EndCmp
+
+BeginCmp
+TimeStamp = /52A366F4/52C04614;
+Reference = B6;
+ValeurCmp = 3V3_BBB;
 IdModule  = I_O;
 EndCmp
 
@@ -444,7 +458,7 @@ EndCmp
 BeginCmp
 TimeStamp = /4FC07407/52ACCF3E;
 Reference = J2;
-ValeurCmp = 5V_EXT;
+ValeurCmp = 3V3_EXT;
 IdModule  = Header_2;
 EndCmp
 
@@ -687,6 +701,13 @@ IdModule  = SOT223;
 EndCmp
 
 BeginCmp
+TimeStamp = /52A366F4/52C03DB4;
+Reference = Q5;
+ValeurCmp = 2N7002KW;
+IdModule  = SOT23-3;
+EndCmp
+
+BeginCmp
 TimeStamp = /50E2B7BA;
 Reference = R1;
 ValeurCmp = 10k;
@@ -862,6 +883,20 @@ IdModule  = r_0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /52A366F4/52C03DD8;
+Reference = R26;
+ValeurCmp = 10k;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52A366F4/52C03DF0;
+Reference = R27;
+ValeurCmp = 10k;
+IdModule  = r_0805;
+EndCmp
+
+BeginCmp
 TimeStamp = /50DADA2B;
 Reference = SC1;
 ValeurCmp = SCREW;
@@ -969,14 +1004,14 @@ EndCmp
 BeginCmp
 TimeStamp = /52A366F4/52BDB7DB;
 Reference = SW5;
-ValeurCmp = SW_PUSH;
+ValeurCmp = GPIO1_6;
 IdModule  = SW_PB_V_H;
 EndCmp
 
 BeginCmp
 TimeStamp = /52A366F4/52BDB818;
 Reference = SW6;
-ValeurCmp = SW_PUSH;
+ValeurCmp = GPIO1_29;
 IdModule  = SW_PB_V_H;
 EndCmp
 
