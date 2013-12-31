@@ -1,4 +1,4 @@
-update=Tuesday 31 December 2013 01:23:43 AM IST
+update=Wednesday 01 January 2014 02:32:07 AM IST
 last_client=kicad
 [eeschema]
 version=1
@@ -21,10 +21,10 @@ EquName1=devcms
 version=1
 LastNetListRead=
 UseCmpFile=1
-PadDrill="    1.016000"
-PadDrillOvalY="    1.016000"
-PadSizeH="    1.524000"
-PadSizeV="    1.524000"
+PadDrill="    0.000000"
+PadDrillOvalY="    0.000000"
+PadSizeH="    2.500000"
+PadSizeV="    1.700000"
 PcbTextSizeV="    1.016000"
 PcbTextSizeH="    1.016000"
 PcbTextThickness="    0.203200"

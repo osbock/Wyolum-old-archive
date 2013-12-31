@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Sunday 29 December 2013 08:41:12 PM IST
+Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Wednesday 01 January 2014 02:26:51 AM IST
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -704,7 +704,7 @@ BeginCmp
 TimeStamp = /52A366F4/52C03DB4;
 Reference = Q5;
 ValeurCmp = 2N7002KW;
-IdModule  = SOT23-3;
+IdModule  = SOT323;
 EndCmp
 
 BeginCmp
