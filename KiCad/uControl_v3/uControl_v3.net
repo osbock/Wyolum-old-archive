@@ -1,8 +1,8 @@
 (export (version D)
   (design
-    (source /home/samata/Documents/clockthree/KiCad/uControl_v3/uControl_v3.sch)
-    (date "Sunday 29 December 2013 08:40:28 PM IST")
-    (tool "eeschema (2013-mar-13)-testing"))
+    (source C:/Users/Anool/Documents/Arduino/clockthree/KiCad/uControl_v3/uControl_v3.sch)
+    (date "01-Jan-14 12:33:54 PM")
+    (tool "eeschema (2013-07-07 BZR 4022)-stable"))
   (components
     (comp (ref P4)
       (value ICSP)
@@ -110,7 +110,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 50E2B7BA))
     (comp (ref C3)
-      (value 22p)
+      (value 22pF)
       (footprint c_0603)
       (fields
         (field (name Field4) "CAP CER 22PF 50V 5% RADIAL")
@@ -125,7 +125,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 50E29877))
     (comp (ref C2)
-      (value 22p)
+      (value 22pF)
       (footprint c_0603)
       (fields
         (field (name Field4) "CAP CER 22PF 50V 5% RADIAL")
@@ -140,7 +140,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 50E29842))
     (comp (ref C4)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -155,7 +155,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 50E2949E))
     (comp (ref C1)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -278,7 +278,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 520EF52B))
     (comp (ref C28)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -359,7 +359,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 52AE0AEE))
     (comp (ref C43)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -374,7 +374,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 52AE0B12))
     (comp (ref C44)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -389,7 +389,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 52AE0B20))
     (comp (ref C42)
-      (value 100u,16V)
+      (value 100uF)
       (footprint C_ELCO_SMD)
       (fields
         (field (name Field4) "CAP ALUM 100UF 16V 20% RADIAL")
@@ -449,7 +449,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 52AE0B71))
     (comp (ref C27)
-      (value 100u,16V)
+      (value 100uF)
       (footprint C_ELCO_SMD)
       (fields
         (field (name Field4) "CAP ALUM 100UF 16V 20% RADIAL")
@@ -583,7 +583,7 @@
       (sheetpath (names /Interface/) (tstamps /50B2116F/))
       (tstamp 50E2ABAC))
     (comp (ref D1)
-      (value 1N4007)
+      (value S1D-13-F)
       (footprint diode-DO214AC)
       (fields
         (field (name Field4) "DIODE GEN PURPOSE 50V 1A DO41")
@@ -598,7 +598,7 @@
       (sheetpath (names /Interface/) (tstamps /50B2116F/))
       (tstamp 50E2A152))
     (comp (ref C5)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -613,7 +613,7 @@
       (sheetpath (names /Interface/) (tstamps /50B2116F/))
       (tstamp 50E295BE))
     (comp (ref C17)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -628,7 +628,7 @@
       (sheetpath (names /Interface/) (tstamps /50B2116F/))
       (tstamp 50E29685))
     (comp (ref C13)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -643,7 +643,7 @@
       (sheetpath (names /Interface/) (tstamps /50B2116F/))
       (tstamp 50E2964D))
     (comp (ref C12)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -658,7 +658,7 @@
       (sheetpath (names /Interface/) (tstamps /50B2116F/))
       (tstamp 50E2963E))
     (comp (ref C11)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -673,7 +673,7 @@
       (sheetpath (names /Interface/) (tstamps /50B2116F/))
       (tstamp 50E2962F))
     (comp (ref C10)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -688,7 +688,7 @@
       (sheetpath (names /Interface/) (tstamps /50B2116F/))
       (tstamp 50E29621))
     (comp (ref C9)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -703,7 +703,7 @@
       (sheetpath (names /Interface/) (tstamps /50B2116F/))
       (tstamp 50E29615))
     (comp (ref C8)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -718,7 +718,7 @@
       (sheetpath (names /Interface/) (tstamps /50B2116F/))
       (tstamp 50E29607))
     (comp (ref C7)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -822,7 +822,7 @@
       (sheetpath (names /Interface/) (tstamps /50B2116F/))
       (tstamp 520BA09E))
     (comp (ref D9)
-      (value 1N4007)
+      (value S1D-13-F)
       (footprint diode-DO214AC)
       (fields
         (field (name Field4) "DIODE GEN PURPOSE 50V 1A DO41")
@@ -837,7 +837,7 @@
       (sheetpath (names /Interface/) (tstamps /50B2116F/))
       (tstamp 520BA0AC))
     (comp (ref C31)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -858,7 +858,7 @@
       (sheetpath (names /Interface/) (tstamps /50B2116F/))
       (tstamp 520BA0F1))
     (comp (ref C14)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -888,7 +888,7 @@
       (sheetpath (names /Interface/) (tstamps /50B2116F/))
       (tstamp 520BE371))
     (comp (ref D3)
-      (value 1N4007)
+      (value S1D-13-F)
       (footprint diode-DO214AC)
       (fields
         (field (name Field4) "DIODE GEN PURPOSE 50V 1A DO41")
@@ -939,7 +939,7 @@
       (sheetpath (names /Interface/) (tstamps /50B2116F/))
       (tstamp 5245AF3C))
     (comp (ref C29)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -1089,7 +1089,7 @@
       (sheetpath (names /pwr/) (tstamps /4FC07407/))
       (tstamp 50E2A42C))
     (comp (ref D4)
-      (value 1N4007)
+      (value S1D-13-F)
       (footprint diode-DO214AC)
       (fields
         (field (name Field4) "DIODE GEN PURPOSE 50V 1A DO41")
@@ -1306,7 +1306,7 @@
       (sheetpath (names /rtc/) (tstamps /4E1FEA4E/))
       (tstamp 50E2B876))
     (comp (ref C23)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -1374,7 +1374,7 @@
       (sheetpath (names /BBB/) (tstamps /52A366F4/))
       (tstamp 52A36817))
     (comp (ref C41)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (libsource (lib uControl) (part C))
       (sheetpath (names /BBB/) (tstamps /52A366F4/))
@@ -1458,7 +1458,7 @@
       (sheetpath (names /BBB/) (tstamps /52A366F4/))
       (tstamp 52A6192E))
     (comp (ref C40)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -1473,7 +1473,7 @@
       (sheetpath (names /BBB/) (tstamps /52A366F4/))
       (tstamp 52A6193C))
     (comp (ref C39)
-      (value 100n)
+      (value 100nF)
       (footprint c_0805)
       (fields
         (field (name Field4) "CAP FILM 0.1UF 63VDC RADIAL")
@@ -1576,6 +1576,7 @@
       (tstamp 52BDB818))
     (comp (ref Q5)
       (value 2N7002KW)
+      (footprint SOT23-3)
       (libsource (lib uControl) (part MOS_N))
       (sheetpath (names /BBB/) (tstamps /52A366F4/))
       (tstamp 52C03DB4))
@@ -1611,11 +1612,13 @@
       (tstamp 52C03DF0))
     (comp (ref B6)
       (value 3V3_BBB)
+      (footprint I_O)
       (libsource (lib uControl) (part I_O))
       (sheetpath (names /BBB/) (tstamps /52A366F4/))
       (tstamp 52C04614))
     (comp (ref B5)
       (value 5V_ATMega)
+      (footprint I_O)
       (libsource (lib uControl) (part I_O))
       (sheetpath (names /BBB/) (tstamps /52A366F4/))
       (tstamp 52C04621)))
@@ -2475,10 +2478,10 @@
         (pin (num 3) (name 3) (type passive))
         (pin (num 4) (name 4) (type passive)))))
   (libraries
-    (library (logical uControl_v3-cache)
-      (uri /home/samata/Documents/clockthree/KiCad/uControl_v3/uControl_v3-cache.lib))
     (library (logical uControl)
-      (uri uControl_Libs/uControl.lib)))
+      (uri uControl_Libs\uControl.lib))
+    (library (logical uControl_v3-cache)
+      (uri C:\Users\Anool\Documents\Arduino\clockthree\KiCad\uControl_v3\uControl_v3-cache.lib)))
   (nets
     (net (code 1) (name /PB0)
       (node (ref B12) (pin 1))
