@@ -3,13 +3,13 @@ LIBS:Conn-raspberry
 LIBS:power
 LIBS:uControl
 LIBS:uControl_v3-cache
-EELAYER 24 0
+EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 5
 Title ""
-Date "28 dec 2013"
+Date "1 jan 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -1903,7 +1903,7 @@ U 1 1 52C03DB4
 P 2900 7500
 F 0 "Q5" V 2800 7725 40  0000 R CNN
 F 1 "2N7002KW" V 2800 7475 40  0000 R CNN
-F 2 "SOT23-3" H 2900 7500 60  0001 C CNN
+F 2 "SOT323" H 2900 7500 60  0001 C CNN
 F 3 "" H 2900 7500 60  0000 C CNN
 	1    2900 7500
 	0    -1   1    0   

@@ -3,13 +3,13 @@ LIBS:Conn-raspberry
 LIBS:power
 LIBS:uControl
 LIBS:uControl_v3-cache
-EELAYER 24 0
+EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 5
 Title ""
-Date "28 dec 2013"
+Date "1 jan 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -359,7 +359,7 @@ U 1 1 50E2B14F
 P 7700 2775
 F 0 "P16" V 7650 2775 50  0000 C CNN
 F 1 "FLOWMETER" V 7750 2775 40  0000 C CNN
-F 2 "FlowMeter_CFM3000" V 7850 2775 40  0001 C CNN
+F 2 "FlowMeter_SFM3000" V 7850 2775 40  0001 C CNN
 F 3 "" H 7700 2775 60  0001 C CNN
 	1    7700 2775
 	1    0    0    -1  

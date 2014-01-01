@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Wednesday 01 January 2014 02:26:51 AM IST
+Cmp-Mod V01 Created by PcbNew date = 01-Jan-14 4:31:53 PM
 
 BeginCmp
 TimeStamp = /4E1FEA4E/4E1FEBC6;
@@ -94,98 +94,98 @@ EndCmp
 BeginCmp
 TimeStamp = /50E2940E;
 Reference = C1;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50E29842;
 Reference = C2;
-ValeurCmp = 22p;
+ValeurCmp = 22pF;
 IdModule  = c_0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /50E29877;
 Reference = C3;
-ValeurCmp = 22p;
+ValeurCmp = 22pF;
 IdModule  = c_0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /50E2949E;
 Reference = C4;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50B2116F/50E295BE;
 Reference = C5;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50B2116F/50E295F0;
 Reference = C7;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50B2116F/50E29607;
 Reference = C8;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50B2116F/50E29615;
 Reference = C9;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50B2116F/50E29621;
 Reference = C10;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50B2116F/50E2962F;
 Reference = C11;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50B2116F/50E2963E;
 Reference = C12;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50B2116F/50E2964D;
 Reference = C13;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50B2116F/520BE330;
 Reference = C14;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50B2116F/50E29685;
 Reference = C17;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
@@ -227,7 +227,7 @@ EndCmp
 BeginCmp
 TimeStamp = /4E1FEA4E/50E2955A;
 Reference = C23;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
@@ -241,21 +241,21 @@ EndCmp
 BeginCmp
 TimeStamp = /50B2116F/51020D1A;
 Reference = C27;
-ValeurCmp = 100u,16V;
+ValeurCmp = 100uF;
 IdModule  = C_ELCO_SMD;
 EndCmp
 
 BeginCmp
 TimeStamp = /520F1F04;
 Reference = C28;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50B2116F/5245AF72;
 Reference = C29;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
@@ -269,7 +269,7 @@ EndCmp
 BeginCmp
 TimeStamp = /50B2116F/520BA0BA;
 Reference = C31;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
@@ -325,63 +325,63 @@ EndCmp
 BeginCmp
 TimeStamp = /52A366F4/52A6194A;
 Reference = C39;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52A366F4/52A6193C;
 Reference = C40;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52A366F4/52A367F6;
 Reference = C41;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52AE0B2E;
 Reference = C42;
-ValeurCmp = 100u,16V;
+ValeurCmp = 100uF;
 IdModule  = C_ELCO_SMD;
 EndCmp
 
 BeginCmp
 TimeStamp = /52AE0B12;
 Reference = C43;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52AE0B20;
 Reference = C44;
-ValeurCmp = 100n;
+ValeurCmp = 100nF;
 IdModule  = c_0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50B2116F/50E2A152;
 Reference = D1;
-ValeurCmp = 1N4007;
+ValeurCmp = S1D-13-F;
 IdModule  = diode-DO214AC;
 EndCmp
 
 BeginCmp
 TimeStamp = /50B2116F/520BE37F;
 Reference = D3;
-ValeurCmp = 1N4007;
+ValeurCmp = S1D-13-F;
 IdModule  = diode-DO214AC;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FC07407/50E2A12F;
 Reference = D4;
-ValeurCmp = 1N4007;
+ValeurCmp = S1D-13-F;
 IdModule  = diode-DO214AC;
 EndCmp
 
@@ -416,7 +416,7 @@ EndCmp
 BeginCmp
 TimeStamp = /50B2116F/520BA0AC;
 Reference = D9;
-ValeurCmp = 1N4007;
+ValeurCmp = S1D-13-F;
 IdModule  = diode-DO214AC;
 EndCmp
 
@@ -571,7 +571,7 @@ BeginCmp
 TimeStamp = /50B2116F/50E2B14F;
 Reference = P16;
 ValeurCmp = FLOWMETER;
-IdModule  = FlowMeter_CFM3000;
+IdModule  = FlowMeter_SFM3000;
 EndCmp
 
 BeginCmp
